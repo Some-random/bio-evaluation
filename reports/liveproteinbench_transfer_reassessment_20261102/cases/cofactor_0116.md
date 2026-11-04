@@ -1,18 +1,16 @@
-# cofactor_0116: before and after transfer clarification
+# cofactor_0116
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0116.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0116.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — FAD
+**Expected answer:** **C** — FAD
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,234 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry annotated as an FAD-dependent monooxygenase, with FAD listed as its cofactor. This supports choice C as a database annotation; the cited cofactor evidence code does not itself establish direct experimental measurement.
-
-Citations as saved: [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features may support a flavin-dependent enzyme, but general sequence reasoning does not reliably distinguish FAD from FMN for this specific protein.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation that this monooxygenase uses FAD rather than FMN.
-
-
-**Reason**
-
-> The input provides only the sequence and choices; selecting between the two flavin options depends on a protein-specific fact absent from the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices are distinct cofactors and the matching database annotation favors FAD. The sequence-only limitation is a lookup dependence, not ambiguity in the wording.
-
-
-### Important caveats
-
-- The sequence matches the historical and current UniProt record, but the exact source snapshot used by the author is unknown.
-- The cited cofactor annotation is database evidence, not independently verified experimental evidence in the supplied excerpts.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features may support a flavin-dependent enzyme, but general sequence reasoning does not reliably distinguish FAD from FMN for this specific protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation that this monooxygenase uses FAD rather than FMN.",
-    "reason": "The input provides only the sequence and choices; selecting between the two flavin options depends on a protein-specific fact absent from the question."
-  },
-  "case_id": "cofactor_0116",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated as an FAD-dependent monooxygenase, with FAD listed as its cofactor. This supports choice C as a database annotation; the cited cofactor evidence code does not itself establish direct experimental measurement."
-  },
-  "important_caveats": [
-    "The sequence matches the historical and current UniProt record, but the exact source snapshot used by the author is unknown.",
-    "The cited cofactor annotation is database evidence, not independently verified experimental evidence in the supplied excerpts."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices are distinct cofactors and the matching database annotation favors FAD. The sequence-only limitation is a lookup dependence, not ambiguity in the wording."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0116",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated as an FAD-dependent monooxygenase, with FAD listed as its cofactor. This supports choice C as a database annotation; the cited cofactor evidence code does not itself establish direct experimental measurement.",
-    "evidence_ids": ["H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features may support a flavin-dependent enzyme, but general sequence reasoning does not reliably distinguish FAD from FMN for this specific protein.",
-    "missing_item_specific_fact": "The protein-specific annotation that this monooxygenase uses FAD rather than FMN.",
-    "reason": "The input provides only the sequence and choices; selecting between the two flavin options depends on a protein-specific fact absent from the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices are distinct cofactors and the matching database annotation favors FAD. The sequence-only limitation is a lookup dependence, not ambiguity in the wording."
-  },
-  "important_caveats": [
-    "The sequence matches the historical and current UniProt record, but the exact source snapshot used by the author is unknown.",
-    "The cited cofactor annotation is database evidence, not independently verified experimental evidence in the supplied excerpts."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXV6 (sequence SHA256 matched, 546 AA) explicitly annotates the cofactor as FAD (ChEBI:57692, ECO:0000305) and names the protein 'FAD-dependent monooxygenase' involved in lanomycin biosynthesis. Both current (C4, C5) and historical (H2, H4) records confirm this. The evidence code ECO:0000305 indicates curator inference rather than direct experimental measurement, but the protein name and cofactor annotation are consistent and specific.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The N-terminal region contains a Rossmann-like glycine-rich motif ('VGAGWCGLAAAK', GxGxxG pattern) characteristic of dinucleotide-binding flavoproteins. More diagnostically, the sequence contains the 'GGGG' motif (residues ~'IREGGGGPSIMTPL') and additional glycine-rich stretches ('GGSKSAF', 'GGSSQPL') that are hallmark FAD-binding signatures of the FAD-dependent PCMH-type monooxygenase family. FMN-binding enzymes use structurally distinct motifs (shorter loops, different glycine spacing). Pantetheine 4'-phosphate is covalently attached to acyl carrier proteins/fatty acid synthases with entirely different fold architecture. Cob(II)alamin-dependent enzymes (mutases, transferases) have a TIM-barrel or radical SAM architecture with no resemblance to this sequence. The overall multi-domain glycine-rich flavoprotein architecture strongly points to FAD over FMN.
-
-
-**Missing item-specific fact**
-
-> None strictly required; however, the FAD-vs-FMN distinction via the 'GGGG' motif requires specialized knowledge of flavoprotein classification that is not universally known outside biochemistry of flavoenzymes.
-
-
-**Reason**
-
-> A model with general flavoprotein knowledge can identify the Rossmann-like N-terminal motif and the diagnostic 'GGGG' FAD-binding signature to distinguish FAD from FMN, and can exclude pantetheine-4'-phosphate and cob(II)alamin based on the overall protein fold and domain architecture. This constitutes a concrete sequence-based biological argument rather than pure lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The 'GGGG' motif and Rossmann-like N-terminal pattern are well-established FAD-specific signatures in flavoprotein literature. Pantetheine-4'-phosphate and cob(II)alamin are excluded by the overall architecture. FMN is the only other plausible flavin but is disfavored by the specific glycine-rich binding motif pattern.
-
-
-### Important caveats
-
-- The UniProt cofactor annotation uses ECO:0000305 (inferred by curator), not direct experimental cofactor reconstitution. The FAD assignment may rest on sequence homology to characterized FAD-dependent monooxygenases in the lanomycin BGC rather than in vitro cofactor binding assays.
-- The FAD-vs-FMN distinction via the 'GGGG' motif, while well-established, is a specialized flavoprotein classification heuristic; a model without this specific knowledge might struggle to separate options A and C.
-- The protein is annotated as a 'Precursor' (flag in UniProt), meaning the mature form may differ slightly from the supplied 546-residue sequence, though this does not affect the cofactor assignment.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal region contains a Rossmann-like glycine-rich motif ('VGAGWCGLAAAK', GxGxxG pattern) characteristic of dinucleotide-binding flavoproteins. More diagnostically, the sequence contains the 'GGGG' motif (residues ~'IREGGGGPSIMTPL') and additional glycine-rich stretches ('GGSKSAF', 'GGSSQPL') that are hallmark FAD-binding signatures of the FAD-dependent PCMH-type monooxygenase family. FMN-binding enzymes use structurally distinct motifs (shorter loops, different glycine spacing). Pantetheine 4'-phosphate is covalently attached to acyl carrier proteins/fatty acid synthases with entirely different fold architecture. Cob(II)alamin-dependent enzymes (mutases, transferases) have a TIM-barrel or radical SAM architecture with no resemblance to this sequence. The overall multi-domain glycine-rich flavoprotein architecture strongly points to FAD over FMN.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; however, the FAD-vs-FMN distinction via the 'GGGG' motif requires specialized knowledge of flavoprotein classification that is not universally known outside biochemistry of flavoenzymes.",
-    "reason": "A model with general flavoprotein knowledge can identify the Rossmann-like N-terminal motif and the diagnostic 'GGGG' FAD-binding signature to distinguish FAD from FMN, and can exclude pantetheine-4'-phosphate and cob(II)alamin based on the overall protein fold and domain architecture. This constitutes a concrete sequence-based biological argument rather than pure lookup."
-  },
-  "case_id": "cofactor_0116",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXV6 (sequence SHA256 matched, 546 AA) explicitly annotates the cofactor as FAD (ChEBI:57692, ECO:0000305) and names the protein 'FAD-dependent monooxygenase' involved in lanomycin biosynthesis. Both current (C4, C5) and historical (H2, H4) records confirm this. The evidence code ECO:0000305 indicates curator inference rather than direct experimental measurement, but the protein name and cofactor annotation are consistent and specific."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation uses ECO:0000305 (inferred by curator), not direct experimental cofactor reconstitution. The FAD assignment may rest on sequence homology to characterized FAD-dependent monooxygenases in the lanomycin BGC rather than in vitro cofactor binding assays.",
-    "The FAD-vs-FMN distinction via the 'GGGG' motif, while well-established, is a specialized flavoprotein classification heuristic; a model without this specific knowledge might struggle to separate options A and C.",
-    "The protein is annotated as a 'Precursor' (flag in UniProt), meaning the mature form may differ slightly from the supplied 546-residue sequence, though this does not affect the cofactor assignment."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The 'GGGG' motif and Rossmann-like N-terminal pattern are well-established FAD-specific signatures in flavoprotein literature. Pantetheine-4'-phosphate and cob(II)alamin are excluded by the overall architecture. FMN is the only other plausible flavin but is disfavored by the specific glycine-rich binding motif pattern."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0116",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXV6 (sequence SHA256 matched, 546 AA) explicitly annotates the cofactor as FAD (ChEBI:57692, ECO:0000305) and names the protein 'FAD-dependent monooxygenase' involved in lanomycin biosynthesis. Both current (C4, C5) and historical (H2, H4) records confirm this. The evidence code ECO:0000305 indicates curator inference rather than direct experimental measurement, but the protein name and cofactor annotation are consistent and specific.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The N-terminal region contains a Rossmann-like glycine-rich motif ('VGAGWCGLAAAK', GxGxxG pattern) characteristic of dinucleotide-binding flavoproteins. More diagnostically, the sequence contains the 'GGGG' motif (residues ~'IREGGGGPSIMTPL') and additional glycine-rich stretches ('GGSKSAF', 'GGSSQPL') that are hallmark FAD-binding signatures of the FAD-dependent PCMH-type monooxygenase family. FMN-binding enzymes use structurally distinct motifs (shorter loops, different glycine spacing). Pantetheine 4'-phosphate is covalently attached to acyl carrier proteins/fatty acid synthases with entirely different fold architecture. Cob(II)alamin-dependent enzymes (mutases, transferases) have a TIM-barrel or radical SAM architecture with no resemblance to this sequence. The overall multi-domain glycine-rich flavoprotein architecture strongly points to FAD over FMN.",
-    "missing_item_specific_fact": "None strictly required; however, the FAD-vs-FMN distinction via the 'GGGG' motif requires specialized knowledge of flavoprotein classification that is not universally known outside biochemistry of flavoenzymes.",
-    "reason": "A model with general flavoprotein knowledge can identify the Rossmann-like N-terminal motif and the diagnostic 'GGGG' FAD-binding signature to distinguish FAD from FMN, and can exclude pantetheine-4'-phosphate and cob(II)alamin based on the overall protein fold and domain architecture. This constitutes a concrete sequence-based biological argument rather than pure lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The 'GGGG' motif and Rossmann-like N-terminal pattern are well-established FAD-specific signatures in flavoprotein literature. Pantetheine-4'-phosphate and cob(II)alamin are excluded by the overall architecture. FMN is the only other plausible flavin but is disfavored by the specific glycine-rich binding motif pattern."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation uses ECO:0000305 (inferred by curator), not direct experimental cofactor reconstitution. The FAD assignment may rest on sequence homology to characterized FAD-dependent monooxygenases in the lanomycin BGC rather than in vitro cofactor binding assays.",
-    "The FAD-vs-FMN distinction via the 'GGGG' motif, while well-established, is a specialized flavoprotein classification heuristic; a model without this specific knowledge might struggle to separate options A and C.",
-    "The protein is annotated as a 'Precursor' (flag in UniProt), meaning the mature form may differ slightly from the supplied 546-residue sequence, though this does not affect the cofactor assignment."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +165,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXV6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "7df1c302f7926e2d8ce67872cea5f1885a96c661666cec76e87fe2b497b1dc21",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 546,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "7df1c302f7926e2d8ce67872cea5f1885a96c661666cec76e87fe2b497b1dc21",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
-  "current_source_sequence_sha256": "7df1c302f7926e2d8ce67872cea5f1885a96c661666cec76e87fe2b497b1dc21",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 546,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "7df1c302f7926e2d8ce67872cea5f1885a96c661666cec76e87fe2b497b1dc21",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXV6",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
+  "selected_historical_source_sequence_length": 546,
+  "selected_historical_source_sequence_sha256": "7df1c302f7926e2d8ce67872cea5f1885a96c661666cec76e87fe2b497b1dc21",
   "selected_historical_version": {
     "accession": "P0DXV6",
     "database": "Swiss-Prot",
@@ -553,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "LAN4_PYRDE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
-  "selected_historical_source_sequence_sha256": "7df1c302f7926e2d8ce67872cea5f1885a96c661666cec76e87fe2b497b1dc21",
-  "selected_historical_source_sequence_length": 546,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json",
-  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
-  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXV6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json"
 }
 ```
 
@@ -603,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json",
-  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
-  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json"
 }
 ```
 
@@ -622,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json",
-  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
-  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Helminthosporium dematioideum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Dothideomycetes\",\"Pleosporomycetidae\",\"Pleosporales\",\"Pleosporineae\",\"Pleosporaceae\",\"Pyrenophora\"],\"scientificName\":\"Pyrenophora dematioidea\",\"taxonId\":139229}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json"
 }
 ```
 
@@ -641,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json",
-  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
-  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"Lanomycin biosynthesis cluster protein 4\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"FAD-dependent monooxygenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json"
 }
 ```
 
@@ -660,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json",
-  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
-  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:57692\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"name\":\"FAD\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json"
 }
 ```
 
@@ -679,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json",
-  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
-  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu N.\",\"Abramyan E.D.\",\"Cheng W.\",\"Perlatti B.\",\"Harvey C.J.B.\",\"Bills G.F.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33857369\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.1c01516\"}],\"citationType\":\"journal article\",\"firstPage\":\"6043\",\"id\":\"33857369\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"6047\",\"publicationDate\":\"2021\",\"title\":\"Targeted genome mining reveals the biosynthetic gene clusters of natural product CYP51 inhibitors.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"TTI-1096\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:48.282490+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "604f2ff191211f3fc9173924778cd268cd13201aacb65262a9cd48362829e340",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV6.json"
 }
 ```
 
@@ -697,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2",
-  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
-  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   LAN4_PYRDE              Reviewed;         546 AA.\nAC   P0DXV6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   09-APR-2025, entry version 2.\nDE   RecName: Full=FAD-dependent monooxygenase {ECO:0000303|PubMed:33857369};\nDE            EC=1.-.-.- {ECO:0000305|PubMed:33857369};\nDE   AltName: Full=Lanomycin biosynthesis cluster protein 4 {ECO:0000303|PubMed:33857369};\nDE   Flags: Precursor;\nGN   Name=ORF4 {ECO:0000303|PubMed:33857369};\nOS   Pyrenophora dematioidea (Helminthosporium dematioideum).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Dothideomycetes;\nOC   Pleosporomycetidae; Pleosporales; Pleosporineae; Pleosporaceae;\nOC   Pyrenophora.\nOX   NCBI_TaxID=139229;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
+  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2"
 }
 ```
 
@@ -718,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2",
-  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
-  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=FAD-dependent monooxygenase {ECO:0000303|PubMed:33857369};\nDE            EC=1.-.-.- {ECO:0000305|PubMed:33857369};\nDE   AltName: Full=Lanomycin biosynthesis cluster protein 4 {ECO:0000303|PubMed:33857369};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
+  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2"
 }
 ```
 
@@ -739,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2",
-  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
-  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
-  "source_locator": "lines 16-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND PATHWAY.\nRC   STRAIN=TTI-1096;\nRX   PubMed=33857369; DOI=10.1021/jacs.1c01516;\nRA   Liu N., Abramyan E.D., Cheng W., Perlatti B., Harvey C.J.B., Bills G.F.,\nRA   Tang Y.;\nRT   \"Targeted genome mining reveals the biosynthetic gene clusters of natural\nRT   product CYP51 inhibitors.\";\nRL   J. Am. Chem. Soc. 143:6043-6047(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
+  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2"
 }
 ```
 
@@ -760,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2",
-  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
-  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
-  "source_locator": "lines 35-36",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=FAD; Xref=ChEBI:CHEBI:57692; Evidence={ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:50.838620+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1aa3327dc9591ccf3b323653d57490eeb83ea02899e48e37df4e6dc51b099591",
+  "url": "https://rest.uniprot.org/unisave/P0DXV6?format=txt&versions=2"
 }
 ```
 

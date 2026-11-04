@@ -1,18 +1,16 @@
-# pathway_0022: before and after transfer clarification
+# pathway_0022
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0022.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0022.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Antifungal biosynthesis. .
+**Expected answer:** **B** — Antifungal biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated with the pathway “Antifungal biosynthesis.” The entry identifies the protein as a nonribosomal peptide synthetase and cites a publication for its function and pathway annotation. This supports choice B as a database- and literature-linked annotation, though the excerpts do not independently establish the experimental basis of the pathway assignment.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The long sequence is compatible with a large biosynthetic enzyme such as a nonribosomal peptide synthetase, which supports a broad biosynthesis role. That does not establish the specific antifungal pathway rather than another natural-product pathway.
-
-
-**Missing item-specific fact**
-
-> The protein’s association with the lanomycin biosynthetic cluster and its pathway annotation as antifungal biosynthesis are not supplied in the question.
-
-
-**Reason**
-
-> Identifying the precise pathway requires protein- or cluster-specific annotation or literature knowledge; general sequence reasoning does not distinguish the specific pathway.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not make the pathway clear, but the cited annotation supports B among the listed choices.
-
-
-### Important caveats
-
-- The reviewer-only source identifies the matched sequence as a nonribosomal peptide synthetase from Pyrenophora dematioidea and annotates its pathway as antifungal biosynthesis.
-- The pathway annotation is linked to a publication, but the supplied evidence excerpts do not independently validate the experimental strength of that assignment.
-- The source identity and annotation were not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The long sequence is compatible with a large biosynthetic enzyme such as a nonribosomal peptide synthetase, which supports a broad biosynthesis role. That does not establish the specific antifungal pathway rather than another natural-product pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein’s association with the lanomycin biosynthetic cluster and its pathway annotation as antifungal biosynthesis are not supplied in the question.",
-    "reason": "Identifying the precise pathway requires protein- or cluster-specific annotation or literature knowledge; general sequence reasoning does not distinguish the specific pathway."
-  },
-  "case_id": "pathway_0022",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with the pathway “Antifungal biosynthesis.” The entry identifies the protein as a nonribosomal peptide synthetase and cites a publication for its function and pathway annotation. This supports choice B as a database- and literature-linked annotation, though the excerpts do not independently establish the experimental basis of the pathway assignment."
-  },
-  "important_caveats": [
-    "The reviewer-only source identifies the matched sequence as a nonribosomal peptide synthetase from Pyrenophora dematioidea and annotates its pathway as antifungal biosynthesis.",
-    "The pathway annotation is linked to a publication, but the supplied evidence excerpts do not independently validate the experimental strength of that assignment.",
-    "The source identity and annotation were not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not make the pathway clear, but the cited annotation supports B among the listed choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0022",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with the pathway “Antifungal biosynthesis.” The entry identifies the protein as a nonribosomal peptide synthetase and cites a publication for its function and pathway annotation. This supports choice B as a database- and literature-linked annotation, though the excerpts do not independently establish the experimental basis of the pathway assignment.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The long sequence is compatible with a large biosynthetic enzyme such as a nonribosomal peptide synthetase, which supports a broad biosynthesis role. That does not establish the specific antifungal pathway rather than another natural-product pathway.",
-    "missing_item_specific_fact": "The protein’s association with the lanomycin biosynthetic cluster and its pathway annotation as antifungal biosynthesis are not supplied in the question.",
-    "reason": "Identifying the precise pathway requires protein- or cluster-specific annotation or literature knowledge; general sequence reasoning does not distinguish the specific pathway."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not make the pathway clear, but the cited annotation supports B among the listed choices."
-  },
-  "important_caveats": [
-    "The reviewer-only source identifies the matched sequence as a nonribosomal peptide synthetase from Pyrenophora dematioidea and annotates its pathway as antifungal biosynthesis.",
-    "The pathway annotation is linked to a publication, but the supplied evidence excerpts do not independently validate the experimental strength of that assignment.",
-    "The source identity and annotation were not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt entry P0DXV4 (LAN2_PYRDE, 1325 AA, sequence SHA256 matched). The UniProt PATHWAY comment explicitly states 'Antifungal biosynthesis' (ECO:0000305, PubMed:33857369). The protein is annotated as a Nonribosomal peptide synthetase / Lanomycin biosynthesis cluster protein 1 from Pyrenophora dematioidea. The underlying paper (Liu et al., JACS 2021) describes genome mining of CYP51-inhibitor biosynthetic gene clusters, providing experimental context for the antifungal pathway assignment.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable NRPS domain signatures (e.g., 'TSGSTG' adenylation-domain motif, 'HHAMFDG' condensation-domain motif), which could allow identification as a nonribosomal peptide synthetase. NRPS enzymes are involved in secondary metabolite biosynthesis, which could help eliminate lipid metabolism (fatty acid synthases/desaturases), spheroidene biosynthesis (carotenoid desaturases/cyclases), and one-carbon metabolism (folate/methionine enzymes) as unlikely NRPS pathways. However, the specific assignment to 'antifungal' biosynthesis (vs. antibacterial, siderophore, immunosuppressant, or other NRPS-product pathways) cannot be derived from sequence features alone.
-
-
-**Missing item-specific fact**
-
-> Knowledge that this particular NRPS is part of the lanomycin biosynthetic gene cluster and that lanomycin is specifically an antifungal (CYP51 inhibitor) compound. The sequence provides no information distinguishing this NRPS's product as antifungal rather than antibacterial or another secondary metabolite class.
-
-
-**Reason**
-
-> While NRPS domain architecture recognition might narrow choices by eliminating clearly non-NRPS pathways (A, C, D), the specific pathway label 'Antifungal biosynthesis' requires item-specific knowledge of the gene cluster context and product bioactivity. NRPS enzymes produce diverse secondary metabolites; the antifungal designation is a database annotation derived from the underlying genomics paper, not a property inferable from the amino acid sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, only 'Antifungal biosynthesis' is a secondary-metabolite/NRPS pathway. Lipid metabolism, spheroidene biosynthesis, and one-carbon metabolism are clearly distinct pathway classes not associated with NRPS enzymes. So if NRPS is recognized, B is the only viable option. However, this elimination still depends on the specific pathway taxonomy used by the benchmark.
-
-
-### Important caveats
-
-- The UniProt entry was first public on 2025-02-05; the benchmark construction date is unknown. If the benchmark was constructed before this date, the annotation source may differ.
-- The pathway annotation carries evidence code ECO:0000305 (inferred from curator), though the underlying PubMed reference (33857369) provides experimental genome-mining support.
-- The protein is 1325 AA, which is relatively small for a multi-module NRPS; it may represent a single module or a partial assembly line, which could complicate domain recognition.
-- The reviewer-only evidence was not available to the evaluated model; the model only sees the raw sequence and four choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable NRPS domain signatures (e.g., 'TSGSTG' adenylation-domain motif, 'HHAMFDG' condensation-domain motif), which could allow identification as a nonribosomal peptide synthetase. NRPS enzymes are involved in secondary metabolite biosynthesis, which could help eliminate lipid metabolism (fatty acid synthases/desaturases), spheroidene biosynthesis (carotenoid desaturases/cyclases), and one-carbon metabolism (folate/methionine enzymes) as unlikely NRPS pathways. However, the specific assignment to 'antifungal' biosynthesis (vs. antibacterial, siderophore, immunosuppressant, or other NRPS-product pathways) cannot be derived from sequence features alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Knowledge that this particular NRPS is part of the lanomycin biosynthetic gene cluster and that lanomycin is specifically an antifungal (CYP51 inhibitor) compound. The sequence provides no information distinguishing this NRPS's product as antifungal rather than antibacterial or another secondary metabolite class.",
-    "reason": "While NRPS domain architecture recognition might narrow choices by eliminating clearly non-NRPS pathways (A, C, D), the specific pathway label 'Antifungal biosynthesis' requires item-specific knowledge of the gene cluster context and product bioactivity. NRPS enzymes produce diverse secondary metabolites; the antifungal designation is a database annotation derived from the underlying genomics paper, not a property inferable from the amino acid sequence alone."
-  },
-  "case_id": "pathway_0022",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry P0DXV4 (LAN2_PYRDE, 1325 AA, sequence SHA256 matched). The UniProt PATHWAY comment explicitly states 'Antifungal biosynthesis' (ECO:0000305, PubMed:33857369). The protein is annotated as a Nonribosomal peptide synthetase / Lanomycin biosynthesis cluster protein 1 from Pyrenophora dematioidea. The underlying paper (Liu et al., JACS 2021) describes genome mining of CYP51-inhibitor biosynthetic gene clusters, providing experimental context for the antifungal pathway assignment."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public on 2025-02-05; the benchmark construction date is unknown. If the benchmark was constructed before this date, the annotation source may differ.",
-    "The pathway annotation carries evidence code ECO:0000305 (inferred from curator), though the underlying PubMed reference (33857369) provides experimental genome-mining support.",
-    "The protein is 1325 AA, which is relatively small for a multi-module NRPS; it may represent a single module or a partial assembly line, which could complicate domain recognition.",
-    "The reviewer-only evidence was not available to the evaluated model; the model only sees the raw sequence and four choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only 'Antifungal biosynthesis' is a secondary-metabolite/NRPS pathway. Lipid metabolism, spheroidene biosynthesis, and one-carbon metabolism are clearly distinct pathway classes not associated with NRPS enzymes. So if NRPS is recognized, B is the only viable option. However, this elimination still depends on the specific pathway taxonomy used by the benchmark."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0022",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry P0DXV4 (LAN2_PYRDE, 1325 AA, sequence SHA256 matched). The UniProt PATHWAY comment explicitly states 'Antifungal biosynthesis' (ECO:0000305, PubMed:33857369). The protein is annotated as a Nonribosomal peptide synthetase / Lanomycin biosynthesis cluster protein 1 from Pyrenophora dematioidea. The underlying paper (Liu et al., JACS 2021) describes genome mining of CYP51-inhibitor biosynthetic gene clusters, providing experimental context for the antifungal pathway assignment.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains recognizable NRPS domain signatures (e.g., 'TSGSTG' adenylation-domain motif, 'HHAMFDG' condensation-domain motif), which could allow identification as a nonribosomal peptide synthetase. NRPS enzymes are involved in secondary metabolite biosynthesis, which could help eliminate lipid metabolism (fatty acid synthases/desaturases), spheroidene biosynthesis (carotenoid desaturases/cyclases), and one-carbon metabolism (folate/methionine enzymes) as unlikely NRPS pathways. However, the specific assignment to 'antifungal' biosynthesis (vs. antibacterial, siderophore, immunosuppressant, or other NRPS-product pathways) cannot be derived from sequence features alone.",
-    "missing_item_specific_fact": "Knowledge that this particular NRPS is part of the lanomycin biosynthetic gene cluster and that lanomycin is specifically an antifungal (CYP51 inhibitor) compound. The sequence provides no information distinguishing this NRPS's product as antifungal rather than antibacterial or another secondary metabolite class.",
-    "reason": "While NRPS domain architecture recognition might narrow choices by eliminating clearly non-NRPS pathways (A, C, D), the specific pathway label 'Antifungal biosynthesis' requires item-specific knowledge of the gene cluster context and product bioactivity. NRPS enzymes produce diverse secondary metabolites; the antifungal designation is a database annotation derived from the underlying genomics paper, not a property inferable from the amino acid sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only 'Antifungal biosynthesis' is a secondary-metabolite/NRPS pathway. Lipid metabolism, spheroidene biosynthesis, and one-carbon metabolism are clearly distinct pathway classes not associated with NRPS enzymes. So if NRPS is recognized, B is the only viable option. However, this elimination still depends on the specific pathway taxonomy used by the benchmark."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public on 2025-02-05; the benchmark construction date is unknown. If the benchmark was constructed before this date, the annotation source may differ.",
-    "The pathway annotation carries evidence code ECO:0000305 (inferred from curator), though the underlying PubMed reference (33857369) provides experimental genome-mining support.",
-    "The protein is 1325 AA, which is relatively small for a multi-module NRPS; it may represent a single module or a partial assembly line, which could complicate domain recognition.",
-    "The reviewer-only evidence was not available to the evaluated model; the model only sees the raw sequence and four choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXV4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b09f5bc596e360b38514b0be6e8b7293c64d426438082f8f28a697222a7f4980",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1325,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b09f5bc596e360b38514b0be6e8b7293c64d426438082f8f28a697222a7f4980",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-02-05",
@@ -541,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
-  "current_source_sequence_sha256": "b09f5bc596e360b38514b0be6e8b7293c64d426438082f8f28a697222a7f4980",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1325,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b09f5bc596e360b38514b0be6e8b7293c64d426438082f8f28a697222a7f4980",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXV4",
   "selected_historical_entry_version": 4,
+  "selected_historical_record_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
+  "selected_historical_source_sequence_length": 1325,
+  "selected_historical_source_sequence_sha256": "b09f5bc596e360b38514b0be6e8b7293c64d426438082f8f28a697222a7f4980",
   "selected_historical_version": {
     "accession": "P0DXV4",
     "database": "Swiss-Prot",
@@ -559,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "LAN2_PYRDE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
-  "selected_historical_source_sequence_sha256": "b09f5bc596e360b38514b0be6e8b7293c64d426438082f8f28a697222a7f4980",
-  "selected_historical_source_sequence_length": 1325,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 4,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json",
-  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
-  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXV4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json"
 }
 ```
 
@@ -609,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json",
-  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
-  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json"
 }
 ```
 
@@ -628,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json",
-  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
-  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Helminthosporium dematioideum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Dothideomycetes\",\"Pleosporomycetidae\",\"Pleosporales\",\"Pleosporineae\",\"Pleosporaceae\",\"Pyrenophora\"],\"scientificName\":\"Pyrenophora dematioidea\",\"taxonId\":139229}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json"
 }
 ```
 
@@ -647,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json",
-  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
-  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"Lanomycin biosynthesis cluster protein 1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"6.3.2.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"Nonribosomal peptide synthetase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json"
 }
 ```
 
@@ -666,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json",
-  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
-  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"Antifungal biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json"
 }
 ```
 
@@ -685,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json",
-  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
-  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu N.\",\"Abramyan E.D.\",\"Cheng W.\",\"Perlatti B.\",\"Harvey C.J.B.\",\"Bills G.F.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33857369\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.1c01516\"}],\"citationType\":\"journal article\",\"firstPage\":\"6043\",\"id\":\"33857369\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"6047\",\"publicationDate\":\"2021\",\"title\":\"Targeted genome mining reveals the biosynthetic gene clusters of natural product CYP51 inhibitors.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"TTI-1096\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:46.025798+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6306f5ce87df5ee04db986988c948755e8b2c4fe4ace8282933e84b394cf62fd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV4.json"
 }
 ```
 
@@ -703,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV4?format=txt&versions=4",
-  "source_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
-  "retrieved_utc": "2026-11-02T04:29:48.541613+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   LAN2_PYRDE              Reviewed;        1325 AA.\nAC   P0DXV4;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=Nonribosomal peptide synthetase {ECO:0000303|PubMed:33857369};\nDE            EC=6.3.2.- {ECO:0000305|PubMed:33857369};\nDE   AltName: Full=Lanomycin biosynthesis cluster protein 1 {ECO:0000303|PubMed:33857369};\nGN   Name=ORF2 {ECO:0000303|PubMed:33857369};\nOS   Pyrenophora dematioidea (Helminthosporium dematioideum).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Dothideomycetes;\nOC   Pleosporomycetidae; Pleosporales; Pleosporineae; Pleosporaceae;\nOC   Pyrenophora.\nOX   NCBI_TaxID=139229;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:48.541613+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
+  "url": "https://rest.uniprot.org/unisave/P0DXV4?format=txt&versions=4"
 }
 ```
 
@@ -724,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV4?format=txt&versions=4",
-  "source_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
-  "retrieved_utc": "2026-11-02T04:29:48.541613+00:00",
-  "source_locator": "lines 15-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND PATHWAY.\nRC   STRAIN=TTI-1096;\nRX   PubMed=33857369; DOI=10.1021/jacs.1c01516;\nRA   Liu N., Abramyan E.D., Cheng W., Perlatti B., Harvey C.J.B., Bills G.F.,\nRA   Tang Y.;\nRT   \"Targeted genome mining reveals the biosynthetic gene clusters of natural\nRT   product CYP51 inhibitors.\";\nRL   J. Am. Chem. Soc. 143:6043-6047(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:48.541613+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
+  "url": "https://rest.uniprot.org/unisave/P0DXV4?format=txt&versions=4"
 }
 ```
 
@@ -745,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV4?format=txt&versions=4",
-  "source_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
-  "retrieved_utc": "2026-11-02T04:29:48.541613+00:00",
-  "source_locator": "lines 37-37",
   "excerpt": "CC   -!- PATHWAY: Antifungal biosynthesis. {ECO:0000305|PubMed:33857369}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:48.541613+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ba16325a29b0d20c33cbeceb3d33ee2d578da70c3cbda9228dab9fae89b8c8fd",
+  "url": "https://rest.uniprot.org/unisave/P0DXV4?format=txt&versions=4"
 }
 ```
 

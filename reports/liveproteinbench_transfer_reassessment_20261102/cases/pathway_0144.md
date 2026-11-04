@@ -1,18 +1,16 @@
-# pathway_0144: before and after transfer clarification
+# pathway_0144
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0144.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0144.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Cell wall degradation
+**Expected answer:** **C** — Cell wall degradation
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Vibrio cholerae ShyB entry, annotated as a peptidoglycan DD-endopeptidase with the pathway “Cell wall degradation; peptidoglycan degradation.” The pathway annotation is linked to a publication (ECO:0000269); this supports the key, though the excerpt alone does not independently verify the experiments.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The N-terminus has a strong hydrophobic signal-peptide-like region, and the remaining sequence is consistent with a catalytic metallopeptidase, supporting an exported enzyme rather than a protein-biosynthesis component. Among the choices, cell-wall degradation is the biologically coherent pathway.
-
-
-**Missing item-specific fact**
-
-> The exact substrate specificity and ShyB pathway annotation are protein-specific facts not explicitly supplied; the sequence-based argument supports, but does not by itself experimentally establish, peptidoglycan degradation.
-
-
-**Reason**
-
-> The sequence and contrasting choices provide a meaningful biological basis for selecting C without requiring recognition of the exact database entry, although protein-specific annotation would strengthen the precise assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the exported-enzyme features and the listed alternatives, cell wall degradation is the clearly best-supported choice.
-
-
-### Important caveats
-
-- The reviewer-only evidence confirms an exact sequence match and a historical pathway annotation, but the author's exact source snapshot is unknown.
-- The database annotation is linked to experimental-evidence coding and a cited study; the supplied excerpts do not include the study's full experimental results.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminus has a strong hydrophobic signal-peptide-like region, and the remaining sequence is consistent with a catalytic metallopeptidase, supporting an exported enzyme rather than a protein-biosynthesis component. Among the choices, cell-wall degradation is the biologically coherent pathway.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The exact substrate specificity and ShyB pathway annotation are protein-specific facts not explicitly supplied; the sequence-based argument supports, but does not by itself experimentally establish, peptidoglycan degradation.",
-    "reason": "The sequence and contrasting choices provide a meaningful biological basis for selecting C without requiring recognition of the exact database entry, although protein-specific annotation would strengthen the precise assignment."
-  },
-  "case_id": "pathway_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Vibrio cholerae ShyB entry, annotated as a peptidoglycan DD-endopeptidase with the pathway “Cell wall degradation; peptidoglycan degradation.” The pathway annotation is linked to a publication (ECO:0000269); this supports the key, though the excerpt alone does not independently verify the experiments."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence confirms an exact sequence match and a historical pathway annotation, but the author's exact source snapshot is unknown.",
-    "The database annotation is linked to experimental-evidence coding and a cited study; the supplied excerpts do not include the study's full experimental results."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the exported-enzyme features and the listed alternatives, cell wall degradation is the clearly best-supported choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Vibrio cholerae ShyB entry, annotated as a peptidoglycan DD-endopeptidase with the pathway “Cell wall degradation; peptidoglycan degradation.” The pathway annotation is linked to a publication (ECO:0000269); this supports the key, though the excerpt alone does not independently verify the experiments.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The N-terminus has a strong hydrophobic signal-peptide-like region, and the remaining sequence is consistent with a catalytic metallopeptidase, supporting an exported enzyme rather than a protein-biosynthesis component. Among the choices, cell-wall degradation is the biologically coherent pathway.",
-    "missing_item_specific_fact": "The exact substrate specificity and ShyB pathway annotation are protein-specific facts not explicitly supplied; the sequence-based argument supports, but does not by itself experimentally establish, peptidoglycan degradation.",
-    "reason": "The sequence and contrasting choices provide a meaningful biological basis for selecting C without requiring recognition of the exact database entry, although protein-specific annotation would strengthen the precise assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the exported-enzyme features and the listed alternatives, cell wall degradation is the clearly best-supported choice."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence confirms an exact sequence match and a historical pathway annotation, but the author's exact source snapshot is unknown.",
-    "The database annotation is linked to experimental-evidence coding and a cited study; the supplied excerpts do not include the study's full experimental results."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is UniProt Q9KUL5 (ShyB) from Vibrio cholerae, experimentally characterized as a Peptidoglycan DD-endopeptidase (EC 3.4.24.-). The UniProt PATHWAY annotation explicitly states 'Cell wall degradation; peptidoglycan degradation' with experimental evidence code ECO:0000269 from PubMed:30782657. Multiple independent publications (PubMed:23834664, 30782657, 18498110) and a crystal structure (PDB 2GU1) confirm its peptidoglycan-hydrolyzing activity. The sequence match is confirmed (SHA256 identical). The expected answer 'Cell wall degradation' directly corresponds to the database pathway annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could note the hydrophobic N-terminal signal peptide (MGQFRFLALIVAVLCFSVALFL...) suggesting a secreted protein, and detect zinc-binding HxH motifs (e.g., 'HPYAGNYLVIEHNSV') suggesting a metalloprotease. This weakly supports an extracellular proteolytic role. However, the specific assignment to 'cell wall degradation' (peptidoglycan hydrolysis) versus other extracellular proteolysis requires recognizing the M23/lysostaphin-type peptidase family, which is not reliably inferable from primary sequence alone without family-level annotation knowledge.
-
-
-**Missing item-specific fact**
-
-> Recognition that this specific sequence belongs to the M23 (lysostaphin-type) peptidase family, whose defining substrate is peptidoglycan cross-links, rather than being a general extracellular metalloprotease. This family assignment is the item-specific fact needed to positively identify 'cell wall degradation' as the pathway.
-
-
-**Reason**
-
-> While elimination of clearly wrong distractors (B: plant alkaloid pathway; D: ribosomal protein biosynthesis is intracellular and non-proteolytic; A: generic biosynthesis) is possible, the positive identification of peptidoglycan as the specific substrate of this zinc-metalloprotease requires knowledge of the M23 peptidase family or direct recognition of the protein. The sequence does not contain a unique, unambiguous signature that a general model could use to conclude 'cell wall degradation' rather than, say, general extracellular protein turnover (which is not an option but shows the reasoning gap).
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options are well-separated: B (ajmaline biosynthesis) is a plant pathway irrelevant to a bacterial protein; D (Protein biosynthesis) refers to ribosomal translation, incompatible with a secreted protease; A (Metabolic intermediate biosynthesis) is a generic biosynthetic category incompatible with a catabolic hydrolase. C is the only option involving extracellular hydrolytic activity. No genuine ambiguity among the choices.
-
-
-### Important caveats
-
-- The UniProt entry was first publicly released on 2025-04-09 (Swiss-Prot), meaning the full experimental annotation (including the PATHWAY line) was established in 2019 (PubMed:30782657). The author's data-construction date and exact source snapshot are unknown.
-- The pathway annotation carries experimental evidence (ECO:0000269), not purely computational inference, strengthening the expected-answer key.
-- The identity of the protein (Q9KUL5) was inferred by the reviewer from dataset metadata absent from the model input; the model only sees the raw sequence.
-- Distractor B contains a formatting artifact ('ajmaline biosynthesis. .') suggesting possible data-quality issues in the question generation pipeline.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could note the hydrophobic N-terminal signal peptide (MGQFRFLALIVAVLCFSVALFL...) suggesting a secreted protein, and detect zinc-binding HxH motifs (e.g., 'HPYAGNYLVIEHNSV') suggesting a metalloprotease. This weakly supports an extracellular proteolytic role. However, the specific assignment to 'cell wall degradation' (peptidoglycan hydrolysis) versus other extracellular proteolysis requires recognizing the M23/lysostaphin-type peptidase family, which is not reliably inferable from primary sequence alone without family-level annotation knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Recognition that this specific sequence belongs to the M23 (lysostaphin-type) peptidase family, whose defining substrate is peptidoglycan cross-links, rather than being a general extracellular metalloprotease. This family assignment is the item-specific fact needed to positively identify 'cell wall degradation' as the pathway.",
-    "reason": "While elimination of clearly wrong distractors (B: plant alkaloid pathway; D: ribosomal protein biosynthesis is intracellular and non-proteolytic; A: generic biosynthesis) is possible, the positive identification of peptidoglycan as the specific substrate of this zinc-metalloprotease requires knowledge of the M23 peptidase family or direct recognition of the protein. The sequence does not contain a unique, unambiguous signature that a general model could use to conclude 'cell wall degradation' rather than, say, general extracellular protein turnover (which is not an option but shows the reasoning gap)."
-  },
-  "case_id": "pathway_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "H1",
-      "H2",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is UniProt Q9KUL5 (ShyB) from Vibrio cholerae, experimentally characterized as a Peptidoglycan DD-endopeptidase (EC 3.4.24.-). The UniProt PATHWAY annotation explicitly states 'Cell wall degradation; peptidoglycan degradation' with experimental evidence code ECO:0000269 from PubMed:30782657. Multiple independent publications (PubMed:23834664, 30782657, 18498110) and a crystal structure (PDB 2GU1) confirm its peptidoglycan-hydrolyzing activity. The sequence match is confirmed (SHA256 identical). The expected answer 'Cell wall degradation' directly corresponds to the database pathway annotation."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released on 2025-04-09 (Swiss-Prot), meaning the full experimental annotation (including the PATHWAY line) was established in 2019 (PubMed:30782657). The author's data-construction date and exact source snapshot are unknown.",
-    "The pathway annotation carries experimental evidence (ECO:0000269), not purely computational inference, strengthening the expected-answer key.",
-    "The identity of the protein (Q9KUL5) was inferred by the reviewer from dataset metadata absent from the model input; the model only sees the raw sequence.",
-    "Distractor B contains a formatting artifact ('ajmaline biosynthesis. .') suggesting possible data-quality issues in the question generation pipeline."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated: B (ajmaline biosynthesis) is a plant pathway irrelevant to a bacterial protein; D (Protein biosynthesis) refers to ribosomal translation, incompatible with a secreted protease; A (Metabolic intermediate biosynthesis) is a generic biosynthetic category incompatible with a catabolic hydrolase. C is the only option involving extracellular hydrolytic activity. No genuine ambiguity among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is UniProt Q9KUL5 (ShyB) from Vibrio cholerae, experimentally characterized as a Peptidoglycan DD-endopeptidase (EC 3.4.24.-). The UniProt PATHWAY annotation explicitly states 'Cell wall degradation; peptidoglycan degradation' with experimental evidence code ECO:0000269 from PubMed:30782657. Multiple independent publications (PubMed:23834664, 30782657, 18498110) and a crystal structure (PDB 2GU1) confirm its peptidoglycan-hydrolyzing activity. The sequence match is confirmed (SHA256 identical). The expected answer 'Cell wall degradation' directly corresponds to the database pathway annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "C8", "H1", "H2", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could note the hydrophobic N-terminal signal peptide (MGQFRFLALIVAVLCFSVALFL...) suggesting a secreted protein, and detect zinc-binding HxH motifs (e.g., 'HPYAGNYLVIEHNSV') suggesting a metalloprotease. This weakly supports an extracellular proteolytic role. However, the specific assignment to 'cell wall degradation' (peptidoglycan hydrolysis) versus other extracellular proteolysis requires recognizing the M23/lysostaphin-type peptidase family, which is not reliably inferable from primary sequence alone without family-level annotation knowledge.",
-    "missing_item_specific_fact": "Recognition that this specific sequence belongs to the M23 (lysostaphin-type) peptidase family, whose defining substrate is peptidoglycan cross-links, rather than being a general extracellular metalloprotease. This family assignment is the item-specific fact needed to positively identify 'cell wall degradation' as the pathway.",
-    "reason": "While elimination of clearly wrong distractors (B: plant alkaloid pathway; D: ribosomal protein biosynthesis is intracellular and non-proteolytic; A: generic biosynthesis) is possible, the positive identification of peptidoglycan as the specific substrate of this zinc-metalloprotease requires knowledge of the M23 peptidase family or direct recognition of the protein. The sequence does not contain a unique, unambiguous signature that a general model could use to conclude 'cell wall degradation' rather than, say, general extracellular protein turnover (which is not an option but shows the reasoning gap)."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated: B (ajmaline biosynthesis) is a plant pathway irrelevant to a bacterial protein; D (Protein biosynthesis) refers to ribosomal translation, incompatible with a secreted protease; A (Metabolic intermediate biosynthesis) is a generic biosynthetic category incompatible with a catabolic hydrolase. C is the only option involving extracellular hydrolytic activity. No genuine ambiguity among the choices."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released on 2025-04-09 (Swiss-Prot), meaning the full experimental annotation (including the PATHWAY line) was established in 2019 (PubMed:30782657). The author's data-construction date and exact source snapshot are unknown.",
-    "The pathway annotation carries experimental evidence (ECO:0000269), not purely computational inference, strengthening the expected-answer key.",
-    "The identity of the protein (Q9KUL5) was inferred by the reviewer from dataset metadata absent from the model input; the model only sees the raw sequence.",
-    "Distractor B contains a formatting artifact ('ajmaline biosynthesis. .') suggesting possible data-quality issues in the question generation pipeline."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -396,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9KUL5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "34584a20856bfb24b4e9d3cd47bf32ba3f960017eb05fdba40f5b8f0c5608054",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 426,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "34584a20856bfb24b4e9d3cd47bf32ba3f960017eb05fdba40f5b8f0c5608054",
   "current_entry_audit": {
     "entryVersion": 124,
     "firstPublicDate": "2025-04-09",
@@ -541,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-10-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "current_source_sequence_sha256": "34584a20856bfb24b4e9d3cd47bf32ba3f960017eb05fdba40f5b8f0c5608054",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 426,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "34584a20856bfb24b4e9d3cd47bf32ba3f960017eb05fdba40f5b8f0c5608054",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 122,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9KUL5",
   "selected_historical_entry_version": 122,
+  "selected_historical_record_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
+  "selected_historical_source_sequence_length": 426,
+  "selected_historical_source_sequence_sha256": "34584a20856bfb24b4e9d3cd47bf32ba3f960017eb05fdba40f5b8f0c5608054",
   "selected_historical_version": {
     "accession": "Q9KUL5",
     "database": "Swiss-Prot",
@@ -559,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "SHYB_VIBCH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
-  "selected_historical_source_sequence_sha256": "34584a20856bfb24b4e9d3cd47bf32ba3f960017eb05fdba40f5b8f0c5608054",
-  "selected_historical_source_sequence_length": 426,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 122,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9KUL5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -609,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":124,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-10-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -628,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAF93673.1\",\"source\":\"EMBL\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000584\",\"source\":\"Proteomes\"}],\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Vibrionales\",\"Vibrionaceae\",\"Vibrio\"],\"scientificName\":\"Vibrio cholerae serotype O1 (strain ATCC 39315 / El Tor Inaba N16961)\",\"taxonId\":243277}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -647,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30782657\",\"source\":\"PubMed\"}],\"value\":\"Autolysin ShyB\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18498110\",\"source\":\"PubMed\"}],\"value\":\"Putative lysostaphin-type peptidase P01\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23834664\",\"source\":\"PubMed\"}],\"value\":\"Sidewall hydrolase B\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30782657\",\"source\":\"PubMed\"}],\"value\":\"3.4.24.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30782657\",\"source\":\"PubMed\"}],\"value\":\"Peptidoglycan DD-endopeptidase ShyB\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -666,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30782657\",\"source\":\"PubMed\"}],\"value\":\"Cell wall degradation; peptidoglycan degradation\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -685,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Doerr T.\",\"Cava F.\",\"Lam H.\",\"Davis B.M.\",\"Waldor M.K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23834664\"},{\"database\":\"DOI\",\"id\":\"10.1111/mmi.12323\"}],\"citationType\":\"journal article\",\"firstPage\":\"949\",\"id\":\"23834664\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"962\",\"publicationDate\":\"2013\",\"title\":\"Substrate specificity of an elongation-specific peptidoglycan endopeptidase and its implications for cell wall architecture and growth of Vibrio cholerae.\",\"volume\":\"89\"},\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23834664\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"ATCC 39315 / El Tor Inaba N16961\"}],\"referenceNumber\":2,\"referencePositions\":[\"SUBCELLULAR LOCATION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -704,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Murphy S.G.\",\"Alvarez L.\",\"Adams M.C.\",\"Liu S.\",\"Chappie J.S.\",\"Cava F.\",\"Doerr T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30782657\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.02620-18\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"30782657\",\"journal\":\"MBio\",\"lastPage\":\"0\",\"publicationDate\":\"2019\",\"title\":\"Endopeptidase Regulation as a Novel Function of the Zur-Dependent Zinc Starvation Response.\",\"volume\":\"10\"},\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30782657\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"ATCC 39315 / El Tor Inaba N16961\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"PATHWAY\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF HIS-372\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -723,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json",
-  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
-  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Ragumani S.\",\"Kumaran D.\",\"Burley S.K.\",\"Swaminathan S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18498110\"},{\"database\":\"DOI\",\"id\":\"10.1002/prot.22095\"}],\"citationType\":\"journal article\",\"firstPage\":\"1096\",\"id\":\"18498110\",\"journal\":\"Proteins\",\"lastPage\":\"1103\",\"publicationDate\":\"2008\",\"title\":\"Crystal structure of a putative lysostaphin peptidase from Vibrio cholerae.\",\"volume\":\"72\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2GU1\",\"source\":\"PDB\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.90 ANGSTROMS) OF 63-412 IN COMPLEX WITH ZINC\",\"COFACTOR\",\"SUBUNIT\",\"REACTION MECHANISM\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:33:03.079631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1a012051c558ee6fd878608af744d11d6b39c2a2321431a37e26522e1959abde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KUL5.json"
 }
 ```
 
@@ -741,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122",
-  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
-  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
-  "source_locator": "lines 1-18",
   "excerpt": "ID   SHYB_VIBCH              Reviewed;         426 AA.\nAC   Q9KUL5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2000, sequence version 1.\nDT   28-JAN-2026, entry version 122.\nDE   RecName: Full=Peptidoglycan DD-endopeptidase ShyB {ECO:0000303|PubMed:30782657};\nDE            EC=3.4.24.- {ECO:0000269|PubMed:30782657};\nDE   AltName: Full=Autolysin ShyB {ECO:0000303|PubMed:30782657};\nDE   AltName: Full=Putative lysostaphin-type peptidase P01 {ECO:0000303|PubMed:18498110};\nDE   AltName: Full=Sidewall hydrolase B {ECO:0000303|PubMed:23834664};\nDE   Flags: Precursor;\nGN   Name=shyB {ECO:0000303|PubMed:23834664, ECO:0000303|PubMed:30782657};\nGN   OrderedLocusNames=VC_0503 {ECO:0000303|PubMed:23834664,\nGN   ECO:0000312|EMBL:AAF93673.1};\nOS   Vibrio cholerae serotype O1 (strain ATCC 39315 / El Tor Inaba N16961).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria; Vibrionales;\nOC   Vibrionaceae; Vibrio.\nOX   NCBI_TaxID=243277 {ECO:0000312|EMBL:AAF93673.1, ECO:0000312|Proteomes:UP000000584};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-18",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
+  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122"
 }
 ```
 
@@ -762,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122",
-  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
-  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
-  "source_locator": "lines 33-41",
   "excerpt": "RN   [2]\nRP   SUBCELLULAR LOCATION, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC 39315 / El Tor Inaba N16961 {ECO:0000303|PubMed:23834664};\nRX   PubMed=23834664; DOI=10.1111/mmi.12323;\nRA   Doerr T., Cava F., Lam H., Davis B.M., Waldor M.K.;\nRT   \"Substrate specificity of an elongation-specific peptidoglycan\nRT   endopeptidase and its implications for cell wall architecture and growth of\nRT   Vibrio cholerae.\";\nRL   Mol. Microbiol. 89:949-962(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
+  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122"
 }
 ```
 
@@ -783,18 +535,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122",
-  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
-  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
-  "source_locator": "lines 42-51",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, PATHWAY, INDUCTION,\nRP   DISRUPTION PHENOTYPE, AND MUTAGENESIS OF HIS-372.\nRC   STRAIN=ATCC 39315 / El Tor Inaba N16961 {ECO:0000303|PubMed:30782657};\nRX   PubMed=30782657; DOI=10.1128/mbio.02620-18;\nRA   Murphy S.G., Alvarez L., Adams M.C., Liu S., Chappie J.S., Cava F.,\nRA   Doerr T.;\nRT   \"Endopeptidase Regulation as a Novel Function of the Zur-Dependent Zinc\nRT   Starvation Response.\";\nRL   MBio 10:0-0(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
+  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122"
 }
 ```
 
@@ -804,18 +556,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122",
-  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
-  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
-  "source_locator": "lines 52-59",
   "excerpt": "RN   [4] {ECO:0007744|PDB:2GU1}\nRP   X-RAY CRYSTALLOGRAPHY (1.90 ANGSTROMS) OF 63-412 IN COMPLEX WITH ZINC,\nRP   COFACTOR, SUBUNIT, AND REACTION MECHANISM.\nRX   PubMed=18498110; DOI=10.1002/prot.22095;\nRA   Ragumani S., Kumaran D., Burley S.K., Swaminathan S.;\nRT   \"Crystal structure of a putative lysostaphin peptidase from Vibrio\nRT   cholerae.\";\nRL   Proteins 72:1096-1103(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
+  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122"
 }
 ```
 
@@ -825,18 +577,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122",
-  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
-  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
-  "source_locator": "lines 76-77",
   "excerpt": "CC   -!- PATHWAY: Cell wall degradation; peptidoglycan degradation.\nCC       {ECO:0000269|PubMed:30782657}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:33:12.389220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 76-77",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b9f7a140df11a5f08c01597b78b8022558b8ed9a38f84cfba42460807a20b310",
+  "url": "https://rest.uniprot.org/unisave/Q9KUL5?format=txt&versions=122"
 }
 ```
 

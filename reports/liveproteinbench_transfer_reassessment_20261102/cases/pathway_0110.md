@@ -1,18 +1,16 @@
-# pathway_0110: before and after transfer clarification
+# pathway_0110
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0110.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0110.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Alkaloid biosynthesis. .
+**Expected answer:** **C** — Alkaloid biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt entry annotated as Rhazimal reductase 1, with an alkaloid-biosynthesis pathway annotation linked to a publication reporting function and catalytic activity. This supports choice C for this protein, while the annotation and cited experimental evidence are reviewer-only, not information supplied in the question.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support a broad inference of an oxidoreductase, but that does not establish which pathway it serves. The choices require knowing this particular enzyme's biological function.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and functional/pathway annotation as rhazimal reductase 1 in alkaloid biosynthesis.
-
-
-**Reason**
-
-> No organism, enzyme name, reaction, or pathway context is supplied. General sequence-based reasoning does not meaningfully distinguish alkaloid biosynthesis from the other proposed pathways.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only annotation supports C for the matched sequence; the input itself does not provide enough context to establish another choice.
-
-
-### Important caveats
-
-- The matched UniProt entry and its pathway annotation are reviewer-only evidence and cannot be treated as supplied to the evaluated model.
-- The entry links its pathway annotation to a publication with function and catalytic-activity evidence, but the primary paper was not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support a broad inference of an oxidoreductase, but that does not establish which pathway it serves. The choices require knowing this particular enzyme's biological function.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and functional/pathway annotation as rhazimal reductase 1 in alkaloid biosynthesis.",
-    "reason": "No organism, enzyme name, reaction, or pathway context is supplied. General sequence-based reasoning does not meaningfully distinguish alkaloid biosynthesis from the other proposed pathways."
-  },
-  "case_id": "pathway_0110",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry annotated as Rhazimal reductase 1, with an alkaloid-biosynthesis pathway annotation linked to a publication reporting function and catalytic activity. This supports choice C for this protein, while the annotation and cited experimental evidence are reviewer-only, not information supplied in the question."
-  },
-  "important_caveats": [
-    "The matched UniProt entry and its pathway annotation are reviewer-only evidence and cannot be treated as supplied to the evaluated model.",
-    "The entry links its pathway annotation to a publication with function and catalytic-activity evidence, but the primary paper was not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only annotation supports C for the matched sequence; the input itself does not provide enough context to establish another choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0110",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry annotated as Rhazimal reductase 1, with an alkaloid-biosynthesis pathway annotation linked to a publication reporting function and catalytic activity. This supports choice C for this protein, while the annotation and cited experimental evidence are reviewer-only, not information supplied in the question.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support a broad inference of an oxidoreductase, but that does not establish which pathway it serves. The choices require knowing this particular enzyme's biological function.",
-    "missing_item_specific_fact": "The protein-specific identification and functional/pathway annotation as rhazimal reductase 1 in alkaloid biosynthesis.",
-    "reason": "No organism, enzyme name, reaction, or pathway context is supplied. General sequence-based reasoning does not meaningfully distinguish alkaloid biosynthesis from the other proposed pathways."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only annotation supports C for the matched sequence; the input itself does not provide enough context to establish another choice."
-  },
-  "important_caveats": [
-    "The matched UniProt entry and its pathway annotation are reviewer-only evidence and cannot be treated as supplied to the evaluated model.",
-    "The entry links its pathway annotation to a publication with function and catalytic-activity evidence, but the primary paper was not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A9E7S518 (Rhazimal reductase 1, AsRHR1, EC 1.1.1.440 from Alstonia scholaris) carries the explicit pathway annotation 'Alkaloid biosynthesis' with experimental evidence code ECO:0000269 from PubMed:36349266 (Wang et al., Chem. Sci. 2022, on indole alkaloid biosynthesis). The sequence matches exactly (SHA-256 confirmed). The annotation is backed by experimental characterization of catalytic activity and pathway role.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The 323-aa sequence contains a possible Rossmann-fold nucleotide-binding motif (e.g., 'VGFGT' near the N-terminus), consistent with a short-chain dehydrogenase/reductase (SDR) or related NAD(P)-dependent oxidoreductase. However, SDR/oxidoreductase motifs are ubiquitous across lipid metabolism, amino acid biosynthesis, and alkaloid biosynthesis pathways. Without organism context (Alstonia scholaris, a plant in the Apocynaceae family renowned for monoterpenoid indole alkaloid production) or knowledge that this is Rhazimal reductase 1, the sequence provides no alkaloid-specific catalytic motif that would unambiguously distinguish choice C from choice B (Lipid metabolism).
-
-
-**Missing item-specific fact**
-
-> The organism identity (Alstonia scholaris, Apocynaceae) and the specific protein identity (Rhazimal reductase 1, EC 1.1.1.440, acting in the indole alkaloid biosynthetic pathway) are absent from the model input. Recognizing the protein or knowing the organism's dominant secondary-metabolism pathway is required to select C over B.
-
-
-**Reason**
-
-> The question supplies only a raw amino acid sequence and four pathway labels. The sequence is consistent with a generic NAD(P)-dependent oxidoreductase, a superfamily found in lipid metabolism, amino acid biosynthesis, and alkaloid biosynthesis alike. No alkaloid-specific active-site motif, substrate-binding signature, or pathway-specific domain is identifiable from the sequence alone. Selecting 'Alkaloid biosynthesis' over 'Lipid metabolism' requires knowing the protein's identity or the organism's metabolic context, which is a lookup/memorization task rather than a reasoning task.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Without organism or protein-identity context, an NAD(P)-dependent oxidoreductase of ~323 aa could plausibly be assigned to lipid metabolism (B), as many plant fatty-acid or terpenoid oxidoreductases belong to the same structural superfamily. Choice C is correct per the database annotation, but the sequence alone does not provide a decisive argument to exclude B. Choices A (capsule biogenesis, a bacterial pathway) and D (a very specific histidine-biosynthesis step) are clearly less plausible.
-
-
-### Important caveats
-
-- The pathway annotation 'Alkaloid biosynthesis' is backed by experimental evidence (ECO:0000269), not merely computational inference, strengthening the key's correctness.
-- The organism (Alstonia scholaris) and protein name (Rhazimal reductase 1) are absent from the evaluated model input; they appear only in reviewer-only evidence.
-- The entry was first publicly released 2025-06-18; the author's data-construction date and exact source snapshot are unknown, though the sequence has been stable since 2023-05-03.
-- The trailing periods in choices B, C, and D appear to be formatting artifacts and do not affect meaning.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 323-aa sequence contains a possible Rossmann-fold nucleotide-binding motif (e.g., 'VGFGT' near the N-terminus), consistent with a short-chain dehydrogenase/reductase (SDR) or related NAD(P)-dependent oxidoreductase. However, SDR/oxidoreductase motifs are ubiquitous across lipid metabolism, amino acid biosynthesis, and alkaloid biosynthesis pathways. Without organism context (Alstonia scholaris, a plant in the Apocynaceae family renowned for monoterpenoid indole alkaloid production) or knowledge that this is Rhazimal reductase 1, the sequence provides no alkaloid-specific catalytic motif that would unambiguously distinguish choice C from choice B (Lipid metabolism).",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The organism identity (Alstonia scholaris, Apocynaceae) and the specific protein identity (Rhazimal reductase 1, EC 1.1.1.440, acting in the indole alkaloid biosynthetic pathway) are absent from the model input. Recognizing the protein or knowing the organism's dominant secondary-metabolism pathway is required to select C over B.",
-    "reason": "The question supplies only a raw amino acid sequence and four pathway labels. The sequence is consistent with a generic NAD(P)-dependent oxidoreductase, a superfamily found in lipid metabolism, amino acid biosynthesis, and alkaloid biosynthesis alike. No alkaloid-specific active-site motif, substrate-binding signature, or pathway-specific domain is identifiable from the sequence alone. Selecting 'Alkaloid biosynthesis' over 'Lipid metabolism' requires knowing the protein's identity or the organism's metabolic context, which is a lookup/memorization task rather than a reasoning task."
-  },
-  "case_id": "pathway_0110",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A9E7S518 (Rhazimal reductase 1, AsRHR1, EC 1.1.1.440 from Alstonia scholaris) carries the explicit pathway annotation 'Alkaloid biosynthesis' with experimental evidence code ECO:0000269 from PubMed:36349266 (Wang et al., Chem. Sci. 2022, on indole alkaloid biosynthesis). The sequence matches exactly (SHA-256 confirmed). The annotation is backed by experimental characterization of catalytic activity and pathway role."
-  },
-  "important_caveats": [
-    "The pathway annotation 'Alkaloid biosynthesis' is backed by experimental evidence (ECO:0000269), not merely computational inference, strengthening the key's correctness.",
-    "The organism (Alstonia scholaris) and protein name (Rhazimal reductase 1) are absent from the evaluated model input; they appear only in reviewer-only evidence.",
-    "The entry was first publicly released 2025-06-18; the author's data-construction date and exact source snapshot are unknown, though the sequence has been stable since 2023-05-03.",
-    "The trailing periods in choices B, C, and D appear to be formatting artifacts and do not affect meaning."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Without organism or protein-identity context, an NAD(P)-dependent oxidoreductase of ~323 aa could plausibly be assigned to lipid metabolism (B), as many plant fatty-acid or terpenoid oxidoreductases belong to the same structural superfamily. Choice C is correct per the database annotation, but the sequence alone does not provide a decisive argument to exclude B. Choices A (capsule biogenesis, a bacterial pathway) and D (a very specific histidine-biosynthesis step) are clearly less plausible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0110",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A9E7S518 (Rhazimal reductase 1, AsRHR1, EC 1.1.1.440 from Alstonia scholaris) carries the explicit pathway annotation 'Alkaloid biosynthesis' with experimental evidence code ECO:0000269 from PubMed:36349266 (Wang et al., Chem. Sci. 2022, on indole alkaloid biosynthesis). The sequence matches exactly (SHA-256 confirmed). The annotation is backed by experimental characterization of catalytic activity and pathway role.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The 323-aa sequence contains a possible Rossmann-fold nucleotide-binding motif (e.g., 'VGFGT' near the N-terminus), consistent with a short-chain dehydrogenase/reductase (SDR) or related NAD(P)-dependent oxidoreductase. However, SDR/oxidoreductase motifs are ubiquitous across lipid metabolism, amino acid biosynthesis, and alkaloid biosynthesis pathways. Without organism context (Alstonia scholaris, a plant in the Apocynaceae family renowned for monoterpenoid indole alkaloid production) or knowledge that this is Rhazimal reductase 1, the sequence provides no alkaloid-specific catalytic motif that would unambiguously distinguish choice C from choice B (Lipid metabolism).",
-    "missing_item_specific_fact": "The organism identity (Alstonia scholaris, Apocynaceae) and the specific protein identity (Rhazimal reductase 1, EC 1.1.1.440, acting in the indole alkaloid biosynthetic pathway) are absent from the model input. Recognizing the protein or knowing the organism's dominant secondary-metabolism pathway is required to select C over B.",
-    "reason": "The question supplies only a raw amino acid sequence and four pathway labels. The sequence is consistent with a generic NAD(P)-dependent oxidoreductase, a superfamily found in lipid metabolism, amino acid biosynthesis, and alkaloid biosynthesis alike. No alkaloid-specific active-site motif, substrate-binding signature, or pathway-specific domain is identifiable from the sequence alone. Selecting 'Alkaloid biosynthesis' over 'Lipid metabolism' requires knowing the protein's identity or the organism's metabolic context, which is a lookup/memorization task rather than a reasoning task."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Without organism or protein-identity context, an NAD(P)-dependent oxidoreductase of ~323 aa could plausibly be assigned to lipid metabolism (B), as many plant fatty-acid or terpenoid oxidoreductases belong to the same structural superfamily. Choice C is correct per the database annotation, but the sequence alone does not provide a decisive argument to exclude B. Choices A (capsule biogenesis, a bacterial pathway) and D (a very specific histidine-biosynthesis step) are clearly less plausible."
-  },
-  "important_caveats": [
-    "The pathway annotation 'Alkaloid biosynthesis' is backed by experimental evidence (ECO:0000269), not merely computational inference, strengthening the key's correctness.",
-    "The organism (Alstonia scholaris) and protein name (Rhazimal reductase 1) are absent from the evaluated model input; they appear only in reviewer-only evidence.",
-    "The entry was first publicly released 2025-06-18; the author's data-construction date and exact source snapshot are unknown, though the sequence has been stable since 2023-05-03.",
-    "The trailing periods in choices B, C, and D appear to be formatting artifacts and do not affect meaning."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -398,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7S518",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 323,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
   "current_entry_audit": {
     "entryVersion": 13,
     "firstPublicDate": "2025-06-18",
@@ -545,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "current_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 323,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 12,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7S518",
   "selected_historical_entry_version": 12,
+  "selected_historical_record_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "selected_historical_source_sequence_length": 323,
+  "selected_historical_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
   "selected_historical_version": {
     "accession": "A0A9E7S518",
     "database": "Swiss-Prot",
@@ -563,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RHR1_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "selected_historical_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
-  "selected_historical_source_sequence_length": 323,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 12,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7S518\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -613,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":13,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -632,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -651,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.440\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Rhazimal reductase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsRHR1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -670,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -689,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65385.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -707,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   RHR1_ALSSC              Reviewed;         323 AA.\nAC   A0A9E7S518;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 12.\nDE   RecName: Full=Rhazimal reductase 1 {ECO:0000303|PubMed:36349266};\nDE            Short=AsRHR1 {ECO:0000303|PubMed:36349266};\nDE            EC=1.1.1.440 {ECO:0000269|PubMed:36349266};\nGN   Name=RHR1 {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 
@@ -728,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 16-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65385.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 
@@ -749,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 43-43",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:36349266}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 

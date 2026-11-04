@@ -1,18 +1,16 @@
-# GO_molecular_function_0177: before and after transfer clarification
+# GO_molecular_function_0177
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0177.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0177.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **B** — glycosyltransferase activity
+**Expected answer:** **B** — glycosyltransferase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | uncertain | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | uncertain |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as a probable glycosyltransferase, with EC 2.4.-.- and a glycosyltransferase-activity GO annotation. This supports the broad expected function, but the annotation is inferential rather than direct experimental evidence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is strongly hydrophobic in several regions, consistent with a membrane protein, but that does not establish glycosyltransferase activity or distinguish it from the other listed functions.
-
-
-**Missing item-specific fact**
-
-> A protein-specific functional annotation or evidence identifying its catalytic family and substrate/donor specificity is needed; the sequence and choices alone do not establish glycosyltransferase activity.
-
-
-**Reason**
-
-> The answer is supported by the matched protein's database annotation, not by a clear, general sequence-based argument available in the question. In particular, the sequence does not reveal whether the enzyme is a UDP-glycosyltransferase.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> UDP-glycosyltransferase activity is a narrower kind of glycosyltransferase activity, so the options overlap. The available annotation supports broad glycosyltransferase activity but does not resolve whether the narrower UDP-specific option also applies.
-
-
-### Important caveats
-
-- The matched UniProt annotation calls the protein a probable glycosyltransferase; the cited GO annotation is IEA, not evidence of a direct biochemical assay.
-- The database record also describes a probable role in a DNA-damage-response locus, which does not itself establish a molecular catalytic activity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic in several regions, consistent with a membrane protein, but that does not establish glycosyltransferase activity or distinguish it from the other listed functions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "A protein-specific functional annotation or evidence identifying its catalytic family and substrate/donor specificity is needed; the sequence and choices alone do not establish glycosyltransferase activity.",
-    "reason": "The answer is supported by the matched protein's database annotation, not by a clear, general sequence-based argument available in the question. In particular, the sequence does not reveal whether the enzyme is a UDP-glycosyltransferase."
-  },
-  "case_id": "GO_molecular_function_0177",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as a probable glycosyltransferase, with EC 2.4.-.- and a glycosyltransferase-activity GO annotation. This supports the broad expected function, but the annotation is inferential rather than direct experimental evidence."
-  },
-  "important_caveats": [
-    "The matched UniProt annotation calls the protein a probable glycosyltransferase; the cited GO annotation is IEA, not evidence of a direct biochemical assay.",
-    "The database record also describes a probable role in a DNA-damage-response locus, which does not itself establish a molecular catalytic activity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "UDP-glycosyltransferase activity is a narrower kind of glycosyltransferase activity, so the options overlap. The available annotation supports broad glycosyltransferase activity but does not resolve whether the narrower UDP-specific option also applies."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0177",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as a probable glycosyltransferase, with EC 2.4.-.- and a glycosyltransferase-activity GO annotation. This supports the broad expected function, but the annotation is inferential rather than direct experimental evidence.",
-    "evidence_ids": ["C1", "C4", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic in several regions, consistent with a membrane protein, but that does not establish glycosyltransferase activity or distinguish it from the other listed functions.",
-    "missing_item_specific_fact": "A protein-specific functional annotation or evidence identifying its catalytic family and substrate/donor specificity is needed; the sequence and choices alone do not establish glycosyltransferase activity.",
-    "reason": "The answer is supported by the matched protein's database annotation, not by a clear, general sequence-based argument available in the question. In particular, the sequence does not reveal whether the enzyme is a UDP-glycosyltransferase."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "UDP-glycosyltransferase activity is a narrower kind of glycosyltransferase activity, so the options overlap. The available annotation supports broad glycosyltransferase activity but does not resolve whether the narrower UDP-specific option also applies."
-  },
-  "important_caveats": [
-    "The matched UniProt annotation calls the protein a probable glycosyltransferase; the cited GO annotation is IEA, not evidence of a direct biochemical assay.",
-    "The database record also describes a probable role in a DNA-damage-response locus, which does not itself establish a molecular catalytic activity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q4J8Q7 (sequence matched) annotates this protein as 'Probable glycosyltransferase Saci_1499' with EC 2.4.-.- (C4, H1), and carries the GO term GO:0016757 (glycosyltransferase activity) via IEA:UniProtKB-KW (H4). GO:0016757 maps exactly to option B. The EC 2.4.-.- is the generic glycosyltransferase class, consistent with B rather than the more specific UDP-glycosyltransferase (A). However, the annotation is IEA (electronic/computational inference) and the protein name includes 'Probable,' indicating the assignment is not experimentally confirmed. Option C (5'-nucleotidase, EC 3.1.3.5, a hydrolase) and D (carbohydrate derivative binding, a non-catalytic binding term) are inconsistent with the transferase annotation.
-
-Citations as saved: [C4](#evidence-c4), [H1](#evidence-h1), [H4](#evidence-h4), [GO3](#evidence-go3), [GO1](#evidence-go1), [GO2](#evidence-go2), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Some partial reasoning is possible: the protein has multiple transmembrane segments (long hydrophobic stretches throughout), which is inconsistent with classical soluble UDP-glycosyltransferases (UGTs, typically cytosolic single-domain enzymes), providing a weak argument against option A. The absence of recognizable nucleotidase catalytic motifs (e.g., HxH, specific phosphatase residues) weakly argues against C. The multi-pass membrane architecture suggests a catalytic or transport role rather than simple binding, weakly arguing against D. However, none of these arguments positively identify the protein as a glycosyltransferase rather than, say, a membrane transporter, flippase, or other integral membrane enzyme.
-
-
-**Missing item-specific fact**
-
-> The specific sequence-family assignment (e.g., GT-B fold nucleotide-binding motif, PSPG box, or other glycosyltransferase signature) that would positively identify this protein as a glycosyltransferase from sequence alone. The UniProt annotation itself is IEA (computational inference), and the protein is labeled 'Probable,' indicating even the database relies on sequence-similarity heuristics rather than experimental characterization. Distinguishing A (UDP-glycosyltransferase, a specific subclass) from B (general glycosyltransferase) requires knowing the specific sugar-donor preference, which is not determinable from the sequence without family-specific knowledge or experimental data.
-
-
-**Reason**
-
-> The core identification as a glycosyltransferase depends on recognizing family-specific motifs or database annotation. The sequence does not contain a widely recognized, easily identifiable catalytic signature that would allow a model to confidently assign glycosyltransferase activity over other membrane-protein functions using only general biological knowledge. The annotation is itself computational (IEA), and the protein is 'probable,' underscoring the reliance on pattern-matching rather than definitive experimental evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While A (UDP-glycosyltransferase) is a child term of B (glycosyltransferase), the EC 2.4.-.- annotation is generic and does not specify a UDP-sugar donor. The multi-pass membrane topology is atypical for classical UDP-glycosyltransferases. C and D are clearly inconsistent with a transferase annotation. B is the most defensible single answer given the available annotation.
-
-
-### Important caveats
-
-- The GO annotation (GO:0016757) carries evidence code IEA (Inferred from Electronic Annotation), meaning it is a computational inference, not experimental evidence.
-- The protein is named 'Probable glycosyltransferase,' indicating uncertainty even at the database level.
-- The EC number 2.4.-.- is the generic glycosyltransferase class; no specific subclass or sugar-donor preference has been experimentally determined.
-- The function comment describes a role in DNA damage response/homologous recombination (PubMed:26148716), which is a biological context rather than a direct enzymatic characterization.
-- The reviewer-only evidence was not available to the evaluated model; the model sees only the 464-aa sequence and four choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Some partial reasoning is possible: the protein has multiple transmembrane segments (long hydrophobic stretches throughout), which is inconsistent with classical soluble UDP-glycosyltransferases (UGTs, typically cytosolic single-domain enzymes), providing a weak argument against option A. The absence of recognizable nucleotidase catalytic motifs (e.g., HxH, specific phosphatase residues) weakly argues against C. The multi-pass membrane architecture suggests a catalytic or transport role rather than simple binding, weakly arguing against D. However, none of these arguments positively identify the protein as a glycosyltransferase rather than, say, a membrane transporter, flippase, or other integral membrane enzyme.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific sequence-family assignment (e.g., GT-B fold nucleotide-binding motif, PSPG box, or other glycosyltransferase signature) that would positively identify this protein as a glycosyltransferase from sequence alone. The UniProt annotation itself is IEA (computational inference), and the protein is labeled 'Probable,' indicating even the database relies on sequence-similarity heuristics rather than experimental characterization. Distinguishing A (UDP-glycosyltransferase, a specific subclass) from B (general glycosyltransferase) requires knowing the specific sugar-donor preference, which is not determinable from the sequence without family-specific knowledge or experimental data.",
-    "reason": "The core identification as a glycosyltransferase depends on recognizing family-specific motifs or database annotation. The sequence does not contain a widely recognized, easily identifiable catalytic signature that would allow a model to confidently assign glycosyltransferase activity over other membrane-protein functions using only general biological knowledge. The annotation is itself computational (IEA), and the protein is 'probable,' underscoring the reliance on pattern-matching rather than definitive experimental evidence."
-  },
-  "case_id": "GO_molecular_function_0177",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "H1",
-      "H4",
-      "GO3",
-      "GO1",
-      "GO2",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q4J8Q7 (sequence matched) annotates this protein as 'Probable glycosyltransferase Saci_1499' with EC 2.4.-.- (C4, H1), and carries the GO term GO:0016757 (glycosyltransferase activity) via IEA:UniProtKB-KW (H4). GO:0016757 maps exactly to option B. The EC 2.4.-.- is the generic glycosyltransferase class, consistent with B rather than the more specific UDP-glycosyltransferase (A). However, the annotation is IEA (electronic/computational inference) and the protein name includes 'Probable,' indicating the assignment is not experimentally confirmed. Option C (5'-nucleotidase, EC 3.1.3.5, a hydrolase) and D (carbohydrate derivative binding, a non-catalytic binding term) are inconsistent with the transferase annotation."
-  },
-  "important_caveats": [
-    "The GO annotation (GO:0016757) carries evidence code IEA (Inferred from Electronic Annotation), meaning it is a computational inference, not experimental evidence.",
-    "The protein is named 'Probable glycosyltransferase,' indicating uncertainty even at the database level.",
-    "The EC number 2.4.-.- is the generic glycosyltransferase class; no specific subclass or sugar-donor preference has been experimentally determined.",
-    "The function comment describes a role in DNA damage response/homologous recombination (PubMed:26148716), which is a biological context rather than a direct enzymatic characterization.",
-    "The reviewer-only evidence was not available to the evaluated model; the model sees only the 464-aa sequence and four choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While A (UDP-glycosyltransferase) is a child term of B (glycosyltransferase), the EC 2.4.-.- annotation is generic and does not specify a UDP-sugar donor. The multi-pass membrane topology is atypical for classical UDP-glycosyltransferases. C and D are clearly inconsistent with a transferase annotation. B is the most defensible single answer given the available annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0177",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q4J8Q7 (sequence matched) annotates this protein as 'Probable glycosyltransferase Saci_1499' with EC 2.4.-.- (C4, H1), and carries the GO term GO:0016757 (glycosyltransferase activity) via IEA:UniProtKB-KW (H4). GO:0016757 maps exactly to option B. The EC 2.4.-.- is the generic glycosyltransferase class, consistent with B rather than the more specific UDP-glycosyltransferase (A). However, the annotation is IEA (electronic/computational inference) and the protein name includes 'Probable,' indicating the assignment is not experimentally confirmed. Option C (5'-nucleotidase, EC 3.1.3.5, a hydrolase) and D (carbohydrate derivative binding, a non-catalytic binding term) are inconsistent with the transferase annotation.",
-    "evidence_ids": ["C4", "H1", "H4", "GO3", "GO1", "GO2", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Some partial reasoning is possible: the protein has multiple transmembrane segments (long hydrophobic stretches throughout), which is inconsistent with classical soluble UDP-glycosyltransferases (UGTs, typically cytosolic single-domain enzymes), providing a weak argument against option A. The absence of recognizable nucleotidase catalytic motifs (e.g., HxH, specific phosphatase residues) weakly argues against C. The multi-pass membrane architecture suggests a catalytic or transport role rather than simple binding, weakly arguing against D. However, none of these arguments positively identify the protein as a glycosyltransferase rather than, say, a membrane transporter, flippase, or other integral membrane enzyme.",
-    "missing_item_specific_fact": "The specific sequence-family assignment (e.g., GT-B fold nucleotide-binding motif, PSPG box, or other glycosyltransferase signature) that would positively identify this protein as a glycosyltransferase from sequence alone. The UniProt annotation itself is IEA (computational inference), and the protein is labeled 'Probable,' indicating even the database relies on sequence-similarity heuristics rather than experimental characterization. Distinguishing A (UDP-glycosyltransferase, a specific subclass) from B (general glycosyltransferase) requires knowing the specific sugar-donor preference, which is not determinable from the sequence without family-specific knowledge or experimental data.",
-    "reason": "The core identification as a glycosyltransferase depends on recognizing family-specific motifs or database annotation. The sequence does not contain a widely recognized, easily identifiable catalytic signature that would allow a model to confidently assign glycosyltransferase activity over other membrane-protein functions using only general biological knowledge. The annotation is itself computational (IEA), and the protein is 'probable,' underscoring the reliance on pattern-matching rather than definitive experimental evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While A (UDP-glycosyltransferase) is a child term of B (glycosyltransferase), the EC 2.4.-.- annotation is generic and does not specify a UDP-sugar donor. The multi-pass membrane topology is atypical for classical UDP-glycosyltransferases. C and D are clearly inconsistent with a transferase annotation. B is the most defensible single answer given the available annotation."
-  },
-  "important_caveats": [
-    "The GO annotation (GO:0016757) carries evidence code IEA (Inferred from Electronic Annotation), meaning it is a computational inference, not experimental evidence.",
-    "The protein is named 'Probable glycosyltransferase,' indicating uncertainty even at the database level.",
-    "The EC number 2.4.-.- is the generic glycosyltransferase class; no specific subclass or sugar-donor preference has been experimentally determined.",
-    "The function comment describes a role in DNA damage response/homologous recombination (PubMed:26148716), which is a biological context rather than a direct enzymatic characterization.",
-    "The reviewer-only evidence was not available to the evaluated model; the model sees only the 464-aa sequence and four choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -398,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -519,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q4J8Q7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "72c1798b49bae9f57c5f8f2af2190336eda2aa84ac1f7c439509152b3e010ed3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 464,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "72c1798b49bae9f57c5f8f2af2190336eda2aa84ac1f7c439509152b3e010ed3",
   "current_entry_audit": {
     "entryVersion": 85,
     "firstPublicDate": "2025-06-18",
@@ -550,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-08-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
-  "current_source_sequence_sha256": "72c1798b49bae9f57c5f8f2af2190336eda2aa84ac1f7c439509152b3e010ed3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 464,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "72c1798b49bae9f57c5f8f2af2190336eda2aa84ac1f7c439509152b3e010ed3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q4J8Q7",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
+  "selected_historical_source_sequence_length": 464,
+  "selected_historical_source_sequence_sha256": "72c1798b49bae9f57c5f8f2af2190336eda2aa84ac1f7c439509152b3e010ed3",
   "selected_historical_version": {
     "accession": "Q4J8Q7",
     "database": "Swiss-Prot",
@@ -568,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "Y1499_SULAC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
-  "selected_historical_source_sequence_sha256": "72c1798b49bae9f57c5f8f2af2190336eda2aa84ac1f7c439509152b3e010ed3",
-  "selected_historical_source_sequence_length": 464,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -603,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json",
-  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
-  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q4J8Q7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json"
 }
 ```
 
@@ -622,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json",
-  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
-  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":85,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-08-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json"
 }
 ```
 
@@ -641,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json",
-  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
-  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Archaea\",\"Thermoproteota\",\"Thermoprotei\",\"Sulfolobales\",\"Sulfolobaceae\",\"Sulfolobus\"],\"scientificName\":\"Sulfolobus acidocaldarius (strain ATCC 33909 / DSM 639 / JCM 8929 / NBRC 15157 / NCIMB 11770)\",\"taxonId\":330779}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json"
 }
 ```
 
@@ -660,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json",
-  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
-  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"value\":\"2.4.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Probable glycosyltransferase Saci_1499\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json"
 }
 ```
 
@@ -679,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json",
-  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
-  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"26148716\",\"source\":\"PubMed\"}],\"value\":\"Probably part of a 4-gene DNA damage response locus in which the upstream ups system, in combination with this downstream locus, functions in homologous recombination to rescue Sulfolobales from DNA-damaging threats\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json"
 }
 ```
 
@@ -698,15 +447,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json",
-  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
-  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"van Wolferen M.\",\"Ma X.\",\"Albers S.V.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26148716\"},{\"database\":\"DOI\",\"id\":\"10.1128/jb.00344-15\"}],\"citationType\":\"journal article\",\"firstPage\":\"2941\",\"id\":\"26148716\",\"journal\":\"J. Bacteriol.\",\"lastPage\":\"2951\",\"publicationDate\":\"2015\",\"title\":\"DNA Processing Proteins Involved in the UV-Induced Stress Response of Sulfolobales.\",\"volume\":\"197\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 33909 / DSM 639 / JCM 8929 / NBRC 15157 / NCIMB 11770\"}],\"referenceNumber\":2,\"referencePositions\":[\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:48.833149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3e85eec2dfbc367c39396a2802767d7bd8d7eecdc2ad5665df5f0b909ffd12ee",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4J8Q7.json"
 }
 ```
 
@@ -716,18 +465,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83",
-  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
-  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   Y1499_SULAC             Reviewed;         464 AA.\nAC   Q4J8Q7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-AUG-2005, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=Probable glycosyltransferase Saci_1499 {ECO:0000305};\nDE            EC=2.4.-.-;\nGN   OrderedLocusNames=Saci_1499 {ECO:0000312|EMBL:AAY80820.1};\nOS   Sulfolobus acidocaldarius (strain ATCC 33909 / DSM 639 / JCM 8929 / NBRC\nOS   15157 / NCIMB 11770).\nOC   Archaea; Thermoproteota; Thermoprotei; Sulfolobales; Sulfolobaceae;\nOC   Sulfolobus.\nOX   NCBI_TaxID=330779;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
+  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83"
 }
 ```
 
@@ -737,18 +486,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83",
-  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
-  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
-  "source_locator": "lines 23-30",
   "excerpt": "RN   [2]\nRP   DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC 33909 / DSM 639 / JCM 8929 / NBRC 15157 / NCIMB 11770;\nRX   PubMed=26148716; DOI=10.1128/jb.00344-15;\nRA   van Wolferen M., Ma X., Albers S.V.;\nRT   \"DNA Processing Proteins Involved in the UV-Induced Stress Response of\nRT   Sulfolobales.\";\nRL   J. Bacteriol. 197:2941-2951(2015).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
+  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83"
 }
 ```
 
@@ -758,18 +507,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83",
-  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
-  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
-  "source_locator": "lines 31-34",
   "excerpt": "CC   -!- FUNCTION: Probably part of a 4-gene DNA damage response locus in which\nCC       the upstream ups system, in combination with this downstream locus,\nCC       functions in homologous recombination to rescue Sulfolobales from DNA-\nCC       damaging threats. {ECO:0000305|PubMed:26148716}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
+  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83"
 }
 ```
 
@@ -779,18 +528,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83",
-  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
-  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
-  "source_locator": "lines 56-56",
   "excerpt": "DR   GO; GO:0016757; F:glycosyltransferase activity; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:30:51.056852+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-56",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a0391d87d26f83f55657f76a4009b13d967514999d8b969ae7fda3d19b4120",
+  "url": "https://rest.uniprot.org/unisave/Q4J8Q7?format=txt&versions=83"
 }
 ```
 
@@ -801,15 +550,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 80524-80531",
   "excerpt": "[Term]\nid: GO:0008194\nname: UDP-glycosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a glycosyl group from a UDP-sugar to a small hydrophobic molecule.\" [PMID:11846783]\nxref: Reactome:R-HSA-162730 \"phosphatidylinositol + UDP-N-acetyl-D-glucosamine -> N-acetylglucosaminyl-PI + UDP\"\nis_a: GO:0016757 ! glycosyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008194",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 80524-80531",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008194"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -820,15 +569,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 81203-81255",
   "excerpt": "[Term]\nid: GO:0008253\nname: 5'-nucleotidase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: a nucleoside 5'-phosphate + H2O = a nucleoside + phosphate.\" [EC:3.1.3.5, PMID:27907199]\nsynonym: \"5' nucleotidase activity\" EXACT []\nsynonym: \"5'-adenylic phosphatase\" NARROW [EC:3.1.3.5]\nsynonym: \"5'-AMP nucleotidase\" NARROW [EC:3.1.3.5]\nsynonym: \"5'-AMPase\" NARROW [EC:3.1.3.5]\nsynonym: \"5'-mononucleotidase activity\" RELATED [EC:3.1.3.5]\nsynonym: \"5'-ribonucleotide phosphohydrolase activity\" NARROW [EC:3.1.3.5]\nsynonym: \"adenosine 5'-phosphatase\" NARROW [EC:3.1.3.5]\nsynonym: \"adenosine monophosphatase\" NARROW [EC:3.1.3.5]\nsynonym: \"AMP phosphatase\" NARROW [EC:3.1.3.5]\nsynonym: \"AMP phosphohydrolase\" NARROW [EC:3.1.3.5]\nsynonym: \"AMPase\" NARROW [EC:3.1.3.5]\nsynonym: \"snake venom 5'-nucleotidase\" NARROW [EC:3.1.3.5]\nsynonym: \"thimidine monophosphate nucleotidase\" NARROW [EC:3.1.3.5]\nsynonym: \"UMPase\" NARROW [EC:3.1.3.5]\nsynonym: \"uridine 5'-nucleotidase\" NARROW [EC:3.1.3.5]\nxref: EC:3.1.3.5\nxref: MetaCyc:5-NUCLEOTID-RXN\nxref: Reactome:R-HSA-109278 \"NT5E:Zn2+ hydrolyses AMP,dAMP,GMP, IMP\"\nxref: Reactome:R-HSA-109291 \"CMP or TMP or UMP + H2O => cytidine, thymidine, or uridine + orthophosphate [NT5E]\"\nxref: Reactome:R-HSA-109380 \"(d)CMP, TMP, or (d)UMP + H2O => (deoxy)cytidine, thymidine, or (deoxy)uridine + orthophosphate (NT5C1A)\"\nxref: Reactome:R-HSA-109387 \"(d)AMP, (d)GMP, or (d)IMP + H2O => (deoxy)adenosine, (deoxy)guanosine, or (deoxy)inosine + orthophosphate (NT5C1A)\"\nxref: Reactome:R-HSA-109415 \"AMP + H2O => adenosine + orthophosphate [NT5C1B]\"\nxref: Reactome:R-HSA-109449 \"(d)CMP, TMP, or (d)UMP + H2O => (deoxy)cytidine, thymidine, or (deoxy)uridine + orthophosphate (NT5C3)\"\nxref: Reactome:R-HSA-109470 \"(d)GMP or (d)IMP + H2O => (d)G or (d)I + orthophosphate (NT5C)\"\nxref: Reactome:R-HSA-109480 \"TMP, uridine 2', 3', or 5' monophosphates, or deoxyuridine 3' or 5' monophosphates + H2O => thymidine or (deoxy)uridine + orthophosphate [NT5C]\"\nxref: Reactome:R-HSA-109514 \"TMP, (d)UMP, uridine 2' monophosphate, or uridine 3'-monophosphate + H2O => thymidine, deoxyuridine, or uridine + orthophosphate [NT5M]\"\nxref: Reactome:R-HSA-5694126 \"NT5C3B hydrolyses 7MGP to 7MG\"\nxref: Reactome:R-HSA-74248 \"(d)GMP or (d)IMP + H2O => (2'-deoxy)guanosine or (2'-deoxy)inosine + orthophosphate (NT5C2)\"\nxref: Reactome:R-HSA-8940070 \"NT5E:Zn2+ hydrolyses NAD+\"\nxref: Reactome:R-HSA-8940074 \"NT5E:Zn2+ hydrolyses NMN\"\nxref: Reactome:R-HSA-9755078 \"NT5C2 tetramer dephosphorylates RBV-MP\"\nxref: RHEA:12484\nxref: RHEA:22140\nxref: RHEA:27714\nxref: RHEA:27718\nxref: RHEA:29359\nxref: RHEA:29375\nxref: RHEA:30815\nis_a: GO:0008252 ! nucleotidase activity\nproperty_value: skos:exactMatch EC:3.1.3.5\nproperty_value: skos:exactMatch RHEA:22140\nproperty_value: skos:narrowMatch RHEA:12484\nproperty_value: skos:narrowMatch RHEA:27714\nproperty_value: skos:narrowMatch RHEA:27718\nproperty_value: skos:narrowMatch RHEA:29359\nproperty_value: skos:narrowMatch RHEA:29375\nproperty_value: skos:narrowMatch RHEA:30815\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008253",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 81203-81255",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008253"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -839,15 +588,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 129828-129846",
   "excerpt": "[Term]\nid: GO:0016757\nname: glycosyltransferase activity\nnamespace: molecular_function\nalt_id: GO:0016932\ndef: \"Catalysis of the transfer of a glycosyl group from one compound (donor) to another (acceptor).\" [GOC:jl, ISBN:0198506732]\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_yeast\nsynonym: \"transferase activity, transferring glycosyl groups\" EXACT []\nsynonym: \"transferase activity, transferring other glycosyl groups\" NARROW []\nsynonym: \"transglycosidase activity\" EXACT []\nsynonym: \"transglycosylase activity\" EXACT []\nxref: EC:2.4.-.-\nxref: Reactome:R-HSA-5173005 \"B3GALTL transfers glucose to O-fucosyl-proteins\"\nxref: Reactome:R-HSA-6785565 \"Defective B3GALTL does not transfer glucose to O-fucosyl-proteins\"\nis_a: GO:0016740 ! transferase activity\nproperty_value: skos:exactMatch EC:2.4.-.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016757",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 129828-129846",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016757"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -858,15 +607,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 404743-404751",
   "excerpt": "[Term]\nid: GO:0097367\nname: carbohydrate derivative binding\nnamespace: molecular_function\ndef: \"Binding to a carbohydrate derivative.\" [GOC:pr]\nsubset: goslim_agr\nsubset: goslim_mouse\nis_a: GO:0005488 ! binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0097367",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 404743-404751",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0097367"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

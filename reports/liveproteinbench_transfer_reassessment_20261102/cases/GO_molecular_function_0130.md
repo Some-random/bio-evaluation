@@ -1,18 +1,16 @@
-# GO_molecular_function_0130: before and after transfer clarification
+# GO_molecular_function_0130
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0130.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0130.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — translation regulator activity
+**Expected answer:** **D** — translation regulator activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-match sequence has a historical UniProt annotation for translation regulator activity, assigned by InterPro (computational evidence). Its record also describes a ribosome-associated protein and reports regulation of gene expression, though those facts do not independently establish the precise molecular-function term experimentally.
-
-Citations as saved: [H3](#evidence-h3), [H5](#evidence-h5), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The WD-repeat-rich sequence may suggest a protein-interaction scaffold, but that does not meaningfully distinguish translation regulation from other regulatory or binding functions among the options.
-
-
-**Missing item-specific fact**
-
-> The identity-specific InterPro/GO annotation linking this sequence to translation regulator activity, or equivalent protein-specific functional evidence.
-
-
-**Reason**
-
-> The sequence and choices alone provide no sufficiently diagnostic feature for the specific regulatory role; recognizing the protein or consulting its annotation supplies the distinguishing fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> D is the best-supported listed choice. The experimental evidence described is broader than translation regulation, but no other option is supported by the supplied reviewer evidence.
-
-
-### Important caveats
-
-- The GO assignment is computational (IEA:InterPro), not direct experimental evidence for the molecular-function term.
-- The sequence matches historical and current UniProt records, but the original author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The WD-repeat-rich sequence may suggest a protein-interaction scaffold, but that does not meaningfully distinguish translation regulation from other regulatory or binding functions among the options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity-specific InterPro/GO annotation linking this sequence to translation regulator activity, or equivalent protein-specific functional evidence.",
-    "reason": "The sequence and choices alone provide no sufficiently diagnostic feature for the specific regulatory role; recognizing the protein or consulting its annotation supplies the distinguishing fact."
-  },
-  "case_id": "GO_molecular_function_0130",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "H5",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-match sequence has a historical UniProt annotation for translation regulator activity, assigned by InterPro (computational evidence). Its record also describes a ribosome-associated protein and reports regulation of gene expression, though those facts do not independently establish the precise molecular-function term experimentally."
-  },
-  "important_caveats": [
-    "The GO assignment is computational (IEA:InterPro), not direct experimental evidence for the molecular-function term.",
-    "The sequence matches historical and current UniProt records, but the original author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "D is the best-supported listed choice. The experimental evidence described is broader than translation regulation, but no other option is supported by the supplied reviewer evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0130",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-match sequence has a historical UniProt annotation for translation regulator activity, assigned by InterPro (computational evidence). Its record also describes a ribosome-associated protein and reports regulation of gene expression, though those facts do not independently establish the precise molecular-function term experimentally.",
-    "evidence_ids": ["H3", "H5", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The WD-repeat-rich sequence may suggest a protein-interaction scaffold, but that does not meaningfully distinguish translation regulation from other regulatory or binding functions among the options.",
-    "missing_item_specific_fact": "The identity-specific InterPro/GO annotation linking this sequence to translation regulator activity, or equivalent protein-specific functional evidence.",
-    "reason": "The sequence and choices alone provide no sufficiently diagnostic feature for the specific regulatory role; recognizing the protein or consulting its annotation supplies the distinguishing fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "D is the best-supported listed choice. The experimental evidence described is broader than translation regulation, but no other option is supported by the supplied reviewer evidence."
-  },
-  "important_caveats": [
-    "The GO assignment is computational (IEA:InterPro), not direct experimental evidence for the molecular-function term.",
-    "The sequence matches historical and current UniProt records, but the original author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A223GEB2 (CPC2_FLAVE, Cross-pathway control WD-repeat protein 2 from Flammulina velutipes) carries GO:0045182 (translation regulator activity) as an IEA:InterPro annotation (evidence C7/H5). The protein is annotated as a ribosomal component (C5/H3), and the GO term definition covers functions involved in regulation of polypeptide synthesis at the ribosome. The annotation is computationally inferred (IEA:InterPro) rather than experimentally validated; the experimental evidence (PubMed:32273873) documents developmental gene regulation, not direct translation-regulation assays. Nonetheless, the annotation is present in the database and is consistent with the protein's described role as a ribosomal subunit component.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains multiple tandem WD40 repeats (recurring 'TD…GH…SD…LW…G…H…SD…LS…S' motifs forming a beta-propeller scaffold). WD40 domains are protein-protein interaction scaffolds, not catalytic or glycan-binding modules. This is incompatible with aspartic-type endopeptidase activity (which requires a DTG motif and catalytic Asp dyad), glycosaminoglycan binding (which requires clusters of basic residues in specific binding motifs), and phosphoglycolate phosphatase activity (which requires dedicated catalytic residues). By elimination of these three mechanistically incompatible options, the remaining choice—translation regulator activity, a general regulatory/scaffold function—is the only one consistent with a WD40 repeat protein.
-
-
-**Missing item-specific fact**
-
-> Positive identification as specifically a 'translation regulator' (rather than, e.g., a signal-transduction or chromatin-remodeling WD40 scaffold) would require knowing this protein is a ribosomal subunit component. However, because the other three options are mechanistically excluded by the WD40 fold, elimination alone suffices to select D among the given choices.
-
-
-**Reason**
-
-> A model can reason from the WD40 repeat architecture to exclude options A, B, and C on mechanistic grounds (no catalytic Asp dyad, no basic GAG-binding motifs, no phosphatase active-site residues). Option D is the sole remaining compatible choice. The reasoning does not require memorizing this specific protein's UniProt entry, though confirming the 'translation' specificity (as opposed to other regulatory roles) benefits from knowing it is a ribosomal component.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and C are mechanistically incompatible with a WD40 beta-propeller scaffold. Option D is the only remaining choice. While 'ribosome binding' (GO:0043022) might be a more precise GO term for a structural ribosomal component, it is not among the options, so no ambiguity arises within the given set.
-
-
-### Important caveats
-
-- The GO:0045182 annotation is IEA:InterPro (computationally inferred from domain match), not experimentally validated. The experimental study (PubMed:32273873) characterizes developmental gene regulation, not direct translation-regulation assays.
-- The protein is described as a 'component of the ribosome'; GO:0043022 (ribosome binding) is also annotated. The distinction between 'ribosome binding' and 'translation regulator activity' is subtle and neither term is perfectly precise for a structural ribosomal subunit.
-- The positive assignment to 'translation regulator' specifically (rather than another regulatory role common to WD40 proteins) relies on elimination of the other three options rather than direct positive evidence from the sequence alone.
-- The sequence is 315 aa and matches the UniProt canonical entry exactly (SHA-256 confirmed).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains multiple tandem WD40 repeats (recurring 'TD…GH…SD…LW…G…H…SD…LS…S' motifs forming a beta-propeller scaffold). WD40 domains are protein-protein interaction scaffolds, not catalytic or glycan-binding modules. This is incompatible with aspartic-type endopeptidase activity (which requires a DTG motif and catalytic Asp dyad), glycosaminoglycan binding (which requires clusters of basic residues in specific binding motifs), and phosphoglycolate phosphatase activity (which requires dedicated catalytic residues). By elimination of these three mechanistically incompatible options, the remaining choice—translation regulator activity, a general regulatory/scaffold function—is the only one consistent with a WD40 repeat protein.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Positive identification as specifically a 'translation regulator' (rather than, e.g., a signal-transduction or chromatin-remodeling WD40 scaffold) would require knowing this protein is a ribosomal subunit component. However, because the other three options are mechanistically excluded by the WD40 fold, elimination alone suffices to select D among the given choices.",
-    "reason": "A model can reason from the WD40 repeat architecture to exclude options A, B, and C on mechanistic grounds (no catalytic Asp dyad, no basic GAG-binding motifs, no phosphatase active-site residues). Option D is the sole remaining compatible choice. The reasoning does not require memorizing this specific protein's UniProt entry, though confirming the 'translation' specificity (as opposed to other regulatory roles) benefits from knowing it is a ribosomal component."
-  },
-  "case_id": "GO_molecular_function_0130",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A223GEB2 (CPC2_FLAVE, Cross-pathway control WD-repeat protein 2 from Flammulina velutipes) carries GO:0045182 (translation regulator activity) as an IEA:InterPro annotation (evidence C7/H5). The protein is annotated as a ribosomal component (C5/H3), and the GO term definition covers functions involved in regulation of polypeptide synthesis at the ribosome. The annotation is computationally inferred (IEA:InterPro) rather than experimentally validated; the experimental evidence (PubMed:32273873) documents developmental gene regulation, not direct translation-regulation assays. Nonetheless, the annotation is present in the database and is consistent with the protein's described role as a ribosomal subunit component."
-  },
-  "important_caveats": [
-    "The GO:0045182 annotation is IEA:InterPro (computationally inferred from domain match), not experimentally validated. The experimental study (PubMed:32273873) characterizes developmental gene regulation, not direct translation-regulation assays.",
-    "The protein is described as a 'component of the ribosome'; GO:0043022 (ribosome binding) is also annotated. The distinction between 'ribosome binding' and 'translation regulator activity' is subtle and neither term is perfectly precise for a structural ribosomal subunit.",
-    "The positive assignment to 'translation regulator' specifically (rather than another regulatory role common to WD40 proteins) relies on elimination of the other three options rather than direct positive evidence from the sequence alone.",
-    "The sequence is 315 aa and matches the UniProt canonical entry exactly (SHA-256 confirmed)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C are mechanistically incompatible with a WD40 beta-propeller scaffold. Option D is the only remaining choice. While 'ribosome binding' (GO:0043022) might be a more precise GO term for a structural ribosomal component, it is not among the options, so no ambiguity arises within the given set."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0130",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A223GEB2 (CPC2_FLAVE, Cross-pathway control WD-repeat protein 2 from Flammulina velutipes) carries GO:0045182 (translation regulator activity) as an IEA:InterPro annotation (evidence C7/H5). The protein is annotated as a ribosomal component (C5/H3), and the GO term definition covers functions involved in regulation of polypeptide synthesis at the ribosome. The annotation is computationally inferred (IEA:InterPro) rather than experimentally validated; the experimental evidence (PubMed:32273873) documents developmental gene regulation, not direct translation-regulation assays. Nonetheless, the annotation is present in the database and is consistent with the protein's described role as a ribosomal subunit component.",
-    "evidence_ids": ["C5", "C6", "C7", "H3", "H4", "H5", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains multiple tandem WD40 repeats (recurring 'TD…GH…SD…LW…G…H…SD…LS…S' motifs forming a beta-propeller scaffold). WD40 domains are protein-protein interaction scaffolds, not catalytic or glycan-binding modules. This is incompatible with aspartic-type endopeptidase activity (which requires a DTG motif and catalytic Asp dyad), glycosaminoglycan binding (which requires clusters of basic residues in specific binding motifs), and phosphoglycolate phosphatase activity (which requires dedicated catalytic residues). By elimination of these three mechanistically incompatible options, the remaining choice—translation regulator activity, a general regulatory/scaffold function—is the only one consistent with a WD40 repeat protein.",
-    "missing_item_specific_fact": "Positive identification as specifically a 'translation regulator' (rather than, e.g., a signal-transduction or chromatin-remodeling WD40 scaffold) would require knowing this protein is a ribosomal subunit component. However, because the other three options are mechanistically excluded by the WD40 fold, elimination alone suffices to select D among the given choices.",
-    "reason": "A model can reason from the WD40 repeat architecture to exclude options A, B, and C on mechanistic grounds (no catalytic Asp dyad, no basic GAG-binding motifs, no phosphatase active-site residues). Option D is the sole remaining compatible choice. The reasoning does not require memorizing this specific protein's UniProt entry, though confirming the 'translation' specificity (as opposed to other regulatory roles) benefits from knowing it is a ribosomal component."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C are mechanistically incompatible with a WD40 beta-propeller scaffold. Option D is the only remaining choice. While 'ribosome binding' (GO:0043022) might be a more precise GO term for a structural ribosomal component, it is not among the options, so no ambiguity arises within the given set."
-  },
-  "important_caveats": [
-    "The GO:0045182 annotation is IEA:InterPro (computationally inferred from domain match), not experimentally validated. The experimental study (PubMed:32273873) characterizes developmental gene regulation, not direct translation-regulation assays.",
-    "The protein is described as a 'component of the ribosome'; GO:0043022 (ribosome binding) is also annotated. The distinction between 'ribosome binding' and 'translation regulator activity' is subtle and neither term is perfectly precise for a structural ribosomal subunit.",
-    "The positive assignment to 'translation regulator' specifically (rather than another regulatory role common to WD40 proteins) relies on elimination of the other three options rather than direct positive evidence from the sequence alone.",
-    "The sequence is 315 aa and matches the UniProt canonical entry exactly (SHA-256 confirmed)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A223GEB2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d3baf37b83300da4d76fe26c43b8f9d51ac1b0b73b08def9479ca54c6a46ba37",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 315,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d3baf37b83300da4d76fe26c43b8f9d51ac1b0b73b08def9479ca54c6a46ba37",
   "current_entry_audit": {
     "entryVersion": 19,
     "firstPublicDate": "2025-06-18",
@@ -536,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-10-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "current_source_sequence_sha256": "d3baf37b83300da4d76fe26c43b8f9d51ac1b0b73b08def9479ca54c6a46ba37",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 315,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d3baf37b83300da4d76fe26c43b8f9d51ac1b0b73b08def9479ca54c6a46ba37",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 18,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A223GEB2",
   "selected_historical_entry_version": 18,
+  "selected_historical_record_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
+  "selected_historical_source_sequence_length": 315,
+  "selected_historical_source_sequence_sha256": "d3baf37b83300da4d76fe26c43b8f9d51ac1b0b73b08def9479ca54c6a46ba37",
   "selected_historical_version": {
     "accession": "A0A223GEB2",
     "database": "Swiss-Prot",
@@ -554,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "CPC2_FLAVE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
-  "selected_historical_source_sequence_sha256": "d3baf37b83300da4d76fe26c43b8f9d51ac1b0b73b08def9479ca54c6a46ba37",
-  "selected_historical_source_sequence_length": 315,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 18,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -589,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A223GEB2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -608,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":19,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-10-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -627,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Agaricus velutipes\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Basidiomycota\",\"Agaricomycotina\",\"Agaricomycetes\",\"Agaricomycetidae\",\"Agaricales\",\"Marasmiineae\",\"Physalacriaceae\",\"Flammulina\"],\"scientificName\":\"Flammulina velutipes\",\"taxonId\":38945}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -646,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32273873\",\"source\":\"PubMed\"}],\"value\":\"Cross-pathway control WD-repeat protein 2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -665,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q01369\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32273873\",\"source\":\"PubMed\"}],\"value\":\"Component of the ribosome, a large ribonucleoprotein complex responsible for the synthesis of proteins in the cell. The small ribosomal subunit (SSU) binds messenger RNAs (mRNAs) and translates the encoded message by selecting cognate aminoacyl-transfer RNA (tRNA) molecules. The large subunit (LSU) contains the ribosomal catalytic site termed the peptidyl transferase center (PTC), which catalyzes the formation of peptide bonds, thereby polymerizing the amino acids delivered by tRNAs into a polypeptide chain. The nascent polypeptides leave the ribosome through a tunnel in the LSU and interact with protein factors that function in enzymatic processing, targeting, and the membrane insertion of nascent chains at the exit of the ribosomal tunnel (By similarity). Plays in important role in the regulation of vegetative growth and fruiting body development (PubMed:32273873). Especially, positively regulates the expression of genes involved in fruiting body development such as FVFD30 and FVFD16, as well as genes encoding for lectins and hydrophobins (PubMed:32273873). Also regulates the expression of genes involved in cAMP signaling pathway (PubMed:32273873)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -684,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/3",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0043022\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:ribosome binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/3",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -703,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/4",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0045182\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:translation regulator activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/4",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -722,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json",
-  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
-  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wu T.\",\"Zhang Z.\",\"Hu C.\",\"Zhang L.\",\"Wei S.\",\"Li S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32273873\"},{\"database\":\"DOI\",\"id\":\"10.3389/fmicb.2020.00498\"}],\"citationType\":\"journal article\",\"firstPage\":\"498\",\"id\":\"32273873\",\"journal\":\"Front. Microbiol.\",\"lastPage\":\"498\",\"publicationDate\":\"2020\",\"title\":\"A WD40 Protein Encoding Gene Fvcpc2 Positively Regulates Mushroom Development and Yield in Flammulina velutipes.\",\"volume\":\"11\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"DEVELOPMENTAL STAGE\",\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:24:42.147209+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bff2f48356558647c2396d801380e7284c70fbbee4d4dfc282d68400dcdb751b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223GEB2.json"
 }
 ```
 
@@ -740,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18",
-  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
-  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
-  "source_locator": "lines 1-11",
   "excerpt": "ID   CPC2_FLAVE              Reviewed;         315 AA.\nAC   A0A223GEB2;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-OCT-2017, sequence version 1.\nDT   28-JAN-2026, entry version 18.\nDE   RecName: Full=Cross-pathway control WD-repeat protein 2 {ECO:0000303|PubMed:32273873};\nGN   Name=cpc2 {ECO:0000303|PubMed:32273873};\nOS   Flammulina velutipes (Agaricus velutipes).\nOC   Eukaryota; Fungi; Dikarya; Basidiomycota; Agaricomycotina; Agaricomycetes;\nOC   Agaricomycetidae; Agaricales; Marasmiineae; Physalacriaceae; Flammulina.\nOX   NCBI_TaxID=38945;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-11",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
+  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18"
 }
 ```
 
@@ -761,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18",
-  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
-  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
-  "source_locator": "lines 12-19",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], DEVELOPMENTAL STAGE, FUNCTION, AND\nRP   DISRUPTION PHENOTYPE.\nRX   PubMed=32273873; DOI=10.3389/fmicb.2020.00498;\nRA   Wu T., Zhang Z., Hu C., Zhang L., Wei S., Li S.;\nRT   \"A WD40 Protein Encoding Gene Fvcpc2 Positively Regulates Mushroom\nRT   Development and Yield in Flammulina velutipes.\";\nRL   Front. Microbiol. 11:498-498(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 12-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
+  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18"
 }
 ```
 
@@ -782,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18",
-  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
-  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
-  "source_locator": "lines 20-38",
   "excerpt": "CC   -!- FUNCTION: Component of the ribosome, a large ribonucleoprotein complex\nCC       responsible for the synthesis of proteins in the cell. The small\nCC       ribosomal subunit (SSU) binds messenger RNAs (mRNAs) and translates the\nCC       encoded message by selecting cognate aminoacyl-transfer RNA (tRNA)\nCC       molecules. The large subunit (LSU) contains the ribosomal catalytic\nCC       site termed the peptidyl transferase center (PTC), which catalyzes the\nCC       formation of peptide bonds, thereby polymerizing the amino acids\nCC       delivered by tRNAs into a polypeptide chain. The nascent polypeptides\nCC       leave the ribosome through a tunnel in the LSU and interact with\nCC       protein factors that function in enzymatic processing, targeting, and\nCC       the membrane insertion of nascent chains at the exit of the ribosomal\nCC       tunnel (By similarity). Plays in important role in the regulation of\nCC       vegetative growth and fruiting body development (PubMed:32273873).\nCC       Especially, positively regulates the expression of genes involved in\nCC       fruiting body development such as FVFD30 and FVFD16, as well as genes\nCC       encoding for lectins and hydrophobins (PubMed:32273873). Also regulates\nCC       the expression of genes involved in cAMP signaling pathway\nCC       (PubMed:32273873). {ECO:0000250|UniProtKB:Q01369,\nCC       ECO:0000269|PubMed:32273873}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
+  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18"
 }
 ```
 
@@ -803,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18",
-  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
-  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
-  "source_locator": "lines 60-60",
   "excerpt": "DR   GO; GO:0043022; F:ribosome binding; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 60-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
+  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18"
 }
 ```
 
@@ -824,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18",
-  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
-  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
-  "source_locator": "lines 61-61",
   "excerpt": "DR   GO; GO:0045182; F:translation regulator activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:24:43.872451+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08b21d0de3ba4039cd1c346641d0bdb62523c8a44c63067352d57b9a47ef9174",
+  "url": "https://rest.uniprot.org/unisave/A0A223GEB2?format=txt&versions=18"
 }
 ```
 
@@ -846,15 +604,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 37379-37447",
   "excerpt": "[Term]\nid: GO:0004190\nname: aspartic-type endopeptidase activity\nnamespace: molecular_function\ndef: \"Catalysis of the hydrolysis of internal, alpha-peptide bonds in a polypeptide chain by a mechanism in which a water molecule bound by the side chains of aspartic residues at the active center acts as a nucleophile.\" [ISBN:0198506732]\nsynonym: \"aspartate protease activity\" NARROW [GOC:mah, GOC:vw]\nsynonym: \"aspartic endopeptidase activity\" EXACT []\nsynonym: \"aspartic protease activity\" NARROW []\nsynonym: \"aspartyl protease activity\" NARROW []\nsynonym: \"carboxyl protease activity\" NARROW []\nxref: EC:3.4.23.-\nxref: EC:3.4.23.1\nxref: EC:3.4.23.15\nxref: EC:3.4.23.20\nxref: EC:3.4.23.25\nxref: EC:3.4.23.32\nxref: EC:3.4.23.34\nxref: EC:3.4.23.35\nxref: EC:3.4.23.36\nxref: EC:3.4.23.4\nxref: EC:3.4.23.43\nxref: EC:3.4.23.49\nxref: EC:3.4.23.5\nxref: MetaCyc:3.4.23.1-RXN\nxref: MetaCyc:3.4.23.15-RXN\nxref: MetaCyc:3.4.23.20-RXN\nxref: MetaCyc:3.4.23.25-RXN\nxref: MetaCyc:3.4.23.32-RXN\nxref: MetaCyc:3.4.23.34-RXN\nxref: MetaCyc:3.4.23.35-RXN\nxref: MetaCyc:3.4.23.4-RXN\nxref: MetaCyc:3.4.23.43-RXN\nxref: MetaCyc:3.4.23.5-RXN\nxref: Reactome:R-HSA-157353 \"NEXT1 is cleaved to produce NICD1\"\nxref: Reactome:R-HSA-157640 \"NEXT2 is cleaved to produce NICD2\"\nxref: Reactome:R-HSA-2022403 \"Renin:Prorenin Receptor hydrolyzes Angiotensinogen to AGT(25-34) (Angiotensin-(1-10))\"\nxref: Reactome:R-HSA-2022412 \"Renin hydrolyzes Angiotensinogen to AGT(25-34) (Angiotensin-(1-10))\"\nxref: Reactome:R-HSA-2065357 \"Prorenin:Prorenin Receptor hydrolyzes Angiotensinogen to AGT(25-35) (Angiotensin-(1-10))\"\nxref: Reactome:R-HSA-2220988 \"NEXT1 PEST domain mutants are cleaved to produce NICD1 PEST domain mutants\"\nxref: Reactome:R-HSA-373705 \"Caspase cleavage of DCC\"\nxref: Reactome:R-HSA-9013361 \"NEXT3 is cleaved to produce NICD3\"\nxref: Reactome:R-HSA-9017817 \"Gamma-secretase cleaves YBX1:NOTCH3\"\nxref: Reactome:R-HSA-9604294 \"Gamma-secretase cleaves NOTCH4\"\nis_a: GO:0004175 ! endopeptidase activity\nis_a: GO:0070001 ! aspartic-type peptidase activity\nproperty_value: skos:exactMatch EC:3.4.23.-\nproperty_value: skos:narrowMatch EC:3.4.23.1\nproperty_value: skos:narrowMatch EC:3.4.23.15\nproperty_value: skos:narrowMatch EC:3.4.23.20\nproperty_value: skos:narrowMatch EC:3.4.23.25\nproperty_value: skos:narrowMatch EC:3.4.23.32\nproperty_value: skos:narrowMatch EC:3.4.23.34\nproperty_value: skos:narrowMatch EC:3.4.23.35\nproperty_value: skos:narrowMatch EC:3.4.23.36\nproperty_value: skos:narrowMatch EC:3.4.23.4\nproperty_value: skos:narrowMatch EC:3.4.23.43\nproperty_value: skos:narrowMatch EC:3.4.23.49\nproperty_value: skos:narrowMatch EC:3.4.23.5\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.1-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.15-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.20-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.25-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.32-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.34-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.35-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.4-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.43-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.5-RXN\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004190",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 37379-37447",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004190"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -865,15 +623,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 57150-57157",
   "excerpt": "[Term]\nid: GO:0005539\nname: glycosaminoglycan binding\nnamespace: molecular_function\ndef: \"Binding to a glycan (polysaccharide) containing a substantial proportion of aminomonosaccharide residues.\" [GOC:jl, ISBN:0198506732]\nsubset: goslim_chembl\nis_a: GO:0097367 ! carbohydrate derivative binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005539",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 57150-57157",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005539"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -884,15 +642,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 90815-90832",
   "excerpt": "[Term]\nid: GO:0008967\nname: phosphoglycolate phosphatase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: 2-phosphoglycolate + H2O = glycolate + phosphate.\" [EC:3.1.3.18, RHEA:14369]\nsynonym: \"2-phosphoglycolate phosphatase activity\" RELATED [EC:3.1.3.18]\nsynonym: \"2-phosphoglycolate phosphohydrolase activity\" RELATED [EC:3.1.3.18]\nsynonym: \"P-glycolate phosphatase activity\" RELATED [EC:3.1.3.18]\nsynonym: \"phosphoglycolate hydrolase activity\" RELATED [EC:3.1.3.18]\nsynonym: \"phosphoglycollate phosphatase activity\" RELATED [EC:3.1.3.18]\nxref: EC:3.1.3.18\nxref: KEGG_REACTION:R01334\nxref: MetaCyc:GPH-RXN\nxref: RHEA:14369\nis_a: GO:0016791 ! phosphatase activity\nproperty_value: skos:exactMatch EC:3.1.3.18\nproperty_value: skos:exactMatch RHEA:14369\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008967",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 90815-90832",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008967"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -903,15 +661,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 262674-262689",
   "excerpt": "[Term]\nid: GO:0045182\nname: translation regulator activity\nnamespace: molecular_function\ndef: \"Any molecular function involved in the regulation of initiation, activation, perpetuation, repression or termination of polypeptide synthesis at the ribosome.\" [GOC:ai]\nsubset: goslim_candida\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nis_a: GO:0003674 ! molecular_function\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045182",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 262674-262689",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045182"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

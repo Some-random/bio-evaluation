@@ -1,18 +1,16 @@
-# motif_position_0000: before and after transfer clarification
+# motif_position_0000
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/motif_position_0000.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/motif_position_0000.txt)
 
 **Task:** `motif_position`  
-**Author key, unchanged:** **D** — 66..75
+**Expected answer:** **D** — 66..75
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,232 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry annotates residues 66..75 as a nuclear export signal. This supports D as a database annotation, though the annotation is transferred by similarity rather than independently established here.
-
-Citations as saved: [H9](#evidence-h9), [C12](#evidence-c12).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Residues 66..75 are leucine-rich and fit a plausible nuclear-export-signal pattern, which makes D a reasonable hypothesis. But the question does not identify the motif being sought, so that pattern alone does not establish that this is the intended annotation.
-
-
-**Missing item-specific fact**
-
-> The identity and annotated coordinates of the intended motif—here, the protein-specific nuclear export signal at 66..75—are not supplied.
-
-
-**Reason**
-
-> Selecting the expected interval ultimately depends on knowing which motif annotation the question targets; sequence pattern recognition offers a clue, not a specified target.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> No motif identity or defining pattern is stated. D has a plausible leucine-rich signal pattern, but the wording does not clarify that this is the motif being asked about.
-
-
-### Important caveats
-
-- The cited UniProt annotation is transferred by similarity (ECO:0000250), not direct experimental evidence in the supplied material.
-- The reviewer-only database evidence was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Residues 66..75 are leucine-rich and fit a plausible nuclear-export-signal pattern, which makes D a reasonable hypothesis. But the question does not identify the motif being sought, so that pattern alone does not establish that this is the intended annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity and annotated coordinates of the intended motif—here, the protein-specific nuclear export signal at 66..75—are not supplied.",
-    "reason": "Selecting the expected interval ultimately depends on knowing which motif annotation the question targets; sequence pattern recognition offers a clue, not a specified target."
-  },
-  "case_id": "motif_position_0000",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H9",
-      "C12"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates residues 66..75 as a nuclear export signal. This supports D as a database annotation, though the annotation is transferred by similarity rather than independently established here."
-  },
-  "important_caveats": [
-    "The cited UniProt annotation is transferred by similarity (ECO:0000250), not direct experimental evidence in the supplied material.",
-    "The reviewer-only database evidence was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No motif identity or defining pattern is stated. D has a plausible leucine-rich signal pattern, but the wording does not clarify that this is the motif being asked about."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "motif_position_0000",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates residues 66..75 as a nuclear export signal. This supports D as a database annotation, though the annotation is transferred by similarity rather than independently established here.",
-    "evidence_ids": ["H9", "C12"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Residues 66..75 are leucine-rich and fit a plausible nuclear-export-signal pattern, which makes D a reasonable hypothesis. But the question does not identify the motif being sought, so that pattern alone does not establish that this is the intended annotation.",
-    "missing_item_specific_fact": "The identity and annotated coordinates of the intended motif—here, the protein-specific nuclear export signal at 66..75—are not supplied.",
-    "reason": "Selecting the expected interval ultimately depends on knowing which motif annotation the question targets; sequence pattern recognition offers a clue, not a specified target."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No motif identity or defining pattern is stated. D has a plausible leucine-rich signal pattern, but the wording does not clarify that this is the motif being asked about."
-  },
-  "important_caveats": [
-    "The cited UniProt annotation is transferred by similarity (ECO:0000250), not direct experimental evidence in the supplied material.",
-    "The reviewer-only database evidence was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A8I6GM68 (rat HDAC6, sequence SHA256 matched) annotates a 'Nuclear export signal' MOTIF at positions 66..75 (evidence C12, H9). The sequence at 66-75 is L-I-V-G-L-Q-G-L-D-L, a leucine-rich pattern consistent with the NES consensus L-x(2,3)-L-x(2,3)-L-x(2,3)-L. The annotation is transferred from mouse HDAC6 (Q9Z2V5) via ECO:0000250, so it is computational transfer rather than direct experimental validation in rat, but the pattern is well-supported by the orthologous experimental data.
-
-Citations as saved: [C12](#evidence-c12), [H9](#evidence-h9), [C1](#evidence-c1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence at positions 66-75 (LIVGLQGLDL) displays a leucine-rich pattern (L-x3-L-x2-L-x1-L) that matches the canonical NES consensus, one of the few motifs identifiable directly from primary sequence. Option B (74-119, 46 residues) is too long for a 'motif' and spans a domain boundary. Option A (972-974, 3 residues) is too short and falls within a disordered region. Option C (227-237, FNHLAVAARYA) lacks a recognizable short consensus pattern. Thus the leucine-rich NES pattern at 66-75 is the most identifiable motif from sequence alone.
-
-
-**Missing item-specific fact**
-
-> The question does not specify which motif type to locate (NES, catalytic, zinc finger, etc.). A model must infer from the sequence that the leucine-rich NES is the intended 'conserved motif' rather than relying on the UniProt 'MOTIF' feature type label.
-
-
-**Reason**
-
-> The leucine-rich NES consensus is genuinely recognizable from primary sequence, and the distractors are eliminable by length (B too long, A too short) or absence of a distinctive short pattern (C). This provides a concrete biological argument for choosing D without requiring memorization of the specific UniProt annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The question says 'the motif' without specifying type, which is imprecise. However, the leucine-rich NES pattern at 66-75 is the only option presenting a clearly identifiable short consensus motif from sequence. The other options are eliminable by length or lack of recognizable pattern, so in practice only D is defensible.
-
-
-### Important caveats
-
-- The NES annotation in rat HDAC6 is transferred by similarity from mouse HDAC6 (Q9Z2V5) via ECO:0000250; it is not independently experimentally validated in the rat protein.
-- The question does not name the motif type (NES), relying on the solver to recognize the leucine-rich pattern from sequence.
-- The spacing in the rat NES (L-x3-L-x2-L-x1-L) deviates slightly from the ideal L-x(2,3)-L-x(2,3)-L-x(2,3)-L consensus, particularly the final x1 spacing, though this is within the tolerance of NES prediction tools.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence at positions 66-75 (LIVGLQGLDL) displays a leucine-rich pattern (L-x3-L-x2-L-x1-L) that matches the canonical NES consensus, one of the few motifs identifiable directly from primary sequence. Option B (74-119, 46 residues) is too long for a 'motif' and spans a domain boundary. Option A (972-974, 3 residues) is too short and falls within a disordered region. Option C (227-237, FNHLAVAARYA) lacks a recognizable short consensus pattern. Thus the leucine-rich NES pattern at 66-75 is the most identifiable motif from sequence alone.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The question does not specify which motif type to locate (NES, catalytic, zinc finger, etc.). A model must infer from the sequence that the leucine-rich NES is the intended 'conserved motif' rather than relying on the UniProt 'MOTIF' feature type label.",
-    "reason": "The leucine-rich NES consensus is genuinely recognizable from primary sequence, and the distractors are eliminable by length (B too long, A too short) or absence of a distinctive short pattern (C). This provides a concrete biological argument for choosing D without requiring memorization of the specific UniProt annotation."
-  },
-  "case_id": "motif_position_0000",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C12",
-      "H9",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A8I6GM68 (rat HDAC6, sequence SHA256 matched) annotates a 'Nuclear export signal' MOTIF at positions 66..75 (evidence C12, H9). The sequence at 66-75 is L-I-V-G-L-Q-G-L-D-L, a leucine-rich pattern consistent with the NES consensus L-x(2,3)-L-x(2,3)-L-x(2,3)-L. The annotation is transferred from mouse HDAC6 (Q9Z2V5) via ECO:0000250, so it is computational transfer rather than direct experimental validation in rat, but the pattern is well-supported by the orthologous experimental data."
-  },
-  "important_caveats": [
-    "The NES annotation in rat HDAC6 is transferred by similarity from mouse HDAC6 (Q9Z2V5) via ECO:0000250; it is not independently experimentally validated in the rat protein.",
-    "The question does not name the motif type (NES), relying on the solver to recognize the leucine-rich pattern from sequence.",
-    "The spacing in the rat NES (L-x3-L-x2-L-x1-L) deviates slightly from the ideal L-x(2,3)-L-x(2,3)-L-x(2,3)-L consensus, particularly the final x1 spacing, though this is within the tolerance of NES prediction tools."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The question says 'the motif' without specifying type, which is imprecise. However, the leucine-rich NES pattern at 66-75 is the only option presenting a clearly identifiable short consensus motif from sequence. The other options are eliminable by length or lack of recognizable pattern, so in practice only D is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "motif_position_0000",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A8I6GM68 (rat HDAC6, sequence SHA256 matched) annotates a 'Nuclear export signal' MOTIF at positions 66..75 (evidence C12, H9). The sequence at 66-75 is L-I-V-G-L-Q-G-L-D-L, a leucine-rich pattern consistent with the NES consensus L-x(2,3)-L-x(2,3)-L-x(2,3)-L. The annotation is transferred from mouse HDAC6 (Q9Z2V5) via ECO:0000250, so it is computational transfer rather than direct experimental validation in rat, but the pattern is well-supported by the orthologous experimental data.",
-    "evidence_ids": ["C12", "H9", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence at positions 66-75 (LIVGLQGLDL) displays a leucine-rich pattern (L-x3-L-x2-L-x1-L) that matches the canonical NES consensus, one of the few motifs identifiable directly from primary sequence. Option B (74-119, 46 residues) is too long for a 'motif' and spans a domain boundary. Option A (972-974, 3 residues) is too short and falls within a disordered region. Option C (227-237, FNHLAVAARYA) lacks a recognizable short consensus pattern. Thus the leucine-rich NES pattern at 66-75 is the most identifiable motif from sequence alone.",
-    "missing_item_specific_fact": "The question does not specify which motif type to locate (NES, catalytic, zinc finger, etc.). A model must infer from the sequence that the leucine-rich NES is the intended 'conserved motif' rather than relying on the UniProt 'MOTIF' feature type label.",
-    "reason": "The leucine-rich NES consensus is genuinely recognizable from primary sequence, and the distractors are eliminable by length (B too long, A too short) or absence of a distinctive short pattern (C). This provides a concrete biological argument for choosing D without requiring memorization of the specific UniProt annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The question says 'the motif' without specifying type, which is imprecise. However, the leucine-rich NES pattern at 66-75 is the only option presenting a clearly identifiable short consensus motif from sequence. The other options are eliminable by length or lack of recognizable pattern, so in practice only D is defensible."
-  },
-  "important_caveats": [
-    "The NES annotation in rat HDAC6 is transferred by similarity from mouse HDAC6 (Q9Z2V5) via ECO:0000250; it is not independently experimentally validated in the rat protein.",
-    "The question does not name the motif type (NES), relying on the solver to recognize the leucine-rich pattern from sequence.",
-    "The spacing in the rat NES (L-x3-L-x2-L-x1-L) deviates slightly from the ideal L-x(2,3)-L-x(2,3)-L-x(2,3)-L consensus, particularly the final x1 spacing, though this is within the tolerance of NES prediction tools."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -378,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -490,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A8I6GM68",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6d9edbee508d7fe58beded1f01767c150bdc6cd16fea4e36bfc8dd392f2beb73",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1183,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6d9edbee508d7fe58beded1f01767c150bdc6cd16fea4e36bfc8dd392f2beb73",
   "current_entry_audit": {
     "entryVersion": 21,
     "firstPublicDate": "2025-04-09",
@@ -521,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2022-05-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "current_source_sequence_sha256": "6d9edbee508d7fe58beded1f01767c150bdc6cd16fea4e36bfc8dd392f2beb73",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1183,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6d9edbee508d7fe58beded1f01767c150bdc6cd16fea4e36bfc8dd392f2beb73",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 19,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A8I6GM68",
   "selected_historical_entry_version": 19,
+  "selected_historical_record_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "selected_historical_source_sequence_length": 1183,
+  "selected_historical_source_sequence_sha256": "6d9edbee508d7fe58beded1f01767c150bdc6cd16fea4e36bfc8dd392f2beb73",
   "selected_historical_version": {
     "accession": "A0A8I6GM68",
     "database": "Swiss-Prot",
@@ -539,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HDAC6_RAT",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "selected_historical_source_sequence_sha256": "6d9edbee508d7fe58beded1f01767c150bdc6cd16fea4e36bfc8dd392f2beb73",
-  "selected_historical_source_sequence_length": 1183,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 19,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -570,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A8I6GM68\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -589,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":21,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2022-05-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -608,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rat\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000002494\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Rattus\"],\"scientificName\":\"Rattus norvegicus\",\"taxonId\":10116}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -627,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9UBN7\",\"source\":\"UniProtKB\"}],\"value\":\"2.3.2.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"E3 ubiquitin-protein ligase HDAC6\"}},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9UBN7\",\"source\":\"UniProtKB\"}],\"value\":\"3.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Tubulin-lysine deacetylase HDAC6\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9UBN7\",\"source\":\"UniProtKB\"}],\"value\":\"3.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Protein deacetylase HDAC6\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -646,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"UBP-type\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00502\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":1177},\"start\":{\"modifier\":\"EXACT\",\"value\":1079}},\"type\":\"Zinc finger\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -665,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Disordered\",\"evidences\":[{\"evidenceCode\":\"ECO:0000256\",\"id\":\"MobiDB-lite\",\"source\":\"SAM\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":61},\"start\":{\"modifier\":\"EXACT\",\"value\":1}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -684,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Histone deacetylase 1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":434},\"start\":{\"modifier\":\"EXACT\",\"value\":86}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -703,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Histone deacetylase 2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":830},\"start\":{\"modifier\":\"EXACT\",\"value\":512}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -722,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Disordered\",\"evidences\":[{\"evidenceCode\":\"ECO:0000256\",\"id\":\"MobiDB-lite\",\"source\":\"SAM\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":1042},\"start\":{\"modifier\":\"EXACT\",\"value\":972}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -741,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Ubiquitin binding\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9UBN7\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":1124},\"start\":{\"modifier\":\"EXACT\",\"value\":1122}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -760,15 +526,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"Ubiquitin binding\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9UBN7\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":1157},\"start\":{\"modifier\":\"EXACT\",\"value\":1150}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -779,15 +545,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json",
-  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
-  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"Nuclear export signal\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9Z2V5\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":75},\"start\":{\"modifier\":\"EXACT\",\"value\":66}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:26:02.236008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9141e1d535119088234545225bc4ad0ed1a2b60ab7625fd7b063733a1ed106d1",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GM68.json"
 }
 ```
 
@@ -797,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   HDAC6_RAT               Reviewed;        1183 AA.\nAC   A0A8I6GM68;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-MAY-2022, sequence version 1.\nDT   28-JAN-2026, entry version 19.\nDE   RecName: Full=Protein deacetylase HDAC6 {ECO:0000305};\nDE            EC=3.5.1.- {ECO:0000250|UniProtKB:Q9UBN7};\nDE   AltName: Full=E3 ubiquitin-protein ligase HDAC6 {ECO:0000305};\nDE            EC=2.3.2.- {ECO:0000250|UniProtKB:Q9UBN7};\nDE   AltName: Full=Tubulin-lysine deacetylase HDAC6 {ECO:0000305};\nDE            EC=3.5.1.- {ECO:0000250|UniProtKB:Q9UBN7};\nGN   Name=Hdac6 {ECO:0000312|RGD:619981};\nOS   Rattus norvegicus (Rat).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Rattus.\nOX   NCBI_TaxID=10116 {ECO:0000312|Proteomes:UP000002494};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -818,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 330-332",
   "excerpt": "FT   ZN_FING         1079..1177\nFT                   /note=\"UBP-type\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00502\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 330-332",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -839,18 +605,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 333-335",
   "excerpt": "FT   REGION          1..61\nFT                   /note=\"Disordered\"\nFT                   /evidence=\"ECO:0000256|SAM:MobiDB-lite\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 333-335",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -860,18 +626,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 336-338",
   "excerpt": "FT   REGION          86..434\nFT                   /note=\"Histone deacetylase 1\"\nFT                   /evidence=\"ECO:0000305\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 336-338",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -881,18 +647,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 339-341",
   "excerpt": "FT   REGION          512..830\nFT                   /note=\"Histone deacetylase 2\"\nFT                   /evidence=\"ECO:0000305\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 339-341",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -902,18 +668,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 342-344",
   "excerpt": "FT   REGION          972..1042\nFT                   /note=\"Disordered\"\nFT                   /evidence=\"ECO:0000256|SAM:MobiDB-lite\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 342-344",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -923,18 +689,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 345-347",
   "excerpt": "FT   REGION          1122..1124\nFT                   /note=\"Ubiquitin binding\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9UBN7\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 345-347",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -944,18 +710,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 348-350",
   "excerpt": "FT   REGION          1150..1157\nFT                   /note=\"Ubiquitin binding\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9UBN7\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 348-350",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 
@@ -965,18 +731,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19",
-  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
-  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
-  "source_locator": "lines 351-353",
   "excerpt": "FT   MOTIF           66..75\nFT                   /note=\"Nuclear export signal\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9Z2V5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:04.375301+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 351-353",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "58fcde5c33fd6fa5c1e7ab9aba45d973ba90d90a0d5f4aec75b9a9719bb48c50",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GM68?format=txt&versions=19"
 }
 ```
 

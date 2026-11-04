@@ -1,18 +1,16 @@
-# cofactor_0043: before and after transfer clarification
+# cofactor_0043
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0043.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0043.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — pantetheine 4&#x27;-phosphate
+**Expected answer:** **C** — pantetheine 4&#x27;-phosphate
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated with pantetheine 4'-phosphate as a cofactor. The annotation is computational, based on a PROSITE-ProRule, rather than direct experimental evidence in the supplied excerpts.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide clear, readily interpretable evidence that distinguishes pantetheine 4'-phosphate from the other listed cofactors; doing so requires identifying its specific protein function or domain features.
-
-
-**Missing item-specific fact**
-
-> The sequence's association with FrzA and the annotation of a phosphopantetheine-bearing carrier-protein feature are not stated in the question.
-
-
-**Reason**
-
-> The correct choice is supported by a sequence-matched protein annotation, but the input supplies no functional or domain context that makes this specific cofactor inferable by general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available evidence specifically supports choice C; it does not establish another listed option as an alternative answer.
-
-
-### Important caveats
-
-- The cofactor annotation is computational (PROSITE-ProRule), not direct experimental confirmation in the supplied evidence.
-- The sequence match is exact in both the current and archived UniProt records; the record's cofactor annotation should not be mistaken for information supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide clear, readily interpretable evidence that distinguishes pantetheine 4'-phosphate from the other listed cofactors; doing so requires identifying its specific protein function or domain features.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's association with FrzA and the annotation of a phosphopantetheine-bearing carrier-protein feature are not stated in the question.",
-    "reason": "The correct choice is supported by a sequence-matched protein annotation, but the input supplies no functional or domain context that makes this specific cofactor inferable by general biological reasoning."
-  },
-  "case_id": "cofactor_0043",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with pantetheine 4'-phosphate as a cofactor. The annotation is computational, based on a PROSITE-ProRule, rather than direct experimental evidence in the supplied excerpts."
-  },
-  "important_caveats": [
-    "The cofactor annotation is computational (PROSITE-ProRule), not direct experimental confirmation in the supplied evidence.",
-    "The sequence match is exact in both the current and archived UniProt records; the record's cofactor annotation should not be mistaken for information supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available evidence specifically supports choice C; it does not establish another listed option as an alternative answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0043",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with pantetheine 4'-phosphate as a cofactor. The annotation is computational, based on a PROSITE-ProRule, rather than direct experimental evidence in the supplied excerpts.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide clear, readily interpretable evidence that distinguishes pantetheine 4'-phosphate from the other listed cofactors; doing so requires identifying its specific protein function or domain features.",
-    "missing_item_specific_fact": "The sequence's association with FrzA and the annotation of a phosphopantetheine-bearing carrier-protein feature are not stated in the question.",
-    "reason": "The correct choice is supported by a sequence-matched protein annotation, but the input supplies no functional or domain context that makes this specific cofactor inferable by general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available evidence specifically supports choice C; it does not establish another listed option as an alternative answer."
-  },
-  "important_caveats": [
-    "The cofactor annotation is computational (PROSITE-ProRule), not direct experimental confirmation in the supplied evidence.",
-    "The sequence match is exact in both the current and archived UniProt records; the record's cofactor annotation should not be mistaken for information supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A7T8F1L4 (sequence matched, 1024 aa) annotates the cofactor as pantetheine 4'-phosphate (ChEBI:CHEBI:47942) with evidence code ECO:0000255|PROSITE-ProRule:PRU00258. The protein is a non-canonical nonribosomal peptide synthetase (FrzA, EC 1.2.1.101) from Cladobotryum sp. NRPS enzymes universally require pantetheine 4'-phosphate as the phosphopantetheinyl prosthetic group on the peptidyl carrier protein (PCP/T) domain. While the annotation evidence is computational (PROSITE pattern matching), the biological rationale is well-established general biochemistry for NRPS enzymes.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable NRPS multi-domain architecture signatures: (1) an adenylation (A) domain motif region including 'GDEGGESDQGELWIGGPGVSPGYFRQ' with the characteristic GGPG/A7 motif; (2) a condensation (C) domain motif 'GGTGFVGAFLL' with the classic C-domain glycine-rich flanking; (3) a PCP/thiolation (T) domain motif 'GGSCAPMDPT' containing the conserved serine in a GxxS context that serves as the phosphopantetheinylation site. NRPS enzymes universally require pantetheine 4'-phosphate covalently attached to the T-domain serine to carry activated amino acid intermediates. The distractors (Mg2+, NAD+, Fe2+) are common cofactors for other enzyme classes (kinases, dehydrogenases, oxygenases respectively) and are not associated with NRPS catalytic mechanisms.
-
-
-**Missing item-specific fact**
-
-> None critical. Recognition of the NRPS domain architecture from sequence motifs and the general biochemical fact that NRPS enzymes require pantetheine 4'-phosphate are both within the scope of general enzymology knowledge.
-
-
-**Reason**
-
-> A model with knowledge of NRPS domain architecture can identify the A, C, and T domain motifs in the sequence, conclude the protein is a nonribosomal peptide synthetase, and apply the well-known general fact that NRPS enzymes require pantetheine 4'-phosphate as their defining prosthetic group. This does not require recalling a specific database entry for FrzA.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The distractors Mg2+, NAD+, and Fe2+ are not cofactors of NRPS enzymes. Pantetheine 4'-phosphate is the unique and defining cofactor/prosthetic group of the thiolation domain in NRPS systems. No other listed option is defensible for an NRPS.
-
-
-### Important caveats
-
-- The UniProt cofactor annotation uses ECO:0000255 (PROSITE-ProRule computational inference), not direct experimental measurement of phosphopantetheinylation on this specific protein. However, the NRPS-cofactor relationship is textbook biochemistry.
-- The protein is described as 'non-canonical' NRPS (EC 1.2.1.101, an aldehyde reductase-like function), but the presence of T-domain motifs and the PROSITE annotation still support pantetheine 4'-phosphate as the cofactor.
-- Identification of NRPS domain motifs from raw sequence requires specialized domain-architecture knowledge; a model without this training would likely default to a generic cofactor guess.
-- The sequence is from Cladobotryum sp. (a mycoparasitic fungus), and the protein participates in FR901483 immunosuppressant biosynthesis per the cited 2021 JACS paper.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable NRPS multi-domain architecture signatures: (1) an adenylation (A) domain motif region including 'GDEGGESDQGELWIGGPGVSPGYFRQ' with the characteristic GGPG/A7 motif; (2) a condensation (C) domain motif 'GGTGFVGAFLL' with the classic C-domain glycine-rich flanking; (3) a PCP/thiolation (T) domain motif 'GGSCAPMDPT' containing the conserved serine in a GxxS context that serves as the phosphopantetheinylation site. NRPS enzymes universally require pantetheine 4'-phosphate covalently attached to the T-domain serine to carry activated amino acid intermediates. The distractors (Mg2+, NAD+, Fe2+) are common cofactors for other enzyme classes (kinases, dehydrogenases, oxygenases respectively) and are not associated with NRPS catalytic mechanisms.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. Recognition of the NRPS domain architecture from sequence motifs and the general biochemical fact that NRPS enzymes require pantetheine 4'-phosphate are both within the scope of general enzymology knowledge.",
-    "reason": "A model with knowledge of NRPS domain architecture can identify the A, C, and T domain motifs in the sequence, conclude the protein is a nonribosomal peptide synthetase, and apply the well-known general fact that NRPS enzymes require pantetheine 4'-phosphate as their defining prosthetic group. This does not require recalling a specific database entry for FrzA."
-  },
-  "case_id": "cofactor_0043",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7T8F1L4 (sequence matched, 1024 aa) annotates the cofactor as pantetheine 4'-phosphate (ChEBI:CHEBI:47942) with evidence code ECO:0000255|PROSITE-ProRule:PRU00258. The protein is a non-canonical nonribosomal peptide synthetase (FrzA, EC 1.2.1.101) from Cladobotryum sp. NRPS enzymes universally require pantetheine 4'-phosphate as the phosphopantetheinyl prosthetic group on the peptidyl carrier protein (PCP/T) domain. While the annotation evidence is computational (PROSITE pattern matching), the biological rationale is well-established general biochemistry for NRPS enzymes."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation uses ECO:0000255 (PROSITE-ProRule computational inference), not direct experimental measurement of phosphopantetheinylation on this specific protein. However, the NRPS-cofactor relationship is textbook biochemistry.",
-    "The protein is described as 'non-canonical' NRPS (EC 1.2.1.101, an aldehyde reductase-like function), but the presence of T-domain motifs and the PROSITE annotation still support pantetheine 4'-phosphate as the cofactor.",
-    "Identification of NRPS domain motifs from raw sequence requires specialized domain-architecture knowledge; a model without this training would likely default to a generic cofactor guess.",
-    "The sequence is from Cladobotryum sp. (a mycoparasitic fungus), and the protein participates in FR901483 immunosuppressant biosynthesis per the cited 2021 JACS paper."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors Mg2+, NAD+, and Fe2+ are not cofactors of NRPS enzymes. Pantetheine 4'-phosphate is the unique and defining cofactor/prosthetic group of the thiolation domain in NRPS systems. No other listed option is defensible for an NRPS."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0043",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7T8F1L4 (sequence matched, 1024 aa) annotates the cofactor as pantetheine 4'-phosphate (ChEBI:CHEBI:47942) with evidence code ECO:0000255|PROSITE-ProRule:PRU00258. The protein is a non-canonical nonribosomal peptide synthetase (FrzA, EC 1.2.1.101) from Cladobotryum sp. NRPS enzymes universally require pantetheine 4'-phosphate as the phosphopantetheinyl prosthetic group on the peptidyl carrier protein (PCP/T) domain. While the annotation evidence is computational (PROSITE pattern matching), the biological rationale is well-established general biochemistry for NRPS enzymes.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains recognizable NRPS multi-domain architecture signatures: (1) an adenylation (A) domain motif region including 'GDEGGESDQGELWIGGPGVSPGYFRQ' with the characteristic GGPG/A7 motif; (2) a condensation (C) domain motif 'GGTGFVGAFLL' with the classic C-domain glycine-rich flanking; (3) a PCP/thiolation (T) domain motif 'GGSCAPMDPT' containing the conserved serine in a GxxS context that serves as the phosphopantetheinylation site. NRPS enzymes universally require pantetheine 4'-phosphate covalently attached to the T-domain serine to carry activated amino acid intermediates. The distractors (Mg2+, NAD+, Fe2+) are common cofactors for other enzyme classes (kinases, dehydrogenases, oxygenases respectively) and are not associated with NRPS catalytic mechanisms.",
-    "missing_item_specific_fact": "None critical. Recognition of the NRPS domain architecture from sequence motifs and the general biochemical fact that NRPS enzymes require pantetheine 4'-phosphate are both within the scope of general enzymology knowledge.",
-    "reason": "A model with knowledge of NRPS domain architecture can identify the A, C, and T domain motifs in the sequence, conclude the protein is a nonribosomal peptide synthetase, and apply the well-known general fact that NRPS enzymes require pantetheine 4'-phosphate as their defining prosthetic group. This does not require recalling a specific database entry for FrzA."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors Mg2+, NAD+, and Fe2+ are not cofactors of NRPS enzymes. Pantetheine 4'-phosphate is the unique and defining cofactor/prosthetic group of the thiolation domain in NRPS systems. No other listed option is defensible for an NRPS."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation uses ECO:0000255 (PROSITE-ProRule computational inference), not direct experimental measurement of phosphopantetheinylation on this specific protein. However, the NRPS-cofactor relationship is textbook biochemistry.",
-    "The protein is described as 'non-canonical' NRPS (EC 1.2.1.101, an aldehyde reductase-like function), but the presence of T-domain motifs and the PROSITE annotation still support pantetheine 4'-phosphate as the cofactor.",
-    "Identification of NRPS domain motifs from raw sequence requires specialized domain-architecture knowledge; a model without this training would likely default to a generic cofactor guess.",
-    "The sequence is from Cladobotryum sp. (a mycoparasitic fungus), and the protein participates in FR901483 immunosuppressant biosynthesis per the cited 2021 JACS paper."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7T8F1L4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "78903b102e2259d837b80ac44bcf15e6ae1534722167cff1a23d530bb0db74e0",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1024,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "78903b102e2259d837b80ac44bcf15e6ae1534722167cff1a23d530bb0db74e0",
   "current_entry_audit": {
     "entryVersion": 20,
     "firstPublicDate": "2025-06-18",
@@ -531,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
-  "current_source_sequence_sha256": "78903b102e2259d837b80ac44bcf15e6ae1534722167cff1a23d530bb0db74e0",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1024,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "78903b102e2259d837b80ac44bcf15e6ae1534722167cff1a23d530bb0db74e0",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 18,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7T8F1L4",
   "selected_historical_entry_version": 18,
+  "selected_historical_record_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
+  "selected_historical_source_sequence_length": 1024,
+  "selected_historical_source_sequence_sha256": "78903b102e2259d837b80ac44bcf15e6ae1534722167cff1a23d530bb0db74e0",
   "selected_historical_version": {
     "accession": "A0A7T8F1L4",
     "database": "Swiss-Prot",
@@ -549,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FRZA_CLASX",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
-  "selected_historical_source_sequence_sha256": "78903b102e2259d837b80ac44bcf15e6ae1534722167cff1a23d530bb0db74e0",
-  "selected_historical_source_sequence_length": 1024,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 18,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json",
-  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
-  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7T8F1L4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json"
 }
 ```
 
@@ -599,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json",
-  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
-  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":20,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json"
 }
 ```
 
@@ -618,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json",
-  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
-  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Hypocreaceae\",\"Cladobotryum\"],\"scientificName\":\"Cladobotryum sp\",\"taxonId\":2040732}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json"
 }
 ```
 
@@ -637,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json",
-  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
-  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"FR901483 biosynthesis cluster protein A\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"1.2.1.101\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Non-canonical nonribosomal peptide synthetase FrzA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json"
 }
 ```
 
@@ -656,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json",
-  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
-  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:47942\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00258\",\"source\":\"PROSITE-ProRule\"}],\"name\":\"pantetheine 4'-phosphate\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json"
 }
 ```
 
@@ -675,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json",
-  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
-  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang Z.\",\"Tamura Y.\",\"Tang M.\",\"Qiao T.\",\"Sato M.\",\"Otsu Y.\",\"Sasamura S.\",\"Taniguchi M.\",\"Watanabe K.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33372776\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.0c12352\"}],\"citationType\":\"journal article\",\"firstPage\":\"132\",\"id\":\"33372776\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"136\",\"publicationDate\":\"2021\",\"title\":\"Biosynthesis of the Immunosuppressant (-)-FR901483.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"11231\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:48.509506+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4cf4e4af61e7d91300bdd1c46dcd31d2e7126d4631315e40df3061127135d0fb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L4.json"
 }
 ```
 
@@ -693,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18",
-  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
-  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   FRZA_CLASX              Reviewed;        1024 AA.\nAC   A0A7T8F1L4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 18.\nDE   RecName: Full=Non-canonical nonribosomal peptide synthetase FrzA {ECO:0000303|PubMed:33372776};\nDE            EC=1.2.1.101 {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein A {ECO:0000303|PubMed:33372776};\nGN   Name=FrzA {ECO:0000303|PubMed:33372776};\nOS   Cladobotryum sp.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Hypocreaceae; Cladobotryum.\nOX   NCBI_TaxID=2040732;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18"
 }
 ```
 
@@ -714,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18",
-  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
-  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Non-canonical nonribosomal peptide synthetase FrzA {ECO:0000303|PubMed:33372776};\nDE            EC=1.2.1.101 {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein A {ECO:0000303|PubMed:33372776};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18"
 }
 ```
 
@@ -735,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18",
-  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
-  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
-  "source_locator": "lines 14-22",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, AND\nRP   PATHWAY.\nRC   STRAIN=11231;\nRX   PubMed=33372776; DOI=10.1021/jacs.0c12352;\nRA   Zhang Z., Tamura Y., Tang M., Qiao T., Sato M., Otsu Y., Sasamura S.,\nRA   Taniguchi M., Watanabe K., Tang Y.;\nRT   \"Biosynthesis of the Immunosuppressant (-)-FR901483.\";\nRL   J. Am. Chem. Soc. 143:132-136(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18"
 }
 ```
 
@@ -756,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18",
-  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
-  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
-  "source_locator": "lines 62-64",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=pantetheine 4'-phosphate; Xref=ChEBI:CHEBI:47942;\nCC         Evidence={ECO:0000255|PROSITE-ProRule:PRU00258};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:50.375049+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc244e3d4206d7a97707ec88200b44521e519f3504ebcf6f0cd7d074b3fd2c4b",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L4?format=txt&versions=18"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_cellular_component_0010: before and after transfer clarification
+# GO_cellular_component_0010
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0010.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0010.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — cytosolic small ribosomal subunit
+**Expected answer:** **D** — cytosolic small ribosomal subunit
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches a Thermococcus kodakarensis protein annotated as small ribosomal subunit protein eS19, and the matched record assigns it to the cytosolic small ribosomal subunit. The protein name is supported by a HAMAP rule, and the GO annotation is IBA, so this is computational/phylogenetic annotation rather than direct experimental evidence in the excerpts.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The short, soluble sequence lacks the hydrophobic character expected for a membrane transporter, making the ABC-transporter choice less plausible; its size also makes a checkpoint clamp subunit unlikely. Those broad clues do not specifically distinguish a ribosomal protein from a transcription-related protein.
-
-
-**Missing item-specific fact**
-
-> The sequence's identity or family as archaeal ribosomal protein eS19, or an equivalent protein-specific functional annotation, is not supplied.
-
-
-**Reason**
-
-> Selecting D depends on knowing the protein-specific ribosomal identity. Generic sequence properties can help eliminate some choices but do not establish membership in the small ribosomal subunit over the remaining alternative.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein-specific annotation supports D; the other choices are not comparably supported by the supplied sequence.
-
-
-### Important caveats
-
-- The historical record also matches the sequence, but the author's exact source snapshot is unknown.
-- The cited GO evidence is IBA, and the protein-name evidence is computational; the excerpts do not establish direct experimental localization.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The short, soluble sequence lacks the hydrophobic character expected for a membrane transporter, making the ABC-transporter choice less plausible; its size also makes a checkpoint clamp subunit unlikely. Those broad clues do not specifically distinguish a ribosomal protein from a transcription-related protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's identity or family as archaeal ribosomal protein eS19, or an equivalent protein-specific functional annotation, is not supplied.",
-    "reason": "Selecting D depends on knowing the protein-specific ribosomal identity. Generic sequence properties can help eliminate some choices but do not establish membership in the small ribosomal subunit over the remaining alternative."
-  },
-  "case_id": "GO_cellular_component_0010",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches a Thermococcus kodakarensis protein annotated as small ribosomal subunit protein eS19, and the matched record assigns it to the cytosolic small ribosomal subunit. The protein name is supported by a HAMAP rule, and the GO annotation is IBA, so this is computational/phylogenetic annotation rather than direct experimental evidence in the excerpts."
-  },
-  "important_caveats": [
-    "The historical record also matches the sequence, but the author's exact source snapshot is unknown.",
-    "The cited GO evidence is IBA, and the protein-name evidence is computational; the excerpts do not establish direct experimental localization."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein-specific annotation supports D; the other choices are not comparably supported by the supplied sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0010",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches a Thermococcus kodakarensis protein annotated as small ribosomal subunit protein eS19, and the matched record assigns it to the cytosolic small ribosomal subunit. The protein name is supported by a HAMAP rule, and the GO annotation is IBA, so this is computational/phylogenetic annotation rather than direct experimental evidence in the excerpts.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The short, soluble sequence lacks the hydrophobic character expected for a membrane transporter, making the ABC-transporter choice less plausible; its size also makes a checkpoint clamp subunit unlikely. Those broad clues do not specifically distinguish a ribosomal protein from a transcription-related protein.",
-    "missing_item_specific_fact": "The sequence's identity or family as archaeal ribosomal protein eS19, or an equivalent protein-specific functional annotation, is not supplied.",
-    "reason": "Selecting D depends on knowing the protein-specific ribosomal identity. Generic sequence properties can help eliminate some choices but do not establish membership in the small ribosomal subunit over the remaining alternative."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein-specific annotation supports D; the other choices are not comparably supported by the supplied sequence."
-  },
-  "important_caveats": [
-    "The historical record also matches the sequence, but the author's exact source snapshot is unknown.",
-    "The cited GO evidence is IBA, and the protein-name evidence is computational; the excerpts do not establish direct experimental localization."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence (150 aa, SHA256-matched) corresponds to UniProt Q5JGN5, annotated as 'Small ribosomal subunit protein eS19' (via HAMAP-Rule MF_01474) and carrying GO:0022627 'cytosolic small ribosomal subunit' (evidence IBA:GO_Central). The protein is from Thermococcus kodakarensis, an archaeon whose ribosomes are cytosolic; GO:0022627 includes 'prokaryotic small ribosomal subunit' as a NARROW synonym, making the term appropriate. The evidence codes (HAMAP-Rule, IBA) indicate computational/pattern-based inference rather than direct experimental localization, but the protein identity as a small ribosomal subunit protein is well-established.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 150-aa protein is extremely rich in basic residues (numerous K and R) typical of rRNA-binding ribosomal proteins. It lacks any transmembrane segments or Walker A/B ATP-binding motifs, ruling out ABC transporter complex (A). Its small size (150 aa) is far below the ~300-500+ aa of checkpoint clamp subunits (Rad9/Rad1/Hus1), ruling out (B). No canonical DNA-binding motifs (zinc fingers, helix-turn-helix, leucine zippers) are present, weakening (C). The combination of very small size, high basic-residue density, absence of membrane/ATP/DNA-binding domains, and no signal peptide is most consistent with a cytosolic small ribosomal subunit protein (D).
-
-
-**Missing item-specific fact**
-
-> None critical. The reasoning relies on general structural/functional domain absence and compositional bias rather than recognition of a specific database entry.
-
-
-**Reason**
-
-> A model can eliminate A (no TM/ATP motifs), B (too small for clamp subunits), and partially C (no DNA-binding domains) through general protein-structure knowledge, leaving D as the best fit given the small size and basic-residue enrichment characteristic of ribosomal proteins.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While option C (transcription regulator complex) could superficially be considered for a small basic protein, the absence of any recognizable DNA-binding structural motif and the overall ribosomal-protein-like composition make D clearly the most defensible choice. The other options (A, B) are effectively excluded by size and domain content.
-
-
-### Important caveats
-
-- The GO annotation evidence is IBA:GO_Central (computational inference by biological aspect), not direct experimental localization. The protein name derives from a HAMAP pattern rule, also computational.
-- The protein is archaeal (Thermococcus kodakarensis); 'cytosolic' in GO:0022627 encompasses prokaryotic/archaeal ribosomes per the NARROW synonym 'prokaryotic small ribosomal subunit'.
-- The reasoning argument (basic-residue enrichment, small size, absence of functional domains) is suggestive but not definitive; some small basic proteins are not ribosomal. The elimination logic is the primary discriminator.
-- Identity of the accession Q5JGN5 was inferred by the reviewer from dataset metadata, not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 150-aa protein is extremely rich in basic residues (numerous K and R) typical of rRNA-binding ribosomal proteins. It lacks any transmembrane segments or Walker A/B ATP-binding motifs, ruling out ABC transporter complex (A). Its small size (150 aa) is far below the ~300-500+ aa of checkpoint clamp subunits (Rad9/Rad1/Hus1), ruling out (B). No canonical DNA-binding motifs (zinc fingers, helix-turn-helix, leucine zippers) are present, weakening (C). The combination of very small size, high basic-residue density, absence of membrane/ATP/DNA-binding domains, and no signal peptide is most consistent with a cytosolic small ribosomal subunit protein (D).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The reasoning relies on general structural/functional domain absence and compositional bias rather than recognition of a specific database entry.",
-    "reason": "A model can eliminate A (no TM/ATP motifs), B (too small for clamp subunits), and partially C (no DNA-binding domains) through general protein-structure knowledge, leaving D as the best fit given the small size and basic-residue enrichment characteristic of ribosomal proteins."
-  },
-  "case_id": "GO_cellular_component_0010",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence (150 aa, SHA256-matched) corresponds to UniProt Q5JGN5, annotated as 'Small ribosomal subunit protein eS19' (via HAMAP-Rule MF_01474) and carrying GO:0022627 'cytosolic small ribosomal subunit' (evidence IBA:GO_Central). The protein is from Thermococcus kodakarensis, an archaeon whose ribosomes are cytosolic; GO:0022627 includes 'prokaryotic small ribosomal subunit' as a NARROW synonym, making the term appropriate. The evidence codes (HAMAP-Rule, IBA) indicate computational/pattern-based inference rather than direct experimental localization, but the protein identity as a small ribosomal subunit protein is well-established."
-  },
-  "important_caveats": [
-    "The GO annotation evidence is IBA:GO_Central (computational inference by biological aspect), not direct experimental localization. The protein name derives from a HAMAP pattern rule, also computational.",
-    "The protein is archaeal (Thermococcus kodakarensis); 'cytosolic' in GO:0022627 encompasses prokaryotic/archaeal ribosomes per the NARROW synonym 'prokaryotic small ribosomal subunit'.",
-    "The reasoning argument (basic-residue enrichment, small size, absence of functional domains) is suggestive but not definitive; some small basic proteins are not ribosomal. The elimination logic is the primary discriminator.",
-    "Identity of the accession Q5JGN5 was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While option C (transcription regulator complex) could superficially be considered for a small basic protein, the absence of any recognizable DNA-binding structural motif and the overall ribosomal-protein-like composition make D clearly the most defensible choice. The other options (A, B) are effectively excluded by size and domain content."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0010",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence (150 aa, SHA256-matched) corresponds to UniProt Q5JGN5, annotated as 'Small ribosomal subunit protein eS19' (via HAMAP-Rule MF_01474) and carrying GO:0022627 'cytosolic small ribosomal subunit' (evidence IBA:GO_Central). The protein is from Thermococcus kodakarensis, an archaeon whose ribosomes are cytosolic; GO:0022627 includes 'prokaryotic small ribosomal subunit' as a NARROW synonym, making the term appropriate. The evidence codes (HAMAP-Rule, IBA) indicate computational/pattern-based inference rather than direct experimental localization, but the protein identity as a small ribosomal subunit protein is well-established.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "H1", "H2", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 150-aa protein is extremely rich in basic residues (numerous K and R) typical of rRNA-binding ribosomal proteins. It lacks any transmembrane segments or Walker A/B ATP-binding motifs, ruling out ABC transporter complex (A). Its small size (150 aa) is far below the ~300-500+ aa of checkpoint clamp subunits (Rad9/Rad1/Hus1), ruling out (B). No canonical DNA-binding motifs (zinc fingers, helix-turn-helix, leucine zippers) are present, weakening (C). The combination of very small size, high basic-residue density, absence of membrane/ATP/DNA-binding domains, and no signal peptide is most consistent with a cytosolic small ribosomal subunit protein (D).",
-    "missing_item_specific_fact": "None critical. The reasoning relies on general structural/functional domain absence and compositional bias rather than recognition of a specific database entry.",
-    "reason": "A model can eliminate A (no TM/ATP motifs), B (too small for clamp subunits), and partially C (no DNA-binding domains) through general protein-structure knowledge, leaving D as the best fit given the small size and basic-residue enrichment characteristic of ribosomal proteins."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While option C (transcription regulator complex) could superficially be considered for a small basic protein, the absence of any recognizable DNA-binding structural motif and the overall ribosomal-protein-like composition make D clearly the most defensible choice. The other options (A, B) are effectively excluded by size and domain content."
-  },
-  "important_caveats": [
-    "The GO annotation evidence is IBA:GO_Central (computational inference by biological aspect), not direct experimental localization. The protein name derives from a HAMAP pattern rule, also computational.",
-    "The protein is archaeal (Thermococcus kodakarensis); 'cytosolic' in GO:0022627 encompasses prokaryotic/archaeal ribosomes per the NARROW synonym 'prokaryotic small ribosomal subunit'.",
-    "The reasoning argument (basic-residue enrichment, small size, absence of functional domains) is suggestive but not definitive; some small basic proteins are not ribosomal. The elimination logic is the primary discriminator.",
-    "Identity of the accession Q5JGN5 was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5JGN5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ca24b2f2c78aeeaeecd6fcfc750a322ea6aecc81681fc3099d44313021e584ba",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 150,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ca24b2f2c78aeeaeecd6fcfc750a322ea6aecc81681fc3099d44313021e584ba",
   "current_entry_audit": {
     "entryVersion": 106,
     "firstPublicDate": "2025-02-05",
@@ -541,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-02-15",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
-  "current_source_sequence_sha256": "ca24b2f2c78aeeaeecd6fcfc750a322ea6aecc81681fc3099d44313021e584ba",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 150,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ca24b2f2c78aeeaeecd6fcfc750a322ea6aecc81681fc3099d44313021e584ba",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 104,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5JGN5",
   "selected_historical_entry_version": 104,
+  "selected_historical_record_sha256": "6db90196a1a395ff770ce2fe5f3dc8be7b57ed1244fe3114f10726e4eadae529",
+  "selected_historical_source_sequence_length": 150,
+  "selected_historical_source_sequence_sha256": "ca24b2f2c78aeeaeecd6fcfc750a322ea6aecc81681fc3099d44313021e584ba",
   "selected_historical_version": {
     "accession": "Q5JGN5",
     "database": "Swiss-Prot",
@@ -559,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RS19E_THEKO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6db90196a1a395ff770ce2fe5f3dc8be7b57ed1244fe3114f10726e4eadae529",
-  "selected_historical_source_sequence_sha256": "ca24b2f2c78aeeaeecd6fcfc750a322ea6aecc81681fc3099d44313021e584ba",
-  "selected_historical_source_sequence_length": 150,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 104,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json",
-  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
-  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5JGN5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json"
 }
 ```
 
@@ -613,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json",
-  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
-  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":106,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-02-15\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json"
 }
 ```
 
@@ -632,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json",
-  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
-  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Pyrococcus kodakaraensis (strain KOD1)\",\"lineage\":[\"Archaea\",\"Methanobacteriati\",\"Methanobacteriota\",\"Thermococci\",\"Thermococcales\",\"Thermococcaceae\",\"Thermococcus\"],\"scientificName\":\"Thermococcus kodakarensis (strain ATCC BAA-918 / JCM 12380 / KOD1)\",\"taxonId\":69014}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json"
 }
 ```
 
@@ -651,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json",
-  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
-  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01474\",\"source\":\"HAMAP-Rule\"}],\"value\":\"Small ribosomal subunit protein eS19\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json"
 }
 ```
 
@@ -670,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json",
-  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
-  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/27",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0022627\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosolic small ribosomal subunit\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/27",
+  "retrieved_utc": "2026-11-02T04:31:19.785707+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e144e65e3685bef7f3cec25fa03f0af6a1a9ecfa4cc3f83127dc7805eff27a59",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JGN5.json"
 }
 ```
 
@@ -688,18 +444,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 104,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JGN5?format=txt&versions=104",
-  "source_sha256": "6db90196a1a395ff770ce2fe5f3dc8be7b57ed1244fe3114f10726e4eadae529",
-  "retrieved_utc": "2026-11-02T04:31:23.320142+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   RS19E_THEKO             Reviewed;         150 AA.\nAC   Q5JGN5;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   15-FEB-2005, sequence version 1.\nDT   18-JUN-2025, entry version 104.\nDE   RecName: Full=Small ribosomal subunit protein eS19 {ECO:0000255|HAMAP-Rule:MF_01474};\nGN   Name=rps19e {ECO:0000255|HAMAP-Rule:MF_01474};\nGN   OrderedLocusNames=TK1276 {ECO:0000312|EMBL:BAD85465.1};\nOS   Thermococcus kodakarensis (strain ATCC BAA-918 / JCM 12380 / KOD1)\nOS   (Pyrococcus kodakaraensis (strain KOD1)).\nOC   Archaea; Methanobacteriati; Methanobacteriota; Thermococci; Thermococcales;\nOC   Thermococcaceae; Thermococcus.\nOX   NCBI_TaxID=69014;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 104,
+  "retrieved_utc": "2026-11-02T04:31:23.320142+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6db90196a1a395ff770ce2fe5f3dc8be7b57ed1244fe3114f10726e4eadae529",
+  "url": "https://rest.uniprot.org/unisave/Q5JGN5?format=txt&versions=104"
 }
 ```
 
@@ -709,18 +465,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 104,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JGN5?format=txt&versions=104",
-  "source_sha256": "6db90196a1a395ff770ce2fe5f3dc8be7b57ed1244fe3114f10726e4eadae529",
-  "retrieved_utc": "2026-11-02T04:31:23.320142+00:00",
-  "source_locator": "lines 72-72",
   "excerpt": "DR   GO; GO:0022627; C:cytosolic small ribosomal subunit; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 104,
+  "retrieved_utc": "2026-11-02T04:31:23.320142+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 72-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6db90196a1a395ff770ce2fe5f3dc8be7b57ed1244fe3114f10726e4eadae529",
+  "url": "https://rest.uniprot.org/unisave/Q5JGN5?format=txt&versions=104"
 }
 ```
 
@@ -731,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 1801-1810",
   "excerpt": "[Term]\nid: GO:0000181\nname: obsolete cytosolic small ribosomal subunit\nnamespace: cellular_component\ndef: \"OBSOLETE. (Was not defined before being made obsolete).\" [GOC:ai]\ncomment: This term was made obsolete because more specific children exist.\nsynonym: \"cytosolic small ribosomal subunit\" EXACT []\nis_obsolete: true\nconsider: GO:0022627\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000181",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 1801-1810",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000181"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -750,15 +506,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58346-58358",
   "excerpt": "[Term]\nid: GO:0005667\nname: transcription regulator complex\nnamespace: cellular_component\nalt_id: GO:0044797\nalt_id: GO:0044798\ndef: \"A protein complex that is capable of associating with DNA by direct binding, or via other DNA-binding proteins or complexes, and regulating transcription.\" [GOC:jl]\nsubset: goslim_pir\nsynonym: \"cytoplasmic transcription factor complex\" RELATED []\nsynonym: \"nuclear transcription factor complex\" RELATED []\nsynonym: \"transcription factor complex\" RELATED []\nis_a: GO:0032991 ! protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005667",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58346-58358",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005667"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -769,15 +525,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 160585-160600",
   "excerpt": "[Term]\nid: GO:0022627\nname: cytosolic small ribosomal subunit\nnamespace: cellular_component\nalt_id: GO:0005843\nalt_id: GO:0009283\nalt_id: GO:0030499\nalt_id: GO:0030873\ndef: \"The small subunit of a ribosome located in the cytosol.\" [GOC:mtg_sensu]\nsynonym: \"30S ribosomal subunit\" NARROW []\nsynonym: \"40S ribosomal subunit\" NARROW []\nsynonym: \"eukaryotic ribosomal SSU\" NARROW []\nsynonym: \"prokaryotic small ribosomal subunit\" NARROW []\nis_a: GO:0015935 ! small ribosomal subunit\nrelationship: part_of GO:0022626 ! cytosolic ribosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0022627",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 160585-160600",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0022627"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -788,15 +544,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 171270-171280",
   "excerpt": "[Term]\nid: GO:0030896\nname: checkpoint clamp complex\nnamespace: cellular_component\ndef: \"Conserved heterotrimeric complex of PCNA-like proteins that is loaded onto DNA at sites of DNA damage.\" [PMID:12531008]\ncomment: Note that the following subunit names have been used: human RAD9/RAD1/HUS1; S. pombe Rad9/Rad1/Hus1; S. cerevisiae Ddc1p/Rad17p/Mec3p.\nsynonym: \"CCC\" EXACT []\nsynonym: \"Rad9-Hus1-Rad1 (9-1-1) clamp complex\" EXACT []\nis_a: GO:0140513 ! nuclear protein-containing complex\nrelationship: part_of GO:0000794 ! condensed nuclear chromosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030896",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 171270-171280",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030896"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -807,15 +563,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 244782-244797",
   "excerpt": "[Term]\nid: GO:0043190\nname: ATP-binding cassette (ABC) transporter complex\nnamespace: cellular_component\nalt_id: GO:0043191\nalt_id: GO:0043192\ndef: \"A complex for the transport of metabolites into and out of the cell, typically comprised of four domains; two membrane-associated domains and two ATP-binding domains at the intracellular face of the membrane, that form a central pore through the plasma membrane. Each of the four core domains may be encoded as a separate polypeptide or the domains can be fused in any one of a number of ways into multidomain polypeptides. In Bacteria and Archaebacteria, ABC transporters also include substrate binding proteins to bind substrate external to the cytoplasm and deliver it to the transporter.\" [GOC:jl, GOC:mtg_sensu, PMID:11421269, PMID:15111107]\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsynonym: \"ABC-type efflux permease complex\" NARROW []\nsynonym: \"ABC-type efflux porter complex\" NARROW []\nsynonym: \"ABC-type uptake permease complex\" NARROW []\nsynonym: \"mating pheromone exporter\" NARROW []\nis_a: GO:0098533 ! ATPase dependent transmembrane transport complex\nis_a: GO:0098797 ! plasma membrane protein complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043190",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 244782-244797",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043190"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_cellular_component_0045: before and after transfer clarification
+# GO_cellular_component_0045
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0045.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0045.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **C** — plasma membrane
+**Expected answer:** **C** — plasma membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated to the plasma membrane. Its cell-membrane localization is transferred by similarity, and the GO plasma-membrane annotation is computational/inferred rather than direct experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has an ABC-type P-loop ATPase signature and lacks an obvious transmembrane segment, which is consistent with a peripheral ATP-binding component associated with a membrane transporter. That supports membrane association, but does not establish this protein's specific localization.
-
-
-**Missing item-specific fact**
-
-> The protein-specific membrane-localization assignment, which the supplied evidence shows is transferred by similarity to another protein.
-
-
-**Reason**
-
-> Sequence-based reasoning can suggest a membrane-associated transporter component, but the specific plasma-membrane assignment depends on protein-specific annotation or external homolog information; recognizing the sequence would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Plasma membrane is a type of membrane, and the supplied annotation also calls the location cell membrane. C is the more specific choice, but A is also broadly true unless the question explicitly requires the most specific GO term.
-
-
-### Important caveats
-
-- The sequence matches the annotated record, but the cited localization evidence is similarity-based, not direct experimental localization evidence.
-- The exact source snapshot used by the question author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has an ABC-type P-loop ATPase signature and lacks an obvious transmembrane segment, which is consistent with a peripheral ATP-binding component associated with a membrane transporter. That supports membrane association, but does not establish this protein's specific localization.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific membrane-localization assignment, which the supplied evidence shows is transferred by similarity to another protein.",
-    "reason": "Sequence-based reasoning can suggest a membrane-associated transporter component, but the specific plasma-membrane assignment depends on protein-specific annotation or external homolog information; recognizing the sequence would be lookup or memorization."
-  },
-  "case_id": "GO_cellular_component_0045",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated to the plasma membrane. Its cell-membrane localization is transferred by similarity, and the GO plasma-membrane annotation is computational/inferred rather than direct experimental evidence."
-  },
-  "important_caveats": [
-    "The sequence matches the annotated record, but the cited localization evidence is similarity-based, not direct experimental localization evidence.",
-    "The exact source snapshot used by the question author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Plasma membrane is a type of membrane, and the supplied annotation also calls the location cell membrane. C is the more specific choice, but A is also broadly true unless the question explicitly requires the most specific GO term."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0045",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated to the plasma membrane. Its cell-membrane localization is transferred by similarity, and the GO plasma-membrane annotation is computational/inferred rather than direct experimental evidence.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has an ABC-type P-loop ATPase signature and lacks an obvious transmembrane segment, which is consistent with a peripheral ATP-binding component associated with a membrane transporter. That supports membrane association, but does not establish this protein's specific localization.",
-    "missing_item_specific_fact": "The protein-specific membrane-localization assignment, which the supplied evidence shows is transferred by similarity to another protein.",
-    "reason": "Sequence-based reasoning can suggest a membrane-associated transporter component, but the specific plasma-membrane assignment depends on protein-specific annotation or external homolog information; recognizing the sequence would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Plasma membrane is a type of membrane, and the supplied annotation also calls the location cell membrane. C is the more specific choice, but A is also broadly true unless the question explicitly requires the most specific GO term."
-  },
-  "important_caveats": [
-    "The sequence matches the annotated record, but the cited localization evidence is similarity-based, not direct experimental localization evidence.",
-    "The exact source snapshot used by the question author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXG8 annotates the protein's subcellular location as 'Cell membrane; Peripheral membrane protein; Cytoplasmic side' (evidence ECO:0000250, inferred from similarity to P32010). The corresponding GO annotation is GO:0005886 (plasma membrane), confirmed by both the JSON cross-reference (C6) and the flat-file DR line (H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). The protein is an ABC transporter ATP-binding protein (EC 7.6.2.2, DrrA1) involved in daunorubicin efflux in Streptomyces coeruleorubidus, consistent with membrane association. The annotation is computational (ISS/IEA), not direct experimental, but it is the database record supporting choice C.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a canonical Walker A motif (GPNGAGKST), identifying it as an ATP-binding protein. Combined with the overall domain architecture suggestive of an ABC transporter ATPase, general knowledge places it as membrane-associated. Since the organism is a bacterium (Streptomyces), the only membrane is the plasma membrane (cell membrane). Options B (a CoA-biosynthesis cytoplasmic complex) and D (a neuronal axon, impossible in bacteria) are eliminated by basic biology. Between A (membrane, GO:0016020) and C (plasma membrane, GO:0005886): for a prokaryote the sole membrane IS the plasma membrane, and GO:0005886 is the more specific term (is_a GO:0016020), making C the primary annotation.
-
-
-**Missing item-specific fact**
-
-> None critical. Precise identification as an ABC transporter (vs. other Walker A proteins) adds confidence but is not strictly necessary: bacterial context + elimination of B/D + specificity of 'plasma membrane' over generic 'membrane' suffices.
-
-
-**Reason**
-
-> A model can identify the Walker A motif, reason that ATP-binding proteins of this architecture in bacteria are membrane-associated, eliminate axon (eukaryotic neuron) and the CoA complex (unrelated cytoplasmic complex), and then choose the more specific 'plasma membrane' over the broad parent 'membrane' because bacteria possess only one membrane. This is general biological reasoning, not a lookup of a specific database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While GO:0005886 (plasma membrane) is_a GO:0016020 (membrane), the question asks for the 'primary Cellular Component,' which in GO annotation convention means the most specific term. For a bacterium, 'plasma membrane' is the precise and correct specific annotation; 'membrane' is an overly broad parent. B and D are clearly inapplicable. No genuine ambiguity remains.
-
-
-### Important caveats
-
-- The GO annotation is IEA/ISS (inferred from electronic annotation / sequence similarity to P32010), not direct experimental localization evidence.
-- The protein is a peripheral membrane protein (cytoplasmic side), not an integral membrane protein; it associates with the membrane via interaction with transmembrane ABC transporter components rather than spanning the bilayer itself.
-- The Walker A motif alone does not uniquely identify ABC transporters; additional domain context and bacterial membrane biology support the inference.
-- The UniProt entry was first public 2025-02-05; the benchmark construction date is unknown, but sequence match is confirmed across available versions.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a canonical Walker A motif (GPNGAGKST), identifying it as an ATP-binding protein. Combined with the overall domain architecture suggestive of an ABC transporter ATPase, general knowledge places it as membrane-associated. Since the organism is a bacterium (Streptomyces), the only membrane is the plasma membrane (cell membrane). Options B (a CoA-biosynthesis cytoplasmic complex) and D (a neuronal axon, impossible in bacteria) are eliminated by basic biology. Between A (membrane, GO:0016020) and C (plasma membrane, GO:0005886): for a prokaryote the sole membrane IS the plasma membrane, and GO:0005886 is the more specific term (is_a GO:0016020), making C the primary annotation.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. Precise identification as an ABC transporter (vs. other Walker A proteins) adds confidence but is not strictly necessary: bacterial context + elimination of B/D + specificity of 'plasma membrane' over generic 'membrane' suffices.",
-    "reason": "A model can identify the Walker A motif, reason that ATP-binding proteins of this architecture in bacteria are membrane-associated, eliminate axon (eukaryotic neuron) and the CoA complex (unrelated cytoplasmic complex), and then choose the more specific 'plasma membrane' over the broad parent 'membrane' because bacteria possess only one membrane. This is general biological reasoning, not a lookup of a specific database entry."
-  },
-  "case_id": "GO_cellular_component_0045",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXG8 annotates the protein's subcellular location as 'Cell membrane; Peripheral membrane protein; Cytoplasmic side' (evidence ECO:0000250, inferred from similarity to P32010). The corresponding GO annotation is GO:0005886 (plasma membrane), confirmed by both the JSON cross-reference (C6) and the flat-file DR line (H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). The protein is an ABC transporter ATP-binding protein (EC 7.6.2.2, DrrA1) involved in daunorubicin efflux in Streptomyces coeruleorubidus, consistent with membrane association. The annotation is computational (ISS/IEA), not direct experimental, but it is the database record supporting choice C."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA/ISS (inferred from electronic annotation / sequence similarity to P32010), not direct experimental localization evidence.",
-    "The protein is a peripheral membrane protein (cytoplasmic side), not an integral membrane protein; it associates with the membrane via interaction with transmembrane ABC transporter components rather than spanning the bilayer itself.",
-    "The Walker A motif alone does not uniquely identify ABC transporters; additional domain context and bacterial membrane biology support the inference.",
-    "The UniProt entry was first public 2025-02-05; the benchmark construction date is unknown, but sequence match is confirmed across available versions."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While GO:0005886 (plasma membrane) is_a GO:0016020 (membrane), the question asks for the 'primary Cellular Component,' which in GO annotation convention means the most specific term. For a bacterium, 'plasma membrane' is the precise and correct specific annotation; 'membrane' is an overly broad parent. B and D are clearly inapplicable. No genuine ambiguity remains."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0045",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXG8 annotates the protein's subcellular location as 'Cell membrane; Peripheral membrane protein; Cytoplasmic side' (evidence ECO:0000250, inferred from similarity to P32010). The corresponding GO annotation is GO:0005886 (plasma membrane), confirmed by both the JSON cross-reference (C6) and the flat-file DR line (H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). The protein is an ABC transporter ATP-binding protein (EC 7.6.2.2, DrrA1) involved in daunorubicin efflux in Streptomyces coeruleorubidus, consistent with membrane association. The annotation is computational (ISS/IEA), not direct experimental, but it is the database record supporting choice C.",
-    "evidence_ids": ["C5", "C6", "H3", "H4", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a canonical Walker A motif (GPNGAGKST), identifying it as an ATP-binding protein. Combined with the overall domain architecture suggestive of an ABC transporter ATPase, general knowledge places it as membrane-associated. Since the organism is a bacterium (Streptomyces), the only membrane is the plasma membrane (cell membrane). Options B (a CoA-biosynthesis cytoplasmic complex) and D (a neuronal axon, impossible in bacteria) are eliminated by basic biology. Between A (membrane, GO:0016020) and C (plasma membrane, GO:0005886): for a prokaryote the sole membrane IS the plasma membrane, and GO:0005886 is the more specific term (is_a GO:0016020), making C the primary annotation.",
-    "missing_item_specific_fact": "None critical. Precise identification as an ABC transporter (vs. other Walker A proteins) adds confidence but is not strictly necessary: bacterial context + elimination of B/D + specificity of 'plasma membrane' over generic 'membrane' suffices.",
-    "reason": "A model can identify the Walker A motif, reason that ATP-binding proteins of this architecture in bacteria are membrane-associated, eliminate axon (eukaryotic neuron) and the CoA complex (unrelated cytoplasmic complex), and then choose the more specific 'plasma membrane' over the broad parent 'membrane' because bacteria possess only one membrane. This is general biological reasoning, not a lookup of a specific database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While GO:0005886 (plasma membrane) is_a GO:0016020 (membrane), the question asks for the 'primary Cellular Component,' which in GO annotation convention means the most specific term. For a bacterium, 'plasma membrane' is the precise and correct specific annotation; 'membrane' is an overly broad parent. B and D are clearly inapplicable. No genuine ambiguity remains."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA/ISS (inferred from electronic annotation / sequence similarity to P32010), not direct experimental localization evidence.",
-    "The protein is a peripheral membrane protein (cytoplasmic side), not an integral membrane protein; it associates with the membrane via interaction with transmembrane ABC transporter components rather than spanning the bilayer itself.",
-    "The Walker A motif alone does not uniquely identify ABC transporters; additional domain context and bacterial membrane biology support the inference.",
-    "The UniProt entry was first public 2025-02-05; the benchmark construction date is unknown, but sequence match is confirmed across available versions."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +166,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -526,30 +289,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXG8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ad2ea907ea45035c9658ce71d6525af775e5e2cb247a1245bff85cb9dce29966",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 330,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ad2ea907ea45035c9658ce71d6525af775e5e2cb247a1245bff85cb9dce29966",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-02-05",
@@ -557,14 +307,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "current_source_sequence_sha256": "ad2ea907ea45035c9658ce71d6525af775e5e2cb247a1245bff85cb9dce29966",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 330,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ad2ea907ea45035c9658ce71d6525af775e5e2cb247a1245bff85cb9dce29966",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXG8",
   "selected_historical_entry_version": 4,
+  "selected_historical_record_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
+  "selected_historical_source_sequence_length": 330,
+  "selected_historical_source_sequence_sha256": "ad2ea907ea45035c9658ce71d6525af775e5e2cb247a1245bff85cb9dce29966",
   "selected_historical_version": {
     "accession": "P0DXG8",
     "database": "Swiss-Prot",
@@ -575,24 +341,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DRRA1_STRC4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
-  "selected_historical_source_sequence_sha256": "ad2ea907ea45035c9658ce71d6525af775e5e2cb247a1245bff85cb9dce29966",
-  "selected_historical_source_sequence_length": 330,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 4,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -610,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json",
-  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXG8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json"
 }
 ```
 
@@ -629,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json",
-  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json"
 }
 ```
 
@@ -648,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json",
-  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces coeruleorubidus\",\"taxonId\":116188}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json"
 }
 ```
 
@@ -667,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json",
-  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39375957\",\"source\":\"PubMed\"}],\"value\":\"7.6.2.2\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Daunorubicin resistance ATP-binding protein DrrA1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json"
 }
 ```
 
@@ -686,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json",
-  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P32010\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0039\",\"value\":\"Cell membrane\"},\"orientation\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P32010\",\"source\":\"UniProtKB\"}],\"id\":\"SL-9910\",\"value\":\"Cytoplasmic side\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P32010\",\"source\":\"UniProtKB\"}],\"id\":\"SL-9903\",\"value\":\"Peripheral membrane protein\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json"
 }
 ```
 
@@ -705,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json",
-  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/6",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/6",
+  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json"
 }
 ```
 
@@ -724,15 +477,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json",
-  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
-  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Dong J.\",\"Ning J.\",\"Tian Y.\",\"Li H.\",\"Chen H.\",\"Guan W.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39375957\"},{\"database\":\"DOI\",\"id\":\"10.1111/1751-7915.70023\"}],\"citationType\":\"journal article\",\"firstPage\":\"e70023\",\"id\":\"39375957\",\"journal\":\"Microb. Biotechnol.\",\"lastPage\":\"e70023\",\"publicationDate\":\"2024\",\"title\":\"The involvement of multiple ABC transporters in daunorubicin efflux in Streptomyces coeruleorubidus.\",\"volume\":\"17\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION IN DAUNORUBICIN EFFLUX\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:29:26.942110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXG8.json"
 }
 ```
 
@@ -742,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4",
-  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
-  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   DRRA1_STRC4             Reviewed;         330 AA.\nAC   P0DXG8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=Daunorubicin resistance ATP-binding protein DrrA1 {ECO:0000305};\nDE            EC=7.6.2.2 {ECO:0000305|PubMed:39375957};\nGN   Name=drrA1 {ECO:0000303|PubMed:39375957};\nGN   Synonyms=drrA {ECO:0000312|EMBL:WOT33550.1};\nGN   ORFNames=R5U08_05025 {ECO:0000312|EMBL:WOT33550.1};\nOS   Streptomyces coeruleorubidus.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=116188;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
+  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4"
 }
 ```
 
@@ -763,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4",
-  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
-  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
-  "source_locator": "lines 20-26",
   "excerpt": "RN   [2]\nRP   FUNCTION IN DAUNORUBICIN EFFLUX, AND DISRUPTION PHENOTYPE.\nRX   PubMed=39375957; DOI=10.1111/1751-7915.70023;\nRA   Dong J., Ning J., Tian Y., Li H., Chen H., Guan W.;\nRT   \"The involvement of multiple ABC transporters in daunorubicin efflux in\nRT   Streptomyces coeruleorubidus.\";\nRL   Microb. Biotechnol. 17:e70023-e70023(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
+  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4"
 }
 ```
 
@@ -784,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4",
-  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
-  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
-  "source_locator": "lines 42-44",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cell membrane {ECO:0000250|UniProtKB:P32010};\nCC       Peripheral membrane protein {ECO:0000250|UniProtKB:P32010}; Cytoplasmic\nCC       side {ECO:0000250|UniProtKB:P32010}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
+  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4"
 }
 ```
 
@@ -805,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4",
-  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
-  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
-  "source_locator": "lines 65-65",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:29.046585+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 65-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111",
+  "url": "https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4"
 }
 ```
 
@@ -827,15 +580,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60420-60454",
   "excerpt": "[Term]\nid: GO:0005886\nname: plasma membrane\nnamespace: cellular_component\nalt_id: GO:0005887\nalt_id: GO:0005904\ndef: \"The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.\" [ISBN:0716731363]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"bacterial inner membrane\" NARROW []\nsynonym: \"cell membrane\" EXACT []\nsynonym: \"cellular membrane\" EXACT [NIF_Subcellular:sao6433132645]\nsynonym: \"cytoplasmic membrane\" EXACT []\nsynonym: \"inner endospore membrane\" NARROW []\nsynonym: \"integral component of plasma membrane\" NARROW []\nsynonym: \"integral to plasma membrane\" NARROW []\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"plasma membrane lipid bilayer\" NARROW [GOC:mah]\nsynonym: \"plasmalemma\" EXACT []\nxref: NIF_Subcellular:sao1663586795\nxref: Wikipedia:Cell_membrane\nis_a: GO:0016020 ! membrane\nrelationship: part_of GO:0071944 ! cell periphery\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60420-60454",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -846,15 +599,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 122626-122650",
   "excerpt": "[Term]\nid: GO:0016020\nname: membrane\nnamespace: cellular_component\nalt_id: GO:0016021\nalt_id: GO:0098589\nalt_id: GO:0098805\ndef: \"A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it.\" [GOC:dos, GOC:mah, ISBN:0815316194]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_flybase_ribbon\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_yeast\nsynonym: \"integral component of membrane\" NARROW []\nsynonym: \"integral to membrane\" NARROW []\nsynonym: \"membrane region\" NARROW []\nsynonym: \"region of membrane\" NARROW []\nsynonym: \"transmembrane\" RELATED [GOC:mah]\nsynonym: \"whole membrane\" NARROW []\nxref: Wikipedia:Biological_membrane\nxref: Wikipedia:Transmembrane_protein\nis_a: GO:0110165 ! cellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016020",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 122626-122650",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016020"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -865,15 +618,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 166061-166069",
   "excerpt": "[Term]\nid: GO:0030424\nname: axon\nnamespace: cellular_component\ndef: \"The long process of a neuron that conducts nerve impulses, usually away from the cell body to the terminals and varicosities, which are sites of storage and release of neurotransmitter.\" [GOC:nln, ISBN:0198506732]\nxref: NIF_Subcellular:sao1770195789\nxref: Wikipedia:Axon\nis_a: GO:0043005 ! neuron projection\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030424",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 166061-166069",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030424"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -884,15 +637,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 377848-377856",
   "excerpt": "[Term]\nid: GO:0071513\nname: phosphopantothenoylcysteine decarboxylase complex\nnamespace: cellular_component\ndef: \"A protein complex that catalyzes decarboxylation of 4'-phosphopantothenoylcysteine to yield 4'-phosphopantetheine; this is the third step in the biosynthesis of Coenzyme A. The complex is homotrimeric in many eukaryotes, but is a heterotrimer in Saccharomyces.\" [GOC:jh, PMID:19915539]\ncomment: See also the molecular function term 'acetolactate synthase activity ; GO:0003984'.\nis_a: GO:1902494 ! catalytic complex\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0071513",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 377848-377856",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0071513"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

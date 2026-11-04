@@ -1,18 +1,16 @@
-# catalytic_activity_0147: before and after transfer clarification
+# catalytic_activity_0147
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0147.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0147.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **A** — &#91;thioredoxin&#93;-dithiol + NADP(+) = &#91;thioredoxin&#93;-disulfide + NADPH + H(+)
+**Expected answer:** **A** — &#91;thioredoxin&#93;-dithiol + NADP(+) = &#91;thioredoxin&#93;-disulfide + NADPH + H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry annotated with EC 1.8.1.9 and the reaction in choice A. The annotation carries experimental-evidence code ECO:0000269 and is also present in the historical record available by the stated cutoff. This supports the key, though the cited primary study was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H1](#evidence-h1), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices name distinct, specific enzyme reactions, but the supplied sequence alone offers no clear motif or context that identifies which one this protein catalyzes. General sequence reasoning does not establish the precise catalytic activity.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional assignment or experimental evidence that this sequence catalyzes the thioredoxin/NADP(+) reaction.
-
-
-**Reason**
-
-> Selecting A depends on knowing the identity or catalytic annotation of this particular protein, information absent from the input. Reviewer-only database evidence supports the key but was not supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports A; it does not establish any competing option for this sequence.
-
-
-### Important caveats
-
-- The sequence match is exact, and the relevant historical database record includes the catalytic-activity annotation.
-- The annotation cites experimental evidence, but the cited paper was not independently examined.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices name distinct, specific enzyme reactions, but the supplied sequence alone offers no clear motif or context that identifies which one this protein catalyzes. General sequence reasoning does not establish the precise catalytic activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional assignment or experimental evidence that this sequence catalyzes the thioredoxin/NADP(+) reaction.",
-    "reason": "Selecting A depends on knowing the identity or catalytic annotation of this particular protein, information absent from the input. Reviewer-only database evidence supports the key but was not supplied to the evaluated model."
-  },
-  "case_id": "catalytic_activity_0147",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H1",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated with EC 1.8.1.9 and the reaction in choice A. The annotation carries experimental-evidence code ECO:0000269 and is also present in the historical record available by the stated cutoff. This supports the key, though the cited primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence match is exact, and the relevant historical database record includes the catalytic-activity annotation.",
-    "The annotation cites experimental evidence, but the cited paper was not independently examined."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A; it does not establish any competing option for this sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0147",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated with EC 1.8.1.9 and the reaction in choice A. The annotation carries experimental-evidence code ECO:0000269 and is also present in the historical record available by the stated cutoff. This supports the key, though the cited primary study was not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "H1", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices name distinct, specific enzyme reactions, but the supplied sequence alone offers no clear motif or context that identifies which one this protein catalyzes. General sequence reasoning does not establish the precise catalytic activity.",
-    "missing_item_specific_fact": "The protein-specific functional assignment or experimental evidence that this sequence catalyzes the thioredoxin/NADP(+) reaction.",
-    "reason": "Selecting A depends on knowing the identity or catalytic annotation of this particular protein, information absent from the input. Reviewer-only database evidence supports the key but was not supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A; it does not establish any competing option for this sequence."
-  },
-  "important_caveats": [
-    "The sequence match is exact, and the relevant historical database record includes the catalytic-activity annotation.",
-    "The annotation cites experimental evidence, but the cited paper was not independently examined."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9VGV8 (PhLP3_DROME) annotates EC 1.8.1.9 with the exact reaction '&#91;thioredoxin&#93;-dithiol + NADP(+) = &#91;thioredoxin&#93;-disulfide + NADPH + H(+)', supported by experimental evidence (ECO:0000269, PubMed:39480878, 2024 PLoS ONE paper). The benchmark sequence matches the UniProt sequence exactly (216 aa, SHA-256 identical). The annotation is backed by a primary experimental study demonstrating thioredoxin reductase activity for PhLP3.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The 216-aa sequence lacks the canonical thioredoxin reductase architecture (~475-500 aa with FAD/NADPH-binding domains and the Cys-Val-Asn-Val active-site motif). No obvious FAD-binding Rossmann fold, no clear CVNV motif, and no heme-binding CXXCH motif are identifiable. The sequence does not positively indicate EC 1.8.1.9 over the other three options through general structural or motif reasoning.
-
-
-**Missing item-specific fact**
-
-> The 2024 experimental finding (PubMed:39480878) demonstrating that Drosophila PhLP3, a 216-aa phosducin-like chaperone protein, possesses thioredoxin reductase (EC 1.8.1.9) activity. Without knowing this specific protein identity and its recently characterized non-canonical enzymatic function, the sequence alone provides no reliable basis to select A over B, C, or D.
-
-
-**Reason**
-
-> While the distractors belong to different enzyme classes (nucleotidyltransferase, kinase, P450-type monooxygenase) and one might weakly argue by elimination that no kinase or heme-binding motifs are present, this negative evidence does not positively identify thioredoxin reductase activity in a 216-aa protein that lacks canonical TrxR structural features. The correct answer depends on knowing the specific 2024 experimental characterization of PhLP3 as an EC 1.8.1.9 enzyme, which is a non-obvious, recently discovered function not inferable from sequence motifs or general enzyme classification logic.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices represent distinct enzyme classes (oxidoreductase, transferase, kinase, monooxygenase). If the protein is correctly identified as PhLP3 with its experimentally validated EC 1.8.1.9 activity, the answer is unambiguous. The difficulty lies in protein identification and function assignment from a short sequence, not in ambiguity between the choices themselves.
-
-
-### Important caveats
-
-- The EC 1.8.1.9 annotation for PhLP3 is a 2024 experimental finding (PubMed:39480878); this is a non-canonical function for a phosducin-like protein traditionally studied as a G-protein/ciliary assembly chaperone.
-- The annotation evidence code ECO:0000269 indicates direct experimental evidence, not computational inference or similarity transfer.
-- The protein is only 216 aa, far smaller than canonical thioredoxin reductases (~475-500 aa), making motif-based identification particularly unreliable.
-- The identity origin (accession Q9VGV8) was inferred from dataset metadata and was absent from the evaluated model input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 216-aa sequence lacks the canonical thioredoxin reductase architecture (~475-500 aa with FAD/NADPH-binding domains and the Cys-Val-Asn-Val active-site motif). No obvious FAD-binding Rossmann fold, no clear CVNV motif, and no heme-binding CXXCH motif are identifiable. The sequence does not positively indicate EC 1.8.1.9 over the other three options through general structural or motif reasoning.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The 2024 experimental finding (PubMed:39480878) demonstrating that Drosophila PhLP3, a 216-aa phosducin-like chaperone protein, possesses thioredoxin reductase (EC 1.8.1.9) activity. Without knowing this specific protein identity and its recently characterized non-canonical enzymatic function, the sequence alone provides no reliable basis to select A over B, C, or D.",
-    "reason": "While the distractors belong to different enzyme classes (nucleotidyltransferase, kinase, P450-type monooxygenase) and one might weakly argue by elimination that no kinase or heme-binding motifs are present, this negative evidence does not positively identify thioredoxin reductase activity in a 216-aa protein that lacks canonical TrxR structural features. The correct answer depends on knowing the specific 2024 experimental characterization of PhLP3 as an EC 1.8.1.9 enzyme, which is a non-obvious, recently discovered function not inferable from sequence motifs or general enzyme classification logic."
-  },
-  "case_id": "catalytic_activity_0147",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VGV8 (PhLP3_DROME) annotates EC 1.8.1.9 with the exact reaction '[thioredoxin]-dithiol + NADP(+) = [thioredoxin]-disulfide + NADPH + H(+)', supported by experimental evidence (ECO:0000269, PubMed:39480878, 2024 PLoS ONE paper). The benchmark sequence matches the UniProt sequence exactly (216 aa, SHA-256 identical). The annotation is backed by a primary experimental study demonstrating thioredoxin reductase activity for PhLP3."
-  },
-  "important_caveats": [
-    "The EC 1.8.1.9 annotation for PhLP3 is a 2024 experimental finding (PubMed:39480878); this is a non-canonical function for a phosducin-like protein traditionally studied as a G-protein/ciliary assembly chaperone.",
-    "The annotation evidence code ECO:0000269 indicates direct experimental evidence, not computational inference or similarity transfer.",
-    "The protein is only 216 aa, far smaller than canonical thioredoxin reductases (~475-500 aa), making motif-based identification particularly unreliable.",
-    "The identity origin (accession Q9VGV8) was inferred from dataset metadata and was absent from the evaluated model input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent distinct enzyme classes (oxidoreductase, transferase, kinase, monooxygenase). If the protein is correctly identified as PhLP3 with its experimentally validated EC 1.8.1.9 activity, the answer is unambiguous. The difficulty lies in protein identification and function assignment from a short sequence, not in ambiguity between the choices themselves."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0147",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VGV8 (PhLP3_DROME) annotates EC 1.8.1.9 with the exact reaction '[thioredoxin]-dithiol + NADP(+) = [thioredoxin]-disulfide + NADPH + H(+)', supported by experimental evidence (ECO:0000269, PubMed:39480878, 2024 PLoS ONE paper). The benchmark sequence matches the UniProt sequence exactly (216 aa, SHA-256 identical). The annotation is backed by a primary experimental study demonstrating thioredoxin reductase activity for PhLP3.",
-    "evidence_ids": ["C4", "C5", "H2", "H4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The 216-aa sequence lacks the canonical thioredoxin reductase architecture (~475-500 aa with FAD/NADPH-binding domains and the Cys-Val-Asn-Val active-site motif). No obvious FAD-binding Rossmann fold, no clear CVNV motif, and no heme-binding CXXCH motif are identifiable. The sequence does not positively indicate EC 1.8.1.9 over the other three options through general structural or motif reasoning.",
-    "missing_item_specific_fact": "The 2024 experimental finding (PubMed:39480878) demonstrating that Drosophila PhLP3, a 216-aa phosducin-like chaperone protein, possesses thioredoxin reductase (EC 1.8.1.9) activity. Without knowing this specific protein identity and its recently characterized non-canonical enzymatic function, the sequence alone provides no reliable basis to select A over B, C, or D.",
-    "reason": "While the distractors belong to different enzyme classes (nucleotidyltransferase, kinase, P450-type monooxygenase) and one might weakly argue by elimination that no kinase or heme-binding motifs are present, this negative evidence does not positively identify thioredoxin reductase activity in a 216-aa protein that lacks canonical TrxR structural features. The correct answer depends on knowing the specific 2024 experimental characterization of PhLP3 as an EC 1.8.1.9 enzyme, which is a non-obvious, recently discovered function not inferable from sequence motifs or general enzyme classification logic."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent distinct enzyme classes (oxidoreductase, transferase, kinase, monooxygenase). If the protein is correctly identified as PhLP3 with its experimentally validated EC 1.8.1.9 activity, the answer is unambiguous. The difficulty lies in protein identification and function assignment from a short sequence, not in ambiguity between the choices themselves."
-  },
-  "important_caveats": [
-    "The EC 1.8.1.9 annotation for PhLP3 is a 2024 experimental finding (PubMed:39480878); this is a non-canonical function for a phosducin-like protein traditionally studied as a G-protein/ciliary assembly chaperone.",
-    "The annotation evidence code ECO:0000269 indicates direct experimental evidence, not computational inference or similarity transfer.",
-    "The protein is only 216 aa, far smaller than canonical thioredoxin reductases (~475-500 aa), making motif-based identification particularly unreliable.",
-    "The identity origin (accession Q9VGV8) was inferred from dataset metadata and was absent from the evaluated model input."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VGV8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c25c23004437d39c2d205acb8e99a590ca09b0fcb126425b294296e18fe712ce",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 216,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c25c23004437d39c2d205acb8e99a590ca09b0fcb126425b294296e18fe712ce",
   "current_entry_audit": {
     "entryVersion": 207,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
-  "current_source_sequence_sha256": "c25c23004437d39c2d205acb8e99a590ca09b0fcb126425b294296e18fe712ce",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 216,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c25c23004437d39c2d205acb8e99a590ca09b0fcb126425b294296e18fe712ce",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 205,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VGV8",
   "selected_historical_entry_version": 205,
+  "selected_historical_record_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
+  "selected_historical_source_sequence_length": 216,
+  "selected_historical_source_sequence_sha256": "c25c23004437d39c2d205acb8e99a590ca09b0fcb126425b294296e18fe712ce",
   "selected_historical_version": {
     "accession": "Q9VGV8",
     "database": "Swiss-Prot",
@@ -550,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PHLP3_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
-  "selected_historical_source_sequence_sha256": "c25c23004437d39c2d205acb8e99a590ca09b0fcb126425b294296e18fe712ce",
-  "selected_historical_source_sequence_length": 216,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 205,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json",
-  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
-  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VGV8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json"
 }
 ```
 
@@ -600,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json",
-  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
-  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":207,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json"
 }
 ```
 
@@ -619,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json",
-  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
-  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json"
 }
 ```
 
@@ -638,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json",
-  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
-  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39480878\",\"source\":\"PubMed\"}],\"value\":\"1.8.1.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0037843\",\"source\":\"FlyBase\"}],\"value\":\"Phosducin-like protein 3\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json"
 }
 ```
 
@@ -657,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json",
-  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
-  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.8.1.9\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39480878\",\"source\":\"PubMed\"}],\"name\":\"[thioredoxin]-dithiol + NADP(+) = [thioredoxin]-disulfide + NADPH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:20345\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:10698\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:10700\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29950\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:50058\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json"
 }
 ```
 
@@ -676,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json",
-  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
-  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Petit C.\",\"Kojak E.\",\"Webster S.\",\"Marra M.\",\"Sweeney B.\",\"Chaikin C.\",\"Jemc J.C.\",\"Kanzok S.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39480878\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0306676\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0306676\",\"id\":\"39480878\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e0306676\",\"publicationDate\":\"2024\",\"title\":\"The evolutionarily conserved PhLP3 is essential for sperm development in Drosophila melanogaster.\",\"volume\":\"19\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"TISSUE SPECIFICITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:25:29.511607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "001fc5745522d199a9c119f27c0032aedc0754c9aa981b45c9211e06c04ae925",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VGV8.json"
 }
 ```
 
@@ -694,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 205,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205",
-  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
-  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   PHLP3_DROME             Reviewed;         216 AA.\nAC   Q9VGV8;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 205.\nDE   RecName: Full=Phosducin-like protein 3 {ECO:0000312|FlyBase:FBgn0037843};\nDE            EC=1.8.1.9 {ECO:0000269|PubMed:39480878};\nGN   Name=PhLP3 {ECO:0000312|FlyBase:FBgn0037843};\nGN   ORFNames=CG4511 {ECO:0000312|FlyBase:FBgn0037843};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 205,
+  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
+  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205"
 }
 ```
 
@@ -715,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 205,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205",
-  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
-  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Phosducin-like protein 3 {ECO:0000312|FlyBase:FBgn0037843};\nDE            EC=1.8.1.9 {ECO:0000269|PubMed:39480878};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 205,
+  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
+  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205"
 }
 ```
 
@@ -736,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 205,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205",
-  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
-  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
-  "source_locator": "lines 79-87",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, TISSUE\nRP   SPECIFICITY, AND DISRUPTION PHENOTYPE.\nRX   PubMed=39480878; DOI=10.1371/journal.pone.0306676;\nRA   Petit C., Kojak E., Webster S., Marra M., Sweeney B., Chaikin C.,\nRA   Jemc J.C., Kanzok S.M.;\nRT   \"The evolutionarily conserved PhLP3 is essential for sperm development in\nRT   Drosophila melanogaster.\";\nRL   PLoS ONE 19:e0306676-e0306676(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 205,
+  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 79-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
+  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205"
 }
 ```
 
@@ -757,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 205,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205",
-  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
-  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
-  "source_locator": "lines 92-97",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=[thioredoxin]-dithiol + NADP(+) = [thioredoxin]-disulfide +\nCC         NADPH + H(+); Xref=Rhea:RHEA:20345, Rhea:RHEA-COMP:10698, Rhea:RHEA-\nCC         COMP:10700, ChEBI:CHEBI:15378, ChEBI:CHEBI:29950, ChEBI:CHEBI:50058,\nCC         ChEBI:CHEBI:57783, ChEBI:CHEBI:58349; EC=1.8.1.9;\nCC         Evidence={ECO:0000269|PubMed:39480878};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 205,
+  "retrieved_utc": "2026-11-01T06:28:51.609437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 92-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ee39c846a943511e3d8538c029ddef37e863da08eae5ba56de2e5fb1d1d03f00",
+  "url": "https://rest.uniprot.org/unisave/Q9VGV8?format=txt&versions=205"
 }
 ```
 

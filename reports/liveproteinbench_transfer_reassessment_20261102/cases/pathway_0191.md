@@ -1,18 +1,16 @@
-# pathway_0191: before and after transfer clarification
+# pathway_0191
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0191.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0191.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **D** — Glycan degradation
+**Expected answer:** **D** — Glycan degradation
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the historical sequence for an entry annotated as a xylanase (EC 3.2.1.8) and assigned to glycan/xylan degradation. The pathway assignment is computationally supported by a PROSITE-ProRule annotation; it is not, by itself, direct experimental evidence for the pathway.
-
-Citations as saved: [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has a likely secretion signal and enzyme-like features, but those general clues do not identify its specific substrate or distinguish xylan degradation from the other listed pathways.
-
-
-**Missing item-specific fact**
-
-> The protein's xylanase identity and activity (EC 3.2.1.8), or an equivalent protein-specific functional annotation, are needed to select glycan degradation.
-
-
-**Reason**
-
-> Choosing D requires a protein-specific functional fact not supplied in the question. Recognizing the exact sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided choices and sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the xylanase annotation, glycan degradation is the distinct matching option; the other choices do not describe xylan breakdown.
-
-
-### Important caveats
-
-- The matching historical record supports the annotation's applicability to this sequence; the current UniProt sequence differs.
-- The pathway annotation is attributed to a PROSITE-ProRule, so it should be distinguished from direct experimental validation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has a likely secretion signal and enzyme-like features, but those general clues do not identify its specific substrate or distinguish xylan degradation from the other listed pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's xylanase identity and activity (EC 3.2.1.8), or an equivalent protein-specific functional annotation, are needed to select glycan degradation.",
-    "reason": "Choosing D requires a protein-specific functional fact not supplied in the question. Recognizing the exact sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided choices and sequence alone."
-  },
-  "case_id": "pathway_0191",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical sequence for an entry annotated as a xylanase (EC 3.2.1.8) and assigned to glycan/xylan degradation. The pathway assignment is computationally supported by a PROSITE-ProRule annotation; it is not, by itself, direct experimental evidence for the pathway."
-  },
-  "important_caveats": [
-    "The matching historical record supports the annotation's applicability to this sequence; the current UniProt sequence differs.",
-    "The pathway annotation is attributed to a PROSITE-ProRule, so it should be distinguished from direct experimental validation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the xylanase annotation, glycan degradation is the distinct matching option; the other choices do not describe xylan breakdown."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0191",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical sequence for an entry annotated as a xylanase (EC 3.2.1.8) and assigned to glycan/xylan degradation. The pathway assignment is computationally supported by a PROSITE-ProRule annotation; it is not, by itself, direct experimental evidence for the pathway.",
-    "evidence_ids": ["H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has a likely secretion signal and enzyme-like features, but those general clues do not identify its specific substrate or distinguish xylan degradation from the other listed pathways.",
-    "missing_item_specific_fact": "The protein's xylanase identity and activity (EC 3.2.1.8), or an equivalent protein-specific functional annotation, are needed to select glycan degradation.",
-    "reason": "Choosing D requires a protein-specific functional fact not supplied in the question. Recognizing the exact sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided choices and sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the xylanase annotation, glycan degradation is the distinct matching option; the other choices do not describe xylan breakdown."
-  },
-  "important_caveats": [
-    "The matching historical record supports the annotation's applicability to this sequence; the current UniProt sequence differs.",
-    "The pathway annotation is attributed to a PROSITE-ProRule, so it should be distinguished from direct experimental validation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The historical UniProt entry G2X0L1 (entry version 60, sequence version 1, 237 AA) matches the benchmark sequence exactly (sha256 confirmed). The entry annotates the protein as Ethylene-inducing xylanase 2 (EIX2) with EC 3.2.1.8 (endo-1,4-beta-xylanase) and explicitly states PATHWAY: Glycan degradation; xylan degradation (ECO:0000255|PROSITE-ProRule:PRU01097). The EC number assignment is additionally supported by experimental evidence (PubMed:18720841, ECO:0000269). Xylanases are glycoside hydrolases that degrade xylan, a polysaccharide (glycan), making 'Glycan degradation' the correct pathway classification.
-
-Citations as saved: [H1](#evidence-h1), [H3](#evidence-h3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a cleavable N-terminal signal peptide (MVSFKSLLLAASAFTAVLGRPF...) indicating a secreted protein. The core domain exhibits hallmarks of glycoside hydrolase family 11 (GH11): the 'WWSDGGGQ' catalytic motif, the 'GWNPGTGRT' and 'GGSFSPQGNGYLAVYGWTRNPLIEYYVVESYGTYNPGSGGQLKGTVTTDGGTYNVYVSTRTNQPSIDGTRTFQQYWSVRTSKRVGGAVTMQNHFNAWAQFGMNLGAHYYQIVATEGNGDFVGTEIWGLARGCRR' β-jelly-roll pattern characteristic of GH11 xylanases. A small (~237 AA) secreted fungal protein with these carbohydrate-active enzyme motifs points to glycan (xylan) degradation. Options B (Fe-S cluster biosynthesis) and C (terpenoid biosynthesis) are eliminated by absence of Fe-S cluster motifs and terpene synthase motifs respectively. Option A (antifungal biosynthesis) is implausible for a secreted fungal enzyme; antifungal pathways typically involve large NRPS/PKS assembly lines or plant defense responses, not small secreted hydrolases.
-
-
-**Missing item-specific fact**
-
-> None strictly required, though confident positive identification of the GH11 fold from sequence alone requires specialized knowledge of glycoside hydrolase family motifs (particularly the WWSDGGGQ signature). General elimination of B and C is straightforward; distinguishing D from A benefits from recognizing carbohydrate-active enzyme architecture.
-
-
-**Reason**
-
-> The sequence provides concrete structural motifs (GH11 catalytic and binding signatures) that a knowledgeable model can use to infer glycoside hydrolase function. The elimination of Fe-S cluster biosynthesis and terpenoid biosynthesis is straightforward from absence of relevant motifs. The distinction between glycan degradation and antifungal biosynthesis relies on recognizing the protein as a secreted hydrolase rather than a biosynthetic enzyme, which is supported by sequence features (small size, signal peptide, GH11 motifs).
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options are well-separated biologically. Fe-S cluster biosynthesis requires Fe-S cluster motifs (CX2CX4C or similar), terpenoid biosynthesis requires terpene cyclase motifs, and antifungal biosynthesis implies large multi-domain assembly enzymes. The GH11 xylanase fold is distinctive enough to unambiguously point to glycan degradation.
-
-
-### Important caveats
-
-- The current UniProt sequence (version 2, 250 AA) differs from the benchmark sequence (version 1, 237 AA); however, the historical entry (version 60) matches exactly, confirming the annotation applies to the supplied sequence.
-- The pathway annotation carries ECO:0000255 (PROSITE-ProRule), a computational annotation based on sequence similarity to characterized xylanases, though the EC number has independent experimental support (PubMed:18720841).
-- EIX2 also functions as an ethylene-inducing elicitor in plant-pathogen interactions (PubMed:33205907), but its enzymatic pathway classification is glycan degradation, not signaling biosynthesis.
-- The accession G2X0L1 was inferred by the reviewer from dataset metadata and was not provided to the evaluated model; the model must rely solely on sequence analysis.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a cleavable N-terminal signal peptide (MVSFKSLLLAASAFTAVLGRPF...) indicating a secreted protein. The core domain exhibits hallmarks of glycoside hydrolase family 11 (GH11): the 'WWSDGGGQ' catalytic motif, the 'GWNPGTGRT' and 'GGSFSPQGNGYLAVYGWTRNPLIEYYVVESYGTYNPGSGGQLKGTVTTDGGTYNVYVSTRTNQPSIDGTRTFQQYWSVRTSKRVGGAVTMQNHFNAWAQFGMNLGAHYYQIVATEGNGDFVGTEIWGLARGCRR' β-jelly-roll pattern characteristic of GH11 xylanases. A small (~237 AA) secreted fungal protein with these carbohydrate-active enzyme motifs points to glycan (xylan) degradation. Options B (Fe-S cluster biosynthesis) and C (terpenoid biosynthesis) are eliminated by absence of Fe-S cluster motifs and terpene synthase motifs respectively. Option A (antifungal biosynthesis) is implausible for a secreted fungal enzyme; antifungal pathways typically involve large NRPS/PKS assembly lines or plant defense responses, not small secreted hydrolases.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required, though confident positive identification of the GH11 fold from sequence alone requires specialized knowledge of glycoside hydrolase family motifs (particularly the WWSDGGGQ signature). General elimination of B and C is straightforward; distinguishing D from A benefits from recognizing carbohydrate-active enzyme architecture.",
-    "reason": "The sequence provides concrete structural motifs (GH11 catalytic and binding signatures) that a knowledgeable model can use to infer glycoside hydrolase function. The elimination of Fe-S cluster biosynthesis and terpenoid biosynthesis is straightforward from absence of relevant motifs. The distinction between glycan degradation and antifungal biosynthesis relies on recognizing the protein as a secreted hydrolase rather than a biosynthetic enzyme, which is supported by sequence features (small size, signal peptide, GH11 motifs)."
-  },
-  "case_id": "pathway_0191",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H1",
-      "H3",
-      "C4",
-      "C5",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The historical UniProt entry G2X0L1 (entry version 60, sequence version 1, 237 AA) matches the benchmark sequence exactly (sha256 confirmed). The entry annotates the protein as Ethylene-inducing xylanase 2 (EIX2) with EC 3.2.1.8 (endo-1,4-beta-xylanase) and explicitly states PATHWAY: Glycan degradation; xylan degradation (ECO:0000255|PROSITE-ProRule:PRU01097). The EC number assignment is additionally supported by experimental evidence (PubMed:18720841, ECO:0000269). Xylanases are glycoside hydrolases that degrade xylan, a polysaccharide (glycan), making 'Glycan degradation' the correct pathway classification."
-  },
-  "important_caveats": [
-    "The current UniProt sequence (version 2, 250 AA) differs from the benchmark sequence (version 1, 237 AA); however, the historical entry (version 60) matches exactly, confirming the annotation applies to the supplied sequence.",
-    "The pathway annotation carries ECO:0000255 (PROSITE-ProRule), a computational annotation based on sequence similarity to characterized xylanases, though the EC number has independent experimental support (PubMed:18720841).",
-    "EIX2 also functions as an ethylene-inducing elicitor in plant-pathogen interactions (PubMed:33205907), but its enzymatic pathway classification is glycan degradation, not signaling biosynthesis.",
-    "The accession G2X0L1 was inferred by the reviewer from dataset metadata and was not provided to the evaluated model; the model must rely solely on sequence analysis."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated biologically. Fe-S cluster biosynthesis requires Fe-S cluster motifs (CX2CX4C or similar), terpenoid biosynthesis requires terpene cyclase motifs, and antifungal biosynthesis implies large multi-domain assembly enzymes. The GH11 xylanase fold is distinctive enough to unambiguously point to glycan degradation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0191",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The historical UniProt entry G2X0L1 (entry version 60, sequence version 1, 237 AA) matches the benchmark sequence exactly (sha256 confirmed). The entry annotates the protein as Ethylene-inducing xylanase 2 (EIX2) with EC 3.2.1.8 (endo-1,4-beta-xylanase) and explicitly states PATHWAY: Glycan degradation; xylan degradation (ECO:0000255|PROSITE-ProRule:PRU01097). The EC number assignment is additionally supported by experimental evidence (PubMed:18720841, ECO:0000269). Xylanases are glycoside hydrolases that degrade xylan, a polysaccharide (glycan), making 'Glycan degradation' the correct pathway classification.",
-    "evidence_ids": ["H1", "H3", "C4", "C5", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a cleavable N-terminal signal peptide (MVSFKSLLLAASAFTAVLGRPF...) indicating a secreted protein. The core domain exhibits hallmarks of glycoside hydrolase family 11 (GH11): the 'WWSDGGGQ' catalytic motif, the 'GWNPGTGRT' and 'GGSFSPQGNGYLAVYGWTRNPLIEYYVVESYGTYNPGSGGQLKGTVTTDGGTYNVYVSTRTNQPSIDGTRTFQQYWSVRTSKRVGGAVTMQNHFNAWAQFGMNLGAHYYQIVATEGNGDFVGTEIWGLARGCRR' β-jelly-roll pattern characteristic of GH11 xylanases. A small (~237 AA) secreted fungal protein with these carbohydrate-active enzyme motifs points to glycan (xylan) degradation. Options B (Fe-S cluster biosynthesis) and C (terpenoid biosynthesis) are eliminated by absence of Fe-S cluster motifs and terpene synthase motifs respectively. Option A (antifungal biosynthesis) is implausible for a secreted fungal enzyme; antifungal pathways typically involve large NRPS/PKS assembly lines or plant defense responses, not small secreted hydrolases.",
-    "missing_item_specific_fact": "None strictly required, though confident positive identification of the GH11 fold from sequence alone requires specialized knowledge of glycoside hydrolase family motifs (particularly the WWSDGGGQ signature). General elimination of B and C is straightforward; distinguishing D from A benefits from recognizing carbohydrate-active enzyme architecture.",
-    "reason": "The sequence provides concrete structural motifs (GH11 catalytic and binding signatures) that a knowledgeable model can use to infer glycoside hydrolase function. The elimination of Fe-S cluster biosynthesis and terpenoid biosynthesis is straightforward from absence of relevant motifs. The distinction between glycan degradation and antifungal biosynthesis relies on recognizing the protein as a secreted hydrolase rather than a biosynthetic enzyme, which is supported by sequence features (small size, signal peptide, GH11 motifs)."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated biologically. Fe-S cluster biosynthesis requires Fe-S cluster motifs (CX2CX4C or similar), terpenoid biosynthesis requires terpene cyclase motifs, and antifungal biosynthesis implies large multi-domain assembly enzymes. The GH11 xylanase fold is distinctive enough to unambiguously point to glycan degradation."
-  },
-  "important_caveats": [
-    "The current UniProt sequence (version 2, 250 AA) differs from the benchmark sequence (version 1, 237 AA); however, the historical entry (version 60) matches exactly, confirming the annotation applies to the supplied sequence.",
-    "The pathway annotation carries ECO:0000255 (PROSITE-ProRule), a computational annotation based on sequence similarity to characterized xylanases, though the EC number has independent experimental support (PubMed:18720841).",
-    "EIX2 also functions as an ethylene-inducing elicitor in plant-pathogen interactions (PubMed:33205907), but its enzymatic pathway classification is glycan degradation, not signaling biosynthesis.",
-    "The accession G2X0L1 was inferred by the reviewer from dataset metadata and was not provided to the evaluated model; the model must rely solely on sequence analysis."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G2X0L1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "cfdd4b83b607c771888b0e9deb32dd898625aa384e94930782d11bae4f218452",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 237,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "mismatch",
+  "benchmark_sequence_sha256": "cfdd4b83b607c771888b0e9deb32dd898625aa384e94930782d11bae4f218452",
   "current_entry_audit": {
     "entryVersion": 62,
     "firstPublicDate": "2025-06-18",
@@ -530,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2026-06-10",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "current_source_sequence_sha256": "5530b30cec055de49b753bba02a39d9eca395ae75579bf67e16c02b7b3c232ce",
+  "current_sequence_comparison": "mismatch",
   "current_source_sequence_length": 250,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5530b30cec055de49b753bba02a39d9eca395ae75579bf67e16c02b7b3c232ce",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 60,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G2X0L1",
   "selected_historical_entry_version": 60,
+  "selected_historical_record_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
+  "selected_historical_source_sequence_length": 237,
+  "selected_historical_source_sequence_sha256": "cfdd4b83b607c771888b0e9deb32dd898625aa384e94930782d11bae4f218452",
   "selected_historical_version": {
     "accession": "G2X0L1",
     "database": "Swiss-Prot",
@@ -548,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "EIX2_VERDV",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
-  "selected_historical_source_sequence_sha256": "cfdd4b83b607c771888b0e9deb32dd898625aa384e94930782d11bae4f218452",
-  "selected_historical_source_sequence_length": 237,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 60,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json",
-  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G2X0L1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
+  "sequence_comparison": "mismatch",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "mismatch"
+  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json"
 }
 ```
 
@@ -599,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json",
-  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":62,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2026-06-10\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
+  "sequence_comparison": "mismatch",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "mismatch"
+  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json"
 }
 ```
 
@@ -618,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json",
-  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Verticillium wilt\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Glomerellales\",\"Plectosphaerellaceae\",\"Verticillium\"],\"scientificName\":\"Verticillium dahliae (strain VdLs.17 / ATCC MYA-4575 / FGSC 10137)\",\"taxonId\":498257}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
+  "sequence_comparison": "mismatch",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "mismatch"
+  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json"
 }
 ```
 
@@ -637,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json",
-  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"1,4-beta-D-xylan xylanohydrolase G\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18720841\",\"source\":\"PubMed\"}],\"value\":\"Endo-1,4-beta-xylanase G\"},\"shortNames\":[{\"value\":\"Xylanase G\"}]}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18720841\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.8\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33205907\",\"source\":\"PubMed\"}],\"value\":\"Ethylene-inducing xylanase 2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
+  "sequence_comparison": "mismatch",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "mismatch"
+  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json"
 }
 ```
 
@@ -656,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json",
-  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01097\",\"source\":\"PROSITE-ProRule\"}],\"value\":\"Glycan degradation; xylan degradation\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
+  "sequence_comparison": "mismatch",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "mismatch"
+  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json"
 }
 ```
 
@@ -675,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json",
-  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang G.\",\"Rao B.\",\"Ye J.\",\"Ma L.\",\"Zhang X.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18720841\"}],\"citationType\":\"journal article\",\"firstPage\":\"765\",\"id\":\"18720841\",\"journal\":\"Wei Sheng Wu Xue Bao\",\"lastPage\":\"771\",\"publicationDate\":\"2008\",\"title\":\"Molecular cloning and heterologous expression of a new xylanase gene from Verticillium dahliae.\",\"volume\":\"48\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"SUBCELLULAR LOCATION\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
+  "sequence_comparison": "mismatch",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "mismatch"
+  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json"
 }
 ```
 
@@ -694,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json",
-  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
-  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Yin Z.\",\"Wang N.\",\"Pi L.\",\"Li L.\",\"Duan W.\",\"Wang X.\",\"Dou D.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33205907\"},{\"database\":\"DOI\",\"id\":\"10.1111/jipb.13031\"}],\"citationType\":\"journal article\",\"firstPage\":\"949\",\"id\":\"33205907\",\"journal\":\"J. Integr. Plant Biol.\",\"lastPage\":\"960\",\"publicationDate\":\"2021\",\"title\":\"Nicotiana benthamiana LRR-RLP NbEIX2 mediates the perception of an EIX-like protein from Verticillium dahliae.\",\"volume\":\"63\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:06.423596+00:00",
+  "sequence_comparison": "mismatch",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "mismatch"
+  "source_sha256": "b6bf3dd61dab32b344f08d226c011b7c3f3936305e457046c933fe6555956510",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X0L1.json"
 }
 ```
 
@@ -712,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 60,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2X0L1?format=txt&versions=60",
-  "source_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
-  "retrieved_utc": "2026-11-01T06:28:04.256317+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   EIX2_VERDV              Reviewed;         237 AA.\nAC   G2X0L1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-NOV-2011, sequence version 1.\nDT   28-JAN-2026, entry version 60.\nDE   RecName: Full=Ethylene-inducing xylanase 2 {ECO:0000303|PubMed:33205907};\nDE            Short=EIX2 {ECO:0000303|PubMed:33205907};\nDE            EC=3.2.1.8 {ECO:0000255|PROSITE-ProRule:PRU01097};\nDE   AltName: Full=Endo-1,4-beta-xylanase EIX2 {ECO:0000303|PubMed:33205907};\nDE   Flags: Precursor;\nGN   Name=EIX2 {ECO:0000303|PubMed:33205907}; ORFNames=VDAG_03790;\nOS   Verticillium dahliae (strain VdLs.17 / ATCC MYA-4575 / FGSC 10137)\nOS   (Verticillium wilt).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Glomerellales; Plectosphaerellaceae; Verticillium.\nOX   NCBI_TaxID=498257;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 60,
+  "retrieved_utc": "2026-11-01T06:28:04.256317+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
+  "url": "https://rest.uniprot.org/unisave/G2X0L1?format=txt&versions=60"
 }
 ```
 
@@ -733,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 60,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2X0L1?format=txt&versions=60",
-  "source_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
-  "retrieved_utc": "2026-11-01T06:28:04.256317+00:00",
-  "source_locator": "lines 30-36",
   "excerpt": "RN   [2]\nRP   FUNCTION.\nRX   PubMed=33205907; DOI=10.1111/jipb.13031;\nRA   Yin Z., Wang N., Pi L., Li L., Duan W., Wang X., Dou D.;\nRT   \"Nicotiana benthamiana LRR-RLP NbEIX2 mediates the perception of an EIX-\nRT   like protein from Verticillium dahliae.\";\nRL   J. Integr. Plant Biol. 63:949-960(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 60,
+  "retrieved_utc": "2026-11-01T06:28:04.256317+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
+  "url": "https://rest.uniprot.org/unisave/G2X0L1?format=txt&versions=60"
 }
 ```
 
@@ -754,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 60,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2X0L1?format=txt&versions=60",
-  "source_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
-  "retrieved_utc": "2026-11-01T06:28:04.256317+00:00",
-  "source_locator": "lines 47-48",
   "excerpt": "CC   -!- PATHWAY: Glycan degradation; xylan degradation. {ECO:0000255|PROSITE-\nCC       ProRule:PRU01097}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 60,
+  "retrieved_utc": "2026-11-01T06:28:04.256317+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fdadd4e4d52d68a34b5b3ac543b98fcb1301387253e8b3d7575373dd73f1aa2a",
+  "url": "https://rest.uniprot.org/unisave/G2X0L1?format=txt&versions=60"
 }
 ```
 

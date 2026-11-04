@@ -1,18 +1,16 @@
-# GO_molecular_function_0062: before and after transfer clarification
+# GO_molecular_function_0062
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0062.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0062.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **A** — metal ion binding
+**Expected answer:** **A** — metal ion binding
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-sequence-matched historical UniProt record annotates metal ion binding (GO:0046872), supporting choice A at the database-annotation level. The evidence code is IEA, so this is computational annotation, not experimental confirmation of metal binding.
-
-Citations as saved: [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The short bacterial sequence does not show an obvious signature for either enzyme activity, and its lack of a secretion signal makes glycosaminoglycan binding less compelling. These are weak exclusions, not a diagnostic basis for inferring metal binding.
-
-
-**Missing item-specific fact**
-
-> Whether this particular protein, HobA, has a metal-binding annotation or experimentally established metal-binding activity.
-
-
-**Reason**
-
-> The sequence and choices provide no clear metal-binding motif or other positive evidence that distinguishes A. Identifying the keyed function depends on a protein-specific fact absent from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports A as an annotation, and provides no affirmative evidence for the other choices; however, the annotation's computational status limits claims about experimentally demonstrated function.
-
-
-### Important caveats
-
-- The matched record identifies the protein as H. pylori HobA, a DNA replication regulator; the cited functional evidence concerns replication initiation and DnaA binding, not metal binding.
-- The metal-ion-binding annotation is IEA:UniProtKB-KW; the excerpts do not establish direct experimental metal binding.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The short bacterial sequence does not show an obvious signature for either enzyme activity, and its lack of a secretion signal makes glycosaminoglycan binding less compelling. These are weak exclusions, not a diagnostic basis for inferring metal binding.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Whether this particular protein, HobA, has a metal-binding annotation or experimentally established metal-binding activity.",
-    "reason": "The sequence and choices provide no clear metal-binding motif or other positive evidence that distinguishes A. Identifying the keyed function depends on a protein-specific fact absent from the input."
-  },
-  "case_id": "GO_molecular_function_0062",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-sequence-matched historical UniProt record annotates metal ion binding (GO:0046872), supporting choice A at the database-annotation level. The evidence code is IEA, so this is computational annotation, not experimental confirmation of metal binding."
-  },
-  "important_caveats": [
-    "The matched record identifies the protein as H. pylori HobA, a DNA replication regulator; the cited functional evidence concerns replication initiation and DnaA binding, not metal binding.",
-    "The metal-ion-binding annotation is IEA:UniProtKB-KW; the excerpts do not establish direct experimental metal binding."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A as an annotation, and provides no affirmative evidence for the other choices; however, the annotation's computational status limits claims about experimentally demonstrated function."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0062",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-sequence-matched historical UniProt record annotates metal ion binding (GO:0046872), supporting choice A at the database-annotation level. The evidence code is IEA, so this is computational annotation, not experimental confirmation of metal binding.",
-    "evidence_ids": ["H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The short bacterial sequence does not show an obvious signature for either enzyme activity, and its lack of a secretion signal makes glycosaminoglycan binding less compelling. These are weak exclusions, not a diagnostic basis for inferring metal binding.",
-    "missing_item_specific_fact": "Whether this particular protein, HobA, has a metal-binding annotation or experimentally established metal-binding activity.",
-    "reason": "The sequence and choices provide no clear metal-binding motif or other positive evidence that distinguishes A. Identifying the keyed function depends on a protein-specific fact absent from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A as an annotation, and provides no affirmative evidence for the other choices; however, the annotation's computational status limits claims about experimentally demonstrated function."
-  },
-  "important_caveats": [
-    "The matched record identifies the protein as H. pylori HobA, a DNA replication regulator; the cited functional evidence concerns replication initiation and DnaA binding, not metal binding.",
-    "The metal-ion-binding annotation is IEA:UniProtKB-KW; the excerpts do not establish direct experimental metal binding."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry for O25828 (HobA, DNA replication regulator protein from H. pylori) does carry GO:0046872 (metal ion binding) as an annotation (evidence H5). However, this annotation carries the evidence code IEA:UniProtKB-KW, meaning it was inferred computationally from a UniProt keyword assignment rather than from direct experimental measurement. The protein's experimentally supported primary molecular function is identical protein binding (GO:0042802, IPI:IntAct) — specifically, binding DnaA to facilitate DNA replication initiation (evidence C5, H3). The 'metal ion binding' annotation is therefore a weak, peripheral, computationally inferred annotation rather than a well-supported characterization of the protein's primary molecular activity. It is present in the database but does not represent the protein's principal function.
-
-Citations as saved: [H5](#evidence-h5), [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> By elimination, a knowledgeable biologist can rule out B (UDP-glycosyltransferase) and C (mannose-6-phosphate isomerase) because this 180-aa protein lacks the PSP motif, catalytic His/Asp residues, and other hallmarks of glycosyltransferase or phosphomannose isomerase catalysis. D (glycosaminoglycan binding) is also unlikely for a bacterial DNA replication regulator lacking prominent clusters of basic residues typical of GAG-binding motifs. However, this elimination does not positively identify 'metal ion binding' as the protein's specific molecular function — it merely leaves A as the only uneliminated option. The positive assignment of metal ion binding to this protein rests entirely on the IEA:UniProtKB-KW keyword annotation in UniProt, which is a computational inference, not a sequence-detectable motif.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt keyword-based (IEA) annotation GO:0046872 for O25828 is the sole basis for selecting A. The 180-aa sequence contains no recognizable canonical metal-binding motif (no zinc finger, no iron-sulfur cluster Cys pattern, no prominent His/Glu coordination geometry) that would allow a biologist to positively identify metal ion binding from sequence alone. The protein's true primary molecular function — DnaA protein binding / DNA replication regulation — is not among the answer choices.
-
-
-**Reason**
-
-> While B, C, and D can be eliminated by general biological knowledge (absence of catalytic machinery, absence of GAG-binding motifs), the positive identification of A depends on knowing the specific UniProt keyword annotation. The sequence does not contain a recognizable metal-binding site. The answer is essentially determined by database lookup of the IEA annotation rather than by reasoning from sequence features to a specific metal-binding function.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, only A has any database annotation for this protein. B, C, and D are clearly incompatible with the protein's identity as a small bacterial DNA replication regulator with no enzymatic catalytic machinery and no carbohydrate-binding motifs. Although A represents a weak IEA annotation and is not the protein's primary molecular function, it is the only option with any evidentiary connection to the protein. No alternative choice is defensible.
-
-
-### Important caveats
-
-- The GO:0046872 annotation is IEA:UniProtKB-KW (Inferred from Electronic Annotation via keyword), the weakest evidence category in GO. It is not experimentally validated.
-- The protein's experimentally supported primary molecular function is 'identical protein binding' (GO:0042802, IPI:IntAct) — binding DnaA to promote DNA replication initiation — which is not offered as a choice.
-- The question asks for the 'primary molecular function,' but the expected answer (metal ion binding) is a peripheral IEA annotation, not the primary function. The question is somewhat misaligned with the protein's actual biology.
-- The UniProt entry was first publicly released on 2025-02-05 (Swiss-Prot); the benchmark's author source snapshot is unknown.
-- Sequence match is confirmed (SHA-256 match between benchmark sequence and UniProt O25828 sequence, 180 aa).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "By elimination, a knowledgeable biologist can rule out B (UDP-glycosyltransferase) and C (mannose-6-phosphate isomerase) because this 180-aa protein lacks the PSP motif, catalytic His/Asp residues, and other hallmarks of glycosyltransferase or phosphomannose isomerase catalysis. D (glycosaminoglycan binding) is also unlikely for a bacterial DNA replication regulator lacking prominent clusters of basic residues typical of GAG-binding motifs. However, this elimination does not positively identify 'metal ion binding' as the protein's specific molecular function — it merely leaves A as the only uneliminated option. The positive assignment of metal ion binding to this protein rests entirely on the IEA:UniProtKB-KW keyword annotation in UniProt, which is a computational inference, not a sequence-detectable motif.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific UniProt keyword-based (IEA) annotation GO:0046872 for O25828 is the sole basis for selecting A. The 180-aa sequence contains no recognizable canonical metal-binding motif (no zinc finger, no iron-sulfur cluster Cys pattern, no prominent His/Glu coordination geometry) that would allow a biologist to positively identify metal ion binding from sequence alone. The protein's true primary molecular function — DnaA protein binding / DNA replication regulation — is not among the answer choices.",
-    "reason": "While B, C, and D can be eliminated by general biological knowledge (absence of catalytic machinery, absence of GAG-binding motifs), the positive identification of A depends on knowing the specific UniProt keyword annotation. The sequence does not contain a recognizable metal-binding site. The answer is essentially determined by database lookup of the IEA annotation rather than by reasoning from sequence features to a specific metal-binding function."
-  },
-  "case_id": "GO_molecular_function_0062",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H5",
-      "C5",
-      "H3",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry for O25828 (HobA, DNA replication regulator protein from H. pylori) does carry GO:0046872 (metal ion binding) as an annotation (evidence H5). However, this annotation carries the evidence code IEA:UniProtKB-KW, meaning it was inferred computationally from a UniProt keyword assignment rather than from direct experimental measurement. The protein's experimentally supported primary molecular function is identical protein binding (GO:0042802, IPI:IntAct) — specifically, binding DnaA to facilitate DNA replication initiation (evidence C5, H3). The 'metal ion binding' annotation is therefore a weak, peripheral, computationally inferred annotation rather than a well-supported characterization of the protein's primary molecular activity. It is present in the database but does not represent the protein's principal function."
-  },
-  "important_caveats": [
-    "The GO:0046872 annotation is IEA:UniProtKB-KW (Inferred from Electronic Annotation via keyword), the weakest evidence category in GO. It is not experimentally validated.",
-    "The protein's experimentally supported primary molecular function is 'identical protein binding' (GO:0042802, IPI:IntAct) — binding DnaA to promote DNA replication initiation — which is not offered as a choice.",
-    "The question asks for the 'primary molecular function,' but the expected answer (metal ion binding) is a peripheral IEA annotation, not the primary function. The question is somewhat misaligned with the protein's actual biology.",
-    "The UniProt entry was first publicly released on 2025-02-05 (Swiss-Prot); the benchmark's author source snapshot is unknown.",
-    "Sequence match is confirmed (SHA-256 match between benchmark sequence and UniProt O25828 sequence, 180 aa)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only A has any database annotation for this protein. B, C, and D are clearly incompatible with the protein's identity as a small bacterial DNA replication regulator with no enzymatic catalytic machinery and no carbohydrate-binding motifs. Although A represents a weak IEA annotation and is not the protein's primary molecular function, it is the only option with any evidentiary connection to the protein. No alternative choice is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0062",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry for O25828 (HobA, DNA replication regulator protein from H. pylori) does carry GO:0046872 (metal ion binding) as an annotation (evidence H5). However, this annotation carries the evidence code IEA:UniProtKB-KW, meaning it was inferred computationally from a UniProt keyword assignment rather than from direct experimental measurement. The protein's experimentally supported primary molecular function is identical protein binding (GO:0042802, IPI:IntAct) — specifically, binding DnaA to facilitate DNA replication initiation (evidence C5, H3). The 'metal ion binding' annotation is therefore a weak, peripheral, computationally inferred annotation rather than a well-supported characterization of the protein's primary molecular activity. It is present in the database but does not represent the protein's principal function.",
-    "evidence_ids": ["H5", "C5", "H3", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "By elimination, a knowledgeable biologist can rule out B (UDP-glycosyltransferase) and C (mannose-6-phosphate isomerase) because this 180-aa protein lacks the PSP motif, catalytic His/Asp residues, and other hallmarks of glycosyltransferase or phosphomannose isomerase catalysis. D (glycosaminoglycan binding) is also unlikely for a bacterial DNA replication regulator lacking prominent clusters of basic residues typical of GAG-binding motifs. However, this elimination does not positively identify 'metal ion binding' as the protein's specific molecular function — it merely leaves A as the only uneliminated option. The positive assignment of metal ion binding to this protein rests entirely on the IEA:UniProtKB-KW keyword annotation in UniProt, which is a computational inference, not a sequence-detectable motif.",
-    "missing_item_specific_fact": "The specific UniProt keyword-based (IEA) annotation GO:0046872 for O25828 is the sole basis for selecting A. The 180-aa sequence contains no recognizable canonical metal-binding motif (no zinc finger, no iron-sulfur cluster Cys pattern, no prominent His/Glu coordination geometry) that would allow a biologist to positively identify metal ion binding from sequence alone. The protein's true primary molecular function — DnaA protein binding / DNA replication regulation — is not among the answer choices.",
-    "reason": "While B, C, and D can be eliminated by general biological knowledge (absence of catalytic machinery, absence of GAG-binding motifs), the positive identification of A depends on knowing the specific UniProt keyword annotation. The sequence does not contain a recognizable metal-binding site. The answer is essentially determined by database lookup of the IEA annotation rather than by reasoning from sequence features to a specific metal-binding function."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only A has any database annotation for this protein. B, C, and D are clearly incompatible with the protein's identity as a small bacterial DNA replication regulator with no enzymatic catalytic machinery and no carbohydrate-binding motifs. Although A represents a weak IEA annotation and is not the protein's primary molecular function, it is the only option with any evidentiary connection to the protein. No alternative choice is defensible."
-  },
-  "important_caveats": [
-    "The GO:0046872 annotation is IEA:UniProtKB-KW (Inferred from Electronic Annotation via keyword), the weakest evidence category in GO. It is not experimentally validated.",
-    "The protein's experimentally supported primary molecular function is 'identical protein binding' (GO:0042802, IPI:IntAct) — binding DnaA to promote DNA replication initiation — which is not offered as a choice.",
-    "The question asks for the 'primary molecular function,' but the expected answer (metal ion binding) is a peripheral IEA annotation, not the primary function. The question is somewhat misaligned with the protein's actual biology.",
-    "The UniProt entry was first publicly released on 2025-02-05 (Swiss-Prot); the benchmark's author source snapshot is unknown.",
-    "Sequence match is confirmed (SHA-256 match between benchmark sequence and UniProt O25828 sequence, 180 aa)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "O25828",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 180,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
   "current_entry_audit": {
     "entryVersion": 135,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "1998-01-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "current_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 180,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 133,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "O25828",
   "selected_historical_entry_version": 133,
+  "selected_historical_record_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "selected_historical_source_sequence_length": 180,
+  "selected_historical_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
   "selected_historical_version": {
     "accession": "O25828",
     "database": "Swiss-Prot",
@@ -553,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HOBA_HELPY",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "selected_historical_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
-  "selected_historical_source_sequence_length": 180,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 133,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"O25828\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -607,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":135,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"1998-01-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -626,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Campylobacter pylori\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Campylobacterota\",\"Epsilonproteobacteria\",\"Campylobacterales\",\"Helicobacteraceae\",\"Helicobacter\"],\"scientificName\":\"Helicobacter pylori (strain ATCC 700392 / 26695)\",\"taxonId\":85962}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -645,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17645450\",\"source\":\"PubMed\"}],\"value\":\"Helicobacter orisome binding protein A\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17645450\",\"source\":\"PubMed\"}],\"value\":\"HobA\"}]}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DNA replication regulator protein HobA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -664,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17645450\",\"source\":\"PubMed\"}],\"value\":\"Required for DNA replication initiation (PubMed:17645450). Increases binding of DnaA to oriC region (PubMed:17645450)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -683,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/23",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000353\",\"id\":\"11196647\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000353\",\"id\":\"19940251\",\"source\":\"PubMed\"}],\"id\":\"GO:0042802\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:identical protein binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IPI:IntAct\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/23",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -702,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zawilak-Pawlik A.\",\"Kois A.\",\"Stingl K.\",\"Boneca I.G.\",\"Skrobuk P.\",\"Piotr J.\",\"Lurz R.\",\"Zakrzewska-Czerwinska J.\",\"Labigne A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17645450\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1365-2958.2007.05853.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"979\",\"id\":\"17645450\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"994\",\"publicationDate\":\"2007\",\"title\":\"HobA--a novel protein involved in initiation of chromosomal replication in Helicobacter pylori.\",\"volume\":\"65\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700392 / 26695\"},{\"type\":\"STRAIN\",\"value\":\"N6\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PROTEIN ABUNDANCE\",\"INTERACTION WITH DNAA\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -721,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Natrajan G.\",\"Noirot-Gros M.F.\",\"Zawilak-Pawlik A.\",\"Kapp U.\",\"Terradot L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19940251\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.0908966106\"}],\"citationType\":\"journal article\",\"firstPage\":\"21115\",\"id\":\"19940251\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"21120\",\"publicationDate\":\"2009\",\"title\":\"The structure of a DnaA/HobA complex from Helicobacter pylori provides insight into regulation of DNA replication in bacteria.\",\"volume\":\"106\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2WP0\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700392 / 26695\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.67 ANGSTROMS) IN COMPLEX WITH DNAA DOMAINS I AND II\",\"MUTAGENESIS OF 76-GLU--PRO-78; LEU-80 AND TYR-175\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -739,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   HOBA_HELPY              Reviewed;         180 AA.\nAC   O25828;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JAN-1998, sequence version 1.\nDT   28-JAN-2026, entry version 133.\nDE   RecName: Full=DNA replication regulator protein HobA {ECO:0000305};\nDE   AltName: Full=Helicobacter orisome binding protein A {ECO:0000303|PubMed:17645450};\nDE            Short=HobA {ECO:0000303|PubMed:17645450};\nGN   Name=hobA {ECO:0000303|PubMed:17645450};\nGN   OrderedLocusNames=HP_1230 {ECO:0000312|EMBL:AAD08280.1};\nOS   Helicobacter pylori (strain ATCC 700392 / 26695) (Campylobacter pylori).\nOC   Bacteria; Pseudomonadati; Campylobacterota; Epsilonproteobacteria;\nOC   Campylobacterales; Helicobacteraceae; Helicobacter.\nOX   NCBI_TaxID=85962;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -760,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [2]\nRP   FUNCTION, PROTEIN ABUNDANCE, INTERACTION WITH DNAA, INDUCTION, AND\nRP   DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC 700392 / 26695, and N6;\nRX   PubMed=17645450; DOI=10.1111/j.1365-2958.2007.05853.x;\nRA   Zawilak-Pawlik A., Kois A., Stingl K., Boneca I.G., Skrobuk P., Piotr J.,\nRA   Lurz R., Zakrzewska-Czerwinska J., Labigne A.;\nRT   \"HobA--a novel protein involved in initiation of chromosomal replication in\nRT   Helicobacter pylori.\";\nRL   Mol. Microbiol. 65:979-994(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -781,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 57-59",
   "excerpt": "CC   -!- FUNCTION: Required for DNA replication initiation (PubMed:17645450).\nCC       Increases binding of DnaA to oriC region (PubMed:17645450).\nCC       {ECO:0000269|PubMed:17645450}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 57-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -802,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 110-110",
   "excerpt": "DR   GO; GO:0042802; F:identical protein binding; IPI:IntAct.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 110-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -823,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 111-111",
   "excerpt": "DR   GO; GO:0046872; F:metal ion binding; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 111-111",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -845,15 +604,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 42843-42863",
   "excerpt": "[Term]\nid: GO:0004476\nname: mannose-6-phosphate isomerase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: D-mannose 6-phosphate = D-fructose 6-phosphate.\" [RHEA:12356]\nsynonym: \"D-mannose-6-phosphate aldose-ketose-isomerase activity\" RELATED [EC:5.3.1.8]\nsynonym: \"D-mannose-6-phosphate ketol-isomerase activity\" RELATED [EC:5.3.1.8]\nsynonym: \"mannose phosphate isomerase activity\" RELATED [EC:5.3.1.8]\nsynonym: \"phosphohexoisomerase activity\" BROAD [EC:5.3.1.8]\nsynonym: \"phosphohexomutase activity\" BROAD [EC:5.3.1.8]\nsynonym: \"phosphomannoisomerase activity\" RELATED [EC:5.3.1.8]\nsynonym: \"phosphomannose isomerase activity\" RELATED [EC:5.3.1.8]\nxref: EC:5.3.1.8\nxref: MetaCyc:MANNPISOM-RXN\nxref: Reactome:R-HSA-3781832 \"Defective MPI does not  isomerize Fru6P to Man6P\"\nxref: Reactome:R-HSA-532549 \"MPI isomerises Fru6P to Man6P\"\nxref: RHEA:12356\nis_a: GO:0016861 ! intramolecular oxidoreductase activity, interconverting aldoses and ketoses\nproperty_value: skos:exactMatch EC:5.3.1.8\nproperty_value: skos:exactMatch RHEA:12356\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004476",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 42843-42863",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004476"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -864,15 +623,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 57150-57157",
   "excerpt": "[Term]\nid: GO:0005539\nname: glycosaminoglycan binding\nnamespace: molecular_function\ndef: \"Binding to a glycan (polysaccharide) containing a substantial proportion of aminomonosaccharide residues.\" [GOC:jl, ISBN:0198506732]\nsubset: goslim_chembl\nis_a: GO:0097367 ! carbohydrate derivative binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005539",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 57150-57157",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005539"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -883,15 +642,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 80524-80531",
   "excerpt": "[Term]\nid: GO:0008194\nname: UDP-glycosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a glycosyl group from a UDP-sugar to a small hydrophobic molecule.\" [PMID:11846783]\nxref: Reactome:R-HSA-162730 \"phosphatidylinositol + UDP-N-acetyl-D-glucosamine -> N-acetylglucosaminyl-PI + UDP\"\nis_a: GO:0016757 ! glycosyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008194",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 80524-80531",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008194"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -902,15 +661,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 281280-281292",
   "excerpt": "[Term]\nid: GO:0046872\nname: metal ion binding\nnamespace: molecular_function\ndef: \"Binding to a metal ion.\" [GOC:ai]\nsubset: goslim_agr\nsubset: goslim_drosophila\nsubset: goslim_flybase_ribbon\nsubset: goslim_metagenomics\nsynonym: \"heavy metal binding\" NARROW []\nsynonym: \"metal binding\" EXACT []\nis_a: GO:0043169 ! cation binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046872",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 281280-281292",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046872"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

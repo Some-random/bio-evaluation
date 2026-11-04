@@ -1,18 +1,16 @@
-# temperature_0026: before and after transfer clarification
+# temperature_0026
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0026.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0026.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **C** — 50
+**Expected answer:** **C** — 50
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence has a UniProt temperature-dependence annotation stating an optimum of 50°C, attributed to experimental evidence (ECO:0000269, PubMed:28010060). This supports choice C as the enzyme's reported optimum.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a defensible way to distinguish an exact optimum of 50°C from 60°C; broad thermal-adaptation tendencies cannot establish that specific value.
-
-
-**Missing item-specific fact**
-
-> The reported experimental optimum temperature for this particular protein is 50°C.
-
-
-**Reason**
-
-> Choosing C requires a protein-specific annotation or experimental result absent from the question. The sequence and choices do not independently establish the exact optimum.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> The prompt describes thermal-adaptation categories, but the choices are specific temperatures. If interpreted as broad categories, both 50°C and 60°C could indicate heat adaptation; if asking for the measured optimum, the evidence supports only 50°C.
-
-
-### Important caveats
-
-- The sequence matches the cited UniProt entry, and the experimental attribution is recorded there; the primary paper was not independently reviewed here.
-- The evidence supports the reported optimum temperature, not necessarily a general thermal-adaptation category.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish an exact optimum of 50°C from 60°C; broad thermal-adaptation tendencies cannot establish that specific value.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The reported experimental optimum temperature for this particular protein is 50°C.",
-    "reason": "Choosing C requires a protein-specific annotation or experimental result absent from the question. The sequence and choices do not independently establish the exact optimum."
-  },
-  "case_id": "temperature_0026",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence has a UniProt temperature-dependence annotation stating an optimum of 50°C, attributed to experimental evidence (ECO:0000269, PubMed:28010060). This supports choice C as the enzyme's reported optimum."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt entry, and the experimental attribution is recorded there; the primary paper was not independently reviewed here.",
-    "The evidence supports the reported optimum temperature, not necessarily a general thermal-adaptation category."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "The prompt describes thermal-adaptation categories, but the choices are specific temperatures. If interpreted as broad categories, both 50°C and 60°C could indicate heat adaptation; if asking for the measured optimum, the evidence supports only 50°C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0026",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence has a UniProt temperature-dependence annotation stating an optimum of 50°C, attributed to experimental evidence (ECO:0000269, PubMed:28010060). This supports choice C as the enzyme's reported optimum.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish an exact optimum of 50°C from 60°C; broad thermal-adaptation tendencies cannot establish that specific value.",
-    "missing_item_specific_fact": "The reported experimental optimum temperature for this particular protein is 50°C.",
-    "reason": "Choosing C requires a protein-specific annotation or experimental result absent from the question. The sequence and choices do not independently establish the exact optimum."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "The prompt describes thermal-adaptation categories, but the choices are specific temperatures. If interpreted as broad categories, both 50°C and 60°C could indicate heat adaptation; if asking for the measured optimum, the evidence supports only 50°C."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt entry, and the experimental attribution is recorded there; the primary paper was not independently reviewed here.",
-    "The evidence supports the reported optimum temperature, not necessarily a general thermal-adaptation category."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry G2QA95 (sequence SHA256 match confirmed) records an experimentally determined optimum temperature of 50°C (evidence code ECO:0000269, PubMed:28010060, Furst et al. JACS 2017). The annotation is from a primary experimental study involving X-ray crystallography and biophysical characterization of the polycyclic ketone monooxygenase from Thermothelomyces thermophilus. The author's key of 50°C is directly supported by this experimental measurement.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could potentially recognize thermophilic sequence signatures (elevated charged/salt-bridge-forming residues, reduced thermolabile residues) to exclude the cold/moderate options (23-35 and 30), narrowing to 50 or 60. However, distinguishing 50°C from 60°C for this specific flavoenzyme requires knowledge of the organism's identity (Thermothelomyces thermophilus, a thermophilic fungus whose growth optimum is ~50°C) or the specific experimental optimum measured in the 2017 JACS study. The sequence alone does not encode a precise numerical optimum temperature.
-
-
-**Missing item-specific fact**
-
-> The specific experimentally measured optimum temperature of 50°C for this particular polycyclic ketone monooxygenase (from Furst et al. 2017, PubMed:28010060), or alternatively the organism identity (Thermothelomyces thermophilus) and its known growth/enzymatic temperature range, which are absent from the model input.
-
-
-**Reason**
-
-> While general thermophilic sequence features might narrow the answer to the 50-60°C range, the precise distinction between 50 and 60 for this enzyme is an experimental measurement not derivable from sequence composition alone. The organism name is not provided in the question input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Both 50°C and 60°C are plausible thermal optima for an enzyme from a thermophilic organism. Without the organism name or experimental data, a model reasoning from thermophilic sequence features could reasonably select either 50 or 60. The 23-35 and 30 options are clearly inconsistent with thermophilic adaptation and serve as easy distractors.
-
-
-### Important caveats
-
-- The organism name (Thermothelomyces thermophilus) is present in the UniProt record but NOT provided in the model input; only the raw sequence is given.
-- The 50°C optimum is an experimentally measured value (ECO:0000269) from a single primary publication, not a computational prediction.
-- The question format mixes a range (23-35) with discrete values (30, 50, 60), which is somewhat inconsistent but does not create a fatal ambiguity since the correct answer is unambiguously 50 per the experimental record.
-- The UniProt entry was first publicly released in June 2025; the underlying experimental data (PubMed 28010060) dates to 2017.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could potentially recognize thermophilic sequence signatures (elevated charged/salt-bridge-forming residues, reduced thermolabile residues) to exclude the cold/moderate options (23-35 and 30), narrowing to 50 or 60. However, distinguishing 50°C from 60°C for this specific flavoenzyme requires knowledge of the organism's identity (Thermothelomyces thermophilus, a thermophilic fungus whose growth optimum is ~50°C) or the specific experimental optimum measured in the 2017 JACS study. The sequence alone does not encode a precise numerical optimum temperature.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimentally measured optimum temperature of 50°C for this particular polycyclic ketone monooxygenase (from Furst et al. 2017, PubMed:28010060), or alternatively the organism identity (Thermothelomyces thermophilus) and its known growth/enzymatic temperature range, which are absent from the model input.",
-    "reason": "While general thermophilic sequence features might narrow the answer to the 50-60°C range, the precise distinction between 50 and 60 for this enzyme is an experimental measurement not derivable from sequence composition alone. The organism name is not provided in the question input."
-  },
-  "case_id": "temperature_0026",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C6",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry G2QA95 (sequence SHA256 match confirmed) records an experimentally determined optimum temperature of 50°C (evidence code ECO:0000269, PubMed:28010060, Furst et al. JACS 2017). The annotation is from a primary experimental study involving X-ray crystallography and biophysical characterization of the polycyclic ketone monooxygenase from Thermothelomyces thermophilus. The author's key of 50°C is directly supported by this experimental measurement."
-  },
-  "important_caveats": [
-    "The organism name (Thermothelomyces thermophilus) is present in the UniProt record but NOT provided in the model input; only the raw sequence is given.",
-    "The 50°C optimum is an experimentally measured value (ECO:0000269) from a single primary publication, not a computational prediction.",
-    "The question format mixes a range (23-35) with discrete values (30, 50, 60), which is somewhat inconsistent but does not create a fatal ambiguity since the correct answer is unambiguously 50 per the experimental record.",
-    "The UniProt entry was first publicly released in June 2025; the underlying experimental data (PubMed 28010060) dates to 2017."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Both 50°C and 60°C are plausible thermal optima for an enzyme from a thermophilic organism. Without the organism name or experimental data, a model reasoning from thermophilic sequence features could reasonably select either 50 or 60. The 23-35 and 30 options are clearly inconsistent with thermophilic adaptation and serve as easy distractors."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0026",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry G2QA95 (sequence SHA256 match confirmed) records an experimentally determined optimum temperature of 50°C (evidence code ECO:0000269, PubMed:28010060, Furst et al. JACS 2017). The annotation is from a primary experimental study involving X-ray crystallography and biophysical characterization of the polycyclic ketone monooxygenase from Thermothelomyces thermophilus. The author's key of 50°C is directly supported by this experimental measurement.",
-    "evidence_ids": ["C5", "H3", "C6", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could potentially recognize thermophilic sequence signatures (elevated charged/salt-bridge-forming residues, reduced thermolabile residues) to exclude the cold/moderate options (23-35 and 30), narrowing to 50 or 60. However, distinguishing 50°C from 60°C for this specific flavoenzyme requires knowledge of the organism's identity (Thermothelomyces thermophilus, a thermophilic fungus whose growth optimum is ~50°C) or the specific experimental optimum measured in the 2017 JACS study. The sequence alone does not encode a precise numerical optimum temperature.",
-    "missing_item_specific_fact": "The specific experimentally measured optimum temperature of 50°C for this particular polycyclic ketone monooxygenase (from Furst et al. 2017, PubMed:28010060), or alternatively the organism identity (Thermothelomyces thermophilus) and its known growth/enzymatic temperature range, which are absent from the model input.",
-    "reason": "While general thermophilic sequence features might narrow the answer to the 50-60°C range, the precise distinction between 50 and 60 for this enzyme is an experimental measurement not derivable from sequence composition alone. The organism name is not provided in the question input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Both 50°C and 60°C are plausible thermal optima for an enzyme from a thermophilic organism. Without the organism name or experimental data, a model reasoning from thermophilic sequence features could reasonably select either 50 or 60. The 23-35 and 30 options are clearly inconsistent with thermophilic adaptation and serve as easy distractors."
-  },
-  "important_caveats": [
-    "The organism name (Thermothelomyces thermophilus) is present in the UniProt record but NOT provided in the model input; only the raw sequence is given.",
-    "The 50°C optimum is an experimentally measured value (ECO:0000269) from a single primary publication, not a computational prediction.",
-    "The question format mixes a range (23-35) with discrete values (30, 50, 60), which is somewhat inconsistent but does not create a fatal ambiguity since the correct answer is unambiguously 50 per the experimental record.",
-    "The UniProt entry was first publicly released in June 2025; the underlying experimental data (PubMed 28010060) dates to 2017."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +278,17 @@ Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G2QA95",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "09b636920a3f5f3b7e69fa4f71f91685b6346b6eef60641ed9e987c21d819e93",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 655,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "09b636920a3f5f3b7e69fa4f71f91685b6346b6eef60641ed9e987c21d819e93",
   "current_entry_audit": {
     "entryVersion": 58,
     "firstPublicDate": "2025-06-18",
@@ -549,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-11-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
-  "current_source_sequence_sha256": "09b636920a3f5f3b7e69fa4f71f91685b6346b6eef60641ed9e987c21d819e93",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 655,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "09b636920a3f5f3b7e69fa4f71f91685b6346b6eef60641ed9e987c21d819e93",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 56,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G2QA95",
   "selected_historical_entry_version": 56,
+  "selected_historical_record_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
+  "selected_historical_source_sequence_length": 655,
+  "selected_historical_source_sequence_sha256": "09b636920a3f5f3b7e69fa4f71f91685b6346b6eef60641ed9e987c21d819e93",
   "selected_historical_version": {
     "accession": "G2QA95",
     "database": "Swiss-Prot",
@@ -567,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BVMO_THET4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
-  "selected_historical_source_sequence_sha256": "09b636920a3f5f3b7e69fa4f71f91685b6346b6eef60641ed9e987c21d819e93",
-  "selected_historical_source_sequence_length": 655,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 56,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json",
-  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
-  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G2QA95\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
+  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json"
 }
 ```
 
@@ -617,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json",
-  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
-  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":58,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-11-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
+  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json"
 }
 ```
 
@@ -636,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json",
-  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
-  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Sporotrichum thermophile\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Thermothelomyces\"],\"scientificName\":\"Thermothelomyces thermophilus (strain ATCC 42464 / BCRC 31852 / DSM 1799)\",\"taxonId\":573729}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
+  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json"
 }
 ```
 
@@ -655,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json",
-  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
-  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"value\":\"Baeyer-Villiger monooxygenase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"value\":\"BVMO\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"value\":\"1.14.13.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"value\":\"Polycyclic ketone monooxygenase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"value\":\"PockeMO\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
+  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json"
 }
 ```
 
@@ -674,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json",
-  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
-  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"kineticParameters\":{\"michaelisConstants\":[{\"constant\":144.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"substrate\":\"cyclododecanone\",\"unit\":\"uM\"},{\"constant\":0.4,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"substrate\":\"bicyclic ketone 13\",\"unit\":\"mM\"}]},\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is 6.5 to 9.0.\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28010060\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 50 degrees Celsius.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
+  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json"
 }
 ```
 
@@ -693,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json",
-  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
-  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Furst M.J.\",\"Savino S.\",\"Dudek H.M.\",\"Gomez Castellanos J.R.\",\"Gutierrez de Souza C.\",\"Rovida S.\",\"Fraaije M.W.\",\"Mattevi A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28010060\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.6b12246\"}],\"citationType\":\"journal article\",\"firstPage\":\"627\",\"id\":\"28010060\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"630\",\"publicationDate\":\"2017\",\"title\":\"Polycyclic Ketone Monooxygenase from the Thermophilic Fungus Thermothelomyces thermophila: A Structurally Distinct Biocatalyst for Bulky Substrates.\",\"volume\":\"139\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5MQ6\",\"source\":\"PDB\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.00 ANGSTROMS) IN COMPLEX WITH FAD AND NADPH\",\"DISULFIDE BONDS\",\"COFACTOR\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBSTRATE SPECIFICITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:06.440589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d68b3a6b723a763aeede4c3561c77e9b98dcca4238897f1ddbc147129fd1cfeb",
+  "url": "https://rest.uniprot.org/uniprotkb/G2QA95.json"
 }
 ```
 
@@ -711,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 56,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2QA95?format=txt&versions=56",
-  "source_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
-  "retrieved_utc": "2026-11-01T06:28:01.571843+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   BVMO_THET4              Reviewed;         655 AA.\nAC   G2QA95;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-NOV-2011, sequence version 1.\nDT   28-JAN-2026, entry version 56.\nDE   RecName: Full=Polycyclic ketone monooxygenase {ECO:0000303|PubMed:28010060};\nDE            Short=PockeMO {ECO:0000303|PubMed:28010060};\nDE            EC=1.14.13.- {ECO:0000269|PubMed:28010060};\nDE   AltName: Full=Baeyer-Villiger monooxygenase {ECO:0000303|PubMed:28010060};\nDE            Short=BVMO {ECO:0000303|PubMed:28010060};\nGN   ORFNames=MYCTH_65400;\nOS   Thermothelomyces thermophilus (strain ATCC 42464 / BCRC 31852 / DSM 1799)\nOS   (Sporotrichum thermophile).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Thermothelomyces.\nOX   NCBI_TaxID=573729;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 56,
+  "retrieved_utc": "2026-11-01T06:28:01.571843+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
+  "url": "https://rest.uniprot.org/unisave/G2QA95?format=txt&versions=56"
 }
 ```
 
@@ -732,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 56,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2QA95?format=txt&versions=56",
-  "source_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
-  "retrieved_utc": "2026-11-01T06:28:01.571843+00:00",
-  "source_locator": "lines 32-42",
   "excerpt": "RN   [2] {ECO:0007744|PDB:5MQ6}\nRP   X-RAY CRYSTALLOGRAPHY (2.00 ANGSTROMS) IN COMPLEX WITH FAD AND NADPH,\nRP   DISULFIDE BONDS, COFACTOR, FUNCTION, CATALYTIC ACTIVITY, SUBSTRATE\nRP   SPECIFICITY, BIOPHYSICOCHEMICAL PROPERTIES, AND BIOTECHNOLOGY.\nRX   PubMed=28010060; DOI=10.1021/jacs.6b12246;\nRA   Furst M.J., Savino S., Dudek H.M., Gomez Castellanos J.R.,\nRA   Gutierrez de Souza C., Rovida S., Fraaije M.W., Mattevi A.;\nRT   \"Polycyclic Ketone Monooxygenase from the Thermophilic Fungus\nRT   Thermothelomyces thermophila: A Structurally Distinct Biocatalyst for Bulky\nRT   Substrates.\";\nRL   J. Am. Chem. Soc. 139:627-630(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 56,
+  "retrieved_utc": "2026-11-01T06:28:01.571843+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
+  "url": "https://rest.uniprot.org/unisave/G2QA95?format=txt&versions=56"
 }
 ```
 
@@ -753,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 56,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2QA95?format=txt&versions=56",
-  "source_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
-  "retrieved_utc": "2026-11-01T06:28:01.571843+00:00",
-  "source_locator": "lines 61-69",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Kinetic parameters:\nCC         KM=144 uM for cyclododecanone {ECO:0000269|PubMed:28010060};\nCC         KM=0.4 mM for bicyclic ketone 13 {ECO:0000269|PubMed:28010060};\nCC       pH dependence:\nCC         Optimum pH is 6.5 to 9.0. {ECO:0000269|PubMed:28010060};\nCC       Temperature dependence:\nCC         Optimum temperature is 50 degrees Celsius.\nCC         {ECO:0000269|PubMed:28010060};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 56,
+  "retrieved_utc": "2026-11-01T06:28:01.571843+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0318176fb6154b708d301de6d2e3ad08fef54e818227bdd198fb527dc3b65386",
+  "url": "https://rest.uniprot.org/unisave/G2QA95?format=txt&versions=56"
 }
 ```
 

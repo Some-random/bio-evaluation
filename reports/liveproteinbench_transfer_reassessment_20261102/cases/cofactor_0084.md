@@ -1,18 +1,16 @@
-# cofactor_0084: before and after transfer clarification
+# cofactor_0084
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0084.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0084.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **D** — Fe(2+)
+**Expected answer:** **D** — Fe(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | output error (invalid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the ArsI entry, whose cofactor annotation identifies Fe(2+) and cites experimental evidence (ECO:0000269, PubMed:35487149).
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C8](#evidence-c8), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone offers no decisive general motif or contextual clue that distinguishes Fe(2+) from the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity/function as ArsI and its experimentally supported Fe(2+) cofactor annotation.
-
-
-**Reason**
-
-> Selecting the keyed cofactor requires protein-specific knowledge or external annotation; the sequence and choices do not meaningfully establish which ion is required.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports Fe(2+) for this protein, although the supplied input does not itself distinguish it.
-
-
-### Important caveats
-
-- The cofactor annotation is database evidence citing a 2022 publication; the primary paper was not independently reviewed here.
-- The reviewer-only source identity and cofactor annotation were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone offers no decisive general motif or contextual clue that distinguishes Fe(2+) from the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity/function as ArsI and its experimentally supported Fe(2+) cofactor annotation.",
-    "reason": "Selecting the keyed cofactor requires protein-specific knowledge or external annotation; the sequence and choices do not meaningfully establish which ion is required."
-  },
-  "case_id": "cofactor_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C8",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the ArsI entry, whose cofactor annotation identifies Fe(2+) and cites experimental evidence (ECO:0000269, PubMed:35487149)."
-  },
-  "important_caveats": [
-    "The cofactor annotation is database evidence citing a 2022 publication; the primary paper was not independently reviewed here.",
-    "The reviewer-only source identity and cofactor annotation were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports Fe(2+) for this protein, although the supplied input does not itself distinguish it."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the ArsI entry, whose cofactor annotation identifies Fe(2+) and cites experimental evidence (ECO:0000269, PubMed:35487149).",
-    "evidence_ids": ["C1", "C5", "C8", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone offers no decisive general motif or contextual clue that distinguishes Fe(2+) from the listed alternatives.",
-    "missing_item_specific_fact": "The protein-specific identity/function as ArsI and its experimentally supported Fe(2+) cofactor annotation.",
-    "reason": "Selecting the keyed cofactor requires protein-specific knowledge or external annotation; the sequence and choices do not meaningfully establish which ion is required."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports Fe(2+) for this protein, although the supplied input does not itself distinguish it."
-  },
-  "important_caveats": [
-    "The cofactor annotation is database evidence citing a 2022 publication; the primary paper was not independently reviewed here.",
-    "The reviewer-only source identity and cofactor annotation were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
-
-**Validation errors:** `question_ambiguity:invalid_option_ids`.
-
-### Expected-answer support: supported
-
-> UniProt entry D1A230 (ArsI C-As lyase, Thermomonospora curvata) explicitly annotates Fe(2+) as the cofactor with experimental evidence code ECO:0000269 (inferred from direct assay) citing PubMed:35487149. X-ray crystallography structures (PDB 5V0F, 6XA0, 6XCK) show Fe(2+) in complex with substrate roxarsone (III). The 2022 Nadar et al. paper directly established Fe(2+) as the catalytic cofactor. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [C8](#evidence-c8), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could weakly argue that the protein's small size, cysteine-rich C-terminal region, and D/E/H residue spacing might suggest a metal-binding site, and that organoarsenical cleavage (if the function were known) would favor Fe(2+) dioxygenase chemistry. However, the sequence alone does not reveal the protein's identity, EC class, or catalytic mechanism. The 2-His-1-carboxylate facial triad characteristic of Fe(2+)-dependent dioxygenases is present in the structure but is not unambiguously identifiable from the raw 151-aa sequence without prior knowledge of the ArsI fold.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as ArsI C-As lyase (a trivalent organoarsenical cleaving enzyme, EC 1.13.11.-) and its classification as a Fe(2+)-dependent dioxygenase. Without knowing the protein family, the sequence does not uniquely distinguish Fe(2+) from Mg(2+), both of which are common catalytic metal cofactors. The specific experimental determination of Fe(2+) as the physiologically relevant cofactor (as opposed to Fe(3+) observed in earlier crystal structures) requires the 2022 Nadar et al. study.
-
-
-**Reason**
-
-> The protein is from an obscure actinobacterium (Thermomonospora curvata) and was only integrated into Swiss-Prot in April 2025. Recognizing the exact 151-aa sequence and recalling its Fe(2+) cofactor assignment constitutes memorization of a database entry. General sequence analysis cannot reliably distinguish Fe(2+) from Mg(2+) for this protein without knowing it is a C-As lyase/dioxygenase. The absence of CXXCH heme motifs mildly disfavors heme b, and Na(+) is rarely a catalytic cofactor for lyases, but these eliminations still leave Mg(2+) vs Fe(2+) as a near coin-flip from sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C (Mg(2+))",
-  "D (Fe(2+))"
-]
-```
-
-> Without protein identity or functional context, Mg(2+) is a plausible cofactor for many small lyases and is not excluded by the sequence. Fe(2+) is correct per experimental data, but the sequence does not provide a general biological argument that uniquely excludes Mg(2+). Heme b is weakly disfavored by absence of canonical CXXCH heme-anchoring motifs, and Na(+) is an unusual catalytic cofactor, but these eliminations are insufficient to resolve C vs D without lookup.
-
-
-### Important caveats
-
-- The UniProt entry was only first published 2025-04-09, making this a very recent annotation. The author's source snapshot date is unknown.
-- Earlier crystallography (2016, PubMed:27107642) observed Fe(3+) in wild-type structures; the definitive assignment of Fe(2+) as the catalytically relevant cofactor came from the 2022 study (PubMed:35487149) with substrate-bound Fe(2+) complexes.
-- The sequence-match is confirmed (SHA-256 identical to UniProt D1A230, 151 aa), so the annotation applies directly to the supplied sequence.
-- The reviewer-only evidence establishes the key is correct but does not make the question reasoning-supported; the evaluated model received only the raw sequence and four choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could weakly argue that the protein's small size, cysteine-rich C-terminal region, and D/E/H residue spacing might suggest a metal-binding site, and that organoarsenical cleavage (if the function were known) would favor Fe(2+) dioxygenase chemistry. However, the sequence alone does not reveal the protein's identity, EC class, or catalytic mechanism. The 2-His-1-carboxylate facial triad characteristic of Fe(2+)-dependent dioxygenases is present in the structure but is not unambiguously identifiable from the raw 151-aa sequence without prior knowledge of the ArsI fold.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as ArsI C-As lyase (a trivalent organoarsenical cleaving enzyme, EC 1.13.11.-) and its classification as a Fe(2+)-dependent dioxygenase. Without knowing the protein family, the sequence does not uniquely distinguish Fe(2+) from Mg(2+), both of which are common catalytic metal cofactors. The specific experimental determination of Fe(2+) as the physiologically relevant cofactor (as opposed to Fe(3+) observed in earlier crystal structures) requires the 2022 Nadar et al. study.",
-    "reason": "The protein is from an obscure actinobacterium (Thermomonospora curvata) and was only integrated into Swiss-Prot in April 2025. Recognizing the exact 151-aa sequence and recalling its Fe(2+) cofactor assignment constitutes memorization of a database entry. General sequence analysis cannot reliably distinguish Fe(2+) from Mg(2+) for this protein without knowing it is a C-As lyase/dioxygenase. The absence of CXXCH heme motifs mildly disfavors heme b, and Na(+) is rarely a catalytic cofactor for lyases, but these eliminations still leave Mg(2+) vs Fe(2+) as a near coin-flip from sequence alone."
-  },
-  "case_id": "cofactor_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C8",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry D1A230 (ArsI C-As lyase, Thermomonospora curvata) explicitly annotates Fe(2+) as the cofactor with experimental evidence code ECO:0000269 (inferred from direct assay) citing PubMed:35487149. X-ray crystallography structures (PDB 5V0F, 6XA0, 6XCK) show Fe(2+) in complex with substrate roxarsone (III). The 2022 Nadar et al. paper directly established Fe(2+) as the catalytic cofactor. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed)."
-  },
-  "important_caveats": [
-    "The UniProt entry was only first published 2025-04-09, making this a very recent annotation. The author's source snapshot date is unknown.",
-    "Earlier crystallography (2016, PubMed:27107642) observed Fe(3+) in wild-type structures; the definitive assignment of Fe(2+) as the catalytically relevant cofactor came from the 2022 study (PubMed:35487149) with substrate-bound Fe(2+) complexes.",
-    "The sequence-match is confirmed (SHA-256 identical to UniProt D1A230, 151 aa), so the annotation applies directly to the supplied sequence.",
-    "The reviewer-only evidence establishes the key is correct but does not make the question reasoning-supported; the evaluated model received only the raw sequence and four choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C (Mg(2+))",
-      "D (Fe(2+))"
-    ],
-    "reason": "Without protein identity or functional context, Mg(2+) is a plausible cofactor for many small lyases and is not excluded by the sequence. Fe(2+) is correct per experimental data, but the sequence does not provide a general biological argument that uniquely excludes Mg(2+). Heme b is weakly disfavored by absence of canonical CXXCH heme-anchoring motifs, and Na(+) is an unusual catalytic cofactor, but these eliminations are insufficient to resolve C vs D without lookup."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry D1A230 (ArsI C-As lyase, Thermomonospora curvata) explicitly annotates Fe(2+) as the cofactor with experimental evidence code ECO:0000269 (inferred from direct assay) citing PubMed:35487149. X-ray crystallography structures (PDB 5V0F, 6XA0, 6XCK) show Fe(2+) in complex with substrate roxarsone (III). The 2022 Nadar et al. paper directly established Fe(2+) as the catalytic cofactor. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed).",
-    "evidence_ids": ["C5", "C8", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could weakly argue that the protein's small size, cysteine-rich C-terminal region, and D/E/H residue spacing might suggest a metal-binding site, and that organoarsenical cleavage (if the function were known) would favor Fe(2+) dioxygenase chemistry. However, the sequence alone does not reveal the protein's identity, EC class, or catalytic mechanism. The 2-His-1-carboxylate facial triad characteristic of Fe(2+)-dependent dioxygenases is present in the structure but is not unambiguously identifiable from the raw 151-aa sequence without prior knowledge of the ArsI fold.",
-    "missing_item_specific_fact": "The protein's identity as ArsI C-As lyase (a trivalent organoarsenical cleaving enzyme, EC 1.13.11.-) and its classification as a Fe(2+)-dependent dioxygenase. Without knowing the protein family, the sequence does not uniquely distinguish Fe(2+) from Mg(2+), both of which are common catalytic metal cofactors. The specific experimental determination of Fe(2+) as the physiologically relevant cofactor (as opposed to Fe(3+) observed in earlier crystal structures) requires the 2022 Nadar et al. study.",
-    "reason": "The protein is from an obscure actinobacterium (Thermomonospora curvata) and was only integrated into Swiss-Prot in April 2025. Recognizing the exact 151-aa sequence and recalling its Fe(2+) cofactor assignment constitutes memorization of a database entry. General sequence analysis cannot reliably distinguish Fe(2+) from Mg(2+) for this protein without knowing it is a C-As lyase/dioxygenase. The absence of CXXCH heme motifs mildly disfavors heme b, and Na(+) is rarely a catalytic cofactor for lyases, but these eliminations still leave Mg(2+) vs Fe(2+) as a near coin-flip from sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C (Mg(2+))", "D (Fe(2+))"],
-    "reason": "Without protein identity or functional context, Mg(2+) is a plausible cofactor for many small lyases and is not excluded by the sequence. Fe(2+) is correct per experimental data, but the sequence does not provide a general biological argument that uniquely excludes Mg(2+). Heme b is weakly disfavored by absence of canonical CXXCH heme-anchoring motifs, and Na(+) is an unusual catalytic cofactor, but these eliminations are insufficient to resolve C vs D without lookup."
-  },
-  "important_caveats": [
-    "The UniProt entry was only first published 2025-04-09, making this a very recent annotation. The author's source snapshot date is unknown.",
-    "Earlier crystallography (2016, PubMed:27107642) observed Fe(3+) in wild-type structures; the definitive assignment of Fe(2+) as the catalytically relevant cofactor came from the 2022 study (PubMed:35487149) with substrate-bound Fe(2+) complexes.",
-    "The sequence-match is confirmed (SHA-256 identical to UniProt D1A230, 151 aa), so the annotation applies directly to the supplied sequence.",
-    "The reviewer-only evidence establishes the key is correct but does not make the question reasoning-supported; the evaluated model received only the raw sequence and four choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "D1A230",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "96f901d3406d3fc76b1b13d6687ce5e7fc465abc1cc4f694dd78fac7c7851ba3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 151,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "96f901d3406d3fc76b1b13d6687ce5e7fc465abc1cc4f694dd78fac7c7851ba3",
   "current_entry_audit": {
     "entryVersion": 78,
     "firstPublicDate": "2025-04-09",
@@ -545,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-01-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "current_source_sequence_sha256": "96f901d3406d3fc76b1b13d6687ce5e7fc465abc1cc4f694dd78fac7c7851ba3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 151,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "96f901d3406d3fc76b1b13d6687ce5e7fc465abc1cc4f694dd78fac7c7851ba3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 77,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "D1A230",
   "selected_historical_entry_version": 77,
+  "selected_historical_record_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
+  "selected_historical_source_sequence_length": 151,
+  "selected_historical_source_sequence_sha256": "96f901d3406d3fc76b1b13d6687ce5e7fc465abc1cc4f694dd78fac7c7851ba3",
   "selected_historical_version": {
     "accession": "D1A230",
     "database": "Swiss-Prot",
@@ -563,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "ARSI_THECD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
-  "selected_historical_source_sequence_sha256": "96f901d3406d3fc76b1b13d6687ce5e7fc465abc1cc4f694dd78fac7c7851ba3",
-  "selected_historical_source_sequence_length": 151,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 77,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"D1A230\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -613,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":78,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-01-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -632,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Streptosporangiales\",\"Thermomonosporaceae\",\"Thermomonospora\"],\"scientificName\":\"Thermomonospora curvata (strain ATCC 19995 / DSM 43183 / JCM 3096 / KCTC 9072 / NBRC 15933 / NCIMB 10081 / Henssen B9)\",\"taxonId\":471852}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -651,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24915088\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27107642\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35487149\",\"source\":\"PubMed\"}],\"value\":\"C-As lyase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"27107642\",\"source\":\"PubMed\"}],\"value\":\"Methylarsonous acid demethylase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"27107642\",\"source\":\"PubMed\"}],\"value\":\"MAs(III) demethylase\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27107642\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35487149\",\"source\":\"PubMed\"}],\"value\":\"1.13.11.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Trivalent organoarsenical cleaving enzyme\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -670,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29033\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35487149\",\"source\":\"PubMed\"}],\"name\":\"Fe(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -689,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Nadar S.V.\",\"Yoshinaga M.\",\"Kandavelu P.\",\"Sankaran B.\",\"Rosen B.P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24915088\"},{\"database\":\"DOI\",\"id\":\"10.1107/s2053230x14008814\"}],\"citationType\":\"journal article\",\"firstPage\":\"761\",\"id\":\"24915088\",\"journal\":\"Acta Crystallogr. F Struct. Biol. Commun.\",\"lastPage\":\"764\",\"publicationDate\":\"2014\",\"title\":\"Crystallization and preliminary X-ray crystallographic studies of the ArsI C-As lyase from Thermomonospora curvata.\",\"volume\":\"70\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 19995 / DSM 43183 / JCM 3096 / KCTC 9072 / NBRC 15933 / NCIMB 10081 / Henssen B9\"}],\"referenceNumber\":2,\"referencePositions\":[\"CRYSTALLIZATION\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -708,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Nadar V.S.\",\"Yoshinaga M.\",\"Pawitwar S.S.\",\"Kandavelu P.\",\"Sankaran B.\",\"Rosen B.P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27107642\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jmb.2016.04.022\"}],\"citationType\":\"journal article\",\"firstPage\":\"2462\",\"id\":\"27107642\",\"journal\":\"J. Mol. Biol.\",\"lastPage\":\"2473\",\"publicationDate\":\"2016\",\"title\":\"Structure of the ArsI C-As Lyase: Insights into the Mechanism of Degradation of Organoarsenical Herbicides and Growth Promoters.\",\"volume\":\"428\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5C4P\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5C68\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5C6X\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5CB9\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5D4F\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5DFG\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5DRH\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5HCW\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 19995 / DSM 43183 / JCM 3096 / KCTC 9072 / NBRC 15933 / NCIMB 10081 / Henssen B9\"}],\"referenceNumber\":3,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.46 ANGSTROMS) OF 1-123 OF WILD TYPE AND MUTANT HIS-97/PHE-99 IN COMPLEXES WITH FE(3+); NI(2+) AND CO(2+)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -727,15 +477,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json",
-  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
-  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Nadar V.S.\",\"Kandavelu P.\",\"Sankaran B.\",\"Rosen B.P.\",\"Yoshinaga M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35487149\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jinorgbio.2022.111836\"}],\"citationType\":\"journal article\",\"firstPage\":\"111836\",\"id\":\"35487149\",\"journal\":\"J. Inorg. Biochem.\",\"lastPage\":\"111836\",\"publicationDate\":\"2022\",\"title\":\"The ArsI C-As lyase: Elucidating the catalytic mechanism of degradation of organoarsenicals.\",\"volume\":\"232\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5V0F\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6XA0\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6XCK\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 19995 / DSM 43183 / JCM 3096 / KCTC 9072 / NBRC 15933 / NCIMB 10081 / Henssen B9\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.15 ANGSTROMS) OF 1-123 OF MUTANT ALA-102 IN COMPLEX WITH SUBSTRATE ROXARSONE (III) AND FE(2+); MUTANT ARG-102 IN COMPLEX WITH NI(2+) AND MUTANT GLU-102\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"REACTION MECHANISM\",\"MUTAGENESIS OF TYR-35; GLN-100 AND LYS-102\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:27:37.960057+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8dad989ed29fb7ada17e387219e7b659eae84dce16c4879193b7897bab3a769",
+  "url": "https://rest.uniprot.org/uniprotkb/D1A230.json"
 }
 ```
 
@@ -745,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 77,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77",
-  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
-  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   ARSI_THECD              Reviewed;         151 AA.\nAC   D1A230;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-JAN-2010, sequence version 1.\nDT   28-JAN-2026, entry version 77.\nDE   RecName: Full=Trivalent organoarsenical cleaving enzyme {ECO:0000305};\nDE            EC=1.13.11.- {ECO:0000269|PubMed:27107642, ECO:0000269|PubMed:35487149};\nDE   AltName: Full=C-As lyase {ECO:0000303|PubMed:24915088, ECO:0000303|PubMed:27107642, ECO:0000303|PubMed:35487149};\nDE   AltName: Full=Methylarsonous acid demethylase {ECO:0000305|PubMed:27107642};\nDE            Short=MAs(III) demethylase {ECO:0000305|PubMed:27107642};\nGN   Name=arsI {ECO:0000303|PubMed:24915088};\nGN   OrderedLocusNames=Tcur_4156 {ECO:0000312|EMBL:ACY99683.1};\nOS   Thermomonospora curvata (strain ATCC 19995 / DSM 43183 / JCM 3096 / KCTC\nOS   9072 / NBRC 15933 / NCIMB 10081 / Henssen B9).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Streptosporangiales;\nOC   Thermomonosporaceae; Thermomonospora.\nOX   NCBI_TaxID=471852;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 77,
+  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
+  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77"
 }
 ```
 
@@ -766,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 77,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77",
-  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
-  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Trivalent organoarsenical cleaving enzyme {ECO:0000305};\nDE            EC=1.13.11.- {ECO:0000269|PubMed:27107642, ECO:0000269|PubMed:35487149};\nDE   AltName: Full=C-As lyase {ECO:0000303|PubMed:24915088, ECO:0000303|PubMed:27107642, ECO:0000303|PubMed:35487149};\nDE   AltName: Full=Methylarsonous acid demethylase {ECO:0000305|PubMed:27107642};\nDE            Short=MAs(III) demethylase {ECO:0000305|PubMed:27107642};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 77,
+  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
+  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77"
 }
 ```
 
@@ -787,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 77,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77",
-  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
-  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
-  "source_locator": "lines 31-39",
   "excerpt": "RN   [2]\nRP   CRYSTALLIZATION, AND SUBUNIT.\nRC   STRAIN=ATCC 19995 / DSM 43183 / JCM 3096 / KCTC 9072 / NBRC 15933 / NCIMB\nRC   10081 / Henssen B9;\nRX   PubMed=24915088; DOI=10.1107/s2053230x14008814;\nRA   Nadar S.V., Yoshinaga M., Kandavelu P., Sankaran B., Rosen B.P.;\nRT   \"Crystallization and preliminary X-ray crystallographic studies of the ArsI\nRT   C-As lyase from Thermomonospora curvata.\";\nRL   Acta Crystallogr. F Struct. Biol. Commun. 70:761-764(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 77,
+  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
+  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77"
 }
 ```
 
@@ -808,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 77,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77",
-  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
-  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
-  "source_locator": "lines 40-51",
   "excerpt": "RN   [3] {ECO:0007744|PDB:5C4P, ECO:0007744|PDB:5C68, ECO:0007744|PDB:5C6X, ECO:0007744|PDB:5CB9, ECO:0007744|PDB:5D4F, ECO:0007744|PDB:5DFG, ECO:0007744|PDB:5DRH, ECO:0007744|PDB:5HCW}\nRP   X-RAY CRYSTALLOGRAPHY (1.46 ANGSTROMS) OF 1-123 OF WILD TYPE AND MUTANT\nRP   HIS-97/PHE-99 IN COMPLEXES WITH FE(3+); NI(2+) AND CO(2+), FUNCTION,\nRP   CATALYTIC ACTIVITY, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRC   STRAIN=ATCC 19995 / DSM 43183 / JCM 3096 / KCTC 9072 / NBRC 15933 / NCIMB\nRC   10081 / Henssen B9;\nRX   PubMed=27107642; DOI=10.1016/j.jmb.2016.04.022;\nRA   Nadar V.S., Yoshinaga M., Pawitwar S.S., Kandavelu P., Sankaran B.,\nRA   Rosen B.P.;\nRT   \"Structure of the ArsI C-As Lyase: Insights into the Mechanism of\nRT   Degradation of Organoarsenical Herbicides and Growth Promoters.\";\nRL   J. Mol. Biol. 428:2462-2473(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 77,
+  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
+  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77"
 }
 ```
 
@@ -829,18 +579,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 77,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77",
-  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
-  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
-  "source_locator": "lines 52-64",
   "excerpt": "RN   [4] {ECO:0007744|PDB:5V0F, ECO:0007744|PDB:6XA0, ECO:0007744|PDB:6XCK}\nRP   X-RAY CRYSTALLOGRAPHY (2.15 ANGSTROMS) OF 1-123 OF MUTANT ALA-102 IN\nRP   COMPLEX WITH SUBSTRATE ROXARSONE (III) AND FE(2+); MUTANT ARG-102 IN\nRP   COMPLEX WITH NI(2+) AND MUTANT GLU-102, FUNCTION, CATALYTIC ACTIVITY,\nRP   COFACTOR, REACTION MECHANISM, AND MUTAGENESIS OF TYR-35; GLN-100 AND\nRP   LYS-102.\nRC   STRAIN=ATCC 19995 / DSM 43183 / JCM 3096 / KCTC 9072 / NBRC 15933 / NCIMB\nRC   10081 / Henssen B9;\nRX   PubMed=35487149; DOI=10.1016/j.jinorgbio.2022.111836;\nRA   Nadar V.S., Kandavelu P., Sankaran B., Rosen B.P., Yoshinaga M.;\nRT   \"The ArsI C-As lyase: Elucidating the catalytic mechanism of degradation of\nRT   organoarsenicals.\";\nRL   J. Inorg. Biochem. 232:111836-111836(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 77,
+  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
+  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77"
 }
 ```
 
@@ -850,18 +600,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 77,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77",
-  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
-  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
-  "source_locator": "lines 110-112",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Fe(2+); Xref=ChEBI:CHEBI:29033;\nCC         Evidence={ECO:0000269|PubMed:35487149};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 77,
+  "retrieved_utc": "2026-11-02T04:27:46.748619+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 110-112",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64f904109a5f69718a32231b7c4349d474c2b8b6f90d2e9fb11be49e672c03f2",
+  "url": "https://rest.uniprot.org/unisave/D1A230?format=txt&versions=77"
 }
 ```
 

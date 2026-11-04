@@ -1,18 +1,16 @@
-# EC_number_0078: before and after transfer clarification
+# EC_number_0078
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0078.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0078.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **B** — 2.1.1.27
+**Expected answer:** **B** — 2.1.1.27
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,250 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the cited UniProt entry, which assigns EC 2.1.1.27 and records the tyramine + SAM methylation reaction with PubMed experimental evidence. The historical entry also contains this assignment.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support a broad methyltransferase inference, but that does not establish the exact substrate specificity or distinguish EC 2.1.1.27 from another methyltransferase option.
-
-
-**Missing item-specific fact**
-
-> The protein's demonstrated reaction—methyl transfer from SAM to tyramine and related amines—is not supplied in the question.
-
-
-**Reason**
-
-> Choosing the precise four-part EC number depends on protein-specific substrate and reaction evidence absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Reviewer-only evidence supports B for this exact sequence, though the input alone does not establish that specific EC assignment.
-
-
-### Important caveats
-
-- The cited UniProt entry and sequence match are reviewer-only information, not information available to the evaluated model.
-- The EC assignment is supported by a recorded experimental-evidence citation; the primary papers were not independently reviewed here.
-- The author's exact source snapshot is unknown, but a historical entry within the stated cutoff also matches the sequence and gives the same EC assignment.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support a broad methyltransferase inference, but that does not establish the exact substrate specificity or distinguish EC 2.1.1.27 from another methyltransferase option.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's demonstrated reaction—methyl transfer from SAM to tyramine and related amines—is not supplied in the question.",
-    "reason": "Choosing the precise four-part EC number depends on protein-specific substrate and reaction evidence absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization."
-  },
-  "case_id": "EC_number_0078",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the cited UniProt entry, which assigns EC 2.1.1.27 and records the tyramine + SAM methylation reaction with PubMed experimental evidence. The historical entry also contains this assignment."
-  },
-  "important_caveats": [
-    "The cited UniProt entry and sequence match are reviewer-only information, not information available to the evaluated model.",
-    "The EC assignment is supported by a recorded experimental-evidence citation; the primary papers were not independently reviewed here.",
-    "The author's exact source snapshot is unknown, but a historical entry within the stated cutoff also matches the sequence and gives the same EC assignment."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Reviewer-only evidence supports B for this exact sequence, though the input alone does not establish that specific EC assignment."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0078",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the cited UniProt entry, which assigns EC 2.1.1.27 and records the tyramine + SAM methylation reaction with PubMed experimental evidence. The historical entry also contains this assignment.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support a broad methyltransferase inference, but that does not establish the exact substrate specificity or distinguish EC 2.1.1.27 from another methyltransferase option.",
-    "missing_item_specific_fact": "The protein's demonstrated reaction—methyl transfer from SAM to tyramine and related amines—is not supplied in the question.",
-    "reason": "Choosing the precise four-part EC number depends on protein-specific substrate and reaction evidence absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Reviewer-only evidence supports B for this exact sequence, though the input alone does not establish that specific EC assignment."
-  },
-  "important_caveats": [
-    "The cited UniProt entry and sequence match are reviewer-only information, not information available to the evaluated model.",
-    "The EC assignment is supported by a recorded experimental-evidence citation; the primary papers were not independently reviewed here.",
-    "The author's exact source snapshot is unknown, but a historical entry within the stated cutoff also matches the sequence and gives the same EC assignment."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0AA51VIL7 (sequence SHA256 matched) explicitly annotates EC=2.1.1.27 (Tyramine N-methyltransferase 1) with evidence codes ECO:0000269 (PubMed:38835170, experimental) and ECO:0000255 (PROSITE-ProRule PRU01020). The catalytic reaction 'tyramine + SAM = N-methyltyramine + SAH + H+' is confirmed by experimental evidence. The sequence matches the benchmark input exactly.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H5](#evidence-h5), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a VQEGFEG motif (~residues 290-296) characteristic of plant class-I SAM-dependent methyltransferases, which could help eliminate C (isomerase, EC 5.4.99.14) and D (alkyl/aryl transferase, EC 2.5.1.76). However, this motif is shared by both O-methyltransferases and N-methyltransferases in plants. The enzyme was initially misnamed 'O-methyltransferase 4' (LwOMT4) and only reclassified as an N-methyltransferase (EC 2.1.1.27) through experimental substrate assays (PubMed:38835170, 2024). Distinguishing 2.1.1.27 from 2.1.1.353 (another specific methyltransferase) from sequence alone is not feasible.
-
-
-**Missing item-specific fact**
-
-> The specific experimental determination that this enzyme catalyzes N-methylation of tyramine (rather than O-methylation or methylation of another substrate) required in vitro enzyme assays and product identification (PubMed:38835170, PubMed:37675639). No sequence motif in the provided 367-aa sequence uniquely identifies tyramine as the substrate or nitrogen as the methylation acceptor.
-
-
-**Reason**
-
-> While general methyltransferase motifs allow elimination of C and D, the final choice between A (2.1.1.353) and B (2.1.1.27) depends entirely on the experimentally determined substrate specificity of this particular peyote enzyme. The PROSITE-ProRule PRU01020 only confirms the general SAM-dependent methyltransferase fold, not the specific reaction. This is a recently characterized enzyme (first published 2023-2024) whose EC assignment was resolved only through targeted biochemical experiments.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> Both A (2.1.1.353) and B (2.1.1.27) are methyltransferases. Without experimental knowledge of this enzyme's specific substrate (tyramine) and methylation position (nitrogen), a model relying solely on sequence features would see a typical plant SAM-dependent methyltransferase with the VQEGFEG motif and could plausibly assign either EC number. The initial annotation of this enzyme as 'O-methyltransferase 4' further confounds sequence-based inference.
-
-
-### Important caveats
-
-- The UniProt annotation carries ECO:0000269 (PubMed) evidence, indicating experimental validation, not mere computational prediction.
-- The enzyme was initially misclassified as an O-methyltransferase (LwOMT4) in the 2023 paper and only reclassified as an N-methyltransferase (LwNMT1, EC 2.1.1.27) in the 2024 paper, making sequence-based inference particularly unreliable for this entry.
-- The PROSITE-ProRule PRU01020 evidence (ECO:0000255) only supports the general methyltransferase classification, not the specific EC 2.1.1.27 assignment.
-- The sequence is from a recently characterized enzyme (first public release 2025-06-18), limiting the training data available to models for this specific entry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a VQEGFEG motif (~residues 290-296) characteristic of plant class-I SAM-dependent methyltransferases, which could help eliminate C (isomerase, EC 5.4.99.14) and D (alkyl/aryl transferase, EC 2.5.1.76). However, this motif is shared by both O-methyltransferases and N-methyltransferases in plants. The enzyme was initially misnamed 'O-methyltransferase 4' (LwOMT4) and only reclassified as an N-methyltransferase (EC 2.1.1.27) through experimental substrate assays (PubMed:38835170, 2024). Distinguishing 2.1.1.27 from 2.1.1.353 (another specific methyltransferase) from sequence alone is not feasible.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimental determination that this enzyme catalyzes N-methylation of tyramine (rather than O-methylation or methylation of another substrate) required in vitro enzyme assays and product identification (PubMed:38835170, PubMed:37675639). No sequence motif in the provided 367-aa sequence uniquely identifies tyramine as the substrate or nitrogen as the methylation acceptor.",
-    "reason": "While general methyltransferase motifs allow elimination of C and D, the final choice between A (2.1.1.353) and B (2.1.1.27) depends entirely on the experimentally determined substrate specificity of this particular peyote enzyme. The PROSITE-ProRule PRU01020 only confirms the general SAM-dependent methyltransferase fold, not the specific reaction. This is a recently characterized enzyme (first published 2023-2024) whose EC assignment was resolved only through targeted biochemical experiments."
-  },
-  "case_id": "EC_number_0078",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H5",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AA51VIL7 (sequence SHA256 matched) explicitly annotates EC=2.1.1.27 (Tyramine N-methyltransferase 1) with evidence codes ECO:0000269 (PubMed:38835170, experimental) and ECO:0000255 (PROSITE-ProRule PRU01020). The catalytic reaction 'tyramine + SAM = N-methyltyramine + SAH + H+' is confirmed by experimental evidence. The sequence matches the benchmark input exactly."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries ECO:0000269 (PubMed) evidence, indicating experimental validation, not mere computational prediction.",
-    "The enzyme was initially misclassified as an O-methyltransferase (LwOMT4) in the 2023 paper and only reclassified as an N-methyltransferase (LwNMT1, EC 2.1.1.27) in the 2024 paper, making sequence-based inference particularly unreliable for this entry.",
-    "The PROSITE-ProRule PRU01020 evidence (ECO:0000255) only supports the general methyltransferase classification, not the specific EC 2.1.1.27 assignment.",
-    "The sequence is from a recently characterized enzyme (first public release 2025-06-18), limiting the training data available to models for this specific entry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "Both A (2.1.1.353) and B (2.1.1.27) are methyltransferases. Without experimental knowledge of this enzyme's specific substrate (tyramine) and methylation position (nitrogen), a model relying solely on sequence features would see a typical plant SAM-dependent methyltransferase with the VQEGFEG motif and could plausibly assign either EC number. The initial annotation of this enzyme as 'O-methyltransferase 4' further confounds sequence-based inference."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0078",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AA51VIL7 (sequence SHA256 matched) explicitly annotates EC=2.1.1.27 (Tyramine N-methyltransferase 1) with evidence codes ECO:0000269 (PubMed:38835170, experimental) and ECO:0000255 (PROSITE-ProRule PRU01020). The catalytic reaction 'tyramine + SAM = N-methyltyramine + SAH + H+' is confirmed by experimental evidence. The sequence matches the benchmark input exactly.",
-    "evidence_ids": ["C4", "C5", "H2", "H5", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a VQEGFEG motif (~residues 290-296) characteristic of plant class-I SAM-dependent methyltransferases, which could help eliminate C (isomerase, EC 5.4.99.14) and D (alkyl/aryl transferase, EC 2.5.1.76). However, this motif is shared by both O-methyltransferases and N-methyltransferases in plants. The enzyme was initially misnamed 'O-methyltransferase 4' (LwOMT4) and only reclassified as an N-methyltransferase (EC 2.1.1.27) through experimental substrate assays (PubMed:38835170, 2024). Distinguishing 2.1.1.27 from 2.1.1.353 (another specific methyltransferase) from sequence alone is not feasible.",
-    "missing_item_specific_fact": "The specific experimental determination that this enzyme catalyzes N-methylation of tyramine (rather than O-methylation or methylation of another substrate) required in vitro enzyme assays and product identification (PubMed:38835170, PubMed:37675639). No sequence motif in the provided 367-aa sequence uniquely identifies tyramine as the substrate or nitrogen as the methylation acceptor.",
-    "reason": "While general methyltransferase motifs allow elimination of C and D, the final choice between A (2.1.1.353) and B (2.1.1.27) depends entirely on the experimentally determined substrate specificity of this particular peyote enzyme. The PROSITE-ProRule PRU01020 only confirms the general SAM-dependent methyltransferase fold, not the specific reaction. This is a recently characterized enzyme (first published 2023-2024) whose EC assignment was resolved only through targeted biochemical experiments."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "Both A (2.1.1.353) and B (2.1.1.27) are methyltransferases. Without experimental knowledge of this enzyme's specific substrate (tyramine) and methylation position (nitrogen), a model relying solely on sequence features would see a typical plant SAM-dependent methyltransferase with the VQEGFEG motif and could plausibly assign either EC number. The initial annotation of this enzyme as 'O-methyltransferase 4' further confounds sequence-based inference."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries ECO:0000269 (PubMed) evidence, indicating experimental validation, not mere computational prediction.",
-    "The enzyme was initially misclassified as an O-methyltransferase (LwOMT4) in the 2023 paper and only reclassified as an N-methyltransferase (LwNMT1, EC 2.1.1.27) in the 2024 paper, making sequence-based inference particularly unreliable for this entry.",
-    "The PROSITE-ProRule PRU01020 evidence (ECO:0000255) only supports the general methyltransferase classification, not the specific EC 2.1.1.27 assignment.",
-    "The sequence is from a recently characterized enzyme (first public release 2025-06-18), limiting the training data available to models for this specific entry."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -401,10 +160,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -522,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AA51VIL7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "906a0fa54cdd2ce71a5c37c6ca189cd70e43ff9b39cc2d3e1acaa55aa615c8d4",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 367,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "906a0fa54cdd2ce71a5c37c6ca189cd70e43ff9b39cc2d3e1acaa55aa615c8d4",
   "current_entry_audit": {
     "entryVersion": 12,
     "firstPublicDate": "2025-06-18",
@@ -553,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-01-24",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "current_source_sequence_sha256": "906a0fa54cdd2ce71a5c37c6ca189cd70e43ff9b39cc2d3e1acaa55aa615c8d4",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 367,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "906a0fa54cdd2ce71a5c37c6ca189cd70e43ff9b39cc2d3e1acaa55aa615c8d4",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 10,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AA51VIL7",
   "selected_historical_entry_version": 10,
+  "selected_historical_record_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "selected_historical_source_sequence_length": 367,
+  "selected_historical_source_sequence_sha256": "906a0fa54cdd2ce71a5c37c6ca189cd70e43ff9b39cc2d3e1acaa55aa615c8d4",
   "selected_historical_version": {
     "accession": "A0AA51VIL7",
     "database": "Swiss-Prot",
@@ -571,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NMT1_LOPWI",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "selected_historical_source_sequence_sha256": "906a0fa54cdd2ce71a5c37c6ca189cd70e43ff9b39cc2d3e1acaa55aa615c8d4",
-  "selected_historical_source_sequence_length": 367,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 10,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -602,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AA51VIL7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -621,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":12,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2024-01-24\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -640,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Peyote\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Cactineae\",\"Cactaceae\",\"Cactoideae\",\"Cacteae\",\"Lophophora\"],\"scientificName\":\"Lophophora williamsii\",\"synonyms\":[\"Echinocactus williamsii\"],\"taxonId\":130138}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -659,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37675639\",\"source\":\"PubMed\"}],\"value\":\"O-methyltransferase 4\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37675639\",\"source\":\"PubMed\"}],\"value\":\"LwOMT4\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.27\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"Tyramine N-methyltransferase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"LwNMT1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -678,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:14866\"}}],\"reaction\":{\"ecNumber\":\"2.1.1.27\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"tyramine + S-adenosyl-L-methionine = N-methyltyramine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:14865\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58155\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:327995\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -697,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:80992\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"N-methyltyramine + S-adenosyl-L-methionine = hordenine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:80991\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58155\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231770\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -716,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:80996\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"dopamine + S-adenosyl-L-methionine = N-methyl-dopamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:80995\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59905\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231771\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -735,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81000\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"N-methyl-dopamine + S-adenosyl-L-methionine = N,N-dimethyldopamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:80999\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231771\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231772\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -754,15 +502,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81004\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"3-methoxytyramine + S-adenosyl-L-methionine = N-methyl-3-methoxytyramine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81003\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:192089\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231773\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -773,15 +521,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81008\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"N-methyl-3-methoxytyramine + S-adenosyl-L-methionine = N,N-dimethyl-3-methoxytyramine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81007\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231773\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231774\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -792,15 +540,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/7",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81012\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"3,4-dihydroxy-5-methoxyphenethylamine + S-adenosyl-L-methionine = N-methyl-3,4-dihydroxy-5-methoxyphenethylamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81011\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231763\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231775\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/7",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -811,15 +559,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/8",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81016\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"N-methyl-3,4-dihydroxy-5-methoxyphenethylamine + S-adenosyl-L-methionine = N,N-dimethyl-3,4-dihydroxy-5-methoxyphenethylamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81015\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231775\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231776\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/8",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -830,15 +578,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/9",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81020\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"3-hydroxy-4,5-dimethoxyphenethylamine + S-adenosyl-L-methionine = N-methyl-3-hydroxy-4,5-dimethoxyphenethylamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81019\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231769\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231779\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/9",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -849,15 +597,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/10",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81024\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"N-methyl-3-hydroxy-4,5-dimethoxyphenethylamine + S-adenosyl-L-methionine = N,N-dimethyl-3-hydroxy-4,5-dimethoxyphenethylamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81023\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231779\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231780\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/10",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -868,15 +616,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/11",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81028\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"4-hydroxy-3,5-dimethoxyphenethylamine + S-adenosyl-L-methionine = N-methyl-4-hydroxy-3,5-dimethoxyphenethylamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81027\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231768\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231777\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/11",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -887,15 +635,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C16",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/12",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81032\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"N-methyl-4-hydroxy-3,5-dimethoxyphenethylamine + S-adenosyl-L-methionine = N,N-dimethyl-4-hydroxy-3,5-dimethoxyphenethylamine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81031\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231777\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231778\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/12",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -906,15 +654,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C17",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/13",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81036\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"mescaline + S-adenosyl-L-methionine = N-methylmescaline + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81035\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231762\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231781\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/13",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -925,15 +673,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C18",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/comments/14",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81040\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"name\":\"N-methylmescaline + S-adenosyl-L-methionine = N,N-dimethylmescaline + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81039\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231781\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231782\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/14",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -944,15 +692,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C19",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Watkins J.L.\",\"Li Q.\",\"Yeaman S.\",\"Facchini P.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37675639\"},{\"database\":\"DOI\",\"id\":\"10.1111/tpj.16447\"}],\"citationType\":\"journal article\",\"firstPage\":\"635\",\"id\":\"37675639\",\"journal\":\"Plant J.\",\"lastPage\":\"649\",\"publicationDate\":\"2023\",\"title\":\"Elucidation of the mescaline biosynthetic pathway in peyote (Lophophora williamsii).\",\"volume\":\"116\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WMX25282.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. Jourdaniana\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -963,15 +711,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C20",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json",
-  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
-  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Berman P.\",\"de Haro L.A.\",\"Cavaco A.-R.\",\"Panda S.\",\"Dong Y.\",\"Kuzmich N.\",\"Lichtenstein G.\",\"Peleg Y.\",\"Harat H.\",\"Jozwiak A.\",\"Cai J.\",\"Heinig U.\",\"Meir S.\",\"Rogachev I.\",\"Aharoni A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38835170\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.molp.2024.05.012\"}],\"citationType\":\"journal article\",\"firstPage\":\"1129\",\"id\":\"38835170\",\"journal\":\"Mol. Plant\",\"lastPage\":\"1150\",\"publicationDate\":\"2024\",\"title\":\"The biosynthetic pathway of the hallucinogen mescaline and its heterologous reconstruction.\",\"volume\":\"17\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. Rehovot 7\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"MUTAGENESIS OF TRP-266; ASP-270 AND PHE-324\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:55.487954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a5716b3c7e89f33127adc2f7a1674ece442bb48daa4358bf4bc4253e71206ee6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51VIL7.json"
 }
 ```
 
@@ -981,18 +729,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   NMT1_LOPWI              Reviewed;         367 AA.\nAC   A0AA51VIL7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   24-JAN-2024, sequence version 1.\nDT   28-JAN-2026, entry version 10.\nDE   RecName: Full=Tyramine N-methyltransferase 1 {ECO:0000305|PubMed:38835170};\nDE            Short=LwNMT1 {ECO:0000303|PubMed:38835170};\nDE            EC=2.1.1.27 {ECO:0000255|PROSITE-ProRule:PRU01020, ECO:0000269|PubMed:38835170};\nDE   AltName: Full=O-methyltransferase 4 {ECO:0000303|PubMed:37675639};\nDE            Short=LwOMT4 {ECO:0000303|PubMed:37675639};\nGN   Name=NMT1 {ECO:0000303|PubMed:38835170};\nGN   Synonyms=OMT4 {ECO:0000303|PubMed:37675639};\nOS   Lophophora williamsii (Peyote) (Echinocactus williamsii).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Cactineae; Cactaceae; Cactoideae; Cacteae; Lophophora.\nOX   NCBI_TaxID=130138;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1002,18 +750,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Tyramine N-methyltransferase 1 {ECO:0000305|PubMed:38835170};\nDE            Short=LwNMT1 {ECO:0000303|PubMed:38835170};\nDE            EC=2.1.1.27 {ECO:0000255|PROSITE-ProRule:PRU01020, ECO:0000269|PubMed:38835170};\nDE   AltName: Full=O-methyltransferase 4 {ECO:0000303|PubMed:37675639};\nDE            Short=LwOMT4 {ECO:0000303|PubMed:37675639};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1023,18 +771,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 18-25",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WMX25282.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRC   STRAIN=cv. Jourdaniana;\nRX   PubMed=37675639; DOI=10.1111/tpj.16447;\nRA   Watkins J.L., Li Q., Yeaman S., Facchini P.J.;\nRT   \"Elucidation of the mescaline biosynthetic pathway in peyote (Lophophora\nRT   williamsii).\";\nRL   Plant J. 116:635-649(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 18-25",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1044,18 +792,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 26-36",
   "excerpt": "RN   [2]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, MUTAGENESIS OF TRP-266; ASP-270 AND\nRP   PHE-324, CATALYTIC ACTIVITY, PATHWAY, AND BIOTECHNOLOGY.\nRC   STRAIN=cv. Rehovot 7;\nRX   PubMed=38835170; DOI=10.1016/j.molp.2024.05.012;\nRA   Berman P., de Haro L.A., Cavaco A.-R., Panda S., Dong Y., Kuzmich N.,\nRA   Lichtenstein G., Peleg Y., Harat H., Jozwiak A., Cai J., Heinig U.,\nRA   Meir S., Rogachev I., Aharoni A.;\nRT   \"The biosynthetic pathway of the hallucinogen mescaline and its\nRT   heterologous reconstruction.\";\nRL   Mol. Plant 17:1129-1150(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1065,18 +813,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 50-57",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=tyramine + S-adenosyl-L-methionine = N-methyltyramine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:14865,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:58155,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:327995; EC=2.1.1.27;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:14866;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1086,18 +834,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 58-65",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-methyltyramine + S-adenosyl-L-methionine = hordenine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:80991,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:58155,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:231770;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:80992;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1107,18 +855,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 66-73",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=dopamine + S-adenosyl-L-methionine = N-methyl-dopamine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:80995,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:59905, ChEBI:CHEBI:231771;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:80996;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 66-73",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1128,18 +876,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 74-81",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-methyl-dopamine + S-adenosyl-L-methionine = N,N-\nCC         dimethyldopamine + S-adenosyl-L-homocysteine + H(+);\nCC         Xref=Rhea:RHEA:80999, ChEBI:CHEBI:15378, ChEBI:CHEBI:57856,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:231771, ChEBI:CHEBI:231772;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81000;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 74-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1149,18 +897,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 82-89",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=3-methoxytyramine + S-adenosyl-L-methionine = N-methyl-3-\nCC         methoxytyramine + S-adenosyl-L-homocysteine + H(+);\nCC         Xref=Rhea:RHEA:81003, ChEBI:CHEBI:15378, ChEBI:CHEBI:57856,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:192089, ChEBI:CHEBI:231773;\nCC         Evidence={ECO:0000269|PubMed:37675639, ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81004;\nCC         Evidence={ECO:0000269|PubMed:37675639, ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-89",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1170,18 +918,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 90-97",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-methyl-3-methoxytyramine + S-adenosyl-L-methionine = N,N-\nCC         dimethyl-3-methoxytyramine + S-adenosyl-L-homocysteine + H(+);\nCC         Xref=Rhea:RHEA:81007, ChEBI:CHEBI:15378, ChEBI:CHEBI:57856,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:231773, ChEBI:CHEBI:231774;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81008;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 90-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1191,18 +939,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 98-106",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=3,4-dihydroxy-5-methoxyphenethylamine + S-adenosyl-L-\nCC         methionine = N-methyl-3,4-dihydroxy-5-methoxyphenethylamine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81011,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231763, ChEBI:CHEBI:231775;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81012;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 98-106",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1212,18 +960,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 107-115",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-methyl-3,4-dihydroxy-5-methoxyphenethylamine + S-adenosyl-L-\nCC         methionine = N,N-dimethyl-3,4-dihydroxy-5-methoxyphenethylamine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81015,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231775, ChEBI:CHEBI:231776;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81016;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 107-115",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1233,18 +981,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H13",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 116-124",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=3-hydroxy-4,5-dimethoxyphenethylamine + S-adenosyl-L-\nCC         methionine = N-methyl-3-hydroxy-4,5-dimethoxyphenethylamine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81019,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231769, ChEBI:CHEBI:231779;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81020;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 116-124",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1254,18 +1002,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H14",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 125-133",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-methyl-3-hydroxy-4,5-dimethoxyphenethylamine + S-adenosyl-L-\nCC         methionine = N,N-dimethyl-3-hydroxy-4,5-dimethoxyphenethylamine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81023,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231779, ChEBI:CHEBI:231780;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81024;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 125-133",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1275,18 +1023,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H15",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 134-142",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=4-hydroxy-3,5-dimethoxyphenethylamine + S-adenosyl-L-\nCC         methionine = N-methyl-4-hydroxy-3,5-dimethoxyphenethylamine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81027,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231768, ChEBI:CHEBI:231777;\nCC         Evidence={ECO:0000269|PubMed:37675639, ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81028;\nCC         Evidence={ECO:0000269|PubMed:37675639, ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 134-142",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1296,18 +1044,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H16",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 143-151",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-methyl-4-hydroxy-3,5-dimethoxyphenethylamine + S-adenosyl-L-\nCC         methionine = N,N-dimethyl-4-hydroxy-3,5-dimethoxyphenethylamine + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81031,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231777, ChEBI:CHEBI:231778;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81032;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 143-151",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1317,18 +1065,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H17",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 152-159",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=mescaline + S-adenosyl-L-methionine = N-methylmescaline + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81035,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231762, ChEBI:CHEBI:231781;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81036;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 152-159",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 
@@ -1338,18 +1086,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 10,
   "evidence_id": "H18",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10",
-  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
-  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
-  "source_locator": "lines 160-167",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-methylmescaline + S-adenosyl-L-methionine = N,N-\nCC         dimethylmescaline + S-adenosyl-L-homocysteine + H(+);\nCC         Xref=Rhea:RHEA:81039, ChEBI:CHEBI:15378, ChEBI:CHEBI:57856,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:231781, ChEBI:CHEBI:231782;\nCC         Evidence={ECO:0000269|PubMed:38835170};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81040;\nCC         Evidence={ECO:0000269|PubMed:38835170};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 10,
+  "retrieved_utc": "2026-11-01T06:27:38.117320+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 160-167",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4eaff71313f44d4f70b4dabe345699f1e93502209fec974e1426ccfcd7207c8",
+  "url": "https://rest.uniprot.org/unisave/A0AA51VIL7?format=txt&versions=10"
 }
 ```
 

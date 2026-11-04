@@ -1,18 +1,16 @@
-# transmembrane_0055: before and after transfer clarification
+# transmembrane_0055
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0055.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/transmembrane_0055.txt)
 
 **Task:** `transmembrane`  
-**Author key, unchanged:** **B** — 278..290; 402..415
+**Expected answer:** **B** — 278..290; 402..415
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,250 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record annotates transmembrane beta-strands at 278..290 and 402..415, matching choice B. The annotation is transferred by similarity from UniProtKB:P13671, so it supports the key as a database annotation, not as independently verified experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The supplied sequence does not provide a reliable way to distinguish these precise beta-strand boundaries from the nearby alternative in choice A. The question's generic description of typically hydrophobic alpha-helices does not identify these annotated beta-strands.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific transmembrane beta-strand annotations at 278..290 and 402..415, or equivalent protein-specific evidence.
-
-
-**Reason**
-
-> Choosing the exact intervals requires protein-specific annotation or evidence not supplied in the question. Recognizing the protein or retrieving its annotation would be lookup, not reasoning from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports B's annotated intervals; no other choice is established as an alternative transmembrane annotation. The lack of input-level grounds for choosing the exact intervals is captured by the lookup-dependence judgment.
-
-
-### Important caveats
-
-- The annotation is a similarity-based transfer, not direct experimental confirmation for this mouse sequence.
-- The reviewer-only database evidence was not available to the evaluated model.
-- The annotated regions are beta-stranded, whereas the prompt describes transmembrane domains in terms of typical hydrophobic alpha-helices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied sequence does not provide a reliable way to distinguish these precise beta-strand boundaries from the nearby alternative in choice A. The question's generic description of typically hydrophobic alpha-helices does not identify these annotated beta-strands.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific transmembrane beta-strand annotations at 278..290 and 402..415, or equivalent protein-specific evidence.",
-    "reason": "Choosing the exact intervals requires protein-specific annotation or evidence not supplied in the question. Recognizing the protein or retrieving its annotation would be lookup, not reasoning from the input."
-  },
-  "case_id": "transmembrane_0055",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates transmembrane beta-strands at 278..290 and 402..415, matching choice B. The annotation is transferred by similarity from UniProtKB:P13671, so it supports the key as a database annotation, not as independently verified experimental evidence."
-  },
-  "important_caveats": [
-    "The annotation is a similarity-based transfer, not direct experimental confirmation for this mouse sequence.",
-    "The reviewer-only database evidence was not available to the evaluated model.",
-    "The annotated regions are beta-stranded, whereas the prompt describes transmembrane domains in terms of typical hydrophobic alpha-helices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports B's annotated intervals; no other choice is established as an alternative transmembrane annotation. The lack of input-level grounds for choosing the exact intervals is captured by the lookup-dependence judgment."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "transmembrane_0055",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates transmembrane beta-strands at 278..290 and 402..415, matching choice B. The annotation is transferred by similarity from UniProtKB:P13671, so it supports the key as a database annotation, not as independently verified experimental evidence.",
-    "evidence_ids": ["C5", "C6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The supplied sequence does not provide a reliable way to distinguish these precise beta-strand boundaries from the nearby alternative in choice A. The question's generic description of typically hydrophobic alpha-helices does not identify these annotated beta-strands.",
-    "missing_item_specific_fact": "The sequence-specific transmembrane beta-strand annotations at 278..290 and 402..415, or equivalent protein-specific evidence.",
-    "reason": "Choosing the exact intervals requires protein-specific annotation or evidence not supplied in the question. Recognizing the protein or retrieving its annotation would be lookup, not reasoning from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports B's annotated intervals; no other choice is established as an alternative transmembrane annotation. The lack of input-level grounds for choosing the exact intervals is captured by the lookup-dependence judgment."
-  },
-  "important_caveats": [
-    "The annotation is a similarity-based transfer, not direct experimental confirmation for this mouse sequence.",
-    "The reviewer-only database evidence was not available to the evaluated model.",
-    "The annotated regions are beta-stranded, whereas the prompt describes transmembrane domains in terms of typical hydrophobic alpha-helices."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry E9Q6D8 (Mouse Complement component C6, sequence matched by SHA256) annotates two transmembrane features at exactly 278..290 and 402..415, both described as 'Beta stranded' with evidence code ECO:0000250 (inferred by similarity from P13671, human C6). Both the current entry (C5, C6) and the historical entry version 99 (H2, H3) confirm these coordinates. The expected answer B matches these annotations exactly. However, the annotation is computational inference by similarity, not direct experimental evidence, and describes beta-stranded (not alpha-helical) membrane-spanning regions.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The prompt instructs the solver to look for 'hydrophobic alpha-helices' typical of transmembrane domains, but the actual annotated regions are 'Beta stranded' and only 13–14 residues long (well below the 18–25 residue threshold for alpha-helical TM). Standard hydrophobicity-window analysis would not cleanly distinguish positions 278–290 from 281–291 (option A), nor confirm the existence of a second TM at 402–415 rather than at 510–528 (option D). The protein is a secreted complement component (C6), making the presence of transmembrane segments itself counterintuitive without prior knowledge of this specific annotation.
-
-
-**Missing item-specific fact**
-
-> The exact UniProt annotation coordinates (278..290 and 402..415), the fact that these are beta-stranded rather than alpha-helical membrane regions, and the knowledge that this secreted complement precursor carries two such annotated segments transferred by similarity from human C6 (P13671). Without this protein-specific annotation, general hydrophobicity reasoning cannot resolve the 3-residue boundary shift between A and B or confirm the dual-region topology.
-
-
-**Reason**
-
-> Selecting B over A requires knowing the exact start position (278 vs 281), which is a boundary-level annotation detail not derivable from general TM prediction heuristics. Selecting B over C requires knowing there are two TM segments at these specific locations. The 'beta stranded' character contradicts the prompt's alpha-helix framing, further undermining general reasoning. The answer depends on recalling or accessing the specific UniProt feature table for this protein.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Option A (281..291; 402..415) differs from B by only a 3-residue shift in the first region; without exact annotation knowledge, a hydrophobicity-based analysis could plausibly select either boundary. Option C (278..290 only) is defensible if a solver identifies only one TM segment. The prompt's description of TM domains as 'hydrophobic alpha-helices' conflicts with the actual 'Beta stranded' annotation, making the reasoning path ambiguous.
-
-
-### Important caveats
-
-- The transmembrane annotations carry evidence code ECO:0000250 (inferred by similarity from P13671), not direct experimental evidence.
-- The annotated regions are 'Beta stranded,' contradicting the prompt's description of TM domains as 'hydrophobic alpha-helices.' This is unusual for a secreted complement protein.
-- The identity origin note states the UniProt accession was inferred mechanically from dataset metadata and was absent from the evaluated model input.
-- The historical entry (v99) and current entry (v101) both carry the same TM annotations with the same similarity-transfer evidence code; no experimental validation was found in the retrieved excerpts.
-- The benchmark sequence SHA256 matches both current and historical source sequences (934 AA, sequence version 2).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The prompt instructs the solver to look for 'hydrophobic alpha-helices' typical of transmembrane domains, but the actual annotated regions are 'Beta stranded' and only 13–14 residues long (well below the 18–25 residue threshold for alpha-helical TM). Standard hydrophobicity-window analysis would not cleanly distinguish positions 278–290 from 281–291 (option A), nor confirm the existence of a second TM at 402–415 rather than at 510–528 (option D). The protein is a secreted complement component (C6), making the presence of transmembrane segments itself counterintuitive without prior knowledge of this specific annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact UniProt annotation coordinates (278..290 and 402..415), the fact that these are beta-stranded rather than alpha-helical membrane regions, and the knowledge that this secreted complement precursor carries two such annotated segments transferred by similarity from human C6 (P13671). Without this protein-specific annotation, general hydrophobicity reasoning cannot resolve the 3-residue boundary shift between A and B or confirm the dual-region topology.",
-    "reason": "Selecting B over A requires knowing the exact start position (278 vs 281), which is a boundary-level annotation detail not derivable from general TM prediction heuristics. Selecting B over C requires knowing there are two TM segments at these specific locations. The 'beta stranded' character contradicts the prompt's alpha-helix framing, further undermining general reasoning. The answer depends on recalling or accessing the specific UniProt feature table for this protein."
-  },
-  "case_id": "transmembrane_0055",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry E9Q6D8 (Mouse Complement component C6, sequence matched by SHA256) annotates two transmembrane features at exactly 278..290 and 402..415, both described as 'Beta stranded' with evidence code ECO:0000250 (inferred by similarity from P13671, human C6). Both the current entry (C5, C6) and the historical entry version 99 (H2, H3) confirm these coordinates. The expected answer B matches these annotations exactly. However, the annotation is computational inference by similarity, not direct experimental evidence, and describes beta-stranded (not alpha-helical) membrane-spanning regions."
-  },
-  "important_caveats": [
-    "The transmembrane annotations carry evidence code ECO:0000250 (inferred by similarity from P13671), not direct experimental evidence.",
-    "The annotated regions are 'Beta stranded,' contradicting the prompt's description of TM domains as 'hydrophobic alpha-helices.' This is unusual for a secreted complement protein.",
-    "The identity origin note states the UniProt accession was inferred mechanically from dataset metadata and was absent from the evaluated model input.",
-    "The historical entry (v99) and current entry (v101) both carry the same TM annotations with the same similarity-transfer evidence code; no experimental validation was found in the retrieved excerpts.",
-    "The benchmark sequence SHA256 matches both current and historical source sequences (934 AA, sequence version 2)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Option A (281..291; 402..415) differs from B by only a 3-residue shift in the first region; without exact annotation knowledge, a hydrophobicity-based analysis could plausibly select either boundary. Option C (278..290 only) is defensible if a solver identifies only one TM segment. The prompt's description of TM domains as 'hydrophobic alpha-helices' conflicts with the actual 'Beta stranded' annotation, making the reasoning path ambiguous."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "transmembrane_0055",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry E9Q6D8 (Mouse Complement component C6, sequence matched by SHA256) annotates two transmembrane features at exactly 278..290 and 402..415, both described as 'Beta stranded' with evidence code ECO:0000250 (inferred by similarity from P13671, human C6). Both the current entry (C5, C6) and the historical entry version 99 (H2, H3) confirm these coordinates. The expected answer B matches these annotations exactly. However, the annotation is computational inference by similarity, not direct experimental evidence, and describes beta-stranded (not alpha-helical) membrane-spanning regions.",
-    "evidence_ids": ["C5", "C6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The prompt instructs the solver to look for 'hydrophobic alpha-helices' typical of transmembrane domains, but the actual annotated regions are 'Beta stranded' and only 13–14 residues long (well below the 18–25 residue threshold for alpha-helical TM). Standard hydrophobicity-window analysis would not cleanly distinguish positions 278–290 from 281–291 (option A), nor confirm the existence of a second TM at 402–415 rather than at 510–528 (option D). The protein is a secreted complement component (C6), making the presence of transmembrane segments itself counterintuitive without prior knowledge of this specific annotation.",
-    "missing_item_specific_fact": "The exact UniProt annotation coordinates (278..290 and 402..415), the fact that these are beta-stranded rather than alpha-helical membrane regions, and the knowledge that this secreted complement precursor carries two such annotated segments transferred by similarity from human C6 (P13671). Without this protein-specific annotation, general hydrophobicity reasoning cannot resolve the 3-residue boundary shift between A and B or confirm the dual-region topology.",
-    "reason": "Selecting B over A requires knowing the exact start position (278 vs 281), which is a boundary-level annotation detail not derivable from general TM prediction heuristics. Selecting B over C requires knowing there are two TM segments at these specific locations. The 'beta stranded' character contradicts the prompt's alpha-helix framing, further undermining general reasoning. The answer depends on recalling or accessing the specific UniProt feature table for this protein."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Option A (281..291; 402..415) differs from B by only a 3-residue shift in the first region; without exact annotation knowledge, a hydrophobicity-based analysis could plausibly select either boundary. Option C (278..290 only) is defensible if a solver identifies only one TM segment. The prompt's description of TM domains as 'hydrophobic alpha-helices' conflicts with the actual 'Beta stranded' annotation, making the reasoning path ambiguous."
-  },
-  "important_caveats": [
-    "The transmembrane annotations carry evidence code ECO:0000250 (inferred by similarity from P13671), not direct experimental evidence.",
-    "The annotated regions are 'Beta stranded,' contradicting the prompt's description of TM domains as 'hydrophobic alpha-helices.' This is unusual for a secreted complement protein.",
-    "The identity origin note states the UniProt accession was inferred mechanically from dataset metadata and was absent from the evaluated model input.",
-    "The historical entry (v99) and current entry (v101) both carry the same TM annotations with the same similarity-transfer evidence code; no experimental validation was found in the retrieved excerpts.",
-    "The benchmark sequence SHA256 matches both current and historical source sequences (934 AA, sequence version 2)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -407,10 +166,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -530,30 +288,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E9Q6D8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8886931fba31717048f68746485603eba835719d0ab9ad67408064a7be8af267",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 934,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8886931fba31717048f68746485603eba835719d0ab9ad67408064a7be8af267",
   "current_entry_audit": {
     "entryVersion": 101,
     "firstPublicDate": "2025-06-18",
@@ -561,14 +306,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-02-28",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
-  "current_source_sequence_sha256": "8886931fba31717048f68746485603eba835719d0ab9ad67408064a7be8af267",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 934,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8886931fba31717048f68746485603eba835719d0ab9ad67408064a7be8af267",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 99,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E9Q6D8",
   "selected_historical_entry_version": 99,
+  "selected_historical_record_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
+  "selected_historical_source_sequence_length": 934,
+  "selected_historical_source_sequence_sha256": "8886931fba31717048f68746485603eba835719d0ab9ad67408064a7be8af267",
   "selected_historical_version": {
     "accession": "E9Q6D8",
     "database": "Swiss-Prot",
@@ -579,24 +340,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CO6_MOUSE",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
-  "selected_historical_source_sequence_sha256": "8886931fba31717048f68746485603eba835719d0ab9ad67408064a7be8af267",
-  "selected_historical_source_sequence_length": 934,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 99,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -610,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json",
-  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
-  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E9Q6D8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json"
 }
 ```
 
@@ -629,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json",
-  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
-  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":101,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-02-28\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json"
 }
 ```
 
@@ -648,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json",
-  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
-  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mouse\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Mus\",\"Mus\"],\"scientificName\":\"Mus musculus\",\"taxonId\":10090}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json"
 }
 ```
 
@@ -667,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json",
-  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
-  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Complement component C6\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json"
 }
 ```
 
@@ -686,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json",
-  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
-  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Beta stranded\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P13671\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":290},\"start\":{\"modifier\":\"EXACT\",\"value\":278}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json"
 }
 ```
 
@@ -705,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json",
-  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
-  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Beta stranded\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P13671\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":415},\"start\":{\"modifier\":\"EXACT\",\"value\":402}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:28:07.887054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ab2ff8c634de0b89fdc8ef96721bd2d2e212b3c99707b0a066f82eb2a76e11f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q6D8.json"
 }
 ```
 
@@ -723,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 99,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q6D8?format=txt&versions=99",
-  "source_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
-  "retrieved_utc": "2026-11-02T04:28:10.587277+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   CO6_MOUSE               Reviewed;         934 AA.\nAC   E9Q6D8; Q8BRY4; Q91X70; Q9QXT7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   28-FEB-2018, sequence version 2.\nDT   28-JAN-2026, entry version 99.\nDE   RecName: Full=Complement component C6 {ECO:0000305};\nDE   Flags: Precursor;\nGN   Name=C6 {ECO:0000312|MGI:MGI:88233};\nOS   Mus musculus (Mouse).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Mus; Mus.\nOX   NCBI_TaxID=10090;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 99,
+  "retrieved_utc": "2026-11-02T04:28:10.587277+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
+  "url": "https://rest.uniprot.org/unisave/E9Q6D8?format=txt&versions=99"
 }
 ```
 
@@ -744,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 99,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q6D8?format=txt&versions=99",
-  "source_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
-  "retrieved_utc": "2026-11-02T04:28:10.587277+00:00",
-  "source_locator": "lines 238-240",
   "excerpt": "FT   TRANSMEM        278..290\nFT                   /note=\"Beta stranded\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P13671\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 99,
+  "retrieved_utc": "2026-11-02T04:28:10.587277+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 238-240",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
+  "url": "https://rest.uniprot.org/unisave/E9Q6D8?format=txt&versions=99"
 }
 ```
 
@@ -765,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 99,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q6D8?format=txt&versions=99",
-  "source_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
-  "retrieved_utc": "2026-11-02T04:28:10.587277+00:00",
-  "source_locator": "lines 241-243",
   "excerpt": "FT   TRANSMEM        402..415\nFT                   /note=\"Beta stranded\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P13671\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 99,
+  "retrieved_utc": "2026-11-02T04:28:10.587277+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 241-243",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "91cb7e42a331a9224499c3b00d14730203dbf91c7234b33358bef2146f9087f9",
+  "url": "https://rest.uniprot.org/unisave/E9Q6D8?format=txt&versions=99"
 }
 ```
 

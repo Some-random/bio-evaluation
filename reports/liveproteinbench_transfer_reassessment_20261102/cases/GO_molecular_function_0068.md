@@ -1,18 +1,16 @@
-# GO_molecular_function_0068: before and after transfer clarification
+# GO_molecular_function_0068
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0068.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0068.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — protein heterodimerization activity
+**Expected answer:** **D** — protein heterodimerization activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | no saved label | no saved label | output error (invalid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | Unusable review | Unusable review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,13 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `invalid_review`.
 
-### Expected-answer support: supported
-
-> The exact-matched protein has a UniProt GO annotation for protein heterodimerization activity, supporting choice D. The annotation is computationally inferred by InterPro (IEA), not direct experimental evidence for that molecular function.
-
-Citations as saved: [C6](#evidence-c6), [H8](#evidence-h8), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a reliable, specific basis for inferring protein heterodimerization activity rather than the other listed functions.
-
-
-**Missing item-specific fact**
-
-> Identifying this sequence as Drosophila Spt7, or knowing its protein-specific GO annotation or interaction evidence, is needed to select D.
-
-
-**Reason**
-
-> The reviewer-only annotation supports the key, but that annotation and protein identity were not supplied to the model. Recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports D among the listed choices; it does not establish another listed option as a competing answer.
-
-
-### Important caveats
-
-- The sequence matches the current and historical UniProt sequence for the protein, but the author's exact source snapshot is unknown.
-- The heterodimerization GO annotation is IEA:InterPro, a computational annotation rather than direct experimental proof.
-- UniProt describes the protein as a component of the SAGA transcription regulatory complex; that biological context is reviewer-only evidence, absent from the question.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a reliable, specific basis for inferring protein heterodimerization activity rather than the other listed functions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying this sequence as Drosophila Spt7, or knowing its protein-specific GO annotation or interaction evidence, is needed to select D.",
-    "reason": "The reviewer-only annotation supports the key, but that annotation and protein identity were not supplied to the model. Recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the provided input."
-  },
-  "case_id": "GO_molecular_function_0068",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H8",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matched protein has a UniProt GO annotation for protein heterodimerization activity, supporting choice D. The annotation is computationally inferred by InterPro (IEA), not direct experimental evidence for that molecular function."
-  },
-  "important_caveats": [
-    "The sequence matches the current and historical UniProt sequence for the protein, but the author's exact source snapshot is unknown.",
-    "The heterodimerization GO annotation is IEA:InterPro, a computational annotation rather than direct experimental proof.",
-    "UniProt describes the protein as a component of the SAGA transcription regulatory complex; that biological context is reviewer-only evidence, absent from the question."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports D among the listed choices; it does not establish another listed option as a competing answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0068",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matched protein has a UniProt GO annotation for protein heterodimerization activity, supporting choice D. The annotation is computationally inferred by InterPro (IEA), not direct experimental evidence for that molecular function.",
-    "evidence_ids": ["C6", "H8", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a reliable, specific basis for inferring protein heterodimerization activity rather than the other listed functions.",
-    "missing_item_specific_fact": "Identifying this sequence as Drosophila Spt7, or knowing its protein-specific GO annotation or interaction evidence, is needed to select D.",
-    "reason": "The reviewer-only annotation supports the key, but that annotation and protein identity were not supplied to the model. Recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports D among the listed choices; it does not establish another listed option as a competing answer."
-  },
-  "important_caveats": [
-    "The sequence matches the current and historical UniProt sequence for the protein, but the author's exact source snapshot is unknown.",
-    "The heterodimerization GO annotation is IEA:InterPro, a computational annotation rather than direct experimental proof.",
-    "UniProt describes the protein as a component of the SAGA transcription regulatory complex; that biological context is reviewer-only evidence, absent from the question."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q9VX12 (SAGA complex subunit Spt7, Drosophila melanogaster) carries GO:0046982 (protein heterodimerization activity) as an annotation (evidence C6/H8). However, this annotation is IEA:InterPro (computational inference), not experimentally validated. The experimental evidence (PubMed:16980620, 20008933, etc.) describes Spt7 as a component of the SAGA multiprotein complex, which involves protein-protein interactions consistent with heterodimerization. The annotation is present in the database, so the key is supported, albeit by computational rather than direct experimental evidence.
-
-Citations as saved: [C6](#evidence-c6), [H8](#evidence-h8), [C5](#evidence-c5), [H7](#evidence-h7).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 359-residue sequence lacks characteristic catalytic motifs for the three enzyme options: no 2-oxoglutarate-dependent dioxygenase facial triad (HxD...H/F) for option A, no RNA-directed RNA polymerase palm/GDD motif for option B, and no GNAT-fold or acetyltransferase domain for option C. The protein appears to be a structural/scaffold protein (consistent with its actual role as a SAGA complex subunit). Among the four choices, D (protein heterodimerization activity) is the only non-catalytic molecular function, making it the sole viable option by elimination of clearly inapplicable catalytic activities.
-
-
-**Missing item-specific fact**
-
-> None strictly required to distinguish among the four given choices. However, the specific annotation of 'heterodimerization' (vs. 'transcription coactivator activity' GO:0003713, which is annotated with stronger IBA:GO_Central evidence) as the PRIMARY molecular function would require protein-specific knowledge. This distinction is moot because transcription coactivator activity is not among the offered options.
-
-
-**Reason**
-
-> The elimination of three catalytic options based on absence of well-defined enzyme motifs is a concrete biological argument derivable from the sequence and general knowledge of enzyme domain architecture. The remaining option D is the only non-catalytic molecular function among the choices, providing a valid reasoning path without requiring memorization of this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, A, B, and C all describe specific catalytic activities requiring well-defined enzyme domains that are clearly absent from this sequence. D is the only non-catalytic option. No ambiguity exists within the given option set.
-
-
-### Important caveats
-
-- The GO:0046982 annotation is IEA:InterPro (computational inference), not experimentally determined. The experimental evidence describes Spt7 as a component of the SAGA multiprotein complex, not specifically as a heterodimer.
-- The protein also carries GO:0003713 (transcription coactivator activity, IBA:GO_Central), which arguably better describes its primary molecular role, but this term is not among the offered choices.
-- The reasoning path is primarily by elimination of catalytic options rather than positive identification of a heterodimerization domain.
-- The sequence is only 359 residues; definitive absence of all possible catalytic motifs relies on the assumption that no cryptic or atypical catalytic site is present.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 359-residue sequence lacks characteristic catalytic motifs for the three enzyme options: no 2-oxoglutarate-dependent dioxygenase facial triad (HxD...H/F) for option A, no RNA-directed RNA polymerase palm/GDD motif for option B, and no GNAT-fold or acetyltransferase domain for option C. The protein appears to be a structural/scaffold protein (consistent with its actual role as a SAGA complex subunit). Among the four choices, D (protein heterodimerization activity) is the only non-catalytic molecular function, making it the sole viable option by elimination of clearly inapplicable catalytic activities.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required to distinguish among the four given choices. However, the specific annotation of 'heterodimerization' (vs. 'transcription coactivator activity' GO:0003713, which is annotated with stronger IBA:GO_Central evidence) as the PRIMARY molecular function would require protein-specific knowledge. This distinction is moot because transcription coactivator activity is not among the offered options.",
-    "reason": "The elimination of three catalytic options based on absence of well-defined enzyme motifs is a concrete biological argument derivable from the sequence and general knowledge of enzyme domain architecture. The remaining option D is the only non-catalytic molecular function among the choices, providing a valid reasoning path without requiring memorization of this specific protein's database entry."
-  },
-  "case_id": "GO_molecular_function_0068",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H8",
-      "C5",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VX12 (SAGA complex subunit Spt7, Drosophila melanogaster) carries GO:0046982 (protein heterodimerization activity) as an annotation (evidence C6/H8). However, this annotation is IEA:InterPro (computational inference), not experimentally validated. The experimental evidence (PubMed:16980620, 20008933, etc.) describes Spt7 as a component of the SAGA multiprotein complex, which involves protein-protein interactions consistent with heterodimerization. The annotation is present in the database, so the key is supported, albeit by computational rather than direct experimental evidence."
-  },
-  "important_caveats": [
-    "The GO:0046982 annotation is IEA:InterPro (computational inference), not experimentally determined. The experimental evidence describes Spt7 as a component of the SAGA multiprotein complex, not specifically as a heterodimer.",
-    "The protein also carries GO:0003713 (transcription coactivator activity, IBA:GO_Central), which arguably better describes its primary molecular role, but this term is not among the offered choices.",
-    "The reasoning path is primarily by elimination of catalytic options rather than positive identification of a heterodimerization domain.",
-    "The sequence is only 359 residues; definitive absence of all possible catalytic motifs relies on the assumption that no cryptic or atypical catalytic site is present."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, A, B, and C all describe specific catalytic activities requiring well-defined enzyme domains that are clearly absent from this sequence. D is the only non-catalytic option. No ambiguity exists within the given option set."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0068",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VX12 (SAGA complex subunit Spt7, Drosophila melanogaster) carries GO:0046982 (protein heterodimerization activity) as an annotation (evidence C6/H8). However, this annotation is IEA:InterPro (computational inference), not experimentally validated. The experimental evidence (PubMed:16980620, 20008933, etc.) describes Spt7 as a component of the SAGA multiprotein complex, which involves protein-protein interactions consistent with heterodimerization. The annotation is present in the database, so the key is supported, albeit by computational rather than direct experimental evidence.",
-    "evidence_ids": ["C6", "H8", "C5", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 359-residue sequence lacks characteristic catalytic motifs for the three enzyme options: no 2-oxoglutarate-dependent dioxygenase facial triad (HxD...H/F) for option A, no RNA-directed RNA polymerase palm/GDD motif for option B, and no GNAT-fold or acetyltransferase domain for option C. The protein appears to be a structural/scaffold protein (consistent with its actual role as a SAGA complex subunit). Among the four choices, D (protein heterodimerization activity) is the only non-catalytic molecular function, making it the sole viable option by elimination of clearly inapplicable catalytic activities.",
-    "missing_item_specific_fact": "None strictly required to distinguish among the four given choices. However, the specific annotation of 'heterodimerization' (vs. 'transcription coactivator activity' GO:0003713, which is annotated with stronger IBA:GO_Central evidence) as the PRIMARY molecular function would require protein-specific knowledge. This distinction is moot because transcription coactivator activity is not among the offered options.",
-    "reason": "The elimination of three catalytic options based on absence of well-defined enzyme motifs is a concrete biological argument derivable from the sequence and general knowledge of enzyme domain architecture. The remaining option D is the only non-catalytic molecular function among the choices, providing a valid reasoning path without requiring memorization of this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, A, B, and C all describe specific catalytic activities requiring well-defined enzyme domains that are clearly absent from this sequence. D is the only non-catalytic option. No ambiguity exists within the given option set."
-  },
-  "important_caveats": [
-    "The GO:0046982 annotation is IEA:InterPro (computational inference), not experimentally determined. The experimental evidence describes Spt7 as a component of the SAGA multiprotein complex, not specifically as a heterodimer.",
-    "The protein also carries GO:0003713 (transcription coactivator activity, IBA:GO_Central), which arguably better describes its primary molecular role, but this term is not among the offered choices.",
-    "The reasoning path is primarily by elimination of catalytic options rather than positive identification of a heterodimerization domain.",
-    "The sequence is only 359 residues; definitive absence of all possible catalytic motifs relies on the assumption that no cryptic or atypical catalytic site is present."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
+**This response is not a usable structured review.** Its saved text is preserved below; any labels in that text are excluded from the summary counts.
 
 **Validation errors:** `invalid_json:Expecting property name enclosed in double quotes: line 13 column 3 (char 1363)`.
 
@@ -323,10 +92,9 @@ Citations as saved: [C6](#evidence-c6), [H8](#evidence-h8), [C5](#evidence-c5), 
 
 **Saved parsed visible review:** `null`.
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -440,30 +208,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VX12",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "24c8d7f5d596b66562cea83bbe3bbdd5cccf1afe472e54ce1802596000891e36",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 359,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "24c8d7f5d596b66562cea83bbe3bbdd5cccf1afe472e54ce1802596000891e36",
   "current_entry_audit": {
     "entryVersion": 169,
     "firstPublicDate": "2025-06-18",
@@ -471,14 +226,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-02-07",
     "sequenceVersion": 3
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "current_source_sequence_sha256": "24c8d7f5d596b66562cea83bbe3bbdd5cccf1afe472e54ce1802596000891e36",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 359,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "24c8d7f5d596b66562cea83bbe3bbdd5cccf1afe472e54ce1802596000891e36",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 167,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 3
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VX12",
   "selected_historical_entry_version": 167,
+  "selected_historical_record_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "selected_historical_source_sequence_length": 359,
+  "selected_historical_source_sequence_sha256": "24c8d7f5d596b66562cea83bbe3bbdd5cccf1afe472e54ce1802596000891e36",
   "selected_historical_version": {
     "accession": "Q9VX12",
     "database": "Swiss-Prot",
@@ -489,24 +260,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "SPT7_DROME",
     "sequenceVersion": 3
-  },
-  "selected_historical_record_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "selected_historical_source_sequence_sha256": "24c8d7f5d596b66562cea83bbe3bbdd5cccf1afe472e54ce1802596000891e36",
-  "selected_historical_source_sequence_length": 359,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 167,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 3
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -524,15 +282,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VX12\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -543,15 +301,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":169,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-02-07\",\"sequenceVersion\":3}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -562,15 +320,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -581,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"SAGA complex subunit Spt7\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -600,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"16980620\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20008933\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21764853\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24493646\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30559249\",\"source\":\"PubMed\"}],\"value\":\"Component of the transcription regulatory complex SAGA, a multiprotein complex that activates transcription by remodeling chromatin and mediating histone acetylation and deubiquitination (PubMed:16980620, PubMed:20008933, PubMed:21764853, PubMed:24493646, PubMed:30559249). The SAGA complex predominantly acetylates histone H3 (PubMed:30559249)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -619,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/29",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0046982\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:protein heterodimerization activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/29",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -638,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/30",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0003713\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:transcription coactivator activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/30",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -657,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Guelman S.\",\"Suganuma T.\",\"Florens L.\",\"Weake V.\",\"Swanson S.K.\",\"Washburn M.P.\",\"Abmayr S.M.\",\"Workman J.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"16980620\"},{\"database\":\"DOI\",\"id\":\"10.1128/mcb.00130-06\"}],\"citationType\":\"journal article\",\"firstPage\":\"7178\",\"id\":\"16980620\",\"journal\":\"Mol. Cell. Biol.\",\"lastPage\":\"7189\",\"publicationDate\":\"2006\",\"title\":\"The essential gene wda encodes a WD40 repeat subunit of Drosophila SAGA required for histone H3 acetylation.\",\"volume\":\"26\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN SAGA COMPLEX\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -676,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Weake V.M.\",\"Swanson S.K.\",\"Mushegian A.\",\"Florens L.\",\"Washburn M.P.\",\"Abmayr S.M.\",\"Workman J.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20008933\"},{\"database\":\"DOI\",\"id\":\"10.1101/gad.1846409\"}],\"citationType\":\"journal article\",\"firstPage\":\"2818\",\"id\":\"20008933\",\"journal\":\"Genes Dev.\",\"lastPage\":\"2823\",\"publicationDate\":\"2009\",\"title\":\"A novel histone fold domain-containing protein that replaces TAF6 in Drosophila SAGA is required for SAGA-dependent gene expression.\",\"volume\":\"23\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN SAGA COMPLEX\",\"SUBCELLULAR LOCATION\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -695,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Weake V.M.\",\"Dyer J.O.\",\"Seidel C.\",\"Box A.\",\"Swanson S.K.\",\"Peak A.\",\"Florens L.\",\"Washburn M.P.\",\"Abmayr S.M.\",\"Workman J.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21764853\"},{\"database\":\"DOI\",\"id\":\"10.1101/gad.2046211\"}],\"citationType\":\"journal article\",\"firstPage\":\"1499\",\"id\":\"21764853\",\"journal\":\"Genes Dev.\",\"lastPage\":\"1509\",\"publicationDate\":\"2011\",\"title\":\"Post-transcription initiation function of the ubiquitous SAGA complex in tissue-specific gene activation.\",\"volume\":\"25\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":6,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN SAGA COMPLEX\",\"DEVELOPMENTAL STAGE\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -714,15 +472,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Mohan R.D.\",\"Dialynas G.\",\"Weake V.M.\",\"Liu J.\",\"Martin-Brown S.\",\"Florens L.\",\"Washburn M.P.\",\"Workman J.L.\",\"Abmayr S.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24493646\"},{\"database\":\"DOI\",\"id\":\"10.1101/gad.225151.113\"}],\"citationType\":\"journal article\",\"firstPage\":\"259\",\"id\":\"24493646\",\"journal\":\"Genes Dev.\",\"lastPage\":\"272\",\"publicationDate\":\"2014\",\"title\":\"Loss of Drosophila Ataxin-7, a SAGA subunit, reduces H2B ubiquitination and leads to neural and retinal degeneration.\",\"volume\":\"28\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":7,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN THE SAGA COMPLEX\",\"SUBCELLULAR LOCATION\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -733,15 +491,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json",
-  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
-  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
-  "json_pointer": "/references/7",
   "excerpt": "{\"citation\":{\"authors\":[\"Torres-Zelada E.F.\",\"Stephenson R.E.\",\"Alpsoy A.\",\"Anderson B.D.\",\"Swanson S.K.\",\"Florens L.\",\"Dykhuizen E.C.\",\"Washburn M.P.\",\"Weake V.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30559249\"},{\"database\":\"DOI\",\"id\":\"10.1242/jcs.214072\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"30559249\",\"journal\":\"J. Cell Sci.\",\"lastPage\":\"0\",\"publicationDate\":\"2019\",\"title\":\"The Drosophila Dbf4 ortholog Chiffon forms a complex with Gcn5 that is necessary for histone acetylation and viability.\",\"volume\":\"132\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":8,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN THE SAGA COMPLEX\",\"INTERACTION WITH ADA2B\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/7",
+  "retrieved_utc": "2026-11-02T04:33:45.135468+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae7512cc6937670c745d0ef7f02a0b1125a8c84ebd9426ae75d0ae1ec689e89f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VX12.json"
 }
 ```
 
@@ -751,18 +509,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   SPT7_DROME              Reviewed;         359 AA.\nAC   Q9VX12; Q8MSV3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   07-FEB-2006, sequence version 3.\nDT   28-JAN-2026, entry version 167.\nDE   RecName: Full=SAGA complex subunit Spt7 {ECO:0000305};\nGN   Name=Spt7 {ECO:0000303|PubMed:16980620, ECO:0000312|FlyBase:FBgn0030874};\nGN   ORFNames=CG6506 {ECO:0000312|FlyBase:FBgn0030874};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -772,18 +530,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 77-85",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN SAGA COMPLEX, AND IDENTIFICATION BY MASS\nRP   SPECTROMETRY.\nRX   PubMed=16980620; DOI=10.1128/mcb.00130-06;\nRA   Guelman S., Suganuma T., Florens L., Weake V., Swanson S.K., Washburn M.P.,\nRA   Abmayr S.M., Workman J.L.;\nRT   \"The essential gene wda encodes a WD40 repeat subunit of Drosophila SAGA\nRT   required for histone H3 acetylation.\";\nRL   Mol. Cell. Biol. 26:7178-7189(2006).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -793,18 +551,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 86-94",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN SAGA COMPLEX, SUBCELLULAR LOCATION, AND\nRP   IDENTIFICATION BY MASS SPECTROMETRY.\nRX   PubMed=20008933; DOI=10.1101/gad.1846409;\nRA   Weake V.M., Swanson S.K., Mushegian A., Florens L., Washburn M.P.,\nRA   Abmayr S.M., Workman J.L.;\nRT   \"A novel histone fold domain-containing protein that replaces TAF6 in\nRT   Drosophila SAGA is required for SAGA-dependent gene expression.\";\nRL   Genes Dev. 23:2818-2823(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-94",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -814,18 +572,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 95-103",
   "excerpt": "RN   [6] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN SAGA COMPLEX, DEVELOPMENTAL STAGE, AND\nRP   IDENTIFICATION BY MASS SPECTROMETRY.\nRX   PubMed=21764853; DOI=10.1101/gad.2046211;\nRA   Weake V.M., Dyer J.O., Seidel C., Box A., Swanson S.K., Peak A.,\nRA   Florens L., Washburn M.P., Abmayr S.M., Workman J.L.;\nRT   \"Post-transcription initiation function of the ubiquitous SAGA complex in\nRT   tissue-specific gene activation.\";\nRL   Genes Dev. 25:1499-1509(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 95-103",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -835,18 +593,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 104-112",
   "excerpt": "RN   [7] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN THE SAGA COMPLEX, SUBCELLULAR LOCATION, AND\nRP   IDENTIFICATION BY MASS SPECTROMETRY.\nRX   PubMed=24493646; DOI=10.1101/gad.225151.113;\nRA   Mohan R.D., Dialynas G., Weake V.M., Liu J., Martin-Brown S., Florens L.,\nRA   Washburn M.P., Workman J.L., Abmayr S.M.;\nRT   \"Loss of Drosophila Ataxin-7, a SAGA subunit, reduces H2B ubiquitination\nRT   and leads to neural and retinal degeneration.\";\nRL   Genes Dev. 28:259-272(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-112",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -856,18 +614,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 113-121",
   "excerpt": "RN   [8] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN THE SAGA COMPLEX, INTERACTION WITH ADA2B, AND\nRP   IDENTIFICATION BY MASS SPECTROMETRY.\nRX   PubMed=30559249; DOI=10.1242/jcs.214072;\nRA   Torres-Zelada E.F., Stephenson R.E., Alpsoy A., Anderson B.D.,\nRA   Swanson S.K., Florens L., Dykhuizen E.C., Washburn M.P., Weake V.M.;\nRT   \"The Drosophila Dbf4 ortholog Chiffon forms a complex with Gcn5 that is\nRT   necessary for histone acetylation and viability.\";\nRL   J. Cell Sci. 132:0-0(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 113-121",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -877,18 +635,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 122-129",
   "excerpt": "CC   -!- FUNCTION: Component of the transcription regulatory complex SAGA, a\nCC       multiprotein complex that activates transcription by remodeling\nCC       chromatin and mediating histone acetylation and deubiquitination\nCC       (PubMed:16980620, PubMed:20008933, PubMed:21764853, PubMed:24493646,\nCC       PubMed:30559249). The SAGA complex predominantly acetylates histone H3\nCC       (PubMed:30559249). {ECO:0000269|PubMed:16980620,\nCC       ECO:0000269|PubMed:20008933, ECO:0000269|PubMed:21764853,\nCC       ECO:0000269|PubMed:24493646, ECO:0000269|PubMed:30559249}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 122-129",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -898,18 +656,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 174-174",
   "excerpt": "DR   GO; GO:0046982; F:protein heterodimerization activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 174-174",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -919,18 +677,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 167,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167",
-  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
-  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
-  "source_locator": "lines 175-175",
   "excerpt": "DR   GO; GO:0003713; F:transcription coactivator activity; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 167,
+  "retrieved_utc": "2026-11-02T04:33:49.946751+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 175-175",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "13cc86526c2299139df11f6bcecf17865c802aee49360b817aee509eb152a071",
+  "url": "https://rest.uniprot.org/unisave/Q9VX12?format=txt&versions=167"
 }
 ```
 
@@ -941,15 +699,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 32345-32388",
   "excerpt": "[Term]\nid: GO:0003968\nname: RNA-directed RNA polymerase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: nucleoside triphosphate + RNA(n) = diphosphate + RNA(n+1); uses an RNA template, i.e. the catalysis of RNA-template-directed extension of the 3'-end of an RNA strand by one nucleotide at a time.\" [EC:2.7.7.48, GOC:mah, GOC:pf]\nsynonym: \"RdRP activity\" EXACT []\nsynonym: \"RNA nucleotidyltransferase (RNA-directed) activity\" EXACT []\nsynonym: \"RNA replicase activity\" RELATED []\nsynonym: \"RNA synthetase activity\" RELATED []\nsynonym: \"RNA-dependent RNA polymerase activity\" EXACT []\nsynonym: \"RNA-dependent RNA replicase activity\" EXACT []\nsynonym: \"RNA-directed 5'-3' RNA polymerase activity\" EXACT []\nsynonym: \"transcriptase\" BROAD []\nxref: EC:2.7.7.48\nxref: MetaCyc:RNA-DIRECTED-RNA-POLYMERASE-RXN\nxref: Reactome:R-HSA-168280 \"Priming and Initiation of Transcription\"\nxref: Reactome:R-HSA-168301 \"Elongation, Polyadenylation and Termination\"\nxref: Reactome:R-HSA-192624 \"cRNA Extension\"\nxref: Reactome:R-HSA-192832 \"Initiation of cRNA Synthesis\"\nxref: Reactome:R-HSA-192851 \"vRNA Extension\"\nxref: Reactome:R-HSA-192916 \"Initiation of vRNA Synthesis\"\nxref: Reactome:R-HSA-9681651 \"nsp8 generates RNA primers\"\nxref: Reactome:R-HSA-9681674 \"nsp12 synthesizes minus strand SARS-CoV-1 genomic RNA complement\"\nxref: Reactome:R-HSA-9681840 \"RTC synthesizes SARS-CoV-1 plus strand genomic RNA\"\nxref: Reactome:R-HSA-9682465 \"RTC completes synthesis of the minus strand genomic RNA complement\"\nxref: Reactome:R-HSA-9682563 \"nsp12 misincorporates a nucleotide in nascent RNA minus strand\"\nxref: Reactome:R-HSA-9685639 \"Synthesis of SARS-CoV-1 minus strand subgenomic mRNAs by template switching\"\nxref: Reactome:R-HSA-9685681 \"Synthesis of SARS-CoV-1 plus strand subgenomic mRNAs\"\nxref: Reactome:R-HSA-9694277 \"nsp8 generates RNA primers\"\nxref: Reactome:R-HSA-9694344 \"Synthesis of SARS-CoV-2 minus strand subgenomic mRNAs by template switching\"\nxref: Reactome:R-HSA-9694506 \"Synthesis of SARS-CoV-2 plus strand subgenomic mRNAs\"\nxref: Reactome:R-HSA-9694549 \"RTC completes synthesis of the minus strand genomic RNA complement\"\nxref: Reactome:R-HSA-9694581 \"RTC synthesizes SARS-CoV-2 plus strand genomic RNA\"\nxref: Reactome:R-HSA-9694605 \"nsp12 synthesizes minus strand SARS-CoV-2 genomic RNA complement\"\nxref: Reactome:R-HSA-9694792 \"nsp12 misincorporates a nucleotide in nascent RNA minus strand\"\nxref: Reactome:R-HSA-9828639 \"Transcription of respiratory syncytial virus subgenomic positive sense mRNAs\"\nxref: Reactome:R-HSA-9834719 \"Synthesis of negative sense genomic RNA of respiratory syncytial virus\"\nxref: Reactome:R-HSA-9834736 \"Synthesis of antigenomic RNA of human respiratory syncytial virus\"\nxref: Reactome:R-HSA-9837511 \"Abortive replication of hRSV A\"\nxref: Reactome:R-HSA-9922955 \"NS5 synthesizes minus strand genome\"\nxref: Reactome:R-HSA-9923068 \"NS5 synthesizes plus strand genome\"\nis_a: GO:0034062 ! 5'-3' RNA polymerase activity\nproperty_value: skos:exactMatch EC:2.7.7.48\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0003968",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 32345-32388",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0003968"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -960,15 +718,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 129228-129242",
   "excerpt": "[Term]\nid: GO:0016706\nname: 2-oxoglutarate-dependent dioxygenase activity\nnamespace: molecular_function\nalt_id: GO:0010302\ndef: \"Catalysis of the reaction: A + 2-oxoglutarate + O2 = B + succinate + CO2. This is an oxidation-reduction (redox) reaction in which hydrogen or electrons are transferred from 2-oxoglutarate and one other donor, and one atom of oxygen is incorporated into each donor.\" [GOC:mah]\nsynonym: \"2-oxoglutarate dioxygenase activity\" EXACT []\nsynonym: \"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, 2-oxoglutarate as one donor, and incorporation of one atom each of oxygen into both donors\" EXACT []\nxref: EC:1.14.11.-\nxref: Reactome:R-HSA-1234164 \"Cytosolic HIF1AN (FIH1) hydroxylates asparagine residues of Hypoxia-inducible Factor Alpha (HIF1A,HIF2A)\"\nxref: Reactome:R-HSA-6783455 \"TYW5 hydroxylates yW-72 yielding OHyW-72 at nucleotide 37 of tRNA(Phe)\"\nis_a: GO:0016705 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen\nis_a: GO:0051213 ! dioxygenase activity\nproperty_value: skos:exactMatch EC:1.14.11.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016706",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 129228-129242",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016706"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -979,15 +737,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 282546-282553",
   "excerpt": "[Term]\nid: GO:0046982\nname: protein heterodimerization activity\nnamespace: molecular_function\ndef: \"Binding to a nonidentical protein to form a heterodimer.\" [GOC:ai]\nsubset: goslim_chembl\nis_a: GO:0046983 ! protein dimerization activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046982",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 282546-282553",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046982"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -998,15 +756,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 555941-555950",
   "excerpt": "[Term]\nid: GO:1990883\nname: 18S rRNA cytidine N-acetyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: a cytidine in 18S rRNA + acetyl-CoA + ATP + H2O = an N(4)-acetylcytidine in 18S rRNA + ADP + phosphate + CoA + H+.\" [PMID:25402480, RHEA:51424]\nxref: RHEA:51424\nis_a: GO:0008080 ! N-acetyltransferase activity\nis_a: GO:0140102 ! catalytic activity, acting on a rRNA\nproperty_value: skos:exactMatch RHEA:51424\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990883",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 555941-555950",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990883"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

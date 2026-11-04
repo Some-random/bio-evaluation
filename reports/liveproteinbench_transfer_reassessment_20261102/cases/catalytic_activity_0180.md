@@ -1,18 +1,16 @@
-# catalytic_activity_0180: before and after transfer clarification
+# catalytic_activity_0180
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0180.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0180.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — 1&#x27;-carboxy-chondrochloren A + FAD + 2 H(+) = chondrochloren A + FADH2 + CO2
+**Expected answer:** **D** — 1&#x27;-carboxy-chondrochloren A + FAD + 2 H(+) = chondrochloren A + FADH2 + CO2
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the historical and current UniProt sequence for CndG. Its catalytic-activity annotation gives choice D and cites ECO:0000269 (experimental evidence) linked to PubMed 20080978. The cited study itself was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices describe distinct, highly specific reactions. The sequence alone offers no clear general biological argument identifying this enzyme as the decarboxylase acting on 1'-carboxy-chondrochloren; assigning D requires protein-specific functional knowledge.
-
-
-**Missing item-specific fact**
-
-> The protein's identity or experimentally characterized catalytic activity as 1'-carboxy-chondrochloren decarboxylase.
-
-
-**Reason**
-
-> The reviewer-only annotation supports D but was not supplied to the evaluated model. Recognizing the sequence or relying on an unspecified predictor would not make the answer reasoning-supported.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched-sequence catalytic-activity annotation specifically supports D; the other options describe different reactions.
-
-
-### Important caveats
-
-- The sequence match establishes applicability of the cited annotation to this sequence, not independent verification of the primary study.
-- The annotation’s experimental evidence code and cited paper support the key, but the paper was not comprehensively retrieved or independently validated.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices describe distinct, highly specific reactions. The sequence alone offers no clear general biological argument identifying this enzyme as the decarboxylase acting on 1'-carboxy-chondrochloren; assigning D requires protein-specific functional knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity or experimentally characterized catalytic activity as 1'-carboxy-chondrochloren decarboxylase.",
-    "reason": "The reviewer-only annotation supports D but was not supplied to the evaluated model. Recognizing the sequence or relying on an unspecified predictor would not make the answer reasoning-supported."
-  },
-  "case_id": "catalytic_activity_0180",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical and current UniProt sequence for CndG. Its catalytic-activity annotation gives choice D and cites ECO:0000269 (experimental evidence) linked to PubMed 20080978. The cited study itself was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence match establishes applicability of the cited annotation to this sequence, not independent verification of the primary study.",
-    "The annotation’s experimental evidence code and cited paper support the key, but the paper was not comprehensively retrieved or independently validated."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence catalytic-activity annotation specifically supports D; the other options describe different reactions."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0180",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical and current UniProt sequence for CndG. Its catalytic-activity annotation gives choice D and cites ECO:0000269 (experimental evidence) linked to PubMed 20080978. The cited study itself was not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices describe distinct, highly specific reactions. The sequence alone offers no clear general biological argument identifying this enzyme as the decarboxylase acting on 1'-carboxy-chondrochloren; assigning D requires protein-specific functional knowledge.",
-    "missing_item_specific_fact": "The protein's identity or experimentally characterized catalytic activity as 1'-carboxy-chondrochloren decarboxylase.",
-    "reason": "The reviewer-only annotation supports D but was not supplied to the evaluated model. Recognizing the sequence or relying on an unspecified predictor would not make the answer reasoning-supported."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence catalytic-activity annotation specifically supports D; the other options describe different reactions."
-  },
-  "important_caveats": [
-    "The sequence match establishes applicability of the cited annotation to this sequence, not independent verification of the primary study.",
-    "The annotation’s experimental evidence code and cited paper support the key, but the paper was not comprehensively retrieved or independently validated."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProtKB entry B9ZUK6 (sequence-matched, 541 AA) explicitly annotates the catalytic activity as '1'-carboxy-chondrochloren A + FAD + 2 H(+) = chondrochloren A + FADH2 + CO2' (EC 4.1.1.129) with experimental evidence (ECO:0000269, PubMed:20080978, JBC 2010). The protein is named '1'-carboxy-chondrochloren decarboxylase' / 'Oxidative decarboxylase CndG' from Chondromyces crocatus. The expected answer matches the annotated reaction verbatim.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a possible FAD-binding region (STGKNWGYGSRV near the N-terminus), which could weakly suggest FAD involvement and thus disfavor choices A, B, and C. However, this is at best a very weak heuristic and does not uniquely identify the reaction. The specific substrate '1'-carboxy-chondrochloren A' is an extremely niche natural-product intermediate in the chondrochloren biosynthetic pathway of Chondromyces crocatus. No general biological reasoning from a 541-aa sequence can deduce that this particular protein oxidatively decarboxylates this particular styryl intermediate.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as CndG (oxidative decarboxylase) in the chondrochloren biosynthetic gene cluster of Chondromyces crocatus, and the experimental characterization (PubMed:20080978) demonstrating its FAD-dependent oxidative decarboxylation of 1'-carboxy-chondrochloren A.
-
-
-**Reason**
-
-> Selecting answer D requires knowing the specific database annotation of this protein. The reaction involves a highly specialized natural-product intermediate (chondrochloren A) that cannot be inferred from general enzymology or sequence motifs. While a trained model might recognize the sequence as CndG and recall its annotation, this constitutes memorization of a database entry rather than biological reasoning from the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices describe mechanistically distinct enzyme classes (triphosphatase, prenyltransferase, dehydratase, oxidative decarboxylase). Given the experimental annotation, only D is correct. The choices are well-separated and do not create genuine ambiguity.
-
-
-### Important caveats
-
-- The annotation evidence is experimental (ECO:0000269 from a JBC paper), not merely computational prediction.
-- The sequence is an exact match (SHA256) to UniProt B9ZUK6 in both current and historical (entry v61) snapshots.
-- The FAD-binding region in the sequence is suggestive but insufficient to uniquely determine the specific substrate and reaction; it merely narrows the class of enzymes.
-- The chondrochloren pathway is known from a single myxobacterium (Chondromyces crocatus); this is not a broadly conserved or textbook pathway.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a possible FAD-binding region (STGKNWGYGSRV near the N-terminus), which could weakly suggest FAD involvement and thus disfavor choices A, B, and C. However, this is at best a very weak heuristic and does not uniquely identify the reaction. The specific substrate '1'-carboxy-chondrochloren A' is an extremely niche natural-product intermediate in the chondrochloren biosynthetic pathway of Chondromyces crocatus. No general biological reasoning from a 541-aa sequence can deduce that this particular protein oxidatively decarboxylates this particular styryl intermediate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as CndG (oxidative decarboxylase) in the chondrochloren biosynthetic gene cluster of Chondromyces crocatus, and the experimental characterization (PubMed:20080978) demonstrating its FAD-dependent oxidative decarboxylation of 1'-carboxy-chondrochloren A.",
-    "reason": "Selecting answer D requires knowing the specific database annotation of this protein. The reaction involves a highly specialized natural-product intermediate (chondrochloren A) that cannot be inferred from general enzymology or sequence motifs. While a trained model might recognize the sequence as CndG and recall its annotation, this constitutes memorization of a database entry rather than biological reasoning from the sequence."
-  },
-  "case_id": "catalytic_activity_0180",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProtKB entry B9ZUK6 (sequence-matched, 541 AA) explicitly annotates the catalytic activity as '1'-carboxy-chondrochloren A + FAD + 2 H(+) = chondrochloren A + FADH2 + CO2' (EC 4.1.1.129) with experimental evidence (ECO:0000269, PubMed:20080978, JBC 2010). The protein is named '1'-carboxy-chondrochloren decarboxylase' / 'Oxidative decarboxylase CndG' from Chondromyces crocatus. The expected answer matches the annotated reaction verbatim."
-  },
-  "important_caveats": [
-    "The annotation evidence is experimental (ECO:0000269 from a JBC paper), not merely computational prediction.",
-    "The sequence is an exact match (SHA256) to UniProt B9ZUK6 in both current and historical (entry v61) snapshots.",
-    "The FAD-binding region in the sequence is suggestive but insufficient to uniquely determine the specific substrate and reaction; it merely narrows the class of enzymes.",
-    "The chondrochloren pathway is known from a single myxobacterium (Chondromyces crocatus); this is not a broadly conserved or textbook pathway."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices describe mechanistically distinct enzyme classes (triphosphatase, prenyltransferase, dehydratase, oxidative decarboxylase). Given the experimental annotation, only D is correct. The choices are well-separated and do not create genuine ambiguity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0180",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProtKB entry B9ZUK6 (sequence-matched, 541 AA) explicitly annotates the catalytic activity as '1'-carboxy-chondrochloren A + FAD + 2 H(+) = chondrochloren A + FADH2 + CO2' (EC 4.1.1.129) with experimental evidence (ECO:0000269, PubMed:20080978, JBC 2010). The protein is named '1'-carboxy-chondrochloren decarboxylase' / 'Oxidative decarboxylase CndG' from Chondromyces crocatus. The expected answer matches the annotated reaction verbatim.",
-    "evidence_ids": ["C4", "C5", "C7", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a possible FAD-binding region (STGKNWGYGSRV near the N-terminus), which could weakly suggest FAD involvement and thus disfavor choices A, B, and C. However, this is at best a very weak heuristic and does not uniquely identify the reaction. The specific substrate '1'-carboxy-chondrochloren A' is an extremely niche natural-product intermediate in the chondrochloren biosynthetic pathway of Chondromyces crocatus. No general biological reasoning from a 541-aa sequence can deduce that this particular protein oxidatively decarboxylates this particular styryl intermediate.",
-    "missing_item_specific_fact": "The specific identity of this protein as CndG (oxidative decarboxylase) in the chondrochloren biosynthetic gene cluster of Chondromyces crocatus, and the experimental characterization (PubMed:20080978) demonstrating its FAD-dependent oxidative decarboxylation of 1'-carboxy-chondrochloren A.",
-    "reason": "Selecting answer D requires knowing the specific database annotation of this protein. The reaction involves a highly specialized natural-product intermediate (chondrochloren A) that cannot be inferred from general enzymology or sequence motifs. While a trained model might recognize the sequence as CndG and recall its annotation, this constitutes memorization of a database entry rather than biological reasoning from the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices describe mechanistically distinct enzyme classes (triphosphatase, prenyltransferase, dehydratase, oxidative decarboxylase). Given the experimental annotation, only D is correct. The choices are well-separated and do not create genuine ambiguity."
-  },
-  "important_caveats": [
-    "The annotation evidence is experimental (ECO:0000269 from a JBC paper), not merely computational prediction.",
-    "The sequence is an exact match (SHA256) to UniProt B9ZUK6 in both current and historical (entry v61) snapshots.",
-    "The FAD-binding region in the sequence is suggestive but insufficient to uniquely determine the specific substrate and reaction; it merely narrows the class of enzymes.",
-    "The chondrochloren pathway is known from a single myxobacterium (Chondromyces crocatus); this is not a broadly conserved or textbook pathway."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B9ZUK6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 541,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
   "current_entry_audit": {
     "entryVersion": 63,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-04-14",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "current_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 541,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 61,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B9ZUK6",
   "selected_historical_entry_version": 61,
+  "selected_historical_record_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "selected_historical_source_sequence_length": 541,
+  "selected_historical_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
   "selected_historical_version": {
     "accession": "B9ZUK6",
     "database": "Swiss-Prot",
@@ -553,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CNDG_CHOCO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "selected_historical_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
-  "selected_historical_source_sequence_length": 541,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 61,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B9ZUK6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -603,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":63,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-04-14\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -622,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Myxococcota\",\"Polyangia\",\"Polyangiales\",\"Polyangiaceae\",\"Chondromyces\"],\"scientificName\":\"Chondromyces crocatus\",\"taxonId\":52}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -641,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"value\":\"Oxidative decarboxylase CndG\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.129\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"1'-carboxy-chondrochloren decarboxylase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -660,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81492\"}}],\"reaction\":{\"ecNumber\":\"4.1.1.129\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"name\":\"1'-carboxy-chondrochloren A + FAD + 2 H(+) = chondrochloren A + FADH2 + CO2\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81491\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57692\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58307\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132426\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231889\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -679,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81496\"}}],\"reaction\":{\"ecNumber\":\"4.1.1.129\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"name\":\"1'-carboxy-chondrochloren B + FAD + 2 H(+) = chondrochloren B + FADH2 + CO2\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81495\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57692\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58307\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132442\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231890\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -698,15 +457,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Rachid S.\",\"Revermann O.\",\"Dauth C.\",\"Kazmaier U.\",\"Mueller R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20080978\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m109.079707\"}],\"citationType\":\"journal article\",\"firstPage\":\"12482\",\"id\":\"20080978\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"12489\",\"publicationDate\":\"2010\",\"title\":\"Characterization of a novel type of oxidative decarboxylase involved in the biosynthesis of the styryl moiety of chondrochloren from an acylated tyrosine.\",\"volume\":\"285\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 14714 / JCM 12616 / Cm c5\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"MASS SPECTROMETRY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -716,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   CNDG_CHOCO              Reviewed;         541 AA.\nAC   B9ZUK6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   14-APR-2009, sequence version 1.\nDT   28-JAN-2026, entry version 61.\nDE   RecName: Full=1'-carboxy-chondrochloren decarboxylase {ECO:0000305};\nDE            EC=4.1.1.129 {ECO:0000269|PubMed:20080978};\nDE   AltName: Full=Oxidative decarboxylase CndG {ECO:0000303|PubMed:20080978};\nGN   Name=cndG {ECO:0000303|PubMed:19171307};\nGN   ORFNames=CMC5_053350 {ECO:0000312|EMBL:AKT41174.1};\nOS   Chondromyces crocatus.\nOC   Bacteria; Pseudomonadati; Myxococcota; Polyangia; Polyangiales;\nOC   Polyangiaceae; Chondromyces.\nOX   NCBI_TaxID=52;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -737,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=1'-carboxy-chondrochloren decarboxylase {ECO:0000305};\nDE            EC=4.1.1.129 {ECO:0000269|PubMed:20080978};\nDE   AltName: Full=Oxidative decarboxylase CndG {ECO:0000303|PubMed:20080978};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -758,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 15-21",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAQ43085.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], GENE CLUSTER, AND PATHWAY.\nRC   STRAIN=DSM 14714 / JCM 12616 / Cm c5;\nRX   PubMed=19171307; DOI=10.1016/j.chembiol.2008.11.005;\nRA   Rachid S., Scharfe M., Bloecker H., Weissman K.J., Mueller R.;\nRT   \"Unusual chemistry in the biosynthesis of the antibiotic chondrochlorens.\";\nRL   Chem. Biol. 16:70-81(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -779,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, BIOPHYSICOCHEMICAL\nRP   PROPERTIES, PATHWAY, MASS SPECTROMETRY, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=DSM 14714 / JCM 12616 / Cm c5;\nRX   PubMed=20080978; DOI=10.1074/jbc.m109.079707;\nRA   Rachid S., Revermann O., Dauth C., Kazmaier U., Mueller R.;\nRT   \"Characterization of a novel type of oxidative decarboxylase involved in\nRT   the biosynthesis of the styryl moiety of chondrochloren from an acylated\nRT   tyrosine.\";\nRL   J. Biol. Chem. 285:12482-12489(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -800,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 48-55",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=1'-carboxy-chondrochloren A + FAD + 2 H(+) = chondrochloren A\nCC         + FADH2 + CO2; Xref=Rhea:RHEA:81491, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:16526, ChEBI:CHEBI:57692, ChEBI:CHEBI:58307,\nCC         ChEBI:CHEBI:132426, ChEBI:CHEBI:231889; EC=4.1.1.129;\nCC         Evidence={ECO:0000269|PubMed:20080978};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81492;\nCC         Evidence={ECO:0000269|PubMed:20080978};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 48-55",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -821,18 +580,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 56-63",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=1'-carboxy-chondrochloren B + FAD + 2 H(+) = chondrochloren B\nCC         + FADH2 + CO2; Xref=Rhea:RHEA:81495, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:16526, ChEBI:CHEBI:57692, ChEBI:CHEBI:58307,\nCC         ChEBI:CHEBI:132442, ChEBI:CHEBI:231890; EC=4.1.1.129;\nCC         Evidence={ECO:0000269|PubMed:20080978};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81496;\nCC         Evidence={ECO:0000269|PubMed:20080978};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 

@@ -1,18 +1,16 @@
-# active_site_0133: before and after transfer clarification
+# active_site_0133
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0133.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0133.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 318 (O-(5&#x27;-phospho-DNA)-tyrosine intermediate)
+**Expected answer:** **B** — Position 318 (O-(5&#x27;-phospho-DNA)-tyrosine intermediate)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,232 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the annotated 668-aa DNA topoisomerase III, and its active-site annotation identifies residue 318 as the O-(5'-phospho-DNA)-tyrosine intermediate. This supports choice B. The residue annotation is computationally assigned by PROSITE-ProRule, not direct experimental evidence for residue 318.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A tyrosine-DNA phosphodiester intermediate is characteristic of topoisomerase chemistry, making B biologically plausible over the dehydratase and acyl-ester distractors.
-
-
-**Missing item-specific fact**
-
-> The input does not identify this sequence as DNA topoisomerase III or establish that its residue 318 is the catalytic tyrosine; that protein-specific site assignment comes from annotation or equivalent external knowledge.
-
-
-**Reason**
-
-> The mechanism clue in B helps distinguish the type of chemistry, but assigning the specific sequence position as the active site requires information not established by the sequence and choices alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched-sequence annotation specifically assigns the DNA-tyrosine intermediate to residue 318; the other listed descriptions do not provide a competing assignment for this protein.
-
-
-### Important caveats
-
-- The active-site residue annotation is PROSITE-rule computational evidence; the cited publications support the protein's topoisomerase identity and activity, but the supplied evidence does not independently establish experimental validation of Tyr318.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A tyrosine-DNA phosphodiester intermediate is characteristic of topoisomerase chemistry, making B biologically plausible over the dehydratase and acyl-ester distractors.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The input does not identify this sequence as DNA topoisomerase III or establish that its residue 318 is the catalytic tyrosine; that protein-specific site assignment comes from annotation or equivalent external knowledge.",
-    "reason": "The mechanism clue in B helps distinguish the type of chemistry, but assigning the specific sequence position as the active site requires information not established by the sequence and choices alone."
-  },
-  "case_id": "active_site_0133",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the annotated 668-aa DNA topoisomerase III, and its active-site annotation identifies residue 318 as the O-(5'-phospho-DNA)-tyrosine intermediate. This supports choice B. The residue annotation is computationally assigned by PROSITE-ProRule, not direct experimental evidence for residue 318."
-  },
-  "important_caveats": [
-    "The active-site residue annotation is PROSITE-rule computational evidence; the cited publications support the protein's topoisomerase identity and activity, but the supplied evidence does not independently establish experimental validation of Tyr318."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation specifically assigns the DNA-tyrosine intermediate to residue 318; the other listed descriptions do not provide a competing assignment for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0133",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the annotated 668-aa DNA topoisomerase III, and its active-site annotation identifies residue 318 as the O-(5'-phospho-DNA)-tyrosine intermediate. This supports choice B. The residue annotation is computationally assigned by PROSITE-ProRule, not direct experimental evidence for residue 318.",
-    "evidence_ids": ["C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A tyrosine-DNA phosphodiester intermediate is characteristic of topoisomerase chemistry, making B biologically plausible over the dehydratase and acyl-ester distractors.",
-    "missing_item_specific_fact": "The input does not identify this sequence as DNA topoisomerase III or establish that its residue 318 is the catalytic tyrosine; that protein-specific site assignment comes from annotation or equivalent external knowledge.",
-    "reason": "The mechanism clue in B helps distinguish the type of chemistry, but assigning the specific sequence position as the active site requires information not established by the sequence and choices alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation specifically assigns the DNA-tyrosine intermediate to residue 318; the other listed descriptions do not provide a competing assignment for this protein."
-  },
-  "important_caveats": [
-    "The active-site residue annotation is PROSITE-rule computational evidence; the cited publications support the protein's topoisomerase identity and activity, but the supplied evidence does not independently establish experimental validation of Tyr318."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt Q97ZJ8 (DNA topoisomerase 3, Saccharolobus solfataricus, 668 AA, sequence SHA256 matched) annotates position 318 as 'O-(5'-phospho-DNA)-tyrosine intermediate' (Active site, ECO:0000255|PROSITE-ProRule:PRU01383). This is the canonical catalytic tyrosine of type IA topoisomerases, forming a covalent phosphotyrosyl intermediate with the 5'-phospho end of DNA. The annotation is pattern-based (PROSITE-ProRule) rather than direct experimental mutagenesis, but it is the standard, well-established assignment for the TOPRIM catalytic tyrosine in Topo III proteins. The other options are clearly wrong: positions 1142 and 976 exceed the 668-residue sequence, and 'Acyl-ester intermediate' at position 70 describes a serine hydrolase mechanism irrelevant to a topoisomerase.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Two independent reasoning steps distinguish the answer: (1) Positions 1142 (A) and 976 (C) exceed the 668-residue sequence length, eliminating them by arithmetic. (2) Between B and D, the C-terminal region of the sequence contains a Cys-rich zinc-binding motif ('CKYCDLEQYKDGLCKYHYEAK') characteristic of the OB-fold/zinc-binding domain of type IA topoisomerases (Topo III/IV), not of serine hydrolases. The 'O-(5'-phospho-DNA)-tyrosine intermediate' (B) is the defining catalytic mechanism of type IA topoisomerases, while 'Acyl-ester intermediate' (D) is the hallmark of serine hydrolases/proteases. The protein lacks canonical serine hydrolase motifs (e.g., GxSxG nucleophile elbow) and its domain architecture (N-terminal TOPRIM-like domain + C-terminal Zn-binding domain) is inconsistent with a hydrolase.
-
-
-**Missing item-specific fact**
-
-> None strictly required. Identifying the exact protein as SsTop3/Q97ZJ8 would require database lookup, but the family-level assignment (type IA topoisomerase vs. serine hydrolase) can be inferred from the zinc-binding Cys-rich motif, absence of hydrolase catalytic motifs, and the mechanistic terminology in the answer choices themselves.
-
-
-**Reason**
-
-> The length-based elimination of A and C is purely arithmetic. The B-vs-D distinction relies on recognizing the zinc-binding domain signature and the incompatibility of an acyl-ester mechanism with a DNA-processing enzyme, both of which are general biological reasoning rather than item-specific memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and C are impossible (positions beyond sequence length). Option D describes a mechanism (acyl-ester) mechanistically incompatible with a DNA topoisomerase. Only B is consistent with both the sequence length and the enzyme class identifiable from sequence features.
-
-
-### Important caveats
-
-- The active-site annotation at position 318 carries evidence code ECO:0000255 (PROSITE-ProRule), i.e., it is a pattern-based computational/curatorial assignment rather than a direct experimental (e.g., mutagenesis or crystallographic covalent-trapping) determination. It is nonetheless the universally accepted assignment for the TOPRIM catalytic tyrosine in Topo III.
-- The reviewer-only evidence confirms the sequence match and annotation but was not available to the evaluated model; the model must work from the raw sequence and the answer-choice descriptions alone.
-- Positions 1142 and 976 being beyond the 668-residue sequence makes options A and C trivially eliminable, reducing the effective choice to B vs. D. This somewhat lowers the difficulty but does not invalidate the question.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Two independent reasoning steps distinguish the answer: (1) Positions 1142 (A) and 976 (C) exceed the 668-residue sequence length, eliminating them by arithmetic. (2) Between B and D, the C-terminal region of the sequence contains a Cys-rich zinc-binding motif ('CKYCDLEQYKDGLCKYHYEAK') characteristic of the OB-fold/zinc-binding domain of type IA topoisomerases (Topo III/IV), not of serine hydrolases. The 'O-(5'-phospho-DNA)-tyrosine intermediate' (B) is the defining catalytic mechanism of type IA topoisomerases, while 'Acyl-ester intermediate' (D) is the hallmark of serine hydrolases/proteases. The protein lacks canonical serine hydrolase motifs (e.g., GxSxG nucleophile elbow) and its domain architecture (N-terminal TOPRIM-like domain + C-terminal Zn-binding domain) is inconsistent with a hydrolase.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. Identifying the exact protein as SsTop3/Q97ZJ8 would require database lookup, but the family-level assignment (type IA topoisomerase vs. serine hydrolase) can be inferred from the zinc-binding Cys-rich motif, absence of hydrolase catalytic motifs, and the mechanistic terminology in the answer choices themselves.",
-    "reason": "The length-based elimination of A and C is purely arithmetic. The B-vs-D distinction relies on recognizing the zinc-binding domain signature and the incompatibility of an acyl-ester mechanism with a DNA-processing enzyme, both of which are general biological reasoning rather than item-specific memorization."
-  },
-  "case_id": "active_site_0133",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt Q97ZJ8 (DNA topoisomerase 3, Saccharolobus solfataricus, 668 AA, sequence SHA256 matched) annotates position 318 as 'O-(5'-phospho-DNA)-tyrosine intermediate' (Active site, ECO:0000255|PROSITE-ProRule:PRU01383). This is the canonical catalytic tyrosine of type IA topoisomerases, forming a covalent phosphotyrosyl intermediate with the 5'-phospho end of DNA. The annotation is pattern-based (PROSITE-ProRule) rather than direct experimental mutagenesis, but it is the standard, well-established assignment for the TOPRIM catalytic tyrosine in Topo III proteins. The other options are clearly wrong: positions 1142 and 976 exceed the 668-residue sequence, and 'Acyl-ester intermediate' at position 70 describes a serine hydrolase mechanism irrelevant to a topoisomerase."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 318 carries evidence code ECO:0000255 (PROSITE-ProRule), i.e., it is a pattern-based computational/curatorial assignment rather than a direct experimental (e.g., mutagenesis or crystallographic covalent-trapping) determination. It is nonetheless the universally accepted assignment for the TOPRIM catalytic tyrosine in Topo III.",
-    "The reviewer-only evidence confirms the sequence match and annotation but was not available to the evaluated model; the model must work from the raw sequence and the answer-choice descriptions alone.",
-    "Positions 1142 and 976 being beyond the 668-residue sequence makes options A and C trivially eliminable, reducing the effective choice to B vs. D. This somewhat lowers the difficulty but does not invalidate the question."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C are impossible (positions beyond sequence length). Option D describes a mechanism (acyl-ester) mechanistically incompatible with a DNA topoisomerase. Only B is consistent with both the sequence length and the enzyme class identifiable from sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0133",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt Q97ZJ8 (DNA topoisomerase 3, Saccharolobus solfataricus, 668 AA, sequence SHA256 matched) annotates position 318 as 'O-(5'-phospho-DNA)-tyrosine intermediate' (Active site, ECO:0000255|PROSITE-ProRule:PRU01383). This is the canonical catalytic tyrosine of type IA topoisomerases, forming a covalent phosphotyrosyl intermediate with the 5'-phospho end of DNA. The annotation is pattern-based (PROSITE-ProRule) rather than direct experimental mutagenesis, but it is the standard, well-established assignment for the TOPRIM catalytic tyrosine in Topo III proteins. The other options are clearly wrong: positions 1142 and 976 exceed the 668-residue sequence, and 'Acyl-ester intermediate' at position 70 describes a serine hydrolase mechanism irrelevant to a topoisomerase.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Two independent reasoning steps distinguish the answer: (1) Positions 1142 (A) and 976 (C) exceed the 668-residue sequence length, eliminating them by arithmetic. (2) Between B and D, the C-terminal region of the sequence contains a Cys-rich zinc-binding motif ('CKYCDLEQYKDGLCKYHYEAK') characteristic of the OB-fold/zinc-binding domain of type IA topoisomerases (Topo III/IV), not of serine hydrolases. The 'O-(5'-phospho-DNA)-tyrosine intermediate' (B) is the defining catalytic mechanism of type IA topoisomerases, while 'Acyl-ester intermediate' (D) is the hallmark of serine hydrolases/proteases. The protein lacks canonical serine hydrolase motifs (e.g., GxSxG nucleophile elbow) and its domain architecture (N-terminal TOPRIM-like domain + C-terminal Zn-binding domain) is inconsistent with a hydrolase.",
-    "missing_item_specific_fact": "None strictly required. Identifying the exact protein as SsTop3/Q97ZJ8 would require database lookup, but the family-level assignment (type IA topoisomerase vs. serine hydrolase) can be inferred from the zinc-binding Cys-rich motif, absence of hydrolase catalytic motifs, and the mechanistic terminology in the answer choices themselves.",
-    "reason": "The length-based elimination of A and C is purely arithmetic. The B-vs-D distinction relies on recognizing the zinc-binding domain signature and the incompatibility of an acyl-ester mechanism with a DNA-processing enzyme, both of which are general biological reasoning rather than item-specific memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C are impossible (positions beyond sequence length). Option D describes a mechanism (acyl-ester) mechanistically incompatible with a DNA topoisomerase. Only B is consistent with both the sequence length and the enzyme class identifiable from sequence features."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 318 carries evidence code ECO:0000255 (PROSITE-ProRule), i.e., it is a pattern-based computational/curatorial assignment rather than a direct experimental (e.g., mutagenesis or crystallographic covalent-trapping) determination. It is nonetheless the universally accepted assignment for the TOPRIM catalytic tyrosine in Topo III.",
-    "The reviewer-only evidence confirms the sequence match and annotation but was not available to the evaluated model; the model must work from the raw sequence and the answer-choice descriptions alone.",
-    "Positions 1142 and 976 being beyond the 668-residue sequence makes options A and C trivially eliminable, reducing the effective choice to B vs. D. This somewhat lowers the difficulty but does not invalidate the question."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -381,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -494,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q97ZJ8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 668,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
   "current_entry_audit": {
     "entryVersion": 134,
     "firstPublicDate": "2025-06-18",
@@ -525,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-10-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "current_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 668,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 132,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q97ZJ8",
   "selected_historical_entry_version": 132,
+  "selected_historical_record_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "selected_historical_source_sequence_length": 668,
+  "selected_historical_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
   "selected_historical_version": {
     "accession": "Q97ZJ8",
     "database": "Swiss-Prot",
@@ -543,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TOP3_SACS2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "selected_historical_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
-  "selected_historical_source_sequence_length": 668,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 132,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -574,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q97ZJ8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -593,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":134,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-10-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -612,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Sulfolobus solfataricus\",\"lineage\":[\"Archaea\",\"Thermoproteota\",\"Thermoprotei\",\"Sulfolobales\",\"Sulfolobaceae\",\"Saccharolobus\"],\"scientificName\":\"Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2)\",\"taxonId\":273057}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -631,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"DNA topoisomerase III\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22722926\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"5.6.2.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22722926\",\"source\":\"PubMed\"}],\"value\":\"DNA topoisomerase 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22722926\",\"source\":\"PubMed\"}],\"value\":\"SsTop3\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"SsTopA\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -650,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"O-(5'-phospho-DNA)-tyrosine intermediate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01383\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":318},\"start\":{\"modifier\":\"EXACT\",\"value\":318}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -669,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8N\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8O\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":602},\"start\":{\"modifier\":\"EXACT\",\"value\":602}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -688,15 +454,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8N\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8O\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":605},\"start\":{\"modifier\":\"EXACT\",\"value\":605}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -707,15 +473,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8N\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8O\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":615},\"start\":{\"modifier\":\"EXACT\",\"value\":615}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -726,15 +492,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8N\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6K8O\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":618},\"start\":{\"modifier\":\"EXACT\",\"value\":618}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -745,15 +511,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Valenti A.\",\"De Felice M.\",\"Perugino G.\",\"Bizard A.\",\"Nadal M.\",\"Rossi M.\",\"Ciaramella M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22722926\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m112.366377\"}],\"citationType\":\"journal article\",\"firstPage\":\"30282\",\"id\":\"22722926\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"30295\",\"publicationDate\":\"2012\",\"title\":\"Synergic and opposing activities of thermophilic RecQ-like helicase and topoisomerase 3 proteins in Holliday junction processing and replication fork stabilization.\",\"volume\":\"287\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBUNIT\",\"INTERACTION WITH LHR\",\"DNA-BINDING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -764,15 +530,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bizard A.H.\",\"Yang X.\",\"Debat H.\",\"Fogg J.M.\",\"Zechiedrich L.\",\"Strick T.R.\",\"Garnier F.\",\"Nadal M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29253195\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkx1247\"}],\"citationType\":\"journal article\",\"firstPage\":\"861\",\"id\":\"29253195\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"872\",\"publicationDate\":\"2018\",\"title\":\"TopA, the Sulfolobus solfataricus topoisomerase III, is a decatenase.\",\"volume\":\"46\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -782,18 +548,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   TOP3_SACS2              Reviewed;         668 AA.\nAC   Q97ZJ8;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2001, sequence version 1.\nDT   28-JAN-2026, entry version 132.\nDE   RecName: Full=DNA topoisomerase 3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTop3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTopA {ECO:0000303|PubMed:29253195};\nDE            EC=5.6.2.1 {ECO:0000269|PubMed:22722926, ECO:0000269|PubMed:29253195};\nDE   AltName: Full=DNA topoisomerase III {ECO:0000303|PubMed:29253195};\nGN   Name=topA {ECO:0000303|PubMed:22722926, ECO:0000312|EMBL:AAK41190.1};\nGN   OrderedLocusNames=SSO0907 {ECO:0000312|EMBL:AAK41190.1};\nOS   Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2)\nOS   (Sulfolobus solfataricus).\nOC   Archaea; Thermoproteota; Thermoprotei; Sulfolobales; Sulfolobaceae;\nOC   Saccharolobus.\nOX   NCBI_TaxID=273057;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -803,18 +569,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, SUBUNIT, INTERACTION WITH LHR, AND\nRP   DNA-BINDING.\nRX   PubMed=22722926; DOI=10.1074/jbc.m112.366377;\nRA   Valenti A., De Felice M., Perugino G., Bizard A., Nadal M., Rossi M.,\nRA   Ciaramella M.;\nRT   \"Synergic and opposing activities of thermophilic RecQ-like helicase and\nRT   topoisomerase 3 proteins in Holliday junction processing and replication\nRT   fork stabilization.\";\nRL   J. Biol. Chem. 287:30282-30295(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -824,18 +590,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 40-47",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=29253195; DOI=10.1093/nar/gkx1247;\nRA   Bizard A.H., Yang X., Debat H., Fogg J.M., Zechiedrich L., Strick T.R.,\nRA   Garnier F., Nadal M.;\nRT   \"TopA, the Sulfolobus solfataricus topoisomerase III, is a decatenase.\";\nRL   Nucleic Acids Res. 46:861-872(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -845,18 +611,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 160-162",
   "excerpt": "FT   ACT_SITE        318\nFT                   /note=\"O-(5'-phospho-DNA)-tyrosine intermediate\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01383\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 160-162",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -866,18 +632,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 163-166",
   "excerpt": "FT   BINDING         602\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0007744|PDB:6K8N, ECO:0007744|PDB:6K8O\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 163-166",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -887,18 +653,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 167-170",
   "excerpt": "FT   BINDING         605\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0007744|PDB:6K8N, ECO:0007744|PDB:6K8O\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 167-170",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -908,18 +674,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 171-174",
   "excerpt": "FT   BINDING         615\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0007744|PDB:6K8N, ECO:0007744|PDB:6K8O\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 171-174",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -929,18 +695,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 175-178",
   "excerpt": "FT   BINDING         618\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0007744|PDB:6K8N, ECO:0007744|PDB:6K8O\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 175-178",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 

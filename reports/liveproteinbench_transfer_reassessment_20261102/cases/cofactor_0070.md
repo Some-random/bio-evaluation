@@ -1,18 +1,16 @@
-# cofactor_0070: before and after transfer clarification
+# cofactor_0070
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0070.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0070.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **D** — NAD(+)
+**Expected answer:** **D** — NAD(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt annotation identifies NAD(+) as the cofactor and cites experimental evidence (ECO:0000269), including a note that NADP(+) cannot substitute. The linked paper is cited for cofactor evidence, though it was not independently reviewed here.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal glycine-rich motif may suggest dinucleotide binding, but it does not establish this protein's cofactor specificity. The sequence alone does not provide a reliable distinction among the listed choices.
-
-
-**Missing item-specific fact**
-
-> The protein's identity/function and experimentally established NAD(+) cofactor specificity are absent from the supplied input.
-
-
-**Reason**
-
-> The key is supported by sequence-matched database evidence, but that annotation and its experimental basis were reviewer-only. Recognizing the exact protein or retrieving its cofactor annotation would be needed to establish the answer.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The cited annotation specifically supports NAD(+) among the listed choices.
-
-
-### Important caveats
-
-- The current and archived UniProt records match the supplied sequence; the author's exact source snapshot is unknown.
-- The experimental claim is reported through the database annotation and citation; the primary study was not independently validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal glycine-rich motif may suggest dinucleotide binding, but it does not establish this protein's cofactor specificity. The sequence alone does not provide a reliable distinction among the listed choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity/function and experimentally established NAD(+) cofactor specificity are absent from the supplied input.",
-    "reason": "The key is supported by sequence-matched database evidence, but that annotation and its experimental basis were reviewer-only. Recognizing the exact protein or retrieving its cofactor annotation would be needed to establish the answer."
-  },
-  "case_id": "cofactor_0070",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation identifies NAD(+) as the cofactor and cites experimental evidence (ECO:0000269), including a note that NADP(+) cannot substitute. The linked paper is cited for cofactor evidence, though it was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The current and archived UniProt records match the supplied sequence; the author's exact source snapshot is unknown.",
-    "The experimental claim is reported through the database annotation and citation; the primary study was not independently validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited annotation specifically supports NAD(+) among the listed choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0070",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation identifies NAD(+) as the cofactor and cites experimental evidence (ECO:0000269), including a note that NADP(+) cannot substitute. The linked paper is cited for cofactor evidence, though it was not independently reviewed here.",
-    "evidence_ids": ["C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal glycine-rich motif may suggest dinucleotide binding, but it does not establish this protein's cofactor specificity. The sequence alone does not provide a reliable distinction among the listed choices.",
-    "missing_item_specific_fact": "The protein's identity/function and experimentally established NAD(+) cofactor specificity are absent from the supplied input.",
-    "reason": "The key is supported by sequence-matched database evidence, but that annotation and its experimental basis were reviewer-only. Recognizing the exact protein or retrieving its cofactor annotation would be needed to establish the answer."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited annotation specifically supports NAD(+) among the listed choices."
-  },
-  "important_caveats": [
-    "The current and archived UniProt records match the supplied sequence; the author's exact source snapshot is unknown.",
-    "The experimental claim is reported through the database annotation and citation; the primary study was not independently validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A7GKX7 (sequence SHA256 matched) annotates the cofactor as NAD(+) (CHEBI:57540) with experimental evidence code ECO:0000269 from PubMed:20529859 (Gu et al., J. Biol. Chem. 2010). The note explicitly states NADP(+) cannot substitute. The protein is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase (EC 4.1.1.128) from Bacillus cytotoxicus NVH 391-98. The sequence in the question matches the annotated entry exactly.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Elimination reasoning is partially available: the sequence lacks EF-hand motifs (DxDxDGxDG) ruling out Ca(2+); it is only 321 aa with no B12-binding domain (~150 aa) making cob(II)alamin unlikely; Co(2+) is rare and no specific binding motifs are apparent. A glycine-rich stretch 'GGAGFIGSH' near the N-terminus is loosely suggestive of a Rossmann-fold-like nucleotide-binding region. However, this motif is a degenerate variant of the canonical GxGxxG and is not a definitive positive predictor of NAD+ requirement, especially in a decarboxylase (EC 4.1.1.128) rather than a dehydrogenase. Many decarboxylases are cofactor-independent.
-
-
-**Missing item-specific fact**
-
-> The experimental demonstration (PubMed:20529859) that this specific UDP-GlcNAcA decarboxylase requires NAD+ as a cofactor, and that it cannot use NADP+ instead. This is a protein-specific biochemical finding from a single 2010 study that cannot be reliably inferred from sequence features alone.
-
-
-**Reason**
-
-> While elimination of Ca(2+), cob(II)alamin, and Co(2+) is feasible from general structural biology, the positive identification of NAD+ as the required cofactor for this particular decarboxylase depends on the experimental annotation from the 2010 JBC paper. The sequence's glycine-rich region is suggestive but not conclusive for NAD+ binding, and the enzyme class (decarboxylase) does not strongly predict a dinucleotide cofactor. Recognition of the specific protein or recall of its experimental characterization is needed to confidently select NAD+ over a cofactor-independent or alternative-cofactor hypothesis.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the four choices, Ca(2+), cob(II)alamin, and Co(2+) can each be reasonably excluded by the absence of their characteristic binding motifs and structural requirements. NAD(+) is the only option consistent with the glycine-rich N-terminal region and the small single-domain architecture. No other choice is defensible.
-
-
-### Important caveats
-
-- The glycine-rich motif 'GGAGFIGSH' is a degenerate variant of the canonical Rossmann-fold GxGxxG; it is suggestive but not a textbook diagnostic for NAD+ binding.
-- The NAD+ requirement was established experimentally in a single 2010 study (ECO:0000269); no independent replication evidence is cited in the annotation.
-- The protein's function as a decarboxylase (not a dehydrogenase) makes the NAD+ cofactor requirement less predictable from enzyme class alone.
-- The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must rely on sequence features and general knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Elimination reasoning is partially available: the sequence lacks EF-hand motifs (DxDxDGxDG) ruling out Ca(2+); it is only 321 aa with no B12-binding domain (~150 aa) making cob(II)alamin unlikely; Co(2+) is rare and no specific binding motifs are apparent. A glycine-rich stretch 'GGAGFIGSH' near the N-terminus is loosely suggestive of a Rossmann-fold-like nucleotide-binding region. However, this motif is a degenerate variant of the canonical GxGxxG and is not a definitive positive predictor of NAD+ requirement, especially in a decarboxylase (EC 4.1.1.128) rather than a dehydrogenase. Many decarboxylases are cofactor-independent.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimental demonstration (PubMed:20529859) that this specific UDP-GlcNAcA decarboxylase requires NAD+ as a cofactor, and that it cannot use NADP+ instead. This is a protein-specific biochemical finding from a single 2010 study that cannot be reliably inferred from sequence features alone.",
-    "reason": "While elimination of Ca(2+), cob(II)alamin, and Co(2+) is feasible from general structural biology, the positive identification of NAD+ as the required cofactor for this particular decarboxylase depends on the experimental annotation from the 2010 JBC paper. The sequence's glycine-rich region is suggestive but not conclusive for NAD+ binding, and the enzyme class (decarboxylase) does not strongly predict a dinucleotide cofactor. Recognition of the specific protein or recall of its experimental characterization is needed to confidently select NAD+ over a cofactor-independent or alternative-cofactor hypothesis."
-  },
-  "case_id": "cofactor_0070",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H4",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A7GKX7 (sequence SHA256 matched) annotates the cofactor as NAD(+) (CHEBI:57540) with experimental evidence code ECO:0000269 from PubMed:20529859 (Gu et al., J. Biol. Chem. 2010). The note explicitly states NADP(+) cannot substitute. The protein is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase (EC 4.1.1.128) from Bacillus cytotoxicus NVH 391-98. The sequence in the question matches the annotated entry exactly."
-  },
-  "important_caveats": [
-    "The glycine-rich motif 'GGAGFIGSH' is a degenerate variant of the canonical Rossmann-fold GxGxxG; it is suggestive but not a textbook diagnostic for NAD+ binding.",
-    "The NAD+ requirement was established experimentally in a single 2010 study (ECO:0000269); no independent replication evidence is cited in the annotation.",
-    "The protein's function as a decarboxylase (not a dehydrogenase) makes the NAD+ cofactor requirement less predictable from enzyme class alone.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must rely on sequence features and general knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the four choices, Ca(2+), cob(II)alamin, and Co(2+) can each be reasonably excluded by the absence of their characteristic binding motifs and structural requirements. NAD(+) is the only option consistent with the glycine-rich N-terminal region and the small single-domain architecture. No other choice is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0070",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A7GKX7 (sequence SHA256 matched) annotates the cofactor as NAD(+) (CHEBI:57540) with experimental evidence code ECO:0000269 from PubMed:20529859 (Gu et al., J. Biol. Chem. 2010). The note explicitly states NADP(+) cannot substitute. The protein is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase (EC 4.1.1.128) from Bacillus cytotoxicus NVH 391-98. The sequence in the question matches the annotated entry exactly.",
-    "evidence_ids": ["C5", "C6", "H4", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Elimination reasoning is partially available: the sequence lacks EF-hand motifs (DxDxDGxDG) ruling out Ca(2+); it is only 321 aa with no B12-binding domain (~150 aa) making cob(II)alamin unlikely; Co(2+) is rare and no specific binding motifs are apparent. A glycine-rich stretch 'GGAGFIGSH' near the N-terminus is loosely suggestive of a Rossmann-fold-like nucleotide-binding region. However, this motif is a degenerate variant of the canonical GxGxxG and is not a definitive positive predictor of NAD+ requirement, especially in a decarboxylase (EC 4.1.1.128) rather than a dehydrogenase. Many decarboxylases are cofactor-independent.",
-    "missing_item_specific_fact": "The experimental demonstration (PubMed:20529859) that this specific UDP-GlcNAcA decarboxylase requires NAD+ as a cofactor, and that it cannot use NADP+ instead. This is a protein-specific biochemical finding from a single 2010 study that cannot be reliably inferred from sequence features alone.",
-    "reason": "While elimination of Ca(2+), cob(II)alamin, and Co(2+) is feasible from general structural biology, the positive identification of NAD+ as the required cofactor for this particular decarboxylase depends on the experimental annotation from the 2010 JBC paper. The sequence's glycine-rich region is suggestive but not conclusive for NAD+ binding, and the enzyme class (decarboxylase) does not strongly predict a dinucleotide cofactor. Recognition of the specific protein or recall of its experimental characterization is needed to confidently select NAD+ over a cofactor-independent or alternative-cofactor hypothesis."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the four choices, Ca(2+), cob(II)alamin, and Co(2+) can each be reasonably excluded by the absence of their characteristic binding motifs and structural requirements. NAD(+) is the only option consistent with the glycine-rich N-terminal region and the small single-domain architecture. No other choice is defensible."
-  },
-  "important_caveats": [
-    "The glycine-rich motif 'GGAGFIGSH' is a degenerate variant of the canonical Rossmann-fold GxGxxG; it is suggestive but not a textbook diagnostic for NAD+ binding.",
-    "The NAD+ requirement was established experimentally in a single 2010 study (ECO:0000269); no independent replication evidence is cited in the annotation.",
-    "The protein's function as a decarboxylase (not a dehydrogenase) makes the NAD+ cofactor requirement less predictable from enzyme class alone.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must rely on sequence features and general knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -496,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A7GKX7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 321,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
   "current_entry_audit": {
     "entryVersion": 96,
     "firstPublicDate": "2025-02-05",
@@ -527,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-09-11",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "current_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 321,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 94,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A7GKX7",
   "selected_historical_entry_version": 94,
+  "selected_historical_record_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "selected_historical_source_sequence_length": 321,
+  "selected_historical_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
   "selected_historical_version": {
     "accession": "A7GKX7",
     "database": "Swiss-Prot",
@@ -545,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UXNAS_BACCN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "selected_historical_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
-  "selected_historical_source_sequence_length": 321,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 94,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -576,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A7GKX7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -595,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":96,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-09-11\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -614,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Bacillota\",\"Bacilli\",\"Caryophanales\",\"Bacillaceae\",\"Bacillus\",\"Bacillus cereus group\"],\"scientificName\":\"Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98)\",\"taxonId\":315749}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -633,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-XylNAc synthase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.128\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-GlcNAcA decarboxylase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -652,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"name\":\"NAD(+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"Cannot use NADP(+) instead of NAD(+).\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -671,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Gu X.\",\"Glushka J.\",\"Lee S.G.\",\"Bar-Peled M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20529859\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m110.125872\"}],\"citationType\":\"journal article\",\"firstPage\":\"24825\",\"id\":\"20529859\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"24833\",\"publicationDate\":\"2010\",\"title\":\"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\",\"volume\":\"285\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ADE43880.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 22905 / CIP 110041 / 391-98 / NVH 391-98\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -689,18 +450,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   UXNAS_BACCN             Reviewed;         321 AA.\nAC   A7GKX7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   11-SEP-2007, sequence version 1.\nDT   28-JAN-2026, entry version 94.\nDE   RecName: Full=UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase {ECO:0000305};\nDE            Short=UDP-GlcNAcA decarboxylase {ECO:0000303|PubMed:20529859};\nDE            EC=4.1.1.128 {ECO:0000269|PubMed:20529859};\nDE   AltName: Full=UDP-XylNAc synthase {ECO:0000303|PubMed:20529859};\nGN   Name=UXNAcS {ECO:0000303|PubMed:20529859};\nGN   OrderedLocusNames=Bcer98_0430 {ECO:0000312|EMBL:ABS20785.1};\nOS   Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98).\nOC   Bacteria; Bacillati; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus;\nOC   Bacillus cereus group.\nOX   NCBI_TaxID=315749;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -710,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase {ECO:0000305};\nDE            Short=UDP-GlcNAcA decarboxylase {ECO:0000303|PubMed:20529859};\nDE            EC=4.1.1.128 {ECO:0000269|PubMed:20529859};\nDE   AltName: Full=UDP-XylNAc synthase {ECO:0000303|PubMed:20529859};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -731,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2] {ECO:0000312|EMBL:ADE43880.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, COFACTOR,\nRP   ACTIVITY REGULATION, BIOPHYSICOCHEMICAL PROPERTIES, AND SUBUNIT.\nRC   STRAIN=DSM 22905 / CIP 110041 / 391-98 / NVH 391-98;\nRX   PubMed=20529859; DOI=10.1074/jbc.m110.125872;\nRA   Gu X., Glushka J., Lee S.G., Bar-Peled M.;\nRT   \"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the\nRT   human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\";\nRL   J. Biol. Chem. 285:24825-24833(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -752,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 50-54",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=NAD(+); Xref=ChEBI:CHEBI:57540;\nCC         Evidence={ECO:0000269|PubMed:20529859};\nCC       Note=Cannot use NADP(+) instead of NAD(+).\nCC       {ECO:0000269|PubMed:20529859};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_cellular_component_0167: before and after transfer clarification
+# GO_cellular_component_0167
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0167.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0167.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — peptidoglycan-based cell wall
+**Expected answer:** **D** — peptidoglycan-based cell wall
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | uncertain | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | contradicted | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | uncertain | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | contradicted | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact matching historical UniProt record annotates the protein to peptidoglycan-based cell wall with evidence code HDA (H6). However, this supports the recorded GO annotation, not conclusively that the cell wall is its primary location: experimental localization in the same record places it in the cytoplasm and peripherally associated with the inner membrane (H4).
-
-Citations as saved: [H6](#evidence-h6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic region is consistent with membrane association, but does not distinguish cell-wall localization from cytoplasmic or membrane localization. The eukaryote-specific distractors make D comparatively plausible if the protein is known to be bacterial, but the sequence alone does not establish that its primary location is the peptidoglycan-based cell wall.
-
-
-**Missing item-specific fact**
-
-> The protein-specific GO annotation to peptidoglycan-based cell wall, or other evidence establishing this protein's location, is absent from the input.
-
-
-**Reason**
-
-> Choosing D depends on protein-specific annotation or localization evidence, not a sufficiently discriminating inference from the sequence and choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence supports D as an annotation; although experimental localization also reports cytoplasm and inner-membrane association, those locations are not among the choices.
-
-
-### Important caveats
-
-- The cell-wall annotation is database evidence with code HDA; it should not be conflated with definitive evidence that this is the protein's primary cellular component.
-- The experimental cytoplasm and inner-membrane localization evidence complicates interpreting D as a primary-location answer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic region is consistent with membrane association, but does not distinguish cell-wall localization from cytoplasmic or membrane localization. The eukaryote-specific distractors make D comparatively plausible if the protein is known to be bacterial, but the sequence alone does not establish that its primary location is the peptidoglycan-based cell wall.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific GO annotation to peptidoglycan-based cell wall, or other evidence establishing this protein's location, is absent from the input.",
-    "reason": "Choosing D depends on protein-specific annotation or localization evidence, not a sufficiently discriminating inference from the sequence and choices."
-  },
-  "case_id": "GO_cellular_component_0167",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact matching historical UniProt record annotates the protein to peptidoglycan-based cell wall with evidence code HDA (H6). However, this supports the recorded GO annotation, not conclusively that the cell wall is its primary location: experimental localization in the same record places it in the cytoplasm and peripherally associated with the inner membrane (H4)."
-  },
-  "important_caveats": [
-    "The cell-wall annotation is database evidence with code HDA; it should not be conflated with definitive evidence that this is the protein's primary cellular component.",
-    "The experimental cytoplasm and inner-membrane localization evidence complicates interpreting D as a primary-location answer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports D as an annotation; although experimental localization also reports cytoplasm and inner-membrane association, those locations are not among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0167",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact matching historical UniProt record annotates the protein to peptidoglycan-based cell wall with evidence code HDA (H6). However, this supports the recorded GO annotation, not conclusively that the cell wall is its primary location: experimental localization in the same record places it in the cytoplasm and peripherally associated with the inner membrane (H4).",
-    "evidence_ids": ["H6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic region is consistent with membrane association, but does not distinguish cell-wall localization from cytoplasmic or membrane localization. The eukaryote-specific distractors make D comparatively plausible if the protein is known to be bacterial, but the sequence alone does not establish that its primary location is the peptidoglycan-based cell wall.",
-    "missing_item_specific_fact": "The protein-specific GO annotation to peptidoglycan-based cell wall, or other evidence establishing this protein's location, is absent from the input.",
-    "reason": "Choosing D depends on protein-specific annotation or localization evidence, not a sufficiently discriminating inference from the sequence and choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports D as an annotation; although experimental localization also reports cytoplasm and inner-membrane association, those locations are not among the choices."
-  },
-  "important_caveats": [
-    "The cell-wall annotation is database evidence with code HDA; it should not be conflated with definitive evidence that this is the protein's primary cellular component.",
-    "The experimental cytoplasm and inner-membrane localization evidence complicates interpreting D as a primary-location answer."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The protein is VirR (P96277) from Mycobacterium tuberculosis H37Rv, a 164-aa protein. The curated UniProt SUBCELLULAR LOCATION comment (C5/H4, evidence ECO:0000269/PubMed:24248369) states: 'Cell inner membrane; Peripheral membrane protein; Cytoplasmic side. Cytoplasm.' with the note that 'VirR is located in the cytosol, where it is associated with the plasma membrane without crossing it.' The experimental GO annotations (EXP:UniProtKB) are GO:0005737 cytoplasm (C6) and GO:0005886 plasma membrane (C7). The GO:0009274 peptidoglycan-based cell wall annotation (H6) carries only the HDA:MTBBASE evidence code — a low-confidence high-throughput database annotation, not experimental data. The primary cellular component is cytoplasm/plasma membrane, not the peptidoglycan cell wall. The expected answer D is contradicted by the stronger experimental and curated evidence.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could eliminate options A (collagen-containing extracellular matrix), B (motile cilium), and C (histone deacetylase complex) as eukaryotic-specific compartments irrelevant to a bacterium, leaving D. However, this elimination does not confirm that the protein is actually in the peptidoglycan cell wall. The sequence lacks any peptidoglycan-binding domain (e.g., LysM, SH3b, Amidase) and lacks a secretion signal peptide; instead it shows an N-terminal hydrophobic membrane-anchoring region consistent with cytoplasmic/peripheral membrane localization. The correct primary location (cytoplasm/plasma membrane) is not among the choices at all.
-
-
-**Missing item-specific fact**
-
-> The HDA:MTBBASE database annotation linking this specific protein to GO:0009274 is an item-specific external fact absent from the sequence. More critically, the correct primary location (cytoplasm/plasma membrane, supported by experimental evidence) is not offered as a choice, making the question fundamentally unanswerable by reasoning toward the true biology.
-
-
-**Reason**
-
-> While general biological knowledge (bacteria lack collagen, cilia, histone deacetylase complexes) allows elimination of A–C, this leads to D, which is not the protein's actual location. The expected answer D depends on a specific low-confidence database annotation (HDA:MTBBASE), and the true experimental location is not among the options. Sequence features (hydrophobic membrane-anchor, no peptidoglycan-binding motifs, no secretion signal) argue against D.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> None of the four options matches the experimentally determined primary location (cytoplasm / plasma membrane). The question is not ambiguous among the choices so much as it is misconstructed: the correct answer is absent from the option set. D is the only bacterial-relevant compartment but is not where this protein actually resides.
-
-
-### Important caveats
-
-- The GO:0009274 annotation for P96277 carries evidence code HDA:MTBBASE, a high-throughput database annotation from MTBBASE, not experimental evidence. The benchmark may have selected this annotation as ground truth without distinguishing evidence strength.
-- The curated UniProt SUBCELLULAR LOCATION (ECO:0000269, experimental) explicitly places VirR in the cytosol associated with the cytoplasmic face of the plasma membrane — directly contradicting a peptidoglycan cell wall assignment.
-- The sequence (164 aa) shows an N-terminal hydrophobic stretch (~residues 15–30) consistent with membrane anchoring, not a cleavable signal peptide for secretion to the cell wall.
-- The identity of the protein (P96277) was inferred from reviewer-only metadata; the evaluated model saw only the raw sequence and the four choices.
-- The question's option set omits the correct primary compartments (cytoplasm GO:0005737, plasma membrane GO:0005886), making the item structurally flawed regardless of which option is designated correct.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could eliminate options A (collagen-containing extracellular matrix), B (motile cilium), and C (histone deacetylase complex) as eukaryotic-specific compartments irrelevant to a bacterium, leaving D. However, this elimination does not confirm that the protein is actually in the peptidoglycan cell wall. The sequence lacks any peptidoglycan-binding domain (e.g., LysM, SH3b, Amidase) and lacks a secretion signal peptide; instead it shows an N-terminal hydrophobic membrane-anchoring region consistent with cytoplasmic/peripheral membrane localization. The correct primary location (cytoplasm/plasma membrane) is not among the choices at all.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The HDA:MTBBASE database annotation linking this specific protein to GO:0009274 is an item-specific external fact absent from the sequence. More critically, the correct primary location (cytoplasm/plasma membrane, supported by experimental evidence) is not offered as a choice, making the question fundamentally unanswerable by reasoning toward the true biology.",
-    "reason": "While general biological knowledge (bacteria lack collagen, cilia, histone deacetylase complexes) allows elimination of A–C, this leads to D, which is not the protein's actual location. The expected answer D depends on a specific low-confidence database annotation (HDA:MTBBASE), and the true experimental location is not among the options. Sequence features (hydrophobic membrane-anchor, no peptidoglycan-binding motifs, no secretion signal) argue against D."
-  },
-  "case_id": "GO_cellular_component_0167",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H4",
-      "H5",
-      "H6",
-      "H7"
-    ],
-    "judgment": "contradicted",
-    "reason": "The protein is VirR (P96277) from Mycobacterium tuberculosis H37Rv, a 164-aa protein. The curated UniProt SUBCELLULAR LOCATION comment (C5/H4, evidence ECO:0000269/PubMed:24248369) states: 'Cell inner membrane; Peripheral membrane protein; Cytoplasmic side. Cytoplasm.' with the note that 'VirR is located in the cytosol, where it is associated with the plasma membrane without crossing it.' The experimental GO annotations (EXP:UniProtKB) are GO:0005737 cytoplasm (C6) and GO:0005886 plasma membrane (C7). The GO:0009274 peptidoglycan-based cell wall annotation (H6) carries only the HDA:MTBBASE evidence code — a low-confidence high-throughput database annotation, not experimental data. The primary cellular component is cytoplasm/plasma membrane, not the peptidoglycan cell wall. The expected answer D is contradicted by the stronger experimental and curated evidence."
-  },
-  "important_caveats": [
-    "The GO:0009274 annotation for P96277 carries evidence code HDA:MTBBASE, a high-throughput database annotation from MTBBASE, not experimental evidence. The benchmark may have selected this annotation as ground truth without distinguishing evidence strength.",
-    "The curated UniProt SUBCELLULAR LOCATION (ECO:0000269, experimental) explicitly places VirR in the cytosol associated with the cytoplasmic face of the plasma membrane — directly contradicting a peptidoglycan cell wall assignment.",
-    "The sequence (164 aa) shows an N-terminal hydrophobic stretch (~residues 15–30) consistent with membrane anchoring, not a cleavable signal peptide for secretion to the cell wall.",
-    "The identity of the protein (P96277) was inferred from reviewer-only metadata; the evaluated model saw only the raw sequence and the four choices.",
-    "The question's option set omits the correct primary compartments (cytoplasm GO:0005737, plasma membrane GO:0005886), making the item structurally flawed regardless of which option is designated correct."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "None of the four options matches the experimentally determined primary location (cytoplasm / plasma membrane). The question is not ambiguous among the choices so much as it is misconstructed: the correct answer is absent from the option set. D is the only bacterial-relevant compartment but is not where this protein actually resides."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0167",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The protein is VirR (P96277) from Mycobacterium tuberculosis H37Rv, a 164-aa protein. The curated UniProt SUBCELLULAR LOCATION comment (C5/H4, evidence ECO:0000269/PubMed:24248369) states: 'Cell inner membrane; Peripheral membrane protein; Cytoplasmic side. Cytoplasm.' with the note that 'VirR is located in the cytosol, where it is associated with the plasma membrane without crossing it.' The experimental GO annotations (EXP:UniProtKB) are GO:0005737 cytoplasm (C6) and GO:0005886 plasma membrane (C7). The GO:0009274 peptidoglycan-based cell wall annotation (H6) carries only the HDA:MTBBASE evidence code — a low-confidence high-throughput database annotation, not experimental data. The primary cellular component is cytoplasm/plasma membrane, not the peptidoglycan cell wall. The expected answer D is contradicted by the stronger experimental and curated evidence.",
-    "evidence_ids": ["C5", "C6", "C7", "H4", "H5", "H6", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could eliminate options A (collagen-containing extracellular matrix), B (motile cilium), and C (histone deacetylase complex) as eukaryotic-specific compartments irrelevant to a bacterium, leaving D. However, this elimination does not confirm that the protein is actually in the peptidoglycan cell wall. The sequence lacks any peptidoglycan-binding domain (e.g., LysM, SH3b, Amidase) and lacks a secretion signal peptide; instead it shows an N-terminal hydrophobic membrane-anchoring region consistent with cytoplasmic/peripheral membrane localization. The correct primary location (cytoplasm/plasma membrane) is not among the choices at all.",
-    "missing_item_specific_fact": "The HDA:MTBBASE database annotation linking this specific protein to GO:0009274 is an item-specific external fact absent from the sequence. More critically, the correct primary location (cytoplasm/plasma membrane, supported by experimental evidence) is not offered as a choice, making the question fundamentally unanswerable by reasoning toward the true biology.",
-    "reason": "While general biological knowledge (bacteria lack collagen, cilia, histone deacetylase complexes) allows elimination of A–C, this leads to D, which is not the protein's actual location. The expected answer D depends on a specific low-confidence database annotation (HDA:MTBBASE), and the true experimental location is not among the options. Sequence features (hydrophobic membrane-anchor, no peptidoglycan-binding motifs, no secretion signal) argue against D."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "None of the four options matches the experimentally determined primary location (cytoplasm / plasma membrane). The question is not ambiguous among the choices so much as it is misconstructed: the correct answer is absent from the option set. D is the only bacterial-relevant compartment but is not where this protein actually resides."
-  },
-  "important_caveats": [
-    "The GO:0009274 annotation for P96277 carries evidence code HDA:MTBBASE, a high-throughput database annotation from MTBBASE, not experimental evidence. The benchmark may have selected this annotation as ground truth without distinguishing evidence strength.",
-    "The curated UniProt SUBCELLULAR LOCATION (ECO:0000269, experimental) explicitly places VirR in the cytosol associated with the cytoplasmic face of the plasma membrane — directly contradicting a peptidoglycan cell wall assignment.",
-    "The sequence (164 aa) shows an N-terminal hydrophobic stretch (~residues 15–30) consistent with membrane anchoring, not a cleavable signal peptide for secretion to the cell wall.",
-    "The identity of the protein (P96277) was inferred from reviewer-only metadata; the evaluated model saw only the raw sequence and the four choices.",
-    "The question's option set omits the correct primary compartments (cytoplasm GO:0005737, plasma membrane GO:0005886), making the item structurally flawed regardless of which option is designated correct."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: uncertain
 
@@ -392,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -511,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P96277",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "44ad8fcff829052f173aab199bd7170fa7051098da11e518186541989cb7eaa8",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 164,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "44ad8fcff829052f173aab199bd7170fa7051098da11e518186541989cb7eaa8",
   "current_entry_audit": {
     "entryVersion": 138,
     "firstPublicDate": "2025-06-18",
@@ -542,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "1997-07-01",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "current_source_sequence_sha256": "44ad8fcff829052f173aab199bd7170fa7051098da11e518186541989cb7eaa8",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 164,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "44ad8fcff829052f173aab199bd7170fa7051098da11e518186541989cb7eaa8",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 136,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P96277",
   "selected_historical_entry_version": 136,
+  "selected_historical_record_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "selected_historical_source_sequence_length": 164,
+  "selected_historical_source_sequence_sha256": "44ad8fcff829052f173aab199bd7170fa7051098da11e518186541989cb7eaa8",
   "selected_historical_version": {
     "accession": "P96277",
     "database": "Swiss-Prot",
@@ -560,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "VIRR_MYCTU",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "selected_historical_source_sequence_sha256": "44ad8fcff829052f173aab199bd7170fa7051098da11e518186541989cb7eaa8",
-  "selected_historical_source_sequence_length": 164,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 136,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -595,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P96277\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -614,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":138,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"1997-07-01\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -633,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Mycobacteriales\",\"Mycobacteriaceae\",\"Mycobacterium\",\"Mycobacterium tuberculosis complex\"],\"scientificName\":\"Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)\",\"taxonId\":83332}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -652,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24248369\",\"source\":\"PubMed\"}],\"value\":\"Vesiculogenesis and immune response regulator\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -671,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24248369\",\"source\":\"PubMed\"}],\"value\":\"Subcellular fractionation and topologic analyses suggest that VirR is located in the cytosol, where it is associated with the plasma membrane without crossing it\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24248369\",\"source\":\"PubMed\"}],\"id\":\"SL-0037\",\"value\":\"Cell inner membrane\"},\"orientation\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24248369\",\"source\":\"PubMed\"}],\"id\":\"SL-9910\",\"value\":\"Cytoplasmic side\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24248369\",\"source\":\"PubMed\"}],\"id\":\"SL-9903\",\"value\":\"Peripheral membrane protein\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"31285241\",\"source\":\"PubMed\"}],\"id\":\"SL-0086\",\"value\":\"Cytoplasm\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -690,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"31285241\",\"source\":\"PubMed\"}],\"id\":\"GO:0005737\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytoplasm\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -709,15 +465,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/18",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24248369\",\"source\":\"PubMed\"}],\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/18",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -728,15 +484,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Rath P.\",\"Huang C.\",\"Wang T.\",\"Wang T.\",\"Li H.\",\"Prados-Rosales R.\",\"Elemento O.\",\"Casadevall A.\",\"Nathan C.F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24248369\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.1320118110\"}],\"citationType\":\"journal article\",\"firstPage\":\"E4790\",\"id\":\"24248369\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"E4797\",\"publicationDate\":\"2013\",\"title\":\"Genetic regulation of vesiculogenesis and immunomodulation in Mycobacterium tuberculosis.\",\"volume\":\"110\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"H37Rv\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF 1-MET--GLY-42\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -747,15 +503,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P96277.json",
-  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
-  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Ballister E.R.\",\"Samanovic M.I.\",\"Darwin K.H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"31285241\"},{\"database\":\"DOI\",\"id\":\"10.1128/jb.00228-19\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"31285241\",\"journal\":\"J. Bacteriol.\",\"lastPage\":\"0\",\"publicationDate\":\"2019\",\"title\":\"Mycobacterium tuberculosis Rv2700 Contributes to Cell Envelope Integrity and Virulence.\",\"volume\":\"201\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"H37Rv\"}],\"referenceNumber\":6,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:30:08.695621+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "50dc24e09769c87e9d9e8f99cff758c5946bf28fabde62058d84108ce1a51d28",
+  "url": "https://rest.uniprot.org/uniprotkb/P96277.json"
 }
 ```
 
@@ -765,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 136,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136",
-  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   VIRR_MYCTU              Reviewed;         164 AA.\nAC   P96277; F2GME8; I6WYD6; Q7D9U0;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JUL-1997, sequence version 2.\nDT   28-JAN-2026, entry version 136.\nDE   RecName: Full=Vesiculogenesis and immune response regulator {ECO:0000303|PubMed:24248369};\nGN   Name=virR {ECO:0000303|PubMed:24248369};\nGN   OrderedLocusNames=Rv0431 {ECO:0000312|EMBL:CCP43162.1};\nOS   Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Mycobacteriales;\nOC   Mycobacteriaceae; Mycobacterium; Mycobacterium tuberculosis complex.\nOX   NCBI_TaxID=83332;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 136,
+  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136"
 }
 ```
 
@@ -786,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 136,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136",
-  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
-  "source_locator": "lines 48-57",
   "excerpt": "RN   [4]\nRP   FUNCTION, SUBCELLULAR LOCATION, DISRUPTION PHENOTYPE, AND MUTAGENESIS OF\nRP   1-MET--GLY-42.\nRC   STRAIN=H37Rv;\nRX   PubMed=24248369; DOI=10.1073/pnas.1320118110;\nRA   Rath P., Huang C., Wang T., Wang T., Li H., Prados-Rosales R., Elemento O.,\nRA   Casadevall A., Nathan C.F.;\nRT   \"Genetic regulation of vesiculogenesis and immunomodulation in\nRT   Mycobacterium tuberculosis.\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 110:E4790-E4797(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 136,
+  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 48-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136"
 }
 ```
 
@@ -807,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 136,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136",
-  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
-  "source_locator": "lines 68-75",
   "excerpt": "RN   [6]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=H37Rv;\nRX   PubMed=31285241; DOI=10.1128/jb.00228-19;\nRA   Ballister E.R., Samanovic M.I., Darwin K.H.;\nRT   \"Mycobacterium tuberculosis Rv2700 Contributes to Cell Envelope Integrity\nRT   and Virulence.\";\nRL   J. Bacteriol. 201:0-0(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 136,
+  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 68-75",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136"
 }
 ```
 
@@ -828,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 136,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136",
-  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
-  "source_locator": "lines 89-95",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cell inner membrane\nCC       {ECO:0000269|PubMed:24248369}; Peripheral membrane protein\nCC       {ECO:0000269|PubMed:24248369}; Cytoplasmic side\nCC       {ECO:0000269|PubMed:24248369}. Cytoplasm {ECO:0000269|PubMed:31285241}.\nCC       Note=Subcellular fractionation and topologic analyses suggest that VirR\nCC       is located in the cytosol, where it is associated with the plasma\nCC       membrane without crossing it. {ECO:0000269|PubMed:24248369}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 136,
+  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 89-95",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136"
 }
 ```
 
@@ -849,18 +605,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 136,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136",
-  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
-  "source_locator": "lines 140-140",
   "excerpt": "DR   GO; GO:0005737; C:cytoplasm; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 136,
+  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 140-140",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136"
 }
 ```
 
@@ -870,18 +626,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 136,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136",
-  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
-  "source_locator": "lines 141-141",
   "excerpt": "DR   GO; GO:0009274; C:peptidoglycan-based cell wall; HDA:MTBBASE.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 136,
+  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 141-141",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136"
 }
 ```
 
@@ -891,18 +647,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 136,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136",
-  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
-  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
-  "source_locator": "lines 142-142",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 136,
+  "retrieved_utc": "2026-11-02T04:30:15.043382+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 142-142",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "53ba58c04d416cac1c559fd5dcb54fc6d644e0d38cc28631e46a6f7202aa84a7",
+  "url": "https://rest.uniprot.org/unisave/P96277?format=txt&versions=136"
 }
 ```
 
@@ -913,15 +669,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 1175-1185",
   "excerpt": "[Term]\nid: GO:0000118\nname: histone deacetylase complex\nnamespace: cellular_component\ndef: \"A protein complex that possesses histone deacetylase activity.\" [GOC:mah]\ncomment: Note that this term represents a location, not a function; the activity possessed by this complex is mentioned in the definition for the purpose of describing and distinguishing the complex. The function of this complex is represented by the molecular function term 'histone deacetylase activity ; GO:0004407'.\nsynonym: \"HDAC complex\" EXACT []\nis_a: GO:0140513 ! nuclear protein-containing complex\nis_a: GO:1902494 ! catalytic complex\nrelationship: part_of GO:0005654 ! nucleoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000118",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 1175-1185",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000118"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -932,15 +688,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 94735-94744",
   "excerpt": "[Term]\nid: GO:0009274\nname: peptidoglycan-based cell wall\nnamespace: cellular_component\ndef: \"A protective structure outside the cytoplasmic membrane composed of peptidoglycan (also known as murein), a molecule made up of a glycan (sugar) backbone of repetitively alternating N-acetylglucosamine and N-acetylmuramic acid with short, attached, cross-linked peptide chains containing unusual amino acids. An example of this component is found in Escherichia coli.\" [GOC:mlg, ISBN:0815108893]\nsynonym: \"envelope\" BROAD []\nsynonym: \"murein sacculus\" RELATED []\nsynonym: \"peptidoglycan\" NARROW []\nis_a: GO:0005618 ! cell wall\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009274",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 94735-94744",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009274"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -951,15 +707,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 177294-177308",
   "excerpt": "[Term]\nid: GO:0031514\nname: motile cilium\nnamespace: cellular_component\nalt_id: GO:0009434\nalt_id: GO:0031512\ndef: \"A cilium which may have a variable arrangement of axonemal microtubules and also contains molecular motors. It may beat with a whip-like pattern that promotes cell motility or transport of fluids and other cells across a cell surface, such as on epithelial cells that line the lumenal ducts of various tissues; or they may display a distinct twirling motion that directs fluid flow asymmetrically across the cellular surface to affect asymmetric body plan organization. Motile cilia can be found in single as well as multiple copies per cell.\" [GOC:cilia, GOC:dgh, GOC:kmv, PMID:17009929, PMID:20144998, PMID:22118931]\nsynonym: \"microtubule-based flagellum\" RELATED []\nsynonym: \"motile cilia\" EXACT []\nsynonym: \"motile primary cilia\" RELATED []\nsynonym: \"motile primary cilium\" RELATED []\nsynonym: \"motile secondary cilium\" RELATED []\nsynonym: \"nodal cilium\" RELATED []\nis_a: GO:0005929 ! cilium\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031514",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 177294-177308",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031514"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

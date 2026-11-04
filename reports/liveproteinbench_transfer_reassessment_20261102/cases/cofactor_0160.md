@@ -1,18 +1,16 @@
-# cofactor_0160: before and after transfer clarification
+# cofactor_0160
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0160.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0160.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — &#91;4Fe-4S&#93; cluster
+**Expected answer:** **C** — &#91;4Fe-4S&#93; cluster
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | output error (invalid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact matched sequence is annotated as the iron-sulfur cluster assembly protein IscU, with a &#91;4Fe-4S&#93; cluster listed as its cofactor and evidence attributed to a 2021 publication. This supports choice C, though the cited primary study was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The cysteine-rich sequence may suggest metal or iron-sulfur binding, but that pattern alone does not reliably distinguish a &#91;4Fe-4S&#93; cluster from other metal-binding possibilities.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as IscU and its experimentally supported &#91;4Fe-4S&#93; cofactor annotation are not supplied in the question.
-
-
-**Reason**
-
-> Selecting C requires recognizing or identifying this particular protein and knowing its cofactor association; generic sequence reasoning does not establish the specific cluster.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports C for this matched protein. The sequence alone is insufficient to resolve the cofactor, but that is missing item-specific information rather than evidence that multiple choices are correct.
-
-
-### Important caveats
-
-- IscU is an iron-sulfur cluster assembly scaffold; describing its cofactor as required for catalytic activity may not precisely describe its role.
-- The cofactor annotation is experimental-evidence-coded and cites a publication, but the primary study was not independently validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The cysteine-rich sequence may suggest metal or iron-sulfur binding, but that pattern alone does not reliably distinguish a [4Fe-4S] cluster from other metal-binding possibilities.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as IscU and its experimentally supported [4Fe-4S] cofactor annotation are not supplied in the question.",
-    "reason": "Selecting C requires recognizing or identifying this particular protein and knowing its cofactor association; generic sequence reasoning does not establish the specific cluster."
-  },
-  "case_id": "cofactor_0160",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact matched sequence is annotated as the iron-sulfur cluster assembly protein IscU, with a [4Fe-4S] cluster listed as its cofactor and evidence attributed to a 2021 publication. This supports choice C, though the cited primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "IscU is an iron-sulfur cluster assembly scaffold; describing its cofactor as required for catalytic activity may not precisely describe its role.",
-    "The cofactor annotation is experimental-evidence-coded and cites a publication, but the primary study was not independently validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports C for this matched protein. The sequence alone is insufficient to resolve the cofactor, but that is missing item-specific information rather than evidence that multiple choices are correct."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0160",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact matched sequence is annotated as the iron-sulfur cluster assembly protein IscU, with a [4Fe-4S] cluster listed as its cofactor and evidence attributed to a 2021 publication. This supports choice C, though the cited primary study was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The cysteine-rich sequence may suggest metal or iron-sulfur binding, but that pattern alone does not reliably distinguish a [4Fe-4S] cluster from other metal-binding possibilities.",
-    "missing_item_specific_fact": "The protein-specific identification as IscU and its experimentally supported [4Fe-4S] cofactor annotation are not supplied in the question.",
-    "reason": "Selecting C requires recognizing or identifying this particular protein and knowing its cofactor association; generic sequence reasoning does not establish the specific cluster."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports C for this matched protein. The sequence alone is insufficient to resolve the cofactor, but that is missing item-specific information rather than evidence that multiple choices are correct."
-  },
-  "important_caveats": [
-    "IscU is an iron-sulfur cluster assembly scaffold; describing its cofactor as required for catalytic activity may not precisely describe its role.",
-    "The cofactor annotation is experimental-evidence-coded and cites a publication, but the primary study was not independently validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
-
-**Validation errors:** `question_ambiguity:invalid_option_ids`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q8IKT4 (PfIscU, Iron-sulfur cluster assembly protein IscU from Plasmodium falciparum 3D7) annotates the cofactor as &#91;4Fe-4S&#93; cluster (ChEBI:CHEBI:49883) with evidence code ECO:0000269 linked to experimental literature (PubMed:34032321, Sadik et al. 2021, Mol Microbiol). The sequence matches exactly (SHA256 confirmed). The protein name itself ('Iron-sulfur cluster assembly protein') directly implies Fe-S cluster involvement, and the cited paper specifically addresses &#91;Fe-S&#93; biogenesis and ISC scaffold assembly in P. falciparum.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The N-terminal region contains an unusually dense cysteine cluster (C7, C15, C18, C21, C29 — five Cys in ~30 residues) with tight spacing (C-X3-C-X3-C at positions 15-18-21). This C-X3-C-X3-C motif is characteristic of Fe-S cluster coordination in scaffold proteins, whereas Zn(2+) coordination typically follows C-X2,4-C patterns embedded in defined structural motifs (zinc fingers, metalloprotease sites) with intervening His residues. The sequence lacks any GxGxxG Rossmann-fold motif (eliminating NAD+), lacks ACP-like β-turn/α-helix motifs with a Ser-Pantetheine attachment site (eliminating pantetheine 4'-phosphate), and lacks the compact C2H2/C4 zinc-finger architecture expected for Zn(2+). The small size (162 aa) and cysteine-rich N-terminal architecture are consistent with a scaffold-type Fe-S assembly protein.
-
-
-**Missing item-specific fact**
-
-> The specific designation &#91;4Fe-4S&#93; versus &#91;2Fe-2S&#93; for this particular IscU variant may require knowledge of the published experimental characterization; however, the question only offers &#91;4Fe-4S&#93; among Fe-S options, and the general Fe-S assignment is inferable from the cysteine motif.
-
-
-**Reason**
-
-> A knowledgeable biologist can eliminate NAD+ (no Rossmann fold), pantetheine 4'-phosphate (no ACP motif), and argue against Zn(2+) based on the atypical cysteine spacing and absence of zinc-finger architecture. The tight C-X3-C-X3-C cluster is a recognized Fe-S coordination signature. The remaining choice &#91;4Fe-4S&#93; is the only Fe-S option provided.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A (Zn2+)"
-]
-```
-
-> In principle, a cysteine-rich protein could bind Zn(2+), and without knowing the specific protein identity, one might tentatively assign Zn(2+) to a Cys-rich region. However, the tight C-X3-C-X3-C spacing and absence of any His residues in the N-terminal Cys cluster make Zn(2+) coordination structurally implausible, and no other option (B, D) is defensible. The ambiguity is minor and resolvable with standard bioinorganic reasoning.
-
-
-### Important caveats
-
-- The UniProt annotation uses ECO:0000269 (evidence used in automatic assertion) linked to a specific PubMed paper, indicating the annotation was derived from literature rather than a direct biochemical assay of this exact protein's cofactor in isolation.
-- The historical UniProt entry (version 123, released 2026-01) already contains the &#91;4Fe-4S&#93; annotation, so this was available before the benchmark construction cutoff.
-- The specific cluster nuclearity (&#91;4Fe-4S&#93; vs &#91;2Fe-2S&#93;) for PfIscU may reflect the predominant form reported in the cited study; IscU scaffold proteins can transiently carry different cluster types.
-- The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on the sequence and general biological knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal region contains an unusually dense cysteine cluster (C7, C15, C18, C21, C29 — five Cys in ~30 residues) with tight spacing (C-X3-C-X3-C at positions 15-18-21). This C-X3-C-X3-C motif is characteristic of Fe-S cluster coordination in scaffold proteins, whereas Zn(2+) coordination typically follows C-X2,4-C patterns embedded in defined structural motifs (zinc fingers, metalloprotease sites) with intervening His residues. The sequence lacks any GxGxxG Rossmann-fold motif (eliminating NAD+), lacks ACP-like β-turn/α-helix motifs with a Ser-Pantetheine attachment site (eliminating pantetheine 4'-phosphate), and lacks the compact C2H2/C4 zinc-finger architecture expected for Zn(2+). The small size (162 aa) and cysteine-rich N-terminal architecture are consistent with a scaffold-type Fe-S assembly protein.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific designation [4Fe-4S] versus [2Fe-2S] for this particular IscU variant may require knowledge of the published experimental characterization; however, the question only offers [4Fe-4S] among Fe-S options, and the general Fe-S assignment is inferable from the cysteine motif.",
-    "reason": "A knowledgeable biologist can eliminate NAD+ (no Rossmann fold), pantetheine 4'-phosphate (no ACP motif), and argue against Zn(2+) based on the atypical cysteine spacing and absence of zinc-finger architecture. The tight C-X3-C-X3-C cluster is a recognized Fe-S coordination signature. The remaining choice [4Fe-4S] is the only Fe-S option provided."
-  },
-  "case_id": "cofactor_0160",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q8IKT4 (PfIscU, Iron-sulfur cluster assembly protein IscU from Plasmodium falciparum 3D7) annotates the cofactor as [4Fe-4S] cluster (ChEBI:CHEBI:49883) with evidence code ECO:0000269 linked to experimental literature (PubMed:34032321, Sadik et al. 2021, Mol Microbiol). The sequence matches exactly (SHA256 confirmed). The protein name itself ('Iron-sulfur cluster assembly protein') directly implies Fe-S cluster involvement, and the cited paper specifically addresses [Fe-S] biogenesis and ISC scaffold assembly in P. falciparum."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses ECO:0000269 (evidence used in automatic assertion) linked to a specific PubMed paper, indicating the annotation was derived from literature rather than a direct biochemical assay of this exact protein's cofactor in isolation.",
-    "The historical UniProt entry (version 123, released 2026-01) already contains the [4Fe-4S] annotation, so this was available before the benchmark construction cutoff.",
-    "The specific cluster nuclearity ([4Fe-4S] vs [2Fe-2S]) for PfIscU may reflect the predominant form reported in the cited study; IscU scaffold proteins can transiently carry different cluster types.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on the sequence and general biological knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A (Zn2+)"
-    ],
-    "reason": "In principle, a cysteine-rich protein could bind Zn(2+), and without knowing the specific protein identity, one might tentatively assign Zn(2+) to a Cys-rich region. However, the tight C-X3-C-X3-C spacing and absence of any His residues in the N-terminal Cys cluster make Zn(2+) coordination structurally implausible, and no other option (B, D) is defensible. The ambiguity is minor and resolvable with standard bioinorganic reasoning."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0160",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q8IKT4 (PfIscU, Iron-sulfur cluster assembly protein IscU from Plasmodium falciparum 3D7) annotates the cofactor as [4Fe-4S] cluster (ChEBI:CHEBI:49883) with evidence code ECO:0000269 linked to experimental literature (PubMed:34032321, Sadik et al. 2021, Mol Microbiol). The sequence matches exactly (SHA256 confirmed). The protein name itself ('Iron-sulfur cluster assembly protein') directly implies Fe-S cluster involvement, and the cited paper specifically addresses [Fe-S] biogenesis and ISC scaffold assembly in P. falciparum.",
-    "evidence_ids": ["C4", "C5", "H2", "H4", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The N-terminal region contains an unusually dense cysteine cluster (C7, C15, C18, C21, C29 — five Cys in ~30 residues) with tight spacing (C-X3-C-X3-C at positions 15-18-21). This C-X3-C-X3-C motif is characteristic of Fe-S cluster coordination in scaffold proteins, whereas Zn(2+) coordination typically follows C-X2,4-C patterns embedded in defined structural motifs (zinc fingers, metalloprotease sites) with intervening His residues. The sequence lacks any GxGxxG Rossmann-fold motif (eliminating NAD+), lacks ACP-like β-turn/α-helix motifs with a Ser-Pantetheine attachment site (eliminating pantetheine 4'-phosphate), and lacks the compact C2H2/C4 zinc-finger architecture expected for Zn(2+). The small size (162 aa) and cysteine-rich N-terminal architecture are consistent with a scaffold-type Fe-S assembly protein.",
-    "missing_item_specific_fact": "The specific designation [4Fe-4S] versus [2Fe-2S] for this particular IscU variant may require knowledge of the published experimental characterization; however, the question only offers [4Fe-4S] among Fe-S options, and the general Fe-S assignment is inferable from the cysteine motif.",
-    "reason": "A knowledgeable biologist can eliminate NAD+ (no Rossmann fold), pantetheine 4'-phosphate (no ACP motif), and argue against Zn(2+) based on the atypical cysteine spacing and absence of zinc-finger architecture. The tight C-X3-C-X3-C cluster is a recognized Fe-S coordination signature. The remaining choice [4Fe-4S] is the only Fe-S option provided."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A (Zn2+)"],
-    "reason": "In principle, a cysteine-rich protein could bind Zn(2+), and without knowing the specific protein identity, one might tentatively assign Zn(2+) to a Cys-rich region. However, the tight C-X3-C-X3-C spacing and absence of any His residues in the N-terminal Cys cluster make Zn(2+) coordination structurally implausible, and no other option (B, D) is defensible. The ambiguity is minor and resolvable with standard bioinorganic reasoning."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses ECO:0000269 (evidence used in automatic assertion) linked to a specific PubMed paper, indicating the annotation was derived from literature rather than a direct biochemical assay of this exact protein's cofactor in isolation.",
-    "The historical UniProt entry (version 123, released 2026-01) already contains the [4Fe-4S] annotation, so this was available before the benchmark construction cutoff.",
-    "The specific cluster nuclearity ([4Fe-4S] vs [2Fe-2S]) for PfIscU may reflect the predominant form reported in the cited study; IscU scaffold proteins can transiently carry different cluster types.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on the sequence and general biological knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -396,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IKT4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 162,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
   "current_entry_audit": {
     "entryVersion": 125,
     "firstPublicDate": "2025-04-09",
@@ -541,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "current_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 162,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 123,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IKT4",
   "selected_historical_entry_version": 123,
+  "selected_historical_record_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "selected_historical_source_sequence_length": 162,
+  "selected_historical_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
   "selected_historical_version": {
     "accession": "Q8IKT4",
     "database": "Swiss-Prot",
@@ -559,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ISCU_PLAF7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "selected_historical_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
-  "selected_historical_source_sequence_length": 162,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 123,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IKT4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -609,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":125,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -628,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001450\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Laverania\"],\"scientificName\":\"Plasmodium falciparum (isolate 3D7)\",\"taxonId\":36329}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -647,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Iron-sulfur cluster assembly protein IscU\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34032321\",\"source\":\"PubMed\"}],\"value\":\"PfIscU\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -666,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:49883\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34032321\",\"source\":\"PubMed\"}],\"name\":\"[4Fe-4S] cluster\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -685,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Sadik M.\",\"Afsar M.\",\"Ramachandran R.\",\"Habib S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34032321\"},{\"database\":\"DOI\",\"id\":\"10.1111/mmi.14735\"}],\"citationType\":\"journal article\",\"firstPage\":\"606\",\"id\":\"34032321\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"623\",\"publicationDate\":\"2021\",\"title\":\"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the Plasmodium falciparum mitochondrion.\",\"volume\":\"116\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"COFACTOR\",\"SUBUNIT\",\"INTERACTION WITH ISCS\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -703,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   ISCU_PLAF7              Reviewed;         162 AA.\nAC   Q8IKT4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 123.\nDE   RecName: Full=Iron-sulfur cluster assembly protein IscU {ECO:0000305};\nDE            Short=PfIscU {ECO:0000303|PubMed:34032321};\nGN   Name=IscU {ECO:0000305};\nGN   ORFNames=PF3D7_1454500 {ECO:0000312|EMBL:CZU00240.1};\nOS   Plasmodium falciparum (isolate 3D7).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Laverania).\nOX   NCBI_TaxID=36329 {ECO:0000312|Proteomes:UP000001450};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -724,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Iron-sulfur cluster assembly protein IscU {ECO:0000305};\nDE            Short=PfIscU {ECO:0000303|PubMed:34032321};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -745,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 28-35",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, COFACTOR, SUBUNIT, INTERACTION WITH ISCS, AND SUBCELLULAR\nRP   LOCATION.\nRX   PubMed=34032321; DOI=10.1111/mmi.14735;\nRA   Sadik M., Afsar M., Ramachandran R., Habib S.;\nRT   \"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the\nRT   Plasmodium falciparum mitochondrion.\";\nRL   Mol. Microbiol. 116:606-623(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -766,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 52-54",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=[4Fe-4S] cluster; Xref=ChEBI:CHEBI:49883;\nCC         Evidence={ECO:0000269|PubMed:34032321};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 

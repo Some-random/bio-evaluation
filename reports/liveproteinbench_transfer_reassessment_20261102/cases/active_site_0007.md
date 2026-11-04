@@ -1,18 +1,16 @@
-# active_site_0007: before and after transfer clarification
+# active_site_0007
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0007.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0007.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **D** — Position 52 (Proton acceptor; for glutaminase activity)
+**Expected answer:** **D** — Position 52 (Proton acceptor; for glutaminase activity)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt annotation identifies residue 52 as the proton acceptor for glutaminase activity. This is a HAMAP computational annotation, not direct experimental evidence in the supplied record.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a defensible way to assign the specific proton-acceptor role to residue 52 rather than to the other listed positions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation that residue 52 is the proton acceptor for glutaminase activity.
-
-
-**Reason**
-
-> Choosing the keyed position and role requires a protein-specific functional annotation or equivalent external knowledge; general sequence reasoning does not establish that exact catalytic assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation specifically supports option D among the listed choices.
-
-
-### Important caveats
-
-- The supporting active-site annotation is attributed to HAMAP, so it should not be described as experimentally demonstrated by this evidence.
-- The reviewer-only source records an exact sequence match, including for the historical entry; the author's precise source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to assign the specific proton-acceptor role to residue 52 rather than to the other listed positions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation that residue 52 is the proton acceptor for glutaminase activity.",
-    "reason": "Choosing the keyed position and role requires a protein-specific functional annotation or equivalent external knowledge; general sequence reasoning does not establish that exact catalytic assignment."
-  },
-  "case_id": "active_site_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation identifies residue 52 as the proton acceptor for glutaminase activity. This is a HAMAP computational annotation, not direct experimental evidence in the supplied record."
-  },
-  "important_caveats": [
-    "The supporting active-site annotation is attributed to HAMAP, so it should not be described as experimentally demonstrated by this evidence.",
-    "The reviewer-only source records an exact sequence match, including for the historical entry; the author's precise source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation specifically supports option D among the listed choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation identifies residue 52 as the proton acceptor for glutaminase activity. This is a HAMAP computational annotation, not direct experimental evidence in the supplied record.",
-    "evidence_ids": ["C5", "H3", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to assign the specific proton-acceptor role to residue 52 rather than to the other listed positions.",
-    "missing_item_specific_fact": "The protein-specific annotation that residue 52 is the proton acceptor for glutaminase activity.",
-    "reason": "Choosing the keyed position and role requires a protein-specific functional annotation or equivalent external knowledge; general sequence reasoning does not establish that exact catalytic assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation specifically supports option D among the listed choices."
-  },
-  "important_caveats": [
-    "The supporting active-site annotation is attributed to HAMAP, so it should not be described as experimentally demonstrated by this evidence.",
-    "The reviewer-only source records an exact sequence match, including for the historical entry; the author's precise source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A0H2X6L3 (NadE, Xanthomonas campestris pv. campestris 8004) annotates position 52 as 'Proton acceptor; for glutaminase activity' (Active site feature, evidence ECO:0000255|HAMAP-Rule:MF_02090). The sequence residue at position 52 is Glu (E), consistent with the known catalytic mechanism of glutamine amidotransferases where a conserved Glu activates a water nucleophile. The annotation is computational (HAMAP-Rule inference by family similarity), not direct experimental evidence for this specific protein, but it is consistent with the well-characterized NadE catalytic triad. The distractor positions (413, 327, 372) do not correspond to any annotated active site in this entry.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could weakly reason that the N-terminal ~200 residues constitute a glutaminase domain (Ntn-hydrolase fold) and that a Glu proton acceptor would reside there, making options B (327), C (372), and A (413) less likely as they fall in the synthetase domain. However, distinguishing position 52 specifically from the many Glu residues in the N-terminal region, or confirming its exact role as 'proton acceptor for glutaminase activity,' requires knowledge of the conserved NadE catalytic triad positions or the specific UniProt annotation.
-
-
-**Missing item-specific fact**
-
-> The exact position (52) of the catalytic Glu proton acceptor in this particular NadE sequence, and the assignment of functional roles (proton acceptor vs. nucleophile vs. 'for glutaminase activity') to positions 52, 119, and 157 respectively, as annotated by HAMAP-Rule MF_02090. Without this annotation or memorized family alignment, selecting position 52 over other Glu residues in the glutaminase domain is not achievable by general reasoning alone.
-
-
-**Reason**
-
-> While domain architecture recognition (N-terminal glutaminase vs. C-terminal synthetase) provides a weak argument against the C-terminal distractors, pinpointing position 52 as the specific proton acceptor requires item-specific annotation knowledge or memorization of the NadE family catalytic residue positions. The question's precision (exact position + exact functional label) exceeds what general biological reasoning from sequence alone can resolve.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only option D corresponds to an actual UniProt-annotated active site (position 52). Positions 413, 327, and 372 are not annotated as active sites in this entry. The other annotated active sites (119, 157) are not offered as options. Thus D is uniquely correct among the four choices.
-
-
-### Important caveats
-
-- The active site annotation at position 52 carries evidence code ECO:0000255 (inferred by similarity to HAMAP-Rule MF_02090), meaning it is a computational/curatorial family inference, not direct experimental characterization of this specific X. campestris protein.
-- The full catalytic center of NadE involves three active-site residues (52, 119, 157); the question and answer format presents only one, which is a simplification.
-- The UniProt accession A0A0H2X6L3 was inferred by the reviewer from dataset metadata and was not provided to the evaluated model; the model must identify the protein from sequence alone.
-- The protein was integrated into Swiss-Prot on 2025-02-05; if the benchmark was constructed before this date, the annotation may not have been publicly available at construction time.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could weakly reason that the N-terminal ~200 residues constitute a glutaminase domain (Ntn-hydrolase fold) and that a Glu proton acceptor would reside there, making options B (327), C (372), and A (413) less likely as they fall in the synthetase domain. However, distinguishing position 52 specifically from the many Glu residues in the N-terminal region, or confirming its exact role as 'proton acceptor for glutaminase activity,' requires knowledge of the conserved NadE catalytic triad positions or the specific UniProt annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact position (52) of the catalytic Glu proton acceptor in this particular NadE sequence, and the assignment of functional roles (proton acceptor vs. nucleophile vs. 'for glutaminase activity') to positions 52, 119, and 157 respectively, as annotated by HAMAP-Rule MF_02090. Without this annotation or memorized family alignment, selecting position 52 over other Glu residues in the glutaminase domain is not achievable by general reasoning alone.",
-    "reason": "While domain architecture recognition (N-terminal glutaminase vs. C-terminal synthetase) provides a weak argument against the C-terminal distractors, pinpointing position 52 as the specific proton acceptor requires item-specific annotation knowledge or memorization of the NadE family catalytic residue positions. The question's precision (exact position + exact functional label) exceeds what general biological reasoning from sequence alone can resolve."
-  },
-  "case_id": "active_site_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C6",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0H2X6L3 (NadE, Xanthomonas campestris pv. campestris 8004) annotates position 52 as 'Proton acceptor; for glutaminase activity' (Active site feature, evidence ECO:0000255|HAMAP-Rule:MF_02090). The sequence residue at position 52 is Glu (E), consistent with the known catalytic mechanism of glutamine amidotransferases where a conserved Glu activates a water nucleophile. The annotation is computational (HAMAP-Rule inference by family similarity), not direct experimental evidence for this specific protein, but it is consistent with the well-characterized NadE catalytic triad. The distractor positions (413, 327, 372) do not correspond to any annotated active site in this entry."
-  },
-  "important_caveats": [
-    "The active site annotation at position 52 carries evidence code ECO:0000255 (inferred by similarity to HAMAP-Rule MF_02090), meaning it is a computational/curatorial family inference, not direct experimental characterization of this specific X. campestris protein.",
-    "The full catalytic center of NadE involves three active-site residues (52, 119, 157); the question and answer format presents only one, which is a simplification.",
-    "The UniProt accession A0A0H2X6L3 was inferred by the reviewer from dataset metadata and was not provided to the evaluated model; the model must identify the protein from sequence alone.",
-    "The protein was integrated into Swiss-Prot on 2025-02-05; if the benchmark was constructed before this date, the annotation may not have been publicly available at construction time."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option D corresponds to an actual UniProt-annotated active site (position 52). Positions 413, 327, and 372 are not annotated as active sites in this entry. The other annotated active sites (119, 157) are not offered as options. Thus D is uniquely correct among the four choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0H2X6L3 (NadE, Xanthomonas campestris pv. campestris 8004) annotates position 52 as 'Proton acceptor; for glutaminase activity' (Active site feature, evidence ECO:0000255|HAMAP-Rule:MF_02090). The sequence residue at position 52 is Glu (E), consistent with the known catalytic mechanism of glutamine amidotransferases where a conserved Glu activates a water nucleophile. The annotation is computational (HAMAP-Rule inference by family similarity), not direct experimental evidence for this specific protein, but it is consistent with the well-characterized NadE catalytic triad. The distractor positions (413, 327, 372) do not correspond to any annotated active site in this entry.",
-    "evidence_ids": ["C5", "H3", "C4", "C6", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could weakly reason that the N-terminal ~200 residues constitute a glutaminase domain (Ntn-hydrolase fold) and that a Glu proton acceptor would reside there, making options B (327), C (372), and A (413) less likely as they fall in the synthetase domain. However, distinguishing position 52 specifically from the many Glu residues in the N-terminal region, or confirming its exact role as 'proton acceptor for glutaminase activity,' requires knowledge of the conserved NadE catalytic triad positions or the specific UniProt annotation.",
-    "missing_item_specific_fact": "The exact position (52) of the catalytic Glu proton acceptor in this particular NadE sequence, and the assignment of functional roles (proton acceptor vs. nucleophile vs. 'for glutaminase activity') to positions 52, 119, and 157 respectively, as annotated by HAMAP-Rule MF_02090. Without this annotation or memorized family alignment, selecting position 52 over other Glu residues in the glutaminase domain is not achievable by general reasoning alone.",
-    "reason": "While domain architecture recognition (N-terminal glutaminase vs. C-terminal synthetase) provides a weak argument against the C-terminal distractors, pinpointing position 52 as the specific proton acceptor requires item-specific annotation knowledge or memorization of the NadE family catalytic residue positions. The question's precision (exact position + exact functional label) exceeds what general biological reasoning from sequence alone can resolve."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option D corresponds to an actual UniProt-annotated active site (position 52). Positions 413, 327, and 372 are not annotated as active sites in this entry. The other annotated active sites (119, 157) are not offered as options. Thus D is uniquely correct among the four choices."
-  },
-  "important_caveats": [
-    "The active site annotation at position 52 carries evidence code ECO:0000255 (inferred by similarity to HAMAP-Rule MF_02090), meaning it is a computational/curatorial family inference, not direct experimental characterization of this specific X. campestris protein.",
-    "The full catalytic center of NadE involves three active-site residues (52, 119, 157); the question and answer format presents only one, which is a simplification.",
-    "The UniProt accession A0A0H2X6L3 was inferred by the reviewer from dataset metadata and was not provided to the evaluated model; the model must identify the protein from sequence alone.",
-    "The protein was integrated into Swiss-Prot on 2025-02-05; if the benchmark was constructed before this date, the annotation may not have been publicly available at construction time."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0H2X6L3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3d11eda2e9e6481a31767f7fc550e14d13db9c3ed7ac21360bb4b2288341703d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 552,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3d11eda2e9e6481a31767f7fc550e14d13db9c3ed7ac21360bb4b2288341703d",
   "current_entry_audit": {
     "entryVersion": 50,
     "firstPublicDate": "2025-02-05",
@@ -530,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2015-09-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "current_source_sequence_sha256": "3d11eda2e9e6481a31767f7fc550e14d13db9c3ed7ac21360bb4b2288341703d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 552,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3d11eda2e9e6481a31767f7fc550e14d13db9c3ed7ac21360bb4b2288341703d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 49,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0H2X6L3",
   "selected_historical_entry_version": 49,
+  "selected_historical_record_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "selected_historical_source_sequence_length": 552,
+  "selected_historical_source_sequence_sha256": "3d11eda2e9e6481a31767f7fc550e14d13db9c3ed7ac21360bb4b2288341703d",
   "selected_historical_version": {
     "accession": "A0A0H2X6L3",
     "database": "Swiss-Prot",
@@ -548,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NADE_XANC8",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "selected_historical_source_sequence_sha256": "3d11eda2e9e6481a31767f7fc550e14d13db9c3ed7ac21360bb4b2288341703d",
-  "selected_historical_source_sequence_length": 552,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 49,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0H2X6L3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -598,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":50,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2015-09-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -617,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Lysobacterales\",\"Lysobacteraceae\",\"Xanthomonas\"],\"scientificName\":\"Xanthomonas campestris pv. campestris (strain 8004)\",\"taxonId\":314565}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -636,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"value\":\"NAD(+) synthase [glutamine-hydrolyzing]\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38429435\",\"source\":\"PubMed\"}],\"value\":\"NAD(+) synthetase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38429435\",\"source\":\"PubMed\"}],\"value\":\"NADS\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"value\":\"6.3.5.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"value\":\"Glutamine-dependent NAD(+) synthetase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -655,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Proton acceptor; for glutaminase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":52},\"start\":{\"modifier\":\"EXACT\",\"value\":52}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -674,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"For glutaminase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":119},\"start\":{\"modifier\":\"EXACT\",\"value\":119}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -693,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Nucleophile; for glutaminase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":157},\"start\":{\"modifier\":\"EXACT\",\"value\":157}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -712,15 +472,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58359\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58359\",\"name\":\"L-glutamine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":125},\"start\":{\"modifier\":\"EXACT\",\"value\":125}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -731,15 +491,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58359\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58359\",\"name\":\"L-glutamine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":183},\"start\":{\"modifier\":\"EXACT\",\"value\":183}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -750,15 +510,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58359\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58359\",\"name\":\"L-glutamine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":189},\"start\":{\"modifier\":\"EXACT\",\"value\":189}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -769,15 +529,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":305},\"start\":{\"modifier\":\"EXACT\",\"value\":298}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -788,15 +548,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58437\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58437\",\"name\":\"deamido-NAD(+)\",\"note\":\"ligand shared between two neighboring subunits\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":381},\"start\":{\"modifier\":\"EXACT\",\"value\":381}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -807,15 +567,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/11",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":405},\"start\":{\"modifier\":\"EXACT\",\"value\":405}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/11",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -826,15 +586,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/12",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58437\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58437\",\"name\":\"deamido-NAD(+)\",\"note\":\"ligand shared between two neighboring subunits\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":410},\"start\":{\"modifier\":\"EXACT\",\"value\":410}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/12",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -845,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/features/13",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_02090\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58437\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58437\",\"name\":\"deamido-NAD(+)\",\"note\":\"ligand shared between two neighboring subunits\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":522},\"start\":{\"modifier\":\"EXACT\",\"value\":522}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/13",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -864,15 +624,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C16",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json",
-  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
-  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Xu G.\",\"Ma J.\",\"Fang Q.\",\"Peng Q.\",\"Jiao X.\",\"Hu W.\",\"Zhao Q.\",\"Kong Y.\",\"Liu F.\",\"Shi X.\",\"Tang D.J.\",\"Tang J.L.\",\"Ming Z.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38429435\"},{\"database\":\"DOI\",\"id\":\"10.1038/s42003-024-05921-3\"}],\"citationType\":\"journal article\",\"firstPage\":\"255\",\"id\":\"38429435\",\"journal\":\"Commun. Biol.\",\"lastPage\":\"255\",\"publicationDate\":\"2024\",\"title\":\"Structural insights into Xanthomonas campestris pv. campestris NAD+ biosynthesis via the NAM salvage pathway.\",\"volume\":\"7\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"8004\"}],\"referenceNumber\":2,\"referencePositions\":[\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:06.673007+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c621b7373f2a6fa91b908243cb91d5f7c41394ff382a16440790296873fffe79",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2X6L3.json"
 }
 ```
 
@@ -882,18 +642,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   NADE_XANC8              Reviewed;         552 AA.\nAC   A0A0H2X6L3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-SEP-2015, sequence version 1.\nDT   28-JAN-2026, entry version 49.\nDE   RecName: Full=Glutamine-dependent NAD(+) synthetase {ECO:0000255|HAMAP-Rule:MF_02090};\nDE            EC=6.3.5.1 {ECO:0000255|HAMAP-Rule:MF_02090};\nDE   AltName: Full=NAD(+) synthase [glutamine-hydrolyzing] {ECO:0000255|HAMAP-Rule:MF_02090};\nDE   AltName: Full=NAD(+) synthetase {ECO:0000303|PubMed:38429435};\nDE            Short=NADS {ECO:0000303|PubMed:38429435};\nGN   Name=nadE {ECO:0000255|HAMAP-Rule:MF_02090};\nGN   OrderedLocusNames=XC_1067 {ECO:0000312|EMBL:AAY48137.1};\nOS   Xanthomonas campestris pv. campestris (strain 8004).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Lysobacterales; Lysobacteraceae; Xanthomonas.\nOX   NCBI_TaxID=314565;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -903,18 +663,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 28-36",
   "excerpt": "RN   [2]\nRP   DISRUPTION PHENOTYPE.\nRC   STRAIN=8004;\nRX   PubMed=38429435; DOI=10.1038/s42003-024-05921-3;\nRA   Xu G., Ma J., Fang Q., Peng Q., Jiao X., Hu W., Zhao Q., Kong Y., Liu F.,\nRA   Shi X., Tang D.J., Tang J.L., Ming Z.;\nRT   \"Structural insights into Xanthomonas campestris pv. campestris NAD+\nRT   biosynthesis via the NAM salvage pathway.\";\nRL   Commun. Biol. 7:255-255(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -924,18 +684,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 108-110",
   "excerpt": "FT   ACT_SITE        52\nFT                   /note=\"Proton acceptor; for glutaminase activity\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 108-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -945,18 +705,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 111-113",
   "excerpt": "FT   ACT_SITE        119\nFT                   /note=\"For glutaminase activity\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 111-113",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -966,18 +726,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 114-116",
   "excerpt": "FT   ACT_SITE        157\nFT                   /note=\"Nucleophile; for glutaminase activity\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 114-116",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -987,18 +747,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 117-120",
   "excerpt": "FT   BINDING         125\nFT                   /ligand=\"L-glutamine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58359\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 117-120",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -1008,18 +768,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 121-124",
   "excerpt": "FT   BINDING         183\nFT                   /ligand=\"L-glutamine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58359\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 121-124",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -1029,18 +789,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 125-128",
   "excerpt": "FT   BINDING         189\nFT                   /ligand=\"L-glutamine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58359\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 125-128",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -1050,18 +810,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 129-132",
   "excerpt": "FT   BINDING         298..305\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 129-132",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -1071,18 +831,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 133-138",
   "excerpt": "FT   BINDING         381\nFT                   /ligand=\"deamido-NAD(+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58437\"\nFT                   /ligand_note=\"ligand shared between two neighboring\nFT                   subunits\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 133-138",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -1092,18 +852,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 139-142",
   "excerpt": "FT   BINDING         405\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 139-142",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -1113,18 +873,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 143-148",
   "excerpt": "FT   BINDING         410\nFT                   /ligand=\"deamido-NAD(+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58437\"\nFT                   /ligand_note=\"ligand shared between two neighboring\nFT                   subunits\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 143-148",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 
@@ -1134,18 +894,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 49,
   "evidence_id": "H13",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49",
-  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
-  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
-  "source_locator": "lines 149-154",
   "excerpt": "FT   BINDING         522\nFT                   /ligand=\"deamido-NAD(+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58437\"\nFT                   /ligand_note=\"ligand shared between two neighboring\nFT                   subunits\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_02090\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 49,
+  "retrieved_utc": "2026-11-02T04:24:10.555808+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 149-154",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb3a35bb9946c1cd8f5bc8cbdbcf89a05f7652dac19292f276cf608a43a2cb41",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2X6L3?format=txt&versions=49"
 }
 ```
 

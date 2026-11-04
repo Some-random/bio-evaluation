@@ -1,18 +1,16 @@
-# GO_cellular_component_0184: before and after transfer clarification
+# GO_cellular_component_0184
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0184.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0184.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **C** — cell outer membrane
+**Expected answer:** **C** — cell outer membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for a Neisseria meningitidis protein annotated to the cell outer membrane. The entry reports a GO annotation with IDA evidence and describes the mature protein as probably associated with the outer membrane, citing PubMed:22046377. The location is therefore supported, though the prose retains a qualification of probability.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic region is consistent with a bacterial export signal, which makes nuclear options implausible. But that general sequence feature does not establish that the mature protein resides at the outer membrane rather than another non-cytoplasmic location.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization annotation or experimental evidence linking this particular protein to the cell outer membrane.
-
-
-**Reason**
-
-> Selecting C over the other options depends on the specific localization of this protein, a fact not supplied in the question. Recognizing the sequence or recalling its database record would be lookup or memorization, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options are distinguishable, and the matched protein-specific evidence supports C. The remaining options are not comparably supported by the sequence or supplied context.
-
-
-### Important caveats
-
-- The UniProt subcellular-location text says the mature protein is probably associated with the outer membrane; this should not be overstated as unqualified certainty.
-- The database entry and sequence match are reviewer-only evidence and were not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic region is consistent with a bacterial export signal, which makes nuclear options implausible. But that general sequence feature does not establish that the mature protein resides at the outer membrane rather than another non-cytoplasmic location.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental evidence linking this particular protein to the cell outer membrane.",
-    "reason": "Selecting C over the other options depends on the specific localization of this protein, a fact not supplied in the question. Recognizing the sequence or recalling its database record would be lookup or memorization, not reasoning from the provided input."
-  },
-  "case_id": "GO_cellular_component_0184",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for a Neisseria meningitidis protein annotated to the cell outer membrane. The entry reports a GO annotation with IDA evidence and describes the mature protein as probably associated with the outer membrane, citing PubMed:22046377. The location is therefore supported, though the prose retains a qualification of probability."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location text says the mature protein is probably associated with the outer membrane; this should not be overstated as unqualified certainty.",
-    "The database entry and sequence match are reviewer-only evidence and were not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options are distinguishable, and the matched protein-specific evidence supports C. The remaining options are not comparably supported by the sequence or supplied context."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0184",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for a Neisseria meningitidis protein annotated to the cell outer membrane. The entry reports a GO annotation with IDA evidence and describes the mature protein as probably associated with the outer membrane, citing PubMed:22046377. The location is therefore supported, though the prose retains a qualification of probability.",
-    "evidence_ids": ["C5", "C6", "H3", "H4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic region is consistent with a bacterial export signal, which makes nuclear options implausible. But that general sequence feature does not establish that the mature protein resides at the outer membrane rather than another non-cytoplasmic location.",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental evidence linking this particular protein to the cell outer membrane.",
-    "reason": "Selecting C over the other options depends on the specific localization of this protein, a fact not supplied in the question. Recognizing the sequence or recalling its database record would be lookup or memorization, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options are distinguishable, and the matched protein-specific evidence supports C. The remaining options are not comparably supported by the sequence or supplied context."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location text says the mature protein is probably associated with the outer membrane; this should not be overstated as unqualified certainty.",
-    "The database entry and sequence match are reviewer-only evidence and were not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry E0N688 (MPG_NEIM3, Neisseria meningitidis) annotates this DD-carboxypeptidase/endopeptidase Mpg as located at the cell outer membrane (GO:0009279). Evidence C5 states: 'Mature protein is probably associated with the cell outer membrane (PubMed:22046377)' with evidence code ECO:0000305. The current entry carries a GO IDA annotation (C6). The protein is explicitly named 'Outer membrane protein' (OMP) in its alternative names (C4). The N-terminal hydrophobic region in the supplied sequence is consistent with a signal/transmembrane anchor for outer membrane association. The crystal structure (PDB 3SLU, residues 54-420) supports the mature protein's association. The 'probably' qualifier introduces mild uncertainty, but the IDA GO annotation and explicit 'Outer membrane protein' naming provide adequate support for the expected answer.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The N-terminal region of the sequence contains a hydrophobic stretch (~residues 11-27: ALRALAVSIILVSAAYIAL) characteristic of a signal peptide or transmembrane anchor, strongly indicating membrane association. Among the four options, only C (cell outer membrane) represents a membrane compartment. Options A (protein-DNA complex), B (nuclear pore nuclear basket), and D (chromosome) are all eukaryotic nuclear structures requiring DNA-binding motifs or nuclear localization signals, none of which are present. The zinc-binding motifs (HxxH patterns) are catalytic (metalloprotease), not DNA-binding. The absence of any eukaryotic nuclear targeting features and the presence of a prokaryotic-type signal peptide provide a concrete biological argument to select C.
-
-
-**Missing item-specific fact**
-
-> The organism identity (Neisseria meningitidis, a Gram-negative bacterium) is not stated in the question. However, the sequence features (prokaryotic-type signal peptide architecture, zinc metalloprotease domain common in bacterial surface proteins, absence of eukaryotic motifs) allow inference of bacterial origin and membrane targeting without exact species identification.
-
-
-**Reason**
-
-> A model can reason from the N-terminal hydrophobic signal peptide (indicating membrane targeting) and the complete absence of DNA-binding motifs, nuclear localization signals, or eukaryotic structural features to eliminate options A, B, and D. The only membrane-associated option is C. This is a valid biological inference chain, not dependent on memorizing a specific database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and D are all eukaryotic nuclear compartments incompatible with a protein bearing a prokaryotic-type signal peptide and lacking any DNA-binding or nuclear-targeting features. Only C is a membrane compartment consistent with the N-terminal hydrophobic anchor. No other option is defensible given the sequence features.
-
-
-### Important caveats
-
-- The UniProt annotation uses 'probably associated with the cell outer membrane' (ECO:0000305), indicating some uncertainty; the current entry upgrades to IDA but the historical entry used IEA.
-- The organism (Neisseria meningitidis) is not provided in the question; the model must infer bacterial origin from sequence features.
-- The protein is a zinc metalloprotease with a signal/transmembrane region, not a classic β-barrel outer membrane protein, making its exact membrane topology (integral vs. peripherally associated) less obvious from sequence alone.
-- The crystal structure covers residues 54-420, confirming the mature domain but not directly proving membrane anchoring.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal region of the sequence contains a hydrophobic stretch (~residues 11-27: ALRALAVSIILVSAAYIAL) characteristic of a signal peptide or transmembrane anchor, strongly indicating membrane association. Among the four options, only C (cell outer membrane) represents a membrane compartment. Options A (protein-DNA complex), B (nuclear pore nuclear basket), and D (chromosome) are all eukaryotic nuclear structures requiring DNA-binding motifs or nuclear localization signals, none of which are present. The zinc-binding motifs (HxxH patterns) are catalytic (metalloprotease), not DNA-binding. The absence of any eukaryotic nuclear targeting features and the presence of a prokaryotic-type signal peptide provide a concrete biological argument to select C.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The organism identity (Neisseria meningitidis, a Gram-negative bacterium) is not stated in the question. However, the sequence features (prokaryotic-type signal peptide architecture, zinc metalloprotease domain common in bacterial surface proteins, absence of eukaryotic motifs) allow inference of bacterial origin and membrane targeting without exact species identification.",
-    "reason": "A model can reason from the N-terminal hydrophobic signal peptide (indicating membrane targeting) and the complete absence of DNA-binding motifs, nuclear localization signals, or eukaryotic structural features to eliminate options A, B, and D. The only membrane-associated option is C. This is a valid biological inference chain, not dependent on memorizing a specific database entry."
-  },
-  "case_id": "GO_cellular_component_0184",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H3",
-      "H4",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry E0N688 (MPG_NEIM3, Neisseria meningitidis) annotates this DD-carboxypeptidase/endopeptidase Mpg as located at the cell outer membrane (GO:0009279). Evidence C5 states: 'Mature protein is probably associated with the cell outer membrane (PubMed:22046377)' with evidence code ECO:0000305. The current entry carries a GO IDA annotation (C6). The protein is explicitly named 'Outer membrane protein' (OMP) in its alternative names (C4). The N-terminal hydrophobic region in the supplied sequence is consistent with a signal/transmembrane anchor for outer membrane association. The crystal structure (PDB 3SLU, residues 54-420) supports the mature protein's association. The 'probably' qualifier introduces mild uncertainty, but the IDA GO annotation and explicit 'Outer membrane protein' naming provide adequate support for the expected answer."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses 'probably associated with the cell outer membrane' (ECO:0000305), indicating some uncertainty; the current entry upgrades to IDA but the historical entry used IEA.",
-    "The organism (Neisseria meningitidis) is not provided in the question; the model must infer bacterial origin from sequence features.",
-    "The protein is a zinc metalloprotease with a signal/transmembrane region, not a classic β-barrel outer membrane protein, making its exact membrane topology (integral vs. peripherally associated) less obvious from sequence alone.",
-    "The crystal structure covers residues 54-420, confirming the mature domain but not directly proving membrane anchoring."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are all eukaryotic nuclear compartments incompatible with a protein bearing a prokaryotic-type signal peptide and lacking any DNA-binding or nuclear-targeting features. Only C is a membrane compartment consistent with the N-terminal hydrophobic anchor. No other option is defensible given the sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0184",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry E0N688 (MPG_NEIM3, Neisseria meningitidis) annotates this DD-carboxypeptidase/endopeptidase Mpg as located at the cell outer membrane (GO:0009279). Evidence C5 states: 'Mature protein is probably associated with the cell outer membrane (PubMed:22046377)' with evidence code ECO:0000305. The current entry carries a GO IDA annotation (C6). The protein is explicitly named 'Outer membrane protein' (OMP) in its alternative names (C4). The N-terminal hydrophobic region in the supplied sequence is consistent with a signal/transmembrane anchor for outer membrane association. The crystal structure (PDB 3SLU, residues 54-420) supports the mature protein's association. The 'probably' qualifier introduces mild uncertainty, but the IDA GO annotation and explicit 'Outer membrane protein' naming provide adequate support for the expected answer.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H1", "H3", "H4", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The N-terminal region of the sequence contains a hydrophobic stretch (~residues 11-27: ALRALAVSIILVSAAYIAL) characteristic of a signal peptide or transmembrane anchor, strongly indicating membrane association. Among the four options, only C (cell outer membrane) represents a membrane compartment. Options A (protein-DNA complex), B (nuclear pore nuclear basket), and D (chromosome) are all eukaryotic nuclear structures requiring DNA-binding motifs or nuclear localization signals, none of which are present. The zinc-binding motifs (HxxH patterns) are catalytic (metalloprotease), not DNA-binding. The absence of any eukaryotic nuclear targeting features and the presence of a prokaryotic-type signal peptide provide a concrete biological argument to select C.",
-    "missing_item_specific_fact": "The organism identity (Neisseria meningitidis, a Gram-negative bacterium) is not stated in the question. However, the sequence features (prokaryotic-type signal peptide architecture, zinc metalloprotease domain common in bacterial surface proteins, absence of eukaryotic motifs) allow inference of bacterial origin and membrane targeting without exact species identification.",
-    "reason": "A model can reason from the N-terminal hydrophobic signal peptide (indicating membrane targeting) and the complete absence of DNA-binding motifs, nuclear localization signals, or eukaryotic structural features to eliminate options A, B, and D. The only membrane-associated option is C. This is a valid biological inference chain, not dependent on memorizing a specific database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are all eukaryotic nuclear compartments incompatible with a protein bearing a prokaryotic-type signal peptide and lacking any DNA-binding or nuclear-targeting features. Only C is a membrane compartment consistent with the N-terminal hydrophobic anchor. No other option is defensible given the sequence features."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses 'probably associated with the cell outer membrane' (ECO:0000305), indicating some uncertainty; the current entry upgrades to IDA but the historical entry used IEA.",
-    "The organism (Neisseria meningitidis) is not provided in the question; the model must infer bacterial origin from sequence features.",
-    "The protein is a zinc metalloprotease with a signal/transmembrane region, not a classic β-barrel outer membrane protein, making its exact membrane topology (integral vs. peripherally associated) less obvious from sequence alone.",
-    "The crystal structure covers residues 54-420, confirming the mature domain but not directly proving membrane anchoring."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E0N688",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 430,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-02-05",
@@ -538,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-11-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "current_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 430,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E0N688",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "selected_historical_source_sequence_length": 430,
+  "selected_historical_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
   "selected_historical_version": {
     "accession": "E0N688",
     "database": "Swiss-Prot",
@@ -556,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MPG_NEIM3",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "selected_historical_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
-  "selected_historical_source_sequence_length": 430,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E0N688\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -610,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-11-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -629,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Neisseriales\",\"Neisseriaceae\",\"Neisseria\"],\"scientificName\":\"Neisseria meningitidis serogroup B (strain ATCC 13091 / M2091)\",\"taxonId\":862513}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -648,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5F676\",\"source\":\"UniProtKB\"}],\"value\":\"Metalloprotease active against peptidoglycan\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"value\":\"Outer membrane protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"value\":\"OMP\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Zinc metallopeptidase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Zinc metalloprotease\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"value\":\"Zinc-dependent metallopeptidase\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5F676\",\"source\":\"UniProtKB\"}],\"value\":\"3.4.17.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5F676\",\"source\":\"UniProtKB\"}],\"value\":\"3.4.24.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DD-carboxypeptidase/endopeptidase Mpg\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -667,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"value\":\"There is a signal or a transmembrane region in the N-terminus of the pre-protein (Probable). Mature protein is probably associated with the cell outer membrane (PubMed:22046377)\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"id\":\"SL-0040\",\"value\":\"Cell outer membrane\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -686,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"id\":\"GO:0009279\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cell outer membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -705,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang X.\",\"Yang X.\",\"Yang C.\",\"Wu Z.\",\"Xu H.\",\"Shen Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22046377\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0026845\"}],\"citationType\":\"journal article\",\"firstPage\":\"e26845\",\"id\":\"22046377\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e26845\",\"publicationDate\":\"2011\",\"title\":\"Crystal structure of outer membrane protein NMB0315 from Neisseria meningitidis.\",\"volume\":\"6\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3SLU\",\"source\":\"PDB\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"ATCC 13091 / M2091\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.41 ANGSTROMS) OF 54-420 IN COMPLEX WITH NICKEL\",\"COFACTOR\",\"SUBUNIT\",\"SUBCELLULAR LOCATION\",\"PTM\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -723,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 1-20",
   "excerpt": "ID   MPG_NEIM3               Reviewed;         430 AA.\nAC   E0N688;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-NOV-2010, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=DD-carboxypeptidase/endopeptidase Mpg {ECO:0000305};\nDE            EC=3.4.17.- {ECO:0000250|UniProtKB:Q5F676};\nDE            EC=3.4.24.- {ECO:0000250|UniProtKB:Q5F676};\nDE   AltName: Full=Metalloprotease active against peptidoglycan {ECO:0000250|UniProtKB:Q5F676};\nDE   AltName: Full=Outer membrane protein {ECO:0000303|PubMed:22046377};\nDE            Short=OMP {ECO:0000303|PubMed:22046377};\nDE   AltName: Full=Zinc metallopeptidase {ECO:0000305};\nDE   AltName: Full=Zinc metalloprotease {ECO:0000305};\nDE   AltName: Full=Zinc-dependent metallopeptidase {ECO:0000303|PubMed:22046377};\nDE   Flags: Precursor;\nGN   ORFNames=HMPREF0602_0018 {ECO:0000312|EMBL:EFM05396.1};\nOS   Neisseria meningitidis serogroup B (strain ATCC 13091 / M2091).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria; Neisseriales;\nOC   Neisseriaceae; Neisseria.\nOX   NCBI_TaxID=862513;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -744,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 37-45",
   "excerpt": "RN   [2] {ECO:0007744|PDB:3SLU}\nRP   X-RAY CRYSTALLOGRAPHY (2.41 ANGSTROMS) OF 54-420 IN COMPLEX WITH NICKEL,\nRP   COFACTOR, SUBUNIT, SUBCELLULAR LOCATION, AND PTM.\nRC   STRAIN=ATCC 13091 / M2091 {ECO:0000303|PubMed:22046377};\nRX   PubMed=22046377; DOI=10.1371/journal.pone.0026845;\nRA   Wang X., Yang X., Yang C., Wu Z., Xu H., Shen Y.;\nRT   \"Crystal structure of outer membrane protein NMB0315 from Neisseria\nRT   meningitidis.\";\nRL   PLoS ONE 6:e26845-e26845(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -765,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 56-60",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cell outer membrane\nCC       {ECO:0000305|PubMed:22046377}. Note=There is a signal or a\nCC       transmembrane region in the N-terminus of the pre-protein (Probable).\nCC       Mature protein is probably associated with the cell outer membrane\nCC       (PubMed:22046377). {ECO:0000305|PubMed:22046377}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -786,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 79-79",
   "excerpt": "DR   GO; GO:0009279; C:cell outer membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 79-79",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -808,15 +563,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58583-58605",
   "excerpt": "[Term]\nid: GO:0005694\nname: chromosome\nnamespace: cellular_component\ndef: \"A structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information.\" [ISBN:0198547684]\ncomment: Chromosomes include parts that are not part of the chromatin. Examples include the kinetochore.\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"chromatid\" RELATED []\nsynonym: \"interphase chromosome\" NARROW []\nsynonym: \"prophase chromosome\" NARROW []\nxref: Wikipedia:Chromosome\nis_a: GO:0043232 ! intracellular membraneless organelle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005694",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58583-58605",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005694"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -827,15 +582,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 94785-94797",
   "excerpt": "[Term]\nid: GO:0009279\nname: cell outer membrane\nnamespace: cellular_component\ndef: \"A lipid bilayer that forms the outermost membrane of the cell envelope; enriched in polysaccharide and protein; the outer leaflet of the membrane contains specific lipopolysaccharide structures.\" [GOC:md, GOC:mtg_sensu, ISBN:0135712254]\ncomment: To annotate the plasma (cytoplasmic) membrane, see instead GO:0005886.\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsynonym: \"outer membrane of cell\" EXACT []\nis_a: GO:0019867 ! outer membrane\nis_a: GO:0030312 ! external encapsulating structure\nrelationship: part_of GO:0030313 ! cell envelope\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009279",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 94785-94797",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009279"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -846,15 +601,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 192695-192704",
   "excerpt": "[Term]\nid: GO:0032993\nname: protein-DNA complex\nnamespace: cellular_component\ndef: \"A macromolecular complex containing both protein and DNA molecules.\" [GOC:mah]\ncomment: Note that this term is intended to classify complexes that have DNA as one of the members of the complex, that is, the complex does not exist if DNA is not present. Protein complexes that interact with DNA e.g. transcription factor complexes should not be classified here.\nsubset: goslim_pir\nsynonym: \"DNA-protein complex\" EXACT [GOC:mah]\nis_a: GO:0032991 ! protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032993",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 192695-192704",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032993"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -865,15 +620,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 258897-258904",
   "excerpt": "[Term]\nid: GO:0044615\nname: nuclear pore nuclear basket\nnamespace: cellular_component\ndef: \"A filamentous, cage-like assembly on the nuclear face of the nuclear pore complex (NPC). In S. cerevisiae, Mlp1p and Mlp2p are two major components of the NPC nuclear basket. In vertebrates, Tpr is a major component.\" [GOC:dgf, PMID:18046406, PMID:19524430, PMID:20947011, PMID:22419078]\nis_a: GO:0140513 ! nuclear protein-containing complex\nrelationship: part_of GO:0005643 ! nuclear pore\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044615",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 258897-258904",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044615"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

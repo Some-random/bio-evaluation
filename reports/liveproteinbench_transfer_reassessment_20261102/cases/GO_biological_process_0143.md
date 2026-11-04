@@ -1,18 +1,16 @@
-# GO_biological_process_0143: before and after transfer clarification
+# GO_biological_process_0143
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0143.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0143.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — antibiotic biosynthetic process
+**Expected answer:** **A** — antibiotic biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,253 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence is annotated as a bifunctional cytochrome P450 involved in aureothin antibiotic biosynthesis, with cited experimental evidence for its catalytic role. This supports antibiotic biosynthetic process as the expected answer.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H6](#evidence-h6), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a cytochrome P450 enzyme, which makes the ribosome-rescue and GDP-L-fucose-salvage choices poor fits. But P450 family features do not distinguish an antibiotic-biosynthesis role from a xenobiotic-response role.
-
-
-**Missing item-specific fact**
-
-> The protein-specific substrate and biological pathway—here, its role in aureothin biosynthesis—are not provided in the input.
-
-
-**Reason**
-
-> Selecting A over D requires knowing this particular P450's biological role; generic sequence-family reasoning does not establish that specificity.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> From the sequence alone, both antibiotic biosynthesis and xenobiotic response remain plausible contexts for a P450. The protein-specific annotation resolves this in favor of A, but that information is absent from the question.
-
-
-### Important caveats
-
-- Reviewer-only sources support the key but were not supplied to the evaluated model.
-- The cited annotation and sequence match identify the protein as aureothin-pathway luteothin monooxygenase; this does not make that identity inferable from the question without item-specific knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a cytochrome P450 enzyme, which makes the ribosome-rescue and GDP-L-fucose-salvage choices poor fits. But P450 family features do not distinguish an antibiotic-biosynthesis role from a xenobiotic-response role.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific substrate and biological pathway—here, its role in aureothin biosynthesis—are not provided in the input.",
-    "reason": "Selecting A over D requires knowing this particular P450's biological role; generic sequence-family reasoning does not establish that specificity."
-  },
-  "case_id": "GO_biological_process_0143",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H6",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as a bifunctional cytochrome P450 involved in aureothin antibiotic biosynthesis, with cited experimental evidence for its catalytic role. This supports antibiotic biosynthetic process as the expected answer."
-  },
-  "important_caveats": [
-    "Reviewer-only sources support the key but were not supplied to the evaluated model.",
-    "The cited annotation and sequence match identify the protein as aureothin-pathway luteothin monooxygenase; this does not make that identity inferable from the question without item-specific knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "From the sequence alone, both antibiotic biosynthesis and xenobiotic response remain plausible contexts for a P450. The protein-specific annotation resolves this in favor of A, but that information is absent from the question."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0143",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as a bifunctional cytochrome P450 involved in aureothin antibiotic biosynthesis, with cited experimental evidence for its catalytic role. This supports antibiotic biosynthetic process as the expected answer.",
-    "evidence_ids": ["C1", "C5", "H6", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a cytochrome P450 enzyme, which makes the ribosome-rescue and GDP-L-fucose-salvage choices poor fits. But P450 family features do not distinguish an antibiotic-biosynthesis role from a xenobiotic-response role.",
-    "missing_item_specific_fact": "The protein-specific substrate and biological pathway—here, its role in aureothin biosynthesis—are not provided in the input.",
-    "reason": "Selecting A over D requires knowing this particular P450's biological role; generic sequence-family reasoning does not establish that specificity."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "From the sequence alone, both antibiotic biosynthesis and xenobiotic response remain plausible contexts for a P450. The protein-specific annotation resolves this in favor of A, but that information is absent from the question."
-  },
-  "important_caveats": [
-    "Reviewer-only sources support the key but were not supplied to the evaluated model.",
-    "The cited annotation and sequence match identify the protein as aureothin-pathway luteothin monooxygenase; this does not make that identity inferable from the question without item-specific knowledge."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q70KH6 (AurH from Streptomyces thioluteus) is annotated with GO:0017000 (antibiotic biosynthetic process) and the pathway 'Antibiotic biosynthesis.' The underlying evidence is experimental: multiple PubMed papers (15612710, 18855960, 21280577) demonstrate AurH catalyzes hydroxylation of luteothin and tetrahydrofuran ring formation in the biosynthesis of the antibiotic aureothin. X-ray crystallography structures (3P3L, 3P3O, 3P3X, 3P3Z) further confirm function. The GO annotation itself is IEA:UniProtKB-KW, but the pathway annotation is ECO:0000305 curator inference from experimental literature. The sequence matches the benchmark exactly.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H6](#evidence-h6), [H7](#evidence-h7), [H9](#evidence-h9), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable cytochrome P450 heme-binding motif (FGGGPHFCLGT region with the conserved cysteine), allowing elimination of B (ribosome rescue) and C (GDP-L-fucose salvage), which involve entirely different enzyme classes. However, both A (antibiotic biosynthetic process) and D (response to xenobiotic stimulus) are canonical P450-mediated processes. No sequence-intrinsic feature—length, motif architecture, or domain composition—reliably distinguishes a P450 acting in a polyketide antibiotic biosynthetic gene cluster from one acting in xenobiotic detoxification. The decisive fact is that this specific P450 (AurH) is embedded in the aureothin biosynthetic gene cluster of Streptomyces thioluteus, which is a protein-specific annotation not derivable from the 406-aa sequence alone.
-
-
-**Missing item-specific fact**
-
-> The identity of this P450 as AurH within the aureothin (nitroaryl polyketide) biosynthetic gene cluster of Streptomyces thioluteus, and the organism context (Streptomyces species being prolific antibiotic producers), which together assign the process to antibiotic biosynthesis rather than xenobiotic response.
-
-
-**Reason**
-
-> A knowledgeable biologist can recognize the P450 fold and eliminate B and C. The general heuristic that bacterial (especially actinobacterial) P450s are more often biosynthetic than xenobiotic-metabolic is suggestive but not definitive without organism identification, which itself requires database lookup. The precise assignment to 'antibiotic biosynthetic process' over 'response to xenobiotic stimulus' depends on knowing this protein's role in a specific biosynthetic gene cluster—an item-specific fact absent from the provided sequence and choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Both A and D describe processes commonly catalyzed by cytochrome P450 monooxygenases. Without organism context or gene-cluster information in the prompt, a model that correctly identifies the P450 fold could plausibly select D (xenobiotic response), since many well-studied P450s (e.g., mammalian CYPs, bacterial CYP153) function in xenobiotic metabolism. The sequence alone does not encode whether the P450 acts on a biosynthetic intermediate or a foreign compound.
-
-
-### Important caveats
-
-- The GO annotation GO:0017000 is tagged IEA:UniProtKB-KW (inferred from electronic annotation via keyword), not a direct experimental GO assignment. However, the underlying pathway annotation is supported by multiple experimental papers (ECO:0000269, ECO:0000305).
-- The identity of the protein (AurH, Q70KH6) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no accession or organism label.
-- The reviewer evidence confirms sequence match (SHA-256 identical) across both current and historical (entry version 97) UniProt records.
-- Distractors B and C are clearly incompatible with a P450 enzyme and serve as easy eliminations; the substantive discrimination is between A and D.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FGGGPHFCLGT region with the conserved cysteine), allowing elimination of B (ribosome rescue) and C (GDP-L-fucose salvage), which involve entirely different enzyme classes. However, both A (antibiotic biosynthetic process) and D (response to xenobiotic stimulus) are canonical P450-mediated processes. No sequence-intrinsic feature—length, motif architecture, or domain composition—reliably distinguishes a P450 acting in a polyketide antibiotic biosynthetic gene cluster from one acting in xenobiotic detoxification. The decisive fact is that this specific P450 (AurH) is embedded in the aureothin biosynthetic gene cluster of Streptomyces thioluteus, which is a protein-specific annotation not derivable from the 406-aa sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of this P450 as AurH within the aureothin (nitroaryl polyketide) biosynthetic gene cluster of Streptomyces thioluteus, and the organism context (Streptomyces species being prolific antibiotic producers), which together assign the process to antibiotic biosynthesis rather than xenobiotic response.",
-    "reason": "A knowledgeable biologist can recognize the P450 fold and eliminate B and C. The general heuristic that bacterial (especially actinobacterial) P450s are more often biosynthetic than xenobiotic-metabolic is suggestive but not definitive without organism identification, which itself requires database lookup. The precise assignment to 'antibiotic biosynthetic process' over 'response to xenobiotic stimulus' depends on knowing this protein's role in a specific biosynthetic gene cluster—an item-specific fact absent from the provided sequence and choices."
-  },
-  "case_id": "GO_biological_process_0143",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H6",
-      "H7",
-      "H9",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q70KH6 (AurH from Streptomyces thioluteus) is annotated with GO:0017000 (antibiotic biosynthetic process) and the pathway 'Antibiotic biosynthesis.' The underlying evidence is experimental: multiple PubMed papers (15612710, 18855960, 21280577) demonstrate AurH catalyzes hydroxylation of luteothin and tetrahydrofuran ring formation in the biosynthesis of the antibiotic aureothin. X-ray crystallography structures (3P3L, 3P3O, 3P3X, 3P3Z) further confirm function. The GO annotation itself is IEA:UniProtKB-KW, but the pathway annotation is ECO:0000305 curator inference from experimental literature. The sequence matches the benchmark exactly."
-  },
-  "important_caveats": [
-    "The GO annotation GO:0017000 is tagged IEA:UniProtKB-KW (inferred from electronic annotation via keyword), not a direct experimental GO assignment. However, the underlying pathway annotation is supported by multiple experimental papers (ECO:0000269, ECO:0000305).",
-    "The identity of the protein (AurH, Q70KH6) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no accession or organism label.",
-    "The reviewer evidence confirms sequence match (SHA-256 identical) across both current and historical (entry version 97) UniProt records.",
-    "Distractors B and C are clearly incompatible with a P450 enzyme and serve as easy eliminations; the substantive discrimination is between A and D."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Both A and D describe processes commonly catalyzed by cytochrome P450 monooxygenases. Without organism context or gene-cluster information in the prompt, a model that correctly identifies the P450 fold could plausibly select D (xenobiotic response), since many well-studied P450s (e.g., mammalian CYPs, bacterial CYP153) function in xenobiotic metabolism. The sequence alone does not encode whether the P450 acts on a biosynthetic intermediate or a foreign compound."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0143",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q70KH6 (AurH from Streptomyces thioluteus) is annotated with GO:0017000 (antibiotic biosynthetic process) and the pathway 'Antibiotic biosynthesis.' The underlying evidence is experimental: multiple PubMed papers (15612710, 18855960, 21280577) demonstrate AurH catalyzes hydroxylation of luteothin and tetrahydrofuran ring formation in the biosynthesis of the antibiotic aureothin. X-ray crystallography structures (3P3L, 3P3O, 3P3X, 3P3Z) further confirm function. The GO annotation itself is IEA:UniProtKB-KW, but the pathway annotation is ECO:0000305 curator inference from experimental literature. The sequence matches the benchmark exactly.",
-    "evidence_ids": ["C5", "C6", "C7", "H6", "H7", "H9", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FGGGPHFCLGT region with the conserved cysteine), allowing elimination of B (ribosome rescue) and C (GDP-L-fucose salvage), which involve entirely different enzyme classes. However, both A (antibiotic biosynthetic process) and D (response to xenobiotic stimulus) are canonical P450-mediated processes. No sequence-intrinsic feature—length, motif architecture, or domain composition—reliably distinguishes a P450 acting in a polyketide antibiotic biosynthetic gene cluster from one acting in xenobiotic detoxification. The decisive fact is that this specific P450 (AurH) is embedded in the aureothin biosynthetic gene cluster of Streptomyces thioluteus, which is a protein-specific annotation not derivable from the 406-aa sequence alone.",
-    "missing_item_specific_fact": "The identity of this P450 as AurH within the aureothin (nitroaryl polyketide) biosynthetic gene cluster of Streptomyces thioluteus, and the organism context (Streptomyces species being prolific antibiotic producers), which together assign the process to antibiotic biosynthesis rather than xenobiotic response.",
-    "reason": "A knowledgeable biologist can recognize the P450 fold and eliminate B and C. The general heuristic that bacterial (especially actinobacterial) P450s are more often biosynthetic than xenobiotic-metabolic is suggestive but not definitive without organism identification, which itself requires database lookup. The precise assignment to 'antibiotic biosynthetic process' over 'response to xenobiotic stimulus' depends on knowing this protein's role in a specific biosynthetic gene cluster—an item-specific fact absent from the provided sequence and choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Both A and D describe processes commonly catalyzed by cytochrome P450 monooxygenases. Without organism context or gene-cluster information in the prompt, a model that correctly identifies the P450 fold could plausibly select D (xenobiotic response), since many well-studied P450s (e.g., mammalian CYPs, bacterial CYP153) function in xenobiotic metabolism. The sequence alone does not encode whether the P450 acts on a biosynthetic intermediate or a foreign compound."
-  },
-  "important_caveats": [
-    "The GO annotation GO:0017000 is tagged IEA:UniProtKB-KW (inferred from electronic annotation via keyword), not a direct experimental GO assignment. However, the underlying pathway annotation is supported by multiple experimental papers (ECO:0000269, ECO:0000305).",
-    "The identity of the protein (AurH, Q70KH6) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no accession or organism label.",
-    "The reviewer evidence confirms sequence match (SHA-256 identical) across both current and historical (entry version 97) UniProt records.",
-    "Distractors B and C are clearly incompatible with a P450 enzyme and serve as easy eliminations; the substantive discrimination is between A and D."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +158,9 @@ Citations as saved: [C5](#evidence-c5), [H6](#evidence-h6).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -522,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q70KH6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4ebef3f648ec9220b43ad18df8ba571bfc85f07a1ba03f43e4ba9f5e6ddb38b9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 406,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4ebef3f648ec9220b43ad18df8ba571bfc85f07a1ba03f43e4ba9f5e6ddb38b9",
   "current_entry_audit": {
     "entryVersion": 98,
     "firstPublicDate": "2025-02-05",
@@ -553,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "current_source_sequence_sha256": "4ebef3f648ec9220b43ad18df8ba571bfc85f07a1ba03f43e4ba9f5e6ddb38b9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 406,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4ebef3f648ec9220b43ad18df8ba571bfc85f07a1ba03f43e4ba9f5e6ddb38b9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 97,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q70KH6",
   "selected_historical_entry_version": 97,
+  "selected_historical_record_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "selected_historical_source_sequence_length": 406,
+  "selected_historical_source_sequence_sha256": "4ebef3f648ec9220b43ad18df8ba571bfc85f07a1ba03f43e4ba9f5e6ddb38b9",
   "selected_historical_version": {
     "accession": "Q70KH6",
     "database": "Swiss-Prot",
@@ -571,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "AURH_STRTU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "selected_historical_source_sequence_sha256": "4ebef3f648ec9220b43ad18df8ba571bfc85f07a1ba03f43e4ba9f5e6ddb38b9",
-  "selected_historical_source_sequence_length": 406,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 97,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -606,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q70KH6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -625,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":98,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2004-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -644,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces thioluteus\",\"taxonId\":66431}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -663,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"15612710\",\"source\":\"PubMed\"}],\"value\":\"Bifunctional cytochrome P450 monooxygenase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18855960\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21280577\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"15612710\",\"source\":\"PubMed\"}],\"value\":\"1.14.15.37\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Luteothin monooxygenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -682,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"15612710\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18855960\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21280577\",\"source\":\"PubMed\"}],\"value\":\"Bifunctional cytochrome P450 protein involved in the biosynthesis of the antibiotic aureothin, a nitroaryl polyketide metabolite with antifungal, cytotoxic and insecticidal activities (PubMed:15612710, PubMed:18855960). Catalyzes the hydroxylation of luteothin (also called deoxyaureothin), leading to the formation of the intermediate (7R)-7-hydroxydeoxyaureothin, followed by the formation of the aureothin tetrahydrofuran ring, the final step in the biosynthesis of aureothin (PubMed:15612710, PubMed:18855960, PubMed:21280577)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -701,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"14700630\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"15612710\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"18855960\",\"source\":\"PubMed\"}],\"value\":\"Antibiotic biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -720,15 +465,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"14700630\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"15612710\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"18855960\",\"source\":\"PubMed\"}],\"value\":\"Polyketide biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -739,15 +484,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"He J.\",\"Hertweck C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"14700630\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.chembiol.2003.11.009\"}],\"citationType\":\"journal article\",\"firstPage\":\"1225\",\"id\":\"14700630\",\"journal\":\"Chem. Biol.\",\"lastPage\":\"1232\",\"publicationDate\":\"2003\",\"title\":\"Iteration as programmed event during polyketide assembly; molecular analysis of the aureothin biosynthesis gene cluster.\",\"volume\":\"10\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAE02604.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"HKI-227\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -758,15 +503,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"He J.\",\"Mueller M.\",\"Hertweck C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"15612710\"},{\"database\":\"DOI\",\"id\":\"10.1021/ja046104h\"}],\"citationType\":\"journal article\",\"firstPage\":\"16742\",\"id\":\"15612710\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"16743\",\"publicationDate\":\"2004\",\"title\":\"Formation of the aureothin tetrahydrofuran ring by a bifunctional cytochrome p450 monooxygenase.\",\"volume\":\"126\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -777,15 +522,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Richter M.E.\",\"Traitcheva N.\",\"Knuepfer U.\",\"Hertweck C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18855960\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.200803714\"}],\"citationType\":\"journal article\",\"firstPage\":\"8872\",\"id\":\"18855960\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"8875\",\"publicationDate\":\"2008\",\"title\":\"Sequential asymmetric polyketide heterocyclization catalyzed by a single cytochrome P450 monooxygenase (AurH).\",\"volume\":\"47\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"REACTION MECHANISM\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -796,15 +541,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json",
-  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
-  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Zocher G.\",\"Richter M.E.\",\"Mueller U.\",\"Hertweck C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21280577\"},{\"database\":\"DOI\",\"id\":\"10.1021/ja110146z\"}],\"citationType\":\"journal article\",\"firstPage\":\"2292\",\"id\":\"21280577\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"2302\",\"publicationDate\":\"2011\",\"title\":\"Structural fine-tuning of a multifunctional cytochrome P450 monooxygenase.\",\"volume\":\"133\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3P3L\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3P3O\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3P3X\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3P3Z\",\"source\":\"PDB\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.54 ANGSTROMS) IN COMPLEXES WITH HEME B AND IN COMPLEX WITH THE P450 INHIBITOR ANCYMIDOL\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"REACTION MECHANISM\",\"COFACTOR\",\"SUBUNIT\",\"DOMAIN\",\"MUTAGENESIS OF PHE-89; GLN-91; LEU-175; LEU-179; THR-239; LEU-290 AND PHE-316\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:31:47.723607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ba8377eaa9a48799a1eee53d5720940c7e354b7f3a661214941630d81d9902ff",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH6.json"
 }
 ```
 
@@ -814,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   AURH_STRTU              Reviewed;         406 AA.\nAC   Q70KH6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2004, sequence version 1.\nDT   18-JUN-2025, entry version 97.\nDE   RecName: Full=Luteothin monooxygenase {ECO:0000305};\nDE            EC=1.14.15.37 {ECO:0000269|PubMed:18855960, ECO:0000269|PubMed:21280577, ECO:0000305|PubMed:15612710};\nDE   AltName: Full=Bifunctional cytochrome P450 monooxygenase {ECO:0000303|PubMed:15612710};\nGN   Name=aurH {ECO:0000303|PubMed:14700630};\nOS   Streptomyces thioluteus.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=66431;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -835,18 +580,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 14-21",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAE02604.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].\nRC   STRAIN=HKI-227;\nRX   PubMed=14700630; DOI=10.1016/j.chembiol.2003.11.009;\nRA   He J., Hertweck C.;\nRT   \"Iteration as programmed event during polyketide assembly; molecular\nRT   analysis of the aureothin biosynthesis gene cluster.\";\nRL   Chem. Biol. 10:1225-1232(2003).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -856,18 +601,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 22-28",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=15612710; DOI=10.1021/ja046104h;\nRA   He J., Mueller M., Hertweck C.;\nRT   \"Formation of the aureothin tetrahydrofuran ring by a bifunctional\nRT   cytochrome p450 monooxygenase.\";\nRL   J. Am. Chem. Soc. 126:16742-16743(2004).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-28",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -877,18 +622,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 29-35",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND REACTION MECHANISM.\nRX   PubMed=18855960; DOI=10.1002/anie.200803714;\nRA   Richter M.E., Traitcheva N., Knuepfer U., Hertweck C.;\nRT   \"Sequential asymmetric polyketide heterocyclization catalyzed by a single\nRT   cytochrome P450 monooxygenase (AurH).\";\nRL   Angew. Chem. Int. Ed. 47:8872-8875(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -898,18 +643,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 36-45",
   "excerpt": "RN   [4] {ECO:0007744|PDB:3P3L, ECO:0007744|PDB:3P3O, ECO:0007744|PDB:3P3X, ECO:0007744|PDB:3P3Z}\nRP   X-RAY CRYSTALLOGRAPHY (1.54 ANGSTROMS) IN COMPLEXES WITH HEME B AND IN\nRP   COMPLEX WITH THE P450 INHIBITOR ANCYMIDOL, FUNCTION, CATALYTIC ACTIVITY,\nRP   REACTION MECHANISM, COFACTOR, SUBUNIT, DOMAIN, AND MUTAGENESIS OF PHE-89;\nRP   GLN-91; LEU-175; LEU-179; THR-239; LEU-290 AND PHE-316.\nRX   PubMed=21280577; DOI=10.1021/ja110146z;\nRA   Zocher G., Richter M.E., Mueller U., Hertweck C.;\nRT   \"Structural fine-tuning of a multifunctional cytochrome P450\nRT   monooxygenase.\";\nRL   J. Am. Chem. Soc. 133:2292-2302(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -919,18 +664,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 46-55",
   "excerpt": "CC   -!- FUNCTION: Bifunctional cytochrome P450 protein involved in the\nCC       biosynthesis of the antibiotic aureothin, a nitroaryl polyketide\nCC       metabolite with antifungal, cytotoxic and insecticidal activities\nCC       (PubMed:15612710, PubMed:18855960). Catalyzes the hydroxylation of\nCC       luteothin (also called deoxyaureothin), leading to the formation of the\nCC       intermediate (7R)-7-hydroxydeoxyaureothin, followed by the formation of\nCC       the aureothin tetrahydrofuran ring, the final step in the biosynthesis\nCC       of aureothin (PubMed:15612710, PubMed:18855960, PubMed:21280577).\nCC       {ECO:0000269|PubMed:15612710, ECO:0000269|PubMed:18855960,\nCC       ECO:0000269|PubMed:21280577}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-55",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -940,18 +685,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 71-72",
   "excerpt": "CC   -!- PATHWAY: Antibiotic biosynthesis. {ECO:0000305|PubMed:14700630,\nCC       ECO:0000305|PubMed:15612710, ECO:0000305|PubMed:18855960}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 71-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -961,18 +706,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 73-74",
   "excerpt": "CC   -!- PATHWAY: Polyketide biosynthesis. {ECO:0000305|PubMed:14700630,\nCC       ECO:0000305|PubMed:15612710, ECO:0000305|PubMed:18855960}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -982,18 +727,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 97,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97",
-  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
-  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
-  "source_locator": "lines 109-109",
   "excerpt": "DR   GO; GO:0017000; P:antibiotic biosynthetic process; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 97,
+  "retrieved_utc": "2026-11-02T04:31:51.166275+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 109-109",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2dcea6b60b452a9aa4815c42f9dc0d88db5c87719a5dec08b5f84b305e55f621",
+  "url": "https://rest.uniprot.org/unisave/Q70KH6?format=txt&versions=97"
 }
 ```
 
@@ -1004,15 +749,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 95982-95995",
   "excerpt": "[Term]\nid: GO:0009410\nname: response to xenobiotic stimulus\nnamespace: biological_process\nalt_id: GO:0017035\nalt_id: GO:0017104\nalt_id: GO:0042493\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus from a xenobiotic, a compound foreign to the organism exposed to it. It may be synthesized by another organism (like ampicilin) or it can be a synthetic chemical.\" [GOC:jl, GOC:krc]\nsubset: goslim_candida\nsynonym: \"drug resistance\" RELATED []\nsynonym: \"drug susceptibility/resistance\" RELATED []\nsynonym: \"response to drug\" RELATED []\nis_a: GO:0042221 ! response to chemical\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009410",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 95982-95995",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009410"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1023,15 +768,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 132339-132351",
   "excerpt": "[Term]\nid: GO:0017000\nname: antibiotic biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of an antibiotic, a substance produced by or derived from certain fungi, bacteria, and other organisms, that can destroy or inhibit the growth of other microorganisms.\" [GOC:curators]\nsubset: goslim_metagenomics\nsynonym: \"antibiotic anabolism\" EXACT []\nsynonym: \"antibiotic biosynthesis\" EXACT []\nsynonym: \"antibiotic formation\" EXACT []\nsynonym: \"antibiotic synthesis\" EXACT []\nis_a: GO:0009058 ! biosynthetic process\nis_a: GO:0016999 ! antibiotic metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0017000",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 132339-132351",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0017000"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1042,15 +787,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 236645-236655",
   "excerpt": "[Term]\nid: GO:0042352\nname: GDP-L-fucose salvage\nnamespace: biological_process\ndef: \"The formation of GDP-L-fucose from L-fucose, without de novo synthesis. L-fucose is phosphorylated by fucokinase and then converted by fucose-1-phosphate guanylyltransferase (EC:2.7.7.30).\" [GOC:ma]\nsynonym: \"GDP-L-fucose biosynthesis, salvage pathway\" EXACT []\nsynonym: \"GDP-L-fucose biosynthetic process, salvage pathway\" EXACT []\nxref: MetaCyc:PWY-6\nis_a: GO:0042350 ! GDP-L-fucose biosynthetic process\nis_a: GO:0043094 ! metabolic compound salvage\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042352",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 236645-236655",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042352"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

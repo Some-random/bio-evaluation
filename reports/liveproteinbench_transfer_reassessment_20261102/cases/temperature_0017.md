@@ -1,18 +1,16 @@
-# temperature_0017: before and after transfer clarification
+# temperature_0017
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0017.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0017.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **C** — 90
+**Expected answer:** **C** — 90
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | output error (invalid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 299-aa sequence matches the UniProt entry, which reports an optimum temperature of 90°C for phosphoglucose isomerase activity, with experimental evidence attributed to PubMed 39208883. This supports choice C, though the primary paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a defensible way to distinguish an exact optimum of 90°C from the other listed temperatures. General sequence-based thermal tendencies would not establish this particular measured value.
-
-
-**Missing item-specific fact**
-
-> The protein-specific experimental temperature optimum (reported as 90°C), or an external identification of the protein and its associated measurement.
-
-
-**Reason**
-
-> The protein identity, organism, and temperature measurement are absent from the evaluated input. Recognizing or looking up this sequence could supply the answer, but that is item-specific lookup rather than reasoning from the provided information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The system wording describes thermal categories, but the choices are numeric temperatures. Interpreting them as candidate optimum temperatures, the cited evidence distinguishes 90°C.
-
-
-### Important caveats
-
-- The reported optimum is specifically for phosphoglucose isomerase activity, not an unrestricted measure of stability or thermal category.
-- The source sequence match is exact, including in the checked historical entry; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish an exact optimum of 90°C from the other listed temperatures. General sequence-based thermal tendencies would not establish this particular measured value.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific experimental temperature optimum (reported as 90°C), or an external identification of the protein and its associated measurement.",
-    "reason": "The protein identity, organism, and temperature measurement are absent from the evaluated input. Recognizing or looking up this sequence could supply the answer, but that is item-specific lookup rather than reasoning from the provided information."
-  },
-  "case_id": "temperature_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 299-aa sequence matches the UniProt entry, which reports an optimum temperature of 90°C for phosphoglucose isomerase activity, with experimental evidence attributed to PubMed 39208883. This supports choice C, though the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reported optimum is specifically for phosphoglucose isomerase activity, not an unrestricted measure of stability or thermal category.",
-    "The source sequence match is exact, including in the checked historical entry; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The system wording describes thermal categories, but the choices are numeric temperatures. Interpreting them as candidate optimum temperatures, the cited evidence distinguishes 90°C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 299-aa sequence matches the UniProt entry, which reports an optimum temperature of 90°C for phosphoglucose isomerase activity, with experimental evidence attributed to PubMed 39208883. This supports choice C, though the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish an exact optimum of 90°C from the other listed temperatures. General sequence-based thermal tendencies would not establish this particular measured value.",
-    "missing_item_specific_fact": "The protein-specific experimental temperature optimum (reported as 90°C), or an external identification of the protein and its associated measurement.",
-    "reason": "The protein identity, organism, and temperature measurement are absent from the evaluated input. Recognizing or looking up this sequence could supply the answer, but that is item-specific lookup rather than reasoning from the provided information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The system wording describes thermal categories, but the choices are numeric temperatures. Interpreting them as candidate optimum temperatures, the cited evidence distinguishes 90°C."
-  },
-  "important_caveats": [
-    "The reported optimum is specifically for phosphoglucose isomerase activity, not an unrestricted measure of stability or thermal category.",
-    "The source sequence match is exact, including in the checked historical entry; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
-
-**Validation errors:** `question_ambiguity:invalid_option_ids`.
-
-### Expected-answer support: supported
-
-> UniProt entry A3MTR6 (PGMI_PYRCJ) from Pyrobaculum calidifontis explicitly annotates: 'Optimum temperature is 90 degrees Celsius (for phosphoglucose isomerase activity)' with experimental evidence code ECO:0000269 from PubMed:39208883 (Maqsood et al., 2024). The sequence matches perfectly (SHA256 identical, 299 AA). The 90°C value is an experimentally determined optimum, not a computational prediction.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence shows elevated charged-residue content (K, E, R, D) and patterns consistent with thermophilic salt-bridge networks, which could narrow the answer away from 25°C (mesophilic) and 41°C (moderate thermophilic). However, distinguishing 90°C (hyperthermophilic) from 59°C (thermophilic) requires knowing the organism is Pyrobaculum calidifontis, a hyperthermophilic archaeon growing at ~90°C, or having access to the specific experimental measurement. General sequence-composition heuristics (charged residue ratio, proline content, loop length) can indicate 'thermophilic' broadly but cannot reliably separate 59 from 90 without organism context.
-
-
-**Missing item-specific fact**
-
-> The organism identity (Pyrobaculum calidifontis, a hyperthermophilic archaeon) or the experimentally determined optimum temperature of 90°C from PubMed:39208883. Without knowing the source organism is a hyperthermophile, the sequence alone does not provide a general-biology argument that cleanly separates 90°C from 59°C.
-
-
-**Reason**
-
-> While the sequence exhibits thermophilic signatures (high charged-residue density, salt-bridge-forming patterns), the precise distinction between 59°C and 90°C depends on organism-specific knowledge (Pyrobaculum is a known hyperthermophile) or the experimental measurement itself. This is not derivable from general biological reasoning about amino acid composition alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C (90)",
-  "D (59)"
-]
-```
-
-> Both 90°C and 59°C represent thermophilic optima. From sequence composition alone, without organism identification, a knowledgeable model could reasonably argue for either a thermophilic (59°C) or hyperthermophilic (90°C) assignment based on the degree of charged-residue enrichment. The question does not provide organism context, making the 59 vs 90 distinction dependent on external knowledge.
-
-
-### Important caveats
-
-- The UniProt annotation of 90°C is experimentally determined (ECO:0000269, PubMed:39208883, 2024 paper), not a computational prediction.
-- The organism identity (Pyrobaculum calidifontis, hyperthermophilic archaeon) is not provided in the question input, making organism-based reasoning unavailable to the evaluated model.
-- The sequence was deposited in 2007 but the experimental characterization (including the 90°C optimum) was published in 2024, so the annotation is relatively recent.
-- The question's framing ('subtle patterns in the amino acid sequence') implies sequence-based reasoning should suffice, but in practice the precise temperature value requires organism or experimental knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence shows elevated charged-residue content (K, E, R, D) and patterns consistent with thermophilic salt-bridge networks, which could narrow the answer away from 25°C (mesophilic) and 41°C (moderate thermophilic). However, distinguishing 90°C (hyperthermophilic) from 59°C (thermophilic) requires knowing the organism is Pyrobaculum calidifontis, a hyperthermophilic archaeon growing at ~90°C, or having access to the specific experimental measurement. General sequence-composition heuristics (charged residue ratio, proline content, loop length) can indicate 'thermophilic' broadly but cannot reliably separate 59 from 90 without organism context.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The organism identity (Pyrobaculum calidifontis, a hyperthermophilic archaeon) or the experimentally determined optimum temperature of 90°C from PubMed:39208883. Without knowing the source organism is a hyperthermophile, the sequence alone does not provide a general-biology argument that cleanly separates 90°C from 59°C.",
-    "reason": "While the sequence exhibits thermophilic signatures (high charged-residue density, salt-bridge-forming patterns), the precise distinction between 59°C and 90°C depends on organism-specific knowledge (Pyrobaculum is a known hyperthermophile) or the experimental measurement itself. This is not derivable from general biological reasoning about amino acid composition alone."
-  },
-  "case_id": "temperature_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C1",
-      "C3",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A3MTR6 (PGMI_PYRCJ) from Pyrobaculum calidifontis explicitly annotates: 'Optimum temperature is 90 degrees Celsius (for phosphoglucose isomerase activity)' with experimental evidence code ECO:0000269 from PubMed:39208883 (Maqsood et al., 2024). The sequence matches perfectly (SHA256 identical, 299 AA). The 90°C value is an experimentally determined optimum, not a computational prediction."
-  },
-  "important_caveats": [
-    "The UniProt annotation of 90°C is experimentally determined (ECO:0000269, PubMed:39208883, 2024 paper), not a computational prediction.",
-    "The organism identity (Pyrobaculum calidifontis, hyperthermophilic archaeon) is not provided in the question input, making organism-based reasoning unavailable to the evaluated model.",
-    "The sequence was deposited in 2007 but the experimental characterization (including the 90°C optimum) was published in 2024, so the annotation is relatively recent.",
-    "The question's framing ('subtle patterns in the amino acid sequence') implies sequence-based reasoning should suffice, but in practice the precise temperature value requires organism or experimental knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C (90)",
-      "D (59)"
-    ],
-    "reason": "Both 90°C and 59°C represent thermophilic optima. From sequence composition alone, without organism identification, a knowledgeable model could reasonably argue for either a thermophilic (59°C) or hyperthermophilic (90°C) assignment based on the degree of charged-residue enrichment. The question does not provide organism context, making the 59 vs 90 distinction dependent on external knowledge."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A3MTR6 (PGMI_PYRCJ) from Pyrobaculum calidifontis explicitly annotates: 'Optimum temperature is 90 degrees Celsius (for phosphoglucose isomerase activity)' with experimental evidence code ECO:0000269 from PubMed:39208883 (Maqsood et al., 2024). The sequence matches perfectly (SHA256 identical, 299 AA). The 90°C value is an experimentally determined optimum, not a computational prediction.",
-    "evidence_ids": ["C5", "H3", "C1", "C3", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence shows elevated charged-residue content (K, E, R, D) and patterns consistent with thermophilic salt-bridge networks, which could narrow the answer away from 25°C (mesophilic) and 41°C (moderate thermophilic). However, distinguishing 90°C (hyperthermophilic) from 59°C (thermophilic) requires knowing the organism is Pyrobaculum calidifontis, a hyperthermophilic archaeon growing at ~90°C, or having access to the specific experimental measurement. General sequence-composition heuristics (charged residue ratio, proline content, loop length) can indicate 'thermophilic' broadly but cannot reliably separate 59 from 90 without organism context.",
-    "missing_item_specific_fact": "The organism identity (Pyrobaculum calidifontis, a hyperthermophilic archaeon) or the experimentally determined optimum temperature of 90°C from PubMed:39208883. Without knowing the source organism is a hyperthermophile, the sequence alone does not provide a general-biology argument that cleanly separates 90°C from 59°C.",
-    "reason": "While the sequence exhibits thermophilic signatures (high charged-residue density, salt-bridge-forming patterns), the precise distinction between 59°C and 90°C depends on organism-specific knowledge (Pyrobaculum is a known hyperthermophile) or the experimental measurement itself. This is not derivable from general biological reasoning about amino acid composition alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C (90)", "D (59)"],
-    "reason": "Both 90°C and 59°C represent thermophilic optima. From sequence composition alone, without organism identification, a knowledgeable model could reasonably argue for either a thermophilic (59°C) or hyperthermophilic (90°C) assignment based on the degree of charged-residue enrichment. The question does not provide organism context, making the 59 vs 90 distinction dependent on external knowledge."
-  },
-  "important_caveats": [
-    "The UniProt annotation of 90°C is experimentally determined (ECO:0000269, PubMed:39208883, 2024 paper), not a computational prediction.",
-    "The organism identity (Pyrobaculum calidifontis, hyperthermophilic archaeon) is not provided in the question input, making organism-based reasoning unavailable to the evaluated model.",
-    "The sequence was deposited in 2007 but the experimental characterization (including the 90°C optimum) was published in 2024, so the annotation is relatively recent.",
-    "The question's framing ('subtle patterns in the amino acid sequence') implies sequence-based reasoning should suffice, but in practice the precise temperature value requires organism or experimental knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +158,9 @@ Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A3MTR6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 299,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
   "current_entry_audit": {
     "entryVersion": 75,
     "firstPublicDate": "2025-02-05",
@@ -549,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-04-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "current_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 299,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 74,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A3MTR6",
   "selected_historical_entry_version": 74,
+  "selected_historical_record_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "selected_historical_source_sequence_length": 299,
+  "selected_historical_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
   "selected_historical_version": {
     "accession": "A3MTR6",
     "database": "Swiss-Prot",
@@ -567,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PGMI_PYRCJ",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "selected_historical_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
-  "selected_historical_source_sequence_length": 299,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 74,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A3MTR6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -617,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":75,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-04-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -636,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Archaea\",\"Thermoproteota\",\"Thermoprotei\",\"Thermoproteales\",\"Thermoproteaceae\",\"Pyrobaculum\"],\"scientificName\":\"Pyrobaculum calidifontis (strain DSM 21063 / JCM 11548 / VA1)\",\"taxonId\":410359}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -655,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"Glucose-6-phosphate isomerase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"GPI\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Mannose-6-phosphate isomerase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"5.3.1.8\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"5.3.1.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"Bifunctional phosphoglucose/phosphomannose isomerase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Bifunctional PGI/PMI\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -674,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"kineticParameters\":{\"maximumVelocities\":[{\"enzyme\":\"enzyme with glucose 6-phosphate as substrate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"unit\":\"umol/min/mg\",\"velocity\":290.0},{\"enzyme\":\"enzyme with mannose 6-phosphate as substrate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"unit\":\"umol/min/mg\",\"velocity\":235.0},{\"enzyme\":\"enzyme with fructose 6-phosphate as substrate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"unit\":\"umol/min/mg\",\"velocity\":240.0}],\"michaelisConstants\":[{\"constant\":0.33,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"substrate\":\"glucose 6-phosphate\",\"unit\":\"mM\"},{\"constant\":0.34,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"substrate\":\"mannose 6-phosphate\",\"unit\":\"mM\"},{\"constant\":0.29,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"substrate\":\"fructose 6-phosphate\",\"unit\":\"mM\"}],\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"kcat is 315 sec(-1) with glucose 6-phosphate as substrate. kcat is 240 sec(-1) with mannose 6-phosphate as substrate. kcat is 265 sec(-1) with fructose 6-phosphate as substrate.\"}]}},\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is 8.5 (for phosphoglucose isomerase activity) (PubMed:39208883). Activity is reduced significantly below pH 8.0 and above 9.0 (PubMed:39208883).\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 90 degrees Celsius (for phosphoglucose isomerase activity) (PubMed:39208883). Displays high thermostability with a half-life of about 50 minutes at 100 degrees Celsius (PubMed:39208883).\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -693,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Maqsood A.\",\"Shakir N.A.\",\"Aslam M.\",\"Rahman M.\",\"Rashid N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39208883\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.ijbiomac.2024.135127\"}],\"citationType\":\"journal article\",\"firstPage\":\"135127\",\"id\":\"39208883\",\"journal\":\"Int. J. Biol. Macromol.\",\"lastPage\":\"135127\",\"publicationDate\":\"2024\",\"title\":\"Structural and functional investigations of Pcal_0606, a bifunctional phosphoglucose/phosphomannose isomerase from Pyrobaculum calidifontis.\",\"volume\":\"279\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 21063 / JCM 11548 / VA1\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -711,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   PGMI_PYRCJ              Reviewed;         299 AA.\nAC   A3MTR6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-APR-2007, sequence version 1.\nDT   28-JAN-2026, entry version 74.\nDE   RecName: Full=Bifunctional phosphoglucose/phosphomannose isomerase {ECO:0000303|PubMed:39208883};\nDE            Short=Bifunctional PGI/PMI {ECO:0000305};\nDE            EC=5.3.1.8 {ECO:0000269|PubMed:39208883};\nDE            EC=5.3.1.9 {ECO:0000269|PubMed:39208883};\nDE   AltName: Full=Glucose-6-phosphate isomerase {ECO:0000303|PubMed:39208883};\nDE            Short=GPI {ECO:0000305};\nDE   AltName: Full=Mannose-6-phosphate isomerase {ECO:0000305};\nGN   OrderedLocusNames=Pcal_0606 {ECO:0000312|EMBL:ABO08033.1};\nOS   Pyrobaculum calidifontis (strain DSM 21063 / JCM 11548 / VA1).\nOC   Archaea; Thermoproteota; Thermoprotei; Thermoproteales; Thermoproteaceae;\nOC   Pyrobaculum.\nOX   NCBI_TaxID=410359;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 
@@ -732,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 28-36",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, BIOPHYSICOCHEMICAL\nRP   PROPERTIES, AND SUBUNIT.\nRC   STRAIN=DSM 21063 / JCM 11548 / VA1;\nRX   PubMed=39208883; DOI=10.1016/j.ijbiomac.2024.135127;\nRA   Maqsood A., Shakir N.A., Aslam M., Rahman M., Rashid N.;\nRT   \"Structural and functional investigations of Pcal_0606, a bifunctional\nRT   phosphoglucose/phosphomannose isomerase from Pyrobaculum calidifontis.\";\nRL   Int. J. Biol. Macromol. 279:135127-135127(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 
@@ -753,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 55-78",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Kinetic parameters:\nCC         KM=0.33 mM for glucose 6-phosphate {ECO:0000269|PubMed:39208883};\nCC         KM=0.34 mM for mannose 6-phosphate {ECO:0000269|PubMed:39208883};\nCC         KM=0.29 mM for fructose 6-phosphate {ECO:0000269|PubMed:39208883};\nCC         Vmax=290 umol/min/mg enzyme with glucose 6-phosphate as substrate\nCC         {ECO:0000269|PubMed:39208883};\nCC         Vmax=235 umol/min/mg enzyme with mannose 6-phosphate as substrate\nCC         {ECO:0000269|PubMed:39208883};\nCC         Vmax=240 umol/min/mg enzyme with fructose 6-phosphate as substrate\nCC         {ECO:0000269|PubMed:39208883};\nCC         Note=kcat is 315 sec(-1) with glucose 6-phosphate as substrate. kcat\nCC         is 240 sec(-1) with mannose 6-phosphate as substrate. kcat is 265\nCC         sec(-1) with fructose 6-phosphate as substrate.\nCC         {ECO:0000269|PubMed:39208883};\nCC       pH dependence:\nCC         Optimum pH is 8.5 (for phosphoglucose isomerase activity)\nCC         (PubMed:39208883). Activity is reduced significantly below pH 8.0 and\nCC         above 9.0 (PubMed:39208883). {ECO:0000269|PubMed:39208883};\nCC       Temperature dependence:\nCC         Optimum temperature is 90 degrees Celsius (for phosphoglucose\nCC         isomerase activity) (PubMed:39208883). Displays high thermostability\nCC         with a half-life of about 50 minutes at 100 degrees Celsius\nCC         (PubMed:39208883). {ECO:0000269|PubMed:39208883};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 55-78",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 

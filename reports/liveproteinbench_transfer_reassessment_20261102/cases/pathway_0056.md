@@ -1,18 +1,16 @@
-# pathway_0056: before and after transfer clarification
+# pathway_0056
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0056.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0056.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Alkaloid biosynthesis
+**Expected answer:** **B** — Alkaloid biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the sequence in the UniProt record for 1,2-dihydrovomilenine reductase from Rauvolfia tetraphylla. That record annotates the protein to alkaloid and ajmaline biosynthesis, with an ECO:0000269 evidence tag citing PubMed 26715562. This supports choice B, while remaining a curated annotation tied to that cited study rather than an independent review of the study.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a soluble oxidoreductase, which makes a ribosomal elongation or peptidoglycan-biosynthesis role unlikely. But that broad inference does not distinguish alkaloid biosynthesis from other metabolic pathways or establish the specific substrate and pathway.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity and functional assignment as 1,2-dihydrovomilenine reductase in Rauvolfia alkaloid/ajmaline biosynthesis are absent from the input.
-
-
-**Reason**
-
-> Selecting B requires the protein-specific pathway annotation or equivalent functional evidence; the sequence and choices alone do not provide a meaningful basis for that precise pathway assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched functional annotation supports B. The other options are not comparably supported by the supplied sequence, though the pathway choice itself is not inferable from sequence-based general reasoning alone.
-
-
-### Important caveats
-
-- The annotation and its pathway evidence are reviewer-only and were not supplied to the evaluated model.
-- The exact sequence match establishes applicability of the cited record to this sequence, but does not establish which database snapshot the author used.
-- The cited publication is associated with the experimental evidence code; its findings were not independently assessed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a soluble oxidoreductase, which makes a ribosomal elongation or peptidoglycan-biosynthesis role unlikely. But that broad inference does not distinguish alkaloid biosynthesis from other metabolic pathways or establish the specific substrate and pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity and functional assignment as 1,2-dihydrovomilenine reductase in Rauvolfia alkaloid/ajmaline biosynthesis are absent from the input.",
-    "reason": "Selecting B requires the protein-specific pathway annotation or equivalent functional evidence; the sequence and choices alone do not provide a meaningful basis for that precise pathway assignment."
-  },
-  "case_id": "pathway_0056",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the sequence in the UniProt record for 1,2-dihydrovomilenine reductase from Rauvolfia tetraphylla. That record annotates the protein to alkaloid and ajmaline biosynthesis, with an ECO:0000269 evidence tag citing PubMed 26715562. This supports choice B, while remaining a curated annotation tied to that cited study rather than an independent review of the study."
-  },
-  "important_caveats": [
-    "The annotation and its pathway evidence are reviewer-only and were not supplied to the evaluated model.",
-    "The exact sequence match establishes applicability of the cited record to this sequence, but does not establish which database snapshot the author used.",
-    "The cited publication is associated with the experimental evidence code; its findings were not independently assessed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched functional annotation supports B. The other options are not comparably supported by the supplied sequence, though the pathway choice itself is not inferable from sequence-based general reasoning alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0056",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the sequence in the UniProt record for 1,2-dihydrovomilenine reductase from Rauvolfia tetraphylla. That record annotates the protein to alkaloid and ajmaline biosynthesis, with an ECO:0000269 evidence tag citing PubMed 26715562. This supports choice B, while remaining a curated annotation tied to that cited study rather than an independent review of the study.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a soluble oxidoreductase, which makes a ribosomal elongation or peptidoglycan-biosynthesis role unlikely. But that broad inference does not distinguish alkaloid biosynthesis from other metabolic pathways or establish the specific substrate and pathway.",
-    "missing_item_specific_fact": "The protein-specific identity and functional assignment as 1,2-dihydrovomilenine reductase in Rauvolfia alkaloid/ajmaline biosynthesis are absent from the input.",
-    "reason": "Selecting B requires the protein-specific pathway annotation or equivalent functional evidence; the sequence and choices alone do not provide a meaningful basis for that precise pathway assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched functional annotation supports B. The other options are not comparably supported by the supplied sequence, though the pathway choice itself is not inferable from sequence-based general reasoning alone."
-  },
-  "important_caveats": [
-    "The annotation and its pathway evidence are reviewer-only and were not supplied to the evaluated model.",
-    "The exact sequence match establishes applicability of the cited record to this sequence, but does not establish which database snapshot the author used.",
-    "The cited publication is associated with the experimental evidence code; its findings were not independently assessed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A0U4BHM2 (sequence-exact match, 363 aa) is annotated as '1,2-Dihydrovomilenine reductase' (EC 1.3.1.73) from Rauvolfia tetraphylla, with the pathway explicitly stated as 'Alkaloid biosynthesis; ajmaline biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:26715562). The expected answer 'Alkaloid biosynthesis' is directly confirmed by the UniProt annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains clear NAD(P)-dependent oxidoreductase motifs (e.g., GGLGHLAVKF and ATMGSFELPILPLGVGRKS representing Rossmann-fold GxGxxG and related NAD(P)-binding patterns), identifying it as an NAD(P)-dependent reductase/dehydrogenase. This enzyme class is inconsistent with Option A (homoserine O-acetyltransferase, EC 2.3.1.31, a transferase requiring acetyl-CoA, not NAD(P)), Option C (polypeptide chain elongation factors, which are GTPases such as EF-Tu/EF-G with distinct GTPase motifs absent here), and Option D (peptidoglycan biosynthesis, a strictly bacterial pathway; the sequence's composition and length are consistent with a plant eukaryotic enzyme, not a bacterial cell-wall enzyme). By elimination based on enzyme-class and organismal inference, Option B (alkaloid biosynthesis, which contains multiple NAD(P)-dependent reductase steps) is the most defensible choice.
-
-
-**Missing item-specific fact**
-
-> The exact identity of the specific alkaloid sub-pathway (ajmaline biosynthesis) and the precise substrate (1,2-dihydrovomilenine) require database lookup or literature knowledge, but the broader pathway category 'Alkaloid biosynthesis' is reachable by the enzyme-class reasoning above.
-
-
-**Reason**
-
-> The NAD(P)-binding motifs provide a concrete, general biological argument that distinguishes the reductase from a transferase (A), a GTPase (C), and a bacterial-specific pathway (D). While pinpointing the exact alkaloid sub-pathway requires external knowledge, the question's option set is narrow enough that enzyme-class reasoning meaningfully selects B over the alternatives.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, C, and D are each inconsistent with the NAD(P)-dependent reductase character of the sequence and/or the eukaryotic/plant context. Only B is compatible with both the enzyme class and the biological context, leaving a single defensible answer.
-
-
-### Important caveats
-
-- The pathway annotation 'Alkaloid biosynthesis; ajmaline biosynthesis' is supported by experimental evidence (PubMed:26715562, Geissler et al. 2016, Planta), not merely by similarity transfer.
-- The organism (Rauvolfia tetraphylla) is not provided in the model input; the inference that this is a plant enzyme (ruling out peptidoglycan) relies on sequence-composition heuristics rather than explicit metadata.
-- The EC number 1.3.1.73 for the recommended name is assigned by similarity (ECO:0000250) to A0A0U3S9Q3, while the alternative EC 1.5.1.- is experimentally determined (ECO:0000269). This does not affect the pathway assignment.
-- The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on what a model could infer from the raw sequence and the four options.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains clear NAD(P)-dependent oxidoreductase motifs (e.g., GGLGHLAVKF and ATMGSFELPILPLGVGRKS representing Rossmann-fold GxGxxG and related NAD(P)-binding patterns), identifying it as an NAD(P)-dependent reductase/dehydrogenase. This enzyme class is inconsistent with Option A (homoserine O-acetyltransferase, EC 2.3.1.31, a transferase requiring acetyl-CoA, not NAD(P)), Option C (polypeptide chain elongation factors, which are GTPases such as EF-Tu/EF-G with distinct GTPase motifs absent here), and Option D (peptidoglycan biosynthesis, a strictly bacterial pathway; the sequence's composition and length are consistent with a plant eukaryotic enzyme, not a bacterial cell-wall enzyme). By elimination based on enzyme-class and organismal inference, Option B (alkaloid biosynthesis, which contains multiple NAD(P)-dependent reductase steps) is the most defensible choice.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The exact identity of the specific alkaloid sub-pathway (ajmaline biosynthesis) and the precise substrate (1,2-dihydrovomilenine) require database lookup or literature knowledge, but the broader pathway category 'Alkaloid biosynthesis' is reachable by the enzyme-class reasoning above.",
-    "reason": "The NAD(P)-binding motifs provide a concrete, general biological argument that distinguishes the reductase from a transferase (A), a GTPase (C), and a bacterial-specific pathway (D). While pinpointing the exact alkaloid sub-pathway requires external knowledge, the question's option set is narrow enough that enzyme-class reasoning meaningfully selects B over the alternatives."
-  },
-  "case_id": "pathway_0056",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0U4BHM2 (sequence-exact match, 363 aa) is annotated as '1,2-Dihydrovomilenine reductase' (EC 1.3.1.73) from Rauvolfia tetraphylla, with the pathway explicitly stated as 'Alkaloid biosynthesis; ajmaline biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:26715562). The expected answer 'Alkaloid biosynthesis' is directly confirmed by the UniProt annotation."
-  },
-  "important_caveats": [
-    "The pathway annotation 'Alkaloid biosynthesis; ajmaline biosynthesis' is supported by experimental evidence (PubMed:26715562, Geissler et al. 2016, Planta), not merely by similarity transfer.",
-    "The organism (Rauvolfia tetraphylla) is not provided in the model input; the inference that this is a plant enzyme (ruling out peptidoglycan) relies on sequence-composition heuristics rather than explicit metadata.",
-    "The EC number 1.3.1.73 for the recommended name is assigned by similarity (ECO:0000250) to A0A0U3S9Q3, while the alternative EC 1.5.1.- is experimentally determined (ECO:0000269). This does not affect the pathway assignment.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on what a model could infer from the raw sequence and the four options."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are each inconsistent with the NAD(P)-dependent reductase character of the sequence and/or the eukaryotic/plant context. Only B is compatible with both the enzyme class and the biological context, leaving a single defensible answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0056",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0U4BHM2 (sequence-exact match, 363 aa) is annotated as '1,2-Dihydrovomilenine reductase' (EC 1.3.1.73) from Rauvolfia tetraphylla, with the pathway explicitly stated as 'Alkaloid biosynthesis; ajmaline biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:26715562). The expected answer 'Alkaloid biosynthesis' is directly confirmed by the UniProt annotation.",
-    "evidence_ids": ["C4", "C5", "H3", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains clear NAD(P)-dependent oxidoreductase motifs (e.g., GGLGHLAVKF and ATMGSFELPILPLGVGRKS representing Rossmann-fold GxGxxG and related NAD(P)-binding patterns), identifying it as an NAD(P)-dependent reductase/dehydrogenase. This enzyme class is inconsistent with Option A (homoserine O-acetyltransferase, EC 2.3.1.31, a transferase requiring acetyl-CoA, not NAD(P)), Option C (polypeptide chain elongation factors, which are GTPases such as EF-Tu/EF-G with distinct GTPase motifs absent here), and Option D (peptidoglycan biosynthesis, a strictly bacterial pathway; the sequence's composition and length are consistent with a plant eukaryotic enzyme, not a bacterial cell-wall enzyme). By elimination based on enzyme-class and organismal inference, Option B (alkaloid biosynthesis, which contains multiple NAD(P)-dependent reductase steps) is the most defensible choice.",
-    "missing_item_specific_fact": "The exact identity of the specific alkaloid sub-pathway (ajmaline biosynthesis) and the precise substrate (1,2-dihydrovomilenine) require database lookup or literature knowledge, but the broader pathway category 'Alkaloid biosynthesis' is reachable by the enzyme-class reasoning above.",
-    "reason": "The NAD(P)-binding motifs provide a concrete, general biological argument that distinguishes the reductase from a transferase (A), a GTPase (C), and a bacterial-specific pathway (D). While pinpointing the exact alkaloid sub-pathway requires external knowledge, the question's option set is narrow enough that enzyme-class reasoning meaningfully selects B over the alternatives."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are each inconsistent with the NAD(P)-dependent reductase character of the sequence and/or the eukaryotic/plant context. Only B is compatible with both the enzyme class and the biological context, leaving a single defensible answer."
-  },
-  "important_caveats": [
-    "The pathway annotation 'Alkaloid biosynthesis; ajmaline biosynthesis' is supported by experimental evidence (PubMed:26715562, Geissler et al. 2016, Planta), not merely by similarity transfer.",
-    "The organism (Rauvolfia tetraphylla) is not provided in the model input; the inference that this is a plant enzyme (ruling out peptidoglycan) relies on sequence-composition heuristics rather than explicit metadata.",
-    "The EC number 1.3.1.73 for the recommended name is assigned by similarity (ECO:0000250) to A0A0U3S9Q3, while the alternative EC 1.5.1.- is experimentally determined (ECO:0000269). This does not affect the pathway assignment.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on what a model could infer from the raw sequence and the four options."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0U4BHM2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "351c34d2095e544533593a3430ee8d4f870ed8068eab99c7a6c309e20ddfb657",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 363,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "351c34d2095e544533593a3430ee8d4f870ed8068eab99c7a6c309e20ddfb657",
   "current_entry_audit": {
     "entryVersion": 32,
     "firstPublicDate": "2025-06-18",
@@ -537,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2016-03-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
-  "current_source_sequence_sha256": "351c34d2095e544533593a3430ee8d4f870ed8068eab99c7a6c309e20ddfb657",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 363,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "351c34d2095e544533593a3430ee8d4f870ed8068eab99c7a6c309e20ddfb657",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 30,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0U4BHM2",
   "selected_historical_entry_version": 30,
+  "selected_historical_record_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
+  "selected_historical_source_sequence_length": 363,
+  "selected_historical_source_sequence_sha256": "351c34d2095e544533593a3430ee8d4f870ed8068eab99c7a6c309e20ddfb657",
   "selected_historical_version": {
     "accession": "A0A0U4BHM2",
     "database": "Swiss-Prot",
@@ -555,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DHVOR_RAUTE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
-  "selected_historical_source_sequence_sha256": "351c34d2095e544533593a3430ee8d4f870ed8068eab99c7a6c309e20ddfb657",
-  "selected_historical_source_sequence_length": 363,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 30,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json",
-  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
-  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0U4BHM2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json"
 }
 ```
 
@@ -605,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json",
-  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
-  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":32,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2016-03-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json"
 }
 ```
 
@@ -624,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json",
-  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
-  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Be still tree\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Vinceae\",\"Rauvolfiinae\",\"Rauvolfia\"],\"scientificName\":\"Rauvolfia tetraphylla\",\"taxonId\":545371}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json"
 }
 ```
 
@@ -643,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json",
-  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
-  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"Protein RR2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"RtRR2\"}]},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"1.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"Vomilenine reductase 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"RtVR2\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A0U3S9Q3\",\"source\":\"UniProtKB\"}],\"value\":\"1.3.1.73\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"1,2-Dihydrovomilenine reductase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"RtDHVR\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json"
 }
 ```
 
@@ -662,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json",
-  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
-  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26715562\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis; ajmaline biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json"
 }
 ```
 
@@ -681,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json",
-  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
-  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Geissler M.\",\"Burghard M.\",\"Volk J.\",\"Staniek A.\",\"Warzecha H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26715562\"},{\"database\":\"DOI\",\"id\":\"10.1007/s00425-015-2446-6\"}],\"citationType\":\"journal article\",\"firstPage\":\"813\",\"id\":\"26715562\",\"journal\":\"Planta\",\"lastPage\":\"824\",\"publicationDate\":\"2016\",\"title\":\"A novel cinnamyl alcohol dehydrogenase (CAD)-like reductase contributes to the structural diversity of monoterpenoid indole alkaloids in Rauvolfia.\",\"volume\":\"243\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ALW82982.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"PROTEIN SEQUENCE OF 14-26 AND 149-156\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:24:23.340033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c26b85d02403fbdfc042529d2261359bc369b05deb9442cd6e55153bd5141c6f",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0U4BHM2.json"
 }
 ```
 
@@ -699,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0U4BHM2?format=txt&versions=30",
-  "source_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
-  "retrieved_utc": "2026-11-02T04:24:25.840272+00:00",
-  "source_locator": "lines 1-22",
   "excerpt": "ID   DHVOR_RAUTE             Reviewed;         363 AA.\nAC   A0A0U4BHM2;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-MAR-2016, sequence version 1.\nDT   28-JAN-2026, entry version 30.\nDE   RecName: Full=1,2-Dihydrovomilenine reductase {ECO:0000303|PubMed:26715562};\nDE            Short=RtDHVR {ECO:0000303|PubMed:26715562};\nDE            EC=1.3.1.73 {ECO:0000250|UniProtKB:A0A0U3S9Q3};\nDE   AltName: Full=Protein RR2 {ECO:0000303|PubMed:26715562};\nDE            Short=RtRR2 {ECO:0000303|PubMed:26715562};\nDE   AltName: Full=Vomilenine reductase 2 {ECO:0000303|PubMed:26715562};\nDE            Short=RtVR2 {ECO:0000303|PubMed:26715562};\nDE            EC=1.5.1.- {ECO:0000269|PubMed:26715562};\nGN   Name=DHVR {ECO:0000303|PubMed:26715562};\nGN   Synonyms=RR2 {ECO:0000303|PubMed:26715562},\nGN   VR2 {ECO:0000303|PubMed:26715562};\nOS   Rauvolfia tetraphylla (Be still tree).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Vinceae;\nOC   Rauvolfiinae; Rauvolfia.\nOX   NCBI_TaxID=545371;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:25.840272+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
+  "url": "https://rest.uniprot.org/unisave/A0A0U4BHM2?format=txt&versions=30"
 }
 ```
 
@@ -720,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0U4BHM2?format=txt&versions=30",
-  "source_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
-  "retrieved_utc": "2026-11-02T04:24:25.840272+00:00",
-  "source_locator": "lines 23-30",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:ALW82982.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], PROTEIN SEQUENCE OF 14-26 AND 149-156,\nRP   FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=26715562; DOI=10.1007/s00425-015-2446-6;\nRA   Geissler M., Burghard M., Volk J., Staniek A., Warzecha H.;\nRT   \"A novel cinnamyl alcohol dehydrogenase (CAD)-like reductase contributes to\nRT   the structural diversity of monoterpenoid indole alkaloids in Rauvolfia.\";\nRL   Planta 243:813-824(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:25.840272+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
+  "url": "https://rest.uniprot.org/unisave/A0A0U4BHM2?format=txt&versions=30"
 }
 ```
 
@@ -741,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0U4BHM2?format=txt&versions=30",
-  "source_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
-  "retrieved_utc": "2026-11-02T04:24:25.840272+00:00",
-  "source_locator": "lines 61-62",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis; ajmaline biosynthesis.\nCC       {ECO:0000269|PubMed:26715562}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:25.840272+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f1ca3ed3dfca81ae192adab6c5b2e6c70586c275e9a49b6b2913846785e88634",
+  "url": "https://rest.uniprot.org/unisave/A0A0U4BHM2?format=txt&versions=30"
 }
 ```
 

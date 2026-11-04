@@ -1,18 +1,16 @@
-# active_site_0085: before and after transfer clarification
+# active_site_0085
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0085.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0085.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 60 (Cysteine sulfenic acid (-SOH) intermediate)
+**Expected answer:** **C** — Position 60 (Cysteine sulfenic acid (-SOH) intermediate)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry G0S1P8, whose active-site annotation places a cysteine sulfenic-acid intermediate at position 60. The annotation is transferred by similarity from P38013 (ECO:0000250), so it supports the key but is not direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is 172 residues long, ruling out positions 341 and 959, and position 60 is a cysteine, making option C chemically plausible. But those facts alone do not establish that this cysteine is catalytic; position 151 is also within range, and the sequence input does not identify the enzyme family or provide a structure or homolog annotation.
-
-
-**Missing item-specific fact**
-
-> The mapping of this protein's catalytic function to Cys60—available from the protein-specific active-site annotation or homolog evidence—is needed to distinguish C from the remaining plausible choice.
-
-
-**Reason**
-
-> Selecting C requires protein-specific functional annotation or equivalent homology knowledge absent from the model input. Merely recognizing or retrieving the matching database entry would be lookup, not reasoning from the supplied sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched annotation supports C; the fact that the input alone does not establish the catalytic assignment is an answerability limitation, not evidence that another option is correct.
-
-
-### Important caveats
-
-- The current and archived UniProt records match the supplied sequence, but the annotation evidence is transferred from P38013 rather than independently verified here.
-- Reviewer-only accession and annotation evidence were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is 172 residues long, ruling out positions 341 and 959, and position 60 is a cysteine, making option C chemically plausible. But those facts alone do not establish that this cysteine is catalytic; position 151 is also within range, and the sequence input does not identify the enzyme family or provide a structure or homolog annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The mapping of this protein's catalytic function to Cys60—available from the protein-specific active-site annotation or homolog evidence—is needed to distinguish C from the remaining plausible choice.",
-    "reason": "Selecting C requires protein-specific functional annotation or equivalent homology knowledge absent from the model input. Merely recognizing or retrieving the matching database entry would be lookup, not reasoning from the supplied sequence."
-  },
-  "case_id": "active_site_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry G0S1P8, whose active-site annotation places a cysteine sulfenic-acid intermediate at position 60. The annotation is transferred by similarity from P38013 (ECO:0000250), so it supports the key but is not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The current and archived UniProt records match the supplied sequence, but the annotation evidence is transferred from P38013 rather than independently verified here.",
-    "Reviewer-only accession and annotation evidence were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation supports C; the fact that the input alone does not establish the catalytic assignment is an answerability limitation, not evidence that another option is correct."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry G0S1P8, whose active-site annotation places a cysteine sulfenic-acid intermediate at position 60. The annotation is transferred by similarity from P38013 (ECO:0000250), so it supports the key but is not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is 172 residues long, ruling out positions 341 and 959, and position 60 is a cysteine, making option C chemically plausible. But those facts alone do not establish that this cysteine is catalytic; position 151 is also within range, and the sequence input does not identify the enzyme family or provide a structure or homolog annotation.",
-    "missing_item_specific_fact": "The mapping of this protein's catalytic function to Cys60—available from the protein-specific active-site annotation or homolog evidence—is needed to distinguish C from the remaining plausible choice.",
-    "reason": "Selecting C requires protein-specific functional annotation or equivalent homology knowledge absent from the model input. Merely recognizing or retrieving the matching database entry would be lookup, not reasoning from the supplied sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation supports C; the fact that the input alone does not establish the catalytic assignment is an answerability limitation, not evidence that another option is correct."
-  },
-  "important_caveats": [
-    "The current and archived UniProt records match the supplied sequence, but the annotation evidence is transferred from P38013 rather than independently verified here.",
-    "Reviewer-only accession and annotation evidence were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry G0S1P8 (sequence SHA256 match, 172 AA) annotates position 60 as 'Cysteine sulfenic acid (-SOH) intermediate' active site (evidence C5, H2). The annotation evidence code is ECO:0000250 (inferred by similarity from P38013), making it a similarity-based annotation rather than direct experimental measurement. However, the protein is annotated as Peroxiredoxin AHP1 (EC 1.11.1.24), and the cysteine sulfenic acid intermediate mechanism is the well-established catalytic mechanism of peroxiredoxins. Position 60 in the supplied sequence is indeed a Cysteine (verified by counting), embedded in a TPTC context consistent with the peroxidatic cysteine motif.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Three reasoning steps distinguish the answer: (1) The sequence is only 172 residues, so positions 341 (A) and 959 (B) are physically impossible and can be eliminated by simple counting. (2) The sequence contains hallmark peroxiredoxin features: ~172 AA length, the conserved 'CGRPIEYNASEALAKGTSVLVAVPGAFTPTC' region with a TPTC motif at positions 57–60, and a second Cys at position 30 (resolving cysteine context). (3) The catalytic mechanism of peroxiredoxins universally involves a peroxidatic cysteine forming a sulfenic acid (-SOH) intermediate — this is general enzymology, not protein-specific memorization. Position 60 is a Cys in the TPTC context, matching the peroxidatic Cys. Position 151 is an Arg, which does not fit the peroxiredoxin catalytic mechanism.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The exact position number (60) can be confirmed by counting Cys residues in the TPTC motif from the supplied sequence. Recognizing the protein as a peroxiredoxin from sequence motifs and applying general peroxiredoxin biochemistry suffices.
-
-
-**Reason**
-
-> The question is answerable through: (a) trivial length-based elimination of impossible positions, (b) recognition of peroxiredoxin sequence motifs (TPTC, conserved Cys residues, ~170 AA length), and (c) general knowledge that peroxiredoxin catalysis proceeds through a cysteine sulfenic acid intermediate. The choice between C and D is resolved by knowing that the catalytic residue in peroxiredoxins is a cysteine (not an arginine) and that its mechanism involves sulfenic acid formation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choices A and B reference positions far exceeding the 172-residue sequence, making them trivially impossible. Choice D (position 151, Arg, 'proton acceptor') is inconsistent with peroxiredoxin catalytic chemistry. Only C is internally consistent with both the sequence content (Cys at 60 in TPTC motif) and peroxiredoxin mechanism.
-
-
-### Important caveats
-
-- The UniProt annotation for position 60 is ECO:0000250 (similarity-based inference from P38013, a yeast peroxiredoxin), not direct experimental evidence for this specific protein. However, the peroxiredoxin catalytic mechanism is extensively validated across the family.
-- The sequence identity of the protein (peroxiredoxin) is inferable from motifs but not explicitly stated in the question; a model unfamiliar with peroxiredoxin sequence signatures might struggle to choose between C and D without recognizing the fold.
-- The reviewer-only evidence was not available to the evaluated model; the reasoning chain described above relies only on the supplied sequence and general biochemistry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Three reasoning steps distinguish the answer: (1) The sequence is only 172 residues, so positions 341 (A) and 959 (B) are physically impossible and can be eliminated by simple counting. (2) The sequence contains hallmark peroxiredoxin features: ~172 AA length, the conserved 'CGRPIEYNASEALAKGTSVLVAVPGAFTPTC' region with a TPTC motif at positions 57–60, and a second Cys at position 30 (resolving cysteine context). (3) The catalytic mechanism of peroxiredoxins universally involves a peroxidatic cysteine forming a sulfenic acid (-SOH) intermediate — this is general enzymology, not protein-specific memorization. Position 60 is a Cys in the TPTC context, matching the peroxidatic Cys. Position 151 is an Arg, which does not fit the peroxiredoxin catalytic mechanism.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The exact position number (60) can be confirmed by counting Cys residues in the TPTC motif from the supplied sequence. Recognizing the protein as a peroxiredoxin from sequence motifs and applying general peroxiredoxin biochemistry suffices.",
-    "reason": "The question is answerable through: (a) trivial length-based elimination of impossible positions, (b) recognition of peroxiredoxin sequence motifs (TPTC, conserved Cys residues, ~170 AA length), and (c) general knowledge that peroxiredoxin catalysis proceeds through a cysteine sulfenic acid intermediate. The choice between C and D is resolved by knowing that the catalytic residue in peroxiredoxins is a cysteine (not an arginine) and that its mechanism involves sulfenic acid formation."
-  },
-  "case_id": "active_site_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry G0S1P8 (sequence SHA256 match, 172 AA) annotates position 60 as 'Cysteine sulfenic acid (-SOH) intermediate' active site (evidence C5, H2). The annotation evidence code is ECO:0000250 (inferred by similarity from P38013), making it a similarity-based annotation rather than direct experimental measurement. However, the protein is annotated as Peroxiredoxin AHP1 (EC 1.11.1.24), and the cysteine sulfenic acid intermediate mechanism is the well-established catalytic mechanism of peroxiredoxins. Position 60 in the supplied sequence is indeed a Cysteine (verified by counting), embedded in a TPTC context consistent with the peroxidatic cysteine motif."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 60 is ECO:0000250 (similarity-based inference from P38013, a yeast peroxiredoxin), not direct experimental evidence for this specific protein. However, the peroxiredoxin catalytic mechanism is extensively validated across the family.",
-    "The sequence identity of the protein (peroxiredoxin) is inferable from motifs but not explicitly stated in the question; a model unfamiliar with peroxiredoxin sequence signatures might struggle to choose between C and D without recognizing the fold.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning chain described above relies only on the supplied sequence and general biochemistry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A and B reference positions far exceeding the 172-residue sequence, making them trivially impossible. Choice D (position 151, Arg, 'proton acceptor') is inconsistent with peroxiredoxin catalytic chemistry. Only C is internally consistent with both the sequence content (Cys at 60 in TPTC motif) and peroxiredoxin mechanism."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry G0S1P8 (sequence SHA256 match, 172 AA) annotates position 60 as 'Cysteine sulfenic acid (-SOH) intermediate' active site (evidence C5, H2). The annotation evidence code is ECO:0000250 (inferred by similarity from P38013), making it a similarity-based annotation rather than direct experimental measurement. However, the protein is annotated as Peroxiredoxin AHP1 (EC 1.11.1.24), and the cysteine sulfenic acid intermediate mechanism is the well-established catalytic mechanism of peroxiredoxins. Position 60 in the supplied sequence is indeed a Cysteine (verified by counting), embedded in a TPTC context consistent with the peroxidatic cysteine motif.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Three reasoning steps distinguish the answer: (1) The sequence is only 172 residues, so positions 341 (A) and 959 (B) are physically impossible and can be eliminated by simple counting. (2) The sequence contains hallmark peroxiredoxin features: ~172 AA length, the conserved 'CGRPIEYNASEALAKGTSVLVAVPGAFTPTC' region with a TPTC motif at positions 57–60, and a second Cys at position 30 (resolving cysteine context). (3) The catalytic mechanism of peroxiredoxins universally involves a peroxidatic cysteine forming a sulfenic acid (-SOH) intermediate — this is general enzymology, not protein-specific memorization. Position 60 is a Cys in the TPTC context, matching the peroxidatic Cys. Position 151 is an Arg, which does not fit the peroxiredoxin catalytic mechanism.",
-    "missing_item_specific_fact": "None strictly required. The exact position number (60) can be confirmed by counting Cys residues in the TPTC motif from the supplied sequence. Recognizing the protein as a peroxiredoxin from sequence motifs and applying general peroxiredoxin biochemistry suffices.",
-    "reason": "The question is answerable through: (a) trivial length-based elimination of impossible positions, (b) recognition of peroxiredoxin sequence motifs (TPTC, conserved Cys residues, ~170 AA length), and (c) general knowledge that peroxiredoxin catalysis proceeds through a cysteine sulfenic acid intermediate. The choice between C and D is resolved by knowing that the catalytic residue in peroxiredoxins is a cysteine (not an arginine) and that its mechanism involves sulfenic acid formation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A and B reference positions far exceeding the 172-residue sequence, making them trivially impossible. Choice D (position 151, Arg, 'proton acceptor') is inconsistent with peroxiredoxin catalytic chemistry. Only C is internally consistent with both the sequence content (Cys at 60 in TPTC motif) and peroxiredoxin mechanism."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 60 is ECO:0000250 (similarity-based inference from P38013, a yeast peroxiredoxin), not direct experimental evidence for this specific protein. However, the peroxiredoxin catalytic mechanism is extensively validated across the family.",
-    "The sequence identity of the protein (peroxiredoxin) is inferable from motifs but not explicitly stated in the question; a model unfamiliar with peroxiredoxin sequence signatures might struggle to choose between C and D without recognizing the fold.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning chain described above relies only on the supplied sequence and general biochemistry."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -496,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G0S1P8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "192d7107c7c1fff1917cea3fb330c144082964f8d6c33e949126d604354b924b",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 172,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "192d7107c7c1fff1917cea3fb330c144082964f8d6c33e949126d604354b924b",
   "current_entry_audit": {
     "entryVersion": 56,
     "firstPublicDate": "2025-02-05",
@@ -527,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-10-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
-  "current_source_sequence_sha256": "192d7107c7c1fff1917cea3fb330c144082964f8d6c33e949126d604354b924b",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 172,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "192d7107c7c1fff1917cea3fb330c144082964f8d6c33e949126d604354b924b",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 54,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G0S1P8",
   "selected_historical_entry_version": 54,
+  "selected_historical_record_sha256": "ad6b8e635a2d1310f20d35c06db92e8909dc4cbae80b5fef229cdcd3da0ecf4f",
+  "selected_historical_source_sequence_length": 172,
+  "selected_historical_source_sequence_sha256": "192d7107c7c1fff1917cea3fb330c144082964f8d6c33e949126d604354b924b",
   "selected_historical_version": {
     "accession": "G0S1P8",
     "database": "Swiss-Prot",
@@ -545,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AHP1_CHATD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ad6b8e635a2d1310f20d35c06db92e8909dc4cbae80b5fef229cdcd3da0ecf4f",
-  "selected_historical_source_sequence_sha256": "192d7107c7c1fff1917cea3fb330c144082964f8d6c33e949126d604354b924b",
-  "selected_historical_source_sequence_length": 172,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 54,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -576,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json",
-  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
-  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G0S1P8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
+  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json"
 }
 ```
 
@@ -595,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json",
-  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
-  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":56,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-10-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
+  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json"
 }
 ```
 
@@ -614,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json",
-  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
-  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Chaetomium thermophilum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Thermochaetoides\"],\"scientificName\":\"Thermochaetoides thermophila (strain DSM 1495 / CBS 144.50 / DAOM 24625 / IMI 039719)\",\"taxonId\":759272}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
+  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json"
 }
 ```
 
@@ -633,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json",
-  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
-  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Alkyl hydroperoxide reductase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P38013\",\"source\":\"UniProtKB\"}],\"value\":\"1.11.1.24\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Peroxiredoxin AHP1\"},\"shortNames\":[{\"value\":\"Prx\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
+  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json"
 }
 ```
 
@@ -652,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json",
-  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
-  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Cysteine sulfenic acid (-SOH) intermediate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P38013\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":60},\"start\":{\"modifier\":\"EXACT\",\"value\":60}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:28:23.003674+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac59354270103a00640e3456b661297eaa89577d53f69bd751d7eb36a829cb5f",
+  "url": "https://rest.uniprot.org/uniprotkb/G0S1P8.json"
 }
 ```
 
@@ -670,18 +432,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0S1P8?format=txt&versions=54",
-  "source_sha256": "ad6b8e635a2d1310f20d35c06db92e8909dc4cbae80b5fef229cdcd3da0ecf4f",
-  "retrieved_utc": "2026-11-02T04:28:28.092103+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   AHP1_CHATD              Reviewed;         172 AA.\nAC   G0S1P8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-OCT-2011, sequence version 1.\nDT   28-JAN-2026, entry version 54.\nDE   RecName: Full=Peroxiredoxin AHP1 {ECO:0000305};\nDE            Short=Prx;\nDE            EC=1.11.1.24 {ECO:0000250|UniProtKB:P38013};\nDE   AltName: Full=Alkyl hydroperoxide reductase;\nGN   Name=AHP1; ORFNames=CTHT_0014370;\nOS   Chaetomium thermophilum (strain DSM 1495 / CBS 144.50 / IMI 039719)\nOS   (Thermochaetoides thermophila).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Thermochaetoides.\nOX   NCBI_TaxID=759272;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:28.092103+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ad6b8e635a2d1310f20d35c06db92e8909dc4cbae80b5fef229cdcd3da0ecf4f",
+  "url": "https://rest.uniprot.org/unisave/G0S1P8?format=txt&versions=54"
 }
 ```
 
@@ -691,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0S1P8?format=txt&versions=54",
-  "source_sha256": "ad6b8e635a2d1310f20d35c06db92e8909dc4cbae80b5fef229cdcd3da0ecf4f",
-  "retrieved_utc": "2026-11-02T04:28:28.092103+00:00",
-  "source_locator": "lines 136-138",
   "excerpt": "FT   ACT_SITE        60\nFT                   /note=\"Cysteine sulfenic acid (-SOH) intermediate\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P38013\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:28.092103+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 136-138",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ad6b8e635a2d1310f20d35c06db92e8909dc4cbae80b5fef229cdcd3da0ecf4f",
+  "url": "https://rest.uniprot.org/unisave/G0S1P8?format=txt&versions=54"
 }
 ```
 

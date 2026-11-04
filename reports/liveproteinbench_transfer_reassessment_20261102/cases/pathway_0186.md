@@ -1,18 +1,16 @@
-# pathway_0186: before and after transfer clarification
+# pathway_0186
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0186.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0186.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **D** — Secondary metabolite biosynthesis
+**Expected answer:** **D** — Secondary metabolite biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for fungal O-methyltransferase mfmE, annotated to secondary metabolite and terpenoid biosynthesis. The pathway annotation is linked to a publication with experimental evidence code ECO:0000269, though the underlying experiments were not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with an enzyme, but its sequence alone does not provide a defensible, pathway-specific distinction among the options; identifying its role in a particular fungal biosynthetic pathway requires protein-specific functional knowledge.
-
-
-**Missing item-specific fact**
-
-> That this specific protein, mfmE, is an O-methyltransferase in secondary-metabolite/terpenoid biosynthesis.
-
-
-**Reason**
-
-> The sequence was provided without organism or pathway context, and general sequence-level reasoning does not establish this enzyme's particular pathway. The matching annotation supports the key as reviewer evidence, but was not available in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports D; no supplied evidence supports another option. The input alone, however, does not distinguish D reliably.
-
-
-### Important caveats
-
-- The sequence matches the referenced UniProt record, but the author's exact source snapshot is unknown.
-- The accession, organism, and pathway annotation are reviewer-only information, not information supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, but its sequence alone does not provide a defensible, pathway-specific distinction among the options; identifying its role in a particular fungal biosynthetic pathway requires protein-specific functional knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this specific protein, mfmE, is an O-methyltransferase in secondary-metabolite/terpenoid biosynthesis.",
-    "reason": "The sequence was provided without organism or pathway context, and general sequence-level reasoning does not establish this enzyme's particular pathway. The matching annotation supports the key as reviewer evidence, but was not available in the question."
-  },
-  "case_id": "pathway_0186",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for fungal O-methyltransferase mfmE, annotated to secondary metabolite and terpenoid biosynthesis. The pathway annotation is linked to a publication with experimental evidence code ECO:0000269, though the underlying experiments were not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence matches the referenced UniProt record, but the author's exact source snapshot is unknown.",
-    "The accession, organism, and pathway annotation are reviewer-only information, not information supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports D; no supplied evidence supports another option. The input alone, however, does not distinguish D reliably."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0186",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for fungal O-methyltransferase mfmE, annotated to secondary metabolite and terpenoid biosynthesis. The pathway annotation is linked to a publication with experimental evidence code ECO:0000269, though the underlying experiments were not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, but its sequence alone does not provide a defensible, pathway-specific distinction among the options; identifying its role in a particular fungal biosynthetic pathway requires protein-specific functional knowledge.",
-    "missing_item_specific_fact": "That this specific protein, mfmE, is an O-methyltransferase in secondary-metabolite/terpenoid biosynthesis.",
-    "reason": "The sequence was provided without organism or pathway context, and general sequence-level reasoning does not establish this enzyme's particular pathway. The matching annotation supports the key as reviewer evidence, but was not available in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports D; no supplied evidence supports another option. The input alone, however, does not distinguish D reliably."
-  },
-  "important_caveats": [
-    "The sequence matches the referenced UniProt record, but the author's exact source snapshot is unknown.",
-    "The accession, organism, and pathway annotation are reviewer-only information, not information supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry P9WEG4 (sequence matched, 401 aa) annotates this protein as O-methyltransferase mfmE, a member of the 11'-O-desmethylfendlerol biosynthesis cluster in the fungus Annulohypoxylon moriforme. The pathway comment reads 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:38404388, Yan & Matsuda, Chem. Sci. 2024). The expected answer D is directly supported by experimental annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the canonical SAM-dependent methyltransferase motif 'GGNIGHDIE' (residues ~210-218), identifying the protein as a Class I (Rossmann-fold) O-methyltransferase. Among the four choices, methyltransferases are hallmark tailoring enzymes in secondary metabolite biosynthesis clusters (polyketide, terpenoid, NRPS hybrids), whereas cell wall degradation (A) requires glycosidases/cellulases, NAD(+) biosynthesis (B) requires phosphoribosyltransferases/aspartate oxidases, and L-leucine degradation (C) requires branched-chain dehydrogenases/carboxylases. None of those three pathways are primarily served by SAM-dependent methyltransferases. The methyltransferase identification thus meaningfully discriminates D from A, B, and C.
-
-
-**Missing item-specific fact**
-
-> The specific organism (a fungus) and the gene-cluster context (polyketide-terpenoid hybrid biosynthesis) are not provided in the question. Without knowing the protein is fungal, the methyltransferase-to-secondary-metabolite association is somewhat less airtight, since methyltransferases also participate in primary metabolism (e.g., phospholipid, DNA, or small-molecule methylation). However, the four provided options do not include a primary-metabolism methyltransferase pathway, so the discrimination among the given choices remains reasonable.
-
-
-**Reason**
-
-> The GGNIGHDIE motif is unambiguously present and identifies the enzyme class. The biological association between SAM-dependent methyltransferases and secondary metabolite biosynthesis (especially in fungi) is well-established general knowledge. The other three options invoke enzyme classes (glycosidases, phosphoribosyltransferases, dehydrogenases) that are clearly inconsistent with a methyltransferase fold. This provides a concrete, sequence-grounded argument favoring D, even without knowing the exact organism or gene cluster.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The methyltransferase motif clearly excludes glycosidase-type (A), NAD-biosynthetic (B), and BCAA-degradation (C) enzymes. While methyltransferases can serve primary metabolic roles, none of the other three listed pathways are methyltransferase-centric, so D is the only defensible choice among the four.
-
-
-### Important caveats
-
-- The question does not state the organism. The strong fungal secondary-metabolite-methyltransferase link is general knowledge but the specific gene-cluster context (polyketide-terpenoid hybrid, Annulohypoxylon moriforme) is not derivable from the sequence alone.
-- The UniProt annotation carries experimental evidence (ECO:0000269) from a 2024 publication, so the pathway assignment is experimentally grounded, not merely computational.
-- The entry was first public 2025-04-09; the author data-construction date is unknown. If the benchmark was assembled before that date, the annotation may have been derived from the primary paper independently.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the canonical SAM-dependent methyltransferase motif 'GGNIGHDIE' (residues ~210-218), identifying the protein as a Class I (Rossmann-fold) O-methyltransferase. Among the four choices, methyltransferases are hallmark tailoring enzymes in secondary metabolite biosynthesis clusters (polyketide, terpenoid, NRPS hybrids), whereas cell wall degradation (A) requires glycosidases/cellulases, NAD(+) biosynthesis (B) requires phosphoribosyltransferases/aspartate oxidases, and L-leucine degradation (C) requires branched-chain dehydrogenases/carboxylases. None of those three pathways are primarily served by SAM-dependent methyltransferases. The methyltransferase identification thus meaningfully discriminates D from A, B, and C.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific organism (a fungus) and the gene-cluster context (polyketide-terpenoid hybrid biosynthesis) are not provided in the question. Without knowing the protein is fungal, the methyltransferase-to-secondary-metabolite association is somewhat less airtight, since methyltransferases also participate in primary metabolism (e.g., phospholipid, DNA, or small-molecule methylation). However, the four provided options do not include a primary-metabolism methyltransferase pathway, so the discrimination among the given choices remains reasonable.",
-    "reason": "The GGNIGHDIE motif is unambiguously present and identifies the enzyme class. The biological association between SAM-dependent methyltransferases and secondary metabolite biosynthesis (especially in fungi) is well-established general knowledge. The other three options invoke enzyme classes (glycosidases, phosphoribosyltransferases, dehydrogenases) that are clearly inconsistent with a methyltransferase fold. This provides a concrete, sequence-grounded argument favoring D, even without knowing the exact organism or gene cluster."
-  },
-  "case_id": "pathway_0186",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry P9WEG4 (sequence matched, 401 aa) annotates this protein as O-methyltransferase mfmE, a member of the 11'-O-desmethylfendlerol biosynthesis cluster in the fungus Annulohypoxylon moriforme. The pathway comment reads 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:38404388, Yan & Matsuda, Chem. Sci. 2024). The expected answer D is directly supported by experimental annotation."
-  },
-  "important_caveats": [
-    "The question does not state the organism. The strong fungal secondary-metabolite-methyltransferase link is general knowledge but the specific gene-cluster context (polyketide-terpenoid hybrid, Annulohypoxylon moriforme) is not derivable from the sequence alone.",
-    "The UniProt annotation carries experimental evidence (ECO:0000269) from a 2024 publication, so the pathway assignment is experimentally grounded, not merely computational.",
-    "The entry was first public 2025-04-09; the author data-construction date is unknown. If the benchmark was assembled before that date, the annotation may have been derived from the primary paper independently."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The methyltransferase motif clearly excludes glycosidase-type (A), NAD-biosynthetic (B), and BCAA-degradation (C) enzymes. While methyltransferases can serve primary metabolic roles, none of the other three listed pathways are methyltransferase-centric, so D is the only defensible choice among the four."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0186",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry P9WEG4 (sequence matched, 401 aa) annotates this protein as O-methyltransferase mfmE, a member of the 11'-O-desmethylfendlerol biosynthesis cluster in the fungus Annulohypoxylon moriforme. The pathway comment reads 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:38404388, Yan & Matsuda, Chem. Sci. 2024). The expected answer D is directly supported by experimental annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the canonical SAM-dependent methyltransferase motif 'GGNIGHDIE' (residues ~210-218), identifying the protein as a Class I (Rossmann-fold) O-methyltransferase. Among the four choices, methyltransferases are hallmark tailoring enzymes in secondary metabolite biosynthesis clusters (polyketide, terpenoid, NRPS hybrids), whereas cell wall degradation (A) requires glycosidases/cellulases, NAD(+) biosynthesis (B) requires phosphoribosyltransferases/aspartate oxidases, and L-leucine degradation (C) requires branched-chain dehydrogenases/carboxylases. None of those three pathways are primarily served by SAM-dependent methyltransferases. The methyltransferase identification thus meaningfully discriminates D from A, B, and C.",
-    "missing_item_specific_fact": "The specific organism (a fungus) and the gene-cluster context (polyketide-terpenoid hybrid biosynthesis) are not provided in the question. Without knowing the protein is fungal, the methyltransferase-to-secondary-metabolite association is somewhat less airtight, since methyltransferases also participate in primary metabolism (e.g., phospholipid, DNA, or small-molecule methylation). However, the four provided options do not include a primary-metabolism methyltransferase pathway, so the discrimination among the given choices remains reasonable.",
-    "reason": "The GGNIGHDIE motif is unambiguously present and identifies the enzyme class. The biological association between SAM-dependent methyltransferases and secondary metabolite biosynthesis (especially in fungi) is well-established general knowledge. The other three options invoke enzyme classes (glycosidases, phosphoribosyltransferases, dehydrogenases) that are clearly inconsistent with a methyltransferase fold. This provides a concrete, sequence-grounded argument favoring D, even without knowing the exact organism or gene cluster."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The methyltransferase motif clearly excludes glycosidase-type (A), NAD-biosynthetic (B), and BCAA-degradation (C) enzymes. While methyltransferases can serve primary metabolic roles, none of the other three listed pathways are methyltransferase-centric, so D is the only defensible choice among the four."
-  },
-  "important_caveats": [
-    "The question does not state the organism. The strong fungal secondary-metabolite-methyltransferase link is general knowledge but the specific gene-cluster context (polyketide-terpenoid hybrid, Annulohypoxylon moriforme) is not derivable from the sequence alone.",
-    "The UniProt annotation carries experimental evidence (ECO:0000269) from a 2024 publication, so the pathway assignment is experimentally grounded, not merely computational.",
-    "The entry was first public 2025-04-09; the author data-construction date is unknown. If the benchmark was assembled before that date, the annotation may have been derived from the primary paper independently."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P9WEG4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6cfc09707733a1f9780ef66f5d2b1f440e910de12814b5aee6608c39d7f1d918",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 401,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6cfc09707733a1f9780ef66f5d2b1f440e910de12814b5aee6608c39d7f1d918",
   "current_entry_audit": {
     "entryVersion": 5,
     "firstPublicDate": "2025-04-09",
@@ -537,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-04-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
-  "current_source_sequence_sha256": "6cfc09707733a1f9780ef66f5d2b1f440e910de12814b5aee6608c39d7f1d918",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 401,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6cfc09707733a1f9780ef66f5d2b1f440e910de12814b5aee6608c39d7f1d918",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 3,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P9WEG4",
   "selected_historical_entry_version": 3,
+  "selected_historical_record_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
+  "selected_historical_source_sequence_length": 401,
+  "selected_historical_source_sequence_sha256": "6cfc09707733a1f9780ef66f5d2b1f440e910de12814b5aee6608c39d7f1d918",
   "selected_historical_version": {
     "accession": "P9WEG4",
     "database": "Swiss-Prot",
@@ -555,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MFME_ANNMO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
-  "selected_historical_source_sequence_sha256": "6cfc09707733a1f9780ef66f5d2b1f440e910de12814b5aee6608c39d7f1d918",
-  "selected_historical_source_sequence_length": 401,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 3,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json",
-  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
-  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P9WEG4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json"
 }
 ```
 
@@ -605,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json",
-  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
-  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":5,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-04-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json"
 }
 ```
 
@@ -624,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json",
-  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
-  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Filamentous fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Xylariomycetidae\",\"Xylariales\",\"Hypoxylaceae\",\"Annulohypoxylon\"],\"scientificName\":\"Annulohypoxylon moriforme\",\"synonyms\":[\"Hypoxylon moriforme\"],\"taxonId\":326622}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json"
 }
 ```
 
@@ -643,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json",
-  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
-  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"11'-O-desmethylfendlerol biosynthesis cluster protein E\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"O-methyltransferase mfmE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json"
 }
 ```
 
@@ -662,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json",
-  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
-  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json"
 }
 ```
 
@@ -681,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json",
-  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
-  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yan D.\",\"Matsuda Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38404388\"},{\"database\":\"DOI\",\"id\":\"10.1039/d3sc06001b\"}],\"citationType\":\"journal article\",\"firstPage\":\"3011\",\"id\":\"38404388\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"3017\",\"publicationDate\":\"2024\",\"title\":\"Global genome mining-driven discovery of an unusual biosynthetic logic for fungal polyketide-terpenoid hybrids.\",\"volume\":\"15\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"CBS 123579\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:13.696495+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "951c9805e3f5495465fa2073e5dc93713a74fafc14f052798e02ea80ac79b432",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG4.json"
 }
 ```
 
@@ -699,18 +458,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEG4?format=txt&versions=3",
-  "source_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
-  "retrieved_utc": "2026-11-02T04:30:15.434880+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   MFME_ANNMO              Reviewed;         401 AA.\nAC   P9WEG4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-APR-2025, sequence version 1.\nDT   28-JAN-2026, entry version 3.\nDE   RecName: Full=O-methyltransferase mfmE {ECO:0000303|PubMed:38404388};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:38404388};\nDE   AltName: Full=11'-O-desmethylfendlerol biosynthesis cluster protein E {ECO:0000303|PubMed:38404388};\nGN   Name=mfmE {ECO:0000303|PubMed:38404388}; ORFNames=F4805DRAFT_462788;\nOS   Annulohypoxylon moriforme (Filamentous fungus) (Hypoxylon moriforme).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Xylariomycetidae; Xylariales; Hypoxylaceae; Annulohypoxylon.\nOX   NCBI_TaxID=326622;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:15.434880+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
+  "url": "https://rest.uniprot.org/unisave/P9WEG4?format=txt&versions=3"
 }
 ```
 
@@ -720,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEG4?format=txt&versions=3",
-  "source_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
-  "retrieved_utc": "2026-11-02T04:30:15.434880+00:00",
-  "source_locator": "lines 28-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRC   STRAIN=CBS 123579;\nRX   PubMed=38404388; DOI=10.1039/d3sc06001b;\nRA   Yan D., Matsuda Y.;\nRT   \"Global genome mining-driven discovery of an unusual biosynthetic logic for\nRT   fungal polyketide-terpenoid hybrids.\";\nRL   Chem. Sci. 15:3011-3017(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:15.434880+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
+  "url": "https://rest.uniprot.org/unisave/P9WEG4?format=txt&versions=3"
 }
 ```
 
@@ -741,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEG4?format=txt&versions=3",
-  "source_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
-  "retrieved_utc": "2026-11-02T04:30:15.434880+00:00",
-  "source_locator": "lines 56-57",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:38404388}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:15.434880+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ab50f7c37654fa60bf5b1d59b32a4688ea73cf2b9ee5ef208bcd560c1a433116",
+  "url": "https://rest.uniprot.org/unisave/P9WEG4?format=txt&versions=3"
 }
 ```
 

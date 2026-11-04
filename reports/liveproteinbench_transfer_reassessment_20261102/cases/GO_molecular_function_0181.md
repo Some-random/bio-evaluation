@@ -1,18 +1,16 @@
-# GO_molecular_function_0181: before and after transfer clarification
+# GO_molecular_function_0181
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0181.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0181.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **B** — metal ion binding
+**Expected answer:** **B** — metal ion binding
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-sequence-matched UniProt entry annotates metal ion binding (GO:0046872), but the annotation is IEA:UniProtKB-KW, a computational keyword-based annotation rather than direct experimental evidence. The reported structure in a complex with Mg2+ does not by itself establish functional metal binding.
-
-Citations as saved: [C7](#evidence-c7), [H7](#evidence-h7), [C10](#evidence-c10), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a small, helical regulatory protein, but it does not provide a clear sequence-based argument that distinguishes metal-ion binding from the other listed activities.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific GO annotation linking this protein to metal ion binding; the supplied input does not identify the protein or provide that annotation.
-
-
-**Reason**
-
-> The key is supported by a protein-specific database annotation, not by a sufficiently discriminating biological inference from the sequence and choices alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> No other listed option has comparable support in the supplied evidence. However, the protein's reported DNA- and RNA-binding regulatory functions are absent from the choices, and metal ion binding is supported here by a computational annotation rather than direct functional evidence.
-
-
-### Important caveats
-
-- The exact sequence matches the UniProt entry for phage Aca2 repressor.
-- UniProt reports DNA and RNA binding in the protein's regulatory function, with experimental evidence codes; those activities are not offered as choices.
-- The author source snapshot is unknown, and the reviewer evidence does not establish that the author's key came from the same annotation snapshot.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a small, helical regulatory protein, but it does not provide a clear sequence-based argument that distinguishes metal-ion binding from the other listed activities.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific GO annotation linking this protein to metal ion binding; the supplied input does not identify the protein or provide that annotation.",
-    "reason": "The key is supported by a protein-specific database annotation, not by a sufficiently discriminating biological inference from the sequence and choices alone."
-  },
-  "case_id": "GO_molecular_function_0181",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "H7",
-      "C10",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-sequence-matched UniProt entry annotates metal ion binding (GO:0046872), but the annotation is IEA:UniProtKB-KW, a computational keyword-based annotation rather than direct experimental evidence. The reported structure in a complex with Mg2+ does not by itself establish functional metal binding."
-  },
-  "important_caveats": [
-    "The exact sequence matches the UniProt entry for phage Aca2 repressor.",
-    "UniProt reports DNA and RNA binding in the protein's regulatory function, with experimental evidence codes; those activities are not offered as choices.",
-    "The author source snapshot is unknown, and the reviewer evidence does not establish that the author's key came from the same annotation snapshot."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No other listed option has comparable support in the supplied evidence. However, the protein's reported DNA- and RNA-binding regulatory functions are absent from the choices, and metal ion binding is supported here by a computational annotation rather than direct functional evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0181",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-sequence-matched UniProt entry annotates metal ion binding (GO:0046872), but the annotation is IEA:UniProtKB-KW, a computational keyword-based annotation rather than direct experimental evidence. The reported structure in a complex with Mg2+ does not by itself establish functional metal binding.",
-    "evidence_ids": ["C7", "H7", "C10", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a small, helical regulatory protein, but it does not provide a clear sequence-based argument that distinguishes metal-ion binding from the other listed activities.",
-    "missing_item_specific_fact": "The sequence-specific GO annotation linking this protein to metal ion binding; the supplied input does not identify the protein or provide that annotation.",
-    "reason": "The key is supported by a protein-specific database annotation, not by a sufficiently discriminating biological inference from the sequence and choices alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No other listed option has comparable support in the supplied evidence. However, the protein's reported DNA- and RNA-binding regulatory functions are absent from the choices, and metal ion binding is supported here by a computational annotation rather than direct functional evidence."
-  },
-  "important_caveats": [
-    "The exact sequence matches the UniProt entry for phage Aca2 repressor.",
-    "UniProt reports DNA and RNA binding in the protein's regulatory function, with experimental evidence codes; those activities are not offered as choices.",
-    "The author source snapshot is unknown, and the reviewer evidence does not establish that the author's key came from the same annotation snapshot."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> GO:0046872 (metal ion binding) is annotated for H9C180 (C7/H7, evidence code IEA:UniProtKB-KW). More importantly, experimental evidence exists: X-ray crystallography at 1.31 Å in complex with Mg(2+) (PDB 7VJO, 7VJP; PubMed:34756887; C10/H3) confirms metal ion binding. The other three options (ADP binding, sodium channel inhibitor activity, carboxylesterase activity) have no annotation or experimental support for this bacteriophage Aca2 repressor. Note: the protein's primary molecular function is DNA/RNA binding as a transcriptional repressor (C5/H5), but neither is offered among the choices; among the four options, metal ion binding is the only one with any support.
-
-Citations as saved: [C7](#evidence-c7), [H7](#evidence-h7), [C10](#evidence-c10), [H3](#evidence-h3), [C5](#evidence-c5), [H5](#evidence-h5), [C6](#evidence-c6), [H6](#evidence-h6), [C8](#evidence-c8), [H8](#evidence-h8).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The three distractors can be eliminated through general biological reasoning applied to the sequence: (A) No nucleotide-binding motifs (Walker A/B, Rossmann-fold signatures) are present in this 116-aa sequence, making ADP binding implausible. (C) Sodium channel inhibitor activity is a function characteristic of animal-derived peptide toxins (conotoxins, scorpion toxins) with disulfide-rich scaffolds; this short phage protein lacks such features. (D) Carboxylesterases require a catalytic Ser-His-Asp triad and a GxSxG nucleophile elbow motif, neither of which is identifiable in this sequence. By elimination, metal ion binding—the most generic molecular-function annotation—is the only remaining plausible option. The Mg²⁺ coordination observed in the crystal structure (PDB 7VJO/7VJP) is consistent with a protein that has multiple His, Asp, and Glu residues capable of metal coordination.
-
-
-**Missing item-specific fact**
-
-> The specific identification of Mg²⁺ binding at the structural level (which residues coordinate it, the coordination geometry) was determined by X-ray crystallography and is not directly readable from the linear sequence without structural prediction. However, the elimination strategy for the distractors is feasible from sequence and general knowledge.
-
-
-**Reason**
-
-> A model can reason through elimination: the sequence lacks motifs for ADP binding, sodium channel inhibition, or esterase catalysis. Metal ion binding is a sufficiently generic annotation that survives elimination. The positive identification is weak (many proteins bind metals), but the question is answerable by ruling out the three clearly inappropriate options using general biological knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only option B (metal ion binding) has any GO annotation or experimental support for this protein. The other three options are clearly inappropriate for a bacteriophage repressor protein. Although the true primary molecular function (DNA binding / RNA binding) is not among the choices, among the four offered options, B is unambiguously the only defensible answer.
-
-
-### Important caveats
-
-- The GO annotation for metal ion binding (GO:0046872) carries evidence code IEA:UniProtKB-KW (Inferred from Electronic Annotation), not a direct experimental GO annotation. However, independent experimental evidence (X-ray crystallography with Mg²⁺, PDB 7VJO/7VJP) supports the metal-binding claim.
-- The protein's primary molecular function is DNA binding (transcriptional repressor) and RNA binding, neither of which is offered as a choice. The question asks for 'primary molecular function' but the correct answer is a secondary/cofactor function. This is a design limitation of the distractor set rather than an error in the key.
-- The UniProt accession H9C180 and protein identity were not provided to the evaluated model; the model must work from the 116-aa sequence alone.
-- The sequence was first released in 2012 (sequence version 1) but the Swiss-Prot entry was only created in February 2025; the author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The three distractors can be eliminated through general biological reasoning applied to the sequence: (A) No nucleotide-binding motifs (Walker A/B, Rossmann-fold signatures) are present in this 116-aa sequence, making ADP binding implausible. (C) Sodium channel inhibitor activity is a function characteristic of animal-derived peptide toxins (conotoxins, scorpion toxins) with disulfide-rich scaffolds; this short phage protein lacks such features. (D) Carboxylesterases require a catalytic Ser-His-Asp triad and a GxSxG nucleophile elbow motif, neither of which is identifiable in this sequence. By elimination, metal ion binding—the most generic molecular-function annotation—is the only remaining plausible option. The Mg²⁺ coordination observed in the crystal structure (PDB 7VJO/7VJP) is consistent with a protein that has multiple His, Asp, and Glu residues capable of metal coordination.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific identification of Mg²⁺ binding at the structural level (which residues coordinate it, the coordination geometry) was determined by X-ray crystallography and is not directly readable from the linear sequence without structural prediction. However, the elimination strategy for the distractors is feasible from sequence and general knowledge.",
-    "reason": "A model can reason through elimination: the sequence lacks motifs for ADP binding, sodium channel inhibition, or esterase catalysis. Metal ion binding is a sufficiently generic annotation that survives elimination. The positive identification is weak (many proteins bind metals), but the question is answerable by ruling out the three clearly inappropriate options using general biological knowledge."
-  },
-  "case_id": "GO_molecular_function_0181",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "H7",
-      "C10",
-      "H3",
-      "C5",
-      "H5",
-      "C6",
-      "H6",
-      "C8",
-      "H8"
-    ],
-    "judgment": "supported",
-    "reason": "GO:0046872 (metal ion binding) is annotated for H9C180 (C7/H7, evidence code IEA:UniProtKB-KW). More importantly, experimental evidence exists: X-ray crystallography at 1.31 Å in complex with Mg(2+) (PDB 7VJO, 7VJP; PubMed:34756887; C10/H3) confirms metal ion binding. The other three options (ADP binding, sodium channel inhibitor activity, carboxylesterase activity) have no annotation or experimental support for this bacteriophage Aca2 repressor. Note: the protein's primary molecular function is DNA/RNA binding as a transcriptional repressor (C5/H5), but neither is offered among the choices; among the four options, metal ion binding is the only one with any support."
-  },
-  "important_caveats": [
-    "The GO annotation for metal ion binding (GO:0046872) carries evidence code IEA:UniProtKB-KW (Inferred from Electronic Annotation), not a direct experimental GO annotation. However, independent experimental evidence (X-ray crystallography with Mg²⁺, PDB 7VJO/7VJP) supports the metal-binding claim.",
-    "The protein's primary molecular function is DNA binding (transcriptional repressor) and RNA binding, neither of which is offered as a choice. The question asks for 'primary molecular function' but the correct answer is a secondary/cofactor function. This is a design limitation of the distractor set rather than an error in the key.",
-    "The UniProt accession H9C180 and protein identity were not provided to the evaluated model; the model must work from the 116-aa sequence alone.",
-    "The sequence was first released in 2012 (sequence version 1) but the Swiss-Prot entry was only created in February 2025; the author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option B (metal ion binding) has any GO annotation or experimental support for this protein. The other three options are clearly inappropriate for a bacteriophage repressor protein. Although the true primary molecular function (DNA binding / RNA binding) is not among the choices, among the four offered options, B is unambiguously the only defensible answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0181",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "GO:0046872 (metal ion binding) is annotated for H9C180 (C7/H7, evidence code IEA:UniProtKB-KW). More importantly, experimental evidence exists: X-ray crystallography at 1.31 Å in complex with Mg(2+) (PDB 7VJO, 7VJP; PubMed:34756887; C10/H3) confirms metal ion binding. The other three options (ADP binding, sodium channel inhibitor activity, carboxylesterase activity) have no annotation or experimental support for this bacteriophage Aca2 repressor. Note: the protein's primary molecular function is DNA/RNA binding as a transcriptional repressor (C5/H5), but neither is offered among the choices; among the four options, metal ion binding is the only one with any support.",
-    "evidence_ids": ["C7", "H7", "C10", "H3", "C5", "H5", "C6", "H6", "C8", "H8"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The three distractors can be eliminated through general biological reasoning applied to the sequence: (A) No nucleotide-binding motifs (Walker A/B, Rossmann-fold signatures) are present in this 116-aa sequence, making ADP binding implausible. (C) Sodium channel inhibitor activity is a function characteristic of animal-derived peptide toxins (conotoxins, scorpion toxins) with disulfide-rich scaffolds; this short phage protein lacks such features. (D) Carboxylesterases require a catalytic Ser-His-Asp triad and a GxSxG nucleophile elbow motif, neither of which is identifiable in this sequence. By elimination, metal ion binding—the most generic molecular-function annotation—is the only remaining plausible option. The Mg²⁺ coordination observed in the crystal structure (PDB 7VJO/7VJP) is consistent with a protein that has multiple His, Asp, and Glu residues capable of metal coordination.",
-    "missing_item_specific_fact": "The specific identification of Mg²⁺ binding at the structural level (which residues coordinate it, the coordination geometry) was determined by X-ray crystallography and is not directly readable from the linear sequence without structural prediction. However, the elimination strategy for the distractors is feasible from sequence and general knowledge.",
-    "reason": "A model can reason through elimination: the sequence lacks motifs for ADP binding, sodium channel inhibition, or esterase catalysis. Metal ion binding is a sufficiently generic annotation that survives elimination. The positive identification is weak (many proteins bind metals), but the question is answerable by ruling out the three clearly inappropriate options using general biological knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option B (metal ion binding) has any GO annotation or experimental support for this protein. The other three options are clearly inappropriate for a bacteriophage repressor protein. Although the true primary molecular function (DNA binding / RNA binding) is not among the choices, among the four offered options, B is unambiguously the only defensible answer."
-  },
-  "important_caveats": [
-    "The GO annotation for metal ion binding (GO:0046872) carries evidence code IEA:UniProtKB-KW (Inferred from Electronic Annotation), not a direct experimental GO annotation. However, independent experimental evidence (X-ray crystallography with Mg²⁺, PDB 7VJO/7VJP) supports the metal-binding claim.",
-    "The protein's primary molecular function is DNA binding (transcriptional repressor) and RNA binding, neither of which is offered as a choice. The question asks for 'primary molecular function' but the correct answer is a secondary/cofactor function. This is a design limitation of the distractor set rather than an error in the key.",
-    "The UniProt accession H9C180 and protein identity were not provided to the evaluated model; the model must work from the 116-aa sequence alone.",
-    "The sequence was first released in 2012 (sequence version 1) but the Swiss-Prot entry was only created in February 2025; the author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "H9C180",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "54d3ff73ff0c3b715a73ad8e414a47da4eccaddeb034918f99f730cb16a8aa1b",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 116,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "54d3ff73ff0c3b715a73ad8e414a47da4eccaddeb034918f99f730cb16a8aa1b",
   "current_entry_audit": {
     "entryVersion": 38,
     "firstPublicDate": "2025-02-05",
@@ -546,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-05-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "current_source_sequence_sha256": "54d3ff73ff0c3b715a73ad8e414a47da4eccaddeb034918f99f730cb16a8aa1b",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 116,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "54d3ff73ff0c3b715a73ad8e414a47da4eccaddeb034918f99f730cb16a8aa1b",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 36,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "H9C180",
   "selected_historical_entry_version": 36,
+  "selected_historical_record_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "selected_historical_source_sequence_length": 116,
+  "selected_historical_source_sequence_sha256": "54d3ff73ff0c3b715a73ad8e414a47da4eccaddeb034918f99f730cb16a8aa1b",
   "selected_historical_version": {
     "accession": "H9C180",
     "database": "Swiss-Prot",
@@ -564,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ACA2_BPZF4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "selected_historical_source_sequence_sha256": "54d3ff73ff0c3b715a73ad8e414a47da4eccaddeb034918f99f730cb16a8aa1b",
-  "selected_historical_source_sequence_length": 116,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 36,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -599,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"H9C180\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -618,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":38,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-05-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -637,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bacteriophage ZF40\",\"lineage\":[\"Viruses\",\"Duplodnaviria\",\"Heunggongvirae\",\"Uroviricota\",\"Caudoviricetes\",\"Marchandvirus\",\"Marchandvirus ZF40\"],\"scientificName\":\"Pectobacterium phage ZF40\",\"taxonId\":1127516}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -656,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Aca2 regulator\"}},{\"fullName\":{\"value\":\"Gene product 30\"},\"shortNames\":[{\"value\":\"Gp30\"}]}],\"recommendedName\":{\"fullName\":{\"value\":\"Aca2 repressor\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -675,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"31428783\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34756887\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38987591\",\"source\":\"PubMed\"}],\"value\":\"Represses the expression of the acrIF8-aca2 operon (PubMed:31428783, PubMed:34756887, PubMed:38987591). Regulates the transcription and translation of phage anti-CRISPR acrIF8 gene (AC H9C181), which is necessary because the expression of this gene rises rapidely upon infection to enable evasion from host CRISPR-Cas defense but is probably toxic to the host cell (PubMed:38987591). Aca2 repressor can inhibit acrIF8 transcriptionally through DNA binding to 2 inverted repeats in the promoter region and translationally by binding conserved RNA stem-loops on mRNAs thereby blocking ribosome access (PubMed:31428783, PubMed:38987591). Both modes of regulation together are essential for complete tight repression (PubMed:38987591)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -694,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0003677\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:DNA binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-KW\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -713,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/18",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0046872\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:metal ion binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-KW\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/18",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -732,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/19",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0003723\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:RNA binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-KW\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/19",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -751,15 +502,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Birkholz N.\",\"Fagerlund R.D.\",\"Smith L.M.\",\"Jackson S.A.\",\"Fineran P.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"31428783\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkz721\"}],\"citationType\":\"journal article\",\"firstPage\":\"9658\",\"id\":\"31428783\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"9665\",\"publicationDate\":\"2019\",\"title\":\"The autoregulator Aca2 mediates anti-CRISPR repression.\",\"volume\":\"47\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"SUBUNIT\",\"DNA-BINDING\",\"DOMAIN\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -770,15 +521,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu Y.\",\"Zhang L.\",\"Guo M.\",\"Chen L.\",\"Wu B.\",\"Huang H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34756887\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jbc.2021.101357\"}],\"citationType\":\"journal article\",\"firstPage\":\"101357\",\"id\":\"34756887\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"101357\",\"publicationDate\":\"2021\",\"title\":\"Structural basis for anti-CRISPR repression mediated by bacterial operon proteins Aca1 and Aca2.\",\"volume\":\"297\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VJO\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VJP\",\"source\":\"PDB\"}],\"referenceNumber\":3,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.31 ANGSTROMS) IN COMPLEX WITH MG(2+)\",\"FUNCTION\",\"SUBUNIT\",\"MUTAGENESIS OF ARG-30; GLN-33; TYR-34 AND ARG-39\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -789,15 +540,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json",
-  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
-  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Birkholz N.\",\"Kamata K.\",\"Feussner M.\",\"Wilkinson M.E.\",\"Cuba Samaniego C.\",\"Migur A.\",\"Kimanius D.\",\"Ceelen M.\",\"Went S.C.\",\"Usher B.\",\"Blower T.R.\",\"Brown C.M.\",\"Beisel C.L.\",\"Weinberg Z.\",\"Fagerlund R.D.\",\"Jackson S.A.\",\"Fineran P.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38987591\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-024-07644-1\"}],\"citationType\":\"journal article\",\"firstPage\":\"670\",\"id\":\"38987591\",\"journal\":\"Nature\",\"lastPage\":\"677\",\"publicationDate\":\"2024\",\"title\":\"Phage anti-CRISPR control by an RNA- and DNA-binding helix-turn-helix protein.\",\"volume\":\"631\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VJQ\",\"source\":\"PDB\"}],\"referenceNumber\":5,\"referencePositions\":[\"STRUCTURE BY ELECTRON MICROSCOPY (2.79 ANGSTROMS) OF 1-116\",\"FUNCTION\",\"DOMAIN\",\"MUTAGENESIS OF ARG-30 AND ASP-45\",\"DNA-BINDING\",\"RNA-BINDING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:28:50.058954+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "285227c3a72acb25f4c60860431676b8190e077de793bd8c3a516e23ad33855e",
+  "url": "https://rest.uniprot.org/uniprotkb/H9C180.json"
 }
 ```
 
@@ -807,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   ACA2_BPZF4              Reviewed;         116 AA.\nAC   H9C180;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-MAY-2012, sequence version 1.\nDT   28-JAN-2026, entry version 36.\nDE   RecName: Full=Aca2 repressor;\nDE   AltName: Full=Aca2 regulator;\nDE   AltName: Full=Gene product 30;\nDE            Short=Gp30;\nGN   ORFNames=ZF40_0030;\nOS   Pectobacterium phage ZF40 (Bacteriophage ZF40).\nOC   Viruses; Duplodnaviria; Heunggongvirae; Uroviricota; Caudoviricetes.\nOX   NCBI_TaxID=1127516;\nOH   NCBI_TaxID=554; Pectobacterium carotovorum (Erwinia carotovora).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -828,18 +579,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 23-28",
   "excerpt": "RN   [2]\nRP   FUNCTION, SUBUNIT, DNA-BINDING, AND DOMAIN.\nRX   PubMed=31428783; DOI=10.1093/nar/gkz721;\nRA   Birkholz N., Fagerlund R.D., Smith L.M., Jackson S.A., Fineran P.C.;\nRT   \"The autoregulator Aca2 mediates anti-CRISPR repression.\";\nRL   Nucleic Acids Res. 47:9658-9665(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-28",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -849,18 +600,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 29-36",
   "excerpt": "RN   [3] {ECO:0007744|PDB:7VJO, ECO:0007744|PDB:7VJP}\nRP   X-RAY CRYSTALLOGRAPHY (1.31 ANGSTROMS) IN COMPLEX WITH MG(2+), FUNCTION,\nRP   SUBUNIT, AND MUTAGENESIS OF ARG-30; GLN-33; TYR-34 AND ARG-39.\nRX   PubMed=34756887; DOI=10.1016/j.jbc.2021.101357;\nRA   Liu Y., Zhang L., Guo M., Chen L., Wu B., Huang H.;\nRT   \"Structural basis for anti-CRISPR repression mediated by bacterial operon\nRT   proteins Aca1 and Aca2.\";\nRL   J. Biol. Chem. 297:101357-101357(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -870,18 +621,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 44-54",
   "excerpt": "RN   [5] {ECO:0007744|PDB:7VJQ}\nRP   STRUCTURE BY ELECTRON MICROSCOPY (2.79 ANGSTROMS) OF 1-116, FUNCTION,\nRP   DOMAIN, MUTAGENESIS OF ARG-30 AND ASP-45, DNA-BINDING, AND RNA-BINDING.\nRX   PubMed=38987591; DOI=10.1038/s41586-024-07644-1;\nRA   Birkholz N., Kamata K., Feussner M., Wilkinson M.E., Cuba Samaniego C.,\nRA   Migur A., Kimanius D., Ceelen M., Went S.C., Usher B., Blower T.R.,\nRA   Brown C.M., Beisel C.L., Weinberg Z., Fagerlund R.D., Jackson S.A.,\nRA   Fineran P.C.;\nRT   \"Phage anti-CRISPR control by an RNA- and DNA-binding helix-turn-helix\nRT   protein.\";\nRL   Nature 631:670-677(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -891,18 +642,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 55-67",
   "excerpt": "CC   -!- FUNCTION: Represses the expression of the acrIF8-aca2 operon\nCC       (PubMed:31428783, PubMed:34756887, PubMed:38987591). Regulates the\nCC       transcription and translation of phage anti-CRISPR acrIF8 gene (AC\nCC       H9C181), which is necessary because the expression of this gene rises\nCC       rapidely upon infection to enable evasion from host CRISPR-Cas defense\nCC       but is probably toxic to the host cell (PubMed:38987591). Aca2\nCC       repressor can inhibit acrIF8 transcriptionally through DNA binding to 2\nCC       inverted repeats in the promoter region and translationally by binding\nCC       conserved RNA stem-loops on mRNAs thereby blocking ribosome access\nCC       (PubMed:31428783, PubMed:38987591). Both modes of regulation together\nCC       are essential for complete tight repression (PubMed:38987591).\nCC       {ECO:0000269|PubMed:31428783, ECO:0000269|PubMed:34756887,\nCC       ECO:0000269|PubMed:38987591}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 55-67",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -912,18 +663,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 96-96",
   "excerpt": "DR   GO; GO:0003677; F:DNA binding; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 96-96",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -933,18 +684,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 97-97",
   "excerpt": "DR   GO; GO:0046872; F:metal ion binding; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 97-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -954,18 +705,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36",
-  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
-  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
-  "source_locator": "lines 98-98",
   "excerpt": "DR   GO; GO:0003723; F:RNA binding; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:28:53.730440+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 98-98",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "478ec54da69150ad62dd5be94639444619dfc5ecf0d351b6812f572b1da1d146",
+  "url": "https://rest.uniprot.org/unisave/H9C180?format=txt&versions=36"
 }
 ```
 
@@ -976,15 +727,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 154099-154107",
   "excerpt": "[Term]\nid: GO:0019871\nname: sodium channel inhibitor activity\nnamespace: molecular_function\nalt_id: GO:0019868\ndef: \"Binds to and stops, prevents, or reduces the activity of a sodium channel.\" [GOC:mah]\nis_a: GO:0008200 ! ion channel inhibitor activity\nis_a: GO:0017080 ! sodium channel regulator activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019871",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 154099-154107",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019871"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -995,15 +746,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 248248-248257",
   "excerpt": "[Term]\nid: GO:0043531\nname: ADP binding\nnamespace: molecular_function\ndef: \"Binding to ADP, adenosine 5'-diphosphate.\" [GOC:jl]\nsynonym: \"adenosine 5'-diphosphate binding\" EXACT []\nsynonym: \"adenosine diphosphate binding\" EXACT []\nis_a: GO:0032559 ! adenyl ribonucleotide binding\nis_a: GO:0043168 ! anion binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043531",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 248248-248257",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043531"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1014,15 +765,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 281280-281292",
   "excerpt": "[Term]\nid: GO:0046872\nname: metal ion binding\nnamespace: molecular_function\ndef: \"Binding to a metal ion.\" [GOC:ai]\nsubset: goslim_agr\nsubset: goslim_drosophila\nsubset: goslim_flybase_ribbon\nsubset: goslim_metagenomics\nsynonym: \"heavy metal binding\" NARROW []\nsynonym: \"metal binding\" EXACT []\nis_a: GO:0043169 ! cation binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046872",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 281280-281292",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046872"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1033,15 +784,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 430643-430695",
   "excerpt": "[Term]\nid: GO:0106435\nname: carboxylesterase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: a carboxylic ester + H2O = a carboxylate + an alcohol + H+.\" [RHEA:21164]\ncomment: Note: This covers a broad range of specificity; also hydrolyzes vitamin A esters.\nsynonym: \"ali-esterase activity\" RELATED [EC:3.1.1.1]\nsynonym: \"alpha-carboxylesterase activity\" NARROW []\nsynonym: \"B-esterase activity\" NARROW [EC:3.1.1.1]\nsynonym: \"cocaine esterase\" NARROW [EC:3.1.1.1]\nsynonym: \"nonspecific carboxylesterase activity\" RELATED []\nsynonym: \"procaine esterase\" NARROW [] {comment=\"EC:3.1.1.1\"}\nsynonym: \"serine esterase activity\" NARROW []\nsynonym: \"triacetin esterase\" NARROW []\nsynonym: \"vitamin A esterase\" NARROW []\nxref: EC:3.1.1.1\nxref: MetaCyc:CARBOXYLESTERASE-RXN\nxref: Reactome:R-HSA-9619024 \"CES1 trimer hydrolyses ACEI pro-drugs to ACEIs\"\nxref: Reactome:R-HSA-9727567 \"CES1 hydrolyses sacubitril to sacubitrilat\"\nxref: Reactome:R-HSA-9749647 \"CES2 hydrolyzes ASA-\"\nxref: RHEA:21164\nxref: RHEA:31779\nxref: RHEA:38555\nxref: RHEA:47348\nxref: RHEA:47352\nxref: RHEA:47356\nxref: RHEA:47360\nxref: RHEA:47364\nxref: RHEA:47388\nxref: RHEA:47392\nxref: RHEA:50136\nxref: RHEA:50144\nxref: RHEA:50148\nxref: RHEA:59388\nxref: RHEA:63052\nis_a: GO:0052689 ! carboxylic ester hydrolase activity\nproperty_value: skos:exactMatch EC:3.1.1.1\nproperty_value: skos:exactMatch RHEA:21164\nproperty_value: skos:narrowMatch RHEA:31779\nproperty_value: skos:narrowMatch RHEA:38555\nproperty_value: skos:narrowMatch RHEA:47348\nproperty_value: skos:narrowMatch RHEA:47352\nproperty_value: skos:narrowMatch RHEA:47356\nproperty_value: skos:narrowMatch RHEA:47360\nproperty_value: skos:narrowMatch RHEA:47364\nproperty_value: skos:narrowMatch RHEA:47388\nproperty_value: skos:narrowMatch RHEA:47392\nproperty_value: skos:narrowMatch RHEA:50136\nproperty_value: skos:narrowMatch RHEA:50144\nproperty_value: skos:narrowMatch RHEA:50148\nproperty_value: skos:narrowMatch RHEA:59388\nproperty_value: skos:narrowMatch RHEA:63052\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0106435",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 430643-430695",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0106435"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

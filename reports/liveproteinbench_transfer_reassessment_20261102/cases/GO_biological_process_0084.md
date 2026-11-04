@@ -1,18 +1,16 @@
-# GO_biological_process_0084: before and after transfer clarification
+# GO_biological_process_0084
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0084.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0084.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — alpha-amino acid metabolic process
+**Expected answer:** **A** — alpha-amino acid metabolic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched protein is experimentally characterized as cysteate synthase, catalyzing formation of cysteate from O-phospho-L-serine and sulfite. This supports an amino-acid metabolic process, though the enzyme’s broader role is capnine biosynthesis and lipid metabolism; the exact option is broader than the annotation evidence.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a soluble enzyme, which makes a metabolic role more plausible than vesicle fusion or epigenetic regulation. But that general clue does not establish its substrate, reaction, or biological pathway, nor does it reliably distinguish the metabolic choice from the mechanical-stimulus choice.
-
-
-**Missing item-specific fact**
-
-> The protein-specific cysteate-synthase activity—formation of cysteate from O-phospho-L-serine and sulfite—and its role in capnine biosynthesis.
-
-
-**Reason**
-
-> Choosing A requires identifying the particular enzyme activity or relying on a protein-specific functional annotation. Neither that activity nor the pathway is provided in the question; recognizing the sequence or consulting an external annotation would supply the needed fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> A is supported by the amino-acid substrate and product of the characterized reaction. The other choices are not supported by the supplied sequence or the protein-specific evidence; the principal capnine/lipid pathway is not offered as an option.
-
-
-### Important caveats
-
-- The reviewed annotation reports experimental evidence for the enzyme function, while the serine-family amino-acid GO annotation is computationally assigned.
-- The evidence supports amino-acid metabolism but identifies capnine biosynthesis and lipid metabolism as the broader biological role; the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a soluble enzyme, which makes a metabolic role more plausible than vesicle fusion or epigenetic regulation. But that general clue does not establish its substrate, reaction, or biological pathway, nor does it reliably distinguish the metabolic choice from the mechanical-stimulus choice.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific cysteate-synthase activity—formation of cysteate from O-phospho-L-serine and sulfite—and its role in capnine biosynthesis.",
-    "reason": "Choosing A requires identifying the particular enzyme activity or relying on a protein-specific functional annotation. Neither that activity nor the pathway is provided in the question; recognizing the sequence or consulting an external annotation would supply the needed fact."
-  },
-  "case_id": "GO_biological_process_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched protein is experimentally characterized as cysteate synthase, catalyzing formation of cysteate from O-phospho-L-serine and sulfite. This supports an amino-acid metabolic process, though the enzyme’s broader role is capnine biosynthesis and lipid metabolism; the exact option is broader than the annotation evidence."
-  },
-  "important_caveats": [
-    "The reviewed annotation reports experimental evidence for the enzyme function, while the serine-family amino-acid GO annotation is computationally assigned.",
-    "The evidence supports amino-acid metabolism but identifies capnine biosynthesis and lipid metabolism as the broader biological role; the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "A is supported by the amino-acid substrate and product of the characterized reaction. The other choices are not supported by the supplied sequence or the protein-specific evidence; the principal capnine/lipid pathway is not offered as an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched protein is experimentally characterized as cysteate synthase, catalyzing formation of cysteate from O-phospho-L-serine and sulfite. This supports an amino-acid metabolic process, though the enzyme’s broader role is capnine biosynthesis and lipid metabolism; the exact option is broader than the annotation evidence.",
-    "evidence_ids": ["C4", "C5", "H3", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a soluble enzyme, which makes a metabolic role more plausible than vesicle fusion or epigenetic regulation. But that general clue does not establish its substrate, reaction, or biological pathway, nor does it reliably distinguish the metabolic choice from the mechanical-stimulus choice.",
-    "missing_item_specific_fact": "The protein-specific cysteate-synthase activity—formation of cysteate from O-phospho-L-serine and sulfite—and its role in capnine biosynthesis.",
-    "reason": "Choosing A requires identifying the particular enzyme activity or relying on a protein-specific functional annotation. Neither that activity nor the pathway is provided in the question; recognizing the sequence or consulting an external annotation would supply the needed fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "A is supported by the amino-acid substrate and product of the characterized reaction. The other choices are not supported by the supplied sequence or the protein-specific evidence; the principal capnine/lipid pathway is not offered as an option."
-  },
-  "important_caveats": [
-    "The reviewed annotation reports experimental evidence for the enzyme function, while the serine-family amino-acid GO annotation is computationally assigned.",
-    "The evidence supports amino-acid metabolism but identifies capnine biosynthesis and lipid metabolism as the broader biological role; the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is Cysteate synthase (EC 2.5.1.76), catalyzing O-phospho-L-serine + sulfite → cysteate. GO annotations include GO:0006534 (cysteine metabolic process) and GO:0009069 (serine family amino acid metabolic process), both children of alpha-amino acid metabolic process. The reaction chemistry is an amino acid metabolic transformation. While the broader biological context is sulfonolipid (capnine) biosynthesis (pathway: Lipid metabolism, GO:0006629), 'lipid metabolic process' is not among the options. Among the four choices, A is the only one consistent with the protein's enzymatic activity; B, C, D describe eukaryotic-specific processes incompatible with this bacterial enzyme. Note: the amino acid metabolic GO terms are IEA:UniProtKB-ARBA (computational inference), while the experimental evidence (PubMed:35414181) emphasizes the lipid biosynthesis context.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [H7](#evidence-h7), [H8](#evidence-h8).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the motif 'VVVCSGTGGTISG' (~positions 155-170), characteristic of PLP (pyridoxal-5'-phosphate) fold-type I enzymes. PLP-dependent enzymes are overwhelmingly involved in amino acid metabolism (transamination, decarboxylation, racemization, β-replacement). Additionally, options B (vesicle fusion to plasma membrane), C (negative regulation of gene expression, epigenetic), and D (response to mechanical stimulus) describe eukaryotic-specific processes (SNARE-mediated exocytosis, chromatin remodeling, mechanotransduction signaling) that are incompatible with a ~333-residue bacterial enzyme lacking any eukaryotic signaling or membrane-trafficking domains. By identifying the PLP-binding motif and eliminating eukaryotic-specific processes, a knowledgeable biologist can reason toward amino acid metabolic process.
-
-
-**Missing item-specific fact**
-
-> None strictly required. Precise identification of this enzyme as 'Cysteate synthase' requires database lookup, but the PLP-motif recognition and elimination of eukaryotic-specific options provide a defensible reasoning pathway to option A.
-
-
-**Reason**
-
-> The PLP-binding motif is identifiable from the sequence and strongly implicates amino acid metabolism. The three distractors are eukaryotic-specific processes, making elimination straightforward for any biologist familiar with basic cell biology and enzyme cofactor chemistry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B, C, and D describe processes (vesicle fusion, epigenetic gene silencing, mechanical stimulus response) that are fundamentally incompatible with a small bacterial enzyme bearing a PLP-binding motif. Only A is biologically plausible for this protein. No ambiguity exists among the choices.
-
-
-### Important caveats
-
-- The primary biological objective of this enzyme is sulfonolipid (capnine) biosynthesis (lipid metabolism), not amino acid metabolism per se. The amino acid metabolic GO terms (cysteine metabolic process, serine family amino acid metabolic process) are IEA:UniProtKB-ARBA computational annotations reflecting reaction chemistry, not the enzyme's primary biological role. However, since 'lipid metabolic process' is not an option, A remains the best available answer.
-- The PLP-binding motif identification is a reasonable inference but not definitive proof of amino acid metabolism; some PLP enzymes participate in other pathways. The reasoning is strengthened by elimination of the three eukaryotic-specific distractors.
-- The GO annotations supporting option A are all IEA (Inferred from Electronic Annotation), not experimental. The experimental evidence (PubMed:35414181) characterizes the enzyme in the context of capnine/sulfonolipid biosynthesis.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the motif 'VVVCSGTGGTISG' (~positions 155-170), characteristic of PLP (pyridoxal-5'-phosphate) fold-type I enzymes. PLP-dependent enzymes are overwhelmingly involved in amino acid metabolism (transamination, decarboxylation, racemization, β-replacement). Additionally, options B (vesicle fusion to plasma membrane), C (negative regulation of gene expression, epigenetic), and D (response to mechanical stimulus) describe eukaryotic-specific processes (SNARE-mediated exocytosis, chromatin remodeling, mechanotransduction signaling) that are incompatible with a ~333-residue bacterial enzyme lacking any eukaryotic signaling or membrane-trafficking domains. By identifying the PLP-binding motif and eliminating eukaryotic-specific processes, a knowledgeable biologist can reason toward amino acid metabolic process.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. Precise identification of this enzyme as 'Cysteate synthase' requires database lookup, but the PLP-motif recognition and elimination of eukaryotic-specific options provide a defensible reasoning pathway to option A.",
-    "reason": "The PLP-binding motif is identifiable from the sequence and strongly implicates amino acid metabolism. The three distractors are eukaryotic-specific processes, making elimination straightforward for any biologist familiar with basic cell biology and enzyme cofactor chemistry."
-  },
-  "case_id": "GO_biological_process_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5",
-      "H6",
-      "H7",
-      "H8"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is Cysteate synthase (EC 2.5.1.76), catalyzing O-phospho-L-serine + sulfite → cysteate. GO annotations include GO:0006534 (cysteine metabolic process) and GO:0009069 (serine family amino acid metabolic process), both children of alpha-amino acid metabolic process. The reaction chemistry is an amino acid metabolic transformation. While the broader biological context is sulfonolipid (capnine) biosynthesis (pathway: Lipid metabolism, GO:0006629), 'lipid metabolic process' is not among the options. Among the four choices, A is the only one consistent with the protein's enzymatic activity; B, C, D describe eukaryotic-specific processes incompatible with this bacterial enzyme. Note: the amino acid metabolic GO terms are IEA:UniProtKB-ARBA (computational inference), while the experimental evidence (PubMed:35414181) emphasizes the lipid biosynthesis context."
-  },
-  "important_caveats": [
-    "The primary biological objective of this enzyme is sulfonolipid (capnine) biosynthesis (lipid metabolism), not amino acid metabolism per se. The amino acid metabolic GO terms (cysteine metabolic process, serine family amino acid metabolic process) are IEA:UniProtKB-ARBA computational annotations reflecting reaction chemistry, not the enzyme's primary biological role. However, since 'lipid metabolic process' is not an option, A remains the best available answer.",
-    "The PLP-binding motif identification is a reasonable inference but not definitive proof of amino acid metabolism; some PLP enzymes participate in other pathways. The reasoning is strengthened by elimination of the three eukaryotic-specific distractors.",
-    "The GO annotations supporting option A are all IEA (Inferred from Electronic Annotation), not experimental. The experimental evidence (PubMed:35414181) characterizes the enzyme in the context of capnine/sulfonolipid biosynthesis."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D describe processes (vesicle fusion, epigenetic gene silencing, mechanical stimulus response) that are fundamentally incompatible with a small bacterial enzyme bearing a PLP-binding motif. Only A is biologically plausible for this protein. No ambiguity exists among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is Cysteate synthase (EC 2.5.1.76), catalyzing O-phospho-L-serine + sulfite → cysteate. GO annotations include GO:0006534 (cysteine metabolic process) and GO:0009069 (serine family amino acid metabolic process), both children of alpha-amino acid metabolic process. The reaction chemistry is an amino acid metabolic transformation. While the broader biological context is sulfonolipid (capnine) biosynthesis (pathway: Lipid metabolism, GO:0006629), 'lipid metabolic process' is not among the options. Among the four choices, A is the only one consistent with the protein's enzymatic activity; B, C, D describe eukaryotic-specific processes incompatible with this bacterial enzyme. Note: the amino acid metabolic GO terms are IEA:UniProtKB-ARBA (computational inference), while the experimental evidence (PubMed:35414181) emphasizes the lipid biosynthesis context.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H3", "H4", "H5", "H6", "H7", "H8"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the motif 'VVVCSGTGGTISG' (~positions 155-170), characteristic of PLP (pyridoxal-5'-phosphate) fold-type I enzymes. PLP-dependent enzymes are overwhelmingly involved in amino acid metabolism (transamination, decarboxylation, racemization, β-replacement). Additionally, options B (vesicle fusion to plasma membrane), C (negative regulation of gene expression, epigenetic), and D (response to mechanical stimulus) describe eukaryotic-specific processes (SNARE-mediated exocytosis, chromatin remodeling, mechanotransduction signaling) that are incompatible with a ~333-residue bacterial enzyme lacking any eukaryotic signaling or membrane-trafficking domains. By identifying the PLP-binding motif and eliminating eukaryotic-specific processes, a knowledgeable biologist can reason toward amino acid metabolic process.",
-    "missing_item_specific_fact": "None strictly required. Precise identification of this enzyme as 'Cysteate synthase' requires database lookup, but the PLP-motif recognition and elimination of eukaryotic-specific options provide a defensible reasoning pathway to option A.",
-    "reason": "The PLP-binding motif is identifiable from the sequence and strongly implicates amino acid metabolism. The three distractors are eukaryotic-specific processes, making elimination straightforward for any biologist familiar with basic cell biology and enzyme cofactor chemistry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D describe processes (vesicle fusion, epigenetic gene silencing, mechanical stimulus response) that are fundamentally incompatible with a small bacterial enzyme bearing a PLP-binding motif. Only A is biologically plausible for this protein. No ambiguity exists among the choices."
-  },
-  "important_caveats": [
-    "The primary biological objective of this enzyme is sulfonolipid (capnine) biosynthesis (lipid metabolism), not amino acid metabolism per se. The amino acid metabolic GO terms (cysteine metabolic process, serine family amino acid metabolic process) are IEA:UniProtKB-ARBA computational annotations reflecting reaction chemistry, not the enzyme's primary biological role. However, since 'lipid metabolic process' is not an option, A remains the best available answer.",
-    "The PLP-binding motif identification is a reasonable inference but not definitive proof of amino acid metabolism; some PLP enzymes participate in other pathways. The reasoning is strengthened by elimination of the three eukaryotic-specific distractors.",
-    "The GO annotations supporting option A are all IEA (Inferred from Electronic Annotation), not experimental. The experimental evidence (PubMed:35414181) characterizes the enzyme in the context of capnine/sulfonolipid biosynthesis."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -509,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "C7M8J5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "27d70ef70b1e05efb4edd9f772e95f338a911fbeff53d81928bf3b959e4fbb62",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 333,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "27d70ef70b1e05efb4edd9f772e95f338a911fbeff53d81928bf3b959e4fbb62",
   "current_entry_audit": {
     "entryVersion": 67,
     "firstPublicDate": "2025-04-09",
@@ -540,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-10-13",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "current_source_sequence_sha256": "27d70ef70b1e05efb4edd9f772e95f338a911fbeff53d81928bf3b959e4fbb62",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 333,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "27d70ef70b1e05efb4edd9f772e95f338a911fbeff53d81928bf3b959e4fbb62",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 65,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "C7M8J5",
   "selected_historical_entry_version": 65,
+  "selected_historical_record_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "selected_historical_source_sequence_length": 333,
+  "selected_historical_source_sequence_sha256": "27d70ef70b1e05efb4edd9f772e95f338a911fbeff53d81928bf3b959e4fbb62",
   "selected_historical_version": {
     "accession": "C7M8J5",
     "database": "Swiss-Prot",
@@ -558,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CAPA_CAPOD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "selected_historical_source_sequence_sha256": "27d70ef70b1e05efb4edd9f772e95f338a911fbeff53d81928bf3b959e4fbb62",
-  "selected_historical_source_sequence_length": 333,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 65,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"C7M8J5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -612,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":67,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-10-13\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -631,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bacteroides ochraceus\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Bacteroidota\",\"Flavobacteriia\",\"Flavobacteriales\",\"Flavobacteriaceae\",\"Capnocytophaga\"],\"scientificName\":\"Capnocytophaga ochracea (strain ATCC 27872 / DSM 7271 / CCUG 9716 / JCM 12966 / NCTC 12371 / SS31 / VPI 2845)\",\"taxonId\":521097}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -650,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"2.5.1.76\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"Cysteate synthase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -669,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"Transferase involved in the biosynthesis of capnine, a sulfonolipid present in the outer membrane of gliding Bacteroidetes and essential for gliding motility (PubMed:35414181). Catalyzes the formation of cysteate from O-phospho-L-serine and sulfite (PubMed:35414181)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -688,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"Lipid metabolism\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -707,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0044272\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:sulfur compound biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-ARBA\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -726,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json",
-  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
-  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu Y.\",\"Wei Y.\",\"Teh T.M.\",\"Liu D.\",\"Zhou Y.\",\"Zhao S.\",\"Ang E.L.\",\"Zhao H.\",\"Zhang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35414181\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.2c00102\"}],\"citationType\":\"journal article\",\"firstPage\":\"2861\",\"id\":\"35414181\",\"journal\":\"Biochemistry\",\"lastPage\":\"2869\",\"publicationDate\":\"2022\",\"title\":\"Identification and Characterization of the Biosynthetic Pathway of the Sulfonolipid Capnine.\",\"volume\":\"61\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"MUTAGENESIS OF LYS-241\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:35.457032+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "74833a2e933a644627806a5f2995e746ea7942dff28f119bca547cefbc71d5d6",
+  "url": "https://rest.uniprot.org/uniprotkb/C7M8J5.json"
 }
 ```
 
@@ -744,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   CAPA_CAPOD              Reviewed;         333 AA.\nAC   C7M8J5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   13-OCT-2009, sequence version 1.\nDT   28-JAN-2026, entry version 65.\nDE   RecName: Full=Cysteate synthase {ECO:0000303|PubMed:35414181};\nDE            EC=2.5.1.76 {ECO:0000269|PubMed:35414181};\nGN   Name=capA {ECO:0000303|PubMed:35414181};\nGN   OrderedLocusNames=Coch_1829 {ECO:0000312|EMBL:ACU93374.1};\nOS   Capnocytophaga ochracea (strain ATCC 27872 / DSM 7271 / CCUG 9716 / JCM\nOS   12966 / NCTC 12371 / SS31 / VPI 2845) (Bacteroides ochraceus).\nOC   Bacteria; Pseudomonadati; Bacteroidota; Flavobacteriia; Flavobacteriales;\nOC   Flavobacteriaceae; Capnocytophaga.\nOX   NCBI_TaxID=521097;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -765,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 29-37",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, BIOPHYSICOCHEMICAL PROPERTIES, AND\nRP   MUTAGENESIS OF LYS-241.\nRX   PubMed=35414181; DOI=10.1021/acs.biochem.2c00102;\nRA   Liu Y., Wei Y., Teh T.M., Liu D., Zhou Y., Zhao S., Ang E.L., Zhao H.,\nRA   Zhang Y.;\nRT   \"Identification and Characterization of the Biosynthetic Pathway of the\nRT   Sulfonolipid Capnine.\";\nRL   Biochemistry 61:2861-2869(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -786,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 38-42",
   "excerpt": "CC   -!- FUNCTION: Transferase involved in the biosynthesis of capnine, a\nCC       sulfonolipid present in the outer membrane of gliding Bacteroidetes and\nCC       essential for gliding motility (PubMed:35414181). Catalyzes the\nCC       formation of cysteate from O-phospho-L-serine and sulfite\nCC       (PubMed:35414181). {ECO:0000269|PubMed:35414181}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 38-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -807,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 62-62",
   "excerpt": "CC   -!- PATHWAY: Lipid metabolism. {ECO:0000305|PubMed:35414181}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -828,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 80-80",
   "excerpt": "DR   GO; GO:0006534; P:cysteine metabolic process; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 80-80",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -849,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 81-81",
   "excerpt": "DR   GO; GO:0006629; P:lipid metabolic process; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -870,18 +627,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 82-82",
   "excerpt": "DR   GO; GO:0009069; P:serine family amino acid metabolic process; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-82",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -891,18 +648,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 65,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65",
-  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
-  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
-  "source_locator": "lines 83-83",
   "excerpt": "DR   GO; GO:0044272; P:sulfur compound biosynthetic process; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 65,
+  "retrieved_utc": "2026-11-02T04:27:40.735965+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 83-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b41db9ab6487840f3f81fafe34e6a0dbd98dcbb452a2aaa98446e01f78448110",
+  "url": "https://rest.uniprot.org/unisave/C7M8J5?format=txt&versions=65"
 }
 ```
 
@@ -913,15 +670,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 97922-97931",
   "excerpt": "[Term]\nid: GO:0009612\nname: response to mechanical stimulus\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a mechanical stimulus.\" [GOC:hb]\nsynonym: \"chemi-mechanical coupling\" RELATED []\nsynonym: \"mechanical stimulus response\" EXACT []\nis_a: GO:0009605 ! response to external stimulus\nis_a: GO:0009628 ! response to abiotic stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009612",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 97922-97931",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009612"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -932,15 +689,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 269020-269034",
   "excerpt": "[Term]\nid: GO:0045814\nname: negative regulation of gene expression, epigenetic\nnamespace: biological_process\ndef: \"An epigenetic process that silences gene expression at specific genomic regions through chromatin remodeling either by modifying higher order chromatin fiber structure, nucleosomal histones, or the cytosine DNA methylation.\" [PMID:22243696]\nsynonym: \"down regulation of gene expression, epigenetic\" EXACT []\nsynonym: \"down-regulation of gene expression, epigenetic\" EXACT []\nsynonym: \"downregulation of gene expression, epigenetic\" EXACT []\nsynonym: \"gene silencing\" RELATED []\nsynonym: \"inhibition of gene expression, epigenetic\" NARROW []\nxref: Reactome:R-HSA-212300 \"PRC2 methylates histones and DNA\"\nxref: Reactome:R-HSA-5250941 \"Negative epigenetic regulation of rRNA expression\"\nis_a: GO:0010629 ! negative regulation of gene expression\nis_a: GO:0040029 ! epigenetic regulation of gene expression\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045814",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 269020-269034",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045814"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -951,15 +708,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 414643-414650",
   "excerpt": "[Term]\nid: GO:0099500\nname: vesicle fusion to plasma membrane\nnamespace: biological_process\ndef: \"Fusion of the membrane of a vesicle with the plasma membrane, thereby releasing its contents into the extracellular space.\" [GOC:aruk, GOC:bc, ISBN:0071120009, PMID:18618940]\nis_a: GO:0006906 ! vesicle fusion\nis_a: GO:0140029 ! exocytic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0099500",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 414643-414650",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0099500"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

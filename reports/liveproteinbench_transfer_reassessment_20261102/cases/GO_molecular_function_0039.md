@@ -1,18 +1,16 @@
-# GO_molecular_function_0039: before and after transfer clarification
+# GO_molecular_function_0039
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0039.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0039.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **A** — D-threo-aldose 1-dehydrogenase activity
+**Expected answer:** **A** — D-threo-aldose 1-dehydrogenase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,250 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the mouse UniProt entry, which annotates L-fucose dehydrogenase, EC 1.1.1.122, and describes NAD+-dependent oxidation of L-fucose. GO:0047834 names the corresponding D-threo-aldose 1-dehydrogenase activity, supporting choice A. The functional annotation is transferred by similarity rather than presented as direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C9](#evidence-c9), [H2](#evidence-h2), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a nucleotide-binding-like motif consistent with an oxidoreductase, but that general clue does not establish its specific substrate or distinguish the listed activities reliably.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional assignment that this sequence is an L-fucose/D-threo-aldose dehydrogenase, supported here by an annotation transferred from a homolog.
-
-
-**Reason**
-
-> Choosing A over the other options requires the specific enzyme-function assignment, which is not supplied in the question. Inferring a broad enzyme class from sequence features would not establish the precise molecular function.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence's functional annotation supports A; the other choices describe different activities. The supplied evidence does not suggest another listed option is comparably supported.
-
-
-### Important caveats
-
-- The UniProt functional and GO annotations cite similarity-based evidence (ECO:0000250 and ISS), not direct experimental validation of this mouse sequence in the provided evidence.
-- The historical and current records match the sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a nucleotide-binding-like motif consistent with an oxidoreductase, but that general clue does not establish its specific substrate or distinguish the listed activities reliably.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional assignment that this sequence is an L-fucose/D-threo-aldose dehydrogenase, supported here by an annotation transferred from a homolog.",
-    "reason": "Choosing A over the other options requires the specific enzyme-function assignment, which is not supplied in the question. Inferring a broad enzyme class from sequence features would not establish the precise molecular function."
-  },
-  "case_id": "GO_molecular_function_0039",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C9",
-      "H2",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the mouse UniProt entry, which annotates L-fucose dehydrogenase, EC 1.1.1.122, and describes NAD+-dependent oxidation of L-fucose. GO:0047834 names the corresponding D-threo-aldose 1-dehydrogenase activity, supporting choice A. The functional annotation is transferred by similarity rather than presented as direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The UniProt functional and GO annotations cite similarity-based evidence (ECO:0000250 and ISS), not direct experimental validation of this mouse sequence in the provided evidence.",
-    "The historical and current records match the sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's functional annotation supports A; the other choices describe different activities. The supplied evidence does not suggest another listed option is comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0039",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the mouse UniProt entry, which annotates L-fucose dehydrogenase, EC 1.1.1.122, and describes NAD+-dependent oxidation of L-fucose. GO:0047834 names the corresponding D-threo-aldose 1-dehydrogenase activity, supporting choice A. The functional annotation is transferred by similarity rather than presented as direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C9", "H2", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a nucleotide-binding-like motif consistent with an oxidoreductase, but that general clue does not establish its specific substrate or distinguish the listed activities reliably.",
-    "missing_item_specific_fact": "The protein-specific functional assignment that this sequence is an L-fucose/D-threo-aldose dehydrogenase, supported here by an annotation transferred from a homolog.",
-    "reason": "Choosing A over the other options requires the specific enzyme-function assignment, which is not supplied in the question. Inferring a broad enzyme class from sequence features would not establish the precise molecular function."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's functional annotation supports A; the other choices describe different activities. The supplied evidence does not suggest another listed option is comparably supported."
-  },
-  "important_caveats": [
-    "The UniProt functional and GO annotations cite similarity-based evidence (ECO:0000250 and ISS), not direct experimental validation of this mouse sequence in the provided evidence.",
-    "The historical and current records match the sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt E9Q3D4 (DHB14_MOUSE, mouse L-fucose dehydrogenase / HSD17B14) is annotated with GO:0047834 (D-threo-aldose 1-dehydrogenase activity, EC 1.1.1.122). The GO term definition matches the protein's catalytic activity (NAD+-dependent oxidation of D-threo-aldoses including L-fucose, D-arabinose, L-galactose). The evidence code is ISS:UniProtKB (sequence similarity to human Q9BPX1), so this is computational inference rather than direct experimental characterization of the mouse protein, but the annotation is present and consistent with the EC assignment.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a clear Rossmann-fold NAD-binding motif (VVVVTGGSRGIGAAIVRAF, i.e. GxGxxG pattern) and is 273 amino acids long with an SDR (short-chain dehydrogenase/reductase) architecture. This identifies the protein as an NAD-dependent oxidoreductase. Among the four choices, only A (D-threo-aldose 1-dehydrogenase activity, EC 1.1.1.122) is a dehydrogenase/oxidoreductase. Option B (UDP-GlcNAc 2-epimerase, GNE) is a ~700-aa protein with a completely different domain architecture; options C and D are protein/receptor binding activities requiring no catalytic cofactor-binding motifs. A biologist recognizing the Rossmann fold and SDR-like length can eliminate B, C, and D without database lookup.
-
-
-**Missing item-specific fact**
-
-Empty string, as saved.
-
-
-**Reason**
-
-> The sequence provides identifiable structural motifs (Rossmann fold) and family-level architecture (273-aa SDR) that are sufficient to classify the protein as an NAD-dependent dehydrogenase. Since only one option among the four is a dehydrogenase activity, the functional class can be determined by general enzymology knowledge without needing to memorize the specific UniProt annotation for E9Q3D4.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B, C, and D represent fundamentally different functional classes (epimerase, cytoskeletal protein binding, receptor binding) that are incompatible with the visible Rossmann-fold/NAD-binding architecture and SDR-like length of the sequence. Only option A is consistent with a dehydrogenase.
-
-
-### Important caveats
-
-- The GO annotation for this protein is ISS (Inferred from Sequence Similarity to human Q9BPX1), not direct experimental evidence on the mouse protein itself.
-- The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot date is unknown.
-- The sequence is 273 aa and matches the canonical UniProt entry exactly (SHA-256 confirmed).
-- The reasoning path relies on recognizing the Rossmann fold and SDR family architecture, which is standard structural biology knowledge but still requires pattern recognition from the raw sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a clear Rossmann-fold NAD-binding motif (VVVVTGGSRGIGAAIVRAF, i.e. GxGxxG pattern) and is 273 amino acids long with an SDR (short-chain dehydrogenase/reductase) architecture. This identifies the protein as an NAD-dependent oxidoreductase. Among the four choices, only A (D-threo-aldose 1-dehydrogenase activity, EC 1.1.1.122) is a dehydrogenase/oxidoreductase. Option B (UDP-GlcNAc 2-epimerase, GNE) is a ~700-aa protein with a completely different domain architecture; options C and D are protein/receptor binding activities requiring no catalytic cofactor-binding motifs. A biologist recognizing the Rossmann fold and SDR-like length can eliminate B, C, and D without database lookup.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "",
-    "reason": "The sequence provides identifiable structural motifs (Rossmann fold) and family-level architecture (273-aa SDR) that are sufficient to classify the protein as an NAD-dependent dehydrogenase. Since only one option among the four is a dehydrogenase activity, the functional class can be determined by general enzymology knowledge without needing to memorize the specific UniProt annotation for E9Q3D4."
-  },
-  "case_id": "GO_molecular_function_0039",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "C9",
-      "H1",
-      "H2",
-      "H3",
-      "H4",
-      "H5",
-      "H6",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt E9Q3D4 (DHB14_MOUSE, mouse L-fucose dehydrogenase / HSD17B14) is annotated with GO:0047834 (D-threo-aldose 1-dehydrogenase activity, EC 1.1.1.122). The GO term definition matches the protein's catalytic activity (NAD+-dependent oxidation of D-threo-aldoses including L-fucose, D-arabinose, L-galactose). The evidence code is ISS:UniProtKB (sequence similarity to human Q9BPX1), so this is computational inference rather than direct experimental characterization of the mouse protein, but the annotation is present and consistent with the EC assignment."
-  },
-  "important_caveats": [
-    "The GO annotation for this protein is ISS (Inferred from Sequence Similarity to human Q9BPX1), not direct experimental evidence on the mouse protein itself.",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot date is unknown.",
-    "The sequence is 273 aa and matches the canonical UniProt entry exactly (SHA-256 confirmed).",
-    "The reasoning path relies on recognizing the Rossmann fold and SDR family architecture, which is standard structural biology knowledge but still requires pattern recognition from the raw sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D represent fundamentally different functional classes (epimerase, cytoskeletal protein binding, receptor binding) that are incompatible with the visible Rossmann-fold/NAD-binding architecture and SDR-like length of the sequence. Only option A is consistent with a dehydrogenase."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0039",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt E9Q3D4 (DHB14_MOUSE, mouse L-fucose dehydrogenase / HSD17B14) is annotated with GO:0047834 (D-threo-aldose 1-dehydrogenase activity, EC 1.1.1.122). The GO term definition matches the protein's catalytic activity (NAD+-dependent oxidation of D-threo-aldoses including L-fucose, D-arabinose, L-galactose). The evidence code is ISS:UniProtKB (sequence similarity to human Q9BPX1), so this is computational inference rather than direct experimental characterization of the mouse protein, but the annotation is present and consistent with the EC assignment.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "C8", "C9", "H1", "H2", "H3", "H4", "H5", "H6", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a clear Rossmann-fold NAD-binding motif (VVVVTGGSRGIGAAIVRAF, i.e. GxGxxG pattern) and is 273 amino acids long with an SDR (short-chain dehydrogenase/reductase) architecture. This identifies the protein as an NAD-dependent oxidoreductase. Among the four choices, only A (D-threo-aldose 1-dehydrogenase activity, EC 1.1.1.122) is a dehydrogenase/oxidoreductase. Option B (UDP-GlcNAc 2-epimerase, GNE) is a ~700-aa protein with a completely different domain architecture; options C and D are protein/receptor binding activities requiring no catalytic cofactor-binding motifs. A biologist recognizing the Rossmann fold and SDR-like length can eliminate B, C, and D without database lookup.",
-    "missing_item_specific_fact": "",
-    "reason": "The sequence provides identifiable structural motifs (Rossmann fold) and family-level architecture (273-aa SDR) that are sufficient to classify the protein as an NAD-dependent dehydrogenase. Since only one option among the four is a dehydrogenase activity, the functional class can be determined by general enzymology knowledge without needing to memorize the specific UniProt annotation for E9Q3D4."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D represent fundamentally different functional classes (epimerase, cytoskeletal protein binding, receptor binding) that are incompatible with the visible Rossmann-fold/NAD-binding architecture and SDR-like length of the sequence. Only option A is consistent with a dehydrogenase."
-  },
-  "important_caveats": [
-    "The GO annotation for this protein is ISS (Inferred from Sequence Similarity to human Q9BPX1), not direct experimental evidence on the mouse protein itself.",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot date is unknown.",
-    "The sequence is 273 aa and matches the canonical UniProt entry exactly (SHA-256 confirmed).",
-    "The reasoning path relies on recognizing the Rossmann fold and SDR family architecture, which is standard structural biology knowledge but still requires pattern recognition from the raw sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +161,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -523,30 +281,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E9Q3D4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 273,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
   "current_entry_audit": {
     "entryVersion": 97,
     "firstPublicDate": "2025-04-09",
@@ -554,14 +299,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-04-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "current_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 273,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 95,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E9Q3D4",
   "selected_historical_entry_version": 95,
+  "selected_historical_record_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "selected_historical_source_sequence_length": 273,
+  "selected_historical_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
   "selected_historical_version": {
     "accession": "E9Q3D4",
     "database": "Swiss-Prot",
@@ -572,24 +333,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DHB14_MOUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "selected_historical_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
-  "selected_historical_source_sequence_length": 273,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 95,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -607,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E9Q3D4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -626,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":97,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-04-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -645,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mouse\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Mus\",\"Mus\"],\"scientificName\":\"Mus musculus\",\"taxonId\":10090}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -664,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Hydroxysteroid 17-beta dehydrogenase 14\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPX1\",\"source\":\"UniProtKB\"}],\"value\":\"1.1.1.122\"}],\"fullName\":{\"value\":\"L-fucose dehydrogenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -683,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPX1\",\"source\":\"UniProtKB\"}],\"value\":\"Catalyzes the NAD(+)-dependent oxidation of L-fucose, yielding L-fucono-1,5-lactone, which rapidly converts spontaneously to L-fucone-1,4-lactone. Can also act on D-arabinose and L-galactose, with lower catalytic efficiency. Does not use NADPH. May be the initial enzyme of the putative L-fucose degradation pathway in mammals\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -702,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPX1\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81516\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.122\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPX1\",\"source\":\"UniProtKB\"}],\"name\":\"L-fucose + NAD(+) = L-fucono-1,5-lactone + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81515\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:2181\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:81457\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -721,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.1.1.122\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPX1\",\"source\":\"UniProtKB\"}],\"name\":\"D-arabinose + NAD(+) = D-arabinono-1,5-lactone + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81519\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:46994\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194242\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -740,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.1.1.122\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPX1\",\"source\":\"UniProtKB\"}],\"name\":\"L-galactose + NAD(+) = L-galactono-1,5-lactone + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81523\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:37619\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:182410\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -759,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/37",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0047834\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:D-threo-aldose 1-dehydrogenase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/37",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -778,15 +526,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/38",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0042802\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:identical protein binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISO:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/38",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -796,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   DHB14_MOUSE             Reviewed;         273 AA.\nAC   E9Q3D4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-APR-2011, sequence version 1.\nDT   28-JAN-2026, entry version 95.\nDE   RecName: Full=L-fucose dehydrogenase;\nDE            EC=1.1.1.122 {ECO:0000250|UniProtKB:Q9BPX1};\nDE   AltName: Full=Hydroxysteroid 17-beta dehydrogenase 14;\nGN   Name=Hsd17b14 {ECO:0000312|MGI:MGI:1913315}; Synonyms=Dhrs10, retSDR3;\nOS   Mus musculus (Mouse).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Mus; Mus.\nOX   NCBI_TaxID=10090;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -817,18 +565,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 28-33",
   "excerpt": "CC   -!- FUNCTION: Catalyzes the NAD(+)-dependent oxidation of L-fucose,\nCC       yielding L-fucono-1,5-lactone, which rapidly converts spontaneously to\nCC       L-fucone-1,4-lactone. Can also act on D-arabinose and L-galactose, with\nCC       lower catalytic efficiency. Does not use NADPH. May be the initial\nCC       enzyme of the putative L-fucose degradation pathway in mammals.\nCC       {ECO:0000250|UniProtKB:Q9BPX1}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -838,18 +586,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 34-40",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-fucose + NAD(+) = L-fucono-1,5-lactone + NADH + H(+);\nCC         Xref=Rhea:RHEA:81515, ChEBI:CHEBI:2181, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57945, ChEBI:CHEBI:81457;\nCC         EC=1.1.1.122; Evidence={ECO:0000250|UniProtKB:Q9BPX1};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81516;\nCC         Evidence={ECO:0000250|UniProtKB:Q9BPX1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -859,18 +607,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 41-45",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=D-arabinose + NAD(+) = D-arabinono-1,5-lactone + NADH + H(+);\nCC         Xref=Rhea:RHEA:81519, ChEBI:CHEBI:15378, ChEBI:CHEBI:46994,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57945, ChEBI:CHEBI:194242;\nCC         EC=1.1.1.122; Evidence={ECO:0000250|UniProtKB:Q9BPX1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -880,18 +628,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 46-50",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-galactose + NAD(+) = L-galactono-1,5-lactone + NADH + H(+);\nCC         Xref=Rhea:RHEA:81523, ChEBI:CHEBI:15378, ChEBI:CHEBI:37619,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57945, ChEBI:CHEBI:182410;\nCC         EC=1.1.1.122; Evidence={ECO:0000250|UniProtKB:Q9BPX1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -901,18 +649,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 102-102",
   "excerpt": "DR   GO; GO:0047834; F:D-threo-aldose 1-dehydrogenase activity; ISS:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 102-102",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -922,18 +670,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 103-103",
   "excerpt": "DR   GO; GO:0042802; F:identical protein binding; ISO:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 103-103",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -944,15 +692,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 87476-87495",
   "excerpt": "[Term]\nid: GO:0008761\nname: UDP-N-acetylglucosamine 2-epimerase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: UDP-N-acetyl-D-glucosamine = UDP-N-acetyl-D-mannosamine.\" [EC:5.1.3.14]\nsynonym: \"UDP-GlcNAc-2-epimerase activity\" RELATED [EC:5.1.3.14]\nsynonym: \"UDP-N-acetyl-D-glucosamine 2-epimerase activity\" RELATED [EC:5.1.3.14]\nsynonym: \"UDP-N-acetylglucosamine 2'-epimerase activity\" RELATED [EC:5.1.3.14]\nsynonym: \"uridine diphosphate-N-acetylglucosamine-2'-epimerase activity\" RELATED [EC:5.1.3.14]\nsynonym: \"uridine diphospho-N-acetylglucosamine 2'-epimerase activity\" RELATED [EC:5.1.3.14]\nsynonym: \"uridine diphosphoacetylglucosamine 2'-epimerase activity\" RELATED [EC:5.1.3.14]\nxref: EC:5.1.3.14\nxref: MetaCyc:UDPGLCNACEPIM-RXN\nxref: Reactome:R-HSA-4085021 \"GNE hydrolyzes/epimerises UDP-GlcNAc to ManNAc and UDP\"\nxref: Reactome:R-HSA-4088338 \"Defective GNE does not hydrolyse UDP-GlcNAc\"\nxref: RHEA:17213\nis_a: GO:0016857 ! racemase and epimerase activity, acting on carbohydrates and derivatives\nproperty_value: skos:exactMatch EC:5.1.3.14\nproperty_value: skos:exactMatch RHEA:17213\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008761",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 87476-87495",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008761"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -963,15 +711,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 180413-180420",
   "excerpt": "[Term]\nid: GO:0031857\nname: type 1 parathyroid hormone receptor binding\nnamespace: molecular_function\ndef: \"Binding to a type 1 parathyroid hormone receptor.\" [GOC:mah, GOC:nln]\nsynonym: \"type 1 parathyroid hormone receptor ligand\" NARROW []\nis_a: GO:0031856 ! parathyroid hormone receptor binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031857",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 180413-180420",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031857"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -982,15 +730,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 296916-296938",
   "excerpt": "[Term]\nid: GO:0047834\nname: D-threo-aldose 1-dehydrogenase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: a D-threo-aldose + NAD+ = a D-threo-aldono-1,5-lactone + NADH.\" [EC:1.1.1.122, MetaCyc:D-THREO-ALDOSE-1-DEHYDROGENASE-RXN]\nsynonym: \"(2S,3R)-aldose dehydrogenase activity\" RELATED [EC:1.1.1.122]\nsynonym: \"D-threo-aldose:NAD+ 1-oxidoreductase activity\" RELATED [EC:1.1.1.122]\nsynonym: \"dehydrogenase, L-fucose\" RELATED [EC:1.1.1.122]\nsynonym: \"L-fucose (D-arabinose) dehydrogenase activity\" RELATED [EC:1.1.1.122]\nsynonym: \"L-fucose dehydrogenase activity\" RELATED [EC:1.1.1.122]\nxref: EC:1.1.1.122\nxref: MetaCyc:D-THREO-ALDOSE-1-DEHYDROGENASE-RXN\nxref: RHEA:19645\nxref: RHEA:81515\nxref: RHEA:81519\nxref: RHEA:81523\nis_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor\nproperty_value: skos:exactMatch EC:1.1.1.122\nproperty_value: skos:exactMatch RHEA:19645\nproperty_value: skos:narrowMatch RHEA:81515\nproperty_value: skos:narrowMatch RHEA:81519\nproperty_value: skos:narrowMatch RHEA:81523\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0047834",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 296916-296938",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0047834"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1001,15 +749,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 300902-300908",
   "excerpt": "[Term]\nid: GO:0048156\nname: tau protein binding\nnamespace: molecular_function\ndef: \"Binding to tau protein. tau is a microtubule-associated protein, implicated in Alzheimer's disease, Down Syndrome and ALS.\" [GOC:jid]\nis_a: GO:0008092 ! cytoskeletal protein binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048156",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 300902-300908",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048156"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

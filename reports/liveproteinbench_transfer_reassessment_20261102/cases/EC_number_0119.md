@@ -1,18 +1,16 @@
-# EC_number_0119: before and after transfer clarification
+# EC_number_0119
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0119.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0119.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 1.1.1.122
+**Expected answer:** **C** — 1.1.1.122
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the rat UniProt entry, whose EC 1.1.1.122 annotation is linked to experimental evidence (ECO:0000269) for oxidation of L-fucose and other sugars. This supports choice C, while preserving that the evidence is reported through a curated database entry citing a paper.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence's cofactor-binding motif and enzyme-family features may suggest an NAD-dependent oxidoreductase, helping distinguish it from an isomerase or hydrolase, but they do not establish the precise substrate specificity needed to distinguish the dehydrogenase options.
-
-
-**Missing item-specific fact**
-
-> The protein's experimentally characterized substrate specificity and corresponding EC annotation are not supplied in the question.
-
-
-**Reason**
-
-> Choosing the exact four-part EC number depends on protein-specific functional knowledge absent from the input; recognizing the sequence or consulting its annotation would resolve it, but is not reasoning from the supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options designate distinct enzyme classifications, and the sequence-matched annotation with cited experimental evidence supports C. The sequence-only input does not itself resolve exact substrate specificity, but that is a lookup-dependence limitation rather than evidence that multiple options are correct.
-
-
-### Important caveats
-
-- The evidence is from a sequence-matched UniProt annotation citing a 2024 paper; the primary study was not independently reviewed here.
-- The author’s exact data-construction snapshot is unknown, although the sequence-matched archived entry already records EC 1.1.1.122.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence's cofactor-binding motif and enzyme-family features may suggest an NAD-dependent oxidoreductase, helping distinguish it from an isomerase or hydrolase, but they do not establish the precise substrate specificity needed to distinguish the dehydrogenase options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's experimentally characterized substrate specificity and corresponding EC annotation are not supplied in the question.",
-    "reason": "Choosing the exact four-part EC number depends on protein-specific functional knowledge absent from the input; recognizing the sequence or consulting its annotation would resolve it, but is not reasoning from the supplied information."
-  },
-  "case_id": "EC_number_0119",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the rat UniProt entry, whose EC 1.1.1.122 annotation is linked to experimental evidence (ECO:0000269) for oxidation of L-fucose and other sugars. This supports choice C, while preserving that the evidence is reported through a curated database entry citing a paper."
-  },
-  "important_caveats": [
-    "The evidence is from a sequence-matched UniProt annotation citing a 2024 paper; the primary study was not independently reviewed here.",
-    "The author’s exact data-construction snapshot is unknown, although the sequence-matched archived entry already records EC 1.1.1.122."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options designate distinct enzyme classifications, and the sequence-matched annotation with cited experimental evidence supports C. The sequence-only input does not itself resolve exact substrate specificity, but that is a lookup-dependence limitation rather than evidence that multiple options are correct."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0119",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the rat UniProt entry, whose EC 1.1.1.122 annotation is linked to experimental evidence (ECO:0000269) for oxidation of L-fucose and other sugars. This supports choice C, while preserving that the evidence is reported through a curated database entry citing a paper.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "C8", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence's cofactor-binding motif and enzyme-family features may suggest an NAD-dependent oxidoreductase, helping distinguish it from an isomerase or hydrolase, but they do not establish the precise substrate specificity needed to distinguish the dehydrogenase options.",
-    "missing_item_specific_fact": "The protein's experimentally characterized substrate specificity and corresponding EC annotation are not supplied in the question.",
-    "reason": "Choosing the exact four-part EC number depends on protein-specific functional knowledge absent from the input; recognizing the sequence or consulting its annotation would resolve it, but is not reasoning from the supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options designate distinct enzyme classifications, and the sequence-matched annotation with cited experimental evidence supports C. The sequence-only input does not itself resolve exact substrate specificity, but that is a lookup-dependence limitation rather than evidence that multiple options are correct."
-  },
-  "important_caveats": [
-    "The evidence is from a sequence-matched UniProt annotation citing a 2024 paper; the primary study was not independently reviewed here.",
-    "The author’s exact data-construction snapshot is unknown, although the sequence-matched archived entry already records EC 1.1.1.122."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A8I6GJ95 (rat HSD17B14, 270 aa, sequence SHA256 matched) is annotated as L-fucose dehydrogenase with EC 1.1.1.122, supported by experimental evidence (ECO:0000269, PubMed:38944119, 2024 JBC paper by Witecka et al.). The catalytic activity L-fucose + NAD(+) = L-fucono-1,5-lactone + NADH + H(+) is confirmed experimentally. The expected answer C (1.1.1.122) is directly supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C8](#evidence-c8), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal mitochondrial targeting signal and the Rossmann-fold NAD-binding motif (VVVTGGSRGIGAA) allow a model to infer this is an NAD-dependent dehydrogenase (EC 1.1.1.x), thereby eliminating the isomerase (B, EC 5.4.99.39) and hydrolase (D, EC 3.1.1.29). However, no general sequence feature distinguishes EC 1.1.1.122 (L-fucose dehydrogenase) from EC 1.1.1.336 (another EC 1.1.1.x dehydrogenase). The substrate-specificity residues that determine whether this enzyme acts on L-fucose versus the substrate of 1.1.1.336 are not identifiable from the raw sequence without prior knowledge of this particular protein's active-site architecture or its database annotation.
-
-
-**Missing item-specific fact**
-
-> The specific substrate-binding and catalytic-site residues that confer L-fucose specificity in HSD17B14, or alternatively the protein's identity as HSD17B14/L-fucose dehydrogenase (a function only experimentally established in 2024, PubMed:38944119), are required to distinguish EC 1.1.1.122 from EC 1.1.1.336.
-
-
-**Reason**
-
-> While the Rossmann fold provides a valid general argument for EC class 1.1.1.x (oxidoreductase, CH-OH, NAD+), selecting the fourth digit (122 vs 336) requires protein-specific knowledge. The function was only confirmed experimentally in 2024; before that, HSD17B14 had no well-established EC assignment. No general biological reasoning from the 270-aa sequence alone can distinguish these two EC 1.1.1.x options.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Both A (1.1.1.336) and C (1.1.1.122) are EC 1.1.1.x oxidoreductases consistent with the Rossmann-fold NAD-binding motif visible in the sequence. Without protein-specific knowledge, a model cannot definitively choose between them. Options B (isomerase) and D (hydrolase) are clearly incompatible with the dehydrogenase fold and can be eliminated by reasoning.
-
-
-### Important caveats
-
-- The EC 1.1.1.122 assignment for HSD17B14 is very recent (2024, PubMed:38944119). Before this publication, HSD17B14 was primarily associated with mitochondrial RNA processing and lacked a confirmed EC number. A model trained on older data would not associate this sequence with EC 1.1.1.122.
-- The protein's alternative name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead a model toward steroid-dehydrogenase EC numbers, which are not among the choices, adding to the lookup dependency.
-- All UniProt evidence is reviewer-only and was not available to the evaluated model. The sequence-match is confirmed (SHA256 identical, 270 aa).
-- The identity of EC 1.1.1.336 as a specific enzyme was not independently verified in this audit; it is treated as a plausible distractor within the same EC subclass.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal mitochondrial targeting signal and the Rossmann-fold NAD-binding motif (VVVTGGSRGIGAA) allow a model to infer this is an NAD-dependent dehydrogenase (EC 1.1.1.x), thereby eliminating the isomerase (B, EC 5.4.99.39) and hydrolase (D, EC 3.1.1.29). However, no general sequence feature distinguishes EC 1.1.1.122 (L-fucose dehydrogenase) from EC 1.1.1.336 (another EC 1.1.1.x dehydrogenase). The substrate-specificity residues that determine whether this enzyme acts on L-fucose versus the substrate of 1.1.1.336 are not identifiable from the raw sequence without prior knowledge of this particular protein's active-site architecture or its database annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate-binding and catalytic-site residues that confer L-fucose specificity in HSD17B14, or alternatively the protein's identity as HSD17B14/L-fucose dehydrogenase (a function only experimentally established in 2024, PubMed:38944119), are required to distinguish EC 1.1.1.122 from EC 1.1.1.336.",
-    "reason": "While the Rossmann fold provides a valid general argument for EC class 1.1.1.x (oxidoreductase, CH-OH, NAD+), selecting the fourth digit (122 vs 336) requires protein-specific knowledge. The function was only confirmed experimentally in 2024; before that, HSD17B14 had no well-established EC assignment. No general biological reasoning from the 270-aa sequence alone can distinguish these two EC 1.1.1.x options."
-  },
-  "case_id": "EC_number_0119",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C8",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A8I6GJ95 (rat HSD17B14, 270 aa, sequence SHA256 matched) is annotated as L-fucose dehydrogenase with EC 1.1.1.122, supported by experimental evidence (ECO:0000269, PubMed:38944119, 2024 JBC paper by Witecka et al.). The catalytic activity L-fucose + NAD(+) = L-fucono-1,5-lactone + NADH + H(+) is confirmed experimentally. The expected answer C (1.1.1.122) is directly supported."
-  },
-  "important_caveats": [
-    "The EC 1.1.1.122 assignment for HSD17B14 is very recent (2024, PubMed:38944119). Before this publication, HSD17B14 was primarily associated with mitochondrial RNA processing and lacked a confirmed EC number. A model trained on older data would not associate this sequence with EC 1.1.1.122.",
-    "The protein's alternative name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead a model toward steroid-dehydrogenase EC numbers, which are not among the choices, adding to the lookup dependency.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model. The sequence-match is confirmed (SHA256 identical, 270 aa).",
-    "The identity of EC 1.1.1.336 as a specific enzyme was not independently verified in this audit; it is treated as a plausible distractor within the same EC subclass."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Both A (1.1.1.336) and C (1.1.1.122) are EC 1.1.1.x oxidoreductases consistent with the Rossmann-fold NAD-binding motif visible in the sequence. Without protein-specific knowledge, a model cannot definitively choose between them. Options B (isomerase) and D (hydrolase) are clearly incompatible with the dehydrogenase fold and can be eliminated by reasoning."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0119",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A8I6GJ95 (rat HSD17B14, 270 aa, sequence SHA256 matched) is annotated as L-fucose dehydrogenase with EC 1.1.1.122, supported by experimental evidence (ECO:0000269, PubMed:38944119, 2024 JBC paper by Witecka et al.). The catalytic activity L-fucose + NAD(+) = L-fucono-1,5-lactone + NADH + H(+) is confirmed experimentally. The expected answer C (1.1.1.122) is directly supported.",
-    "evidence_ids": ["C4", "C5", "C8", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal mitochondrial targeting signal and the Rossmann-fold NAD-binding motif (VVVTGGSRGIGAA) allow a model to infer this is an NAD-dependent dehydrogenase (EC 1.1.1.x), thereby eliminating the isomerase (B, EC 5.4.99.39) and hydrolase (D, EC 3.1.1.29). However, no general sequence feature distinguishes EC 1.1.1.122 (L-fucose dehydrogenase) from EC 1.1.1.336 (another EC 1.1.1.x dehydrogenase). The substrate-specificity residues that determine whether this enzyme acts on L-fucose versus the substrate of 1.1.1.336 are not identifiable from the raw sequence without prior knowledge of this particular protein's active-site architecture or its database annotation.",
-    "missing_item_specific_fact": "The specific substrate-binding and catalytic-site residues that confer L-fucose specificity in HSD17B14, or alternatively the protein's identity as HSD17B14/L-fucose dehydrogenase (a function only experimentally established in 2024, PubMed:38944119), are required to distinguish EC 1.1.1.122 from EC 1.1.1.336.",
-    "reason": "While the Rossmann fold provides a valid general argument for EC class 1.1.1.x (oxidoreductase, CH-OH, NAD+), selecting the fourth digit (122 vs 336) requires protein-specific knowledge. The function was only confirmed experimentally in 2024; before that, HSD17B14 had no well-established EC assignment. No general biological reasoning from the 270-aa sequence alone can distinguish these two EC 1.1.1.x options."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Both A (1.1.1.336) and C (1.1.1.122) are EC 1.1.1.x oxidoreductases consistent with the Rossmann-fold NAD-binding motif visible in the sequence. Without protein-specific knowledge, a model cannot definitively choose between them. Options B (isomerase) and D (hydrolase) are clearly incompatible with the dehydrogenase fold and can be eliminated by reasoning."
-  },
-  "important_caveats": [
-    "The EC 1.1.1.122 assignment for HSD17B14 is very recent (2024, PubMed:38944119). Before this publication, HSD17B14 was primarily associated with mitochondrial RNA processing and lacked a confirmed EC number. A model trained on older data would not associate this sequence with EC 1.1.1.122.",
-    "The protein's alternative name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead a model toward steroid-dehydrogenase EC numbers, which are not among the choices, adding to the lookup dependency.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model. The sequence-match is confirmed (SHA256 identical, 270 aa).",
-    "The identity of EC 1.1.1.336 as a specific enzyme was not independently verified in this audit; it is treated as a plausible distractor within the same EC subclass."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -399,10 +159,9 @@ Citations as saved: [C5](#evidence-c5), [C8](#evidence-c8), [H4](#evidence-h4).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -513,30 +272,17 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), 
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A8I6GJ95",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "bd37d1d516e73777e155d3437157c555ba99078fd50abfd1f3899c2c20580fad",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 270,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "bd37d1d516e73777e155d3437157c555ba99078fd50abfd1f3899c2c20580fad",
   "current_entry_audit": {
     "entryVersion": 21,
     "firstPublicDate": "2025-04-09",
@@ -544,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2022-05-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "current_source_sequence_sha256": "bd37d1d516e73777e155d3437157c555ba99078fd50abfd1f3899c2c20580fad",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 270,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "bd37d1d516e73777e155d3437157c555ba99078fd50abfd1f3899c2c20580fad",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 19,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A8I6GJ95",
   "selected_historical_entry_version": 19,
+  "selected_historical_record_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
+  "selected_historical_source_sequence_length": 270,
+  "selected_historical_source_sequence_sha256": "bd37d1d516e73777e155d3437157c555ba99078fd50abfd1f3899c2c20580fad",
   "selected_historical_version": {
     "accession": "A0A8I6GJ95",
     "database": "Swiss-Prot",
@@ -562,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DHB14_RAT",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
-  "selected_historical_source_sequence_sha256": "bd37d1d516e73777e155d3437157c555ba99078fd50abfd1f3899c2c20580fad",
-  "selected_historical_source_sequence_length": 270,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 19,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A8I6GJ95\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -612,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":21,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2022-05-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -631,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rat\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Rattus\"],\"scientificName\":\"Rattus norvegicus\",\"taxonId\":10116}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -650,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Hydroxysteroid 17-beta dehydrogenase 14\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38944119\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.122\"}],\"fullName\":{\"value\":\"L-fucose dehydrogenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -669,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"38944119\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81516\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.122\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38944119\",\"source\":\"PubMed\"}],\"name\":\"L-fucose + NAD(+) = L-fucono-1,5-lactone + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81515\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:2181\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:81457\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -688,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"38944119\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81520\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.122\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38944119\",\"source\":\"PubMed\"}],\"name\":\"D-arabinose + NAD(+) = D-arabinono-1,5-lactone + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81519\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:46994\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194242\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -707,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"38944119\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81524\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.122\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38944119\",\"source\":\"PubMed\"}],\"name\":\"L-galactose + NAD(+) = L-galactono-1,5-lactone + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81523\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:37619\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:182410\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -726,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json",
-  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
-  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Witecka A.\",\"Kazak V.\",\"Kwiatkowski S.\",\"Kiersztan A.\",\"Jagielski A.K.\",\"Kozminski W.\",\"Augustyniak R.\",\"Drozak J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38944119\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jbc.2024.107501\"}],\"citationType\":\"journal article\",\"firstPage\":\"107501\",\"id\":\"38944119\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"107501\",\"publicationDate\":\"2024\",\"title\":\"Hydroxysteroid 17-beta dehydrogenase 14 (HSD17B14) is an L-fucose dehydrogenase, the initial enzyme of the L-fucose degradation pathway.\",\"volume\":\"300\"},\"referenceNumber\":2,\"referencePositions\":[\"CATALYTIC ACTIVITY\",\"FUNCTION\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:12.152365+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b771d75ec68fe3fe40ec9ce4a7c5be09aba6ba685a4b44078776bc6814ffb3ca",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6GJ95.json"
 }
 ```
 
@@ -744,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19",
-  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
-  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   DHB14_RAT               Reviewed;         270 AA.\nAC   A0A8I6GJ95;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-MAY-2022, sequence version 1.\nDT   28-JAN-2026, entry version 19.\nDE   RecName: Full=L-fucose dehydrogenase;\nDE            EC=1.1.1.122 {ECO:0000269|PubMed:38944119};\nDE   AltName: Full=Hydroxysteroid 17-beta dehydrogenase 14;\nGN   Name=Hsd17b14;\nOS   Rattus norvegicus (Rat).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Rattus.\nOX   NCBI_TaxID=10116;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19"
 }
 ```
 
@@ -765,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19",
-  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
-  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=L-fucose dehydrogenase;\nDE            EC=1.1.1.122 {ECO:0000269|PubMed:38944119};\nDE   AltName: Full=Hydroxysteroid 17-beta dehydrogenase 14;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19"
 }
 ```
 
@@ -786,18 +535,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19",
-  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
-  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
-  "source_locator": "lines 62-69",
   "excerpt": "RN   [2]\nRP   CATALYTIC ACTIVITY, FUNCTION, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=38944119; DOI=10.1016/j.jbc.2024.107501;\nRA   Witecka A., Kazak V., Kwiatkowski S., Kiersztan A., Jagielski A.K.,\nRA   Kozminski W., Augustyniak R., Drozak J.;\nRT   \"Hydroxysteroid 17-beta dehydrogenase 14 (HSD17B14) is an L-fucose\nRT   dehydrogenase, the initial enzyme of the L-fucose degradation pathway.\";\nRL   J. Biol. Chem. 300:107501-107501(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19"
 }
 ```
 
@@ -807,18 +556,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19",
-  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
-  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
-  "source_locator": "lines 77-83",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-fucose + NAD(+) = L-fucono-1,5-lactone + NADH + H(+);\nCC         Xref=Rhea:RHEA:81515, ChEBI:CHEBI:2181, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57945, ChEBI:CHEBI:81457;\nCC         EC=1.1.1.122; Evidence={ECO:0000269|PubMed:38944119};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81516;\nCC         Evidence={ECO:0000305|PubMed:38944119};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19"
 }
 ```
 
@@ -828,18 +577,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19",
-  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
-  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
-  "source_locator": "lines 84-90",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=D-arabinose + NAD(+) = D-arabinono-1,5-lactone + NADH + H(+);\nCC         Xref=Rhea:RHEA:81519, ChEBI:CHEBI:15378, ChEBI:CHEBI:46994,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57945, ChEBI:CHEBI:194242;\nCC         EC=1.1.1.122; Evidence={ECO:0000269|PubMed:38944119};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81520;\nCC         Evidence={ECO:0000305|PubMed:38944119};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 84-90",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19"
 }
 ```
 
@@ -849,18 +598,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19",
-  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
-  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
-  "source_locator": "lines 91-97",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-galactose + NAD(+) = L-galactono-1,5-lactone + NADH + H(+);\nCC         Xref=Rhea:RHEA:81523, ChEBI:CHEBI:15378, ChEBI:CHEBI:37619,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57945, ChEBI:CHEBI:182410;\nCC         EC=1.1.1.122; Evidence={ECO:0000269|PubMed:38944119};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81524;\nCC         Evidence={ECO:0000305|PubMed:38944119};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:42:06.511227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 91-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "254b3aaa13d8772a07a9fba560b88aee21dbd339669de4833af8d223c7eed898",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6GJ95?format=txt&versions=19"
 }
 ```
 

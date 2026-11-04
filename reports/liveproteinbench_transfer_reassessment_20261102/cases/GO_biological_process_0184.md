@@ -1,18 +1,16 @@
-# GO_biological_process_0184: before and after transfer clarification
+# GO_biological_process_0184
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0184.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0184.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — carboxylic acid metabolic process
+**Expected answer:** **A** — carboxylic acid metabolic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> For the sequence-matched protein, experimental annotations report decarboxylation of L-tyrosine and L-DOPA. These are carboxylic-acid-containing substrates, so their metabolism supports option A as a broad process, though more specific annotated processes are also available.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [H8](#evidence-h8), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is compatible with a soluble enzyme, but the input does not establish its substrate or biological role. Inferring that it acts on amino-acid carboxyl groups rather than participating in another process requires identifying its protein-specific function.
-
-
-**Missing item-specific fact**
-
-> The absent fact is that this protein catalyzes aromatic amino acid decarboxylation, including decarboxylation of tyrosine and L-DOPA; this substrate-specific functional assignment is needed to select A.
-
-
-**Reason**
-
-> The sequence alone does not make a sufficiently specific case for the substrate or process among the options. The protein-specific functional assignment is not supplied, and merely recognizing or retrieving it would be lookup or memorization rather than reasoning from the provided context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option A is broad but is supported by the reported metabolism of carboxylic-acid-containing amino-acid substrates. The other choices do not have comparable support in the supplied input.
-
-
-### Important caveats
-
-- The reviewer-only evidence matches the supplied sequence; the accession and functional annotation were not provided to the evaluated model.
-- The protein also has more specific annotations for alkaloid and phenylethylamine biosynthesis, neither of which is offered as a choice.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is compatible with a soluble enzyme, but the input does not establish its substrate or biological role. Inferring that it acts on amino-acid carboxyl groups rather than participating in another process requires identifying its protein-specific function.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The absent fact is that this protein catalyzes aromatic amino acid decarboxylation, including decarboxylation of tyrosine and L-DOPA; this substrate-specific functional assignment is needed to select A.",
-    "reason": "The sequence alone does not make a sufficiently specific case for the substrate or process among the options. The protein-specific functional assignment is not supplied, and merely recognizing or retrieving it would be lookup or memorization rather than reasoning from the provided context."
-  },
-  "case_id": "GO_biological_process_0184",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "H8",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "For the sequence-matched protein, experimental annotations report decarboxylation of L-tyrosine and L-DOPA. These are carboxylic-acid-containing substrates, so their metabolism supports option A as a broad process, though more specific annotated processes are also available."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence matches the supplied sequence; the accession and functional annotation were not provided to the evaluated model.",
-    "The protein also has more specific annotations for alkaloid and phenylethylamine biosynthesis, neither of which is offered as a choice."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option A is broad but is supported by the reported metabolism of carboxylic-acid-containing amino-acid substrates. The other choices do not have comparable support in the supplied input."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0184",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "For the sequence-matched protein, experimental annotations report decarboxylation of L-tyrosine and L-DOPA. These are carboxylic-acid-containing substrates, so their metabolism supports option A as a broad process, though more specific annotated processes are also available.",
-    "evidence_ids": ["C5", "H4", "H8", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is compatible with a soluble enzyme, but the input does not establish its substrate or biological role. Inferring that it acts on amino-acid carboxyl groups rather than participating in another process requires identifying its protein-specific function.",
-    "missing_item_specific_fact": "The absent fact is that this protein catalyzes aromatic amino acid decarboxylation, including decarboxylation of tyrosine and L-DOPA; this substrate-specific functional assignment is needed to select A.",
-    "reason": "The sequence alone does not make a sufficiently specific case for the substrate or process among the options. The protein-specific functional assignment is not supplied, and merely recognizing or retrieving it would be lookup or memorization rather than reasoning from the provided context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option A is broad but is supported by the reported metabolism of carboxylic-acid-containing amino-acid substrates. The other choices do not have comparable support in the supplied input."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence matches the supplied sequence; the accession and functional annotation were not provided to the evaluated model.",
-    "The protein also has more specific annotations for alkaloid and phenylethylamine biosynthesis, neither of which is offered as a choice."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein (A0AA51Z3J4, LwTyDC2) is an experimentally validated L-tyrosine/L-DOPA decarboxylase (EC 4.1.1.25/4.1.1.28, ECO:0000269). Decarboxylation of L-tyrosine and L-DOPA is a chemical reaction involving carboxylic acids (both substrates contain COOH groups), which falls within the definition of GO:0019752 'carboxylic acid metabolic process' ('The chemical reactions and pathways involving carboxylic acids, any organic acid containing one or more carboxyl (COOH) groups'). Among the four choices, A is the only option with any biochemical connection to this enzyme. However, the term is flagged 'do_not_annotate' in GO and is extremely broad; the protein's actual direct annotations are more specific (amino acid metabolic process IEA:InterPro, alkaloid biosynthetic process IDA, phenylethylamine biosynthetic process IDA). The answer is defensible as the best available option but is not the most precise description.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C9](#evidence-c9), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein sequence contains motifs characteristic of PLP-dependent aromatic amino acid decarboxylases. Recognizing this enzyme class establishes that it catalyzes removal of a carboxyl group from amino acid substrates. Since amino acids are by definition carboxylic acids (containing COOH groups), their decarboxylation is a carboxylic acid metabolic reaction. The three distractors are clearly incompatible: 'response to cytokine' (B) and 'bone mineralization' (C) are animal-specific processes irrelevant to a plant enzyme, and 'coenzyme A biosynthetic process' (D) involves a completely different enzymatic pathway (pantothenate/CoA synthesis) unrelated to aromatic amino acid decarboxylation.
-
-
-**Missing item-specific fact**
-
-> None strictly required. General knowledge that (1) this is a plant protein (ruling out B, C), (2) decarboxylases act on carboxylic acid substrates, and (3) CoA biosynthesis involves entirely different enzymes (pantothenate kinases, etc., ruling out D) suffices to eliminate distractors and select A.
-
-
-**Reason**
-
-> A model with general biochemistry knowledge can identify the enzyme as a decarboxylase from sequence motifs, recognize that amino acids are carboxylic acids, and eliminate the three clearly incompatible distractors. The reasoning path does not require memorizing a specific database annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B, C, and D are unambiguously incompatible with a plant aromatic amino acid decarboxylase. Only A has any biochemical relevance. While 'amino acid metabolic process' or 'alkaloid biosynthetic process' would be more precise terms (and are the actual GO annotations), they are not offered, leaving A as the sole defensible choice among the given options.
-
-
-### Important caveats
-
-- GO:0019752 is flagged 'gocheck_do_not_annotate' in the ontology, meaning curators deliberately avoid using it for direct annotation due to excessive breadth. The protein's actual annotations are more specific (GO:0006520 amino acid metabolic process, GO:0009821 alkaloid biosynthetic process).
-- The expected answer is the broadest possible correct category rather than the most informative one. A more precise benchmark would offer 'amino acid metabolic process' or 'alkaloid biosynthetic process' as the correct option.
-- The sequence-match is confirmed (SHA256 match between benchmark and UniProt entry A0AA51Z3J4, 522 aa).
-- The reviewer-only evidence confirms experimental (IDA) annotations for alkaloid/phenylethylamine/tyramine biosynthetic processes, but none of these specific terms appear among the answer choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein sequence contains motifs characteristic of PLP-dependent aromatic amino acid decarboxylases. Recognizing this enzyme class establishes that it catalyzes removal of a carboxyl group from amino acid substrates. Since amino acids are by definition carboxylic acids (containing COOH groups), their decarboxylation is a carboxylic acid metabolic reaction. The three distractors are clearly incompatible: 'response to cytokine' (B) and 'bone mineralization' (C) are animal-specific processes irrelevant to a plant enzyme, and 'coenzyme A biosynthetic process' (D) involves a completely different enzymatic pathway (pantothenate/CoA synthesis) unrelated to aromatic amino acid decarboxylation.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. General knowledge that (1) this is a plant protein (ruling out B, C), (2) decarboxylases act on carboxylic acid substrates, and (3) CoA biosynthesis involves entirely different enzymes (pantothenate kinases, etc., ruling out D) suffices to eliminate distractors and select A.",
-    "reason": "A model with general biochemistry knowledge can identify the enzyme as a decarboxylase from sequence motifs, recognize that amino acids are carboxylic acids, and eliminate the three clearly incompatible distractors. The reasoning path does not require memorizing a specific database annotation."
-  },
-  "case_id": "GO_biological_process_0184",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C9",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The protein (A0AA51Z3J4, LwTyDC2) is an experimentally validated L-tyrosine/L-DOPA decarboxylase (EC 4.1.1.25/4.1.1.28, ECO:0000269). Decarboxylation of L-tyrosine and L-DOPA is a chemical reaction involving carboxylic acids (both substrates contain COOH groups), which falls within the definition of GO:0019752 'carboxylic acid metabolic process' ('The chemical reactions and pathways involving carboxylic acids, any organic acid containing one or more carboxyl (COOH) groups'). Among the four choices, A is the only option with any biochemical connection to this enzyme. However, the term is flagged 'do_not_annotate' in GO and is extremely broad; the protein's actual direct annotations are more specific (amino acid metabolic process IEA:InterPro, alkaloid biosynthetic process IDA, phenylethylamine biosynthetic process IDA). The answer is defensible as the best available option but is not the most precise description."
-  },
-  "important_caveats": [
-    "GO:0019752 is flagged 'gocheck_do_not_annotate' in the ontology, meaning curators deliberately avoid using it for direct annotation due to excessive breadth. The protein's actual annotations are more specific (GO:0006520 amino acid metabolic process, GO:0009821 alkaloid biosynthetic process).",
-    "The expected answer is the broadest possible correct category rather than the most informative one. A more precise benchmark would offer 'amino acid metabolic process' or 'alkaloid biosynthetic process' as the correct option.",
-    "The sequence-match is confirmed (SHA256 match between benchmark and UniProt entry A0AA51Z3J4, 522 aa).",
-    "The reviewer-only evidence confirms experimental (IDA) annotations for alkaloid/phenylethylamine/tyramine biosynthetic processes, but none of these specific terms appear among the answer choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D are unambiguously incompatible with a plant aromatic amino acid decarboxylase. Only A has any biochemical relevance. While 'amino acid metabolic process' or 'alkaloid biosynthetic process' would be more precise terms (and are the actual GO annotations), they are not offered, leaving A as the sole defensible choice among the given options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0184",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein (A0AA51Z3J4, LwTyDC2) is an experimentally validated L-tyrosine/L-DOPA decarboxylase (EC 4.1.1.25/4.1.1.28, ECO:0000269). Decarboxylation of L-tyrosine and L-DOPA is a chemical reaction involving carboxylic acids (both substrates contain COOH groups), which falls within the definition of GO:0019752 'carboxylic acid metabolic process' ('The chemical reactions and pathways involving carboxylic acids, any organic acid containing one or more carboxyl (COOH) groups'). Among the four choices, A is the only option with any biochemical connection to this enzyme. However, the term is flagged 'do_not_annotate' in GO and is extremely broad; the protein's actual direct annotations are more specific (amino acid metabolic process IEA:InterPro, alkaloid biosynthetic process IDA, phenylethylamine biosynthetic process IDA). The answer is defensible as the best available option but is not the most precise description.",
-    "evidence_ids": ["C4", "C5", "C9", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein sequence contains motifs characteristic of PLP-dependent aromatic amino acid decarboxylases. Recognizing this enzyme class establishes that it catalyzes removal of a carboxyl group from amino acid substrates. Since amino acids are by definition carboxylic acids (containing COOH groups), their decarboxylation is a carboxylic acid metabolic reaction. The three distractors are clearly incompatible: 'response to cytokine' (B) and 'bone mineralization' (C) are animal-specific processes irrelevant to a plant enzyme, and 'coenzyme A biosynthetic process' (D) involves a completely different enzymatic pathway (pantothenate/CoA synthesis) unrelated to aromatic amino acid decarboxylation.",
-    "missing_item_specific_fact": "None strictly required. General knowledge that (1) this is a plant protein (ruling out B, C), (2) decarboxylases act on carboxylic acid substrates, and (3) CoA biosynthesis involves entirely different enzymes (pantothenate kinases, etc., ruling out D) suffices to eliminate distractors and select A.",
-    "reason": "A model with general biochemistry knowledge can identify the enzyme as a decarboxylase from sequence motifs, recognize that amino acids are carboxylic acids, and eliminate the three clearly incompatible distractors. The reasoning path does not require memorizing a specific database annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D are unambiguously incompatible with a plant aromatic amino acid decarboxylase. Only A has any biochemical relevance. While 'amino acid metabolic process' or 'alkaloid biosynthetic process' would be more precise terms (and are the actual GO annotations), they are not offered, leaving A as the sole defensible choice among the given options."
-  },
-  "important_caveats": [
-    "GO:0019752 is flagged 'gocheck_do_not_annotate' in the ontology, meaning curators deliberately avoid using it for direct annotation due to excessive breadth. The protein's actual annotations are more specific (GO:0006520 amino acid metabolic process, GO:0009821 alkaloid biosynthetic process).",
-    "The expected answer is the broadest possible correct category rather than the most informative one. A more precise benchmark would offer 'amino acid metabolic process' or 'alkaloid biosynthetic process' as the correct option.",
-    "The sequence-match is confirmed (SHA256 match between benchmark and UniProt entry A0AA51Z3J4, 522 aa).",
-    "The reviewer-only evidence confirms experimental (IDA) annotations for alkaloid/phenylethylamine/tyramine biosynthetic processes, but none of these specific terms appear among the answer choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AA51Z3J4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 522,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
   "current_entry_audit": {
     "entryVersion": 11,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "current_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 522,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 9,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AA51Z3J4",
   "selected_historical_entry_version": 9,
+  "selected_historical_record_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "selected_historical_source_sequence_length": 522,
+  "selected_historical_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
   "selected_historical_version": {
     "accession": "A0AA51Z3J4",
     "database": "Swiss-Prot",
@@ -550,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TYDC2_LOPWI",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "selected_historical_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
-  "selected_historical_source_sequence_length": 522,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 9,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AA51Z3J4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -604,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":11,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -623,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Peyote\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Cactineae\",\"Cactaceae\",\"Cactoideae\",\"Cacteae\",\"Lophophora\"],\"scientificName\":\"Lophophora williamsii\",\"synonyms\":[\"Echinocactus williamsii\"],\"taxonId\":130138}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -642,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37675639\",\"source\":\"PubMed\"}],\"value\":\"Aromatic amino acid decarboxylase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37675639\",\"source\":\"PubMed\"}],\"value\":\"LwTyDC1\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.25\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.28\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"L-tyrosine/L-DOPA decarboxylase 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"LwTyDC2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -661,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"Aromatic amino acid decarboxylase participating in the biosynthesis of natural products derived from phenylethylamine, including mescaline, a natural hallucinogen potentially used in psychotherapeutic treatments (PubMed:37675639, PubMed:38835170). Catalyzes the decarboxylation of L-tyrosine and L-DOPA (PubMed:37675639, PubMed:38835170)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -680,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"Aromatic compound metabolism\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -699,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -718,15 +478,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/7",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000314\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"id\":\"GO:0009821\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:alkaloid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/7",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -737,15 +497,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0006520\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:amino acid metabolic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -756,15 +516,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000314\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"id\":\"GO:0042444\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:phenylethylamine biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -775,15 +535,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/10",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"37675639\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000314\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"id\":\"GO:1901695\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:tyramine biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/10",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -794,15 +554,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Watkins J.L.\",\"Li Q.\",\"Yeaman S.\",\"Facchini P.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37675639\"},{\"database\":\"DOI\",\"id\":\"10.1111/tpj.16447\"}],\"citationType\":\"journal article\",\"firstPage\":\"635\",\"id\":\"37675639\",\"journal\":\"Plant J.\",\"lastPage\":\"649\",\"publicationDate\":\"2023\",\"title\":\"Elucidation of the mescaline biosynthetic pathway in peyote (Lophophora williamsii).\",\"volume\":\"116\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WMX25288.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. Jourdaniana\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -813,15 +573,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Berman P.\",\"de Haro L.A.\",\"Cavaco A.-R.\",\"Panda S.\",\"Dong Y.\",\"Kuzmich N.\",\"Lichtenstein G.\",\"Peleg Y.\",\"Harat H.\",\"Jozwiak A.\",\"Cai J.\",\"Heinig U.\",\"Meir S.\",\"Rogachev I.\",\"Aharoni A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38835170\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.molp.2024.05.012\"}],\"citationType\":\"journal article\",\"firstPage\":\"1129\",\"id\":\"38835170\",\"journal\":\"Mol. Plant\",\"lastPage\":\"1150\",\"publicationDate\":\"2024\",\"title\":\"The biosynthetic pathway of the hallucinogen mescaline and its heterologous reconstruction.\",\"volume\":\"17\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. Rehovot 7\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOTECHNOLOGY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -831,18 +591,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 1-18",
   "excerpt": "ID   TYDC2_LOPWI             Reviewed;         522 AA.\nAC   A0AA51Z3J4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 2.\nDT   28-JAN-2026, entry version 9.\nDE   RecName: Full=L-tyrosine/L-DOPA decarboxylase 2 {ECO:0000303|PubMed:38835170};\nDE            Short=LwTyDC2 {ECO:0000303|PubMed:38835170};\nDE            EC=4.1.1.25 {ECO:0000269|PubMed:38835170};\nDE            EC=4.1.1.28 {ECO:0000269|PubMed:38835170};\nDE   AltName: Full=Aromatic amino acid decarboxylase 1 {ECO:0000303|PubMed:37675639};\nDE            Short=LwTyDC1 {ECO:0000303|PubMed:37675639};\nGN   Name=TyDC2 {ECO:0000303|PubMed:38835170};\nGN   Synonyms=TyDC1 {ECO:0000303|PubMed:37675639};\nOS   Lophophora williamsii (Peyote) (Echinocactus williamsii).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Cactineae; Cactaceae; Cactoideae; Cacteae; Lophophora.\nOX   NCBI_TaxID=130138;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-18",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -852,18 +612,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 19-27",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WMX25288.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   TISSUE SPECIFICITY.\nRC   STRAIN=cv. Jourdaniana;\nRX   PubMed=37675639; DOI=10.1111/tpj.16447;\nRA   Watkins J.L., Li Q., Yeaman S., Facchini P.J.;\nRT   \"Elucidation of the mescaline biosynthetic pathway in peyote (Lophophora\nRT   williamsii).\";\nRL   Plant J. 116:635-649(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -873,18 +633,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 28-38",
   "excerpt": "RN   [2]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY,\nRP   BIOTECHNOLOGY, BIOPHYSICOCHEMICAL PROPERTIES, AND TISSUE SPECIFICITY.\nRC   STRAIN=cv. Rehovot 7;\nRX   PubMed=38835170; DOI=10.1016/j.molp.2024.05.012;\nRA   Berman P., de Haro L.A., Cavaco A.-R., Panda S., Dong Y., Kuzmich N.,\nRA   Lichtenstein G., Peleg Y., Harat H., Jozwiak A., Cai J., Heinig U.,\nRA   Meir S., Rogachev I., Aharoni A.;\nRT   \"The biosynthetic pathway of the hallucinogen mescaline and its\nRT   heterologous reconstruction.\";\nRL   Mol. Plant 17:1129-1150(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -894,18 +654,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 39-45",
   "excerpt": "CC   -!- FUNCTION: Aromatic amino acid decarboxylase participating in the\nCC       biosynthesis of natural products derived from phenylethylamine,\nCC       including mescaline, a natural hallucinogen potentially used in\nCC       psychotherapeutic treatments (PubMed:37675639, PubMed:38835170).\nCC       Catalyzes the decarboxylation of L-tyrosine and L-DOPA\nCC       (PubMed:37675639, PubMed:38835170). {ECO:0000269|PubMed:37675639,\nCC       ECO:0000269|PubMed:38835170}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -915,18 +675,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 69-70",
   "excerpt": "CC   -!- PATHWAY: Aromatic compound metabolism. {ECO:0000269|PubMed:37675639,\nCC       ECO:0000269|PubMed:38835170}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 69-70",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -936,18 +696,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 71-72",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:37675639,\nCC       ECO:0000269|PubMed:38835170}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 71-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -957,18 +717,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 92-92",
   "excerpt": "DR   GO; GO:0009821; P:alkaloid biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 92-92",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -978,18 +738,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 93-93",
   "excerpt": "DR   GO; GO:1903184; P:L-dopa metabolic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 93-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -999,18 +759,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 94-94",
   "excerpt": "DR   GO; GO:0042444; P:phenylethylamine biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 94-94",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -1020,18 +780,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 95-95",
   "excerpt": "DR   GO; GO:1901695; P:tyramine biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 95-95",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -1042,15 +802,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 121836-121866",
   "excerpt": "[Term]\nid: GO:0015937\nname: coenzyme A biosynthetic process\nnamespace: biological_process\nalt_id: GO:0006764\ndef: \"The chemical reactions and pathways resulting in the formation of coenzyme A, 3'-phosphoadenosine-(5')diphospho(4')pantatheine, an acyl carrier in many acylation and acyl-transfer reactions in which the intermediate is a thiol ester.\" [ISBN:0198547684]\nsynonym: \"CoA biosynthesis\" EXACT []\nsynonym: \"coenzyme A anabolism\" EXACT []\nsynonym: \"coenzyme A biosynthesis\" EXACT []\nsynonym: \"coenzyme A formation\" EXACT []\nsynonym: \"coenzyme A synthesis\" EXACT []\nxref: MetaCyc:COA-PWY\nxref: MetaCyc:COA-PWY-1\nxref: MetaCyc:PANTOSYN-PWY\nxref: MetaCyc:PWY-4221\nxref: MetaCyc:PWY-7851\nxref: MetaCyc:PWY-8342\nxref: MetaCyc:PWY8J2-29\nxref: Reactome:R-HSA-196783 \"Coenzyme A biosynthesis\"\nis_a: GO:0015936 ! coenzyme A metabolic process\nis_a: GO:0044272 ! sulfur compound biosynthetic process\nis_a: GO:0072522 ! purine-containing compound biosynthetic process\nis_a: GO:1901293 ! nucleoside phosphate biosynthetic process\nproperty_value: skos:narrowMatch MetaCyc:COA-PWY\nproperty_value: skos:narrowMatch MetaCyc:COA-PWY-1\nproperty_value: skos:narrowMatch MetaCyc:PANTOSYN-PWY\nproperty_value: skos:narrowMatch MetaCyc:PWY-4221\nproperty_value: skos:narrowMatch MetaCyc:PWY-7851\nproperty_value: skos:narrowMatch MetaCyc:PWY-8342\nproperty_value: skos:narrowMatch MetaCyc:PWY8J2-29\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0015937",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 121836-121866",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0015937"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1061,15 +821,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 152755-152764",
   "excerpt": "[Term]\nid: GO:0019752\nname: carboxylic acid metabolic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways involving carboxylic acids, any organic acid containing one or more carboxyl (COOH) groups or anions (COO-).\" [ISBN:0198506732]\nsubset: gocheck_do_not_annotate\nsynonym: \"carboxylic acid metabolism\" EXACT []\nxref: Reactome:R-HSA-389661 \"Glyoxylate metabolism and glycine degradation\"\nis_a: GO:0043436 ! oxoacid metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019752",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 152755-152764",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019752"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1080,15 +840,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 164753-164762",
   "excerpt": "[Term]\nid: GO:0030282\nname: bone mineralization\nnamespace: biological_process\ndef: \"The deposition of hydroxyapatite, a form of calcium phosphate with the formula Ca10(PO4)6(OH)2, in bone tissue.\" [GOC:mah, PMID:22936354]\nsynonym: \"bone calcification\" NARROW []\nis_a: GO:0031214 ! biomineral tissue development\nis_a: GO:0160108 ! animal gross anatomical part developmental process\nrelationship: part_of GO:0001503 ! ossification\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030282",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 164753-164762",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030282"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1099,15 +859,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 205545-205553",
   "excerpt": "[Term]\nid: GO:0034097\nname: response to cytokine\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a cytokine stimulus.\" [GOC:sl]\nsynonym: \"response to cytokine stimulus\" EXACT [GOC:dos]\nxref: Reactome:R-HSA-9645135 \"STAT5 Activation\"\nis_a: GO:1901652 ! response to peptide\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0034097",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 205545-205553",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0034097"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

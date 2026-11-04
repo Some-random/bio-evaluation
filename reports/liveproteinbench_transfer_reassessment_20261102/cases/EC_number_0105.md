@@ -1,18 +1,16 @@
-# EC_number_0105: before and after transfer clarification
+# EC_number_0105
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0105.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0105.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 2.3.1.322
+**Expected answer:** **D** — 2.3.1.322
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry annotated with EC 2.3.1.322. The entry attributes this EC number and the rhazimol acetylation reaction to experimental evidence (ECO:0000269) and PubMed 36349266; the historical entry also contains the annotation. This supports choice D, though the primary study was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features may suggest an acyltransferase rather than an oxygenase, but choices A and D are both acyltransferase EC numbers. The sequence and choices alone do not establish the enzyme's specific substrate reaction needed to distinguish them.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic activity: this enzyme catalyzes acetyl transfer from acetyl-CoA to rhazimol, producing akuammiline.
-
-
-**Reason**
-
-> Identifying the exact EC number requires the enzyme's specific catalytic activity, an item-specific fact absent from the supplied input. Recognizing the sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The annotated, experimentally supported reaction corresponds to D; no supplied evidence supports another listed EC number for this sequence.
-
-
-### Important caveats
-
-- The supporting annotation is tied to a cited experimental publication, but that publication was not independently examined.
-- The sequence match and historical annotation are established by reviewer-only evidence, not information provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features may suggest an acyltransferase rather than an oxygenase, but choices A and D are both acyltransferase EC numbers. The sequence and choices alone do not establish the enzyme's specific substrate reaction needed to distinguish them.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic activity: this enzyme catalyzes acetyl transfer from acetyl-CoA to rhazimol, producing akuammiline.",
-    "reason": "Identifying the exact EC number requires the enzyme's specific catalytic activity, an item-specific fact absent from the supplied input. Recognizing the sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided evidence."
-  },
-  "case_id": "EC_number_0105",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated with EC 2.3.1.322. The entry attributes this EC number and the rhazimol acetylation reaction to experimental evidence (ECO:0000269) and PubMed 36349266; the historical entry also contains the annotation. This supports choice D, though the primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The supporting annotation is tied to a cited experimental publication, but that publication was not independently examined.",
-    "The sequence match and historical annotation are established by reviewer-only evidence, not information provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The annotated, experimentally supported reaction corresponds to D; no supplied evidence supports another listed EC number for this sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0105",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated with EC 2.3.1.322. The entry attributes this EC number and the rhazimol acetylation reaction to experimental evidence (ECO:0000269) and PubMed 36349266; the historical entry also contains the annotation. This supports choice D, though the primary study was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features may suggest an acyltransferase rather than an oxygenase, but choices A and D are both acyltransferase EC numbers. The sequence and choices alone do not establish the enzyme's specific substrate reaction needed to distinguish them.",
-    "missing_item_specific_fact": "The protein-specific catalytic activity: this enzyme catalyzes acetyl transfer from acetyl-CoA to rhazimol, producing akuammiline.",
-    "reason": "Identifying the exact EC number requires the enzyme's specific catalytic activity, an item-specific fact absent from the supplied input. Recognizing the sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The annotated, experimentally supported reaction corresponds to D; no supplied evidence supports another listed EC number for this sequence."
-  },
-  "important_caveats": [
-    "The supporting annotation is tied to a cited experimental publication, but that publication was not independently examined.",
-    "The sequence match and historical annotation are established by reviewer-only evidence, not information provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein sequence matches UniProt entry A0A9E7S5E3 exactly (sequence_comparison: matched, SHA-256 identical). The entry is annotated as Akuammiline synthase 1 (AsAKS1) with EC 2.3.1.322, supported by experimental evidence (ECO:0000269, PubMed:36349266). The catalytic reaction (rhazimol + acetyl-CoA → akuammiline + CoA + H⁺) confirms the acyltransferase classification. Both current and historical (entry version 13) records confirm this annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a clear HxxDG motif (ISHKVADG) and a DPGx-like motif (SPGDE), characteristic of BAHD acyltransferases, and lacks the P450 heme-binding motif (FxxGxxxCxG) and Fe(II)/2-oxoglutarate dioxygenase motifs (HxD/E…H). The protein length (419 AA) is consistent with BAHD acyltransferases rather than P450s (~500+ AA) or 2OG-dependent oxygenases. This reasoning meaningfully rules out options B (1.14.11.53, Fe(II)/2OG-dependent dioxygenase) and C (1.14.14.154, P450 monooxygenase), narrowing to acyltransferases A (2.3.1.319) and D (2.3.1.322).
-
-
-**Missing item-specific fact**
-
-> Distinguishing EC 2.3.1.319 from EC 2.3.1.322 requires knowing the specific substrate of this enzyme (rhazimol acetylation to akuammiline vs. the substrate for 2.3.1.319). The specific active-site architecture determining substrate selectivity within the BAHD acyltransferase superfamily cannot be reliably inferred from the 419-residue sequence alone without structural data or a trained specificity predictor. This is an item-specific enzymological fact.
-
-
-**Reason**
-
-> While the broad EC class (2.3.1.x acyltransferase vs. 1.14.x.x oxidoreductase) is reasoning-supported via the HxxDG motif and absence of P450/dioxygenase signatures, the final distinction between the two acyltransferase options (A vs. D) depends on knowing the specific substrate identity of this particular enzyme, which is not derivable from sequence motifs alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Both A (2.3.1.319) and D (2.3.1.322) are acyltransferases within the same EC subclass. Without specific knowledge of the enzyme's substrate (rhazimol → akuammiline), a model reasoning from sequence motifs alone cannot definitively choose between these two. The HxxDG and DPGx motifs confirm BAHD acyltransferase family membership but do not encode substrate specificity at the level of individual EC numbers.
-
-
-### Important caveats
-
-- The EC annotation is backed by experimental evidence (ECO:0000269) from a 2022 Chem. Sci. publication, not merely computational prediction.
-- The protein is annotated as a BAHD acyltransferase (gene synonym BAHD3), consistent with the HxxDG motif observed.
-- The distinction between ruling out B/C (reasoning-supported via motif analysis) and choosing between A/D (lookup-dependent) is the critical boundary for answerability.
-- The reviewer-only evidence was not available to the evaluated model; the model must work solely from the 419-residue sequence and four EC number choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a clear HxxDG motif (ISHKVADG) and a DPGx-like motif (SPGDE), characteristic of BAHD acyltransferases, and lacks the P450 heme-binding motif (FxxGxxxCxG) and Fe(II)/2-oxoglutarate dioxygenase motifs (HxD/E…H). The protein length (419 AA) is consistent with BAHD acyltransferases rather than P450s (~500+ AA) or 2OG-dependent oxygenases. This reasoning meaningfully rules out options B (1.14.11.53, Fe(II)/2OG-dependent dioxygenase) and C (1.14.14.154, P450 monooxygenase), narrowing to acyltransferases A (2.3.1.319) and D (2.3.1.322).",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Distinguishing EC 2.3.1.319 from EC 2.3.1.322 requires knowing the specific substrate of this enzyme (rhazimol acetylation to akuammiline vs. the substrate for 2.3.1.319). The specific active-site architecture determining substrate selectivity within the BAHD acyltransferase superfamily cannot be reliably inferred from the 419-residue sequence alone without structural data or a trained specificity predictor. This is an item-specific enzymological fact.",
-    "reason": "While the broad EC class (2.3.1.x acyltransferase vs. 1.14.x.x oxidoreductase) is reasoning-supported via the HxxDG motif and absence of P450/dioxygenase signatures, the final distinction between the two acyltransferase options (A vs. D) depends on knowing the specific substrate identity of this particular enzyme, which is not derivable from sequence motifs alone."
-  },
-  "case_id": "EC_number_0105",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The protein sequence matches UniProt entry A0A9E7S5E3 exactly (sequence_comparison: matched, SHA-256 identical). The entry is annotated as Akuammiline synthase 1 (AsAKS1) with EC 2.3.1.322, supported by experimental evidence (ECO:0000269, PubMed:36349266). The catalytic reaction (rhazimol + acetyl-CoA → akuammiline + CoA + H⁺) confirms the acyltransferase classification. Both current and historical (entry version 13) records confirm this annotation."
-  },
-  "important_caveats": [
-    "The EC annotation is backed by experimental evidence (ECO:0000269) from a 2022 Chem. Sci. publication, not merely computational prediction.",
-    "The protein is annotated as a BAHD acyltransferase (gene synonym BAHD3), consistent with the HxxDG motif observed.",
-    "The distinction between ruling out B/C (reasoning-supported via motif analysis) and choosing between A/D (lookup-dependent) is the critical boundary for answerability.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must work solely from the 419-residue sequence and four EC number choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Both A (2.3.1.319) and D (2.3.1.322) are acyltransferases within the same EC subclass. Without specific knowledge of the enzyme's substrate (rhazimol → akuammiline), a model reasoning from sequence motifs alone cannot definitively choose between these two. The HxxDG and DPGx motifs confirm BAHD acyltransferase family membership but do not encode substrate specificity at the level of individual EC numbers."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0105",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein sequence matches UniProt entry A0A9E7S5E3 exactly (sequence_comparison: matched, SHA-256 identical). The entry is annotated as Akuammiline synthase 1 (AsAKS1) with EC 2.3.1.322, supported by experimental evidence (ECO:0000269, PubMed:36349266). The catalytic reaction (rhazimol + acetyl-CoA → akuammiline + CoA + H⁺) confirms the acyltransferase classification. Both current and historical (entry version 13) records confirm this annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a clear HxxDG motif (ISHKVADG) and a DPGx-like motif (SPGDE), characteristic of BAHD acyltransferases, and lacks the P450 heme-binding motif (FxxGxxxCxG) and Fe(II)/2-oxoglutarate dioxygenase motifs (HxD/E…H). The protein length (419 AA) is consistent with BAHD acyltransferases rather than P450s (~500+ AA) or 2OG-dependent oxygenases. This reasoning meaningfully rules out options B (1.14.11.53, Fe(II)/2OG-dependent dioxygenase) and C (1.14.14.154, P450 monooxygenase), narrowing to acyltransferases A (2.3.1.319) and D (2.3.1.322).",
-    "missing_item_specific_fact": "Distinguishing EC 2.3.1.319 from EC 2.3.1.322 requires knowing the specific substrate of this enzyme (rhazimol acetylation to akuammiline vs. the substrate for 2.3.1.319). The specific active-site architecture determining substrate selectivity within the BAHD acyltransferase superfamily cannot be reliably inferred from the 419-residue sequence alone without structural data or a trained specificity predictor. This is an item-specific enzymological fact.",
-    "reason": "While the broad EC class (2.3.1.x acyltransferase vs. 1.14.x.x oxidoreductase) is reasoning-supported via the HxxDG motif and absence of P450/dioxygenase signatures, the final distinction between the two acyltransferase options (A vs. D) depends on knowing the specific substrate identity of this particular enzyme, which is not derivable from sequence motifs alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Both A (2.3.1.319) and D (2.3.1.322) are acyltransferases within the same EC subclass. Without specific knowledge of the enzyme's substrate (rhazimol → akuammiline), a model reasoning from sequence motifs alone cannot definitively choose between these two. The HxxDG and DPGx motifs confirm BAHD acyltransferase family membership but do not encode substrate specificity at the level of individual EC numbers."
-  },
-  "important_caveats": [
-    "The EC annotation is backed by experimental evidence (ECO:0000269) from a 2022 Chem. Sci. publication, not merely computational prediction.",
-    "The protein is annotated as a BAHD acyltransferase (gene synonym BAHD3), consistent with the HxxDG motif observed.",
-    "The distinction between ruling out B/C (reasoning-supported via motif analysis) and choosing between A/D (lookup-dependent) is the critical boundary for answerability.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must work solely from the 419-residue sequence and four EC number choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +155,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +274,17 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), 
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7S5E3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 419,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
   "current_entry_audit": {
     "entryVersion": 15,
     "firstPublicDate": "2025-06-18",
@@ -545,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "current_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 419,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 13,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7S5E3",
   "selected_historical_entry_version": 13,
+  "selected_historical_record_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "selected_historical_source_sequence_length": 419,
+  "selected_historical_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
   "selected_historical_version": {
     "accession": "A0A9E7S5E3",
     "database": "Swiss-Prot",
@@ -563,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AKS1_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "selected_historical_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
-  "selected_historical_source_sequence_length": 419,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 13,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7S5E3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -613,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":15,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -632,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -651,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.322\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Akuammiline synthase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsAKS1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -670,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:79624\"}}],\"reaction\":{\"ecNumber\":\"2.3.1.322\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"name\":\"rhazimol + acetyl-CoA = akuammiline + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:79623\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:141879\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:230474\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -689,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65387.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -707,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   AKS1_ALSSC              Reviewed;         419 AA.\nAC   A0A9E7S5E3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 13.\nDE   RecName: Full=Akuammiline synthase 1 {ECO:0000303|PubMed:36349266};\nDE            Short=AsAKS1 {ECO:0000303|PubMed:36349266};\nDE            EC=2.3.1.322 {ECO:0000269|PubMed:36349266};\nGN   Name=AKS1 {ECO:0000303|PubMed:36349266};\nGN   Synonyms=BAHD3 {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -728,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Akuammiline synthase 1 {ECO:0000303|PubMed:36349266};\nDE            Short=AsAKS1 {ECO:0000303|PubMed:36349266};\nDE            EC=2.3.1.322 {ECO:0000269|PubMed:36349266};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -749,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 17-24",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65387.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -770,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 31-37",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=rhazimol + acetyl-CoA = akuammiline + CoA + H(+);\nCC         Xref=Rhea:RHEA:79623, ChEBI:CHEBI:15378, ChEBI:CHEBI:57287,\nCC         ChEBI:CHEBI:57288, ChEBI:CHEBI:141879, ChEBI:CHEBI:230474;\nCC         EC=2.3.1.322; Evidence={ECO:0000269|PubMed:36349266};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:79624;\nCC         Evidence={ECO:0000269|PubMed:36349266};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 

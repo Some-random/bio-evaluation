@@ -1,18 +1,16 @@
-# pathway_0079: before and after transfer clarification
+# pathway_0079
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0079.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0079.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **D** — Antibiotic biosynthesis. .
+**Expected answer:** **D** — Antibiotic biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 681-residue sequence matches the historical UniProt entry for TokK. That entry assigns it to antibiotic biosynthesis, and the cited research concerns a cobalamin-dependent enzyme involved in complex carbapenem biosynthesis. The pathway annotation is curator-level evidence, while the research citations provide supporting functional context.
-
-Citations as saved: [H2](#evidence-h2), [H5](#evidence-h5), [H6](#evidence-h6), [C5](#evidence-c5), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features may suggest a complex cofactor-dependent enzyme, but do not meaningfully establish that its pathway is antibiotic biosynthesis rather than the other listed pathways.
-
-
-**Missing item-specific fact**
-
-> The identity and pathway role of this particular protein: TokK catalyzes methylations in carbapenem biosynthesis.
-
-
-**Reason**
-
-> The input provides only the sequence and broad pathway choices. Distinguishing antibiotic biosynthesis requires protein-specific functional or pathway annotation; recognizing the sequence from a database would be lookup or memorization, not reasoning from the supplied context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein-specific evidence supports antibiotic biosynthesis. The input alone does not provide enough information to distinguish it, but that lack of answerability does not establish another listed option as equally defensible.
-
-
-### Important caveats
-
-- The annotation and sequence match are reviewer-only evidence and were not supplied to the evaluated model.
-- The source record identifies the organism as Streptomyces tokunonensis; the author’s exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features may suggest a complex cofactor-dependent enzyme, but do not meaningfully establish that its pathway is antibiotic biosynthesis rather than the other listed pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity and pathway role of this particular protein: TokK catalyzes methylations in carbapenem biosynthesis.",
-    "reason": "The input provides only the sequence and broad pathway choices. Distinguishing antibiotic biosynthesis requires protein-specific functional or pathway annotation; recognizing the sequence from a database would be lookup or memorization, not reasoning from the supplied context."
-  },
-  "case_id": "pathway_0079",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H2",
-      "H5",
-      "H6",
-      "C5",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 681-residue sequence matches the historical UniProt entry for TokK. That entry assigns it to antibiotic biosynthesis, and the cited research concerns a cobalamin-dependent enzyme involved in complex carbapenem biosynthesis. The pathway annotation is curator-level evidence, while the research citations provide supporting functional context."
-  },
-  "important_caveats": [
-    "The annotation and sequence match are reviewer-only evidence and were not supplied to the evaluated model.",
-    "The source record identifies the organism as Streptomyces tokunonensis; the author’s exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein-specific evidence supports antibiotic biosynthesis. The input alone does not provide enough information to distinguish it, but that lack of answerability does not establish another listed option as equally defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0079",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 681-residue sequence matches the historical UniProt entry for TokK. That entry assigns it to antibiotic biosynthesis, and the cited research concerns a cobalamin-dependent enzyme involved in complex carbapenem biosynthesis. The pathway annotation is curator-level evidence, while the research citations provide supporting functional context.",
-    "evidence_ids": ["H2", "H5", "H6", "C5", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features may suggest a complex cofactor-dependent enzyme, but do not meaningfully establish that its pathway is antibiotic biosynthesis rather than the other listed pathways.",
-    "missing_item_specific_fact": "The identity and pathway role of this particular protein: TokK catalyzes methylations in carbapenem biosynthesis.",
-    "reason": "The input provides only the sequence and broad pathway choices. Distinguishing antibiotic biosynthesis requires protein-specific functional or pathway annotation; recognizing the sequence from a database would be lookup or memorization, not reasoning from the supplied context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein-specific evidence supports antibiotic biosynthesis. The input alone does not provide enough information to distinguish it, but that lack of answerability does not establish another listed option as equally defensible."
-  },
-  "important_caveats": [
-    "The annotation and sequence match are reviewer-only evidence and were not supplied to the evaluated model.",
-    "The source record identifies the organism as Streptomyces tokunonensis; the author’s exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A6B9HEI0 (TokK from Streptomyces tokunonensis) explicitly annotates the pathway as 'Antibiotic biosynthesis' (ECO:0000305|PubMed:31774078). TokK is a cobalamin-dependent radical SAM methyltransferase that catalyzes sequential C-H methylations in the biosynthesis of thienamycin, a carbapenem antibiotic. Multiple primary publications (Sinner 2019, Knox 2022, Lichstrahl 2022) confirm its function in carbapenem biosynthesis. The sequence matches exactly (681 aa, SHA256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C9](#evidence-c9), [H6](#evidence-h6), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a canonical radical SAM motif (CPYSCSFCD, i.e., CxxxCxxC) and features consistent with a cobalamin-binding domain, identifying it as a B12-dependent radical SAM enzyme. Such enzymes occur in specialized natural product biosynthesis, which could narrow options away from dTTP biosynthesis (which uses class III ribonucleotide reductase, a different radical SAM architecture). However, radical SAM enzymes participate in antibiotic, pigment, and other specialized pathways; the B12-dependence and general architecture do not definitively distinguish 'antibiotic biosynthesis' from 'pigment biosynthesis' without knowing this specific enzyme acts in the thienamycin/carbapenem cluster.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as TokK in the thienamycin (carbapenem) biosynthetic gene cluster of Streptomyces tokunonensis, and the fact that carbapenems are β-lactam antibiotics (not pigments or polyketides). The organism name is not provided in the model input, so even the Streptomyces→antibiotic heuristic requires sequence recognition/memorization.
-
-
-**Reason**
-
-> While generalizable features (radical SAM motif, B12-binding domain, absence of polyketide synthase domains) can eliminate option B (polyketide) and partially option A (dTTP), the final discrimination between 'antibiotic biosynthesis' and 'pigment biosynthesis' requires item-specific knowledge that this enzyme catalyzes methylations in the carbapenem (thienamycin) pathway. Without the organism name or pathway context in the input, selecting D over C depends on recognizing this as a Streptomyces antibiotic-cluster enzyme.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the UniProt annotation and primary literature, 'Antibiotic biosynthesis' is the correct and unambiguous pathway assignment. Polyketide biosynthesis (B) is clearly wrong (carbapenems are not polyketides). dTTP biosynthesis (A) involves a different radical SAM enzyme class. Pigment biosynthesis (C) has no connection to TokK. The answer is singular once the protein is identified.
-
-
-### Important caveats
-
-- The pathway annotation in UniProt uses ECO:0000305 (curator inference from literature), not direct experimental pathway assignment, though the underlying function is experimentally validated by multiple primary papers including X-ray crystallography (PDB 7KDX, 7KDY).
-- The organism (Streptomyces tokunonensis) is not provided in the model input; only the raw sequence is given. Recognition of Streptomyces origin would require sequence memorization or database lookup.
-- The sequence was first publicly released in 2025 (UniProt integration date 2025-02-05), so it postdates many model training cutoffs, potentially increasing lookup dependence.
-- Carbapenems are β-lactam antibiotics, not polyketides or pigments; this taxonomic distinction is generalizable knowledge but requires knowing the specific substrate class of TokK.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a canonical radical SAM motif (CPYSCSFCD, i.e., CxxxCxxC) and features consistent with a cobalamin-binding domain, identifying it as a B12-dependent radical SAM enzyme. Such enzymes occur in specialized natural product biosynthesis, which could narrow options away from dTTP biosynthesis (which uses class III ribonucleotide reductase, a different radical SAM architecture). However, radical SAM enzymes participate in antibiotic, pigment, and other specialized pathways; the B12-dependence and general architecture do not definitively distinguish 'antibiotic biosynthesis' from 'pigment biosynthesis' without knowing this specific enzyme acts in the thienamycin/carbapenem cluster.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as TokK in the thienamycin (carbapenem) biosynthetic gene cluster of Streptomyces tokunonensis, and the fact that carbapenems are β-lactam antibiotics (not pigments or polyketides). The organism name is not provided in the model input, so even the Streptomyces→antibiotic heuristic requires sequence recognition/memorization.",
-    "reason": "While generalizable features (radical SAM motif, B12-binding domain, absence of polyketide synthase domains) can eliminate option B (polyketide) and partially option A (dTTP), the final discrimination between 'antibiotic biosynthesis' and 'pigment biosynthesis' requires item-specific knowledge that this enzyme catalyzes methylations in the carbapenem (thienamycin) pathway. Without the organism name or pathway context in the input, selecting D over C depends on recognizing this as a Streptomyces antibiotic-cluster enzyme."
-  },
-  "case_id": "pathway_0079",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C9",
-      "H6",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A6B9HEI0 (TokK from Streptomyces tokunonensis) explicitly annotates the pathway as 'Antibiotic biosynthesis' (ECO:0000305|PubMed:31774078). TokK is a cobalamin-dependent radical SAM methyltransferase that catalyzes sequential C-H methylations in the biosynthesis of thienamycin, a carbapenem antibiotic. Multiple primary publications (Sinner 2019, Knox 2022, Lichstrahl 2022) confirm its function in carbapenem biosynthesis. The sequence matches exactly (681 aa, SHA256 confirmed)."
-  },
-  "important_caveats": [
-    "The pathway annotation in UniProt uses ECO:0000305 (curator inference from literature), not direct experimental pathway assignment, though the underlying function is experimentally validated by multiple primary papers including X-ray crystallography (PDB 7KDX, 7KDY).",
-    "The organism (Streptomyces tokunonensis) is not provided in the model input; only the raw sequence is given. Recognition of Streptomyces origin would require sequence memorization or database lookup.",
-    "The sequence was first publicly released in 2025 (UniProt integration date 2025-02-05), so it postdates many model training cutoffs, potentially increasing lookup dependence.",
-    "Carbapenems are β-lactam antibiotics, not polyketides or pigments; this taxonomic distinction is generalizable knowledge but requires knowing the specific substrate class of TokK."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the UniProt annotation and primary literature, 'Antibiotic biosynthesis' is the correct and unambiguous pathway assignment. Polyketide biosynthesis (B) is clearly wrong (carbapenems are not polyketides). dTTP biosynthesis (A) involves a different radical SAM enzyme class. Pigment biosynthesis (C) has no connection to TokK. The answer is singular once the protein is identified."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0079",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A6B9HEI0 (TokK from Streptomyces tokunonensis) explicitly annotates the pathway as 'Antibiotic biosynthesis' (ECO:0000305|PubMed:31774078). TokK is a cobalamin-dependent radical SAM methyltransferase that catalyzes sequential C-H methylations in the biosynthesis of thienamycin, a carbapenem antibiotic. Multiple primary publications (Sinner 2019, Knox 2022, Lichstrahl 2022) confirm its function in carbapenem biosynthesis. The sequence matches exactly (681 aa, SHA256 confirmed).",
-    "evidence_ids": ["C5", "C6", "C9", "H6", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a canonical radical SAM motif (CPYSCSFCD, i.e., CxxxCxxC) and features consistent with a cobalamin-binding domain, identifying it as a B12-dependent radical SAM enzyme. Such enzymes occur in specialized natural product biosynthesis, which could narrow options away from dTTP biosynthesis (which uses class III ribonucleotide reductase, a different radical SAM architecture). However, radical SAM enzymes participate in antibiotic, pigment, and other specialized pathways; the B12-dependence and general architecture do not definitively distinguish 'antibiotic biosynthesis' from 'pigment biosynthesis' without knowing this specific enzyme acts in the thienamycin/carbapenem cluster.",
-    "missing_item_specific_fact": "The specific identity of this protein as TokK in the thienamycin (carbapenem) biosynthetic gene cluster of Streptomyces tokunonensis, and the fact that carbapenems are β-lactam antibiotics (not pigments or polyketides). The organism name is not provided in the model input, so even the Streptomyces→antibiotic heuristic requires sequence recognition/memorization.",
-    "reason": "While generalizable features (radical SAM motif, B12-binding domain, absence of polyketide synthase domains) can eliminate option B (polyketide) and partially option A (dTTP), the final discrimination between 'antibiotic biosynthesis' and 'pigment biosynthesis' requires item-specific knowledge that this enzyme catalyzes methylations in the carbapenem (thienamycin) pathway. Without the organism name or pathway context in the input, selecting D over C depends on recognizing this as a Streptomyces antibiotic-cluster enzyme."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the UniProt annotation and primary literature, 'Antibiotic biosynthesis' is the correct and unambiguous pathway assignment. Polyketide biosynthesis (B) is clearly wrong (carbapenems are not polyketides). dTTP biosynthesis (A) involves a different radical SAM enzyme class. Pigment biosynthesis (C) has no connection to TokK. The answer is singular once the protein is identified."
-  },
-  "important_caveats": [
-    "The pathway annotation in UniProt uses ECO:0000305 (curator inference from literature), not direct experimental pathway assignment, though the underlying function is experimentally validated by multiple primary papers including X-ray crystallography (PDB 7KDX, 7KDY).",
-    "The organism (Streptomyces tokunonensis) is not provided in the model input; only the raw sequence is given. Recognition of Streptomyces origin would require sequence memorization or database lookup.",
-    "The sequence was first publicly released in 2025 (UniProt integration date 2025-02-05), so it postdates many model training cutoffs, potentially increasing lookup dependence.",
-    "Carbapenems are β-lactam antibiotics, not polyketides or pigments; this taxonomic distinction is generalizable knowledge but requires knowing the specific substrate class of TokK."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A6B9HEI0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "20a79865ba2f5a96d35b67c5fd2787c6e2b4f9cc4e4abac3b790ab1d6f1d40bd",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 681,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "20a79865ba2f5a96d35b67c5fd2787c6e2b4f9cc4e4abac3b790ab1d6f1d40bd",
   "current_entry_audit": {
     "entryVersion": 20,
     "firstPublicDate": "2025-02-05",
@@ -541,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2020-06-17",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "current_source_sequence_sha256": "20a79865ba2f5a96d35b67c5fd2787c6e2b4f9cc4e4abac3b790ab1d6f1d40bd",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 681,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "20a79865ba2f5a96d35b67c5fd2787c6e2b4f9cc4e4abac3b790ab1d6f1d40bd",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 18,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A6B9HEI0",
   "selected_historical_entry_version": 18,
+  "selected_historical_record_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
+  "selected_historical_source_sequence_length": 681,
+  "selected_historical_source_sequence_sha256": "20a79865ba2f5a96d35b67c5fd2787c6e2b4f9cc4e4abac3b790ab1d6f1d40bd",
   "selected_historical_version": {
     "accession": "A0A6B9HEI0",
     "database": "Swiss-Prot",
@@ -559,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TOKK_STREV",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
-  "selected_historical_source_sequence_sha256": "20a79865ba2f5a96d35b67c5fd2787c6e2b4f9cc4e4abac3b790ab1d6f1d40bd",
-  "selected_historical_source_sequence_length": 681,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 18,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A6B9HEI0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -609,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":20,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2020-06-17\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -628,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces tokunonensis\",\"taxonId\":2689386}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -647,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36321632\",\"source\":\"PubMed\"}],\"value\":\"B12-dependent SAM enzyme TokK\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"31774078\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35110734\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36042702\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cobalamin-dependent radical SAM methyltransferase TokK\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -666,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"31774078\",\"source\":\"PubMed\"}],\"value\":\"Antibiotic biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -685,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Sinner E.K.\",\"Lichstrahl M.S.\",\"Li R.\",\"Marous D.R.\",\"Townsend C.A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"31774078\"},{\"database\":\"DOI\",\"id\":\"10.1039/c9cc07197k\"}],\"citationType\":\"journal article\",\"firstPage\":\"14934\",\"id\":\"31774078\",\"journal\":\"Chem. Commun. (Camb.)\",\"lastPage\":\"14937\",\"publicationDate\":\"2019\",\"title\":\"Methylations in complex carbapenem biosynthesis are catalyzed by a single cobalamin-dependent radical S-adenosylmethionine enzyme.\",\"volume\":\"55\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"QGY73527.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 31569 / FERM 4843 / PA-31088\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -704,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lichstrahl M.S.\",\"Townsend C.A.\",\"Sinner E.K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36042702\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2cb00113f\"}],\"citationType\":\"journal article\",\"firstPage\":\"1028\",\"id\":\"36042702\",\"journal\":\"RSC Chem. Biol.\",\"lastPage\":\"1034\",\"publicationDate\":\"2022\",\"title\":\"Stereochemical course of cobalamin-dependent radical SAM methylation by TokK and ThnK.\",\"volume\":\"3\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"REACTION MECHANISM FOR THE FIRST METHYLATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -723,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Deng W.H.\",\"Liao R.Z.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36321632\"},{\"database\":\"DOI\",\"id\":\"10.1002/chem.202202995\"}],\"citationType\":\"journal article\",\"firstPage\":\"e202202995\",\"id\":\"36321632\",\"journal\":\"Chemistry\",\"lastPage\":\"e202202995\",\"publicationDate\":\"2023\",\"title\":\"Sequential C-H Methylation Catalyzed by the B12-Dependent SAM Enzyme TokK: Comprehensive Theoretical Study of Selectivities.\",\"volume\":\"29\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"QUANTUM CHEMICAL STUDY OF THE REACTION MECHANISM\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -742,15 +499,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json",
-  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
-  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Knox H.L.\",\"Sinner E.K.\",\"Townsend C.A.\",\"Boal A.K.\",\"Booker S.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35110734\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-021-04392-4\"}],\"citationType\":\"journal article\",\"firstPage\":\"343\",\"id\":\"35110734\",\"journal\":\"Nature\",\"lastPage\":\"348\",\"publicationDate\":\"2022\",\"title\":\"Structure of a B12-dependent radical SAM enzyme in carbapenem biosynthesis.\",\"volume\":\"602\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7KDX\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7KDY\",\"source\":\"PDB\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.79 ANGSTROMS) IN COMPLEXES WITH [4FE-4S] CLUSTER; COB(II)ALAMIN; CARBAPENAM SUBSTRATE AND 5'-DEOXYADENOSINE\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"DOMAIN\",\"MUTAGENESIS OF 19-GLU-TYR-20; TRP-76; TRP-215; ARG-280 AND LEU-383\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:25:32.139042+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "07f6f6875eb6b670742397f945aef55e5d385a36991e5466fdf5dae9f6257913",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6B9HEI0.json"
 }
 ```
 
@@ -760,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18",
-  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
-  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   TOKK_STREV              Reviewed;         681 AA.\nAC   A0A6B9HEI0;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   17-JUN-2020, sequence version 1.\nDT   28-JAN-2026, entry version 18.\nDE   RecName: Full=Cobalamin-dependent radical SAM methyltransferase TokK {ECO:0000305};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:31774078, ECO:0000269|PubMed:35110734, ECO:0000269|PubMed:36042702};\nDE   AltName: Full=B12-dependent SAM enzyme TokK {ECO:0000303|PubMed:36321632};\nGN   Name=tokK {ECO:0000303|PubMed:31774078};\nOS   Streptomyces tokunonensis.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=2689386;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
+  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18"
 }
 ```
 
@@ -781,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18",
-  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
-  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
-  "source_locator": "lines 14-21",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:QGY73527.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND CATALYTIC ACTIVITY.\nRC   STRAIN=ATCC 31569 / FERM 4843 / PA-31088;\nRX   PubMed=31774078; DOI=10.1039/c9cc07197k;\nRA   Sinner E.K., Lichstrahl M.S., Li R., Marous D.R., Townsend C.A.;\nRT   \"Methylations in complex carbapenem biosynthesis are catalyzed by a single\nRT   cobalamin-dependent radical S-adenosylmethionine enzyme.\";\nRL   Chem. Commun. (Camb.) 55:14934-14937(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
+  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18"
 }
 ```
 
@@ -802,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18",
-  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
-  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
-  "source_locator": "lines 22-29",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND REACTION MECHANISM FOR THE FIRST\nRP   METHYLATION.\nRX   PubMed=36042702; DOI=10.1039/d2cb00113f;\nRA   Lichstrahl M.S., Townsend C.A., Sinner E.K.;\nRT   \"Stereochemical course of cobalamin-dependent radical SAM methylation by\nRT   TokK and ThnK.\";\nRL   RSC Chem. Biol. 3:1028-1034(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
+  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18"
 }
 ```
 
@@ -823,18 +580,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18",
-  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
-  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
-  "source_locator": "lines 30-36",
   "excerpt": "RN   [3]\nRP   FUNCTION, AND QUANTUM CHEMICAL STUDY OF THE REACTION MECHANISM.\nRX   PubMed=36321632; DOI=10.1002/chem.202202995;\nRA   Deng W.H., Liao R.Z.;\nRT   \"Sequential C-H Methylation Catalyzed by the B12-Dependent SAM Enzyme TokK:\nRT   Comprehensive Theoretical Study of Selectivities.\";\nRL   Chemistry 29:e202202995-e202202995(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
+  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18"
 }
 ```
 
@@ -844,18 +601,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18",
-  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
-  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
-  "source_locator": "lines 37-46",
   "excerpt": "RN   [4] {ECO:0007744|PDB:7KDX, ECO:0007744|PDB:7KDY}\nRP   X-RAY CRYSTALLOGRAPHY (1.79 ANGSTROMS) IN COMPLEXES WITH [4FE-4S] CLUSTER;\nRP   COB(II)ALAMIN; CARBAPENAM SUBSTRATE AND 5'-DEOXYADENOSINE, FUNCTION,\nRP   CATALYTIC ACTIVITY, COFACTOR, DOMAIN, AND MUTAGENESIS OF 19-GLU-TYR-20;\nRP   TRP-76; TRP-215; ARG-280 AND LEU-383.\nRX   PubMed=35110734; DOI=10.1038/s41586-021-04392-4;\nRA   Knox H.L., Sinner E.K., Townsend C.A., Boal A.K., Booker S.J.;\nRT   \"Structure of a B12-dependent radical SAM enzyme in carbapenem\nRT   biosynthesis.\";\nRL   Nature 602:343-348(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
+  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18"
 }
 ```
 
@@ -865,18 +622,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18",
-  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
-  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
-  "source_locator": "lines 63-63",
   "excerpt": "CC   -!- PATHWAY: Antibiotic biosynthesis. {ECO:0000305|PubMed:31774078}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:34.178407+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "140f29cd7d5501b98fe670a4e8aadd5214465a83c126dce996028e3e47afe85c",
+  "url": "https://rest.uniprot.org/unisave/A0A6B9HEI0?format=txt&versions=18"
 }
 ```
 

@@ -1,18 +1,16 @@
-# pathway_0161: before and after transfer clarification
+# pathway_0161
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0161.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0161.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Alkaloid biosynthesis. .
+**Expected answer:** **B** — Alkaloid biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 350-aa sequence matches the UniProt entry for IpeOMT1. Its pathway annotation is alkaloid biosynthesis and is linked to a cited experimental-evidence code; the referenced study concerns O-methylation reactions in ipecac alkaloid biosynthesis.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is compatible with an enzyme, but the supplied input provides no biological source or substrate context that specifically connects it to alkaloid biosynthesis rather than the other listed pathways.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity and experimentally characterized substrate/function of IpeOMT1, including its role in ipecac alkaloid O-methylation.
-
-
-**Reason**
-
-> Identifying the pathway requires a protein-specific functional annotation or equivalent external knowledge. Generic sequence features of a methyltransferase would not establish this pathway.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation and cited functional study support choice B; the evidence does not identify another listed pathway as a competing function.
-
-
-### Important caveats
-
-- The UniProt pathway annotation is evidence-linked to a cited publication, but the primary paper was not independently retrieved or validated here.
-- Reviewer-only accession and annotation evidence were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is compatible with an enzyme, but the supplied input provides no biological source or substrate context that specifically connects it to alkaloid biosynthesis rather than the other listed pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity and experimentally characterized substrate/function of IpeOMT1, including its role in ipecac alkaloid O-methylation.",
-    "reason": "Identifying the pathway requires a protein-specific functional annotation or equivalent external knowledge. Generic sequence features of a methyltransferase would not establish this pathway."
-  },
-  "case_id": "pathway_0161",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 350-aa sequence matches the UniProt entry for IpeOMT1. Its pathway annotation is alkaloid biosynthesis and is linked to a cited experimental-evidence code; the referenced study concerns O-methylation reactions in ipecac alkaloid biosynthesis."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation is evidence-linked to a cited publication, but the primary paper was not independently retrieved or validated here.",
-    "Reviewer-only accession and annotation evidence were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation and cited functional study support choice B; the evidence does not identify another listed pathway as a competing function."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0161",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 350-aa sequence matches the UniProt entry for IpeOMT1. Its pathway annotation is alkaloid biosynthesis and is linked to a cited experimental-evidence code; the referenced study concerns O-methylation reactions in ipecac alkaloid biosynthesis.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is compatible with an enzyme, but the supplied input provides no biological source or substrate context that specifically connects it to alkaloid biosynthesis rather than the other listed pathways.",
-    "missing_item_specific_fact": "The protein-specific identity and experimentally characterized substrate/function of IpeOMT1, including its role in ipecac alkaloid O-methylation.",
-    "reason": "Identifying the pathway requires a protein-specific functional annotation or equivalent external knowledge. Generic sequence features of a methyltransferase would not establish this pathway."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation and cited functional study support choice B; the evidence does not identify another listed pathway as a competing function."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation is evidence-linked to a cited publication, but the primary paper was not independently retrieved or validated here.",
-    "Reviewer-only accession and annotation evidence were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry D3KY98 (OMT1_CARIP, Cephaeline 6'-O-methyltransferase IpeOMT1 from Carapichea ipecacuanha) explicitly annotates PATHWAY: Alkaloid biosynthesis with experimental evidence code ECO:0000269 (PubMed:20061395, Nomura & Kutchan 2010 JBC). The protein catalyzes O-methylation reactions in ipecac/benzylisoquinoline alkaloid biosynthesis. The expected answer B is directly and experimentally supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The ~350 aa sequence contains motifs consistent with a plant SAM-dependent O-methyltransferase fold (e.g., the GDKGGKVIVIDGVVELQ region resembling catalytic/SAM-binding motifs of class I plant OMTs). Plant O-methyltransferases function predominantly in secondary metabolite biosynthesis (alkaloids, lignins, flavonoids). Among the four choices, only B (alkaloid biosynthesis) is a secondary metabolite pathway involving O-methyltransferases. Choices C (L-methionine biosynthesis) and D (CoA from pantothenate step 3/5) involve fundamentally different enzyme classes (homoserine O-succinyltransferase/cystathionine gamma-synthase; phosphopantothenoylcysteine synthetase/decarboxylase), not O-methyltransferases. Choice A (lipid metabolism) does not typically employ O-methyltransferases as pathway-defining enzymes. Thus, identifying the OMT fold and applying general knowledge of plant OMT pathway distribution meaningfully distinguishes B from the distractors.
-
-
-**Missing item-specific fact**
-
-> None critical. The specific substrate (cephaline, norcoclaurine) and the exact ipecac pathway position would require database lookup, but the pathway-level assignment is reachable via the OMT-fold → plant secondary metabolism → alkaloid biosynthesis reasoning chain.
-
-
-**Reason**
-
-> A model can (a) recognize methyltransferase sequence motifs and length, (b) eliminate C and D because their pathway-defining enzymes are not methyltransferases, (c) eliminate A because lipid metabolism does not center on O-methyltransferases, and (d) select B because plant OMTs are overwhelmingly associated with alkaloid/secondary metabolite biosynthesis. This is a general biological reasoning chain, not an item-specific database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choices C and D involve enzymes of entirely different mechanistic classes (ligases, transferases of non-methyl groups) incompatible with an OMT fold. Choice A (lipid metabolism) is not a recognized pathway for plant O-methyltransferases. Only B is consistent with both the identified enzyme class and the plant context. No other option is defensible given the sequence features.
-
-
-### Important caveats
-
-- The OMT motif identification from this particular sequence is not trivially obvious to all models; the conserved GxGxG/VLDVG motifs are somewhat degenerate in this entry.
-- The reasoning chain (OMT → plant secondary metabolism → alkaloids) is probabilistic rather than deductive; a model might hesitate between B and a hypothetical 'lignin biosynthesis' option if one were present, but no such option is offered here.
-- The UniProt annotation carries experimental evidence (ECO:0000269), making the key well-grounded, but the model at test time has no access to this annotation.
-- The source is a plant (Carapichea ipecacuanha, Rubiaceae); this organismal context is not stated in the question but can be weakly inferred from sequence composition.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The ~350 aa sequence contains motifs consistent with a plant SAM-dependent O-methyltransferase fold (e.g., the GDKGGKVIVIDGVVELQ region resembling catalytic/SAM-binding motifs of class I plant OMTs). Plant O-methyltransferases function predominantly in secondary metabolite biosynthesis (alkaloids, lignins, flavonoids). Among the four choices, only B (alkaloid biosynthesis) is a secondary metabolite pathway involving O-methyltransferases. Choices C (L-methionine biosynthesis) and D (CoA from pantothenate step 3/5) involve fundamentally different enzyme classes (homoserine O-succinyltransferase/cystathionine gamma-synthase; phosphopantothenoylcysteine synthetase/decarboxylase), not O-methyltransferases. Choice A (lipid metabolism) does not typically employ O-methyltransferases as pathway-defining enzymes. Thus, identifying the OMT fold and applying general knowledge of plant OMT pathway distribution meaningfully distinguishes B from the distractors.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The specific substrate (cephaline, norcoclaurine) and the exact ipecac pathway position would require database lookup, but the pathway-level assignment is reachable via the OMT-fold → plant secondary metabolism → alkaloid biosynthesis reasoning chain.",
-    "reason": "A model can (a) recognize methyltransferase sequence motifs and length, (b) eliminate C and D because their pathway-defining enzymes are not methyltransferases, (c) eliminate A because lipid metabolism does not center on O-methyltransferases, and (d) select B because plant OMTs are overwhelmingly associated with alkaloid/secondary metabolite biosynthesis. This is a general biological reasoning chain, not an item-specific database lookup."
-  },
-  "case_id": "pathway_0161",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry D3KY98 (OMT1_CARIP, Cephaeline 6'-O-methyltransferase IpeOMT1 from Carapichea ipecacuanha) explicitly annotates PATHWAY: Alkaloid biosynthesis with experimental evidence code ECO:0000269 (PubMed:20061395, Nomura & Kutchan 2010 JBC). The protein catalyzes O-methylation reactions in ipecac/benzylisoquinoline alkaloid biosynthesis. The expected answer B is directly and experimentally supported."
-  },
-  "important_caveats": [
-    "The OMT motif identification from this particular sequence is not trivially obvious to all models; the conserved GxGxG/VLDVG motifs are somewhat degenerate in this entry.",
-    "The reasoning chain (OMT → plant secondary metabolism → alkaloids) is probabilistic rather than deductive; a model might hesitate between B and a hypothetical 'lignin biosynthesis' option if one were present, but no such option is offered here.",
-    "The UniProt annotation carries experimental evidence (ECO:0000269), making the key well-grounded, but the model at test time has no access to this annotation.",
-    "The source is a plant (Carapichea ipecacuanha, Rubiaceae); this organismal context is not stated in the question but can be weakly inferred from sequence composition."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices C and D involve enzymes of entirely different mechanistic classes (ligases, transferases of non-methyl groups) incompatible with an OMT fold. Choice A (lipid metabolism) is not a recognized pathway for plant O-methyltransferases. Only B is consistent with both the identified enzyme class and the plant context. No other option is defensible given the sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0161",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry D3KY98 (OMT1_CARIP, Cephaeline 6'-O-methyltransferase IpeOMT1 from Carapichea ipecacuanha) explicitly annotates PATHWAY: Alkaloid biosynthesis with experimental evidence code ECO:0000269 (PubMed:20061395, Nomura & Kutchan 2010 JBC). The protein catalyzes O-methylation reactions in ipecac/benzylisoquinoline alkaloid biosynthesis. The expected answer B is directly and experimentally supported.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The ~350 aa sequence contains motifs consistent with a plant SAM-dependent O-methyltransferase fold (e.g., the GDKGGKVIVIDGVVELQ region resembling catalytic/SAM-binding motifs of class I plant OMTs). Plant O-methyltransferases function predominantly in secondary metabolite biosynthesis (alkaloids, lignins, flavonoids). Among the four choices, only B (alkaloid biosynthesis) is a secondary metabolite pathway involving O-methyltransferases. Choices C (L-methionine biosynthesis) and D (CoA from pantothenate step 3/5) involve fundamentally different enzyme classes (homoserine O-succinyltransferase/cystathionine gamma-synthase; phosphopantothenoylcysteine synthetase/decarboxylase), not O-methyltransferases. Choice A (lipid metabolism) does not typically employ O-methyltransferases as pathway-defining enzymes. Thus, identifying the OMT fold and applying general knowledge of plant OMT pathway distribution meaningfully distinguishes B from the distractors.",
-    "missing_item_specific_fact": "None critical. The specific substrate (cephaline, norcoclaurine) and the exact ipecac pathway position would require database lookup, but the pathway-level assignment is reachable via the OMT-fold → plant secondary metabolism → alkaloid biosynthesis reasoning chain.",
-    "reason": "A model can (a) recognize methyltransferase sequence motifs and length, (b) eliminate C and D because their pathway-defining enzymes are not methyltransferases, (c) eliminate A because lipid metabolism does not center on O-methyltransferases, and (d) select B because plant OMTs are overwhelmingly associated with alkaloid/secondary metabolite biosynthesis. This is a general biological reasoning chain, not an item-specific database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices C and D involve enzymes of entirely different mechanistic classes (ligases, transferases of non-methyl groups) incompatible with an OMT fold. Choice A (lipid metabolism) is not a recognized pathway for plant O-methyltransferases. Only B is consistent with both the identified enzyme class and the plant context. No other option is defensible given the sequence features."
-  },
-  "important_caveats": [
-    "The OMT motif identification from this particular sequence is not trivially obvious to all models; the conserved GxGxG/VLDVG motifs are somewhat degenerate in this entry.",
-    "The reasoning chain (OMT → plant secondary metabolism → alkaloids) is probabilistic rather than deductive; a model might hesitate between B and a hypothetical 'lignin biosynthesis' option if one were present, but no such option is offered here.",
-    "The UniProt annotation carries experimental evidence (ECO:0000269), making the key well-grounded, but the model at test time has no access to this annotation.",
-    "The source is a plant (Carapichea ipecacuanha, Rubiaceae); this organismal context is not stated in the question but can be weakly inferred from sequence composition."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "D3KY98",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ab6b8f525c4405adcc9e2f43d65d1e3b7ba98c49c094274d62c7598adf3167f9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 350,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ab6b8f525c4405adcc9e2f43d65d1e3b7ba98c49c094274d62c7598adf3167f9",
   "current_entry_audit": {
     "entryVersion": 58,
     "firstPublicDate": "2025-06-18",
@@ -536,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-04-20",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
-  "current_source_sequence_sha256": "ab6b8f525c4405adcc9e2f43d65d1e3b7ba98c49c094274d62c7598adf3167f9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 350,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ab6b8f525c4405adcc9e2f43d65d1e3b7ba98c49c094274d62c7598adf3167f9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 56,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "D3KY98",
   "selected_historical_entry_version": 56,
+  "selected_historical_record_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
+  "selected_historical_source_sequence_length": 350,
+  "selected_historical_source_sequence_sha256": "ab6b8f525c4405adcc9e2f43d65d1e3b7ba98c49c094274d62c7598adf3167f9",
   "selected_historical_version": {
     "accession": "D3KY98",
     "database": "Swiss-Prot",
@@ -554,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "OMT1_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
-  "selected_historical_source_sequence_sha256": "ab6b8f525c4405adcc9e2f43d65d1e3b7ba98c49c094274d62c7598adf3167f9",
-  "selected_historical_source_sequence_length": 350,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 56,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json",
-  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
-  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"D3KY98\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json"
 }
 ```
 
@@ -604,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json",
-  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
-  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":58,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-04-20\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json"
 }
 ```
 
@@ -623,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json",
-  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
-  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json"
 }
 ```
 
@@ -642,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json",
-  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
-  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.128\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"(R,S)-norcoclaurine 6-O-methyltransferase IpeOMT1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"Coclaurine synthase IpeOMT1\"}]},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"(R,S)-norprotosinomenine 6-O-methyltransferase IpeOMT1\"}},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"7-O-methyl-N-deacetylisoipecoside 6-O-methyltransferase IpeOMT1\"}},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"Ipecac/benzylisoquinoline alkaloid O-methyltransferase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAI79243.1\",\"source\":\"EMBL\"}],\"value\":\"IpeOMT1\"}]},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"Isococlaurine 6-O-methyltransferase IpeOMT1\"}},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"N-deacetylisoipecoside 6-O-methyltransferase IpeOMT1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.396\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"Cephaeline 6'-O-methyltransferase IpeOMT1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"Emetine synthase IpeOMT1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json"
 }
 ```
 
@@ -661,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json",
-  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
-  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
-  "json_pointer": "/comments/8",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/8",
+  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json"
 }
 ```
 
@@ -680,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json",
-  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
-  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Nomura T.\",\"Kutchan T.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20061395\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m109.086157\"}],\"citationType\":\"journal article\",\"firstPage\":\"7722\",\"id\":\"20061395\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"7738\",\"publicationDate\":\"2010\",\"title\":\"Three new O-methyltransferases are sufficient for all O-methylation reactions of ipecac alkaloid biosynthesis in root culture of Psychotria ipecacuanha.\",\"volume\":\"285\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAI79243.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\",\"PATHWAY\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:02.422509+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19b6f572b17e083c89247122e314ad458ae0c6830eb2f6fd9037dae0b0ba85fb",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KY98.json"
 }
 ```
 
@@ -698,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 56,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3KY98?format=txt&versions=56",
-  "source_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
-  "retrieved_utc": "2026-11-01T06:27:56.372657+00:00",
-  "source_locator": "lines 1-29",
   "excerpt": "ID   OMT1_CARIP              Reviewed;         350 AA.\nAC   D3KY98;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   20-APR-2010, sequence version 1.\nDT   28-JAN-2026, entry version 56.\nDE   RecName: Full=Cephaeline 6'-O-methyltransferase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            Short=Emetine synthase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.396 {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=(R,S)-norcoclaurine 6-O-methyltransferase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            Short=Coclaurine synthase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.128 {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=(R,S)-norprotosinomenine 6-O-methyltransferase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=7-O-methyl-N-deacetylisoipecoside 6-O-methyltransferase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=Ipecac/benzylisoquinoline alkaloid O-methyltransferase 1 {ECO:0000303|PubMed:20061395};\nDE            Short=IpeOMT1 {ECO:0000303|PubMed:20061395, ECO:0000312|EMBL:BAI79243.1};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=Isococlaurine 6-O-methyltransferase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=N-deacetylisoipecoside 6-O-methyltransferase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nGN   Name=OMT1 {ECO:0000303|PubMed:20061395};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 56,
+  "retrieved_utc": "2026-11-01T06:27:56.372657+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
+  "url": "https://rest.uniprot.org/unisave/D3KY98?format=txt&versions=56"
 }
 ```
 
@@ -719,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 56,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3KY98?format=txt&versions=56",
-  "source_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
-  "retrieved_utc": "2026-11-01T06:27:56.372657+00:00",
-  "source_locator": "lines 30-40",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAI79243.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBCELLULAR LOCATION, PATHWAY, AND TISSUE\nRP   SPECIFICITY.\nRC   TISSUE=Root;\nRX   PubMed=20061395; DOI=10.1074/jbc.m109.086157;\nRA   Nomura T., Kutchan T.M.;\nRT   \"Three new O-methyltransferases are sufficient for all O-methylation\nRT   reactions of ipecac alkaloid biosynthesis in root culture of Psychotria\nRT   ipecacuanha.\";\nRL   J. Biol. Chem. 285:7722-7738(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 56,
+  "retrieved_utc": "2026-11-01T06:27:56.372657+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
+  "url": "https://rest.uniprot.org/unisave/D3KY98?format=txt&versions=56"
 }
 ```
 
@@ -740,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 56,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3KY98?format=txt&versions=56",
-  "source_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
-  "retrieved_utc": "2026-11-01T06:27:56.372657+00:00",
-  "source_locator": "lines 129-129",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:20061395}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 56,
+  "retrieved_utc": "2026-11-01T06:27:56.372657+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 129-129",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "249d7589109d17284287fa739c8c561ac8c25a9cbe30bbf7a2f9eff0d76959bb",
+  "url": "https://rest.uniprot.org/unisave/D3KY98?format=txt&versions=56"
 }
 ```
 

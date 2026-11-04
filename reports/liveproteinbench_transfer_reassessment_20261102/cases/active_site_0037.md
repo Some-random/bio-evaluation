@@ -1,18 +1,16 @@
-# active_site_0037: before and after transfer clarification
+# active_site_0037
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0037.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0037.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 139 (Proton donor/acceptor)
+**Expected answer:** **B** — Position 139 (Proton donor/acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry annotates position 139 as an active site proton donor/acceptor, with PubMed experimental evidence; the cited reference includes mutagenesis of Glu-139. This supports choice B, though the primary study was not independently reviewed here.
-
-Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3), [C10](#evidence-c10).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The 402-residue sequence makes position 4094 impossible, but general sequence inspection does not establish that residue 139 has the specific proton donor/acceptor role rather than the other proposed catalytic roles.
-
-
-**Missing item-specific fact**
-
-> The experimentally supported, protein-specific assignment of Glu-139 as an active-site proton donor/acceptor.
-
-
-**Reason**
-
-> Distinguishing the intended answer requires an item-specific catalytic-site annotation or experimental result not supplied with the sequence; recognizing the protein or recalling its database entry would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence specifically supports B. Position 4094 exceeds the sequence length, and no provided evidence supports the alternative positions or roles.
-
-
-### Important caveats
-
-- The current and archived database records match the supplied sequence, but the author's exact source snapshot is unknown.
-- The experimental support is represented here by a UniProt evidence code and citation; the cited primary paper was not independently examined.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 402-residue sequence makes position 4094 impossible, but general sequence inspection does not establish that residue 139 has the specific proton donor/acceptor role rather than the other proposed catalytic roles.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimentally supported, protein-specific assignment of Glu-139 as an active-site proton donor/acceptor.",
-    "reason": "Distinguishing the intended answer requires an item-specific catalytic-site annotation or experimental result not supplied with the sequence; recognizing the protein or recalling its database entry would be lookup or memorization."
-  },
-  "case_id": "active_site_0037",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H2",
-      "H3",
-      "C10"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates position 139 as an active site proton donor/acceptor, with PubMed experimental evidence; the cited reference includes mutagenesis of Glu-139. This supports choice B, though the primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The current and archived database records match the supplied sequence, but the author's exact source snapshot is unknown.",
-    "The experimental support is represented here by a UniProt evidence code and citation; the cited primary paper was not independently examined."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports B. Position 4094 exceeds the sequence length, and no provided evidence supports the alternative positions or roles."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0037",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates position 139 as an active site proton donor/acceptor, with PubMed experimental evidence; the cited reference includes mutagenesis of Glu-139. This supports choice B, though the primary study was not independently reviewed here.",
-    "evidence_ids": ["C5", "H2", "H3", "C10"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The 402-residue sequence makes position 4094 impossible, but general sequence inspection does not establish that residue 139 has the specific proton donor/acceptor role rather than the other proposed catalytic roles.",
-    "missing_item_specific_fact": "The experimentally supported, protein-specific assignment of Glu-139 as an active-site proton donor/acceptor.",
-    "reason": "Distinguishing the intended answer requires an item-specific catalytic-site annotation or experimental result not supplied with the sequence; recognizing the protein or recalling its database entry would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports B. Position 4094 exceeds the sequence length, and no provided evidence supports the alternative positions or roles."
-  },
-  "important_caveats": [
-    "The current and archived database records match the supplied sequence, but the author's exact source snapshot is unknown.",
-    "The experimental support is represented here by a UniProt evidence code and citation; the cited primary paper was not independently examined."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A7U2QYM2 (Histone acetyltransferase gcnE, Aspergillus flavus) annotates position 139 (Glu/E) as the Active Site with description 'Proton donor/acceptor', supported by experimental evidence (ECO:0000269, PubMed:39601562) including mutagenesis of Glu-139. The sequence confirms position 139 is E (Glutamate), consistent with the catalytic mechanism of GNAT-family histone acetyltransferases. The reference explicitly lists 'ACTIVE SITE' and 'MUTAGENESIS OF GLU-139' among the reported findings.
-
-Citations as saved: [C5](#evidence-c5), [C9](#evidence-c9), [C10](#evidence-c10), [H3](#evidence-h3), [H7](#evidence-h7), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Distractors C (Proline at 131, incompatible with charge relay) and D (position 4094 exceeds the 402-aa sequence length) can be eliminated by basic reasoning. However, distinguishing option A (Asp-331, 'Proton acceptor') from option B (Glu-139, 'Proton donor/acceptor') requires knowing this protein is a GNAT-family HAT and that the catalytic Glu lies adjacent to the acetyl-CoA binding P-loop (residues ~143-185). This proximity information is not provided in the question input.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as a GNAT-family histone acetyltransferase, the location of its acetyl-CoA binding site, and the specific structural role of Glu-139 versus other acidic residues (e.g., Asp-331) in the catalytic mechanism. Without protein identification or structural context, the sequence alone does not reveal which of multiple acidic residues is the catalytic proton donor/acceptor.
-
-
-**Reason**
-
-> While two distractors are trivially eliminable (D exceeds sequence length; C is Proline), the core distinction between A (Asp-331) and B (Glu-139) as the catalytic residue requires item-specific knowledge of this protein's family, fold, and active-site geometry. A model must recognize the GNAT HAT signature and recall that the catalytic Glu is positioned near the acetyl-CoA P-loop, which is essentially database/family-level lookup rather than general biological reasoning from the raw sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option D is impossible (position 4094 > 402 aa). Option C is biologically implausible (Proline cannot form a charge relay). Between A and B, only B is supported by experimental annotation; however, from the raw sequence alone without protein identification, a model could not definitively exclude A. In practice, the question is unambiguous given the correct answer is experimentally validated, but the reasoning path to B requires external knowledge.
-
-
-### Important caveats
-
-- The UniProt annotation for position 139 is based on experimental evidence (ECO:0000269, PubMed:39601562, 2025 publication) including site-directed mutagenesis, not merely computational transfer.
-- The protein was only integrated into Swiss-Prot on 09-Apr-2025; the active-site annotation depends on a very recent publication, limiting the availability of this knowledge to training corpora predating that date.
-- The question provides no protein name, EC number, or functional context—only the raw 402-aa sequence—making family recognition and active-site assignment dependent on memorization of sequence-to-function mappings.
-- Option D (position 4094, beta-ketoacyl synthase) is an obviously irrelevant distractor referencing a different enzyme class and a position beyond the sequence length.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Distractors C (Proline at 131, incompatible with charge relay) and D (position 4094 exceeds the 402-aa sequence length) can be eliminated by basic reasoning. However, distinguishing option A (Asp-331, 'Proton acceptor') from option B (Glu-139, 'Proton donor/acceptor') requires knowing this protein is a GNAT-family HAT and that the catalytic Glu lies adjacent to the acetyl-CoA binding P-loop (residues ~143-185). This proximity information is not provided in the question input.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as a GNAT-family histone acetyltransferase, the location of its acetyl-CoA binding site, and the specific structural role of Glu-139 versus other acidic residues (e.g., Asp-331) in the catalytic mechanism. Without protein identification or structural context, the sequence alone does not reveal which of multiple acidic residues is the catalytic proton donor/acceptor.",
-    "reason": "While two distractors are trivially eliminable (D exceeds sequence length; C is Proline), the core distinction between A (Asp-331) and B (Glu-139) as the catalytic residue requires item-specific knowledge of this protein's family, fold, and active-site geometry. A model must recognize the GNAT HAT signature and recall that the catalytic Glu is positioned near the acetyl-CoA P-loop, which is essentially database/family-level lookup rather than general biological reasoning from the raw sequence."
-  },
-  "case_id": "active_site_0037",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C9",
-      "C10",
-      "H3",
-      "H7",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7U2QYM2 (Histone acetyltransferase gcnE, Aspergillus flavus) annotates position 139 (Glu/E) as the Active Site with description 'Proton donor/acceptor', supported by experimental evidence (ECO:0000269, PubMed:39601562) including mutagenesis of Glu-139. The sequence confirms position 139 is E (Glutamate), consistent with the catalytic mechanism of GNAT-family histone acetyltransferases. The reference explicitly lists 'ACTIVE SITE' and 'MUTAGENESIS OF GLU-139' among the reported findings."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 139 is based on experimental evidence (ECO:0000269, PubMed:39601562, 2025 publication) including site-directed mutagenesis, not merely computational transfer.",
-    "The protein was only integrated into Swiss-Prot on 09-Apr-2025; the active-site annotation depends on a very recent publication, limiting the availability of this knowledge to training corpora predating that date.",
-    "The question provides no protein name, EC number, or functional context—only the raw 402-aa sequence—making family recognition and active-site assignment dependent on memorization of sequence-to-function mappings.",
-    "Option D (position 4094, beta-ketoacyl synthase) is an obviously irrelevant distractor referencing a different enzyme class and a position beyond the sequence length."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option D is impossible (position 4094 > 402 aa). Option C is biologically implausible (Proline cannot form a charge relay). Between A and B, only B is supported by experimental annotation; however, from the raw sequence alone without protein identification, a model could not definitively exclude A. In practice, the question is unambiguous given the correct answer is experimentally validated, but the reasoning path to B requires external knowledge."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0037",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7U2QYM2 (Histone acetyltransferase gcnE, Aspergillus flavus) annotates position 139 (Glu/E) as the Active Site with description 'Proton donor/acceptor', supported by experimental evidence (ECO:0000269, PubMed:39601562) including mutagenesis of Glu-139. The sequence confirms position 139 is E (Glutamate), consistent with the catalytic mechanism of GNAT-family histone acetyltransferases. The reference explicitly lists 'ACTIVE SITE' and 'MUTAGENESIS OF GLU-139' among the reported findings.",
-    "evidence_ids": ["C5", "C9", "C10", "H3", "H7", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Distractors C (Proline at 131, incompatible with charge relay) and D (position 4094 exceeds the 402-aa sequence length) can be eliminated by basic reasoning. However, distinguishing option A (Asp-331, 'Proton acceptor') from option B (Glu-139, 'Proton donor/acceptor') requires knowing this protein is a GNAT-family HAT and that the catalytic Glu lies adjacent to the acetyl-CoA binding P-loop (residues ~143-185). This proximity information is not provided in the question input.",
-    "missing_item_specific_fact": "The protein's identity as a GNAT-family histone acetyltransferase, the location of its acetyl-CoA binding site, and the specific structural role of Glu-139 versus other acidic residues (e.g., Asp-331) in the catalytic mechanism. Without protein identification or structural context, the sequence alone does not reveal which of multiple acidic residues is the catalytic proton donor/acceptor.",
-    "reason": "While two distractors are trivially eliminable (D exceeds sequence length; C is Proline), the core distinction between A (Asp-331) and B (Glu-139) as the catalytic residue requires item-specific knowledge of this protein's family, fold, and active-site geometry. A model must recognize the GNAT HAT signature and recall that the catalytic Glu is positioned near the acetyl-CoA P-loop, which is essentially database/family-level lookup rather than general biological reasoning from the raw sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option D is impossible (position 4094 > 402 aa). Option C is biologically implausible (Proline cannot form a charge relay). Between A and B, only B is supported by experimental annotation; however, from the raw sequence alone without protein identification, a model could not definitively exclude A. In practice, the question is unambiguous given the correct answer is experimentally validated, but the reasoning path to B requires external knowledge."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 139 is based on experimental evidence (ECO:0000269, PubMed:39601562, 2025 publication) including site-directed mutagenesis, not merely computational transfer.",
-    "The protein was only integrated into Swiss-Prot on 09-Apr-2025; the active-site annotation depends on a very recent publication, limiting the availability of this knowledge to training corpora predating that date.",
-    "The question provides no protein name, EC number, or functional context—only the raw 402-aa sequence—making family recognition and active-site assignment dependent on memorization of sequence-to-function mappings.",
-    "Option D (position 4094, beta-ketoacyl synthase) is an obviously irrelevant distractor referencing a different enzyme class and a position beyond the sequence length."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7U2QYM2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 402,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
   "current_entry_audit": {
     "entryVersion": 22,
     "firstPublicDate": "2025-04-09",
@@ -535,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "current_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 402,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7U2QYM2",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "selected_historical_source_sequence_length": 402,
+  "selected_historical_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
   "selected_historical_version": {
     "accession": "A0A7U2QYM2",
     "database": "Swiss-Prot",
@@ -553,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "GCNE_ASPFN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "selected_historical_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
-  "selected_historical_source_sequence_length": 402,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7U2QYM2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -603,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":22,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -622,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357 / JCM 12722 / SRRC 167)\",\"taxonId\":332952}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -641,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"Benzoyltransferase gcnE\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.48\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q03330\",\"source\":\"UniProtKB\"}],\"value\":\"Histone acetyltransferase gcnE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -660,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Proton donor/acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":139},\"start\":{\"modifier\":\"EXACT\",\"value\":139}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -679,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q92830\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:57288\",\"name\":\"acetyl-CoA\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":145},\"start\":{\"modifier\":\"EXACT\",\"value\":143}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -698,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q92830\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:57288\",\"name\":\"acetyl-CoA\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":156},\"start\":{\"modifier\":\"EXACT\",\"value\":150}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -717,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q92830\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:57288\",\"name\":\"acetyl-CoA\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":185},\"start\":{\"modifier\":\"EXACT\",\"value\":182}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -736,15 +494,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"Important for catalytic activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q03330\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":139},\"start\":{\"modifier\":\"EXACT\",\"value\":139}},\"type\":\"Site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -755,15 +513,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Chen X.\",\"Wu L.\",\"Zhang Y.\",\"Wang S.\",\"Wang S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39601562\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.02665-24\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0266524\",\"id\":\"39601562\",\"journal\":\"MBio\",\"lastPage\":\"e0266524\",\"publicationDate\":\"2025\",\"title\":\"Importance of benzoyltransferase GcnE and lysine benzoylation of alcohol dehydrogenase AdhB in pathogenesis and aflatoxin production in Aspergillus flavus.\",\"volume\":\"16\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"CATALYTIC ACTIVITY\",\"DOMAIN\",\"ACTIVE SITE\",\"MUTAGENESIS OF GLU-139\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -773,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   GCNE_ASPFN              Reviewed;         402 AA.\nAC   A0A7U2QYM2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=Histone acetyltransferase gcnE {ECO:0000250|UniProtKB:Q03330};\nDE            EC=2.3.1.48 {ECO:0000269|PubMed:39601562};\nDE   AltName: Full=Benzoyltransferase gcnE {ECO:0000303|PubMed:39601562};\nDE            EC=2.3.1.- {ECO:0000269|PubMed:39601562};\nGN   Name=gcnE {ECO:0000303|PubMed:39601562}; ORFNames=F9C07_11133;\nOS   Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357\nOS   / JCM 12722 / SRRC 167).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=332952;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -794,18 +552,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, CATALYTIC ACTIVITY, DOMAIN, ACTIVE SITE,\nRP   AND MUTAGENESIS OF GLU-139.\nRX   PubMed=39601562; DOI=10.1128/mbio.02665-24;\nRA   Chen X., Wu L., Zhang Y., Wang S., Wang S.;\nRT   \"Importance of benzoyltransferase GcnE and lysine benzoylation of alcohol\nRT   dehydrogenase AdhB in pathogenesis and aflatoxin production in Aspergillus\nRT   flavus.\";\nRL   MBio 16:e0266524-e0266524(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -815,18 +573,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 141-143",
   "excerpt": "FT   ACT_SITE        139\nFT                   /note=\"Proton donor/acceptor\"\nFT                   /evidence=\"ECO:0000269|PubMed:39601562\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 141-143",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -836,18 +594,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 144-147",
   "excerpt": "FT   BINDING         143..145\nFT                   /ligand=\"acetyl-CoA\"\nFT                   /ligand_id=\"ChEBI:CHEBI:57288\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q92830\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 144-147",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -857,18 +615,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 148-151",
   "excerpt": "FT   BINDING         150..156\nFT                   /ligand=\"acetyl-CoA\"\nFT                   /ligand_id=\"ChEBI:CHEBI:57288\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q92830\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 148-151",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -878,18 +636,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 152-155",
   "excerpt": "FT   BINDING         182..185\nFT                   /ligand=\"acetyl-CoA\"\nFT                   /ligand_id=\"ChEBI:CHEBI:57288\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q92830\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 152-155",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -899,18 +657,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 156-158",
   "excerpt": "FT   SITE            139\nFT                   /note=\"Important for catalytic activity\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q03330\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 156-158",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 

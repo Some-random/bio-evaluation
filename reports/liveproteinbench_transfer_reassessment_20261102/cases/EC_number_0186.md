@@ -1,18 +1,16 @@
-# EC_number_0186: before and after transfer clarification
+# EC_number_0186
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0186.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0186.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 5.6.2.1
+**Expected answer:** **D** — 5.6.2.1
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the cited 668-aa UniProt entry for DNA topoisomerase 3, which assigns EC 5.6.2.1 and links the catalytic-activity annotation to experimental evidence from two publications.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> No specific catalytic activity or organism is given in the question. Identifying the protein as a topoisomerase from its sequence would require sequence-specific family recognition; the exact EC assignment depends on the protein's catalytic activity.
-
-
-**Missing item-specific fact**
-
-> That this exact sequence is DNA topoisomerase 3 with ATP-independent DNA strand passage activity, classified as EC 5.6.2.1.
-
-
-**Reason**
-
-> The sequence may support protein-family prediction with external homology or domain knowledge, but the input alone does not establish the exact catalytic reaction needed to choose the complete EC number.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched, experimentally supported annotation assigns EC 5.6.2.1; no evidence supports another listed option for this sequence.
-
-
-### Important caveats
-
-- The UniProt annotation is reviewer-only and was not available to the evaluated model.
-- The historical record and current entry both match the supplied sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "No specific catalytic activity or organism is given in the question. Identifying the protein as a topoisomerase from its sequence would require sequence-specific family recognition; the exact EC assignment depends on the protein's catalytic activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this exact sequence is DNA topoisomerase 3 with ATP-independent DNA strand passage activity, classified as EC 5.6.2.1.",
-    "reason": "The sequence may support protein-family prediction with external homology or domain knowledge, but the input alone does not establish the exact catalytic reaction needed to choose the complete EC number."
-  },
-  "case_id": "EC_number_0186",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited 668-aa UniProt entry for DNA topoisomerase 3, which assigns EC 5.6.2.1 and links the catalytic-activity annotation to experimental evidence from two publications."
-  },
-  "important_caveats": [
-    "The UniProt annotation is reviewer-only and was not available to the evaluated model.",
-    "The historical record and current entry both match the supplied sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched, experimentally supported annotation assigns EC 5.6.2.1; no evidence supports another listed option for this sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0186",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited 668-aa UniProt entry for DNA topoisomerase 3, which assigns EC 5.6.2.1 and links the catalytic-activity annotation to experimental evidence from two publications.",
-    "evidence_ids": ["C1", "C4", "C5", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "No specific catalytic activity or organism is given in the question. Identifying the protein as a topoisomerase from its sequence would require sequence-specific family recognition; the exact EC assignment depends on the protein's catalytic activity.",
-    "missing_item_specific_fact": "That this exact sequence is DNA topoisomerase 3 with ATP-independent DNA strand passage activity, classified as EC 5.6.2.1.",
-    "reason": "The sequence may support protein-family prediction with external homology or domain knowledge, but the input alone does not establish the exact catalytic reaction needed to choose the complete EC number."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched, experimentally supported annotation assigns EC 5.6.2.1; no evidence supports another listed option for this sequence."
-  },
-  "important_caveats": [
-    "The UniProt annotation is reviewer-only and was not available to the evaluated model.",
-    "The historical record and current entry both match the supplied sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q97ZJ8 (TOP3_SACS2, DNA topoisomerase 3 from Saccharolobus solfataricus) is annotated with EC 5.6.2.1, supported by experimental evidence (ECO:0000269) from PubMed 22722926 (Valenti et al., JBC 2012) and PubMed 29253195 (Bizard et al., NAR 2018). The catalytic activity is described as 'ATP-independent breakage of single-stranded DNA, followed by passage and rejoining.' The benchmark sequence matches the UniProt sequence exactly (SHA256 confirmed, 668 aa, sequence version 1). Both the current entry (v134) and the historical archived entry (v132, within the 2026-05-07 cutoff) carry the same EC annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a Cys-rich cluster ('CKYCDLEQYKDGLCKYHYEAK') consistent with the zinc-binding domain of type IA topoisomerases, and the overall ~668 aa length and domain architecture are compatible with an archaeal Topo III. These features could in principle help eliminate transferase options (B, C) and point toward an isomerase. However, distinguishing EC 5.6.2.1 (topoisomerase) from EC 5.4.99.14 (another isomerase class) purely from sequence requires recognizing the specific TOPRIM fold, catalytic tyrosine context, and C-terminal domain arrangement of a type IA topoisomerase — a protein-family-level identification that in practice depends on database matching or memorization of this specific entry.
-
-
-**Missing item-specific fact**
-
-> The specific identification of this 668-aa archaeal protein as DNA topoisomerase 3 (Topo III / TopA) of Saccharolobus solfataricus, and the knowledge that type IA topoisomerases (Topo I and Topo III) share EC 5.6.2.1, is required to select D over A with confidence. Without recognizing the exact protein family, the sequence alone does not provide a decisive argument for 5.6.2.1 over 5.4.99.14.
-
-
-**Reason**
-
-> While the zinc-binding motif and approximate size offer weak hints toward a topoisomerase, the final 4-digit EC assignment depends on identifying the protein as a type IA topoisomerase (Topo III) rather than another isomerase. This is a protein-family-level identification that, in the absence of database tools, effectively requires memorization of the specific entry or recognition of the exact sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span two EC classes (isomerases: A and D; transferases: B and C), so the transferase options are clearly wrong for a DNA-processing enzyme. Between the two isomerase options, 5.6.2.1 is well-established for type IA topoisomerases, while 5.4.99.14 is an extremely obscure (possibly non-standard or fabricated) EC number, making it a weak distractor. No genuine ambiguity exists among the options given the correct answer.
-
-
-### Important caveats
-
-- The EC 5.6.2.1 annotation is supported by experimental evidence (ECO:0000269) from two independent publications, not merely by computational prediction or similarity transfer.
-- The identity origin note states the accession was inferred mechanically from dataset image-path metadata and was absent from the evaluated model input; the model sees only the raw sequence.
-- EC 5.4.99.14 could not be independently verified as a currently valid EC number; if it is a fabricated or retired entry, option A is trivially eliminable, slightly increasing the effective reasoning support for D.
-- The sequence is from a hyperthermophilic archaeon; thermophilic adaptations (e.g., increased salt-bridge density, compact folding) do not by themselves identify the enzyme class.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a Cys-rich cluster ('CKYCDLEQYKDGLCKYHYEAK') consistent with the zinc-binding domain of type IA topoisomerases, and the overall ~668 aa length and domain architecture are compatible with an archaeal Topo III. These features could in principle help eliminate transferase options (B, C) and point toward an isomerase. However, distinguishing EC 5.6.2.1 (topoisomerase) from EC 5.4.99.14 (another isomerase class) purely from sequence requires recognizing the specific TOPRIM fold, catalytic tyrosine context, and C-terminal domain arrangement of a type IA topoisomerase — a protein-family-level identification that in practice depends on database matching or memorization of this specific entry.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of this 668-aa archaeal protein as DNA topoisomerase 3 (Topo III / TopA) of Saccharolobus solfataricus, and the knowledge that type IA topoisomerases (Topo I and Topo III) share EC 5.6.2.1, is required to select D over A with confidence. Without recognizing the exact protein family, the sequence alone does not provide a decisive argument for 5.6.2.1 over 5.4.99.14.",
-    "reason": "While the zinc-binding motif and approximate size offer weak hints toward a topoisomerase, the final 4-digit EC assignment depends on identifying the protein as a type IA topoisomerase (Topo III) rather than another isomerase. This is a protein-family-level identification that, in the absence of database tools, effectively requires memorization of the specific entry or recognition of the exact sequence."
-  },
-  "case_id": "EC_number_0186",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H2",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q97ZJ8 (TOP3_SACS2, DNA topoisomerase 3 from Saccharolobus solfataricus) is annotated with EC 5.6.2.1, supported by experimental evidence (ECO:0000269) from PubMed 22722926 (Valenti et al., JBC 2012) and PubMed 29253195 (Bizard et al., NAR 2018). The catalytic activity is described as 'ATP-independent breakage of single-stranded DNA, followed by passage and rejoining.' The benchmark sequence matches the UniProt sequence exactly (SHA256 confirmed, 668 aa, sequence version 1). Both the current entry (v134) and the historical archived entry (v132, within the 2026-05-07 cutoff) carry the same EC annotation."
-  },
-  "important_caveats": [
-    "The EC 5.6.2.1 annotation is supported by experimental evidence (ECO:0000269) from two independent publications, not merely by computational prediction or similarity transfer.",
-    "The identity origin note states the accession was inferred mechanically from dataset image-path metadata and was absent from the evaluated model input; the model sees only the raw sequence.",
-    "EC 5.4.99.14 could not be independently verified as a currently valid EC number; if it is a fabricated or retired entry, option A is trivially eliminable, slightly increasing the effective reasoning support for D.",
-    "The sequence is from a hyperthermophilic archaeon; thermophilic adaptations (e.g., increased salt-bridge density, compact folding) do not by themselves identify the enzyme class."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span two EC classes (isomerases: A and D; transferases: B and C), so the transferase options are clearly wrong for a DNA-processing enzyme. Between the two isomerase options, 5.6.2.1 is well-established for type IA topoisomerases, while 5.4.99.14 is an extremely obscure (possibly non-standard or fabricated) EC number, making it a weak distractor. No genuine ambiguity exists among the options given the correct answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0186",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q97ZJ8 (TOP3_SACS2, DNA topoisomerase 3 from Saccharolobus solfataricus) is annotated with EC 5.6.2.1, supported by experimental evidence (ECO:0000269) from PubMed 22722926 (Valenti et al., JBC 2012) and PubMed 29253195 (Bizard et al., NAR 2018). The catalytic activity is described as 'ATP-independent breakage of single-stranded DNA, followed by passage and rejoining.' The benchmark sequence matches the UniProt sequence exactly (SHA256 confirmed, 668 aa, sequence version 1). Both the current entry (v134) and the historical archived entry (v132, within the 2026-05-07 cutoff) carry the same EC annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "H1", "H2", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a Cys-rich cluster ('CKYCDLEQYKDGLCKYHYEAK') consistent with the zinc-binding domain of type IA topoisomerases, and the overall ~668 aa length and domain architecture are compatible with an archaeal Topo III. These features could in principle help eliminate transferase options (B, C) and point toward an isomerase. However, distinguishing EC 5.6.2.1 (topoisomerase) from EC 5.4.99.14 (another isomerase class) purely from sequence requires recognizing the specific TOPRIM fold, catalytic tyrosine context, and C-terminal domain arrangement of a type IA topoisomerase — a protein-family-level identification that in practice depends on database matching or memorization of this specific entry.",
-    "missing_item_specific_fact": "The specific identification of this 668-aa archaeal protein as DNA topoisomerase 3 (Topo III / TopA) of Saccharolobus solfataricus, and the knowledge that type IA topoisomerases (Topo I and Topo III) share EC 5.6.2.1, is required to select D over A with confidence. Without recognizing the exact protein family, the sequence alone does not provide a decisive argument for 5.6.2.1 over 5.4.99.14.",
-    "reason": "While the zinc-binding motif and approximate size offer weak hints toward a topoisomerase, the final 4-digit EC assignment depends on identifying the protein as a type IA topoisomerase (Topo III) rather than another isomerase. This is a protein-family-level identification that, in the absence of database tools, effectively requires memorization of the specific entry or recognition of the exact sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span two EC classes (isomerases: A and D; transferases: B and C), so the transferase options are clearly wrong for a DNA-processing enzyme. Between the two isomerase options, 5.6.2.1 is well-established for type IA topoisomerases, while 5.4.99.14 is an extremely obscure (possibly non-standard or fabricated) EC number, making it a weak distractor. No genuine ambiguity exists among the options given the correct answer."
-  },
-  "important_caveats": [
-    "The EC 5.6.2.1 annotation is supported by experimental evidence (ECO:0000269) from two independent publications, not merely by computational prediction or similarity transfer.",
-    "The identity origin note states the accession was inferred mechanically from dataset image-path metadata and was absent from the evaluated model input; the model sees only the raw sequence.",
-    "EC 5.4.99.14 could not be independently verified as a currently valid EC number; if it is a fabricated or retired entry, option A is trivially eliminable, slightly increasing the effective reasoning support for D.",
-    "The sequence is from a hyperthermophilic archaeon; thermophilic adaptations (e.g., increased salt-bridge density, compact folding) do not by themselves identify the enzyme class."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q97ZJ8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 668,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
   "current_entry_audit": {
     "entryVersion": 134,
     "firstPublicDate": "2025-06-18",
@@ -541,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-10-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "current_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 668,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 132,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q97ZJ8",
   "selected_historical_entry_version": 132,
+  "selected_historical_record_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "selected_historical_source_sequence_length": 668,
+  "selected_historical_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
   "selected_historical_version": {
     "accession": "Q97ZJ8",
     "database": "Swiss-Prot",
@@ -559,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TOP3_SACS2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "selected_historical_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
-  "selected_historical_source_sequence_length": 668,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 132,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q97ZJ8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -609,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":134,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-10-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -628,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Sulfolobus solfataricus\",\"lineage\":[\"Archaea\",\"Thermoproteota\",\"Thermoprotei\",\"Sulfolobales\",\"Sulfolobaceae\",\"Saccharolobus\"],\"scientificName\":\"Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2)\",\"taxonId\":273057}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -647,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"DNA topoisomerase III\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22722926\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"5.6.2.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22722926\",\"source\":\"PubMed\"}],\"value\":\"DNA topoisomerase 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22722926\",\"source\":\"PubMed\"}],\"value\":\"SsTop3\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"SsTopA\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -666,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"5.6.2.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22722926\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"name\":\"ATP-independent breakage of single-stranded DNA, followed by passage and rejoining.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -685,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Valenti A.\",\"De Felice M.\",\"Perugino G.\",\"Bizard A.\",\"Nadal M.\",\"Rossi M.\",\"Ciaramella M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22722926\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m112.366377\"}],\"citationType\":\"journal article\",\"firstPage\":\"30282\",\"id\":\"22722926\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"30295\",\"publicationDate\":\"2012\",\"title\":\"Synergic and opposing activities of thermophilic RecQ-like helicase and topoisomerase 3 proteins in Holliday junction processing and replication fork stabilization.\",\"volume\":\"287\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBUNIT\",\"INTERACTION WITH LHR\",\"DNA-BINDING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -704,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bizard A.H.\",\"Yang X.\",\"Debat H.\",\"Fogg J.M.\",\"Zechiedrich L.\",\"Strick T.R.\",\"Garnier F.\",\"Nadal M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29253195\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkx1247\"}],\"citationType\":\"journal article\",\"firstPage\":\"861\",\"id\":\"29253195\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"872\",\"publicationDate\":\"2018\",\"title\":\"TopA, the Sulfolobus solfataricus topoisomerase III, is a decatenase.\",\"volume\":\"46\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -722,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   TOP3_SACS2              Reviewed;         668 AA.\nAC   Q97ZJ8;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2001, sequence version 1.\nDT   28-JAN-2026, entry version 132.\nDE   RecName: Full=DNA topoisomerase 3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTop3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTopA {ECO:0000303|PubMed:29253195};\nDE            EC=5.6.2.1 {ECO:0000269|PubMed:22722926, ECO:0000269|PubMed:29253195};\nDE   AltName: Full=DNA topoisomerase III {ECO:0000303|PubMed:29253195};\nGN   Name=topA {ECO:0000303|PubMed:22722926, ECO:0000312|EMBL:AAK41190.1};\nGN   OrderedLocusNames=SSO0907 {ECO:0000312|EMBL:AAK41190.1};\nOS   Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2)\nOS   (Sulfolobus solfataricus).\nOC   Archaea; Thermoproteota; Thermoprotei; Sulfolobales; Sulfolobaceae;\nOC   Saccharolobus.\nOX   NCBI_TaxID=273057;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -743,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=DNA topoisomerase 3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTop3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTopA {ECO:0000303|PubMed:29253195};\nDE            EC=5.6.2.1 {ECO:0000269|PubMed:22722926, ECO:0000269|PubMed:29253195};\nDE   AltName: Full=DNA topoisomerase III {ECO:0000303|PubMed:29253195};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -764,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, SUBUNIT, INTERACTION WITH LHR, AND\nRP   DNA-BINDING.\nRX   PubMed=22722926; DOI=10.1074/jbc.m112.366377;\nRA   Valenti A., De Felice M., Perugino G., Bizard A., Nadal M., Rossi M.,\nRA   Ciaramella M.;\nRT   \"Synergic and opposing activities of thermophilic RecQ-like helicase and\nRT   topoisomerase 3 proteins in Holliday junction processing and replication\nRT   fork stabilization.\";\nRL   J. Biol. Chem. 287:30282-30295(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -785,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 40-47",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=29253195; DOI=10.1093/nar/gkx1247;\nRA   Bizard A.H., Yang X., Debat H., Fogg J.M., Zechiedrich L., Strick T.R.,\nRA   Garnier F., Nadal M.;\nRT   \"TopA, the Sulfolobus solfataricus topoisomerase III, is a decatenase.\";\nRL   Nucleic Acids Res. 46:861-872(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -806,18 +560,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 68-71",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=ATP-independent breakage of single-stranded DNA, followed by\nCC         passage and rejoining.; EC=5.6.2.1;\nCC         Evidence={ECO:0000269|PubMed:22722926, ECO:0000269|PubMed:29253195};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 68-71",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 

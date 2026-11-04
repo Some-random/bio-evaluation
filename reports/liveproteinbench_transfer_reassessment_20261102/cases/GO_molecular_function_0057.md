@@ -1,18 +1,16 @@
-# GO_molecular_function_0057: before and after transfer clarification
+# GO_molecular_function_0057
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0057.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0057.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — ATP binding
+**Expected answer:** **C** — ATP binding
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-matched sequence is annotated with ATP binding (GO:0005524), though the cited ATP-binding annotation is computational. Its homoserine kinase function is supported by cited experimental evidence, and the associated reaction uses ATP, supporting ATP binding mechanistically.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> An ATP-dependent kinase would bind ATP, but the supplied sequence does not state its function or provide a clear, distinctive motif that establishes this protein as such; recognizing the relevant protein family would require protein-specific functional knowledge.
-
-
-**Missing item-specific fact**
-
-> That this sequence encodes homoserine kinase, whose reaction uses ATP.
-
-
-**Reason**
-
-> The reviewer evidence supports the key, but that evidence was not supplied to the evaluated model. Identifying the protein or its ATP-dependent reaction from this sequence requires item-specific functional identification, not simply the broad fact that many proteins bind ATP.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Of the listed choices, ATP binding is supported by the protein's ATP-dependent kinase function; the other options describe unrelated specific activities.
-
-
-### Important caveats
-
-- The ATP-binding GO annotation is computationally inferred, not presented as direct experimental evidence of binding.
-- The source record identifies this protein as homoserine kinase, a function not included among the options.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "An ATP-dependent kinase would bind ATP, but the supplied sequence does not state its function or provide a clear, distinctive motif that establishes this protein as such; recognizing the relevant protein family would require protein-specific functional knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this sequence encodes homoserine kinase, whose reaction uses ATP.",
-    "reason": "The reviewer evidence supports the key, but that evidence was not supplied to the evaluated model. Identifying the protein or its ATP-dependent reaction from this sequence requires item-specific functional identification, not simply the broad fact that many proteins bind ATP."
-  },
-  "case_id": "GO_molecular_function_0057",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matched sequence is annotated with ATP binding (GO:0005524), though the cited ATP-binding annotation is computational. Its homoserine kinase function is supported by cited experimental evidence, and the associated reaction uses ATP, supporting ATP binding mechanistically."
-  },
-  "important_caveats": [
-    "The ATP-binding GO annotation is computationally inferred, not presented as direct experimental evidence of binding.",
-    "The source record identifies this protein as homoserine kinase, a function not included among the options."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Of the listed choices, ATP binding is supported by the protein's ATP-dependent kinase function; the other options describe unrelated specific activities."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0057",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matched sequence is annotated with ATP binding (GO:0005524), though the cited ATP-binding annotation is computational. Its homoserine kinase function is supported by cited experimental evidence, and the associated reaction uses ATP, supporting ATP binding mechanistically.",
-    "evidence_ids": ["C1", "C5", "C6", "C7", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "An ATP-dependent kinase would bind ATP, but the supplied sequence does not state its function or provide a clear, distinctive motif that establishes this protein as such; recognizing the relevant protein family would require protein-specific functional knowledge.",
-    "missing_item_specific_fact": "That this sequence encodes homoserine kinase, whose reaction uses ATP.",
-    "reason": "The reviewer evidence supports the key, but that evidence was not supplied to the evaluated model. Identifying the protein or its ATP-dependent reaction from this sequence requires item-specific functional identification, not simply the broad fact that many proteins bind ATP."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Of the listed choices, ATP binding is supported by the protein's ATP-dependent kinase function; the other options describe unrelated specific activities."
-  },
-  "important_caveats": [
-    "The ATP-binding GO annotation is computationally inferred, not presented as direct experimental evidence of binding.",
-    "The source record identifies this protein as homoserine kinase, a function not included among the options."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry J9VU26 (Homoserine kinase, EC 2.7.1.39) carries GO:0005524 (ATP binding) annotated with IEA:InterPro and IEA:UniProtKB-KW evidence codes (C7, H5). The protein's catalytic reaction (L-homoserine + ATP → O-phospho-L-homoserine + ADP + H⁺) requires ATP binding. Although the primary function annotation is GO:0004413 (homoserine kinase activity, IGI evidence, C8/H6), that term is not among the choices. Among the four options, only 'ATP binding' is annotated to this protein. The other three options (sulfatase, dehydrogenase, phosphoribosyltransferase) have no annotation support for this entry. The answer is supported, albeit via a secondary IEA annotation rather than the primary IGI-annotated kinase activity.
-
-Citations as saved: [C7](#evidence-c7), [C8](#evidence-c8), [C6](#evidence-c6), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains motifs consistent with the GHMP kinase superfamily (e.g., the 'GAGPTILAL' glycine-rich P-loop-like region and the 'GIGHF' motif), which are hallmarks of nucleotide-dependent phosphate-transfer enzymes. A kinase by definition binds ATP to donate a phosphoryl group. Among the four choices: (A) N-acetylglucosamine-6-sulfatase is a hydrolase cleaving sulfate esters—no ATP involvement; (B) medium-chain fatty acyl-CoA dehydrogenase is an FAD-dependent oxidoreductase—no ATP; (D) nicotinamide phosphoribosyltransferase uses PRPP/PPi, not ATP, as its ribosyl donor. Only option C (ATP binding) is mechanistically compatible with a kinase. Thus, recognizing kinase-like sequence features and understanding the substrate requirements of each enzyme class allows elimination of A, B, and D.
-
-
-**Missing item-specific fact**
-
-> None critical. The reasoning requires knowledge of GHMP kinase family motifs and the substrate specificities of the four enzyme classes, which is general enzymology/biochemistry knowledge rather than a protein-specific database lookup.
-
-
-**Reason**
-
-> A model with knowledge of kinase family motifs and the mechanistic distinctions among hydrolases, oxidoreductases, phosphoribosyltransferases, and kinases can reason from the sequence to 'ATP binding' without needing to recall the specific UniProt entry. The distractors are mechanistically incompatible with a nucleotide-dependent phosphotransferase.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the question asks for 'primary molecular function' and the true primary annotation (homoserine kinase activity, GO:0004413) is absent from the choices, only one option (C, ATP binding) is annotated to this protein. Options A, B, and D describe entirely different enzyme classes with no annotation or mechanistic support for this sequence. The wording is slightly imprecise (calling a secondary IEA annotation the 'primary' function), but this does not create ambiguity among the four provided choices.
-
-
-### Important caveats
-
-- The GO:0005524 (ATP binding) annotation is IEA (Inferred from Electronic Annotation), not experimental. The primary experimentally supported function is homoserine kinase activity (GO:0004413, IGI evidence from PubMed:18757810).
-- The question asks for 'primary molecular function' but the correct answer among the choices is a secondary, computationally inferred annotation. The true primary function term is not offered.
-- The sequence-to-GHMP-kinase identification, while supported by recognizable motifs, still benefits from family-level training data; a purely de novo motif analysis of a 357-aa sequence is non-trivial.
-- The UniProt entry was first publicly released 2025-02-05 (entry version 51 archived), which may postdate the benchmark construction date; the author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains motifs consistent with the GHMP kinase superfamily (e.g., the 'GAGPTILAL' glycine-rich P-loop-like region and the 'GIGHF' motif), which are hallmarks of nucleotide-dependent phosphate-transfer enzymes. A kinase by definition binds ATP to donate a phosphoryl group. Among the four choices: (A) N-acetylglucosamine-6-sulfatase is a hydrolase cleaving sulfate esters—no ATP involvement; (B) medium-chain fatty acyl-CoA dehydrogenase is an FAD-dependent oxidoreductase—no ATP; (D) nicotinamide phosphoribosyltransferase uses PRPP/PPi, not ATP, as its ribosyl donor. Only option C (ATP binding) is mechanistically compatible with a kinase. Thus, recognizing kinase-like sequence features and understanding the substrate requirements of each enzyme class allows elimination of A, B, and D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The reasoning requires knowledge of GHMP kinase family motifs and the substrate specificities of the four enzyme classes, which is general enzymology/biochemistry knowledge rather than a protein-specific database lookup.",
-    "reason": "A model with knowledge of kinase family motifs and the mechanistic distinctions among hydrolases, oxidoreductases, phosphoribosyltransferases, and kinases can reason from the sequence to 'ATP binding' without needing to recall the specific UniProt entry. The distractors are mechanistically incompatible with a nucleotide-dependent phosphotransferase."
-  },
-  "case_id": "GO_molecular_function_0057",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "C8",
-      "C6",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry J9VU26 (Homoserine kinase, EC 2.7.1.39) carries GO:0005524 (ATP binding) annotated with IEA:InterPro and IEA:UniProtKB-KW evidence codes (C7, H5). The protein's catalytic reaction (L-homoserine + ATP → O-phospho-L-homoserine + ADP + H⁺) requires ATP binding. Although the primary function annotation is GO:0004413 (homoserine kinase activity, IGI evidence, C8/H6), that term is not among the choices. Among the four options, only 'ATP binding' is annotated to this protein. The other three options (sulfatase, dehydrogenase, phosphoribosyltransferase) have no annotation support for this entry. The answer is supported, albeit via a secondary IEA annotation rather than the primary IGI-annotated kinase activity."
-  },
-  "important_caveats": [
-    "The GO:0005524 (ATP binding) annotation is IEA (Inferred from Electronic Annotation), not experimental. The primary experimentally supported function is homoserine kinase activity (GO:0004413, IGI evidence from PubMed:18757810).",
-    "The question asks for 'primary molecular function' but the correct answer among the choices is a secondary, computationally inferred annotation. The true primary function term is not offered.",
-    "The sequence-to-GHMP-kinase identification, while supported by recognizable motifs, still benefits from family-level training data; a purely de novo motif analysis of a 357-aa sequence is non-trivial.",
-    "The UniProt entry was first publicly released 2025-02-05 (entry version 51 archived), which may postdate the benchmark construction date; the author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the question asks for 'primary molecular function' and the true primary annotation (homoserine kinase activity, GO:0004413) is absent from the choices, only one option (C, ATP binding) is annotated to this protein. Options A, B, and D describe entirely different enzyme classes with no annotation or mechanistic support for this sequence. The wording is slightly imprecise (calling a secondary IEA annotation the 'primary' function), but this does not create ambiguity among the four provided choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0057",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry J9VU26 (Homoserine kinase, EC 2.7.1.39) carries GO:0005524 (ATP binding) annotated with IEA:InterPro and IEA:UniProtKB-KW evidence codes (C7, H5). The protein's catalytic reaction (L-homoserine + ATP → O-phospho-L-homoserine + ADP + H⁺) requires ATP binding. Although the primary function annotation is GO:0004413 (homoserine kinase activity, IGI evidence, C8/H6), that term is not among the choices. Among the four options, only 'ATP binding' is annotated to this protein. The other three options (sulfatase, dehydrogenase, phosphoribosyltransferase) have no annotation support for this entry. The answer is supported, albeit via a secondary IEA annotation rather than the primary IGI-annotated kinase activity.",
-    "evidence_ids": ["C7", "C8", "C6", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains motifs consistent with the GHMP kinase superfamily (e.g., the 'GAGPTILAL' glycine-rich P-loop-like region and the 'GIGHF' motif), which are hallmarks of nucleotide-dependent phosphate-transfer enzymes. A kinase by definition binds ATP to donate a phosphoryl group. Among the four choices: (A) N-acetylglucosamine-6-sulfatase is a hydrolase cleaving sulfate esters—no ATP involvement; (B) medium-chain fatty acyl-CoA dehydrogenase is an FAD-dependent oxidoreductase—no ATP; (D) nicotinamide phosphoribosyltransferase uses PRPP/PPi, not ATP, as its ribosyl donor. Only option C (ATP binding) is mechanistically compatible with a kinase. Thus, recognizing kinase-like sequence features and understanding the substrate requirements of each enzyme class allows elimination of A, B, and D.",
-    "missing_item_specific_fact": "None critical. The reasoning requires knowledge of GHMP kinase family motifs and the substrate specificities of the four enzyme classes, which is general enzymology/biochemistry knowledge rather than a protein-specific database lookup.",
-    "reason": "A model with knowledge of kinase family motifs and the mechanistic distinctions among hydrolases, oxidoreductases, phosphoribosyltransferases, and kinases can reason from the sequence to 'ATP binding' without needing to recall the specific UniProt entry. The distractors are mechanistically incompatible with a nucleotide-dependent phosphotransferase."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the question asks for 'primary molecular function' and the true primary annotation (homoserine kinase activity, GO:0004413) is absent from the choices, only one option (C, ATP binding) is annotated to this protein. Options A, B, and D describe entirely different enzyme classes with no annotation or mechanistic support for this sequence. The wording is slightly imprecise (calling a secondary IEA annotation the 'primary' function), but this does not create ambiguity among the four provided choices."
-  },
-  "important_caveats": [
-    "The GO:0005524 (ATP binding) annotation is IEA (Inferred from Electronic Annotation), not experimental. The primary experimentally supported function is homoserine kinase activity (GO:0004413, IGI evidence from PubMed:18757810).",
-    "The question asks for 'primary molecular function' but the correct answer among the choices is a secondary, computationally inferred annotation. The true primary function term is not offered.",
-    "The sequence-to-GHMP-kinase identification, while supported by recognizable motifs, still benefits from family-level training data; a purely de novo motif analysis of a 357-aa sequence is non-trivial.",
-    "The UniProt entry was first publicly released 2025-02-05 (entry version 51 archived), which may postdate the benchmark construction date; the author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "J9VU26",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 357,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-02-05",
@@ -538,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-11-28",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "current_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 357,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "J9VU26",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "selected_historical_source_sequence_length": 357,
+  "selected_historical_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
   "selected_historical_version": {
     "accession": "J9VU26",
     "database": "Swiss-Prot",
@@ -556,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "KHSE_CRYN9",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "selected_historical_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
-  "selected_historical_source_sequence_length": 357,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"J9VU26\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -610,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-11-28\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -629,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Cryptococcus neoformans var. grubii serotype A\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000010091\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Basidiomycota\",\"Agaricomycotina\",\"Tremellomycetes\",\"Tremellales\",\"Cryptococcaceae\",\"Cryptococcus\",\"Cryptococcus neoformans species complex\"],\"scientificName\":\"Cryptococcus neoformans (strain H99 / ATCC 208821 / CBS 10515 / FGSC 9487)\",\"taxonId\":235443}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -648,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17423\",\"source\":\"UniProtKB\"}],\"value\":\"2.7.1.39\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Homoserine kinase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HK\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HSK\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -667,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18757810\",\"source\":\"PubMed\"}],\"value\":\"Commits homoserine to the threonine biosynthesis pathway by catalyzing its O-phosphorylation\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -686,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17423\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:13986\"}}],\"reaction\":{\"ecNumber\":\"2.7.1.39\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17423\",\"source\":\"UniProtKB\"}],\"name\":\"L-homoserine + ATP = O-phospho-L-homoserine + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:13985\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57476\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57590\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -705,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005524\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:ATP binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -724,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/14",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000316\",\"id\":\"18757810\",\"source\":\"PubMed\"}],\"id\":\"GO:0004413\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:homoserine kinase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IGI:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/14",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -743,15 +499,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Kingsbury J.M.\",\"McCusker J.H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18757810\"},{\"database\":\"DOI\",\"id\":\"10.1099/mic.0.2008/019729-0\"}],\"citationType\":\"journal article\",\"firstPage\":\"2767\",\"id\":\"18757810\",\"journal\":\"Microbiology\",\"lastPage\":\"2775\",\"publicationDate\":\"2008\",\"title\":\"Threonine biosynthetic genes are essential in Cryptococcus neoformans.\",\"volume\":\"154\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ACC85591.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"PATHWAY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -761,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   KHSE_CRYN9              Reviewed;         357 AA.\nAC   J9VU26; B2MVI2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   28-NOV-2012, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=Homoserine kinase {ECO:0000305};\nDE            Short=HK {ECO:0000305};\nDE            Short=HSK {ECO:0000305};\nDE            EC=2.7.1.39 {ECO:0000250|UniProtKB:P17423};\nGN   Name=THR1 {ECO:0000303|PubMed:18757810};\nGN   ORFNames=CNAG_04156 {ECO:0000312|EMBL:AFR96886.1};\nOS   Cryptococcus neoformans (strain H99 / ATCC 208821 / CBS 10515 / FGSC 9487)\nOS   (Cryptococcus neoformans var. grubii serotype A).\nOC   Eukaryota; Fungi; Dikarya; Basidiomycota; Agaricomycotina; Tremellomycetes;\nOC   Tremellales; Cryptococcaceae; Cryptococcus;\nOC   Cryptococcus neoformans species complex.\nOX   NCBI_TaxID=235443 {ECO:0000312|Proteomes:UP000010091};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -782,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 18-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:ACC85591.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, PATHWAY, AND DISRUPTION PHENOTYPE.\nRX   PubMed=18757810; DOI=10.1099/mic.0.2008/019729-0;\nRA   Kingsbury J.M., McCusker J.H.;\nRT   \"Threonine biosynthetic genes are essential in Cryptococcus neoformans.\";\nRL   Microbiology 154:2767-2775(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 18-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -803,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 43-44",
   "excerpt": "CC   -!- FUNCTION: Commits homoserine to the threonine biosynthesis pathway by\nCC       catalyzing its O-phosphorylation. {ECO:0000269|PubMed:18757810}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -824,18 +580,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 45-51",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-homoserine + ATP = O-phospho-L-homoserine + ADP + H(+);\nCC         Xref=Rhea:RHEA:13985, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:57476, ChEBI:CHEBI:57590, ChEBI:CHEBI:456216;\nCC         EC=2.7.1.39; Evidence={ECO:0000250|UniProtKB:P17423};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:13986;\nCC         Evidence={ECO:0000250|UniProtKB:P17423};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -845,18 +601,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 76-76",
   "excerpt": "DR   GO; GO:0005524; F:ATP binding; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 76-76",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -866,18 +622,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 77-77",
   "excerpt": "DR   GO; GO:0004413; F:homoserine kinase activity; IGI:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-77",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -888,15 +644,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 57041-57052",
   "excerpt": "[Term]\nid: GO:0005524\nname: ATP binding\nnamespace: molecular_function\ndef: \"Binding to ATP, adenosine 5'-triphosphate, a universally important coenzyme and enzyme regulator.\" [ISBN:0198506732]\nsynonym: \"Mg-ATP binding\" EXACT []\nsynonym: \"MgATP binding\" EXACT []\nxref: Reactome:R-HSA-265682 \"KCNJ11 tetramer:ABCC8 tetramer binds 4xATP, closing the channel\"\nis_a: GO:0032559 ! adenyl ribonucleotide binding\nis_a: GO:0035639 ! purine ribonucleoside triphosphate binding\nis_a: GO:0043168 ! anion binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005524",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 57041-57052",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005524"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -907,15 +663,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 83469-83488",
   "excerpt": "[Term]\nid: GO:0008449\nname: N-acetylglucosamine-6-sulfatase activity\nnamespace: molecular_function\ndef: \"Catalysis of the hydrolysis of the 6-sulfate group of the N-acetyl-D-glucosamine 6-sulfate units of heparan sulfate and keratan sulfate.\" [EC:3.1.6.14]\nsynonym: \"2-acetamido-2-deoxy-D-glucose 6-sulfate sulfatase activity\" RELATED [EC:3.1.6.14]\nsynonym: \"acetylglucosamine 6-sulfatase activity\" RELATED [EC:3.1.6.14]\nsynonym: \"chondroitinsulfatase\" BROAD [EC:3.1.6.14]\nsynonym: \"glucosamine-6-sulfatase activity\" RELATED [EC:3.1.6.14]\nsynonym: \"N-acetyl-D-glucosamine-6-sulfate 6-sulfohydrolase activity\" RELATED [EC:3.1.6.14]\nsynonym: \"N-acetylglucosamine 6-sulfate sulfatase activity\" RELATED [EC:3.1.6.14]\nsynonym: \"N-acetylglucosamine-6-sulphatase activity\" EXACT []\nsynonym: \"O,N-disulfate O-sulfohydrolase activity\" RELATED [EC:3.1.6.14]\nxref: EC:3.1.6.14\nxref: MetaCyc:3.1.6.14-RXN\nxref: Reactome:R-HSA-1638032 \"GNS:Ca2+ cleaves sulfate from GlcNAc-6-sulfate units of keratan sulfate\"\nxref: Reactome:R-HSA-2263495 \"Defective GNS does not hydrolyse 6-sulfate from GlcNAc6S\"\nis_a: GO:0008484 ! sulfuric ester hydrolase activity\nproperty_value: skos:exactMatch EC:3.1.6.14\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008449",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 83469-83488",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008449"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -926,15 +682,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 287522-287541",
   "excerpt": "[Term]\nid: GO:0047280\nname: nicotinamide phosphoribosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: diphosphate + nicotinamide mononucleotide = 5-phospho-alpha-D-ribose 1-diphosphate + H+ + nicotinamide.\" [RHEA:16149]\nsynonym: \"nicotinamide mononucleotide pyrophosphorylase activity\" RELATED [EC:2.4.2.12]\nsynonym: \"nicotinamide mononucleotide synthetase activity\" RELATED [EC:2.4.2.12]\nsynonym: \"nicotinamide-nucleotide:diphosphate phospho-alpha-D-ribosyltransferase activity\" RELATED [EC:2.4.2.12]\nsynonym: \"NMN diphosphorylase activity\" RELATED [EC:2.4.2.12]\nsynonym: \"NMN pyrophosphorylase activity\" RELATED [EC:2.4.2.12]\nsynonym: \"NMN synthetase activity\" RELATED [EC:2.4.2.12]\nxref: EC:2.4.2.12\nxref: KEGG_REACTION:R01271\nxref: MetaCyc:2.4.2.12-RXN\nxref: Reactome:R-HSA-197250 \"NAMPT transfers PRIB to NAM to form NAMN\"\nxref: RHEA:16149\nis_a: GO:0016763 ! pentosyltransferase activity\nproperty_value: skos:exactMatch EC:2.4.2.12\nproperty_value: skos:exactMatch RHEA:16149\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0047280",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 287522-287541",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0047280"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -945,15 +701,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 373007-373043",
   "excerpt": "[Term]\nid: GO:0070991\nname: medium-chain fatty acyl-CoA dehydrogenase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: a medium-chain 2,3-saturated fatty acyl-CoA + H+ + oxidized [electron-transfer flavoprotein] = a medium-chain trans-(2E)-enoyl-CoA + reduced [electron-transfer flavoprotein]. A medium-chain fatty acid has an aliphatic tail containing 6 to 12 carbons.\" [RHEA:14477]\ncomment: While there is not universal consensus on the lengths of short-, medium-, long- and very-long-chain fatty acids, the GO uses the definitions in ChEBI (see CHEBI:26666, CHEBI:59554, CHEBI:15904 and CHEBI:27283).\nsynonym: \"MCAD activity\" EXACT [GOC:mah]\nxref: EC:1.3.8.7\nxref: MetaCyc:RXN-11734\nxref: RHEA:14477\nxref: RHEA:43464\nxref: RHEA:47296\nxref: RHEA:48176\nxref: RHEA:48180\nxref: RHEA:48208\nxref: RHEA:82951\nxref: RHEA:84471\nxref: RHEA:84475\nxref: RHEA:84607\nxref: RHEA:84611\nxref: RHEA:84615\nis_a: GO:0003995 ! acyl-CoA dehydrogenase activity\nproperty_value: skos:exactMatch EC:1.3.8.7\nproperty_value: skos:exactMatch MetaCyc:RXN-11734\nproperty_value: skos:exactMatch RHEA:14477\nproperty_value: skos:narrowMatch RHEA:43464\nproperty_value: skos:narrowMatch RHEA:47296\nproperty_value: skos:narrowMatch RHEA:48176\nproperty_value: skos:narrowMatch RHEA:48180\nproperty_value: skos:narrowMatch RHEA:48208\nproperty_value: skos:narrowMatch RHEA:82951\nproperty_value: skos:narrowMatch RHEA:84471\nproperty_value: skos:narrowMatch RHEA:84475\nproperty_value: skos:narrowMatch RHEA:84607\nproperty_value: skos:narrowMatch RHEA:84611\nproperty_value: skos:narrowMatch RHEA:84615\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0070991",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 373007-373043",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0070991"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

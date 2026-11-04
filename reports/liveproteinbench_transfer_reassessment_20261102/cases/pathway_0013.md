@@ -1,18 +1,16 @@
-# pathway_0013: before and after transfer clarification
+# pathway_0013
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0013.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0013.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Amino-acid biosynthesis
+**Expected answer:** **C** — Amino-acid biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the reviewed UniProt entry for aspartate-semialdehyde dehydrogenase. That entry assigns it to amino-acid biosynthesis, including methionine and threonine biosynthesis, with pathway annotations carrying ECO:0000269 evidence linked to a publication. This supports choice C.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices include several distinct pathway categories, but the sequence alone does not provide a clear, general biological clue that identifies this particular enzyme and its pathway. Knowing that aspartate-semialdehyde dehydrogenase participates in aspartate-family amino-acid biosynthesis would distinguish C, but that protein-specific identification is not supplied.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as aspartate-semialdehyde dehydrogenase and its role in amino-acid biosynthesis, including methionine and threonine biosynthesis.
-
-
-**Reason**
-
-> Selecting C requires recognizing or looking up the sequence's protein-specific function; generic sequence-based reasoning does not meaningfully distinguish the pathway choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched annotation supports amino-acid biosynthesis rather than the specific histidine pathway or the unrelated pathways listed.
-
-
-### Important caveats
-
-- The reviewer-only evidence is absent from the evaluated input and supports the key without making the question reasoning-supported.
-- The UniProt pathway annotations cite publication-based evidence, but the primary papers were not independently assessed here; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices include several distinct pathway categories, but the sequence alone does not provide a clear, general biological clue that identifies this particular enzyme and its pathway. Knowing that aspartate-semialdehyde dehydrogenase participates in aspartate-family amino-acid biosynthesis would distinguish C, but that protein-specific identification is not supplied.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as aspartate-semialdehyde dehydrogenase and its role in amino-acid biosynthesis, including methionine and threonine biosynthesis.",
-    "reason": "Selecting C requires recognizing or looking up the sequence's protein-specific function; generic sequence-based reasoning does not meaningfully distinguish the pathway choices."
-  },
-  "case_id": "pathway_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the reviewed UniProt entry for aspartate-semialdehyde dehydrogenase. That entry assigns it to amino-acid biosynthesis, including methionine and threonine biosynthesis, with pathway annotations carrying ECO:0000269 evidence linked to a publication. This supports choice C."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence is absent from the evaluated input and supports the key without making the question reasoning-supported.",
-    "The UniProt pathway annotations cite publication-based evidence, but the primary papers were not independently assessed here; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation supports amino-acid biosynthesis rather than the specific histidine pathway or the unrelated pathways listed."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the reviewed UniProt entry for aspartate-semialdehyde dehydrogenase. That entry assigns it to amino-acid biosynthesis, including methionine and threonine biosynthesis, with pathway annotations carrying ECO:0000269 evidence linked to a publication. This supports choice C.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices include several distinct pathway categories, but the sequence alone does not provide a clear, general biological clue that identifies this particular enzyme and its pathway. Knowing that aspartate-semialdehyde dehydrogenase participates in aspartate-family amino-acid biosynthesis would distinguish C, but that protein-specific identification is not supplied.",
-    "missing_item_specific_fact": "The protein's identity as aspartate-semialdehyde dehydrogenase and its role in amino-acid biosynthesis, including methionine and threonine biosynthesis.",
-    "reason": "Selecting C requires recognizing or looking up the sequence's protein-specific function; generic sequence-based reasoning does not meaningfully distinguish the pathway choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation supports amino-acid biosynthesis rather than the specific histidine pathway or the unrelated pathways listed."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence is absent from the evaluated input and supports the key without making the question reasoning-supported.",
-    "The UniProt pathway annotations cite publication-based evidence, but the primary papers were not independently assessed here; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A179UL48 (sequence matched, 362 aa) identifies this protein as Aspartate-semialdehyde dehydrogenase (EC 1.2.1.11) from Blastomyces gilchristii. Two pathway annotations explicitly place it under 'Amino-acid biosynthesis': (1) L-methionine biosynthesis via de novo pathway, L-homoserine from L-aspartate: step 2/3, and (2) L-threonine biosynthesis, L-threonine from L-aspartate: step 2/5. Both are experimentally supported (ECO:0000269, PubMed:30107909). Choice C 'Amino-acid biosynthesis' is the correct umbrella category.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a clear Rossmann-fold nucleotide-binding motif (GVLGATGAVGTR at positions ~10-21), identifying this as an NAD(P)-dependent dehydrogenase. This allows elimination of: (D) L-histidine biosynthesis, which proceeds via ATP/PRPP rearrangements and cyclization without NAD(P)-dependent dehydrogenase steps; (B) oxylipin biosynthesis, which involves lipoxygenases/cyclooxygenases (oxygenases, not dehydrogenases); and (A) HMG-CoA from isovaleryl-CoA (step 3/3), which is a carboxylation reaction, not a dehydrogenation. Multiple amino-acid biosynthesis pathways (aspartate→homoserine→methionine/threonine, glutamate→proline, etc.) do employ NAD(P)-dependent dehydrogenases, making C the consistent broad category.
-
-
-**Missing item-specific fact**
-
-> Precisely identifying the enzyme as aspartate-semialdehyde dehydrogenase (rather than glutamate-5-semialdehyde dehydrogenase or another family member) and specifying methionine/threonine over proline would require family-level sequence recognition or database lookup. However, the broad category 'Amino-acid biosynthesis' is defensible from the dehydrogenase identification alone.
-
-
-**Reason**
-
-> The Rossmann fold is a generalizable structural motif identifiable from sequence. Eliminating histidine biosynthesis (no dehydrogenase steps), oxylipin biosynthesis (oxygenases), and HMG-CoA carboxylation (carboxylase) from the presence of a dehydrogenase fold constitutes a concrete biological argument. The remaining option C is the only pathway category that commonly features NAD(P)-dependent dehydrogenases.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options are well-separated by enzyme class: A involves a carboxylase, B involves oxygenases, D involves transferases/isomerases/cyclases, and C encompasses dehydrogenases. The Rossmann fold clearly points to a dehydrogenase, uniquely consistent with C among the choices.
-
-
-### Important caveats
-
-- The Rossmann fold alone does not specify which amino-acid biosynthesis pathway; the broad category C is used, which is appropriate given the answer choices.
-- The UniProt annotation is experimentally supported (ECO:0000269, PubMed:30107909 with X-ray crystallography PDB 6C85/6C8W), not merely computational.
-- The sequence is 362 aa, matching the canonical entry exactly (SHA-256 match confirmed in both current and historical snapshots).
-- The identity origin note states the accession was inferred mechanically from dataset metadata absent from the evaluated model input; the model must work from the raw sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a clear Rossmann-fold nucleotide-binding motif (GVLGATGAVGTR at positions ~10-21), identifying this as an NAD(P)-dependent dehydrogenase. This allows elimination of: (D) L-histidine biosynthesis, which proceeds via ATP/PRPP rearrangements and cyclization without NAD(P)-dependent dehydrogenase steps; (B) oxylipin biosynthesis, which involves lipoxygenases/cyclooxygenases (oxygenases, not dehydrogenases); and (A) HMG-CoA from isovaleryl-CoA (step 3/3), which is a carboxylation reaction, not a dehydrogenation. Multiple amino-acid biosynthesis pathways (aspartate→homoserine→methionine/threonine, glutamate→proline, etc.) do employ NAD(P)-dependent dehydrogenases, making C the consistent broad category.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precisely identifying the enzyme as aspartate-semialdehyde dehydrogenase (rather than glutamate-5-semialdehyde dehydrogenase or another family member) and specifying methionine/threonine over proline would require family-level sequence recognition or database lookup. However, the broad category 'Amino-acid biosynthesis' is defensible from the dehydrogenase identification alone.",
-    "reason": "The Rossmann fold is a generalizable structural motif identifiable from sequence. Eliminating histidine biosynthesis (no dehydrogenase steps), oxylipin biosynthesis (oxygenases), and HMG-CoA carboxylation (carboxylase) from the presence of a dehydrogenase fold constitutes a concrete biological argument. The remaining option C is the only pathway category that commonly features NAD(P)-dependent dehydrogenases."
-  },
-  "case_id": "pathway_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A179UL48 (sequence matched, 362 aa) identifies this protein as Aspartate-semialdehyde dehydrogenase (EC 1.2.1.11) from Blastomyces gilchristii. Two pathway annotations explicitly place it under 'Amino-acid biosynthesis': (1) L-methionine biosynthesis via de novo pathway, L-homoserine from L-aspartate: step 2/3, and (2) L-threonine biosynthesis, L-threonine from L-aspartate: step 2/5. Both are experimentally supported (ECO:0000269, PubMed:30107909). Choice C 'Amino-acid biosynthesis' is the correct umbrella category."
-  },
-  "important_caveats": [
-    "The Rossmann fold alone does not specify which amino-acid biosynthesis pathway; the broad category C is used, which is appropriate given the answer choices.",
-    "The UniProt annotation is experimentally supported (ECO:0000269, PubMed:30107909 with X-ray crystallography PDB 6C85/6C8W), not merely computational.",
-    "The sequence is 362 aa, matching the canonical entry exactly (SHA-256 match confirmed in both current and historical snapshots).",
-    "The identity origin note states the accession was inferred mechanically from dataset metadata absent from the evaluated model input; the model must work from the raw sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated by enzyme class: A involves a carboxylase, B involves oxygenases, D involves transferases/isomerases/cyclases, and C encompasses dehydrogenases. The Rossmann fold clearly points to a dehydrogenase, uniquely consistent with C among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A179UL48 (sequence matched, 362 aa) identifies this protein as Aspartate-semialdehyde dehydrogenase (EC 1.2.1.11) from Blastomyces gilchristii. Two pathway annotations explicitly place it under 'Amino-acid biosynthesis': (1) L-methionine biosynthesis via de novo pathway, L-homoserine from L-aspartate: step 2/3, and (2) L-threonine biosynthesis, L-threonine from L-aspartate: step 2/5. Both are experimentally supported (ECO:0000269, PubMed:30107909). Choice C 'Amino-acid biosynthesis' is the correct umbrella category.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a clear Rossmann-fold nucleotide-binding motif (GVLGATGAVGTR at positions ~10-21), identifying this as an NAD(P)-dependent dehydrogenase. This allows elimination of: (D) L-histidine biosynthesis, which proceeds via ATP/PRPP rearrangements and cyclization without NAD(P)-dependent dehydrogenase steps; (B) oxylipin biosynthesis, which involves lipoxygenases/cyclooxygenases (oxygenases, not dehydrogenases); and (A) HMG-CoA from isovaleryl-CoA (step 3/3), which is a carboxylation reaction, not a dehydrogenation. Multiple amino-acid biosynthesis pathways (aspartate→homoserine→methionine/threonine, glutamate→proline, etc.) do employ NAD(P)-dependent dehydrogenases, making C the consistent broad category.",
-    "missing_item_specific_fact": "Precisely identifying the enzyme as aspartate-semialdehyde dehydrogenase (rather than glutamate-5-semialdehyde dehydrogenase or another family member) and specifying methionine/threonine over proline would require family-level sequence recognition or database lookup. However, the broad category 'Amino-acid biosynthesis' is defensible from the dehydrogenase identification alone.",
-    "reason": "The Rossmann fold is a generalizable structural motif identifiable from sequence. Eliminating histidine biosynthesis (no dehydrogenase steps), oxylipin biosynthesis (oxygenases), and HMG-CoA carboxylation (carboxylase) from the presence of a dehydrogenase fold constitutes a concrete biological argument. The remaining option C is the only pathway category that commonly features NAD(P)-dependent dehydrogenases."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated by enzyme class: A involves a carboxylase, B involves oxygenases, D involves transferases/isomerases/cyclases, and C encompasses dehydrogenases. The Rossmann fold clearly points to a dehydrogenase, uniquely consistent with C among the choices."
-  },
-  "important_caveats": [
-    "The Rossmann fold alone does not specify which amino-acid biosynthesis pathway; the broad category C is used, which is appropriate given the answer choices.",
-    "The UniProt annotation is experimentally supported (ECO:0000269, PubMed:30107909 with X-ray crystallography PDB 6C85/6C8W), not merely computational.",
-    "The sequence is 362 aa, matching the canonical entry exactly (SHA-256 match confirmed in both current and historical snapshots).",
-    "The identity origin note states the accession was inferred mechanically from dataset metadata absent from the evaluated model input; the model must work from the raw sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A179UL48",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f30799121529a0913069a9614b7c0737990588a5013bf3d73955823ac077cf36",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 362,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f30799121529a0913069a9614b7c0737990588a5013bf3d73955823ac077cf36",
   "current_entry_audit": {
     "entryVersion": 28,
     "firstPublicDate": "2025-02-05",
@@ -538,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "current_source_sequence_sha256": "f30799121529a0913069a9614b7c0737990588a5013bf3d73955823ac077cf36",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 362,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f30799121529a0913069a9614b7c0737990588a5013bf3d73955823ac077cf36",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 26,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A179UL48",
   "selected_historical_entry_version": 26,
+  "selected_historical_record_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
+  "selected_historical_source_sequence_length": 362,
+  "selected_historical_source_sequence_sha256": "f30799121529a0913069a9614b7c0737990588a5013bf3d73955823ac077cf36",
   "selected_historical_version": {
     "accession": "A0A179UL48",
     "database": "Swiss-Prot",
@@ -556,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DHAS_BLAGS",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
-  "selected_historical_source_sequence_sha256": "f30799121529a0913069a9614b7c0737990588a5013bf3d73955823ac077cf36",
-  "selected_historical_source_sequence_length": 362,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 26,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A179UL48\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -606,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":28,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -625,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Blastomyces dermatitidis\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000002038\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Onygenales\",\"Ajellomycetaceae\",\"Blastomyces\"],\"scientificName\":\"Blastomyces gilchristii (strain SLH14081)\",\"taxonId\":559298}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -644,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29608391\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30107909\",\"source\":\"PubMed\"}],\"value\":\"1.2.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Aspartate-semialdehyde dehydrogenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -663,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30107909\",\"source\":\"PubMed\"}],\"value\":\"Amino-acid biosynthesis; L-methionine biosynthesis via de novo pathway; L-homoserine from L-aspartate: step 2/3\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -682,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30107909\",\"source\":\"PubMed\"}],\"value\":\"Amino-acid biosynthesis; L-threonine biosynthesis; L-threonine from L-aspartate: step 2/5\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -701,15 +457,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Dahal G.P.\",\"Viola R.E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29608391\"},{\"database\":\"DOI\",\"id\":\"10.1177/2472555218767844\"}],\"citationType\":\"journal article\",\"firstPage\":\"520\",\"id\":\"29608391\",\"journal\":\"SLAS Discovery\",\"lastPage\":\"531\",\"publicationDate\":\"2018\",\"title\":\"A Fragment Library Screening Approach to Identify Selective Inhibitors against an Essential Fungal Enzyme.\",\"volume\":\"23\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -720,15 +476,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json",
-  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
-  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Dahal G.P.\",\"Viola R.E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30107909\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.bbrc.2018.08.053\"}],\"citationType\":\"journal article\",\"firstPage\":\"2848\",\"id\":\"30107909\",\"journal\":\"Biochem. Biophys. Res. Commun.\",\"lastPage\":\"2854\",\"publicationDate\":\"2018\",\"title\":\"Structural insights into inhibitor binding to a fungal ortholog of aspartate semialdehyde dehydrogenase.\",\"volume\":\"503\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6C85\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6C8W\",\"source\":\"PDB\"}],\"referenceNumber\":3,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.4 ANGSTROMS) IN COMPLEX WITH INHIBITOR AND NADP(+)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:24:30.243142+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bfbfb6c511568b902ff86e7618d016f76423131a7103b823ff729117ec12dafa",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A179UL48.json"
 }
 ```
 
@@ -738,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26",
-  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
-  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   DHAS_BLAGS              Reviewed;         362 AA.\nAC   A0A179UL48;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 2.\nDT   28-JAN-2026, entry version 26.\nDE   RecName: Full=Aspartate-semialdehyde dehydrogenase {ECO:0000305};\nDE            EC=1.2.1.11 {ECO:0000269|PubMed:29608391, ECO:0000269|PubMed:30107909};\nGN   ORFNames=BDBG_16922 {ECO:0000312|EMBL:OAT07949.1};\nOS   Blastomyces gilchristii (strain SLH14081) (Blastomyces dermatitidis).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Onygenales; Ajellomycetaceae; Blastomyces.\nOX   NCBI_TaxID=559298 {ECO:0000312|Proteomes:UP000002038};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
+  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26"
 }
 ```
 
@@ -759,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26",
-  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
-  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
-  "source_locator": "lines 25-31",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, AND ACTIVITY REGULATION.\nRX   PubMed=29608391; DOI=10.1177/2472555218767844;\nRA   Dahal G.P., Viola R.E.;\nRT   \"A Fragment Library Screening Approach to Identify Selective Inhibitors\nRT   against an Essential Fungal Enzyme.\";\nRL   SLAS Discovery 23:520-531(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
+  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26"
 }
 ```
 
@@ -780,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26",
-  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
-  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
-  "source_locator": "lines 32-40",
   "excerpt": "RN   [3] {ECO:0007744|PDB:6C85, ECO:0007744|PDB:6C8W}\nRP   X-RAY CRYSTALLOGRAPHY (2.4 ANGSTROMS) IN COMPLEX WITH INHIBITOR AND\nRP   NADP(+), FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, PATHWAY, AND SUBUNIT.\nRX   PubMed=30107909; DOI=10.1016/j.bbrc.2018.08.053;\nRA   Dahal G.P., Viola R.E.;\nRT   \"Structural insights into inhibitor binding to a fungal ortholog of\nRT   aspartate semialdehyde dehydrogenase.\";\nRL   Biochem. Biophys. Res. Commun. 503:2848-2854(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
+  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26"
 }
 ```
 
@@ -801,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26",
-  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
-  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
-  "source_locator": "lines 64-66",
   "excerpt": "CC   -!- PATHWAY: Amino-acid biosynthesis; L-methionine biosynthesis via de novo\nCC       pathway; L-homoserine from L-aspartate: step 2/3.\nCC       {ECO:0000269|PubMed:30107909}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 64-66",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
+  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26"
 }
 ```
 
@@ -822,18 +578,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26",
-  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
-  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
-  "source_locator": "lines 67-68",
   "excerpt": "CC   -!- PATHWAY: Amino-acid biosynthesis; L-threonine biosynthesis; L-threonine\nCC       from L-aspartate: step 2/5. {ECO:0000269|PubMed:30107909}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:24:32.458235+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 67-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f875f72a66f602258c8fcfbbffa13b408826e3f67e6f950e3069cb2c5b75a5d",
+  "url": "https://rest.uniprot.org/unisave/A0A179UL48?format=txt&versions=26"
 }
 ```
 

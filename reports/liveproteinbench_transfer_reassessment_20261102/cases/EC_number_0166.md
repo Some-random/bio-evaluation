@@ -1,18 +1,16 @@
-# EC_number_0166: before and after transfer clarification
+# EC_number_0166
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0166.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0166.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **B** — 1.1.1.1
+**Expected answer:** **B** — 1.1.1.1
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as zinc-type alcohol dehydrogenase B with EC 1.1.1.1; the EC annotation cites experimental evidence. The listed catalytic reactions are supported by transfer from another UniProt entry, so they are not independent direct measurements for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a zinc-type alcohol dehydrogenase, which helps distinguish it from the kinase and enolase choices. That broad identification does not establish the precise EC number among potentially related oxidoreductases.
-
-
-**Missing item-specific fact**
-
-> The protein-specific reaction classification—especially substrate specificity needed to distinguish EC 1.1.1.1 from a related oxidoreductase EC—requires an annotation, homolog-specific fact, or experimental characterization absent from the input.
-
-
-**Reason**
-
-> Sequence-based family recognition can narrow the choices, but the exact four-part EC assignment depends on item-specific functional knowledge rather than a sufficiently discriminating argument from the supplied sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched database record supports choice B; the evidence does not establish another listed EC as a competing classification for this sequence.
-
-
-### Important caveats
-
-- The reviewer-only UniProt accession and annotations were not supplied to the evaluated model.
-- The cited EC annotation has an experimental evidence code, but the primary paper was not independently reviewed here; the detailed catalytic-reaction annotations cite evidence transferred from another UniProt entry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a zinc-type alcohol dehydrogenase, which helps distinguish it from the kinase and enolase choices. That broad identification does not establish the precise EC number among potentially related oxidoreductases.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific reaction classification—especially substrate specificity needed to distinguish EC 1.1.1.1 from a related oxidoreductase EC—requires an annotation, homolog-specific fact, or experimental characterization absent from the input.",
-    "reason": "Sequence-based family recognition can narrow the choices, but the exact four-part EC assignment depends on item-specific functional knowledge rather than a sufficiently discriminating argument from the supplied sequence alone."
-  },
-  "case_id": "EC_number_0166",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as zinc-type alcohol dehydrogenase B with EC 1.1.1.1; the EC annotation cites experimental evidence. The listed catalytic reactions are supported by transfer from another UniProt entry, so they are not independent direct measurements for this sequence."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt accession and annotations were not supplied to the evaluated model.",
-    "The cited EC annotation has an experimental evidence code, but the primary paper was not independently reviewed here; the detailed catalytic-reaction annotations cite evidence transferred from another UniProt entry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched database record supports choice B; the evidence does not establish another listed EC as a competing classification for this sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0166",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as zinc-type alcohol dehydrogenase B with EC 1.1.1.1; the EC annotation cites experimental evidence. The listed catalytic reactions are supported by transfer from another UniProt entry, so they are not independent direct measurements for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a zinc-type alcohol dehydrogenase, which helps distinguish it from the kinase and enolase choices. That broad identification does not establish the precise EC number among potentially related oxidoreductases.",
-    "missing_item_specific_fact": "The protein-specific reaction classification—especially substrate specificity needed to distinguish EC 1.1.1.1 from a related oxidoreductase EC—requires an annotation, homolog-specific fact, or experimental characterization absent from the input.",
-    "reason": "Sequence-based family recognition can narrow the choices, but the exact four-part EC assignment depends on item-specific functional knowledge rather than a sufficiently discriminating argument from the supplied sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched database record supports choice B; the evidence does not establish another listed EC as a competing classification for this sequence."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt accession and annotations were not supplied to the evaluated model.",
-    "The cited EC annotation has an experimental evidence code, but the primary paper was not independently reviewed here; the detailed catalytic-reaction annotations cite evidence transferred from another UniProt entry."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A7U2MMF3 (ADHB_ASPFN, Aspergillus flavus) is annotated with EC 1.1.1.1 (Zinc-type alcohol dehydrogenase B) with experimental evidence code ECO:0000269 from PubMed:39601562. Catalytic activity comments confirm NAD-dependent oxidation of primary and secondary alcohols. The benchmark sequence (428 aa) matches the UniProt sequence exactly. The author key B (1.1.1.1) is consistent with the database annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a zinc-binding cysteine cluster (CGECFYCKQGFSSRCEKSVLFGCDHLDG) and a Rossmann-fold motif (GCGPVGLCALINALEFKPKHLL), which together support classification as a zinc-dependent alcohol dehydrogenase (EC 1.1.1.x), effectively eliminating C (lyase, EC 4.2.1.121) and D (kinase, EC 2.7.11.1). However, distinguishing EC 1.1.1.1 (NAD+) from EC 1.1.1.122 (NADP+) requires knowledge of specific cofactor-binding pocket residues that discriminate the 2'-phosphate of NADP+, or knowledge of which structural subfamily this particular enzyme belongs to. The sequence-level features (zinc coordination pattern, Rossmann fold) are broadly consistent with classical zinc ADHs but do not unambiguously resolve the 4th digit without item-specific structural or experimental knowledge.
-
-
-**Missing item-specific fact**
-
-> The specific cofactor preference (NAD+ vs NADP+) of this Aspergillus flavus AdhB enzyme, determined experimentally (PubMed:39601562), is the decisive fact. Without knowing whether this particular enzyme has residues in its cofactor-binding pocket that accommodate or exclude the 2'-phosphate of NADP+, the 4th digit (1 vs 122) cannot be reliably assigned from sequence alone.
-
-
-**Reason**
-
-> The broader EC class (1.1.1.x, oxidoreductase acting on CH-OH with NAD/NADP) is inferable from zinc-binding motifs and Rossmann fold. But the final digit distinguishing NAD+ (1) from NADP+ (122) preference is a fine biochemical distinction that depends on the specific 3D arrangement of residues in the cofactor pocket, which is not reliably readable from the linear sequence without specialized structural knowledge of this particular enzyme family member.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> Both A (1.1.1.122, alcohol dehydrogenase NADP+) and B (1.1.1.1, alcohol dehydrogenase NAD+) are zinc-dependent alcohol dehydrogenases with similar overall architecture. From the linear sequence alone, without knowledge of the specific cofactor-binding pocket geometry, a model could reasonably select either. The zinc-binding cysteine clusters and Rossmann fold are present in both classes. The distinction requires item-specific knowledge of this enzyme's experimentally determined cofactor preference.
-
-
-### Important caveats
-
-- The UniProt annotation for the catalytic activity comments uses evidence code ECO:0000250 (transferred from UniProtKB:P11766, horse liver ADH) for the reaction equations, while the EC number assignment itself uses ECO:0000269 (experimental evidence from PubMed:39601562). The primary experimental evidence is from the 2025 MBio paper.
-- The sequence was first publicly released in April 2025; the benchmark may have been constructed before or after this annotation was available, affecting whether the answer was accessible via database lookup at construction time.
-- The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was not available to the evaluated model.
-- Distractors C (4.2.1.121, lyase) and D (2.7.11.1, kinase) are clearly eliminable by any model recognizing oxidoreductase features, making the effective discrimination between A and B the core challenge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a zinc-binding cysteine cluster (CGECFYCKQGFSSRCEKSVLFGCDHLDG) and a Rossmann-fold motif (GCGPVGLCALINALEFKPKHLL), which together support classification as a zinc-dependent alcohol dehydrogenase (EC 1.1.1.x), effectively eliminating C (lyase, EC 4.2.1.121) and D (kinase, EC 2.7.11.1). However, distinguishing EC 1.1.1.1 (NAD+) from EC 1.1.1.122 (NADP+) requires knowledge of specific cofactor-binding pocket residues that discriminate the 2'-phosphate of NADP+, or knowledge of which structural subfamily this particular enzyme belongs to. The sequence-level features (zinc coordination pattern, Rossmann fold) are broadly consistent with classical zinc ADHs but do not unambiguously resolve the 4th digit without item-specific structural or experimental knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific cofactor preference (NAD+ vs NADP+) of this Aspergillus flavus AdhB enzyme, determined experimentally (PubMed:39601562), is the decisive fact. Without knowing whether this particular enzyme has residues in its cofactor-binding pocket that accommodate or exclude the 2'-phosphate of NADP+, the 4th digit (1 vs 122) cannot be reliably assigned from sequence alone.",
-    "reason": "The broader EC class (1.1.1.x, oxidoreductase acting on CH-OH with NAD/NADP) is inferable from zinc-binding motifs and Rossmann fold. But the final digit distinguishing NAD+ (1) from NADP+ (122) preference is a fine biochemical distinction that depends on the specific 3D arrangement of residues in the cofactor pocket, which is not reliably readable from the linear sequence without specialized structural knowledge of this particular enzyme family member."
-  },
-  "case_id": "EC_number_0166",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7U2MMF3 (ADHB_ASPFN, Aspergillus flavus) is annotated with EC 1.1.1.1 (Zinc-type alcohol dehydrogenase B) with experimental evidence code ECO:0000269 from PubMed:39601562. Catalytic activity comments confirm NAD-dependent oxidation of primary and secondary alcohols. The benchmark sequence (428 aa) matches the UniProt sequence exactly. The author key B (1.1.1.1) is consistent with the database annotation."
-  },
-  "important_caveats": [
-    "The UniProt annotation for the catalytic activity comments uses evidence code ECO:0000250 (transferred from UniProtKB:P11766, horse liver ADH) for the reaction equations, while the EC number assignment itself uses ECO:0000269 (experimental evidence from PubMed:39601562). The primary experimental evidence is from the 2025 MBio paper.",
-    "The sequence was first publicly released in April 2025; the benchmark may have been constructed before or after this annotation was available, affecting whether the answer was accessible via database lookup at construction time.",
-    "The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was not available to the evaluated model.",
-    "Distractors C (4.2.1.121, lyase) and D (2.7.11.1, kinase) are clearly eliminable by any model recognizing oxidoreductase features, making the effective discrimination between A and B the core challenge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "Both A (1.1.1.122, alcohol dehydrogenase NADP+) and B (1.1.1.1, alcohol dehydrogenase NAD+) are zinc-dependent alcohol dehydrogenases with similar overall architecture. From the linear sequence alone, without knowledge of the specific cofactor-binding pocket geometry, a model could reasonably select either. The zinc-binding cysteine clusters and Rossmann fold are present in both classes. The distinction requires item-specific knowledge of this enzyme's experimentally determined cofactor preference."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0166",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7U2MMF3 (ADHB_ASPFN, Aspergillus flavus) is annotated with EC 1.1.1.1 (Zinc-type alcohol dehydrogenase B) with experimental evidence code ECO:0000269 from PubMed:39601562. Catalytic activity comments confirm NAD-dependent oxidation of primary and secondary alcohols. The benchmark sequence (428 aa) matches the UniProt sequence exactly. The author key B (1.1.1.1) is consistent with the database annotation.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H1", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a zinc-binding cysteine cluster (CGECFYCKQGFSSRCEKSVLFGCDHLDG) and a Rossmann-fold motif (GCGPVGLCALINALEFKPKHLL), which together support classification as a zinc-dependent alcohol dehydrogenase (EC 1.1.1.x), effectively eliminating C (lyase, EC 4.2.1.121) and D (kinase, EC 2.7.11.1). However, distinguishing EC 1.1.1.1 (NAD+) from EC 1.1.1.122 (NADP+) requires knowledge of specific cofactor-binding pocket residues that discriminate the 2'-phosphate of NADP+, or knowledge of which structural subfamily this particular enzyme belongs to. The sequence-level features (zinc coordination pattern, Rossmann fold) are broadly consistent with classical zinc ADHs but do not unambiguously resolve the 4th digit without item-specific structural or experimental knowledge.",
-    "missing_item_specific_fact": "The specific cofactor preference (NAD+ vs NADP+) of this Aspergillus flavus AdhB enzyme, determined experimentally (PubMed:39601562), is the decisive fact. Without knowing whether this particular enzyme has residues in its cofactor-binding pocket that accommodate or exclude the 2'-phosphate of NADP+, the 4th digit (1 vs 122) cannot be reliably assigned from sequence alone.",
-    "reason": "The broader EC class (1.1.1.x, oxidoreductase acting on CH-OH with NAD/NADP) is inferable from zinc-binding motifs and Rossmann fold. But the final digit distinguishing NAD+ (1) from NADP+ (122) preference is a fine biochemical distinction that depends on the specific 3D arrangement of residues in the cofactor pocket, which is not reliably readable from the linear sequence without specialized structural knowledge of this particular enzyme family member."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "Both A (1.1.1.122, alcohol dehydrogenase NADP+) and B (1.1.1.1, alcohol dehydrogenase NAD+) are zinc-dependent alcohol dehydrogenases with similar overall architecture. From the linear sequence alone, without knowledge of the specific cofactor-binding pocket geometry, a model could reasonably select either. The zinc-binding cysteine clusters and Rossmann fold are present in both classes. The distinction requires item-specific knowledge of this enzyme's experimentally determined cofactor preference."
-  },
-  "important_caveats": [
-    "The UniProt annotation for the catalytic activity comments uses evidence code ECO:0000250 (transferred from UniProtKB:P11766, horse liver ADH) for the reaction equations, while the EC number assignment itself uses ECO:0000269 (experimental evidence from PubMed:39601562). The primary experimental evidence is from the 2025 MBio paper.",
-    "The sequence was first publicly released in April 2025; the benchmark may have been constructed before or after this annotation was available, affecting whether the answer was accessible via database lookup at construction time.",
-    "The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was not available to the evaluated model.",
-    "Distractors C (4.2.1.121, lyase) and D (2.7.11.1, kinase) are clearly eliminable by any model recognizing oxidoreductase features, making the effective discrimination between A and B the core challenge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -513,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7U2MMF3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d348871be27146ff8293c1eea5717c61d5770c4daa89748fe4eca3cdd1c5ab9f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 428,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d348871be27146ff8293c1eea5717c61d5770c4daa89748fe4eca3cdd1c5ab9f",
   "current_entry_audit": {
     "entryVersion": 8,
     "firstPublicDate": "2025-04-09",
@@ -544,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-05-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "current_source_sequence_sha256": "d348871be27146ff8293c1eea5717c61d5770c4daa89748fe4eca3cdd1c5ab9f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 428,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d348871be27146ff8293c1eea5717c61d5770c4daa89748fe4eca3cdd1c5ab9f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 6,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7U2MMF3",
   "selected_historical_entry_version": 6,
+  "selected_historical_record_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
+  "selected_historical_source_sequence_length": 428,
+  "selected_historical_source_sequence_sha256": "d348871be27146ff8293c1eea5717c61d5770c4daa89748fe4eca3cdd1c5ab9f",
   "selected_historical_version": {
     "accession": "A0A7U2MMF3",
     "database": "Swiss-Prot",
@@ -562,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ADHB_ASPFN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
-  "selected_historical_source_sequence_sha256": "d348871be27146ff8293c1eea5717c61d5770c4daa89748fe4eca3cdd1c5ab9f",
-  "selected_historical_source_sequence_length": 428,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 6,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json",
-  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7U2MMF3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json"
 }
 ```
 
@@ -612,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json",
-  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":8,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2024-05-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json"
 }
 ```
 
@@ -631,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json",
-  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357 / JCM 12722 / SRRC 167)\",\"taxonId\":332952}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json"
 }
 ```
 
@@ -650,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json",
-  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"Zinc-type alcohol dehydrogenase B\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json"
 }
 ```
 
@@ -669,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json",
-  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P11766\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:10737\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P11766\",\"source\":\"UniProtKB\"}],\"name\":\"a primary alcohol + NAD(+) = an aldehyde + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:10736\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15734\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17478\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json"
 }
 ```
 
@@ -688,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json",
-  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P11766\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:10741\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P11766\",\"source\":\"UniProtKB\"}],\"name\":\"a secondary alcohol + NAD(+) = a ketone + NADH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:10740\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17087\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:35681\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json"
 }
 ```
 
@@ -707,15 +457,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json",
-  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
-  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Chen X.\",\"Wu L.\",\"Zhang Y.\",\"Wang S.\",\"Wang S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39601562\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.02665-24\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0266524\",\"id\":\"39601562\",\"journal\":\"MBio\",\"lastPage\":\"e0266524\",\"publicationDate\":\"2025\",\"title\":\"Importance of benzoyltransferase GcnE and lysine benzoylation of alcohol dehydrogenase AdhB in pathogenesis and aflatoxin production in Aspergillus flavus.\",\"volume\":\"16\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BENZOYLATION AT LYS-393\",\"MUTAGENESIS OF LYS-393\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:52.417589+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e46822396e66b1f6560085f9592ff59bbb63670635ea2594ff88b97769995e9b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MMF3.json"
 }
 ```
 
@@ -725,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6",
-  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
-  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   ADHB_ASPFN              Reviewed;         428 AA.\nAC   A0A7U2MMF3;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-MAY-2024, sequence version 1.\nDT   28-JAN-2026, entry version 6.\nDE   RecName: Full=Zinc-type alcohol dehydrogenase B {ECO:0000303|PubMed:39601562};\nDE            EC=1.1.1.1 {ECO:0000269|PubMed:39601562};\nGN   Name=adhB {ECO:0000303|PubMed:39601562}; ORFNames=F9C07_7207;\nOS   Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357\nOS   / JCM 12722 / SRRC 167).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=332952;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6"
 }
 ```
 
@@ -746,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6",
-  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
-  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Zinc-type alcohol dehydrogenase B {ECO:0000303|PubMed:39601562};\nDE            EC=1.1.1.1 {ECO:0000269|PubMed:39601562};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6"
 }
 ```
 
@@ -767,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6",
-  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
-  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
-  "source_locator": "lines 25-33",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BENZOYLATION AT LYS-393, MUTAGENESIS OF\nRP   LYS-393, AND DISRUPTION PHENOTYPE.\nRX   PubMed=39601562; DOI=10.1128/mbio.02665-24;\nRA   Chen X., Wu L., Zhang Y., Wang S., Wang S.;\nRT   \"Importance of benzoyltransferase GcnE and lysine benzoylation of alcohol\nRT   dehydrogenase AdhB in pathogenesis and aflatoxin production in Aspergillus\nRT   flavus.\";\nRL   MBio 16:e0266524-e0266524(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6"
 }
 ```
 
@@ -788,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6",
-  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
-  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
-  "source_locator": "lines 40-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a primary alcohol + NAD(+) = an aldehyde + NADH + H(+);\nCC         Xref=Rhea:RHEA:10736, ChEBI:CHEBI:15378, ChEBI:CHEBI:15734,\nCC         ChEBI:CHEBI:17478, ChEBI:CHEBI:57540, ChEBI:CHEBI:57945; EC=1.1.1.1;\nCC         Evidence={ECO:0000250|UniProtKB:P11766};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:10737;\nCC         Evidence={ECO:0000250|UniProtKB:P11766};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6"
 }
 ```
 
@@ -809,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6",
-  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
-  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
-  "source_locator": "lines 47-53",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a secondary alcohol + NAD(+) = a ketone + NADH + H(+);\nCC         Xref=Rhea:RHEA:10740, ChEBI:CHEBI:15378, ChEBI:CHEBI:17087,\nCC         ChEBI:CHEBI:35681, ChEBI:CHEBI:57540, ChEBI:CHEBI:57945; EC=1.1.1.1;\nCC         Evidence={ECO:0000250|UniProtKB:P11766};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:10741;\nCC         Evidence={ECO:0000250|UniProtKB:P11766};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:55.240936+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d4faaa36f941085d4c1a6051f22ec6d1c6e4b6f59555b76c64575e9cff75ee7",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MMF3?format=txt&versions=6"
 }
 ```
 

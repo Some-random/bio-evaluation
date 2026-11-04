@@ -1,18 +1,16 @@
-# pathway_0087: before and after transfer clarification
+# pathway_0087
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0087.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0087.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Amino-acid degradation. .
+**Expected answer:** **C** — Amino-acid degradation. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as N-acetyl-D-glutamate racemase, with the pathway listed as amino-acid degradation. The annotation cites a study on a D-glutamate catabolic pathway; this supports choice C, though the study was not independently reviewed here.
-
-Citations as saved: [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The input supplies only the sequence and choices; it gives no organism, biochemical function, or pathway context that meaningfully distinguishes these options.
-
-
-**Missing item-specific fact**
-
-> The sequence’s specific function as N-acetyl-D-glutamate racemase, and its role in amino-acid degradation, is needed to select C.
-
-
-**Reason**
-
-> Identifying this enzyme and pathway requires protein-specific functional knowledge or an external annotation; no concrete sequence-based argument available in the prompt establishes the pathway.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched entry’s pathway annotation specifically supports amino-acid degradation among the listed choices.
-
-
-### Important caveats
-
-- The reviewer-only database evidence matches the supplied sequence, but was not available to the evaluated model.
-- The pathway annotation cites a publication; it is not an independent review of the underlying experiments.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The input supplies only the sequence and choices; it gives no organism, biochemical function, or pathway context that meaningfully distinguishes these options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence’s specific function as N-acetyl-D-glutamate racemase, and its role in amino-acid degradation, is needed to select C.",
-    "reason": "Identifying this enzyme and pathway requires protein-specific functional knowledge or an external annotation; no concrete sequence-based argument available in the prompt establishes the pathway."
-  },
-  "case_id": "pathway_0087",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H1",
-      "H2",
-      "H3",
-      "C4",
-      "C5",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as N-acetyl-D-glutamate racemase, with the pathway listed as amino-acid degradation. The annotation cites a study on a D-glutamate catabolic pathway; this supports choice C, though the study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence matches the supplied sequence, but was not available to the evaluated model.",
-    "The pathway annotation cites a publication; it is not an independent review of the underlying experiments."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched entry’s pathway annotation specifically supports amino-acid degradation among the listed choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0087",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as N-acetyl-D-glutamate racemase, with the pathway listed as amino-acid degradation. The annotation cites a study on a D-glutamate catabolic pathway; this supports choice C, though the study was not independently reviewed here.",
-    "evidence_ids": ["H1", "H2", "H3", "C4", "C5", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The input supplies only the sequence and choices; it gives no organism, biochemical function, or pathway context that meaningfully distinguishes these options.",
-    "missing_item_specific_fact": "The sequence’s specific function as N-acetyl-D-glutamate racemase, and its role in amino-acid degradation, is needed to select C.",
-    "reason": "Identifying this enzyme and pathway requires protein-specific functional knowledge or an external annotation; no concrete sequence-based argument available in the prompt establishes the pathway."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched entry’s pathway annotation specifically supports amino-acid degradation among the listed choices."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence matches the supplied sequence, but was not available to the evaluated model.",
-    "The pathway annotation cites a publication; it is not an independent review of the underlying experiments."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry P0DXZ2 (N-acetyl-D-glutamate racemase, EC 5.1.1.25, from Pseudoalteromonas sp.) explicitly annotates the pathway as 'Amino-acid degradation' (evidence code ECO:0000305, derived from PubMed:36690779, Yu et al. 2023 ISME J. 17:537-548, describing a novel D-glutamate catabolic pathway). The benchmark sequence matches the canonical entry (315 AA, SHA256 confirmed). The author's key C matches the UniProt pathway annotation exactly.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence provides no clear motif or structural signature that unambiguously distinguishes 'amino-acid degradation' (C) from 'metabolic intermediate biosynthesis' (D). Racemases acting on amino acid derivatives participate in both catabolic and anabolic pathways. Without prior knowledge that this specific enzyme (N-acetyl-D-glutamate racemase, EC 5.1.1.25) functions in the recently characterized (2023) D-glutamate catabolic pathway, a model cannot reliably select C over D from sequence features alone.
-
-
-**Missing item-specific fact**
-
-> The specific identity of the protein as N-acetyl-D-glutamate racemase (DgcA) and its role in the novel D-glutamate catabolic pathway described in Yu et al. 2023 (PubMed:36690779). This is a recently characterized enzyme (UniProt entry first public 2025-04-09) whose pathway assignment depends on the specific experimental context of D-glutamate catabolism rather than on generalizable sequence motifs.
-
-
-**Reason**
-
-> Distinguishing C from D requires knowing that this racemase is specifically part of a D-glutamate degradation pathway rather than an amino-acid-derivative biosynthetic route. The sequence lacks diagnostic motifs (e.g., folate-binding domains for A, chorismate synthase features for B) that would eliminate some options, but the critical C-vs-D discrimination depends entirely on the item-specific annotation from a 2023 publication and its UniProt curation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C",
-  "D"
-]
-```
-
-> Without the specific annotation, a model might argue D (metabolic intermediate biosynthesis) since N-acetyl-glutamate is a known intermediate in arginine biosynthesis, and racemases can serve biosynthetic roles. However, the UniProt annotation and primary literature clearly place this enzyme in a catabolic (degradation) pathway, making C the correct answer. The ambiguity is resolvable with the annotation but not from sequence alone.
-
-
-### Important caveats
-
-- The UniProt entry was first publicly released 2025-04-09, and the underlying publication is from 2023. This is a very recent annotation, increasing lookup dependence.
-- The pathway annotation uses ECO:0000305 (curator inference from literature), not direct experimental measurement of the pathway assignment itself, though the enzyme's function was experimentally characterized.
-- The identity of the protein (accession P0DXZ2) was inferred from dataset metadata and was not available to the evaluated model; the model only had the 315-aa sequence.
-- Options A (tetrahydrofolate interconversion) and B (chorismate biosynthesis) are reasonably eliminable by a knowledgeable model through absence of folate-binding or chorismate-synthase motifs, but C vs D remains the critical discrimination.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence provides no clear motif or structural signature that unambiguously distinguishes 'amino-acid degradation' (C) from 'metabolic intermediate biosynthesis' (D). Racemases acting on amino acid derivatives participate in both catabolic and anabolic pathways. Without prior knowledge that this specific enzyme (N-acetyl-D-glutamate racemase, EC 5.1.1.25) functions in the recently characterized (2023) D-glutamate catabolic pathway, a model cannot reliably select C over D from sequence features alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of the protein as N-acetyl-D-glutamate racemase (DgcA) and its role in the novel D-glutamate catabolic pathway described in Yu et al. 2023 (PubMed:36690779). This is a recently characterized enzyme (UniProt entry first public 2025-04-09) whose pathway assignment depends on the specific experimental context of D-glutamate catabolism rather than on generalizable sequence motifs.",
-    "reason": "Distinguishing C from D requires knowing that this racemase is specifically part of a D-glutamate degradation pathway rather than an amino-acid-derivative biosynthetic route. The sequence lacks diagnostic motifs (e.g., folate-binding domains for A, chorismate synthase features for B) that would eliminate some options, but the critical C-vs-D discrimination depends entirely on the item-specific annotation from a 2023 publication and its UniProt curation."
-  },
-  "case_id": "pathway_0087",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXZ2 (N-acetyl-D-glutamate racemase, EC 5.1.1.25, from Pseudoalteromonas sp.) explicitly annotates the pathway as 'Amino-acid degradation' (evidence code ECO:0000305, derived from PubMed:36690779, Yu et al. 2023 ISME J. 17:537-548, describing a novel D-glutamate catabolic pathway). The benchmark sequence matches the canonical entry (315 AA, SHA256 confirmed). The author's key C matches the UniProt pathway annotation exactly."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released 2025-04-09, and the underlying publication is from 2023. This is a very recent annotation, increasing lookup dependence.",
-    "The pathway annotation uses ECO:0000305 (curator inference from literature), not direct experimental measurement of the pathway assignment itself, though the enzyme's function was experimentally characterized.",
-    "The identity of the protein (accession P0DXZ2) was inferred from dataset metadata and was not available to the evaluated model; the model only had the 315-aa sequence.",
-    "Options A (tetrahydrofolate interconversion) and B (chorismate biosynthesis) are reasonably eliminable by a knowledgeable model through absence of folate-binding or chorismate-synthase motifs, but C vs D remains the critical discrimination."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C",
-      "D"
-    ],
-    "reason": "Without the specific annotation, a model might argue D (metabolic intermediate biosynthesis) since N-acetyl-glutamate is a known intermediate in arginine biosynthesis, and racemases can serve biosynthetic roles. However, the UniProt annotation and primary literature clearly place this enzyme in a catabolic (degradation) pathway, making C the correct answer. The ambiguity is resolvable with the annotation but not from sequence alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0087",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXZ2 (N-acetyl-D-glutamate racemase, EC 5.1.1.25, from Pseudoalteromonas sp.) explicitly annotates the pathway as 'Amino-acid degradation' (evidence code ECO:0000305, derived from PubMed:36690779, Yu et al. 2023 ISME J. 17:537-548, describing a novel D-glutamate catabolic pathway). The benchmark sequence matches the canonical entry (315 AA, SHA256 confirmed). The author's key C matches the UniProt pathway annotation exactly.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence provides no clear motif or structural signature that unambiguously distinguishes 'amino-acid degradation' (C) from 'metabolic intermediate biosynthesis' (D). Racemases acting on amino acid derivatives participate in both catabolic and anabolic pathways. Without prior knowledge that this specific enzyme (N-acetyl-D-glutamate racemase, EC 5.1.1.25) functions in the recently characterized (2023) D-glutamate catabolic pathway, a model cannot reliably select C over D from sequence features alone.",
-    "missing_item_specific_fact": "The specific identity of the protein as N-acetyl-D-glutamate racemase (DgcA) and its role in the novel D-glutamate catabolic pathway described in Yu et al. 2023 (PubMed:36690779). This is a recently characterized enzyme (UniProt entry first public 2025-04-09) whose pathway assignment depends on the specific experimental context of D-glutamate catabolism rather than on generalizable sequence motifs.",
-    "reason": "Distinguishing C from D requires knowing that this racemase is specifically part of a D-glutamate degradation pathway rather than an amino-acid-derivative biosynthetic route. The sequence lacks diagnostic motifs (e.g., folate-binding domains for A, chorismate synthase features for B) that would eliminate some options, but the critical C-vs-D discrimination depends entirely on the item-specific annotation from a 2023 publication and its UniProt curation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C", "D"],
-    "reason": "Without the specific annotation, a model might argue D (metabolic intermediate biosynthesis) since N-acetyl-glutamate is a known intermediate in arginine biosynthesis, and racemases can serve biosynthetic roles. However, the UniProt annotation and primary literature clearly place this enzyme in a catabolic (degradation) pathway, making C the correct answer. The ambiguity is resolvable with the annotation but not from sequence alone."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released 2025-04-09, and the underlying publication is from 2023. This is a very recent annotation, increasing lookup dependence.",
-    "The pathway annotation uses ECO:0000305 (curator inference from literature), not direct experimental measurement of the pathway assignment itself, though the enzyme's function was experimentally characterized.",
-    "The identity of the protein (accession P0DXZ2) was inferred from dataset metadata and was not available to the evaluated model; the model only had the 315-aa sequence.",
-    "Options A (tetrahydrofolate interconversion) and B (chorismate biosynthesis) are reasonably eliminable by a knowledgeable model through absence of folate-binding or chorismate-synthase motifs, but C vs D remains the critical discrimination."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -400,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -519,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXZ2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 315,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
   "current_entry_audit": {
     "entryVersion": 5,
     "firstPublicDate": "2025-04-09",
@@ -550,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-04-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "current_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 315,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 3,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXZ2",
   "selected_historical_entry_version": 3,
+  "selected_historical_record_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "selected_historical_source_sequence_length": 315,
+  "selected_historical_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
   "selected_historical_version": {
     "accession": "P0DXZ2",
     "database": "Swiss-Prot",
@@ -568,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DGCA_PSEAS",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "selected_historical_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
-  "selected_historical_source_sequence_length": 315,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 3,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -599,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXZ2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -618,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":5,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-04-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -637,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Alteromonadales\",\"Pseudoalteromonadaceae\",\"Pseudoalteromonas\"],\"scientificName\":\"Pseudoalteromonas sp\",\"taxonId\":53249}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -656,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"5.1.1.25\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"N-acetyl-D-glutamate racemase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"N-acetyl-D-Glu racemase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -675,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"Amino-acid degradation\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -694,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Yu Y.\",\"Wang P.\",\"Cao H.Y.\",\"Teng Z.J.\",\"Zhu Y.\",\"Wang M.\",\"McMinn A.\",\"Chen Y.\",\"Xiang H.\",\"Zhang Y.Z.\",\"Chen X.L.\",\"Zhang Y.Q.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36690779\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41396-023-01364-6\"}],\"citationType\":\"journal article\",\"firstPage\":\"537\",\"id\":\"36690779\",\"journal\":\"ISME J.\",\"lastPage\":\"548\",\"publicationDate\":\"2023\",\"title\":\"Novel D-glutamate catabolic pathway in marine Proteobacteria and halophilic archaea.\",\"volume\":\"17\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"CF6-2\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -712,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3",
-  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   DGCA_PSEAS              Reviewed;         315 AA.\nAC   P0DXZ2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-APR-2025, sequence version 1.\nDT   28-JAN-2026, entry version 3.\nDE   RecName: Full=N-acetyl-D-glutamate racemase {ECO:0000303|PubMed:36690779};\nDE            Short=N-acetyl-D-Glu racemase {ECO:0000303|PubMed:36690779};\nDE            EC=5.1.1.25 {ECO:0000269|PubMed:36690779};\nGN   Name=dgcA {ECO:0000303|PubMed:36690779};\nOS   Pseudoalteromonas sp.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Alteromonadales; Pseudoalteromonadaceae; Pseudoalteromonas.\nOX   NCBI_TaxID=53249;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3"
 }
 ```
 
@@ -733,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3",
-  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
-  "source_locator": "lines 14-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, INDUCTION,\nRP   AND DISRUPTION PHENOTYPE.\nRC   STRAIN=CF6-2;\nRX   PubMed=36690779; DOI=10.1038/s41396-023-01364-6;\nRA   Yu Y., Wang P., Cao H.Y., Teng Z.J., Zhu Y., Wang M., McMinn A., Chen Y.,\nRA   Xiang H., Zhang Y.Z., Chen X.L., Zhang Y.Q.;\nRT   \"Novel D-glutamate catabolic pathway in marine Proteobacteria and\nRT   halophilic archaea.\";\nRL   ISME J. 17:537-548(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3"
 }
 ```
 
@@ -754,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3",
-  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
-  "source_locator": "lines 41-41",
   "excerpt": "CC   -!- PATHWAY: Amino-acid degradation. {ECO:0000305|PubMed:36690779}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3"
 }
 ```
 

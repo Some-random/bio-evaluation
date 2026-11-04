@@ -1,18 +1,16 @@
-# pathway_0014: before and after transfer clarification
+# pathway_0014
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0014.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0014.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Antifungal biosynthesis. .
+**Expected answer:** **B** — Antifungal biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt record for a protein annotated as O-methyltransferase resE in the restricticin biosynthesis cluster, with the pathway listed as antifungal biosynthesis. The pathway annotation cites experimental evidence, though the underlying paper was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support an inference of a methyltransferase-like function, but that does not identify the specific biosynthetic pathway among the choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific association with restricticin/antifungal biosynthesis, established by annotation or experimental work, is absent from the input.
-
-
-**Reason**
-
-> Choosing B requires the specific pathway assignment for this protein; broad sequence-based functional inference does not distinguish it reliably from the alternatives.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein record explicitly assigns the pathway to antifungal biosynthesis; no competing option is supported by the supplied sequence alone.
-
-
-### Important caveats
-
-- The reviewer-only database evidence supports the key but was not available to the evaluated model.
-- The pathway annotation cites a publication with experimental evidence, but the primary study was not independently validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support an inference of a methyltransferase-like function, but that does not identify the specific biosynthetic pathway among the choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific association with restricticin/antifungal biosynthesis, established by annotation or experimental work, is absent from the input.",
-    "reason": "Choosing B requires the specific pathway assignment for this protein; broad sequence-based functional inference does not distinguish it reliably from the alternatives."
-  },
-  "case_id": "pathway_0014",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt record for a protein annotated as O-methyltransferase resE in the restricticin biosynthesis cluster, with the pathway listed as antifungal biosynthesis. The pathway annotation cites experimental evidence, though the underlying paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence supports the key but was not available to the evaluated model.",
-    "The pathway annotation cites a publication with experimental evidence, but the primary study was not independently validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein record explicitly assigns the pathway to antifungal biosynthesis; no competing option is supported by the supplied sequence alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0014",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt record for a protein annotated as O-methyltransferase resE in the restricticin biosynthesis cluster, with the pathway listed as antifungal biosynthesis. The pathway annotation cites experimental evidence, though the underlying paper was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support an inference of a methyltransferase-like function, but that does not identify the specific biosynthetic pathway among the choices.",
-    "missing_item_specific_fact": "The protein-specific association with restricticin/antifungal biosynthesis, established by annotation or experimental work, is absent from the input.",
-    "reason": "Choosing B requires the specific pathway assignment for this protein; broad sequence-based functional inference does not distinguish it reliably from the alternatives."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein record explicitly assigns the pathway to antifungal biosynthesis; no competing option is supported by the supplied sequence alone."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence supports the key but was not available to the evaluated model.",
-    "The pathway annotation cites a publication with experimental evidence, but the primary study was not independently validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry P0DXV1 (RESE_ASPSL) for this exact 264-aa sequence carries a PATHWAY annotation of 'Antifungal biosynthesis' with evidence code ECO:0000269 (direct assay/experimental), citing PubMed:39105744 (Lu et al., 2024, J. Agric. Food Chem.). The protein is annotated as 'O-methyltransferase resE' / 'Restricticin biosynthesis cluster protein E' from Aspergillus sclerotiorum. The sequence match is exact (SHA-256 identical). The expected answer B directly corresponds to the database pathway annotation supported by experimental evidence.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could identify methyltransferase-like sequence motifs (e.g., the GCGTGK region suggestive of a SAM-binding Rossmann-like fold) and note the fungal origin, but the methyltransferase superfamily spans tRNA modification, secondary metabolite biosynthesis, lipid metabolism, and many other pathways. Distinguishing 'Antifungal biosynthesis' (a specific secondary metabolite cluster pathway) from 'tRNA modification' (C) or other methylation-dependent pathways requires knowing that this protein is resE in the restricticin biosynthetic gene cluster of A. sclerotiorum.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as resE, a member of the restricticin biosynthetic cluster, and the experimental demonstration (PubMed:39105744) that this cluster produces an antifungal/phytotoxic hybrid molecule. Without this protein-specific annotation or literature knowledge, the methyltransferase fold alone cannot distinguish antifungal secondary metabolite biosynthesis from tRNA modification or other methylation pathways.
-
-
-**Reason**
-
-> The sequence reveals a methyltransferase fold but does not encode pathway-specific information sufficient to select 'Antifungal biosynthesis' over 'tRNA modification' or other methyltransferase-associated pathways. Correct selection depends on recognizing this exact protein's role in the restricticin cluster, which is an item-specific database/literature fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> From sequence alone, the protein is identifiable as a SAM-dependent methyltransferase. Methyltransferases are prominent in tRNA modification pathways (option C), making C a superficially plausible alternative. Without knowing the restricticin cluster context, a model reasoning purely from sequence could not confidently eliminate C in favor of B. Option A (methionine biosynthesis) is less defensible because the sequence lacks hallmark features of Met biosynthesis enzymes (e.g., cobalamin-dependent methionine synthase domains, homoserine O-succinyltransferase motifs), and D (capsule polysaccharide biosynthesis) is poorly supported by methyltransferase fold features.
-
-
-### Important caveats
-
-- The UniProt pathway annotation uses ECO:0000269 (experimental/direct assay), lending stronger support than a purely computational annotation, but the underlying paper (Lu et al. 2024) describes a 'hybrid molecule with phytotoxic activity'—the categorization under 'Antifungal biosynthesis' reflects the biosynthetic cluster's function as characterized in that study.
-- The entry was first public in February 2025; the author's data-construction snapshot is unknown. If the benchmark was constructed before this date, the annotation source may differ.
-- The term 'Antifungal biosynthesis' is a UniProt-specific pathway category for secondary metabolite clusters with antifungal activity, not a standard KEGG/MetaCyc pathway name, which may affect general-knowledge reasoning.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could identify methyltransferase-like sequence motifs (e.g., the GCGTGK region suggestive of a SAM-binding Rossmann-like fold) and note the fungal origin, but the methyltransferase superfamily spans tRNA modification, secondary metabolite biosynthesis, lipid metabolism, and many other pathways. Distinguishing 'Antifungal biosynthesis' (a specific secondary metabolite cluster pathway) from 'tRNA modification' (C) or other methylation-dependent pathways requires knowing that this protein is resE in the restricticin biosynthetic gene cluster of A. sclerotiorum.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as resE, a member of the restricticin biosynthetic cluster, and the experimental demonstration (PubMed:39105744) that this cluster produces an antifungal/phytotoxic hybrid molecule. Without this protein-specific annotation or literature knowledge, the methyltransferase fold alone cannot distinguish antifungal secondary metabolite biosynthesis from tRNA modification or other methylation pathways.",
-    "reason": "The sequence reveals a methyltransferase fold but does not encode pathway-specific information sufficient to select 'Antifungal biosynthesis' over 'tRNA modification' or other methyltransferase-associated pathways. Correct selection depends on recognizing this exact protein's role in the restricticin cluster, which is an item-specific database/literature fact."
-  },
-  "case_id": "pathway_0014",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXV1 (RESE_ASPSL) for this exact 264-aa sequence carries a PATHWAY annotation of 'Antifungal biosynthesis' with evidence code ECO:0000269 (direct assay/experimental), citing PubMed:39105744 (Lu et al., 2024, J. Agric. Food Chem.). The protein is annotated as 'O-methyltransferase resE' / 'Restricticin biosynthesis cluster protein E' from Aspergillus sclerotiorum. The sequence match is exact (SHA-256 identical). The expected answer B directly corresponds to the database pathway annotation supported by experimental evidence."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation uses ECO:0000269 (experimental/direct assay), lending stronger support than a purely computational annotation, but the underlying paper (Lu et al. 2024) describes a 'hybrid molecule with phytotoxic activity'—the categorization under 'Antifungal biosynthesis' reflects the biosynthetic cluster's function as characterized in that study.",
-    "The entry was first public in February 2025; the author's data-construction snapshot is unknown. If the benchmark was constructed before this date, the annotation source may differ.",
-    "The term 'Antifungal biosynthesis' is a UniProt-specific pathway category for secondary metabolite clusters with antifungal activity, not a standard KEGG/MetaCyc pathway name, which may affect general-knowledge reasoning."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "From sequence alone, the protein is identifiable as a SAM-dependent methyltransferase. Methyltransferases are prominent in tRNA modification pathways (option C), making C a superficially plausible alternative. Without knowing the restricticin cluster context, a model reasoning purely from sequence could not confidently eliminate C in favor of B. Option A (methionine biosynthesis) is less defensible because the sequence lacks hallmark features of Met biosynthesis enzymes (e.g., cobalamin-dependent methionine synthase domains, homoserine O-succinyltransferase motifs), and D (capsule polysaccharide biosynthesis) is poorly supported by methyltransferase fold features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0014",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXV1 (RESE_ASPSL) for this exact 264-aa sequence carries a PATHWAY annotation of 'Antifungal biosynthesis' with evidence code ECO:0000269 (direct assay/experimental), citing PubMed:39105744 (Lu et al., 2024, J. Agric. Food Chem.). The protein is annotated as 'O-methyltransferase resE' / 'Restricticin biosynthesis cluster protein E' from Aspergillus sclerotiorum. The sequence match is exact (SHA-256 identical). The expected answer B directly corresponds to the database pathway annotation supported by experimental evidence.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could identify methyltransferase-like sequence motifs (e.g., the GCGTGK region suggestive of a SAM-binding Rossmann-like fold) and note the fungal origin, but the methyltransferase superfamily spans tRNA modification, secondary metabolite biosynthesis, lipid metabolism, and many other pathways. Distinguishing 'Antifungal biosynthesis' (a specific secondary metabolite cluster pathway) from 'tRNA modification' (C) or other methylation-dependent pathways requires knowing that this protein is resE in the restricticin biosynthetic gene cluster of A. sclerotiorum.",
-    "missing_item_specific_fact": "The specific identity of this protein as resE, a member of the restricticin biosynthetic cluster, and the experimental demonstration (PubMed:39105744) that this cluster produces an antifungal/phytotoxic hybrid molecule. Without this protein-specific annotation or literature knowledge, the methyltransferase fold alone cannot distinguish antifungal secondary metabolite biosynthesis from tRNA modification or other methylation pathways.",
-    "reason": "The sequence reveals a methyltransferase fold but does not encode pathway-specific information sufficient to select 'Antifungal biosynthesis' over 'tRNA modification' or other methyltransferase-associated pathways. Correct selection depends on recognizing this exact protein's role in the restricticin cluster, which is an item-specific database/literature fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "From sequence alone, the protein is identifiable as a SAM-dependent methyltransferase. Methyltransferases are prominent in tRNA modification pathways (option C), making C a superficially plausible alternative. Without knowing the restricticin cluster context, a model reasoning purely from sequence could not confidently eliminate C in favor of B. Option A (methionine biosynthesis) is less defensible because the sequence lacks hallmark features of Met biosynthesis enzymes (e.g., cobalamin-dependent methionine synthase domains, homoserine O-succinyltransferase motifs), and D (capsule polysaccharide biosynthesis) is poorly supported by methyltransferase fold features."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation uses ECO:0000269 (experimental/direct assay), lending stronger support than a purely computational annotation, but the underlying paper (Lu et al. 2024) describes a 'hybrid molecule with phytotoxic activity'—the categorization under 'Antifungal biosynthesis' reflects the biosynthetic cluster's function as characterized in that study.",
-    "The entry was first public in February 2025; the author's data-construction snapshot is unknown. If the benchmark was constructed before this date, the annotation source may differ.",
-    "The term 'Antifungal biosynthesis' is a UniProt-specific pathway category for secondary metabolite clusters with antifungal activity, not a standard KEGG/MetaCyc pathway name, which may affect general-knowledge reasoning."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +158,9 @@ Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -509,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXV1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "9d95ee40b689b53793e1326b5c6bfc2a9c1aa1eebfb365d9fc2d0250df01e630",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 264,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "9d95ee40b689b53793e1326b5c6bfc2a9c1aa1eebfb365d9fc2d0250df01e630",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-02-05",
@@ -540,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
-  "current_source_sequence_sha256": "9d95ee40b689b53793e1326b5c6bfc2a9c1aa1eebfb365d9fc2d0250df01e630",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 264,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "9d95ee40b689b53793e1326b5c6bfc2a9c1aa1eebfb365d9fc2d0250df01e630",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXV1",
   "selected_historical_entry_version": 4,
+  "selected_historical_record_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
+  "selected_historical_source_sequence_length": 264,
+  "selected_historical_source_sequence_sha256": "9d95ee40b689b53793e1326b5c6bfc2a9c1aa1eebfb365d9fc2d0250df01e630",
   "selected_historical_version": {
     "accession": "P0DXV1",
     "database": "Swiss-Prot",
@@ -558,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RESE_ASPSL",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
-  "selected_historical_source_sequence_sha256": "9d95ee40b689b53793e1326b5c6bfc2a9c1aa1eebfb365d9fc2d0250df01e630",
-  "selected_historical_source_sequence_length": 264,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 4,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -589,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json",
-  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
-  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXV1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json"
 }
 ```
 
@@ -608,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json",
-  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
-  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json"
 }
 ```
 
@@ -627,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json",
-  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
-  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus sclerotiorum\",\"taxonId\":138282}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json"
 }
 ```
 
@@ -646,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json",
-  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
-  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Restricticin biosynthesis cluster protein E\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"O-methyltransferase resE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json"
 }
 ```
 
@@ -665,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json",
-  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
-  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Antifungal biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json"
 }
 ```
 
@@ -684,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json",
-  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
-  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Lu Y.\",\"Li Y.\",\"Dou M.\",\"Liu D.\",\"Lin W.\",\"Fan A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39105744\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c04244\"}],\"citationType\":\"journal article\",\"firstPage\":\"18520\",\"id\":\"39105744\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"18527\",\"publicationDate\":\"2024\",\"title\":\"Discovery of a hybrid molecule with phytotoxic activity by genome mining, heterologous expression, and OSMAC strategy.\",\"volume\":\"72\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:42.952467+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "28f2208ebdc3c58c28d8c0bd9978354bcb775822363a3845e9d7dffaefd695cd",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXV1.json"
 }
 ```
 
@@ -702,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV1?format=txt&versions=4",
-  "source_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
-  "retrieved_utc": "2026-11-02T04:29:45.445708+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   RESE_ASPSL              Reviewed;         264 AA.\nAC   P0DXV1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=O-methyltransferase resE {ECO:0000303|PubMed:39105744};\nDE            EC=2.1.1.- {ECO:0000305|PubMed:39105744};\nDE   AltName: Full=Restricticin biosynthesis cluster protein E {ECO:0000303|PubMed:39105744};\nGN   Name=resE {ECO:0000303|PubMed:39105744};\nOS   Aspergillus sclerotiorum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=138282;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:45.445708+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
+  "url": "https://rest.uniprot.org/unisave/P0DXV1?format=txt&versions=4"
 }
 ```
 
@@ -723,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV1?format=txt&versions=4",
-  "source_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
-  "retrieved_utc": "2026-11-02T04:29:45.445708+00:00",
-  "source_locator": "lines 15-21",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND PATHWAY.\nRX   PubMed=39105744; DOI=10.1021/acs.jafc.4c04244;\nRA   Lu Y., Li Y., Dou M., Liu D., Lin W., Fan A.;\nRT   \"Discovery of a hybrid molecule with phytotoxic activity by genome mining,\nRT   heterologous expression, and OSMAC strategy.\";\nRL   J. Agric. Food Chem. 72:18520-18527(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:45.445708+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
+  "url": "https://rest.uniprot.org/unisave/P0DXV1?format=txt&versions=4"
 }
 ```
 
@@ -744,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXV1?format=txt&versions=4",
-  "source_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
-  "retrieved_utc": "2026-11-02T04:29:45.445708+00:00",
-  "source_locator": "lines 48-48",
   "excerpt": "CC   -!- PATHWAY: Antifungal biosynthesis. {ECO:0000269|PubMed:39105744}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:45.445708+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 48-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd2e82952af8d3844a3a9c286440d6c646ca7af305696f06813c85a3b4406cf2",
+  "url": "https://rest.uniprot.org/unisave/P0DXV1?format=txt&versions=4"
 }
 ```
 

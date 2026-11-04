@@ -1,18 +1,16 @@
-# EC_number_0070: before and after transfer clarification
+# EC_number_0070
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0070.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0070.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **A** — 2.3.1.193
+**Expected answer:** **A** — 2.3.1.193
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied 811-aa sequence exactly matches the UniProt sequence for this protein. The entry assigns EC 2.3.1.193 and describes tRNA cytidine acetyltransferase activity; the annotation cites both a computational HAMAP rule and a PubMed experimental source. The experimental annotation specifically reports cytidine acetylation in tRNA.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C7](#evidence-c7), [H1](#evidence-h1), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence characteristics might suggest a large ATP-dependent acetyltransferase, but they do not establish the specific RNA substrate and reaction needed to choose among the acetyltransferase EC options.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment to TmcA and its experimentally characterized tRNA cytidine acetylation activity are absent from the question.
-
-
-**Reason**
-
-> The sequence and choices provide no sufficiently specific biological clue to distinguish EC 2.3.1.193 from the other candidate EC numbers without protein-specific annotation or functional evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports the keyed EC number; no other listed option is supported by the evidence.
-
-
-### Important caveats
-
-- The reviewer-only database evidence was not available to the evaluated model and supports the key, not reasoning-based answerability.
-- The UniProt assignment includes computational HAMAP evidence as well as a cited experimental source; the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence characteristics might suggest a large ATP-dependent acetyltransferase, but they do not establish the specific RNA substrate and reaction needed to choose among the acetyltransferase EC options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment to TmcA and its experimentally characterized tRNA cytidine acetylation activity are absent from the question.",
-    "reason": "The sequence and choices provide no sufficiently specific biological clue to distinguish EC 2.3.1.193 from the other candidate EC numbers without protein-specific annotation or functional evidence."
-  },
-  "case_id": "EC_number_0070",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C7",
-      "H1",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied 811-aa sequence exactly matches the UniProt sequence for this protein. The entry assigns EC 2.3.1.193 and describes tRNA cytidine acetyltransferase activity; the annotation cites both a computational HAMAP rule and a PubMed experimental source. The experimental annotation specifically reports cytidine acetylation in tRNA."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence was not available to the evaluated model and supports the key, not reasoning-based answerability.",
-    "The UniProt assignment includes computational HAMAP evidence as well as a cited experimental source; the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports the keyed EC number; no other listed option is supported by the evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0070",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied 811-aa sequence exactly matches the UniProt sequence for this protein. The entry assigns EC 2.3.1.193 and describes tRNA cytidine acetyltransferase activity; the annotation cites both a computational HAMAP rule and a PubMed experimental source. The experimental annotation specifically reports cytidine acetylation in tRNA.",
-    "evidence_ids": ["C1", "C4", "C7", "H1", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence characteristics might suggest a large ATP-dependent acetyltransferase, but they do not establish the specific RNA substrate and reaction needed to choose among the acetyltransferase EC options.",
-    "missing_item_specific_fact": "The protein-specific assignment to TmcA and its experimentally characterized tRNA cytidine acetylation activity are absent from the question.",
-    "reason": "The sequence and choices provide no sufficiently specific biological clue to distinguish EC 2.3.1.193 from the other candidate EC numbers without protein-specific annotation or functional evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports the keyed EC number; no other listed option is supported by the evidence."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence was not available to the evaluated model and supports the key, not reasoning-based answerability.",
-    "The UniProt assignment includes computational HAMAP evidence as well as a cited experimental source; the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q5JHC6 (TMCA_THEKO) is annotated with EC 2.3.1.193 (tRNA(Met) cytidine acetyltransferase TmcA) with both computational (ECO:0000255, HAMAP-Rule MF_01886) and experimental (ECO:0000269, PubMed:32555463, Nature 2020) evidence. The catalytic reaction (acetylating cytidine(34) in elongator tRNA(Met) using acetyl-CoA and ATP) is confirmed experimentally. The benchmark sequence (811 AA, SHA256 matched) corresponds exactly to this entry.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C9](#evidence-c9), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General reasoning can eliminate EC 3.2.1.8 (glycosidase/hydrolase) and EC 1.1.1.336 (oxidoreductase) because the sequence lacks canonical glycosidase motifs or Rossmann-fold NAD(P)-binding patterns typical of oxidoreductases. The GNAT-like 'GSGFG' motif and apparent ATP-binding regions suggest an acyltransferase (EC 2.3.1.x). However, distinguishing EC 2.3.1.193 (tRNA cytidine acetyltransferase) from EC 2.3.1.322 (another acetyltransferase) requires knowing the exact substrate identity and modification position, which is not derivable from sequence motifs alone.
-
-
-**Missing item-specific fact**
-
-> The specific substrate specificity (cytidine at position 34 of elongator tRNA(Met) vs. the substrate of EC 2.3.1.322) and the precise 4-digit EC assignment for this particular protein, which requires recognizing the protein as TmcA/NAT10 and recalling its database annotation.
-
-
-**Reason**
-
-> While the EC class (2 = transferase) can be reasoned from the GNAT fold and absence of hydrolase/oxidoreductase motifs, the final distinction between two acetyltransferase EC numbers (2.3.1.193 vs 2.3.1.322) depends on item-specific substrate knowledge that cannot be inferred from general sequence features. The answer effectively requires identifying the protein as TmcA/NAT10 and recalling its specific EC annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The distractors C (3.2.1.8, glycosidase) and D (1.1.1.336, oxidoreductase) are clearly wrong for this protein. The distinction between A and B, while difficult, is not genuinely ambiguous in the database annotation sense—only one EC number is assigned. The question is answerable with sufficient training knowledge but not through pure reasoning.
-
-
-### Important caveats
-
-- The EC 2.3.1.193 annotation carries both HAMAP computational evidence (ECO:0000255) and experimental evidence (ECO:0000269, Nature 2020), so the assignment is well-supported experimentally.
-- The reviewer-only evidence was not available to the evaluated model; the model must rely on training knowledge of the TmcA/NAT10 family or sequence-based inference.
-- EC 2.3.1.322 is a relatively obscure transferase; its exact identity and substrate may not be widely represented in training data, making the A-vs-B distinction heavily dependent on memorization of the specific annotation rather than comparative reasoning.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General reasoning can eliminate EC 3.2.1.8 (glycosidase/hydrolase) and EC 1.1.1.336 (oxidoreductase) because the sequence lacks canonical glycosidase motifs or Rossmann-fold NAD(P)-binding patterns typical of oxidoreductases. The GNAT-like 'GSGFG' motif and apparent ATP-binding regions suggest an acyltransferase (EC 2.3.1.x). However, distinguishing EC 2.3.1.193 (tRNA cytidine acetyltransferase) from EC 2.3.1.322 (another acetyltransferase) requires knowing the exact substrate identity and modification position, which is not derivable from sequence motifs alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate specificity (cytidine at position 34 of elongator tRNA(Met) vs. the substrate of EC 2.3.1.322) and the precise 4-digit EC assignment for this particular protein, which requires recognizing the protein as TmcA/NAT10 and recalling its database annotation.",
-    "reason": "While the EC class (2 = transferase) can be reasoned from the GNAT fold and absence of hydrolase/oxidoreductase motifs, the final distinction between two acetyltransferase EC numbers (2.3.1.193 vs 2.3.1.322) depends on item-specific substrate knowledge that cannot be inferred from general sequence features. The answer effectively requires identifying the protein as TmcA/NAT10 and recalling its specific EC annotation."
-  },
-  "case_id": "EC_number_0070",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C9",
-      "H1",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q5JHC6 (TMCA_THEKO) is annotated with EC 2.3.1.193 (tRNA(Met) cytidine acetyltransferase TmcA) with both computational (ECO:0000255, HAMAP-Rule MF_01886) and experimental (ECO:0000269, PubMed:32555463, Nature 2020) evidence. The catalytic reaction (acetylating cytidine(34) in elongator tRNA(Met) using acetyl-CoA and ATP) is confirmed experimentally. The benchmark sequence (811 AA, SHA256 matched) corresponds exactly to this entry."
-  },
-  "important_caveats": [
-    "The EC 2.3.1.193 annotation carries both HAMAP computational evidence (ECO:0000255) and experimental evidence (ECO:0000269, Nature 2020), so the assignment is well-supported experimentally.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must rely on training knowledge of the TmcA/NAT10 family or sequence-based inference.",
-    "EC 2.3.1.322 is a relatively obscure transferase; its exact identity and substrate may not be widely represented in training data, making the A-vs-B distinction heavily dependent on memorization of the specific annotation rather than comparative reasoning."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors C (3.2.1.8, glycosidase) and D (1.1.1.336, oxidoreductase) are clearly wrong for this protein. The distinction between A and B, while difficult, is not genuinely ambiguous in the database annotation sense—only one EC number is assigned. The question is answerable with sufficient training knowledge but not through pure reasoning."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0070",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q5JHC6 (TMCA_THEKO) is annotated with EC 2.3.1.193 (tRNA(Met) cytidine acetyltransferase TmcA) with both computational (ECO:0000255, HAMAP-Rule MF_01886) and experimental (ECO:0000269, PubMed:32555463, Nature 2020) evidence. The catalytic reaction (acetylating cytidine(34) in elongator tRNA(Met) using acetyl-CoA and ATP) is confirmed experimentally. The benchmark sequence (811 AA, SHA256 matched) corresponds exactly to this entry.",
-    "evidence_ids": ["C1", "C4", "C5", "C9", "H1", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General reasoning can eliminate EC 3.2.1.8 (glycosidase/hydrolase) and EC 1.1.1.336 (oxidoreductase) because the sequence lacks canonical glycosidase motifs or Rossmann-fold NAD(P)-binding patterns typical of oxidoreductases. The GNAT-like 'GSGFG' motif and apparent ATP-binding regions suggest an acyltransferase (EC 2.3.1.x). However, distinguishing EC 2.3.1.193 (tRNA cytidine acetyltransferase) from EC 2.3.1.322 (another acetyltransferase) requires knowing the exact substrate identity and modification position, which is not derivable from sequence motifs alone.",
-    "missing_item_specific_fact": "The specific substrate specificity (cytidine at position 34 of elongator tRNA(Met) vs. the substrate of EC 2.3.1.322) and the precise 4-digit EC assignment for this particular protein, which requires recognizing the protein as TmcA/NAT10 and recalling its database annotation.",
-    "reason": "While the EC class (2 = transferase) can be reasoned from the GNAT fold and absence of hydrolase/oxidoreductase motifs, the final distinction between two acetyltransferase EC numbers (2.3.1.193 vs 2.3.1.322) depends on item-specific substrate knowledge that cannot be inferred from general sequence features. The answer effectively requires identifying the protein as TmcA/NAT10 and recalling its specific EC annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors C (3.2.1.8, glycosidase) and D (1.1.1.336, oxidoreductase) are clearly wrong for this protein. The distinction between A and B, while difficult, is not genuinely ambiguous in the database annotation sense—only one EC number is assigned. The question is answerable with sufficient training knowledge but not through pure reasoning."
-  },
-  "important_caveats": [
-    "The EC 2.3.1.193 annotation carries both HAMAP computational evidence (ECO:0000255) and experimental evidence (ECO:0000269, Nature 2020), so the assignment is well-supported experimentally.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must rely on training knowledge of the TmcA/NAT10 family or sequence-based inference.",
-    "EC 2.3.1.322 is a relatively obscure transferase; its exact identity and substrate may not be widely represented in training data, making the A-vs-B distinction heavily dependent on memorization of the specific annotation rather than comparative reasoning."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5JHC6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "54beed0f1c05c798248d154a7e8ad0383a6ab7c487ffdd87fd0c8eb435930b3f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 811,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "54beed0f1c05c798248d154a7e8ad0383a6ab7c487ffdd87fd0c8eb435930b3f",
   "current_entry_audit": {
     "entryVersion": 117,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-02-15",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "current_source_sequence_sha256": "54beed0f1c05c798248d154a7e8ad0383a6ab7c487ffdd87fd0c8eb435930b3f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 811,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "54beed0f1c05c798248d154a7e8ad0383a6ab7c487ffdd87fd0c8eb435930b3f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 116,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5JHC6",
   "selected_historical_entry_version": 116,
+  "selected_historical_record_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "selected_historical_source_sequence_length": 811,
+  "selected_historical_source_sequence_sha256": "54beed0f1c05c798248d154a7e8ad0383a6ab7c487ffdd87fd0c8eb435930b3f",
   "selected_historical_version": {
     "accession": "Q5JHC6",
     "database": "Swiss-Prot",
@@ -553,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "TMCA_THEKO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "selected_historical_source_sequence_sha256": "54beed0f1c05c798248d154a7e8ad0383a6ab7c487ffdd87fd0c8eb435930b3f",
-  "selected_historical_source_sequence_length": 811,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 116,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5JHC6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -603,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":117,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-02-15\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -622,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Pyrococcus kodakaraensis (strain KOD1)\",\"lineage\":[\"Archaea\",\"Methanobacteriati\",\"Methanobacteriota\",\"Thermococci\",\"Thermococcales\",\"Thermococcaceae\",\"Thermococcus\"],\"scientificName\":\"Thermococcus kodakarensis (strain ATCC BAA-918 / JCM 12380 / KOD1)\",\"taxonId\":69014}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -641,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32555463\",\"source\":\"PubMed\"}],\"value\":\"TkNAT10\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01886\",\"source\":\"HAMAP-Rule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32555463\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.193\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01886\",\"source\":\"HAMAP-Rule\"}],\"value\":\"tRNA(Met) cytidine acetyltransferase TmcA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -660,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.3.1.193\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01886\",\"source\":\"HAMAP-Rule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32555463\",\"source\":\"PubMed\"}],\"name\":\"cytidine(34) in elongator tRNA(Met) + acetyl-CoA + ATP + H2O = N(4)-acetylcytidine(34) in elongator tRNA(Met) + ADP + phosphate + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:43788\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:10693\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:10694\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:74900\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:82748\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -679,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32555463\",\"source\":\"PubMed\"}],\"name\":\"a cytidine in RNA + acetyl-CoA + ATP + H2O = an N(4)-acetylcytidine in RNA + ADP + phosphate + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:82211\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:15704\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19834\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:74900\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:82748\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -698,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32555463\",\"source\":\"PubMed\"}],\"name\":\"a cytidine in tRNA + acetyl-CoA + ATP + H2O = an N(4)-acetylcytidine in tRNA + ADP + phosphate + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:53876\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:13670\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:13671\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:74900\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:82748\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -717,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32555463\",\"source\":\"PubMed\"}],\"name\":\"a cytidine in mRNA + acetyl-CoA + ATP + H2O = an N(4)-acetylcytidine in mRNA + ADP + phosphate + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:58480\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:15145\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:15146\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:74900\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:82748\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -736,15 +494,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json",
-  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
-  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Sas-Chen A.\",\"Thomas J.M.\",\"Matzov D.\",\"Taoka M.\",\"Nance K.D.\",\"Nir R.\",\"Bryson K.M.\",\"Shachar R.\",\"Liman G.L.S.\",\"Burkhart B.W.\",\"Gamage S.T.\",\"Nobe Y.\",\"Briney C.A.\",\"Levy M.J.\",\"Fuchs R.T.\",\"Robb G.B.\",\"Hartmann J.\",\"Sharma S.\",\"Lin Q.\",\"Florens L.\",\"Washburn M.P.\",\"Isobe T.\",\"Santangelo T.J.\",\"Shalev-Benami M.\",\"Meier J.L.\",\"Schwartz S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32555463\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-020-2418-2\"}],\"citationType\":\"journal article\",\"firstPage\":\"638\",\"id\":\"32555463\",\"journal\":\"Nature\",\"lastPage\":\"643\",\"publicationDate\":\"2020\",\"title\":\"Dynamic RNA acetylation revealed by quantitative cross-evolutionary mapping.\",\"volume\":\"583\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC BAA-918 / TS559\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:31:20.774043+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea4a460cde5d00a398177cf74e38b13ad1b2d74b5375e6ba462564c31deb157",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JHC6.json"
 }
 ```
 
@@ -754,18 +512,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   TMCA_THEKO              Reviewed;         811 AA.\nAC   Q5JHC6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   15-FEB-2005, sequence version 1.\nDT   28-JAN-2026, entry version 116.\nDE   RecName: Full=tRNA(Met) cytidine acetyltransferase TmcA {ECO:0000255|HAMAP-Rule:MF_01886};\nDE            EC=2.3.1.193 {ECO:0000255|HAMAP-Rule:MF_01886, ECO:0000269|PubMed:32555463};\nDE   AltName: Full=TkNAT10 {ECO:0000303|PubMed:32555463};\nGN   Name=tmcA {ECO:0000255|HAMAP-Rule:MF_01886, ECO:0000303|PubMed:30605516};\nGN   Synonyms=Nat10 {ECO:0000303|PubMed:32555463};\nGN   OrderedLocusNames=TK0754 {ECO:0000312|EMBL:BAD84943.1};\nOS   Thermococcus kodakarensis (strain ATCC BAA-918 / JCM 12380 / KOD1)\nOS   (Pyrococcus kodakaraensis (strain KOD1)).\nOC   Archaea; Methanobacteriati; Methanobacteriota; Thermococci; Thermococcales;\nOC   Thermococcaceae; Thermococcus.\nOX   NCBI_TaxID=69014;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 
@@ -775,18 +533,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=tRNA(Met) cytidine acetyltransferase TmcA {ECO:0000255|HAMAP-Rule:MF_01886};\nDE            EC=2.3.1.193 {ECO:0000255|HAMAP-Rule:MF_01886, ECO:0000269|PubMed:32555463};\nDE   AltName: Full=TkNAT10 {ECO:0000303|PubMed:32555463};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 
@@ -796,18 +554,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 25-33",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC BAA-918 / JCM 12380 / KOD1;\nRX   PubMed=30605516; DOI=10.1093/nar/gky1313;\nRA   Orita I., Futatsuishi R., Adachi K., Ohira T., Kaneko A., Minowa K.,\nRA   Suzuki M., Tamura T., Nakamura S., Imanaka T., Suzuki T., Fukui T.;\nRT   \"Random mutagenesis of a hyperthermophilic archaeon identified tRNA\nRT   modifications associated with cellular hyperthermotolerance.\";\nRL   Nucleic Acids Res. 47:1964-1976(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 
@@ -817,18 +575,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 34-45",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, INDUCTION, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC BAA-918 / TS559;\nRX   PubMed=32555463; DOI=10.1038/s41586-020-2418-2;\nRA   Sas-Chen A., Thomas J.M., Matzov D., Taoka M., Nance K.D., Nir R.,\nRA   Bryson K.M., Shachar R., Liman G.L.S., Burkhart B.W., Gamage S.T., Nobe Y.,\nRA   Briney C.A., Levy M.J., Fuchs R.T., Robb G.B., Hartmann J., Sharma S.,\nRA   Lin Q., Florens L., Washburn M.P., Isobe T., Santangelo T.J.,\nRA   Shalev-Benami M., Meier J.L., Schwartz S.;\nRT   \"Dynamic RNA acetylation revealed by quantitative cross-evolutionary\nRT   mapping.\";\nRL   Nature 583:638-643(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 
@@ -838,18 +596,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 56-64",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=cytidine(34) in elongator tRNA(Met) + acetyl-CoA + ATP + H2O =\nCC         N(4)-acetylcytidine(34) in elongator tRNA(Met) + ADP + phosphate +\nCC         CoA + H(+); Xref=Rhea:RHEA:43788, Rhea:RHEA-COMP:10693, Rhea:RHEA-\nCC         COMP:10694, ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:43474, ChEBI:CHEBI:57287, ChEBI:CHEBI:57288,\nCC         ChEBI:CHEBI:74900, ChEBI:CHEBI:82748, ChEBI:CHEBI:456216;\nCC         EC=2.3.1.193; Evidence={ECO:0000255|HAMAP-Rule:MF_01886,\nCC         ECO:0000269|PubMed:32555463};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 
@@ -859,18 +617,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 65-72",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a cytidine in RNA + acetyl-CoA + ATP + H2O = an N(4)-\nCC         acetylcytidine in RNA + ADP + phosphate + CoA + H(+);\nCC         Xref=Rhea:RHEA:82211, Rhea:RHEA-COMP:15704, Rhea:RHEA-COMP:19834,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:43474, ChEBI:CHEBI:57287, ChEBI:CHEBI:57288,\nCC         ChEBI:CHEBI:74900, ChEBI:CHEBI:82748, ChEBI:CHEBI:456216;\nCC         Evidence={ECO:0000305|PubMed:32555463};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 65-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 
@@ -880,18 +638,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 73-80",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a cytidine in tRNA + acetyl-CoA + ATP + H2O = an N(4)-\nCC         acetylcytidine in tRNA + ADP + phosphate + CoA + H(+);\nCC         Xref=Rhea:RHEA:53876, Rhea:RHEA-COMP:13670, Rhea:RHEA-COMP:13671,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:43474, ChEBI:CHEBI:57287, ChEBI:CHEBI:57288,\nCC         ChEBI:CHEBI:74900, ChEBI:CHEBI:82748, ChEBI:CHEBI:456216;\nCC         Evidence={ECO:0000269|PubMed:32555463};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-80",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 
@@ -901,18 +659,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 116,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116",
-  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
-  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
-  "source_locator": "lines 81-88",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a cytidine in mRNA + acetyl-CoA + ATP + H2O = an N(4)-\nCC         acetylcytidine in mRNA + ADP + phosphate + CoA + H(+);\nCC         Xref=Rhea:RHEA:58480, Rhea:RHEA-COMP:15145, Rhea:RHEA-COMP:15146,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:43474, ChEBI:CHEBI:57287, ChEBI:CHEBI:57288,\nCC         ChEBI:CHEBI:74900, ChEBI:CHEBI:82748, ChEBI:CHEBI:456216;\nCC         Evidence={ECO:0000269|PubMed:32555463};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 116,
+  "retrieved_utc": "2026-11-02T04:31:24.956546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c05dd90ac793c3b0b7a7e2c5ead01e559eb6146b501bb39db646e351ccdaa9a7",
+  "url": "https://rest.uniprot.org/unisave/Q5JHC6?format=txt&versions=116"
 }
 ```
 

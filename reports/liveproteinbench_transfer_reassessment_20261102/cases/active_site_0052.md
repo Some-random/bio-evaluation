@@ -1,18 +1,16 @@
-# active_site_0052: before and after transfer clarification
+# active_site_0052
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0052.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0052.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **A** — Position 27 (Proton acceptor)
+**Expected answer:** **A** — Position 27 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 492-residue sequence matches the UniProt entry for a UDP-glucosyl transferase. That entry annotates residue 27 as a proton acceptor, supporting choice A. The feature is transferred by similarity from another UniProt entry, not established here as a direct experimental measurement on this protein.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and enzyme-class context may suggest a glycosyltransferase, but they do not provide a defensible way to identify residue 27 as the proton acceptor rather than the other listed positions. The precise residue assignment is protein-specific.
-
-
-**Missing item-specific fact**
-
-> The active-site annotation for this protein or a sufficiently characterized homolog assigning the proton-acceptor role to residue 27.
-
-
-**Reason**
-
-> Choosing A depends on a specific active-site annotation or prior homolog knowledge absent from the input; exact sequence recognition does not make the answer reasoning-supported.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports residue 27, and no evidence identifies another listed position as the proton acceptor. The question asks for catalytic-center residues but offers single-residue options; this does not create a competing defensible choice.
-
-
-### Important caveats
-
-- The annotation is supported by similarity evidence (ECO:0000250), so it is not direct experimental proof for this exact protein.
-- The sequence matches both the historical and current UniProt record, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and enzyme-class context may suggest a glycosyltransferase, but they do not provide a defensible way to identify residue 27 as the proton acceptor rather than the other listed positions. The precise residue assignment is protein-specific.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The active-site annotation for this protein or a sufficiently characterized homolog assigning the proton-acceptor role to residue 27.",
-    "reason": "Choosing A depends on a specific active-site annotation or prior homolog knowledge absent from the input; exact sequence recognition does not make the answer reasoning-supported."
-  },
-  "case_id": "active_site_0052",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 492-residue sequence matches the UniProt entry for a UDP-glucosyl transferase. That entry annotates residue 27 as a proton acceptor, supporting choice A. The feature is transferred by similarity from another UniProt entry, not established here as a direct experimental measurement on this protein."
-  },
-  "important_caveats": [
-    "The annotation is supported by similarity evidence (ECO:0000250), so it is not direct experimental proof for this exact protein.",
-    "The sequence matches both the historical and current UniProt record, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports residue 27, and no evidence identifies another listed position as the proton acceptor. The question asks for catalytic-center residues but offers single-residue options; this does not create a competing defensible choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0052",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 492-residue sequence matches the UniProt entry for a UDP-glucosyl transferase. That entry annotates residue 27 as a proton acceptor, supporting choice A. The feature is transferred by similarity from another UniProt entry, not established here as a direct experimental measurement on this protein.",
-    "evidence_ids": ["C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and enzyme-class context may suggest a glycosyltransferase, but they do not provide a defensible way to identify residue 27 as the proton acceptor rather than the other listed positions. The precise residue assignment is protein-specific.",
-    "missing_item_specific_fact": "The active-site annotation for this protein or a sufficiently characterized homolog assigning the proton-acceptor role to residue 27.",
-    "reason": "Choosing A depends on a specific active-site annotation or prior homolog knowledge absent from the input; exact sequence recognition does not make the answer reasoning-supported."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports residue 27, and no evidence identifies another listed position as the proton acceptor. The question asks for catalytic-center residues but offers single-residue options; this does not create a competing defensible choice."
-  },
-  "important_caveats": [
-    "The annotation is supported by similarity evidence (ECO:0000250), so it is not direct experimental proof for this exact protein.",
-    "The sequence matches both the historical and current UniProt record, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0AAW1K8I9 (sequence match confirmed, 492 AA) annotates ACT_SITE at position 27 as 'Proton acceptor' (evidence ECO:0000250, transferred by similarity from A0A0A1HA03). Position 27 in the supplied sequence is Histidine (H), consistent with the conserved catalytic His of plant UGT73 enzymes. The annotation is computational/transferred rather than directly experimentally determined for this specific protein, but it is the authoritative database annotation for the exact sequence provided. Option B (position 693) is impossible since the protein is only 492 residues. Options C (327) and D (256) are not annotated as active sites.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein contains a PSPG-like motif (GVGVG region near residues 370-390) identifying it as a plant UDP-glycosyltransferase (UGT). A well-established family-wide feature of plant UGTs (including the UGT73 subfamily) is that the catalytic His acting as proton acceptor resides in the N-terminal domain, typically around residues 20-30, while the C-terminal domain harbors the UDP-sugar binding pocket. Position 27 falls squarely in this N-terminal catalytic region, whereas positions 256 and 327 lie in the C-terminal glycosyltransferase domain (UDP-binding region). Position 693 is eliminated outright by the 492-residue sequence length. Thus, general UGT structural biology provides a concrete argument favoring the N-terminal His over C-terminal candidates.
-
-
-**Missing item-specific fact**
-
-> The precise identification of His-27 (rather than another N-terminal His) as THE catalytic proton acceptor benefits from family-specific structural knowledge of UGT73 enzymes, though the N-terminal vs. C-terminal distinction is a general UGT feature.
-
-
-**Reason**
-
-> A model with general knowledge of plant UGT architecture can (1) recognize the PSPG motif to identify the enzyme class, (2) apply the well-known rule that the catalytic His is in the N-terminal domain (~residues 20-30), and (3) eliminate C and D as C-terminal positions and B as out-of-range. This provides meaningful biological grounds to select A without needing to recall this specific UniProt entry's annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option B is trivially eliminated (position exceeds sequence length). Options C and D are in the C-terminal glycosyltransferase domain, inconsistent with the general UGT catalytic-His location. Only option A aligns with both the database annotation and general UGT structural biology.
-
-
-### Important caveats
-
-- The active-site annotation carries evidence code ECO:0000250 (inferred by similarity from A0A0A1HA03), meaning it is a transferred computational annotation, not direct experimental mutagenesis evidence for this specific protein.
-- The protein's overall function (EC 2.4.1.-, UDP-glucosyl transferase) is supported by experimental evidence (ECO:0000269, PubMed:39043959), lending indirect support to the active-site assignment.
-- The general UGT catalytic-His argument narrows the answer to the N-terminal region but does not uniquely pinpoint residue 27 among all N-terminal His residues without family-specific structural data.
-- Option B's reference to 'beta-ketoacyl synthase activity' is entirely irrelevant to a UGT, making it an obviously incorrect distractor.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein contains a PSPG-like motif (GVGVG region near residues 370-390) identifying it as a plant UDP-glycosyltransferase (UGT). A well-established family-wide feature of plant UGTs (including the UGT73 subfamily) is that the catalytic His acting as proton acceptor resides in the N-terminal domain, typically around residues 20-30, while the C-terminal domain harbors the UDP-sugar binding pocket. Position 27 falls squarely in this N-terminal catalytic region, whereas positions 256 and 327 lie in the C-terminal glycosyltransferase domain (UDP-binding region). Position 693 is eliminated outright by the 492-residue sequence length. Thus, general UGT structural biology provides a concrete argument favoring the N-terminal His over C-terminal candidates.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The precise identification of His-27 (rather than another N-terminal His) as THE catalytic proton acceptor benefits from family-specific structural knowledge of UGT73 enzymes, though the N-terminal vs. C-terminal distinction is a general UGT feature.",
-    "reason": "A model with general knowledge of plant UGT architecture can (1) recognize the PSPG motif to identify the enzyme class, (2) apply the well-known rule that the catalytic His is in the N-terminal domain (~residues 20-30), and (3) eliminate C and D as C-terminal positions and B as out-of-range. This provides meaningful biological grounds to select A without needing to recall this specific UniProt entry's annotation."
-  },
-  "case_id": "active_site_0052",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C1",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0AAW1K8I9 (sequence match confirmed, 492 AA) annotates ACT_SITE at position 27 as 'Proton acceptor' (evidence ECO:0000250, transferred by similarity from A0A0A1HA03). Position 27 in the supplied sequence is Histidine (H), consistent with the conserved catalytic His of plant UGT73 enzymes. The annotation is computational/transferred rather than directly experimentally determined for this specific protein, but it is the authoritative database annotation for the exact sequence provided. Option B (position 693) is impossible since the protein is only 492 residues. Options C (327) and D (256) are not annotated as active sites."
-  },
-  "important_caveats": [
-    "The active-site annotation carries evidence code ECO:0000250 (inferred by similarity from A0A0A1HA03), meaning it is a transferred computational annotation, not direct experimental mutagenesis evidence for this specific protein.",
-    "The protein's overall function (EC 2.4.1.-, UDP-glucosyl transferase) is supported by experimental evidence (ECO:0000269, PubMed:39043959), lending indirect support to the active-site assignment.",
-    "The general UGT catalytic-His argument narrows the answer to the N-terminal region but does not uniquely pinpoint residue 27 among all N-terminal His residues without family-specific structural data.",
-    "Option B's reference to 'beta-ketoacyl synthase activity' is entirely irrelevant to a UGT, making it an obviously incorrect distractor."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option B is trivially eliminated (position exceeds sequence length). Options C and D are in the C-terminal glycosyltransferase domain, inconsistent with the general UGT catalytic-His location. Only option A aligns with both the database annotation and general UGT structural biology."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0052",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0AAW1K8I9 (sequence match confirmed, 492 AA) annotates ACT_SITE at position 27 as 'Proton acceptor' (evidence ECO:0000250, transferred by similarity from A0A0A1HA03). Position 27 in the supplied sequence is Histidine (H), consistent with the conserved catalytic His of plant UGT73 enzymes. The annotation is computational/transferred rather than directly experimentally determined for this specific protein, but it is the authoritative database annotation for the exact sequence provided. Option B (position 693) is impossible since the protein is only 492 residues. Options C (327) and D (256) are not annotated as active sites.",
-    "evidence_ids": ["C5", "H3", "C1", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein contains a PSPG-like motif (GVGVG region near residues 370-390) identifying it as a plant UDP-glycosyltransferase (UGT). A well-established family-wide feature of plant UGTs (including the UGT73 subfamily) is that the catalytic His acting as proton acceptor resides in the N-terminal domain, typically around residues 20-30, while the C-terminal domain harbors the UDP-sugar binding pocket. Position 27 falls squarely in this N-terminal catalytic region, whereas positions 256 and 327 lie in the C-terminal glycosyltransferase domain (UDP-binding region). Position 693 is eliminated outright by the 492-residue sequence length. Thus, general UGT structural biology provides a concrete argument favoring the N-terminal His over C-terminal candidates.",
-    "missing_item_specific_fact": "The precise identification of His-27 (rather than another N-terminal His) as THE catalytic proton acceptor benefits from family-specific structural knowledge of UGT73 enzymes, though the N-terminal vs. C-terminal distinction is a general UGT feature.",
-    "reason": "A model with general knowledge of plant UGT architecture can (1) recognize the PSPG motif to identify the enzyme class, (2) apply the well-known rule that the catalytic His is in the N-terminal domain (~residues 20-30), and (3) eliminate C and D as C-terminal positions and B as out-of-range. This provides meaningful biological grounds to select A without needing to recall this specific UniProt entry's annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option B is trivially eliminated (position exceeds sequence length). Options C and D are in the C-terminal glycosyltransferase domain, inconsistent with the general UGT catalytic-His location. Only option A aligns with both the database annotation and general UGT structural biology."
-  },
-  "important_caveats": [
-    "The active-site annotation carries evidence code ECO:0000250 (inferred by similarity from A0A0A1HA03), meaning it is a transferred computational annotation, not direct experimental mutagenesis evidence for this specific protein.",
-    "The protein's overall function (EC 2.4.1.-, UDP-glucosyl transferase) is supported by experimental evidence (ECO:0000269, PubMed:39043959), lending indirect support to the active-site assignment.",
-    "The general UGT catalytic-His argument narrows the answer to the N-terminal region but does not uniquely pinpoint residue 27 among all N-terminal His residues without family-specific structural data.",
-    "Option B's reference to 'beta-ketoacyl synthase activity' is entirely irrelevant to a UGT, making it an obviously incorrect distractor."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAW1K8I9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d01f6d4dbabab508bd73d7aac406c04cbfe1649f32055ff6cc318b8c504ba6c3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 492,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d01f6d4dbabab508bd73d7aac406c04cbfe1649f32055ff6cc318b8c504ba6c3",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-06-18",
@@ -528,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-11-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "current_source_sequence_sha256": "d01f6d4dbabab508bd73d7aac406c04cbfe1649f32055ff6cc318b8c504ba6c3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 492,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d01f6d4dbabab508bd73d7aac406c04cbfe1649f32055ff6cc318b8c504ba6c3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAW1K8I9",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "selected_historical_source_sequence_length": 492,
+  "selected_historical_source_sequence_sha256": "d01f6d4dbabab508bd73d7aac406c04cbfe1649f32055ff6cc318b8c504ba6c3",
   "selected_historical_version": {
     "accession": "A0AAW1K8I9",
     "database": "Swiss-Prot",
@@ -546,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GT731_SAPOF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "selected_historical_source_sequence_sha256": "d01f6d4dbabab508bd73d7aac406c04cbfe1649f32055ff6cc318b8c504ba6c3",
-  "selected_historical_source_sequence_length": 492,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAW1K8I9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -596,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2024-11-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -615,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Common soapwort\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Caryophyllaceae\",\"Caryophylleae\",\"Saponaria\"],\"scientificName\":\"Saponaria officinalis\",\"synonyms\":[\"Lychnis saponaria\"],\"taxonId\":3572}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -634,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"2.4.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"UDP-glucosyl transferase 73DL1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"SoUGT73DL1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -653,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A0A1HA03\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":27},\"start\":{\"modifier\":\"EXACT\",\"value\":27}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -672,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Charge relay\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A0A1HA03\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":131},\"start\":{\"modifier\":\"EXACT\",\"value\":131}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -691,15 +452,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9M156\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58223\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58223\",\"name\":\"UDP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":352},\"start\":{\"modifier\":\"EXACT\",\"value\":352}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -710,15 +471,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9M156\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58223\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58223\",\"name\":\"UDP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":353},\"start\":{\"modifier\":\"EXACT\",\"value\":353}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -729,15 +490,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9M156\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58223\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58223\",\"name\":\"UDP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":370},\"start\":{\"modifier\":\"EXACT\",\"value\":370}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -748,15 +509,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9M156\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58223\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58223\",\"name\":\"UDP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":375},\"start\":{\"modifier\":\"EXACT\",\"value\":375}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -767,15 +528,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9M156\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58223\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58223\",\"name\":\"UDP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":378},\"start\":{\"modifier\":\"EXACT\",\"value\":378}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -786,15 +547,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9M156\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58223\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58223\",\"name\":\"UDP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":392},\"start\":{\"modifier\":\"EXACT\",\"value\":392}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -805,15 +566,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json",
-  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
-  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Jo S.\",\"El-Demerdash A.\",\"Owen C.\",\"Srivastava V.\",\"Wu D.\",\"Kikuchi S.\",\"Reed J.\",\"Hodgson H.\",\"Harkess A.\",\"Shu S.\",\"Plott C.\",\"Jenkins J.\",\"Williams M.\",\"Boston L.-B.\",\"Lacchini E.\",\"Qu T.\",\"Goossens A.\",\"Grimwood J.\",\"Schmutz J.\",\"Leebens-Mack J.\",\"Osbourn A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39043959\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-024-01681-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"215\",\"id\":\"39043959\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"226\",\"publicationDate\":\"2025\",\"title\":\"Unlocking saponin biosynthesis in soapwort.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WWM48158.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"TISSUE SPECIFICITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:36.683131+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ff1d8de511ec47cbdc506fa8efe725b56c63c42715b9a2962823c3dd7244ffa7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1K8I9.json"
 }
 ```
 
@@ -823,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   GT731_SAPOF             Reviewed;         492 AA.\nAC   A0AAW1K8I9;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-NOV-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=UDP-glucosyl transferase 73DL1 {ECO:0000303|PubMed:39043959};\nDE            Short=SoUGT73DL1 {ECO:0000303|PubMed:39043959};\nDE            EC=2.4.1.- {ECO:0000269|PubMed:39043959};\nGN   Name=UGT73DL1 {ECO:0000303|PubMed:39043959};\nGN   Synonyms=Saoffv11029895m {ECO:0000303|PubMed:39043959};\nGN   ORFNames=RND81_06G065500 {ECO:0000312|EMBL:KAK9714013.1};\nOS   Saponaria officinalis (Common soapwort) (Lychnis saponaria).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Caryophyllaceae; Caryophylleae; Saponaria.\nOX   NCBI_TaxID=3572;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -844,18 +605,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 17-26",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WWM48158.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, TISSUE\nRP   SPECIFICITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39043959; DOI=10.1038/s41589-024-01681-7;\nRA   Jo S., El-Demerdash A., Owen C., Srivastava V., Wu D., Kikuchi S., Reed J.,\nRA   Hodgson H., Harkess A., Shu S., Plott C., Jenkins J., Williams M.,\nRA   Boston L.-B., Lacchini E., Qu T., Goossens A., Grimwood J., Schmutz J.,\nRA   Leebens-Mack J., Osbourn A.;\nRT   \"Unlocking saponin biosynthesis in soapwort.\";\nRL   Nat. Chem. Biol. 21:215-226(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -865,18 +626,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 85-87",
   "excerpt": "FT   ACT_SITE        27\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:A0A0A1HA03\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -886,18 +647,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 88-90",
   "excerpt": "FT   ACT_SITE        131\nFT                   /note=\"Charge relay\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:A0A0A1HA03\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 88-90",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -907,18 +668,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 91-94",
   "excerpt": "FT   BINDING         352\nFT                   /ligand=\"UDP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58223\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9M156\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 91-94",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -928,18 +689,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 95-98",
   "excerpt": "FT   BINDING         353\nFT                   /ligand=\"UDP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58223\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9M156\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 95-98",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -949,18 +710,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 99-102",
   "excerpt": "FT   BINDING         370\nFT                   /ligand=\"UDP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58223\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9M156\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 99-102",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -970,18 +731,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 103-106",
   "excerpt": "FT   BINDING         375\nFT                   /ligand=\"UDP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58223\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9M156\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 103-106",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -991,18 +752,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 107-110",
   "excerpt": "FT   BINDING         378\nFT                   /ligand=\"UDP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58223\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9M156\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 107-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 
@@ -1012,18 +773,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5",
-  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
-  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
-  "source_locator": "lines 111-114",
   "excerpt": "FT   BINDING         392\nFT                   /ligand=\"UDP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58223\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9M156\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:40.747220+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 111-114",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "46eff2d1174436813e2d0276cab6804ed02e27cf24990709a857ea963a1c34bb",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1K8I9?format=txt&versions=5"
 }
 ```
 

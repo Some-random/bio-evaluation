@@ -1,18 +1,16 @@
-# EC_number_0138: before and after transfer clarification
+# EC_number_0138
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0138.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0138.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 3.2.1.8
+**Expected answer:** **D** — 3.2.1.8
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as EC 3.2.1.8, with the activity described as endohydrolysis of beta-xylosidic linkages in xylans. The cited support is a PROSITE-ProRule computational annotation, not direct experimental evidence in the supplied excerpts.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal signal peptide and compact enzyme-like sequence are compatible with a secreted hydrolase, but do not establish xylan specificity or distinguish the listed glycosidase EC numbers.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional assignment to endo-1,4-beta-xylanase activity, or an equivalent sequence-family/homology annotation that establishes that substrate specificity.
-
-
-**Reason**
-
-> The exact EC choice depends on protein-specific functional information absent from the prompt. General sequence features may suggest a secreted hydrolase but do not justify this precise reaction assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matching database annotation supports D, but the supplied sequence and choices alone do not provide enough information to distinguish D from other glycosidase activities.
-
-
-### Important caveats
-
-- The sequence match applies to the 224-residue UniProt entry; the entry's EC assignment is computationally supported rather than shown here by a catalytic assay.
-- The cited paper concerns perception of an EIX-like protein and does not, in these excerpts, independently demonstrate its catalytic activity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal signal peptide and compact enzyme-like sequence are compatible with a secreted hydrolase, but do not establish xylan specificity or distinguish the listed glycosidase EC numbers.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional assignment to endo-1,4-beta-xylanase activity, or an equivalent sequence-family/homology annotation that establishes that substrate specificity.",
-    "reason": "The exact EC choice depends on protein-specific functional information absent from the prompt. General sequence features may suggest a secreted hydrolase but do not justify this precise reaction assignment."
-  },
-  "case_id": "EC_number_0138",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as EC 3.2.1.8, with the activity described as endohydrolysis of beta-xylosidic linkages in xylans. The cited support is a PROSITE-ProRule computational annotation, not direct experimental evidence in the supplied excerpts."
-  },
-  "important_caveats": [
-    "The sequence match applies to the 224-residue UniProt entry; the entry's EC assignment is computationally supported rather than shown here by a catalytic assay.",
-    "The cited paper concerns perception of an EIX-like protein and does not, in these excerpts, independently demonstrate its catalytic activity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matching database annotation supports D, but the supplied sequence and choices alone do not provide enough information to distinguish D from other glycosidase activities."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0138",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as EC 3.2.1.8, with the activity described as endohydrolysis of beta-xylosidic linkages in xylans. The cited support is a PROSITE-ProRule computational annotation, not direct experimental evidence in the supplied excerpts.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal signal peptide and compact enzyme-like sequence are compatible with a secreted hydrolase, but do not establish xylan specificity or distinguish the listed glycosidase EC numbers.",
-    "missing_item_specific_fact": "The protein-specific functional assignment to endo-1,4-beta-xylanase activity, or an equivalent sequence-family/homology annotation that establishes that substrate specificity.",
-    "reason": "The exact EC choice depends on protein-specific functional information absent from the prompt. General sequence features may suggest a secreted hydrolase but do not justify this precise reaction assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matching database annotation supports D, but the supplied sequence and choices alone do not provide enough information to distinguish D from other glycosidase activities."
-  },
-  "important_caveats": [
-    "The sequence match applies to the 224-residue UniProt entry; the entry's EC assignment is computationally supported rather than shown here by a catalytic assay.",
-    "The cited paper concerns perception of an EIX-like protein and does not, in these excerpts, independently demonstrate its catalytic activity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry G2X4G1 (EIX5_VERDV, Ethylene-inducing xylanase 5 from Verticillium dahliae) annotates EC 3.2.1.8 (endo-1,4-beta-xylanase) with evidence code ECO:0000255 (PROSITE-ProRule:PRU01097). The catalytic activity is stated as 'Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.' The benchmark sequence (224 AA) matches the source sequence exactly (SHA256 confirmed). The EC annotation is based on a computational/structural motif rule (PROSITE-ProRule), not direct experimental enzymatic assay, but the protein's recommended name ('Endo-1,4-beta-xylanase EIX5') and functional description are consistent with EC 3.2.1.8.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The protein contains a signal peptide (MLKSLVVLLLTSRVIAFPTLDTDQ) indicating secretion, and the sequence displays an aromatic-rich pattern (YY, WW, YW clusters) consistent with a carbohydrate-binding enzyme. These features help eliminate option C (3.4.21.62, a serine protease lacking a catalytic triad in this sequence). However, distinguishing among options A (3.2.1.18, alpha-L-arabinofuranosidase), B (3.2.1.20, alpha-glucuronidase), and D (3.2.1.8, endo-1,4-beta-xylanase) requires recognizing the 'GTHGG' motif as a PROSITE-ProRule PRU01097 signature specific to Glycoside Hydrolase family 11 (GH11), which is exclusively associated with xylanase activity. This is a specific database-derived motif assignment rather than a general biological inference.
-
-
-**Missing item-specific fact**
-
-> The PROSITE-ProRule PRU01097 motif match (GTHGG pattern) that assigns this sequence to GH family 11 and thereby to EC 3.2.1.8. Without knowing this specific family-signature correspondence, the three 3.2.1.x options cannot be reliably distinguished by general reasoning alone.
-
-
-**Reason**
-
-> While general features (secretion signal, absence of protease catalytic triad) eliminate option C, the critical distinction among the three glycosidase options (A, B, D) depends on recognizing a specific PROSITE motif (GTHGG → GH11 → xylanase). This is an item-specific database annotation (the UniProt entry's own EC assignment relies on this exact PROSITE-ProRule evidence code ECO:0000255), not a derivable consequence of general enzymology principles.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The GTHGG motif and overall GH11 architecture are well-established signatures for endo-1,4-beta-xylanase (EC 3.2.1.8). Options A and B correspond to different GH families with different structural signatures. Option C is a serine protease with a completely different fold and catalytic mechanism. Once the GH11 assignment is recognized, D is the only defensible answer.
-
-
-### Important caveats
-
-- The EC 3.2.1.8 annotation in UniProt is based on PROSITE-ProRule (ECO:0000255, computational/motif evidence), not direct experimental enzymatic assay. The PubMed reference (33205907) documents function in the context of plant-pathogen interaction (ethylene induction) but the primary EC assignment is motif-based.
-- The UniProt entry was first publicly released 2025-06-18, which may postdate the benchmark construction period; the sequence version (v1, 2011-11-16) predates this, but the Swiss-Prot annotation itself is relatively recent.
-- The reviewer-only evidence confirms sequence match (SHA256: 980bd9f9...) between the benchmark input and UniProt G2X4G1, confirming the annotation applies to this exact sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein contains a signal peptide (MLKSLVVLLLTSRVIAFPTLDTDQ) indicating secretion, and the sequence displays an aromatic-rich pattern (YY, WW, YW clusters) consistent with a carbohydrate-binding enzyme. These features help eliminate option C (3.4.21.62, a serine protease lacking a catalytic triad in this sequence). However, distinguishing among options A (3.2.1.18, alpha-L-arabinofuranosidase), B (3.2.1.20, alpha-glucuronidase), and D (3.2.1.8, endo-1,4-beta-xylanase) requires recognizing the 'GTHGG' motif as a PROSITE-ProRule PRU01097 signature specific to Glycoside Hydrolase family 11 (GH11), which is exclusively associated with xylanase activity. This is a specific database-derived motif assignment rather than a general biological inference.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The PROSITE-ProRule PRU01097 motif match (GTHGG pattern) that assigns this sequence to GH family 11 and thereby to EC 3.2.1.8. Without knowing this specific family-signature correspondence, the three 3.2.1.x options cannot be reliably distinguished by general reasoning alone.",
-    "reason": "While general features (secretion signal, absence of protease catalytic triad) eliminate option C, the critical distinction among the three glycosidase options (A, B, D) depends on recognizing a specific PROSITE motif (GTHGG → GH11 → xylanase). This is an item-specific database annotation (the UniProt entry's own EC assignment relies on this exact PROSITE-ProRule evidence code ECO:0000255), not a derivable consequence of general enzymology principles."
-  },
-  "case_id": "EC_number_0138",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry G2X4G1 (EIX5_VERDV, Ethylene-inducing xylanase 5 from Verticillium dahliae) annotates EC 3.2.1.8 (endo-1,4-beta-xylanase) with evidence code ECO:0000255 (PROSITE-ProRule:PRU01097). The catalytic activity is stated as 'Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.' The benchmark sequence (224 AA) matches the source sequence exactly (SHA256 confirmed). The EC annotation is based on a computational/structural motif rule (PROSITE-ProRule), not direct experimental enzymatic assay, but the protein's recommended name ('Endo-1,4-beta-xylanase EIX5') and functional description are consistent with EC 3.2.1.8."
-  },
-  "important_caveats": [
-    "The EC 3.2.1.8 annotation in UniProt is based on PROSITE-ProRule (ECO:0000255, computational/motif evidence), not direct experimental enzymatic assay. The PubMed reference (33205907) documents function in the context of plant-pathogen interaction (ethylene induction) but the primary EC assignment is motif-based.",
-    "The UniProt entry was first publicly released 2025-06-18, which may postdate the benchmark construction period; the sequence version (v1, 2011-11-16) predates this, but the Swiss-Prot annotation itself is relatively recent.",
-    "The reviewer-only evidence confirms sequence match (SHA256: 980bd9f9...) between the benchmark input and UniProt G2X4G1, confirming the annotation applies to this exact sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The GTHGG motif and overall GH11 architecture are well-established signatures for endo-1,4-beta-xylanase (EC 3.2.1.8). Options A and B correspond to different GH families with different structural signatures. Option C is a serine protease with a completely different fold and catalytic mechanism. Once the GH11 assignment is recognized, D is the only defensible answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0138",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry G2X4G1 (EIX5_VERDV, Ethylene-inducing xylanase 5 from Verticillium dahliae) annotates EC 3.2.1.8 (endo-1,4-beta-xylanase) with evidence code ECO:0000255 (PROSITE-ProRule:PRU01097). The catalytic activity is stated as 'Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.' The benchmark sequence (224 AA) matches the source sequence exactly (SHA256 confirmed). The EC annotation is based on a computational/structural motif rule (PROSITE-ProRule), not direct experimental enzymatic assay, but the protein's recommended name ('Endo-1,4-beta-xylanase EIX5') and functional description are consistent with EC 3.2.1.8.",
-    "evidence_ids": ["C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The protein contains a signal peptide (MLKSLVVLLLTSRVIAFPTLDTDQ) indicating secretion, and the sequence displays an aromatic-rich pattern (YY, WW, YW clusters) consistent with a carbohydrate-binding enzyme. These features help eliminate option C (3.4.21.62, a serine protease lacking a catalytic triad in this sequence). However, distinguishing among options A (3.2.1.18, alpha-L-arabinofuranosidase), B (3.2.1.20, alpha-glucuronidase), and D (3.2.1.8, endo-1,4-beta-xylanase) requires recognizing the 'GTHGG' motif as a PROSITE-ProRule PRU01097 signature specific to Glycoside Hydrolase family 11 (GH11), which is exclusively associated with xylanase activity. This is a specific database-derived motif assignment rather than a general biological inference.",
-    "missing_item_specific_fact": "The PROSITE-ProRule PRU01097 motif match (GTHGG pattern) that assigns this sequence to GH family 11 and thereby to EC 3.2.1.8. Without knowing this specific family-signature correspondence, the three 3.2.1.x options cannot be reliably distinguished by general reasoning alone.",
-    "reason": "While general features (secretion signal, absence of protease catalytic triad) eliminate option C, the critical distinction among the three glycosidase options (A, B, D) depends on recognizing a specific PROSITE motif (GTHGG → GH11 → xylanase). This is an item-specific database annotation (the UniProt entry's own EC assignment relies on this exact PROSITE-ProRule evidence code ECO:0000255), not a derivable consequence of general enzymology principles."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The GTHGG motif and overall GH11 architecture are well-established signatures for endo-1,4-beta-xylanase (EC 3.2.1.8). Options A and B correspond to different GH families with different structural signatures. Option C is a serine protease with a completely different fold and catalytic mechanism. Once the GH11 assignment is recognized, D is the only defensible answer."
-  },
-  "important_caveats": [
-    "The EC 3.2.1.8 annotation in UniProt is based on PROSITE-ProRule (ECO:0000255, computational/motif evidence), not direct experimental enzymatic assay. The PubMed reference (33205907) documents function in the context of plant-pathogen interaction (ethylene induction) but the primary EC assignment is motif-based.",
-    "The UniProt entry was first publicly released 2025-06-18, which may postdate the benchmark construction period; the sequence version (v1, 2011-11-16) predates this, but the Swiss-Prot annotation itself is relatively recent.",
-    "The reviewer-only evidence confirms sequence match (SHA256: 980bd9f9...) between the benchmark input and UniProt G2X4G1, confirming the annotation applies to this exact sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -498,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G2X4G1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "980bd9f921aa409c70d3c3af6ec2027d0fd84980947d8618f64a513744e596ed",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 224,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "980bd9f921aa409c70d3c3af6ec2027d0fd84980947d8618f64a513744e596ed",
   "current_entry_audit": {
     "entryVersion": 58,
     "firstPublicDate": "2025-06-18",
@@ -529,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-11-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
-  "current_source_sequence_sha256": "980bd9f921aa409c70d3c3af6ec2027d0fd84980947d8618f64a513744e596ed",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 224,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "980bd9f921aa409c70d3c3af6ec2027d0fd84980947d8618f64a513744e596ed",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 57,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G2X4G1",
   "selected_historical_entry_version": 57,
+  "selected_historical_record_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
+  "selected_historical_source_sequence_length": 224,
+  "selected_historical_source_sequence_sha256": "980bd9f921aa409c70d3c3af6ec2027d0fd84980947d8618f64a513744e596ed",
   "selected_historical_version": {
     "accession": "G2X4G1",
     "database": "Swiss-Prot",
@@ -547,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "EIX5_VERDV",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
-  "selected_historical_source_sequence_sha256": "980bd9f921aa409c70d3c3af6ec2027d0fd84980947d8618f64a513744e596ed",
-  "selected_historical_source_sequence_length": 224,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 57,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -578,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json",
-  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
-  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G2X4G1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json"
 }
 ```
 
@@ -597,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json",
-  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
-  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":58,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2011-11-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json"
 }
 ```
 
@@ -616,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json",
-  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
-  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Verticillium wilt\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Glomerellales\",\"Plectosphaerellaceae\",\"Verticillium\"],\"scientificName\":\"Verticillium dahliae (strain VdLs.17 / ATCC MYA-4575 / FGSC 10137)\",\"taxonId\":498257}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json"
 }
 ```
 
@@ -635,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json",
-  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
-  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33205907\",\"source\":\"PubMed\"}],\"value\":\"Endo-1,4-beta-xylanase EIX5\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01097\",\"source\":\"PROSITE-ProRule\"}],\"value\":\"3.2.1.8\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33205907\",\"source\":\"PubMed\"}],\"value\":\"Ethylene-inducing xylanase 5\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33205907\",\"source\":\"PubMed\"}],\"value\":\"EIX5\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json"
 }
 ```
 
@@ -654,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json",
-  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
-  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.8\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01097\",\"source\":\"PROSITE-ProRule\"}],\"name\":\"Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json"
 }
 ```
 
@@ -673,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json",
-  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
-  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yin Z.\",\"Wang N.\",\"Pi L.\",\"Li L.\",\"Duan W.\",\"Wang X.\",\"Dou D.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33205907\"},{\"database\":\"DOI\",\"id\":\"10.1111/jipb.13031\"}],\"citationType\":\"journal article\",\"firstPage\":\"949\",\"id\":\"33205907\",\"journal\":\"J. Integr. Plant Biol.\",\"lastPage\":\"960\",\"publicationDate\":\"2021\",\"title\":\"Nicotiana benthamiana LRR-RLP NbEIX2 mediates the perception of an EIX-like protein from Verticillium dahliae.\",\"volume\":\"63\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:06.575092+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d3b854e7294c2d9fc95934e8e57b8df5f1a13a692ac39bb9a57962743c2e6c0",
+  "url": "https://rest.uniprot.org/uniprotkb/G2X4G1.json"
 }
 ```
 
@@ -691,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 57,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57",
-  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
-  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   EIX5_VERDV              Reviewed;         224 AA.\nAC   G2X4G1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-NOV-2011, sequence version 1.\nDT   28-JAN-2026, entry version 57.\nDE   RecName: Full=Ethylene-inducing xylanase 5 {ECO:0000303|PubMed:33205907};\nDE            Short=EIX5 {ECO:0000303|PubMed:33205907};\nDE            EC=3.2.1.8 {ECO:0000255|PROSITE-ProRule:PRU01097};\nDE   AltName: Full=Endo-1,4-beta-xylanase EIX5 {ECO:0000303|PubMed:33205907};\nDE   Flags: Precursor;\nGN   Name=EIX5 {ECO:0000303|PubMed:33205907}; ORFNames=VDAG_05043;\nOS   Verticillium dahliae (strain VdLs.17 / ATCC MYA-4575 / FGSC 10137)\nOS   (Verticillium wilt).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Glomerellales; Plectosphaerellaceae; Verticillium.\nOX   NCBI_TaxID=498257;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 57,
+  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
+  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57"
 }
 ```
 
@@ -712,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 57,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57",
-  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
-  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Ethylene-inducing xylanase 5 {ECO:0000303|PubMed:33205907};\nDE            Short=EIX5 {ECO:0000303|PubMed:33205907};\nDE            EC=3.2.1.8 {ECO:0000255|PROSITE-ProRule:PRU01097};\nDE   AltName: Full=Endo-1,4-beta-xylanase EIX5 {ECO:0000303|PubMed:33205907};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 57,
+  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
+  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57"
 }
 ```
 
@@ -733,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 57,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57",
-  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
-  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
-  "source_locator": "lines 30-36",
   "excerpt": "RN   [2]\nRP   FUNCTION.\nRX   PubMed=33205907; DOI=10.1111/jipb.13031;\nRA   Yin Z., Wang N., Pi L., Li L., Duan W., Wang X., Dou D.;\nRT   \"Nicotiana benthamiana LRR-RLP NbEIX2 mediates the perception of an EIX-\nRT   like protein from Verticillium dahliae.\";\nRL   J. Integr. Plant Biol. 63:949-960(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 57,
+  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
+  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57"
 }
 ```
 
@@ -754,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 57,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57",
-  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
-  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
-  "source_locator": "lines 44-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.;\nCC         EC=3.2.1.8; Evidence={ECO:0000255|PROSITE-ProRule:PRU01097};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 57,
+  "retrieved_utc": "2026-11-01T06:28:04.705992+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e0c511e580167b3398281d34cf1b42f13481b77974f64acc52440d0b06a7af8b",
+  "url": "https://rest.uniprot.org/unisave/G2X4G1?format=txt&versions=57"
 }
 ```
 

@@ -1,18 +1,16 @@
-# catalytic_activity_0019: before and after transfer clarification
+# catalytic_activity_0019
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0019.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0019.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — S-ubiquitinyl-&#91;E2 ubiquitin-conjugating enzyme&#93;-L-cysteine + &#91;acceptor protein&#93;-L-lysine = &#91;E2 ubiquitin-conjugating enzyme&#93;-L-cysteine + N(6)-ubiquitinyl-&#91;acceptor protein&#93;-L-lysine.
+**Expected answer:** **D** — S-ubiquitinyl-&#91;E2 ubiquitin-conjugating enzyme&#93;-L-cysteine + &#91;acceptor protein&#93;-L-lysine = &#91;E2 ubiquitin-conjugating enzyme&#93;-L-cysteine + N(6)-ubiquitinyl-&#91;acceptor protein&#93;-L-lysine.
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt entry annotated as E3 ubiquitin-protein ligase NleG, whose catalytic activity is the ubiquitin transfer reaction in choice D. The annotation carries an experimental evidence code, though the cited primary study was not independently assessed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices describe quite different enzyme activities, but the supplied sequence alone does not provide a sufficiently specific, evident feature to establish that this protein is an E3 ubiquitin ligase and distinguish choice D.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or equivalent experimental evidence identifying this sequence as NleG and linking it to ubiquitin transfer.
-
-
-**Reason**
-
-> Selecting D depends on knowing the identity or function of this particular protein, which is not given in the question. Recognizing the sequence from an external database would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The documented catalytic activity for the sequence matches choice D; the other options describe different reactions.
-
-
-### Important caveats
-
-- The matched UniProt annotations support the key, but their evidence code and cited reference do not by themselves constitute an independent review of the primary experimental results.
-- The database identity and annotation are reviewer-only evidence and were absent from the evaluated input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices describe quite different enzyme activities, but the supplied sequence alone does not provide a sufficiently specific, evident feature to establish that this protein is an E3 ubiquitin ligase and distinguish choice D.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or equivalent experimental evidence identifying this sequence as NleG and linking it to ubiquitin transfer.",
-    "reason": "Selecting D depends on knowing the identity or function of this particular protein, which is not given in the question. Recognizing the sequence from an external database would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "catalytic_activity_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry annotated as E3 ubiquitin-protein ligase NleG, whose catalytic activity is the ubiquitin transfer reaction in choice D. The annotation carries an experimental evidence code, though the cited primary study was not independently assessed here."
-  },
-  "important_caveats": [
-    "The matched UniProt annotations support the key, but their evidence code and cited reference do not by themselves constitute an independent review of the primary experimental results.",
-    "The database identity and annotation are reviewer-only evidence and were absent from the evaluated input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The documented catalytic activity for the sequence matches choice D; the other options describe different reactions."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry annotated as E3 ubiquitin-protein ligase NleG, whose catalytic activity is the ubiquitin transfer reaction in choice D. The annotation carries an experimental evidence code, though the cited primary study was not independently assessed here.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices describe quite different enzyme activities, but the supplied sequence alone does not provide a sufficiently specific, evident feature to establish that this protein is an E3 ubiquitin ligase and distinguish choice D.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or equivalent experimental evidence identifying this sequence as NleG and linking it to ubiquitin transfer.",
-    "reason": "Selecting D depends on knowing the identity or function of this particular protein, which is not given in the question. Recognizing the sequence from an external database would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The documented catalytic activity for the sequence matches choice D; the other options describe different reactions."
-  },
-  "important_caveats": [
-    "The matched UniProt annotations support the key, but their evidence code and cited reference do not by themselves constitute an independent review of the primary experimental results.",
-    "The database identity and annotation are reviewer-only evidence and were absent from the evaluated input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q8XAN6 (NLEG8_ECO57), annotated as 'E3 ubiquitin-protein ligase NleG' with EC 2.3.2.27. The catalytic activity annotation (C5, H4) explicitly states the reaction in option D. The evidence code is ECO:0000269 (PubMed:36511702), indicating experimental support. Sequence match is exact (215 aa, SHA-256 identical).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Negative reasoning can weakly eliminate some options: no P450 heme-binding motif (FxxGxRxCxG) argues against A; no Rossmann-fold SAM-binding motif argues against B; no GNAT or other acetyltransferase motif argues against C. However, positively identifying this 215-aa bacterial protein as a U-box E3 ubiquitin ligase (NleG family) requires recognizing the specific U-box fold architecture (a pseudo-RING domain at the C-terminus with modified zinc-binding cysteine spacing and a catalytic glutamine), which is not a canonical, easily recognizable catalytic motif from sequence alone.
-
-
-**Missing item-specific fact**
-
-> Knowledge that this specific 215-aa E. coli O157:H7 protein is NleG8, a type III secretion system effector with a C-terminal U-box domain functioning as an E3 ubiquitin ligase, or recognition of the non-canonical U-box fold (distinct from standard RING C3HC4 or HECT catalytic cysteine motifs) from primary sequence.
-
-
-**Reason**
-
-> While the small size, bacterial pathogen origin, and presence of C-terminal cysteines provide weak circumstantial hints, the U-box domain lacks the canonical RING (C3HC4) or HECT (catalytic Cys in a specific context) signatures. Definitively assigning E3 ubiquitin ligase activity to this sequence over the other three enzyme classes requires prior knowledge of the NleG/U-box family or its database annotation, rather than generalizable sequence-to-function reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent very different enzyme classes (P450 monooxygenase, methyltransferase, acetyltransferase, E3 ligase). The absence of motifs characteristic of A, B, and C, combined with the presence of C-terminal cysteine clusters loosely reminiscent of a modified zinc-binding domain, makes D the most plausible choice by elimination. No other option is seriously defensible.
-
-
-### Important caveats
-
-- The annotation evidence (ECO:0000269, PubMed:36511702) is experimental but the U-box E3 ligase mechanism of NleG proteins was established relatively recently; the protein was originally characterized as a T3SS effector before its ligase activity was confirmed.
-- The U-box domain in NleG proteins is a pseudo-RING that has lost canonical zinc coordination; standard RING-detection heuristics would not flag this sequence.
-- Reviewer-only evidence was absent from the evaluated model input; the model must rely solely on the 215-aa sequence and the four reaction choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Negative reasoning can weakly eliminate some options: no P450 heme-binding motif (FxxGxRxCxG) argues against A; no Rossmann-fold SAM-binding motif argues against B; no GNAT or other acetyltransferase motif argues against C. However, positively identifying this 215-aa bacterial protein as a U-box E3 ubiquitin ligase (NleG family) requires recognizing the specific U-box fold architecture (a pseudo-RING domain at the C-terminus with modified zinc-binding cysteine spacing and a catalytic glutamine), which is not a canonical, easily recognizable catalytic motif from sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Knowledge that this specific 215-aa E. coli O157:H7 protein is NleG8, a type III secretion system effector with a C-terminal U-box domain functioning as an E3 ubiquitin ligase, or recognition of the non-canonical U-box fold (distinct from standard RING C3HC4 or HECT catalytic cysteine motifs) from primary sequence.",
-    "reason": "While the small size, bacterial pathogen origin, and presence of C-terminal cysteines provide weak circumstantial hints, the U-box domain lacks the canonical RING (C3HC4) or HECT (catalytic Cys in a specific context) signatures. Definitively assigning E3 ubiquitin ligase activity to this sequence over the other three enzyme classes requires prior knowledge of the NleG/U-box family or its database annotation, rather than generalizable sequence-to-function reasoning."
-  },
-  "case_id": "catalytic_activity_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q8XAN6 (NLEG8_ECO57), annotated as 'E3 ubiquitin-protein ligase NleG' with EC 2.3.2.27. The catalytic activity annotation (C5, H4) explicitly states the reaction in option D. The evidence code is ECO:0000269 (PubMed:36511702), indicating experimental support. Sequence match is exact (215 aa, SHA-256 identical)."
-  },
-  "important_caveats": [
-    "The annotation evidence (ECO:0000269, PubMed:36511702) is experimental but the U-box E3 ligase mechanism of NleG proteins was established relatively recently; the protein was originally characterized as a T3SS effector before its ligase activity was confirmed.",
-    "The U-box domain in NleG proteins is a pseudo-RING that has lost canonical zinc coordination; standard RING-detection heuristics would not flag this sequence.",
-    "Reviewer-only evidence was absent from the evaluated model input; the model must rely solely on the 215-aa sequence and the four reaction choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent very different enzyme classes (P450 monooxygenase, methyltransferase, acetyltransferase, E3 ligase). The absence of motifs characteristic of A, B, and C, combined with the presence of C-terminal cysteine clusters loosely reminiscent of a modified zinc-binding domain, makes D the most plausible choice by elimination. No other option is seriously defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q8XAN6 (NLEG8_ECO57), annotated as 'E3 ubiquitin-protein ligase NleG' with EC 2.3.2.27. The catalytic activity annotation (C5, H4) explicitly states the reaction in option D. The evidence code is ECO:0000269 (PubMed:36511702), indicating experimental support. Sequence match is exact (215 aa, SHA-256 identical).",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Negative reasoning can weakly eliminate some options: no P450 heme-binding motif (FxxGxRxCxG) argues against A; no Rossmann-fold SAM-binding motif argues against B; no GNAT or other acetyltransferase motif argues against C. However, positively identifying this 215-aa bacterial protein as a U-box E3 ubiquitin ligase (NleG family) requires recognizing the specific U-box fold architecture (a pseudo-RING domain at the C-terminus with modified zinc-binding cysteine spacing and a catalytic glutamine), which is not a canonical, easily recognizable catalytic motif from sequence alone.",
-    "missing_item_specific_fact": "Knowledge that this specific 215-aa E. coli O157:H7 protein is NleG8, a type III secretion system effector with a C-terminal U-box domain functioning as an E3 ubiquitin ligase, or recognition of the non-canonical U-box fold (distinct from standard RING C3HC4 or HECT catalytic cysteine motifs) from primary sequence.",
-    "reason": "While the small size, bacterial pathogen origin, and presence of C-terminal cysteines provide weak circumstantial hints, the U-box domain lacks the canonical RING (C3HC4) or HECT (catalytic Cys in a specific context) signatures. Definitively assigning E3 ubiquitin ligase activity to this sequence over the other three enzyme classes requires prior knowledge of the NleG/U-box family or its database annotation, rather than generalizable sequence-to-function reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent very different enzyme classes (P450 monooxygenase, methyltransferase, acetyltransferase, E3 ligase). The absence of motifs characteristic of A, B, and C, combined with the presence of C-terminal cysteine clusters loosely reminiscent of a modified zinc-binding domain, makes D the most plausible choice by elimination. No other option is seriously defensible."
-  },
-  "important_caveats": [
-    "The annotation evidence (ECO:0000269, PubMed:36511702) is experimental but the U-box E3 ligase mechanism of NleG proteins was established relatively recently; the protein was originally characterized as a T3SS effector before its ligase activity was confirmed.",
-    "The U-box domain in NleG proteins is a pseudo-RING that has lost canonical zinc coordination; standard RING-detection heuristics would not flag this sequence.",
-    "Reviewer-only evidence was absent from the evaluated model input; the model must rely solely on the 215-aa sequence and the four reaction choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8XAN6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ebd4800979a86f7074a5ae32983d282e50962a3735f30deb653b969a18f418ac",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 215,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ebd4800979a86f7074a5ae32983d282e50962a3735f30deb653b969a18f418ac",
   "current_entry_audit": {
     "entryVersion": 130,
     "firstPublicDate": "2025-06-18",
@@ -531,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2002-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
-  "current_source_sequence_sha256": "ebd4800979a86f7074a5ae32983d282e50962a3735f30deb653b969a18f418ac",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 215,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ebd4800979a86f7074a5ae32983d282e50962a3735f30deb653b969a18f418ac",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 129,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8XAN6",
   "selected_historical_entry_version": 129,
+  "selected_historical_record_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
+  "selected_historical_source_sequence_length": 215,
+  "selected_historical_source_sequence_sha256": "ebd4800979a86f7074a5ae32983d282e50962a3735f30deb653b969a18f418ac",
   "selected_historical_version": {
     "accession": "Q8XAN6",
     "database": "Swiss-Prot",
@@ -549,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "NLEG8_ECO57",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
-  "selected_historical_source_sequence_sha256": "ebd4800979a86f7074a5ae32983d282e50962a3735f30deb653b969a18f418ac",
-  "selected_historical_source_sequence_length": 215,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 129,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json",
-  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
-  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8XAN6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json"
 }
 ```
 
@@ -599,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json",
-  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
-  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":130,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2002-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json"
 }
 ```
 
@@ -618,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json",
-  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
-  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Enterobacterales\",\"Enterobacteriaceae\",\"Escherichia\"],\"scientificName\":\"Escherichia coli O157:H7\",\"taxonId\":83334}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json"
 }
 ```
 
@@ -637,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json",
-  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
-  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36511702\",\"source\":\"PubMed\"}],\"value\":\"2.3.2.27\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"E3 ubiquitin-protein ligase NleG\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json"
 }
 ```
 
@@ -656,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json",
-  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
-  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.3.2.27\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36511702\",\"source\":\"PubMed\"}],\"name\":\"S-ubiquitinyl-[E2 ubiquitin-conjugating enzyme]-L-cysteine + [acceptor protein]-L-lysine = [E2 ubiquitin-conjugating enzyme]-L-cysteine + N(6)-ubiquitinyl-[acceptor protein]-L-lysine.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json"
 }
 ```
 
@@ -675,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json",
-  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
-  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Popov G.\",\"Fiebig-Comyn A.\",\"Syriste L.\",\"Little D.J.\",\"Skarina T.\",\"Stogios P.J.\",\"Birstonas S.\",\"Coombes B.K.\",\"Savchenko A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36511702\"},{\"database\":\"DOI\",\"id\":\"10.1128/iai.00505-22\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0050522\",\"id\":\"36511702\",\"journal\":\"Infect. Immun.\",\"lastPage\":\"e0050522\",\"publicationDate\":\"2023\",\"title\":\"Distinct Molecular Features of NleG Type 3 Secreted Effectors Allow for Different Roles during Citrobacter rodentium Infection in Mice.\",\"volume\":\"91\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6XNJ\",\"source\":\"PDB\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.85 ANGSTROMS) OF 206-215 IN COMPLEX WITH HUMAN GOPC\",\"FUNCTION\",\"SUBUNIT\",\"INTERACTION WITH HOST GOPC\",\"SUBCELLULAR LOCATION\",\"DOMAIN\",\"MOTIF\",\"MUTAGENESIS OF ILE-138 AND 212-CYS--ILE-215\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:25.588356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "791e2a8b0c3d1f9c0bb073dd763d0e0b5f78854dc2060aca744568fc452d270b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8XAN6.json"
 }
 ```
 
@@ -693,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 129,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129",
-  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
-  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   NLEG8_ECO57             Reviewed;         215 AA.\nAC   Q8XAN6; A0A0H3JIV3; A0A6M0JK84; Q7AEM3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2002, sequence version 1.\nDT   28-JAN-2026, entry version 129.\nDE   RecName: Full=E3 ubiquitin-protein ligase NleG {ECO:0000305};\nDE            EC=2.3.2.27 {ECO:0000269|PubMed:36511702};\nGN   Name=nleG8 {ECO:0000303|PubMed:36511702};\nGN   Synonyms=nleG {ECO:0000312|EMBL:BAB35247.1};\nGN   ORFNames=ECs_1824 {ECO:0000312|EMBL:BAB35247.1};\nOS   Escherichia coli O157:H7.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Enterobacterales; Enterobacteriaceae; Escherichia.\nOX   NCBI_TaxID=83334;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 129,
+  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
+  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129"
 }
 ```
 
@@ -714,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 129,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129",
-  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
-  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=E3 ubiquitin-protein ligase NleG {ECO:0000305};\nDE            EC=2.3.2.27 {ECO:0000269|PubMed:36511702};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 129,
+  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
+  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129"
 }
 ```
 
@@ -735,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 129,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129",
-  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
-  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
-  "source_locator": "lines 26-35",
   "excerpt": "RN   [2] {ECO:0007744|PDB:6XNJ}\nRP   X-RAY CRYSTALLOGRAPHY (1.85 ANGSTROMS) OF 206-215 IN COMPLEX WITH HUMAN\nRP   GOPC, FUNCTION, SUBUNIT, INTERACTION WITH HOST GOPC, SUBCELLULAR LOCATION,\nRP   DOMAIN, MOTIF, AND MUTAGENESIS OF ILE-138 AND 212-CYS--ILE-215.\nRX   PubMed=36511702; DOI=10.1128/iai.00505-22;\nRA   Popov G., Fiebig-Comyn A., Syriste L., Little D.J., Skarina T.,\nRA   Stogios P.J., Birstonas S., Coombes B.K., Savchenko A.;\nRT   \"Distinct Molecular Features of NleG Type 3 Secreted Effectors Allow for\nRT   Different Roles during Citrobacter rodentium Infection in Mice.\";\nRL   Infect. Immun. 91:e0050522-e0050522(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 129,
+  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
+  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129"
 }
 ```
 
@@ -756,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 129,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129",
-  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
-  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
-  "source_locator": "lines 50-54",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=S-ubiquitinyl-[E2 ubiquitin-conjugating enzyme]-L-cysteine +\nCC         [acceptor protein]-L-lysine = [E2 ubiquitin-conjugating enzyme]-L-\nCC         cysteine + N(6)-ubiquitinyl-[acceptor protein]-L-lysine.;\nCC         EC=2.3.2.27; Evidence={ECO:0000269|PubMed:36511702};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 129,
+  "retrieved_utc": "2026-11-01T06:28:42.292045+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f2c88b76a2a840b2a82d844b183b53e16025dc00931c5f80d6e962d640caabe",
+  "url": "https://rest.uniprot.org/unisave/Q8XAN6?format=txt&versions=129"
 }
 ```
 

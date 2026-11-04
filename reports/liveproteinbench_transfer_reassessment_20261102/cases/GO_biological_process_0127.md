@@ -1,18 +1,16 @@
-# GO_biological_process_0127: before and after transfer clarification
+# GO_biological_process_0127
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0127.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0127.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — defense response to bacterium
+**Expected answer:** **D** — defense response to bacterium
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,251 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a historical UniProt record annotated with the requested process, “defense response to bacterium” (H5). This is an IEA annotation, not experimental confirmation of that specific process. The recorded functional evidence reports antimicrobial activity mainly against fungi and no activity against several tested bacterial species, so direct experimental support for bacterial defense is limited.
-
-Citations as saved: [H5](#evidence-h5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic stretch is consistent with a secreted precursor, but that does not establish a bacterial-defense role or distinguish it reliably from the other proposed processes.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental characterization linking this peptide to a biological process is absent from the input.
-
-
-**Reason**
-
-> Choosing D depends on knowing the annotation or function of this particular peptide. General sequence features do not meaningfully establish the requested GO process.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> No alternative is clearly supported by the supplied sequence, although the sequence alone also does not establish D.
-
-
-### Important caveats
-
-- The archived GO annotation is computationally inferred (IEA:UniProtKB-KW), not an experimental GO assignment.
-- The sequence-to-record match is exact, but the author's source snapshot is unknown.
-- The cited functional description gives limited direct support for bacterial defense: it reports no activity against several tested bacteria and includes an apparent organism-label inconsistency.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with a secreted precursor, but that does not establish a bacterial-defense role or distinguish it reliably from the other proposed processes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental characterization linking this peptide to a biological process is absent from the input.",
-    "reason": "Choosing D depends on knowing the annotation or function of this particular peptide. General sequence features do not meaningfully establish the requested GO process."
-  },
-  "case_id": "GO_biological_process_0127",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a historical UniProt record annotated with the requested process, “defense response to bacterium” (H5). This is an IEA annotation, not experimental confirmation of that specific process. The recorded functional evidence reports antimicrobial activity mainly against fungi and no activity against several tested bacterial species, so direct experimental support for bacterial defense is limited."
-  },
-  "important_caveats": [
-    "The archived GO annotation is computationally inferred (IEA:UniProtKB-KW), not an experimental GO assignment.",
-    "The sequence-to-record match is exact, but the author's source snapshot is unknown.",
-    "The cited functional description gives limited direct support for bacterial defense: it reports no activity against several tested bacteria and includes an apparent organism-label inconsistency."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No alternative is clearly supported by the supplied sequence, although the sequence alone also does not establish D."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0127",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a historical UniProt record annotated with the requested process, “defense response to bacterium” (H5). This is an IEA annotation, not experimental confirmation of that specific process. The recorded functional evidence reports antimicrobial activity mainly against fungi and no activity against several tested bacterial species, so direct experimental support for bacterial defense is limited.",
-    "evidence_ids": ["H5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with a secreted precursor, but that does not establish a bacterial-defense role or distinguish it reliably from the other proposed processes.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental characterization linking this peptide to a biological process is absent from the input.",
-    "reason": "Choosing D depends on knowing the annotation or function of this particular peptide. General sequence features do not meaningfully establish the requested GO process."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No alternative is clearly supported by the supplied sequence, although the sequence alone also does not establish D."
-  },
-  "important_caveats": [
-    "The archived GO annotation is computationally inferred (IEA:UniProtKB-KW), not an experimental GO assignment.",
-    "The sequence-to-record match is exact, but the author's source snapshot is unknown.",
-    "The cited functional description gives limited direct support for bacterial defense: it reports no activity against several tested bacteria and includes an apparent organism-label inconsistency."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The GO annotation GO:0042742 (defense response to bacterium) is formally assigned to UniProt entry P0DY04 (H5). However, this annotation carries evidence code IEA:UniProtKB-KW (inferred from a keyword, not from direct experiment). Critically, the underlying experimental evidence (PubMed:27267248, cited in C5/H4) reports moderate antimicrobial activity against FUNGI (C. albicans, C. tropicalis, A. flavus, T. rubrum) and explicitly states NO activity against bacteria (S. aureus, S. epidermidis, P. aeruginosa). The UniProt FUNCTION text itself contains an apparent typographical error, listing C. albicans, C. tropicalis, and A. flavus under 'bacteria' when they are fungi. The entry also carries GO:0050832 (defense response to fungus, H6), which better matches the experimental data. Thus the annotation exists in the database but is a low-confidence IEA assignment contradicted by the primary experimental evidence.
-
-Citations as saved: [H5](#evidence-h5), [H6](#evidence-h6), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The 72-aa sequence shows a hydrophobic signal peptide (MKMMIAVFVSILLLMFSLSSTAMG) followed by a small, highly charged mature peptide with no cysteines. A general reasoner might note that a small secreted peptide from a scorpion venom gland could participate in antimicrobial defense, broadly narrowing toward defense-related options (D) and away from neural development (B) or apoptosis regulation (A). However, nothing in the sequence distinguishes 'defense response to bacterium' from 'defense response to fungus,' 'killing of cells of another organism,' or 'host-mediated perturbation of symbiont process.' The mature peptide lacks any antibacterial-specific motif (e.g., pore-forming amphipathic helix, cell-wall-binding domain) that would single out bacteria over fungi. Selecting D specifically over C (or over the absent but more accurate 'defense response to fungus') requires knowing the database annotation or the specific MIC assay results for this peptide.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt keyword-based GO assignment (IEA:UniProtKB-KW) linking this exact peptide to GO:0042742, and/or the experimental MIC data from PubMed:27267248 showing the spectrum of antimicrobial activity. Without this, the sequence alone cannot distinguish 'defense response to bacterium' from other defense/antimicrobial GO terms.
-
-
-**Reason**
-
-> The sequence provides only generic cues (small secreted peptide → possible antimicrobial role) that narrow the field but do not uniquely select D. The decisive step—choosing 'bacterium' over 'fungus' or 'symbiont process'—depends on the item-specific database annotation or experimental measurement, which is absent from the model input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C",
-  "D"
-]
-```
-
-> Option C ('host-mediated perturbation of symbiont process') is a broad GO term for host actions on a symbiont/other organism and could plausibly encompass venom-mediated antimicrobial effects in a general sense. Option D ('defense response to bacterium') is the annotated answer but is contradicted by the experimental data (no antibacterial activity; activity is antifungal). Neither option perfectly matches the actual experimental profile. Option B (dendritic spine morphogenesis) and A (negative regulation of apoptotic process) are clearly inapplicable to a scorpion venom peptide, so the real ambiguity is between C and D, with D being the database-assigned answer despite the experimental mismatch.
-
-
-### Important caveats
-
-- The GO:0042742 annotation is IEA:UniProtKB-KW (keyword-inferred), not experimentally derived. The primary literature (PubMed:27267248) reports NO antibacterial activity for this peptide.
-- The UniProt FUNCTION text contains an apparent error: it lists C. albicans, C. tropicalis, and A. flavus (all fungi) under the heading 'bacteria.' The correct reading from the source paper is antifungal activity.
-- GO:0050832 (defense response to fungus, H6) is also annotated for this entry and better matches the experimental evidence, but is not offered as a choice.
-- The UniProt entry P0DY04 was first published 2025-02-05, making it a very recent Swiss-Prot entry; the benchmark's construction date relative to this annotation is uncertain.
-- The protein has zero cysteine residues, which is atypical for scorpion venom peptides (most have multiple disulfide bonds), consistent with it being a small linear antimicrobial/hypotensive peptide rather than a classic neurotoxin.
-- The reviewer-only evidence confirms the sequence matches P0DY04 exactly (SHA-256 match in both current and historical snapshots), but the accession was inferred from dataset metadata and was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 72-aa sequence shows a hydrophobic signal peptide (MKMMIAVFVSILLLMFSLSSTAMG) followed by a small, highly charged mature peptide with no cysteines. A general reasoner might note that a small secreted peptide from a scorpion venom gland could participate in antimicrobial defense, broadly narrowing toward defense-related options (D) and away from neural development (B) or apoptosis regulation (A). However, nothing in the sequence distinguishes 'defense response to bacterium' from 'defense response to fungus,' 'killing of cells of another organism,' or 'host-mediated perturbation of symbiont process.' The mature peptide lacks any antibacterial-specific motif (e.g., pore-forming amphipathic helix, cell-wall-binding domain) that would single out bacteria over fungi. Selecting D specifically over C (or over the absent but more accurate 'defense response to fungus') requires knowing the database annotation or the specific MIC assay results for this peptide.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific UniProt keyword-based GO assignment (IEA:UniProtKB-KW) linking this exact peptide to GO:0042742, and/or the experimental MIC data from PubMed:27267248 showing the spectrum of antimicrobial activity. Without this, the sequence alone cannot distinguish 'defense response to bacterium' from other defense/antimicrobial GO terms.",
-    "reason": "The sequence provides only generic cues (small secreted peptide → possible antimicrobial role) that narrow the field but do not uniquely select D. The decisive step—choosing 'bacterium' over 'fungus' or 'symbiont process'—depends on the item-specific database annotation or experimental measurement, which is absent from the model input."
-  },
-  "case_id": "GO_biological_process_0127",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H5",
-      "H6",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The GO annotation GO:0042742 (defense response to bacterium) is formally assigned to UniProt entry P0DY04 (H5). However, this annotation carries evidence code IEA:UniProtKB-KW (inferred from a keyword, not from direct experiment). Critically, the underlying experimental evidence (PubMed:27267248, cited in C5/H4) reports moderate antimicrobial activity against FUNGI (C. albicans, C. tropicalis, A. flavus, T. rubrum) and explicitly states NO activity against bacteria (S. aureus, S. epidermidis, P. aeruginosa). The UniProt FUNCTION text itself contains an apparent typographical error, listing C. albicans, C. tropicalis, and A. flavus under 'bacteria' when they are fungi. The entry also carries GO:0050832 (defense response to fungus, H6), which better matches the experimental data. Thus the annotation exists in the database but is a low-confidence IEA assignment contradicted by the primary experimental evidence."
-  },
-  "important_caveats": [
-    "The GO:0042742 annotation is IEA:UniProtKB-KW (keyword-inferred), not experimentally derived. The primary literature (PubMed:27267248) reports NO antibacterial activity for this peptide.",
-    "The UniProt FUNCTION text contains an apparent error: it lists C. albicans, C. tropicalis, and A. flavus (all fungi) under the heading 'bacteria.' The correct reading from the source paper is antifungal activity.",
-    "GO:0050832 (defense response to fungus, H6) is also annotated for this entry and better matches the experimental evidence, but is not offered as a choice.",
-    "The UniProt entry P0DY04 was first published 2025-02-05, making it a very recent Swiss-Prot entry; the benchmark's construction date relative to this annotation is uncertain.",
-    "The protein has zero cysteine residues, which is atypical for scorpion venom peptides (most have multiple disulfide bonds), consistent with it being a small linear antimicrobial/hypotensive peptide rather than a classic neurotoxin.",
-    "The reviewer-only evidence confirms the sequence matches P0DY04 exactly (SHA-256 match in both current and historical snapshots), but the accession was inferred from dataset metadata and was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C",
-      "D"
-    ],
-    "reason": "Option C ('host-mediated perturbation of symbiont process') is a broad GO term for host actions on a symbiont/other organism and could plausibly encompass venom-mediated antimicrobial effects in a general sense. Option D ('defense response to bacterium') is the annotated answer but is contradicted by the experimental data (no antibacterial activity; activity is antifungal). Neither option perfectly matches the actual experimental profile. Option B (dendritic spine morphogenesis) and A (negative regulation of apoptotic process) are clearly inapplicable to a scorpion venom peptide, so the real ambiguity is between C and D, with D being the database-assigned answer despite the experimental mismatch."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0127",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The GO annotation GO:0042742 (defense response to bacterium) is formally assigned to UniProt entry P0DY04 (H5). However, this annotation carries evidence code IEA:UniProtKB-KW (inferred from a keyword, not from direct experiment). Critically, the underlying experimental evidence (PubMed:27267248, cited in C5/H4) reports moderate antimicrobial activity against FUNGI (C. albicans, C. tropicalis, A. flavus, T. rubrum) and explicitly states NO activity against bacteria (S. aureus, S. epidermidis, P. aeruginosa). The UniProt FUNCTION text itself contains an apparent typographical error, listing C. albicans, C. tropicalis, and A. flavus under 'bacteria' when they are fungi. The entry also carries GO:0050832 (defense response to fungus, H6), which better matches the experimental data. Thus the annotation exists in the database but is a low-confidence IEA assignment contradicted by the primary experimental evidence.",
-    "evidence_ids": ["H5", "H6", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The 72-aa sequence shows a hydrophobic signal peptide (MKMMIAVFVSILLLMFSLSSTAMG) followed by a small, highly charged mature peptide with no cysteines. A general reasoner might note that a small secreted peptide from a scorpion venom gland could participate in antimicrobial defense, broadly narrowing toward defense-related options (D) and away from neural development (B) or apoptosis regulation (A). However, nothing in the sequence distinguishes 'defense response to bacterium' from 'defense response to fungus,' 'killing of cells of another organism,' or 'host-mediated perturbation of symbiont process.' The mature peptide lacks any antibacterial-specific motif (e.g., pore-forming amphipathic helix, cell-wall-binding domain) that would single out bacteria over fungi. Selecting D specifically over C (or over the absent but more accurate 'defense response to fungus') requires knowing the database annotation or the specific MIC assay results for this peptide.",
-    "missing_item_specific_fact": "The specific UniProt keyword-based GO assignment (IEA:UniProtKB-KW) linking this exact peptide to GO:0042742, and/or the experimental MIC data from PubMed:27267248 showing the spectrum of antimicrobial activity. Without this, the sequence alone cannot distinguish 'defense response to bacterium' from other defense/antimicrobial GO terms.",
-    "reason": "The sequence provides only generic cues (small secreted peptide → possible antimicrobial role) that narrow the field but do not uniquely select D. The decisive step—choosing 'bacterium' over 'fungus' or 'symbiont process'—depends on the item-specific database annotation or experimental measurement, which is absent from the model input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C", "D"],
-    "reason": "Option C ('host-mediated perturbation of symbiont process') is a broad GO term for host actions on a symbiont/other organism and could plausibly encompass venom-mediated antimicrobial effects in a general sense. Option D ('defense response to bacterium') is the annotated answer but is contradicted by the experimental data (no antibacterial activity; activity is antifungal). Neither option perfectly matches the actual experimental profile. Option B (dendritic spine morphogenesis) and A (negative regulation of apoptotic process) are clearly inapplicable to a scorpion venom peptide, so the real ambiguity is between C and D, with D being the database-assigned answer despite the experimental mismatch."
-  },
-  "important_caveats": [
-    "The GO:0042742 annotation is IEA:UniProtKB-KW (keyword-inferred), not experimentally derived. The primary literature (PubMed:27267248) reports NO antibacterial activity for this peptide.",
-    "The UniProt FUNCTION text contains an apparent error: it lists C. albicans, C. tropicalis, and A. flavus (all fungi) under the heading 'bacteria.' The correct reading from the source paper is antifungal activity.",
-    "GO:0050832 (defense response to fungus, H6) is also annotated for this entry and better matches the experimental evidence, but is not offered as a choice.",
-    "The UniProt entry P0DY04 was first published 2025-02-05, making it a very recent Swiss-Prot entry; the benchmark's construction date relative to this annotation is uncertain.",
-    "The protein has zero cysteine residues, which is atypical for scorpion venom peptides (most have multiple disulfide bonds), consistent with it being a small linear antimicrobial/hypotensive peptide rather than a classic neurotoxin.",
-    "The reviewer-only evidence confirms the sequence matches P0DY04 exactly (SHA-256 match in both current and historical snapshots), but the accession was inferred from dataset metadata and was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -400,10 +158,9 @@ Citations as saved: [H5](#evidence-h5), [C5](#evidence-c5).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -519,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DY04",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "248485e2d9ba6d3db7d1e38cf37953b3910710422e16c83ccdc52ce9b027a752",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 72,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "248485e2d9ba6d3db7d1e38cf37953b3910710422e16c83ccdc52ce9b027a752",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-02-05",
@@ -550,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "current_source_sequence_sha256": "248485e2d9ba6d3db7d1e38cf37953b3910710422e16c83ccdc52ce9b027a752",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 72,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "248485e2d9ba6d3db7d1e38cf37953b3910710422e16c83ccdc52ce9b027a752",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DY04",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "selected_historical_source_sequence_length": 72,
+  "selected_historical_source_sequence_sha256": "248485e2d9ba6d3db7d1e38cf37953b3910710422e16c83ccdc52ce9b027a752",
   "selected_historical_version": {
     "accession": "P0DY04",
     "database": "Swiss-Prot",
@@ -568,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NDBH_TITST",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "selected_historical_source_sequence_sha256": "248485e2d9ba6d3db7d1e38cf37953b3910710422e16c83ccdc52ce9b027a752",
-  "selected_historical_source_sequence_length": 72,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -603,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json",
-  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DY04\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json"
 }
 ```
 
@@ -622,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json",
-  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json"
 }
 ```
 
@@ -641,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json",
-  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Brazilian scorpion\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Chelicerata\",\"Arachnida\",\"Scorpiones\",\"Buthida\",\"Buthoidea\",\"Buthidae\",\"Tityus\"],\"scientificName\":\"Tityus stigmurus\",\"taxonId\":50344}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json"
 }
 ```
 
@@ -660,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json",
-  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27267248\",\"source\":\"PubMed\"}],\"value\":\"TistH\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27267248\",\"source\":\"PubMed\"}],\"value\":\"Hypotensin\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json"
 }
 ```
 
@@ -679,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json",
-  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25930987\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27267248\",\"source\":\"PubMed\"}],\"value\":\"Potentiates the hypotensive action of bradykinin (BK) in normotensive rats, and induces a vasorelaxant effect in mesenteric artery rings that is induced by endothelium-dependent release of nitric oxide (NO) (PubMed:25930987). Does not inhibit angiotensin converting enzyme (ACE) (PubMed:25930987). Shows neither hemolytic activity nor cytotoxicity to normal and cancer cells (PubMed:25930987, PubMed:27267248). Shows moderate antimicrobial activity against the fungi Candida albicans and the filamentous fungus Trichophyton rubrum, as well as against the bacteria C.albicans (MIC=128 ug/mL), C.tropicalis (MIC=128 ug/mL) and Aspergillus flavus (MIC=128 ug/mL) (PubMed:27267248). Has no antimicrobial activity against S.aureus, S.epidermidis and P.aeruginosa (PubMed:27267248)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json"
 }
 ```
 
@@ -698,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json",
-  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Machado R.J.\",\"Junior L.G.\",\"Monteiro N.K.\",\"Silva-Junior A.A.\",\"Portaro F.C.\",\"Barbosa E.G.\",\"Braga V.A.\",\"Fernandes-Pedrosa M.F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25930987\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.toxicon.2015.04.003\"}],\"citationType\":\"journal article\",\"firstPage\":\"11\",\"id\":\"25930987\",\"journal\":\"Toxicon\",\"lastPage\":\"18\",\"publicationDate\":\"2015\",\"title\":\"Homology modeling, vasorelaxant and bradykinin-potentiating activities of a novel hypotensin found in the scorpion venom from Tityus stigmurus.\",\"volume\":\"101\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"BIOASSAY\",\"SYNTHESIS OF 36-60\",\"3D-STRUCTURE MODELING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json"
 }
 ```
 
@@ -717,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json",
-  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
-  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Machado R.J.\",\"Estrela A.B.\",\"Nascimento A.K.\",\"Melo M.M.\",\"Torres-Rego M.\",\"Lima E.O.\",\"Rocha H.A.\",\"Carvalho E.\",\"Silva-Junior A.A.\",\"Fernandes-Pedrosa M.F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27267248\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.toxicon.2016.06.002\"}],\"citationType\":\"journal article\",\"firstPage\":\"362\",\"id\":\"27267248\",\"journal\":\"Toxicon\",\"lastPage\":\"370\",\"publicationDate\":\"2016\",\"title\":\"Characterization of TistH, a multifunctional peptide from the scorpion Tityus stigmurus: structure, cytotoxicity and antimicrobial activity.\",\"volume\":\"119\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"SYNTHESIS OF 36-60\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"CIRCULAR DICHROISM ANALYSIS\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:30:01.173779+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "76ba3622e8a379f951587a2a093d6c0e3d09f3a26cceabcd5afc58b4c4f769a6",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY04.json"
 }
 ```
 
@@ -735,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   NDBH_TITST              Reviewed;          72 AA.\nAC   P0DY04;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   09-APR-2025, entry version 2.\nDE   RecName: Full=Hypotensin {ECO:0000303|PubMed:27267248};\nDE   AltName: Full=TistH {ECO:0000303|PubMed:27267248};\nDE   Flags: Precursor;\nOS   Tityus stigmurus (Brazilian scorpion).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Chelicerata; Arachnida;\nOC   Scorpiones; Buthida; Buthoidea; Buthidae; Tityus.\nOX   NCBI_TaxID=50344;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -756,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 22-29",
   "excerpt": "RN   [2]\nRP   FUNCTION, BIOASSAY, SYNTHESIS OF 36-60, AND 3D-STRUCTURE MODELING.\nRX   PubMed=25930987; DOI=10.1016/j.toxicon.2015.04.003;\nRA   Machado R.J., Junior L.G., Monteiro N.K., Silva-Junior A.A., Portaro F.C.,\nRA   Barbosa E.G., Braga V.A., Fernandes-Pedrosa M.F.;\nRT   \"Homology modeling, vasorelaxant and bradykinin-potentiating activities of\nRT   a novel hypotensin found in the scorpion venom from Tityus stigmurus.\";\nRL   Toxicon 101:11-18(2015).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -777,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3]\nRP   FUNCTION, SYNTHESIS OF 36-60, BIOPHYSICOCHEMICAL PROPERTIES, AND CIRCULAR\nRP   DICHROISM ANALYSIS.\nRX   PubMed=27267248; DOI=10.1016/j.toxicon.2016.06.002;\nRA   Machado R.J., Estrela A.B., Nascimento A.K., Melo M.M., Torres-Rego M.,\nRA   Lima E.O., Rocha H.A., Carvalho E., Silva-Junior A.A.,\nRA   Fernandes-Pedrosa M.F.;\nRT   \"Characterization of TistH, a multifunctional peptide from the scorpion\nRT   Tityus stigmurus: structure, cytotoxicity and antimicrobial activity.\";\nRL   Toxicon 119:362-370(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -798,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 50-62",
   "excerpt": "CC   -!- FUNCTION: Potentiates the hypotensive action of bradykinin (BK) in\nCC       normotensive rats, and induces a vasorelaxant effect in mesenteric\nCC       artery rings that is induced by endothelium-dependent release of nitric\nCC       oxide (NO) (PubMed:25930987). Does not inhibit angiotensin converting\nCC       enzyme (ACE) (PubMed:25930987). Shows neither hemolytic activity nor\nCC       cytotoxicity to normal and cancer cells (PubMed:25930987,\nCC       PubMed:27267248). Shows moderate antimicrobial activity against the\nCC       fungi Candida albicans and the filamentous fungus Trichophyton rubrum,\nCC       as well as against the bacteria C.albicans (MIC=128 ug/mL),\nCC       C.tropicalis (MIC=128 ug/mL) and Aspergillus flavus (MIC=128 ug/mL)\nCC       (PubMed:27267248). Has no antimicrobial activity against S.aureus,\nCC       S.epidermidis and P.aeruginosa (PubMed:27267248).\nCC       {ECO:0000269|PubMed:25930987, ECO:0000269|PubMed:27267248}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -819,18 +566,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 85-85",
   "excerpt": "DR   GO; GO:0042742; P:defense response to bacterium; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -840,18 +587,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 86-86",
   "excerpt": "DR   GO; GO:0050832; P:defense response to fungus; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-86",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -861,18 +608,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 87-87",
   "excerpt": "DR   GO; GO:0031640; P:killing of cells of another organism; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -882,18 +629,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2",
-  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
-  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
-  "source_locator": "lines 88-88",
   "excerpt": "DR   GO; GO:0008217; P:regulation of blood pressure; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:06.846514+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 88-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c8b4115841800dae670f350cbf773638e8b942a0d57ff6847b296ca3b5007b19",
+  "url": "https://rest.uniprot.org/unisave/P0DY04?format=txt&versions=2"
 }
 ```
 
@@ -904,15 +651,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 240383-240399",
   "excerpt": "[Term]\nid: GO:0042742\nname: defense response to bacterium\nnamespace: biological_process\nalt_id: GO:0009816\nalt_id: GO:0042830\ndef: \"Reactions triggered in response to the presence of a bacterium that act to protect the cell or organism.\" [GOC:jl]\nsynonym: \"antibacterial peptide activity\" RELATED []\nsynonym: \"defence response to bacteria\" EXACT []\nsynonym: \"defence response to bacterium\" EXACT []\nsynonym: \"defense response to bacteria\" EXACT []\nsynonym: \"defense response to bacterium, incompatible interaction\" NARROW []\nsynonym: \"resistance response to pathogenic bacteria\" NARROW []\nsynonym: \"resistance response to pathogenic bacterium\" NARROW []\nis_a: GO:0006952 ! defense response\nis_a: GO:0009617 ! response to bacterium\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042742",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 240383-240399",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042742"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -923,15 +670,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 243641-243662",
   "excerpt": "[Term]\nid: GO:0043066\nname: negative regulation of apoptotic process\nnamespace: biological_process\nalt_id: GO:0006916\ndef: \"Any process that stops, prevents, or reduces the frequency, rate or extent of cell death by apoptotic process.\" [GOC:jl, GOC:mtg_apoptosis]\ncomment: This term should only be used when it is not possible to determine which phase or subtype of the apoptotic process is negatively regulated by a gene product. Whenever detailed information is available, the more granular children terms should be used.\nsynonym: \"anti-apoptosis\" EXACT []\nsynonym: \"apoptosis inhibitor activity\" RELATED []\nsynonym: \"down regulation of apoptosis\" EXACT []\nsynonym: \"down-regulation of apoptosis\" EXACT []\nsynonym: \"downregulation of apoptosis\" EXACT []\nsynonym: \"inhibition of apoptosis\" NARROW []\nsynonym: \"negative regulation of apoptosis\" NARROW []\nsynonym: \"pro-survival\" RELATED []\nxref: Reactome:R-HSA-193639 \"p75NTR signals via NF-kB\"\nxref: Reactome:R-HSA-211728 \"Regulation of PAK-2p34 activity by PS-GAP/RHG10\"\nxref: Reactome:R-HSA-211733 \"Regulation of activated PAK-2p34 by proteasome mediated degradation\"\nis_a: GO:0042981 ! regulation of apoptotic process\nis_a: GO:0043069 ! negative regulation of programmed cell death\nrelationship: negatively_regulates GO:0006915 ! apoptotic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043066",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 243641-243662",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043066"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -942,15 +689,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 331223-331231",
   "excerpt": "[Term]\nid: GO:0051851\nname: host-mediated perturbation of symbiont process\nnamespace: biological_process\ndef: \"The process in which an host alters or subverts a process in a symbiont organism. The symbiont is defined as the smaller of the organisms involved in a symbiotic interaction.\" [GOC:cc]\nsynonym: \"modification by host of symbiont morphology or physiology\" RELATED []\nsynonym: \"modulation by host of symbiont process\" EXACT []\nis_a: GO:0035821 ! modulation of process of another organism\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0051851",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 331223-331231",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0051851"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -961,15 +708,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 352679-352689",
   "excerpt": "[Term]\nid: GO:0060997\nname: dendritic spine morphogenesis\nnamespace: biological_process\ndef: \"The process in which the anatomical structures of a dendritic spine are generated and organized. A dendritic spine is a protrusion from a dendrite and a specialized subcellular compartment involved in synaptic transmission.\" [GOC:dph]\nis_a: GO:0031175 ! neuron projection development\nis_a: GO:0048812 ! neuron projection morphogenesis\nis_a: GO:0097061 ! dendritic spine organization\nrelationship: part_of GO:0048813 ! dendrite morphogenesis\nrelationship: part_of GO:0060996 ! dendritic spine development\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0060997",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 352679-352689",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0060997"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_biological_process_0170: before and after transfer clarification
+# GO_biological_process_0170
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0170.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0170.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **C** — DNA-templated transcription
+**Expected answer:** **C** — DNA-templated transcription
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the referenced protein. Its annotation describes a transcriptional regulator that regulates virulence-related gene expression and binds target promoters; DNA-templated transcription is therefore supported. The specific GO annotation is computationally assigned (IEA:TreeGrafter), while the functional evidence cited for transcriptional regulation is experimental.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is compatible with a soluble bacterial protein, making the GPCR signaling option an implausible fit, but the supplied sequence and context do not establish whether its biological role is transcriptional regulation, osmotic-stress response, or another process.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional identification as a transcriptional regulator, or equivalent homology/experimental evidence connecting this sequence to transcriptional regulation.
-
-
-**Reason**
-
-> The key is supported by reviewer-only protein-specific annotation and functional evidence. Those facts are not supplied in the question, and generic sequence features alone do not distinguish the remaining biological-process choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The protein-specific evidence supports transcriptional regulation, aligning with choice C; none of the other options is comparably supported.
-
-
-### Important caveats
-
-- The sequence match establishes that the cited annotation concerns this protein, but the author’s exact source snapshot is unknown.
-- The GO term assignment is computational; the cited experimental function supports transcriptional regulation but does not itself establish that this is the protein’s sole or primary process.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is compatible with a soluble bacterial protein, making the GPCR signaling option an implausible fit, but the supplied sequence and context do not establish whether its biological role is transcriptional regulation, osmotic-stress response, or another process.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional identification as a transcriptional regulator, or equivalent homology/experimental evidence connecting this sequence to transcriptional regulation.",
-    "reason": "The key is supported by reviewer-only protein-specific annotation and functional evidence. Those facts are not supplied in the question, and generic sequence features alone do not distinguish the remaining biological-process choices."
-  },
-  "case_id": "GO_biological_process_0170",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the referenced protein. Its annotation describes a transcriptional regulator that regulates virulence-related gene expression and binds target promoters; DNA-templated transcription is therefore supported. The specific GO annotation is computationally assigned (IEA:TreeGrafter), while the functional evidence cited for transcriptional regulation is experimental."
-  },
-  "important_caveats": [
-    "The sequence match establishes that the cited annotation concerns this protein, but the author’s exact source snapshot is unknown.",
-    "The GO term assignment is computational; the cited experimental function supports transcriptional regulation but does not itself establish that this is the protein’s sole or primary process."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein-specific evidence supports transcriptional regulation, aligning with choice C; none of the other options is comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0170",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the referenced protein. Its annotation describes a transcriptional regulator that regulates virulence-related gene expression and binds target promoters; DNA-templated transcription is therefore supported. The specific GO annotation is computationally assigned (IEA:TreeGrafter), while the functional evidence cited for transcriptional regulation is experimental.",
-    "evidence_ids": ["C1", "C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is compatible with a soluble bacterial protein, making the GPCR signaling option an implausible fit, but the supplied sequence and context do not establish whether its biological role is transcriptional regulation, osmotic-stress response, or another process.",
-    "missing_item_specific_fact": "The protein-specific functional identification as a transcriptional regulator, or equivalent homology/experimental evidence connecting this sequence to transcriptional regulation.",
-    "reason": "The key is supported by reviewer-only protein-specific annotation and functional evidence. Those facts are not supplied in the question, and generic sequence features alone do not distinguish the remaining biological-process choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein-specific evidence supports transcriptional regulation, aligning with choice C; none of the other options is comparably supported."
-  },
-  "important_caveats": [
-    "The sequence match establishes that the cited annotation concerns this protein, but the author’s exact source snapshot is unknown.",
-    "The GO term assignment is computational; the cited experimental function supports transcriptional regulation but does not itself establish that this is the protein’s sole or primary process."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein (A0A0H2XAU1, XC_2801 from Xanthomonas campestris pv. campestris 8004) is annotated as an 'HTH-type transcriptional regulator' (C4, H1). Experimental evidence (ECO:0000269, PubMed:25329577; C5, H3) demonstrates it 'directly or indirectly regulates the expression of virulence-related genes' and 'binds to the promoter of the target genes.' The GO annotation GO:0006351 (DNA-templated transcription) is present but carries an IEA:TreeGrafter evidence code (C6, H4), i.e., computational inference rather than direct experimental GO curation. Nevertheless, the underlying experimental data clearly establish the protein as a transcriptional regulator that binds DNA promoters, making the assignment to DNA-templated transcription well-supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Option D (Rho-activating GPCR signaling) is a eukaryotic pathway involving Rho-family GTPases (RhoA, Cdc42, Rac1) and 7TM GPCRs; the sequence is from a bacterium (Xanthomonas) with no transmembrane helices or GPCR architecture, so D is eliminable by general knowledge. Option B (chorismate biosynthetic process) requires specific shikimate-pathway enzymes (e.g., DAHP synthase, shikimate dehydrogenase, chorismate synthase) with distinctive catalytic folds; the sequence lacks these enzyme signatures. Between A and C, the C-terminal region of the sequence contains features consistent with a helix-turn-helix (HTH) DNA-binding domain, a motif canonically associated with transcriptional regulation. A transcriptional regulator's primary molecular biological process is DNA-templated transcription by definition, whereas 'cellular response to osmotic stress' (A) is a broad stimulus-response category not specifically indicated by the sequence. Thus, recognizing the HTH-like domain and applying the definitional link between transcription factors and transcription supports C.
-
-
-**Missing item-specific fact**
-
-> The YajQ-family HTH domain is less canonical than textbook HTH motifs (e.g., LacI, homeodomain), so confident identification from raw sequence alone is non-trivial. Knowledge that this specific protein is a cyclic di-GMP-responsive transcriptional regulator would strengthen the case but is not strictly necessary given the HTH reasoning and distractor elimination.
-
-
-**Reason**
-
-> A model with general biological knowledge can eliminate D (eukaryotic pathway in a bacterium) and B (no shikimate-pathway enzyme features), and can plausibly identify HTH-like structural features in the C-terminal region to reason toward transcription. The remaining choice between A and C is resolved by the definitional link between HTH transcription factors and DNA-templated transcription, and by the absence of osmotic-sensor or compatible-solute-transport features. The reasoning chain is concrete though the HTH identification in this non-canonical family adds difficulty.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> D is clearly inapplicable (eukaryotic GPCR/Rho pathway in a bacterium). B is clearly inapplicable (no shikimate-pathway catalytic domains). A is a broad stress-response category not specifically supported by the sequence. C is the single best-supported option given the HTH transcription-factor identity.
-
-
-### Important caveats
-
-- The GO:0006351 annotation carries evidence code IEA:TreeGrafter (computational), not direct experimental GO curation. The experimental evidence (PubMed:25329577) supports the transcriptional-regulator function but the GO term assignment itself is inferred.
-- The YajQ-family HTH domain is structurally distinct from classic HTH motifs; sequence-based recognition without prior training on YajQ proteins is challenging.
-- The protein's biological role is specifically as a cyclic di-GMP effector regulating virulence genes; 'DNA-templated transcription' is the correct GO biological process but is a very broad term (GO:0006351) that encompasses all transcription.
-- All reviewer evidence is from UniProt entries retrieved in 2026; the author's original data snapshot is unknown, though the sequence matches exactly across checked versions.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Option D (Rho-activating GPCR signaling) is a eukaryotic pathway involving Rho-family GTPases (RhoA, Cdc42, Rac1) and 7TM GPCRs; the sequence is from a bacterium (Xanthomonas) with no transmembrane helices or GPCR architecture, so D is eliminable by general knowledge. Option B (chorismate biosynthetic process) requires specific shikimate-pathway enzymes (e.g., DAHP synthase, shikimate dehydrogenase, chorismate synthase) with distinctive catalytic folds; the sequence lacks these enzyme signatures. Between A and C, the C-terminal region of the sequence contains features consistent with a helix-turn-helix (HTH) DNA-binding domain, a motif canonically associated with transcriptional regulation. A transcriptional regulator's primary molecular biological process is DNA-templated transcription by definition, whereas 'cellular response to osmotic stress' (A) is a broad stimulus-response category not specifically indicated by the sequence. Thus, recognizing the HTH-like domain and applying the definitional link between transcription factors and transcription supports C.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The YajQ-family HTH domain is less canonical than textbook HTH motifs (e.g., LacI, homeodomain), so confident identification from raw sequence alone is non-trivial. Knowledge that this specific protein is a cyclic di-GMP-responsive transcriptional regulator would strengthen the case but is not strictly necessary given the HTH reasoning and distractor elimination.",
-    "reason": "A model with general biological knowledge can eliminate D (eukaryotic pathway in a bacterium) and B (no shikimate-pathway enzyme features), and can plausibly identify HTH-like structural features in the C-terminal region to reason toward transcription. The remaining choice between A and C is resolved by the definitional link between HTH transcription factors and DNA-templated transcription, and by the absence of osmotic-sensor or compatible-solute-transport features. The reasoning chain is concrete though the HTH identification in this non-canonical family adds difficulty."
-  },
-  "case_id": "GO_biological_process_0170",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The protein (A0A0H2XAU1, XC_2801 from Xanthomonas campestris pv. campestris 8004) is annotated as an 'HTH-type transcriptional regulator' (C4, H1). Experimental evidence (ECO:0000269, PubMed:25329577; C5, H3) demonstrates it 'directly or indirectly regulates the expression of virulence-related genes' and 'binds to the promoter of the target genes.' The GO annotation GO:0006351 (DNA-templated transcription) is present but carries an IEA:TreeGrafter evidence code (C6, H4), i.e., computational inference rather than direct experimental GO curation. Nevertheless, the underlying experimental data clearly establish the protein as a transcriptional regulator that binds DNA promoters, making the assignment to DNA-templated transcription well-supported."
-  },
-  "important_caveats": [
-    "The GO:0006351 annotation carries evidence code IEA:TreeGrafter (computational), not direct experimental GO curation. The experimental evidence (PubMed:25329577) supports the transcriptional-regulator function but the GO term assignment itself is inferred.",
-    "The YajQ-family HTH domain is structurally distinct from classic HTH motifs; sequence-based recognition without prior training on YajQ proteins is challenging.",
-    "The protein's biological role is specifically as a cyclic di-GMP effector regulating virulence genes; 'DNA-templated transcription' is the correct GO biological process but is a very broad term (GO:0006351) that encompasses all transcription.",
-    "All reviewer evidence is from UniProt entries retrieved in 2026; the author's original data snapshot is unknown, though the sequence matches exactly across checked versions."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "D is clearly inapplicable (eukaryotic GPCR/Rho pathway in a bacterium). B is clearly inapplicable (no shikimate-pathway catalytic domains). A is a broad stress-response category not specifically supported by the sequence. C is the single best-supported option given the HTH transcription-factor identity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0170",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein (A0A0H2XAU1, XC_2801 from Xanthomonas campestris pv. campestris 8004) is annotated as an 'HTH-type transcriptional regulator' (C4, H1). Experimental evidence (ECO:0000269, PubMed:25329577; C5, H3) demonstrates it 'directly or indirectly regulates the expression of virulence-related genes' and 'binds to the promoter of the target genes.' The GO annotation GO:0006351 (DNA-templated transcription) is present but carries an IEA:TreeGrafter evidence code (C6, H4), i.e., computational inference rather than direct experimental GO curation. Nevertheless, the underlying experimental data clearly establish the protein as a transcriptional regulator that binds DNA promoters, making the assignment to DNA-templated transcription well-supported.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Option D (Rho-activating GPCR signaling) is a eukaryotic pathway involving Rho-family GTPases (RhoA, Cdc42, Rac1) and 7TM GPCRs; the sequence is from a bacterium (Xanthomonas) with no transmembrane helices or GPCR architecture, so D is eliminable by general knowledge. Option B (chorismate biosynthetic process) requires specific shikimate-pathway enzymes (e.g., DAHP synthase, shikimate dehydrogenase, chorismate synthase) with distinctive catalytic folds; the sequence lacks these enzyme signatures. Between A and C, the C-terminal region of the sequence contains features consistent with a helix-turn-helix (HTH) DNA-binding domain, a motif canonically associated with transcriptional regulation. A transcriptional regulator's primary molecular biological process is DNA-templated transcription by definition, whereas 'cellular response to osmotic stress' (A) is a broad stimulus-response category not specifically indicated by the sequence. Thus, recognizing the HTH-like domain and applying the definitional link between transcription factors and transcription supports C.",
-    "missing_item_specific_fact": "The YajQ-family HTH domain is less canonical than textbook HTH motifs (e.g., LacI, homeodomain), so confident identification from raw sequence alone is non-trivial. Knowledge that this specific protein is a cyclic di-GMP-responsive transcriptional regulator would strengthen the case but is not strictly necessary given the HTH reasoning and distractor elimination.",
-    "reason": "A model with general biological knowledge can eliminate D (eukaryotic pathway in a bacterium) and B (no shikimate-pathway enzyme features), and can plausibly identify HTH-like structural features in the C-terminal region to reason toward transcription. The remaining choice between A and C is resolved by the definitional link between HTH transcription factors and DNA-templated transcription, and by the absence of osmotic-sensor or compatible-solute-transport features. The reasoning chain is concrete though the HTH identification in this non-canonical family adds difficulty."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "D is clearly inapplicable (eukaryotic GPCR/Rho pathway in a bacterium). B is clearly inapplicable (no shikimate-pathway catalytic domains). A is a broad stress-response category not specifically supported by the sequence. C is the single best-supported option given the HTH transcription-factor identity."
-  },
-  "important_caveats": [
-    "The GO:0006351 annotation carries evidence code IEA:TreeGrafter (computational), not direct experimental GO curation. The experimental evidence (PubMed:25329577) supports the transcriptional-regulator function but the GO term assignment itself is inferred.",
-    "The YajQ-family HTH domain is structurally distinct from classic HTH motifs; sequence-based recognition without prior training on YajQ proteins is challenging.",
-    "The protein's biological role is specifically as a cyclic di-GMP effector regulating virulence genes; 'DNA-templated transcription' is the correct GO biological process but is a very broad term (GO:0006351) that encompasses all transcription.",
-    "All reviewer evidence is from UniProt entries retrieved in 2026; the author's original data snapshot is unknown, though the sequence matches exactly across checked versions."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0H2XAU1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ad3aa82562e4e137649128ba7183928c7b4f7a8fb1cacf0c87394fd2ee69b1aa",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 344,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ad3aa82562e4e137649128ba7183928c7b4f7a8fb1cacf0c87394fd2ee69b1aa",
   "current_entry_audit": {
     "entryVersion": 54,
     "firstPublicDate": "2025-06-18",
@@ -537,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2015-09-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "current_source_sequence_sha256": "ad3aa82562e4e137649128ba7183928c7b4f7a8fb1cacf0c87394fd2ee69b1aa",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 344,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ad3aa82562e4e137649128ba7183928c7b4f7a8fb1cacf0c87394fd2ee69b1aa",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 52,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0H2XAU1",
   "selected_historical_entry_version": 52,
+  "selected_historical_record_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
+  "selected_historical_source_sequence_length": 344,
+  "selected_historical_source_sequence_sha256": "ad3aa82562e4e137649128ba7183928c7b4f7a8fb1cacf0c87394fd2ee69b1aa",
   "selected_historical_version": {
     "accession": "A0A0H2XAU1",
     "database": "Swiss-Prot",
@@ -555,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "R2801_XANC8",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
-  "selected_historical_source_sequence_sha256": "ad3aa82562e4e137649128ba7183928c7b4f7a8fb1cacf0c87394fd2ee69b1aa",
-  "selected_historical_source_sequence_length": 344,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 52,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json",
-  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0H2XAU1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json"
 }
 ```
 
@@ -609,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json",
-  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":54,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2015-09-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json"
 }
 ```
 
@@ -628,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json",
-  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Lysobacterales\",\"Lysobacteraceae\",\"Xanthomonas\"],\"scientificName\":\"Xanthomonas campestris pv. campestris (strain 8004)\",\"taxonId\":314565}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json"
 }
 ```
 
@@ -647,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json",
-  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HTH-type transcriptional regulator XC_2801\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json"
 }
 ```
 
@@ -666,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json",
-  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25329577\",\"source\":\"PubMed\"}],\"value\":\"Transcriptional regulator that directly or indirectly regulates the expression of virulence-related genes, including flhB, aaeA, fliL and flgG (PubMed:25329577). Binds to the promoter of the target genes only in the presence of XC_3703 (PubMed:25329577)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json"
 }
 ```
 
@@ -685,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json",
-  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0006351\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:DNA-templated transcription\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json"
 }
 ```
 
@@ -704,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json",
-  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
-  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"An S.Q.\",\"Caly D.L.\",\"McCarthy Y.\",\"Murdoch S.L.\",\"Ward J.\",\"Febrer M.\",\"Dow J.M.\",\"Ryan R.P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25329577\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.ppat.1004429\"}],\"citationType\":\"journal article\",\"firstPage\":\"e1004429\",\"id\":\"25329577\",\"journal\":\"PLoS Pathog.\",\"lastPage\":\"e1004429\",\"publicationDate\":\"2014\",\"title\":\"Novel cyclic di-GMP effectors of the YajQ protein family control bacterial virulence.\",\"volume\":\"10\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"8004\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"ACTIVITY REGULATION\",\"INTERACTION WITH XC_3703\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:08.022572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b75adc0c6efc0702465f433f4be9eb9a440d34557935e8293dc1a2fa6dbd37d0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0H2XAU1.json"
 }
 ```
 
@@ -722,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 52,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52",
-  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
-  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
-  "source_locator": "lines 1-11",
   "excerpt": "ID   R2801_XANC8             Reviewed;         344 AA.\nAC   A0A0H2XAU1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-SEP-2015, sequence version 1.\nDT   28-JAN-2026, entry version 52.\nDE   RecName: Full=HTH-type transcriptional regulator XC_2801 {ECO:0000305};\nGN   OrderedLocusNames=XC_2801 {ECO:0000312|EMBL:AAY49850.1};\nOS   Xanthomonas campestris pv. campestris (strain 8004).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Lysobacterales; Lysobacteraceae; Xanthomonas.\nOX   NCBI_TaxID=314565;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 52,
+  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-11",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52"
 }
 ```
 
@@ -743,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 52,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52",
-  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
-  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
-  "source_locator": "lines 23-32",
   "excerpt": "RN   [2]\nRP   FUNCTION, ACTIVITY REGULATION, INTERACTION WITH XC_3703, AND DISRUPTION\nRP   PHENOTYPE.\nRC   STRAIN=8004;\nRX   PubMed=25329577; DOI=10.1371/journal.ppat.1004429;\nRA   An S.Q., Caly D.L., McCarthy Y., Murdoch S.L., Ward J., Febrer M.,\nRA   Dow J.M., Ryan R.P.;\nRT   \"Novel cyclic di-GMP effectors of the YajQ protein family control bacterial\nRT   virulence.\";\nRL   PLoS Pathog. 10:e1004429-e1004429(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 52,
+  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-32",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52"
 }
 ```
 
@@ -764,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 52,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52",
-  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
-  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
-  "source_locator": "lines 33-37",
   "excerpt": "CC   -!- FUNCTION: Transcriptional regulator that directly or indirectly\nCC       regulates the expression of virulence-related genes, including flhB,\nCC       aaeA, fliL and flgG (PubMed:25329577). Binds to the promoter of the\nCC       target genes only in the presence of XC_3703 (PubMed:25329577).\nCC       {ECO:0000269|PubMed:25329577}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 52,
+  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52"
 }
 ```
 
@@ -785,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 52,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52",
-  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
-  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
-  "source_locator": "lines 67-67",
   "excerpt": "DR   GO; GO:0006351; P:DNA-templated transcription; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 52,
+  "retrieved_utc": "2026-11-02T04:24:10.817174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 67-67",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f97eefa003cd1d83c4ce23905ffa935218f47efb464b690425bc6c7e600189a5",
+  "url": "https://rest.uniprot.org/unisave/A0A0H2XAU1?format=txt&versions=52"
 }
 ```
 
@@ -807,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 65307-65337",
   "excerpt": "[Term]\nid: GO:0006351\nname: DNA-templated transcription\nnamespace: biological_process\nalt_id: GO:0001121\nalt_id: GO:0006350\nalt_id: GO:0061018\nalt_id: GO:0061022\ndef: \"The synthesis of an RNA transcript from a DNA template.\" [GOC:jl, GOC:txnOH]\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_pombe\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsynonym: \"bacterial transcription\" NARROW []\nsynonym: \"cellular transcription\" BROAD []\nsynonym: \"DNA-dependent transcription\" EXACT []\nsynonym: \"transcription\" BROAD []\nsynonym: \"transcription from bacterial-type RNA polymerase promoter\" NARROW []\nsynonym: \"transcription, DNA-dependent\" EXACT [GOC:txnOH]\nsynonym: \"transcription, DNA-templated\" EXACT []\nxref: Reactome:R-HSA-2173793 \"Transcriptional activity of SMAD2/SMAD3:SMAD4 heterotrimer\"\nxref: Reactome:R-HSA-74160 \"Gene expression (Transcription)\"\nxref: Wikipedia:Transcription_(genetics)\nis_a: GO:0032774 ! RNA biosynthetic process\nrelationship: part_of GO:0010467 ! gene expression\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006351",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 65307-65337",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006351"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -826,15 +583,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 96113-96136",
   "excerpt": "[Term]\nid: GO:0009423\nname: chorismate biosynthetic process\nnamespace: biological_process\nalt_id: GO:0033587\ndef: \"The chemical reactions and pathways resulting in the formation of the unsymmetrical ether derived from phosphoenolpyruvate and 5-phosphoshikimic acid formed as an intermediate in the biosynthesis of aromatic amino acids and many other compounds.\" [GOC:sm, ISBN:0198547684]\nsynonym: \"chorismate anabolism\" EXACT []\nsynonym: \"chorismate biosynthesis\" EXACT []\nsynonym: \"chorismate formation\" EXACT []\nsynonym: \"chorismate synthesis\" EXACT []\nsynonym: \"shikimate anabolism\" RELATED []\nsynonym: \"shikimate biosynthesis\" RELATED []\nsynonym: \"shikimate biosynthetic process\" RELATED []\nsynonym: \"shikimate pathway\" EXACT []\nsynonym: \"shikimate synthesis\" RELATED []\nxref: MetaCyc:ARO-PWY\nxref: MetaCyc:PWY-6163\nxref: MetaCyc:PWY-6165\nis_a: GO:0043650 ! dicarboxylic acid biosynthetic process\nis_a: GO:0046417 ! chorismate metabolic process\nproperty_value: skos:narrowMatch MetaCyc:ARO-PWY\nproperty_value: skos:narrowMatch MetaCyc:PWY-6163\nproperty_value: skos:narrowMatch MetaCyc:PWY-6165\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009423",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 96113-96136",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009423"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -845,15 +602,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 377426-377436",
   "excerpt": "[Term]\nid: GO:0071470\nname: cellular response to osmotic stress\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus indicating an increase or decrease in the concentration of solutes outside the organism or cell.\" [GOC:mah]\nsynonym: \"cellular osmotic response\" EXACT [GOC:mah]\nsynonym: \"cellular osmotic stress response\" EXACT [GOC:mah]\nis_a: GO:0006970 ! response to osmotic stress\nis_a: GO:0062197 ! cellular response to chemical stress\nis_a: GO:0071214 ! cellular response to abiotic stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0071470",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 377426-377436",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0071470"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -864,15 +621,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 450812-450818",
   "excerpt": "[Term]\nid: GO:0160221\nname: Rho-activating G protein-coupled receptor signaling pathway\nnamespace: biological_process\ndef: \"A G protein-coupled receptor signaling pathway in which the signal is transmitted via the activation of Rho activity. Rho is a family of small (~21 kDa) signaling G proteins that include RhoA, Cdc42, and Rac1.\" [PMID:10836144, PMID:33849392]\nis_a: GO:0007186 ! G protein-coupled receptor signaling pathway\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0160221",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 450812-450818",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0160221"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

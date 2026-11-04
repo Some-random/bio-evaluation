@@ -1,18 +1,16 @@
-# cofactor_0144: before and after transfer clarification
+# cofactor_0144
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0144.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0144.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — Mn(2+)
+**Expected answer:** **A** — Mn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,233 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry annotates Mn(2+) as a cofactor and says the L-fucokinase activity requires divalent cations such as Mn(2+) and Mg(2+). This supports A, though the annotation is transferred from another UniProt entry rather than direct experimental evidence for this sequence.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The protein's kinase and pyrophosphorylase activities make a divalent metal cofactor biologically plausible, but that general inference does not establish that this particular protein uses Mn(2+) rather than another metal.
-
-
-**Missing item-specific fact**
-
-> The protein-specific cofactor annotation that Mn(2+) is among the divalent cations supporting its L-fucokinase activity.
-
-
-**Reason**
-
-> The sequence alone does not supply functional annotation or experimental cofactor measurements. Selecting Mn(2+) over the other choices depends on an item-specific annotation or equivalent protein-specific knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, Mn(2+) is supported by the annotation. However, the annotation also identifies Mg(2+) as a required divalent cation, and Mg(2+) is not offered.
-
-
-### Important caveats
-
-- The Mn(2+) and Mg(2+) annotations are transferred by similarity (ECO:0000250), not shown here to be direct experimental measurements for the supplied protein.
-- The source sequence matches the supplied sequence; the cited annotation describes both L-fucokinase and GDP-fucose pyrophosphorylase activities.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein's kinase and pyrophosphorylase activities make a divalent metal cofactor biologically plausible, but that general inference does not establish that this particular protein uses Mn(2+) rather than another metal.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation that Mn(2+) is among the divalent cations supporting its L-fucokinase activity.",
-    "reason": "The sequence alone does not supply functional annotation or experimental cofactor measurements. Selecting Mn(2+) over the other choices depends on an item-specific annotation or equivalent protein-specific knowledge."
-  },
-  "case_id": "cofactor_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates Mn(2+) as a cofactor and says the L-fucokinase activity requires divalent cations such as Mn(2+) and Mg(2+). This supports A, though the annotation is transferred from another UniProt entry rather than direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The Mn(2+) and Mg(2+) annotations are transferred by similarity (ECO:0000250), not shown here to be direct experimental measurements for the supplied protein.",
-    "The source sequence matches the supplied sequence; the cited annotation describes both L-fucokinase and GDP-fucose pyrophosphorylase activities."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, Mn(2+) is supported by the annotation. However, the annotation also identifies Mg(2+) as a required divalent cation, and Mg(2+) is not offered."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates Mn(2+) as a cofactor and says the L-fucokinase activity requires divalent cations such as Mn(2+) and Mg(2+). This supports A, though the annotation is transferred from another UniProt entry rather than direct experimental evidence for this sequence.",
-    "evidence_ids": ["C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The protein's kinase and pyrophosphorylase activities make a divalent metal cofactor biologically plausible, but that general inference does not establish that this particular protein uses Mn(2+) rather than another metal.",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation that Mn(2+) is among the divalent cations supporting its L-fucokinase activity.",
-    "reason": "The sequence alone does not supply functional annotation or experimental cofactor measurements. Selecting Mn(2+) over the other choices depends on an item-specific annotation or equivalent protein-specific knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, Mn(2+) is supported by the annotation. However, the annotation also identifies Mg(2+) as a required divalent cation, and Mg(2+) is not offered."
-  },
-  "important_caveats": [
-    "The Mn(2+) and Mg(2+) annotations are transferred by similarity (ECO:0000250), not shown here to be direct experimental measurements for the supplied protein.",
-    "The source sequence matches the supplied sequence; the cited annotation describes both L-fucokinase and GDP-fucose pyrophosphorylase activities."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q58T34 (FKP_BACFG, L-fucokinase/L-fucose-1-P guanylyltransferase from Bacteroides fragilis) annotates Mn(2+) as a required cofactor for the L-fucokinase activity (ECO:0000250, similarity-based inference from Q9LNJ9). The note states: 'The L-fucokinase activity absolutely requires divalent cations such as Mn(2+) and Mg(2+).' Mg(2+) is also listed but is not among the four answer choices. Among the provided options (Mn2+, NAD+, Na+, Zn2+), only Mn(2+) appears in the cofactor annotation. The evidence code is similarity-based rather than direct experimental proof for this specific protein, but the annotation nonetheless supports the key.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The four choices span distinct cofactor classes: NAD(+) is a hydride-transfer cofactor for dehydrogenases; Na(+) is a monovalent ion not typically a catalytic cofactor; Zn(2+) is characteristic of metalloproteases, carbonic anhydrases, and certain dehydrogenases; Mn(2+) is a divalent cation used by kinases to coordinate the β- and γ-phosphates of ATP. Recognizing the protein as a sugar kinase (the sequence contains glycine-rich stretches such as 'GSGGGTSWL' suggestive of a nucleotide-binding/P-loop region, and the overall architecture is consistent with a multi-domain transferase) allows elimination of NAD+, Na+, and Zn(2+), leaving Mn(2+) as the only plausible kinase cofactor among the options. Even without full sequence recognition, the elimination logic—kinases need divalent cations for phosphate coordination, and among the four choices only Mn(2+) fits—provides a defensible general-biology argument.
-
-
-**Missing item-specific fact**
-
-> None that is essential. The specific annotation confirming Mn(2+) for this exact protein is similarity-based (ECO:0000250), but the reasoning from enzyme-class cofactor preferences is sufficient to select Mn(2+) over the three clearly inappropriate distractors.
-
-
-**Reason**
-
-> General knowledge of kinase cofactor requirements (divalent cations for ATP phosphate coordination) meaningfully distinguishes Mn(2+) from NAD+ (dehydrogenase cofactor), Na+ (non-catalytic monovalent ion), and Zn(2+) (metalloprotease/dehydrogenase cofactor). The glycine-rich motifs in the sequence provide weak but real structural hints toward a nucleotide-binding/kinase fold. This constitutes a concrete biological argument rather than pure lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Mg(2+) is also annotated as a cofactor for this protein but is absent from the answer choices, so it cannot create ambiguity. Among the four provided options, Mn(2+) is the only one matching any annotated cofactor, and the other three are clearly inappropriate for a kinase. No genuine ambiguity exists within the given option set.
-
-
-### Important caveats
-
-- The cofactor annotation carries evidence code ECO:0000250 (inferred by similarity from Q9LNJ9), not direct experimental measurement on this specific B. fragilis protein. The Cryo-EM structure (PDB 5YYS, 4.2 Å) was determined but the cofactor assignment is transferred.
-- The protein has two catalytic activities (L-fucokinase and GDP-fucose pyrophosphorylase). The L-fucokinase activity requires Mn(2+) and Mg(2+); the pyrophosphorylase activity has a high preference for Mg(2+). The question does not specify which activity's cofactor is being asked about, but since only Mn(2+) appears among the choices, this does not affect the answer.
-- The sequence-match to Q58T34 is confirmed (SHA-256 match, 949 aa), and the historical entry (v87) is identical to the current entry (v89) for the relevant annotation fields.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The four choices span distinct cofactor classes: NAD(+) is a hydride-transfer cofactor for dehydrogenases; Na(+) is a monovalent ion not typically a catalytic cofactor; Zn(2+) is characteristic of metalloproteases, carbonic anhydrases, and certain dehydrogenases; Mn(2+) is a divalent cation used by kinases to coordinate the β- and γ-phosphates of ATP. Recognizing the protein as a sugar kinase (the sequence contains glycine-rich stretches such as 'GSGGGTSWL' suggestive of a nucleotide-binding/P-loop region, and the overall architecture is consistent with a multi-domain transferase) allows elimination of NAD+, Na+, and Zn(2+), leaving Mn(2+) as the only plausible kinase cofactor among the options. Even without full sequence recognition, the elimination logic—kinases need divalent cations for phosphate coordination, and among the four choices only Mn(2+) fits—provides a defensible general-biology argument.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None that is essential. The specific annotation confirming Mn(2+) for this exact protein is similarity-based (ECO:0000250), but the reasoning from enzyme-class cofactor preferences is sufficient to select Mn(2+) over the three clearly inappropriate distractors.",
-    "reason": "General knowledge of kinase cofactor requirements (divalent cations for ATP phosphate coordination) meaningfully distinguishes Mn(2+) from NAD+ (dehydrogenase cofactor), Na+ (non-catalytic monovalent ion), and Zn(2+) (metalloprotease/dehydrogenase cofactor). The glycine-rich motifs in the sequence provide weak but real structural hints toward a nucleotide-binding/kinase fold. This constitutes a concrete biological argument rather than pure lookup."
-  },
-  "case_id": "cofactor_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q58T34 (FKP_BACFG, L-fucokinase/L-fucose-1-P guanylyltransferase from Bacteroides fragilis) annotates Mn(2+) as a required cofactor for the L-fucokinase activity (ECO:0000250, similarity-based inference from Q9LNJ9). The note states: 'The L-fucokinase activity absolutely requires divalent cations such as Mn(2+) and Mg(2+).' Mg(2+) is also listed but is not among the four answer choices. Among the provided options (Mn2+, NAD+, Na+, Zn2+), only Mn(2+) appears in the cofactor annotation. The evidence code is similarity-based rather than direct experimental proof for this specific protein, but the annotation nonetheless supports the key."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (inferred by similarity from Q9LNJ9), not direct experimental measurement on this specific B. fragilis protein. The Cryo-EM structure (PDB 5YYS, 4.2 Å) was determined but the cofactor assignment is transferred.",
-    "The protein has two catalytic activities (L-fucokinase and GDP-fucose pyrophosphorylase). The L-fucokinase activity requires Mn(2+) and Mg(2+); the pyrophosphorylase activity has a high preference for Mg(2+). The question does not specify which activity's cofactor is being asked about, but since only Mn(2+) appears among the choices, this does not affect the answer.",
-    "The sequence-match to Q58T34 is confirmed (SHA-256 match, 949 aa), and the historical entry (v87) is identical to the current entry (v89) for the relevant annotation fields."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mg(2+) is also annotated as a cofactor for this protein but is absent from the answer choices, so it cannot create ambiguity. Among the four provided options, Mn(2+) is the only one matching any annotated cofactor, and the other three are clearly inappropriate for a kinase. No genuine ambiguity exists within the given option set."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q58T34 (FKP_BACFG, L-fucokinase/L-fucose-1-P guanylyltransferase from Bacteroides fragilis) annotates Mn(2+) as a required cofactor for the L-fucokinase activity (ECO:0000250, similarity-based inference from Q9LNJ9). The note states: 'The L-fucokinase activity absolutely requires divalent cations such as Mn(2+) and Mg(2+).' Mg(2+) is also listed but is not among the four answer choices. Among the provided options (Mn2+, NAD+, Na+, Zn2+), only Mn(2+) appears in the cofactor annotation. The evidence code is similarity-based rather than direct experimental proof for this specific protein, but the annotation nonetheless supports the key.",
-    "evidence_ids": ["C5", "H4", "C4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The four choices span distinct cofactor classes: NAD(+) is a hydride-transfer cofactor for dehydrogenases; Na(+) is a monovalent ion not typically a catalytic cofactor; Zn(2+) is characteristic of metalloproteases, carbonic anhydrases, and certain dehydrogenases; Mn(2+) is a divalent cation used by kinases to coordinate the β- and γ-phosphates of ATP. Recognizing the protein as a sugar kinase (the sequence contains glycine-rich stretches such as 'GSGGGTSWL' suggestive of a nucleotide-binding/P-loop region, and the overall architecture is consistent with a multi-domain transferase) allows elimination of NAD+, Na+, and Zn(2+), leaving Mn(2+) as the only plausible kinase cofactor among the options. Even without full sequence recognition, the elimination logic—kinases need divalent cations for phosphate coordination, and among the four choices only Mn(2+) fits—provides a defensible general-biology argument.",
-    "missing_item_specific_fact": "None that is essential. The specific annotation confirming Mn(2+) for this exact protein is similarity-based (ECO:0000250), but the reasoning from enzyme-class cofactor preferences is sufficient to select Mn(2+) over the three clearly inappropriate distractors.",
-    "reason": "General knowledge of kinase cofactor requirements (divalent cations for ATP phosphate coordination) meaningfully distinguishes Mn(2+) from NAD+ (dehydrogenase cofactor), Na+ (non-catalytic monovalent ion), and Zn(2+) (metalloprotease/dehydrogenase cofactor). The glycine-rich motifs in the sequence provide weak but real structural hints toward a nucleotide-binding/kinase fold. This constitutes a concrete biological argument rather than pure lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mg(2+) is also annotated as a cofactor for this protein but is absent from the answer choices, so it cannot create ambiguity. Among the four provided options, Mn(2+) is the only one matching any annotated cofactor, and the other three are clearly inappropriate for a kinase. No genuine ambiguity exists within the given option set."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (inferred by similarity from Q9LNJ9), not direct experimental measurement on this specific B. fragilis protein. The Cryo-EM structure (PDB 5YYS, 4.2 Å) was determined but the cofactor assignment is transferred.",
-    "The protein has two catalytic activities (L-fucokinase and GDP-fucose pyrophosphorylase). The L-fucokinase activity requires Mn(2+) and Mg(2+); the pyrophosphorylase activity has a high preference for Mg(2+). The question does not specify which activity's cofactor is being asked about, but since only Mn(2+) appears among the choices, this does not affect the answer.",
-    "The sequence-match to Q58T34 is confirmed (SHA-256 match, 949 aa), and the historical entry (v87) is identical to the current entry (v89) for the relevant annotation fields."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -494,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q58T34",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "0a1aad3ffd7b1cb09dfa4c0be0b330d8ac5ca7321345ec11ac9ab6c74f4a10e2",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 949,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "0a1aad3ffd7b1cb09dfa4c0be0b330d8ac5ca7321345ec11ac9ab6c74f4a10e2",
   "current_entry_audit": {
     "entryVersion": 89,
     "firstPublicDate": "2025-02-05",
@@ -525,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-04-26",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "current_source_sequence_sha256": "0a1aad3ffd7b1cb09dfa4c0be0b330d8ac5ca7321345ec11ac9ab6c74f4a10e2",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 949,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "0a1aad3ffd7b1cb09dfa4c0be0b330d8ac5ca7321345ec11ac9ab6c74f4a10e2",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 87,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q58T34",
   "selected_historical_entry_version": 87,
+  "selected_historical_record_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
+  "selected_historical_source_sequence_length": 949,
+  "selected_historical_source_sequence_sha256": "0a1aad3ffd7b1cb09dfa4c0be0b330d8ac5ca7321345ec11ac9ab6c74f4a10e2",
   "selected_historical_version": {
     "accession": "Q58T34",
     "database": "Swiss-Prot",
@@ -543,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FKP_BACFG",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
-  "selected_historical_source_sequence_sha256": "0a1aad3ffd7b1cb09dfa4c0be0b330d8ac5ca7321345ec11ac9ab6c74f4a10e2",
-  "selected_historical_source_sequence_length": 949,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 87,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -574,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json",
-  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q58T34\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
+  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json"
 }
 ```
 
@@ -593,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json",
-  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":89,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-04-26\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
+  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json"
 }
 ```
 
@@ -612,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json",
-  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Bacteroidota\",\"Bacteroidia\",\"Bacteroidales\",\"Bacteroidaceae\",\"Bacteroides\"],\"scientificName\":\"Bacteroides fragilis\",\"taxonId\":817}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
+  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json"
 }
 ```
 
@@ -631,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json",
-  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"L-fucokinase/GDP-fucose pyrophosphorylase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"FKP\"}]}],\"includes\":[{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"GDP-fucose pyrophosphorylase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"2.7.7.30\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"Fucose-1-phosphate guanylyltransferase\"}}},{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"2.7.1.52\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"L-fucokinase\"}}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"30242642\",\"source\":\"PubMed\"}],\"value\":\"L-fucokinase/L-fucose-1-P guanylyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
+  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json"
 }
 ```
 
@@ -650,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json",
-  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29035\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9LNJ9\",\"source\":\"UniProtKB\"}],\"name\":\"Mn(2+)\"},{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:18420\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9LNJ9\",\"source\":\"UniProtKB\"}],\"name\":\"Mg(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9LNJ9\",\"source\":\"UniProtKB\"}],\"value\":\"The L-fucokinase activity absolutely requires divalent cations such as Mn(2+) and Mg(2+).\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
+  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json"
 }
 ```
 
@@ -669,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json",
-  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:18420\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9LNJ9\",\"source\":\"UniProtKB\"}],\"name\":\"Mg(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9LNJ9\",\"source\":\"UniProtKB\"}],\"value\":\"The GDP-fucose pyrophosphorylase activity also requires divalent cations, with a high preference for Mg(2+).\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
+  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json"
 }
 ```
 
@@ -688,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json",
-  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
-  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu Y.\",\"Hu H.\",\"Wang J.\",\"Zhou Q.\",\"Wu P.\",\"Yan N.\",\"Wang H.W.\",\"Wu J.W.\",\"Sun L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30242642\"},{\"database\":\"DOI\",\"id\":\"10.1007/s13238-018-0576-x\"}],\"citationType\":\"journal article\",\"firstPage\":\"365\",\"id\":\"30242642\",\"journal\":\"Protein Cell\",\"lastPage\":\"369\",\"publicationDate\":\"2019\",\"title\":\"Cryo-EM structure of L-fucokinase/GDP-fucose pyrophosphorylase (FKP) in Bacteroides fragilis.\",\"volume\":\"10\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5YYS\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"9343\"}],\"referenceNumber\":3,\"referencePositions\":[\"STRUCTURE BY ELECTRON MICROSCOPY (4.20 ANGSTROMS)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\",\"DOMAIN\",\"MUTAGENESIS OF GLY-76; ARG-80; GLY-88; LYS-89; ARG-592; ASP-594; GLY-597; GLY-598; ASP-601; GLY-713; SER-714; GLY-715; GLY-717; SER-719; SER-720; ALA-723; GLY-758; GLY-759; GLN-761; ASP-762; GLY-899 AND GLY-901\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:31:01.700323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "613cb95f164460b198373fe8b1a0278d6f82b5f36a7ad73441bef68f5e41af74",
+  "url": "https://rest.uniprot.org/uniprotkb/Q58T34.json"
 }
 ```
 
@@ -706,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87",
-  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
-  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
-  "source_locator": "lines 1-21",
   "excerpt": "ID   FKP_BACFG               Reviewed;         949 AA.\nAC   Q58T34;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   26-APR-2005, sequence version 1.\nDT   28-JAN-2026, entry version 87.\nDE   RecName: Full=L-fucokinase/L-fucose-1-P guanylyltransferase {ECO:0000305|PubMed:30242642};\nDE   AltName: Full=L-fucokinase/GDP-fucose pyrophosphorylase {ECO:0000303|PubMed:30242642};\nDE            Short=FKP {ECO:0000303|PubMed:30242642};\nDE   Includes:\nDE     RecName: Full=Fucose-1-phosphate guanylyltransferase {ECO:0000305|PubMed:30242642};\nDE              EC=2.7.7.30 {ECO:0000269|PubMed:30242642};\nDE     AltName: Full=GDP-fucose pyrophosphorylase {ECO:0000303|PubMed:30242642};\nDE   Includes:\nDE     RecName: Full=L-fucokinase {ECO:0000303|PubMed:30242642};\nDE              EC=2.7.1.52 {ECO:0000269|PubMed:30242642};\nGN   Name=fkp {ECO:0000312|EMBL:AAX45030.1};\nGN   ORFNames=HMPREF2533_03026 {ECO:0000312|EMBL:KXU43832.1};\nOS   Bacteroides fragilis.\nOC   Bacteria; Pseudomonadati; Bacteroidota; Bacteroidia; Bacteroidales;\nOC   Bacteroidaceae; Bacteroides.\nOX   NCBI_TaxID=817;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
+  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87"
 }
 ```
 
@@ -727,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87",
-  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
-  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
-  "source_locator": "lines 6-15",
   "excerpt": "DE   RecName: Full=L-fucokinase/L-fucose-1-P guanylyltransferase {ECO:0000305|PubMed:30242642};\nDE   AltName: Full=L-fucokinase/GDP-fucose pyrophosphorylase {ECO:0000303|PubMed:30242642};\nDE            Short=FKP {ECO:0000303|PubMed:30242642};\nDE   Includes:\nDE     RecName: Full=Fucose-1-phosphate guanylyltransferase {ECO:0000305|PubMed:30242642};\nDE              EC=2.7.7.30 {ECO:0000269|PubMed:30242642};\nDE     AltName: Full=GDP-fucose pyrophosphorylase {ECO:0000303|PubMed:30242642};\nDE   Includes:\nDE     RecName: Full=L-fucokinase {ECO:0000303|PubMed:30242642};\nDE              EC=2.7.1.52 {ECO:0000269|PubMed:30242642};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
+  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87"
 }
 ```
 
@@ -748,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87",
-  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
-  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
-  "source_locator": "lines 36-47",
   "excerpt": "RN   [3] {ECO:0007744|PDB:5YYS}\nRP   STRUCTURE BY ELECTRON MICROSCOPY (4.20 ANGSTROMS), FUNCTION, CATALYTIC\nRP   ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, SUBUNIT, DOMAIN, AND MUTAGENESIS\nRP   OF GLY-76; ARG-80; GLY-88; LYS-89; ARG-592; ASP-594; GLY-597; GLY-598;\nRP   ASP-601; GLY-713; SER-714; GLY-715; GLY-717; SER-719; SER-720; ALA-723;\nRP   GLY-758; GLY-759; GLN-761; ASP-762; GLY-899 AND GLY-901.\nRC   STRAIN=9343;\nRX   PubMed=30242642; DOI=10.1007/s13238-018-0576-x;\nRA   Liu Y., Hu H., Wang J., Zhou Q., Wu P., Yan N., Wang H.W., Wu J.W., Sun L.;\nRT   \"Cryo-EM structure of L-fucokinase/GDP-fucose pyrophosphorylase (FKP) in\nRT   Bacteroides fragilis.\";\nRL   Protein Cell 10:365-369(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
+  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87"
 }
 ```
 
@@ -769,18 +534,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87",
-  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
-  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
-  "source_locator": "lines 69-75",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mn(2+); Xref=ChEBI:CHEBI:29035;\nCC         Evidence={ECO:0000250|UniProtKB:Q9LNJ9};\nCC       Name=Mg(2+); Xref=ChEBI:CHEBI:18420;\nCC         Evidence={ECO:0000250|UniProtKB:Q9LNJ9};\nCC       Note=The L-fucokinase activity absolutely requires divalent cations\nCC       such as Mn(2+) and Mg(2+). {ECO:0000250|UniProtKB:Q9LNJ9};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 69-75",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
+  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87"
 }
 ```
 
@@ -790,18 +555,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87",
-  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
-  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
-  "source_locator": "lines 76-81",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mg(2+); Xref=ChEBI:CHEBI:18420;\nCC         Evidence={ECO:0000250|UniProtKB:Q9LNJ9};\nCC       Note=The GDP-fucose pyrophosphorylase activity also requires divalent\nCC       cations, with a high preference for Mg(2+).\nCC       {ECO:0000250|UniProtKB:Q9LNJ9};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:31:04.760170+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 76-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3ecc50c16d349ff2fe2b86dd83a0288577ce5483563a520fae349796ac46e9a8",
+  "url": "https://rest.uniprot.org/unisave/Q58T34?format=txt&versions=87"
 }
 ```
 

@@ -1,18 +1,16 @@
-# catalytic_activity_0146: before and after transfer clarification
+# catalytic_activity_0146
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0146.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0146.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — a 1,2-diacyl-sn-glycero-3-phosphocholine + H2O = a 1-acyl-sn-glycero-3-phosphocholine + a fatty acid + H(+)
+**Expected answer:** **D** — a 1,2-diacyl-sn-glycero-3-phosphocholine + H2O = a 1-acyl-sn-glycero-3-phosphocholine + a fatty acid + H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry annotated as phospholipase A2, and both current and historical records assign the reaction in D. The reaction annotation is computationally supported by a PROSITE rule; the EC assignment is transferred by similarity, so this supports D but is not direct experimental proof of activity for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has a hydrophobic N-terminal region and is cysteine-rich, which is compatible with a secreted venom protein, but those features alone do not establish phospholipase activity or the specific substrate transformation in D.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as a phospholipase A2, including its assigned EC 3.1.1.4 reaction, is needed to select D; that functional annotation is not provided in the question.
-
-
-**Reason**
-
-> A familiar PLA2-family motif or sequence match could suggest the answer, but the supplied sequence and choices do not establish that identity through a sufficiently discriminating general biological argument without relying on protein-specific family knowledge or annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options describe distinct activities; the uncertainty is whether the sequence alone identifies the enzyme, not whether the reaction choices overlap.
-
-
-### Important caveats
-
-- The cited UniProt entry matches the supplied sequence, but its source identity was inferred by reviewers and was not supplied to the evaluated model.
-- The annotation supports D computationally; the cited sequence-identification and mass-spectrometry reference does not itself establish catalytic activity experimentally.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has a hydrophobic N-terminal region and is cysteine-rich, which is compatible with a secreted venom protein, but those features alone do not establish phospholipase activity or the specific substrate transformation in D.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as a phospholipase A2, including its assigned EC 3.1.1.4 reaction, is needed to select D; that functional annotation is not provided in the question.",
-    "reason": "A familiar PLA2-family motif or sequence match could suggest the answer, but the supplied sequence and choices do not establish that identity through a sufficiently discriminating general biological argument without relying on protein-specific family knowledge or annotation."
-  },
-  "case_id": "catalytic_activity_0146",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as phospholipase A2, and both current and historical records assign the reaction in D. The reaction annotation is computationally supported by a PROSITE rule; the EC assignment is transferred by similarity, so this supports D but is not direct experimental proof of activity for this protein."
-  },
-  "important_caveats": [
-    "The cited UniProt entry matches the supplied sequence, but its source identity was inferred by reviewers and was not supplied to the evaluated model.",
-    "The annotation supports D computationally; the cited sequence-identification and mass-spectrometry reference does not itself establish catalytic activity experimentally."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options describe distinct activities; the uncertainty is whether the sequence alone identifies the enzyme, not whether the reaction choices overlap."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0146",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as phospholipase A2, and both current and historical records assign the reaction in D. The reaction annotation is computationally supported by a PROSITE rule; the EC assignment is transferred by similarity, so this supports D but is not direct experimental proof of activity for this protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has a hydrophobic N-terminal region and is cysteine-rich, which is compatible with a secreted venom protein, but those features alone do not establish phospholipase activity or the specific substrate transformation in D.",
-    "missing_item_specific_fact": "The protein-specific identification as a phospholipase A2, including its assigned EC 3.1.1.4 reaction, is needed to select D; that functional annotation is not provided in the question.",
-    "reason": "A familiar PLA2-family motif or sequence match could suggest the answer, but the supplied sequence and choices do not establish that identity through a sufficiently discriminating general biological argument without relying on protein-specific family knowledge or annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options describe distinct activities; the uncertainty is whether the sequence alone identifies the enzyme, not whether the reaction choices overlap."
-  },
-  "important_caveats": [
-    "The cited UniProt entry matches the supplied sequence, but its source identity was inferred by reviewers and was not supplied to the evaluated model.",
-    "The annotation supports D computationally; the cited sequence-identification and mass-spectrometry reference does not itself establish catalytic activity experimentally."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXZ6 (PA2_XYLAR) annotates this sequence as Phospholipase A2 (EC 3.1.1.4) with the exact catalytic reaction matching option D. The EC number is assigned by similarity (ECO:0000250 to P00630) and the catalytic activity by PROSITE-ProRule PRU10035 (ECO:0000255). The sequence matches the UniProt record (179 aa, sha256 confirmed). The protein was identified by mass spectrometry from venom gland tissue (PubMed:36550366). While the annotation is computational/similarity-based rather than a direct enzyme assay on this specific protein, the PLA2 family assignment is strongly supported by characteristic sequence motifs (GTKWCG, GTKCYR, catalytic His-Asp region, multiple disulfide-bonding cysteines) and the PROSITE-ProRule match.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains hallmark PLA2-family motifs: the 'IIFLGTKWCG' segment (residues ~27-34) is the classic PLA2 superfamily signature, and the later 'GTKCYR' motif reinforces this assignment. The N-terminal hydrophobic stretch (MHALRSSVLALWLCLHVSVRAW) is a cleavable signal peptide indicating a secreted protein, which eliminates membrane transporters (options A and C). The catalytic region 'NCGCDEK' and 'CYRNEHPLICV' contain the PLA2 His-Asp catalytic dyad. The multiple cysteines (forming 6-7 disulfide bonds) are characteristic of the PLA2 fold. Option B (ornithine cyclodeaminase) is a cytosolic enzyme with a completely unrelated fold and no sequence resemblance. These are general biochemical facts about well-characterized enzyme families, not item-specific database lookups.
-
-
-**Missing item-specific fact**
-
-> None critical. The PLA2 GTKWCG/GTKCYR motifs and the signal-peptide/cysteine-rich secreted-enzyme pattern are standard biochemistry knowledge sufficient to distinguish D from the other three choices.
-
-
-**Reason**
-
-> A knowledgeable biochemist can recognize the PLA2 signature motifs (GTKWCG, GTKCYR), the signal peptide, the catalytic His-Asp dyad region, and the disulfide-bonding cysteine pattern from the raw sequence. These motifs are general knowledge in enzymology, not protein-specific memorization. The distractors (nucleoside transporter, ornithine cyclodeaminase, potassium channel) are eliminated by the absence of transmembrane domains (ruling out A, C) and by the complete lack of similarity to ornithine cyclodeaminase (ruling out B).
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and C require transmembrane topology absent from this small secreted protein. Option B (ornithine cyclodeaminase) is a ~400-residue cytosolic enzyme with no resemblance to this sequence. Option D is the only choice consistent with the PLA2-family sequence signatures present. No ambiguity among the choices.
-
-
-### Important caveats
-
-- The EC 3.1.1.4 assignment is by similarity to P00630 (ECO:0000250), not a direct enzyme assay on this specific Xylocopa aruana protein.
-- The catalytic activity annotation relies on PROSITE-ProRule PRU10035 (ECO:0000255), a computational family rule, not site-directed mutagenesis or kinetic characterization of this particular enzyme.
-- The protein was identified by mass spectrometry from venom gland tissue, confirming its presence and secretion, but the evidence excerpts do not include a direct phospholipase assay on this protein.
-- Despite the computational basis of the annotation, PLA2 family recognition from the GTKWCG motif is well-established and the distractors are clearly non-PLA2, making the expected answer robust.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains hallmark PLA2-family motifs: the 'IIFLGTKWCG' segment (residues ~27-34) is the classic PLA2 superfamily signature, and the later 'GTKCYR' motif reinforces this assignment. The N-terminal hydrophobic stretch (MHALRSSVLALWLCLHVSVRAW) is a cleavable signal peptide indicating a secreted protein, which eliminates membrane transporters (options A and C). The catalytic region 'NCGCDEK' and 'CYRNEHPLICV' contain the PLA2 His-Asp catalytic dyad. The multiple cysteines (forming 6-7 disulfide bonds) are characteristic of the PLA2 fold. Option B (ornithine cyclodeaminase) is a cytosolic enzyme with a completely unrelated fold and no sequence resemblance. These are general biochemical facts about well-characterized enzyme families, not item-specific database lookups.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The PLA2 GTKWCG/GTKCYR motifs and the signal-peptide/cysteine-rich secreted-enzyme pattern are standard biochemistry knowledge sufficient to distinguish D from the other three choices.",
-    "reason": "A knowledgeable biochemist can recognize the PLA2 signature motifs (GTKWCG, GTKCYR), the signal peptide, the catalytic His-Asp dyad region, and the disulfide-bonding cysteine pattern from the raw sequence. These motifs are general knowledge in enzymology, not protein-specific memorization. The distractors (nucleoside transporter, ornithine cyclodeaminase, potassium channel) are eliminated by the absence of transmembrane domains (ruling out A, C) and by the complete lack of similarity to ornithine cyclodeaminase (ruling out B)."
-  },
-  "case_id": "catalytic_activity_0146",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXZ6 (PA2_XYLAR) annotates this sequence as Phospholipase A2 (EC 3.1.1.4) with the exact catalytic reaction matching option D. The EC number is assigned by similarity (ECO:0000250 to P00630) and the catalytic activity by PROSITE-ProRule PRU10035 (ECO:0000255). The sequence matches the UniProt record (179 aa, sha256 confirmed). The protein was identified by mass spectrometry from venom gland tissue (PubMed:36550366). While the annotation is computational/similarity-based rather than a direct enzyme assay on this specific protein, the PLA2 family assignment is strongly supported by characteristic sequence motifs (GTKWCG, GTKCYR, catalytic His-Asp region, multiple disulfide-bonding cysteines) and the PROSITE-ProRule match."
-  },
-  "important_caveats": [
-    "The EC 3.1.1.4 assignment is by similarity to P00630 (ECO:0000250), not a direct enzyme assay on this specific Xylocopa aruana protein.",
-    "The catalytic activity annotation relies on PROSITE-ProRule PRU10035 (ECO:0000255), a computational family rule, not site-directed mutagenesis or kinetic characterization of this particular enzyme.",
-    "The protein was identified by mass spectrometry from venom gland tissue, confirming its presence and secretion, but the evidence excerpts do not include a direct phospholipase assay on this protein.",
-    "Despite the computational basis of the annotation, PLA2 family recognition from the GTKWCG motif is well-established and the distractors are clearly non-PLA2, making the expected answer robust."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C require transmembrane topology absent from this small secreted protein. Option B (ornithine cyclodeaminase) is a ~400-residue cytosolic enzyme with no resemblance to this sequence. Option D is the only choice consistent with the PLA2-family sequence signatures present. No ambiguity among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0146",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXZ6 (PA2_XYLAR) annotates this sequence as Phospholipase A2 (EC 3.1.1.4) with the exact catalytic reaction matching option D. The EC number is assigned by similarity (ECO:0000250 to P00630) and the catalytic activity by PROSITE-ProRule PRU10035 (ECO:0000255). The sequence matches the UniProt record (179 aa, sha256 confirmed). The protein was identified by mass spectrometry from venom gland tissue (PubMed:36550366). While the annotation is computational/similarity-based rather than a direct enzyme assay on this specific protein, the PLA2 family assignment is strongly supported by characteristic sequence motifs (GTKWCG, GTKCYR, catalytic His-Asp region, multiple disulfide-bonding cysteines) and the PROSITE-ProRule match.",
-    "evidence_ids": ["C4", "C5", "H2", "H4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains hallmark PLA2-family motifs: the 'IIFLGTKWCG' segment (residues ~27-34) is the classic PLA2 superfamily signature, and the later 'GTKCYR' motif reinforces this assignment. The N-terminal hydrophobic stretch (MHALRSSVLALWLCLHVSVRAW) is a cleavable signal peptide indicating a secreted protein, which eliminates membrane transporters (options A and C). The catalytic region 'NCGCDEK' and 'CYRNEHPLICV' contain the PLA2 His-Asp catalytic dyad. The multiple cysteines (forming 6-7 disulfide bonds) are characteristic of the PLA2 fold. Option B (ornithine cyclodeaminase) is a cytosolic enzyme with a completely unrelated fold and no sequence resemblance. These are general biochemical facts about well-characterized enzyme families, not item-specific database lookups.",
-    "missing_item_specific_fact": "None critical. The PLA2 GTKWCG/GTKCYR motifs and the signal-peptide/cysteine-rich secreted-enzyme pattern are standard biochemistry knowledge sufficient to distinguish D from the other three choices.",
-    "reason": "A knowledgeable biochemist can recognize the PLA2 signature motifs (GTKWCG, GTKCYR), the signal peptide, the catalytic His-Asp dyad region, and the disulfide-bonding cysteine pattern from the raw sequence. These motifs are general knowledge in enzymology, not protein-specific memorization. The distractors (nucleoside transporter, ornithine cyclodeaminase, potassium channel) are eliminated by the absence of transmembrane domains (ruling out A, C) and by the complete lack of similarity to ornithine cyclodeaminase (ruling out B)."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C require transmembrane topology absent from this small secreted protein. Option B (ornithine cyclodeaminase) is a ~400-residue cytosolic enzyme with no resemblance to this sequence. Option D is the only choice consistent with the PLA2-family sequence signatures present. No ambiguity among the choices."
-  },
-  "important_caveats": [
-    "The EC 3.1.1.4 assignment is by similarity to P00630 (ECO:0000250), not a direct enzyme assay on this specific Xylocopa aruana protein.",
-    "The catalytic activity annotation relies on PROSITE-ProRule PRU10035 (ECO:0000255), a computational family rule, not site-directed mutagenesis or kinetic characterization of this particular enzyme.",
-    "The protein was identified by mass spectrometry from venom gland tissue, confirming its presence and secretion, but the evidence excerpts do not include a direct phospholipase assay on this protein.",
-    "Despite the computational basis of the annotation, PLA2 family recognition from the GTKWCG motif is well-established and the distractors are clearly non-PLA2, making the expected answer robust."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXZ6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "50594be59aa7852dcdccd4fd13825b239fed46dff2ce31a488ef868edb881b3b",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 179,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "50594be59aa7852dcdccd4fd13825b239fed46dff2ce31a488ef868edb881b3b",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-02-05",
@@ -537,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
-  "current_source_sequence_sha256": "50594be59aa7852dcdccd4fd13825b239fed46dff2ce31a488ef868edb881b3b",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 179,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "50594be59aa7852dcdccd4fd13825b239fed46dff2ce31a488ef868edb881b3b",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXZ6",
   "selected_historical_entry_version": 4,
+  "selected_historical_record_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
+  "selected_historical_source_sequence_length": 179,
+  "selected_historical_source_sequence_sha256": "50594be59aa7852dcdccd4fd13825b239fed46dff2ce31a488ef868edb881b3b",
   "selected_historical_version": {
     "accession": "P0DXZ6",
     "database": "Swiss-Prot",
@@ -555,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PA2_XYLAR",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
-  "selected_historical_source_sequence_sha256": "50594be59aa7852dcdccd4fd13825b239fed46dff2ce31a488ef868edb881b3b",
-  "selected_historical_source_sequence_length": 179,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 4,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json",
-  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
-  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXZ6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json"
 }
 ```
 
@@ -605,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json",
-  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
-  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json"
 }
 ```
 
@@ -624,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json",
-  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
-  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Great carpenter bee\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Hymenoptera\",\"Apocrita\",\"Aculeata\",\"Apoidea\",\"Anthophila\",\"Apidae\",\"Xylocopa\",\"Koptortosoma\"],\"scientificName\":\"Xylocopa aruana\",\"taxonId\":135674}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json"
 }
 ```
 
@@ -643,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json",
-  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
-  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Phosphatidylcholine 2-acylhydrolase\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P00630\",\"source\":\"UniProtKB\"}],\"value\":\"3.1.1.4\"}],\"fullName\":{\"value\":\"Phospholipase A2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"PA2\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36550366\",\"source\":\"PubMed\"}],\"value\":\"PLA2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json"
 }
 ```
 
@@ -662,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json",
-  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
-  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.1.1.4\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10035\",\"source\":\"PROSITE-ProRule\"}],\"name\":\"a 1,2-diacyl-sn-glycero-3-phosphocholine + H2O = a 1-acyl-sn-glycero-3-phosphocholine + a fatty acid + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:15801\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:28868\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57643\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58168\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json"
 }
 ```
 
@@ -681,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json",
-  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
-  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Shi N.\",\"Szanto T.G.\",\"He J.\",\"Schroeder C.I.\",\"Walker A.A.\",\"Deuis J.R.\",\"Vetter I.\",\"Panyi G.\",\"King G.F.\",\"Robinson S.D.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36550366\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41598-022-26867-8\"}],\"citationType\":\"journal article\",\"firstPage\":\"22168\",\"id\":\"36550366\",\"journal\":\"Sci. Rep.\",\"lastPage\":\"22168\",\"publicationDate\":\"2022\",\"title\":\"Venom composition and pain-causing toxins of the Australian great carpenter bee Xylocopa aruana.\",\"volume\":\"12\"},\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Venom\"},{\"type\":\"TISSUE\",\"value\":\"Venom gland\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"IDENTIFICATION BY MASS SPECTROMETRY\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:59.679483+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a4a3642c25c1c2414c3d78cd3e1fc44c8a083a58364446defb8748c41e68c974",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ6.json"
 }
 ```
 
@@ -699,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4",
-  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
-  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   PA2_XYLAR               Reviewed;         179 AA.\nAC   P0DXZ6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=Phospholipase A2;\nDE            Short=PA2 {ECO:0000305};\nDE            Short=PLA2 {ECO:0000303|PubMed:36550366};\nDE            EC=3.1.1.4 {ECO:0000250|UniProtKB:P00630};\nDE   AltName: Full=Phosphatidylcholine 2-acylhydrolase;\nDE   Flags: Precursor;\nOS   Xylocopa aruana (Great carpenter bee).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Hymenoptera; Apocrita; Aculeata; Apoidea;\nOC   Anthophila; Apidae; Xylocopa; Koptortosoma.\nOX   NCBI_TaxID=135674;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4"
 }
 ```
 
@@ -720,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4",
-  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
-  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
-  "source_locator": "lines 6-11",
   "excerpt": "DE   RecName: Full=Phospholipase A2;\nDE            Short=PA2 {ECO:0000305};\nDE            Short=PLA2 {ECO:0000303|PubMed:36550366};\nDE            EC=3.1.1.4 {ECO:0000250|UniProtKB:P00630};\nDE   AltName: Full=Phosphatidylcholine 2-acylhydrolase;\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-11",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4"
 }
 ```
 
@@ -741,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4",
-  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
-  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
-  "source_locator": "lines 17-26",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], IDENTIFICATION BY MASS SPECTROMETRY, AND\nRP   SUBCELLULAR LOCATION.\nRC   TISSUE=Venom, and Venom gland;\nRX   PubMed=36550366; DOI=10.1038/s41598-022-26867-8;\nRA   Shi N., Szanto T.G., He J., Schroeder C.I., Walker A.A., Deuis J.R.,\nRA   Vetter I., Panyi G., King G.F., Robinson S.D.;\nRT   \"Venom composition and pain-causing toxins of the Australian great\nRT   carpenter bee Xylocopa aruana.\";\nRL   Sci. Rep. 12:22168-22168(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4"
 }
 ```
 
@@ -762,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4",
-  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
-  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
-  "source_locator": "lines 35-40",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a 1,2-diacyl-sn-glycero-3-phosphocholine + H2O = a 1-acyl-sn-\nCC         glycero-3-phosphocholine + a fatty acid + H(+); Xref=Rhea:RHEA:15801,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:28868,\nCC         ChEBI:CHEBI:57643, ChEBI:CHEBI:58168; EC=3.1.1.4;\nCC         Evidence={ECO:0000255|PROSITE-ProRule:PRU10035};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:30:01.445083+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ce685ee2cfb313cb4868e922c2f9afc26dee98c65065d4d9d113b9c37eab4c1a",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ6?format=txt&versions=4"
 }
 ```
 

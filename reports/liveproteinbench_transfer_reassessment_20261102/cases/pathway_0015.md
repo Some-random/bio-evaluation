@@ -1,18 +1,16 @@
-# pathway_0015: before and after transfer clarification
+# pathway_0015
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0015.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0015.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Cofactor biosynthesis
+**Expected answer:** **B** — Cofactor biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the soybean HAL3b/PPCDC entry, whose pathway annotation places it in cofactor and coenzyme A biosynthesis. The enzyme annotation is supported by transfer from a related UniProt entry, so this supports the keyed broad pathway without establishing that it was experimentally validated for this soybean protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone offers no clear general biological cue that distinguishes cofactor biosynthesis from the listed amino-acid or glycolipid pathways; identifying the relevant enzyme family requires protein-specific functional knowledge.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as phosphopantothenoylcysteine decarboxylase (PPCDC), and its role in coenzyme A biosynthesis, is not supplied in the question.
-
-
-**Reason**
-
-> The answer is supported by an annotation for this exact sequence, but that reviewer-only annotation was absent from the model input. Recognizing the sequence or recalling its database record would be lookup or memorization, not reasoning from the provided context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matching annotation places the protein in cofactor biosynthesis, corresponding to B; the other choices describe different pathways.
-
-
-### Important caveats
-
-- The matched UniProt pathway annotation cites evidence transferred by similarity from another UniProt entry (ECO:0000250), rather than direct experimental evidence shown here.
-- The exact author source snapshot is unknown, although the sequence matches the historical entry available by the stated cutoff.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone offers no clear general biological cue that distinguishes cofactor biosynthesis from the listed amino-acid or glycolipid pathways; identifying the relevant enzyme family requires protein-specific functional knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as phosphopantothenoylcysteine decarboxylase (PPCDC), and its role in coenzyme A biosynthesis, is not supplied in the question.",
-    "reason": "The answer is supported by an annotation for this exact sequence, but that reviewer-only annotation was absent from the model input. Recognizing the sequence or recalling its database record would be lookup or memorization, not reasoning from the provided context."
-  },
-  "case_id": "pathway_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the soybean HAL3b/PPCDC entry, whose pathway annotation places it in cofactor and coenzyme A biosynthesis. The enzyme annotation is supported by transfer from a related UniProt entry, so this supports the keyed broad pathway without establishing that it was experimentally validated for this soybean protein."
-  },
-  "important_caveats": [
-    "The matched UniProt pathway annotation cites evidence transferred by similarity from another UniProt entry (ECO:0000250), rather than direct experimental evidence shown here.",
-    "The exact author source snapshot is unknown, although the sequence matches the historical entry available by the stated cutoff."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matching annotation places the protein in cofactor biosynthesis, corresponding to B; the other choices describe different pathways."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the soybean HAL3b/PPCDC entry, whose pathway annotation places it in cofactor and coenzyme A biosynthesis. The enzyme annotation is supported by transfer from a related UniProt entry, so this supports the keyed broad pathway without establishing that it was experimentally validated for this soybean protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone offers no clear general biological cue that distinguishes cofactor biosynthesis from the listed amino-acid or glycolipid pathways; identifying the relevant enzyme family requires protein-specific functional knowledge.",
-    "missing_item_specific_fact": "The protein's identity as phosphopantothenoylcysteine decarboxylase (PPCDC), and its role in coenzyme A biosynthesis, is not supplied in the question.",
-    "reason": "The answer is supported by an annotation for this exact sequence, but that reviewer-only annotation was absent from the model input. Recognizing the sequence or recalling its database record would be lookup or memorization, not reasoning from the provided context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matching annotation places the protein in cofactor biosynthesis, corresponding to B; the other choices describe different pathways."
-  },
-  "important_caveats": [
-    "The matched UniProt pathway annotation cites evidence transferred by similarity from another UniProt entry (ECO:0000250), rather than direct experimental evidence shown here.",
-    "The exact author source snapshot is unknown, although the sequence matches the historical entry available by the stated cutoff."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry C6TA59 (HAL3B_SOYBN) explicitly annotates the pathway as 'Cofactor biosynthesis; coenzyme A biosynthesis; CoA from (R)-pantothenate: step 3/5' (evidence C5, H2). The protein is Phosphopantothenoylcysteine decarboxylase (PPCDC, EC 4.1.1.36), which catalyzes a committed step in coenzyme A biosynthesis. CoA biosynthesis is classified under the top-level UniProt pathway category 'Cofactor biosynthesis,' directly matching answer B. The evidence code is ECO:0000250 (similarity to Q9SWE5), so the annotation is computationally transferred rather than experimentally verified for this specific soybean protein, but it is a valid and consistent annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could note the conserved cysteine-rich motif 'CHCF' in the sequence, which is characteristic of the PPCDC enzyme family, and reason that PPCDC participates in CoA biosynthesis. However, reliably identifying this short motif as diagnostic of PPCDC among all small cysteine-containing proteins, and then correctly mapping PPCDC to the specific UniProt pathway category 'Cofactor biosynthesis' (rather than, say, amino acid biosynthesis or general metabolism), requires specialized knowledge of this particular enzyme family and database pathway taxonomy.
-
-
-**Missing item-specific fact**
-
-> The specific identification of this 214-aa sequence as phosphopantothenoylcysteine decarboxylase (PPCDC, EC 4.1.1.36) and the knowledge that CoA biosynthesis is categorized under 'Cofactor biosynthesis' in the UniProt pathway hierarchy. Without recognizing the PPCDC family, the sequence offers no obvious pathway-specific feature that clearly distinguishes cofactor biosynthesis from the three other unrelated pathway options.
-
-
-**Reason**
-
-> The four choices span completely unrelated pathways (amino acid biosynthesis, cofactor biosynthesis, glycolipid biosynthesis, methionine biosynthesis). Distinguishing them requires identifying the specific enzyme, which depends on recognizing PPCDC family features or recalling the protein's identity. General biological reasoning from a 214-aa sequence without a clear pathway-specific catalytic signature (e.g., no obvious glycosyltransferase, kinase, or aspartokinase motif) does not meaningfully narrow the choices without item-specific knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The UniProt annotation unambiguously places this protein in 'Cofactor biosynthesis; coenzyme A biosynthesis.' None of the other three options (threonine biosynthesis, glycolipid biosynthesis, cystathionine synthesis) bear any relation to PPCDC or CoA biosynthesis. Answer B is the sole defensible choice.
-
-
-### Important caveats
-
-- The pathway annotation carries evidence code ECO:0000250 (inferred by similarity from Q9SWE5), meaning it is computationally transferred rather than experimentally validated for this specific soybean protein.
-- The protein is also named 'Halotolerance protein 3b' (GmHAL3b), which could mislead a model toward a stress-response pathway rather than cofactor biosynthesis.
-- The accession C6TA59 was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence and had no access to this identifier.
-- The UniProt entry was first publicly released on 2025-04-09; the author's source snapshot date is unknown, so the annotation available at question-construction time may differ.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could note the conserved cysteine-rich motif 'CHCF' in the sequence, which is characteristic of the PPCDC enzyme family, and reason that PPCDC participates in CoA biosynthesis. However, reliably identifying this short motif as diagnostic of PPCDC among all small cysteine-containing proteins, and then correctly mapping PPCDC to the specific UniProt pathway category 'Cofactor biosynthesis' (rather than, say, amino acid biosynthesis or general metabolism), requires specialized knowledge of this particular enzyme family and database pathway taxonomy.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of this 214-aa sequence as phosphopantothenoylcysteine decarboxylase (PPCDC, EC 4.1.1.36) and the knowledge that CoA biosynthesis is categorized under 'Cofactor biosynthesis' in the UniProt pathway hierarchy. Without recognizing the PPCDC family, the sequence offers no obvious pathway-specific feature that clearly distinguishes cofactor biosynthesis from the three other unrelated pathway options.",
-    "reason": "The four choices span completely unrelated pathways (amino acid biosynthesis, cofactor biosynthesis, glycolipid biosynthesis, methionine biosynthesis). Distinguishing them requires identifying the specific enzyme, which depends on recognizing PPCDC family features or recalling the protein's identity. General biological reasoning from a 214-aa sequence without a clear pathway-specific catalytic signature (e.g., no obvious glycosyltransferase, kinase, or aspartokinase motif) does not meaningfully narrow the choices without item-specific knowledge."
-  },
-  "case_id": "pathway_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry C6TA59 (HAL3B_SOYBN) explicitly annotates the pathway as 'Cofactor biosynthesis; coenzyme A biosynthesis; CoA from (R)-pantothenate: step 3/5' (evidence C5, H2). The protein is Phosphopantothenoylcysteine decarboxylase (PPCDC, EC 4.1.1.36), which catalyzes a committed step in coenzyme A biosynthesis. CoA biosynthesis is classified under the top-level UniProt pathway category 'Cofactor biosynthesis,' directly matching answer B. The evidence code is ECO:0000250 (similarity to Q9SWE5), so the annotation is computationally transferred rather than experimentally verified for this specific soybean protein, but it is a valid and consistent annotation."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000250 (inferred by similarity from Q9SWE5), meaning it is computationally transferred rather than experimentally validated for this specific soybean protein.",
-    "The protein is also named 'Halotolerance protein 3b' (GmHAL3b), which could mislead a model toward a stress-response pathway rather than cofactor biosynthesis.",
-    "The accession C6TA59 was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence and had no access to this identifier.",
-    "The UniProt entry was first publicly released on 2025-04-09; the author's source snapshot date is unknown, so the annotation available at question-construction time may differ."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt annotation unambiguously places this protein in 'Cofactor biosynthesis; coenzyme A biosynthesis.' None of the other three options (threonine biosynthesis, glycolipid biosynthesis, cystathionine synthesis) bear any relation to PPCDC or CoA biosynthesis. Answer B is the sole defensible choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry C6TA59 (HAL3B_SOYBN) explicitly annotates the pathway as 'Cofactor biosynthesis; coenzyme A biosynthesis; CoA from (R)-pantothenate: step 3/5' (evidence C5, H2). The protein is Phosphopantothenoylcysteine decarboxylase (PPCDC, EC 4.1.1.36), which catalyzes a committed step in coenzyme A biosynthesis. CoA biosynthesis is classified under the top-level UniProt pathway category 'Cofactor biosynthesis,' directly matching answer B. The evidence code is ECO:0000250 (similarity to Q9SWE5), so the annotation is computationally transferred rather than experimentally verified for this specific soybean protein, but it is a valid and consistent annotation.",
-    "evidence_ids": ["C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could note the conserved cysteine-rich motif 'CHCF' in the sequence, which is characteristic of the PPCDC enzyme family, and reason that PPCDC participates in CoA biosynthesis. However, reliably identifying this short motif as diagnostic of PPCDC among all small cysteine-containing proteins, and then correctly mapping PPCDC to the specific UniProt pathway category 'Cofactor biosynthesis' (rather than, say, amino acid biosynthesis or general metabolism), requires specialized knowledge of this particular enzyme family and database pathway taxonomy.",
-    "missing_item_specific_fact": "The specific identification of this 214-aa sequence as phosphopantothenoylcysteine decarboxylase (PPCDC, EC 4.1.1.36) and the knowledge that CoA biosynthesis is categorized under 'Cofactor biosynthesis' in the UniProt pathway hierarchy. Without recognizing the PPCDC family, the sequence offers no obvious pathway-specific feature that clearly distinguishes cofactor biosynthesis from the three other unrelated pathway options.",
-    "reason": "The four choices span completely unrelated pathways (amino acid biosynthesis, cofactor biosynthesis, glycolipid biosynthesis, methionine biosynthesis). Distinguishing them requires identifying the specific enzyme, which depends on recognizing PPCDC family features or recalling the protein's identity. General biological reasoning from a 214-aa sequence without a clear pathway-specific catalytic signature (e.g., no obvious glycosyltransferase, kinase, or aspartokinase motif) does not meaningfully narrow the choices without item-specific knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt annotation unambiguously places this protein in 'Cofactor biosynthesis; coenzyme A biosynthesis.' None of the other three options (threonine biosynthesis, glycolipid biosynthesis, cystathionine synthesis) bear any relation to PPCDC or CoA biosynthesis. Answer B is the sole defensible choice."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000250 (inferred by similarity from Q9SWE5), meaning it is computationally transferred rather than experimentally validated for this specific soybean protein.",
-    "The protein is also named 'Halotolerance protein 3b' (GmHAL3b), which could mislead a model toward a stress-response pathway rather than cofactor biosynthesis.",
-    "The accession C6TA59 was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence and had no access to this identifier.",
-    "The UniProt entry was first publicly released on 2025-04-09; the author's source snapshot date is unknown, so the annotation available at question-construction time may differ."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "C6TA59",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "dcaceed6f1d468598241beac0d585a8eb9ed9cdd0b98d0e7be38e1ae1801b687",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 214,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "dcaceed6f1d468598241beac0d585a8eb9ed9cdd0b98d0e7be38e1ae1801b687",
   "current_entry_audit": {
     "entryVersion": 86,
     "firstPublicDate": "2025-04-09",
@@ -533,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-09-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
-  "current_source_sequence_sha256": "dcaceed6f1d468598241beac0d585a8eb9ed9cdd0b98d0e7be38e1ae1801b687",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 214,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "dcaceed6f1d468598241beac0d585a8eb9ed9cdd0b98d0e7be38e1ae1801b687",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 84,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "C6TA59",
   "selected_historical_entry_version": 84,
+  "selected_historical_record_sha256": "9ba69ef0f337ff2a30393964c793af5f757c0c52e62614aa37894bfe6ab8f68d",
+  "selected_historical_source_sequence_length": 214,
+  "selected_historical_source_sequence_sha256": "dcaceed6f1d468598241beac0d585a8eb9ed9cdd0b98d0e7be38e1ae1801b687",
   "selected_historical_version": {
     "accession": "C6TA59",
     "database": "Swiss-Prot",
@@ -551,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HAL3B_SOYBN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9ba69ef0f337ff2a30393964c793af5f757c0c52e62614aa37894bfe6ab8f68d",
-  "selected_historical_source_sequence_sha256": "dcaceed6f1d468598241beac0d585a8eb9ed9cdd0b98d0e7be38e1ae1801b687",
-  "selected_historical_source_sequence_length": 214,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 84,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -582,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json",
-  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
-  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"C6TA59\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
+  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json"
 }
 ```
 
@@ -601,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json",
-  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
-  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":86,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-09-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
+  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json"
 }
 ```
 
@@ -620,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json",
-  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
-  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soybean\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"rosids\",\"fabids\",\"Fabales\",\"Fabaceae\",\"Papilionoideae\",\"50 kb inversion clade\",\"NPAAA clade\",\"indigoferoid/millettioid clade\",\"Phaseoleae\",\"Glycine\",\"Glycine subgen. Soja\"],\"scientificName\":\"Glycine max\",\"synonyms\":[\"Glycine hispida\"],\"taxonId\":3847}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
+  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json"
 }
 ```
 
@@ -639,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json",
-  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
-  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.3\",\"source\":\"Reference\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.4\",\"source\":\"Reference\"}],\"value\":\"Halotolerance protein 3b\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.3\",\"source\":\"Reference\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.4\",\"source\":\"Reference\"}],\"value\":\"GmHAL3b\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"value\":\"4.1.1.36\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Phosphopantothenoylcysteine decarboxylase HAL3b\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"PPCDC\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
+  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json"
 }
 ```
 
@@ -658,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json",
-  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
-  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"value\":\"Cofactor biosynthesis; coenzyme A biosynthesis; CoA from (R)-pantothenate: step 3/5\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:27:35.244012+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4f24a50395840d689b2bca6503bac71363002becd9e9b0e170ac85361993f2a0",
+  "url": "https://rest.uniprot.org/uniprotkb/C6TA59.json"
 }
 ```
 
@@ -676,18 +436,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6TA59?format=txt&versions=84",
-  "source_sha256": "9ba69ef0f337ff2a30393964c793af5f757c0c52e62614aa37894bfe6ab8f68d",
-  "retrieved_utc": "2026-11-02T04:27:37.263279+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   HAL3B_SOYBN             Reviewed;         214 AA.\nAC   C6TA59;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-SEP-2009, sequence version 1.\nDT   28-JAN-2026, entry version 84.\nDE   RecName: Full=Phosphopantothenoylcysteine decarboxylase HAL3b {ECO:0000305};\nDE            Short=PPCDC {ECO:0000305};\nDE            EC=4.1.1.36 {ECO:0000250|UniProtKB:Q9SWE5};\nDE   AltName: Full=Halotolerance protein 3b {ECO:0000303|Ref.3, ECO:0000303|Ref.4};\nDE            Short=GmHAL3b {ECO:0000303|Ref.3, ECO:0000303|Ref.4};\nGN   Name=HAL3B {ECO:0000303|Ref.3, ECO:0000303|Ref.4};\nGN   OrderedLocusNames=Glyma07g082800 {ECO:0000312|EMBL:KRH48322.1};\nOS   Glycine max (Soybean) (Glycine hispida).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   rosids; fabids; Fabales; Fabaceae; Papilionoideae; 50 kb inversion clade;\nOC   NPAAA clade; indigoferoid/millettioid clade; Phaseoleae; Glycine;\nOC   Glycine subgen. Soja.\nOX   NCBI_TaxID=3847;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:37.263279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9ba69ef0f337ff2a30393964c793af5f757c0c52e62614aa37894bfe6ab8f68d",
+  "url": "https://rest.uniprot.org/unisave/C6TA59?format=txt&versions=84"
 }
 ```
 
@@ -697,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6TA59?format=txt&versions=84",
-  "source_sha256": "9ba69ef0f337ff2a30393964c793af5f757c0c52e62614aa37894bfe6ab8f68d",
-  "retrieved_utc": "2026-11-02T04:27:37.263279+00:00",
-  "source_locator": "lines 73-74",
   "excerpt": "CC   -!- PATHWAY: Cofactor biosynthesis; coenzyme A biosynthesis; CoA from (R)-\nCC       pantothenate: step 3/5. {ECO:0000250|UniProtKB:Q9SWE5}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:37.263279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9ba69ef0f337ff2a30393964c793af5f757c0c52e62614aa37894bfe6ab8f68d",
+  "url": "https://rest.uniprot.org/unisave/C6TA59?format=txt&versions=84"
 }
 ```
 

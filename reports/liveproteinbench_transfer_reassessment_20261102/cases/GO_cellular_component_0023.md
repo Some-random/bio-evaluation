@@ -1,18 +1,16 @@
-# GO_cellular_component_0023: before and after transfer clarification
+# GO_cellular_component_0023
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0023.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0023.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — mitochondrion
+**Expected answer:** **D** — mitochondrion
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,258 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record identifies the protein as P. falciparum Isd11 and reports mitochondrial localization with experimental evidence (ECO:0000269); it also records a mitochondrion GO annotation with IDA evidence. This supports D, though the evidence is reviewer-only and does not establish what the original model could infer from sequence alone.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence does not provide a sufficiently unambiguous targeting signal to establish mitochondrial localization or distinguish the organelle from a specific mitochondrial complex. Its short length and composition alone do not resolve the choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization and complex membership of Isd11, established through annotation or experimental work, are not supplied in the question.
-
-
-**Reason**
-
-> Choosing the supported mitochondrial location depends on item-specific knowledge absent from the input. Recognizing the sequence or invoking an unspecified predictor would not constitute reasoning from the provided evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> D is supported as the organelle location. A is also potentially defensible because Isd11 is associated with mitochondrial iron-sulfur assembly machinery, and the reviewer-only record annotates it to a cysteine-desulfurase complex that is related in the supplied ontology to the mitochondrial &#91;2Fe-2S&#93; assembly complex. The question does not clarify whether it seeks a broad location or a specific complex.
-
-
-### Important caveats
-
-- The experimental localization evidence supports D; the exact author source snapshot is unknown.
-- Reviewer-only annotations and source identity were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence does not provide a sufficiently unambiguous targeting signal to establish mitochondrial localization or distinguish the organelle from a specific mitochondrial complex. Its short length and composition alone do not resolve the choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization and complex membership of Isd11, established through annotation or experimental work, are not supplied in the question.",
-    "reason": "Choosing the supported mitochondrial location depends on item-specific knowledge absent from the input. Recognizing the sequence or invoking an unspecified predictor would not constitute reasoning from the provided evidence."
-  },
-  "case_id": "GO_cellular_component_0023",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C7",
-      "H4",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record identifies the protein as P. falciparum Isd11 and reports mitochondrial localization with experimental evidence (ECO:0000269); it also records a mitochondrion GO annotation with IDA evidence. This supports D, though the evidence is reviewer-only and does not establish what the original model could infer from sequence alone."
-  },
-  "important_caveats": [
-    "The experimental localization evidence supports D; the exact author source snapshot is unknown.",
-    "Reviewer-only annotations and source identity were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "D is supported as the organelle location. A is also potentially defensible because Isd11 is associated with mitochondrial iron-sulfur assembly machinery, and the reviewer-only record annotates it to a cysteine-desulfurase complex that is related in the supplied ontology to the mitochondrial [2Fe-2S] assembly complex. The question does not clarify whether it seeks a broad location or a specific complex."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0023",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record identifies the protein as P. falciparum Isd11 and reports mitochondrial localization with experimental evidence (ECO:0000269); it also records a mitochondrion GO annotation with IDA evidence. This supports D, though the evidence is reviewer-only and does not establish what the original model could infer from sequence alone.",
-    "evidence_ids": ["C1", "C4", "C5", "C7", "H4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence does not provide a sufficiently unambiguous targeting signal to establish mitochondrial localization or distinguish the organelle from a specific mitochondrial complex. Its short length and composition alone do not resolve the choices.",
-    "missing_item_specific_fact": "The protein-specific localization and complex membership of Isd11, established through annotation or experimental work, are not supplied in the question.",
-    "reason": "Choosing the supported mitochondrial location depends on item-specific knowledge absent from the input. Recognizing the sequence or invoking an unspecified predictor would not constitute reasoning from the provided evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "D is supported as the organelle location. A is also potentially defensible because Isd11 is associated with mitochondrial iron-sulfur assembly machinery, and the reviewer-only record annotates it to a cysteine-desulfurase complex that is related in the supplied ontology to the mitochondrial [2Fe-2S] assembly complex. The question does not clarify whether it seeks a broad location or a specific complex."
-  },
-  "important_caveats": [
-    "The experimental localization evidence supports D; the exact author source snapshot is unknown.",
-    "Reviewer-only annotations and source identity were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q8IEK7 (Isd11/PfIsd11 from Plasmodium falciparum) carries the experimental subcellular location annotation 'Mitochondrion' with evidence code ECO:0000269 (direct assay) from PubMed:24086138 (Gisselberg et al. 2013, PLoS Pathog). The GO annotation GO:0005739 (mitochondrion) is tagged IDA:GeneDB, indicating direct experimental evidence. The sequence matches the benchmark input exactly (87 aa, SHA256 confirmed). Option A (mitochondrial &#91;2Fe-2S&#93; assembly complex, GO:0099128) is defined for the human complex (ISCU, NFS1, LYRM4, NDUFAB1, FXN) and is not directly annotated to this protein; the related annotation GO:1990221 (L-cysteine desulfurase complex) is via IBA:GO_Central (inference), not direct evidence. Thus D (mitochondrion) is the best-supported primary cellular component.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H4](#evidence-h4), [H6](#evidence-h6), [GO2](#evidence-go2), [GO5](#evidence-go5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A general biologist might note that Fe-S cluster assembly occurs in mitochondria in eukaryotes and that Plasmodium retains a mitochondrion, but the 87-aa sequence lacks a canonical N-terminal mitochondrial targeting sequence (no amphipathic helix rich in Arg/Ser/Thr devoid of acidic residues; the N-terminus MNGNQIKQLKKLYRHILNEASK contains both basic and acidic residues). No cysteine-rich iron-binding motif or ISCU/Isd11-specific domain is discernible from the raw sequence. The distinction between option A (mitochondrial &#91;2Fe-2S&#93; assembly complex) and option D (mitochondrion) cannot be made from sequence features alone; it requires knowing that this protein is Isd11, a component of the ISC scaffold complex, and that its experimentally determined primary location is the mitochondrion rather than being specifically annotated to GO:0099128.
-
-
-**Missing item-specific fact**
-
-> The experimental subcellular localization of PfIsd11 by fluorescence microscopy/fractionation (Gisselberg et al. 2013, PubMed:24086138) and its identification as a component of the Plasmodium ISC scaffold complex (Sadik et al. 2021, PubMed:34032321) are required to confidently assign mitochondrion over cytoplasm and to distinguish the general organelle (D) from the specific complex (A). The 87-aa sequence provides no strong targeting signal for confident de novo prediction.
-
-
-**Reason**
-
-> The sequence is too short (87 aa) and lacks recognizable targeting motifs (no clear MTS, no signal peptide, no transmembrane helix, no NLS) to support reliable compartment prediction by general reasoning. Eliminating C (virion component) is trivial for a eukaryotic protein, but distinguishing A from D from B requires protein-specific knowledge of Isd11 identity and its experimental localization data.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Both A (mitochondrial &#91;2Fe-2S&#93; assembly complex) and D (mitochondrion) point to the mitochondrial compartment. A knowledgeable model aware of Fe-S cluster biology might consider A plausible since Isd11 participates in ISC scaffold assembly. However, GO:0099128 is defined for the human complex and Isd11 is not annotated to it; the direct experimental annotation is to GO:0005739 (mitochondrion). The 'primary cellular component' framing favors D, but the overlap makes A a tempting near-miss distractor that tests specific annotation knowledge rather than reasoning.
-
-
-### Important caveats
-
-- The UniProt entry was first released 2025-04-09 (entry version 87); the benchmark's author source snapshot is unknown, though the historical version 85 (released 2026-01-28) also carries the same mitochondrial annotation.
-- The identity origin (accession Q8IEK7) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model sees only the 87-aa sequence.
-- GO:0099128 (option A) is defined for the human complex (ISCU, NFS1, LYRM4, NDUFAB1, FXN); Plasmodium Isd11 participates in the ISC scaffold complex but is not annotated to this exact term.
-- The annotation to GO:1990221 (L-cysteine desulfurase complex) is via IBA:GO_Central (inference by biological ancestor), not direct experimental evidence, weakening any argument for option A.
-- Plasmodium falciparum also possesses an apicoplast; the cited 2013 paper links the suf pathway to apicoplast maintenance, but the experimental localization of Isd11 specifically is mitochondrial.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A general biologist might note that Fe-S cluster assembly occurs in mitochondria in eukaryotes and that Plasmodium retains a mitochondrion, but the 87-aa sequence lacks a canonical N-terminal mitochondrial targeting sequence (no amphipathic helix rich in Arg/Ser/Thr devoid of acidic residues; the N-terminus MNGNQIKQLKKLYRHILNEASK contains both basic and acidic residues). No cysteine-rich iron-binding motif or ISCU/Isd11-specific domain is discernible from the raw sequence. The distinction between option A (mitochondrial [2Fe-2S] assembly complex) and option D (mitochondrion) cannot be made from sequence features alone; it requires knowing that this protein is Isd11, a component of the ISC scaffold complex, and that its experimentally determined primary location is the mitochondrion rather than being specifically annotated to GO:0099128.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimental subcellular localization of PfIsd11 by fluorescence microscopy/fractionation (Gisselberg et al. 2013, PubMed:24086138) and its identification as a component of the Plasmodium ISC scaffold complex (Sadik et al. 2021, PubMed:34032321) are required to confidently assign mitochondrion over cytoplasm and to distinguish the general organelle (D) from the specific complex (A). The 87-aa sequence provides no strong targeting signal for confident de novo prediction.",
-    "reason": "The sequence is too short (87 aa) and lacks recognizable targeting motifs (no clear MTS, no signal peptide, no transmembrane helix, no NLS) to support reliable compartment prediction by general reasoning. Eliminating C (virion component) is trivial for a eukaryotic protein, but distinguishing A from D from B requires protein-specific knowledge of Isd11 identity and its experimental localization data."
-  },
-  "case_id": "GO_cellular_component_0023",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "C8",
-      "H4",
-      "H6",
-      "GO2",
-      "GO5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q8IEK7 (Isd11/PfIsd11 from Plasmodium falciparum) carries the experimental subcellular location annotation 'Mitochondrion' with evidence code ECO:0000269 (direct assay) from PubMed:24086138 (Gisselberg et al. 2013, PLoS Pathog). The GO annotation GO:0005739 (mitochondrion) is tagged IDA:GeneDB, indicating direct experimental evidence. The sequence matches the benchmark input exactly (87 aa, SHA256 confirmed). Option A (mitochondrial [2Fe-2S] assembly complex, GO:0099128) is defined for the human complex (ISCU, NFS1, LYRM4, NDUFAB1, FXN) and is not directly annotated to this protein; the related annotation GO:1990221 (L-cysteine desulfurase complex) is via IBA:GO_Central (inference), not direct evidence. Thus D (mitochondrion) is the best-supported primary cellular component."
-  },
-  "important_caveats": [
-    "The UniProt entry was first released 2025-04-09 (entry version 87); the benchmark's author source snapshot is unknown, though the historical version 85 (released 2026-01-28) also carries the same mitochondrial annotation.",
-    "The identity origin (accession Q8IEK7) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model sees only the 87-aa sequence.",
-    "GO:0099128 (option A) is defined for the human complex (ISCU, NFS1, LYRM4, NDUFAB1, FXN); Plasmodium Isd11 participates in the ISC scaffold complex but is not annotated to this exact term.",
-    "The annotation to GO:1990221 (L-cysteine desulfurase complex) is via IBA:GO_Central (inference by biological ancestor), not direct experimental evidence, weakening any argument for option A.",
-    "Plasmodium falciparum also possesses an apicoplast; the cited 2013 paper links the suf pathway to apicoplast maintenance, but the experimental localization of Isd11 specifically is mitochondrial."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Both A (mitochondrial [2Fe-2S] assembly complex) and D (mitochondrion) point to the mitochondrial compartment. A knowledgeable model aware of Fe-S cluster biology might consider A plausible since Isd11 participates in ISC scaffold assembly. However, GO:0099128 is defined for the human complex and Isd11 is not annotated to it; the direct experimental annotation is to GO:0005739 (mitochondrion). The 'primary cellular component' framing favors D, but the overlap makes A a tempting near-miss distractor that tests specific annotation knowledge rather than reasoning."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0023",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q8IEK7 (Isd11/PfIsd11 from Plasmodium falciparum) carries the experimental subcellular location annotation 'Mitochondrion' with evidence code ECO:0000269 (direct assay) from PubMed:24086138 (Gisselberg et al. 2013, PLoS Pathog). The GO annotation GO:0005739 (mitochondrion) is tagged IDA:GeneDB, indicating direct experimental evidence. The sequence matches the benchmark input exactly (87 aa, SHA256 confirmed). Option A (mitochondrial [2Fe-2S] assembly complex, GO:0099128) is defined for the human complex (ISCU, NFS1, LYRM4, NDUFAB1, FXN) and is not directly annotated to this protein; the related annotation GO:1990221 (L-cysteine desulfurase complex) is via IBA:GO_Central (inference), not direct evidence. Thus D (mitochondrion) is the best-supported primary cellular component.",
-    "evidence_ids": ["C5", "C7", "C8", "H4", "H6", "GO2", "GO5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A general biologist might note that Fe-S cluster assembly occurs in mitochondria in eukaryotes and that Plasmodium retains a mitochondrion, but the 87-aa sequence lacks a canonical N-terminal mitochondrial targeting sequence (no amphipathic helix rich in Arg/Ser/Thr devoid of acidic residues; the N-terminus MNGNQIKQLKKLYRHILNEASK contains both basic and acidic residues). No cysteine-rich iron-binding motif or ISCU/Isd11-specific domain is discernible from the raw sequence. The distinction between option A (mitochondrial [2Fe-2S] assembly complex) and option D (mitochondrion) cannot be made from sequence features alone; it requires knowing that this protein is Isd11, a component of the ISC scaffold complex, and that its experimentally determined primary location is the mitochondrion rather than being specifically annotated to GO:0099128.",
-    "missing_item_specific_fact": "The experimental subcellular localization of PfIsd11 by fluorescence microscopy/fractionation (Gisselberg et al. 2013, PubMed:24086138) and its identification as a component of the Plasmodium ISC scaffold complex (Sadik et al. 2021, PubMed:34032321) are required to confidently assign mitochondrion over cytoplasm and to distinguish the general organelle (D) from the specific complex (A). The 87-aa sequence provides no strong targeting signal for confident de novo prediction.",
-    "reason": "The sequence is too short (87 aa) and lacks recognizable targeting motifs (no clear MTS, no signal peptide, no transmembrane helix, no NLS) to support reliable compartment prediction by general reasoning. Eliminating C (virion component) is trivial for a eukaryotic protein, but distinguishing A from D from B requires protein-specific knowledge of Isd11 identity and its experimental localization data."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Both A (mitochondrial [2Fe-2S] assembly complex) and D (mitochondrion) point to the mitochondrial compartment. A knowledgeable model aware of Fe-S cluster biology might consider A plausible since Isd11 participates in ISC scaffold assembly. However, GO:0099128 is defined for the human complex and Isd11 is not annotated to it; the direct experimental annotation is to GO:0005739 (mitochondrion). The 'primary cellular component' framing favors D, but the overlap makes A a tempting near-miss distractor that tests specific annotation knowledge rather than reasoning."
-  },
-  "important_caveats": [
-    "The UniProt entry was first released 2025-04-09 (entry version 87); the benchmark's author source snapshot is unknown, though the historical version 85 (released 2026-01-28) also carries the same mitochondrial annotation.",
-    "The identity origin (accession Q8IEK7) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model sees only the 87-aa sequence.",
-    "GO:0099128 (option A) is defined for the human complex (ISCU, NFS1, LYRM4, NDUFAB1, FXN); Plasmodium Isd11 participates in the ISC scaffold complex but is not annotated to this exact term.",
-    "The annotation to GO:1990221 (L-cysteine desulfurase complex) is via IBA:GO_Central (inference by biological ancestor), not direct experimental evidence, weakening any argument for option A.",
-    "Plasmodium falciparum also possesses an apicoplast; the cited 2013 paper links the suf pathway to apicoplast maintenance, but the experimental localization of Isd11 specifically is mitochondrial."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -413,10 +164,9 @@ Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -539,30 +289,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IEK7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "815f42c3144ae2ea2c1a076fe6c0c288030a0dd499a0d2862408f97a7437882f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 87,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "815f42c3144ae2ea2c1a076fe6c0c288030a0dd499a0d2862408f97a7437882f",
   "current_entry_audit": {
     "entryVersion": 87,
     "firstPublicDate": "2025-04-09",
@@ -570,14 +307,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "current_source_sequence_sha256": "815f42c3144ae2ea2c1a076fe6c0c288030a0dd499a0d2862408f97a7437882f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 87,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "815f42c3144ae2ea2c1a076fe6c0c288030a0dd499a0d2862408f97a7437882f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 85,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IEK7",
   "selected_historical_entry_version": 85,
+  "selected_historical_record_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
+  "selected_historical_source_sequence_length": 87,
+  "selected_historical_source_sequence_sha256": "815f42c3144ae2ea2c1a076fe6c0c288030a0dd499a0d2862408f97a7437882f",
   "selected_historical_version": {
     "accession": "Q8IEK7",
     "database": "Swiss-Prot",
@@ -588,24 +341,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ISD11_PLAF7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
-  "selected_historical_source_sequence_sha256": "815f42c3144ae2ea2c1a076fe6c0c288030a0dd499a0d2862408f97a7437882f",
-  "selected_historical_source_sequence_length": 87,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 85,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -623,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IEK7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -642,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":87,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -661,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001450\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Laverania\"],\"scientificName\":\"Plasmodium falciparum (isolate 3D7)\",\"taxonId\":36329}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -680,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Protein Isd11\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34032321\",\"source\":\"PubMed\"}],\"value\":\"PfIsd11\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -699,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24086138\",\"source\":\"PubMed\"}],\"id\":\"SL-0173\",\"value\":\"Mitochondrion\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -718,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/20",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:1990221\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:L-cysteine desulfurase complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/20",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -737,15 +477,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/21",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"24086138\",\"source\":\"PubMed\"}],\"id\":\"GO:0005739\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrion\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:GeneDB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/21",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -756,15 +496,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Gisselberg J.E.\",\"Dellibovi-Ragheb T.A.\",\"Matthews K.A.\",\"Bosch G.\",\"Prigge S.T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24086138\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.ppat.1003655\"}],\"citationType\":\"journal article\",\"firstPage\":\"e1003655\",\"id\":\"24086138\",\"journal\":\"PLoS Pathog.\",\"lastPage\":\"e1003655\",\"publicationDate\":\"2013\",\"title\":\"The suf iron-sulfur cluster synthesis pathway is required for apicoplast maintenance in malaria parasites.\",\"volume\":\"9\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -775,15 +515,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json",
-  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
-  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Sadik M.\",\"Afsar M.\",\"Ramachandran R.\",\"Habib S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34032321\"},{\"database\":\"DOI\",\"id\":\"10.1111/mmi.14735\"}],\"citationType\":\"journal article\",\"firstPage\":\"606\",\"id\":\"34032321\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"623\",\"publicationDate\":\"2021\",\"title\":\"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the Plasmodium falciparum mitochondrion.\",\"volume\":\"116\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"INTERACTION WITH ISCS\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:25:24.795774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dfa2d75ca3fdb086280360b23ddf1875ba7918f7721401a7b327d705fda13007",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IEK7.json"
 }
 ```
 
@@ -793,18 +533,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85",
-  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
-  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   ISD11_PLAF7             Reviewed;          87 AA.\nAC   Q8IEK7;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 85.\nDE   RecName: Full=Protein Isd11 {ECO:0000305};\nDE            Short=PfIsd11 {ECO:0000303|PubMed:34032321};\nGN   Name=Isd11 {ECO:0000303|PubMed:24086138, ECO:0000303|PubMed:34032321};\nGN   ORFNames=PF3D7_1311000 {ECO:0000312|EMBL:CAD52245.1};\nOS   Plasmodium falciparum (isolate 3D7).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Laverania).\nOX   NCBI_TaxID=36329 {ECO:0000312|Proteomes:UP000001450};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
+  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85"
 }
 ```
 
@@ -814,18 +554,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85",
-  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
-  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
-  "source_locator": "lines 48-55",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   SUBCELLULAR LOCATION.\nRX   PubMed=24086138; DOI=10.1371/journal.ppat.1003655;\nRA   Gisselberg J.E., Dellibovi-Ragheb T.A., Matthews K.A., Bosch G.,\nRA   Prigge S.T.;\nRT   \"The suf iron-sulfur cluster synthesis pathway is required for apicoplast\nRT   maintenance in malaria parasites.\";\nRL   PLoS Pathog. 9:e1003655-e1003655(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 48-55",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
+  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85"
 }
 ```
 
@@ -835,18 +575,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85",
-  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
-  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
-  "source_locator": "lines 56-62",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, AND INTERACTION WITH ISCS.\nRX   PubMed=34032321; DOI=10.1111/mmi.14735;\nRA   Sadik M., Afsar M., Ramachandran R., Habib S.;\nRT   \"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the\nRT   Plasmodium falciparum mitochondrion.\";\nRL   Mol. Microbiol. 116:606-623(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
+  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85"
 }
 ```
 
@@ -856,18 +596,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85",
-  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
-  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
-  "source_locator": "lines 73-73",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Mitochondrion {ECO:0000269|PubMed:24086138}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-73",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
+  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85"
 }
 ```
 
@@ -877,18 +617,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85",
-  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
-  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
-  "source_locator": "lines 99-99",
   "excerpt": "DR   GO; GO:1990221; C:L-cysteine desulfurase complex; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 99-99",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
+  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85"
 }
 ```
 
@@ -898,18 +638,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85",
-  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
-  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
-  "source_locator": "lines 100-100",
   "excerpt": "DR   GO; GO:0005739; C:mitochondrion; IDA:GeneDB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-01T06:28:39.775629+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 100-100",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "18fdec44d773d33a5e2664d2cf997d80ce20de391821c4bd520cd8ae8e074c4d",
+  "url": "https://rest.uniprot.org/unisave/Q8IEK7?format=txt&versions=85"
 }
 ```
 
@@ -920,15 +660,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58957-58974",
   "excerpt": "[Term]\nid: GO:0005737\nname: cytoplasm\nnamespace: cellular_component\ndef: \"The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures.\" [ISBN:0198547684]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nxref: Wikipedia:Cytoplasm\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005622 ! intracellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005737",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58957-58974",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005737"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -939,15 +679,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58975-58998",
   "excerpt": "[Term]\nid: GO:0005739\nname: mitochondrion\nnamespace: cellular_component\ndef: \"A semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration.\" [GOC:giardia, ISBN:0198506732]\ncomment: Some anaerobic or microaerophilic organisms (e.g. Entamoeba histolytica, Giardia intestinalis and several Microsporidia species) do not have mitochondria, and contain mitochondrion-related organelles (MROs) instead, called mitosomes or hydrogenosomes, very likely derived from mitochondria. To annotate gene products located in these mitochondrial relics in species such as Entamoeba histolytica, Giardia intestinalis or others, please use GO:0032047 'mitosome' or GO:0042566 'hydrogenosome'. (See PMID:24316280 for a list of species currently known to contain mitochondrion-related organelles.)\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_yeast\nsynonym: \"mitochondria\" EXACT []\nxref: NIF_Subcellular:sao1860313010\nxref: Wikipedia:Mitochondrion\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005739",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58975-58998",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005739"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -958,15 +698,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59936-59953",
   "excerpt": "[Term]\nid: GO:0005829\nname: cytosol\nnamespace: cellular_component\ndef: \"The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.\" [GOC:hjd, GOC:jl]\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_plant\nxref: NIF_Subcellular:sao101633890\nxref: Wikipedia:Cytosol\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005829",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59936-59953",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005829"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -977,15 +717,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 257048-257062",
   "excerpt": "[Term]\nid: GO:0044423\nname: virion component\nnamespace: cellular_component\nalt_id: GO:0019012\ndef: \"Any constituent part of a virion, a complete fully infectious extracellular virus particle.\" [GOC:jl]\nsubset: goslim_chembl\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsynonym: \"complete virus particle\" RELATED []\nsynonym: \"virion\" RELATED []\nsynonym: \"virion part\" EXACT []\nxref: Wikipedia:Virus\nis_a: GO:0005575 ! cellular_component\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044423",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 257048-257062",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044423"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -996,15 +736,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 413997-414007",
   "excerpt": "[Term]\nid: GO:0099128\nname: mitochondrial [2Fe-2S] assembly complex\nnamespace: cellular_component\ndef: \"A protein complex capable of forming 2Fe-2S clusters in mitochondria. In humans it consists of ISCU, NFS1, LYRM4, NDUFAB1 and FXN.\" [PMID:31101807, PMID:34660592]\nsynonym: \"mitochondrial iron-sulfur cluster assembly complex\" RELATED []\nsynonym: \"mitochondrial ISCU complex\" EXACT []\nis_a: GO:0098798 ! mitochondrial protein-containing complex\nis_a: GO:1990221 ! L-cysteine desulfurase complex\nis_a: GO:1990229 ! iron-sulfur cluster assembly complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0099128",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 413997-414007",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0099128"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1015,15 +755,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO6",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 550305-550314",
   "excerpt": "[Term]\nid: GO:1990221\nname: L-cysteine desulfurase complex\nnamespace: cellular_component\ndef: \"A protein complex capable of cysteine desulfurase activity decomposing L-cysteine to L-alanine and sulfur. It belongs to a ubiquitous family of pyridoxal 5-phosphate (PLP)-dependent enzymes.\" [GOC:bhm, PMID:11827487]\nsynonym: \"IscS\" NARROW [GOC:bhm, GOC:dph]\nsynonym: \"NifS\" NARROW [GOC:bhm, GOC:dph]\nsynonym: \"SufS complex\" NARROW []\nis_a: GO:1990228 ! sulfurtransferase complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990221",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 550305-550314",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990221"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1034,15 +774,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO7",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 550367-550378",
   "excerpt": "[Term]\nid: GO:1990228\nname: sulfurtransferase complex\nnamespace: cellular_component\ndef: \"A protein complex capable of catalyzing the transfer of sulfur atoms from one compound (donor) to another (acceptor).\" [GOC:bhm, PMID:17350958]\nsynonym: \"SufE complex\" NARROW [GOC:bhm]\nsynonym: \"SufE dimer\" NARROW [GOC:bhm]\nsynonym: \"sulfur transfer complex\" EXACT [GOC:bhm]\nsynonym: \"ThiF-ThiS complex\" RELATED [GOC:bhm]\nis_a: GO:1990234 ! transferase complex\nrelationship: part_of GO:0005829 ! cytosol\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990228",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 550367-550378",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990228"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

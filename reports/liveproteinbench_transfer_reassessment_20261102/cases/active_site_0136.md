@@ -1,18 +1,16 @@
-# active_site_0136: before and after transfer clarification
+# active_site_0136
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0136.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0136.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **D** — Position 31 (Proton donor)
+**Expected answer:** **D** — Position 31 (Proton donor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry, which annotates residue 31 as the proton donor. This supports choice D, though the annotation is attributed to a HAMAP computational rule rather than presented as direct experimental evidence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence makes positions 1336 and 385 impossible for this 316-residue protein, but sequence inspection and general biochemical knowledge do not identify which remaining residue is the catalytic proton donor.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment that residue 31 is the proton donor; the reviewer-only UniProt annotation attributes this assignment to HAMAP.
-
-
-**Reason**
-
-> The correct catalytic role and position require a protein-specific annotation or equivalent external functional information not supplied in the question. Recognizing the exact sequence or recalling its annotation would be lookup or memorization, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matching annotation supports D. Options A and C specify positions beyond the sequence length; the supplied evidence does not support B as an alternative.
-
-
-### Important caveats
-
-- The active-site assignment is computationally annotated via HAMAP; the supplied evidence does not establish direct experimental validation.
-- The source sequence match is exact, but the author's precise source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence makes positions 1336 and 385 impossible for this 316-residue protein, but sequence inspection and general biochemical knowledge do not identify which remaining residue is the catalytic proton donor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment that residue 31 is the proton donor; the reviewer-only UniProt annotation attributes this assignment to HAMAP.",
-    "reason": "The correct catalytic role and position require a protein-specific annotation or equivalent external functional information not supplied in the question. Recognizing the exact sequence or recalling its annotation would be lookup or memorization, not reasoning from the provided input."
-  },
-  "case_id": "active_site_0136",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry, which annotates residue 31 as the proton donor. This supports choice D, though the annotation is attributed to a HAMAP computational rule rather than presented as direct experimental evidence."
-  },
-  "important_caveats": [
-    "The active-site assignment is computationally annotated via HAMAP; the supplied evidence does not establish direct experimental validation.",
-    "The source sequence match is exact, but the author's precise source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matching annotation supports D. Options A and C specify positions beyond the sequence length; the supplied evidence does not support B as an alternative."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0136",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry, which annotates residue 31 as the proton donor. This supports choice D, though the annotation is attributed to a HAMAP computational rule rather than presented as direct experimental evidence.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence makes positions 1336 and 385 impossible for this 316-residue protein, but sequence inspection and general biochemical knowledge do not identify which remaining residue is the catalytic proton donor.",
-    "missing_item_specific_fact": "The protein-specific assignment that residue 31 is the proton donor; the reviewer-only UniProt annotation attributes this assignment to HAMAP.",
-    "reason": "The correct catalytic role and position require a protein-specific annotation or equivalent external functional information not supplied in the question. Recognizing the exact sequence or recalling its annotation would be lookup or memorization, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matching annotation supports D. Options A and C specify positions beyond the sequence length; the supplied evidence does not support B as an alternative."
-  },
-  "important_caveats": [
-    "The active-site assignment is computationally annotated via HAMAP; the supplied evidence does not establish direct experimental validation.",
-    "The source sequence match is exact, but the author's precise source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9L393 (Pseudouridine-5'-phosphate glycosidase, Dickeya dadantii 3937) annotates position 31 as 'Proton donor' active site (C5, H3). The sequence matches the benchmark exactly (316 AA, SHA256 match). Position 31 in the supplied sequence is Glu (E), consistent with a catalytic proton donor. The annotation evidence code is ECO:0000255 (HAMAP-Rule:MF_01876), i.e. a computational/profiling-based annotation rather than direct experimental verification, but it is the canonical Swiss-Prot annotation. The distractor positions 1336 (A) and 385 (C) exceed the 316-residue protein length, and position 141 (B, Arg) is not annotated as any active site.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6), [H4](#evidence-h4), [C1](#evidence-c1), [C3](#evidence-c3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Two-step elimination is available from the supplied sequence and general enzyme-catalysis knowledge. (1) The protein is 316 residues; options A (position 1336) and C (position 385) refer to non-existent positions and are eliminable by simple length check. (2) Between B and D: residue 141 is Arginine, which is not a recognized catalytic proton acceptor in glycosidase or glycosyl-hydrolase mechanisms; residue 31 is Glutamic acid, the archetypal catalytic acid/proton donor in glycosidases (cf. Glu35 in lysozyme, Glu172 in many retaining glycosidases). A model with general knowledge of enzyme catalytic residues can therefore select D over B.
-
-
-**Missing item-specific fact**
-
-> None that is strictly required. The reasoning relies on (a) counting the sequence length and (b) knowing that Glu is a typical proton donor and Arg is not a proton acceptor in glycosidase catalysis. Exact confirmation of which specific residue serves which role in this particular PsiMP glycosidase would require the HAMAP-Rule profile or experimental mutagenesis, but the question's distractors are constructed so that general catalytic-chemistry knowledge suffices to eliminate B, A, and C.
-
-
-**Reason**
-
-> The question is answerable by: (i) trivial arithmetic to remove A and C, and (ii) standard knowledge that Glu acts as a catalytic proton donor while Arg does not function as a proton acceptor, which discriminates D from B. No protein-specific experimental measurement or obscure database lookup is indispensable, although the HAMAP-Rule annotation provides the ground truth.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> A and C are impossible (positions exceed the 316-residue sequence). B names Arg at position 141 as a 'proton acceptor,' which is biochemically implausible for a glycosidase active site. D names Glu at position 31 as 'proton donor,' consistent with canonical glycosidase catalytic chemistry and the UniProt annotation. Only D is defensible.
-
-
-### Important caveats
-
-- The active-site annotation (position 31, proton donor) carries evidence code ECO:0000255 (HAMAP-Rule:MF_01876), meaning it is derived from a computational profile/family rule, not from site-directed mutagenesis or kinetic experiments on this specific enzyme. The annotation is reliable for the family but is not independently experimentally validated for Q9L393.
-- The reviewer identified the UniProt accession Q9L393 from dataset image-path metadata; this accession was not provided to the evaluated model. The model must work from the raw sequence alone.
-- The protein is a relatively obscure enzyme (Pseudouridine-5'-phosphate glycosidase, EC 4.2.1.70). A model that does not recognize the enzyme family may still arrive at D via the length-elimination and amino-acid-chemistry argument, but the margin is narrower than for a well-known enzyme like lysozyme.
-- Option B's label 'Proton acceptor' at a non-annotated position (141, Arg) is a fabricated distractor; no UniProt feature at position 141 supports this description.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Two-step elimination is available from the supplied sequence and general enzyme-catalysis knowledge. (1) The protein is 316 residues; options A (position 1336) and C (position 385) refer to non-existent positions and are eliminable by simple length check. (2) Between B and D: residue 141 is Arginine, which is not a recognized catalytic proton acceptor in glycosidase or glycosyl-hydrolase mechanisms; residue 31 is Glutamic acid, the archetypal catalytic acid/proton donor in glycosidases (cf. Glu35 in lysozyme, Glu172 in many retaining glycosidases). A model with general knowledge of enzyme catalytic residues can therefore select D over B.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None that is strictly required. The reasoning relies on (a) counting the sequence length and (b) knowing that Glu is a typical proton donor and Arg is not a proton acceptor in glycosidase catalysis. Exact confirmation of which specific residue serves which role in this particular PsiMP glycosidase would require the HAMAP-Rule profile or experimental mutagenesis, but the question's distractors are constructed so that general catalytic-chemistry knowledge suffices to eliminate B, A, and C.",
-    "reason": "The question is answerable by: (i) trivial arithmetic to remove A and C, and (ii) standard knowledge that Glu acts as a catalytic proton donor while Arg does not function as a proton acceptor, which discriminates D from B. No protein-specific experimental measurement or obscure database lookup is indispensable, although the HAMAP-Rule annotation provides the ground truth."
-  },
-  "case_id": "active_site_0136",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C6",
-      "H4",
-      "C1",
-      "C3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9L393 (Pseudouridine-5'-phosphate glycosidase, Dickeya dadantii 3937) annotates position 31 as 'Proton donor' active site (C5, H3). The sequence matches the benchmark exactly (316 AA, SHA256 match). Position 31 in the supplied sequence is Glu (E), consistent with a catalytic proton donor. The annotation evidence code is ECO:0000255 (HAMAP-Rule:MF_01876), i.e. a computational/profiling-based annotation rather than direct experimental verification, but it is the canonical Swiss-Prot annotation. The distractor positions 1336 (A) and 385 (C) exceed the 316-residue protein length, and position 141 (B, Arg) is not annotated as any active site."
-  },
-  "important_caveats": [
-    "The active-site annotation (position 31, proton donor) carries evidence code ECO:0000255 (HAMAP-Rule:MF_01876), meaning it is derived from a computational profile/family rule, not from site-directed mutagenesis or kinetic experiments on this specific enzyme. The annotation is reliable for the family but is not independently experimentally validated for Q9L393.",
-    "The reviewer identified the UniProt accession Q9L393 from dataset image-path metadata; this accession was not provided to the evaluated model. The model must work from the raw sequence alone.",
-    "The protein is a relatively obscure enzyme (Pseudouridine-5'-phosphate glycosidase, EC 4.2.1.70). A model that does not recognize the enzyme family may still arrive at D via the length-elimination and amino-acid-chemistry argument, but the margin is narrower than for a well-known enzyme like lysozyme.",
-    "Option B's label 'Proton acceptor' at a non-annotated position (141, Arg) is a fabricated distractor; no UniProt feature at position 141 supports this description."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "A and C are impossible (positions exceed the 316-residue sequence). B names Arg at position 141 as a 'proton acceptor,' which is biochemically implausible for a glycosidase active site. D names Glu at position 31 as 'proton donor,' consistent with canonical glycosidase catalytic chemistry and the UniProt annotation. Only D is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0136",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9L393 (Pseudouridine-5'-phosphate glycosidase, Dickeya dadantii 3937) annotates position 31 as 'Proton donor' active site (C5, H3). The sequence matches the benchmark exactly (316 AA, SHA256 match). Position 31 in the supplied sequence is Glu (E), consistent with a catalytic proton donor. The annotation evidence code is ECO:0000255 (HAMAP-Rule:MF_01876), i.e. a computational/profiling-based annotation rather than direct experimental verification, but it is the canonical Swiss-Prot annotation. The distractor positions 1336 (A) and 385 (C) exceed the 316-residue protein length, and position 141 (B, Arg) is not annotated as any active site.",
-    "evidence_ids": ["C5", "H3", "C6", "H4", "C1", "C3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Two-step elimination is available from the supplied sequence and general enzyme-catalysis knowledge. (1) The protein is 316 residues; options A (position 1336) and C (position 385) refer to non-existent positions and are eliminable by simple length check. (2) Between B and D: residue 141 is Arginine, which is not a recognized catalytic proton acceptor in glycosidase or glycosyl-hydrolase mechanisms; residue 31 is Glutamic acid, the archetypal catalytic acid/proton donor in glycosidases (cf. Glu35 in lysozyme, Glu172 in many retaining glycosidases). A model with general knowledge of enzyme catalytic residues can therefore select D over B.",
-    "missing_item_specific_fact": "None that is strictly required. The reasoning relies on (a) counting the sequence length and (b) knowing that Glu is a typical proton donor and Arg is not a proton acceptor in glycosidase catalysis. Exact confirmation of which specific residue serves which role in this particular PsiMP glycosidase would require the HAMAP-Rule profile or experimental mutagenesis, but the question's distractors are constructed so that general catalytic-chemistry knowledge suffices to eliminate B, A, and C.",
-    "reason": "The question is answerable by: (i) trivial arithmetic to remove A and C, and (ii) standard knowledge that Glu acts as a catalytic proton donor while Arg does not function as a proton acceptor, which discriminates D from B. No protein-specific experimental measurement or obscure database lookup is indispensable, although the HAMAP-Rule annotation provides the ground truth."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "A and C are impossible (positions exceed the 316-residue sequence). B names Arg at position 141 as a 'proton acceptor,' which is biochemically implausible for a glycosidase active site. D names Glu at position 31 as 'proton donor,' consistent with canonical glycosidase catalytic chemistry and the UniProt annotation. Only D is defensible."
-  },
-  "important_caveats": [
-    "The active-site annotation (position 31, proton donor) carries evidence code ECO:0000255 (HAMAP-Rule:MF_01876), meaning it is derived from a computational profile/family rule, not from site-directed mutagenesis or kinetic experiments on this specific enzyme. The annotation is reliable for the family but is not independently experimentally validated for Q9L393.",
-    "The reviewer identified the UniProt accession Q9L393 from dataset image-path metadata; this accession was not provided to the evaluated model. The model must work from the raw sequence alone.",
-    "The protein is a relatively obscure enzyme (Pseudouridine-5'-phosphate glycosidase, EC 4.2.1.70). A model that does not recognize the enzyme family may still arrive at D via the length-elimination and amino-acid-chemistry argument, but the margin is narrower than for a well-known enzyme like lysozyme.",
-    "Option B's label 'Proton acceptor' at a non-annotated position (141, Arg) is a fabricated distractor; no UniProt feature at position 141 supports this description."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9L393",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "79ec54a1b9a163f1fff48088a706f31d4fafb5f1834f53349d86da2f5110f685",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 316,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "79ec54a1b9a163f1fff48088a706f31d4fafb5f1834f53349d86da2f5110f685",
   "current_entry_audit": {
     "entryVersion": 68,
     "firstPublicDate": "2025-02-05",
@@ -528,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "current_source_sequence_sha256": "79ec54a1b9a163f1fff48088a706f31d4fafb5f1834f53349d86da2f5110f685",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 316,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "79ec54a1b9a163f1fff48088a706f31d4fafb5f1834f53349d86da2f5110f685",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 67,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9L393",
   "selected_historical_entry_version": 67,
+  "selected_historical_record_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "selected_historical_source_sequence_length": 316,
+  "selected_historical_source_sequence_sha256": "79ec54a1b9a163f1fff48088a706f31d4fafb5f1834f53349d86da2f5110f685",
   "selected_historical_version": {
     "accession": "Q9L393",
     "database": "Swiss-Prot",
@@ -546,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PSUG_DICD3",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "selected_historical_source_sequence_sha256": "79ec54a1b9a163f1fff48088a706f31d4fafb5f1834f53349d86da2f5110f685",
-  "selected_historical_source_sequence_length": 316,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 67,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9L393\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -596,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":68,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -615,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Erwinia chrysanthemi (strain 3937)\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Enterobacterales\",\"Pectobacteriaceae\",\"Dickeya\"],\"scientificName\":\"Dickeya dadantii (strain 3937)\",\"taxonId\":198628}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -634,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"value\":\"4.2.1.70\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"value\":\"Pseudouridine-5'-phosphate glycosidase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"value\":\"PsiMP glycosidase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -653,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":31},\"start\":{\"modifier\":\"EXACT\",\"value\":31}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -672,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Nucleophile\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":165},\"start\":{\"modifier\":\"EXACT\",\"value\":165}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -691,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"ligand\":{\"name\":\"substrate\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":92},\"start\":{\"modifier\":\"EXACT\",\"value\":92}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -710,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"ligand\":{\"name\":\"substrate\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":112},\"start\":{\"modifier\":\"EXACT\",\"value\":112}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -729,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29035\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29035\",\"name\":\"Mn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":144},\"start\":{\"modifier\":\"EXACT\",\"value\":144}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -748,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json",
-  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
-  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01876\",\"source\":\"HAMAP-Rule\"}],\"ligand\":{\"name\":\"substrate\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":148},\"start\":{\"modifier\":\"EXACT\",\"value\":146}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:33:05.918269+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e759032be015a488064afb4002812a0cd7d67c7a33fdd30fb39167eddef3cb9d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9L393.json"
 }
 ```
 
@@ -766,18 +525,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   PSUG_DICD3              Reviewed;         316 AA.\nAC   Q9L393; E0SMH8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 2.\nDT   28-JAN-2026, entry version 67.\nDE   RecName: Full=Pseudouridine-5'-phosphate glycosidase {ECO:0000255|HAMAP-Rule:MF_01876};\nDE            Short=PsiMP glycosidase {ECO:0000255|HAMAP-Rule:MF_01876};\nDE            EC=4.2.1.70 {ECO:0000255|HAMAP-Rule:MF_01876};\nGN   Name=indA {ECO:0000303|PubMed:11790734};\nGN   Synonyms=psuG {ECO:0000255|HAMAP-Rule:MF_01876};\nGN   OrderedLocusNames=Dda3937_00974 {ECO:0000312|EMBL:ADN00617.1};\nOS   Dickeya dadantii (strain 3937) (Erwinia chrysanthemi (strain 3937)).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Enterobacterales; Pectobacteriaceae; Dickeya.\nOX   NCBI_TaxID=198628;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 
@@ -787,18 +546,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 16-24",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAB87988.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, INDUCTION, AND DISRUPTION\nRP   PHENOTYPE.\nRC   STRAIN=3937;\nRX   PubMed=11790734; DOI=10.1128/jb.184.3.654-665.2002;\nRA   Reverchon S., Rouanet C., Expert D., Nasser W.;\nRT   \"Characterization of indigoidine biosynthetic genes in Erwinia chrysanthemi\nRT   and role of this blue pigment in pathogenicity.\";\nRL   J. Bacteriol. 184:654-665(2002).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 
@@ -808,18 +567,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 104-106",
   "excerpt": "FT   ACT_SITE        31\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_01876\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-106",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 
@@ -829,18 +588,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 107-109",
   "excerpt": "FT   ACT_SITE        165\nFT                   /note=\"Nucleophile\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_01876\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 107-109",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 
@@ -850,18 +609,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 110-112",
   "excerpt": "FT   BINDING         92\nFT                   /ligand=\"substrate\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_01876\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 110-112",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 
@@ -871,18 +630,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 113-115",
   "excerpt": "FT   BINDING         112\nFT                   /ligand=\"substrate\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_01876\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 113-115",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 
@@ -892,18 +651,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 116-119",
   "excerpt": "FT   BINDING         144\nFT                   /ligand=\"Mn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29035\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_01876\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 116-119",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 
@@ -913,18 +672,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67",
-  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
-  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
-  "source_locator": "lines 120-122",
   "excerpt": "FT   BINDING         146..148\nFT                   /ligand=\"substrate\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_01876\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:33:13.935581+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 120-122",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b4ef33743dbb4e6ea7562dc04819ab1d2a209831d0e36c41a3dbb21a465472ea",
+  "url": "https://rest.uniprot.org/unisave/Q9L393?format=txt&versions=67"
 }
 ```
 

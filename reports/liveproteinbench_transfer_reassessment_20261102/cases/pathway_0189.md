@@ -1,18 +1,16 @@
-# pathway_0189: before and after transfer clarification
+# pathway_0189
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0189.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0189.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Alkaloid biosynthesis. .
+**Expected answer:** **A** — Alkaloid biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,255 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry annotated as Ipecac alkaloid beta-glucosidase 3, with an alkaloid-biosynthesis pathway annotation citing experimental evidence. This supports the author's key, though the underlying paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest an enzyme, but general sequence-based reasoning does not establish its specific role in alkaloid biosynthesis rather than another pathway.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional identification and pathway annotation as Ipecac alkaloid beta-glucosidase 3.
-
-
-**Reason**
-
-> The pathway assignment depends on item-specific functional evidence absent from the question. Recognizing the exact sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B",
-  "C"
-]
-```
-
-> A and C are identical choices. B is a broader category that includes alkaloid biosynthesis, although A/C are the more specific pathway assignment.
-
-
-### Important caveats
-
-- Reviewer-only sources support the key but were not supplied to the evaluated model.
-- The cited UniProt annotation carries experimental evidence, but the cited study was not independently assessed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but general sequence-based reasoning does not establish its specific role in alkaloid biosynthesis rather than another pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional identification and pathway annotation as Ipecac alkaloid beta-glucosidase 3.",
-    "reason": "The pathway assignment depends on item-specific functional evidence absent from the question. Recognizing the exact sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided input."
-  },
-  "case_id": "pathway_0189",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as Ipecac alkaloid beta-glucosidase 3, with an alkaloid-biosynthesis pathway annotation citing experimental evidence. This supports the author's key, though the underlying paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "Reviewer-only sources support the key but were not supplied to the evaluated model.",
-    "The cited UniProt annotation carries experimental evidence, but the cited study was not independently assessed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B",
-      "C"
-    ],
-    "reason": "A and C are identical choices. B is a broader category that includes alkaloid biosynthesis, although A/C are the more specific pathway assignment."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0189",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as Ipecac alkaloid beta-glucosidase 3, with an alkaloid-biosynthesis pathway annotation citing experimental evidence. This supports the author's key, though the underlying paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but general sequence-based reasoning does not establish its specific role in alkaloid biosynthesis rather than another pathway.",
-    "missing_item_specific_fact": "The protein-specific functional identification and pathway annotation as Ipecac alkaloid beta-glucosidase 3.",
-    "reason": "The pathway assignment depends on item-specific functional evidence absent from the question. Recognizing the exact sequence or recalling its database annotation would be lookup or memorization, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B", "C"],
-    "reason": "A and C are identical choices. B is a broader category that includes alkaloid biosynthesis, although A/C are the more specific pathway assignment."
-  },
-  "important_caveats": [
-    "Reviewer-only sources support the key but were not supplied to the evaluated model.",
-    "The cited UniProt annotation carries experimental evidence, but the cited study was not independently assessed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry B6ZKM5 (Ipecac alkaloid beta-glucosidase 3, IpeGLU3) explicitly annotates 'PATHWAY: Alkaloid biosynthesis' with experimental evidence (ECO:0000269, PubMed:18927081). The sequence matches the benchmark input exactly (543 aa, SHA-256 matched). The author's key 'Alkaloid biosynthesis' is directly confirmed by the database annotation.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains motifs consistent with glycoside hydrolase family 1 (GH1) beta-glucosidases (e.g., the conserved NEP motif region, the general GH1 fold architecture). From sequence alone one can infer this is a plant beta-glucosidase involved in secondary metabolism. However, GH1 beta-glucosidases participate in a very wide range of pathways (flavonoid metabolism, glucosinolate activation, cell-wall remodeling, alkaloid deglucosylation, etc.). The sequence does not encode information that specifically identifies the substrate as a terpenoid-isoquinoline alkaloid glucoside, which is what would distinguish 'alkaloid biosynthesis' from the broader 'secondary metabolite biosynthesis' category.
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity (terpenoid-isoquinoline alkaloid glucosides from Carapichea ipecacuanha) and the experimental demonstration that this particular GH1 enzyme acts in the ipecac alkaloid pathway (PubMed:18927081). Without this, a model cannot distinguish 'Alkaloid biosynthesis' from 'Secondary metabolite biosynthesis' on sequence grounds alone.
-
-
-**Reason**
-
-> Identifying the protein as a GH1 beta-glucosidase is achievable from sequence, but the precise pathway assignment to 'Alkaloid biosynthesis' rather than the broader 'Secondary metabolite biosynthesis' requires the item-specific experimental fact that this enzyme deglucosylates terpenoid-isoquinoline alkaloid precursors in ipecac. This is not inferable from general biological knowledge of the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C",
-  "B"
-]
-```
-
-> Choices A ('Alkaloid biosynthesis. .') and C ('Alkaloid biosynthesis') are textually identical in substance, differing only in trailing punctuation. This makes the question unsolvable as a forced single-choice item: any model selecting the correct pathway would find two identical correct options. Additionally, Choice B ('Secondary metabolite biosynthesis') is a broader category that encompasses alkaloid biosynthesis, making it a partially defensible answer for a plant secondary-metabolism enzyme when the specific alkaloid class is not given. Choice D is clearly unrelated.
-
-
-### Important caveats
-
-- Choices A and C are the same answer, rendering the multiple-choice format defective; a model cannot uniquely select between them.
-- The pathway annotation is supported by a single experimental reference (PubMed:18927081, Nomura et al. 2008, JBC) demonstrating the enzyme's role in terpenoid-isoquinoline alkaloid biosynthesis in ipecac.
-- The sequence-to-pathway mapping for GH1 beta-glucosidases is inherently ambiguous without substrate information; the question tests knowledge of a specific experimental finding rather than generalizable sequence-to-pathway inference.
-- The trailing '. .' in choices A and D appear to be formatting artifacts from the source database export.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains motifs consistent with glycoside hydrolase family 1 (GH1) beta-glucosidases (e.g., the conserved NEP motif region, the general GH1 fold architecture). From sequence alone one can infer this is a plant beta-glucosidase involved in secondary metabolism. However, GH1 beta-glucosidases participate in a very wide range of pathways (flavonoid metabolism, glucosinolate activation, cell-wall remodeling, alkaloid deglucosylation, etc.). The sequence does not encode information that specifically identifies the substrate as a terpenoid-isoquinoline alkaloid glucoside, which is what would distinguish 'alkaloid biosynthesis' from the broader 'secondary metabolite biosynthesis' category.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate identity (terpenoid-isoquinoline alkaloid glucosides from Carapichea ipecacuanha) and the experimental demonstration that this particular GH1 enzyme acts in the ipecac alkaloid pathway (PubMed:18927081). Without this, a model cannot distinguish 'Alkaloid biosynthesis' from 'Secondary metabolite biosynthesis' on sequence grounds alone.",
-    "reason": "Identifying the protein as a GH1 beta-glucosidase is achievable from sequence, but the precise pathway assignment to 'Alkaloid biosynthesis' rather than the broader 'Secondary metabolite biosynthesis' requires the item-specific experimental fact that this enzyme deglucosylates terpenoid-isoquinoline alkaloid precursors in ipecac. This is not inferable from general biological knowledge of the sequence."
-  },
-  "case_id": "pathway_0189",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry B6ZKM5 (Ipecac alkaloid beta-glucosidase 3, IpeGLU3) explicitly annotates 'PATHWAY: Alkaloid biosynthesis' with experimental evidence (ECO:0000269, PubMed:18927081). The sequence matches the benchmark input exactly (543 aa, SHA-256 matched). The author's key 'Alkaloid biosynthesis' is directly confirmed by the database annotation."
-  },
-  "important_caveats": [
-    "Choices A and C are the same answer, rendering the multiple-choice format defective; a model cannot uniquely select between them.",
-    "The pathway annotation is supported by a single experimental reference (PubMed:18927081, Nomura et al. 2008, JBC) demonstrating the enzyme's role in terpenoid-isoquinoline alkaloid biosynthesis in ipecac.",
-    "The sequence-to-pathway mapping for GH1 beta-glucosidases is inherently ambiguous without substrate information; the question tests knowledge of a specific experimental finding rather than generalizable sequence-to-pathway inference.",
-    "The trailing '. .' in choices A and D appear to be formatting artifacts from the source database export."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C",
-      "B"
-    ],
-    "reason": "Choices A ('Alkaloid biosynthesis. .') and C ('Alkaloid biosynthesis') are textually identical in substance, differing only in trailing punctuation. This makes the question unsolvable as a forced single-choice item: any model selecting the correct pathway would find two identical correct options. Additionally, Choice B ('Secondary metabolite biosynthesis') is a broader category that encompasses alkaloid biosynthesis, making it a partially defensible answer for a plant secondary-metabolism enzyme when the specific alkaloid class is not given. Choice D is clearly unrelated."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0189",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry B6ZKM5 (Ipecac alkaloid beta-glucosidase 3, IpeGLU3) explicitly annotates 'PATHWAY: Alkaloid biosynthesis' with experimental evidence (ECO:0000269, PubMed:18927081). The sequence matches the benchmark input exactly (543 aa, SHA-256 matched). The author's key 'Alkaloid biosynthesis' is directly confirmed by the database annotation.",
-    "evidence_ids": ["C5", "H3", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains motifs consistent with glycoside hydrolase family 1 (GH1) beta-glucosidases (e.g., the conserved NEP motif region, the general GH1 fold architecture). From sequence alone one can infer this is a plant beta-glucosidase involved in secondary metabolism. However, GH1 beta-glucosidases participate in a very wide range of pathways (flavonoid metabolism, glucosinolate activation, cell-wall remodeling, alkaloid deglucosylation, etc.). The sequence does not encode information that specifically identifies the substrate as a terpenoid-isoquinoline alkaloid glucoside, which is what would distinguish 'alkaloid biosynthesis' from the broader 'secondary metabolite biosynthesis' category.",
-    "missing_item_specific_fact": "The specific substrate identity (terpenoid-isoquinoline alkaloid glucosides from Carapichea ipecacuanha) and the experimental demonstration that this particular GH1 enzyme acts in the ipecac alkaloid pathway (PubMed:18927081). Without this, a model cannot distinguish 'Alkaloid biosynthesis' from 'Secondary metabolite biosynthesis' on sequence grounds alone.",
-    "reason": "Identifying the protein as a GH1 beta-glucosidase is achievable from sequence, but the precise pathway assignment to 'Alkaloid biosynthesis' rather than the broader 'Secondary metabolite biosynthesis' requires the item-specific experimental fact that this enzyme deglucosylates terpenoid-isoquinoline alkaloid precursors in ipecac. This is not inferable from general biological knowledge of the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C", "B"],
-    "reason": "Choices A ('Alkaloid biosynthesis. .') and C ('Alkaloid biosynthesis') are textually identical in substance, differing only in trailing punctuation. This makes the question unsolvable as a forced single-choice item: any model selecting the correct pathway would find two identical correct options. Additionally, Choice B ('Secondary metabolite biosynthesis') is a broader category that encompasses alkaloid biosynthesis, making it a partially defensible answer for a plant secondary-metabolism enzyme when the specific alkaloid class is not given. Choice D is clearly unrelated."
-  },
-  "important_caveats": [
-    "Choices A and C are the same answer, rendering the multiple-choice format defective; a model cannot uniquely select between them.",
-    "The pathway annotation is supported by a single experimental reference (PubMed:18927081, Nomura et al. 2008, JBC) demonstrating the enzyme's role in terpenoid-isoquinoline alkaloid biosynthesis in ipecac.",
-    "The sequence-to-pathway mapping for GH1 beta-glucosidases is inherently ambiguous without substrate information; the question tests knowledge of a specific experimental finding rather than generalizable sequence-to-pathway inference.",
-    "The trailing '. .' in choices A and D appear to be formatting artifacts from the source database export."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -413,10 +167,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -535,30 +288,17 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B6ZKM5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8141756119b0e8092bcefac767f6861053ab97e59d37a7ab570496a465d1b713",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 543,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8141756119b0e8092bcefac767f6861053ab97e59d37a7ab570496a465d1b713",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-06-18",
@@ -566,14 +306,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-02-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
-  "current_source_sequence_sha256": "8141756119b0e8092bcefac767f6861053ab97e59d37a7ab570496a465d1b713",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 543,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8141756119b0e8092bcefac767f6861053ab97e59d37a7ab570496a465d1b713",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B6ZKM5",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
+  "selected_historical_source_sequence_length": 543,
+  "selected_historical_source_sequence_sha256": "8141756119b0e8092bcefac767f6861053ab97e59d37a7ab570496a465d1b713",
   "selected_historical_version": {
     "accession": "B6ZKM5",
     "database": "Swiss-Prot",
@@ -584,24 +340,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GLU3_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
-  "selected_historical_source_sequence_sha256": "8141756119b0e8092bcefac767f6861053ab97e59d37a7ab570496a465d1b713",
-  "selected_historical_source_sequence_length": 543,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -615,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json",
-  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
-  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B6ZKM5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json"
 }
 ```
 
@@ -634,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json",
-  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
-  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-02-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json"
 }
 ```
 
@@ -653,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json",
-  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
-  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json"
 }
 ```
 
@@ -672,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json",
-  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
-  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Ipecac alkaloid beta-glucosidase 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"IpeGLU3\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json"
 }
 ```
 
@@ -691,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json",
-  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
-  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json"
 }
 ```
 
@@ -710,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json",
-  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
-  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Nomura T.\",\"Quesada A.L.\",\"Kutchan T.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18927081\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m806953200\"}],\"citationType\":\"journal article\",\"firstPage\":\"34650\",\"id\":\"18927081\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"34659\",\"publicationDate\":\"2008\",\"title\":\"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis in Psychotria ipecacuanha.\",\"volume\":\"283\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAH02546.1\",\"source\":\"EMBL\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAH02553.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"},{\"type\":\"TISSUE\",\"value\":\"Shoot\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:27:24.045505+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9ce8751c9b282900ae1cfa7efc22995f02ca697466197dd0e4f4ff630319c00a",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM5.json"
 }
 ```
 
@@ -728,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM5?format=txt&versions=51",
-  "source_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
-  "retrieved_utc": "2026-11-02T04:27:26.233250+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   GLU3_CARIP              Reviewed;         543 AA.\nAC   B6ZKM5;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-FEB-2009, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=Ipecac alkaloid beta-glucosidase 3 {ECO:0000303|PubMed:18927081};\nDE            Short=IpeGLU3 {ECO:0000303|PubMed:18927081};\nDE            EC=3.2.1.- {ECO:0000269|PubMed:18927081};\nGN   Name=GLU3 {ECO:0000303|PubMed:18927081};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:27:26.233250+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM5?format=txt&versions=51"
 }
 ```
 
@@ -749,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM5?format=txt&versions=51",
-  "source_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
-  "retrieved_utc": "2026-11-02T04:27:26.233250+00:00",
-  "source_locator": "lines 16-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAH02546.1, ECO:0000312|EMBL:BAH02553.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRC   TISSUE=Root, and Shoot;\nRX   PubMed=18927081; DOI=10.1074/jbc.m806953200;\nRA   Nomura T., Quesada A.L., Kutchan T.M.;\nRT   \"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis\nRT   in Psychotria ipecacuanha.\";\nRL   J. Biol. Chem. 283:34650-34659(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:27:26.233250+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM5?format=txt&versions=51"
 }
 ```
 
@@ -770,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM5?format=txt&versions=51",
-  "source_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
-  "retrieved_utc": "2026-11-02T04:27:26.233250+00:00",
-  "source_locator": "lines 41-41",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:18927081}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:27:26.233250+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d374cbcc14c195ce5c51c5fdab5300bf13d9a704c2f014bd237f3c23f917e6a7",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM5?format=txt&versions=51"
 }
 ```
 

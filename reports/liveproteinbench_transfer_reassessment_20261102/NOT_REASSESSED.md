@@ -1,414 +1,414 @@
-# Exact 408 admitted questions not reassessed
+# Questions outside this report
 
-These questions remain in the original admitted 1,736. Neither prior format-valid review selected them under the lookup/uncertain union rule. No new review is implied. Earlier 61 source-question exclusions are separate. Raw labels from old output errors are shown with their canonical saved status and are not treated as usable structured judgments. Usable output does not mean reasoning-supported or biologically correct.
+These 408 questions belong to the admitted 1,736-question cohort and are outside the selected 1,328-question report. No judgments for them are included here. See [Method](METHOD.md).
 
-| Case: unchanged prior page | Task | Old Luna label | Old Luna output usability (canonical status) | Old Qwen label | Old Qwen output usability (canonical status) |
-|---|---|---|---|---|---|
-| [EC_number_0000](../liveproteinbench_question_reviews_20261101/cases/EC_number_0000.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0015](../liveproteinbench_question_reviews_20261101/cases/EC_number_0015.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0018](../liveproteinbench_question_reviews_20261101/cases/EC_number_0018.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0022](../liveproteinbench_question_reviews_20261101/cases/EC_number_0022.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0030](../liveproteinbench_question_reviews_20261101/cases/EC_number_0030.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0031](../liveproteinbench_question_reviews_20261101/cases/EC_number_0031.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0037](../liveproteinbench_question_reviews_20261101/cases/EC_number_0037.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0039](../liveproteinbench_question_reviews_20261101/cases/EC_number_0039.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0047](../liveproteinbench_question_reviews_20261101/cases/EC_number_0047.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0053](../liveproteinbench_question_reviews_20261101/cases/EC_number_0053.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0054](../liveproteinbench_question_reviews_20261101/cases/EC_number_0054.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0062](../liveproteinbench_question_reviews_20261101/cases/EC_number_0062.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0077](../liveproteinbench_question_reviews_20261101/cases/EC_number_0077.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0090](../liveproteinbench_question_reviews_20261101/cases/EC_number_0090.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0094](../liveproteinbench_question_reviews_20261101/cases/EC_number_0094.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0098](../liveproteinbench_question_reviews_20261101/cases/EC_number_0098.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0104](../liveproteinbench_question_reviews_20261101/cases/EC_number_0104.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0109](../liveproteinbench_question_reviews_20261101/cases/EC_number_0109.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0139](../liveproteinbench_question_reviews_20261101/cases/EC_number_0139.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0158](../liveproteinbench_question_reviews_20261101/cases/EC_number_0158.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0178](../liveproteinbench_question_reviews_20261101/cases/EC_number_0178.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0181](../liveproteinbench_question_reviews_20261101/cases/EC_number_0181.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0191](../liveproteinbench_question_reviews_20261101/cases/EC_number_0191.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [EC_number_0193](../liveproteinbench_question_reviews_20261101/cases/EC_number_0193.md) | EC_number | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0002](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0002.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0004](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0004.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0015](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0015.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0019](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0019.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0023](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0023.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | None | output error (invalid_review) |
-| [GO_biological_process_0027](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0027.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0040](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0040.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0041](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0041.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0057](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0057.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0076](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0076.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | output error (invalid_review) |
-| [GO_biological_process_0088](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0088.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | None | output error (invalid_review) |
-| [GO_biological_process_0093](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0093.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0096](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0096.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0098](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0098.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0105](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0105.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0108](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0108.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0111](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0111.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0137](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0137.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0140](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0140.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0142](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0142.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0150](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0150.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0161](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0161.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0165](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0165.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | output error (invalid_review) |
-| [GO_biological_process_0172](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0172.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_biological_process_0189](../liveproteinbench_question_reviews_20261101/cases/GO_biological_process_0189.md) | GO_biological_process | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0001](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0001.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0003](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0003.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0007](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0007.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0008](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0008.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | output error (invalid_review) |
-| [GO_cellular_component_0009](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0009.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0011](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0011.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0013](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0013.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0014](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0014.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0016](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0016.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0017](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0017.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0018](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0018.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0021](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0021.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0022](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0022.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0024](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0024.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0025](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0025.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0027](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0027.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0036](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0036.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0040](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0040.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0041](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0041.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0043](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0043.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0047](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0047.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0050](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0050.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0057](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0057.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0058](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0058.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0060](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0060.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0062](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0062.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0074](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0074.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0075](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0075.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0076](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0076.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0081](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0081.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0083](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0083.md) | GO_cellular_component | reasoning_supported | output error (invalid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0093](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0093.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0100](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0100.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0102](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0102.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0105](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0105.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0111](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0111.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0115](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0115.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0116](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0116.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0119](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0119.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0122](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0122.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0136](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0136.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0137](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0137.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0148](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0148.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0154](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0154.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0156](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0156.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0160](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0160.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0161](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0161.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0168](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0168.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0173](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0173.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0174](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0174.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0176](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0176.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0182](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0182.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0185](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0185.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0186](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0186.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0190](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0190.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0192](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0192.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0194](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0194.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_cellular_component_0195](../liveproteinbench_question_reviews_20261101/cases/GO_cellular_component_0195.md) | GO_cellular_component | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0000](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0000.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0005](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0005.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | None | output error (invalid_review) |
-| [GO_molecular_function_0008](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0008.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0016](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0016.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0018](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0018.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0019](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0019.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0027](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0027.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0033](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0033.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0034](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0034.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0037](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0037.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0042](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0042.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0043](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0043.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0045](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0045.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0047](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0047.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0053](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0053.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0054](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0054.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0055](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0055.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0058](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0058.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0061](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0061.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0063](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0063.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0066](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0066.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0067](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0067.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0070](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0070.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0071](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0071.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0073](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0073.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0075](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0075.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0078](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0078.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0080](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0080.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0081](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0081.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0084](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0084.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0089](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0089.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0090](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0090.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0094](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0094.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0097](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0097.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0101](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0101.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0104](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0104.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0108](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0108.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0110](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0110.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0112](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0112.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0131](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0131.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0132](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0132.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0133](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0133.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0137](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0137.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0140](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0140.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0144](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0144.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0145](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0145.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0146](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0146.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0150](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0150.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0153](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0153.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0157](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0157.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | output error (invalid_review) |
-| [GO_molecular_function_0158](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0158.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0162](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0162.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0165](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0165.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0167](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0167.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0172](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0172.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0173](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0173.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0174](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0174.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0179](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0179.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0182](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0182.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0183](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0183.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0184](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0184.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0188](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0188.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0192](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0192.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [GO_molecular_function_0194](../liveproteinbench_question_reviews_20261101/cases/GO_molecular_function_0194.md) | GO_molecular_function | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0010](../liveproteinbench_question_reviews_20261101/cases/active_site_0010.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0011](../liveproteinbench_question_reviews_20261101/cases/active_site_0011.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0012](../liveproteinbench_question_reviews_20261101/cases/active_site_0012.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0013](../liveproteinbench_question_reviews_20261101/cases/active_site_0013.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0018](../liveproteinbench_question_reviews_20261101/cases/active_site_0018.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0023](../liveproteinbench_question_reviews_20261101/cases/active_site_0023.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0024](../liveproteinbench_question_reviews_20261101/cases/active_site_0024.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0030](../liveproteinbench_question_reviews_20261101/cases/active_site_0030.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0031](../liveproteinbench_question_reviews_20261101/cases/active_site_0031.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0039](../liveproteinbench_question_reviews_20261101/cases/active_site_0039.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0042](../liveproteinbench_question_reviews_20261101/cases/active_site_0042.md) | active_site | reasoning_supported | usable output (valid_review) | None | output error (invalid_review) |
-| [active_site_0048](../liveproteinbench_question_reviews_20261101/cases/active_site_0048.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0053](../liveproteinbench_question_reviews_20261101/cases/active_site_0053.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0055](../liveproteinbench_question_reviews_20261101/cases/active_site_0055.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0056](../liveproteinbench_question_reviews_20261101/cases/active_site_0056.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0057](../liveproteinbench_question_reviews_20261101/cases/active_site_0057.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0059](../liveproteinbench_question_reviews_20261101/cases/active_site_0059.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0069](../liveproteinbench_question_reviews_20261101/cases/active_site_0069.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0072](../liveproteinbench_question_reviews_20261101/cases/active_site_0072.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0086](../liveproteinbench_question_reviews_20261101/cases/active_site_0086.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0087](../liveproteinbench_question_reviews_20261101/cases/active_site_0087.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0101](../liveproteinbench_question_reviews_20261101/cases/active_site_0101.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0102](../liveproteinbench_question_reviews_20261101/cases/active_site_0102.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0111](../liveproteinbench_question_reviews_20261101/cases/active_site_0111.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0113](../liveproteinbench_question_reviews_20261101/cases/active_site_0113.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0114](../liveproteinbench_question_reviews_20261101/cases/active_site_0114.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0115](../liveproteinbench_question_reviews_20261101/cases/active_site_0115.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0116](../liveproteinbench_question_reviews_20261101/cases/active_site_0116.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0117](../liveproteinbench_question_reviews_20261101/cases/active_site_0117.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0120](../liveproteinbench_question_reviews_20261101/cases/active_site_0120.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0128](../liveproteinbench_question_reviews_20261101/cases/active_site_0128.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0129](../liveproteinbench_question_reviews_20261101/cases/active_site_0129.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0131](../liveproteinbench_question_reviews_20261101/cases/active_site_0131.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0135](../liveproteinbench_question_reviews_20261101/cases/active_site_0135.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0138](../liveproteinbench_question_reviews_20261101/cases/active_site_0138.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0139](../liveproteinbench_question_reviews_20261101/cases/active_site_0139.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0140](../liveproteinbench_question_reviews_20261101/cases/active_site_0140.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0141](../liveproteinbench_question_reviews_20261101/cases/active_site_0141.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [active_site_0143](../liveproteinbench_question_reviews_20261101/cases/active_site_0143.md) | active_site | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0000](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0000.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0003](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0003.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0007](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0007.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0013](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0013.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0020](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0020.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0029](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0029.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0030](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0030.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0032](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0032.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0033](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0033.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0034](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0034.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0035](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0035.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0036](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0036.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0038](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0038.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0039](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0039.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0041](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0041.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0042](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0042.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0043](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0043.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0047](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0047.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0050](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0050.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0066](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0066.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0069](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0069.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0071](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0071.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0078](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0078.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0089](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0089.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0091](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0091.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0098](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0098.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0099](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0099.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0100](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0100.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0108](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0108.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0112](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0112.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0113](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0113.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0115](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0115.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0120](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0120.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0122](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0122.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0124](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0124.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0127](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0127.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0138](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0138.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0139](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0139.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0151](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0151.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0154](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0154.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0157](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0157.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0160](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0160.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0161](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0161.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0169](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0169.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0170](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0170.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0175](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0175.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0176](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0176.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0177](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0177.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0179](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0179.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0181](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0181.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0182](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0182.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0185](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0185.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0186](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0186.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0188](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0188.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0195](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0195.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [catalytic_activity_0197](../liveproteinbench_question_reviews_20261101/cases/catalytic_activity_0197.md) | catalytic_activity | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0002](../liveproteinbench_question_reviews_20261101/cases/cofactor_0002.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0005](../liveproteinbench_question_reviews_20261101/cases/cofactor_0005.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0006](../liveproteinbench_question_reviews_20261101/cases/cofactor_0006.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0007](../liveproteinbench_question_reviews_20261101/cases/cofactor_0007.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0008](../liveproteinbench_question_reviews_20261101/cases/cofactor_0008.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0009](../liveproteinbench_question_reviews_20261101/cases/cofactor_0009.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0010](../liveproteinbench_question_reviews_20261101/cases/cofactor_0010.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0011](../liveproteinbench_question_reviews_20261101/cases/cofactor_0011.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0014](../liveproteinbench_question_reviews_20261101/cases/cofactor_0014.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0015](../liveproteinbench_question_reviews_20261101/cases/cofactor_0015.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0016](../liveproteinbench_question_reviews_20261101/cases/cofactor_0016.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0020](../liveproteinbench_question_reviews_20261101/cases/cofactor_0020.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0022](../liveproteinbench_question_reviews_20261101/cases/cofactor_0022.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0025](../liveproteinbench_question_reviews_20261101/cases/cofactor_0025.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0029](../liveproteinbench_question_reviews_20261101/cases/cofactor_0029.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0036](../liveproteinbench_question_reviews_20261101/cases/cofactor_0036.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0038](../liveproteinbench_question_reviews_20261101/cases/cofactor_0038.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0040](../liveproteinbench_question_reviews_20261101/cases/cofactor_0040.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0041](../liveproteinbench_question_reviews_20261101/cases/cofactor_0041.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0046](../liveproteinbench_question_reviews_20261101/cases/cofactor_0046.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0048](../liveproteinbench_question_reviews_20261101/cases/cofactor_0048.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0051](../liveproteinbench_question_reviews_20261101/cases/cofactor_0051.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0053](../liveproteinbench_question_reviews_20261101/cases/cofactor_0053.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0054](../liveproteinbench_question_reviews_20261101/cases/cofactor_0054.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0055](../liveproteinbench_question_reviews_20261101/cases/cofactor_0055.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0056](../liveproteinbench_question_reviews_20261101/cases/cofactor_0056.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0058](../liveproteinbench_question_reviews_20261101/cases/cofactor_0058.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0059](../liveproteinbench_question_reviews_20261101/cases/cofactor_0059.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0060](../liveproteinbench_question_reviews_20261101/cases/cofactor_0060.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0061](../liveproteinbench_question_reviews_20261101/cases/cofactor_0061.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0064](../liveproteinbench_question_reviews_20261101/cases/cofactor_0064.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0065](../liveproteinbench_question_reviews_20261101/cases/cofactor_0065.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0066](../liveproteinbench_question_reviews_20261101/cases/cofactor_0066.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0073](../liveproteinbench_question_reviews_20261101/cases/cofactor_0073.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0074](../liveproteinbench_question_reviews_20261101/cases/cofactor_0074.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0076](../liveproteinbench_question_reviews_20261101/cases/cofactor_0076.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0077](../liveproteinbench_question_reviews_20261101/cases/cofactor_0077.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0088](../liveproteinbench_question_reviews_20261101/cases/cofactor_0088.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0089](../liveproteinbench_question_reviews_20261101/cases/cofactor_0089.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0093](../liveproteinbench_question_reviews_20261101/cases/cofactor_0093.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0094](../liveproteinbench_question_reviews_20261101/cases/cofactor_0094.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0095](../liveproteinbench_question_reviews_20261101/cases/cofactor_0095.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0097](../liveproteinbench_question_reviews_20261101/cases/cofactor_0097.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | output error (invalid_review) |
-| [cofactor_0098](../liveproteinbench_question_reviews_20261101/cases/cofactor_0098.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0108](../liveproteinbench_question_reviews_20261101/cases/cofactor_0108.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0110](../liveproteinbench_question_reviews_20261101/cases/cofactor_0110.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0111](../liveproteinbench_question_reviews_20261101/cases/cofactor_0111.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0112](../liveproteinbench_question_reviews_20261101/cases/cofactor_0112.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0113](../liveproteinbench_question_reviews_20261101/cases/cofactor_0113.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0114](../liveproteinbench_question_reviews_20261101/cases/cofactor_0114.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0115](../liveproteinbench_question_reviews_20261101/cases/cofactor_0115.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0117](../liveproteinbench_question_reviews_20261101/cases/cofactor_0117.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0119](../liveproteinbench_question_reviews_20261101/cases/cofactor_0119.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0121](../liveproteinbench_question_reviews_20261101/cases/cofactor_0121.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0122](../liveproteinbench_question_reviews_20261101/cases/cofactor_0122.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0123](../liveproteinbench_question_reviews_20261101/cases/cofactor_0123.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0124](../liveproteinbench_question_reviews_20261101/cases/cofactor_0124.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0125](../liveproteinbench_question_reviews_20261101/cases/cofactor_0125.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0128](../liveproteinbench_question_reviews_20261101/cases/cofactor_0128.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0132](../liveproteinbench_question_reviews_20261101/cases/cofactor_0132.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0134](../liveproteinbench_question_reviews_20261101/cases/cofactor_0134.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0137](../liveproteinbench_question_reviews_20261101/cases/cofactor_0137.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0140](../liveproteinbench_question_reviews_20261101/cases/cofactor_0140.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0141](../liveproteinbench_question_reviews_20261101/cases/cofactor_0141.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0142](../liveproteinbench_question_reviews_20261101/cases/cofactor_0142.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0147](../liveproteinbench_question_reviews_20261101/cases/cofactor_0147.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0148](../liveproteinbench_question_reviews_20261101/cases/cofactor_0148.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0149](../liveproteinbench_question_reviews_20261101/cases/cofactor_0149.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0150](../liveproteinbench_question_reviews_20261101/cases/cofactor_0150.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0154](../liveproteinbench_question_reviews_20261101/cases/cofactor_0154.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0155](../liveproteinbench_question_reviews_20261101/cases/cofactor_0155.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0158](../liveproteinbench_question_reviews_20261101/cases/cofactor_0158.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0161](../liveproteinbench_question_reviews_20261101/cases/cofactor_0161.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0171](../liveproteinbench_question_reviews_20261101/cases/cofactor_0171.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0174](../liveproteinbench_question_reviews_20261101/cases/cofactor_0174.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [cofactor_0178](../liveproteinbench_question_reviews_20261101/cases/cofactor_0178.md) | cofactor | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0001](../liveproteinbench_question_reviews_20261101/cases/motif_position_0001.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0002](../liveproteinbench_question_reviews_20261101/cases/motif_position_0002.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0004](../liveproteinbench_question_reviews_20261101/cases/motif_position_0004.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0010](../liveproteinbench_question_reviews_20261101/cases/motif_position_0010.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0017](../liveproteinbench_question_reviews_20261101/cases/motif_position_0017.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0018](../liveproteinbench_question_reviews_20261101/cases/motif_position_0018.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0019](../liveproteinbench_question_reviews_20261101/cases/motif_position_0019.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0022](../liveproteinbench_question_reviews_20261101/cases/motif_position_0022.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0024](../liveproteinbench_question_reviews_20261101/cases/motif_position_0024.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0026](../liveproteinbench_question_reviews_20261101/cases/motif_position_0026.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0027](../liveproteinbench_question_reviews_20261101/cases/motif_position_0027.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0028](../liveproteinbench_question_reviews_20261101/cases/motif_position_0028.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0029](../liveproteinbench_question_reviews_20261101/cases/motif_position_0029.md) | motif_position | reasoning_supported | usable output (valid_review) | None | output error (invalid_review) |
-| [motif_position_0033](../liveproteinbench_question_reviews_20261101/cases/motif_position_0033.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0034](../liveproteinbench_question_reviews_20261101/cases/motif_position_0034.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0038](../liveproteinbench_question_reviews_20261101/cases/motif_position_0038.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0039](../liveproteinbench_question_reviews_20261101/cases/motif_position_0039.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0045](../liveproteinbench_question_reviews_20261101/cases/motif_position_0045.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [motif_position_0048](../liveproteinbench_question_reviews_20261101/cases/motif_position_0048.md) | motif_position | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0035](../liveproteinbench_question_reviews_20261101/cases/pathway_0035.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0037](../liveproteinbench_question_reviews_20261101/cases/pathway_0037.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0053](../liveproteinbench_question_reviews_20261101/cases/pathway_0053.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0071](../liveproteinbench_question_reviews_20261101/cases/pathway_0071.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0093](../liveproteinbench_question_reviews_20261101/cases/pathway_0093.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0100](../liveproteinbench_question_reviews_20261101/cases/pathway_0100.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0127](../liveproteinbench_question_reviews_20261101/cases/pathway_0127.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0152](../liveproteinbench_question_reviews_20261101/cases/pathway_0152.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0154](../liveproteinbench_question_reviews_20261101/cases/pathway_0154.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0167](../liveproteinbench_question_reviews_20261101/cases/pathway_0167.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [pathway_0193](../liveproteinbench_question_reviews_20261101/cases/pathway_0193.md) | pathway | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0002](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0002.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0003](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0003.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0004](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0004.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0010](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0010.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0012](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0012.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0014](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0014.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0015](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0015.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0024](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0024.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0027](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0027.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0029](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0029.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0036](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0036.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0043](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0043.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0051](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0051.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0056](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0056.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0058](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0058.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0061](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0061.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0065](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0065.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0069](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0069.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0072](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0072.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0083](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0083.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0088](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0088.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0089](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0089.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0090](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0090.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0093](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0093.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0094](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0094.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0098](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0098.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0110](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0110.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0113](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0113.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0116](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0116.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0118](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0118.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0120](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0120.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0121](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0121.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0125](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0125.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0126](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0126.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0127](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0127.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
-| [transmembrane_0130](../liveproteinbench_question_reviews_20261101/cases/transmembrane_0130.md) | transmembrane | reasoning_supported | usable output (valid_review) | reasoning_supported | usable output (valid_review) |
+| Question | Task |
+|---|---|
+| EC_number_0000 | EC_number |
+| EC_number_0015 | EC_number |
+| EC_number_0018 | EC_number |
+| EC_number_0022 | EC_number |
+| EC_number_0030 | EC_number |
+| EC_number_0031 | EC_number |
+| EC_number_0037 | EC_number |
+| EC_number_0039 | EC_number |
+| EC_number_0047 | EC_number |
+| EC_number_0053 | EC_number |
+| EC_number_0054 | EC_number |
+| EC_number_0062 | EC_number |
+| EC_number_0077 | EC_number |
+| EC_number_0090 | EC_number |
+| EC_number_0094 | EC_number |
+| EC_number_0098 | EC_number |
+| EC_number_0104 | EC_number |
+| EC_number_0109 | EC_number |
+| EC_number_0139 | EC_number |
+| EC_number_0158 | EC_number |
+| EC_number_0178 | EC_number |
+| EC_number_0181 | EC_number |
+| EC_number_0191 | EC_number |
+| EC_number_0193 | EC_number |
+| GO_biological_process_0002 | GO_biological_process |
+| GO_biological_process_0004 | GO_biological_process |
+| GO_biological_process_0015 | GO_biological_process |
+| GO_biological_process_0019 | GO_biological_process |
+| GO_biological_process_0023 | GO_biological_process |
+| GO_biological_process_0027 | GO_biological_process |
+| GO_biological_process_0040 | GO_biological_process |
+| GO_biological_process_0041 | GO_biological_process |
+| GO_biological_process_0057 | GO_biological_process |
+| GO_biological_process_0076 | GO_biological_process |
+| GO_biological_process_0088 | GO_biological_process |
+| GO_biological_process_0093 | GO_biological_process |
+| GO_biological_process_0096 | GO_biological_process |
+| GO_biological_process_0098 | GO_biological_process |
+| GO_biological_process_0105 | GO_biological_process |
+| GO_biological_process_0108 | GO_biological_process |
+| GO_biological_process_0111 | GO_biological_process |
+| GO_biological_process_0137 | GO_biological_process |
+| GO_biological_process_0140 | GO_biological_process |
+| GO_biological_process_0142 | GO_biological_process |
+| GO_biological_process_0150 | GO_biological_process |
+| GO_biological_process_0161 | GO_biological_process |
+| GO_biological_process_0165 | GO_biological_process |
+| GO_biological_process_0172 | GO_biological_process |
+| GO_biological_process_0189 | GO_biological_process |
+| GO_cellular_component_0001 | GO_cellular_component |
+| GO_cellular_component_0003 | GO_cellular_component |
+| GO_cellular_component_0007 | GO_cellular_component |
+| GO_cellular_component_0008 | GO_cellular_component |
+| GO_cellular_component_0009 | GO_cellular_component |
+| GO_cellular_component_0011 | GO_cellular_component |
+| GO_cellular_component_0013 | GO_cellular_component |
+| GO_cellular_component_0014 | GO_cellular_component |
+| GO_cellular_component_0016 | GO_cellular_component |
+| GO_cellular_component_0017 | GO_cellular_component |
+| GO_cellular_component_0018 | GO_cellular_component |
+| GO_cellular_component_0021 | GO_cellular_component |
+| GO_cellular_component_0022 | GO_cellular_component |
+| GO_cellular_component_0024 | GO_cellular_component |
+| GO_cellular_component_0025 | GO_cellular_component |
+| GO_cellular_component_0027 | GO_cellular_component |
+| GO_cellular_component_0036 | GO_cellular_component |
+| GO_cellular_component_0040 | GO_cellular_component |
+| GO_cellular_component_0041 | GO_cellular_component |
+| GO_cellular_component_0043 | GO_cellular_component |
+| GO_cellular_component_0047 | GO_cellular_component |
+| GO_cellular_component_0050 | GO_cellular_component |
+| GO_cellular_component_0057 | GO_cellular_component |
+| GO_cellular_component_0058 | GO_cellular_component |
+| GO_cellular_component_0060 | GO_cellular_component |
+| GO_cellular_component_0062 | GO_cellular_component |
+| GO_cellular_component_0074 | GO_cellular_component |
+| GO_cellular_component_0075 | GO_cellular_component |
+| GO_cellular_component_0076 | GO_cellular_component |
+| GO_cellular_component_0081 | GO_cellular_component |
+| GO_cellular_component_0083 | GO_cellular_component |
+| GO_cellular_component_0093 | GO_cellular_component |
+| GO_cellular_component_0100 | GO_cellular_component |
+| GO_cellular_component_0102 | GO_cellular_component |
+| GO_cellular_component_0105 | GO_cellular_component |
+| GO_cellular_component_0111 | GO_cellular_component |
+| GO_cellular_component_0115 | GO_cellular_component |
+| GO_cellular_component_0116 | GO_cellular_component |
+| GO_cellular_component_0119 | GO_cellular_component |
+| GO_cellular_component_0122 | GO_cellular_component |
+| GO_cellular_component_0136 | GO_cellular_component |
+| GO_cellular_component_0137 | GO_cellular_component |
+| GO_cellular_component_0148 | GO_cellular_component |
+| GO_cellular_component_0154 | GO_cellular_component |
+| GO_cellular_component_0156 | GO_cellular_component |
+| GO_cellular_component_0160 | GO_cellular_component |
+| GO_cellular_component_0161 | GO_cellular_component |
+| GO_cellular_component_0168 | GO_cellular_component |
+| GO_cellular_component_0173 | GO_cellular_component |
+| GO_cellular_component_0174 | GO_cellular_component |
+| GO_cellular_component_0176 | GO_cellular_component |
+| GO_cellular_component_0182 | GO_cellular_component |
+| GO_cellular_component_0185 | GO_cellular_component |
+| GO_cellular_component_0186 | GO_cellular_component |
+| GO_cellular_component_0190 | GO_cellular_component |
+| GO_cellular_component_0192 | GO_cellular_component |
+| GO_cellular_component_0194 | GO_cellular_component |
+| GO_cellular_component_0195 | GO_cellular_component |
+| GO_molecular_function_0000 | GO_molecular_function |
+| GO_molecular_function_0005 | GO_molecular_function |
+| GO_molecular_function_0008 | GO_molecular_function |
+| GO_molecular_function_0016 | GO_molecular_function |
+| GO_molecular_function_0018 | GO_molecular_function |
+| GO_molecular_function_0019 | GO_molecular_function |
+| GO_molecular_function_0027 | GO_molecular_function |
+| GO_molecular_function_0033 | GO_molecular_function |
+| GO_molecular_function_0034 | GO_molecular_function |
+| GO_molecular_function_0037 | GO_molecular_function |
+| GO_molecular_function_0042 | GO_molecular_function |
+| GO_molecular_function_0043 | GO_molecular_function |
+| GO_molecular_function_0045 | GO_molecular_function |
+| GO_molecular_function_0047 | GO_molecular_function |
+| GO_molecular_function_0053 | GO_molecular_function |
+| GO_molecular_function_0054 | GO_molecular_function |
+| GO_molecular_function_0055 | GO_molecular_function |
+| GO_molecular_function_0058 | GO_molecular_function |
+| GO_molecular_function_0061 | GO_molecular_function |
+| GO_molecular_function_0063 | GO_molecular_function |
+| GO_molecular_function_0066 | GO_molecular_function |
+| GO_molecular_function_0067 | GO_molecular_function |
+| GO_molecular_function_0070 | GO_molecular_function |
+| GO_molecular_function_0071 | GO_molecular_function |
+| GO_molecular_function_0073 | GO_molecular_function |
+| GO_molecular_function_0075 | GO_molecular_function |
+| GO_molecular_function_0078 | GO_molecular_function |
+| GO_molecular_function_0080 | GO_molecular_function |
+| GO_molecular_function_0081 | GO_molecular_function |
+| GO_molecular_function_0084 | GO_molecular_function |
+| GO_molecular_function_0089 | GO_molecular_function |
+| GO_molecular_function_0090 | GO_molecular_function |
+| GO_molecular_function_0094 | GO_molecular_function |
+| GO_molecular_function_0097 | GO_molecular_function |
+| GO_molecular_function_0101 | GO_molecular_function |
+| GO_molecular_function_0104 | GO_molecular_function |
+| GO_molecular_function_0108 | GO_molecular_function |
+| GO_molecular_function_0110 | GO_molecular_function |
+| GO_molecular_function_0112 | GO_molecular_function |
+| GO_molecular_function_0131 | GO_molecular_function |
+| GO_molecular_function_0132 | GO_molecular_function |
+| GO_molecular_function_0133 | GO_molecular_function |
+| GO_molecular_function_0137 | GO_molecular_function |
+| GO_molecular_function_0140 | GO_molecular_function |
+| GO_molecular_function_0144 | GO_molecular_function |
+| GO_molecular_function_0145 | GO_molecular_function |
+| GO_molecular_function_0146 | GO_molecular_function |
+| GO_molecular_function_0150 | GO_molecular_function |
+| GO_molecular_function_0153 | GO_molecular_function |
+| GO_molecular_function_0157 | GO_molecular_function |
+| GO_molecular_function_0158 | GO_molecular_function |
+| GO_molecular_function_0162 | GO_molecular_function |
+| GO_molecular_function_0165 | GO_molecular_function |
+| GO_molecular_function_0167 | GO_molecular_function |
+| GO_molecular_function_0172 | GO_molecular_function |
+| GO_molecular_function_0173 | GO_molecular_function |
+| GO_molecular_function_0174 | GO_molecular_function |
+| GO_molecular_function_0179 | GO_molecular_function |
+| GO_molecular_function_0182 | GO_molecular_function |
+| GO_molecular_function_0183 | GO_molecular_function |
+| GO_molecular_function_0184 | GO_molecular_function |
+| GO_molecular_function_0188 | GO_molecular_function |
+| GO_molecular_function_0192 | GO_molecular_function |
+| GO_molecular_function_0194 | GO_molecular_function |
+| active_site_0010 | active_site |
+| active_site_0011 | active_site |
+| active_site_0012 | active_site |
+| active_site_0013 | active_site |
+| active_site_0018 | active_site |
+| active_site_0023 | active_site |
+| active_site_0024 | active_site |
+| active_site_0030 | active_site |
+| active_site_0031 | active_site |
+| active_site_0039 | active_site |
+| active_site_0042 | active_site |
+| active_site_0048 | active_site |
+| active_site_0053 | active_site |
+| active_site_0055 | active_site |
+| active_site_0056 | active_site |
+| active_site_0057 | active_site |
+| active_site_0059 | active_site |
+| active_site_0069 | active_site |
+| active_site_0072 | active_site |
+| active_site_0086 | active_site |
+| active_site_0087 | active_site |
+| active_site_0101 | active_site |
+| active_site_0102 | active_site |
+| active_site_0111 | active_site |
+| active_site_0113 | active_site |
+| active_site_0114 | active_site |
+| active_site_0115 | active_site |
+| active_site_0116 | active_site |
+| active_site_0117 | active_site |
+| active_site_0120 | active_site |
+| active_site_0128 | active_site |
+| active_site_0129 | active_site |
+| active_site_0131 | active_site |
+| active_site_0135 | active_site |
+| active_site_0138 | active_site |
+| active_site_0139 | active_site |
+| active_site_0140 | active_site |
+| active_site_0141 | active_site |
+| active_site_0143 | active_site |
+| catalytic_activity_0000 | catalytic_activity |
+| catalytic_activity_0003 | catalytic_activity |
+| catalytic_activity_0007 | catalytic_activity |
+| catalytic_activity_0013 | catalytic_activity |
+| catalytic_activity_0020 | catalytic_activity |
+| catalytic_activity_0029 | catalytic_activity |
+| catalytic_activity_0030 | catalytic_activity |
+| catalytic_activity_0032 | catalytic_activity |
+| catalytic_activity_0033 | catalytic_activity |
+| catalytic_activity_0034 | catalytic_activity |
+| catalytic_activity_0035 | catalytic_activity |
+| catalytic_activity_0036 | catalytic_activity |
+| catalytic_activity_0038 | catalytic_activity |
+| catalytic_activity_0039 | catalytic_activity |
+| catalytic_activity_0041 | catalytic_activity |
+| catalytic_activity_0042 | catalytic_activity |
+| catalytic_activity_0043 | catalytic_activity |
+| catalytic_activity_0047 | catalytic_activity |
+| catalytic_activity_0050 | catalytic_activity |
+| catalytic_activity_0066 | catalytic_activity |
+| catalytic_activity_0069 | catalytic_activity |
+| catalytic_activity_0071 | catalytic_activity |
+| catalytic_activity_0078 | catalytic_activity |
+| catalytic_activity_0089 | catalytic_activity |
+| catalytic_activity_0091 | catalytic_activity |
+| catalytic_activity_0098 | catalytic_activity |
+| catalytic_activity_0099 | catalytic_activity |
+| catalytic_activity_0100 | catalytic_activity |
+| catalytic_activity_0108 | catalytic_activity |
+| catalytic_activity_0112 | catalytic_activity |
+| catalytic_activity_0113 | catalytic_activity |
+| catalytic_activity_0115 | catalytic_activity |
+| catalytic_activity_0120 | catalytic_activity |
+| catalytic_activity_0122 | catalytic_activity |
+| catalytic_activity_0124 | catalytic_activity |
+| catalytic_activity_0127 | catalytic_activity |
+| catalytic_activity_0138 | catalytic_activity |
+| catalytic_activity_0139 | catalytic_activity |
+| catalytic_activity_0151 | catalytic_activity |
+| catalytic_activity_0154 | catalytic_activity |
+| catalytic_activity_0157 | catalytic_activity |
+| catalytic_activity_0160 | catalytic_activity |
+| catalytic_activity_0161 | catalytic_activity |
+| catalytic_activity_0169 | catalytic_activity |
+| catalytic_activity_0170 | catalytic_activity |
+| catalytic_activity_0175 | catalytic_activity |
+| catalytic_activity_0176 | catalytic_activity |
+| catalytic_activity_0177 | catalytic_activity |
+| catalytic_activity_0179 | catalytic_activity |
+| catalytic_activity_0181 | catalytic_activity |
+| catalytic_activity_0182 | catalytic_activity |
+| catalytic_activity_0185 | catalytic_activity |
+| catalytic_activity_0186 | catalytic_activity |
+| catalytic_activity_0188 | catalytic_activity |
+| catalytic_activity_0195 | catalytic_activity |
+| catalytic_activity_0197 | catalytic_activity |
+| cofactor_0002 | cofactor |
+| cofactor_0005 | cofactor |
+| cofactor_0006 | cofactor |
+| cofactor_0007 | cofactor |
+| cofactor_0008 | cofactor |
+| cofactor_0009 | cofactor |
+| cofactor_0010 | cofactor |
+| cofactor_0011 | cofactor |
+| cofactor_0014 | cofactor |
+| cofactor_0015 | cofactor |
+| cofactor_0016 | cofactor |
+| cofactor_0020 | cofactor |
+| cofactor_0022 | cofactor |
+| cofactor_0025 | cofactor |
+| cofactor_0029 | cofactor |
+| cofactor_0036 | cofactor |
+| cofactor_0038 | cofactor |
+| cofactor_0040 | cofactor |
+| cofactor_0041 | cofactor |
+| cofactor_0046 | cofactor |
+| cofactor_0048 | cofactor |
+| cofactor_0051 | cofactor |
+| cofactor_0053 | cofactor |
+| cofactor_0054 | cofactor |
+| cofactor_0055 | cofactor |
+| cofactor_0056 | cofactor |
+| cofactor_0058 | cofactor |
+| cofactor_0059 | cofactor |
+| cofactor_0060 | cofactor |
+| cofactor_0061 | cofactor |
+| cofactor_0064 | cofactor |
+| cofactor_0065 | cofactor |
+| cofactor_0066 | cofactor |
+| cofactor_0073 | cofactor |
+| cofactor_0074 | cofactor |
+| cofactor_0076 | cofactor |
+| cofactor_0077 | cofactor |
+| cofactor_0088 | cofactor |
+| cofactor_0089 | cofactor |
+| cofactor_0093 | cofactor |
+| cofactor_0094 | cofactor |
+| cofactor_0095 | cofactor |
+| cofactor_0097 | cofactor |
+| cofactor_0098 | cofactor |
+| cofactor_0108 | cofactor |
+| cofactor_0110 | cofactor |
+| cofactor_0111 | cofactor |
+| cofactor_0112 | cofactor |
+| cofactor_0113 | cofactor |
+| cofactor_0114 | cofactor |
+| cofactor_0115 | cofactor |
+| cofactor_0117 | cofactor |
+| cofactor_0119 | cofactor |
+| cofactor_0121 | cofactor |
+| cofactor_0122 | cofactor |
+| cofactor_0123 | cofactor |
+| cofactor_0124 | cofactor |
+| cofactor_0125 | cofactor |
+| cofactor_0128 | cofactor |
+| cofactor_0132 | cofactor |
+| cofactor_0134 | cofactor |
+| cofactor_0137 | cofactor |
+| cofactor_0140 | cofactor |
+| cofactor_0141 | cofactor |
+| cofactor_0142 | cofactor |
+| cofactor_0147 | cofactor |
+| cofactor_0148 | cofactor |
+| cofactor_0149 | cofactor |
+| cofactor_0150 | cofactor |
+| cofactor_0154 | cofactor |
+| cofactor_0155 | cofactor |
+| cofactor_0158 | cofactor |
+| cofactor_0161 | cofactor |
+| cofactor_0171 | cofactor |
+| cofactor_0174 | cofactor |
+| cofactor_0178 | cofactor |
+| motif_position_0001 | motif_position |
+| motif_position_0002 | motif_position |
+| motif_position_0004 | motif_position |
+| motif_position_0010 | motif_position |
+| motif_position_0017 | motif_position |
+| motif_position_0018 | motif_position |
+| motif_position_0019 | motif_position |
+| motif_position_0022 | motif_position |
+| motif_position_0024 | motif_position |
+| motif_position_0026 | motif_position |
+| motif_position_0027 | motif_position |
+| motif_position_0028 | motif_position |
+| motif_position_0029 | motif_position |
+| motif_position_0033 | motif_position |
+| motif_position_0034 | motif_position |
+| motif_position_0038 | motif_position |
+| motif_position_0039 | motif_position |
+| motif_position_0045 | motif_position |
+| motif_position_0048 | motif_position |
+| pathway_0035 | pathway |
+| pathway_0037 | pathway |
+| pathway_0053 | pathway |
+| pathway_0071 | pathway |
+| pathway_0093 | pathway |
+| pathway_0100 | pathway |
+| pathway_0127 | pathway |
+| pathway_0152 | pathway |
+| pathway_0154 | pathway |
+| pathway_0167 | pathway |
+| pathway_0193 | pathway |
+| transmembrane_0002 | transmembrane |
+| transmembrane_0003 | transmembrane |
+| transmembrane_0004 | transmembrane |
+| transmembrane_0010 | transmembrane |
+| transmembrane_0012 | transmembrane |
+| transmembrane_0014 | transmembrane |
+| transmembrane_0015 | transmembrane |
+| transmembrane_0024 | transmembrane |
+| transmembrane_0027 | transmembrane |
+| transmembrane_0029 | transmembrane |
+| transmembrane_0036 | transmembrane |
+| transmembrane_0043 | transmembrane |
+| transmembrane_0051 | transmembrane |
+| transmembrane_0056 | transmembrane |
+| transmembrane_0058 | transmembrane |
+| transmembrane_0061 | transmembrane |
+| transmembrane_0065 | transmembrane |
+| transmembrane_0069 | transmembrane |
+| transmembrane_0072 | transmembrane |
+| transmembrane_0083 | transmembrane |
+| transmembrane_0088 | transmembrane |
+| transmembrane_0089 | transmembrane |
+| transmembrane_0090 | transmembrane |
+| transmembrane_0093 | transmembrane |
+| transmembrane_0094 | transmembrane |
+| transmembrane_0098 | transmembrane |
+| transmembrane_0110 | transmembrane |
+| transmembrane_0113 | transmembrane |
+| transmembrane_0116 | transmembrane |
+| transmembrane_0118 | transmembrane |
+| transmembrane_0120 | transmembrane |
+| transmembrane_0121 | transmembrane |
+| transmembrane_0125 | transmembrane |
+| transmembrane_0126 | transmembrane |
+| transmembrane_0127 | transmembrane |
+| transmembrane_0130 | transmembrane |

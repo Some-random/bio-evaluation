@@ -1,18 +1,16 @@
-# GO_molecular_function_0014: before and after transfer clarification
+# GO_molecular_function_0014
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0014.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0014.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — isomerase activity
+**Expected answer:** **D** — isomerase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the annotated 4-carboxymethyl-4-methylbutenolide mutase. Its experimentally supported reaction is an isomerization, so the broader choice D, isomerase activity, is supported.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a small protein, but its length or general composition does not meaningfully distinguish isomerase activity from the listed DNA-binding or nuclease activities.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity or functional annotation linking this sequence to 4-carboxymethyl-4-methylbutenolide mutase activity.
-
-
-**Reason**
-
-> Choosing D depends on recognizing the sequence through homology or an external annotation; the supplied sequence and choices alone provide no concrete general biological argument that establishes this particular function.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The experimental reaction supports isomerase activity, and none of the other choices is supported by the supplied evidence.
-
-
-### Important caveats
-
-- The reviewer-only evidence identifies a sequence-matched UniProt record and cites experimental evidence codes and publications; those annotations were not supplied to the evaluated model.
-- The cited primary papers were not independently retrieved and comprehensively validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a small protein, but its length or general composition does not meaningfully distinguish isomerase activity from the listed DNA-binding or nuclease activities.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity or functional annotation linking this sequence to 4-carboxymethyl-4-methylbutenolide mutase activity.",
-    "reason": "Choosing D depends on recognizing the sequence through homology or an external annotation; the supplied sequence and choices alone provide no concrete general biological argument that establishes this particular function."
-  },
-  "case_id": "GO_molecular_function_0014",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated 4-carboxymethyl-4-methylbutenolide mutase. Its experimentally supported reaction is an isomerization, so the broader choice D, isomerase activity, is supported."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence identifies a sequence-matched UniProt record and cites experimental evidence codes and publications; those annotations were not supplied to the evaluated model.",
-    "The cited primary papers were not independently retrieved and comprehensively validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The experimental reaction supports isomerase activity, and none of the other choices is supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0014",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated 4-carboxymethyl-4-methylbutenolide mutase. Its experimentally supported reaction is an isomerization, so the broader choice D, isomerase activity, is supported.",
-    "evidence_ids": ["C5", "C6", "C7", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a small protein, but its length or general composition does not meaningfully distinguish isomerase activity from the listed DNA-binding or nuclease activities.",
-    "missing_item_specific_fact": "The protein-specific identity or functional annotation linking this sequence to 4-carboxymethyl-4-methylbutenolide mutase activity.",
-    "reason": "Choosing D depends on recognizing the sequence through homology or an external annotation; the supplied sequence and choices alone provide no concrete general biological argument that establishes this particular function."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The experimental reaction supports isomerase activity, and none of the other choices is supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence identifies a sequence-matched UniProt record and cites experimental evidence codes and publications; those annotations were not supplied to the evaluated model.",
-    "The cited primary papers were not independently retrieved and comprehensively validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt C5MR76 (sequence matched, 107 aa) annotates this protein as 4-methylmuconolactone methylisomerase / 4-carboxymethyl-4-methylbutenolide mutase (EC 5.4.99.14), with experimental evidence (ECO:0000269, PubMed:19801657 crystal structure and catalytic characterization). The GO annotation GO:0047469 (4-carboxymethyl-4-methylbutenolide mutase activity) is_a GO:0016866 (intramolecular transferase activity) is_a GO:0016853 (isomerase activity). EC class 5 is Isomerases. The function comment explicitly states 'Isomerase involved in the degradation of 4-methylsalicylate and 5-methylsalicylate.' The author key D (isomerase activity) is the correct parent GO term.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [GO3](#evidence-go3), [GO4](#evidence-go4), [GO6](#evidence-go6), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could attempt elimination: the 107-aa sequence lacks recognizable DNA-binding motifs (helix-turn-helix, zinc finger, etc.) to rule out A; lacks nuclease catalytic residues/motifs to rule out B; and lacks a canonical Ser-His-Asp catalytic triad in a serine-protease fold to rule out C. However, this negative elimination does not positively confirm isomerase activity. The sequence contains Cys, His, and Tyr residues (active-site residues His-26, Tyr-39, His-52, Cys-67 per the crystal structure paper), but these are not a recognized isomerase signature motif. There is no well-known, generalizable sequence motif in this 107-aa protein that positively identifies it as an isomerase rather than some other small metabolic enzyme.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as 4-methylmuconolactone methylisomerase (EC 5.4.99.14), a member of a specialized bacterial lactone-mutase family involved in methylsalicylate degradation, is required to positively assign isomerase activity. Without recognizing the sequence or knowing this enzyme family, the sequence alone does not provide a positive, generalizable argument for isomerase over other possible small-enzyme functions.
-
-
-**Reason**
-
-> The sequence provides no recognizable isomerase fold signature or catalytic mechanism motif that would allow general biological reasoning to positively identify isomerase activity. While elimination of A, B, and C via absence of their characteristic motifs is partially defensible, the positive assignment to D requires item-specific knowledge of this particular protein family or its database annotation. Recognizing the exact sequence and recalling its UniProt entry does not constitute reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the four choices, A (sequence-specific DNA binding), B (DNA nuclease activity), and C (serine-type endopeptidase activity) can each be reasonably excluded from the sequence by absence of their defining structural/functional motifs. D (isomerase activity) is the only remaining option and is confirmed by the database annotation. No other option is defensible for this protein.
-
-
-### Important caveats
-
-- The evaluated model receives only the 107-aa sequence and four choices; all UniProt/GO annotations are reviewer-only and were not in the model input.
-- The GO term in the answer key is the broad parent term GO:0016853 (isomerase activity), not the specific GO:0047469; the ontology path confirms the parent-child relationship.
-- The protein's crystal structure (PDB 3HDS, 3HF5, 3HFK) and mutagenesis data (PubMed:19801657) provide experimental (ECO:0000269) support for the isomerase function, not merely computational annotation.
-- The sequence is short (107 aa) and lacks widely recognized motif signatures, making de novo functional assignment from sequence alone very difficult without family-level knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could attempt elimination: the 107-aa sequence lacks recognizable DNA-binding motifs (helix-turn-helix, zinc finger, etc.) to rule out A; lacks nuclease catalytic residues/motifs to rule out B; and lacks a canonical Ser-His-Asp catalytic triad in a serine-protease fold to rule out C. However, this negative elimination does not positively confirm isomerase activity. The sequence contains Cys, His, and Tyr residues (active-site residues His-26, Tyr-39, His-52, Cys-67 per the crystal structure paper), but these are not a recognized isomerase signature motif. There is no well-known, generalizable sequence motif in this 107-aa protein that positively identifies it as an isomerase rather than some other small metabolic enzyme.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as 4-methylmuconolactone methylisomerase (EC 5.4.99.14), a member of a specialized bacterial lactone-mutase family involved in methylsalicylate degradation, is required to positively assign isomerase activity. Without recognizing the sequence or knowing this enzyme family, the sequence alone does not provide a positive, generalizable argument for isomerase over other possible small-enzyme functions.",
-    "reason": "The sequence provides no recognizable isomerase fold signature or catalytic mechanism motif that would allow general biological reasoning to positively identify isomerase activity. While elimination of A, B, and C via absence of their characteristic motifs is partially defensible, the positive assignment to D requires item-specific knowledge of this particular protein family or its database annotation. Recognizing the exact sequence and recalling its UniProt entry does not constitute reasoning."
-  },
-  "case_id": "GO_molecular_function_0014",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "GO3",
-      "GO4",
-      "GO6",
-      "H4",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt C5MR76 (sequence matched, 107 aa) annotates this protein as 4-methylmuconolactone methylisomerase / 4-carboxymethyl-4-methylbutenolide mutase (EC 5.4.99.14), with experimental evidence (ECO:0000269, PubMed:19801657 crystal structure and catalytic characterization). The GO annotation GO:0047469 (4-carboxymethyl-4-methylbutenolide mutase activity) is_a GO:0016866 (intramolecular transferase activity) is_a GO:0016853 (isomerase activity). EC class 5 is Isomerases. The function comment explicitly states 'Isomerase involved in the degradation of 4-methylsalicylate and 5-methylsalicylate.' The author key D (isomerase activity) is the correct parent GO term."
-  },
-  "important_caveats": [
-    "The evaluated model receives only the 107-aa sequence and four choices; all UniProt/GO annotations are reviewer-only and were not in the model input.",
-    "The GO term in the answer key is the broad parent term GO:0016853 (isomerase activity), not the specific GO:0047469; the ontology path confirms the parent-child relationship.",
-    "The protein's crystal structure (PDB 3HDS, 3HF5, 3HFK) and mutagenesis data (PubMed:19801657) provide experimental (ECO:0000269) support for the isomerase function, not merely computational annotation.",
-    "The sequence is short (107 aa) and lacks widely recognized motif signatures, making de novo functional assignment from sequence alone very difficult without family-level knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the four choices, A (sequence-specific DNA binding), B (DNA nuclease activity), and C (serine-type endopeptidase activity) can each be reasonably excluded from the sequence by absence of their defining structural/functional motifs. D (isomerase activity) is the only remaining option and is confirmed by the database annotation. No other option is defensible for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0014",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt C5MR76 (sequence matched, 107 aa) annotates this protein as 4-methylmuconolactone methylisomerase / 4-carboxymethyl-4-methylbutenolide mutase (EC 5.4.99.14), with experimental evidence (ECO:0000269, PubMed:19801657 crystal structure and catalytic characterization). The GO annotation GO:0047469 (4-carboxymethyl-4-methylbutenolide mutase activity) is_a GO:0016866 (intramolecular transferase activity) is_a GO:0016853 (isomerase activity). EC class 5 is Isomerases. The function comment explicitly states 'Isomerase involved in the degradation of 4-methylsalicylate and 5-methylsalicylate.' The author key D (isomerase activity) is the correct parent GO term.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "GO3", "GO4", "GO6", "H4", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could attempt elimination: the 107-aa sequence lacks recognizable DNA-binding motifs (helix-turn-helix, zinc finger, etc.) to rule out A; lacks nuclease catalytic residues/motifs to rule out B; and lacks a canonical Ser-His-Asp catalytic triad in a serine-protease fold to rule out C. However, this negative elimination does not positively confirm isomerase activity. The sequence contains Cys, His, and Tyr residues (active-site residues His-26, Tyr-39, His-52, Cys-67 per the crystal structure paper), but these are not a recognized isomerase signature motif. There is no well-known, generalizable sequence motif in this 107-aa protein that positively identifies it as an isomerase rather than some other small metabolic enzyme.",
-    "missing_item_specific_fact": "The specific identity of this protein as 4-methylmuconolactone methylisomerase (EC 5.4.99.14), a member of a specialized bacterial lactone-mutase family involved in methylsalicylate degradation, is required to positively assign isomerase activity. Without recognizing the sequence or knowing this enzyme family, the sequence alone does not provide a positive, generalizable argument for isomerase over other possible small-enzyme functions.",
-    "reason": "The sequence provides no recognizable isomerase fold signature or catalytic mechanism motif that would allow general biological reasoning to positively identify isomerase activity. While elimination of A, B, and C via absence of their characteristic motifs is partially defensible, the positive assignment to D requires item-specific knowledge of this particular protein family or its database annotation. Recognizing the exact sequence and recalling its UniProt entry does not constitute reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the four choices, A (sequence-specific DNA binding), B (DNA nuclease activity), and C (serine-type endopeptidase activity) can each be reasonably excluded from the sequence by absence of their defining structural/functional motifs. D (isomerase activity) is the only remaining option and is confirmed by the database annotation. No other option is defensible for this protein."
-  },
-  "important_caveats": [
-    "The evaluated model receives only the 107-aa sequence and four choices; all UniProt/GO annotations are reviewer-only and were not in the model input.",
-    "The GO term in the answer key is the broad parent term GO:0016853 (isomerase activity), not the specific GO:0047469; the ontology path confirms the parent-child relationship.",
-    "The protein's crystal structure (PDB 3HDS, 3HF5, 3HFK) and mutagenesis data (PubMed:19801657) provide experimental (ECO:0000269) support for the isomerase function, not merely computational annotation.",
-    "The sequence is short (107 aa) and lacks widely recognized motif signatures, making de novo functional assignment from sequence alone very difficult without family-level knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -516,30 +279,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "C5MR76",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "9b6ceb842a92c4daf2e9899c4fc70734536969d2e135a330b0230d9b3d196226",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 107,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "9b6ceb842a92c4daf2e9899c4fc70734536969d2e135a330b0230d9b3d196226",
   "current_entry_audit": {
     "entryVersion": 68,
     "firstPublicDate": "2025-04-09",
@@ -547,14 +297,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-07-28",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "current_source_sequence_sha256": "9b6ceb842a92c4daf2e9899c4fc70734536969d2e135a330b0230d9b3d196226",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 107,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "9b6ceb842a92c4daf2e9899c4fc70734536969d2e135a330b0230d9b3d196226",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 66,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "C5MR76",
   "selected_historical_entry_version": 66,
+  "selected_historical_record_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
+  "selected_historical_source_sequence_length": 107,
+  "selected_historical_source_sequence_sha256": "9b6ceb842a92c4daf2e9899c4fc70734536969d2e135a330b0230d9b3d196226",
   "selected_historical_version": {
     "accession": "C5MR76",
     "database": "Swiss-Prot",
@@ -565,24 +331,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MMLI_PSERE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
-  "selected_historical_source_sequence_sha256": "9b6ceb842a92c4daf2e9899c4fc70734536969d2e135a330b0230d9b3d196226",
-  "selected_historical_source_sequence_length": 107,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 66,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +353,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"C5MR76\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -619,15 +372,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":68,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-07-28\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -638,15 +391,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Pseudomonadales\",\"Pseudomonadaceae\",\"Pseudomonas\"],\"scientificName\":\"Pseudomonas reinekei\",\"taxonId\":395598}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -657,15 +410,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"19801657\",\"source\":\"PubMed\"}],\"value\":\"4-methylmuconolactone methylisomerase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"19801657\",\"source\":\"PubMed\"}],\"value\":\"MLMI\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19801657\",\"source\":\"PubMed\"}],\"value\":\"5.4.99.14\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"4-carboxymethyl-4-methylbutenolide mutase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -676,15 +429,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19801657\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061479\",\"source\":\"PubMed\"}],\"value\":\"Isomerase involved in the degradation of 4-methylsalicylate and 5-methylsalicylate (PubMed:20061479). Catalyzes the isomerization of the dead-end metabolite 4-methylmuconolactone (4-ML) to 3-methylmuconolactone (3-ML), which can then be further degraded through a modified 3-oxoadipate pathway (PubMed:19801657). Can also use 1-methylbislactone but not 3-methyl-cis,cis-muconate (PubMed:19801657)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -695,15 +448,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"19801657\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:19238\"}}],\"reaction\":{\"ecNumber\":\"5.4.99.14\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19801657\",\"source\":\"PubMed\"}],\"name\":\"4-methylmuconolactone = 3-methylmuconolactone\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:19237\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57883\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57888\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -714,15 +467,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19801657\",\"source\":\"PubMed\"}],\"id\":\"GO:0047469\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:4-carboxymethyl-4-methylbutenolide mutase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -733,15 +486,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Marin M.\",\"Heinz D.W.\",\"Pieper D.H.\",\"Klink B.U.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19801657\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m109.024604\"}],\"citationType\":\"journal article\",\"firstPage\":\"32709\",\"id\":\"19801657\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"32716\",\"publicationDate\":\"2009\",\"title\":\"Crystal structure and catalytic mechanism of 4-methylmuconolactone methylisomerase.\",\"volume\":\"284\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ACR82080.1\",\"source\":\"EMBL\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3HDS\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3HF5\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3HFK\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 18361 / CCUG 53116 / MT1\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"X-RAY CRYSTALLOGRAPHY (1.40 ANGSTROMS) IN COMPLEX WITH 3-METHYLMUCONOLACTONE AND OF MUTANT ALA-52 IN COMPLEX WITH 4-METHYLMUCONOLACTONE\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PROPOSED REACTION MECHANISM\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\",\"DOMAIN\",\"ACTIVE SITE\",\"MUTAGENESIS OF HIS-26; TYR-39; HIS-52 AND CYS-67\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -752,15 +505,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json",
-  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
-  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Marin M.\",\"Perez-Pantoja D.\",\"Donoso R.\",\"Wray V.\",\"Gonzalez B.\",\"Pieper D.H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20061479\"},{\"database\":\"DOI\",\"id\":\"10.1128/jb.01208-09\"}],\"citationType\":\"journal article\",\"firstPage\":\"1543\",\"id\":\"20061479\",\"journal\":\"J. Bacteriol.\",\"lastPage\":\"1552\",\"publicationDate\":\"2010\",\"title\":\"Modified 3-oxoadipate pathway for the biodegradation of methylaromatics in Pseudomonas reinekei MT1.\",\"volume\":\"192\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ACR82080.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 18361 / CCUG 53116 / MT1\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:31.044476+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3d67557ecf827cb87e773519386698ecac17ac2714ab4e9390e7fdb2b8e1ed32",
+  "url": "https://rest.uniprot.org/uniprotkb/C5MR76.json"
 }
 ```
 
@@ -770,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66",
-  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
-  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   MMLI_PSERE              Reviewed;         107 AA.\nAC   C5MR76;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   28-JUL-2009, sequence version 1.\nDT   28-JAN-2026, entry version 66.\nDE   RecName: Full=4-carboxymethyl-4-methylbutenolide mutase {ECO:0000305};\nDE            EC=5.4.99.14 {ECO:0000269|PubMed:19801657};\nDE   AltName: Full=4-methylmuconolactone methylisomerase {ECO:0000303|PubMed:19801657};\nDE            Short=MLMI {ECO:0000303|PubMed:19801657};\nGN   Name=mmlI {ECO:0000303|PubMed:19801657, ECO:0000303|PubMed:20061479};\nGN   ORFNames=BVK86_00405 {ECO:0000312|EMBL:OLU05856.1},\nGN   F7R15_00410 {ECO:0000312|EMBL:KAB0488369.1},\nGN   SAMN04490202_5523 {ECO:0000312|EMBL:SDP67526.1};\nOS   Pseudomonas reinekei.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Pseudomonadales; Pseudomonadaceae; Pseudomonas.\nOX   NCBI_TaxID=395598;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
+  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66"
 }
 ```
 
@@ -791,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66",
-  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
-  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
-  "source_locator": "lines 18-29",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:ACR82080.1, ECO:0007744|PDB:3HDS, ECO:0007744|PDB:3HF5, ECO:0007744|PDB:3HFK}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], X-RAY CRYSTALLOGRAPHY (1.40 ANGSTROMS)\nRP   IN COMPLEX WITH 3-METHYLMUCONOLACTONE AND OF MUTANT ALA-52 IN COMPLEX WITH\nRP   4-METHYLMUCONOLACTONE, FUNCTION, CATALYTIC ACTIVITY, PROPOSED REACTION\nRP   MECHANISM, ACTIVITY REGULATION, BIOPHYSICOCHEMICAL PROPERTIES, SUBUNIT,\nRP   DOMAIN, ACTIVE SITE, AND MUTAGENESIS OF HIS-26; TYR-39; HIS-52 AND CYS-67.\nRC   STRAIN=DSM 18361 / CCUG 53116 / MT1;\nRX   PubMed=19801657; DOI=10.1074/jbc.m109.024604;\nRA   Marin M., Heinz D.W., Pieper D.H., Klink B.U.;\nRT   \"Crystal structure and catalytic mechanism of 4-methylmuconolactone\nRT   methylisomerase.\";\nRL   J. Biol. Chem. 284:32709-32716(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 18-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
+  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66"
 }
 ```
 
@@ -812,18 +565,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66",
-  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
-  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
-  "source_locator": "lines 30-37",
   "excerpt": "RN   [2] {ECO:0000312|EMBL:ACR82080.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], AND FUNCTION.\nRC   STRAIN=DSM 18361 / CCUG 53116 / MT1;\nRX   PubMed=20061479; DOI=10.1128/jb.01208-09;\nRA   Marin M., Perez-Pantoja D., Donoso R., Wray V., Gonzalez B., Pieper D.H.;\nRT   \"Modified 3-oxoadipate pathway for the biodegradation of methylaromatics in\nRT   Pseudomonas reinekei MT1.\";\nRL   J. Bacteriol. 192:1543-1552(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
+  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66"
 }
 ```
 
@@ -833,18 +586,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66",
-  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
-  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
-  "source_locator": "lines 56-62",
   "excerpt": "CC   -!- FUNCTION: Isomerase involved in the degradation of 4-methylsalicylate\nCC       and 5-methylsalicylate (PubMed:20061479). Catalyzes the isomerization\nCC       of the dead-end metabolite 4-methylmuconolactone (4-ML) to 3-\nCC       methylmuconolactone (3-ML), which can then be further degraded through\nCC       a modified 3-oxoadipate pathway (PubMed:19801657). Can also use 1-\nCC       methylbislactone but not 3-methyl-cis,cis-muconate (PubMed:19801657).\nCC       {ECO:0000269|PubMed:19801657, ECO:0000269|PubMed:20061479}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
+  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66"
 }
 ```
 
@@ -854,18 +607,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66",
-  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
-  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
-  "source_locator": "lines 63-68",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=4-methylmuconolactone = 3-methylmuconolactone;\nCC         Xref=Rhea:RHEA:19237, ChEBI:CHEBI:57883, ChEBI:CHEBI:57888;\nCC         EC=5.4.99.14; Evidence={ECO:0000269|PubMed:19801657};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:19238;\nCC         Evidence={ECO:0000305|PubMed:19801657};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
+  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66"
 }
 ```
 
@@ -875,18 +628,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66",
-  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
-  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
-  "source_locator": "lines 104-104",
   "excerpt": "DR   GO; GO:0047469; F:4-carboxymethyl-4-methylbutenolide mutase activity; IEA:UniProtKB-EC.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:27:34.227817+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-104",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813b0f1c8060cf8b4b09f12d8d6ff0f15ff7f1c1b402841ea0a11592eb3069aa",
+  "url": "https://rest.uniprot.org/unisave/C5MR76?format=txt&versions=66"
 }
 ```
 
@@ -897,15 +650,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 38518-38819",
   "excerpt": "[Term]\nid: GO:0004252\nname: serine-type endopeptidase activity\nnamespace: molecular_function\ndef: \"Catalysis of the hydrolysis of internal, alpha-peptide bonds in a polypeptide chain by a catalytic mechanism that involves a catalytic triad consisting of a serine nucleophile that is activated by a proton relay involving an acidic residue (e.g. aspartate or glutamate) and a basic residue (usually histidine).\" [GOC:mah, https://www.ebi.ac.uk/merops/about/glossary.shtml#CATTYPE]\nsubset: goslim_chembl\nsynonym: \"blood coagulation factor activity\" RELATED []\nsynonym: \"serine elastase activity\" RELATED [GOC:krc]\nxref: EC:3.4.21.-\nxref: EC:3.4.21.1\nxref: EC:3.4.21.10\nxref: EC:3.4.21.102\nxref: EC:3.4.21.20\nxref: EC:3.4.21.21\nxref: EC:3.4.21.22\nxref: EC:3.4.21.26\nxref: EC:3.4.21.27\nxref: EC:3.4.21.34\nxref: EC:3.4.21.35\nxref: EC:3.4.21.36\nxref: EC:3.4.21.38\nxref: EC:3.4.21.39\nxref: EC:3.4.21.4\nxref: EC:3.4.21.41\nxref: EC:3.4.21.42\nxref: EC:3.4.21.43\nxref: EC:3.4.21.45\nxref: EC:3.4.21.46\nxref: EC:3.4.21.47\nxref: EC:3.4.21.48\nxref: EC:3.4.21.5\nxref: EC:3.4.21.53\nxref: EC:3.4.21.54\nxref: EC:3.4.21.59\nxref: EC:3.4.21.6\nxref: EC:3.4.21.61\nxref: EC:3.4.21.62\nxref: EC:3.4.21.68\nxref: EC:3.4.21.69\nxref: EC:3.4.21.7\nxref: EC:3.4.21.71\nxref: EC:3.4.21.73\nxref: EC:3.4.21.75\nxref: EC:3.4.21.78\nxref: EC:3.4.21.79\nxref: EC:3.4.21.83\nxref: EC:3.4.21.88\nxref: EC:3.4.21.9\nxref: EC:3.4.21.92\nxref: EC:3.4.21.93\nxref: EC:3.4.21.94\nxref: Reactome:R-HSA-114697 \"Activated thrombin (factor IIa) cleaves PAR3,4, activating them\"\nxref: Reactome:R-HSA-1181152 \"Cleavage of NODAL proprotein\"\nxref: Reactome:R-HSA-139893 \"Granzyme-B activates BID by cleavage\"\nxref: Reactome:R-HSA-140599 \"factor XIII -> factor XIII cleaved tetramer + 2 factor XIII A activation peptides\"\nxref: Reactome:R-HSA-140664 \"prothrombin -> activated thrombin (factor IIa) + thrombin activation peptide (prothrombinase catalyst)\"\nxref: Reactome:R-HSA-140696 \"factor V -> factor Va + factor V activation peptide (thrombin catalyst)\"\nxref: Reactome:R-HSA-140700 \"prothrombin -> activated thrombin (factor IIa) + thrombin activation peptide (Xa catalyst)\"\nxref: Reactome:R-HSA-140736 \"factor X -> factor Xa + factor X activation peptide (TF:F7a catalyst)\"\nxref: Reactome:R-HSA-140769 \"factor VII -> factor VIIa\"\nxref: Reactome:R-HSA-140777 \"factor X -> factor Xa + factor X activation peptide (TF:F7 catalyst)\"\nxref: Reactome:R-HSA-140823 \"factor IX -> factor IXa + factor IX activation peptide (TF:F7a catalyst)\"\nxref: Reactome:R-HSA-140840 \"fibrinogen -> fibrin monomer + 2 fibrinopeptide A + 2 fibrinopeptide B\"\nxref: Reactome:R-HSA-140870 \"thrombin:antithrombin III:heparin -> thrombin:cleaved antithrombin III:heparin\"\nxref: Reactome:R-HSA-141026 \"Activated protein C cleaves factor Va to factor Vi intermediate form\"\nxref: Reactome:R-HSA-141040 \"Activated thrombin:thrombomodulin cleaves PROCR:Protein C to PROCR:Activated protein C\"\nxref: Reactome:R-HSA-1454843 \"E-cadherin degradation by MMP3, MMP7 and plasmin\"\nxref: Reactome:R-HSA-1474197 \"Collagen type II degradation by MMP1,3,8,13,PRSS2\"\nxref: Reactome:R-HSA-1566962 \"Elastin degradation by elastin-degrading extracellular proteinases\"\nxref: Reactome:R-HSA-1566979 \"Laminin-332 degradation by laminin-322 degrading extracellular proteinases\"\nxref: Reactome:R-HSA-1566981 \"Fibronectin degradation by MMP1, 3, 7, 12, 13, 19, CTSS\"\nxref: Reactome:R-HSA-158137 \"factor VIII:von Willibrand factor multimer -> factor VIIIa + factor VIIIa B A3 acidic polypeptide + von Willibrand factor multimer\"\nxref: Reactome:R-HSA-158164 \"factor X -> factor Xa + factor X activation peptide (VIIIa:IXa catalyst)\"\nxref: Reactome:R-HSA-158300 \"factor XI:platelet glycoprotein (GP) Ib:IX:V complex -> factor XIa:platelet glycoprotein (GP) Ib:IX:V complex (XIIa catalyst)\"\nxref: Reactome:R-HSA-158311 \"kallikrein:kininogen:C1q binding protein tetramer -> kallikrein + activated kininogen:C1q binding protein tetramer + bradykinin\"\nxref: Reactome:R-HSA-158313 \"factor XII -> factor XIIa\"\nxref: Reactome:R-HSA-158333 \"factor IX -> factor IXa + factor IX activation peptide (factor XIa catalyst)\"\nxref: Reactome:R-HSA-158419 \"factor XI:platelet glycoprotein (GP) Ib:IX:V complex -> factor XIa:platelet glycoprotein (GP) Ib:IX:V complex (thrombin catalyst)\"\nxref: Reactome:R-HSA-158744 \"crosslinked fibrin multimer:tissue plasminogen activator (two-chain):plasminogen -> crosslinked fibrin multimer:tissue plasminogen activator (two-chain) + plasmin\"\nxref: Reactome:R-HSA-158747 \"crosslinked fibrin multimer:tissue plasminogen activator (one-chain) -> crosslinked fibrin multimer:tissue plasminogen activator (two-chain)\"\nxref: Reactome:R-HSA-158750 \"crosslinked fibrin multimer:tissue plasminogen activator (one-chain):plasminogen -> crosslinked fibrin multimer:tissue plasminogen activator (one-chain) + plasmin\"\nxref: Reactome:R-HSA-158766 \"fibrin multimer, crosslinked -> fibrin digestion products (plasmin)\"\nxref: Reactome:R-HSA-158925 \"plasminogen:histidine-rich glycoprotein -> plasmin + histidine-rich glycoprotein (uPA [two-chain] catalyst)\"\nxref: Reactome:R-HSA-158942 \"urokinase plasminogen activator (one-chain):uPAR -> urokinase plasminogen activator (two-chain):uPAR\"\nxref: Reactome:R-HSA-158982 \"plasminogen:histidine-rich glycoprotein -> plasmin + histidine-rich glycoprotein (uPA [one-chain] catalyst)\"\nxref: Reactome:R-HSA-1592270 \"NID1 degradation by MMP1, 9, 12, ELANE\"\nxref: Reactome:R-HSA-1592278 \"Autocatalytic activation of proMMP2\"\nxref: Reactome:R-HSA-1592297 \"Full activation of MMP1\"\nxref: Reactome:R-HSA-1592314 \"HSPG2 (perlecan) degradation by MMP3, plasmin, (MMP12)\"\nxref: Reactome:R-HSA-1592316 \"Initial activation of proMMP1\"\nxref: Reactome:R-HSA-1592362 \"Activation of proMMP7 by MMP3\"\nxref: Reactome:R-HSA-1592371 \"Initial activation of proMMP3\"\nxref: Reactome:R-HSA-1592398 \"Activation of proMMP8\"\nxref: Reactome:R-HSA-1592436 \"Initial activation of proMMP9 by MMPs\"\nxref: Reactome:R-HSA-159728 \"Furin cleaves pro-prothrombin to prothrombin\"\nxref: Reactome:R-HSA-159733 \"Furin cleaves pro-factor X to factor X\"\nxref: Reactome:R-HSA-159771 \"Furin cleaves pro-protein C to protein C\"\nxref: Reactome:R-HSA-159773 \"Furin cleaves pro-protein S to protein S\"\nxref: Reactome:R-HSA-159796 \"Furin cleaves pro-factor IX to factor IX\"\nxref: Reactome:R-HSA-159868 \"Furin cleaves pro-factor VII to factor VII\"\nxref: Reactome:R-HSA-1602458 \"Activation of proMMP10\"\nxref: Reactome:R-HSA-1602466 \"Activation of MT-MMPs by FURIN\"\nxref: Reactome:R-HSA-1602473 \"Autocatalytic activation of MMP1\"\nxref: Reactome:R-HSA-1602484 \"Activation of proMMP11 by FURIN\"\nxref: Reactome:R-HSA-1602488 \"Initial activation of proMMP13 by plasmin and trypsin\"\nxref: Reactome:R-HSA-1604359 \"Initial activation of proMMP2 by MMP1, 7\"\nxref: Reactome:R-HSA-1604360 \"Initial activation of proMMP2 by MMP14\"\nxref: Reactome:R-HSA-1604368 \"Autocatalytic activation of bound proMMP2\"\nxref: Reactome:R-HSA-1604690 \"Activation of MMP9 intermediate form by MMPs\"\nxref: Reactome:R-HSA-1604712 \"Initial activation of proMMP7 by trypsin\"\nxref: Reactome:R-HSA-1604722 \"Activation of proMMP9 by proteases\"\nxref: Reactome:R-HSA-1604731 \"Autocatalytic activation of MMP3\"\nxref: Reactome:R-HSA-1604732 \"Autocatalytic activation of proMMP13\"\nxref: Reactome:R-HSA-1604741 \"Initial activation of proMMP13 by MMP14 (MT1-MMP)\"\nxref: Reactome:R-HSA-1604752 \"Initial activation of proMMP13 by MMP3\"\nxref: Reactome:R-HSA-1604763 \"Autocatalytic activation of MMP7\"\nxref: Reactome:R-HSA-163798 \"Furin cleaves pro-protein Z to protein Z\"\nxref: Reactome:R-HSA-163843 \"Furin cleaves pro-GAS6 to GAS6\"\nxref: Reactome:R-HSA-1655842 \"S1P hydrolyzes SREBP1A,1C,2\"\nxref: Reactome:R-HSA-166753 \"Conversion of C4 into C4a and C4b\"\nxref: Reactome:R-HSA-166792 \"Conversion of C2 into C2a and C2b\"\nxref: Reactome:R-HSA-166817 \"Cleavage of C3 by C3 convertases\"\nxref: Reactome:R-HSA-170844 \"Latent TGF-beta-1 is cleaved by FURIN\"\nxref: Reactome:R-HSA-171288 \"Cleavage of the viral Env gp160 precursor polyprotein\"\nxref: Reactome:R-HSA-173626 \"Activation of C1r\"\nxref: Reactome:R-HSA-173631 \"Activation of C1s\"\nxref: Reactome:R-HSA-173680 \"Activation of C5\"\nxref: Reactome:R-HSA-173745 \"Factor D cleaves C3(H2O)-bound Factor B\"\nxref: Reactome:R-HSA-174551 \"Formation of alternative pathway C5 convertase\"\nxref: Reactome:R-HSA-1799329 \"Signal peptidase hydrolyzes signal peptide from ribosome-associated nascent protein\"\nxref: Reactome:R-HSA-183122 \"Factor D cleaves C3b-bound Factor B\"\nxref: Reactome:R-HSA-183130 \"C3(H2O):Factor Bb cleaves C3 to C3b and C3a\"\nxref: Reactome:R-HSA-186785 \"PDGF-AA clevage by Furin\"\nxref: Reactome:R-HSA-187020 \"Part of pro-beta-NGF is processed to mature beta-NGF\"\nxref: Reactome:R-HSA-1912369 \"NOTCH precursor cleaved to form mature NOTCH\"\nxref: Reactome:R-HSA-1912372 \"Fringe-modified Pre-NOTCH is cleaved by FURIN\"\nxref: Reactome:R-HSA-2022411 \"Cathepsin G hydrolyzes AGT(25-34) (Angiotensin-(1-10)) to AGT(25-32) (Angiotensin-(1-8))\"\nxref: Reactome:R-HSA-2129357 \"Fibrillin C-terminal processing\"\nxref: Reactome:R-HSA-2168923 \"Collagen type XVIII endostatin release\"\nxref: Reactome:R-HSA-2168960 \"Collagen type XVII ectodomain shedding\"\nxref: Reactome:R-HSA-2172405 \"Collagen type XXIII ectodomain shedding\"\nxref: Reactome:R-HSA-2214330 \"Cleavage of collagen VII NC2 region by BMP1\"\nxref: Reactome:R-HSA-2471621 \"Endostatin degradation by cathepsins\"\nxref: Reactome:R-HSA-2471842 \"Collagen type XXV ectomain shedding\"\nxref: Reactome:R-HSA-2482180 \"Collagen type VIII degradation by ELANE\"\nxref: Reactome:R-HSA-2514772 \"Fibrillin-1 degradation by MMP3, CTSK, CTSL2\"\nxref: Reactome:R-HSA-2514823 \"Fibrillin-1 degradation by ELANE\"\nxref: Reactome:R-HSA-2534160 \"HSPG2 (perlecan) degradation by MMP13, CTSS\"\nxref: Reactome:R-HSA-2534206 \"E-cadherin degradation by PS1:NCSTN (Gamma-secretase)\"\nxref: Reactome:R-HSA-2534260 \"E-cadherin degradation by caspase-3 and calpain-1\"\nxref: Reactome:R-HSA-265301 \"Corticotropin cleavage from POMC\"\nxref: Reactome:R-HSA-3244626 \"DENV protease NS2B3 cleaves STING\"\nxref: Reactome:R-HSA-3266557 \"Factor I cleaves iC3b\"\nxref: Reactome:R-HSA-3785684 \"Fibronectin degradation by CTSG\"\nxref: Reactome:R-HSA-3788061 \"Fibronectin degradation by ADAM8\"\nxref: Reactome:R-HSA-381135 \"MBTPS1 (S1P) cleaves ATF6 (ATF6-alpha)\"\nxref: Reactome:R-HSA-381446 \"Thrombin proteolyzes IGF:IGFBP3:ALS\"\nxref: Reactome:R-HSA-381461 \"Plasmin proteolyzes IGF:IGFBP-3:ALS\"\nxref: Reactome:R-HSA-381466 \"Prostate-specific Antigen proteolyzes IGF:IGFBP3:ALS\"\nxref: Reactome:R-HSA-3814820 \"HSPG2 (perlecan) is cleaved by BMP1, TLL1, TLL2, Cathepsin L1\"\nxref: Reactome:R-HSA-381500 \"Cathepsin G proteolyzes IGF:IGFBP3:ALS\"\nxref: Reactome:R-HSA-381798 \"PCSK1 hydrolyzes Proglucagon to Glucagon-like Peptide-1\"\nxref: Reactome:R-HSA-382061 \"Extracellular processing of novel PDGFs\"\nxref: Reactome:R-HSA-3928657 \"MMP2,9 cleave EPHB\"\nxref: Reactome:R-HSA-400459 \"Signal peptidase hydrolyzes preproGLP-1 to proGLP-1\"\nxref: Reactome:R-HSA-400492 \"PCSK1 hydrolyzes proGIP to GIP\"\nxref: Reactome:R-HSA-400496 \"Signal peptidase hydrolyzes preproGIP to proGIP\"\nxref: Reactome:R-HSA-422021 \"PCSK1 hydrolyzes acyl Proghrelin to acyl Ghrelin\"\nxref: Reactome:R-HSA-422051 \"Cleavage of the signal peptide of Preproghrelin\"\nxref: Reactome:R-HSA-5210912 \"Furin cleaves ANTXR2-bound pagA to yield pagA(197-794)\"\nxref: Reactome:R-HSA-5210935 \"Furin cleaves ANTXR1-bound pagA to yield pagA(197-794)\"\nxref: Reactome:R-HSA-5578783 \"CORIN(802-1042) hydrolyses NPPA to form NPPA(124-151)\"\nxref: Reactome:R-HSA-5591040 \"Activated protein C cleaves Factor Va intermediate form for Factor Va\"\nxref: Reactome:R-HSA-5607002 \"Activated protein C cleaves factor VIIIa\"\nxref: Reactome:R-HSA-5691512 \"APEH hydrolyses NAc-Ser-protein\"\nxref: Reactome:R-HSA-6800198 \"HPN heterodimer cleaves pro-MST1 to form MST1 dimer\"\nxref: Reactome:R-HSA-6800200 \"HPN heterodimer cleaves pro-HGF to form HGF dimer\"\nxref: Reactome:R-HSA-6800299 \"HGFAC cleaves pro-HGF to form HGF dimer\"\nxref: Reactome:R-HSA-6801687 \"PRTN3 cleaves CAMP(31-170) to generate CAMP(134-170)\"\nxref: Reactome:R-HSA-6807224 \"Furin cleaves pro-BGLAP to BGLAP\"\nxref: Reactome:R-HSA-8849826 \"ST14 hydrolyzes and activates KLK5\"\nxref: Reactome:R-HSA-8849857 \"KLK5 cleaves and activates CELA2\"\nxref: Reactome:R-HSA-8850831 \"KLK5 cleaves and activates KLK8\"\nxref: Reactome:R-HSA-8852716 \"Thrombin, ELANE cleave C5\"\nxref: Reactome:R-HSA-8855825 \"HTRA1 hydrolyzes ACAN (Aggrecan)\"\nxref: Reactome:R-HSA-8865275 \"PDGF-BB clevage by Furin\"\nxref: Reactome:R-HSA-8865276 \"PDGF-AB clevage by Furin\"\nxref: Reactome:R-HSA-8874145 \"MBTPS1 (S1P) cleaves ATF6B (ATF6-beta)\"\nxref: Reactome:R-HSA-8874186 \"MBTPS1 (S1P) cleaves CREB3L4\"\nxref: Reactome:R-HSA-8874204 \"MBTPS1 (S1P) cleaves CREB3\"\nxref: Reactome:R-HSA-8874205 \"MBTPS1 (S1P) cleaves CREB3L2\"\nxref: Reactome:R-HSA-8874206 \"MBTPS1 (S1P) cleaves CREB3L3\"\nxref: Reactome:R-HSA-8874212 \"MBTPS1 (S1P) cleaves CREB3L1\"\nxref: Reactome:R-HSA-9023178 \"PCSK2 cleaves Insulin(57-110) to yield Insulin(90-110) and C-peptide (Insulin(57-89))\"\nxref: Reactome:R-HSA-9023196 \"PCSK1 cleaves proinsulin to yield Insulin(25-56) and Insulin(57-110)\"\nxref: Reactome:R-HSA-9023626 \"DPP4(39-766) hydrolyzes Glucose-dependent Insulinotropic Polypeptide (GIP)\"\nxref: Reactome:R-HSA-9023627 \"DPP4(1-766) hydrolyzes Glucose-dependent Insulinotropic Polypeptide (GIP)\"\nxref: Reactome:R-HSA-9023632 \"DPP4(39-766) hydrolyzes Glucagon-like Peptide-1 (GLP-1)\"\nxref: Reactome:R-HSA-9023633 \"DPP4(1-766) hydrolyzes Glucagon-like Peptide-1 (GLP-1)\"\nxref: Reactome:R-HSA-9033490 \"TYSND1 cleaves PHYH\"\nxref: Reactome:R-HSA-9033506 \"TYSND1 cleaves AGPS\"\nxref: Reactome:R-HSA-9033515 \"TYSND1 cleaves ACOX1\"\nxref: Reactome:R-HSA-9033520 \"TYSND1 cleaves TYSND1\"\nxref: Reactome:R-HSA-9033524 \"TYSND1 cleaves SCP2\"\nxref: Reactome:R-HSA-9033529 \"TYSND1 cleaves ACAA1\"\nxref: Reactome:R-HSA-9033530 \"TYSND1 cleaves HSD17B4\"\nxref: Reactome:R-HSA-9653249 \"Cleavage of factor XII variant by activated thrombin\"\nxref: Reactome:R-HSA-9655046 \"Cleavage of FXII variant by KLKB1\"\nxref: Reactome:R-HSA-9662786 \"FURIN cleaves ADAM17\"\nxref: Reactome:R-HSA-9666383 \"F8 variant is not cleaved by thrombin\"\nxref: Reactome:R-HSA-9668253 \"Hyperactivation of factor X by FVIIIa:FIXa R384L\"\nxref: Reactome:R-HSA-9668365 \"FVIIIa variant:FIXa does not convert FX to the active FXa\"\nxref: Reactome:R-HSA-9670874 \"FIXa variant:FVIIIa does not convert FX to the active FXa\"\nxref: Reactome:R-HSA-9673223 \"FIX(29-461) variant is not activated (factor XIa catalyst)\"\nxref: Reactome:R-HSA-9686710 \"Cleavage of S protein into S1:S2\"\nxref: Reactome:R-HSA-9686731 \"TMPRSS2 Mediated SARS-CoV-1 Spike Protein Cleavage and Endocytosis\"\nxref: Reactome:R-HSA-9694287 \"Cleavage of S protein into S1:S2\"\nxref: Reactome:R-HSA-9694661 \"TMPRSS2 Mediated SARS-CoV-2 Spike Protein Cleavage and Endocytosis\"\nxref: Reactome:R-HSA-9698988 \"Direct Host Cell Membrane Membrane Fusion and Release of SARS-CoV-2 Nucleocapsid\"\nxref: Reactome:R-HSA-9699007 \"FURIN Mediated SARS-CoV-2 Spike Protein Cleavage and Endocytosis\"\nxref: Reactome:R-HSA-9708859 \"Activated thrombin (factor IIa) cleaves F2R (PAR1), activating it\"\nxref: Reactome:R-HSA-9710106 \"ELANE cleaves GSDMD\"\nxref: Reactome:R-HSA-9710263 \"GZMB cleaves GSDME\"\nxref: Reactome:R-HSA-976743 \"Factor I inactivates plasma Factor H-bound C3b\"\nxref: Reactome:R-HSA-9769949 \"FURIN Mediated SARS-CoV-2 Spike Protein Cleavage\"\nxref: Reactome:R-HSA-9770187 \"S2 Cleavage by TMPRSS2 Exposes S2' Initiating Cell-Cell Fusion\"\nxref: Reactome:R-HSA-977371 \"Factor I inactivates Factor H-boundC3b\"\nxref: Reactome:R-HSA-977615 \"Factor I inactivates MCP/CR1-bound C4b/C3b\"\nxref: Reactome:R-HSA-9816275 \"CDH1 is proteolytically cleaved in Golgi\"\nxref: Reactome:R-HSA-9829030 \"Nascent F signal peptide is cleaved at ER membrane\"\nxref: Reactome:R-HSA-9829200 \"F0 is cleaved, releasing F1, F2, F(110-136)\"\nxref: Reactome:R-HSA-9830805 \"Nascent sG localizes to ER lumen, gets glycosylated\"\nxref: Reactome:R-HSA-9830882 \"Nascent G signal peptide is cleaved at ER membrane\"\nxref: Reactome:R-HSA-9839367 \"TGFBR3_mem cleavage by MMPs\"\nxref: Reactome:R-HSA-9911236 \"ELANE cleaves NOTCH2NLA\"\nxref: Reactome:R-HSA-9911383 \"LepB cleaves prepro-STa\"\nxref: Reactome:R-HSA-9912368 \"LepB cleaves pre-EltA\"\nxref: Reactome:R-HSA-9912371 \"LepB cleaves pre-EltB\"\nxref: Reactome:R-HSA-9913329 \"Autoproteolysis of DAG1 to alpha and beta chains\"\nxref: Reactome:R-HSA-9918772 \"Dengue polyprotein cis-auto-cleaves\"\nxref: Reactome:R-HSA-9918780 \"Unknown peptidase cleaves NS1-NS2A\"\nxref: Reactome:R-HSA-9918787 \"NS2B3 cleaves C-prM-E-NS1-NS2A\"\nxref: Reactome:R-HSA-9918795 \"Signalase cleaves prM-E-NS1-NS2A\"\nxref: Reactome:R-HSA-9918813 \"NS2B3 cleaves NS4AB\"\nxref: Reactome:R-HSA-9918817 \"NS2B3 cleaves polyprotein\"\nxref: Reactome:R-HSA-9918823 \"NS345:NS2B cleaves NS345\"\nxref: Reactome:R-HSA-9918871 \"Signalase cleaves prepro-NS4B\"\nxref: Reactome:R-HSA-9918876 \"NS2B3 cleaves prepro-C at the C-prM junction\"\nxref: Reactome:R-HSA-9919050 \"Furin cleaves prM:E\"\nxref: Reactome:R-HSA-9921595 \"NS2B3 cleaves FAM134B\"\nxref: Reactome:R-HSA-9921689 \"NS3 cleaves GrpEL1\"\nxref: Reactome:R-HSA-9926936 \"EspC(54-1018) cleaves hemoglobin\"\nxref: Reactome:R-HSA-9926963 \"Hbp cis-autocleaves\"\nxref: Reactome:R-HSA-9927009 \"Hbp(53-1100) cleaves hemoglobin\"\nxref: Reactome:R-HSA-9932162 \"Removal of CDH1 signal peptide\"\nxref: Reactome:R-HSA-9947496 \"ACOT2 cleaves NS345\"\nis_a: GO:0004175 ! endopeptidase activity\nis_a: GO:0008236 ! serine-type peptidase activity\nproperty_value: skos:exactMatch EC:3.4.21.-\nproperty_value: skos:narrowMatch EC:3.4.21.1\nproperty_value: skos:narrowMatch EC:3.4.21.10\nproperty_value: skos:narrowMatch EC:3.4.21.102\nproperty_value: skos:narrowMatch EC:3.4.21.20\nproperty_value: skos:narrowMatch EC:3.4.21.21\nproperty_value: skos:narrowMatch EC:3.4.21.22\nproperty_value: skos:narrowMatch EC:3.4.21.26\nproperty_value: skos:narrowMatch EC:3.4.21.27\nproperty_value: skos:narrowMatch EC:3.4.21.34\nproperty_value: skos:narrowMatch EC:3.4.21.35\nproperty_value: skos:narrowMatch EC:3.4.21.36\nproperty_value: skos:narrowMatch EC:3.4.21.38\nproperty_value: skos:narrowMatch EC:3.4.21.39\nproperty_value: skos:narrowMatch EC:3.4.21.4\nproperty_value: skos:narrowMatch EC:3.4.21.41\nproperty_value: skos:narrowMatch EC:3.4.21.42\nproperty_value: skos:narrowMatch EC:3.4.21.43\nproperty_value: skos:narrowMatch EC:3.4.21.45\nproperty_value: skos:narrowMatch EC:3.4.21.46\nproperty_value: skos:narrowMatch EC:3.4.21.47\nproperty_value: skos:narrowMatch EC:3.4.21.48\nproperty_value: skos:narrowMatch EC:3.4.21.5\nproperty_value: skos:narrowMatch EC:3.4.21.53\nproperty_value: skos:narrowMatch EC:3.4.21.54\nproperty_value: skos:narrowMatch EC:3.4.21.59\nproperty_value: skos:narrowMatch EC:3.4.21.6\nproperty_value: skos:narrowMatch EC:3.4.21.61\nproperty_value: skos:narrowMatch EC:3.4.21.62\nproperty_value: skos:narrowMatch EC:3.4.21.68\nproperty_value: skos:narrowMatch EC:3.4.21.69\nproperty_value: skos:narrowMatch EC:3.4.21.7\nproperty_value: skos:narrowMatch EC:3.4.21.71\nproperty_value: skos:narrowMatch EC:3.4.21.73\nproperty_value: skos:narrowMatch EC:3.4.21.75\nproperty_value: skos:narrowMatch EC:3.4.21.78\nproperty_value: skos:narrowMatch EC:3.4.21.79\nproperty_value: skos:narrowMatch EC:3.4.21.83\nproperty_value: skos:narrowMatch EC:3.4.21.88\nproperty_value: skos:narrowMatch EC:3.4.21.9\nproperty_value: skos:narrowMatch EC:3.4.21.92\nproperty_value: skos:narrowMatch EC:3.4.21.93\nproperty_value: skos:narrowMatch EC:3.4.21.94\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004252",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 38518-38819",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004252"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -916,15 +669,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 44157-44170",
   "excerpt": "[Term]\nid: GO:0004536\nname: DNA nuclease activity\nnamespace: molecular_function\nalt_id: GO:0004537\ndef: \"Catalysis of the cleavage of ester linkages within deoxyribonucleic acid.\" [GOC:mah, ISBN:0198547684]\nsynonym: \"caspase-activated deoxyribonuclease activity\" NARROW []\nsynonym: \"deoxyribonuclease activity\" EXACT []\nxref: Reactome:R-HSA-211247 \"Cleavage of DNA by DFF40\"\nxref: Reactome:R-HSA-5685994 \"Long-range resection of DNA DSBs by EXO1 or DNA2\"\nxref: Reactome:R-HSA-6785986 \"DNA nucleases unhook the interstrand crosslink (ICL)\"\nis_a: GO:0004518 ! nuclease activity\nis_a: GO:0140097 ! catalytic activity, acting on DNA\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004536",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 44157-44170",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004536"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -935,15 +688,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 130892-130912",
   "excerpt": "[Term]\nid: GO:0016853\nname: isomerase activity\nnamespace: molecular_function\ndef: \"Catalysis of the geometric or structural changes within one molecule. Isomerase is the systematic name for any enzyme of EC class 5.\" [ISBN:0198506732]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_prokaryote\nsubset: goslim_yeast\nsynonym: \"other isomerase activity\" NARROW []\nxref: EC:5.-.-.-\nxref: Reactome:R-HSA-2161666 \"PGA2 is isomerised to PGC2\"\nxref: Reactome:R-HSA-2161735 \"PGC2 is isomerised to PGB2\"\nxref: Reactome:R-HSA-6787623 \"GFUS dimer epimerises GDP-DHDMan to GDP-KDGal\"\nis_a: GO:0003824 ! catalytic activity\nproperty_value: skos:exactMatch EC:5.-.-.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016853",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 130892-130912",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016853"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -954,15 +707,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 131035-131045",
   "excerpt": "[Term]\nid: GO:0016866\nname: intramolecular transferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a functional group from one position to another within a single molecule.\" [GOC:mah]\nsynonym: \"intramolecular transferase activity, transferring other groups\" NARROW []\nsynonym: \"mutase activity\" EXACT []\nxref: EC:5.4.-.-\nis_a: GO:0016853 ! isomerase activity\nproperty_value: skos:exactMatch EC:5.4.-.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016866",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 131035-131045",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016866"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -973,15 +726,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 248622-248629",
   "excerpt": "[Term]\nid: GO:0043565\nname: sequence-specific DNA binding\nnamespace: molecular_function\ndef: \"Binding to DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA e.g. promotor binding or rDNA binding.\" [GOC:jl]\nsynonym: \"sequence specific DNA binding\" EXACT []\nis_a: GO:0003677 ! DNA binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043565",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 248622-248629",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043565"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -992,15 +745,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO6",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 290813-290830",
   "excerpt": "[Term]\nid: GO:0047469\nname: 4-carboxymethyl-4-methylbutenolide mutase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: 4-carboxymethyl-4-methylbut-2-en-1,4-olide = 4-carboxymethyl-3-methylbut-2-en-1,4-olide.\" [EC:5.4.99.14, RHEA:19237]\nsynonym: \"4-carboxymethyl-4-methylbut-2-en-1,4-olide methylmutase activity\" RELATED [EC:5.4.99.14]\nsynonym: \"4-methyl-2-enelactone isomerase activity\" RELATED [EC:5.4.99.14]\nsynonym: \"4-methyl-2-enelactone methyl-isomerase activity\" RELATED [EC:5.4.99.14]\nsynonym: \"4-methyl-3-enelactone methyl isomerase activity\" RELATED [EC:5.4.99.14]\nsynonym: \"4-methylmuconolactone methylisomerase activity\" RELATED [EC:5.4.99.14]\nxref: EC:5.4.99.14\nxref: KEGG_REACTION:R04510\nxref: MetaCyc:5.4.99.14-RXN\nxref: RHEA:19237\nis_a: GO:0016866 ! intramolecular transferase activity\nproperty_value: skos:exactMatch EC:5.4.99.14\nproperty_value: skos:exactMatch RHEA:19237\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0047469",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 290813-290830",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0047469"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

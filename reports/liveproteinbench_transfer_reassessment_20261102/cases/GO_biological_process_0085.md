@@ -1,18 +1,16 @@
-# GO_biological_process_0085: before and after transfer clarification
+# GO_biological_process_0085
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0085.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0085.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — carbohydrate metabolic process
+**Expected answer:** **A** — carbohydrate metabolic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the annotated protein. Its experimentally supported function is a glycosyltransferase that transfers glucosyl residues between carbohydrate substrates, supporting carbohydrate metabolic process. The GO annotation itself is computational (IEA:InterPro), while the protein-function annotation cites experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a large globular protein with no obvious signal peptide or membrane-spanning regions, but those generic features do not identify its biological process or distinguish carbohydrate metabolism from the broad regulatory option.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact needed is that this sequence encodes a beta-1,2-glucosyltransferase acting on glucooligosaccharides.
-
-
-**Reason**
-
-> That catalytic identity is not established by the supplied context or a decisive, self-evident sequence feature; selecting A depends on identifying or looking up the particular protein's function.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein's reported catalytic activity supports A; the other choices do not describe that activity.
-
-
-### Important caveats
-
-- The GO term annotation is computational, whereas the cited catalytic-function annotation is experimentally supported.
-- The sequence match is established for the reviewed current and historical records, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a large globular protein with no obvious signal peptide or membrane-spanning regions, but those generic features do not identify its biological process or distinguish carbohydrate metabolism from the broad regulatory option.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact needed is that this sequence encodes a beta-1,2-glucosyltransferase acting on glucooligosaccharides.",
-    "reason": "That catalytic identity is not established by the supplied context or a decisive, self-evident sequence feature; selecting A depends on identifying or looking up the particular protein's function."
-  },
-  "case_id": "GO_biological_process_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the annotated protein. Its experimentally supported function is a glycosyltransferase that transfers glucosyl residues between carbohydrate substrates, supporting carbohydrate metabolic process. The GO annotation itself is computational (IEA:InterPro), while the protein-function annotation cites experimental evidence."
-  },
-  "important_caveats": [
-    "The GO term annotation is computational, whereas the cited catalytic-function annotation is experimentally supported.",
-    "The sequence match is established for the reviewed current and historical records, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein's reported catalytic activity supports A; the other choices do not describe that activity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the annotated protein. Its experimentally supported function is a glycosyltransferase that transfers glucosyl residues between carbohydrate substrates, supporting carbohydrate metabolic process. The GO annotation itself is computational (IEA:InterPro), while the protein-function annotation cites experimental evidence.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a large globular protein with no obvious signal peptide or membrane-spanning regions, but those generic features do not identify its biological process or distinguish carbohydrate metabolism from the broad regulatory option.",
-    "missing_item_specific_fact": "The protein-specific fact needed is that this sequence encodes a beta-1,2-glucosyltransferase acting on glucooligosaccharides.",
-    "reason": "That catalytic identity is not established by the supplied context or a decisive, self-evident sequence feature; selecting A depends on identifying or looking up the particular protein's function."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein's reported catalytic activity supports A; the other choices do not describe that activity."
-  },
-  "important_caveats": [
-    "The GO term annotation is computational, whereas the cited catalytic-function annotation is experimentally supported.",
-    "The sequence match is established for the reviewed current and historical records, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein (UniProt I0AIT9, B12GT_IGNAJ from Ignavibacterium album) is experimentally characterized as a Beta-1,2-glucosyltransferase (EC 2.4.1.391) that catalyzes transfer of glucosyl residues between carbohydrate acceptors, confirmed by X-ray crystallography and enzymatic assays (PubMed:35065074). This activity is squarely within GO:0005975 'carbohydrate metabolic process' (chemical reactions and pathways involving carbohydrates). The UniProt GO annotation is IEA:InterPro (computational), but the underlying experimental evidence (ECO:0000269) confirms the glycosyltransferase function on glucose/oligosaccharide substrates, which is a carbohydrate metabolic reaction.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General biological reasoning allows elimination of options C (response to insulin) and D (regulation of angiogenesis) as eukaryotic/mammalian-specific processes inapplicable to a bacterial protein. However, distinguishing A (carbohydrate metabolic process) from B (regulation of macromolecule metabolic process) requires identifying the protein's specific enzymatic function—namely, that it is a glycosyltransferase directly catalyzing a carbohydrate reaction rather than a regulatory factor modulating metabolic rate. This identification from a 716-aa sequence of a 'novel' enzyme from an obscure bacterium (Ignavibacterium album) is not achievable through general biological reasoning alone.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as a Beta-1,2-glucosyltransferase (EC 2.4.1.391) acting on beta-1,2-glucooligosaccharides, which was established through experimental characterization (crystallography, enzymatic assays) and is not inferable from the raw sequence without database comparison or memorization of this specific enzyme.
-
-
-**Reason**
-
-> While elimination of eukaryotic-specific distractors (C, D) is possible via general knowledge, the critical A-vs-B discrimination requires knowing this particular protein is a direct metabolic enzyme (glycosyltransferase) rather than a regulatory protein. The protein is from an obscure organism, described as 'novel,' and its GO annotation is IEA:InterPro (computational pattern match). Recognizing glycosyltransferase motifs in a novel enzyme sequence without database lookup is not general biological reasoning but specialized pattern recognition bordering on memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Once the protein's identity as a glycosyltransferase is known, A is clearly correct and B is wrong (a direct catalytic enzyme is not a 'regulation' factor). C and D are inapplicable to a bacterium. No genuine ambiguity exists in the answer key itself.
-
-
-### Important caveats
-
-- The GO annotation for this protein is IEA:InterPro (Inferred from Electronic Annotation), not a direct experimental GO assignment. However, the underlying experimental evidence (ECO:0000269, PubMed:35065074) confirms the enzymatic function.
-- The protein is from Ignavibacterium album, a relatively obscure anaerobic bacterium, making sequence-based identification without database access extremely difficult.
-- GO:0060255 (option B) carries the 'gocheck_do_not_annotate' subset tag, indicating it is a deprecated/discouraged annotation term, further weakening it as a distractor.
-- The sequence-match is confirmed (SHA256 match between benchmark sequence and UniProt I0AIT9), so the reviewer evidence applies to the exact protein presented.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General biological reasoning allows elimination of options C (response to insulin) and D (regulation of angiogenesis) as eukaryotic/mammalian-specific processes inapplicable to a bacterial protein. However, distinguishing A (carbohydrate metabolic process) from B (regulation of macromolecule metabolic process) requires identifying the protein's specific enzymatic function—namely, that it is a glycosyltransferase directly catalyzing a carbohydrate reaction rather than a regulatory factor modulating metabolic rate. This identification from a 716-aa sequence of a 'novel' enzyme from an obscure bacterium (Ignavibacterium album) is not achievable through general biological reasoning alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as a Beta-1,2-glucosyltransferase (EC 2.4.1.391) acting on beta-1,2-glucooligosaccharides, which was established through experimental characterization (crystallography, enzymatic assays) and is not inferable from the raw sequence without database comparison or memorization of this specific enzyme.",
-    "reason": "While elimination of eukaryotic-specific distractors (C, D) is possible via general knowledge, the critical A-vs-B discrimination requires knowing this particular protein is a direct metabolic enzyme (glycosyltransferase) rather than a regulatory protein. The protein is from an obscure organism, described as 'novel,' and its GO annotation is IEA:InterPro (computational pattern match). Recognizing glycosyltransferase motifs in a novel enzyme sequence without database lookup is not general biological reasoning but specialized pattern recognition bordering on memorization."
-  },
-  "case_id": "GO_biological_process_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The protein (UniProt I0AIT9, B12GT_IGNAJ from Ignavibacterium album) is experimentally characterized as a Beta-1,2-glucosyltransferase (EC 2.4.1.391) that catalyzes transfer of glucosyl residues between carbohydrate acceptors, confirmed by X-ray crystallography and enzymatic assays (PubMed:35065074). This activity is squarely within GO:0005975 'carbohydrate metabolic process' (chemical reactions and pathways involving carbohydrates). The UniProt GO annotation is IEA:InterPro (computational), but the underlying experimental evidence (ECO:0000269) confirms the glycosyltransferase function on glucose/oligosaccharide substrates, which is a carbohydrate metabolic reaction."
-  },
-  "important_caveats": [
-    "The GO annotation for this protein is IEA:InterPro (Inferred from Electronic Annotation), not a direct experimental GO assignment. However, the underlying experimental evidence (ECO:0000269, PubMed:35065074) confirms the enzymatic function.",
-    "The protein is from Ignavibacterium album, a relatively obscure anaerobic bacterium, making sequence-based identification without database access extremely difficult.",
-    "GO:0060255 (option B) carries the 'gocheck_do_not_annotate' subset tag, indicating it is a deprecated/discouraged annotation term, further weakening it as a distractor.",
-    "The sequence-match is confirmed (SHA256 match between benchmark sequence and UniProt I0AIT9), so the reviewer evidence applies to the exact protein presented."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the protein's identity as a glycosyltransferase is known, A is clearly correct and B is wrong (a direct catalytic enzyme is not a 'regulation' factor). C and D are inapplicable to a bacterium. No genuine ambiguity exists in the answer key itself."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein (UniProt I0AIT9, B12GT_IGNAJ from Ignavibacterium album) is experimentally characterized as a Beta-1,2-glucosyltransferase (EC 2.4.1.391) that catalyzes transfer of glucosyl residues between carbohydrate acceptors, confirmed by X-ray crystallography and enzymatic assays (PubMed:35065074). This activity is squarely within GO:0005975 'carbohydrate metabolic process' (chemical reactions and pathways involving carbohydrates). The UniProt GO annotation is IEA:InterPro (computational), but the underlying experimental evidence (ECO:0000269) confirms the glycosyltransferase function on glucose/oligosaccharide substrates, which is a carbohydrate metabolic reaction.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H3", "H4", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General biological reasoning allows elimination of options C (response to insulin) and D (regulation of angiogenesis) as eukaryotic/mammalian-specific processes inapplicable to a bacterial protein. However, distinguishing A (carbohydrate metabolic process) from B (regulation of macromolecule metabolic process) requires identifying the protein's specific enzymatic function—namely, that it is a glycosyltransferase directly catalyzing a carbohydrate reaction rather than a regulatory factor modulating metabolic rate. This identification from a 716-aa sequence of a 'novel' enzyme from an obscure bacterium (Ignavibacterium album) is not achievable through general biological reasoning alone.",
-    "missing_item_specific_fact": "The specific identity of this protein as a Beta-1,2-glucosyltransferase (EC 2.4.1.391) acting on beta-1,2-glucooligosaccharides, which was established through experimental characterization (crystallography, enzymatic assays) and is not inferable from the raw sequence without database comparison or memorization of this specific enzyme.",
-    "reason": "While elimination of eukaryotic-specific distractors (C, D) is possible via general knowledge, the critical A-vs-B discrimination requires knowing this particular protein is a direct metabolic enzyme (glycosyltransferase) rather than a regulatory protein. The protein is from an obscure organism, described as 'novel,' and its GO annotation is IEA:InterPro (computational pattern match). Recognizing glycosyltransferase motifs in a novel enzyme sequence without database lookup is not general biological reasoning but specialized pattern recognition bordering on memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the protein's identity as a glycosyltransferase is known, A is clearly correct and B is wrong (a direct catalytic enzyme is not a 'regulation' factor). C and D are inapplicable to a bacterium. No genuine ambiguity exists in the answer key itself."
-  },
-  "important_caveats": [
-    "The GO annotation for this protein is IEA:InterPro (Inferred from Electronic Annotation), not a direct experimental GO assignment. However, the underlying experimental evidence (ECO:0000269, PubMed:35065074) confirms the enzymatic function.",
-    "The protein is from Ignavibacterium album, a relatively obscure anaerobic bacterium, making sequence-based identification without database access extremely difficult.",
-    "GO:0060255 (option B) carries the 'gocheck_do_not_annotate' subset tag, indicating it is a deprecated/discouraged annotation term, further weakening it as a distractor.",
-    "The sequence-match is confirmed (SHA256 match between benchmark sequence and UniProt I0AIT9), so the reviewer evidence applies to the exact protein presented."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "I0AIT9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "494a006d1d004f1e295b0562188f842d9d56a09853f24865be22fafa2da2780f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 716,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "494a006d1d004f1e295b0562188f842d9d56a09853f24865be22fafa2da2780f",
   "current_entry_audit": {
     "entryVersion": 57,
     "firstPublicDate": "2025-04-09",
@@ -537,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-06-13",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "current_source_sequence_sha256": "494a006d1d004f1e295b0562188f842d9d56a09853f24865be22fafa2da2780f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 716,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "494a006d1d004f1e295b0562188f842d9d56a09853f24865be22fafa2da2780f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 55,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "I0AIT9",
   "selected_historical_entry_version": 55,
+  "selected_historical_record_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
+  "selected_historical_source_sequence_length": 716,
+  "selected_historical_source_sequence_sha256": "494a006d1d004f1e295b0562188f842d9d56a09853f24865be22fafa2da2780f",
   "selected_historical_version": {
     "accession": "I0AIT9",
     "database": "Swiss-Prot",
@@ -555,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "B12GT_IGNAJ",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
-  "selected_historical_source_sequence_sha256": "494a006d1d004f1e295b0562188f842d9d56a09853f24865be22fafa2da2780f",
-  "selected_historical_source_sequence_length": 716,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 55,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json",
-  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"I0AIT9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
+  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json"
 }
 ```
 
@@ -609,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json",
-  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":57,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-06-13\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
+  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json"
 }
 ```
 
@@ -628,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json",
-  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Ignavibacteriota\",\"Ignavibacteria\",\"Ignavibacteriales\",\"Ignavibacteriaceae\",\"Ignavibacterium\"],\"scientificName\":\"Ignavibacterium album (strain DSM 19864 / JCM 16511 / NBRC 101810 / Mat9-16)\",\"taxonId\":945713}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
+  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json"
 }
 ```
 
@@ -647,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json",
-  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35065074\",\"source\":\"PubMed\"}],\"value\":\"Beta-1,2-glucooligosaccharide:D-glucoside beta-D-glucosyltransferase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35065074\",\"source\":\"PubMed\"}],\"value\":\"IaSGT\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35065074\",\"source\":\"PubMed\"}],\"value\":\"2.4.1.391\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35065074\",\"source\":\"PubMed\"}],\"value\":\"Beta-1,2-glucosyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
+  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json"
 }
 ```
 
@@ -666,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json",
-  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35065074\",\"source\":\"PubMed\"}],\"value\":\"Glycosyltransferase acting on beta-1,2-glucooligosaccharides (PubMed:35065074). Catalyzes the transfer of a glucosyl residue from the non-reducing end of a 1,2-beta-D-glucan to a glucose residue of an acceptor molecule, forming a beta-1,2-glucosidic bond (PubMed:35065074). The beta-1,2-linked glucose dimer sophorose is the preferred donor in vitro (PubMed:35065074). Has a very broad specificity for the acceptor and can act on various aryl- and alkyl-glucosides (PubMed:35065074). Does not show any hydrolytic activity (PubMed:35065074)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
+  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json"
 }
 ```
 
@@ -685,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json",
-  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/41",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005975\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:carbohydrate metabolic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/41",
+  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
+  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json"
 }
 ```
 
@@ -704,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json",
-  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
-  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Kobayashi K.\",\"Shimizu H.\",\"Tanaka N.\",\"Kuramochi K.\",\"Nakai H.\",\"Nakajima M.\",\"Taguchi H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35065074\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jbc.2022.101606\"}],\"citationType\":\"journal article\",\"firstPage\":\"101606\",\"id\":\"35065074\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"101606\",\"publicationDate\":\"2022\",\"title\":\"Characterization and structural analyses of a novel glycosyltransferase acting on the beta-1,2-glucosidic linkages.\",\"volume\":\"298\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VKW\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VKX\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VKY\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VKZ\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VL0\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VL1\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VL2\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VL3\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VL4\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VL5\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7VL6\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 19864 / JCM 16511 / NBRC 101810 / Mat9-16\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.56 ANGSTROMS) IN COMPLEXES WITH BETA-D-GLUCOSE; SOPHOROSE AND ALTERNATIVE SUBSTRATES\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\",\"ACTIVE SITE\",\"MUTAGENESIS OF GLU-176 AND GLU-343\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:10.515356+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0141e863e485261dd884ecaf6bc9c67a2a0434afac2c92f95f4ffba2990aa032",
+  "url": "https://rest.uniprot.org/uniprotkb/I0AIT9.json"
 }
 ```
 
@@ -722,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55",
-  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
-  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   B12GT_IGNAJ             Reviewed;         716 AA.\nAC   I0AIT9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   13-JUN-2012, sequence version 1.\nDT   28-JAN-2026, entry version 55.\nDE   RecName: Full=Beta-1,2-glucosyltransferase {ECO:0000303|PubMed:35065074};\nDE            EC=2.4.1.391 {ECO:0000269|PubMed:35065074};\nDE   AltName: Full=Beta-1,2-glucooligosaccharide:D-glucoside beta-D-glucosyltransferase {ECO:0000303|PubMed:35065074};\nDE   AltName: Full=IaSGT {ECO:0000303|PubMed:35065074};\nGN   OrderedLocusNames=IALB_1185 {ECO:0000312|EMBL:AFH48896.1};\nOS   Ignavibacterium album (strain DSM 19864 / JCM 16511 / NBRC 101810 /\nOS   Mat9-16).\nOC   Bacteria; Pseudomonadati; Ignavibacteriota; Ignavibacteria;\nOC   Ignavibacteriales; Ignavibacteriaceae; Ignavibacterium.\nOX   NCBI_TaxID=945713;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
+  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55"
 }
 ```
 
@@ -743,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55",
-  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
-  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
-  "source_locator": "lines 25-36",
   "excerpt": "RN   [2] {ECO:0007744|PDB:7VKW, ECO:0007744|PDB:7VKX, ECO:0007744|PDB:7VKY, ECO:0007744|PDB:7VKZ, ECO:0007744|PDB:7VL0, ECO:0007744|PDB:7VL1, ECO:0007744|PDB:7VL2, ECO:0007744|PDB:7VL3, ECO:0007744|PDB:7VL4, ECO:0007744|PDB:7VL5, ECO:0007744|PDB:7VL6}\nRP   X-RAY CRYSTALLOGRAPHY (1.56 ANGSTROMS) IN COMPLEXES WITH BETA-D-GLUCOSE;\nRP   SOPHOROSE AND ALTERNATIVE SUBSTRATES, FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBUNIT, ACTIVE SITE, AND MUTAGENESIS OF\nRP   GLU-176 AND GLU-343.\nRC   STRAIN=DSM 19864 / JCM 16511 / NBRC 101810 / Mat9-16;\nRX   PubMed=35065074; DOI=10.1016/j.jbc.2022.101606;\nRA   Kobayashi K., Shimizu H., Tanaka N., Kuramochi K., Nakai H., Nakajima M.,\nRA   Taguchi H.;\nRT   \"Characterization and structural analyses of a novel glycosyltransferase\nRT   acting on the beta-1,2-glucosidic linkages.\";\nRL   J. Biol. Chem. 298:101606-101606(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
+  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55"
 }
 ```
 
@@ -764,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55",
-  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
-  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
-  "source_locator": "lines 37-45",
   "excerpt": "CC   -!- FUNCTION: Glycosyltransferase acting on beta-1,2-glucooligosaccharides\nCC       (PubMed:35065074). Catalyzes the transfer of a glucosyl residue from\nCC       the non-reducing end of a 1,2-beta-D-glucan to a glucose residue of an\nCC       acceptor molecule, forming a beta-1,2-glucosidic bond\nCC       (PubMed:35065074). The beta-1,2-linked glucose dimer sophorose is the\nCC       preferred donor in vitro (PubMed:35065074). Has a very broad\nCC       specificity for the acceptor and can act on various aryl- and alkyl-\nCC       glucosides (PubMed:35065074). Does not show any hydrolytic activity\nCC       (PubMed:35065074). {ECO:0000269|PubMed:35065074}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
+  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55"
 }
 ```
 
@@ -785,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55",
-  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
-  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
-  "source_locator": "lines 140-140",
   "excerpt": "DR   GO; GO:0005975; P:carbohydrate metabolic process; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:28:09.687306+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 140-140",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5021025e7fb0e4fabd17270f530d15eceb2dace998f43c4ec775fc10c6352a01",
+  "url": "https://rest.uniprot.org/unisave/I0AIT9?format=txt&versions=55"
 }
 ```
 
@@ -807,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 61261-61283",
   "excerpt": "[Term]\nid: GO:0005975\nname: carbohydrate metabolic process\nnamespace: biological_process\nalt_id: GO:0044261\nalt_id: GO:0044723\ndef: \"The chemical reactions and pathways involving carbohydrates, any of a group of organic compounds based of the general formula Cx(H2O)y.\" [GOC:mah, ISBN:0198506732]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_pombe\nsubset: goslim_prokaryote\nsubset: goslim_yeast\nsynonym: \"carbohydrate metabolism\" EXACT []\nxref: Wikipedia:Carbohydrate_metabolism\nis_a: GO:0044238 ! primary metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005975",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 61261-61283",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005975"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -826,15 +583,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 191290-191297",
   "excerpt": "[Term]\nid: GO:0032868\nname: response to insulin\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an insulin stimulus. Insulin is a polypeptide hormone produced by the islets of Langerhans of the pancreas in mammals, and by the homologous organs of other organisms.\" [GOC:mah, ISBN:0198506732]\nsynonym: \"response to insulin stimulus\" EXACT [GOC:dos]\nis_a: GO:0043434 ! response to peptide hormone\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032868",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 191290-191297",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032868"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -845,15 +602,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 268463-268471",
   "excerpt": "[Term]\nid: GO:0045765\nname: regulation of angiogenesis\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of angiogenesis.\" [GOC:curators]\nis_a: GO:0022603 ! regulation of anatomical structure morphogenesis\nis_a: GO:1901342 ! regulation of vasculature development\nrelationship: regulates GO:0001525 ! angiogenesis\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045765",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 268463-268471",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045765"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -864,15 +621,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 345971-345979",
   "excerpt": "[Term]\nid: GO:0060255\nname: regulation of macromolecule metabolic process\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass.\" [GOC:dph, GOC:tb]\nsubset: gocheck_do_not_annotate\nis_a: GO:0019222 ! regulation of metabolic process\nrelationship: regulates GO:0043170 ! macromolecule metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0060255",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 345971-345979",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0060255"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

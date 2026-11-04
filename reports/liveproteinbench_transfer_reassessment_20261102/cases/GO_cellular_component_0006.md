@@ -1,18 +1,16 @@
-# GO_cellular_component_0006: before and after transfer clarification
+# GO_cellular_component_0006
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0006.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0006.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — plasma membrane
+**Expected answer:** **D** — plasma membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | contradicted | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | contradicted | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,253 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: uncertain
-
-> The sequence-matched record assigns plasma membrane by computational IEA:TreeGrafter, which supports D as an annotation, but the record also reports secretion and extracellular localization with experimental evidence. That evidence does not establish plasma membrane as the protein's primary location, nor does it definitively rule out some plasma-membrane association.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with a secretion signal, while the sequence does not show an obvious retained transmembrane anchor. This suggests secretion rather than residence at the plasma membrane, but does not distinguish the offered compartments in favor of D.
-
-
-**Missing item-specific fact**
-
-> Choosing D depends on the protein-specific GO plasma-membrane annotation, which is an IEA:TreeGrafter inference; resolving its actual primary localization also requires the protein-specific experimental evidence for secretion/extracellular localization.
-
-
-**Reason**
-
-> The supplied sequence offers no defensible general biological argument for selecting plasma membrane over the other listed options. The relevant evidence is protein-specific annotation and localization data absent from the original question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The listed options omit secretion and extracellular space, the locations supported by the experimental evidence. D has a computational GO annotation, but the supplied evidence does not establish it as the primary location; no second listed option is clearly supported.
-
-
-### Important caveats
-
-- The sequence match identifies the same protein record, but reviewer-only accession and database evidence were not available to the evaluated model.
-- The plasma-membrane annotation is computationally inferred; the secretion and extracellular annotations cite experimental evidence.
-- The exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a secretion signal, while the sequence does not show an obvious retained transmembrane anchor. This suggests secretion rather than residence at the plasma membrane, but does not distinguish the offered compartments in favor of D.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Choosing D depends on the protein-specific GO plasma-membrane annotation, which is an IEA:TreeGrafter inference; resolving its actual primary localization also requires the protein-specific experimental evidence for secretion/extracellular localization.",
-    "reason": "The supplied sequence offers no defensible general biological argument for selecting plasma membrane over the other listed options. The relevant evidence is protein-specific annotation and localization data absent from the original question."
-  },
-  "case_id": "GO_cellular_component_0006",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "cannot_determine",
-    "reason": "The sequence-matched record assigns plasma membrane by computational IEA:TreeGrafter, which supports D as an annotation, but the record also reports secretion and extracellular localization with experimental evidence. That evidence does not establish plasma membrane as the protein's primary location, nor does it definitively rule out some plasma-membrane association."
-  },
-  "important_caveats": [
-    "The sequence match identifies the same protein record, but reviewer-only accession and database evidence were not available to the evaluated model.",
-    "The plasma-membrane annotation is computationally inferred; the secretion and extracellular annotations cite experimental evidence.",
-    "The exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The listed options omit secretion and extracellular space, the locations supported by the experimental evidence. D has a computational GO annotation, but the supplied evidence does not establish it as the primary location; no second listed option is clearly supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0006",
-  "expected_answer_check": {
-    "judgment": "cannot_determine",
-    "reason": "The sequence-matched record assigns plasma membrane by computational IEA:TreeGrafter, which supports D as an annotation, but the record also reports secretion and extracellular localization with experimental evidence. That evidence does not establish plasma membrane as the protein's primary location, nor does it definitively rule out some plasma-membrane association.",
-    "evidence_ids": ["C5", "C6", "C7", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a secretion signal, while the sequence does not show an obvious retained transmembrane anchor. This suggests secretion rather than residence at the plasma membrane, but does not distinguish the offered compartments in favor of D.",
-    "missing_item_specific_fact": "Choosing D depends on the protein-specific GO plasma-membrane annotation, which is an IEA:TreeGrafter inference; resolving its actual primary localization also requires the protein-specific experimental evidence for secretion/extracellular localization.",
-    "reason": "The supplied sequence offers no defensible general biological argument for selecting plasma membrane over the other listed options. The relevant evidence is protein-specific annotation and localization data absent from the original question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The listed options omit secretion and extracellular space, the locations supported by the experimental evidence. D has a computational GO annotation, but the supplied evidence does not establish it as the primary location; no second listed option is clearly supported."
-  },
-  "important_caveats": [
-    "The sequence match identifies the same protein record, but reviewer-only accession and database evidence were not available to the evaluated model.",
-    "The plasma-membrane annotation is computationally inferred; the secretion and extracellular annotations cite experimental evidence.",
-    "The exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The experimentally determined subcellular location of Q95P65 (5'-nucleotidase-related protein from Glossina morsitans morsitans) is 'Secreted' with direct assay evidence (ECO:0000269, PubMed:20351782). The corresponding GO annotations are GO:0005576 (extracellular region) and GO:0005615 (extracellular space), both IDA:UniProtKB (Inferred by Direct Assay). The 'plasma membrane' annotation (GO:0005886) is supported ONLY by IEA:TreeGrafter, a purely automated computational inference from sequence similarity, which is the lowest-confidence annotation type and directly conflicts with the experimental secretion evidence. The protein is a soluble salivary enzyme (EC 3.6.1.5) with a signal peptide, not a membrane-embedded protein. The expected answer 'plasma membrane' is contradicted by the primary experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal sequence 'MKSLIGTLGLYCLFILTNN' resembles a signal peptide, which could suggest secretion or membrane targeting. However, a signal peptide alone does not distinguish 'plasma membrane' from 'cytoplasmic vesicle' or 'secreted/extracellular.' The protein lacks obvious transmembrane helices. A model reasoning from sequence would most naturally infer secretion (extracellular), which is not among the options. Choosing 'plasma membrane' over 'cytoplasmic vesicle' for a signal-peptide-containing nucleotidase requires knowing the specific annotation or recognizing this exact protein.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt annotation (Secreted/extracellular, IDA) versus the TreeGrafter computational annotation (plasma membrane, IEA) for this exact protein. Additionally, the fact that the experimentally correct location (secreted/extracellular) is absent from the answer choices, forcing selection of the weakest computational annotation as 'correct,' is an item-specific database fact not derivable from sequence reasoning.
-
-
-**Reason**
-
-> The sequence provides a signal peptide hint but cannot distinguish plasma membrane from cytoplasmic vesicle or secreted/extracellular localization. The correct experimental answer (secreted) is not offered. Selection of 'plasma membrane' depends entirely on knowing the TreeGrafter annotation for this specific protein, which is a lookup task.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "D"
-]
-```
-
-> The experimentally supported location (secreted/extracellular region/space) is not among the four options. Among the given choices, 'plasma membrane' (D) is the expected answer but is supported only by a low-confidence computational annotation (IEA:TreeGrafter) that contradicts the experimental evidence. 'Cytoplasmic vesicle' (B) could be argued as a transit compartment for a secreted protein. 'Host cell plasma membrane' (C) is a GO term for viral/pathogen contexts and is clearly inapplicable. 'Aggresome' (A) is clearly wrong. The question is fundamentally flawed because the true experimental answer is absent from the options.
-
-
-### Important caveats
-
-- The expected answer 'plasma membrane' is supported only by an IEA:TreeGrafter automated annotation, which is a computational similarity-based inference, not experimental evidence.
-- The direct experimental evidence (ECO:0000269, IDA) places this protein in the secreted/extracellular compartment, contradicting the plasma membrane annotation.
-- The correct experimental localization (secreted, extracellular region, extracellular space) is not offered as an answer choice, making the question structurally problematic.
-- The protein is a soluble salivary enzyme (5'-nucleotidase, EC 3.6.1.5) from tsetse fly saliva with anti-platelet-aggregation activity, consistent with secretion rather than membrane residence.
-- TreeGrafter annotations propagate GO terms by sequence similarity and are known to produce spurious membrane annotations for secreted homologs of membrane-bound enzymes.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal sequence 'MKSLIGTLGLYCLFILTNN' resembles a signal peptide, which could suggest secretion or membrane targeting. However, a signal peptide alone does not distinguish 'plasma membrane' from 'cytoplasmic vesicle' or 'secreted/extracellular.' The protein lacks obvious transmembrane helices. A model reasoning from sequence would most naturally infer secretion (extracellular), which is not among the options. Choosing 'plasma membrane' over 'cytoplasmic vesicle' for a signal-peptide-containing nucleotidase requires knowing the specific annotation or recognizing this exact protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific UniProt annotation (Secreted/extracellular, IDA) versus the TreeGrafter computational annotation (plasma membrane, IEA) for this exact protein. Additionally, the fact that the experimentally correct location (secreted/extracellular) is absent from the answer choices, forcing selection of the weakest computational annotation as 'correct,' is an item-specific database fact not derivable from sequence reasoning.",
-    "reason": "The sequence provides a signal peptide hint but cannot distinguish plasma membrane from cytoplasmic vesicle or secreted/extracellular localization. The correct experimental answer (secreted) is not offered. Selection of 'plasma membrane' depends entirely on knowing the TreeGrafter annotation for this specific protein, which is a lookup task."
-  },
-  "case_id": "GO_cellular_component_0006",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5",
-      "H2"
-    ],
-    "judgment": "contradicted",
-    "reason": "The experimentally determined subcellular location of Q95P65 (5'-nucleotidase-related protein from Glossina morsitans morsitans) is 'Secreted' with direct assay evidence (ECO:0000269, PubMed:20351782). The corresponding GO annotations are GO:0005576 (extracellular region) and GO:0005615 (extracellular space), both IDA:UniProtKB (Inferred by Direct Assay). The 'plasma membrane' annotation (GO:0005886) is supported ONLY by IEA:TreeGrafter, a purely automated computational inference from sequence similarity, which is the lowest-confidence annotation type and directly conflicts with the experimental secretion evidence. The protein is a soluble salivary enzyme (EC 3.6.1.5) with a signal peptide, not a membrane-embedded protein. The expected answer 'plasma membrane' is contradicted by the primary experimental evidence."
-  },
-  "important_caveats": [
-    "The expected answer 'plasma membrane' is supported only by an IEA:TreeGrafter automated annotation, which is a computational similarity-based inference, not experimental evidence.",
-    "The direct experimental evidence (ECO:0000269, IDA) places this protein in the secreted/extracellular compartment, contradicting the plasma membrane annotation.",
-    "The correct experimental localization (secreted, extracellular region, extracellular space) is not offered as an answer choice, making the question structurally problematic.",
-    "The protein is a soluble salivary enzyme (5'-nucleotidase, EC 3.6.1.5) from tsetse fly saliva with anti-platelet-aggregation activity, consistent with secretion rather than membrane residence.",
-    "TreeGrafter annotations propagate GO terms by sequence similarity and are known to produce spurious membrane annotations for secreted homologs of membrane-bound enzymes."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "D"
-    ],
-    "reason": "The experimentally supported location (secreted/extracellular region/space) is not among the four options. Among the given choices, 'plasma membrane' (D) is the expected answer but is supported only by a low-confidence computational annotation (IEA:TreeGrafter) that contradicts the experimental evidence. 'Cytoplasmic vesicle' (B) could be argued as a transit compartment for a secreted protein. 'Host cell plasma membrane' (C) is a GO term for viral/pathogen contexts and is clearly inapplicable. 'Aggresome' (A) is clearly wrong. The question is fundamentally flawed because the true experimental answer is absent from the options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0006",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The experimentally determined subcellular location of Q95P65 (5'-nucleotidase-related protein from Glossina morsitans morsitans) is 'Secreted' with direct assay evidence (ECO:0000269, PubMed:20351782). The corresponding GO annotations are GO:0005576 (extracellular region) and GO:0005615 (extracellular space), both IDA:UniProtKB (Inferred by Direct Assay). The 'plasma membrane' annotation (GO:0005886) is supported ONLY by IEA:TreeGrafter, a purely automated computational inference from sequence similarity, which is the lowest-confidence annotation type and directly conflicts with the experimental secretion evidence. The protein is a soluble salivary enzyme (EC 3.6.1.5) with a signal peptide, not a membrane-embedded protein. The expected answer 'plasma membrane' is contradicted by the primary experimental evidence.",
-    "evidence_ids": ["C5", "C6", "C7", "H3", "H4", "H5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal sequence 'MKSLIGTLGLYCLFILTNN' resembles a signal peptide, which could suggest secretion or membrane targeting. However, a signal peptide alone does not distinguish 'plasma membrane' from 'cytoplasmic vesicle' or 'secreted/extracellular.' The protein lacks obvious transmembrane helices. A model reasoning from sequence would most naturally infer secretion (extracellular), which is not among the options. Choosing 'plasma membrane' over 'cytoplasmic vesicle' for a signal-peptide-containing nucleotidase requires knowing the specific annotation or recognizing this exact protein.",
-    "missing_item_specific_fact": "The specific UniProt annotation (Secreted/extracellular, IDA) versus the TreeGrafter computational annotation (plasma membrane, IEA) for this exact protein. Additionally, the fact that the experimentally correct location (secreted/extracellular) is absent from the answer choices, forcing selection of the weakest computational annotation as 'correct,' is an item-specific database fact not derivable from sequence reasoning.",
-    "reason": "The sequence provides a signal peptide hint but cannot distinguish plasma membrane from cytoplasmic vesicle or secreted/extracellular localization. The correct experimental answer (secreted) is not offered. Selection of 'plasma membrane' depends entirely on knowing the TreeGrafter annotation for this specific protein, which is a lookup task."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["D"],
-    "reason": "The experimentally supported location (secreted/extracellular region/space) is not among the four options. Among the given choices, 'plasma membrane' (D) is the expected answer but is supported only by a low-confidence computational annotation (IEA:TreeGrafter) that contradicts the experimental evidence. 'Cytoplasmic vesicle' (B) could be argued as a transit compartment for a secreted protein. 'Host cell plasma membrane' (C) is a GO term for viral/pathogen contexts and is clearly inapplicable. 'Aggresome' (A) is clearly wrong. The question is fundamentally flawed because the true experimental answer is absent from the options."
-  },
-  "important_caveats": [
-    "The expected answer 'plasma membrane' is supported only by an IEA:TreeGrafter automated annotation, which is a computational similarity-based inference, not experimental evidence.",
-    "The direct experimental evidence (ECO:0000269, IDA) places this protein in the secreted/extracellular compartment, contradicting the plasma membrane annotation.",
-    "The correct experimental localization (secreted, extracellular region, extracellular space) is not offered as an answer choice, making the question structurally problematic.",
-    "The protein is a soluble salivary enzyme (5'-nucleotidase, EC 3.6.1.5) from tsetse fly saliva with anti-platelet-aggregation activity, consistent with secretion rather than membrane residence.",
-    "TreeGrafter annotations propagate GO terms by sequence similarity and are known to produce spurious membrane annotations for secreted homologs of membrane-bound enzymes."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -406,10 +162,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -523,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q95P65",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 555,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "current_entry_audit": {
     "entryVersion": 84,
     "firstPublicDate": "2025-02-05",
@@ -554,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-12-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 555,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q95P65",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "selected_historical_source_sequence_length": 555,
+  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "selected_historical_version": {
     "accession": "Q95P65",
     "database": "Swiss-Prot",
@@ -572,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "APY_GLOMM",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
-  "selected_historical_source_sequence_length": 555,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -607,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q95P65\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -626,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":84,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-12-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -645,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Savannah tsetse fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAK63848.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Hippoboscoidea\",\"Glossinidae\",\"Glossina\"],\"scientificName\":\"Glossina morsitans morsitans\",\"taxonId\":37546}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -664,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"3.6.1.5\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'-nucleotidase-related protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'Nuc\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -683,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -702,15 +447,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/5",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/5",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -721,15 +466,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/6",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/6",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -740,15 +485,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Caljon G.\",\"De Ridder K.\",\"De Baetselier P.\",\"Coosemans M.\",\"Van Den Abbeele J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20351782\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0009671\"}],\"citationType\":\"journal article\",\"firstPage\":\"e9671\",\"id\":\"20351782\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e9671\",\"publicationDate\":\"2010\",\"title\":\"Identification of a tsetse fly salivary protein with dual inhibitory action on human platelet aggregation.\",\"volume\":\"5\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -758,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   APY_GLOMM               Reviewed;         555 AA.\nAC   Q95P65; D3TRV7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-DEC-2001, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=5'-nucleotidase-related protein {ECO:0000303|PubMed:20351782};\nDE            Short=5'Nuc {ECO:0000303|PubMed:20351782};\nDE            EC=3.6.1.5 {ECO:0000269|PubMed:20351782};\nDE   Flags: Precursor;\nOS   Glossina morsitans morsitans (Savannah tsetse fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Hippoboscoidea;\nOC   Glossinidae; Glossina.\nOX   NCBI_TaxID=37546 {ECO:0000312|EMBL:AAK63848.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -779,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBCELLULAR LOCATION, TISSUE SPECIFICITY,\nRP   AND DISRUPTION PHENOTYPE.\nRX   PubMed=20351782; DOI=10.1371/journal.pone.0009671;\nRA   Caljon G., De Ridder K., De Baetselier P., Coosemans M.,\nRA   Van Den Abbeele J.;\nRT   \"Identification of a tsetse fly salivary protein with dual inhibitory\nRT   action on human platelet aggregation.\";\nRL   PLoS ONE 5:e9671-e9671(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -800,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 77-77",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000269|PubMed:20351782}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-77",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -821,18 +566,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 98-98",
   "excerpt": "DR   GO; GO:0005615; C:extracellular space; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 98-98",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -842,18 +587,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 99-99",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 99-99",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -864,15 +609,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60420-60454",
   "excerpt": "[Term]\nid: GO:0005886\nname: plasma membrane\nnamespace: cellular_component\nalt_id: GO:0005887\nalt_id: GO:0005904\ndef: \"The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.\" [ISBN:0716731363]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"bacterial inner membrane\" NARROW []\nsynonym: \"cell membrane\" EXACT []\nsynonym: \"cellular membrane\" EXACT [NIF_Subcellular:sao6433132645]\nsynonym: \"cytoplasmic membrane\" EXACT []\nsynonym: \"inner endospore membrane\" NARROW []\nsynonym: \"integral component of plasma membrane\" NARROW []\nsynonym: \"integral to plasma membrane\" NARROW []\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"plasma membrane lipid bilayer\" NARROW [GOC:mah]\nsynonym: \"plasmalemma\" EXACT []\nxref: NIF_Subcellular:sao1663586795\nxref: Wikipedia:Cell_membrane\nis_a: GO:0016020 ! membrane\nrelationship: part_of GO:0071944 ! cell periphery\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60420-60454",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -883,15 +628,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 124908-124915",
   "excerpt": "[Term]\nid: GO:0016235\nname: aggresome\nnamespace: cellular_component\ndef: \"An inclusion body formed by dynein-dependent retrograde transport of an aggregated protein on microtubules.\" [PMID:11121744]\nxref: Wikipedia:Aggresome\nis_a: GO:0016234 ! inclusion body\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016235",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 124908-124915",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016235"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -902,15 +647,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 155120-155127",
   "excerpt": "[Term]\nid: GO:0020002\nname: host cell plasma membrane\nnamespace: cellular_component\ndef: \"The plasma membrane surrounding a host cell.\" [GOC:mb]\nsubset: goslim_virus\nis_a: GO:0033644 ! host cell membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0020002",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 155120-155127",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0020002"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -921,15 +666,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 176239-176257",
   "excerpt": "[Term]\nid: GO:0031410\nname: cytoplasmic vesicle\nnamespace: cellular_component\nalt_id: GO:0016023\ndef: \"A vesicle found in the cytoplasm of a cell.\" [GOC:ai, GOC:mah, GOC:vesicles]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_yeast\nsynonym: \"cytoplasmic membrane bounded vesicle\" RELATED []\nsynonym: \"cytoplasmic membrane-enclosed vesicle\" RELATED []\nsynonym: \"cytoplasmic, membrane-bounded vesicle\" RELATED []\nxref: NIF_Subcellular:sao180601769\nis_a: GO:0097708 ! intracellular vesicle\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031410",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 176239-176257",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031410"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

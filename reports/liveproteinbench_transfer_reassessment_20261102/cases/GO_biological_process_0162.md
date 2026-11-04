@@ -1,18 +1,16 @@
-# GO_biological_process_0162: before and after transfer clarification
+# GO_biological_process_0162
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0162.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0162.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — carbohydrate metabolic process
+**Expected answer:** **D** — carbohydrate metabolic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-matched sequence is experimentally annotated as a bifunctional beta-xylosidase/alpha-L-arabinosidase that acts on xylosides and related carbohydrate substrates, supporting carbohydrate metabolic process. The GO annotation is computational (IEA:InterPro), while the enzyme function has experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a long, enzyme-like protein, but that alone does not meaningfully distinguish carbohydrate metabolism from other biosynthetic enzyme functions. The alternatives make D plausible only after identifying the protein's specific enzymatic family and substrate activity.
-
-
-**Missing item-specific fact**
-
-> The sequence's identity as a GH43 xylosidase/arabinosidase, or equivalent evidence that it acts on carbohydrate substrates, is not provided in the question.
-
-
-**Reason**
-
-> Choosing D requires protein-specific family or functional annotation absent from the input; recognizing or retrieving the exact sequence's database identity is lookup or memorization, not reasoning from supplied context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The provided experimental functional evidence supports carbohydrate metabolism, and none of the other options is similarly supported.
-
-
-### Important caveats
-
-- The protein-specific annotation and sequence match are reviewer-only evidence and were not available to the evaluated model.
-- The GO annotation uses IEA:InterPro, whereas the enzyme's carbohydrate-substrate activity is supported by experimental evidence.
-- The author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a long, enzyme-like protein, but that alone does not meaningfully distinguish carbohydrate metabolism from other biosynthetic enzyme functions. The alternatives make D plausible only after identifying the protein's specific enzymatic family and substrate activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's identity as a GH43 xylosidase/arabinosidase, or equivalent evidence that it acts on carbohydrate substrates, is not provided in the question.",
-    "reason": "Choosing D requires protein-specific family or functional annotation absent from the input; recognizing or retrieving the exact sequence's database identity is lookup or memorization, not reasoning from supplied context."
-  },
-  "case_id": "GO_biological_process_0162",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matched sequence is experimentally annotated as a bifunctional beta-xylosidase/alpha-L-arabinosidase that acts on xylosides and related carbohydrate substrates, supporting carbohydrate metabolic process. The GO annotation is computational (IEA:InterPro), while the enzyme function has experimental evidence."
-  },
-  "important_caveats": [
-    "The protein-specific annotation and sequence match are reviewer-only evidence and were not available to the evaluated model.",
-    "The GO annotation uses IEA:InterPro, whereas the enzyme's carbohydrate-substrate activity is supported by experimental evidence.",
-    "The author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The provided experimental functional evidence supports carbohydrate metabolism, and none of the other options is similarly supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0162",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matched sequence is experimentally annotated as a bifunctional beta-xylosidase/alpha-L-arabinosidase that acts on xylosides and related carbohydrate substrates, supporting carbohydrate metabolic process. The GO annotation is computational (IEA:InterPro), while the enzyme function has experimental evidence.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a long, enzyme-like protein, but that alone does not meaningfully distinguish carbohydrate metabolism from other biosynthetic enzyme functions. The alternatives make D plausible only after identifying the protein's specific enzymatic family and substrate activity.",
-    "missing_item_specific_fact": "The sequence's identity as a GH43 xylosidase/arabinosidase, or equivalent evidence that it acts on carbohydrate substrates, is not provided in the question.",
-    "reason": "Choosing D requires protein-specific family or functional annotation absent from the input; recognizing or retrieving the exact sequence's database identity is lookup or memorization, not reasoning from supplied context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The provided experimental functional evidence supports carbohydrate metabolism, and none of the other options is similarly supported."
-  },
-  "important_caveats": [
-    "The protein-specific annotation and sequence match are reviewer-only evidence and were not available to the evaluated model.",
-    "The GO annotation uses IEA:InterPro, whereas the enzyme's carbohydrate-substrate activity is supported by experimental evidence.",
-    "The author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry V9TT49 (XY43B_HUMIN) is annotated with GO:0005975 (carbohydrate metabolic process). The protein is a bifunctional beta-xylosidase (EC 3.2.1.37) / alpha-L-arabinofuranosidase (EC 3.2.1.55) with experimentally verified activity on xylooligosaccharides and arabinose-containing substrates (PubMed:24262572, ECO:0000269). These are carbohydrate-active enzymes (CAZymes, GH43 family) that catalyze hydrolysis of glycosidic bonds in carbohydrates, which is unambiguously a carbohydrate metabolic process. The GO annotation evidence code is IEA:InterPro, but the underlying enzymatic function is experimentally confirmed.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The ~538 aa protein lacks transmembrane domains, nuclear localization signals, and importin/karyopherin-like architecture, ruling out option B (nuclear import). It lacks the membrane-anchored, species-specific architecture of gamete-fusion proteins (typically animal-specific), ruling out C. The DAP lysine biosynthesis pathway (option A) is bacterial-specific and involves enzymes (e.g., DAP synthase ~300 aa, DAP epimerase) with distinct folds not matching this sequence. The protein's moderate length, soluble appearance, and presence of catalytic-looking His/Asp/Tyr residues in repeating beta-propeller-like motifs are consistent with a secreted hydrolase. Among the four options, only 'carbohydrate metabolic process' (D) is compatible with a soluble, secreted metabolic enzyme lacking transport, reproductive, or amino-acid-biosynthesis features.
-
-
-**Missing item-specific fact**
-
-> Precise identification of the GH43 beta-propeller fold and the specific xylosidase/arabinosidase catalytic mechanism from raw sequence alone would require CAZyme-family structural knowledge or database lookup, but the elimination of the other three options relies on general biological reasoning about protein class and cellular localization.
-
-
-**Reason**
-
-> A model can eliminate B (no NLS, not an importin-like protein), C (no TM domain, not an animal gamete protein), and A (not a DAP-pathway enzyme architecture) using general biological knowledge about protein types and pathways. This leaves D as the only viable option for a soluble metabolic enzyme. While recognizing the specific GH43 fold is specialized, the elimination-based reasoning is sufficient to distinguish D from the other choices without item-specific database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only option D is biologically consistent with a secreted fungal glycoside hydrolase. Options A (bacterial-specific pathway), B (nuclear transport machinery), and C (animal gamete fusion) are all incompatible with the protein's sequence features and likely biological context. No ambiguity exists.
-
-
-### Important caveats
-
-- The GO annotation for this entry carries evidence code IEA:InterPro (inferred from electronic annotation), not a direct experimental GO assignment. However, the underlying enzymatic function is experimentally verified (ECO:0000269, PubMed:24262572).
-- The model is not told the organism is a fungus; elimination of option A (bacterial DAP pathway) and C (animal gamete fusion) relies on inferring from sequence features rather than explicit organism metadata.
-- The UniProt entry was first publicly released in 2025-02-05; the benchmark's author source snapshot date is unknown, though the sequence has been stable since 2014-03-19.
-- The sequence length in the benchmark (538 aa) matches the canonical UniProt entry exactly.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The ~538 aa protein lacks transmembrane domains, nuclear localization signals, and importin/karyopherin-like architecture, ruling out option B (nuclear import). It lacks the membrane-anchored, species-specific architecture of gamete-fusion proteins (typically animal-specific), ruling out C. The DAP lysine biosynthesis pathway (option A) is bacterial-specific and involves enzymes (e.g., DAP synthase ~300 aa, DAP epimerase) with distinct folds not matching this sequence. The protein's moderate length, soluble appearance, and presence of catalytic-looking His/Asp/Tyr residues in repeating beta-propeller-like motifs are consistent with a secreted hydrolase. Among the four options, only 'carbohydrate metabolic process' (D) is compatible with a soluble, secreted metabolic enzyme lacking transport, reproductive, or amino-acid-biosynthesis features.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise identification of the GH43 beta-propeller fold and the specific xylosidase/arabinosidase catalytic mechanism from raw sequence alone would require CAZyme-family structural knowledge or database lookup, but the elimination of the other three options relies on general biological reasoning about protein class and cellular localization.",
-    "reason": "A model can eliminate B (no NLS, not an importin-like protein), C (no TM domain, not an animal gamete protein), and A (not a DAP-pathway enzyme architecture) using general biological knowledge about protein types and pathways. This leaves D as the only viable option for a soluble metabolic enzyme. While recognizing the specific GH43 fold is specialized, the elimination-based reasoning is sufficient to distinguish D from the other choices without item-specific database lookup."
-  },
-  "case_id": "GO_biological_process_0162",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H2",
-      "H3",
-      "H4",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry V9TT49 (XY43B_HUMIN) is annotated with GO:0005975 (carbohydrate metabolic process). The protein is a bifunctional beta-xylosidase (EC 3.2.1.37) / alpha-L-arabinofuranosidase (EC 3.2.1.55) with experimentally verified activity on xylooligosaccharides and arabinose-containing substrates (PubMed:24262572, ECO:0000269). These are carbohydrate-active enzymes (CAZymes, GH43 family) that catalyze hydrolysis of glycosidic bonds in carbohydrates, which is unambiguously a carbohydrate metabolic process. The GO annotation evidence code is IEA:InterPro, but the underlying enzymatic function is experimentally confirmed."
-  },
-  "important_caveats": [
-    "The GO annotation for this entry carries evidence code IEA:InterPro (inferred from electronic annotation), not a direct experimental GO assignment. However, the underlying enzymatic function is experimentally verified (ECO:0000269, PubMed:24262572).",
-    "The model is not told the organism is a fungus; elimination of option A (bacterial DAP pathway) and C (animal gamete fusion) relies on inferring from sequence features rather than explicit organism metadata.",
-    "The UniProt entry was first publicly released in 2025-02-05; the benchmark's author source snapshot date is unknown, though the sequence has been stable since 2014-03-19.",
-    "The sequence length in the benchmark (538 aa) matches the canonical UniProt entry exactly."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option D is biologically consistent with a secreted fungal glycoside hydrolase. Options A (bacterial-specific pathway), B (nuclear transport machinery), and C (animal gamete fusion) are all incompatible with the protein's sequence features and likely biological context. No ambiguity exists."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0162",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry V9TT49 (XY43B_HUMIN) is annotated with GO:0005975 (carbohydrate metabolic process). The protein is a bifunctional beta-xylosidase (EC 3.2.1.37) / alpha-L-arabinofuranosidase (EC 3.2.1.55) with experimentally verified activity on xylooligosaccharides and arabinose-containing substrates (PubMed:24262572, ECO:0000269). These are carbohydrate-active enzymes (CAZymes, GH43 family) that catalyze hydrolysis of glycosidic bonds in carbohydrates, which is unambiguously a carbohydrate metabolic process. The GO annotation evidence code is IEA:InterPro, but the underlying enzymatic function is experimentally confirmed.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H1", "H2", "H3", "H4", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The ~538 aa protein lacks transmembrane domains, nuclear localization signals, and importin/karyopherin-like architecture, ruling out option B (nuclear import). It lacks the membrane-anchored, species-specific architecture of gamete-fusion proteins (typically animal-specific), ruling out C. The DAP lysine biosynthesis pathway (option A) is bacterial-specific and involves enzymes (e.g., DAP synthase ~300 aa, DAP epimerase) with distinct folds not matching this sequence. The protein's moderate length, soluble appearance, and presence of catalytic-looking His/Asp/Tyr residues in repeating beta-propeller-like motifs are consistent with a secreted hydrolase. Among the four options, only 'carbohydrate metabolic process' (D) is compatible with a soluble, secreted metabolic enzyme lacking transport, reproductive, or amino-acid-biosynthesis features.",
-    "missing_item_specific_fact": "Precise identification of the GH43 beta-propeller fold and the specific xylosidase/arabinosidase catalytic mechanism from raw sequence alone would require CAZyme-family structural knowledge or database lookup, but the elimination of the other three options relies on general biological reasoning about protein class and cellular localization.",
-    "reason": "A model can eliminate B (no NLS, not an importin-like protein), C (no TM domain, not an animal gamete protein), and A (not a DAP-pathway enzyme architecture) using general biological knowledge about protein types and pathways. This leaves D as the only viable option for a soluble metabolic enzyme. While recognizing the specific GH43 fold is specialized, the elimination-based reasoning is sufficient to distinguish D from the other choices without item-specific database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option D is biologically consistent with a secreted fungal glycoside hydrolase. Options A (bacterial-specific pathway), B (nuclear transport machinery), and C (animal gamete fusion) are all incompatible with the protein's sequence features and likely biological context. No ambiguity exists."
-  },
-  "important_caveats": [
-    "The GO annotation for this entry carries evidence code IEA:InterPro (inferred from electronic annotation), not a direct experimental GO assignment. However, the underlying enzymatic function is experimentally verified (ECO:0000269, PubMed:24262572).",
-    "The model is not told the organism is a fungus; elimination of option A (bacterial DAP pathway) and C (animal gamete fusion) relies on inferring from sequence features rather than explicit organism metadata.",
-    "The UniProt entry was first publicly released in 2025-02-05; the benchmark's author source snapshot date is unknown, though the sequence has been stable since 2014-03-19.",
-    "The sequence length in the benchmark (538 aa) matches the canonical UniProt entry exactly."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -513,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "V9TT49",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4c5f6ce116665066820aa85f61aa5d53cbd37564158534eb94cfe0b3bdb23c65",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 538,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4c5f6ce116665066820aa85f61aa5d53cbd37564158534eb94cfe0b3bdb23c65",
   "current_entry_audit": {
     "entryVersion": 21,
     "firstPublicDate": "2025-02-05",
@@ -544,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-03-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "current_source_sequence_sha256": "4c5f6ce116665066820aa85f61aa5d53cbd37564158534eb94cfe0b3bdb23c65",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 538,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4c5f6ce116665066820aa85f61aa5d53cbd37564158534eb94cfe0b3bdb23c65",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 19,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "V9TT49",
   "selected_historical_entry_version": 19,
+  "selected_historical_record_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
+  "selected_historical_source_sequence_length": 538,
+  "selected_historical_source_sequence_sha256": "4c5f6ce116665066820aa85f61aa5d53cbd37564158534eb94cfe0b3bdb23c65",
   "selected_historical_version": {
     "accession": "V9TT49",
     "database": "Swiss-Prot",
@@ -562,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "XY43B_HUMIN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
-  "selected_historical_source_sequence_sha256": "4c5f6ce116665066820aa85f61aa5d53cbd37564158534eb94cfe0b3bdb23c65",
-  "selected_historical_source_sequence_length": 538,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 19,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -597,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json",
-  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"V9TT49\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json"
 }
 ```
 
@@ -616,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json",
-  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":21,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-03-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json"
 }
 ```
 
@@ -635,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json",
-  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soft-rot fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Mycothermus\"],\"scientificName\":\"Humicola insolens\",\"taxonId\":85995}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json"
 }
 ```
 
@@ -654,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json",
-  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"includes\":[{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"1,4-beta-D-xylan xylohydrolase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Xylan 1,4-beta-xylosidase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.37\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Beta-xylosidase\"}}},{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.55\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Alpha-L-arabinofuranosidase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Arabinosidase\"}]}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Xylosidase/arabinosidase 43B\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json"
 }
 ```
 
@@ -673,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json",
-  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Bifunctional beta-xylosidase/alpha-L-arabinosidases with a low level of xylanase activity (PubMed:24262572). Is most active on 4-nitrophenyl beta-D-xylopyranoside (pNPX) (defined as 100%), moderate on p-nitrophenyl-alpha-L-arabinofuranoside (pNPA) (56.6%), and weak on beechwood xylan (5.7%) and birchwood xylan (2.7%) (PubMed:24262572). Is able to attack xylooligosacchardies with degrees of polymerization of 2-5, releasing the amounts of reducing sugars in the order of xylopentose > xylotetraose > xylotriose > xylobiose, i.e. the rate of xylose released from xylooligosacchardies increased with the chain length (PubMed:24262572). No activity was detected in the presence of carboxymethyl cellulose-sodium (CMC-Na), sugar beet arabinan, AZCL-arabinan (debranched), 4-nitrophenyl a-D - galactopyranoside, 2-nitrophenyl beta-D-galactopyranoside, and 4-nitrophenyl alpha-D-glucopyranoside (PubMed:24262572)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json"
 }
 ```
 
@@ -692,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json",
-  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/7",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005975\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:carbohydrate metabolic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/7",
+  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json"
 }
 ```
 
@@ -711,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json",
-  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
-  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Yang X.\",\"Shi P.\",\"Huang H.\",\"Luo H.\",\"Wang Y.\",\"Zhang W.\",\"Yao B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24262572\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.foodchem.2013.10.062\"}],\"citationType\":\"journal article\",\"firstPage\":\"381\",\"id\":\"24262572\",\"journal\":\"Food Chem.\",\"lastPage\":\"387\",\"publicationDate\":\"2014\",\"title\":\"Two xylose-tolerant GH43 bifunctional ?-xylosidase/?-arabinosidases and one GH11 xylanase from Humicola insolens and their synergy in the degradation of xylan.\",\"volume\":\"148\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Y1\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBSTRATE SPECIFICITY\",\"ACTIVITY REGULATION\",\"SUBCELLULAR LOCATION\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:30.461216+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8d044aa2ece80e75b696bdeb84b0c6b83f2e8688f7e3e654cb8a18c760731a93",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TT49.json"
 }
 ```
 
@@ -729,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19",
-  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
-  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
-  "source_locator": "lines 1-20",
   "excerpt": "ID   XY43B_HUMIN             Reviewed;         538 AA.\nAC   V9TT49;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-MAR-2014, sequence version 1.\nDT   28-JAN-2026, entry version 19.\nDE   RecName: Full=Xylosidase/arabinosidase 43B {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.37 {ECO:0000269|PubMed:24262572};\nDE     AltName: Full=1,4-beta-D-xylan xylohydrolase {ECO:0000303|PubMed:24262572};\nDE     AltName: Full=Xylan 1,4-beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Alpha-L-arabinofuranosidase {ECO:0000303|PubMed:24262572};\nDE              Short=Arabinosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.55 {ECO:0000269|PubMed:24262572};\nGN   Name=Xyl43B {ECO:0000303|PubMed:24262572};\nOS   Humicola insolens (Soft-rot fungus).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Mycothermus.\nOX   NCBI_TaxID=85995;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
+  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19"
 }
 ```
 
@@ -750,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19",
-  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
-  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
-  "source_locator": "lines 21-31",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBSTRATE SPECIFICITY, ACTIVITY REGULATION,\nRP   SUBCELLULAR LOCATION, AND BIOTECHNOLOGY.\nRC   STRAIN=Y1;\nRX   PubMed=24262572; DOI=10.1016/j.foodchem.2013.10.062;\nRA   Yang X., Shi P., Huang H., Luo H., Wang Y., Zhang W., Yao B.;\nRT   \"Two xylose-tolerant GH43 bifunctional ?-xylosidase/?-arabinosidases and\nRT   one GH11 xylanase from Humicola insolens and their synergy in the\nRT   degradation of xylan.\";\nRL   Food Chem. 148:381-387(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
+  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19"
 }
 ```
 
@@ -771,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19",
-  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
-  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
-  "source_locator": "lines 32-45",
   "excerpt": "CC   -!- FUNCTION: Bifunctional beta-xylosidase/alpha-L-arabinosidases with a\nCC       low level of xylanase activity (PubMed:24262572). Is most active on 4-\nCC       nitrophenyl beta-D-xylopyranoside (pNPX) (defined as 100%), moderate on\nCC       p-nitrophenyl-alpha-L-arabinofuranoside (pNPA) (56.6%), and weak on\nCC       beechwood xylan (5.7%) and birchwood xylan (2.7%) (PubMed:24262572). Is\nCC       able to attack xylooligosacchardies with degrees of polymerisation of\nCC       2-5, releasing the amounts of reducing sugars in the order of\nCC       xylopentose > xylotetraose > xylotriose > xylobiose, i.e. the rate of\nCC       xylose released from xylooligosacchardies increased with the chain\nCC       length (PubMed:24262572). No activity was detected in the presence of\nCC       carboxymethyl cellulose-sodium (CMC-Na), sugar beet arabinan, AZCL-\nCC       arabinan (debranched), 4-nitrophenyl a-D - galactopyranoside, 2-\nCC       nitrophenyl beta-D-galactopyranoside, and 4-nitrophenyl alpha-D-\nCC       glucopyranoside (PubMed:24262572). {ECO:0000269|PubMed:24262572}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
+  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19"
 }
 ```
 
@@ -792,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19",
-  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
-  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
-  "source_locator": "lines 83-83",
   "excerpt": "DR   GO; GO:0005975; P:carbohydrate metabolic process; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:28:54.377134+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 83-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7c94683d359fe3e29e3c6666c62dc5a8fefeee44cff7107932217aa0e610488c",
+  "url": "https://rest.uniprot.org/unisave/V9TT49?format=txt&versions=19"
 }
 ```
 
@@ -814,15 +566,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 61261-61283",
   "excerpt": "[Term]\nid: GO:0005975\nname: carbohydrate metabolic process\nnamespace: biological_process\nalt_id: GO:0044261\nalt_id: GO:0044723\ndef: \"The chemical reactions and pathways involving carbohydrates, any of a group of organic compounds based of the general formula Cx(H2O)y.\" [GOC:mah, ISBN:0198506732]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_pombe\nsubset: goslim_prokaryote\nsubset: goslim_yeast\nsynonym: \"carbohydrate metabolism\" EXACT []\nxref: Wikipedia:Carbohydrate_metabolism\nis_a: GO:0044238 ! primary metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005975",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 61261-61283",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005975"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -833,15 +585,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 75680-75688",
   "excerpt": "[Term]\nid: GO:0007342\nname: fusion of sperm to egg plasma membrane involved in single fertilization\nnamespace: biological_process\ndef: \"The binding and fusion of a sperm, with the plasma membrane of the oocyte as part of the process of single fertilization. In sperm with flagella, binding occurs at the posterior (post-acrosomal) region of the sperm head.\" [GOC:dph, GOC:jl, PMID:17644969]\nsynonym: \"sperm-oocyte fusion\" NARROW []\nis_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism\nrelationship: part_of GO:0007338 ! single fertilization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0007342",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 75680-75688",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0007342"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -852,15 +604,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 323757-323766",
   "excerpt": "[Term]\nid: GO:0051170\nname: import into nucleus\nnamespace: biological_process\nalt_id: GO:1902593\ndef: \"The directed movement of substances into the nucleus.\" [GOC:ai]\nsynonym: \"nuclear import\" EXACT []\nsynonym: \"nuclear translocation\" EXACT []\nis_a: GO:0006913 ! nucleocytoplasmic transport\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0051170",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 323757-323766",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0051170"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

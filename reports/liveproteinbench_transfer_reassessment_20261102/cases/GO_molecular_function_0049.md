@@ -1,18 +1,16 @@
-# GO_molecular_function_0049: before and after transfer clarification
+# GO_molecular_function_0049
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0049.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0049.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — O-methyltransferase activity
+**Expected answer:** **D** — O-methyltransferase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence match is annotated as O-methyltransferase aoiO, with a cited experimental-evidence annotation describing O-methyltransferase activity. A separate GO annotation assigns O-methyltransferase activity by InterPro inference. The annotation supports the broad activity asked, although the enzyme’s precise pathway role remains unresolved.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A sequence may suggest a methyltransferase-like enzyme, but the input does not provide a sufficiently specific functional signature or context to establish O-methyltransferase activity over the alternatives. Generic sequence-based plausibility is not enough to identify this protein’s annotated function.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation or experimental characterization identifying this sequence as AoiO, an O-methyltransferase, is absent from the question.
-
-
-**Reason**
-
-> Distinguishing the keyed activity depends on a protein-specific functional fact not supplied in the sequence prompt; recognizing the sequence or recalling its database annotation would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence supports the broad O-methyltransferase activity in D. No competing option is supported for this sequence in the supplied evidence.
-
-
-### Important caveats
-
-- The cited UniProt functional annotation carries experimental evidence, while the GO assignment is an InterPro-based inference; these are distinct evidence types.
-- The cited source says the protein’s role in the biosynthetic pathway and its precise function there remain to be determined.
-- Reviewer-only database evidence establishes support for the key but was not information supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A sequence may suggest a methyltransferase-like enzyme, but the input does not provide a sufficiently specific functional signature or context to establish O-methyltransferase activity over the alternatives. Generic sequence-based plausibility is not enough to identify this protein’s annotated function.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation or experimental characterization identifying this sequence as AoiO, an O-methyltransferase, is absent from the question.",
-    "reason": "Distinguishing the keyed activity depends on a protein-specific functional fact not supplied in the sequence prompt; recognizing the sequence or recalling its database annotation would be lookup or memorization."
-  },
-  "case_id": "GO_molecular_function_0049",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence match is annotated as O-methyltransferase aoiO, with a cited experimental-evidence annotation describing O-methyltransferase activity. A separate GO annotation assigns O-methyltransferase activity by InterPro inference. The annotation supports the broad activity asked, although the enzyme’s precise pathway role remains unresolved."
-  },
-  "important_caveats": [
-    "The cited UniProt functional annotation carries experimental evidence, while the GO assignment is an InterPro-based inference; these are distinct evidence types.",
-    "The cited source says the protein’s role in the biosynthetic pathway and its precise function there remain to be determined.",
-    "Reviewer-only database evidence establishes support for the key but was not information supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports the broad O-methyltransferase activity in D. No competing option is supported for this sequence in the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0049",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence match is annotated as O-methyltransferase aoiO, with a cited experimental-evidence annotation describing O-methyltransferase activity. A separate GO annotation assigns O-methyltransferase activity by InterPro inference. The annotation supports the broad activity asked, although the enzyme’s precise pathway role remains unresolved.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A sequence may suggest a methyltransferase-like enzyme, but the input does not provide a sufficiently specific functional signature or context to establish O-methyltransferase activity over the alternatives. Generic sequence-based plausibility is not enough to identify this protein’s annotated function.",
-    "missing_item_specific_fact": "The protein-specific annotation or experimental characterization identifying this sequence as AoiO, an O-methyltransferase, is absent from the question.",
-    "reason": "Distinguishing the keyed activity depends on a protein-specific functional fact not supplied in the sequence prompt; recognizing the sequence or recalling its database annotation would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports the broad O-methyltransferase activity in D. No competing option is supported for this sequence in the supplied evidence."
-  },
-  "important_caveats": [
-    "The cited UniProt functional annotation carries experimental evidence, while the GO assignment is an InterPro-based inference; these are distinct evidence types.",
-    "The cited source says the protein’s role in the biosynthetic pathway and its precise function there remain to be determined.",
-    "Reviewer-only database evidence establishes support for the key but was not information supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt Q2TXQ1 (AOIO_ASPOR) is annotated as 'O-methyltransferase aoiO' with EC 2.1.1.- supported by experimental evidence (ECO:0000269, PubMed:22447538). The GO term GO:0008171 (O-methyltransferase activity) is assigned via IEA:InterPro. The sequence matches exactly (398 AA, SHA256 confirmed). The FUNCTION comment confirms O-methyltransferase activity in a polyketide biosynthesis gene cluster. The expected answer D aligns with both the recommended name and the GO annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the 'DVGG' motif (visible in 'VVVDVGGADGFVGISLA'), a well-known hallmark of Class I (Rossmann-fold) SAM-dependent methyltransferases. This is a standard textbook feature of protein fold families. Among the four options, only D (O-methyltransferase activity) belongs to the methyltransferase superfamily. The other three options require fundamentally different folds: alpha-1,6-mannosyltransferase (GT-A/GT-B glycosyltransferase fold with DXD motif), fucokinase (kinase with Walker A/B ATP-binding motifs), and tubulin deacetylase (zinc-dependent HDAC-like fold with catalytic His/Asp/His triad). None of these alternative fold signatures are evident in the sequence. Recognizing the DVGG/SAM-binding motif and the absence of kinase, glycosyltransferase, or HDAC catalytic motifs allows elimination of A, B, and C through general structural biology knowledge.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The DVGG motif recognition and fold-class elimination rely on general protein biochemistry knowledge rather than a protein-specific annotation lookup.
-
-
-**Reason**
-
-> A model trained in protein structural biology can identify the DVGG Rossmann-fold methyltransferase signature and eliminate the three non-methyltransferase options based on the absence of their characteristic catalytic motifs. This constitutes a concrete biological argument from the sequence itself.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span four entirely different enzyme classes (glycosyltransferase, kinase, deacetylase, methyltransferase). The DVGG motif and overall sequence architecture clearly favor methyltransferase, and no other option has supporting structural evidence in the sequence.
-
-
-### Important caveats
-
-- The GO annotation GO:0008171 is assigned via IEA:InterPro (computational inference from domain match), not direct experimental GO curation. However, the protein description and FUNCTION comment cite experimental evidence (ECO:0000269).
-- The DVGG motif, while characteristic of Class I methyltransferases, is not absolutely exclusive; however, in the context of eliminating three completely unrelated enzyme classes, it provides a strong and defensible discriminant.
-- The UniProt entry notes that the specific substrate and pathway role of aoiO 'has still to be determined' (PubMed:22447538), but the O-methyltransferase activity itself is experimentally supported.
-- The sequence is 398 AA from Aspergillus oryzae; the reviewer confirms exact sequence match to Q2TXQ1.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the 'DVGG' motif (visible in 'VVVDVGGADGFVGISLA'), a well-known hallmark of Class I (Rossmann-fold) SAM-dependent methyltransferases. This is a standard textbook feature of protein fold families. Among the four options, only D (O-methyltransferase activity) belongs to the methyltransferase superfamily. The other three options require fundamentally different folds: alpha-1,6-mannosyltransferase (GT-A/GT-B glycosyltransferase fold with DXD motif), fucokinase (kinase with Walker A/B ATP-binding motifs), and tubulin deacetylase (zinc-dependent HDAC-like fold with catalytic His/Asp/His triad). None of these alternative fold signatures are evident in the sequence. Recognizing the DVGG/SAM-binding motif and the absence of kinase, glycosyltransferase, or HDAC catalytic motifs allows elimination of A, B, and C through general structural biology knowledge.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The DVGG motif recognition and fold-class elimination rely on general protein biochemistry knowledge rather than a protein-specific annotation lookup.",
-    "reason": "A model trained in protein structural biology can identify the DVGG Rossmann-fold methyltransferase signature and eliminate the three non-methyltransferase options based on the absence of their characteristic catalytic motifs. This constitutes a concrete biological argument from the sequence itself."
-  },
-  "case_id": "GO_molecular_function_0049",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt Q2TXQ1 (AOIO_ASPOR) is annotated as 'O-methyltransferase aoiO' with EC 2.1.1.- supported by experimental evidence (ECO:0000269, PubMed:22447538). The GO term GO:0008171 (O-methyltransferase activity) is assigned via IEA:InterPro. The sequence matches exactly (398 AA, SHA256 confirmed). The FUNCTION comment confirms O-methyltransferase activity in a polyketide biosynthesis gene cluster. The expected answer D aligns with both the recommended name and the GO annotation."
-  },
-  "important_caveats": [
-    "The GO annotation GO:0008171 is assigned via IEA:InterPro (computational inference from domain match), not direct experimental GO curation. However, the protein description and FUNCTION comment cite experimental evidence (ECO:0000269).",
-    "The DVGG motif, while characteristic of Class I methyltransferases, is not absolutely exclusive; however, in the context of eliminating three completely unrelated enzyme classes, it provides a strong and defensible discriminant.",
-    "The UniProt entry notes that the specific substrate and pathway role of aoiO 'has still to be determined' (PubMed:22447538), but the O-methyltransferase activity itself is experimentally supported.",
-    "The sequence is 398 AA from Aspergillus oryzae; the reviewer confirms exact sequence match to Q2TXQ1."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span four entirely different enzyme classes (glycosyltransferase, kinase, deacetylase, methyltransferase). The DVGG motif and overall sequence architecture clearly favor methyltransferase, and no other option has supporting structural evidence in the sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0049",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt Q2TXQ1 (AOIO_ASPOR) is annotated as 'O-methyltransferase aoiO' with EC 2.1.1.- supported by experimental evidence (ECO:0000269, PubMed:22447538). The GO term GO:0008171 (O-methyltransferase activity) is assigned via IEA:InterPro. The sequence matches exactly (398 AA, SHA256 confirmed). The FUNCTION comment confirms O-methyltransferase activity in a polyketide biosynthesis gene cluster. The expected answer D aligns with both the recommended name and the GO annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the 'DVGG' motif (visible in 'VVVDVGGADGFVGISLA'), a well-known hallmark of Class I (Rossmann-fold) SAM-dependent methyltransferases. This is a standard textbook feature of protein fold families. Among the four options, only D (O-methyltransferase activity) belongs to the methyltransferase superfamily. The other three options require fundamentally different folds: alpha-1,6-mannosyltransferase (GT-A/GT-B glycosyltransferase fold with DXD motif), fucokinase (kinase with Walker A/B ATP-binding motifs), and tubulin deacetylase (zinc-dependent HDAC-like fold with catalytic His/Asp/His triad). None of these alternative fold signatures are evident in the sequence. Recognizing the DVGG/SAM-binding motif and the absence of kinase, glycosyltransferase, or HDAC catalytic motifs allows elimination of A, B, and C through general structural biology knowledge.",
-    "missing_item_specific_fact": "None strictly required. The DVGG motif recognition and fold-class elimination rely on general protein biochemistry knowledge rather than a protein-specific annotation lookup.",
-    "reason": "A model trained in protein structural biology can identify the DVGG Rossmann-fold methyltransferase signature and eliminate the three non-methyltransferase options based on the absence of their characteristic catalytic motifs. This constitutes a concrete biological argument from the sequence itself."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span four entirely different enzyme classes (glycosyltransferase, kinase, deacetylase, methyltransferase). The DVGG motif and overall sequence architecture clearly favor methyltransferase, and no other option has supporting structural evidence in the sequence."
-  },
-  "important_caveats": [
-    "The GO annotation GO:0008171 is assigned via IEA:InterPro (computational inference from domain match), not direct experimental GO curation. However, the protein description and FUNCTION comment cite experimental evidence (ECO:0000269).",
-    "The DVGG motif, while characteristic of Class I methyltransferases, is not absolutely exclusive; however, in the context of eliminating three completely unrelated enzyme classes, it provides a strong and defensible discriminant.",
-    "The UniProt entry notes that the specific substrate and pathway role of aoiO 'has still to be determined' (PubMed:22447538), but the O-methyltransferase activity itself is experimentally supported.",
-    "The sequence is 398 AA from Aspergillus oryzae; the reviewer confirms exact sequence match to Q2TXQ1."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q2TXQ1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6c5b3f48166497e2b7e121f106f016b3d3e830ee04aa70fb9f8d2f253bc21b3a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 398,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6c5b3f48166497e2b7e121f106f016b3d3e830ee04aa70fb9f8d2f253bc21b3a",
   "current_entry_audit": {
     "entryVersion": 94,
     "firstPublicDate": "2025-04-09",
@@ -537,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-01-24",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "current_source_sequence_sha256": "6c5b3f48166497e2b7e121f106f016b3d3e830ee04aa70fb9f8d2f253bc21b3a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 398,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6c5b3f48166497e2b7e121f106f016b3d3e830ee04aa70fb9f8d2f253bc21b3a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 93,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q2TXQ1",
   "selected_historical_entry_version": 93,
+  "selected_historical_record_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
+  "selected_historical_source_sequence_length": 398,
+  "selected_historical_source_sequence_sha256": "6c5b3f48166497e2b7e121f106f016b3d3e830ee04aa70fb9f8d2f253bc21b3a",
   "selected_historical_version": {
     "accession": "Q2TXQ1",
     "database": "Swiss-Prot",
@@ -555,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "AOIO_ASPOR",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
-  "selected_historical_source_sequence_sha256": "6c5b3f48166497e2b7e121f106f016b3d3e830ee04aa70fb9f8d2f253bc21b3a",
-  "selected_historical_source_sequence_length": 398,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 93,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json",
-  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q2TXQ1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json"
 }
 ```
 
@@ -609,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json",
-  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":94,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-01-24\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json"
 }
 ```
 
@@ -628,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json",
-  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Yellow koji mold\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus oryzae (strain ATCC 42149 / RIB 40)\",\"taxonId\":510516}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json"
 }
 ```
 
@@ -647,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json",
-  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22447538\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22447538\",\"source\":\"PubMed\"}],\"value\":\"O-methyltransferase aoiO\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json"
 }
 ```
 
@@ -666,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json",
-  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22447538\",\"source\":\"PubMed\"}],\"value\":\"O-methyltransferase; part of the gene cluster that mediates the biosynthesis of a methylated derivative of known natural products orthosporin and diaporthin (PubMed:22447538). Does not seem to be involved in the biosynthesis of the identified final product of the pathway and its function has still to be determined (PubMed:22447538)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json"
 }
 ```
 
@@ -685,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json",
-  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0008171\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:O-methyltransferase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json"
 }
 ```
 
@@ -704,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json",
-  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
-  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Nakazawa T.\",\"Ishiuchi K.\",\"Praseuth A.\",\"Noguchi H.\",\"Hotta K.\",\"Watanabe K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22447538\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201200107\"}],\"citationType\":\"journal article\",\"firstPage\":\"855\",\"id\":\"22447538\",\"journal\":\"ChemBioChem\",\"lastPage\":\"861\",\"publicationDate\":\"2012\",\"title\":\"Overexpressing transcriptional regulator in Aspergillus oryzae activates a silent biosynthetic pathway to produce a novel polyketide.\",\"volume\":\"13\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"INDUCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:40.416982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fd213e19e4caadb8bee82031ee55fe37480732c62de951e9e10e42a1c1be159a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ1.json"
 }
 ```
 
@@ -722,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 93,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93",
-  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
-  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   AOIO_ASPOR              Reviewed;         398 AA.\nAC   Q2TXQ1;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   24-JAN-2006, sequence version 1.\nDT   28-JAN-2026, entry version 93.\nDE   RecName: Full=O-methyltransferase aoiO {ECO:0000303|PubMed:22447538};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:22447538};\nGN   Name=aoiO {ECO:0000303|PubMed:22447538}; ORFNames=AO090010000056;\nOS   Aspergillus oryzae (strain ATCC 42149 / RIB 40) (Yellow koji mold).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=510516;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 93,
+  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93"
 }
 ```
 
@@ -743,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 93,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93",
-  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
-  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
-  "source_locator": "lines 32-38",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND INDUCTION.\nRX   PubMed=22447538; DOI=10.1002/cbic.201200107;\nRA   Nakazawa T., Ishiuchi K., Praseuth A., Noguchi H., Hotta K., Watanabe K.;\nRT   \"Overexpressing transcriptional regulator in Aspergillus oryzae activates a\nRT   silent biosynthetic pathway to produce a novel polyketide.\";\nRL   ChemBioChem 13:855-861(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 93,
+  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93"
 }
 ```
 
@@ -764,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 93,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93",
-  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
-  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
-  "source_locator": "lines 39-44",
   "excerpt": "CC   -!- FUNCTION: O-methyltransferase; part of the gene cluster that mediates\nCC       the biosynthesis of a methylated derivative of known natural products\nCC       orthosporin and diaporthin (PubMed:22447538). Does not seem to be\nCC       involved in the biosynthesis of the identified final product of the\nCC       pathway and its function has still to be determined (PubMed:22447538).\nCC       {ECO:0000269|PubMed:22447538}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 93,
+  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93"
 }
 ```
 
@@ -785,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 93,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93",
-  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
-  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
-  "source_locator": "lines 63-63",
   "excerpt": "DR   GO; GO:0008171; F:O-methyltransferase activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 93,
+  "retrieved_utc": "2026-11-02T04:30:42.439973+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d7b4a437ade459e083a2ed6a8bb2cb9041984b055e171ef54deebbf8b9742453",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ1?format=txt&versions=93"
 }
 ```
 
@@ -807,15 +559,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 117-125",
   "excerpt": "[Term]\nid: GO:0000009\nname: alpha-1,6-mannosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a mannose residue to an oligosaccharide, forming an alpha-(1->6) linkage.\" [GOC:mcc, PMID:2644248]\nsynonym: \"1,6-alpha-mannosyltransferase activity\" EXACT []\nxref: Reactome:R-HSA-449718 \"Addition of a third mannose to the N-glycan precursor by ALG2\"\nis_a: GO:0000030 ! mannosyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000009",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 117-125",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000009"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -826,15 +578,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 80302-80313",
   "excerpt": "[Term]\nid: GO:0008171\nname: O-methyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a methyl group to the oxygen atom of an acceptor molecule.\" [GOC:ai]\nxref: Reactome:R-HSA-5578717 \"BCDIN3D dimethylates 5' phosphate of pre-miR-145\"\nxref: Reactome:R-HSA-5629203 \"HENMT1 methylates 2' hydroxyl at 3' end of piRNA in 4xMeR-PIWIL1:piRNA:TDRD6:TDRKH\"\nxref: Reactome:R-HSA-5629218 \"HENMT1 methylates 2' hydroxyl at 3' end of piRNA in 6xMeR-PIWIL2:piRNA:TDRD1:TDRD12:DDX4:ASZ:MOV10L1\"\nxref: Reactome:R-HSA-5629237 \"HENMT1 methylates 2' hydroxyl at 3' end of piRNA in MeR-PIWIL4:piRNA:TDRD9:MAEL:TDRKH\"\nxref: Reactome:R-HSA-6790907 \"Box C/D snoRNP methylates ribonucleotides in pre-rRNA yielding 2'-O-methylribonucleotides\"\nis_a: GO:0008168 ! methyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008171",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 80302-80313",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008171"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -845,15 +597,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 242076-242085",
   "excerpt": "[Term]\nid: GO:0042903\nname: tubulin deacetylase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: N-acetyl(alpha-tubulin) + H2O = alpha-tubulin + acetate.\" [PMID:12024216, PMID:12486003]\nxref: Reactome:R-HSA-5618331 \"HDAC6 deacetylates microtubules\"\nis_a: GO:0016811 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides\nis_a: GO:0033558 ! protein lysine deacetylase activity\nproperty_value: skos:broadMatch EC:3.5.1.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042903",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 242076-242085",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042903"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -864,15 +616,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 311181-311201",
   "excerpt": "[Term]\nid: GO:0050201\nname: fucokinase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: L-fucose + ATP = beta-L-fucose 1-phosphate + ADP + 2 H+.\" [EC:2.7.1.52, RHEA:13241]\nsynonym: \"ATP:6-deoxy-L-galactose 1-phosphotransferase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"ATP:beta-L-fucose 1-phosphotransferase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"fucokinase (phosphorylating) activity\" RELATED [EC:2.7.1.52]\nsynonym: \"fucose kinase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"L-fucokinase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"L-fucose kinase activity\" RELATED [EC:2.7.1.52]\nxref: EC:2.7.1.52\nxref: KEGG_REACTION:R03161\nxref: MetaCyc:FUCOKINASE-RXN\nxref: Reactome:R-HSA-6787540 \"FCSK phosphorylates beta-Fuc to Fuc1P\"\nxref: RHEA:13241\nis_a: GO:0016301 ! kinase activity\nis_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor\nproperty_value: skos:exactMatch EC:2.7.1.52\nproperty_value: skos:exactMatch RHEA:13241\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0050201",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 311181-311201",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0050201"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

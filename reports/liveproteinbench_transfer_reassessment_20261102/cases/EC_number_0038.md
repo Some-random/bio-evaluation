@@ -1,18 +1,16 @@
-# EC_number_0038: before and after transfer clarification
+# EC_number_0038
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0038.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0038.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 2.4.1.259
+**Expected answer:** **C** — 2.4.1.259
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Drosophila Alg9 record, which annotates EC 2.4.1.259 and describes the corresponding mannosyltransferase reaction. This support is transferred by similarity from Q9H6U8 (ECO:0000250), not evidence of direct experimental characterization of this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a multipass membrane glycosyltransferase, but that broad inference does not determine its precise glycan substrate, reaction, or complete EC number.
-
-
-**Missing item-specific fact**
-
-> Identifying this protein as Alg9 and knowing its specific annotated mannosyltransferase activities requires protein-specific functional annotation or experimental knowledge absent from the input.
-
-
-**Reason**
-
-> The exact EC distinction among the choices depends on the specific reaction catalyzed, which cannot be established from the sequence and choices by general biological reasoning alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, the evidence supports C. The matched record also annotates EC 2.4.1.261 for a second reaction, but that number is not offered as an option.
-
-
-### Important caveats
-
-- The supporting EC annotations are similarity-based transfers, not direct experimental evidence for the supplied Drosophila protein.
-- The exact author data snapshot is unknown, though the matched historical record available by the stated cutoff includes EC 2.4.1.259.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a multipass membrane glycosyltransferase, but that broad inference does not determine its precise glycan substrate, reaction, or complete EC number.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying this protein as Alg9 and knowing its specific annotated mannosyltransferase activities requires protein-specific functional annotation or experimental knowledge absent from the input.",
-    "reason": "The exact EC distinction among the choices depends on the specific reaction catalyzed, which cannot be established from the sequence and choices by general biological reasoning alone."
-  },
-  "case_id": "EC_number_0038",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila Alg9 record, which annotates EC 2.4.1.259 and describes the corresponding mannosyltransferase reaction. This support is transferred by similarity from Q9H6U8 (ECO:0000250), not evidence of direct experimental characterization of this exact protein."
-  },
-  "important_caveats": [
-    "The supporting EC annotations are similarity-based transfers, not direct experimental evidence for the supplied Drosophila protein.",
-    "The exact author data snapshot is unknown, though the matched historical record available by the stated cutoff includes EC 2.4.1.259."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the evidence supports C. The matched record also annotates EC 2.4.1.261 for a second reaction, but that number is not offered as an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0038",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila Alg9 record, which annotates EC 2.4.1.259 and describes the corresponding mannosyltransferase reaction. This support is transferred by similarity from Q9H6U8 (ECO:0000250), not evidence of direct experimental characterization of this exact protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a multipass membrane glycosyltransferase, but that broad inference does not determine its precise glycan substrate, reaction, or complete EC number.",
-    "missing_item_specific_fact": "Identifying this protein as Alg9 and knowing its specific annotated mannosyltransferase activities requires protein-specific functional annotation or experimental knowledge absent from the input.",
-    "reason": "The exact EC distinction among the choices depends on the specific reaction catalyzed, which cannot be established from the sequence and choices by general biological reasoning alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the evidence supports C. The matched record also annotates EC 2.4.1.261 for a second reaction, but that number is not offered as an option."
-  },
-  "important_caveats": [
-    "The supporting EC annotations are similarity-based transfers, not direct experimental evidence for the supplied Drosophila protein.",
-    "The exact author data snapshot is unknown, though the matched historical record available by the stated cutoff includes EC 2.4.1.259."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q9VBV8 (ALG9_DROME, Drosophila melanogaster Alpha-1,2-mannosyltransferase Alg9) exactly (623 AA, SHA256 confirmed). The UniProt entry assigns EC 2.4.1.259 (and also EC 2.4.1.261) with evidence code ECO:0000250 (inferred by similarity from human Q9H6U8). Among the four choices, only 2.4.1.259 (option C) appears in the annotation. The other options (2.4.1.392, 4.2.1.70, 2.3.1.319) are unrelated EC numbers. The annotation is computational (transferred by similarity), not direct experimental evidence for the Drosophila protein, but it is the official database assignment.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could note the protein is a polytopic membrane protein with multiple hydrophobic segments consistent with an ER-resident enzyme, and might infer it belongs to the transferase class (EC 2) rather than lyase (EC 4), eliminating option B. However, distinguishing EC 2.4.1.259 (alpha-1,2-mannosyltransferase Alg9, GT47 family) from EC 2.4.1.392 (another glycosyltransferase) and EC 2.3.1.319 (acyltransferase) requires knowing the specific protein family, its role in the dolichol-linked N-glycan biosynthesis pathway (adding the 6th mannose to Man5GlcNAc2-PP-dolichol), and the exact EC assignment. No general sequence motif or biochemical reasoning from the raw 623-aa sequence alone reliably distinguishes these four specific EC numbers.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this sequence as Alg9 (Drosophila ortholog of human DPAGT1-pathway mannosyltransferase) and the knowledge that Alg9 catalyzes the alpha-1,2-mannosyl transfer step designated EC 2.4.1.259 (as opposed to other glycosyltransferase EC numbers in the choices). This is a protein-specific database annotation.
-
-
-**Reason**
-
-> While the transferase vs. lyase distinction (eliminating B) is somewhat accessible, the precise 4-digit EC assignment among three transferase options (A, C, D) requires recognizing this as Alg9 and recalling its specific EC number. This is fundamentally a sequence-to-annotation lookup task, not a reasoning task from general biochemistry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the UniProt entry annotates both EC 2.4.1.259 and EC 2.4.1.261, only 2.4.1.259 appears among the four choices. None of the distractors match any annotation for this protein. Thus, among the given options, only C is defensible.
-
-
-### Important caveats
-
-- The EC assignment carries evidence code ECO:0000250 (inferred by similarity from human Q9H6U8), not direct experimental characterization of the Drosophila protein.
-- The protein is annotated with a second EC number (2.4.1.261) for a later step in the same pathway; the question asks for 'the' EC number (singular), which is slightly imprecise, but this does not affect answer selection since 2.4.1.261 is not a choice.
-- The UniProt entry was first public in 2025-06-18 (Swiss-Prot reviewed status); the benchmark's author source snapshot is unknown but the sequence has been unchanged since 2000.
-- The accession identity was inferred by the reviewer from dataset metadata, not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could note the protein is a polytopic membrane protein with multiple hydrophobic segments consistent with an ER-resident enzyme, and might infer it belongs to the transferase class (EC 2) rather than lyase (EC 4), eliminating option B. However, distinguishing EC 2.4.1.259 (alpha-1,2-mannosyltransferase Alg9, GT47 family) from EC 2.4.1.392 (another glycosyltransferase) and EC 2.3.1.319 (acyltransferase) requires knowing the specific protein family, its role in the dolichol-linked N-glycan biosynthesis pathway (adding the 6th mannose to Man5GlcNAc2-PP-dolichol), and the exact EC assignment. No general sequence motif or biochemical reasoning from the raw 623-aa sequence alone reliably distinguishes these four specific EC numbers.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this sequence as Alg9 (Drosophila ortholog of human DPAGT1-pathway mannosyltransferase) and the knowledge that Alg9 catalyzes the alpha-1,2-mannosyl transfer step designated EC 2.4.1.259 (as opposed to other glycosyltransferase EC numbers in the choices). This is a protein-specific database annotation.",
-    "reason": "While the transferase vs. lyase distinction (eliminating B) is somewhat accessible, the precise 4-digit EC assignment among three transferase options (A, C, D) requires recognizing this as Alg9 and recalling its specific EC number. This is fundamentally a sequence-to-annotation lookup task, not a reasoning task from general biochemistry."
-  },
-  "case_id": "EC_number_0038",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q9VBV8 (ALG9_DROME, Drosophila melanogaster Alpha-1,2-mannosyltransferase Alg9) exactly (623 AA, SHA256 confirmed). The UniProt entry assigns EC 2.4.1.259 (and also EC 2.4.1.261) with evidence code ECO:0000250 (inferred by similarity from human Q9H6U8). Among the four choices, only 2.4.1.259 (option C) appears in the annotation. The other options (2.4.1.392, 4.2.1.70, 2.3.1.319) are unrelated EC numbers. The annotation is computational (transferred by similarity), not direct experimental evidence for the Drosophila protein, but it is the official database assignment."
-  },
-  "important_caveats": [
-    "The EC assignment carries evidence code ECO:0000250 (inferred by similarity from human Q9H6U8), not direct experimental characterization of the Drosophila protein.",
-    "The protein is annotated with a second EC number (2.4.1.261) for a later step in the same pathway; the question asks for 'the' EC number (singular), which is slightly imprecise, but this does not affect answer selection since 2.4.1.261 is not a choice.",
-    "The UniProt entry was first public in 2025-06-18 (Swiss-Prot reviewed status); the benchmark's author source snapshot is unknown but the sequence has been unchanged since 2000.",
-    "The accession identity was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the UniProt entry annotates both EC 2.4.1.259 and EC 2.4.1.261, only 2.4.1.259 appears among the four choices. None of the distractors match any annotation for this protein. Thus, among the given options, only C is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0038",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q9VBV8 (ALG9_DROME, Drosophila melanogaster Alpha-1,2-mannosyltransferase Alg9) exactly (623 AA, SHA256 confirmed). The UniProt entry assigns EC 2.4.1.259 (and also EC 2.4.1.261) with evidence code ECO:0000250 (inferred by similarity from human Q9H6U8). Among the four choices, only 2.4.1.259 (option C) appears in the annotation. The other options (2.4.1.392, 4.2.1.70, 2.3.1.319) are unrelated EC numbers. The annotation is computational (transferred by similarity), not direct experimental evidence for the Drosophila protein, but it is the official database assignment.",
-    "evidence_ids": ["C4", "C5", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could note the protein is a polytopic membrane protein with multiple hydrophobic segments consistent with an ER-resident enzyme, and might infer it belongs to the transferase class (EC 2) rather than lyase (EC 4), eliminating option B. However, distinguishing EC 2.4.1.259 (alpha-1,2-mannosyltransferase Alg9, GT47 family) from EC 2.4.1.392 (another glycosyltransferase) and EC 2.3.1.319 (acyltransferase) requires knowing the specific protein family, its role in the dolichol-linked N-glycan biosynthesis pathway (adding the 6th mannose to Man5GlcNAc2-PP-dolichol), and the exact EC assignment. No general sequence motif or biochemical reasoning from the raw 623-aa sequence alone reliably distinguishes these four specific EC numbers.",
-    "missing_item_specific_fact": "The specific identity of this sequence as Alg9 (Drosophila ortholog of human DPAGT1-pathway mannosyltransferase) and the knowledge that Alg9 catalyzes the alpha-1,2-mannosyl transfer step designated EC 2.4.1.259 (as opposed to other glycosyltransferase EC numbers in the choices). This is a protein-specific database annotation.",
-    "reason": "While the transferase vs. lyase distinction (eliminating B) is somewhat accessible, the precise 4-digit EC assignment among three transferase options (A, C, D) requires recognizing this as Alg9 and recalling its specific EC number. This is fundamentally a sequence-to-annotation lookup task, not a reasoning task from general biochemistry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the UniProt entry annotates both EC 2.4.1.259 and EC 2.4.1.261, only 2.4.1.259 appears among the four choices. None of the distractors match any annotation for this protein. Thus, among the given options, only C is defensible."
-  },
-  "important_caveats": [
-    "The EC assignment carries evidence code ECO:0000250 (inferred by similarity from human Q9H6U8), not direct experimental characterization of the Drosophila protein.",
-    "The protein is annotated with a second EC number (2.4.1.261) for a later step in the same pathway; the question asks for 'the' EC number (singular), which is slightly imprecise, but this does not affect answer selection since 2.4.1.261 is not a choice.",
-    "The UniProt entry was first public in 2025-06-18 (Swiss-Prot reviewed status); the benchmark's author source snapshot is unknown but the sequence has been unchanged since 2000.",
-    "The accession identity was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VBV8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f408e9420c1052e4e0d32438a8e2c7e6058387a35e5959dc8c2bf30c8f4f8cb5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 623,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f408e9420c1052e4e0d32438a8e2c7e6058387a35e5959dc8c2bf30c8f4f8cb5",
   "current_entry_audit": {
     "entryVersion": 176,
     "firstPublicDate": "2025-06-18",
@@ -538,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
-  "current_source_sequence_sha256": "f408e9420c1052e4e0d32438a8e2c7e6058387a35e5959dc8c2bf30c8f4f8cb5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 623,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f408e9420c1052e4e0d32438a8e2c7e6058387a35e5959dc8c2bf30c8f4f8cb5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 174,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VBV8",
   "selected_historical_entry_version": 174,
+  "selected_historical_record_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
+  "selected_historical_source_sequence_length": 623,
+  "selected_historical_source_sequence_sha256": "f408e9420c1052e4e0d32438a8e2c7e6058387a35e5959dc8c2bf30c8f4f8cb5",
   "selected_historical_version": {
     "accession": "Q9VBV8",
     "database": "Swiss-Prot",
@@ -556,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ALG9_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
-  "selected_historical_source_sequence_sha256": "f408e9420c1052e4e0d32438a8e2c7e6058387a35e5959dc8c2bf30c8f4f8cb5",
-  "selected_historical_source_sequence_length": 623,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 174,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json",
-  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
-  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VBV8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json"
 }
 ```
 
@@ -606,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json",
-  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
-  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":176,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json"
 }
 ```
 
@@ -625,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json",
-  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
-  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json"
 }
 ```
 
@@ -644,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json",
-  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
-  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Dolichyl-P-Man:Man6GlcNAc2-PP-dolichol alpha-1,2-mannosyltransferase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Dolichyl-P-Man:Man8GlcNAc2-PP-dolichol alpha-1,2-mannosyltransferase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9H6U8\",\"source\":\"UniProtKB\"}],\"value\":\"2.4.1.259\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9H6U8\",\"source\":\"UniProtKB\"}],\"value\":\"2.4.1.261\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0039293\",\"source\":\"FlyBase\"}],\"value\":\"Alpha-1,2-mannosyltransferase Alg9\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json"
 }
 ```
 
@@ -663,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json",
-  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
-  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.4.1.259\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9H6U8\",\"source\":\"UniProtKB\"}],\"name\":\"an alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->3)-alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc-(1->4)-alpha-D-GlcNAc-diphospho-di-trans,poly-cis-dolichol + a di-trans,poly-cis-dolichyl beta-D-mannosyl phosphate = an alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc-(1->4)-alpha-D-GlcNAc-diphospho-di-trans,poly-cis-dolichol + a di-trans,poly-cis-dolichyl phosphate + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:29531\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19498\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19501\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19517\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19518\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57683\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58211\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132516\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132517\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json"
 }
 ```
 
@@ -682,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json",
-  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
-  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.4.1.261\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9H6U8\",\"source\":\"UniProtKB\"}],\"name\":\"an alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->6)]-alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc-(1->4)-alpha-D-GlcNAc-diphospho-di-trans,poly-cis-dolichol + a di-trans,poly-cis-dolichyl beta-D-mannosyl phosphate = an alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->2)-alpha-D-Man-(1->6)]-alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc-(1->4)-alpha-D-GlcNAc-diphospho-di-trans,poly-cis-dolichol + a di-trans,poly-cis-dolichyl phosphate + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:29539\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19498\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19501\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19519\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:19520\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57683\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58211\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132519\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132520\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:29.193985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "24b898b648022de52a5691dcf6976ea8900e27682aaaa66849096b4d46e10d5f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VBV8.json"
 }
 ```
 
@@ -700,18 +458,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 174,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174",
-  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
-  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   ALG9_DROME              Reviewed;         623 AA.\nAC   Q9VBV8;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 174.\nDE   RecName: Full=Alpha-1,2-mannosyltransferase Alg9 {ECO:0000312|FlyBase:FBgn0039293};\nDE            EC=2.4.1.259 {ECO:0000250|UniProtKB:Q9H6U8};\nDE            EC=2.4.1.261 {ECO:0000250|UniProtKB:Q9H6U8};\nDE   AltName: Full=Dolichyl-P-Man:Man6GlcNAc2-PP-dolichol alpha-1,2-mannosyltransferase {ECO:0000305};\nDE   AltName: Full=Dolichyl-P-Man:Man8GlcNAc2-PP-dolichol alpha-1,2-mannosyltransferase {ECO:0000305};\nGN   Name=Alg9 {ECO:0000312|FlyBase:FBgn0039293};\nGN   ORFNames=CG11851 {ECO:0000312|FlyBase:FBgn0039293};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 174,
+  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
+  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174"
 }
 ```
 
@@ -721,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 174,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174",
-  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
-  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Alpha-1,2-mannosyltransferase Alg9 {ECO:0000312|FlyBase:FBgn0039293};\nDE            EC=2.4.1.259 {ECO:0000250|UniProtKB:Q9H6U8};\nDE            EC=2.4.1.261 {ECO:0000250|UniProtKB:Q9H6U8};\nDE   AltName: Full=Dolichyl-P-Man:Man6GlcNAc2-PP-dolichol alpha-1,2-mannosyltransferase {ECO:0000305};\nDE   AltName: Full=Dolichyl-P-Man:Man8GlcNAc2-PP-dolichol alpha-1,2-mannosyltransferase {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 174,
+  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
+  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174"
 }
 ```
 
@@ -742,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 174,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174",
-  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
-  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
-  "source_locator": "lines 104-116",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=an alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-\nCC         [alpha-D-Man-(1->3)-alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-\nCC         GlcNAc-(1->4)-alpha-D-GlcNAc-diphospho-di-trans,poly-cis-dolichol + a\nCC         di-trans,poly-cis-dolichyl beta-D-mannosyl phosphate = an alpha-D-\nCC         Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->2)-\nCC         alpha-D-Man-(1->3)-alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-\nCC         GlcNAc-(1->4)-alpha-D-GlcNAc-diphospho-di-trans,poly-cis-dolichol + a\nCC         di-trans,poly-cis-dolichyl phosphate + H(+); Xref=Rhea:RHEA:29531,\nCC         Rhea:RHEA-COMP:19498, Rhea:RHEA-COMP:19501, Rhea:RHEA-COMP:19517,\nCC         Rhea:RHEA-COMP:19518, ChEBI:CHEBI:15378, ChEBI:CHEBI:57683,\nCC         ChEBI:CHEBI:58211, ChEBI:CHEBI:132516, ChEBI:CHEBI:132517;\nCC         EC=2.4.1.259; Evidence={ECO:0000250|UniProtKB:Q9H6U8};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 174,
+  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-116",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
+  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174"
 }
 ```
 
@@ -763,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 174,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174",
-  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
-  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
-  "source_locator": "lines 117-131",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=an alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-\nCC         [alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-Man-(1->6)]-alpha-D-\nCC         Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc-(1->4)-alpha-D-GlcNAc-\nCC         diphospho-di-trans,poly-cis-dolichol + a di-trans,poly-cis-dolichyl\nCC         beta-D-mannosyl phosphate = an alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-\nCC         alpha-D-Man-(1->3)-[alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-[alpha-D-\nCC         Man-(1->2)-alpha-D-Man-(1->6)]-alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-\nCC         beta-D-GlcNAc-(1->4)-alpha-D-GlcNAc-diphospho-di-trans,poly-cis-\nCC         dolichol + a di-trans,poly-cis-dolichyl phosphate + H(+);\nCC         Xref=Rhea:RHEA:29539, Rhea:RHEA-COMP:19498, Rhea:RHEA-COMP:19501,\nCC         Rhea:RHEA-COMP:19519, Rhea:RHEA-COMP:19520, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:57683, ChEBI:CHEBI:58211, ChEBI:CHEBI:132519,\nCC         ChEBI:CHEBI:132520; EC=2.4.1.261;\nCC         Evidence={ECO:0000250|UniProtKB:Q9H6U8};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 174,
+  "retrieved_utc": "2026-11-01T06:28:51.427257+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 117-131",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "32d28578b9cd594cb2408d344ac0c5be7d01172b1298053b690508892af4f5f8",
+  "url": "https://rest.uniprot.org/unisave/Q9VBV8?format=txt&versions=174"
 }
 ```
 

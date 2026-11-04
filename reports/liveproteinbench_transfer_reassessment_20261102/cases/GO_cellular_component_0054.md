@@ -1,18 +1,16 @@
-# GO_cellular_component_0054: before and after transfer clarification
+# GO_cellular_component_0054
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0054.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0054.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — plasma membrane
+**Expected answer:** **B** — plasma membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,253 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the cited UniProt entry, which annotates the protein to the cell membrane with PubMed-linked experimental evidence. GO treats “cell membrane” as an exact synonym of “plasma membrane.” The annotation also reports ligand-stimulated relocalization to the vacuole, so the plasma-membrane assignment is not necessarily exclusive or invariant.
-
-Citations as saved: [H3](#evidence-h3), [C5](#evidence-c5), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has multiple hydrophobic transmembrane segments, supporting that it is a membrane protein. That does not distinguish plasma membrane from endoplasmic reticulum or establish cell-surface localization.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization annotation or experimental evidence that this receptor resides at the cell membrane, and can relocalize to the vacuole after ligand stimulation.
-
-
-**Reason**
-
-> The supplied sequence supports membrane insertion but does not provide a reliable basis for selecting the plasma membrane over the other membrane-related choices. The localization evidence is item-specific and was not supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> B is the directly supported, more specific location. D is also potentially defensible at a broader GO level: the cell-surface term includes products integrated into or loosely bound to the plasma membrane. The supplied annotation does not itself assign the cell-surface term.
-
-
-### Important caveats
-
-- The reviewer-only UniProt record and archived entry match the supplied sequence; that identity information was not available in the question.
-- The UniProt cell-membrane annotation cites PubMed evidence with an experimental evidence code, but the underlying paper was not independently assessed here.
-- The current UniProt entry also records ligand-stimulated relocalization to the vacuole.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has multiple hydrophobic transmembrane segments, supporting that it is a membrane protein. That does not distinguish plasma membrane from endoplasmic reticulum or establish cell-surface localization.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental evidence that this receptor resides at the cell membrane, and can relocalize to the vacuole after ligand stimulation.",
-    "reason": "The supplied sequence supports membrane insertion but does not provide a reliable basis for selecting the plasma membrane over the other membrane-related choices. The localization evidence is item-specific and was not supplied to the evaluated model."
-  },
-  "case_id": "GO_cellular_component_0054",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "C5",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the cited UniProt entry, which annotates the protein to the cell membrane with PubMed-linked experimental evidence. GO treats “cell membrane” as an exact synonym of “plasma membrane.” The annotation also reports ligand-stimulated relocalization to the vacuole, so the plasma-membrane assignment is not necessarily exclusive or invariant."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt record and archived entry match the supplied sequence; that identity information was not available in the question.",
-    "The UniProt cell-membrane annotation cites PubMed evidence with an experimental evidence code, but the underlying paper was not independently assessed here.",
-    "The current UniProt entry also records ligand-stimulated relocalization to the vacuole."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "B is the directly supported, more specific location. D is also potentially defensible at a broader GO level: the cell-surface term includes products integrated into or loosely bound to the plasma membrane. The supplied annotation does not itself assign the cell-surface term."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0054",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the cited UniProt entry, which annotates the protein to the cell membrane with PubMed-linked experimental evidence. GO treats “cell membrane” as an exact synonym of “plasma membrane.” The annotation also reports ligand-stimulated relocalization to the vacuole, so the plasma-membrane assignment is not necessarily exclusive or invariant.",
-    "evidence_ids": ["H3", "C5", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has multiple hydrophobic transmembrane segments, supporting that it is a membrane protein. That does not distinguish plasma membrane from endoplasmic reticulum or establish cell-surface localization.",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental evidence that this receptor resides at the cell membrane, and can relocalize to the vacuole after ligand stimulation.",
-    "reason": "The supplied sequence supports membrane insertion but does not provide a reliable basis for selecting the plasma membrane over the other membrane-related choices. The localization evidence is item-specific and was not supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "B is the directly supported, more specific location. D is also potentially defensible at a broader GO level: the cell-surface term includes products integrated into or loosely bound to the plasma membrane. The supplied annotation does not itself assign the cell-surface term."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt record and archived entry match the supplied sequence; that identity information was not available in the question.",
-    "The UniProt cell-membrane annotation cites PubMed evidence with an experimental evidence code, but the underlying paper was not independently assessed here.",
-    "The current UniProt entry also records ligand-stimulated relocalization to the vacuole."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry G1X9E2 (Ascaroside receptor GPR2, a 7-TM GPCR from Arthrobotrys oligospora) annotates the subcellular location as 'Cell membrane; Multi-pass membrane protein' with experimental evidence (ECO:0000269, PubMed:38649409, Nat. Microbiol. 2024). The GO cross-reference assigns GO:0005886 (plasma membrane), which has 'cell membrane' as an EXACT synonym. The sequence matches the benchmark input exactly. The expected answer B (plasma membrane) is directly supported by the annotation.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence displays approximately seven hydrophobic stretches of ~20-25 residues separated by hydrophilic loops, with a longer N-terminal extracellular region and a hydrophilic C-terminal tail. This 7-TM topology with extracellular N-terminus and intracellular C-terminus is the canonical architecture of a G protein-coupled receptor, which is a well-known class of plasma membrane receptors. ER membrane proteins, while also multi-pass, typically lack this specific 7-TM GPCR topology and do not present a long extracellular N-terminal domain. The general biological knowledge that 7-TM receptors reside at the plasma membrane provides a concrete reasoning path from sequence to answer B.
-
-
-**Missing item-specific fact**
-
-> None critical. The distinction between plasma membrane and cell surface (option D) relies somewhat on GO annotation convention (cell surface refers to the external part of cell wall/plasma membrane, typically for cell-wall-associated proteins), but the multi-pass integral membrane topology more naturally maps to 'plasma membrane' than 'cell surface' under standard GO usage.
-
-
-**Reason**
-
-> A knowledgeable model can identify the 7-TM GPCR topology from the hydrophobicity pattern in the sequence and apply the general biological fact that GPCRs are plasma membrane proteins. This distinguishes B from C (ER) and A (leading edge). The B-vs-D distinction is somewhat convention-dependent but the integral multi-pass membrane topology favors 'plasma membrane' over 'cell surface' (which GO reserves for cell-wall-associated or peripherally attached proteins).
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> GO:0009986 (cell surface) is defined as 'The external part of the cell wall and/or plasma membrane' and includes gene products 'attached (integrated or loosely bound) to the plasma membrane or cell wall.' A multi-pass membrane protein is integrated in the plasma membrane, which is part of the cell surface. However, standard GO annotation practice assigns multi-pass integral membrane proteins (especially GPCRs) to 'plasma membrane' (GO:0005886) rather than 'cell surface' (GO:0009986), which is more commonly used for cell-wall-associated proteins in fungi. The UniProt annotation explicitly uses GO:0005886. While D is not strictly wrong in a colloquial sense, B is the more precise and conventionally correct GO term.
-
-
-### Important caveats
-
-- The GO annotation for plasma membrane carries evidence code IEA:UniProtKB-SubCell (inferred from electronic annotation based on the UniProt subcellular location comment), while the underlying subcellular location comment has experimental evidence (ECO:0000269) from PubMed:38649409.
-- The UniProt topology annotation 'Multi-pass membrane protein' uses evidence code ECO:0000255 (sequence analysis), not direct experimental determination of membrane topology.
-- The protein is from a fungus (Arthrobotrys oligospora); the 'plasma membrane' vs 'cell surface' distinction is relevant in fungal biology where a cell wall lies outside the plasma membrane.
-- The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on what could be inferred from the sequence and general biological knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence displays approximately seven hydrophobic stretches of ~20-25 residues separated by hydrophilic loops, with a longer N-terminal extracellular region and a hydrophilic C-terminal tail. This 7-TM topology with extracellular N-terminus and intracellular C-terminus is the canonical architecture of a G protein-coupled receptor, which is a well-known class of plasma membrane receptors. ER membrane proteins, while also multi-pass, typically lack this specific 7-TM GPCR topology and do not present a long extracellular N-terminal domain. The general biological knowledge that 7-TM receptors reside at the plasma membrane provides a concrete reasoning path from sequence to answer B.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The distinction between plasma membrane and cell surface (option D) relies somewhat on GO annotation convention (cell surface refers to the external part of cell wall/plasma membrane, typically for cell-wall-associated proteins), but the multi-pass integral membrane topology more naturally maps to 'plasma membrane' than 'cell surface' under standard GO usage.",
-    "reason": "A knowledgeable model can identify the 7-TM GPCR topology from the hydrophobicity pattern in the sequence and apply the general biological fact that GPCRs are plasma membrane proteins. This distinguishes B from C (ER) and A (leading edge). The B-vs-D distinction is somewhat convention-dependent but the integral multi-pass membrane topology favors 'plasma membrane' over 'cell surface' (which GO reserves for cell-wall-associated or peripherally attached proteins)."
-  },
-  "case_id": "GO_cellular_component_0054",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry G1X9E2 (Ascaroside receptor GPR2, a 7-TM GPCR from Arthrobotrys oligospora) annotates the subcellular location as 'Cell membrane; Multi-pass membrane protein' with experimental evidence (ECO:0000269, PubMed:38649409, Nat. Microbiol. 2024). The GO cross-reference assigns GO:0005886 (plasma membrane), which has 'cell membrane' as an EXACT synonym. The sequence matches the benchmark input exactly. The expected answer B (plasma membrane) is directly supported by the annotation."
-  },
-  "important_caveats": [
-    "The GO annotation for plasma membrane carries evidence code IEA:UniProtKB-SubCell (inferred from electronic annotation based on the UniProt subcellular location comment), while the underlying subcellular location comment has experimental evidence (ECO:0000269) from PubMed:38649409.",
-    "The UniProt topology annotation 'Multi-pass membrane protein' uses evidence code ECO:0000255 (sequence analysis), not direct experimental determination of membrane topology.",
-    "The protein is from a fungus (Arthrobotrys oligospora); the 'plasma membrane' vs 'cell surface' distinction is relevant in fungal biology where a cell wall lies outside the plasma membrane.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on what could be inferred from the sequence and general biological knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "GO:0009986 (cell surface) is defined as 'The external part of the cell wall and/or plasma membrane' and includes gene products 'attached (integrated or loosely bound) to the plasma membrane or cell wall.' A multi-pass membrane protein is integrated in the plasma membrane, which is part of the cell surface. However, standard GO annotation practice assigns multi-pass integral membrane proteins (especially GPCRs) to 'plasma membrane' (GO:0005886) rather than 'cell surface' (GO:0009986), which is more commonly used for cell-wall-associated proteins in fungi. The UniProt annotation explicitly uses GO:0005886. While D is not strictly wrong in a colloquial sense, B is the more precise and conventionally correct GO term."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0054",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry G1X9E2 (Ascaroside receptor GPR2, a 7-TM GPCR from Arthrobotrys oligospora) annotates the subcellular location as 'Cell membrane; Multi-pass membrane protein' with experimental evidence (ECO:0000269, PubMed:38649409, Nat. Microbiol. 2024). The GO cross-reference assigns GO:0005886 (plasma membrane), which has 'cell membrane' as an EXACT synonym. The sequence matches the benchmark input exactly. The expected answer B (plasma membrane) is directly supported by the annotation.",
-    "evidence_ids": ["C5", "C6", "H3", "H4", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence displays approximately seven hydrophobic stretches of ~20-25 residues separated by hydrophilic loops, with a longer N-terminal extracellular region and a hydrophilic C-terminal tail. This 7-TM topology with extracellular N-terminus and intracellular C-terminus is the canonical architecture of a G protein-coupled receptor, which is a well-known class of plasma membrane receptors. ER membrane proteins, while also multi-pass, typically lack this specific 7-TM GPCR topology and do not present a long extracellular N-terminal domain. The general biological knowledge that 7-TM receptors reside at the plasma membrane provides a concrete reasoning path from sequence to answer B.",
-    "missing_item_specific_fact": "None critical. The distinction between plasma membrane and cell surface (option D) relies somewhat on GO annotation convention (cell surface refers to the external part of cell wall/plasma membrane, typically for cell-wall-associated proteins), but the multi-pass integral membrane topology more naturally maps to 'plasma membrane' than 'cell surface' under standard GO usage.",
-    "reason": "A knowledgeable model can identify the 7-TM GPCR topology from the hydrophobicity pattern in the sequence and apply the general biological fact that GPCRs are plasma membrane proteins. This distinguishes B from C (ER) and A (leading edge). The B-vs-D distinction is somewhat convention-dependent but the integral multi-pass membrane topology favors 'plasma membrane' over 'cell surface' (which GO reserves for cell-wall-associated or peripherally attached proteins)."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "GO:0009986 (cell surface) is defined as 'The external part of the cell wall and/or plasma membrane' and includes gene products 'attached (integrated or loosely bound) to the plasma membrane or cell wall.' A multi-pass membrane protein is integrated in the plasma membrane, which is part of the cell surface. However, standard GO annotation practice assigns multi-pass integral membrane proteins (especially GPCRs) to 'plasma membrane' (GO:0005886) rather than 'cell surface' (GO:0009986), which is more commonly used for cell-wall-associated proteins in fungi. The UniProt annotation explicitly uses GO:0005886. While D is not strictly wrong in a colloquial sense, B is the more precise and conventionally correct GO term."
-  },
-  "important_caveats": [
-    "The GO annotation for plasma membrane carries evidence code IEA:UniProtKB-SubCell (inferred from electronic annotation based on the UniProt subcellular location comment), while the underlying subcellular location comment has experimental evidence (ECO:0000269) from PubMed:38649409.",
-    "The UniProt topology annotation 'Multi-pass membrane protein' uses evidence code ECO:0000255 (sequence analysis), not direct experimental determination of membrane topology.",
-    "The protein is from a fungus (Arthrobotrys oligospora); the 'plasma membrane' vs 'cell surface' distinction is relevant in fungal biology where a cell wall lies outside the plasma membrane.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment is based solely on what could be inferred from the sequence and general biological knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -410,10 +166,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -525,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G1X9E2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4e764ad5fe8865d73836f34a410857326f248f960936c909cff720a56696f0f3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 406,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4e764ad5fe8865d73836f34a410857326f248f960936c909cff720a56696f0f3",
   "current_entry_audit": {
     "entryVersion": 47,
     "firstPublicDate": "2025-04-09",
@@ -556,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-11-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "current_source_sequence_sha256": "4e764ad5fe8865d73836f34a410857326f248f960936c909cff720a56696f0f3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 406,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4e764ad5fe8865d73836f34a410857326f248f960936c909cff720a56696f0f3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 45,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G1X9E2",
   "selected_historical_entry_version": 45,
+  "selected_historical_record_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
+  "selected_historical_source_sequence_length": 406,
+  "selected_historical_source_sequence_sha256": "4e764ad5fe8865d73836f34a410857326f248f960936c909cff720a56696f0f3",
   "selected_historical_version": {
     "accession": "G1X9E2",
     "database": "Swiss-Prot",
@@ -574,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GPR2_ARTOA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
-  "selected_historical_source_sequence_sha256": "4e764ad5fe8865d73836f34a410857326f248f960936c909cff720a56696f0f3",
-  "selected_historical_source_sequence_length": 406,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 45,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -609,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json",
-  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G1X9E2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
+  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json"
 }
 ```
 
@@ -628,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json",
-  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":47,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-11-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
+  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json"
 }
 ```
 
@@ -647,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json",
-  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Nematode-trapping fungus\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000008784\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Orbiliomycetes\",\"Orbiliales\",\"Orbiliaceae\",\"Orbilia\",\"Orbilia oligospora\"],\"scientificName\":\"Arthrobotrys oligospora (strain ATCC 24927 / CBS 115.81 / DSM 1491)\",\"synonyms\":[\"Didymozoophaga oligospora\"],\"taxonId\":756982}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
+  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json"
 }
 ```
 
@@ -666,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json",
-  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Ascaroside receptor GPR2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
+  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json"
 }
 ```
 
@@ -685,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json",
-  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38649409\",\"source\":\"PubMed\"}],\"value\":\"Relocalizes to the vacuole following stimulation by ligand\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38649409\",\"source\":\"PubMed\"}],\"id\":\"SL-0039\",\"value\":\"Cell membrane\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"id\":\"SL-9909\",\"value\":\"Multi-pass membrane protein\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
+  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json"
 }
 ```
 
@@ -704,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json",
-  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/11",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/11",
+  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
+  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json"
 }
 ```
 
@@ -723,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json",
-  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
-  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Kuo C.Y.\",\"Tay R.J.\",\"Lin H.C.\",\"Juan S.C.\",\"Vidal-Diez de Ulzurrun G.\",\"Chang Y.C.\",\"Hoki J.\",\"Schroeder F.C.\",\"Hsueh Y.P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38649409\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41564-024-01679-w\"}],\"citationType\":\"journal article\",\"firstPage\":\"1738\",\"id\":\"38649409\",\"journal\":\"Nat. Microbiol.\",\"lastPage\":\"1751\",\"publicationDate\":\"2024\",\"title\":\"The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors.\",\"volume\":\"9\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38649409\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"TWF154\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"INTERACTION WITH GPA2 AND GPR3\",\"SUBCELLULAR LOCATION\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:30.739464+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d672d0bdd6e6d87681068eb4f338f9f4a6f7cf51e1400211480752ecd223995f",
+  "url": "https://rest.uniprot.org/uniprotkb/G1X9E2.json"
 }
 ```
 
@@ -741,18 +486,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45",
-  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
-  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   GPR2_ARTOA              Reviewed;         406 AA.\nAC   G1X9E2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-NOV-2011, sequence version 1.\nDT   28-JAN-2026, entry version 45.\nDE   RecName: Full=Ascaroside receptor GPR2 {ECO:0000305};\nGN   Name=GPR2 {ECO:0000303|PubMed:38649409};\nGN   ORFNames=AOL_s00076g249 {ECO:0000312|EMBL:EGX50174.1};\nOS   Arthrobotrys oligospora (strain ATCC 24927 / CBS 115.81 / DSM 1491)\nOS   (Nematode-trapping fungus) (Didymozoophaga oligospora).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Orbiliomycetes;\nOC   Orbiliales; Orbiliaceae; Orbilia; Orbilia oligospora.\nOX   NCBI_TaxID=756982 {ECO:0000312|Proteomes:UP000008784};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
+  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45"
 }
 ```
 
@@ -762,18 +507,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45",
-  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
-  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
-  "source_locator": "lines 25-34",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, INTERACTION WITH GPA2 AND GPR3, SUBCELLULAR LOCATION, INDUCTION,\nRP   AND DISRUPTION PHENOTYPE.\nRC   STRAIN=TWF154 {ECO:0000303|PubMed:38649409};\nRX   PubMed=38649409; DOI=10.1038/s41564-024-01679-w;\nRA   Kuo C.Y., Tay R.J., Lin H.C., Juan S.C., Vidal-Diez de Ulzurrun G.,\nRA   Chang Y.C., Hoki J., Schroeder F.C., Hsueh Y.P.;\nRT   \"The nematode-trapping fungus Arthrobotrys oligospora detects prey\nRT   pheromones via G protein-coupled receptors.\";\nRL   Nat. Microbiol. 9:1738-1751(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
+  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45"
 }
 ```
 
@@ -783,18 +528,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45",
-  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
-  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
-  "source_locator": "lines 43-45",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cell membrane {ECO:0000269|PubMed:38649409};\nCC       Multi-pass membrane protein {ECO:0000255}. Note=Relocalizes to the\nCC       vacuole following stimulation by ligand. {ECO:0000269|PubMed:38649409}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
+  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45"
 }
 ```
 
@@ -804,18 +549,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45",
-  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
-  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
-  "source_locator": "lines 69-69",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:32.723564+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 69-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e35d509b45ea64e3eac1fedae5691280c0fa8c7205a8651df542bc73ee054a3f",
+  "url": "https://rest.uniprot.org/unisave/G1X9E2?format=txt&versions=45"
 }
 ```
 
@@ -826,15 +571,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59450-59472",
   "excerpt": "[Term]\nid: GO:0005783\nname: endoplasmic reticulum\nnamespace: cellular_component\ndef: \"The irregular network of unit membranes, visible only by electron microscopy, that occurs in the cytoplasm of many eukaryotic cells. The membranes form a complex meshwork of tubular channels, which are often expanded into slitlike cavities called cisternae. The ER takes two forms, rough (or granular), with ribosomes adhering to the outer surface, and smooth (with no ribosomes attached).\" [ISBN:0198506732]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_yeast\nsynonym: \"ER\" EXACT []\nxref: NIF_Subcellular:sao1036339110\nxref: Wikipedia:Endoplasmic_reticulum\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\nrelationship: part_of GO:0005737 ! cytoplasm\nrelationship: part_of GO:0012505 ! endomembrane system\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005783",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59450-59472",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005783"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -845,15 +590,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60420-60454",
   "excerpt": "[Term]\nid: GO:0005886\nname: plasma membrane\nnamespace: cellular_component\nalt_id: GO:0005887\nalt_id: GO:0005904\ndef: \"The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.\" [ISBN:0716731363]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"bacterial inner membrane\" NARROW []\nsynonym: \"cell membrane\" EXACT []\nsynonym: \"cellular membrane\" EXACT [NIF_Subcellular:sao6433132645]\nsynonym: \"cytoplasmic membrane\" EXACT []\nsynonym: \"inner endospore membrane\" NARROW []\nsynonym: \"integral component of plasma membrane\" NARROW []\nsynonym: \"integral to plasma membrane\" NARROW []\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"plasma membrane lipid bilayer\" NARROW [GOC:mah]\nsynonym: \"plasmalemma\" EXACT []\nxref: NIF_Subcellular:sao1663586795\nxref: Wikipedia:Cell_membrane\nis_a: GO:0016020 ! membrane\nrelationship: part_of GO:0071944 ! cell periphery\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60420-60454",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -864,15 +609,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 101772-101784",
   "excerpt": "[Term]\nid: GO:0009986\nname: cell surface\nnamespace: cellular_component\nalt_id: GO:0009928\nalt_id: GO:0009929\ndef: \"The external part of the cell wall and/or plasma membrane.\" [GOC:jl, GOC:mtg_sensu, GOC:sm]\ncomment: Note that this term is intended to annotate gene products that are attached (integrated or loosely bound) to the plasma membrane or cell wall.\nsubset: goslim_pir\nsynonym: \"cell associated\" EXACT []\nsynonym: \"cell bound\" EXACT []\nis_a: GO:0110165 ! cellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009986",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 101772-101784",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009986"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -883,15 +628,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 174523-174532",
   "excerpt": "[Term]\nid: GO:0031252\nname: cell leading edge\nnamespace: cellular_component\ndef: \"The area of a motile cell closest to the direction of movement.\" [GOC:pg]\nsubset: goslim_pir\nsynonym: \"front of cell\" EXACT []\nsynonym: \"leading edge of cell\" EXACT []\nis_a: GO:0110165 ! cellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031252",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 174523-174532",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031252"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

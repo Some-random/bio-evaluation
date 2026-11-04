@@ -1,18 +1,16 @@
-# pathway_0069: before and after transfer clarification
+# pathway_0069
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0069.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0069.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Capsule biogenesis
+**Expected answer:** **C** — Capsule biogenesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Campylobacter jejuni strain 81116 protein annotated as N-acylneuraminate cytidylyltransferase. Its pathway annotation assigns it to capsule biogenesis and cites experimental literature, supporting choice C. The excerpts report the annotation and its evidence citation; they do not independently present the underlying experiments.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support predictions about protein family or enzymatic function, but the input gives no organism, pathway context, or other clear evidence that identifies which candidate pathway this specific protein serves.
-
-
-**Missing item-specific fact**
-
-> The protein's identity and role as an N-acylneuraminate cytidylyltransferase in capsule-polysaccharide precursor biosynthesis.
-
-
-**Reason**
-
-> Distinguishing capsule biogenesis from the listed alternatives requires a protein-specific functional or pathway annotation not supplied in the question. Recognizing the sequence or relying on an unspecified predictor would not make the distinction reasoning-supported.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only evidence supports C for the matched protein. The sequence-only prompt does not provide enough context to distinguish the choices, but that lack of information does not establish another option as correct.
-
-
-### Important caveats
-
-- The archived and current UniProt records match the supplied sequence and identify the same strain-specific protein.
-- The pathway annotation cites a 2024 publication with an experimental evidence code; the primary paper was not independently reviewed here.
-- The author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support predictions about protein family or enzymatic function, but the input gives no organism, pathway context, or other clear evidence that identifies which candidate pathway this specific protein serves.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity and role as an N-acylneuraminate cytidylyltransferase in capsule-polysaccharide precursor biosynthesis.",
-    "reason": "Distinguishing capsule biogenesis from the listed alternatives requires a protein-specific functional or pathway annotation not supplied in the question. Recognizing the sequence or relying on an unspecified predictor would not make the distinction reasoning-supported."
-  },
-  "case_id": "pathway_0069",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Campylobacter jejuni strain 81116 protein annotated as N-acylneuraminate cytidylyltransferase. Its pathway annotation assigns it to capsule biogenesis and cites experimental literature, supporting choice C. The excerpts report the annotation and its evidence citation; they do not independently present the underlying experiments."
-  },
-  "important_caveats": [
-    "The archived and current UniProt records match the supplied sequence and identify the same strain-specific protein.",
-    "The pathway annotation cites a 2024 publication with an experimental evidence code; the primary paper was not independently reviewed here.",
-    "The author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports C for the matched protein. The sequence-only prompt does not provide enough context to distinguish the choices, but that lack of information does not establish another option as correct."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0069",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Campylobacter jejuni strain 81116 protein annotated as N-acylneuraminate cytidylyltransferase. Its pathway annotation assigns it to capsule biogenesis and cites experimental literature, supporting choice C. The excerpts report the annotation and its evidence citation; they do not independently present the underlying experiments.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support predictions about protein family or enzymatic function, but the input gives no organism, pathway context, or other clear evidence that identifies which candidate pathway this specific protein serves.",
-    "missing_item_specific_fact": "The protein's identity and role as an N-acylneuraminate cytidylyltransferase in capsule-polysaccharide precursor biosynthesis.",
-    "reason": "Distinguishing capsule biogenesis from the listed alternatives requires a protein-specific functional or pathway annotation not supplied in the question. Recognizing the sequence or relying on an unspecified predictor would not make the distinction reasoning-supported."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports C for the matched protein. The sequence-only prompt does not provide enough context to distinguish the choices, but that lack of information does not establish another option as correct."
-  },
-  "important_caveats": [
-    "The archived and current UniProt records match the supplied sequence and identify the same strain-specific protein.",
-    "The pathway annotation cites a 2024 publication with an experimental evidence code; the primary paper was not independently reviewed here.",
-    "The author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt P0DY07 (NEUAC_CAMJ8), N-acylneuraminate cytidylyltransferase (EC 2.7.7.43, CMP-Neu5Ac synthase) from Campylobacter jejuni. The UniProt pathway annotation explicitly states 'Capsule biogenesis; capsule polysaccharide biosynthesis' with experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel 2024). Sequence SHA256 match confirmed across current and historical records.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable P-loop/NTP-binding motif (GAGAGKTT ~residues 180-188) suggesting a nucleotidyltransferase, which is consistent with a cytidylyltransferase. However, the nucleotidyltransferase superfamily is enormous and spans dozens of pathways. Identifying this specific enzyme as CMP-N-acetylneuraminate synthase, and then recognizing that in Campylobacter jejuni sialic acid metabolism feeds into capsule polysaccharide biosynthesis (rather than, say, glycolipid or glycoprotein modification pathways), requires item-specific knowledge of this enzyme's substrate specificity and its organism-specific metabolic role.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as CMP-Neu5Ac synthase (a sialic acid-activating cytidylyltransferase) and the fact that in Campylobacter jejuni, sialic acid (Neu5Ac) is incorporated into the capsular polysaccharide rather than serving other metabolic roles. Neither the substrate specificity nor the organism context is derivable from the bare sequence without database lookup or memorization.
-
-
-**Reason**
-
-> While the P-loop motif hints at a nucleotidyltransferase, this is far too broad to distinguish capsule biogenesis from amino-acid degradation or other pathways. The critical step—identifying the substrate as N-acetylneuraminate and linking sialic acid metabolism to capsule biosynthesis in Campylobacter—is an item-specific annotation fact not inferable from general biological reasoning on the sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options are sufficiently distinct. Option D (amino-acid degradation) is a weak distractor since sialic acid is an amino sugar, but sialic acid metabolism is not amino-acid degradation. Options A and B are clearly unrelated pathways. Given the correct annotation, C is the only defensible answer.
-
-
-### Important caveats
-
-- The UniProt entry P0DY07 was first publicly released on 2025-06-18, with the key experimental paper (PubMed:38382015) published in 2024. The author's source snapshot date is unknown; if the benchmark was constructed before June 2025, the pathway annotation may not have been in Swiss-Prot at construction time.
-- The pathway assignment is supported by in vitro biochemical characterization (Ghosh & Raushel, Biochemistry 2024), not merely computational transfer, lending strong experimental support to the key.
-- The organism (Campylobacter jejuni) is not provided to the model, which removes important contextual information for pathway assignment.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable P-loop/NTP-binding motif (GAGAGKTT ~residues 180-188) suggesting a nucleotidyltransferase, which is consistent with a cytidylyltransferase. However, the nucleotidyltransferase superfamily is enormous and spans dozens of pathways. Identifying this specific enzyme as CMP-N-acetylneuraminate synthase, and then recognizing that in Campylobacter jejuni sialic acid metabolism feeds into capsule polysaccharide biosynthesis (rather than, say, glycolipid or glycoprotein modification pathways), requires item-specific knowledge of this enzyme's substrate specificity and its organism-specific metabolic role.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as CMP-Neu5Ac synthase (a sialic acid-activating cytidylyltransferase) and the fact that in Campylobacter jejuni, sialic acid (Neu5Ac) is incorporated into the capsular polysaccharide rather than serving other metabolic roles. Neither the substrate specificity nor the organism context is derivable from the bare sequence without database lookup or memorization.",
-    "reason": "While the P-loop motif hints at a nucleotidyltransferase, this is far too broad to distinguish capsule biogenesis from amino-acid degradation or other pathways. The critical step—identifying the substrate as N-acetylneuraminate and linking sialic acid metabolism to capsule biosynthesis in Campylobacter—is an item-specific annotation fact not inferable from general biological reasoning on the sequence alone."
-  },
-  "case_id": "pathway_0069",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt P0DY07 (NEUAC_CAMJ8), N-acylneuraminate cytidylyltransferase (EC 2.7.7.43, CMP-Neu5Ac synthase) from Campylobacter jejuni. The UniProt pathway annotation explicitly states 'Capsule biogenesis; capsule polysaccharide biosynthesis' with experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel 2024). Sequence SHA256 match confirmed across current and historical records."
-  },
-  "important_caveats": [
-    "The UniProt entry P0DY07 was first publicly released on 2025-06-18, with the key experimental paper (PubMed:38382015) published in 2024. The author's source snapshot date is unknown; if the benchmark was constructed before June 2025, the pathway annotation may not have been in Swiss-Prot at construction time.",
-    "The pathway assignment is supported by in vitro biochemical characterization (Ghosh & Raushel, Biochemistry 2024), not merely computational transfer, lending strong experimental support to the key.",
-    "The organism (Campylobacter jejuni) is not provided to the model, which removes important contextual information for pathway assignment."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are sufficiently distinct. Option D (amino-acid degradation) is a weak distractor since sialic acid is an amino sugar, but sialic acid metabolism is not amino-acid degradation. Options A and B are clearly unrelated pathways. Given the correct annotation, C is the only defensible answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0069",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt P0DY07 (NEUAC_CAMJ8), N-acylneuraminate cytidylyltransferase (EC 2.7.7.43, CMP-Neu5Ac synthase) from Campylobacter jejuni. The UniProt pathway annotation explicitly states 'Capsule biogenesis; capsule polysaccharide biosynthesis' with experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel 2024). Sequence SHA256 match confirmed across current and historical records.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a recognizable P-loop/NTP-binding motif (GAGAGKTT ~residues 180-188) suggesting a nucleotidyltransferase, which is consistent with a cytidylyltransferase. However, the nucleotidyltransferase superfamily is enormous and spans dozens of pathways. Identifying this specific enzyme as CMP-N-acetylneuraminate synthase, and then recognizing that in Campylobacter jejuni sialic acid metabolism feeds into capsule polysaccharide biosynthesis (rather than, say, glycolipid or glycoprotein modification pathways), requires item-specific knowledge of this enzyme's substrate specificity and its organism-specific metabolic role.",
-    "missing_item_specific_fact": "The specific identity of this protein as CMP-Neu5Ac synthase (a sialic acid-activating cytidylyltransferase) and the fact that in Campylobacter jejuni, sialic acid (Neu5Ac) is incorporated into the capsular polysaccharide rather than serving other metabolic roles. Neither the substrate specificity nor the organism context is derivable from the bare sequence without database lookup or memorization.",
-    "reason": "While the P-loop motif hints at a nucleotidyltransferase, this is far too broad to distinguish capsule biogenesis from amino-acid degradation or other pathways. The critical step—identifying the substrate as N-acetylneuraminate and linking sialic acid metabolism to capsule biosynthesis in Campylobacter—is an item-specific annotation fact not inferable from general biological reasoning on the sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are sufficiently distinct. Option D (amino-acid degradation) is a weak distractor since sialic acid is an amino sugar, but sialic acid metabolism is not amino-acid degradation. Options A and B are clearly unrelated pathways. Given the correct annotation, C is the only defensible answer."
-  },
-  "important_caveats": [
-    "The UniProt entry P0DY07 was first publicly released on 2025-06-18, with the key experimental paper (PubMed:38382015) published in 2024. The author's source snapshot date is unknown; if the benchmark was constructed before June 2025, the pathway annotation may not have been in Swiss-Prot at construction time.",
-    "The pathway assignment is supported by in vitro biochemical characterization (Ghosh & Raushel, Biochemistry 2024), not merely computational transfer, lending strong experimental support to the key.",
-    "The organism (Campylobacter jejuni) is not provided to the model, which removes important contextual information for pathway assignment."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DY07",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 394,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -537,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "current_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 394,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DY07",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "selected_historical_source_sequence_length": 394,
+  "selected_historical_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
   "selected_historical_version": {
     "accession": "P0DY07",
     "database": "Swiss-Prot",
@@ -555,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NEUAC_CAMJ8",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "selected_historical_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
-  "selected_historical_source_sequence_length": 394,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DY07\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -605,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -624,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Campylobacterota\",\"Epsilonproteobacteria\",\"Campylobacterales\",\"Campylobacteraceae\",\"Campylobacter\"],\"scientificName\":\"Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC 11828)\",\"taxonId\":407148}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -643,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"CMP-N-acetylneuraminate synthase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"CMP-Neu5Ac synthase\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"2.7.7.43\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"N-acylneuraminate cytidylyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -662,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"Capsule biogenesis; capsule polysaccharide biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -681,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Ghosh M.K.\",\"Raushel F.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38382015\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.3c00664\"}],\"citationType\":\"journal article\",\"firstPage\":\"688\",\"id\":\"38382015\",\"journal\":\"Biochemistry\",\"lastPage\":\"698\",\"publicationDate\":\"2024\",\"title\":\"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter jejuni.\",\"volume\":\"63\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"81116 / NCTC 11828\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -699,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   NEUAC_CAMJ8             Reviewed;         394 AA.\nAC   P0DY07;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=N-acylneuraminate cytidylyltransferase {ECO:0000305};\nDE            EC=2.7.7.43 {ECO:0000269|PubMed:38382015};\nDE   AltName: Full=CMP-N-acetylneuraminate synthase {ECO:0000303|PubMed:38382015};\nDE            Short=CMP-Neu5Ac synthase {ECO:0000303|PubMed:38382015};\nGN   Name=HS6.5 {ECO:0000303|PubMed:38382015};\nGN   OrderedLocusNames=C8J_1333 {ECO:0000312|EMBL:ABV52931.1};\nOS   Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC\nOS   11828).\nOC   Bacteria; Pseudomonadati; Campylobacterota; Epsilonproteobacteria;\nOC   Campylobacterales; Campylobacteraceae; Campylobacter.\nOX   NCBI_TaxID=407148;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 
@@ -720,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 26-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND PATHWAY.\nRC   STRAIN=81116 / NCTC 11828;\nRX   PubMed=38382015; DOI=10.1021/acs.biochem.3c00664;\nRA   Ghosh M.K., Raushel F.M.;\nRT   \"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-\nRT   Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter\nRT   jejuni.\";\nRL   Biochemistry 63:688-698(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 
@@ -741,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 57-58",
   "excerpt": "CC   -!- PATHWAY: Capsule biogenesis; capsule polysaccharide biosynthesis.\nCC       {ECO:0000269|PubMed:38382015}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 57-58",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 

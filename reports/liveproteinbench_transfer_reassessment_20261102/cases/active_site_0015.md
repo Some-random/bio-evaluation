@@ -1,18 +1,16 @@
-# active_site_0015: before and after transfer clarification
+# active_site_0015
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0015.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0015.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 385 (Glycyl thioester intermediate)
+**Expected answer:** **B** — Position 385 (Glycyl thioester intermediate)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry A0A1I1P074, which annotates position 385 as the active site for a glycyl thioester intermediate. The annotation cites a paper that includes mutagenesis of Cys-385. This supports choice B, though the primary experimental results were not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and options reveal that positions 661 and 700 exceed the 461-residue sequence, and position 10 is leucine, making those distractors implausible. But this does not establish which in-range residue is the active site or that it forms a glycyl thioester intermediate.
-
-
-**Missing item-specific fact**
-
-> That Cys-385 of this particular protein is annotated as the active site involved in a glycyl thioester intermediate.
-
-
-**Reason**
-
-> The keyed role is a protein-specific functional fact not established by the supplied sequence alone. The supporting annotation and cited mutagenesis evidence are reviewer-only, not information supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> B is the only plausible listed option: the other positions are out of range or identify leucine as a proton donor. Those eliminations do not independently demonstrate the active-site role.
-
-
-### Important caveats
-
-- The supporting UniProt annotation is linked to a publication and mutagenesis of Cys-385, but the primary paper was not independently assessed.
-- The sequence match establishes applicability of the annotation to the supplied sequence; the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and options reveal that positions 661 and 700 exceed the 461-residue sequence, and position 10 is leucine, making those distractors implausible. But this does not establish which in-range residue is the active site or that it forms a glycyl thioester intermediate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That Cys-385 of this particular protein is annotated as the active site involved in a glycyl thioester intermediate.",
-    "reason": "The keyed role is a protein-specific functional fact not established by the supplied sequence alone. The supporting annotation and cited mutagenesis evidence are reviewer-only, not information supplied to the evaluated model."
-  },
-  "case_id": "active_site_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry A0A1I1P074, which annotates position 385 as the active site for a glycyl thioester intermediate. The annotation cites a paper that includes mutagenesis of Cys-385. This supports choice B, though the primary experimental results were not independently reviewed here."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation is linked to a publication and mutagenesis of Cys-385, but the primary paper was not independently assessed.",
-    "The sequence match establishes applicability of the annotation to the supplied sequence; the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B is the only plausible listed option: the other positions are out of range or identify leucine as a proton donor. Those eliminations do not independently demonstrate the active-site role."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry A0A1I1P074, which annotates position 385 as the active site for a glycyl thioester intermediate. The annotation cites a paper that includes mutagenesis of Cys-385. This supports choice B, though the primary experimental results were not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "C6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and options reveal that positions 661 and 700 exceed the 461-residue sequence, and position 10 is leucine, making those distractors implausible. But this does not establish which in-range residue is the active site or that it forms a glycyl thioester intermediate.",
-    "missing_item_specific_fact": "That Cys-385 of this particular protein is annotated as the active site involved in a glycyl thioester intermediate.",
-    "reason": "The keyed role is a protein-specific functional fact not established by the supplied sequence alone. The supporting annotation and cited mutagenesis evidence are reviewer-only, not information supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B is the only plausible listed option: the other positions are out of range or identify leucine as a proton donor. Those eliminations do not independently demonstrate the active-site role."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation is linked to a publication and mutagenesis of Cys-385, but the primary paper was not independently assessed.",
-    "The sequence match establishes applicability of the annotation to the supplied sequence; the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A1I1P074 (Bacterial E1-like protein BilD, EC 6.2.1.-) annotates an Active site at position 385 described as 'Glycyl thioester intermediate' (evidence ECO:0000305, PubMed:39020165). The cited reference (Hoer et al., Nature 631:850-856, 2024) reports 'FUNCTION, PROBABLE ACTIVE SITE, AND MUTAGENESIS OF CYS-385,' providing experimental support via mutagenesis. The sequence SHA-256 matches exactly (461 AA). This is consistent with E1 enzyme biochemistry where a catalytic cysteine forms a thioester intermediate with ubiquitin/ubiquitin-like proteins. Options A (position 661) and D (position 700) are beyond the 461-residue protein length, making them impossible.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General E1 enzyme biochemistry states that E1 (ubiquitin-activating) enzymes use a catalytic cysteine to form a thioester intermediate with the C-terminus of ubiquitin/ubiquitin-like proteins. This mechanistic knowledge eliminates option C ('Proton donor'), which is inconsistent with E1 catalysis. Options A and D are trivially eliminable because positions 661 and 700 exceed the 461-residue protein length. However, positively identifying this specific protein as E1-like from the raw sequence (to invoke E1 mechanism) and pinpointing the exact catalytic cysteine at position 385 require protein-specific annotation knowledge or domain-recognition tooling not derivable from general reasoning alone.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as a bacterial E1-like protein (BilD) and the exact position of its catalytic cysteine (385) are protein-specific facts. While the mechanistic description in option B is consistent with E1 biochemistry, confirming that this particular sequence is an E1-like enzyme and that Cys-385 is its catalytic residue requires database annotation or structural/biochemical characterization of this specific protein.
-
-
-**Reason**
-
-> The trivial elimination of out-of-range positions (A, D) and the mechanistic inconsistency of 'proton donor' with E1 catalysis (C) provide some reasoning grounds. However, the positive identification of B requires recognizing this specific protein as E1-like from the raw sequence and knowing that position 385 harbors the catalytic cysteine—both of which are item-specific facts not derivable from general biological reasoning applied to the sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and D reference positions (661, 700) that exceed the 461-residue protein length, making them physically impossible. Option C ('Proton donor') is mechanistically inconsistent with E1 enzyme catalysis. Only option B provides both a valid position within the protein and a mechanistically correct description for an E1-like enzyme. No ambiguity among defensible choices.
-
-
-### Important caveats
-
-- Options A and D are trivially eliminable by noting positions 661 and 700 exceed the 461-residue sequence length, reducing effective difficulty.
-- The UniProt annotation evidence code ECO:0000305 indicates curator inference from the PubMed reference, but the underlying reference includes mutagenesis of Cys-385 (experimental support).
-- The protein was only integrated into Swiss-Prot in April 2025; the author's source snapshot timing is unknown but the sequence has been unchanged since 2017.
-- The reviewer-only evidence was absent from the evaluated model's input; the model must work from the raw sequence and options alone.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General E1 enzyme biochemistry states that E1 (ubiquitin-activating) enzymes use a catalytic cysteine to form a thioester intermediate with the C-terminus of ubiquitin/ubiquitin-like proteins. This mechanistic knowledge eliminates option C ('Proton donor'), which is inconsistent with E1 catalysis. Options A and D are trivially eliminable because positions 661 and 700 exceed the 461-residue protein length. However, positively identifying this specific protein as E1-like from the raw sequence (to invoke E1 mechanism) and pinpointing the exact catalytic cysteine at position 385 require protein-specific annotation knowledge or domain-recognition tooling not derivable from general reasoning alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as a bacterial E1-like protein (BilD) and the exact position of its catalytic cysteine (385) are protein-specific facts. While the mechanistic description in option B is consistent with E1 biochemistry, confirming that this particular sequence is an E1-like enzyme and that Cys-385 is its catalytic residue requires database annotation or structural/biochemical characterization of this specific protein.",
-    "reason": "The trivial elimination of out-of-range positions (A, D) and the mechanistic inconsistency of 'proton donor' with E1 catalysis (C) provide some reasoning grounds. However, the positive identification of B requires recognizing this specific protein as E1-like from the raw sequence and knowing that position 385 harbors the catalytic cysteine—both of which are item-specific facts not derivable from general biological reasoning applied to the sequence alone."
-  },
-  "case_id": "active_site_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A1I1P074 (Bacterial E1-like protein BilD, EC 6.2.1.-) annotates an Active site at position 385 described as 'Glycyl thioester intermediate' (evidence ECO:0000305, PubMed:39020165). The cited reference (Hoer et al., Nature 631:850-856, 2024) reports 'FUNCTION, PROBABLE ACTIVE SITE, AND MUTAGENESIS OF CYS-385,' providing experimental support via mutagenesis. The sequence SHA-256 matches exactly (461 AA). This is consistent with E1 enzyme biochemistry where a catalytic cysteine forms a thioester intermediate with ubiquitin/ubiquitin-like proteins. Options A (position 661) and D (position 700) are beyond the 461-residue protein length, making them impossible."
-  },
-  "important_caveats": [
-    "Options A and D are trivially eliminable by noting positions 661 and 700 exceed the 461-residue sequence length, reducing effective difficulty.",
-    "The UniProt annotation evidence code ECO:0000305 indicates curator inference from the PubMed reference, but the underlying reference includes mutagenesis of Cys-385 (experimental support).",
-    "The protein was only integrated into Swiss-Prot in April 2025; the author's source snapshot timing is unknown but the sequence has been unchanged since 2017.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model must work from the raw sequence and options alone."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D reference positions (661, 700) that exceed the 461-residue protein length, making them physically impossible. Option C ('Proton donor') is mechanistically inconsistent with E1 enzyme catalysis. Only option B provides both a valid position within the protein and a mechanistically correct description for an E1-like enzyme. No ambiguity among defensible choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A1I1P074 (Bacterial E1-like protein BilD, EC 6.2.1.-) annotates an Active site at position 385 described as 'Glycyl thioester intermediate' (evidence ECO:0000305, PubMed:39020165). The cited reference (Hoer et al., Nature 631:850-856, 2024) reports 'FUNCTION, PROBABLE ACTIVE SITE, AND MUTAGENESIS OF CYS-385,' providing experimental support via mutagenesis. The sequence SHA-256 matches exactly (461 AA). This is consistent with E1 enzyme biochemistry where a catalytic cysteine forms a thioester intermediate with ubiquitin/ubiquitin-like proteins. Options A (position 661) and D (position 700) are beyond the 461-residue protein length, making them impossible.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General E1 enzyme biochemistry states that E1 (ubiquitin-activating) enzymes use a catalytic cysteine to form a thioester intermediate with the C-terminus of ubiquitin/ubiquitin-like proteins. This mechanistic knowledge eliminates option C ('Proton donor'), which is inconsistent with E1 catalysis. Options A and D are trivially eliminable because positions 661 and 700 exceed the 461-residue protein length. However, positively identifying this specific protein as E1-like from the raw sequence (to invoke E1 mechanism) and pinpointing the exact catalytic cysteine at position 385 require protein-specific annotation knowledge or domain-recognition tooling not derivable from general reasoning alone.",
-    "missing_item_specific_fact": "The specific identity of this protein as a bacterial E1-like protein (BilD) and the exact position of its catalytic cysteine (385) are protein-specific facts. While the mechanistic description in option B is consistent with E1 biochemistry, confirming that this particular sequence is an E1-like enzyme and that Cys-385 is its catalytic residue requires database annotation or structural/biochemical characterization of this specific protein.",
-    "reason": "The trivial elimination of out-of-range positions (A, D) and the mechanistic inconsistency of 'proton donor' with E1 catalysis (C) provide some reasoning grounds. However, the positive identification of B requires recognizing this specific protein as E1-like from the raw sequence and knowing that position 385 harbors the catalytic cysteine—both of which are item-specific facts not derivable from general biological reasoning applied to the sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D reference positions (661, 700) that exceed the 461-residue protein length, making them physically impossible. Option C ('Proton donor') is mechanistically inconsistent with E1 enzyme catalysis. Only option B provides both a valid position within the protein and a mechanistically correct description for an E1-like enzyme. No ambiguity among defensible choices."
-  },
-  "important_caveats": [
-    "Options A and D are trivially eliminable by noting positions 661 and 700 exceed the 461-residue sequence length, reducing effective difficulty.",
-    "The UniProt annotation evidence code ECO:0000305 indicates curator inference from the PubMed reference, but the underlying reference includes mutagenesis of Cys-385 (experimental support).",
-    "The protein was only integrated into Swiss-Prot in April 2025; the author's source snapshot timing is unknown but the sequence has been unchanged since 2017.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model must work from the raw sequence and options alone."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A1I1P074",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "41932a11ef3e7a2f44ccd75bad17dee7b891dfe4dd486698c3c078f6b2c6f62e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 461,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "41932a11ef3e7a2f44ccd75bad17dee7b891dfe4dd486698c3c078f6b2c6f62e",
   "current_entry_audit": {
     "entryVersion": 15,
     "firstPublicDate": "2025-04-09",
@@ -534,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-11-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
-  "current_source_sequence_sha256": "41932a11ef3e7a2f44ccd75bad17dee7b891dfe4dd486698c3c078f6b2c6f62e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 461,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "41932a11ef3e7a2f44ccd75bad17dee7b891dfe4dd486698c3c078f6b2c6f62e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 13,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A1I1P074",
   "selected_historical_entry_version": 13,
+  "selected_historical_record_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
+  "selected_historical_source_sequence_length": 461,
+  "selected_historical_source_sequence_sha256": "41932a11ef3e7a2f44ccd75bad17dee7b891dfe4dd486698c3c078f6b2c6f62e",
   "selected_historical_version": {
     "accession": "A0A1I1P074",
     "database": "Swiss-Prot",
@@ -552,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BILD_COLS4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
-  "selected_historical_source_sequence_sha256": "41932a11ef3e7a2f44ccd75bad17dee7b891dfe4dd486698c3c078f6b2c6f62e",
-  "selected_historical_source_sequence_length": 461,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 13,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json",
-  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
-  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A1I1P074\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json"
 }
 ```
 
@@ -602,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json",
-  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
-  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":15,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-11-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json"
 }
 ```
 
@@ -621,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json",
-  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
-  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Burkholderiales\",\"Oxalobacteraceae\",\"Collimonas\"],\"scientificName\":\"Collimonas sp. (strain OK412)\",\"taxonId\":1801619}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json"
 }
 ```
 
@@ -640,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json",
-  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
-  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"E1 ubiquitin-conjugating enzyme BilD\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"6.2.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"Bacterial E1-like protein BilD\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json"
 }
 ```
 
@@ -659,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json",
-  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
-  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Glycyl thioester intermediate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":385},\"start\":{\"modifier\":\"EXACT\",\"value\":385}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json"
 }
 ```
 
@@ -678,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json",
-  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
-  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Hoer J.\",\"Wolf S.G.\",\"Sorek R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39020165\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-024-07616-5\"}],\"citationType\":\"journal article\",\"firstPage\":\"850\",\"id\":\"39020165\",\"journal\":\"Nature\",\"lastPage\":\"856\",\"publicationDate\":\"2024\",\"title\":\"Bacteria conjugate ubiquitin-like proteins to interfere with phage assembly.\",\"volume\":\"631\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PROBABLE ACTIVE SITE\",\"MUTAGENESIS OF CYS-385\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:37.902008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85e7a104b9ec3fed02e35ea4232cf86a383df56f7435a81173e8fa183bf247be",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1P074.json"
 }
 ```
 
@@ -696,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1P074?format=txt&versions=13",
-  "source_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
-  "retrieved_utc": "2026-11-02T04:24:41.131133+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   BILD_COLS4              Reviewed;         461 AA.\nAC   A0A1I1P074;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-NOV-2017, sequence version 1.\nDT   28-JAN-2026, entry version 13.\nDE   RecName: Full=Bacterial E1-like protein BilD {ECO:0000303|PubMed:39020165};\nDE            EC=6.2.1.- {ECO:0000305|PubMed:39020165};\nDE   AltName: Full=E1 ubiquitin-conjugating enzyme BilD;\nGN   Name=bilD {ECO:0000303|PubMed:39020165};\nGN   ORFNames=SAMN04515619_11955 {ECO:0000312|EMBL:SFD01128.1};\nOS   Collimonas sp. (strain OK412).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria;\nOC   Burkholderiales; Oxalobacteraceae; Collimonas.\nOX   NCBI_TaxID=1801619;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-02T04:24:41.131133+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1P074?format=txt&versions=13"
 }
 ```
 
@@ -717,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1P074?format=txt&versions=13",
-  "source_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
-  "retrieved_utc": "2026-11-02T04:24:41.131133+00:00",
-  "source_locator": "lines 20-26",
   "excerpt": "RN   [2]\nRP   FUNCTION, PROBABLE ACTIVE SITE, AND MUTAGENESIS OF CYS-385.\nRX   PubMed=39020165; DOI=10.1038/s41586-024-07616-5;\nRA   Hoer J., Wolf S.G., Sorek R.;\nRT   \"Bacteria conjugate ubiquitin-like proteins to interfere with phage\nRT   assembly.\";\nRL   Nature 631:850-856(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-02T04:24:41.131133+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1P074?format=txt&versions=13"
 }
 ```
 
@@ -738,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1P074?format=txt&versions=13",
-  "source_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
-  "retrieved_utc": "2026-11-02T04:24:41.131133+00:00",
-  "source_locator": "lines 73-75",
   "excerpt": "FT   ACT_SITE        385\nFT                   /note=\"Glycyl thioester intermediate\"\nFT                   /evidence=\"ECO:0000305|PubMed:39020165\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-02T04:24:41.131133+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-75",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a37af1ad780f0f67b0b403cc351978c7e209c2d02ee53894ad0fc5e2c09bea6a",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1P074?format=txt&versions=13"
 }
 ```
 

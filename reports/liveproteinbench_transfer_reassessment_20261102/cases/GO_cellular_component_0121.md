@@ -1,18 +1,16 @@
-# GO_cellular_component_0121: before and after transfer clarification
+# GO_cellular_component_0121
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0121.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0121.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — nucleus
+**Expected answer:** **B** — nucleus
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | contradicted | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | contradicted | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | contradicted | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The exact-matching historical record describes the protein as secreted and has an extracellular-region annotation with IDA evidence. Its nucleus annotation is only IEA:TreeGrafter, a computational inference, so the evidence does not support nucleus as the primary location.
-
-Citations as saved: [H3](#evidence-h3), [H4](#evidence-h4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic stretch is consistent with a signal peptide and secretion, which argues against nuclear, mitochondrial-complex, or ADA-complex residence. But secretion does not establish that the protein is an egg-chorion component.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this sequence is the tsetse salivary protein Tsal1, reported as secreted; no listed option is extracellular or secreted.
-
-
-**Reason**
-
-> Sequence features suggest secretion, but do not identify an egg-chorion role or support any listed intracellular complex. Distinguishing a listed choice would require protein-specific information absent from the prompt.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports secretion/extracellular location, which is not among the choices. The sequence’s signal-peptide-like region does not make egg chorion a defensible specific assignment.
-
-
-### Important caveats
-
-- The sequence matches the cited UniProt record, but the accession was inferred from reviewer-only metadata and was not supplied to the evaluated model.
-- The extracellular IDA annotation cites a publication; the primary paper was not independently reviewed here.
-- The record also contains a nuclear annotation, but it is computationally inferred and does not outweigh the cited secreted/extracellular evidence for the primary-location claim.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with a signal peptide and secretion, which argues against nuclear, mitochondrial-complex, or ADA-complex residence. But secretion does not establish that the protein is an egg-chorion component.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence is the tsetse salivary protein Tsal1, reported as secreted; no listed option is extracellular or secreted.",
-    "reason": "Sequence features suggest secretion, but do not identify an egg-chorion role or support any listed intracellular complex. Distinguishing a listed choice would require protein-specific information absent from the prompt."
-  },
-  "case_id": "GO_cellular_component_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "H4",
-      "H6"
-    ],
-    "judgment": "contradicted",
-    "reason": "The exact-matching historical record describes the protein as secreted and has an extracellular-region annotation with IDA evidence. Its nucleus annotation is only IEA:TreeGrafter, a computational inference, so the evidence does not support nucleus as the primary location."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt record, but the accession was inferred from reviewer-only metadata and was not supplied to the evaluated model.",
-    "The extracellular IDA annotation cites a publication; the primary paper was not independently reviewed here.",
-    "The record also contains a nuclear annotation, but it is computationally inferred and does not outweigh the cited secreted/extracellular evidence for the primary-location claim."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports secretion/extracellular location, which is not among the choices. The sequence’s signal-peptide-like region does not make egg chorion a defensible specific assignment."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0121",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The exact-matching historical record describes the protein as secreted and has an extracellular-region annotation with IDA evidence. Its nucleus annotation is only IEA:TreeGrafter, a computational inference, so the evidence does not support nucleus as the primary location.",
-    "evidence_ids": ["H3", "H4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with a signal peptide and secretion, which argues against nuclear, mitochondrial-complex, or ADA-complex residence. But secretion does not establish that the protein is an egg-chorion component.",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence is the tsetse salivary protein Tsal1, reported as secreted; no listed option is extracellular or secreted.",
-    "reason": "Sequence features suggest secretion, but do not identify an egg-chorion role or support any listed intracellular complex. Distinguishing a listed choice would require protein-specific information absent from the prompt."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports secretion/extracellular location, which is not among the choices. The sequence’s signal-peptide-like region does not make egg chorion a defensible specific assignment."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt record, but the accession was inferred from reviewer-only metadata and was not supplied to the evaluated model.",
-    "The extracellular IDA annotation cites a publication; the primary paper was not independently reviewed here.",
-    "The record also contains a nuclear annotation, but it is computationally inferred and does not outweigh the cited secreted/extracellular evidence for the primary-location claim."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The protein D3TS87 is 'Salivary protein Tsal1' from Glossina morsitans morsitans. UniProt explicitly annotates its subcellular location as 'Secreted' with experimental evidence (ECO:0000305|PubMed:23110062), and the GO annotation for extracellular region (GO:0005576) carries an IDA:UniProtKB evidence code. The 'nucleus' annotation (GO:0005634) is only IEA:TreeGrafter — a purely computational homology-based prediction. The N-terminal sequence MALKLVYGVFTLALLGISSVNAD is a classic hydrophobic signal peptide consistent with the secretory pathway, not nuclear import. The author's key of 'nucleus' is contradicted by the experimental subcellular location annotation and the protein's identity as a secreted salivary gland protein.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [H3](#evidence-h3), [H4](#evidence-h4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic stretch (MALKLVYGVFTLALLGISSVNAD) is a canonical signal peptide indicating entry into the secretory pathway, which would lead a reasoning model to conclude the protein is secreted/extracellular. However, 'extracellular region' or 'secreted' is not among the four options. No biological reasoning from the sequence supports 'nucleus' — the protein lacks a nuclear localization signal, and the signal peptide argues against nuclear retention. The author's selection of 'nucleus' appears to rest on the mere presence of a GO:0005634 IEA:TreeGrafter annotation in the database, without regard to evidence strength.
-
-
-**Missing item-specific fact**
-
-> The correct cellular component (extracellular region / secreted) is absent from the option set. The author's key was apparently derived from a weak computational annotation (IEA:TreeGrafter) rather than the experimentally supported location, making the 'correct' answer identifiable only by knowing which specific GO term was recorded in the database entry, not by reasoning from the sequence.
-
-
-**Reason**
-
-> No sequence-based reasoning distinguishes 'nucleus' from the other three options for a protein with a clear signal peptide. The author's answer depends on selecting a specific database annotation (GO:0005634, IEA:TreeGrafter) while ignoring the stronger experimental annotation (GO:0005576, IDA:UniProtKB) and the 'Secreted' subcellular location comment. This is a lookup of a particular annotation rather than a reasoning task.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> None of the four options (egg chorion, nucleus, mitochondrial &#91;2Fe-2S&#93; assembly complex, ADA complex) correctly describe the location of a secreted salivary gland protein. The correct answer — extracellular region or secreted — is absent from the choices. The question is defective because no option is scientifically correct, and the author's key ('nucleus') is contradicted by experimental evidence. All four options are equally wrong for this protein, though 'nucleus' is the most directly contradicted by the IDA-level annotation.
-
-
-### Important caveats
-
-- The 'nucleus' GO annotation exists in the database but is IEA:TreeGrafter (computational prediction by homology), not experimental. The experimentally supported location is 'Secreted' (IDA-level evidence).
-- The protein's actual function (high-affinity nucleic acid binding with residual nuclease activity) occurs extracellularly in saliva during tsetse fly feeding, not in the nucleus.
-- The correct cellular component (extracellular region, GO:0005576) is not offered as an option, making the question fundamentally flawed regardless of which option is designated as correct.
-- The identity of the protein (D3TS87, Tsal1) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch (MALKLVYGVFTLALLGISSVNAD) is a canonical signal peptide indicating entry into the secretory pathway, which would lead a reasoning model to conclude the protein is secreted/extracellular. However, 'extracellular region' or 'secreted' is not among the four options. No biological reasoning from the sequence supports 'nucleus' — the protein lacks a nuclear localization signal, and the signal peptide argues against nuclear retention. The author's selection of 'nucleus' appears to rest on the mere presence of a GO:0005634 IEA:TreeGrafter annotation in the database, without regard to evidence strength.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The correct cellular component (extracellular region / secreted) is absent from the option set. The author's key was apparently derived from a weak computational annotation (IEA:TreeGrafter) rather than the experimentally supported location, making the 'correct' answer identifiable only by knowing which specific GO term was recorded in the database entry, not by reasoning from the sequence.",
-    "reason": "No sequence-based reasoning distinguishes 'nucleus' from the other three options for a protein with a clear signal peptide. The author's answer depends on selecting a specific database annotation (GO:0005634, IEA:TreeGrafter) while ignoring the stronger experimental annotation (GO:0005576, IDA:UniProtKB) and the 'Secreted' subcellular location comment. This is a lookup of a particular annotation rather than a reasoning task."
-  },
-  "case_id": "GO_cellular_component_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C8",
-      "H3",
-      "H4",
-      "H6"
-    ],
-    "judgment": "contradicted",
-    "reason": "The protein D3TS87 is 'Salivary protein Tsal1' from Glossina morsitans morsitans. UniProt explicitly annotates its subcellular location as 'Secreted' with experimental evidence (ECO:0000305|PubMed:23110062), and the GO annotation for extracellular region (GO:0005576) carries an IDA:UniProtKB evidence code. The 'nucleus' annotation (GO:0005634) is only IEA:TreeGrafter — a purely computational homology-based prediction. The N-terminal sequence MALKLVYGVFTLALLGISSVNAD is a classic hydrophobic signal peptide consistent with the secretory pathway, not nuclear import. The author's key of 'nucleus' is contradicted by the experimental subcellular location annotation and the protein's identity as a secreted salivary gland protein."
-  },
-  "important_caveats": [
-    "The 'nucleus' GO annotation exists in the database but is IEA:TreeGrafter (computational prediction by homology), not experimental. The experimentally supported location is 'Secreted' (IDA-level evidence).",
-    "The protein's actual function (high-affinity nucleic acid binding with residual nuclease activity) occurs extracellularly in saliva during tsetse fly feeding, not in the nucleus.",
-    "The correct cellular component (extracellular region, GO:0005576) is not offered as an option, making the question fundamentally flawed regardless of which option is designated as correct.",
-    "The identity of the protein (D3TS87, Tsal1) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "None of the four options (egg chorion, nucleus, mitochondrial [2Fe-2S] assembly complex, ADA complex) correctly describe the location of a secreted salivary gland protein. The correct answer — extracellular region or secreted — is absent from the choices. The question is defective because no option is scientifically correct, and the author's key ('nucleus') is contradicted by experimental evidence. All four options are equally wrong for this protein, though 'nucleus' is the most directly contradicted by the IDA-level annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0121",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The protein D3TS87 is 'Salivary protein Tsal1' from Glossina morsitans morsitans. UniProt explicitly annotates its subcellular location as 'Secreted' with experimental evidence (ECO:0000305|PubMed:23110062), and the GO annotation for extracellular region (GO:0005576) carries an IDA:UniProtKB evidence code. The 'nucleus' annotation (GO:0005634) is only IEA:TreeGrafter — a purely computational homology-based prediction. The N-terminal sequence MALKLVYGVFTLALLGISSVNAD is a classic hydrophobic signal peptide consistent with the secretory pathway, not nuclear import. The author's key of 'nucleus' is contradicted by the experimental subcellular location annotation and the protein's identity as a secreted salivary gland protein.",
-    "evidence_ids": ["C4", "C5", "C6", "C8", "H3", "H4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch (MALKLVYGVFTLALLGISSVNAD) is a canonical signal peptide indicating entry into the secretory pathway, which would lead a reasoning model to conclude the protein is secreted/extracellular. However, 'extracellular region' or 'secreted' is not among the four options. No biological reasoning from the sequence supports 'nucleus' — the protein lacks a nuclear localization signal, and the signal peptide argues against nuclear retention. The author's selection of 'nucleus' appears to rest on the mere presence of a GO:0005634 IEA:TreeGrafter annotation in the database, without regard to evidence strength.",
-    "missing_item_specific_fact": "The correct cellular component (extracellular region / secreted) is absent from the option set. The author's key was apparently derived from a weak computational annotation (IEA:TreeGrafter) rather than the experimentally supported location, making the 'correct' answer identifiable only by knowing which specific GO term was recorded in the database entry, not by reasoning from the sequence.",
-    "reason": "No sequence-based reasoning distinguishes 'nucleus' from the other three options for a protein with a clear signal peptide. The author's answer depends on selecting a specific database annotation (GO:0005634, IEA:TreeGrafter) while ignoring the stronger experimental annotation (GO:0005576, IDA:UniProtKB) and the 'Secreted' subcellular location comment. This is a lookup of a particular annotation rather than a reasoning task."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "None of the four options (egg chorion, nucleus, mitochondrial [2Fe-2S] assembly complex, ADA complex) correctly describe the location of a secreted salivary gland protein. The correct answer — extracellular region or secreted — is absent from the choices. The question is defective because no option is scientifically correct, and the author's key ('nucleus') is contradicted by experimental evidence. All four options are equally wrong for this protein, though 'nucleus' is the most directly contradicted by the IDA-level annotation."
-  },
-  "important_caveats": [
-    "The 'nucleus' GO annotation exists in the database but is IEA:TreeGrafter (computational prediction by homology), not experimental. The experimentally supported location is 'Secreted' (IDA-level evidence).",
-    "The protein's actual function (high-affinity nucleic acid binding with residual nuclease activity) occurs extracellularly in saliva during tsetse fly feeding, not in the nucleus.",
-    "The correct cellular component (extracellular region, GO:0005576) is not offered as an option, making the question fundamentally flawed regardless of which option is designated as correct.",
-    "The identity of the protein (D3TS87, Tsal1) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -396,10 +162,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -516,38 +281,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-### Source check 1
-
-**Check:** `historical_location_conflict_traced`.
-
-> The exact-sequence historical source H3 says secreted, H4 assigns extracellular region IDA, and H6 assigns nucleus IEA:TreeGrafter.
-
-**Remaining uncertainty:** The claim is anchored in the exact-match historical source; preserve current-source availability/match limitations and unknown author snapshot.
-
-Evidence checked: [H3](#evidence-h3), [H4](#evidence-h4), [H6](#evidence-h6).
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "D3TS87",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b256b68cfd3ed8b59941ec1d71aba386118a2dce105bd6733b69c36c45f6f404",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 399,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b256b68cfd3ed8b59941ec1d71aba386118a2dce105bd6733b69c36c45f6f404",
   "current_entry_audit": {
     "entryVersion": 55,
     "firstPublicDate": "2025-02-05",
@@ -555,14 +299,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-04-20",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "current_source_sequence_sha256": "b256b68cfd3ed8b59941ec1d71aba386118a2dce105bd6733b69c36c45f6f404",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 399,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b256b68cfd3ed8b59941ec1d71aba386118a2dce105bd6733b69c36c45f6f404",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 54,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "D3TS87",
   "selected_historical_entry_version": 54,
+  "selected_historical_record_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
+  "selected_historical_source_sequence_length": 399,
+  "selected_historical_source_sequence_sha256": "b256b68cfd3ed8b59941ec1d71aba386118a2dce105bd6733b69c36c45f6f404",
   "selected_historical_version": {
     "accession": "D3TS87",
     "database": "Swiss-Prot",
@@ -573,24 +333,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "SAL1_GLOMM",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
-  "selected_historical_source_sequence_sha256": "b256b68cfd3ed8b59941ec1d71aba386118a2dce105bd6733b69c36c45f6f404",
-  "selected_historical_source_sequence_length": 399,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 54,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -608,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"D3TS87\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -627,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":55,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-04-20\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -646,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Savannah tsetse fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ADD20565.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Hippoboscoidea\",\"Glossinidae\",\"Glossina\"],\"scientificName\":\"Glossina morsitans morsitans\",\"taxonId\":37546}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -665,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23110062\",\"source\":\"PubMed\"}],\"value\":\"3.1.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Salivary protein Tsal1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -684,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"23110062\",\"source\":\"PubMed\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -703,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"23110062\",\"source\":\"PubMed\"}],\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -722,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005743\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrial inner membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -741,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/10",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/10",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -760,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json",
-  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
-  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Caljon G.\",\"De Ridder K.\",\"Stijlemans B.\",\"Coosemans M.\",\"Magez S.\",\"De Baetselier P.\",\"Van Den Abbeele J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23110062\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0047233\"}],\"citationType\":\"journal article\",\"firstPage\":\"e47233\",\"id\":\"23110062\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e47233\",\"publicationDate\":\"2012\",\"title\":\"Tsetse salivary gland proteins 1 and 2 are high affinity nucleic acid binding proteins with residual nuclease activity.\",\"volume\":\"7\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:25:05.191362+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c1067e8370eea25297614bdbae67343e3373102000f82a7bc457cf5b90750cd",
+  "url": "https://rest.uniprot.org/uniprotkb/D3TS87.json"
 }
 ```
 
@@ -778,18 +525,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54",
-  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
-  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   SAL1_GLOMM              Reviewed;         399 AA.\nAC   D3TS87; Q9NBA5;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   20-APR-2010, sequence version 1.\nDT   28-JAN-2026, entry version 54.\nDE   RecName: Full=Salivary protein Tsal1 {ECO:0000305};\nDE            EC=3.1.-.- {ECO:0000269|PubMed:23110062};\nDE   Flags: Precursor;\nGN   Name=Tsal1 {ECO:0000303|PubMed:23110062};\nOS   Glossina morsitans morsitans (Savannah tsetse fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Hippoboscoidea;\nOC   Glossinidae; Glossina.\nOX   NCBI_TaxID=37546 {ECO:0000312|EMBL:ADD20565.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
+  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54"
 }
 ```
 
@@ -799,18 +546,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54",
-  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
-  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
-  "source_locator": "lines 39-47",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, BIOPHYSICOCHEMICAL PROPERTIES,\nRP   SUBCELLULAR LOCATION, AND TISSUE SPECIFICITY.\nRX   PubMed=23110062; DOI=10.1371/journal.pone.0047233;\nRA   Caljon G., De Ridder K., Stijlemans B., Coosemans M., Magez S.,\nRA   De Baetselier P., Van Den Abbeele J.;\nRT   \"Tsetse salivary gland proteins 1 and 2 are high affinity nucleic acid\nRT   binding proteins with residual nuclease activity.\";\nRL   PLoS ONE 7:e47233-e47233(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
+  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54"
 }
 ```
 
@@ -820,18 +567,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54",
-  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
-  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
-  "source_locator": "lines 62-62",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000305|PubMed:23110062}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
+  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54"
 }
 ```
 
@@ -841,18 +588,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54",
-  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
-  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
-  "source_locator": "lines 79-79",
   "excerpt": "DR   GO; GO:0005576; C:extracellular region; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 79-79",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
+  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54"
 }
 ```
 
@@ -862,18 +609,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54",
-  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
-  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
-  "source_locator": "lines 80-80",
   "excerpt": "DR   GO; GO:0005743; C:mitochondrial inner membrane; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 80-80",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
+  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54"
 }
 ```
 
@@ -883,18 +630,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54",
-  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
-  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
-  "source_locator": "lines 81-81",
   "excerpt": "DR   GO; GO:0005634; C:nucleus; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-01T06:27:59.125691+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fb1240144f3c2dc980be53f5512a9c4a3ca7a37e1d5376ff2eb491982ca7d926",
+  "url": "https://rest.uniprot.org/unisave/D3TS87?format=txt&versions=54"
 }
 ```
 
@@ -905,15 +652,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58002-58025",
   "excerpt": "[Term]\nid: GO:0005634\nname: nucleus\nnamespace: cellular_component\ndef: \"A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell's chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent.\" [GOC:curators]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_yeast\nsynonym: \"cell nucleus\" EXACT []\nsynonym: \"horsetail nucleus\" NARROW [GOC:al, GOC:mah, GOC:vw, PMID:15030757]\nxref: NIF_Subcellular:sao1702920020\nxref: Wikipedia:Cell_nucleus\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005634",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58002-58025",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005634"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -924,15 +671,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 239034-239042",
   "excerpt": "[Term]\nid: GO:0042600\nname: egg chorion\nnamespace: cellular_component\ndef: \"A protective, noncellular membrane that surrounds the eggs of various animals including insects and fish.\" [GOC:jl, ISBN:0721662544]\ncomment: Note that this term does not refer to the extraembryonic membrane surrounding the embryo of amniote vertebrates as this is an anatomical structure and is therefore not covered by GO.\nsubset: goslim_pir\nis_a: GO:0030312 ! external encapsulating structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042600",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 239034-239042",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042600"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -943,15 +690,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 413997-414007",
   "excerpt": "[Term]\nid: GO:0099128\nname: mitochondrial [2Fe-2S] assembly complex\nnamespace: cellular_component\ndef: \"A protein complex capable of forming 2Fe-2S clusters in mitochondria. In humans it consists of ISCU, NFS1, LYRM4, NDUFAB1 and FXN.\" [PMID:31101807, PMID:34660592]\nsynonym: \"mitochondrial iron-sulfur cluster assembly complex\" RELATED []\nsynonym: \"mitochondrial ISCU complex\" EXACT []\nis_a: GO:0098798 ! mitochondrial protein-containing complex\nis_a: GO:1990221 ! L-cysteine desulfurase complex\nis_a: GO:1990229 ! iron-sulfur cluster assembly complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0099128",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 413997-414007",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0099128"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -962,15 +709,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 442349-442359",
   "excerpt": "[Term]\nid: GO:0140671\nname: ADA complex\nnamespace: cellular_component\ndef: \"A chromatin remodeling complex that regulates transcription via acetylation primarily of nucleosomal histones H3 and H2B. In budding yeast shares the histone acetylation (HAT) module of ADA2-GCN5-NGG1-SGF29 with the related SAGA complex.\" [GOC:bhm, PMID:21734642, PMID:28966424]\nsynonym: \"ADA HAT complex\" EXACT []\nsynonym: \"ADA histone acetyltransferase complex\" EXACT []\nsynonym: \"Ada2/Gcn5/Ada3 transcription activator complex\" RELATED []\nsynonym: \"scADA\" NARROW []\nis_a: GO:0070461 ! SAGA-type complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0140671",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 442349-442359",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0140671"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

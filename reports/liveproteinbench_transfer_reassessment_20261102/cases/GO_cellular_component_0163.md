@@ -1,18 +1,16 @@
-# GO_cellular_component_0163: before and after transfer clarification
+# GO_cellular_component_0163
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0163.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0163.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — RQC complex
+**Expected answer:** **B** — RQC complex
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches rat TCF25, and its GO annotation includes RQC complex. That assignment is ISO:RGD (inferred from sequence orthology), not direct experimental evidence for this protein. The record separately reports mainly nuclear localization experimentally.
-
-Citations as saved: [C1](#evidence-c1), [C8](#evidence-c8), [H6](#evidence-h6), [C5](#evidence-c5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence lacks obvious transmembrane segments, which argues against an ABC transporter complex or a foreign cell membrane association. But that does not specifically establish membership in the RQC complex.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as TCF25 and its RQC-complex assignment, which is annotated by sequence-orthology inference, are not supplied in the question.
-
-
-**Reason**
-
-> General sequence inspection can make some membrane-associated choices less plausible, but identifying the specific RQC complex association requires an item-specific annotation or equivalent protein-specific fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, the sequence-matched record supports RQC complex; its mainly nuclear localization is not offered as an option.
-
-
-### Important caveats
-
-- The RQC-complex annotation is inferred from sequence orthology (ISO:RGD), not shown here as direct experimental evidence for this rat protein.
-- The record reports mainly nuclear localization experimentally, so the keyed complex annotation should not be read as establishing that RQC is the protein's primary cellular location.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks obvious transmembrane segments, which argues against an ABC transporter complex or a foreign cell membrane association. But that does not specifically establish membership in the RQC complex.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as TCF25 and its RQC-complex assignment, which is annotated by sequence-orthology inference, are not supplied in the question.",
-    "reason": "General sequence inspection can make some membrane-associated choices less plausible, but identifying the specific RQC complex association requires an item-specific annotation or equivalent protein-specific fact."
-  },
-  "case_id": "GO_cellular_component_0163",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C8",
-      "H6",
-      "C5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches rat TCF25, and its GO annotation includes RQC complex. That assignment is ISO:RGD (inferred from sequence orthology), not direct experimental evidence for this protein. The record separately reports mainly nuclear localization experimentally."
-  },
-  "important_caveats": [
-    "The RQC-complex annotation is inferred from sequence orthology (ISO:RGD), not shown here as direct experimental evidence for this rat protein.",
-    "The record reports mainly nuclear localization experimentally, so the keyed complex annotation should not be read as establishing that RQC is the protein's primary cellular location."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the sequence-matched record supports RQC complex; its mainly nuclear localization is not offered as an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0163",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches rat TCF25, and its GO annotation includes RQC complex. That assignment is ISO:RGD (inferred from sequence orthology), not direct experimental evidence for this protein. The record separately reports mainly nuclear localization experimentally.",
-    "evidence_ids": ["C1", "C8", "H6", "C5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence lacks obvious transmembrane segments, which argues against an ABC transporter complex or a foreign cell membrane association. But that does not specifically establish membership in the RQC complex.",
-    "missing_item_specific_fact": "The protein-specific identification as TCF25 and its RQC-complex assignment, which is annotated by sequence-orthology inference, are not supplied in the question.",
-    "reason": "General sequence inspection can make some membrane-associated choices less plausible, but identifying the specific RQC complex association requires an item-specific annotation or equivalent protein-specific fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the sequence-matched record supports RQC complex; its mainly nuclear localization is not offered as an option."
-  },
-  "important_caveats": [
-    "The RQC-complex annotation is inferred from sequence orthology (ISO:RGD), not shown here as direct experimental evidence for this rat protein.",
-    "The record reports mainly nuclear localization experimentally, so the keyed complex annotation should not be read as establishing that RQC is the protein's primary cellular location."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry (A0A8I6ASZ5) explicitly annotates GO:1990112 (RQC complex) with evidence code ISO:RGD (C8, H6), and the recommended protein name is 'Ribosome quality control complex subunit TCF25' (C4, H1). The GO term definition (GO4) describes a multiprotein complex associated with ribosomes and stalled polypeptide degradation, consistent with TCF25's role. However, the RQC complex annotation is inferred from orthology (ISO:RGD), not direct experimental evidence for this specific rat protein; the experimental evidence (PubMed:32805187) primarily supports nuclear localization (C5, H3, H5). The answer is supported by database annotation.
-
-Citations as saved: [C4](#evidence-c4), [C8](#evidence-c8), [H1](#evidence-h1), [H6](#evidence-h6), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General reasoning can partially eliminate options C and D: the sequence lacks the hydrophobic transmembrane domains and nucleotide-binding domains characteristic of ABC transporters (GO:0043190, GO2), and 'other organism cell membrane' (GO:0044218, GO3) is an implausible compartment for an endogenous rat protein. However, distinguishing option A (lipid droplet) from option B (RQC complex) requires knowing that TCF25/NULP1 specifically interacts with the 60S ribosomal subunit and is a defined subunit of the RQC complex. The sequence contains nuclear localization signals (e.g., 'KKKKKQKNKK' near position 100) and HEAT-like repeats, but no features uniquely diagnostic of RQC complex membership versus generic nuclear/cytoplasmic localization.
-
-
-**Missing item-specific fact**
-
-> The specific protein-protein interaction annotation identifying TCF25 as a subunit of the RQC complex (GO:1990112, ISO:RGD) is a protein-specific database fact not derivable from sequence features alone. Without knowing the protein's identity as TCF25/NULP1 and its documented role in ribosome-associated quality control, the sequence provides no specific signal pointing to 'RQC complex' over 'nucleus' or 'cytoplasm' or even 'lipid droplet'.
-
-
-**Reason**
-
-> While elimination of C and D is achievable through general structural reasoning (absence of TM domains, implausibility of foreign membrane for a rat protein), the positive identification of RQC complex membership depends on a protein-specific interaction annotation (ISO:RGD). The sequence's nuclear localization signals and lack of membrane features are consistent with many nuclear/cytoplasmic proteins, not uniquely with RQC complex subunits. Recognizing this as TCF25 and recalling its RQC complex association constitutes memorization of a database entry rather than sequence-based reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four options, C (ABC transporter) and D (other organism cell membrane) are clearly implausible given the sequence lacks transmembrane domains and the protein is not a pathogen-associated factor. A (lipid droplet) is unlikely as the sequence lacks typical amphipathic helix patterns of lipid droplet-associated proteins. B is the annotated answer. No genuine ambiguity among the provided choices, though the 'primary' location per experimental evidence is nucleus, which is not offered as an option.
-
-
-### Important caveats
-
-- The RQC complex GO annotation carries evidence code ISO:RGD (inferred from orthology), not direct experimental evidence for this rat protein. The only experimental subcellular evidence (PubMed:32805187) supports nuclear localization.
-- The question asks for 'primary Cellular Component' but the experimentally determined primary location is 'Nucleus' (ECO:0000269, EXP), which is not among the options. The RQC complex is a protein complex annotation, not a spatial compartment in the traditional sense.
-- The sequence match is confirmed (666 AA, sha256 match) to A0A8I6ASZ5 (TCF25_RAT), but this accession identification was reviewer-only and not available to the evaluated model.
-- The GO annotation for RQC complex was added via orthology transfer from human TCF25 (Q9BQ70); direct biochemical demonstration of rat TCF25 in the RQC complex was not found in the supplied evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General reasoning can partially eliminate options C and D: the sequence lacks the hydrophobic transmembrane domains and nucleotide-binding domains characteristic of ABC transporters (GO:0043190, GO2), and 'other organism cell membrane' (GO:0044218, GO3) is an implausible compartment for an endogenous rat protein. However, distinguishing option A (lipid droplet) from option B (RQC complex) requires knowing that TCF25/NULP1 specifically interacts with the 60S ribosomal subunit and is a defined subunit of the RQC complex. The sequence contains nuclear localization signals (e.g., 'KKKKKQKNKK' near position 100) and HEAT-like repeats, but no features uniquely diagnostic of RQC complex membership versus generic nuclear/cytoplasmic localization.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific protein-protein interaction annotation identifying TCF25 as a subunit of the RQC complex (GO:1990112, ISO:RGD) is a protein-specific database fact not derivable from sequence features alone. Without knowing the protein's identity as TCF25/NULP1 and its documented role in ribosome-associated quality control, the sequence provides no specific signal pointing to 'RQC complex' over 'nucleus' or 'cytoplasm' or even 'lipid droplet'.",
-    "reason": "While elimination of C and D is achievable through general structural reasoning (absence of TM domains, implausibility of foreign membrane for a rat protein), the positive identification of RQC complex membership depends on a protein-specific interaction annotation (ISO:RGD). The sequence's nuclear localization signals and lack of membrane features are consistent with many nuclear/cytoplasmic proteins, not uniquely with RQC complex subunits. Recognizing this as TCF25 and recalling its RQC complex association constitutes memorization of a database entry rather than sequence-based reasoning."
-  },
-  "case_id": "GO_cellular_component_0163",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C8",
-      "H1",
-      "H6",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A8I6ASZ5) explicitly annotates GO:1990112 (RQC complex) with evidence code ISO:RGD (C8, H6), and the recommended protein name is 'Ribosome quality control complex subunit TCF25' (C4, H1). The GO term definition (GO4) describes a multiprotein complex associated with ribosomes and stalled polypeptide degradation, consistent with TCF25's role. However, the RQC complex annotation is inferred from orthology (ISO:RGD), not direct experimental evidence for this specific rat protein; the experimental evidence (PubMed:32805187) primarily supports nuclear localization (C5, H3, H5). The answer is supported by database annotation."
-  },
-  "important_caveats": [
-    "The RQC complex GO annotation carries evidence code ISO:RGD (inferred from orthology), not direct experimental evidence for this rat protein. The only experimental subcellular evidence (PubMed:32805187) supports nuclear localization.",
-    "The question asks for 'primary Cellular Component' but the experimentally determined primary location is 'Nucleus' (ECO:0000269, EXP), which is not among the options. The RQC complex is a protein complex annotation, not a spatial compartment in the traditional sense.",
-    "The sequence match is confirmed (666 AA, sha256 match) to A0A8I6ASZ5 (TCF25_RAT), but this accession identification was reviewer-only and not available to the evaluated model.",
-    "The GO annotation for RQC complex was added via orthology transfer from human TCF25 (Q9BQ70); direct biochemical demonstration of rat TCF25 in the RQC complex was not found in the supplied evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four options, C (ABC transporter) and D (other organism cell membrane) are clearly implausible given the sequence lacks transmembrane domains and the protein is not a pathogen-associated factor. A (lipid droplet) is unlikely as the sequence lacks typical amphipathic helix patterns of lipid droplet-associated proteins. B is the annotated answer. No genuine ambiguity among the provided choices, though the 'primary' location per experimental evidence is nucleus, which is not offered as an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0163",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A8I6ASZ5) explicitly annotates GO:1990112 (RQC complex) with evidence code ISO:RGD (C8, H6), and the recommended protein name is 'Ribosome quality control complex subunit TCF25' (C4, H1). The GO term definition (GO4) describes a multiprotein complex associated with ribosomes and stalled polypeptide degradation, consistent with TCF25's role. However, the RQC complex annotation is inferred from orthology (ISO:RGD), not direct experimental evidence for this specific rat protein; the experimental evidence (PubMed:32805187) primarily supports nuclear localization (C5, H3, H5). The answer is supported by database annotation.",
-    "evidence_ids": ["C4", "C8", "H1", "H6", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General reasoning can partially eliminate options C and D: the sequence lacks the hydrophobic transmembrane domains and nucleotide-binding domains characteristic of ABC transporters (GO:0043190, GO2), and 'other organism cell membrane' (GO:0044218, GO3) is an implausible compartment for an endogenous rat protein. However, distinguishing option A (lipid droplet) from option B (RQC complex) requires knowing that TCF25/NULP1 specifically interacts with the 60S ribosomal subunit and is a defined subunit of the RQC complex. The sequence contains nuclear localization signals (e.g., 'KKKKKQKNKK' near position 100) and HEAT-like repeats, but no features uniquely diagnostic of RQC complex membership versus generic nuclear/cytoplasmic localization.",
-    "missing_item_specific_fact": "The specific protein-protein interaction annotation identifying TCF25 as a subunit of the RQC complex (GO:1990112, ISO:RGD) is a protein-specific database fact not derivable from sequence features alone. Without knowing the protein's identity as TCF25/NULP1 and its documented role in ribosome-associated quality control, the sequence provides no specific signal pointing to 'RQC complex' over 'nucleus' or 'cytoplasm' or even 'lipid droplet'.",
-    "reason": "While elimination of C and D is achievable through general structural reasoning (absence of TM domains, implausibility of foreign membrane for a rat protein), the positive identification of RQC complex membership depends on a protein-specific interaction annotation (ISO:RGD). The sequence's nuclear localization signals and lack of membrane features are consistent with many nuclear/cytoplasmic proteins, not uniquely with RQC complex subunits. Recognizing this as TCF25 and recalling its RQC complex association constitutes memorization of a database entry rather than sequence-based reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four options, C (ABC transporter) and D (other organism cell membrane) are clearly implausible given the sequence lacks transmembrane domains and the protein is not a pathogen-associated factor. A (lipid droplet) is unlikely as the sequence lacks typical amphipathic helix patterns of lipid droplet-associated proteins. B is the annotated answer. No genuine ambiguity among the provided choices, though the 'primary' location per experimental evidence is nucleus, which is not offered as an option."
-  },
-  "important_caveats": [
-    "The RQC complex GO annotation carries evidence code ISO:RGD (inferred from orthology), not direct experimental evidence for this rat protein. The only experimental subcellular evidence (PubMed:32805187) supports nuclear localization.",
-    "The question asks for 'primary Cellular Component' but the experimentally determined primary location is 'Nucleus' (ECO:0000269, EXP), which is not among the options. The RQC complex is a protein complex annotation, not a spatial compartment in the traditional sense.",
-    "The sequence match is confirmed (666 AA, sha256 match) to A0A8I6ASZ5 (TCF25_RAT), but this accession identification was reviewer-only and not available to the evaluated model.",
-    "The GO annotation for RQC complex was added via orthology transfer from human TCF25 (Q9BQ70); direct biochemical demonstration of rat TCF25 in the RQC complex was not found in the supplied evidence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A8I6ASZ5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b55974f94d7023b0272ef4481deb49ef24f44353401608946b1b04f7aa3eb040",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 666,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b55974f94d7023b0272ef4481deb49ef24f44353401608946b1b04f7aa3eb040",
   "current_entry_audit": {
     "entryVersion": 21,
     "firstPublicDate": "2025-04-09",
@@ -537,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2022-05-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "current_source_sequence_sha256": "b55974f94d7023b0272ef4481deb49ef24f44353401608946b1b04f7aa3eb040",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 666,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b55974f94d7023b0272ef4481deb49ef24f44353401608946b1b04f7aa3eb040",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 19,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A8I6ASZ5",
   "selected_historical_entry_version": 19,
+  "selected_historical_record_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
+  "selected_historical_source_sequence_length": 666,
+  "selected_historical_source_sequence_sha256": "b55974f94d7023b0272ef4481deb49ef24f44353401608946b1b04f7aa3eb040",
   "selected_historical_version": {
     "accession": "A0A8I6ASZ5",
     "database": "Swiss-Prot",
@@ -555,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TCF25_RAT",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
-  "selected_historical_source_sequence_sha256": "b55974f94d7023b0272ef4481deb49ef24f44353401608946b1b04f7aa3eb040",
-  "selected_historical_source_sequence_length": 666,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 19,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A8I6ASZ5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -609,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":21,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2022-05-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -628,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rat\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000002494\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Rattus\"],\"scientificName\":\"Rattus norvegicus\",\"taxonId\":10116}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -647,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BQ70\",\"source\":\"UniProtKB\"}],\"value\":\"Nuclear localized protein 1\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"1309054\",\"source\":\"RGD\"}],\"value\":\"Transcription factor 25\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"TCF-25\"}]}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Ribosome quality control complex subunit TCF25\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -666,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32805187\",\"source\":\"PubMed\"}],\"value\":\"Mainly nuclear\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32805187\",\"source\":\"PubMed\"}],\"id\":\"SL-0191\",\"value\":\"Nucleus\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BQ70\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0091\",\"value\":\"Cytoplasm, cytosol\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -685,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -704,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32805187\",\"source\":\"PubMed\"}],\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -723,15 +482,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/18",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:1990112\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:RQC complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISO:RGD\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/18",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -742,15 +501,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json",
-  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
-  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang X.\",\"Lei F.\",\"Wang X.M.\",\"Deng K.Q.\",\"Ji Y.X.\",\"Zhang Y.\",\"Li H.\",\"Zhang X.D.\",\"Lu Z.\",\"Zhang P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32805187\"},{\"database\":\"DOI\",\"id\":\"10.1161/jaha.120.016419\"}],\"citationType\":\"journal article\",\"firstPage\":\"e016419\",\"id\":\"32805187\",\"journal\":\"J. Am. Heart Assoc.\",\"lastPage\":\"e016419\",\"publicationDate\":\"2020\",\"title\":\"NULP1 Alleviates Cardiac Hypertrophy by Suppressing NFAT3 Transcriptional Activity.\",\"volume\":\"9\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"INTERACTION WITH NFATC4\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:51.287559+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "db13e28cf53212b88a3330247eb6b69fce14e32a3cdbaa15c6dfdc4fe02619c8",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8I6ASZ5.json"
 }
 ```
 
@@ -760,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19",
-  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
-  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   TCF25_RAT               Reviewed;         666 AA.\nAC   A0A8I6ASZ5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-MAY-2022, sequence version 1.\nDT   28-JAN-2026, entry version 19.\nDE   RecName: Full=Ribosome quality control complex subunit TCF25 {ECO:0000305};\nDE   AltName: Full=Nuclear localized protein 1 {ECO:0000250|UniProtKB:Q9BQ70};\nDE   AltName: Full=Transcription factor 25 {ECO:0000312|RGD:1309054};\nDE            Short=TCF-25 {ECO:0000305};\nGN   Name=Tcf25 {ECO:0000312|RGD:1309054};\nGN   Synonyms=Nulp1 {ECO:0000303|PubMed:32805187};\nOS   Rattus norvegicus (Rat).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Rattus.\nOX   NCBI_TaxID=10116 {ECO:0000312|Proteomes:UP000002494};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19"
 }
 ```
 
@@ -781,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19",
-  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
-  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
-  "source_locator": "lines 64-71",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, INTERACTION WITH NFATC4, AND SUBCELLULAR LOCATION.\nRX   PubMed=32805187; DOI=10.1161/jaha.120.016419;\nRA   Zhang X., Lei F., Wang X.M., Deng K.Q., Ji Y.X., Zhang Y., Li H.,\nRA   Zhang X.D., Lu Z., Zhang P.;\nRT   \"NULP1 Alleviates Cardiac Hypertrophy by Suppressing NFAT3 Transcriptional\nRT   Activity.\";\nRL   J. Am. Heart Assoc. 9:e016419-e016419(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 64-71",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19"
 }
 ```
 
@@ -802,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19",
-  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
-  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
-  "source_locator": "lines 91-93",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Nucleus {ECO:0000269|PubMed:32805187}. Cytoplasm,\nCC       cytosol {ECO:0000250|UniProtKB:Q9BQ70}. Note=Mainly nuclear.\nCC       {ECO:0000269|PubMed:32805187}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 91-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19"
 }
 ```
 
@@ -823,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19",
-  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
-  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
-  "source_locator": "lines 110-110",
   "excerpt": "DR   GO; GO:0005829; C:cytosol; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 110-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19"
 }
 ```
 
@@ -844,18 +603,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19",
-  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
-  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
-  "source_locator": "lines 111-111",
   "excerpt": "DR   GO; GO:0005634; C:nucleus; ISO:RGD.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 111-111",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19"
 }
 ```
 
@@ -865,18 +624,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19",
-  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
-  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
-  "source_locator": "lines 112-112",
   "excerpt": "DR   GO; GO:1990112; C:RQC complex; ISO:RGD.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-01T06:27:34.894954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 112-112",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02d5de5a62e40229c163c44c1ed60fb43f5d7fd00a2bdc4d42a93088921dc0ef",
+  "url": "https://rest.uniprot.org/unisave/A0A8I6ASZ5?format=txt&versions=19"
 }
 ```
 
@@ -887,15 +646,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59777-59789",
   "excerpt": "[Term]\nid: GO:0005811\nname: lipid droplet\nnamespace: cellular_component\ndef: \"An intracellular non-membrane-bounded organelle comprising a matrix of coalesced lipids surrounded by a phospholipid monolayer. May include associated proteins.\" [GOC:mah, GOC:tb]\ncomment: Note that this term does not refer to vesicles, but instead to structures in which lipids do not necessarily form bilayers.\nsubset: goslim_chembl\nsubset: goslim_generic\nsynonym: \"adiposome\" EXACT []\nsynonym: \"lipid body\" EXACT []\nsynonym: \"lipid particle\" EXACT []\nis_a: GO:0043232 ! intracellular membraneless organelle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005811",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59777-59789",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005811"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -906,15 +665,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 244782-244797",
   "excerpt": "[Term]\nid: GO:0043190\nname: ATP-binding cassette (ABC) transporter complex\nnamespace: cellular_component\nalt_id: GO:0043191\nalt_id: GO:0043192\ndef: \"A complex for the transport of metabolites into and out of the cell, typically comprised of four domains; two membrane-associated domains and two ATP-binding domains at the intracellular face of the membrane, that form a central pore through the plasma membrane. Each of the four core domains may be encoded as a separate polypeptide or the domains can be fused in any one of a number of ways into multidomain polypeptides. In Bacteria and Archaebacteria, ABC transporters also include substrate binding proteins to bind substrate external to the cytoplasm and deliver it to the transporter.\" [GOC:jl, GOC:mtg_sensu, PMID:11421269, PMID:15111107]\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsynonym: \"ABC-type efflux permease complex\" NARROW []\nsynonym: \"ABC-type efflux porter complex\" NARROW []\nsynonym: \"ABC-type uptake permease complex\" NARROW []\nsynonym: \"mating pheromone exporter\" NARROW []\nis_a: GO:0098533 ! ATPase dependent transmembrane transport complex\nis_a: GO:0098797 ! plasma membrane protein complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043190",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 244782-244797",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043190"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -925,15 +684,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 255298-255307",
   "excerpt": "[Term]\nid: GO:0044218\nname: other organism cell membrane\nnamespace: cellular_component\nalt_id: GO:0044279\ndef: \"The cell membrane of a secondary organism with which the first organism is interacting.\" [GOC:jl]\nsynonym: \"foreign membrane\" RELATED []\nsynonym: \"other organism membrane\" BROAD []\nis_a: GO:0044217 ! other organism part\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044218",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 255298-255307",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044218"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -944,15 +703,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 549333-549341",
   "excerpt": "[Term]\nid: GO:1990112\nname: RQC complex\nnamespace: cellular_component\ndef: \"A multiprotein complex that forms a stable complex with large ribosomal subunits (60S in eukaryotes and 50S in prokaryotes) containing stalled polypeptides and triggers their degradation (ribosomal quality control). In budding yeast, this complex includes Cdc48p, Rkr1p, Tae2p, Rqc1p, Npl4p and Ufd1p proteins.\" [GOC:rb, PMID:23178123, PMID:23232563]\nsynonym: \"ribosome quality control complex\" EXACT [PMID:23178123, PMID:23232563]\nsynonym: \"ribosome-bound quality control complex\" EXACT []\nis_a: GO:0032991 ! protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990112",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 549333-549341",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990112"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

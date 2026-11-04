@@ -1,18 +1,16 @@
-# cofactor_0024: before and after transfer clarification
+# cofactor_0024
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0024.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0024.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **D** — Mn(2+)
+**Expected answer:** **D** — Mn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as cardiolipin synthase, with Mn(2+) listed as its cofactor. The cofactor annotation is transferred by similarity from another UniProt entry (ECO:0000250), so it supports the key as a computational annotation, not as direct experimental evidence for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is strongly hydrophobic, consistent with a membrane protein, but that does not meaningfully distinguish Mn(2+) from the other listed candidates as its cofactor.
-
-
-**Missing item-specific fact**
-
-> The protein's identity/function as cardiolipin synthase and its Mn(2+) cofactor annotation, or equivalent protein-specific evidence.
-
-
-**Reason**
-
-> The supplied sequence and choices do not provide a reliable biological basis for selecting Mn(2+); doing so depends on identifying the specific protein or consulting its annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not distinguish the options, but the matched protein-specific annotation identifies Mn(2+) as the cofactor.
-
-
-### Important caveats
-
-- The cofactor annotation is transferred by similarity rather than shown here to be experimentally measured for this exact protein.
-- The exact sequence match supports applying the annotation to the supplied sequence; the author's original database snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic, consistent with a membrane protein, but that does not meaningfully distinguish Mn(2+) from the other listed candidates as its cofactor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity/function as cardiolipin synthase and its Mn(2+) cofactor annotation, or equivalent protein-specific evidence.",
-    "reason": "The supplied sequence and choices do not provide a reliable biological basis for selecting Mn(2+); doing so depends on identifying the specific protein or consulting its annotation."
-  },
-  "case_id": "cofactor_0024",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as cardiolipin synthase, with Mn(2+) listed as its cofactor. The cofactor annotation is transferred by similarity from another UniProt entry (ECO:0000250), so it supports the key as a computational annotation, not as direct experimental evidence for this protein."
-  },
-  "important_caveats": [
-    "The cofactor annotation is transferred by similarity rather than shown here to be experimentally measured for this exact protein.",
-    "The exact sequence match supports applying the annotation to the supplied sequence; the author's original database snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not distinguish the options, but the matched protein-specific annotation identifies Mn(2+) as the cofactor."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0024",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as cardiolipin synthase, with Mn(2+) listed as its cofactor. The cofactor annotation is transferred by similarity from another UniProt entry (ECO:0000250), so it supports the key as a computational annotation, not as direct experimental evidence for this protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic, consistent with a membrane protein, but that does not meaningfully distinguish Mn(2+) from the other listed candidates as its cofactor.",
-    "missing_item_specific_fact": "The protein's identity/function as cardiolipin synthase and its Mn(2+) cofactor annotation, or equivalent protein-specific evidence.",
-    "reason": "The supplied sequence and choices do not provide a reliable biological basis for selecting Mn(2+); doing so depends on identifying the specific protein or consulting its annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not distinguish the options, but the matched protein-specific annotation identifies Mn(2+) as the cofactor."
-  },
-  "important_caveats": [
-    "The cofactor annotation is transferred by similarity rather than shown here to be experimentally measured for this exact protein.",
-    "The exact sequence match supports applying the annotation to the supplied sequence; the author's original database snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A2K3D1C8 (Cardiolipin synthase (CMP-forming), EC 2.7.8.41, from Chlamydomonas reinhardtii) explicitly annotates Mn(2+) (ChEBI:CHEBI:29035) as the cofactor. The sequence matches exactly. However, the cofactor annotation carries evidence code ECO:0000250 (inferred by similarity to Q93YW7), meaning it is a computational transfer rather than direct experimental measurement on this specific protein. The functional annotation (EC number, catalytic activity) is supported by PubMed 26793177. The answer D (Mn(2+)) is consistent with the database annotation.
-
-Citations as saved: [C5](#evidence-c5), [C4](#evidence-c4), [H4](#evidence-h4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could attempt general enzyme-class reasoning: the sequence contains hydrophobic stretches suggesting a membrane-associated enzyme, and among the four choices, PLP is specifically for amino acid transformations (aminotransferases, decarboxylases), tungstopterin is restricted to certain anaerobic oxidoreductases, and Fe is typically associated with redox chemistry. Mn(2+) is a common cofactor for transferases and phosphatases. This provides some elimination logic. However, identifying the protein specifically as a phosphatidyltransferase (cardiolipin synthase) from the raw sequence is itself a pattern-recognition/lookup task, and the specific assignment of Mn(2+) (rather than Mg(2+) or Zn(2+), which are also common for transferases) to CMP-forming cardiolipin synthase is a specific biochemical fact.
-
-
-**Missing item-specific fact**
-
-> The specific cofactor requirement (Mn(2+) vs. other divalent cations like Mg(2+)) for CMP-forming cardiolipin synthase (EC 2.7.8.41) is a protein-family-specific biochemical fact. The UniProt annotation itself is transferred by similarity (ECO:0000250 from Q93YW7), not directly experimentally determined for this Chlamydomonas protein. Identifying the protein family from the 351-aa sequence without prior knowledge of cardiolipin synthase motifs requires either memorization of the sequence/family or a trained predictor.
-
-
-**Reason**
-
-> While general biological reasoning about enzyme class can partially eliminate distractors (PLP for amino acid enzymes, tungstopterin for anaerobic oxidoreductases, Fe for redox enzymes), the positive identification of Mn(2+) as the correct cofactor requires knowing that this specific enzyme family (CMP-forming phosphatidyltransferase/cardiolipin synthase) uses Mn(2+). The sequence alone does not contain an unambiguous Mn-binding motif that distinguishes it from other divalent-cation-dependent enzymes. The annotation is similarity-based, further indicating this is a specific database fact rather than something derivable from general sequence features.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, Mn(2+) is the most defensible answer for a phosphatidyltransferase. PLP is clearly inappropriate for a lipid-modifying transferase. Tungstopterin is restricted to specific archaeal/bacterial oxidoreductases. Fe is primarily for redox enzymes. No other choice is biologically plausible for this enzyme class, so the options are adequately discriminable once the enzyme class is identified.
-
-
-### Important caveats
-
-- The cofactor annotation uses evidence code ECO:0000250 (similarity-based inference from Q93YW7, a bacterial homolog), not direct experimental evidence on the Chlamydomonas protein itself.
-- The PubMed reference (26793177) supports the function and catalytic activity of CrCLS1 but the specific cofactor assignment is transferred annotation.
-- The sequence contains no obvious, unambiguous metal-binding motif that would allow confident identification of Mn(2+) over Mg(2+) or Zn(2+) from sequence alone.
-- The identity of the protein (accession A0A2K3D1C8) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could attempt general enzyme-class reasoning: the sequence contains hydrophobic stretches suggesting a membrane-associated enzyme, and among the four choices, PLP is specifically for amino acid transformations (aminotransferases, decarboxylases), tungstopterin is restricted to certain anaerobic oxidoreductases, and Fe is typically associated with redox chemistry. Mn(2+) is a common cofactor for transferases and phosphatases. This provides some elimination logic. However, identifying the protein specifically as a phosphatidyltransferase (cardiolipin synthase) from the raw sequence is itself a pattern-recognition/lookup task, and the specific assignment of Mn(2+) (rather than Mg(2+) or Zn(2+), which are also common for transferases) to CMP-forming cardiolipin synthase is a specific biochemical fact.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific cofactor requirement (Mn(2+) vs. other divalent cations like Mg(2+)) for CMP-forming cardiolipin synthase (EC 2.7.8.41) is a protein-family-specific biochemical fact. The UniProt annotation itself is transferred by similarity (ECO:0000250 from Q93YW7), not directly experimentally determined for this Chlamydomonas protein. Identifying the protein family from the 351-aa sequence without prior knowledge of cardiolipin synthase motifs requires either memorization of the sequence/family or a trained predictor.",
-    "reason": "While general biological reasoning about enzyme class can partially eliminate distractors (PLP for amino acid enzymes, tungstopterin for anaerobic oxidoreductases, Fe for redox enzymes), the positive identification of Mn(2+) as the correct cofactor requires knowing that this specific enzyme family (CMP-forming phosphatidyltransferase/cardiolipin synthase) uses Mn(2+). The sequence alone does not contain an unambiguous Mn-binding motif that distinguishes it from other divalent-cation-dependent enzymes. The annotation is similarity-based, further indicating this is a specific database fact rather than something derivable from general sequence features."
-  },
-  "case_id": "cofactor_0024",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C4",
-      "H4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2K3D1C8 (Cardiolipin synthase (CMP-forming), EC 2.7.8.41, from Chlamydomonas reinhardtii) explicitly annotates Mn(2+) (ChEBI:CHEBI:29035) as the cofactor. The sequence matches exactly. However, the cofactor annotation carries evidence code ECO:0000250 (inferred by similarity to Q93YW7), meaning it is a computational transfer rather than direct experimental measurement on this specific protein. The functional annotation (EC number, catalytic activity) is supported by PubMed 26793177. The answer D (Mn(2+)) is consistent with the database annotation."
-  },
-  "important_caveats": [
-    "The cofactor annotation uses evidence code ECO:0000250 (similarity-based inference from Q93YW7, a bacterial homolog), not direct experimental evidence on the Chlamydomonas protein itself.",
-    "The PubMed reference (26793177) supports the function and catalytic activity of CrCLS1 but the specific cofactor assignment is transferred annotation.",
-    "The sequence contains no obvious, unambiguous metal-binding motif that would allow confident identification of Mn(2+) over Mg(2+) or Zn(2+) from sequence alone.",
-    "The identity of the protein (accession A0A2K3D1C8) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, Mn(2+) is the most defensible answer for a phosphatidyltransferase. PLP is clearly inappropriate for a lipid-modifying transferase. Tungstopterin is restricted to specific archaeal/bacterial oxidoreductases. Fe is primarily for redox enzymes. No other choice is biologically plausible for this enzyme class, so the options are adequately discriminable once the enzyme class is identified."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0024",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2K3D1C8 (Cardiolipin synthase (CMP-forming), EC 2.7.8.41, from Chlamydomonas reinhardtii) explicitly annotates Mn(2+) (ChEBI:CHEBI:29035) as the cofactor. The sequence matches exactly. However, the cofactor annotation carries evidence code ECO:0000250 (inferred by similarity to Q93YW7), meaning it is a computational transfer rather than direct experimental measurement on this specific protein. The functional annotation (EC number, catalytic activity) is supported by PubMed 26793177. The answer D (Mn(2+)) is consistent with the database annotation.",
-    "evidence_ids": ["C5", "C4", "H4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could attempt general enzyme-class reasoning: the sequence contains hydrophobic stretches suggesting a membrane-associated enzyme, and among the four choices, PLP is specifically for amino acid transformations (aminotransferases, decarboxylases), tungstopterin is restricted to certain anaerobic oxidoreductases, and Fe is typically associated with redox chemistry. Mn(2+) is a common cofactor for transferases and phosphatases. This provides some elimination logic. However, identifying the protein specifically as a phosphatidyltransferase (cardiolipin synthase) from the raw sequence is itself a pattern-recognition/lookup task, and the specific assignment of Mn(2+) (rather than Mg(2+) or Zn(2+), which are also common for transferases) to CMP-forming cardiolipin synthase is a specific biochemical fact.",
-    "missing_item_specific_fact": "The specific cofactor requirement (Mn(2+) vs. other divalent cations like Mg(2+)) for CMP-forming cardiolipin synthase (EC 2.7.8.41) is a protein-family-specific biochemical fact. The UniProt annotation itself is transferred by similarity (ECO:0000250 from Q93YW7), not directly experimentally determined for this Chlamydomonas protein. Identifying the protein family from the 351-aa sequence without prior knowledge of cardiolipin synthase motifs requires either memorization of the sequence/family or a trained predictor.",
-    "reason": "While general biological reasoning about enzyme class can partially eliminate distractors (PLP for amino acid enzymes, tungstopterin for anaerobic oxidoreductases, Fe for redox enzymes), the positive identification of Mn(2+) as the correct cofactor requires knowing that this specific enzyme family (CMP-forming phosphatidyltransferase/cardiolipin synthase) uses Mn(2+). The sequence alone does not contain an unambiguous Mn-binding motif that distinguishes it from other divalent-cation-dependent enzymes. The annotation is similarity-based, further indicating this is a specific database fact rather than something derivable from general sequence features."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, Mn(2+) is the most defensible answer for a phosphatidyltransferase. PLP is clearly inappropriate for a lipid-modifying transferase. Tungstopterin is restricted to specific archaeal/bacterial oxidoreductases. Fe is primarily for redox enzymes. No other choice is biologically plausible for this enzyme class, so the options are adequately discriminable once the enzyme class is identified."
-  },
-  "important_caveats": [
-    "The cofactor annotation uses evidence code ECO:0000250 (similarity-based inference from Q93YW7, a bacterial homolog), not direct experimental evidence on the Chlamydomonas protein itself.",
-    "The PubMed reference (26793177) supports the function and catalytic activity of CrCLS1 but the specific cofactor assignment is transferred annotation.",
-    "The sequence contains no obvious, unambiguous metal-binding motif that would allow confident identification of Mn(2+) over Mg(2+) or Zn(2+) from sequence alone.",
-    "The identity of the protein (accession A0A2K3D1C8) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2K3D1C8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d5caa566c264b21e72ce662ef50949e75c0df2a96713facfc4330fbd74359ca1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 351,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d5caa566c264b21e72ce662ef50949e75c0df2a96713facfc4330fbd74359ca1",
   "current_entry_audit": {
     "entryVersion": 33,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-03-28",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
-  "current_source_sequence_sha256": "d5caa566c264b21e72ce662ef50949e75c0df2a96713facfc4330fbd74359ca1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 351,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d5caa566c264b21e72ce662ef50949e75c0df2a96713facfc4330fbd74359ca1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 31,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2K3D1C8",
   "selected_historical_entry_version": 31,
+  "selected_historical_record_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
+  "selected_historical_source_sequence_length": 351,
+  "selected_historical_source_sequence_sha256": "d5caa566c264b21e72ce662ef50949e75c0df2a96713facfc4330fbd74359ca1",
   "selected_historical_version": {
     "accession": "A0A2K3D1C8",
     "database": "Swiss-Prot",
@@ -552,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CRLS1_CHLRE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
-  "selected_historical_source_sequence_sha256": "d5caa566c264b21e72ce662ef50949e75c0df2a96713facfc4330fbd74359ca1",
-  "selected_historical_source_sequence_length": 351,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 31,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json",
-  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
-  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2K3D1C8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json"
 }
 ```
 
@@ -602,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json",
-  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
-  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":33,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-03-28\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json"
 }
 ```
 
@@ -621,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json",
-  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
-  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Chlamydomonas smithii\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000006906\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Chlorophyta\",\"core chlorophytes\",\"Chlorophyceae\",\"CS clade\",\"Chlamydomonadales\",\"Chlamydomonadaceae\",\"Chlamydomonas\"],\"scientificName\":\"Chlamydomonas reinhardtii\",\"taxonId\":3055}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json"
 }
 ```
 
@@ -640,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json",
-  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
-  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"26793177\",\"source\":\"PubMed\"}],\"value\":\"2.7.8.41\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cardiolipin synthase (CMP-forming)\"},\"shortNames\":[{\"value\":\"CLS\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json"
 }
 ```
 
@@ -659,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json",
-  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
-  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29035\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q93YW7\",\"source\":\"UniProtKB\"}],\"name\":\"Mn(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json"
 }
 ```
 
@@ -678,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json",
-  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
-  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Hung C.H.\",\"Kobayashi K.\",\"Wada H.\",\"Nakamura Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26793177\"},{\"database\":\"DOI\",\"id\":\"10.3389/fmicb.2015.01542\"}],\"citationType\":\"journal article\",\"firstPage\":\"1542\",\"id\":\"26793177\",\"journal\":\"Front. Microbiol.\",\"lastPage\":\"1542\",\"publicationDate\":\"2015\",\"title\":\"Functional Specificity of Cardiolipin Synthase Revealed by the Identification of a Cardiolipin Synthase CrCLS1 in Chlamydomonas reinhardtii.\",\"volume\":\"6\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:48.321314+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "26e9b73e0d86ca30bf42039424c27469e24cd0f504b95de4718d0e72ea3a9a16",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2K3D1C8.json"
 }
 ```
 
@@ -696,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31",
-  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
-  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   CRLS1_CHLRE             Reviewed;         351 AA.\nAC   A0A2K3D1C8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   28-MAR-2018, sequence version 1.\nDT   28-JAN-2026, entry version 31.\nDE   RecName: Full=Cardiolipin synthase (CMP-forming) {ECO:0000305};\nDE            Short=CLS;\nDE            EC=2.7.8.41 {ECO:0000305|PubMed:26793177};\nDE   Flags: Precursor;\nGN   ORFNames=CHLRE_13g604700v5 {ECO:0000312|EMBL:PNW74341.1};\nOS   Chlamydomonas reinhardtii (Chlamydomonas smithii).\nOC   Eukaryota; Viridiplantae; Chlorophyta; core chlorophytes; Chlorophyceae;\nOC   CS clade; Chlamydomonadales; Chlamydomonadaceae; Chlamydomonas.\nOX   NCBI_TaxID=3055 {ECO:0000312|Proteomes:UP000006906};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
+  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31"
 }
 ```
 
@@ -717,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31",
-  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
-  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Cardiolipin synthase (CMP-forming) {ECO:0000305};\nDE            Short=CLS;\nDE            EC=2.7.8.41 {ECO:0000305|PubMed:26793177};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
+  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31"
 }
 ```
 
@@ -738,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31",
-  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
-  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
-  "source_locator": "lines 43-50",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, AND CATALYTIC ACTIVITY.\nRX   PubMed=26793177; DOI=10.3389/fmicb.2015.01542;\nRA   Hung C.H., Kobayashi K., Wada H., Nakamura Y.;\nRT   \"Functional Specificity of Cardiolipin Synthase Revealed by the\nRT   Identification of a Cardiolipin Synthase CrCLS1 in Chlamydomonas\nRT   reinhardtii.\";\nRL   Front. Microbiol. 6:1542-1542(2015).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
+  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31"
 }
 ```
 
@@ -759,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31",
-  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
-  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
-  "source_locator": "lines 66-68",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mn(2+); Xref=ChEBI:CHEBI:29035;\nCC         Evidence={ECO:0000250|UniProtKB:Q93YW7};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:24:52.248527+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 66-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "59f1e23ac2c4d5a40557e3d481dab63f297277a1a4b73ab6748fe911f7d4716c",
+  "url": "https://rest.uniprot.org/unisave/A0A2K3D1C8?format=txt&versions=31"
 }
 ```
 

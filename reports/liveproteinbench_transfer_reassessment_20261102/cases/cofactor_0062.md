@@ -1,18 +1,16 @@
-# cofactor_0062: before and after transfer clarification
+# cofactor_0062
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0062.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0062.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — Zn(2+)
+**Expected answer:** **C** — Zn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for mycobacterial Nei2, whose cofactor annotation identifies Zn(2+) and states that it binds one zinc ion per subunit. The annotation cites both a PROSITE rule and a 2024 publication; the cited structure was determined in complex with Zn(2+).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains histidine and cysteine residues, which may be compatible with metal binding, but that pattern does not establish zinc as the cofactor or distinguish it reliably from the other listed ions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification of Nei2 and its zinc-binding annotation or experimental characterization.
-
-
-**Reason**
-
-> The sequence alone provides no sufficiently discriminating basis for selecting Zn(2+) over the other metal-ion choices. The supporting annotation and structural evidence are reviewer-only and were not supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence's cofactor annotation identifies Zn(2+); the supplied evidence does not support another listed option.
-
-
-### Important caveats
-
-- The UniProt annotation cites both computational PROSITE evidence and a publication; the cited crystal structure is in complex with Zn(2+), which is not by itself proof of catalytic necessity.
-- The sequence match establishes applicability of the annotation to this protein, but the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains histidine and cysteine residues, which may be compatible with metal binding, but that pattern does not establish zinc as the cofactor or distinguish it reliably from the other listed ions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification of Nei2 and its zinc-binding annotation or experimental characterization.",
-    "reason": "The sequence alone provides no sufficiently discriminating basis for selecting Zn(2+) over the other metal-ion choices. The supporting annotation and structural evidence are reviewer-only and were not supplied to the evaluated model."
-  },
-  "case_id": "cofactor_0062",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for mycobacterial Nei2, whose cofactor annotation identifies Zn(2+) and states that it binds one zinc ion per subunit. The annotation cites both a PROSITE rule and a 2024 publication; the cited structure was determined in complex with Zn(2+)."
-  },
-  "important_caveats": [
-    "The UniProt annotation cites both computational PROSITE evidence and a publication; the cited crystal structure is in complex with Zn(2+), which is not by itself proof of catalytic necessity.",
-    "The sequence match establishes applicability of the annotation to this protein, but the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's cofactor annotation identifies Zn(2+); the supplied evidence does not support another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0062",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for mycobacterial Nei2, whose cofactor annotation identifies Zn(2+) and states that it binds one zinc ion per subunit. The annotation cites both a PROSITE rule and a 2024 publication; the cited structure was determined in complex with Zn(2+).",
-    "evidence_ids": ["C1", "C4", "C5", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains histidine and cysteine residues, which may be compatible with metal binding, but that pattern does not establish zinc as the cofactor or distinguish it reliably from the other listed ions.",
-    "missing_item_specific_fact": "The protein-specific identification of Nei2 and its zinc-binding annotation or experimental characterization.",
-    "reason": "The sequence alone provides no sufficiently discriminating basis for selecting Zn(2+) over the other metal-ion choices. The supporting annotation and structural evidence are reviewer-only and were not supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's cofactor annotation identifies Zn(2+); the supplied evidence does not support another listed option."
-  },
-  "important_caveats": [
-    "The UniProt annotation cites both computational PROSITE evidence and a publication; the cited crystal structure is in complex with Zn(2+), which is not by itself proof of catalytic necessity.",
-    "The sequence match establishes applicability of the annotation to this protein, but the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0QT90 (END8B_MYCS2, Nei2 AP lyase from Mycolicibacterium smegmatis) annotates Zn(2+) as the cofactor with evidence from PROSITE-ProRule (ECO:0000255, computational) and PubMed:39012146 (ECO:0000269, experimental X-ray crystallography at 1.45 Å in complex with Zn(2+), PDB 8TJG). The sequence matches exactly (252 aa, same SHA-256). The Endonuclease 8/Nei family is well-established as zinc-dependent.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The C-terminal region contains a Cys-Pro-Val-Cys (CPVC) motif, a hallmark Cys-X-X-Cys zinc-coordinating site characteristic of the Endonuclease III/Nei (AP lyase) superfamily. The protein's ~252-residue helical-bundle architecture with multiple scattered cysteines (CDVRVPRY, CPVC, RCGT) is consistent with a zinc-dependent DNA-repair enzyme. The absence of histidine-rich clusters (typical of Cu proteins) and absence of heme/Fe-S cluster motifs further disfavors Fe and Cu. Na(+) is implausible as a catalytic cofactor for a DNA lyase.
-
-
-**Missing item-specific fact**
-
-Empty string, as saved.
-
-
-**Reason**
-
-> A knowledgeable model can recognize the CPVC zinc-binding motif and the overall Endonuclease III/Nei fold characteristics from the sequence, providing a concrete structural-biochemistry argument for Zn(2+) over the other options. The reasoning relies on general knowledge of metalloenzyme coordination motifs and the AP lyase family, not on recalling a specific database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The Cys-X-X-Cys motif and protein architecture strongly favor Zn(2+). Fe and Cu would require different coordination geometries not suggested by the sequence, and Na(+) is not a recognized catalytic cofactor for DNA lyases.
-
-
-### Important caveats
-
-- The zinc annotation carries both computational (PROSITE-ProRule) and experimental (X-ray crystallography, PDB 8TJG, 2024) evidence codes, making the key well-supported.
-- The protein was only integrated into Swiss-Prot on 2025-06-18; the crystal structure paper appeared in 2024. If the benchmark was constructed before mid-2025, the author may have relied on the PROSITE-ProRule computational annotation or the 2023 functional paper rather than the crystallographic proof.
-- The C-P-V-C motif is suggestive but not absolutely exclusive to zinc; however, in the context of the Endonuclease III/Nei fold it is a well-validated zinc site.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The C-terminal region contains a Cys-Pro-Val-Cys (CPVC) motif, a hallmark Cys-X-X-Cys zinc-coordinating site characteristic of the Endonuclease III/Nei (AP lyase) superfamily. The protein's ~252-residue helical-bundle architecture with multiple scattered cysteines (CDVRVPRY, CPVC, RCGT) is consistent with a zinc-dependent DNA-repair enzyme. The absence of histidine-rich clusters (typical of Cu proteins) and absence of heme/Fe-S cluster motifs further disfavors Fe and Cu. Na(+) is implausible as a catalytic cofactor for a DNA lyase.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "",
-    "reason": "A knowledgeable model can recognize the CPVC zinc-binding motif and the overall Endonuclease III/Nei fold characteristics from the sequence, providing a concrete structural-biochemistry argument for Zn(2+) over the other options. The reasoning relies on general knowledge of metalloenzyme coordination motifs and the AP lyase family, not on recalling a specific database entry."
-  },
-  "case_id": "cofactor_0062",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0QT90 (END8B_MYCS2, Nei2 AP lyase from Mycolicibacterium smegmatis) annotates Zn(2+) as the cofactor with evidence from PROSITE-ProRule (ECO:0000255, computational) and PubMed:39012146 (ECO:0000269, experimental X-ray crystallography at 1.45 Å in complex with Zn(2+), PDB 8TJG). The sequence matches exactly (252 aa, same SHA-256). The Endonuclease 8/Nei family is well-established as zinc-dependent."
-  },
-  "important_caveats": [
-    "The zinc annotation carries both computational (PROSITE-ProRule) and experimental (X-ray crystallography, PDB 8TJG, 2024) evidence codes, making the key well-supported.",
-    "The protein was only integrated into Swiss-Prot on 2025-06-18; the crystal structure paper appeared in 2024. If the benchmark was constructed before mid-2025, the author may have relied on the PROSITE-ProRule computational annotation or the 2023 functional paper rather than the crystallographic proof.",
-    "The C-P-V-C motif is suggestive but not absolutely exclusive to zinc; however, in the context of the Endonuclease III/Nei fold it is a well-validated zinc site."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The Cys-X-X-Cys motif and protein architecture strongly favor Zn(2+). Fe and Cu would require different coordination geometries not suggested by the sequence, and Na(+) is not a recognized catalytic cofactor for DNA lyases."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0062",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0QT90 (END8B_MYCS2, Nei2 AP lyase from Mycolicibacterium smegmatis) annotates Zn(2+) as the cofactor with evidence from PROSITE-ProRule (ECO:0000255, computational) and PubMed:39012146 (ECO:0000269, experimental X-ray crystallography at 1.45 Å in complex with Zn(2+), PDB 8TJG). The sequence matches exactly (252 aa, same SHA-256). The Endonuclease 8/Nei family is well-established as zinc-dependent.",
-    "evidence_ids": ["C5", "C7", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The C-terminal region contains a Cys-Pro-Val-Cys (CPVC) motif, a hallmark Cys-X-X-Cys zinc-coordinating site characteristic of the Endonuclease III/Nei (AP lyase) superfamily. The protein's ~252-residue helical-bundle architecture with multiple scattered cysteines (CDVRVPRY, CPVC, RCGT) is consistent with a zinc-dependent DNA-repair enzyme. The absence of histidine-rich clusters (typical of Cu proteins) and absence of heme/Fe-S cluster motifs further disfavors Fe and Cu. Na(+) is implausible as a catalytic cofactor for a DNA lyase.",
-    "missing_item_specific_fact": "",
-    "reason": "A knowledgeable model can recognize the CPVC zinc-binding motif and the overall Endonuclease III/Nei fold characteristics from the sequence, providing a concrete structural-biochemistry argument for Zn(2+) over the other options. The reasoning relies on general knowledge of metalloenzyme coordination motifs and the AP lyase family, not on recalling a specific database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The Cys-X-X-Cys motif and protein architecture strongly favor Zn(2+). Fe and Cu would require different coordination geometries not suggested by the sequence, and Na(+) is not a recognized catalytic cofactor for DNA lyases."
-  },
-  "important_caveats": [
-    "The zinc annotation carries both computational (PROSITE-ProRule) and experimental (X-ray crystallography, PDB 8TJG, 2024) evidence codes, making the key well-supported.",
-    "The protein was only integrated into Swiss-Prot on 2025-06-18; the crystal structure paper appeared in 2024. If the benchmark was constructed before mid-2025, the author may have relied on the PROSITE-ProRule computational annotation or the 2023 functional paper rather than the crystallographic proof.",
-    "The C-P-V-C motif is suggestive but not absolutely exclusive to zinc; however, in the context of the Endonuclease III/Nei fold it is a well-validated zinc site."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0QT90",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 252,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
   "current_entry_audit": {
     "entryVersion": 142,
     "firstPublicDate": "2025-06-18",
@@ -528,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-01-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "current_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 252,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 140,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0QT90",
   "selected_historical_entry_version": 140,
+  "selected_historical_record_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "selected_historical_source_sequence_length": 252,
+  "selected_historical_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
   "selected_historical_version": {
     "accession": "A0QT90",
     "database": "Swiss-Prot",
@@ -546,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "END8B_MYCS2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "selected_historical_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
-  "selected_historical_source_sequence_length": 252,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 140,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0QT90\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -596,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":142,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-01-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -615,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mycobacterium smegmatis\",\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Mycobacteriales\",\"Mycobacteriaceae\",\"Mycolicibacterium\"],\"scientificName\":\"Mycolicibacterium smegmatis (strain ATCC 700084 / mc(2)155)\",\"taxonId\":246196}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -634,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P9WNC1\",\"source\":\"UniProtKB\"}],\"value\":\"Endonuclease 8 2\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00392\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"}],\"value\":\"3.2.2.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00392\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36610794\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"}],\"value\":\"4.2.99.18\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36610794\",\"source\":\"PubMed\"}],\"value\":\"DNA-(apurinic or apyrimidinic site) lyase Nei2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36610794\",\"source\":\"PubMed\"}],\"value\":\"AP lyase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -653,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00391\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"}],\"name\":\"Zn(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00391\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"}],\"value\":\"Binds 1 zinc ion per subunit.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -672,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Warren G.M.\",\"Ejaz A.\",\"Fay A.\",\"Glickman M.S.\",\"Shuman S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36610794\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkac1222\"}],\"citationType\":\"journal article\",\"firstPage\":\"218\",\"id\":\"36610794\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"235\",\"publicationDate\":\"2023\",\"title\":\"Mycobacterial helicase Lhr abets resistance to DNA crosslinking agents mitomycin C and cisplatin.\",\"volume\":\"51\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700084 / mc(2)155\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PROBABLE ACTIVE SITE\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -691,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Warren G.M.\",\"Shuman S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39012146\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.01248-24\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0124824\",\"id\":\"39012146\",\"journal\":\"MBio\",\"lastPage\":\"e0124824\",\"publicationDate\":\"2024\",\"title\":\"Structure and in vivo psoralen DNA crosslink repair activity of mycobacterial Nei2.\",\"volume\":\"15\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8TJG\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700084 / mc(2)155\"}],\"referenceNumber\":5,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.45 ANGSTROMS) IN COMPLEX WITH ZN(2+)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PROBABLE ACTIVE SITE\",\"COFACTOR\",\"SUBUNIT\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF PRO-2; GLU-3 AND LYS-51\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -709,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   END8B_MYCS2             Reviewed;         252 AA.\nAC   A0QT90; I7G4T3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-JAN-2007, sequence version 1.\nDT   28-JAN-2026, entry version 140.\nDE   RecName: Full=DNA-(apurinic or apyrimidinic site) lyase Nei2 {ECO:0000303|PubMed:36610794};\nDE            Short=AP lyase {ECO:0000303|PubMed:36610794};\nDE            EC=3.2.2.- {ECO:0000255|PROSITE-ProRule:PRU00392, ECO:0000269|PubMed:39012146};\nDE            EC=4.2.99.18 {ECO:0000255|PROSITE-ProRule:PRU00392, ECO:0000269|PubMed:36610794, ECO:0000269|PubMed:39012146};\nDE   AltName: Full=Endonuclease 8 2 {ECO:0000250|UniProtKB:P9WNC1};\nGN   Name=nei2 {ECO:0000303|PubMed:36610794};\nGN   OrderedLocusNames=MSMEG_1756 {ECO:0000312|EMBL:ABK74586.1};\nOS   Mycolicibacterium smegmatis (strain ATCC 700084 / mc(2)155) (Mycobacterium\nOS   smegmatis).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Mycobacteriales;\nOC   Mycobacteriaceae; Mycolicibacterium.\nOX   NCBI_TaxID=246196;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -730,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=DNA-(apurinic or apyrimidinic site) lyase Nei2 {ECO:0000303|PubMed:36610794};\nDE            Short=AP lyase {ECO:0000303|PubMed:36610794};\nDE            EC=3.2.2.- {ECO:0000255|PROSITE-ProRule:PRU00392, ECO:0000269|PubMed:39012146};\nDE            EC=4.2.99.18 {ECO:0000255|PROSITE-ProRule:PRU00392, ECO:0000269|PubMed:36610794, ECO:0000269|PubMed:39012146};\nDE   AltName: Full=Endonuclease 8 2 {ECO:0000250|UniProtKB:P9WNC1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -751,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 42-49",
   "excerpt": "RN   [4]\nRP   FUNCTION, CATALYTIC ACTIVITY, PROBABLE ACTIVE SITE, AND SUBUNIT.\nRC   STRAIN=ATCC 700084 / mc(2)155;\nRX   PubMed=36610794; DOI=10.1093/nar/gkac1222;\nRA   Warren G.M., Ejaz A., Fay A., Glickman M.S., Shuman S.;\nRT   \"Mycobacterial helicase Lhr abets resistance to DNA crosslinking agents\nRT   mitomycin C and cisplatin.\";\nRL   Nucleic Acids Res. 51:218-235(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -772,18 +534,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 50-59",
   "excerpt": "RN   [5] {ECO:0007744|PDB:8TJG}\nRP   X-RAY CRYSTALLOGRAPHY (1.45 ANGSTROMS) IN COMPLEX WITH ZN(2+), FUNCTION,\nRP   CATALYTIC ACTIVITY, PROBABLE ACTIVE SITE, COFACTOR, SUBUNIT, DISRUPTION\nRP   PHENOTYPE, AND MUTAGENESIS OF PRO-2; GLU-3 AND LYS-51.\nRC   STRAIN=ATCC 700084 / mc(2)155;\nRX   PubMed=39012146; DOI=10.1128/mbio.01248-24;\nRA   Warren G.M., Shuman S.;\nRT   \"Structure and in vivo psoralen DNA crosslink repair activity of\nRT   mycobacterial Nei2.\";\nRL   MBio 15:e0124824-e0124824(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -793,18 +555,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 85-90",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;\nCC         Evidence={ECO:0000255|PROSITE-ProRule:PRU00391,\nCC         ECO:0000269|PubMed:39012146};\nCC       Note=Binds 1 zinc ion per subunit. {ECO:0000255|PROSITE-\nCC       ProRule:PRU00391, ECO:0000269|PubMed:39012146};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-90",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 

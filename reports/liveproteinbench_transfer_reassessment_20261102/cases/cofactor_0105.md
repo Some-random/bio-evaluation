@@ -1,18 +1,16 @@
-# cofactor_0105: before and after transfer clarification
+# cofactor_0105
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0105.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0105.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — Ca(2+)
+**Expected answer:** **C** — Ca(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | uncertain | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: uncertain
-
-> The sequence matches HobA, a DNA replication regulator. UniProt records four Ca(2+) ions bound in the 2UVP crystal structure, but explicitly says it is unknown whether they are physiologically relevant. That establishes calcium binding in a structure, not that Ca(2+) is required for catalytic activity.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The supplied sequence and choices provide no meaningful basis for identifying a required ion. Knowing the protein's specific annotation or experimental binding behavior would be needed; generic sequence-based reasoning cannot establish that a particular ion is essential.
-
-
-**Missing item-specific fact**
-
-> Whether this HobA protein physiologically requires Ca(2+) for a defined activity, rather than merely binding calcium in the crystallized structure.
-
-
-**Reason**
-
-> The identity and calcium-binding annotation are reviewer-only facts absent from the input, and even those do not establish a required catalytic cofactor.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> No listed ion is established by the supplied sequence as required for catalytic activity. Choice C is defensible only if the task is interpreted as asking which ion was observed bound in the crystal structure, not which cofactor is required.
-
-
-### Important caveats
-
-- The sequence match to HobA is exact, but the accession and database annotation were not supplied to the evaluated model.
-- The calcium evidence is tied to a crystal structure and carries an explicit caveat that physiological relevance is unknown.
-- The available evidence does not establish that HobA has catalytic activity requiring a cofactor.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied sequence and choices provide no meaningful basis for identifying a required ion. Knowing the protein's specific annotation or experimental binding behavior would be needed; generic sequence-based reasoning cannot establish that a particular ion is essential.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Whether this HobA protein physiologically requires Ca(2+) for a defined activity, rather than merely binding calcium in the crystallized structure.",
-    "reason": "The identity and calcium-binding annotation are reviewer-only facts absent from the input, and even those do not establish a required catalytic cofactor."
-  },
-  "case_id": "cofactor_0105",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H4",
-      "H5"
-    ],
-    "judgment": "cannot_determine",
-    "reason": "The sequence matches HobA, a DNA replication regulator. UniProt records four Ca(2+) ions bound in the 2UVP crystal structure, but explicitly says it is unknown whether they are physiologically relevant. That establishes calcium binding in a structure, not that Ca(2+) is required for catalytic activity."
-  },
-  "important_caveats": [
-    "The sequence match to HobA is exact, but the accession and database annotation were not supplied to the evaluated model.",
-    "The calcium evidence is tied to a crystal structure and carries an explicit caveat that physiological relevance is unknown.",
-    "The available evidence does not establish that HobA has catalytic activity requiring a cofactor."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No listed ion is established by the supplied sequence as required for catalytic activity. Choice C is defensible only if the task is interpreted as asking which ion was observed bound in the crystal structure, not which cofactor is required."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0105",
-  "expected_answer_check": {
-    "judgment": "cannot_determine",
-    "reason": "The sequence matches HobA, a DNA replication regulator. UniProt records four Ca(2+) ions bound in the 2UVP crystal structure, but explicitly says it is unknown whether they are physiologically relevant. That establishes calcium binding in a structure, not that Ca(2+) is required for catalytic activity.",
-    "evidence_ids": ["C4", "C5", "C7", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The supplied sequence and choices provide no meaningful basis for identifying a required ion. Knowing the protein's specific annotation or experimental binding behavior would be needed; generic sequence-based reasoning cannot establish that a particular ion is essential.",
-    "missing_item_specific_fact": "Whether this HobA protein physiologically requires Ca(2+) for a defined activity, rather than merely binding calcium in the crystallized structure.",
-    "reason": "The identity and calcium-binding annotation are reviewer-only facts absent from the input, and even those do not establish a required catalytic cofactor."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No listed ion is established by the supplied sequence as required for catalytic activity. Choice C is defensible only if the task is interpreted as asking which ion was observed bound in the crystal structure, not which cofactor is required."
-  },
-  "important_caveats": [
-    "The sequence match to HobA is exact, but the accession and database annotation were not supplied to the evaluated model.",
-    "The calcium evidence is tied to a crystal structure and carries an explicit caveat that physiological relevance is unknown.",
-    "The available evidence does not establish that HobA has catalytic activity requiring a cofactor."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry O25828 (HobA from Helicobacter pylori) explicitly annotates Ca(2+) as a cofactor (C5, H5), supported by X-ray crystallography at 1.70 Å in complex with calcium (PDB:2UVP, evidence code ECO:0007744, reference C7/H4). However, the annotation carries a significant qualifier: 'Binds 4 Ca(2+) ions, it is not known if they are physiologically relevant.' The evidence is structural observation rather than functional/enzymatic demonstration. Additionally, HobA is described as a 'DNA replication regulator protein' rather than a catalyst, so the framing of 'cofactor required for catalytic activity' is somewhat mismatched with the protein's actual role. The key is supported by the database annotation but with important caveats about physiological relevance and the non-enzymatic nature of the protein.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> None meaningfully available from the sequence alone. HobA is a DNA replication regulator that interacts with DnaA, not a classical enzyme with a recognizable active site. The sequence contains no canonical calcium-binding motif (e.g., EF-hand, C2 domain), no metal-coordinating catalytic triad, and no obvious redox-active center. The calcium ions were identified through X-ray crystallography of the protein in complex with calcium, not through sequence-based inference. Distinguishing Ca(2+) from Fe(2+), Fe cation, or Na(+) requires knowing the specific crystallographic annotation of this protein.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt annotation (COFACTOR: Ca(2+)) and the PDB:2UVP crystallographic structure showing four calcium ions bound to HobA. Without this protein-specific experimental/database knowledge, the 180-residue sequence provides no reliable basis to prefer Ca(2+) over the other three metal-ion options.
-
-
-**Reason**
-
-> The sequence does not encode a recognizable calcium-binding domain, catalytic motif, or any structural feature that would allow a knowledgeable biologist to reason toward Ca(2+) over Fe(2+), Fe cation, or Na(+). The answer depends entirely on knowing the database annotation or the crystallographic literature for this specific protein (HobA/HP1230).
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, only Ca(2+) has any database or structural evidence support. Na(+), Fe cation, and Fe(2+) have no annotation support for this protein. However, the question's framing ('cofactor required for catalytic activity') is imprecise because HobA is a replication regulator, not a catalyst, and the UniProt note explicitly questions the physiological relevance of the bound calcium ions. The distinction between 'Fe cation' (B) and 'Fe(2+)' (D) is also somewhat ambiguous since 'Fe cation' could encompass Fe(2+), but neither is relevant here.
-
-
-### Important caveats
-
-- The UniProt annotation qualifies the Ca(2+) binding with 'it is not known if they are physiologically relevant' (ECO:0000269, PubMed:17683397), meaning the structural observation of calcium in the crystal may not reflect a functional requirement.
-- HobA is a DNA replication regulator (interacts with DnaA), not an enzyme; the question's reference to 'catalytic activity' is a poor fit for this protein's actual function.
-- The evidence code ECO:0007744 indicates inference from 3D structure (crystallography), not from biochemical assay of enzymatic cofactor dependence.
-- The sequence-to-accession match is confirmed (SHA256 match), so the annotation applies to the exact sequence provided.
-- The reviewer-only evidence was not available to the evaluated model; the model would need to recognize the sequence or rely on memorized database knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "None meaningfully available from the sequence alone. HobA is a DNA replication regulator that interacts with DnaA, not a classical enzyme with a recognizable active site. The sequence contains no canonical calcium-binding motif (e.g., EF-hand, C2 domain), no metal-coordinating catalytic triad, and no obvious redox-active center. The calcium ions were identified through X-ray crystallography of the protein in complex with calcium, not through sequence-based inference. Distinguishing Ca(2+) from Fe(2+), Fe cation, or Na(+) requires knowing the specific crystallographic annotation of this protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific UniProt annotation (COFACTOR: Ca(2+)) and the PDB:2UVP crystallographic structure showing four calcium ions bound to HobA. Without this protein-specific experimental/database knowledge, the 180-residue sequence provides no reliable basis to prefer Ca(2+) over the other three metal-ion options.",
-    "reason": "The sequence does not encode a recognizable calcium-binding domain, catalytic motif, or any structural feature that would allow a knowledgeable biologist to reason toward Ca(2+) over Fe(2+), Fe cation, or Na(+). The answer depends entirely on knowing the database annotation or the crystallographic literature for this specific protein (HobA/HP1230)."
-  },
-  "case_id": "cofactor_0105",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry O25828 (HobA from Helicobacter pylori) explicitly annotates Ca(2+) as a cofactor (C5, H5), supported by X-ray crystallography at 1.70 Å in complex with calcium (PDB:2UVP, evidence code ECO:0007744, reference C7/H4). However, the annotation carries a significant qualifier: 'Binds 4 Ca(2+) ions, it is not known if they are physiologically relevant.' The evidence is structural observation rather than functional/enzymatic demonstration. Additionally, HobA is described as a 'DNA replication regulator protein' rather than a catalyst, so the framing of 'cofactor required for catalytic activity' is somewhat mismatched with the protein's actual role. The key is supported by the database annotation but with important caveats about physiological relevance and the non-enzymatic nature of the protein."
-  },
-  "important_caveats": [
-    "The UniProt annotation qualifies the Ca(2+) binding with 'it is not known if they are physiologically relevant' (ECO:0000269, PubMed:17683397), meaning the structural observation of calcium in the crystal may not reflect a functional requirement.",
-    "HobA is a DNA replication regulator (interacts with DnaA), not an enzyme; the question's reference to 'catalytic activity' is a poor fit for this protein's actual function.",
-    "The evidence code ECO:0007744 indicates inference from 3D structure (crystallography), not from biochemical assay of enzymatic cofactor dependence.",
-    "The sequence-to-accession match is confirmed (SHA256 match), so the annotation applies to the exact sequence provided.",
-    "The reviewer-only evidence was not available to the evaluated model; the model would need to recognize the sequence or rely on memorized database knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only Ca(2+) has any database or structural evidence support. Na(+), Fe cation, and Fe(2+) have no annotation support for this protein. However, the question's framing ('cofactor required for catalytic activity') is imprecise because HobA is a replication regulator, not a catalyst, and the UniProt note explicitly questions the physiological relevance of the bound calcium ions. The distinction between 'Fe cation' (B) and 'Fe(2+)' (D) is also somewhat ambiguous since 'Fe cation' could encompass Fe(2+), but neither is relevant here."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0105",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry O25828 (HobA from Helicobacter pylori) explicitly annotates Ca(2+) as a cofactor (C5, H5), supported by X-ray crystallography at 1.70 Å in complex with calcium (PDB:2UVP, evidence code ECO:0007744, reference C7/H4). However, the annotation carries a significant qualifier: 'Binds 4 Ca(2+) ions, it is not known if they are physiologically relevant.' The evidence is structural observation rather than functional/enzymatic demonstration. Additionally, HobA is described as a 'DNA replication regulator protein' rather than a catalyst, so the framing of 'cofactor required for catalytic activity' is somewhat mismatched with the protein's actual role. The key is supported by the database annotation but with important caveats about physiological relevance and the non-enzymatic nature of the protein.",
-    "evidence_ids": ["C5", "C7", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "None meaningfully available from the sequence alone. HobA is a DNA replication regulator that interacts with DnaA, not a classical enzyme with a recognizable active site. The sequence contains no canonical calcium-binding motif (e.g., EF-hand, C2 domain), no metal-coordinating catalytic triad, and no obvious redox-active center. The calcium ions were identified through X-ray crystallography of the protein in complex with calcium, not through sequence-based inference. Distinguishing Ca(2+) from Fe(2+), Fe cation, or Na(+) requires knowing the specific crystallographic annotation of this protein.",
-    "missing_item_specific_fact": "The specific UniProt annotation (COFACTOR: Ca(2+)) and the PDB:2UVP crystallographic structure showing four calcium ions bound to HobA. Without this protein-specific experimental/database knowledge, the 180-residue sequence provides no reliable basis to prefer Ca(2+) over the other three metal-ion options.",
-    "reason": "The sequence does not encode a recognizable calcium-binding domain, catalytic motif, or any structural feature that would allow a knowledgeable biologist to reason toward Ca(2+) over Fe(2+), Fe cation, or Na(+). The answer depends entirely on knowing the database annotation or the crystallographic literature for this specific protein (HobA/HP1230)."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only Ca(2+) has any database or structural evidence support. Na(+), Fe cation, and Fe(2+) have no annotation support for this protein. However, the question's framing ('cofactor required for catalytic activity') is imprecise because HobA is a replication regulator, not a catalyst, and the UniProt note explicitly questions the physiological relevance of the bound calcium ions. The distinction between 'Fe cation' (B) and 'Fe(2+)' (D) is also somewhat ambiguous since 'Fe cation' could encompass Fe(2+), but neither is relevant here."
-  },
-  "important_caveats": [
-    "The UniProt annotation qualifies the Ca(2+) binding with 'it is not known if they are physiologically relevant' (ECO:0000269, PubMed:17683397), meaning the structural observation of calcium in the crystal may not reflect a functional requirement.",
-    "HobA is a DNA replication regulator (interacts with DnaA), not an enzyme; the question's reference to 'catalytic activity' is a poor fit for this protein's actual function.",
-    "The evidence code ECO:0007744 indicates inference from 3D structure (crystallography), not from biochemical assay of enzymatic cofactor dependence.",
-    "The sequence-to-accession match is confirmed (SHA256 match), so the annotation applies to the exact sequence provided.",
-    "The reviewer-only evidence was not available to the evaluated model; the model would need to recognize the sequence or rely on memorized database knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: uncertain
 
@@ -395,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "O25828",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 180,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
   "current_entry_audit": {
     "entryVersion": 135,
     "firstPublicDate": "2025-02-05",
@@ -543,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "1998-01-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "current_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 180,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 133,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "O25828",
   "selected_historical_entry_version": 133,
+  "selected_historical_record_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "selected_historical_source_sequence_length": 180,
+  "selected_historical_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
   "selected_historical_version": {
     "accession": "O25828",
     "database": "Swiss-Prot",
@@ -561,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HOBA_HELPY",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "selected_historical_source_sequence_sha256": "cddc21a9c206b5acd72edec11188af523bc79531b47d6d0f42dae01cf0b2c4cc",
-  "selected_historical_source_sequence_length": 180,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 133,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"O25828\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -611,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":135,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"1998-01-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -630,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Campylobacter pylori\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Campylobacterota\",\"Epsilonproteobacteria\",\"Campylobacterales\",\"Helicobacteraceae\",\"Helicobacter\"],\"scientificName\":\"Helicobacter pylori (strain ATCC 700392 / 26695)\",\"taxonId\":85962}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -649,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17645450\",\"source\":\"PubMed\"}],\"value\":\"Helicobacter orisome binding protein A\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17645450\",\"source\":\"PubMed\"}],\"value\":\"HobA\"}]}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DNA replication regulator protein HobA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -668,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2UVP\",\"source\":\"PDB\"}],\"name\":\"Ca(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17683397\",\"source\":\"PubMed\"}],\"value\":\"Binds 4 Ca(2+) ions, it is not known if they are physiologically relevant.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -687,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zawilak-Pawlik A.\",\"Kois A.\",\"Stingl K.\",\"Boneca I.G.\",\"Skrobuk P.\",\"Piotr J.\",\"Lurz R.\",\"Zakrzewska-Czerwinska J.\",\"Labigne A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17645450\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1365-2958.2007.05853.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"979\",\"id\":\"17645450\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"994\",\"publicationDate\":\"2007\",\"title\":\"HobA--a novel protein involved in initiation of chromosomal replication in Helicobacter pylori.\",\"volume\":\"65\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700392 / 26695\"},{\"type\":\"STRAIN\",\"value\":\"N6\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PROTEIN ABUNDANCE\",\"INTERACTION WITH DNAA\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -706,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O25828.json",
-  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
-  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Natrajan G.\",\"Hall D.R.\",\"Thompson A.C.\",\"Gutsche I.\",\"Terradot L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17683397\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1365-2958.2007.05843.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"995\",\"id\":\"17683397\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"1005\",\"publicationDate\":\"2007\",\"title\":\"Structural similarity between the DnaA-binding proteins HobA (HP1230) from Helicobacter pylori and DiaA from Escherichia coli.\",\"volume\":\"65\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2UVP\",\"source\":\"PDB\"}],\"referenceNumber\":3,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.70 ANGSTROMS) IN COMPLEX WITH CALCIUM\",\"SUBUNIT\",\"INTERACTION WITH DNAA\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:29:13.759518+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d581d5812cdc025c1bdd3a7f918973d92ed58ef03c1707152015cb98495ec724",
+  "url": "https://rest.uniprot.org/uniprotkb/O25828.json"
 }
 ```
 
@@ -724,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   HOBA_HELPY              Reviewed;         180 AA.\nAC   O25828;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JAN-1998, sequence version 1.\nDT   28-JAN-2026, entry version 133.\nDE   RecName: Full=DNA replication regulator protein HobA {ECO:0000305};\nDE   AltName: Full=Helicobacter orisome binding protein A {ECO:0000303|PubMed:17645450};\nDE            Short=HobA {ECO:0000303|PubMed:17645450};\nGN   Name=hobA {ECO:0000303|PubMed:17645450};\nGN   OrderedLocusNames=HP_1230 {ECO:0000312|EMBL:AAD08280.1};\nOS   Helicobacter pylori (strain ATCC 700392 / 26695) (Campylobacter pylori).\nOC   Bacteria; Pseudomonadati; Campylobacterota; Epsilonproteobacteria;\nOC   Campylobacterales; Helicobacteraceae; Helicobacter.\nOX   NCBI_TaxID=85962;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -745,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=DNA replication regulator protein HobA {ECO:0000305};\nDE   AltName: Full=Helicobacter orisome binding protein A {ECO:0000303|PubMed:17645450};\nDE            Short=HobA {ECO:0000303|PubMed:17645450};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -766,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [2]\nRP   FUNCTION, PROTEIN ABUNDANCE, INTERACTION WITH DNAA, INDUCTION, AND\nRP   DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC 700392 / 26695, and N6;\nRX   PubMed=17645450; DOI=10.1111/j.1365-2958.2007.05853.x;\nRA   Zawilak-Pawlik A., Kois A., Stingl K., Boneca I.G., Skrobuk P., Piotr J.,\nRA   Lurz R., Zakrzewska-Czerwinska J., Labigne A.;\nRT   \"HobA--a novel protein involved in initiation of chromosomal replication in\nRT   Helicobacter pylori.\";\nRL   Mol. Microbiol. 65:979-994(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -787,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 40-47",
   "excerpt": "RN   [3] {ECO:0007744|PDB:2UVP}\nRP   X-RAY CRYSTALLOGRAPHY (1.70 ANGSTROMS) IN COMPLEX WITH CALCIUM, SUBUNIT,\nRP   AND INTERACTION WITH DNAA.\nRX   PubMed=17683397; DOI=10.1111/j.1365-2958.2007.05843.x;\nRA   Natrajan G., Hall D.R., Thompson A.C., Gutsche I., Terradot L.;\nRT   \"Structural similarity between the DnaA-binding proteins HobA (HP1230) from\nRT   Helicobacter pylori and DiaA from Escherichia coli.\";\nRL   Mol. Microbiol. 65:995-1005(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 
@@ -808,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 133,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133",
-  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
-  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
-  "source_locator": "lines 60-63",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Ca(2+); Xref=ChEBI:CHEBI:29108; Evidence={ECO:0007744|PDB:2UVP};\nCC       Note=Binds 4 Ca(2+) ions, it is not known if they are physiologically\nCC       relevant. {ECO:0000269|PubMed:17683397};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 133,
+  "retrieved_utc": "2026-11-02T04:29:16.247707+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 60-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "185c49334c4da38ceee757dcfea25683625716ed4379ecd05641275d002e6c2d",
+  "url": "https://rest.uniprot.org/unisave/O25828?format=txt&versions=133"
 }
 ```
 

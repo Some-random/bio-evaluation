@@ -1,18 +1,16 @@
-# catalytic_activity_0090: before and after transfer clarification
+# catalytic_activity_0090
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0090.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0090.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — peramine + 2-oxoglutarate + O2 = 8-hydroxyperamine + succinate + CO2
+**Expected answer:** **D** — peramine + 2-oxoglutarate + O2 = 8-hydroxyperamine + succinate + CO2
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the 374-aa UniProt entry for PPZC, whose catalytic-activity annotation gives reaction D with ECO:0000269 evidence linked to a 2024 paper. The archived entry also contains this reaction annotation, though the underlying paper was not independently reviewed here.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices describe different reaction types, and a sequence-based inference of a 2-oxoglutarate-dependent oxygenase could favor D over the hydrolase, synthetase, and methyltransferase options. That broad inference does not establish peramine as the substrate or the specific 8-hydroxylation product.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic activity linking this sequence to peramine 8-hydroxylation, established by annotation or experimental evidence.
-
-
-**Reason**
-
-> The exact substrate and product specificity required by the question is not supplied by the sequence or context in a way that can be reliably deduced from general biological knowledge alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices give distinct reaction types and D is supported for the sequence-matched protein by the reviewer-only evidence.
-
-
-### Important caveats
-
-- The accession and database annotation are reviewer-only information, not information supplied to the evaluated model.
-- UniProt cites experimental evidence for the catalytic activity, but the primary study was not independently validated in this audit.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices describe different reaction types, and a sequence-based inference of a 2-oxoglutarate-dependent oxygenase could favor D over the hydrolase, synthetase, and methyltransferase options. That broad inference does not establish peramine as the substrate or the specific 8-hydroxylation product.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic activity linking this sequence to peramine 8-hydroxylation, established by annotation or experimental evidence.",
-    "reason": "The exact substrate and product specificity required by the question is not supplied by the sequence or context in a way that can be reliably deduced from general biological knowledge alone."
-  },
-  "case_id": "catalytic_activity_0090",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 374-aa UniProt entry for PPZC, whose catalytic-activity annotation gives reaction D with ECO:0000269 evidence linked to a 2024 paper. The archived entry also contains this reaction annotation, though the underlying paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The accession and database annotation are reviewer-only information, not information supplied to the evaluated model.",
-    "UniProt cites experimental evidence for the catalytic activity, but the primary study was not independently validated in this audit."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices give distinct reaction types and D is supported for the sequence-matched protein by the reviewer-only evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0090",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 374-aa UniProt entry for PPZC, whose catalytic-activity annotation gives reaction D with ECO:0000269 evidence linked to a 2024 paper. The archived entry also contains this reaction annotation, though the underlying paper was not independently reviewed here.",
-    "evidence_ids": ["C5", "C7", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices describe different reaction types, and a sequence-based inference of a 2-oxoglutarate-dependent oxygenase could favor D over the hydrolase, synthetase, and methyltransferase options. That broad inference does not establish peramine as the substrate or the specific 8-hydroxylation product.",
-    "missing_item_specific_fact": "The protein-specific catalytic activity linking this sequence to peramine 8-hydroxylation, established by annotation or experimental evidence.",
-    "reason": "The exact substrate and product specificity required by the question is not supplied by the sequence or context in a way that can be reliably deduced from general biological knowledge alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices give distinct reaction types and D is supported for the sequence-matched protein by the reviewer-only evidence."
-  },
-  "important_caveats": [
-    "The accession and database annotation are reviewer-only information, not information supplied to the evaluated model.",
-    "UniProt cites experimental evidence for the catalytic activity, but the primary study was not independently validated in this audit."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A455ZKR7 (PPZC_METMF, 374 AA, exact sequence match) explicitly annotates the catalytic activity as 'peramine + 2-oxoglutarate + O2 = 8-hydroxyperamine + succinate + CO2' (Rhea:RHEA:82167) with experimental evidence code ECO:0000269 from PubMed:38578094 (Rothchild et al., JACS 2024). The protein is named '2-oxoglutarate-Fe(II) type oxidoreductase ppzC' with EC 1.14.11.-. Both current (entry v22) and historical (entry v21) records confirm this annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable motifs of the 2-His-1-carboxylate facial triad characteristic of 2-oxoglutarate/Fe(II) oxygenases: 'IGSHTDF' (HxD motif), 'VHRAQ' (second His), and 'MHESC' (third His). Among the four choices, only D involves 2-oxoglutarate + O2 as substrates yielding succinate + CO2 as byproducts, which is the hallmark reaction chemistry of the 2OG/Fe(II) oxygenase superfamily. Choices A (ADP-ribosylhydrolase), B (FMN/ATP-dependent synthetase), and C (SAM-dependent methyltransferase) require entirely different cofactors and catalytic mechanisms inconsistent with the identified facial-triad motif.
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity 'peramine' and the regiochemistry of hydroxylation at C-8 cannot be predicted from sequence alone; this requires knowledge of the PPZ biosynthetic pathway or the 2024 experimental characterization. However, this fact is not needed to distinguish D from A, B, and C, since only D is mechanistically consistent with a 2OG/Fe(II) oxygenase.
-
-
-**Reason**
-
-> A model with knowledge of the 2-His-1-carboxylate facial triad motif and the general reaction chemistry of 2OG-dependent dioxygenases (2OG + O2 → succinate + CO2 + substrate hydroxylation) can eliminate choices A, B, and C based on their incompatible cofactor requirements and reaction stoichiometries. The sequence provides concrete motif evidence for the enzyme class, and the mechanistic signature uniquely identifies D among the four options.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Each distractor belongs to a fundamentally different enzyme class (hydrolase, synthetase, methyltransferase) with incompatible cofactors (ADP-ribose, FMN/ATP, SAM) and reaction mechanisms. The 2OG/Fe(II) oxygenase motif in the sequence and the 2OG + O2 → succinate + CO2 stoichiometry in D create a clear mechanistic distinction. No other option is consistent with the identified enzyme fold.
-
-
-### Important caveats
-
-- The specific substrate name 'peramine' and product '8-hydroxyperamine' are pathway-specific facts that cannot be deduced from sequence alone; they were confirmed experimentally (ECO:0000269) only in 2024 (PubMed:38578094). The UniProt entry was first released in February 2025.
-- The facial-triad motif identification requires familiarity with 2OG/Fe(II) oxygenase structural biology; while well-established, it is specialized enzymology knowledge rather than general biology.
-- The identity of this sequence as PPZC was inferred by the reviewer from dataset metadata (accession A0A455ZKR7); this accession was not provided to the evaluated model.
-- The sequence match is exact (374 AA, identical SHA256) across both current and historical UniProt records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable motifs of the 2-His-1-carboxylate facial triad characteristic of 2-oxoglutarate/Fe(II) oxygenases: 'IGSHTDF' (HxD motif), 'VHRAQ' (second His), and 'MHESC' (third His). Among the four choices, only D involves 2-oxoglutarate + O2 as substrates yielding succinate + CO2 as byproducts, which is the hallmark reaction chemistry of the 2OG/Fe(II) oxygenase superfamily. Choices A (ADP-ribosylhydrolase), B (FMN/ATP-dependent synthetase), and C (SAM-dependent methyltransferase) require entirely different cofactors and catalytic mechanisms inconsistent with the identified facial-triad motif.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific substrate identity 'peramine' and the regiochemistry of hydroxylation at C-8 cannot be predicted from sequence alone; this requires knowledge of the PPZ biosynthetic pathway or the 2024 experimental characterization. However, this fact is not needed to distinguish D from A, B, and C, since only D is mechanistically consistent with a 2OG/Fe(II) oxygenase.",
-    "reason": "A model with knowledge of the 2-His-1-carboxylate facial triad motif and the general reaction chemistry of 2OG-dependent dioxygenases (2OG + O2 → succinate + CO2 + substrate hydroxylation) can eliminate choices A, B, and C based on their incompatible cofactor requirements and reaction stoichiometries. The sequence provides concrete motif evidence for the enzyme class, and the mechanistic signature uniquely identifies D among the four options."
-  },
-  "case_id": "catalytic_activity_0090",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A455ZKR7 (PPZC_METMF, 374 AA, exact sequence match) explicitly annotates the catalytic activity as 'peramine + 2-oxoglutarate + O2 = 8-hydroxyperamine + succinate + CO2' (Rhea:RHEA:82167) with experimental evidence code ECO:0000269 from PubMed:38578094 (Rothchild et al., JACS 2024). The protein is named '2-oxoglutarate-Fe(II) type oxidoreductase ppzC' with EC 1.14.11.-. Both current (entry v22) and historical (entry v21) records confirm this annotation."
-  },
-  "important_caveats": [
-    "The specific substrate name 'peramine' and product '8-hydroxyperamine' are pathway-specific facts that cannot be deduced from sequence alone; they were confirmed experimentally (ECO:0000269) only in 2024 (PubMed:38578094). The UniProt entry was first released in February 2025.",
-    "The facial-triad motif identification requires familiarity with 2OG/Fe(II) oxygenase structural biology; while well-established, it is specialized enzymology knowledge rather than general biology.",
-    "The identity of this sequence as PPZC was inferred by the reviewer from dataset metadata (accession A0A455ZKR7); this accession was not provided to the evaluated model.",
-    "The sequence match is exact (374 AA, identical SHA256) across both current and historical UniProt records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Each distractor belongs to a fundamentally different enzyme class (hydrolase, synthetase, methyltransferase) with incompatible cofactors (ADP-ribose, FMN/ATP, SAM) and reaction mechanisms. The 2OG/Fe(II) oxygenase motif in the sequence and the 2OG + O2 → succinate + CO2 stoichiometry in D create a clear mechanistic distinction. No other option is consistent with the identified enzyme fold."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0090",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A455ZKR7 (PPZC_METMF, 374 AA, exact sequence match) explicitly annotates the catalytic activity as 'peramine + 2-oxoglutarate + O2 = 8-hydroxyperamine + succinate + CO2' (Rhea:RHEA:82167) with experimental evidence code ECO:0000269 from PubMed:38578094 (Rothchild et al., JACS 2024). The protein is named '2-oxoglutarate-Fe(II) type oxidoreductase ppzC' with EC 1.14.11.-. Both current (entry v22) and historical (entry v21) records confirm this annotation.",
-    "evidence_ids": ["C4", "C5", "C7", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains recognizable motifs of the 2-His-1-carboxylate facial triad characteristic of 2-oxoglutarate/Fe(II) oxygenases: 'IGSHTDF' (HxD motif), 'VHRAQ' (second His), and 'MHESC' (third His). Among the four choices, only D involves 2-oxoglutarate + O2 as substrates yielding succinate + CO2 as byproducts, which is the hallmark reaction chemistry of the 2OG/Fe(II) oxygenase superfamily. Choices A (ADP-ribosylhydrolase), B (FMN/ATP-dependent synthetase), and C (SAM-dependent methyltransferase) require entirely different cofactors and catalytic mechanisms inconsistent with the identified facial-triad motif.",
-    "missing_item_specific_fact": "The specific substrate identity 'peramine' and the regiochemistry of hydroxylation at C-8 cannot be predicted from sequence alone; this requires knowledge of the PPZ biosynthetic pathway or the 2024 experimental characterization. However, this fact is not needed to distinguish D from A, B, and C, since only D is mechanistically consistent with a 2OG/Fe(II) oxygenase.",
-    "reason": "A model with knowledge of the 2-His-1-carboxylate facial triad motif and the general reaction chemistry of 2OG-dependent dioxygenases (2OG + O2 → succinate + CO2 + substrate hydroxylation) can eliminate choices A, B, and C based on their incompatible cofactor requirements and reaction stoichiometries. The sequence provides concrete motif evidence for the enzyme class, and the mechanistic signature uniquely identifies D among the four options."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Each distractor belongs to a fundamentally different enzyme class (hydrolase, synthetase, methyltransferase) with incompatible cofactors (ADP-ribose, FMN/ATP, SAM) and reaction mechanisms. The 2OG/Fe(II) oxygenase motif in the sequence and the 2OG + O2 → succinate + CO2 stoichiometry in D create a clear mechanistic distinction. No other option is consistent with the identified enzyme fold."
-  },
-  "important_caveats": [
-    "The specific substrate name 'peramine' and product '8-hydroxyperamine' are pathway-specific facts that cannot be deduced from sequence alone; they were confirmed experimentally (ECO:0000269) only in 2024 (PubMed:38578094). The UniProt entry was first released in February 2025.",
-    "The facial-triad motif identification requires familiarity with 2OG/Fe(II) oxygenase structural biology; while well-established, it is specialized enzymology knowledge rather than general biology.",
-    "The identity of this sequence as PPZC was inferred by the reviewer from dataset metadata (accession A0A455ZKR7); this accession was not provided to the evaluated model.",
-    "The sequence match is exact (374 AA, identical SHA256) across both current and historical UniProt records."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +155,9 @@ Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A455ZKR7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "15799a948141cc834792097224072e0866bb99a08601d2dffad614221d57bc06",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 374,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "15799a948141cc834792097224072e0866bb99a08601d2dffad614221d57bc06",
   "current_entry_audit": {
     "entryVersion": 22,
     "firstPublicDate": "2025-02-05",
@@ -530,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-06-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "current_source_sequence_sha256": "15799a948141cc834792097224072e0866bb99a08601d2dffad614221d57bc06",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 374,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "15799a948141cc834792097224072e0866bb99a08601d2dffad614221d57bc06",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A455ZKR7",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
+  "selected_historical_source_sequence_length": 374,
+  "selected_historical_source_sequence_sha256": "15799a948141cc834792097224072e0866bb99a08601d2dffad614221d57bc06",
   "selected_historical_version": {
     "accession": "A0A455ZKR7",
     "database": "Swiss-Prot",
@@ -548,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PPZC_METMF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
-  "selected_historical_source_sequence_sha256": "15799a948141cc834792097224072e0866bb99a08601d2dffad614221d57bc06",
-  "selected_historical_source_sequence_length": 374,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json",
-  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A455ZKR7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json"
 }
 ```
 
@@ -598,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json",
-  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":22,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-06-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json"
 }
 ```
 
@@ -617,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json",
-  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Clavicipitaceae\",\"Metarhizium\",\"Metarhizium majus\"],\"scientificName\":\"Metarhizium majus (strain ARSEF 297)\",\"taxonId\":1276143}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json"
 }
 ```
 
@@ -636,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json",
-  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"Pyrrolopyrazine biosynthesis cluster protein C\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38578094\",\"source\":\"PubMed\"}],\"value\":\"1.14.11.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"2-oxoglutarate-Fe(II) type oxidoreductase ppzC\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json"
 }
 ```
 
@@ -655,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json",
-  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38578094\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:82168\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38578094\",\"source\":\"PubMed\"}],\"name\":\"peramine + 2-oxoglutarate + O2 = 8-hydroxyperamine + succinate + CO2\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:82167\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16810\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30031\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:232088\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:232097\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json"
 }
 ```
 
@@ -674,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json",
-  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Berry D.\",\"Mace W.\",\"Rehner S.A.\",\"Grage K.\",\"Dijkwel P.P.\",\"Young C.A.\",\"Scott B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30452111\"},{\"database\":\"DOI\",\"id\":\"10.1111/1462-2920.14483\"}],\"citationType\":\"journal article\",\"firstPage\":\"928\",\"id\":\"30452111\",\"journal\":\"Environ. Microbiol.\",\"lastPage\":\"939\",\"publicationDate\":\"2019\",\"title\":\"Orthologous peramine and pyrrolopyrazine-producing biosynthetic gene clusters in Metarhizium rileyi, Metarhizium majus and Cladonia grayi.\",\"volume\":\"21\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ARSEF 297\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json"
 }
 ```
 
@@ -693,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json",
-  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
-  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Rothchild K.W.\",\"Hagar M.\",\"Berry D.\",\"Ryan K.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38578094\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.4c01419\"}],\"citationType\":\"journal article\",\"firstPage\":\"10263\",\"id\":\"38578094\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"10267\",\"publicationDate\":\"2024\",\"title\":\"Two Iron(II), alpha-Ketoglutarate-Dependent Enzymes Encoded by the PPZ Gene Cluster of Metarhizium majus Enable Production of 8-Hydroxyperamine.\",\"volume\":\"146\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:16.380201+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6f69e81e503f1d4a9ac28a7bfbb2048904d8b6f1c7569c1f7d3c7190d601037a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZKR7.json"
 }
 ```
 
@@ -711,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21",
-  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
-  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   PPZC_METMF              Reviewed;         374 AA.\nAC   A0A455ZKR7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUN-2019, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=2-oxoglutarate-Fe(II) type oxidoreductase ppzC {ECO:0000303|PubMed:30452111};\nDE            EC=1.14.11.- {ECO:0000269|PubMed:38578094};\nDE   AltName: Full=Pyrrolopyrazine biosynthesis cluster protein C {ECO:0000303|PubMed:30452111};\nGN   Name=ppzC;\nOS   Metarhizium majus (strain ARSEF 297).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Clavicipitaceae; Metarhizium;\nOC   Metarhizium majus.\nOX   NCBI_TaxID=1276143;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21"
 }
 ```
 
@@ -732,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21",
-  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
-  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=2-oxoglutarate-Fe(II) type oxidoreductase ppzC {ECO:0000303|PubMed:30452111};\nDE            EC=1.14.11.- {ECO:0000269|PubMed:38578094};\nDE   AltName: Full=Pyrrolopyrazine biosynthesis cluster protein C {ECO:0000303|PubMed:30452111};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21"
 }
 ```
 
@@ -753,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21",
-  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
-  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
-  "source_locator": "lines 15-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND PATHWAY.\nRC   STRAIN=ARSEF 297;\nRX   PubMed=30452111; DOI=10.1111/1462-2920.14483;\nRA   Berry D., Mace W., Rehner S.A., Grage K., Dijkwel P.P., Young C.A.,\nRA   Scott B.;\nRT   \"Orthologous peramine and pyrrolopyrazine-producing biosynthetic gene\nRT   clusters in Metarhizium rileyi, Metarhizium majus and Cladonia grayi.\";\nRL   Environ. Microbiol. 21:928-939(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21"
 }
 ```
 
@@ -774,18 +534,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21",
-  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
-  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
-  "source_locator": "lines 24-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=38578094; DOI=10.1021/jacs.4c01419;\nRA   Rothchild K.W., Hagar M., Berry D., Ryan K.S.;\nRT   \"Two Iron(II), alpha-Ketoglutarate-Dependent Enzymes Encoded by the PPZ\nRT   Gene Cluster of Metarhizium majus Enable Production of 8-Hydroxyperamine.\";\nRL   J. Am. Chem. Soc. 146:10263-10267(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21"
 }
 ```
 
@@ -795,18 +555,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21",
-  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
-  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
-  "source_locator": "lines 51-57",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=peramine + 2-oxoglutarate + O2 = 8-hydroxyperamine + succinate\nCC         + CO2; Xref=Rhea:RHEA:82167, ChEBI:CHEBI:15379, ChEBI:CHEBI:16526,\nCC         ChEBI:CHEBI:16810, ChEBI:CHEBI:30031, ChEBI:CHEBI:232088,\nCC         ChEBI:CHEBI:232097; Evidence={ECO:0000269|PubMed:38578094};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:82168;\nCC         Evidence={ECO:0000269|PubMed:38578094};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:18.441147+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a07bd633297af25909c49dae08be64b07a7ca451f1bf6735c0a9d88a7ac8d4ca",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZKR7?format=txt&versions=21"
 }
 ```
 

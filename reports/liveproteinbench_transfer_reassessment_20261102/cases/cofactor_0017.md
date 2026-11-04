@@ -1,18 +1,16 @@
-# cofactor_0017: before and after transfer clarification
+# cofactor_0017
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0017.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0017.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — FAD
+**Expected answer:** **A** — FAD
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the historical UniProt record for ferric acinetobactin reductase, which annotates FAD as its cofactor with experimental evidence. The cited structural study also reports the protein crystallized in complex with FAD. This supports choice A, while noting the primary study was not independently reviewed here.
-
-Citations as saved: [H3](#evidence-h3), [H4](#evidence-h4), [C5](#evidence-c5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices provide no unambiguous basis for identifying the required cofactor. The protein-specific functional or cofactor annotation is needed to distinguish FAD from the alternatives.
-
-
-**Missing item-specific fact**
-
-> That this exact protein is ferric acinetobactin reductase and uses FAD as a cofactor.
-
-
-**Reason**
-
-> The reviewer evidence supports the key, but that evidence was not supplied to the evaluated model. Inferring a precise cofactor from this sequence alone would require protein-specific knowledge or external annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports FAD as the cofactor; the other choices are not supported as required cofactors for this protein.
-
-
-### Important caveats
-
-- The sequence matches both current and historical UniProt records, including a record available by the approximate benchmark cutoff.
-- The cofactor annotation cites experimental evidence and a structure in complex with FAD, but the cited primary paper was not independently validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices provide no unambiguous basis for identifying the required cofactor. The protein-specific functional or cofactor annotation is needed to distinguish FAD from the alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this exact protein is ferric acinetobactin reductase and uses FAD as a cofactor.",
-    "reason": "The reviewer evidence supports the key, but that evidence was not supplied to the evaluated model. Inferring a precise cofactor from this sequence alone would require protein-specific knowledge or external annotation."
-  },
-  "case_id": "cofactor_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "H4",
-      "C5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the historical UniProt record for ferric acinetobactin reductase, which annotates FAD as its cofactor with experimental evidence. The cited structural study also reports the protein crystallized in complex with FAD. This supports choice A, while noting the primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence matches both current and historical UniProt records, including a record available by the approximate benchmark cutoff.",
-    "The cofactor annotation cites experimental evidence and a structure in complex with FAD, but the cited primary paper was not independently validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports FAD as the cofactor; the other choices are not supported as required cofactors for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the historical UniProt record for ferric acinetobactin reductase, which annotates FAD as its cofactor with experimental evidence. The cited structural study also reports the protein crystallized in complex with FAD. This supports choice A, while noting the primary study was not independently reviewed here.",
-    "evidence_ids": ["H3", "H4", "C5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices provide no unambiguous basis for identifying the required cofactor. The protein-specific functional or cofactor annotation is needed to distinguish FAD from the alternatives.",
-    "missing_item_specific_fact": "That this exact protein is ferric acinetobactin reductase and uses FAD as a cofactor.",
-    "reason": "The reviewer evidence supports the key, but that evidence was not supplied to the evaluated model. Inferring a precise cofactor from this sequence alone would require protein-specific knowledge or external annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports FAD as the cofactor; the other choices are not supported as required cofactors for this protein."
-  },
-  "important_caveats": [
-    "The sequence matches both current and historical UniProt records, including a record available by the approximate benchmark cutoff.",
-    "The cofactor annotation cites experimental evidence and a structure in complex with FAD, but the cited primary paper was not independently validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A1E3M8P2 (Ferric acinetobactin reductase / Flavin-dependent SIP from Acinetobacter baumannii) explicitly annotates FAD as the cofactor with experimental evidence code ECO:0000269|PubMed:34308084. This is corroborated by X-ray crystallography at 2.85 Å in complex with FAD (PDB: 7LRN). The protein's alternative name literally includes 'Flavin-dependent.' The sequence matches the benchmark sequence exactly (SHA-256 confirmed). Both current and historical (entry v35) annotations agree.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence provides a concrete, multi-step elimination pathway. (1) Na+ (D) is eliminated because sodium ions serve structural or transport roles, not as catalytic electron-transfer cofactors in reductase enzymes. (2) Fe cation (C) is eliminated because in a ferric reductase, iron(III) is the substrate being reduced; the enzyme's own electron-transfer cofactor is distinct from the substrate. (3) The decisive discriminator between &#91;2Fe-2S&#93; (B) and FAD (A): a &#91;2Fe-2S&#93; cluster requires four cysteine ligands (or 2 Cys + 2 His) at defined spacings (e.g., CxxC…CxxC). The 286-residue sequence contains only two cysteines, which are adjacent ('AACER' near residue 247-248), making &#91;2Fe-2S&#93; coordination essentially impossible. FAD, a flavin electron-transfer cofactor, does not require cysteine ligation and is the dominant cofactor in small bacterial reductases of this size. The glycine-rich stretches (e.g., 'GKINTL', 'GPRPHFIPNF') and aromatic residues are broadly consistent with a flavin-binding environment, though no canonical GxGxxG Rossmann motif is perfectly present.
-
-
-**Missing item-specific fact**
-
-> None critical. The cysteine-count argument and standard biochemistry of reductase cofactors provide sufficient grounds. A model would not need to recognize the exact SIP family or the specific UniProt annotation to arrive at FAD by elimination.
-
-
-**Reason**
-
-> The sequence itself contains the key discriminating feature (near-absence of cysteines ruling out &#91;2Fe-2S&#93;), and general biochemistry eliminates Na+ and Fe cation. The positive identification of FAD is supported by the overall architecture being consistent with a small flavoprotein reductase, even without a textbook-perfect Rossmann motif. This constitutes a defensible reasoning chain from sequence features and general biological knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options are well-separated by the elimination logic. Na+ and Fe cation are eliminated by standard biochemistry of reductases. &#91;2Fe-2S&#93; is eliminated by the cysteine-count argument. FAD remains as the only viable electron-transfer cofactor for a ~286-residue reductase with only two adjacent cysteines. No other option is defensible.
-
-
-### Important caveats
-
-- The sequence lacks a canonical GxGxxG Rossmann motif, so positive FAD identification relies more on elimination of alternatives than on a clear positive binding-site signature. The reasoning is primarily subtractive.
-- The protein belongs to the siderophore-interacting protein (SIP) family, which is known in the literature to be flavoproteins. A model with family-level knowledge would recognize this, but the cysteine argument provides an independent, sequence-based path.
-- The FAD annotation is experimentally supported (X-ray crystallography, PDB 7LRN), not merely computational inference.
-- The benchmark sequence matches the UniProt entry exactly (SHA-256 confirmed for both current and historical v35 records).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence provides a concrete, multi-step elimination pathway. (1) Na+ (D) is eliminated because sodium ions serve structural or transport roles, not as catalytic electron-transfer cofactors in reductase enzymes. (2) Fe cation (C) is eliminated because in a ferric reductase, iron(III) is the substrate being reduced; the enzyme's own electron-transfer cofactor is distinct from the substrate. (3) The decisive discriminator between [2Fe-2S] (B) and FAD (A): a [2Fe-2S] cluster requires four cysteine ligands (or 2 Cys + 2 His) at defined spacings (e.g., CxxC…CxxC). The 286-residue sequence contains only two cysteines, which are adjacent ('AACER' near residue 247-248), making [2Fe-2S] coordination essentially impossible. FAD, a flavin electron-transfer cofactor, does not require cysteine ligation and is the dominant cofactor in small bacterial reductases of this size. The glycine-rich stretches (e.g., 'GKINTL', 'GPRPHFIPNF') and aromatic residues are broadly consistent with a flavin-binding environment, though no canonical GxGxxG Rossmann motif is perfectly present.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The cysteine-count argument and standard biochemistry of reductase cofactors provide sufficient grounds. A model would not need to recognize the exact SIP family or the specific UniProt annotation to arrive at FAD by elimination.",
-    "reason": "The sequence itself contains the key discriminating feature (near-absence of cysteines ruling out [2Fe-2S]), and general biochemistry eliminates Na+ and Fe cation. The positive identification of FAD is supported by the overall architecture being consistent with a small flavoprotein reductase, even without a textbook-perfect Rossmann motif. This constitutes a defensible reasoning chain from sequence features and general biological knowledge."
-  },
-  "case_id": "cofactor_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A1E3M8P2 (Ferric acinetobactin reductase / Flavin-dependent SIP from Acinetobacter baumannii) explicitly annotates FAD as the cofactor with experimental evidence code ECO:0000269|PubMed:34308084. This is corroborated by X-ray crystallography at 2.85 Å in complex with FAD (PDB: 7LRN). The protein's alternative name literally includes 'Flavin-dependent.' The sequence matches the benchmark sequence exactly (SHA-256 confirmed). Both current and historical (entry v35) annotations agree."
-  },
-  "important_caveats": [
-    "The sequence lacks a canonical GxGxxG Rossmann motif, so positive FAD identification relies more on elimination of alternatives than on a clear positive binding-site signature. The reasoning is primarily subtractive.",
-    "The protein belongs to the siderophore-interacting protein (SIP) family, which is known in the literature to be flavoproteins. A model with family-level knowledge would recognize this, but the cysteine argument provides an independent, sequence-based path.",
-    "The FAD annotation is experimentally supported (X-ray crystallography, PDB 7LRN), not merely computational inference.",
-    "The benchmark sequence matches the UniProt entry exactly (SHA-256 confirmed for both current and historical v35 records)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated by the elimination logic. Na+ and Fe cation are eliminated by standard biochemistry of reductases. [2Fe-2S] is eliminated by the cysteine-count argument. FAD remains as the only viable electron-transfer cofactor for a ~286-residue reductase with only two adjacent cysteines. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A1E3M8P2 (Ferric acinetobactin reductase / Flavin-dependent SIP from Acinetobacter baumannii) explicitly annotates FAD as the cofactor with experimental evidence code ECO:0000269|PubMed:34308084. This is corroborated by X-ray crystallography at 2.85 Å in complex with FAD (PDB: 7LRN). The protein's alternative name literally includes 'Flavin-dependent.' The sequence matches the benchmark sequence exactly (SHA-256 confirmed). Both current and historical (entry v35) annotations agree.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence provides a concrete, multi-step elimination pathway. (1) Na+ (D) is eliminated because sodium ions serve structural or transport roles, not as catalytic electron-transfer cofactors in reductase enzymes. (2) Fe cation (C) is eliminated because in a ferric reductase, iron(III) is the substrate being reduced; the enzyme's own electron-transfer cofactor is distinct from the substrate. (3) The decisive discriminator between [2Fe-2S] (B) and FAD (A): a [2Fe-2S] cluster requires four cysteine ligands (or 2 Cys + 2 His) at defined spacings (e.g., CxxC…CxxC). The 286-residue sequence contains only two cysteines, which are adjacent ('AACER' near residue 247-248), making [2Fe-2S] coordination essentially impossible. FAD, a flavin electron-transfer cofactor, does not require cysteine ligation and is the dominant cofactor in small bacterial reductases of this size. The glycine-rich stretches (e.g., 'GKINTL', 'GPRPHFIPNF') and aromatic residues are broadly consistent with a flavin-binding environment, though no canonical GxGxxG Rossmann motif is perfectly present.",
-    "missing_item_specific_fact": "None critical. The cysteine-count argument and standard biochemistry of reductase cofactors provide sufficient grounds. A model would not need to recognize the exact SIP family or the specific UniProt annotation to arrive at FAD by elimination.",
-    "reason": "The sequence itself contains the key discriminating feature (near-absence of cysteines ruling out [2Fe-2S]), and general biochemistry eliminates Na+ and Fe cation. The positive identification of FAD is supported by the overall architecture being consistent with a small flavoprotein reductase, even without a textbook-perfect Rossmann motif. This constitutes a defensible reasoning chain from sequence features and general biological knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated by the elimination logic. Na+ and Fe cation are eliminated by standard biochemistry of reductases. [2Fe-2S] is eliminated by the cysteine-count argument. FAD remains as the only viable electron-transfer cofactor for a ~286-residue reductase with only two adjacent cysteines. No other option is defensible."
-  },
-  "important_caveats": [
-    "The sequence lacks a canonical GxGxxG Rossmann motif, so positive FAD identification relies more on elimination of alternatives than on a clear positive binding-site signature. The reasoning is primarily subtractive.",
-    "The protein belongs to the siderophore-interacting protein (SIP) family, which is known in the literature to be flavoproteins. A model with family-level knowledge would recognize this, but the cysteine argument provides an independent, sequence-based path.",
-    "The FAD annotation is experimentally supported (X-ray crystallography, PDB 7LRN), not merely computational inference.",
-    "The benchmark sequence matches the UniProt entry exactly (SHA-256 confirmed for both current and historical v35 records)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A1E3M8P2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 286,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
   "current_entry_audit": {
     "entryVersion": 37,
     "firstPublicDate": "2025-04-09",
@@ -531,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-01-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "current_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 286,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 35,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A1E3M8P2",
   "selected_historical_entry_version": 35,
+  "selected_historical_record_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "selected_historical_source_sequence_length": 286,
+  "selected_historical_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
   "selected_historical_version": {
     "accession": "A0A1E3M8P2",
     "database": "Swiss-Prot",
@@ -549,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BAUF_ACIBA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "selected_historical_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
-  "selected_historical_source_sequence_length": 286,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 35,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A1E3M8P2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -599,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":37,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-01-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -618,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Moraxellales\",\"Moraxellaceae\",\"Acinetobacter\",\"Acinetobacter calcoaceticus/baumannii complex\"],\"scientificName\":\"Acinetobacter baumannii\",\"taxonId\":470}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -637,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"value\":\"Flavin-dependent siderophore-interacting protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"value\":\"Flavin-dependent SIP\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"value\":\"1.16.1.10\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Ferric acinetobactin reductase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -656,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:57692\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"name\":\"FAD\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -675,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Valentino H.\",\"Korasick D.A.\",\"Bohac T.J.\",\"Shapiro J.A.\",\"Wencewicz T.A.\",\"Tanner J.J.\",\"Sobrado P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34308084\"},{\"database\":\"DOI\",\"id\":\"10.1021/acsomega.1c03047\"}],\"citationType\":\"journal article\",\"firstPage\":\"18537\",\"id\":\"34308084\",\"journal\":\"ACS Omega\",\"lastPage\":\"18547\",\"publicationDate\":\"2021\",\"title\":\"Structural and Biochemical Characterization of the Flavin-Dependent Siderophore-Interacting Protein from Acinetobacter baumannii.\",\"volume\":\"6\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7LRN\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 17978 / DSM 105126 / CIP 53.77 / LMG 1025 / NCDC KC755 / 5377\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.85 ANGSTROMS) IN COMPLEX WITH FAD\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -693,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   BAUF_ACIBA              Reviewed;         286 AA.\nAC   A0A1E3M8P2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JAN-2017, sequence version 1.\nDT   28-JAN-2026, entry version 35.\nDE   RecName: Full=Ferric acinetobactin reductase {ECO:0000305};\nDE            EC=1.16.1.10 {ECO:0000269|PubMed:34308084};\nDE   AltName: Full=Flavin-dependent siderophore-interacting protein {ECO:0000303|PubMed:34308084};\nDE            Short=Flavin-dependent SIP {ECO:0000303|PubMed:34308084};\nGN   Name=bauF {ECO:0000303|PubMed:34308084};\nGN   ORFNames=AUO97_00860 {ECO:0000312|EMBL:APP29445.1};\nOS   Acinetobacter baumannii.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Moraxellales; Moraxellaceae; Acinetobacter;\nOC   Acinetobacter calcoaceticus/baumannii complex.\nOX   NCBI_TaxID=470;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 
@@ -714,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Ferric acinetobactin reductase {ECO:0000305};\nDE            EC=1.16.1.10 {ECO:0000269|PubMed:34308084};\nDE   AltName: Full=Flavin-dependent siderophore-interacting protein {ECO:0000303|PubMed:34308084};\nDE            Short=Flavin-dependent SIP {ECO:0000303|PubMed:34308084};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 
@@ -735,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 22-31",
   "excerpt": "RN   [2] {ECO:0007744|PDB:7LRN}\nRP   X-RAY CRYSTALLOGRAPHY (2.85 ANGSTROMS) IN COMPLEX WITH FAD, FUNCTION,\nRP   CATALYTIC ACTIVITY, AND COFACTOR.\nRC   STRAIN=ATCC 17978 / DSM 105126 / CIP 53.77 / LMG 1025 / NCDC KC755 / 5377;\nRX   PubMed=34308084; DOI=10.1021/acsomega.1c03047;\nRA   Valentino H., Korasick D.A., Bohac T.J., Shapiro J.A., Wencewicz T.A.,\nRA   Tanner J.J., Sobrado P.;\nRT   \"Structural and Biochemical Characterization of the Flavin-Dependent\nRT   Siderophore-Interacting Protein from Acinetobacter baumannii.\";\nRL   ACS Omega 6:18537-18547(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 
@@ -756,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 59-61",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=FAD; Xref=ChEBI:CHEBI:57692;\nCC         Evidence={ECO:0000269|PubMed:34308084};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 59-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 

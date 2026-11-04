@@ -1,18 +1,16 @@
-# pathway_0151: before and after transfer clarification
+# pathway_0151
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0151.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0151.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Alkaloid biosynthesis
+**Expected answer:** **B** — Alkaloid biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | no saved label | no saved label | output error (invalid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | Unusable review | Unusable review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,13 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `invalid_review`.
 
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt sequence annotated as ajmaline N-methyltransferase from Rauvolfia serpentina. Its pathway annotation is alkaloid biosynthesis, specifically ajmaline biosynthesis, with experimental-evidence attribution to a cited study. This supports choice B, though the excerpts do not independently validate the underlying experiments.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest an enzyme in a methyltransferase family, but that alone does not identify its physiological substrate or distinguish alkaloid biosynthesis from the other listed pathways.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental finding that this enzyme methylates an ajmaline-pathway substrate.
-
-
-**Reason**
-
-> The pathway assignment depends on a protein-specific function not established by the sequence and choices alone. Recognizing the exact protein or consulting its annotation would supply that missing fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched-sequence annotation supports B as the protein's pathway. The input alone does not meaningfully distinguish among the choices, but that lack of answerability does not make another option biologically supported.
-
-
-### Important caveats
-
-- Reviewer-only database and publication evidence was not supplied to the evaluated model.
-- The exact author source snapshot is unknown; both a current entry and a historical entry checked here match the supplied sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest an enzyme in a methyltransferase family, but that alone does not identify its physiological substrate or distinguish alkaloid biosynthesis from the other listed pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental finding that this enzyme methylates an ajmaline-pathway substrate.",
-    "reason": "The pathway assignment depends on a protein-specific function not established by the sequence and choices alone. Recognizing the exact protein or consulting its annotation would supply that missing fact."
-  },
-  "case_id": "pathway_0151",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated as ajmaline N-methyltransferase from Rauvolfia serpentina. Its pathway annotation is alkaloid biosynthesis, specifically ajmaline biosynthesis, with experimental-evidence attribution to a cited study. This supports choice B, though the excerpts do not independently validate the underlying experiments."
-  },
-  "important_caveats": [
-    "Reviewer-only database and publication evidence was not supplied to the evaluated model.",
-    "The exact author source snapshot is unknown; both a current entry and a historical entry checked here match the supplied sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation supports B as the protein's pathway. The input alone does not meaningfully distinguish among the choices, but that lack of answerability does not make another option biologically supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0151",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated as ajmaline N-methyltransferase from Rauvolfia serpentina. Its pathway annotation is alkaloid biosynthesis, specifically ajmaline biosynthesis, with experimental-evidence attribution to a cited study. This supports choice B, though the excerpts do not independently validate the underlying experiments.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest an enzyme in a methyltransferase family, but that alone does not identify its physiological substrate or distinguish alkaloid biosynthesis from the other listed pathways.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental finding that this enzyme methylates an ajmaline-pathway substrate.",
-    "reason": "The pathway assignment depends on a protein-specific function not established by the sequence and choices alone. Recognizing the exact protein or consulting its annotation would supply that missing fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation supports B as the protein's pathway. The input alone does not meaningfully distinguish among the choices, but that lack of answerability does not make another option biologically supported."
-  },
-  "important_caveats": [
-    "Reviewer-only database and publication evidence was not supplied to the evaluated model.",
-    "The exact author source snapshot is unknown; both a current entry and a historical entry checked here match the supplied sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A075D654 (ANMT_RAUSE) explicitly annotates the pathway as 'Alkaloid biosynthesis; ajmaline biosynthesis' with experimental evidence (ECO:0000269, PubMed:27122470). The protein is Ajmaline N-methyltransferase (EC 2.1.1.393) from Rauvolfia serpentina, confirmed by exact sequence match (SHA256 identical, 291 AA). The pathway assignment is backed by a functional characterization paper.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable SAM-dependent methyltransferase motifs (GCGIGGT Rossmann-like SAM-binding motif, VHRDL motif), allowing identification as a methyltransferase. One could weakly argue that methyltransferases are more commonly associated with alkaloid biosynthesis than glycolipid biosynthesis (which primarily uses glycosyltransferases) or cell wall degradation (which uses hydrolases), and the eukaryotic character argues against bacterial outer membrane biogenesis. However, this statistical tendency does not definitively distinguish alkaloid biosynthesis from glycolipid biosynthesis, since plant methyltransferases participate in both (e.g., phospholipid N-methylation).
-
-
-**Missing item-specific fact**
-
-> The specific substrate specificity of this methyltransferase (N-methylation of ajmaline) and its assignment to the ajmaline biosynthetic pathway is an experimentally determined fact (PubMed:27122470). Without knowing the substrate, a plant methyltransferase could plausibly function in alkaloid biosynthesis, phospholipid/glycolipid methylation, or lignin biosynthesis. The organism (Rauvolfia serpentina, famous for indole alkaloids) is not provided to the model.
-
-
-**Reason**
-
-> While the methyltransferase fold is identifiable from sequence, the specific pathway assignment (alkaloid vs. glycolipid) requires knowledge of this particular enzyme's substrate and reaction, which is an item-specific experimental annotation. The general observation that methyltransferases are common in alkaloid pathways provides only a weak statistical prior, not a definitive biological argument distinguishing B from C.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although glycolipid biosynthesis (C) involves some methyltransferase steps in plants, the distractors are sufficiently weak that the correct answer is unique once the substrate specificity is known. The methyltransferase identification does not make C equally defensible as B in a strict sense, but without the substrate information, a model relying only on sequence would struggle to confidently choose B over C.
-
-
-### Important caveats
-
-- The UniProt entry was first public in June 2025; the benchmark construction date is unknown. If the protein was not annotated before benchmark creation, the author may have relied on the underlying publication or transferred annotation.
-- The organism name (Rauvolfia serpentina) is not provided to the evaluated model, removing a strong contextual clue (this plant is famous for indole alkaloid production).
-- The methyltransferase identification from sequence is reliable, but the pathway-level assignment (alkaloid vs. lipid) depends on substrate specificity knowledge not derivable from primary sequence alone.
-- Evidence code ECO:0000269 indicates direct experimental evidence for the pathway assignment.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable SAM-dependent methyltransferase motifs (GCGIGGT Rossmann-like SAM-binding motif, VHRDL motif), allowing identification as a methyltransferase. One could weakly argue that methyltransferases are more commonly associated with alkaloid biosynthesis than glycolipid biosynthesis (which primarily uses glycosyltransferases) or cell wall degradation (which uses hydrolases), and the eukaryotic character argues against bacterial outer membrane biogenesis. However, this statistical tendency does not definitively distinguish alkaloid biosynthesis from glycolipid biosynthesis, since plant methyltransferases participate in both (e.g., phospholipid N-methylation).",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate specificity of this methyltransferase (N-methylation of ajmaline) and its assignment to the ajmaline biosynthetic pathway is an experimentally determined fact (PubMed:27122470). Without knowing the substrate, a plant methyltransferase could plausibly function in alkaloid biosynthesis, phospholipid/glycolipid methylation, or lignin biosynthesis. The organism (Rauvolfia serpentina, famous for indole alkaloids) is not provided to the model.",
-    "reason": "While the methyltransferase fold is identifiable from sequence, the specific pathway assignment (alkaloid vs. glycolipid) requires knowledge of this particular enzyme's substrate and reaction, which is an item-specific experimental annotation. The general observation that methyltransferases are common in alkaloid pathways provides only a weak statistical prior, not a definitive biological argument distinguishing B from C."
-  },
-  "case_id": "pathway_0151",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A075D654 (ANMT_RAUSE) explicitly annotates the pathway as 'Alkaloid biosynthesis; ajmaline biosynthesis' with experimental evidence (ECO:0000269, PubMed:27122470). The protein is Ajmaline N-methyltransferase (EC 2.1.1.393) from Rauvolfia serpentina, confirmed by exact sequence match (SHA256 identical, 291 AA). The pathway assignment is backed by a functional characterization paper."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public in June 2025; the benchmark construction date is unknown. If the protein was not annotated before benchmark creation, the author may have relied on the underlying publication or transferred annotation.",
-    "The organism name (Rauvolfia serpentina) is not provided to the evaluated model, removing a strong contextual clue (this plant is famous for indole alkaloid production).",
-    "The methyltransferase identification from sequence is reliable, but the pathway-level assignment (alkaloid vs. lipid) depends on substrate specificity knowledge not derivable from primary sequence alone.",
-    "Evidence code ECO:0000269 indicates direct experimental evidence for the pathway assignment."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although glycolipid biosynthesis (C) involves some methyltransferase steps in plants, the distractors are sufficiently weak that the correct answer is unique once the substrate specificity is known. The methyltransferase identification does not make C equally defensible as B in a strict sense, but without the substrate information, a model relying only on sequence would struggle to confidently choose B over C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0151",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A075D654 (ANMT_RAUSE) explicitly annotates the pathway as 'Alkaloid biosynthesis; ajmaline biosynthesis' with experimental evidence (ECO:0000269, PubMed:27122470). The protein is Ajmaline N-methyltransferase (EC 2.1.1.393) from Rauvolfia serpentina, confirmed by exact sequence match (SHA256 identical, 291 AA). The pathway assignment is backed by a functional characterization paper.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains recognizable SAM-dependent methyltransferase motifs (GCGIGGT Rossmann-like SAM-binding motif, VHRDL motif), allowing identification as a methyltransferase. One could weakly argue that methyltransferases are more commonly associated with alkaloid biosynthesis than glycolipid biosynthesis (which primarily uses glycosyltransferases) or cell wall degradation (which uses hydrolases), and the eukaryotic character argues against bacterial outer membrane biogenesis. However, this statistical tendency does not definitively distinguish alkaloid biosynthesis from glycolipid biosynthesis, since plant methyltransferases participate in both (e.g., phospholipid N-methylation).",
-    "missing_item_specific_fact": "The specific substrate specificity of this methyltransferase (N-methylation of ajmaline) and its assignment to the ajmaline biosynthetic pathway is an experimentally determined fact (PubMed:27122470). Without knowing the substrate, a plant methyltransferase could plausibly function in alkaloid biosynthesis, phospholipid/glycolipid methylation, or lignin biosynthesis. The organism (Rauvolfia serpentina, famous for indole alkaloids) is not provided to the model.",
-    "reason": "While the methyltransferase fold is identifiable from sequence, the specific pathway assignment (alkaloid vs. glycolipid) requires knowledge of this particular enzyme's substrate and reaction, which is an item-specific experimental annotation. The general observation that methyltransferases are common in alkaloid pathways provides only a weak statistical prior, not a definitive biological argument distinguishing B from C."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although glycolipid biosynthesis (C) involves some methyltransferase steps in plants, the distractors are sufficiently weak that the correct answer is unique once the substrate specificity is known. The methyltransferase identification does not make C equally defensible as B in a strict sense, but without the substrate information, a model relying only on sequence would struggle to confidently choose B over C."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public in June 2025; the benchmark construction date is unknown. If the protein was not annotated before benchmark creation, the author may have relied on the underlying publication or transferred annotation.",
-    "The organism name (Rauvolfia serpentina) is not provided to the evaluated model, removing a strong contextual clue (this plant is famous for indole alkaloid production).",
-    "The methyltransferase identification from sequence is reliable, but the pathway-level assignment (alkaloid vs. lipid) depends on substrate specificity knowledge not derivable from primary sequence alone.",
-    "Evidence code ECO:0000269 indicates direct experimental evidence for the pathway assignment."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
+**This response is not a usable structured review.** Its saved text is preserved below; any labels in that text are excluded from the summary counts.
 
 **Validation errors:** `invalid_json:Expecting property name enclosed in double quotes: line 13 column 3 (char 1231)`.
 
@@ -325,10 +92,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), 
 
 **Saved parsed visible review:** `null`.
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -439,30 +205,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A075D654",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 291,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-06-18",
@@ -470,14 +223,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-10-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "current_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 291,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 32,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A075D654",
   "selected_historical_entry_version": 32,
+  "selected_historical_record_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "selected_historical_source_sequence_length": 291,
+  "selected_historical_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
   "selected_historical_version": {
     "accession": "A0A075D654",
     "database": "Swiss-Prot",
@@ -488,24 +257,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ANMT_RAUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "selected_historical_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
-  "selected_historical_source_sequence_length": 291,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 32,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -519,15 +275,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A075D654\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -538,15 +294,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-10-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -557,15 +313,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Serpentine wood\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Vinceae\",\"Rauvolfiinae\",\"Rauvolfia\"],\"scientificName\":\"Rauvolfia serpentina\",\"synonyms\":[\"Ophioxylon serpentinum\"],\"taxonId\":4060}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -576,15 +332,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AHH02777.1\",\"source\":\"EMBL\"}],\"value\":\"Gamma-tocopherol-like methyltransferase ANMT\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.393\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"Ajmaline N-methyltransferase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"RsANMT\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -595,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis; ajmaline biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -614,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Cazares-Flores P.\",\"Levac D.\",\"De Luca V.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27122470\"},{\"database\":\"DOI\",\"id\":\"10.1111/tpj.13186\"}],\"citationType\":\"journal article\",\"firstPage\":\"335\",\"id\":\"27122470\",\"journal\":\"Plant J.\",\"lastPage\":\"342\",\"publicationDate\":\"2016\",\"title\":\"Rauvolfia serpentina N-methyltransferases involved in ajmaline and Nbeta -methylajmaline biosynthesis belong to a gene family derived from gamma-tocopherol C-methyltransferase.\",\"volume\":\"87\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -632,18 +388,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   ANMT_RAUSE              Reviewed;         291 AA.\nAC   A0A075D654;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-OCT-2014, sequence version 1.\nDT   28-JAN-2026, entry version 32.\nDE   RecName: Full=Ajmaline N-methyltransferase {ECO:0000303|PubMed:27122470};\nDE            Short=RsANMT {ECO:0000303|PubMed:27122470};\nDE            EC=2.1.1.393 {ECO:0000269|PubMed:27122470};\nDE   AltName: Full=Gamma-tocopherol-like methyltransferase ANMT {ECO:0000312|EMBL:AHH02777.1};\nGN   Name=ANMT {ECO:0000303|PubMed:27122470};\nGN   Synonyms=Rs820 {ECO:0000312|EMBL:AHH02777.1};\nOS   Rauvolfia serpentina (Serpentine wood) (Ophioxylon serpentinum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Vinceae;\nOC   Rauvolfiinae; Rauvolfia.\nOX   NCBI_TaxID=4060;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -653,18 +409,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 26-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, PATHWAY, AND\nRP   TISSUE SPECIFICITY.\nRX   PubMed=27122470; DOI=10.1111/tpj.13186;\nRA   Cazares-Flores P., Levac D., De Luca V.;\nRT   \"Rauvolfia serpentina N-methyltransferases involved in ajmaline and Nbeta\nRT   -methylajmaline biosynthesis belong to a gene family derived from gamma-\nRT   tocopherol C-methyltransferase.\";\nRL   Plant J. 87:335-342(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -674,18 +430,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 74-75",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis; ajmaline biosynthesis.\nCC       {ECO:0000269|PubMed:27122470}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 74-75",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 

@@ -1,18 +1,16 @@
-# active_site_0130: before and after transfer clarification
+# active_site_0130
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0130.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0130.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **A** — Position 170 (Nucleophile)
+**Expected answer:** **A** — Position 170 (Nucleophile)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-matched sequence has a UniProt active-site annotation at position 170, described as a nucleophile. The annotation is transferred by similarity from Q94FV7, so it supports the key but is not direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is 405 residues long, making positions 975, 1978, and 2711 impossible in the supplied sequence; this leaves A as the only in-range option, but does not establish that position 170 is a catalytic nucleophile.
-
-
-**Missing item-specific fact**
-
-> The catalytic-site annotation or equivalent protein-specific evidence identifying residue 170 as the nucleophile.
-
-
-**Reason**
-
-> The key's catalytic role is supported by reviewer-only annotation, not established by information supplied to the evaluated model. Eliminating out-of-range options does not independently verify the active-site assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only position 170 falls within the 405-residue sequence; the other listed positions are out of range.
-
-
-### Important caveats
-
-- The sequence matches the cited UniProt entry, but its active-site annotation is similarity-transferred from another protein rather than shown here to be experimentally determined for this sequence.
-- Reviewer-only database evidence was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is 405 residues long, making positions 975, 1978, and 2711 impossible in the supplied sequence; this leaves A as the only in-range option, but does not establish that position 170 is a catalytic nucleophile.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The catalytic-site annotation or equivalent protein-specific evidence identifying residue 170 as the nucleophile.",
-    "reason": "The key's catalytic role is supported by reviewer-only annotation, not established by information supplied to the evaluated model. Eliminating out-of-range options does not independently verify the active-site assignment."
-  },
-  "case_id": "active_site_0130",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matched sequence has a UniProt active-site annotation at position 170, described as a nucleophile. The annotation is transferred by similarity from Q94FV7, so it supports the key but is not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt entry, but its active-site annotation is similarity-transferred from another protein rather than shown here to be experimentally determined for this sequence.",
-    "Reviewer-only database evidence was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only position 170 falls within the 405-residue sequence; the other listed positions are out of range."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0130",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matched sequence has a UniProt active-site annotation at position 170, described as a nucleophile. The annotation is transferred by similarity from Q94FV7, so it supports the key but is not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is 405 residues long, making positions 975, 1978, and 2711 impossible in the supplied sequence; this leaves A as the only in-range option, but does not establish that position 170 is a catalytic nucleophile.",
-    "missing_item_specific_fact": "The catalytic-site annotation or equivalent protein-specific evidence identifying residue 170 as the nucleophile.",
-    "reason": "The key's catalytic role is supported by reviewer-only annotation, not established by information supplied to the evaluated model. Eliminating out-of-range options does not independently verify the active-site assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only position 170 falls within the 405-residue sequence; the other listed positions are out of range."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt entry, but its active-site annotation is similarity-transferred from another protein rather than shown here to be experimentally determined for this sequence.",
-    "Reviewer-only database evidence was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q8H305 (Type III polyketide synthase 10/OsPKS10, rice) annotates an active site at position 170 labeled 'Nucleophile' (evidence ECO:0000250, inferred by similarity from Q94FV7). The benchmark sequence (405 aa) matches the UniProt sequence exactly. The annotation is a similarity-transfer annotation rather than direct experimental measurement for this specific protein, but it is consistent with the well-established catalytic cysteine nucleophile of type III PKS enzymes. The answer text 'Position 170 (Nucleophile)' matches the database annotation verbatim.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The supplied protein sequence is 405 amino acids long. Options B (position 1978), C (position 2711), and D (position 975) all reference positions that exceed the protein's length and are therefore physically impossible. This eliminates all three distractors by simple arithmetic on the provided sequence. Additionally, the sequence contains the conserved type III PKS catalytic motif 'GCSGG' (Cys-Gly) near the expected position, consistent with a nucleophilic cysteine active site for a chalcone-synthase-family enzyme. Only option A (position 170) falls within the valid residue range and matches the conserved catalytic architecture.
-
-
-**Missing item-specific fact**
-
-> None required beyond the sequence itself. The elimination of B, C, and D is purely arithmetic. Confirming the specific residue identity at position 170 as the nucleophilic Cys benefits from knowing the type III PKS catalytic mechanism, but the multiple-choice format makes the answer determinable without it.
-
-
-**Reason**
-
-> A model can eliminate three of four options simply by noting the protein is 405 residues long and that positions 975, 1978, and 2711 are out of range. The remaining option A is then confirmed by the conserved GCSGG nucleophilic-cysteine motif visible in the sequence. This is general biological reasoning applied to the supplied data, not a lookup of a database annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Three of the four options reference positions (975, 1978, 2711) that are far beyond the 405-residue protein length, making them physically impossible. Only position 170 is within range. There is no ambiguity in selecting A.
-
-
-### Important caveats
-
-- The UniProt active-site annotation at position 170 carries evidence code ECO:0000250 (inferred by similarity from Q94FV7), meaning it is a computational transfer rather than direct experimental validation on OsPKS10/OsPKS2 itself.
-- The distractors (positions 975, 1978, 2711) appear to be drawn from a different, much larger protein (possibly a fatty-acid synthase or similar multi-domain enzyme), making them trivially eliminable and the question very easy.
-- The accession Q8H305 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the sequence alone.
-- The annotation was first released in Swiss-Prot on 2025-04-09; the historical snapshot at entry version 131 (2026-01-28) already contains the position-170 nucleophile annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied protein sequence is 405 amino acids long. Options B (position 1978), C (position 2711), and D (position 975) all reference positions that exceed the protein's length and are therefore physically impossible. This eliminates all three distractors by simple arithmetic on the provided sequence. Additionally, the sequence contains the conserved type III PKS catalytic motif 'GCSGG' (Cys-Gly) near the expected position, consistent with a nucleophilic cysteine active site for a chalcone-synthase-family enzyme. Only option A (position 170) falls within the valid residue range and matches the conserved catalytic architecture.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None required beyond the sequence itself. The elimination of B, C, and D is purely arithmetic. Confirming the specific residue identity at position 170 as the nucleophilic Cys benefits from knowing the type III PKS catalytic mechanism, but the multiple-choice format makes the answer determinable without it.",
-    "reason": "A model can eliminate three of four options simply by noting the protein is 405 residues long and that positions 975, 1978, and 2711 are out of range. The remaining option A is then confirmed by the conserved GCSGG nucleophilic-cysteine motif visible in the sequence. This is general biological reasoning applied to the supplied data, not a lookup of a database annotation."
-  },
-  "case_id": "active_site_0130",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q8H305 (Type III polyketide synthase 10/OsPKS10, rice) annotates an active site at position 170 labeled 'Nucleophile' (evidence ECO:0000250, inferred by similarity from Q94FV7). The benchmark sequence (405 aa) matches the UniProt sequence exactly. The annotation is a similarity-transfer annotation rather than direct experimental measurement for this specific protein, but it is consistent with the well-established catalytic cysteine nucleophile of type III PKS enzymes. The answer text 'Position 170 (Nucleophile)' matches the database annotation verbatim."
-  },
-  "important_caveats": [
-    "The UniProt active-site annotation at position 170 carries evidence code ECO:0000250 (inferred by similarity from Q94FV7), meaning it is a computational transfer rather than direct experimental validation on OsPKS10/OsPKS2 itself.",
-    "The distractors (positions 975, 1978, 2711) appear to be drawn from a different, much larger protein (possibly a fatty-acid synthase or similar multi-domain enzyme), making them trivially eliminable and the question very easy.",
-    "The accession Q8H305 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the sequence alone.",
-    "The annotation was first released in Swiss-Prot on 2025-04-09; the historical snapshot at entry version 131 (2026-01-28) already contains the position-170 nucleophile annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Three of the four options reference positions (975, 1978, 2711) that are far beyond the 405-residue protein length, making them physically impossible. Only position 170 is within range. There is no ambiguity in selecting A."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0130",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q8H305 (Type III polyketide synthase 10/OsPKS10, rice) annotates an active site at position 170 labeled 'Nucleophile' (evidence ECO:0000250, inferred by similarity from Q94FV7). The benchmark sequence (405 aa) matches the UniProt sequence exactly. The annotation is a similarity-transfer annotation rather than direct experimental measurement for this specific protein, but it is consistent with the well-established catalytic cysteine nucleophile of type III PKS enzymes. The answer text 'Position 170 (Nucleophile)' matches the database annotation verbatim.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The supplied protein sequence is 405 amino acids long. Options B (position 1978), C (position 2711), and D (position 975) all reference positions that exceed the protein's length and are therefore physically impossible. This eliminates all three distractors by simple arithmetic on the provided sequence. Additionally, the sequence contains the conserved type III PKS catalytic motif 'GCSGG' (Cys-Gly) near the expected position, consistent with a nucleophilic cysteine active site for a chalcone-synthase-family enzyme. Only option A (position 170) falls within the valid residue range and matches the conserved catalytic architecture.",
-    "missing_item_specific_fact": "None required beyond the sequence itself. The elimination of B, C, and D is purely arithmetic. Confirming the specific residue identity at position 170 as the nucleophilic Cys benefits from knowing the type III PKS catalytic mechanism, but the multiple-choice format makes the answer determinable without it.",
-    "reason": "A model can eliminate three of four options simply by noting the protein is 405 residues long and that positions 975, 1978, and 2711 are out of range. The remaining option A is then confirmed by the conserved GCSGG nucleophilic-cysteine motif visible in the sequence. This is general biological reasoning applied to the supplied data, not a lookup of a database annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Three of the four options reference positions (975, 1978, 2711) that are far beyond the 405-residue protein length, making them physically impossible. Only position 170 is within range. There is no ambiguity in selecting A."
-  },
-  "important_caveats": [
-    "The UniProt active-site annotation at position 170 carries evidence code ECO:0000250 (inferred by similarity from Q94FV7), meaning it is a computational transfer rather than direct experimental validation on OsPKS10/OsPKS2 itself.",
-    "The distractors (positions 975, 1978, 2711) appear to be drawn from a different, much larger protein (possibly a fatty-acid synthase or similar multi-domain enzyme), making them trivially eliminable and the question very easy.",
-    "The accession Q8H305 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the sequence alone.",
-    "The annotation was first released in Swiss-Prot on 2025-04-09; the historical snapshot at entry version 131 (2026-01-28) already contains the position-170 nucleophile annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -495,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8H305",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8a56cfb606e4fe50f8190fb2e20628feacd1ddf83ddaf17985ab255c0e083848",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 405,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8a56cfb606e4fe50f8190fb2e20628feacd1ddf83ddaf17985ab255c0e083848",
   "current_entry_audit": {
     "entryVersion": 133,
     "firstPublicDate": "2025-04-09",
@@ -526,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "current_source_sequence_sha256": "8a56cfb606e4fe50f8190fb2e20628feacd1ddf83ddaf17985ab255c0e083848",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 405,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8a56cfb606e4fe50f8190fb2e20628feacd1ddf83ddaf17985ab255c0e083848",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 131,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8H305",
   "selected_historical_entry_version": 131,
+  "selected_historical_record_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
+  "selected_historical_source_sequence_length": 405,
+  "selected_historical_source_sequence_sha256": "8a56cfb606e4fe50f8190fb2e20628feacd1ddf83ddaf17985ab255c0e083848",
   "selected_historical_version": {
     "accession": "Q8H305",
     "database": "Swiss-Prot",
@@ -544,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PKS10_ORYSJ",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
-  "selected_historical_source_sequence_sha256": "8a56cfb606e4fe50f8190fb2e20628feacd1ddf83ddaf17985ab255c0e083848",
-  "selected_historical_source_sequence_length": 405,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 131,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -575,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json",
-  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8H305\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json"
 }
 ```
 
@@ -594,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json",
-  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":133,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json"
 }
 ```
 
@@ -613,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json",
-  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rice\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"Liliopsida\",\"Poales\",\"Poaceae\",\"BOP clade\",\"Oryzoideae\",\"Oryzeae\",\"Oryzinae\",\"Oryza\",\"Oryza sativa\"],\"scientificName\":\"Oryza sativa subsp. japonica\",\"taxonId\":39947}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json"
 }
 ```
 
@@ -632,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json",
-  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28783252\",\"source\":\"PubMed\"}],\"value\":\"Type III polyketide synthase 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28783252\",\"source\":\"PubMed\"}],\"value\":\"OsPKS2\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28783252\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27878652\",\"source\":\"PubMed\"}],\"value\":\"Type III polyketide synthase 10\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27878652\",\"source\":\"PubMed\"}],\"value\":\"OsPKS10\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json"
 }
 ```
 
@@ -651,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json",
-  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Nucleophile\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q94FV7\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":170},\"start\":{\"modifier\":\"EXACT\",\"value\":170}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json"
 }
 ```
 
@@ -670,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json",
-  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhu X.\",\"Yu J.\",\"Shi J.\",\"Tohge T.\",\"Fernie A.R.\",\"Meir S.\",\"Aharoni A.\",\"Xu D.\",\"Zhang D.\",\"Liang W.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28783252\"},{\"database\":\"DOI\",\"id\":\"10.1111/jipb.12574\"}],\"citationType\":\"journal article\",\"firstPage\":\"612\",\"id\":\"28783252\",\"journal\":\"J. Integr. Plant Biol.\",\"lastPage\":\"628\",\"publicationDate\":\"2017\",\"title\":\"The polyketide synthase OsPKS2 is essential for pollen exine and Ubisch body patterning in rice.\",\"volume\":\"59\"},\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"DEVELOPMENTAL STAGE\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json"
 }
 ```
 
@@ -689,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json",
-  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
-  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Hu L.\",\"He H.\",\"Zhu C.\",\"Peng X.\",\"Fu J.\",\"He X.\",\"Chen X.\",\"Ouyang L.\",\"Bian J.\",\"Liu S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27878652\"},{\"database\":\"DOI\",\"id\":\"10.1007/s10265-016-0871-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"95\",\"id\":\"27878652\",\"journal\":\"J. Plant Res.\",\"lastPage\":\"105\",\"publicationDate\":\"2017\",\"title\":\"Genome-wide identification and phylogenetic analysis of the chalcone synthase gene family in rice.\",\"volume\":\"130\"},\"referenceNumber\":5,\"referencePositions\":[\"GENE FAMILY\",\"NOMENCLATURE\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:31:57.631660+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "725c43792b5cff8298b1771be62e5326ec303acf22c3a36d81c4c5bf4079ff65",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8H305.json"
 }
 ```
 
@@ -707,18 +468,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 131,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131",
-  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
-  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   PKS10_ORYSJ             Reviewed;         405 AA.\nAC   Q8H305; A0A5S6RAJ2; Q0D710;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 131.\nDE   RecName: Full=Type III polyketide synthase 10 {ECO:0000303|PubMed:27878652};\nDE            Short=OsPKS10 {ECO:0000303|PubMed:27878652};\nDE            EC=2.3.1.- {ECO:0000269|PubMed:28783252};\nDE   AltName: Full=Type III polyketide synthase 2 {ECO:0000303|PubMed:28783252};\nDE            Short=OsPKS2 {ECO:0000303|PubMed:28783252};\nGN   Name=PKS10 {ECO:0000303|PubMed:27878652};\nGN   Synonyms=PKS2 {ECO:0000303|PubMed:28783252};\nGN   OrderedLocusNames=Os07g0411300 {ECO:0000312|EMBL:BAT01127.1},\nGN   LOC_Os07g22850 {ECO:0000305};\nOS   Oryza sativa subsp. japonica (Rice).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP clade;\nOC   Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.\nOX   NCBI_TaxID=39947;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 131,
+  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
+  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131"
 }
 ```
 
@@ -728,18 +489,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 131,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131",
-  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
-  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
-  "source_locator": "lines 45-53",
   "excerpt": "RN   [4]\nRP   FUNCTION, CATALYTIC ACTIVITY, DEVELOPMENTAL STAGE, AND DISRUPTION\nRP   PHENOTYPE.\nRX   PubMed=28783252; DOI=10.1111/jipb.12574;\nRA   Zhu X., Yu J., Shi J., Tohge T., Fernie A.R., Meir S., Aharoni A., Xu D.,\nRA   Zhang D., Liang W.;\nRT   \"The polyketide synthase OsPKS2 is essential for pollen exine and Ubisch\nRT   body patterning in rice.\";\nRL   J. Integr. Plant Biol. 59:612-628(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 131,
+  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
+  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131"
 }
 ```
 
@@ -749,18 +510,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 131,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131",
-  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
-  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
-  "source_locator": "lines 54-61",
   "excerpt": "RN   [5]\nRP   GENE FAMILY, NOMENCLATURE, AND TISSUE SPECIFICITY.\nRX   PubMed=27878652; DOI=10.1007/s10265-016-0871-7;\nRA   Hu L., He H., Zhu C., Peng X., Fu J., He X., Chen X., Ouyang L., Bian J.,\nRA   Liu S.;\nRT   \"Genome-wide identification and phylogenetic analysis of the chalcone\nRT   synthase gene family in rice.\";\nRL   J. Plant Res. 130:95-105(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 131,
+  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 54-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
+  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131"
 }
 ```
 
@@ -770,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 131,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131",
-  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
-  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
-  "source_locator": "lines 162-164",
   "excerpt": "FT   ACT_SITE        170\nFT                   /note=\"Nucleophile\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q94FV7\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 131,
+  "retrieved_utc": "2026-11-02T04:32:02.084503+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 162-164",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "087e3fd396545934ba1c15f147eb9357fac43fedfd73e6e5d9a9e98b77653b37",
+  "url": "https://rest.uniprot.org/unisave/Q8H305?format=txt&versions=131"
 }
 ```
 

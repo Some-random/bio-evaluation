@@ -1,18 +1,16 @@
-# GO_molecular_function_0065: before and after transfer clarification
+# GO_molecular_function_0065
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0065.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0065.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — nutrient reservoir activity
+**Expected answer:** **C** — nutrient reservoir activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the reviewed Apis mellifera Hexamerin 70b sequence. Its entry describes it as a storage protein that may supply nutrients and assigns nutrient reservoir activity with IDA evidence. This supports choice C, though the functional description retains the qualification “may function.”
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with a signal peptide and secretion, but that alone does not establish nutrient-reservoir activity or reliably distinguish it from the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> The sequence’s identity as honeybee Hexamerin 70b and its storage-protein/nutrient-reservoir annotation are needed to select C confidently.
-
-
-**Reason**
-
-> The input provides no organism, protein name, or functional annotation. The key is supported by sequence-matched database and literature-linked evidence, but that protein-specific fact is not supplied, and generic sequence features do not decisively identify the GO function.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched entry specifically supports nutrient reservoir activity; the evidence supplied does not support another listed option.
-
-
-### Important caveats
-
-- The cited GO annotation is IDA-linked, and the UniProt functional description is based on cited research; the primary papers were not independently reviewed here.
-- The exact source snapshot used by the question author is unknown, although the historical and current records checked match the supplied sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a signal peptide and secretion, but that alone does not establish nutrient-reservoir activity or reliably distinguish it from the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence’s identity as honeybee Hexamerin 70b and its storage-protein/nutrient-reservoir annotation are needed to select C confidently.",
-    "reason": "The input provides no organism, protein name, or functional annotation. The key is supported by sequence-matched database and literature-linked evidence, but that protein-specific fact is not supplied, and generic sequence features do not decisively identify the GO function."
-  },
-  "case_id": "GO_molecular_function_0065",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the reviewed Apis mellifera Hexamerin 70b sequence. Its entry describes it as a storage protein that may supply nutrients and assigns nutrient reservoir activity with IDA evidence. This supports choice C, though the functional description retains the qualification “may function.”"
-  },
-  "important_caveats": [
-    "The cited GO annotation is IDA-linked, and the UniProt functional description is based on cited research; the primary papers were not independently reviewed here.",
-    "The exact source snapshot used by the question author is unknown, although the historical and current records checked match the supplied sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched entry specifically supports nutrient reservoir activity; the evidence supplied does not support another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0065",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the reviewed Apis mellifera Hexamerin 70b sequence. Its entry describes it as a storage protein that may supply nutrients and assigns nutrient reservoir activity with IDA evidence. This supports choice C, though the functional description retains the qualification “may function.”",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a signal peptide and secretion, but that alone does not establish nutrient-reservoir activity or reliably distinguish it from the listed alternatives.",
-    "missing_item_specific_fact": "The sequence’s identity as honeybee Hexamerin 70b and its storage-protein/nutrient-reservoir annotation are needed to select C confidently.",
-    "reason": "The input provides no organism, protein name, or functional annotation. The key is supported by sequence-matched database and literature-linked evidence, but that protein-specific fact is not supplied, and generic sequence features do not decisively identify the GO function."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched entry specifically supports nutrient reservoir activity; the evidence supplied does not support another listed option."
-  },
-  "important_caveats": [
-    "The cited GO annotation is IDA-linked, and the UniProt functional description is based on cited research; the primary papers were not independently reviewed here.",
-    "The exact source snapshot used by the question author is unknown, although the historical and current records checked match the supplied sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt Q6J4Q1 (Hexamerin 70b, Apis mellifera) is annotated with GO:0045735 (nutrient reservoir activity) with evidence code IDA (Inferred from Direct Assay) from PubMed:16055147 (C6/H6). The FUNCTION comment (C5/H5) states: 'Storage protein produced during nutritional abundance, which may function as a nutrient supply to compensate for lack of dietary proteins during metamorphosis, egg production and diapause.' The GO term definition (GO3) is 'Functions in the storage of nutritious substrates.' The protein is a hexamerin, a well-characterized class of insect storage proteins. The sequence matches the UniProt entry exactly (683 AA, SHA256 match).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C9](#evidence-c9), [H1](#evidence-h1), [H5](#evidence-h5), [H6](#evidence-h6), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence lacks the characteristic motifs required for the three catalytic options: no Rossmann-fold NAD(P)-binding motif or catalytic residues for UDP-glucose 6-dehydrogenase (A); no PSPG motif or UDP-sugar-binding pocket for quercetin 3-O-glucosyltransferase (B); no catalytic triad (Ser-His-Asp/Glu or equivalent nucleophile) for ester-bond hydrolase activity (D). The protein is a large (~683 AA) secreted protein (N-terminal signal peptide MIVIMKAGFLFLASLCLLVQAVPNKV...) with no identifiable catalytic machinery, which is consistent with a storage/reservoir role. Among the four options, C (nutrient reservoir activity) is the only non-catalytic molecular function, making it the sole option compatible with a protein lacking enzymatic motifs. The GO term definition ('Functions in the storage of nutritious substrates') is intuitive and does not require memorizing a specific database entry.
-
-
-**Missing item-specific fact**
-
-> Positive identification of this protein as a hexamerin (a specific insect storage protein family) would strengthen the case for C, but is not strictly necessary given that elimination of all three catalytic options leaves C as the only viable choice. Knowledge that hexamerins are storage proteins aids confirmation but the elimination argument is sufficient.
-
-
-**Reason**
-
-> The three catalytic distractors (A, B, D) each require specific, well-defined active-site motifs absent from the sequence. The elimination of these through motif-absence reasoning is a standard and defensible biological argument. C is the only non-catalytic option, and its definition aligns with a large secreted protein lacking enzymatic features. While recognizing the hexamerin family would provide additional confirmation, the answer is reachable through negative evidence (absence of catalytic motifs) combined with the structural context (secreted, large, no active site).
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span three distinct catalytic mechanisms and one non-catalytic storage function. The absence of catalytic motifs in the sequence clearly disfavors A, B, and D. No two options are equally defensible given the sequence features.
-
-
-### Important caveats
-
-- The GO annotation evidence code is IDA (Inferred from Direct Assay), indicating experimental support from PubMed:16055147, not merely computational transfer.
-- The hexamerin family identification from sequence alone is not trivial; the reasoning-supported judgment relies primarily on elimination of catalytic options rather than positive family recognition.
-- The identity_origin note states the UniProt accession was inferred from dataset image-path metadata and was absent from the evaluated model input; the model sees only the raw sequence.
-- The sequence is a precursor (signal peptide present); mature protein numbering may differ, but this does not affect the molecular function assignment.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks the characteristic motifs required for the three catalytic options: no Rossmann-fold NAD(P)-binding motif or catalytic residues for UDP-glucose 6-dehydrogenase (A); no PSPG motif or UDP-sugar-binding pocket for quercetin 3-O-glucosyltransferase (B); no catalytic triad (Ser-His-Asp/Glu or equivalent nucleophile) for ester-bond hydrolase activity (D). The protein is a large (~683 AA) secreted protein (N-terminal signal peptide MIVIMKAGFLFLASLCLLVQAVPNKV...) with no identifiable catalytic machinery, which is consistent with a storage/reservoir role. Among the four options, C (nutrient reservoir activity) is the only non-catalytic molecular function, making it the sole option compatible with a protein lacking enzymatic motifs. The GO term definition ('Functions in the storage of nutritious substrates') is intuitive and does not require memorizing a specific database entry.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Positive identification of this protein as a hexamerin (a specific insect storage protein family) would strengthen the case for C, but is not strictly necessary given that elimination of all three catalytic options leaves C as the only viable choice. Knowledge that hexamerins are storage proteins aids confirmation but the elimination argument is sufficient.",
-    "reason": "The three catalytic distractors (A, B, D) each require specific, well-defined active-site motifs absent from the sequence. The elimination of these through motif-absence reasoning is a standard and defensible biological argument. C is the only non-catalytic option, and its definition aligns with a large secreted protein lacking enzymatic features. While recognizing the hexamerin family would provide additional confirmation, the answer is reachable through negative evidence (absence of catalytic motifs) combined with the structural context (secreted, large, no active site)."
-  },
-  "case_id": "GO_molecular_function_0065",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C9",
-      "H1",
-      "H5",
-      "H6",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt Q6J4Q1 (Hexamerin 70b, Apis mellifera) is annotated with GO:0045735 (nutrient reservoir activity) with evidence code IDA (Inferred from Direct Assay) from PubMed:16055147 (C6/H6). The FUNCTION comment (C5/H5) states: 'Storage protein produced during nutritional abundance, which may function as a nutrient supply to compensate for lack of dietary proteins during metamorphosis, egg production and diapause.' The GO term definition (GO3) is 'Functions in the storage of nutritious substrates.' The protein is a hexamerin, a well-characterized class of insect storage proteins. The sequence matches the UniProt entry exactly (683 AA, SHA256 match)."
-  },
-  "important_caveats": [
-    "The GO annotation evidence code is IDA (Inferred from Direct Assay), indicating experimental support from PubMed:16055147, not merely computational transfer.",
-    "The hexamerin family identification from sequence alone is not trivial; the reasoning-supported judgment relies primarily on elimination of catalytic options rather than positive family recognition.",
-    "The identity_origin note states the UniProt accession was inferred from dataset image-path metadata and was absent from the evaluated model input; the model sees only the raw sequence.",
-    "The sequence is a precursor (signal peptide present); mature protein numbering may differ, but this does not affect the molecular function assignment."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span three distinct catalytic mechanisms and one non-catalytic storage function. The absence of catalytic motifs in the sequence clearly disfavors A, B, and D. No two options are equally defensible given the sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0065",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt Q6J4Q1 (Hexamerin 70b, Apis mellifera) is annotated with GO:0045735 (nutrient reservoir activity) with evidence code IDA (Inferred from Direct Assay) from PubMed:16055147 (C6/H6). The FUNCTION comment (C5/H5) states: 'Storage protein produced during nutritional abundance, which may function as a nutrient supply to compensate for lack of dietary proteins during metamorphosis, egg production and diapause.' The GO term definition (GO3) is 'Functions in the storage of nutritious substrates.' The protein is a hexamerin, a well-characterized class of insect storage proteins. The sequence matches the UniProt entry exactly (683 AA, SHA256 match).",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "C9", "H1", "H5", "H6", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence lacks the characteristic motifs required for the three catalytic options: no Rossmann-fold NAD(P)-binding motif or catalytic residues for UDP-glucose 6-dehydrogenase (A); no PSPG motif or UDP-sugar-binding pocket for quercetin 3-O-glucosyltransferase (B); no catalytic triad (Ser-His-Asp/Glu or equivalent nucleophile) for ester-bond hydrolase activity (D). The protein is a large (~683 AA) secreted protein (N-terminal signal peptide MIVIMKAGFLFLASLCLLVQAVPNKV...) with no identifiable catalytic machinery, which is consistent with a storage/reservoir role. Among the four options, C (nutrient reservoir activity) is the only non-catalytic molecular function, making it the sole option compatible with a protein lacking enzymatic motifs. The GO term definition ('Functions in the storage of nutritious substrates') is intuitive and does not require memorizing a specific database entry.",
-    "missing_item_specific_fact": "Positive identification of this protein as a hexamerin (a specific insect storage protein family) would strengthen the case for C, but is not strictly necessary given that elimination of all three catalytic options leaves C as the only viable choice. Knowledge that hexamerins are storage proteins aids confirmation but the elimination argument is sufficient.",
-    "reason": "The three catalytic distractors (A, B, D) each require specific, well-defined active-site motifs absent from the sequence. The elimination of these through motif-absence reasoning is a standard and defensible biological argument. C is the only non-catalytic option, and its definition aligns with a large secreted protein lacking enzymatic features. While recognizing the hexamerin family would provide additional confirmation, the answer is reachable through negative evidence (absence of catalytic motifs) combined with the structural context (secreted, large, no active site)."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span three distinct catalytic mechanisms and one non-catalytic storage function. The absence of catalytic motifs in the sequence clearly disfavors A, B, and D. No two options are equally defensible given the sequence features."
-  },
-  "important_caveats": [
-    "The GO annotation evidence code is IDA (Inferred from Direct Assay), indicating experimental support from PubMed:16055147, not merely computational transfer.",
-    "The hexamerin family identification from sequence alone is not trivial; the reasoning-supported judgment relies primarily on elimination of catalytic options rather than positive family recognition.",
-    "The identity_origin note states the UniProt accession was inferred from dataset image-path metadata and was absent from the evaluated model input; the model sees only the raw sequence.",
-    "The sequence is a precursor (signal peptide present); mature protein numbering may differ, but this does not affect the molecular function assignment."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q6J4Q1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f4b048de8ee619ce77fda9672606f89d5d12ce8f67699d144b1a6c73f4676898",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 683,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f4b048de8ee619ce77fda9672606f89d5d12ce8f67699d144b1a6c73f4676898",
   "current_entry_audit": {
     "entryVersion": 127,
     "firstPublicDate": "2025-04-09",
@@ -541,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "current_source_sequence_sha256": "f4b048de8ee619ce77fda9672606f89d5d12ce8f67699d144b1a6c73f4676898",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 683,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f4b048de8ee619ce77fda9672606f89d5d12ce8f67699d144b1a6c73f4676898",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 125,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q6J4Q1",
   "selected_historical_entry_version": 125,
+  "selected_historical_record_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
+  "selected_historical_source_sequence_length": 683,
+  "selected_historical_source_sequence_sha256": "f4b048de8ee619ce77fda9672606f89d5d12ce8f67699d144b1a6c73f4676898",
   "selected_historical_version": {
     "accession": "Q6J4Q1",
     "database": "Swiss-Prot",
@@ -559,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HEX7B_APIME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
-  "selected_historical_source_sequence_sha256": "f4b048de8ee619ce77fda9672606f89d5d12ce8f67699d144b1a6c73f4676898",
-  "selected_historical_source_sequence_length": 683,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 125,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q6J4Q1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -613,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":127,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2004-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -632,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Honeybee\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000005203\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Hymenoptera\",\"Apocrita\",\"Aculeata\",\"Apoidea\",\"Anthophila\",\"Apidae\",\"Apis\"],\"scientificName\":\"Apis mellifera\",\"taxonId\":7460}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -651,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9692239\",\"source\":\"PubMed\"}],\"value\":\"Hexamerin 70b\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -670,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"16055147\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"26466725\",\"source\":\"PubMed\"}],\"value\":\"Storage protein produced during nutritional abundance, which may function as a nutrient supply to compensate for lack of dietary proteins during metamorphosis, egg production and diapause\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -689,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/22",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"16055147\",\"source\":\"PubMed\"}],\"id\":\"GO:0045735\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:nutrient reservoir activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/22",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -708,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Cunha A.D.\",\"Nascimento A.M.\",\"Guidugli K.R.\",\"Simoes Z.L.\",\"Bitondi M.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"16055147\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jinsphys.2005.06.004\"}],\"citationType\":\"journal article\",\"firstPage\":\"1135\",\"id\":\"16055147\",\"journal\":\"J. Insect Physiol.\",\"lastPage\":\"1147\",\"publicationDate\":\"2005\",\"title\":\"Molecular cloning and expression of a hexamerin cDNA from the honey bee, Apis mellifera.\",\"volume\":\"51\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAT11850.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"DEVELOPMENTAL STAGE\",\"INDUCTION BY JUVENILE HORMONE AND ECDYSTERONE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -727,15 +479,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Danty E.\",\"Arnold G.\",\"Burmester T.\",\"Huet J.C.\",\"Huet D.\",\"Pernollet J.C.\",\"Masson C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"9692239\"},{\"database\":\"DOI\",\"id\":\"10.1016/s0965-1748(98)00011-3\"}],\"citationType\":\"journal article\",\"firstPage\":\"387\",\"id\":\"9692239\",\"journal\":\"Insect Biochem. Mol. Biol.\",\"lastPage\":\"397\",\"publicationDate\":\"1998\",\"title\":\"Identification and developmental profiles of hexamerins in antenna and hemolymph of the honeybee, Apis mellifera.\",\"volume\":\"28\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"NP_001011600.1\",\"source\":\"RefSeq\"}],\"referenceNumber\":6,\"referencePositions\":[\"PROTEIN SEQUENCE OF 22-36\",\"DEVELOPMENTAL STAGE\",\"PROTEOLYTIC CLEAVAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -746,15 +498,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json",
-  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
-  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
-  "json_pointer": "/references/7",
   "excerpt": "{\"citation\":{\"authors\":[\"Martins J.R.\",\"Bitondi M.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26466725\"},{\"database\":\"DOI\",\"id\":\"10.3390/insects3041039\"}],\"citationType\":\"journal article\",\"firstPage\":\"1039\",\"id\":\"26466725\",\"journal\":\"Insects\",\"lastPage\":\"1055\",\"publicationDate\":\"2012\",\"title\":\"Nuclear Immunolocalization of Hexamerins in the Fat Body of Metamorphosing Honey Bees.\",\"volume\":\"3\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":8,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/7",
+  "retrieved_utc": "2026-11-02T04:31:33.250244+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6c1c0760fdb20004483effb46d2067e52a914320172dbb09e0a7d752bacac092",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6J4Q1.json"
 }
 ```
 
@@ -764,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 125,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125",
-  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
-  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   HEX7B_APIME             Reviewed;         683 AA.\nAC   Q6J4Q1; A0A7M6UKD0; A0A8B6WYY8; A0A8U0WQ75; Q9Y1C3;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2004, sequence version 1.\nDT   28-JAN-2026, entry version 125.\nDE   RecName: Full=Hexamerin 70b {ECO:0000303|PubMed:9692239};\nDE   Flags: Precursor;\nGN   Name=Hex70b {ECO:0000303|PubMed:9692239,\nGN   ECO:0000312|RefSeq:NP_001011600.1};\nGN   Synonyms=406117 {ECO:0000312|EnsemblMetazoa:NP_001011600};\nOS   Apis mellifera (Honeybee).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Hymenoptera; Apocrita; Aculeata; Apoidea;\nOC   Anthophila; Apidae; Apis.\nOX   NCBI_TaxID=7460 {ECO:0000312|Proteomes:UP000005203};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 125,
+  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
+  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125"
 }
 ```
 
@@ -785,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 125,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125",
-  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
-  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
-  "source_locator": "lines 16-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:AAT11850.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, DEVELOPMENTAL STAGE, AND INDUCTION BY\nRP   JUVENILE HORMONE AND ECDYSTERONE.\nRX   PubMed=16055147; DOI=10.1016/j.jinsphys.2005.06.004;\nRA   Cunha A.D., Nascimento A.M., Guidugli K.R., Simoes Z.L., Bitondi M.M.;\nRT   \"Molecular cloning and expression of a hexamerin cDNA from the honey bee,\nRT   Apis mellifera.\";\nRL   J. Insect Physiol. 51:1135-1147(2005).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 125,
+  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
+  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125"
 }
 ```
 
@@ -806,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 125,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125",
-  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
-  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
-  "source_locator": "lines 62-69",
   "excerpt": "RN   [6] {ECO:0000312|RefSeq:NP_001011600.1}\nRP   PROTEIN SEQUENCE OF 22-36, DEVELOPMENTAL STAGE, AND PROTEOLYTIC CLEAVAGE.\nRX   PubMed=9692239; DOI=10.1016/s0965-1748(98)00011-3;\nRA   Danty E., Arnold G., Burmester T., Huet J.C., Huet D., Pernollet J.C.,\nRA   Masson C.;\nRT   \"Identification and developmental profiles of hexamerins in antenna and\nRT   hemolymph of the honeybee, Apis mellifera.\";\nRL   Insect Biochem. Mol. Biol. 28:387-397(1998).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 125,
+  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
+  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125"
 }
 ```
 
@@ -827,18 +579,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 125,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125",
-  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
-  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
-  "source_locator": "lines 77-84",
   "excerpt": "RN   [8] {ECO:0000305}\nRP   FUNCTION, SUBCELLULAR LOCATION, TISSUE SPECIFICITY, AND DEVELOPMENTAL\nRP   STAGE.\nRX   PubMed=26466725; DOI=10.3390/insects3041039;\nRA   Martins J.R., Bitondi M.M.;\nRT   \"Nuclear Immunolocalization of Hexamerins in the Fat Body of Metamorphosing\nRT   Honey Bees.\";\nRL   Insects 3:1039-1055(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 125,
+  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-84",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
+  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125"
 }
 ```
 
@@ -848,18 +600,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 125,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125",
-  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
-  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
-  "source_locator": "lines 94-97",
   "excerpt": "CC   -!- FUNCTION: Storage protein produced during nutritional abundance, which\nCC       may function as a nutrient supply to compensate for lack of dietary\nCC       proteins during metamorphosis, egg production and diapause.\nCC       {ECO:0000269|PubMed:16055147, ECO:0000305|PubMed:26466725}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 125,
+  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 94-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
+  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125"
 }
 ```
 
@@ -869,18 +621,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 125,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125",
-  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
-  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
-  "source_locator": "lines 160-160",
   "excerpt": "DR   GO; GO:0045735; F:nutrient reservoir activity; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 125,
+  "retrieved_utc": "2026-11-02T04:31:39.845057+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 160-160",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eafa09edc6509c05dd80048826da7fccdeb431f6e1785eeaedaf3b2ef5191130",
+  "url": "https://rest.uniprot.org/unisave/Q6J4Q1?format=txt&versions=125"
 }
 ```
 
@@ -891,15 +643,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 32563-32576",
   "excerpt": "[Term]\nid: GO:0003979\nname: UDP-glucose 6-dehydrogenase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: H2O + 2 NAD+ + UDP-alpha-D-glucose = 3 H+ + 2 NADH + UDP-alpha-D-glucuronate.\" [EC:1.1.1.22, RHEA:23596]\nxref: EC:1.1.1.22\nxref: KEGG_REACTION:R00286\nxref: MetaCyc:UGD-RXN\nxref: Reactome:R-HSA-173597 \"UDP-glucose is oxidised to UDP-glucuronate\"\nxref: RHEA:23596\nis_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor\nproperty_value: skos:exactMatch EC:1.1.1.22\nproperty_value: skos:exactMatch RHEA:23596\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0003979",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 32563-32576",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0003979"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -910,15 +662,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 130194-130208",
   "excerpt": "[Term]\nid: GO:0016788\nname: hydrolase activity, acting on ester bonds\nnamespace: molecular_function\ndef: \"Catalysis of the hydrolysis of any ester bond.\" [GOC:jl]\nsubset: goslim_chembl\nsynonym: \"esterase activity\" EXACT []\nxref: EC:3.1.-.-\nxref: Reactome:R-HSA-162729 \"uPAR-acyl-GPI + H2O -> uPAR + long-chain fatty acid\"\nxref: Reactome:R-HSA-9023617 \"Butyrylcholinesterase hydrolyzes acyl Ghrelin\"\nxref: Reactome:R-HSA-9023619 \"Platelet-activating factor acetylhydrolase (PLA2G7) hydrolyzes acyl Ghrelin\"\nxref: Reactome:R-HSA-9749609 \"BCHE hydrolyzes ASA-\"\nis_a: GO:0016787 ! hydrolase activity\nproperty_value: skos:exactMatch EC:3.1.-.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016788",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 130194-130208",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016788"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -929,15 +681,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 268007-268020",
   "excerpt": "[Term]\nid: GO:0045735\nname: nutrient reservoir activity\nnamespace: molecular_function\ndef: \"Functions in the storage of nutritious substrates.\" [GOC:ai]\ncomment: Note that this term can be used in place of the obsolete terms 'storage protein ; GO:0005187' and 'storage protein of fat body (sensu Insecta) ; GO:0008041'.\nsubset: goslim_generic\nsubset: goslim_pir\nsubset: goslim_prokaryote\nsynonym: \"storage protein\" RELATED []\nsynonym: \"storage protein of fat body\" RELATED []\nsynonym: \"yolk protein\" RELATED []\nis_a: GO:0003674 ! molecular_function\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045735",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 268007-268020",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045735"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -948,15 +700,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 392452-392458",
   "excerpt": "[Term]\nid: GO:0080043\nname: quercetin 3-O-glucosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a glucosyl group from UDP-glucose to the 3-hydroxy group of a quercetin molecule.\" [PMID:15352060]\nis_a: GO:0035251 ! UDP-glucosyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0080043",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 392452-392458",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0080043"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

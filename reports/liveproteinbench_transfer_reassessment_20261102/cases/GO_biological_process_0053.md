@@ -1,18 +1,16 @@
-# GO_biological_process_0053: before and after transfer clarification
+# GO_biological_process_0053
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0053.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0053.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — indole alkaloid biosynthetic process
+**Expected answer:** **B** — indole alkaloid biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for akuammiline synthase 1. Its function annotation, citing experimental evidence, says it catalyzes a step in akuammilan monoterpene indole alkaloid biosynthesis; the entry also carries an IDA annotation for the keyed GO process. This supports choice B, while the exact author source snapshot remains unknown.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest an enzyme, but it does not by itself establish the specific plant pathway or substrate involved. The unrelated distractors make B plausible, not meaningfully derivable from the supplied sequence alone.
-
-
-**Missing item-specific fact**
-
-> That this particular sequence is akuammiline synthase 1, experimentally characterized as catalyzing rhazimol-to-akuammiline conversion in indole alkaloid biosynthesis.
-
-
-**Reason**
-
-> Selecting B requires a protein-specific functional annotation or experimental fact absent from the model input; recognizing the sequence from an external database would be lookup or memorization, not reasoning from the supplied evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence-specific functional evidence supports B, and none of the other options is supported by the supplied reviewer evidence.
-
-
-### Important caveats
-
-- The functional evidence is cited as experimental in the database annotation, but the primary paper was not independently retrieved or validated here.
-- The sequence matches both current and historical UniProt records; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but it does not by itself establish the specific plant pathway or substrate involved. The unrelated distractors make B plausible, not meaningfully derivable from the supplied sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this particular sequence is akuammiline synthase 1, experimentally characterized as catalyzing rhazimol-to-akuammiline conversion in indole alkaloid biosynthesis.",
-    "reason": "Selecting B requires a protein-specific functional annotation or experimental fact absent from the model input; recognizing the sequence from an external database would be lookup or memorization, not reasoning from the supplied evidence."
-  },
-  "case_id": "GO_biological_process_0053",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for akuammiline synthase 1. Its function annotation, citing experimental evidence, says it catalyzes a step in akuammilan monoterpene indole alkaloid biosynthesis; the entry also carries an IDA annotation for the keyed GO process. This supports choice B, while the exact author source snapshot remains unknown."
-  },
-  "important_caveats": [
-    "The functional evidence is cited as experimental in the database annotation, but the primary paper was not independently retrieved or validated here.",
-    "The sequence matches both current and historical UniProt records; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence-specific functional evidence supports B, and none of the other options is supported by the supplied reviewer evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0053",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for akuammiline synthase 1. Its function annotation, citing experimental evidence, says it catalyzes a step in akuammilan monoterpene indole alkaloid biosynthesis; the entry also carries an IDA annotation for the keyed GO process. This supports choice B, while the exact author source snapshot remains unknown.",
-    "evidence_ids": ["C1", "C4", "C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but it does not by itself establish the specific plant pathway or substrate involved. The unrelated distractors make B plausible, not meaningfully derivable from the supplied sequence alone.",
-    "missing_item_specific_fact": "That this particular sequence is akuammiline synthase 1, experimentally characterized as catalyzing rhazimol-to-akuammiline conversion in indole alkaloid biosynthesis.",
-    "reason": "Selecting B requires a protein-specific functional annotation or experimental fact absent from the model input; recognizing the sequence from an external database would be lookup or memorization, not reasoning from the supplied evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence-specific functional evidence supports B, and none of the other options is supported by the supplied reviewer evidence."
-  },
-  "important_caveats": [
-    "The functional evidence is cited as experimental in the database annotation, but the primary paper was not independently retrieved or validated here.",
-    "The sequence matches both current and historical UniProt records; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A9E7S5E3 (Akuammiline synthase 1, AsAKS1) from Alstonia scholaris is annotated with GO:0035835 'indole alkaloid biosynthetic process' with evidence code IDA:UniProtKB (ECO:0000269, PubMed:36349266). The function comment explicitly states the protein is an acyltransferase involved in biosynthesis of akuammilan monoterpene indole alkaloids, catalyzing conversion of rhazimol to akuammiline. The EC number 2.3.1.322 and pathway annotation 'Alkaloid biosynthesis' further corroborate. Sequence match is confirmed (419 AA, SHA-256 identical).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable BAHD acyltransferase motifs (HxxxDG in 'ISHKVADG' and GWGK in 'GWGKPTWVCT'), indicating a soluble catalytic enzyme rather than a receptor, channel, signaling protein, or viral fusion protein. Among the four options, only B ('indole alkaloid biosynthetic process') describes an enzymatic biosynthetic pathway. Option A (mechanosensory behavior) requires mechanosensor/channel proteins; C (response to sorbitol) requires signaling components; D (viral membrane fusion) requires viral envelope glycoproteins with fusion peptides and heptad repeats. A 419-residue plant enzyme with acyltransferase motifs cannot participate in behavioral, signaling-response, or viral-entry processes. Eliminating the three non-enzymatic options leaves B as the sole biosynthetic process.
-
-
-**Missing item-specific fact**
-
-> None critical. While identifying the specific substrate pathway as 'indole alkaloid' (vs. lignin, cutin, or other BAHD substrates) would require deeper knowledge, the question's answer is distinguishable by the categorical elimination: B is the only option describing an enzymatic biosynthetic process.
-
-
-**Reason**
-
-> The reasoning path—recognizing enzyme motifs, classifying the protein as a biosynthetic enzyme, and eliminating behavioral/signaling/viral options—is grounded in general biological knowledge and does not require memorizing this specific UniProt entry. The distractors are categorically incompatible with an acyltransferase.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, C, and D describe processes (behavior, signaling response, viral entry) fundamentally incompatible with a soluble plant acyltransferase. Only B describes a biosynthetic chemical process, which is the sole category a catalytic enzyme would participate in. No ambiguity exists among the choices.
-
-
-### Important caveats
-
-- The specific identification of 'indole alkaloid' (as opposed to other alkaloid classes or other BAHD pathways like lignin/cutin) relies on the elimination logic rather than direct substrate inference from sequence; however, since B is the only biosynthetic option, this does not affect answerability.
-- Recognition of BAHD acyltransferase motifs (HxxxDG, GWGK) requires specialized enzyme-family knowledge but falls within general biochemistry/biology training.
-- The UniProt annotation is experimental (IDA, ECO:0000269 from PubMed:36349266), providing strong evidence for the expected answer.
-- The protein is from Alstonia scholaris (Apocynaceae), a plant family well-known for monoterpene indole alkaloid biosynthesis, which provides additional contextual support.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable BAHD acyltransferase motifs (HxxxDG in 'ISHKVADG' and GWGK in 'GWGKPTWVCT'), indicating a soluble catalytic enzyme rather than a receptor, channel, signaling protein, or viral fusion protein. Among the four options, only B ('indole alkaloid biosynthetic process') describes an enzymatic biosynthetic pathway. Option A (mechanosensory behavior) requires mechanosensor/channel proteins; C (response to sorbitol) requires signaling components; D (viral membrane fusion) requires viral envelope glycoproteins with fusion peptides and heptad repeats. A 419-residue plant enzyme with acyltransferase motifs cannot participate in behavioral, signaling-response, or viral-entry processes. Eliminating the three non-enzymatic options leaves B as the sole biosynthetic process.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. While identifying the specific substrate pathway as 'indole alkaloid' (vs. lignin, cutin, or other BAHD substrates) would require deeper knowledge, the question's answer is distinguishable by the categorical elimination: B is the only option describing an enzymatic biosynthetic process.",
-    "reason": "The reasoning path—recognizing enzyme motifs, classifying the protein as a biosynthetic enzyme, and eliminating behavioral/signaling/viral options—is grounded in general biological knowledge and does not require memorizing this specific UniProt entry. The distractors are categorically incompatible with an acyltransferase."
-  },
-  "case_id": "GO_biological_process_0053",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "H1",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A9E7S5E3 (Akuammiline synthase 1, AsAKS1) from Alstonia scholaris is annotated with GO:0035835 'indole alkaloid biosynthetic process' with evidence code IDA:UniProtKB (ECO:0000269, PubMed:36349266). The function comment explicitly states the protein is an acyltransferase involved in biosynthesis of akuammilan monoterpene indole alkaloids, catalyzing conversion of rhazimol to akuammiline. The EC number 2.3.1.322 and pathway annotation 'Alkaloid biosynthesis' further corroborate. Sequence match is confirmed (419 AA, SHA-256 identical)."
-  },
-  "important_caveats": [
-    "The specific identification of 'indole alkaloid' (as opposed to other alkaloid classes or other BAHD pathways like lignin/cutin) relies on the elimination logic rather than direct substrate inference from sequence; however, since B is the only biosynthetic option, this does not affect answerability.",
-    "Recognition of BAHD acyltransferase motifs (HxxxDG, GWGK) requires specialized enzyme-family knowledge but falls within general biochemistry/biology training.",
-    "The UniProt annotation is experimental (IDA, ECO:0000269 from PubMed:36349266), providing strong evidence for the expected answer.",
-    "The protein is from Alstonia scholaris (Apocynaceae), a plant family well-known for monoterpene indole alkaloid biosynthesis, which provides additional contextual support."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D describe processes (behavior, signaling response, viral entry) fundamentally incompatible with a soluble plant acyltransferase. Only B describes a biosynthetic chemical process, which is the sole category a catalytic enzyme would participate in. No ambiguity exists among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0053",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A9E7S5E3 (Akuammiline synthase 1, AsAKS1) from Alstonia scholaris is annotated with GO:0035835 'indole alkaloid biosynthetic process' with evidence code IDA:UniProtKB (ECO:0000269, PubMed:36349266). The function comment explicitly states the protein is an acyltransferase involved in biosynthesis of akuammilan monoterpene indole alkaloids, catalyzing conversion of rhazimol to akuammiline. The EC number 2.3.1.322 and pathway annotation 'Alkaloid biosynthesis' further corroborate. Sequence match is confirmed (419 AA, SHA-256 identical).",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "C8", "H1", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains recognizable BAHD acyltransferase motifs (HxxxDG in 'ISHKVADG' and GWGK in 'GWGKPTWVCT'), indicating a soluble catalytic enzyme rather than a receptor, channel, signaling protein, or viral fusion protein. Among the four options, only B ('indole alkaloid biosynthetic process') describes an enzymatic biosynthetic pathway. Option A (mechanosensory behavior) requires mechanosensor/channel proteins; C (response to sorbitol) requires signaling components; D (viral membrane fusion) requires viral envelope glycoproteins with fusion peptides and heptad repeats. A 419-residue plant enzyme with acyltransferase motifs cannot participate in behavioral, signaling-response, or viral-entry processes. Eliminating the three non-enzymatic options leaves B as the sole biosynthetic process.",
-    "missing_item_specific_fact": "None critical. While identifying the specific substrate pathway as 'indole alkaloid' (vs. lignin, cutin, or other BAHD substrates) would require deeper knowledge, the question's answer is distinguishable by the categorical elimination: B is the only option describing an enzymatic biosynthetic process.",
-    "reason": "The reasoning path—recognizing enzyme motifs, classifying the protein as a biosynthetic enzyme, and eliminating behavioral/signaling/viral options—is grounded in general biological knowledge and does not require memorizing this specific UniProt entry. The distractors are categorically incompatible with an acyltransferase."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D describe processes (behavior, signaling response, viral entry) fundamentally incompatible with a soluble plant acyltransferase. Only B describes a biosynthetic chemical process, which is the sole category a catalytic enzyme would participate in. No ambiguity exists among the choices."
-  },
-  "important_caveats": [
-    "The specific identification of 'indole alkaloid' (as opposed to other alkaloid classes or other BAHD pathways like lignin/cutin) relies on the elimination logic rather than direct substrate inference from sequence; however, since B is the only biosynthetic option, this does not affect answerability.",
-    "Recognition of BAHD acyltransferase motifs (HxxxDG, GWGK) requires specialized enzyme-family knowledge but falls within general biochemistry/biology training.",
-    "The UniProt annotation is experimental (IDA, ECO:0000269 from PubMed:36349266), providing strong evidence for the expected answer.",
-    "The protein is from Alstonia scholaris (Apocynaceae), a plant family well-known for monoterpene indole alkaloid biosynthesis, which provides additional contextual support."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7S5E3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 419,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
   "current_entry_audit": {
     "entryVersion": 15,
     "firstPublicDate": "2025-06-18",
@@ -541,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "current_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 419,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 13,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7S5E3",
   "selected_historical_entry_version": 13,
+  "selected_historical_record_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "selected_historical_source_sequence_length": 419,
+  "selected_historical_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
   "selected_historical_version": {
     "accession": "A0A9E7S5E3",
     "database": "Swiss-Prot",
@@ -559,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AKS1_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "selected_historical_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
-  "selected_historical_source_sequence_length": 419,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 13,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7S5E3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -613,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":15,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -632,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -651,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.322\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Akuammiline synthase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsAKS1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -670,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Acyltransferase involved in the biosynthesis of akuammilan monoterpene indole alkaloids (MIAs) natural products, components with various biological properties such as antidiabetic, antibacterial, anti-inflammatory, anticancer, and antimalarial activities (PubMed:36349266). Catalyzes the conversion of rhazimol to akuammiline (PubMed:36349266)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -689,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -708,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"id\":\"GO:0035835\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:indole alkaloid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -727,15 +479,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65387.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -745,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   AKS1_ALSSC              Reviewed;         419 AA.\nAC   A0A9E7S5E3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 13.\nDE   RecName: Full=Akuammiline synthase 1 {ECO:0000303|PubMed:36349266};\nDE            Short=AsAKS1 {ECO:0000303|PubMed:36349266};\nDE            EC=2.3.1.322 {ECO:0000269|PubMed:36349266};\nGN   Name=AKS1 {ECO:0000303|PubMed:36349266};\nGN   Synonyms=BAHD3 {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -766,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 17-24",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65387.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -787,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 25-30",
   "excerpt": "CC   -!- FUNCTION: Acyltransferase involved in the biosynthesis of akuammilan\nCC       monoterpene indole alkaloids (MIAs) natural products, components with\nCC       various biological properties such as antidiabetic, antibacterial,\nCC       anti-inflammatory, anticancer, and antimalarial activities\nCC       (PubMed:36349266). Catalyzes the conversion of rhazimol to akuammiline\nCC       (PubMed:36349266). {ECO:0000269|PubMed:36349266}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -808,18 +560,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 44-44",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:36349266}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -829,18 +581,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 59-59",
   "excerpt": "DR   GO; GO:0035835; P:indole alkaloid biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 59-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -851,15 +603,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 78288-78298",
   "excerpt": "[Term]\nid: GO:0007638\nname: mechanosensory behavior\nnamespace: biological_process\ndef: \"Behavior that is dependent upon the sensation of a mechanical stimulus.\" [GOC:curators]\nsynonym: \"behavioral response to mechanical stimulus\" EXACT []\nsynonym: \"behavioural response to mechanical stimulus\" EXACT []\nsynonym: \"mechanosensory behaviour\" EXACT []\nis_a: GO:0007610 ! behavior\nrelationship: part_of GO:0009612 ! response to mechanical stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0007638",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 78288-78298",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0007638"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -870,15 +622,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 145032-145049",
   "excerpt": "[Term]\nid: GO:0019064\nname: fusion of virus membrane with host plasma membrane\nnamespace: biological_process\nalt_id: GO:0075706\ndef: \"Fusion of a viral membrane with the host cell membrane during viral entry. Results in release of the virion contents into the cytoplasm.\" [GOC:bf, GOC:jl]\nsynonym: \"viral entry into host cell via membrane fusion with the plasma membrane\" RELATED [GOC:bf, GOC:jl]\nsynonym: \"viral envelope fusion\" BROAD []\nsynonym: \"viral envelope fusion with host cell membrane\" EXACT []\nsynonym: \"viral envelope fusion with host membrane\" EXACT []\nsynonym: \"viral envelope fusion with host plasma membrane\" EXACT []\nsynonym: \"viral penetration via membrane fusion\" BROAD []\nsynonym: \"viral-cell fusion molecule activity\" RELATED []\nxref: Reactome:R-HSA-168288 \"Fusion of the Influenza Virion to the Host Cell Endosome\"\nxref: VZ:987 \"Fusion of virus membrane with host cell membrane\"\nis_a: GO:0039663 ! membrane fusion involved in viral entry into host cell\nis_a: GO:0061025 ! membrane fusion\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019064",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 145032-145049",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019064"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -889,15 +641,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 221717-221728",
   "excerpt": "[Term]\nid: GO:0035835\nname: indole alkaloid biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of an indole alkaloid, an alkaloid containing an indole skeleton.\" [GOC:yaf]\nsynonym: \"indole alkaloid anabolism\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid biosynthesis\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid formation\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid synthesis\" EXACT [GOC:bf]\nis_a: GO:0009821 ! alkaloid biosynthetic process\nis_a: GO:0035834 ! indole alkaloid metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035835",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 221717-221728",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035835"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -908,15 +660,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 388048-388055",
   "excerpt": "[Term]\nid: GO:0072708\nname: response to sorbitol\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a sorbitol stimulus.\" [GOC:mah]\nsynonym: \"response to glucitol\" EXACT [CHEBI:30911, GOC:mah]\nis_a: GO:0009743 ! response to carbohydrate\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0072708",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 388048-388055",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0072708"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

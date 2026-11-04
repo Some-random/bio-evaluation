@@ -1,18 +1,16 @@
-# GO_molecular_function_0015: before and after transfer clarification
+# GO_molecular_function_0015
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0015.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0015.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **A** — exo-alpha-sialidase activity
+**Expected answer:** **A** — exo-alpha-sialidase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt entry for mumps virus hemagglutinin-neuraminidase, whose annotated catalytic activity is hydrolysis of terminal sialic acid linkages (EC 3.2.1.18), corresponding to exo-alpha-sialidase activity. The cited UniProt functional and catalytic annotations are transferred by similarity, not direct experimental evidence for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C7](#evidence-c7), [C8](#evidence-c8), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment and overall sequence are consistent with a membrane-associated viral glycoprotein, making ribosome binding and zinc transport less plausible. But those broad features do not specifically establish sialidase catalysis over other membrane-protein functions.
-
-
-**Missing item-specific fact**
-
-> The specific assignment of this sequence to a hemagglutinin-neuraminidase with sialidase activity, or equivalent protein-specific functional/domain annotation, is absent from the prompt.
-
-
-**Reason**
-
-> Choosing A requires the specific functional identity or a reliable recognition of its protein-specific catalytic features; general sequence and biological reasoning alone do not establish that activity.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, exo-alpha-sialidase activity is supported for this protein. Its additional receptor-binding role is not one of the options.
-
-
-### Important caveats
-
-- The sequence match is exact, but the retrieved functional evidence is primarily similarity-based rather than direct experimental evidence for this sequence.
-- The exact source snapshot used by the author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment and overall sequence are consistent with a membrane-associated viral glycoprotein, making ribosome binding and zinc transport less plausible. But those broad features do not specifically establish sialidase catalysis over other membrane-protein functions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific assignment of this sequence to a hemagglutinin-neuraminidase with sialidase activity, or equivalent protein-specific functional/domain annotation, is absent from the prompt.",
-    "reason": "Choosing A requires the specific functional identity or a reliable recognition of its protein-specific catalytic features; general sequence and biological reasoning alone do not establish that activity."
-  },
-  "case_id": "GO_molecular_function_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C7",
-      "C8",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for mumps virus hemagglutinin-neuraminidase, whose annotated catalytic activity is hydrolysis of terminal sialic acid linkages (EC 3.2.1.18), corresponding to exo-alpha-sialidase activity. The cited UniProt functional and catalytic annotations are transferred by similarity, not direct experimental evidence for this exact protein."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the retrieved functional evidence is primarily similarity-based rather than direct experimental evidence for this sequence.",
-    "The exact source snapshot used by the author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, exo-alpha-sialidase activity is supported for this protein. Its additional receptor-binding role is not one of the options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for mumps virus hemagglutinin-neuraminidase, whose annotated catalytic activity is hydrolysis of terminal sialic acid linkages (EC 3.2.1.18), corresponding to exo-alpha-sialidase activity. The cited UniProt functional and catalytic annotations are transferred by similarity, not direct experimental evidence for this exact protein.",
-    "evidence_ids": ["C1", "C4", "C7", "C8", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment and overall sequence are consistent with a membrane-associated viral glycoprotein, making ribosome binding and zinc transport less plausible. But those broad features do not specifically establish sialidase catalysis over other membrane-protein functions.",
-    "missing_item_specific_fact": "The specific assignment of this sequence to a hemagglutinin-neuraminidase with sialidase activity, or equivalent protein-specific functional/domain annotation, is absent from the prompt.",
-    "reason": "Choosing A requires the specific functional identity or a reliable recognition of its protein-specific catalytic features; general sequence and biological reasoning alone do not establish that activity."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, exo-alpha-sialidase activity is supported for this protein. Its additional receptor-binding role is not one of the options."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the retrieved functional evidence is primarily similarity-based rather than direct experimental evidence for this sequence.",
-    "The exact source snapshot used by the author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q5SC51 (Mumps virus Hemagglutinin-neuraminidase, HN protein, 582 aa). UniProt assigns EC 3.2.1.18 and GO:0004308 (exo-alpha-sialidase activity) with ISS evidence from related paramyxovirus HN proteins. The catalytic activity comment explicitly describes hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-(2->8)-glycosidic linkages of terminal sialic acid residues, which is the definition of GO:0004308. The GO term text matches option A exactly.
-
-Citations as saved: [C4](#evidence-c4), [C7](#evidence-c7), [C8](#evidence-c8), [H4](#evidence-h4), [H5](#evidence-h5), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence encodes a type II viral surface glycoprotein: it has an N-terminal signal peptide, a single transmembrane anchor, and a large C-terminal ectodomain (~582 aa total). This architecture is incompatible with ribosomal proteins (B), zinc-ion transmembrane transporters (C, which require specific Zn-binding motifs and multi-TM topology), and molecular chaperones/misfolded-protein binders (D, which have characteristic ATPase or substrate-binding domains). Among the four options, only exo-alpha-sialidase activity (A) is consistent with a viral attachment glycoprotein possessing an enzymatic ectodomain. Paramyxovirus HN proteins are well-known to combine receptor-binding with neuraminidase (sialidase) activity for viral spread. The conserved neuraminidase motifs (e.g., the R-Y-R and R-E-S catalytic motifs visible in the ectodomain) further support an exo-alpha-sialidase assignment over the other three options.
-
-
-**Missing item-specific fact**
-
-> None strictly required. While confirming the exact GO term benefits from recognizing the sequence as a paramyxovirus HN protein, the three distractors are eliminated by basic architectural and functional incompatibility arguments available from general biology.
-
-
-**Reason**
-
-> The distractors (ribosome binding, zinc transporter, misfolded protein binding) are all clearly incompatible with the observed sequence architecture (viral type II membrane glycoprotein with enzymatic ectodomain). Elimination reasoning grounded in protein architecture and viral biology distinguishes A from B, C, D without requiring a database lookup of this specific entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The three distractors are structurally and functionally incompatible with the sequence. Ribosome binding requires ribosomal protein folds; zinc transport requires specific multi-TM transporter architecture with Zn-coordinating residues; misfolded protein binding requires chaperone domains. None of these features are present. Only exo-alpha-sialidase activity is consistent with a paramyxovirus HN-type viral glycoprotein.
-
-
-### Important caveats
-
-- The UniProt annotation for Q5SC51 is primarily inferred by sequence similarity (ECO:0000250, ISS) from related paramyxovirus HN proteins (Q9WAF5, Q786F2, Q91UL0) rather than direct experimental characterization of this specific mumps strain.
-- The GO:0004308 annotation carries evidence code ISS:UniProtKB (or IEA:UniProtKB-EC in the archived flat file), meaning it is propagated from the EC assignment rather than from direct enzyme assays on this protein.
-- The reviewer-only evidence was not available to the evaluated model; the reasoning assessment considers only what a model could derive from the sequence and general biological knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence encodes a type II viral surface glycoprotein: it has an N-terminal signal peptide, a single transmembrane anchor, and a large C-terminal ectodomain (~582 aa total). This architecture is incompatible with ribosomal proteins (B), zinc-ion transmembrane transporters (C, which require specific Zn-binding motifs and multi-TM topology), and molecular chaperones/misfolded-protein binders (D, which have characteristic ATPase or substrate-binding domains). Among the four options, only exo-alpha-sialidase activity (A) is consistent with a viral attachment glycoprotein possessing an enzymatic ectodomain. Paramyxovirus HN proteins are well-known to combine receptor-binding with neuraminidase (sialidase) activity for viral spread. The conserved neuraminidase motifs (e.g., the R-Y-R and R-E-S catalytic motifs visible in the ectodomain) further support an exo-alpha-sialidase assignment over the other three options.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. While confirming the exact GO term benefits from recognizing the sequence as a paramyxovirus HN protein, the three distractors are eliminated by basic architectural and functional incompatibility arguments available from general biology.",
-    "reason": "The distractors (ribosome binding, zinc transporter, misfolded protein binding) are all clearly incompatible with the observed sequence architecture (viral type II membrane glycoprotein with enzymatic ectodomain). Elimination reasoning grounded in protein architecture and viral biology distinguishes A from B, C, D without requiring a database lookup of this specific entry."
-  },
-  "case_id": "GO_molecular_function_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C7",
-      "C8",
-      "H4",
-      "H5",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q5SC51 (Mumps virus Hemagglutinin-neuraminidase, HN protein, 582 aa). UniProt assigns EC 3.2.1.18 and GO:0004308 (exo-alpha-sialidase activity) with ISS evidence from related paramyxovirus HN proteins. The catalytic activity comment explicitly describes hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-(2->8)-glycosidic linkages of terminal sialic acid residues, which is the definition of GO:0004308. The GO term text matches option A exactly."
-  },
-  "important_caveats": [
-    "The UniProt annotation for Q5SC51 is primarily inferred by sequence similarity (ECO:0000250, ISS) from related paramyxovirus HN proteins (Q9WAF5, Q786F2, Q91UL0) rather than direct experimental characterization of this specific mumps strain.",
-    "The GO:0004308 annotation carries evidence code ISS:UniProtKB (or IEA:UniProtKB-EC in the archived flat file), meaning it is propagated from the EC assignment rather than from direct enzyme assays on this protein.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment considers only what a model could derive from the sequence and general biological knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors are structurally and functionally incompatible with the sequence. Ribosome binding requires ribosomal protein folds; zinc transport requires specific multi-TM transporter architecture with Zn-coordinating residues; misfolded protein binding requires chaperone domains. None of these features are present. Only exo-alpha-sialidase activity is consistent with a paramyxovirus HN-type viral glycoprotein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q5SC51 (Mumps virus Hemagglutinin-neuraminidase, HN protein, 582 aa). UniProt assigns EC 3.2.1.18 and GO:0004308 (exo-alpha-sialidase activity) with ISS evidence from related paramyxovirus HN proteins. The catalytic activity comment explicitly describes hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-(2->8)-glycosidic linkages of terminal sialic acid residues, which is the definition of GO:0004308. The GO term text matches option A exactly.",
-    "evidence_ids": ["C4", "C7", "C8", "H4", "H5", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence encodes a type II viral surface glycoprotein: it has an N-terminal signal peptide, a single transmembrane anchor, and a large C-terminal ectodomain (~582 aa total). This architecture is incompatible with ribosomal proteins (B), zinc-ion transmembrane transporters (C, which require specific Zn-binding motifs and multi-TM topology), and molecular chaperones/misfolded-protein binders (D, which have characteristic ATPase or substrate-binding domains). Among the four options, only exo-alpha-sialidase activity (A) is consistent with a viral attachment glycoprotein possessing an enzymatic ectodomain. Paramyxovirus HN proteins are well-known to combine receptor-binding with neuraminidase (sialidase) activity for viral spread. The conserved neuraminidase motifs (e.g., the R-Y-R and R-E-S catalytic motifs visible in the ectodomain) further support an exo-alpha-sialidase assignment over the other three options.",
-    "missing_item_specific_fact": "None strictly required. While confirming the exact GO term benefits from recognizing the sequence as a paramyxovirus HN protein, the three distractors are eliminated by basic architectural and functional incompatibility arguments available from general biology.",
-    "reason": "The distractors (ribosome binding, zinc transporter, misfolded protein binding) are all clearly incompatible with the observed sequence architecture (viral type II membrane glycoprotein with enzymatic ectodomain). Elimination reasoning grounded in protein architecture and viral biology distinguishes A from B, C, D without requiring a database lookup of this specific entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors are structurally and functionally incompatible with the sequence. Ribosome binding requires ribosomal protein folds; zinc transport requires specific multi-TM transporter architecture with Zn-coordinating residues; misfolded protein binding requires chaperone domains. None of these features are present. Only exo-alpha-sialidase activity is consistent with a paramyxovirus HN-type viral glycoprotein."
-  },
-  "important_caveats": [
-    "The UniProt annotation for Q5SC51 is primarily inferred by sequence similarity (ECO:0000250, ISS) from related paramyxovirus HN proteins (Q9WAF5, Q786F2, Q91UL0) rather than direct experimental characterization of this specific mumps strain.",
-    "The GO:0004308 annotation carries evidence code ISS:UniProtKB (or IEA:UniProtKB-EC in the archived flat file), meaning it is propagated from the EC assignment rather than from direct enzyme assays on this protein.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning assessment considers only what a model could derive from the sequence and general biological knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5SC51",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e96cff28d63a847ba629b286f3a32c333c53ea1cb31fc62f1e0624df41dc039e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 582,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e96cff28d63a847ba629b286f3a32c333c53ea1cb31fc62f1e0624df41dc039e",
   "current_entry_audit": {
     "entryVersion": 107,
     "firstPublicDate": "2025-04-09",
@@ -536,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-12-21",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "current_source_sequence_sha256": "e96cff28d63a847ba629b286f3a32c333c53ea1cb31fc62f1e0624df41dc039e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 582,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e96cff28d63a847ba629b286f3a32c333c53ea1cb31fc62f1e0624df41dc039e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 105,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5SC51",
   "selected_historical_entry_version": 105,
+  "selected_historical_record_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "selected_historical_source_sequence_length": 582,
+  "selected_historical_source_sequence_sha256": "e96cff28d63a847ba629b286f3a32c333c53ea1cb31fc62f1e0624df41dc039e",
   "selected_historical_version": {
     "accession": "Q5SC51",
     "database": "Swiss-Prot",
@@ -554,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HN_MUMPZ",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "selected_historical_source_sequence_sha256": "e96cff28d63a847ba629b286f3a32c333c53ea1cb31fc62f1e0624df41dc039e",
-  "selected_historical_source_sequence_length": 582,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 105,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -589,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5SC51\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -608,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":107,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2004-12-21\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -627,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"MuV\",\"lineage\":[\"Viruses\",\"Riboviria\",\"Orthornavirae\",\"Negarnaviricota\",\"Haploviricotina\",\"Monjiviricetes\",\"Mononegavirales\",\"Paramyxoviridae\",\"Rubulavirinae\",\"Orthorubulavirus\",\"Orthorubulavirus parotitidis\",\"Mumps orthorubulavirus\"],\"scientificName\":\"Mumps virus genotype N (strain L-Zagreb vaccine)\",\"taxonId\":301186}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -646,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9WAF5\",\"source\":\"UniProtKB\"}],\"value\":\"3.2.1.18\"}],\"fullName\":{\"value\":\"Hemagglutinin-neuraminidase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -665,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q786F2\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9WAF5\",\"source\":\"UniProtKB\"}],\"value\":\"Attaches the virus to alpha-2,3-linked sialic acid-containing cell receptors and thereby initiating infection (By similarity). Binding of HN protein to the receptor induces a conformational change that allows the F protein to trigger virion/cell membranes fusion (By similarity). Binds to the glycan motifs sialyl Lewis (SLe) and GM2 ganglioside (GM2-glycan) (By similarity)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -684,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q91UL0\",\"source\":\"UniProtKB\"}],\"value\":\"Neuraminidase activity ensures the efficient spread of the virus by dissociating the mature virions from the neuraminic acid containing glycoproteins\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -703,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.18\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9WAF5\",\"source\":\"UniProtKB\"}],\"name\":\"Hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-(2->8)- glycosidic linkages of terminal sialic acid residues in oligosaccharides, glycoproteins, glycolipids, colominic acid and synthetic substrates.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -722,15 +481,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0004308\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:exo-alpha-sialidase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -741,15 +500,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0046789\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:host cell surface receptor binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -760,15 +519,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json",
-  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
-  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/10",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0042802\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:identical protein binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-ARBA\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/10",
+  "retrieved_utc": "2026-11-02T04:31:29.846842+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "84cb4071f2488c26b98cb3a00a95cf7fafbb3f15b4205e39b2029f487b04b1c3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC51.json"
 }
 ```
 
@@ -778,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 105,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105",
-  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   HN_MUMPZ                Reviewed;         582 AA.\nAC   Q5SC51;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   21-DEC-2004, sequence version 1.\nDT   28-JAN-2026, entry version 105.\nDE   RecName: Full=Hemagglutinin-neuraminidase;\nDE            EC=3.2.1.18 {ECO:0000250|UniProtKB:Q9WAF5};\nGN   Name=HN;\nOS   Mumps virus genotype N (strain L-Zagreb vaccine) (MuV).\nOC   Viruses; Riboviria; Orthornavirae; Negarnaviricota; Haploviricotina;\nOC   Monjiviricetes; Mononegavirales; Paramyxoviridae; Rubulavirinae;\nOC   Orthorubulavirus; Orthorubulavirus parotitidis; Mumps orthorubulavirus.\nOX   NCBI_TaxID=301186;\nOH   NCBI_TaxID=9606; Homo sapiens (Human).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 105,
+  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105"
 }
 ```
 
@@ -799,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 105,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105",
-  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
-  "source_locator": "lines 41-47",
   "excerpt": "CC   -!- FUNCTION: Attaches the virus to alpha-2,3-linked sialic acid-containing\nCC       cell receptors and thereby initiating infection (By similarity).\nCC       Binding of HN protein to the receptor induces a conformational change\nCC       that allows the F protein to trigger virion/cell membranes fusion (By\nCC       similarity). Binds to the glycan motifs sialyl Lewis (SLe) and GM2\nCC       ganglioside (GM2-glycan) (By similarity).\nCC       {ECO:0000250|UniProtKB:Q786F2, ECO:0000250|UniProtKB:Q9WAF5}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 105,
+  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105"
 }
 ```
 
@@ -820,18 +579,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 105,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105",
-  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
-  "source_locator": "lines 48-50",
   "excerpt": "CC   -!- FUNCTION: Neuraminidase activity ensures the efficient spread of the\nCC       virus by dissociating the mature virions from the neuraminic acid\nCC       containing glycoproteins. {ECO:0000250|UniProtKB:Q91UL0}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 105,
+  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 48-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105"
 }
 ```
 
@@ -841,18 +600,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 105,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105",
-  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
-  "source_locator": "lines 51-56",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-\nCC         (2->8)- glycosidic linkages of terminal sialic acid residues in\nCC         oligosaccharides, glycoproteins, glycolipids, colominic acid and\nCC         synthetic substrates.; EC=3.2.1.18;\nCC         Evidence={ECO:0000250|UniProtKB:Q9WAF5};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 105,
+  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-56",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105"
 }
 ```
 
@@ -862,18 +621,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 105,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105",
-  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
-  "source_locator": "lines 82-82",
   "excerpt": "DR   GO; GO:0004308; F:exo-alpha-sialidase activity; IEA:UniProtKB-EC.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 105,
+  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-82",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105"
 }
 ```
 
@@ -883,18 +642,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 105,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105",
-  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
-  "source_locator": "lines 83-83",
   "excerpt": "DR   GO; GO:0046789; F:host cell surface receptor binding; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 105,
+  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 83-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105"
 }
 ```
 
@@ -904,18 +663,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 105,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105",
-  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
-  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
-  "source_locator": "lines 84-84",
   "excerpt": "DR   GO; GO:0042802; F:identical protein binding; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 105,
+  "retrieved_utc": "2026-11-02T04:31:32.054381+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 84-84",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8bf1ba1afc5634387cc3311f78ac6fc61cefd51f3d1e338d340ea041cd46beeb",
+  "url": "https://rest.uniprot.org/unisave/Q5SC51?format=txt&versions=105"
 }
 ```
 
@@ -926,15 +685,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 39493-39517",
   "excerpt": "[Term]\nid: GO:0004308\nname: exo-alpha-sialidase activity\nnamespace: molecular_function\ndef: \"Catalysis of the hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-(2->8)-glycosidic linkages of terminal sialic residues in oligosaccharides, glycoproteins, glycolipids, colominic acid and synthetic substrates.\" [EC:3.2.1.18]\nsynonym: \"acetylneuraminidase activity\" RELATED [EC:3.2.1.18]\nsynonym: \"acetylneuraminyl hydrolase activity\" RELATED [EC:3.2.1.18]\nsynonym: \"alpha-neuraminidase activity\" RELATED [EC:3.2.1.18]\nsynonym: \"N-acylneuraminate glycohydrolase activity\" RELATED [EC:3.2.1.18]\nsynonym: \"neuraminidase activity\" RELATED [EC:3.2.1.18]\nsynonym: \"sialidase activity\" RELATED [EC:3.2.1.18]\nxref: EC:3.2.1.18\nxref: MetaCyc:3.2.1.18-RXN\nxref: Reactome:R-HSA-1605723 \"NEU2 cleaves GM3 to form LacCer (cytosol)\"\nxref: Reactome:R-HSA-1605724 \"NEU1,4 hydrolyze PSAP(195-273):GM3:PE\"\nxref: Reactome:R-HSA-1605768 \"NEU3 cleaves GM3 to form LacCer (plasma membrane)\"\nxref: Reactome:R-HSA-168870 \"Neuraminidase enzymatic release from sialic acid\"\nxref: Reactome:R-HSA-4084994 \"NEU3 hydrolyzes Neu5Ac from glycoconjugates\"\nxref: Reactome:R-HSA-4084999 \"NEU1 hydrolyses Neu5Ac from glycoconjugates\"\nxref: Reactome:R-HSA-4085029 \"NEU2 hydrolyzes Neu5Ac from glycoconjugates\"\nxref: Reactome:R-HSA-4341669 \"Defective NEU1 does not hydrolyse Neu5Ac from glycoconjugates\"\nxref: Reactome:R-HSA-9638120 \"NEU4 hydrolyses Neu5Ac from glycoconjugates\"\nis_a: GO:0016997 ! alpha-sialidase activity\nproperty_value: skos:exactMatch EC:3.2.1.18\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004308",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 39493-39517",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004308"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -945,15 +704,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 56286-56312",
   "excerpt": "[Term]\nid: GO:0005385\nname: zinc ion transmembrane transporter activity\nnamespace: molecular_function\ndef: \"Enables the transfer of zinc (Zn) ions from one side of a membrane to the other.\" [GOC:dgf]\nsynonym: \"cobalt, zinc uptake permease activity\" RELATED []\nsynonym: \"zinc, cadmium uptake permease activity\" RELATED []\nsynonym: \"zinc, cadmium, cobalt, nickel, lead-efflux ATPase activity\" RELATED []\nsynonym: \"zinc, iron permease activity\" NARROW []\nxref: MetaCyc:RXN0-12\nxref: Reactome:R-HSA-435366 \"ZnT1 mediates the efflux of zinc from the cell\"\nxref: Reactome:R-HSA-435375 \"ZnT2 facilitates zinc vesicular sequestration\"\nxref: Reactome:R-HSA-437084 \"ZnT3 transports zinc into synaptic vesicles\"\nxref: Reactome:R-HSA-437085 \"ZnT5 transports zinc into secretory granules in pancreatic beta cells\"\nxref: Reactome:R-HSA-437136 \"SLC30A8 transports Zn2+ from cytosol to secretory granule\"\nxref: Reactome:R-HSA-437139 \"ZnT8 transports zinc into the Golgi apparatus\"\nxref: Reactome:R-HSA-442317 \"ZIP6 and ZIP14 mediate zinc influx into cells\"\nxref: Reactome:R-HSA-442345 \"hZIP10 mediates zinc influx into cells\"\nxref: Reactome:R-HSA-442387 \"ZIP8 mediates zinc influx into cells\"\nxref: Reactome:R-HSA-442393 \"ZIP7 mediates zinc efflux from the endoplasmic reticulum\"\nxref: Reactome:R-HSA-442405 \"hZIP5 mediates zinc uptake by cells\"\nxref: Reactome:R-HSA-442422 \"SLC39A1-4 transports Zn2+ from extracellular region to cytosol\"\nxref: Reactome:R-HSA-5654125 \"Defective SLC39A4 does not transport Zn2+ from extracellular region to cytosol\"\nxref: Reactome:R-HSA-9820566 \"ZnT5 transports zinc into the golgi apparatus\"\nxref: Reactome:R-HSA-9928035 \"ZnuABC transports Zn2+ to cytosol\"\nis_a: GO:0046915 ! transition metal ion transmembrane transporter activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005385",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 56286-56312",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005385"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -964,15 +723,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 243239-243247",
   "excerpt": "[Term]\nid: GO:0043022\nname: ribosome binding\nnamespace: molecular_function\nalt_id: GO:0030376\ndef: \"Binding to a ribosome.\" [GOC:curators]\nsynonym: \"ribosome receptor activity\" NARROW []\nis_a: GO:0043021 ! ribonucleoprotein complex binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043022",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 243239-243247",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043022"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -983,15 +742,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 330727-330734",
   "excerpt": "[Term]\nid: GO:0051787\nname: misfolded protein binding\nnamespace: molecular_function\ndef: \"Binding to a misfolded protein.\" [GOC:ai]\nxref: Reactome:R-HSA-5324632 \"Dissociation of cytosolic HSF1:HSP90:HDAC6:PTGES3 upon sensing protein aggregates\"\nis_a: GO:0005515 ! protein binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0051787",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 330727-330734",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0051787"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

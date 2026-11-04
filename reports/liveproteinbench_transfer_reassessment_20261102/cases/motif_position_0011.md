@@ -1,18 +1,16 @@
-# motif_position_0011: before and after transfer clarification
+# motif_position_0011
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/motif_position_0011.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/motif_position_0011.txt)
 
 **Task:** `motif_position`  
-**Author key, unchanged:** **A** — 128..147
+**Expected answer:** **A** — 128..147
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-sequence-matched UniProt record annotates residues 128–147 as the FTZ-F1 box, matching choice A. This is a similarity-transferred annotation, not evidence of direct experimental determination of these boundaries.
-
-Citations as saved: [C11](#evidence-c11), [H10](#evidence-h10).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence context may suggest a nuclear-receptor protein, but it does not establish which motif is being asked about or the exact boundaries 128–147.
-
-
-**Missing item-specific fact**
-
-> The required fact is that this protein has an annotated FTZ-F1 box at residues 128–147; that motif identity and position are absent from the question.
-
-
-**Reason**
-
-> Choosing the keyed interval requires protein-specific motif annotation or equivalent external knowledge. The sequence and choices alone do not give a defensible way to identify the intended motif and its precise boundaries.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The question refers to “the motif” without naming or defining it. The evidence supports A for the FTZ-F1 box, but the prompt does not specify that this is the motif intended.
-
-
-### Important caveats
-
-- The supporting UniProt annotation is transferred by similarity from another UniProt entry (ECO:0000250), rather than shown here as experimentally established for this sequence.
-- The historical record and current entry match the supplied sequence; the author’s exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence context may suggest a nuclear-receptor protein, but it does not establish which motif is being asked about or the exact boundaries 128–147.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The required fact is that this protein has an annotated FTZ-F1 box at residues 128–147; that motif identity and position are absent from the question.",
-    "reason": "Choosing the keyed interval requires protein-specific motif annotation or equivalent external knowledge. The sequence and choices alone do not give a defensible way to identify the intended motif and its precise boundaries."
-  },
-  "case_id": "motif_position_0011",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C11",
-      "H10"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-sequence-matched UniProt record annotates residues 128–147 as the FTZ-F1 box, matching choice A. This is a similarity-transferred annotation, not evidence of direct experimental determination of these boundaries."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation is transferred by similarity from another UniProt entry (ECO:0000250), rather than shown here as experimentally established for this sequence.",
-    "The historical record and current entry match the supplied sequence; the author’s exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The question refers to “the motif” without naming or defining it. The evidence supports A for the FTZ-F1 box, but the prompt does not specify that this is the motif intended."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "motif_position_0011",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-sequence-matched UniProt record annotates residues 128–147 as the FTZ-F1 box, matching choice A. This is a similarity-transferred annotation, not evidence of direct experimental determination of these boundaries.",
-    "evidence_ids": ["C11", "H10"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence context may suggest a nuclear-receptor protein, but it does not establish which motif is being asked about or the exact boundaries 128–147.",
-    "missing_item_specific_fact": "The required fact is that this protein has an annotated FTZ-F1 box at residues 128–147; that motif identity and position are absent from the question.",
-    "reason": "Choosing the keyed interval requires protein-specific motif annotation or equivalent external knowledge. The sequence and choices alone do not give a defensible way to identify the intended motif and its precise boundaries."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The question refers to “the motif” without naming or defining it. The evidence supports A for the FTZ-F1 box, but the prompt does not specify that this is the motif intended."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation is transferred by similarity from another UniProt entry (ECO:0000250), rather than shown here as experimentally established for this sequence.",
-    "The historical record and current entry match the supplied sequence; the author’s exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q90YL6 (NR5A2_DANRE, zebrafish) explicitly annotates a MOTIF feature at positions 128..147 with the note 'FTZ-F1 box' (evidence_id C11/H10). The sequence SHA256 matches the benchmark sequence. The evidence code is ECO:0000250 (inferred by similarity to human NR5A2, O00482), so this is a computational/transfer annotation rather than direct experimental measurement, but the FTZ-F1 box is a well-established motif in the NR5A2/FTZ-F1 nuclear receptor family. The expected answer A (128..147) is directly supported by this annotation.
-
-Citations as saved: [C11](#evidence-c11), [H10](#evidence-h10), [C1](#evidence-c1), [C4](#evidence-c4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A weak heuristic exists: among the four choices, only A (128..147, 20 residues) has a length consistent with a functional protein motif, while B (92..94) and D (211..213) are only 3 residues and C (6..14) is 9 residues in an unremarkable N-terminal region. Additionally, the FTZ-F1 box is known to reside between the DNA-binding domain (zinc fingers ending ~101) and the ligand-binding domain (starting ~276), and only A falls in that inter-domain linker region. However, this positional argument still requires prior knowledge that the FTZ-F1 box exists and occupies that region.
-
-
-**Missing item-specific fact**
-
-> The specific identity and boundaries of the FTZ-F1 box motif in NR5A2 proteins. The sequence at positions 128-147 (FGPMYKRDRALKQQKKALIR) does not display a universally recognizable consensus pattern that would allow de novo identification without knowing this is NR5A2/FTZ-F1 and that the FTZ-F1 box is its defining motif. The question also fails to specify which motif is being asked about, so the model must know that the FTZ-F1 box is the relevant 'conserved motif' for this protein.
-
-
-**Reason**
-
-> Identifying the FTZ-F1 box at 128..147 requires protein-specific knowledge of NR5A2/FTZ-F1 biology and its annotated motif boundaries. The sequence itself does not contain an obvious, generalizable pattern at those positions. Recognizing the sequence as NR5A2 and recalling its FTZ-F1 box annotation constitutes memorization/lookup, not reasoning from general biological principles. The weak length-based and positional heuristics are insufficient to reliably distinguish A from the distractors without the specific motif knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the question stem says 'a conserved motif' without naming which one, the four choices are sufficiently distinct that only A corresponds to an actual annotated motif-type feature in UniProt. B (92..94) falls within the second zinc finger, C (6..14) is in the N-terminal region, and D (211..213) is at the boundary of a disordered region—none of these represent recognized motif boundaries. The choices effectively disambiguate despite the vague question wording.
-
-
-### Important caveats
-
-- The FTZ-F1 box annotation is computational (ECO:0000250, transferred by similarity to human NR5A2/O00482), not experimentally determined for this zebrafish protein.
-- The question does not specify which motif is being asked about, relying on the choices to implicitly identify the FTZ-F1 box as 'the' conserved motif.
-- The UniProt annotation was first added in the Swiss-Prot entry (first public date 2025-04-09); the author's source snapshot is unknown, though the sequence version has been stable since 2001.
-- The 13x His-tag (HHHHHHHHHHHHH) and poly-Ser linker visible around positions 187-201 suggest this may be a recombinant construct, but this does not affect the motif annotation coordinates.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A weak heuristic exists: among the four choices, only A (128..147, 20 residues) has a length consistent with a functional protein motif, while B (92..94) and D (211..213) are only 3 residues and C (6..14) is 9 residues in an unremarkable N-terminal region. Additionally, the FTZ-F1 box is known to reside between the DNA-binding domain (zinc fingers ending ~101) and the ligand-binding domain (starting ~276), and only A falls in that inter-domain linker region. However, this positional argument still requires prior knowledge that the FTZ-F1 box exists and occupies that region.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity and boundaries of the FTZ-F1 box motif in NR5A2 proteins. The sequence at positions 128-147 (FGPMYKRDRALKQQKKALIR) does not display a universally recognizable consensus pattern that would allow de novo identification without knowing this is NR5A2/FTZ-F1 and that the FTZ-F1 box is its defining motif. The question also fails to specify which motif is being asked about, so the model must know that the FTZ-F1 box is the relevant 'conserved motif' for this protein.",
-    "reason": "Identifying the FTZ-F1 box at 128..147 requires protein-specific knowledge of NR5A2/FTZ-F1 biology and its annotated motif boundaries. The sequence itself does not contain an obvious, generalizable pattern at those positions. Recognizing the sequence as NR5A2 and recalling its FTZ-F1 box annotation constitutes memorization/lookup, not reasoning from general biological principles. The weak length-based and positional heuristics are insufficient to reliably distinguish A from the distractors without the specific motif knowledge."
-  },
-  "case_id": "motif_position_0011",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C11",
-      "H10",
-      "C1",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q90YL6 (NR5A2_DANRE, zebrafish) explicitly annotates a MOTIF feature at positions 128..147 with the note 'FTZ-F1 box' (evidence_id C11/H10). The sequence SHA256 matches the benchmark sequence. The evidence code is ECO:0000250 (inferred by similarity to human NR5A2, O00482), so this is a computational/transfer annotation rather than direct experimental measurement, but the FTZ-F1 box is a well-established motif in the NR5A2/FTZ-F1 nuclear receptor family. The expected answer A (128..147) is directly supported by this annotation."
-  },
-  "important_caveats": [
-    "The FTZ-F1 box annotation is computational (ECO:0000250, transferred by similarity to human NR5A2/O00482), not experimentally determined for this zebrafish protein.",
-    "The question does not specify which motif is being asked about, relying on the choices to implicitly identify the FTZ-F1 box as 'the' conserved motif.",
-    "The UniProt annotation was first added in the Swiss-Prot entry (first public date 2025-04-09); the author's source snapshot is unknown, though the sequence version has been stable since 2001.",
-    "The 13x His-tag (HHHHHHHHHHHHH) and poly-Ser linker visible around positions 187-201 suggest this may be a recombinant construct, but this does not affect the motif annotation coordinates."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the question stem says 'a conserved motif' without naming which one, the four choices are sufficiently distinct that only A corresponds to an actual annotated motif-type feature in UniProt. B (92..94) falls within the second zinc finger, C (6..14) is in the N-terminal region, and D (211..213) is at the boundary of a disordered region—none of these represent recognized motif boundaries. The choices effectively disambiguate despite the vague question wording."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "motif_position_0011",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q90YL6 (NR5A2_DANRE, zebrafish) explicitly annotates a MOTIF feature at positions 128..147 with the note 'FTZ-F1 box' (evidence_id C11/H10). The sequence SHA256 matches the benchmark sequence. The evidence code is ECO:0000250 (inferred by similarity to human NR5A2, O00482), so this is a computational/transfer annotation rather than direct experimental measurement, but the FTZ-F1 box is a well-established motif in the NR5A2/FTZ-F1 nuclear receptor family. The expected answer A (128..147) is directly supported by this annotation.",
-    "evidence_ids": ["C11", "H10", "C1", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A weak heuristic exists: among the four choices, only A (128..147, 20 residues) has a length consistent with a functional protein motif, while B (92..94) and D (211..213) are only 3 residues and C (6..14) is 9 residues in an unremarkable N-terminal region. Additionally, the FTZ-F1 box is known to reside between the DNA-binding domain (zinc fingers ending ~101) and the ligand-binding domain (starting ~276), and only A falls in that inter-domain linker region. However, this positional argument still requires prior knowledge that the FTZ-F1 box exists and occupies that region.",
-    "missing_item_specific_fact": "The specific identity and boundaries of the FTZ-F1 box motif in NR5A2 proteins. The sequence at positions 128-147 (FGPMYKRDRALKQQKKALIR) does not display a universally recognizable consensus pattern that would allow de novo identification without knowing this is NR5A2/FTZ-F1 and that the FTZ-F1 box is its defining motif. The question also fails to specify which motif is being asked about, so the model must know that the FTZ-F1 box is the relevant 'conserved motif' for this protein.",
-    "reason": "Identifying the FTZ-F1 box at 128..147 requires protein-specific knowledge of NR5A2/FTZ-F1 biology and its annotated motif boundaries. The sequence itself does not contain an obvious, generalizable pattern at those positions. Recognizing the sequence as NR5A2 and recalling its FTZ-F1 box annotation constitutes memorization/lookup, not reasoning from general biological principles. The weak length-based and positional heuristics are insufficient to reliably distinguish A from the distractors without the specific motif knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the question stem says 'a conserved motif' without naming which one, the four choices are sufficiently distinct that only A corresponds to an actual annotated motif-type feature in UniProt. B (92..94) falls within the second zinc finger, C (6..14) is in the N-terminal region, and D (211..213) is at the boundary of a disordered region—none of these represent recognized motif boundaries. The choices effectively disambiguate despite the vague question wording."
-  },
-  "important_caveats": [
-    "The FTZ-F1 box annotation is computational (ECO:0000250, transferred by similarity to human NR5A2/O00482), not experimentally determined for this zebrafish protein.",
-    "The question does not specify which motif is being asked about, relying on the choices to implicitly identify the FTZ-F1 box as 'the' conserved motif.",
-    "The UniProt annotation was first added in the Swiss-Prot entry (first public date 2025-04-09); the author's source snapshot is unknown, though the sequence version has been stable since 2001.",
-    "The 13x His-tag (HHHHHHHHHHHHH) and poly-Ser linker visible around positions 187-201 suggest this may be a recombinant construct, but this does not affect the motif annotation coordinates."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -494,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q90YL6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b7c785e3944855ed1e7aa9faa32091cc02df77098be954cc64b2cd3e8976bce9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 517,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b7c785e3944855ed1e7aa9faa32091cc02df77098be954cc64b2cd3e8976bce9",
   "current_entry_audit": {
     "entryVersion": 184,
     "firstPublicDate": "2025-04-09",
@@ -525,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-12-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "current_source_sequence_sha256": "b7c785e3944855ed1e7aa9faa32091cc02df77098be954cc64b2cd3e8976bce9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 517,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b7c785e3944855ed1e7aa9faa32091cc02df77098be954cc64b2cd3e8976bce9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 182,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q90YL6",
   "selected_historical_entry_version": 182,
+  "selected_historical_record_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "selected_historical_source_sequence_length": 517,
+  "selected_historical_source_sequence_sha256": "b7c785e3944855ed1e7aa9faa32091cc02df77098be954cc64b2cd3e8976bce9",
   "selected_historical_version": {
     "accession": "Q90YL6",
     "database": "Swiss-Prot",
@@ -543,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NR5A2_DANRE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "selected_historical_source_sequence_sha256": "b7c785e3944855ed1e7aa9faa32091cc02df77098be954cc64b2cd3e8976bce9",
-  "selected_historical_source_sequence_length": 517,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 182,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -574,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q90YL6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -593,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":184,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-12-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -612,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Zebrafish\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Actinopterygii\",\"Neopterygii\",\"Teleostei\",\"Ostariophysi\",\"Cypriniformes\",\"Danionidae\",\"Danioninae\",\"Danio\"],\"scientificName\":\"Danio rerio\",\"synonyms\":[\"Brachydanio rerio\"],\"taxonId\":7955}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -631,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9178748\",\"source\":\"PubMed\"}],\"value\":\"FTZ-F1 homolog\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9178748\",\"source\":\"PubMed\"}],\"value\":\"zFF1\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28642062\",\"source\":\"PubMed\"}],\"value\":\"Liver receptor homolog 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28642062\",\"source\":\"PubMed\"}],\"value\":\"LRH-1\"}]}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Nuclear receptor subfamily 5 group A member 2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -650,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"NR LBD\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01189\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":515},\"start\":{\"modifier\":\"EXACT\",\"value\":276}},\"type\":\"Domain\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -669,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"NR C4-type\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00407\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":66},\"start\":{\"modifier\":\"EXACT\",\"value\":46}},\"type\":\"Zinc finger\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -688,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"NR C4-type\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00407\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":101},\"start\":{\"modifier\":\"EXACT\",\"value\":82}},\"type\":\"Zinc finger\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -707,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"C-terminal extension (CTE)\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O00482\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":127},\"start\":{\"modifier\":\"EXACT\",\"value\":112}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -726,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Disordered\",\"evidences\":[{\"evidenceCode\":\"ECO:0000256\",\"id\":\"MobiDB-lite\",\"source\":\"SAM\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":211},\"start\":{\"modifier\":\"EXACT\",\"value\":182}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -745,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"AF-2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01189\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":515},\"start\":{\"modifier\":\"EXACT\",\"value\":504}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -764,15 +526,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"FTZ-F1 box\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O00482\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":147},\"start\":{\"modifier\":\"EXACT\",\"value\":128}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -783,15 +545,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu D.\",\"Le Drean Y.\",\"Ekker M.\",\"Xiong F.\",\"Hew C.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"9178748\"},{\"database\":\"DOI\",\"id\":\"10.1210/mend.11.7.9947\"}],\"citationType\":\"journal article\",\"firstPage\":\"877\",\"id\":\"9178748\",\"journal\":\"Mol. Endocrinol.\",\"lastPage\":\"890\",\"publicationDate\":\"1997\",\"title\":\"Teleost FTZ-F1 homolog and its splicing variant determine the expression of the salmon gonadotropin IIbeta subunit gene.\",\"volume\":\"11\"},\"referenceNumber\":4,\"referencePositions\":[\"ALTERNATIVE SPLICING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -802,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json",
-  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
-  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
-  "json_pointer": "/references/8",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhai G.\",\"Song J.\",\"Shu T.\",\"Yan J.\",\"Jin X.\",\"He J.\",\"Yin Z.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28642062\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jgg.2017.03.006\"}],\"citationType\":\"journal article\",\"firstPage\":\"307\",\"id\":\"28642062\",\"journal\":\"J. Genet. Genomics\",\"lastPage\":\"317\",\"publicationDate\":\"2017\",\"title\":\"LRH-1 senses signaling from phosphatidylcholine to regulate the expansion growth of digestive organs via synergy with Wnt/beta-catenin signaling in zebrafish.\",\"volume\":\"44\"},\"referenceNumber\":9,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/8",
+  "retrieved_utc": "2026-11-02T04:32:31.842408+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d44c7f7cfbc5ec1817e4243a16d89625902bfbce478c41a8825d7a9540940b60",
+  "url": "https://rest.uniprot.org/uniprotkb/Q90YL6.json"
 }
 ```
 
@@ -820,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   NR5A2_DANRE             Reviewed;         517 AA.\nAC   Q90YL6; A0A0R4IW70; A0A8M3AXL9; A0A8N7XJG3; B3DJL1;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-DEC-2001, sequence version 1.\nDT   28-JAN-2026, entry version 182.\nDE   RecName: Full=Nuclear receptor subfamily 5 group A member 2 {ECO:0000305};\nDE   AltName: Full=FTZ-F1 homolog {ECO:0000303|PubMed:9178748};\nDE            Short=zFF1 {ECO:0000303|PubMed:9178748};\nDE   AltName: Full=Liver receptor homolog 1 {ECO:0000303|PubMed:28642062};\nDE            Short=LRH-1 {ECO:0000303|PubMed:28642062};\nGN   Name=nr5a2 {ECO:0000312|ZFIN:ZDB-GENE-990415-79};\nGN   Synonyms=ff1a {ECO:0000303|PubMed:9178748};\nOS   Danio rerio (Zebrafish) (Brachydanio rerio).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;\nOC   Actinopterygii; Neopterygii; Teleostei; Ostariophysi; Cypriniformes;\nOC   Danionidae; Danioninae; Danio.\nOX   NCBI_TaxID=7955;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -841,18 +603,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 64-70",
   "excerpt": "RN   [4]\nRP   ALTERNATIVE SPLICING.\nRX   PubMed=9178748; DOI=10.1210/mend.11.7.9947;\nRA   Liu D., Le Drean Y., Ekker M., Xiong F., Hew C.L.;\nRT   \"Teleost FTZ-F1 homolog and its splicing variant determine the expression\nRT   of the salmon gonadotropin IIbeta subunit gene.\";\nRL   Mol. Endocrinol. 11:877-890(1997).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 64-70",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -862,18 +624,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 103-110",
   "excerpt": "RN   [9]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=28642062; DOI=10.1016/j.jgg.2017.03.006;\nRA   Zhai G., Song J., Shu T., Yan J., Jin X., He J., Yin Z.;\nRT   \"LRH-1 senses signaling from phosphatidylcholine to regulate the expansion\nRT   growth of digestive organs via synergy with Wnt/beta-catenin signaling in\nRT   zebrafish.\";\nRL   J. Genet. Genomics 44:307-317(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 103-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -883,18 +645,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 246-248",
   "excerpt": "FT   DOMAIN          276..515\nFT                   /note=\"NR LBD\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01189\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 246-248",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -904,18 +666,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 252-254",
   "excerpt": "FT   ZN_FING         46..66\nFT                   /note=\"NR C4-type\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00407\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 252-254",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -925,18 +687,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 255-257",
   "excerpt": "FT   ZN_FING         82..101\nFT                   /note=\"NR C4-type\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00407\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 255-257",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -946,18 +708,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 258-260",
   "excerpt": "FT   REGION          112..127\nFT                   /note=\"C-terminal extension (CTE)\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O00482\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 258-260",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -967,18 +729,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 261-263",
   "excerpt": "FT   REGION          182..211\nFT                   /note=\"Disordered\"\nFT                   /evidence=\"ECO:0000256|SAM:MobiDB-lite\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 261-263",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -988,18 +750,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 264-266",
   "excerpt": "FT   REGION          504..515\nFT                   /note=\"AF-2\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01189\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 264-266",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 
@@ -1009,18 +771,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 182,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182",
-  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
-  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
-  "source_locator": "lines 267-269",
   "excerpt": "FT   MOTIF           128..147\nFT                   /note=\"FTZ-F1 box\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O00482\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 182,
+  "retrieved_utc": "2026-11-02T04:32:34.883642+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 267-269",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a4d164dbcc6a2a9361980ddd54854f2823cbd7222b59caaa941115286c3e2d39",
+  "url": "https://rest.uniprot.org/unisave/Q90YL6?format=txt&versions=182"
 }
 ```
 

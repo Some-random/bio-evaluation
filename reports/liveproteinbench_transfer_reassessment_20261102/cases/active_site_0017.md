@@ -1,18 +1,16 @@
-# active_site_0017: before and after transfer clarification
+# active_site_0017
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0017.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0017.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **D** — Position 146 (Proton acceptor)
+**Expected answer:** **D** — Position 146 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,234 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt entry, which annotates residue 146 as a proton acceptor. The annotation is transferred by similarity from UniProtKB:P00334, so it supports the key as a database-based inference, not as direct experimental confirmation for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Choice C is inconsistent with the 286-residue sequence, but the supplied sequence and choices do not provide a defensible way to distinguish the exact catalytic role at position 146 from the other in-range residue claims.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site annotation assigning position 146 as a proton acceptor, or equivalent structural or experimental evidence.
-
-
-**Reason**
-
-> Identifying the keyed residue and role depends on an external annotation or protein-specific evidence absent from the input; recognizing the sequence or invoking a predictor would not make that information supplied.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only annotation supports D; the other in-range options are not supported by the supplied evidence. Choice C is outside the sequence length.
-
-
-### Important caveats
-
-- The active-site assignment is similarity-transferred from P00334 (ECO:0000250), rather than shown here to be experimentally established for this exact protein.
-- The sequence match and supporting UniProt records were available only to the reviewer, not the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Choice C is inconsistent with the 286-residue sequence, but the supplied sequence and choices do not provide a defensible way to distinguish the exact catalytic role at position 146 from the other in-range residue claims.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning position 146 as a proton acceptor, or equivalent structural or experimental evidence.",
-    "reason": "Identifying the keyed residue and role depends on an external annotation or protein-specific evidence absent from the input; recognizing the sequence or invoking a predictor would not make that information supplied."
-  },
-  "case_id": "active_site_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry, which annotates residue 146 as a proton acceptor. The annotation is transferred by similarity from UniProtKB:P00334, so it supports the key as a database-based inference, not as direct experimental confirmation for this protein."
-  },
-  "important_caveats": [
-    "The active-site assignment is similarity-transferred from P00334 (ECO:0000250), rather than shown here to be experimentally established for this exact protein.",
-    "The sequence match and supporting UniProt records were available only to the reviewer, not the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only annotation supports D; the other in-range options are not supported by the supplied evidence. Choice C is outside the sequence length."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry, which annotates residue 146 as a proton acceptor. The annotation is transferred by similarity from UniProtKB:P00334, so it supports the key as a database-based inference, not as direct experimental confirmation for this protein.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Choice C is inconsistent with the 286-residue sequence, but the supplied sequence and choices do not provide a defensible way to distinguish the exact catalytic role at position 146 from the other in-range residue claims.",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning position 146 as a proton acceptor, or equivalent structural or experimental evidence.",
-    "reason": "Identifying the keyed residue and role depends on an external annotation or protein-specific evidence absent from the input; recognizing the sequence or invoking a predictor would not make that information supplied."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only annotation supports D; the other in-range options are not supported by the supplied evidence. Choice C is outside the sequence length."
-  },
-  "important_caveats": [
-    "The active-site assignment is similarity-transferred from P00334 (ECO:0000250), rather than shown here to be experimentally established for this exact protein.",
-    "The sequence match and supporting UniProt records were available only to the reviewer, not the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A2G0QDN4 (sequence matched, 286 AA) explicitly annotates position 146 as 'Proton acceptor' active site (evidence C5, H3). The evidence code is ECO:0000250 (inferred by similarity from P00334), making this a homology-based computational annotation rather than direct experimental evidence for this specific protein. However, the annotation is consistent with the SDR (short-chain dehydrogenase/reductase) family catalytic mechanism, where a conserved Tyr acts as the proton acceptor. The protein is identified as a 3-amino-tetrahydro-pyrrolizinone reductase (EC 1.1.-.-), an oxidoreductase consistent with SDR catalytic chemistry.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Three of four options can be eliminated by basic reasoning: (1) Position 735 exceeds the 286-residue protein length (arithmetic elimination of C). (2) Position 159 is Valine (V), which lacks ionizable side-chain groups and cannot function as a proton donor (biochemical elimination of A). (3) Position 250 is also Valine (V), which cannot function as a proton acceptor (biochemical elimination of B). Position 146 is Tyrosine (Y), a residue with a phenolic hydroxyl group capable of proton transfer, consistent with the SDR catalytic tetrad (Ser-Tyr-Lys-Asn) mechanism. The N-terminal Rossmann motif (TGASSG, positions 8-13) and the 'NITSGLGS' region around positions 130-137 identify this as an SDR-family enzyme, in which the catalytic Tyr is the proton acceptor.
-
-
-**Missing item-specific fact**
-
-> None required for elimination-based reasoning. Precise identification of position 146 over position 142 (also Tyr) would benefit from structural knowledge of SDR active-site geometry, but the elimination of all other options by amino-acid chemistry and sequence length makes the answer determinable without that detail.
-
-
-**Reason**
-
-> The question is answerable through general biological reasoning: amino-acid chemistry (Valine cannot donate/accept protons), arithmetic (position 735 > 286), and recognition of SDR-family motifs in the sequence. No item-specific database lookup is strictly necessary to arrive at the correct answer, though the positive identification of Tyr-146 as the catalytic residue is strengthened by SDR-family knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and C are clearly eliminable: C exceeds protein length; A and B name Valine residues as proton donors/acceptors, which is biochemically implausible. Only option D names a chemically plausible catalytic residue (Tyr) at a valid position. No ambiguity in the final answer.
-
-
-### Important caveats
-
-- The active-site annotation at position 146 carries evidence code ECO:0000250 (inferred by similarity from P00334), meaning it is a computational/homology transfer rather than direct experimental characterization of this specific enzyme.
-- The protein is only 286 residues; the annotation source (P00334) is a different protein, and the exact active-site geometry was not experimentally verified for this Xenorhabdus hominickii enzyme.
-- Position 142 is also a Tyrosine in the same region; distinguishing 146 from 142 purely from sequence requires structural or detailed family-level knowledge, though this does not affect the answer since all other options are eliminated by more basic reasoning.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Three of four options can be eliminated by basic reasoning: (1) Position 735 exceeds the 286-residue protein length (arithmetic elimination of C). (2) Position 159 is Valine (V), which lacks ionizable side-chain groups and cannot function as a proton donor (biochemical elimination of A). (3) Position 250 is also Valine (V), which cannot function as a proton acceptor (biochemical elimination of B). Position 146 is Tyrosine (Y), a residue with a phenolic hydroxyl group capable of proton transfer, consistent with the SDR catalytic tetrad (Ser-Tyr-Lys-Asn) mechanism. The N-terminal Rossmann motif (TGASSG, positions 8-13) and the 'NITSGLGS' region around positions 130-137 identify this as an SDR-family enzyme, in which the catalytic Tyr is the proton acceptor.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None required for elimination-based reasoning. Precise identification of position 146 over position 142 (also Tyr) would benefit from structural knowledge of SDR active-site geometry, but the elimination of all other options by amino-acid chemistry and sequence length makes the answer determinable without that detail.",
-    "reason": "The question is answerable through general biological reasoning: amino-acid chemistry (Valine cannot donate/accept protons), arithmetic (position 735 > 286), and recognition of SDR-family motifs in the sequence. No item-specific database lookup is strictly necessary to arrive at the correct answer, though the positive identification of Tyr-146 as the catalytic residue is strengthened by SDR-family knowledge."
-  },
-  "case_id": "active_site_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2G0QDN4 (sequence matched, 286 AA) explicitly annotates position 146 as 'Proton acceptor' active site (evidence C5, H3). The evidence code is ECO:0000250 (inferred by similarity from P00334), making this a homology-based computational annotation rather than direct experimental evidence for this specific protein. However, the annotation is consistent with the SDR (short-chain dehydrogenase/reductase) family catalytic mechanism, where a conserved Tyr acts as the proton acceptor. The protein is identified as a 3-amino-tetrahydro-pyrrolizinone reductase (EC 1.1.-.-), an oxidoreductase consistent with SDR catalytic chemistry."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 146 carries evidence code ECO:0000250 (inferred by similarity from P00334), meaning it is a computational/homology transfer rather than direct experimental characterization of this specific enzyme.",
-    "The protein is only 286 residues; the annotation source (P00334) is a different protein, and the exact active-site geometry was not experimentally verified for this Xenorhabdus hominickii enzyme.",
-    "Position 142 is also a Tyrosine in the same region; distinguishing 146 from 142 purely from sequence requires structural or detailed family-level knowledge, though this does not affect the answer since all other options are eliminated by more basic reasoning."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C are clearly eliminable: C exceeds protein length; A and B name Valine residues as proton donors/acceptors, which is biochemically implausible. Only option D names a chemically plausible catalytic residue (Tyr) at a valid position. No ambiguity in the final answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2G0QDN4 (sequence matched, 286 AA) explicitly annotates position 146 as 'Proton acceptor' active site (evidence C5, H3). The evidence code is ECO:0000250 (inferred by similarity from P00334), making this a homology-based computational annotation rather than direct experimental evidence for this specific protein. However, the annotation is consistent with the SDR (short-chain dehydrogenase/reductase) family catalytic mechanism, where a conserved Tyr acts as the proton acceptor. The protein is identified as a 3-amino-tetrahydro-pyrrolizinone reductase (EC 1.1.-.-), an oxidoreductase consistent with SDR catalytic chemistry.",
-    "evidence_ids": ["C5", "H3", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Three of four options can be eliminated by basic reasoning: (1) Position 735 exceeds the 286-residue protein length (arithmetic elimination of C). (2) Position 159 is Valine (V), which lacks ionizable side-chain groups and cannot function as a proton donor (biochemical elimination of A). (3) Position 250 is also Valine (V), which cannot function as a proton acceptor (biochemical elimination of B). Position 146 is Tyrosine (Y), a residue with a phenolic hydroxyl group capable of proton transfer, consistent with the SDR catalytic tetrad (Ser-Tyr-Lys-Asn) mechanism. The N-terminal Rossmann motif (TGASSG, positions 8-13) and the 'NITSGLGS' region around positions 130-137 identify this as an SDR-family enzyme, in which the catalytic Tyr is the proton acceptor.",
-    "missing_item_specific_fact": "None required for elimination-based reasoning. Precise identification of position 146 over position 142 (also Tyr) would benefit from structural knowledge of SDR active-site geometry, but the elimination of all other options by amino-acid chemistry and sequence length makes the answer determinable without that detail.",
-    "reason": "The question is answerable through general biological reasoning: amino-acid chemistry (Valine cannot donate/accept protons), arithmetic (position 735 > 286), and recognition of SDR-family motifs in the sequence. No item-specific database lookup is strictly necessary to arrive at the correct answer, though the positive identification of Tyr-146 as the catalytic residue is strengthened by SDR-family knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C are clearly eliminable: C exceeds protein length; A and B name Valine residues as proton donors/acceptors, which is biochemically implausible. Only option D names a chemically plausible catalytic residue (Tyr) at a valid position. No ambiguity in the final answer."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 146 carries evidence code ECO:0000250 (inferred by similarity from P00334), meaning it is a computational/homology transfer rather than direct experimental characterization of this specific enzyme.",
-    "The protein is only 286 residues; the annotation source (P00334) is a different protein, and the exact active-site geometry was not experimentally verified for this Xenorhabdus hominickii enzyme.",
-    "Position 142 is also a Tyrosine in the same region; distinguishing 146 from 142 purely from sequence requires structural or detailed family-level knowledge, though this does not affect the answer since all other options are eliminated by more basic reasoning."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -380,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -492,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2G0QDN4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5ac667f5b9af33314dc3039989b8675644797300210825d6858552c1a9de52cb",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 286,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5ac667f5b9af33314dc3039989b8675644797300210825d6858552c1a9de52cb",
   "current_entry_audit": {
     "entryVersion": 30,
     "firstPublicDate": "2025-04-09",
@@ -523,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-01-31",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
-  "current_source_sequence_sha256": "5ac667f5b9af33314dc3039989b8675644797300210825d6858552c1a9de52cb",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 286,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5ac667f5b9af33314dc3039989b8675644797300210825d6858552c1a9de52cb",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 28,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2G0QDN4",
   "selected_historical_entry_version": 28,
+  "selected_historical_record_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
+  "selected_historical_source_sequence_length": 286,
+  "selected_historical_source_sequence_sha256": "5ac667f5b9af33314dc3039989b8675644797300210825d6858552c1a9de52cb",
   "selected_historical_version": {
     "accession": "A0A2G0QDN4",
     "database": "Swiss-Prot",
@@ -541,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "XHPD_XENHO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
-  "selected_historical_source_sequence_sha256": "5ac667f5b9af33314dc3039989b8675644797300210825d6858552c1a9de52cb",
-  "selected_historical_source_sequence_length": 286,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 28,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -572,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json",
-  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
-  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2G0QDN4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json"
 }
 ```
 
@@ -591,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json",
-  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
-  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":30,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-01-31\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json"
 }
 ```
 
@@ -610,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json",
-  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
-  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Enterobacterales\",\"Morganellaceae\",\"Xenorhabdus\"],\"scientificName\":\"Xenorhabdus hominickii\",\"taxonId\":351679}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json"
 }
 ```
 
@@ -629,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json",
-  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
-  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39428351\",\"source\":\"PubMed\"}],\"value\":\"1.1.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39428351\",\"source\":\"PubMed\"}],\"value\":\"3-amino-tetrahydro-pyrrolizinone reductase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json"
 }
 ```
 
@@ -648,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json",
-  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
-  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P00334\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":146},\"start\":{\"modifier\":\"EXACT\",\"value\":146}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json"
 }
 ```
 
@@ -667,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json",
-  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
-  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Effert J.\",\"Westphalen M.\",\"Calderari A.\",\"Shi Y.M.\",\"Elamri I.\",\"Najah S.\",\"Gruen P.\",\"Li Y.\",\"Gruez A.\",\"Weissman K.J.\",\"Bode H.B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39428351\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.202411258\"}],\"citationType\":\"journal article\",\"firstPage\":\"e202411258\",\"id\":\"39428351\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"e202411258\",\"publicationDate\":\"2024\",\"title\":\"Pyrrolizwilline, a unique bacterial alkaloid assembled by a nonribosomal peptide synthetase and non-enzymatic dimerization.\",\"volume\":\"63\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 17903 / CIP 109072 / KE01\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:47.620054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5510f043b076696b57f87efa7739b48cfedb1b8f19f87a14fd6d5a4d3624e099",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDN4.json"
 }
 ```
 
@@ -685,18 +449,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2G0QDN4?format=txt&versions=28",
-  "source_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
-  "retrieved_utc": "2026-11-02T04:24:49.959850+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   XHPD_XENHO              Reviewed;         286 AA.\nAC   A0A2G0QDN4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   31-JAN-2018, sequence version 1.\nDT   28-JAN-2026, entry version 28.\nDE   RecName: Full=3-amino-tetrahydro-pyrrolizinone reductase {ECO:0000305|PubMed:39428351};\nDE            EC=1.1.-.- {ECO:0000269|PubMed:39428351};\nGN   Name=xhpD; ORFNames=Xhom_00313 {ECO:0000312|EMBL:PHM57347.1};\nOS   Xenorhabdus hominickii.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Enterobacterales; Morganellaceae; Xenorhabdus.\nOX   NCBI_TaxID=351679;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:24:49.959850+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
+  "url": "https://rest.uniprot.org/unisave/A0A2G0QDN4?format=txt&versions=28"
 }
 ```
 
@@ -706,18 +470,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2G0QDN4?format=txt&versions=28",
-  "source_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
-  "retrieved_utc": "2026-11-02T04:24:49.959850+00:00",
-  "source_locator": "lines 23-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND CATALYTIC ACTIVITY.\nRC   STRAIN=DSM 17903 / CIP 109072 / KE01;\nRX   PubMed=39428351; DOI=10.1002/anie.202411258;\nRA   Effert J., Westphalen M., Calderari A., Shi Y.M., Elamri I., Najah S.,\nRA   Gruen P., Li Y., Gruez A., Weissman K.J., Bode H.B.;\nRT   \"Pyrrolizwilline, a unique bacterial alkaloid assembled by a nonribosomal\nRT   peptide synthetase and non-enzymatic dimerization.\";\nRL   Angew. Chem. Int. Ed. 63:e202411258-e202411258(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:24:49.959850+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
+  "url": "https://rest.uniprot.org/unisave/A0A2G0QDN4?format=txt&versions=28"
 }
 ```
 
@@ -727,18 +491,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2G0QDN4?format=txt&versions=28",
-  "source_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
-  "retrieved_utc": "2026-11-02T04:24:49.959850+00:00",
-  "source_locator": "lines 73-75",
   "excerpt": "FT   ACT_SITE        146\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P00334\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:24:49.959850+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-75",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e9a43167d987f4d30c210cf3857bc305e9fa0ec071e154f20f0d529315825c29",
+  "url": "https://rest.uniprot.org/unisave/A0A2G0QDN4?format=txt&versions=28"
 }
 ```
 

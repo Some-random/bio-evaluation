@@ -1,18 +1,16 @@
-# catalytic_activity_0040: before and after transfer clarification
+# catalytic_activity_0040
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0040.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0040.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — UDP-N-acetyl-alpha-D-glucosamine + 2 NAD(+) + H2O = UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + 2 NADH + 3 H(+)
+**Expected answer:** **B** — UDP-N-acetyl-alpha-D-glucosamine + 2 NAD(+) + H2O = UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + 2 NADH + 3 H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the referenced UniProt sequence, whose catalytic-activity annotation gives reaction B and cites experimental evidence (ECO:0000269; PubMed 20529859).
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A glycine-rich nucleotide-cofactor-binding pattern and the options' chemistry may suggest an oxidoreductase, favoring B over the transferase-like reactions. That does not establish the specific UDP-sugar substrate or the exact reaction.
-
-
-**Missing item-specific fact**
-
-> The protein's specific identity or experimentally established substrate and catalytic activity is absent from the input.
-
-
-**Reason**
-
-> The sequence may support a broad enzyme-class inference, but distinguishing the precise reaction in B requires protein-specific functional information not supplied in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices describe distinct reaction types, and the sequence-matched annotation supports B; no other listed reaction is supported by the supplied evidence.
-
-
-### Important caveats
-
-- The experimental-evidence code and cited paper support the database annotation, but the primary study was not independently reviewed here.
-- Reviewer-only sequence identity and annotation were not available to the evaluated model; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A glycine-rich nucleotide-cofactor-binding pattern and the options' chemistry may suggest an oxidoreductase, favoring B over the transferase-like reactions. That does not establish the specific UDP-sugar substrate or the exact reaction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's specific identity or experimentally established substrate and catalytic activity is absent from the input.",
-    "reason": "The sequence may support a broad enzyme-class inference, but distinguishing the precise reaction in B requires protein-specific functional information not supplied in the question."
-  },
-  "case_id": "catalytic_activity_0040",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the referenced UniProt sequence, whose catalytic-activity annotation gives reaction B and cites experimental evidence (ECO:0000269; PubMed 20529859)."
-  },
-  "important_caveats": [
-    "The experimental-evidence code and cited paper support the database annotation, but the primary study was not independently reviewed here.",
-    "Reviewer-only sequence identity and annotation were not available to the evaluated model; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reaction types, and the sequence-matched annotation supports B; no other listed reaction is supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0040",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the referenced UniProt sequence, whose catalytic-activity annotation gives reaction B and cites experimental evidence (ECO:0000269; PubMed 20529859).",
-    "evidence_ids": ["C1", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A glycine-rich nucleotide-cofactor-binding pattern and the options' chemistry may suggest an oxidoreductase, favoring B over the transferase-like reactions. That does not establish the specific UDP-sugar substrate or the exact reaction.",
-    "missing_item_specific_fact": "The protein's specific identity or experimentally established substrate and catalytic activity is absent from the input.",
-    "reason": "The sequence may support a broad enzyme-class inference, but distinguishing the precise reaction in B requires protein-specific functional information not supplied in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reaction types, and the sequence-matched annotation supports B; no other listed reaction is supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The experimental-evidence code and cited paper support the database annotation, but the primary study was not independently reviewed here.",
-    "Reviewer-only sequence identity and annotation were not available to the evaluated model; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence (423 AA, SHA256 matched) corresponds exactly to UniProt A7GKX6, annotated as UDP-N-acetyl-D-glucosamine 6-dehydrogenase (EC 1.1.1.136). The catalytic activity annotation (C5, H4) states the reaction 'UDP-N-acetyl-alpha-D-glucosamine + 2 NAD(+) + H2O = UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + 2 NADH + 3 H(+)', which is identical to Choice B. The annotation is backed by experimental evidence (ECO:0000269, PubMed 20529859, Gu et al. 2010 JBC), not merely computational inference.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal region 'TVIGLGYVGLPLAIHFAERGYNVVGL' contains a Rossmann-fold-like GxGxxG motif (G-Y-V-G-L-P), suggesting NAD-binding dehydrogenase activity. This weakly disfavors Choice C (methyltransferase, SAM-dependent) and Choice D (methionine synthase, cobalamin-dependent), and to a lesser extent Choice A (NAD synthetase, ATP-dependent synthetase rather than dehydrogenase). However, this generic Rossmann-fold inference cannot identify the specific substrate (UDP-GlcNAc) or the precise 6-dehydrogenation mechanism requiring two NAD+ molecules.
-
-
-**Missing item-specific fact**
-
-> The specific identification of this protein as a UDP-GlcNAc 6-dehydrogenase (EC 1.1.1.136) acting on UDP-N-acetyl-alpha-D-glucosamine at C6, rather than any other NAD-dependent dehydrogenase, requires knowledge of the UDP-sugar dehydrogenase family's catalytic residues and substrate-binding pocket. This is a rare enzyme characterized in a 2010 paper; the substrate specificity and stoichiometry (2 NAD+ per reaction) are not derivable from general sequence features.
-
-
-**Reason**
-
-> While the Rossmann-fold motif provides a weak hint toward dehydrogenase activity (narrowing from four choices to roughly two), the precise reaction—oxidation of UDP-GlcNAc at C6 to yield UDP-GlcNAcA with 2 NAD+ as electron acceptors—is an item-specific enzymological fact. No general biological reasoning from a 423-residue bacterial sequence can uniquely identify this substrate and this specific two-electron/two-NAD+ oxidation without database lookup or memorization of the EC 1.1.1.136 reaction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices represent distinct enzyme classes (NAD synthetase, UDP-sugar dehydrogenase, O-methyltransferase, methionine synthase). Given the correct annotation, only B is correct. The choices are not ambiguous with respect to the ground truth; the difficulty lies in determining the correct answer from sequence alone, not in distinguishing between equally plausible options.
-
-
-### Important caveats
-
-- The UniProt annotation is supported by experimental evidence (ECO:0000269, PubMed 20529859), not just computational prediction.
-- The sequence match is exact (SHA256 identical) across both current and historical (entry version 96) UniProt records.
-- The Rossmann-fold motif in the N-terminus provides only a very generic 'dehydrogenase-like' signal shared by thousands of unrelated enzymes; it does not constitute reasoning that identifies EC 1.1.1.136 specifically.
-- The entry was first publicly released in 2025-02-05; if the benchmark was constructed before that date, the annotation may not have been available in public databases at construction time.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal region 'TVIGLGYVGLPLAIHFAERGYNVVGL' contains a Rossmann-fold-like GxGxxG motif (G-Y-V-G-L-P), suggesting NAD-binding dehydrogenase activity. This weakly disfavors Choice C (methyltransferase, SAM-dependent) and Choice D (methionine synthase, cobalamin-dependent), and to a lesser extent Choice A (NAD synthetase, ATP-dependent synthetase rather than dehydrogenase). However, this generic Rossmann-fold inference cannot identify the specific substrate (UDP-GlcNAc) or the precise 6-dehydrogenation mechanism requiring two NAD+ molecules.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of this protein as a UDP-GlcNAc 6-dehydrogenase (EC 1.1.1.136) acting on UDP-N-acetyl-alpha-D-glucosamine at C6, rather than any other NAD-dependent dehydrogenase, requires knowledge of the UDP-sugar dehydrogenase family's catalytic residues and substrate-binding pocket. This is a rare enzyme characterized in a 2010 paper; the substrate specificity and stoichiometry (2 NAD+ per reaction) are not derivable from general sequence features.",
-    "reason": "While the Rossmann-fold motif provides a weak hint toward dehydrogenase activity (narrowing from four choices to roughly two), the precise reaction—oxidation of UDP-GlcNAc at C6 to yield UDP-GlcNAcA with 2 NAD+ as electron acceptors—is an item-specific enzymological fact. No general biological reasoning from a 423-residue bacterial sequence can uniquely identify this substrate and this specific two-electron/two-NAD+ oxidation without database lookup or memorization of the EC 1.1.1.136 reaction."
-  },
-  "case_id": "catalytic_activity_0040",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence (423 AA, SHA256 matched) corresponds exactly to UniProt A7GKX6, annotated as UDP-N-acetyl-D-glucosamine 6-dehydrogenase (EC 1.1.1.136). The catalytic activity annotation (C5, H4) states the reaction 'UDP-N-acetyl-alpha-D-glucosamine + 2 NAD(+) + H2O = UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + 2 NADH + 3 H(+)', which is identical to Choice B. The annotation is backed by experimental evidence (ECO:0000269, PubMed 20529859, Gu et al. 2010 JBC), not merely computational inference."
-  },
-  "important_caveats": [
-    "The UniProt annotation is supported by experimental evidence (ECO:0000269, PubMed 20529859), not just computational prediction.",
-    "The sequence match is exact (SHA256 identical) across both current and historical (entry version 96) UniProt records.",
-    "The Rossmann-fold motif in the N-terminus provides only a very generic 'dehydrogenase-like' signal shared by thousands of unrelated enzymes; it does not constitute reasoning that identifies EC 1.1.1.136 specifically.",
-    "The entry was first publicly released in 2025-02-05; if the benchmark was constructed before that date, the annotation may not have been available in public databases at construction time."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent distinct enzyme classes (NAD synthetase, UDP-sugar dehydrogenase, O-methyltransferase, methionine synthase). Given the correct annotation, only B is correct. The choices are not ambiguous with respect to the ground truth; the difficulty lies in determining the correct answer from sequence alone, not in distinguishing between equally plausible options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0040",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence (423 AA, SHA256 matched) corresponds exactly to UniProt A7GKX6, annotated as UDP-N-acetyl-D-glucosamine 6-dehydrogenase (EC 1.1.1.136). The catalytic activity annotation (C5, H4) states the reaction 'UDP-N-acetyl-alpha-D-glucosamine + 2 NAD(+) + H2O = UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + 2 NADH + 3 H(+)', which is identical to Choice B. The annotation is backed by experimental evidence (ECO:0000269, PubMed 20529859, Gu et al. 2010 JBC), not merely computational inference.",
-    "evidence_ids": ["C4", "C5", "H2", "H4", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal region 'TVIGLGYVGLPLAIHFAERGYNVVGL' contains a Rossmann-fold-like GxGxxG motif (G-Y-V-G-L-P), suggesting NAD-binding dehydrogenase activity. This weakly disfavors Choice C (methyltransferase, SAM-dependent) and Choice D (methionine synthase, cobalamin-dependent), and to a lesser extent Choice A (NAD synthetase, ATP-dependent synthetase rather than dehydrogenase). However, this generic Rossmann-fold inference cannot identify the specific substrate (UDP-GlcNAc) or the precise 6-dehydrogenation mechanism requiring two NAD+ molecules.",
-    "missing_item_specific_fact": "The specific identification of this protein as a UDP-GlcNAc 6-dehydrogenase (EC 1.1.1.136) acting on UDP-N-acetyl-alpha-D-glucosamine at C6, rather than any other NAD-dependent dehydrogenase, requires knowledge of the UDP-sugar dehydrogenase family's catalytic residues and substrate-binding pocket. This is a rare enzyme characterized in a 2010 paper; the substrate specificity and stoichiometry (2 NAD+ per reaction) are not derivable from general sequence features.",
-    "reason": "While the Rossmann-fold motif provides a weak hint toward dehydrogenase activity (narrowing from four choices to roughly two), the precise reaction—oxidation of UDP-GlcNAc at C6 to yield UDP-GlcNAcA with 2 NAD+ as electron acceptors—is an item-specific enzymological fact. No general biological reasoning from a 423-residue bacterial sequence can uniquely identify this substrate and this specific two-electron/two-NAD+ oxidation without database lookup or memorization of the EC 1.1.1.136 reaction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent distinct enzyme classes (NAD synthetase, UDP-sugar dehydrogenase, O-methyltransferase, methionine synthase). Given the correct annotation, only B is correct. The choices are not ambiguous with respect to the ground truth; the difficulty lies in determining the correct answer from sequence alone, not in distinguishing between equally plausible options."
-  },
-  "important_caveats": [
-    "The UniProt annotation is supported by experimental evidence (ECO:0000269, PubMed 20529859), not just computational prediction.",
-    "The sequence match is exact (SHA256 identical) across both current and historical (entry version 96) UniProt records.",
-    "The Rossmann-fold motif in the N-terminus provides only a very generic 'dehydrogenase-like' signal shared by thousands of unrelated enzymes; it does not constitute reasoning that identifies EC 1.1.1.136 specifically.",
-    "The entry was first publicly released in 2025-02-05; if the benchmark was constructed before that date, the annotation may not have been available in public databases at construction time."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A7GKX6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5bad7e65801ec8cb99f507e9a58146ea70fefa83160d8597748c30f9b3364a8a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 423,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5bad7e65801ec8cb99f507e9a58146ea70fefa83160d8597748c30f9b3364a8a",
   "current_entry_audit": {
     "entryVersion": 98,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-09-11",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
-  "current_source_sequence_sha256": "5bad7e65801ec8cb99f507e9a58146ea70fefa83160d8597748c30f9b3364a8a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 423,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5bad7e65801ec8cb99f507e9a58146ea70fefa83160d8597748c30f9b3364a8a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 96,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A7GKX6",
   "selected_historical_entry_version": 96,
+  "selected_historical_record_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
+  "selected_historical_source_sequence_length": 423,
+  "selected_historical_source_sequence_sha256": "5bad7e65801ec8cb99f507e9a58146ea70fefa83160d8597748c30f9b3364a8a",
   "selected_historical_version": {
     "accession": "A7GKX6",
     "database": "Swiss-Prot",
@@ -552,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UGNAD_BACCN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
-  "selected_historical_source_sequence_sha256": "5bad7e65801ec8cb99f507e9a58146ea70fefa83160d8597748c30f9b3364a8a",
-  "selected_historical_source_sequence_length": 423,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 96,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json",
-  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
-  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A7GKX6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json"
 }
 ```
 
@@ -602,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json",
-  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
-  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":98,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-09-11\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json"
 }
 ```
 
@@ -621,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json",
-  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
-  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Bacillota\",\"Bacilli\",\"Caryophanales\",\"Bacillaceae\",\"Bacillus\",\"Bacillus cereus group\"],\"scientificName\":\"Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98)\",\"taxonId\":315749}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json"
 }
 ```
 
@@ -640,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json",
-  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
-  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.136\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-N-acetyl-D-glucosamine 6-dehydrogenase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-GlcNAc 6-dehydrogenase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json"
 }
 ```
 
@@ -659,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json",
-  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
-  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:13326\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.136\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"name\":\"UDP-N-acetyl-alpha-D-glucosamine + 2 NAD(+) + H2O = UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + 2 NADH + 3 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:13325\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57705\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:65040\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json"
 }
 ```
 
@@ -678,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json",
-  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
-  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Gu X.\",\"Glushka J.\",\"Lee S.G.\",\"Bar-Peled M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20529859\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m110.125872\"}],\"citationType\":\"journal article\",\"firstPage\":\"24825\",\"id\":\"20529859\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"24833\",\"publicationDate\":\"2010\",\"title\":\"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\",\"volume\":\"285\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ADE43879.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 22905 / CIP 110041 / 391-98 / NVH 391-98\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:09.484643+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "68eff0a78e5c0dadd87ed867729ca5fa907f1022d5a7d7c02ac69e250707cc4f",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX6.json"
 }
 ```
 
@@ -696,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96",
-  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
-  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   UGNAD_BACCN             Reviewed;         423 AA.\nAC   A7GKX6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   11-SEP-2007, sequence version 1.\nDT   28-JAN-2026, entry version 96.\nDE   RecName: Full=UDP-N-acetyl-D-glucosamine 6-dehydrogenase {ECO:0000303|PubMed:20529859};\nDE            Short=UDP-GlcNAc 6-dehydrogenase {ECO:0000303|PubMed:20529859};\nDE            EC=1.1.1.136 {ECO:0000269|PubMed:20529859};\nGN   Name=UGlcNAcDH {ECO:0000303|PubMed:20529859};\nGN   OrderedLocusNames=Bcer98_0429 {ECO:0000312|EMBL:ABS20784.1};\nOS   Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98).\nOC   Bacteria; Bacillati; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus;\nOC   Bacillus cereus group.\nOX   NCBI_TaxID=315749;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
+  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96"
 }
 ```
 
@@ -717,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96",
-  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
-  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=UDP-N-acetyl-D-glucosamine 6-dehydrogenase {ECO:0000303|PubMed:20529859};\nDE            Short=UDP-GlcNAc 6-dehydrogenase {ECO:0000303|PubMed:20529859};\nDE            EC=1.1.1.136 {ECO:0000269|PubMed:20529859};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
+  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96"
 }
 ```
 
@@ -738,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96",
-  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
-  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
-  "source_locator": "lines 26-33",
   "excerpt": "RN   [2] {ECO:0000312|EMBL:ADE43879.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND CATALYTIC ACTIVITY.\nRC   STRAIN=DSM 22905 / CIP 110041 / 391-98 / NVH 391-98;\nRX   PubMed=20529859; DOI=10.1074/jbc.m110.125872;\nRA   Gu X., Glushka J., Lee S.G., Bar-Peled M.;\nRT   \"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the\nRT   human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\";\nRL   J. Biol. Chem. 285:24825-24833(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
+  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96"
 }
 ```
 
@@ -759,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96",
-  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
-  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
-  "source_locator": "lines 40-48",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=UDP-N-acetyl-alpha-D-glucosamine + 2 NAD(+) + H2O = UDP-2-\nCC         acetamido-2-deoxy-alpha-D-glucuronate + 2 NADH + 3 H(+);\nCC         Xref=Rhea:RHEA:13325, ChEBI:CHEBI:15377, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57705, ChEBI:CHEBI:57945,\nCC         ChEBI:CHEBI:65040; EC=1.1.1.136;\nCC         Evidence={ECO:0000269|PubMed:20529859};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:13326;\nCC         Evidence={ECO:0000269|PubMed:20529859};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:27:11.633421+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8a31aa88fd823d2c4ea18977d36968e48e5c0bbc7cb1fe4c9e6ca7171435666",
+  "url": "https://rest.uniprot.org/unisave/A7GKX6?format=txt&versions=96"
 }
 ```
 

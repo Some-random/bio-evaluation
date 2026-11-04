@@ -1,18 +1,16 @@
-# temperature_0036: before and after transfer clarification
+# temperature_0036
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0036.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0036.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **A** — 75-90
+**Expected answer:** **A** — 75-90
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the cited 668-aa protein. Its annotation reports an experimentally supported optimum of 75°C for topoisomerase activity and 75–90°C for decatenase activity, matching choice A.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a defensible basis for assigning this particular protein to the precise 75–90°C range rather than the other listed ranges.
-
-
-**Missing item-specific fact**
-
-> The protein-specific measured activity optimum (75°C, with decatenase activity reported at 75–90°C), or equivalent knowledge of this protein’s thermal phenotype.
-
-
-**Reason**
-
-> Broad sequence or organism-level thermal tendencies cannot establish a precise activity optimum. The supporting measurement is external to the question’s input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The protein-specific decatenase optimum range directly matches A; the other listed ranges do not.
-
-
-### Important caveats
-
-- The cited temperature is an activity optimum, not necessarily a direct measurement of protein stability or a universal optimum for every assay or function.
-- The reviewer-only evidence identifies the organism and protein, but neither is stated in the evaluated input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible basis for assigning this particular protein to the precise 75–90°C range rather than the other listed ranges.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific measured activity optimum (75°C, with decatenase activity reported at 75–90°C), or equivalent knowledge of this protein’s thermal phenotype.",
-    "reason": "Broad sequence or organism-level thermal tendencies cannot establish a precise activity optimum. The supporting measurement is external to the question’s input."
-  },
-  "case_id": "temperature_0036",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited 668-aa protein. Its annotation reports an experimentally supported optimum of 75°C for topoisomerase activity and 75–90°C for decatenase activity, matching choice A."
-  },
-  "important_caveats": [
-    "The cited temperature is an activity optimum, not necessarily a direct measurement of protein stability or a universal optimum for every assay or function.",
-    "The reviewer-only evidence identifies the organism and protein, but neither is stated in the evaluated input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein-specific decatenase optimum range directly matches A; the other listed ranges do not."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0036",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited 668-aa protein. Its annotation reports an experimentally supported optimum of 75°C for topoisomerase activity and 75–90°C for decatenase activity, matching choice A.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible basis for assigning this particular protein to the precise 75–90°C range rather than the other listed ranges.",
-    "missing_item_specific_fact": "The protein-specific measured activity optimum (75°C, with decatenase activity reported at 75–90°C), or equivalent knowledge of this protein’s thermal phenotype.",
-    "reason": "Broad sequence or organism-level thermal tendencies cannot establish a precise activity optimum. The supporting measurement is external to the question’s input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein-specific decatenase optimum range directly matches A; the other listed ranges do not."
-  },
-  "important_caveats": [
-    "The cited temperature is an activity optimum, not necessarily a direct measurement of protein stability or a universal optimum for every assay or function.",
-    "The reviewer-only evidence identifies the organism and protein, but neither is stated in the evaluated input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q97ZJ8 (DNA topoisomerase 3 from Saccharolobus solfataricus, sequence SHA256 matched) explicitly states: 'Optimum temperature is 75 degrees Celsius for topoisomerase activity (PubMed:29253195). Optimum temperature for decatenase is 75-90 degrees Celsius (PubMed:29253195).' The expected answer 75-90 matches the experimentally determined decatenase optimum range. The topoisomerase optimum (75°C) also falls within this range. The evidence is from a 2018 primary experimental study (Bizard et al., NAR 2018, ECO:0000269).
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C7](#evidence-c7), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence shows extreme enrichment in charged residues (K, E, R, D), consistent with thermophilic/hyperthermophilic adaptation via salt-bridge networks. This general signature could narrow the answer to a thermophilic range (A or D) and away from mesophilic options (B, C). However, distinguishing hyperthermophilic (75-90°C) from moderately thermophilic (50-57°C) purely from sequence composition requires either identifying the organism as Saccharolobus solfataricus (a hyperthermophile growing at ~80°C) or knowing the specific experimental measurement from the 2018 Bizard et al. study.
-
-
-**Missing item-specific fact**
-
-> The specific experimental optimum temperature measurement (75-90°C for decatenase, 75°C for topoisomerase activity) reported in PubMed:29253195, or equivalently, the identification of this sequence as originating from the hyperthermophilic archaeon Saccharolobus solfataricus (optimal growth ~80°C), which is not provided in the model input.
-
-
-**Reason**
-
-> While general sequence composition (high charge, low thermolabile residues) supports a thermophilic classification and rules out mesophilic options B and C, the precise distinction between 75-90°C (A) and 50-57°C (D) cannot be reliably made from sequence alone without either organism identification or a trained predictor. The answer depends on knowing this is a Sulfolobus protein or recalling the specific experimental value.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The UniProt annotation gives 75°C (topoisomerase) and 75-90°C (decatenase), both encompassed by option A. No other option matches any reported experimental value. The question wording ('optimal temperature range in which the protein is stable and functional') aligns with the reported optimum activity temperatures. No other option is defensible.
-
-
-### Important caveats
-
-- The UniProt entry reports two distinct optimum temperatures: 75°C for topoisomerase activity and 75-90°C for decatenase activity. The answer key uses the broader decatenase range, which also encompasses the topoisomerase optimum.
-- The sequence is 668 AA and matches the canonical UniProt entry exactly (SHA256 confirmed).
-- The organism identity (Saccharolobus/Sulfolobus solfataricus, a hyperthermophile) is not provided in the model input, only the raw sequence.
-- The temperature evidence is experimental (ECO:0000269, primary literature PubMed:29253195), not computational inference.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence shows extreme enrichment in charged residues (K, E, R, D), consistent with thermophilic/hyperthermophilic adaptation via salt-bridge networks. This general signature could narrow the answer to a thermophilic range (A or D) and away from mesophilic options (B, C). However, distinguishing hyperthermophilic (75-90°C) from moderately thermophilic (50-57°C) purely from sequence composition requires either identifying the organism as Saccharolobus solfataricus (a hyperthermophile growing at ~80°C) or knowing the specific experimental measurement from the 2018 Bizard et al. study.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimental optimum temperature measurement (75-90°C for decatenase, 75°C for topoisomerase activity) reported in PubMed:29253195, or equivalently, the identification of this sequence as originating from the hyperthermophilic archaeon Saccharolobus solfataricus (optimal growth ~80°C), which is not provided in the model input.",
-    "reason": "While general sequence composition (high charge, low thermolabile residues) supports a thermophilic classification and rules out mesophilic options B and C, the precise distinction between 75-90°C (A) and 50-57°C (D) cannot be reliably made from sequence alone without either organism identification or a trained predictor. The answer depends on knowing this is a Sulfolobus protein or recalling the specific experimental value."
-  },
-  "case_id": "temperature_0036",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C7",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q97ZJ8 (DNA topoisomerase 3 from Saccharolobus solfataricus, sequence SHA256 matched) explicitly states: 'Optimum temperature is 75 degrees Celsius for topoisomerase activity (PubMed:29253195). Optimum temperature for decatenase is 75-90 degrees Celsius (PubMed:29253195).' The expected answer 75-90 matches the experimentally determined decatenase optimum range. The topoisomerase optimum (75°C) also falls within this range. The evidence is from a 2018 primary experimental study (Bizard et al., NAR 2018, ECO:0000269)."
-  },
-  "important_caveats": [
-    "The UniProt entry reports two distinct optimum temperatures: 75°C for topoisomerase activity and 75-90°C for decatenase activity. The answer key uses the broader decatenase range, which also encompasses the topoisomerase optimum.",
-    "The sequence is 668 AA and matches the canonical UniProt entry exactly (SHA256 confirmed).",
-    "The organism identity (Saccharolobus/Sulfolobus solfataricus, a hyperthermophile) is not provided in the model input, only the raw sequence.",
-    "The temperature evidence is experimental (ECO:0000269, primary literature PubMed:29253195), not computational inference."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt annotation gives 75°C (topoisomerase) and 75-90°C (decatenase), both encompassed by option A. No other option matches any reported experimental value. The question wording ('optimal temperature range in which the protein is stable and functional') aligns with the reported optimum activity temperatures. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0036",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q97ZJ8 (DNA topoisomerase 3 from Saccharolobus solfataricus, sequence SHA256 matched) explicitly states: 'Optimum temperature is 75 degrees Celsius for topoisomerase activity (PubMed:29253195). Optimum temperature for decatenase is 75-90 degrees Celsius (PubMed:29253195).' The expected answer 75-90 matches the experimentally determined decatenase optimum range. The topoisomerase optimum (75°C) also falls within this range. The evidence is from a 2018 primary experimental study (Bizard et al., NAR 2018, ECO:0000269).",
-    "evidence_ids": ["C5", "H4", "C7", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence shows extreme enrichment in charged residues (K, E, R, D), consistent with thermophilic/hyperthermophilic adaptation via salt-bridge networks. This general signature could narrow the answer to a thermophilic range (A or D) and away from mesophilic options (B, C). However, distinguishing hyperthermophilic (75-90°C) from moderately thermophilic (50-57°C) purely from sequence composition requires either identifying the organism as Saccharolobus solfataricus (a hyperthermophile growing at ~80°C) or knowing the specific experimental measurement from the 2018 Bizard et al. study.",
-    "missing_item_specific_fact": "The specific experimental optimum temperature measurement (75-90°C for decatenase, 75°C for topoisomerase activity) reported in PubMed:29253195, or equivalently, the identification of this sequence as originating from the hyperthermophilic archaeon Saccharolobus solfataricus (optimal growth ~80°C), which is not provided in the model input.",
-    "reason": "While general sequence composition (high charge, low thermolabile residues) supports a thermophilic classification and rules out mesophilic options B and C, the precise distinction between 75-90°C (A) and 50-57°C (D) cannot be reliably made from sequence alone without either organism identification or a trained predictor. The answer depends on knowing this is a Sulfolobus protein or recalling the specific experimental value."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt annotation gives 75°C (topoisomerase) and 75-90°C (decatenase), both encompassed by option A. No other option matches any reported experimental value. The question wording ('optimal temperature range in which the protein is stable and functional') aligns with the reported optimum activity temperatures. No other option is defensible."
-  },
-  "important_caveats": [
-    "The UniProt entry reports two distinct optimum temperatures: 75°C for topoisomerase activity and 75-90°C for decatenase activity. The answer key uses the broader decatenase range, which also encompasses the topoisomerase optimum.",
-    "The sequence is 668 AA and matches the canonical UniProt entry exactly (SHA256 confirmed).",
-    "The organism identity (Saccharolobus/Sulfolobus solfataricus, a hyperthermophile) is not provided in the model input, only the raw sequence.",
-    "The temperature evidence is experimental (ECO:0000269, primary literature PubMed:29253195), not computational inference."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q97ZJ8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 668,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
   "current_entry_audit": {
     "entryVersion": 134,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-10-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "current_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 668,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 132,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q97ZJ8",
   "selected_historical_entry_version": 132,
+  "selected_historical_record_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "selected_historical_source_sequence_length": 668,
+  "selected_historical_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
   "selected_historical_version": {
     "accession": "Q97ZJ8",
     "database": "Swiss-Prot",
@@ -550,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TOP3_SACS2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "selected_historical_source_sequence_sha256": "f752bca03e316d62a9e83d6521be1e3d49c8db05486d213a3b3d45c489790488",
-  "selected_historical_source_sequence_length": 668,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 132,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q97ZJ8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -600,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":134,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-10-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -619,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Sulfolobus solfataricus\",\"lineage\":[\"Archaea\",\"Thermoproteota\",\"Thermoprotei\",\"Sulfolobales\",\"Sulfolobaceae\",\"Saccharolobus\"],\"scientificName\":\"Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2)\",\"taxonId\":273057}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -638,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"DNA topoisomerase III\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22722926\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"5.6.2.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22722926\",\"source\":\"PubMed\"}],\"value\":\"DNA topoisomerase 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22722926\",\"source\":\"PubMed\"}],\"value\":\"SsTop3\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"SsTopA\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -657,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29253195\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 75 degrees Celsius for topoisomerase activity (PubMed:29253195). Optimum temperature for decatenase is 75-90 degrees Celsius (PubMed:29253195).\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -676,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Valenti A.\",\"De Felice M.\",\"Perugino G.\",\"Bizard A.\",\"Nadal M.\",\"Rossi M.\",\"Ciaramella M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22722926\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m112.366377\"}],\"citationType\":\"journal article\",\"firstPage\":\"30282\",\"id\":\"22722926\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"30295\",\"publicationDate\":\"2012\",\"title\":\"Synergic and opposing activities of thermophilic RecQ-like helicase and topoisomerase 3 proteins in Holliday junction processing and replication fork stabilization.\",\"volume\":\"287\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBUNIT\",\"INTERACTION WITH LHR\",\"DNA-BINDING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -695,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json",
-  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
-  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bizard A.H.\",\"Yang X.\",\"Debat H.\",\"Fogg J.M.\",\"Zechiedrich L.\",\"Strick T.R.\",\"Garnier F.\",\"Nadal M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29253195\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkx1247\"}],\"citationType\":\"journal article\",\"firstPage\":\"861\",\"id\":\"29253195\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"872\",\"publicationDate\":\"2018\",\"title\":\"TopA, the Sulfolobus solfataricus topoisomerase III, is a decatenase.\",\"volume\":\"46\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:26.328266+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4ec40a69735e225949e29a9f2298e3634559e703f08ec9c5d619bb337f1a11d5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q97ZJ8.json"
 }
 ```
 
@@ -713,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   TOP3_SACS2              Reviewed;         668 AA.\nAC   Q97ZJ8;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2001, sequence version 1.\nDT   28-JAN-2026, entry version 132.\nDE   RecName: Full=DNA topoisomerase 3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTop3 {ECO:0000303|PubMed:22722926};\nDE            Short=SsTopA {ECO:0000303|PubMed:29253195};\nDE            EC=5.6.2.1 {ECO:0000269|PubMed:22722926, ECO:0000269|PubMed:29253195};\nDE   AltName: Full=DNA topoisomerase III {ECO:0000303|PubMed:29253195};\nGN   Name=topA {ECO:0000303|PubMed:22722926, ECO:0000312|EMBL:AAK41190.1};\nGN   OrderedLocusNames=SSO0907 {ECO:0000312|EMBL:AAK41190.1};\nOS   Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2)\nOS   (Sulfolobus solfataricus).\nOC   Archaea; Thermoproteota; Thermoprotei; Sulfolobales; Sulfolobaceae;\nOC   Saccharolobus.\nOX   NCBI_TaxID=273057;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -734,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, SUBUNIT, INTERACTION WITH LHR, AND\nRP   DNA-BINDING.\nRX   PubMed=22722926; DOI=10.1074/jbc.m112.366377;\nRA   Valenti A., De Felice M., Perugino G., Bizard A., Nadal M., Rossi M.,\nRA   Ciaramella M.;\nRT   \"Synergic and opposing activities of thermophilic RecQ-like helicase and\nRT   topoisomerase 3 proteins in Holliday junction processing and replication\nRT   fork stabilization.\";\nRL   J. Biol. Chem. 287:30282-30295(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -755,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 40-47",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=29253195; DOI=10.1093/nar/gkx1247;\nRA   Bizard A.H., Yang X., Debat H., Fogg J.M., Zechiedrich L., Strick T.R.,\nRA   Garnier F., Nadal M.;\nRT   \"TopA, the Sulfolobus solfataricus topoisomerase III, is a decatenase.\";\nRL   Nucleic Acids Res. 46:861-872(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 
@@ -776,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 132,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132",
-  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
-  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
-  "source_locator": "lines 78-82",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Temperature dependence:\nCC         Optimum temperature is 75 degrees Celsius for topoisomerase activity\nCC         (PubMed:29253195). Optimum temperature for decatenase is 75-90\nCC         degrees Celsius (PubMed:29253195). {ECO:0000269|PubMed:29253195};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 132,
+  "retrieved_utc": "2026-11-01T06:28:45.340278+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 78-82",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77a05af9d1305445b3e0d4b67305724443fad1a6fc01422e81a6d8f5dc26d379",
+  "url": "https://rest.uniprot.org/unisave/Q97ZJ8?format=txt&versions=132"
 }
 ```
 

@@ -1,18 +1,16 @@
-# catalytic_activity_0059: before and after transfer clarification
+# catalytic_activity_0059
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0059.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0059.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — UDP-N-acetyl-alpha-D-glucosamine + H2O = aldehydo-N-acetyl-D-mannosamine + UDP + H(+)
+**Expected answer:** **D** — UDP-N-acetyl-alpha-D-glucosamine + H2O = aldehydo-N-acetyl-D-mannosamine + UDP + H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt sequence annotated as UDP-N-acetylglucosamine 2-epimerase. Its catalytic-activity annotation gives choice D and cites experimental evidence (ECO:0000269) from a 2024 paper. The archived entry available by the stated historical cutoff also records this reaction.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices describe distinct reactions, but the sequence and prompt provide no biological context or recognizable, decisive feature that identifies this specific UDP-GlcNAc hydrolysis/epimerization reaction over the alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic-function annotation or experimental characterization linking this sequence to the UDP-N-acetylglucosamine reaction.
-
-
-**Reason**
-
-> Identifying the correct option requires knowing the function of this particular protein. The reviewer-only database and paper evidence supports the key, but that information was not supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options specify distinct reactions, and the sequence-matched annotation supports D; no competing option is supported by the supplied evidence.
-
-
-### Important caveats
-
-- The database record links the reaction to experimental evidence from a cited paper, but the paper was not independently retrieved or validated here.
-- The author’s exact source snapshot is unknown; the archived sequence-matched entry supports the reaction annotation by the stated historical cutoff.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices describe distinct reactions, but the sequence and prompt provide no biological context or recognizable, decisive feature that identifies this specific UDP-GlcNAc hydrolysis/epimerization reaction over the alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic-function annotation or experimental characterization linking this sequence to the UDP-N-acetylglucosamine reaction.",
-    "reason": "Identifying the correct option requires knowing the function of this particular protein. The reviewer-only database and paper evidence supports the key, but that information was not supplied to the evaluated model."
-  },
-  "case_id": "catalytic_activity_0059",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated as UDP-N-acetylglucosamine 2-epimerase. Its catalytic-activity annotation gives choice D and cites experimental evidence (ECO:0000269) from a 2024 paper. The archived entry available by the stated historical cutoff also records this reaction."
-  },
-  "important_caveats": [
-    "The database record links the reaction to experimental evidence from a cited paper, but the paper was not independently retrieved or validated here.",
-    "The author’s exact source snapshot is unknown; the archived sequence-matched entry supports the reaction annotation by the stated historical cutoff."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options specify distinct reactions, and the sequence-matched annotation supports D; no competing option is supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0059",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated as UDP-N-acetylglucosamine 2-epimerase. Its catalytic-activity annotation gives choice D and cites experimental evidence (ECO:0000269) from a 2024 paper. The archived entry available by the stated historical cutoff also records this reaction.",
-    "evidence_ids": ["C1", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices describe distinct reactions, but the sequence and prompt provide no biological context or recognizable, decisive feature that identifies this specific UDP-GlcNAc hydrolysis/epimerization reaction over the alternatives.",
-    "missing_item_specific_fact": "The protein-specific catalytic-function annotation or experimental characterization linking this sequence to the UDP-N-acetylglucosamine reaction.",
-    "reason": "Identifying the correct option requires knowing the function of this particular protein. The reviewer-only database and paper evidence supports the key, but that information was not supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options specify distinct reactions, and the sequence-matched annotation supports D; no competing option is supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The database record links the reaction to experimental evidence from a cited paper, but the paper was not independently retrieved or validated here.",
-    "The author’s exact source snapshot is unknown; the archived sequence-matched entry supports the reaction annotation by the stated historical cutoff."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The benchmark sequence (373 aa, SHA256 matched) corresponds exactly to UniProt P0DY05 (UAEPH_CAMJ8) from Campylobacter jejuni strain 81116. The UniProt entry annotates this protein as 'UDP-N-acetylglucosamine 2-epimerase' (EC 3.2.1.183, 'Hydrolyzing UDP-GlcNAc 2-epimerase') with the catalytic reaction 'UDP-N-acetyl-alpha-D-glucosamine + H2O = aldehydo-N-acetyl-D-mannosamine + UDP + H(+)' (Rhea:RHEA:30683), supported by experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel 2024 Biochemistry). Choice D matches this reaction verbatim.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could partially eliminate distractors from sequence: absence of a PLP-binding lysine in a conserved aromatic-decarboxylase context weakens Choice A; absence of a radical SAM CX3CX2C motif weakens Choice C. However, positively identifying the hydrolyzing UDP-GlcNAc 2-epimerase (EC 3.2.1.183) and distinguishing it from an N-acetyltransferase (Choice B) requires recognizing a specific, relatively obscure enzyme family fold or recalling the 2024 experimental characterization. No widely-taught sequence motif in the provided sequence unambiguously points to this rare hydrolyzing epimerase reaction.
-
-
-**Missing item-specific fact**
-
-> The specific family assignment (UDP-GlcNAc 2-epimerase / hydrolyzing variant, EC 3.2.1.183) and the 2024 experimental demonstration (PubMed:38382015) that this Campylobacter protein catalyzes the hydrolyzing epimerization of UDP-GlcNAc to aldehydo-GlcNAc. This is a recently characterized, specialized reaction not inferable from generic sequence features without prior knowledge of this enzyme family.
-
-
-**Reason**
-
-> The question requires identifying a recently characterized (2024/2025) and relatively obscure enzyme activity from a 373-aa sequence lacking broadly recognizable catalytic motifs. While negative reasoning can eliminate A (no PLP motif) and C (no radical SAM motif), the positive identification of D over B depends on knowing the specific protein family or its experimental annotation rather than on generalizable sequence-to-function inference.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices represent mechanistically distinct enzyme classes (PLP decarboxylase, acyltransferase, radical SAM enzyme, glycosidase/epimerase). Only D matches the annotated activity. No other option is defensible for this protein given the experimental evidence.
-
-
-### Important caveats
-
-- The UniProt entry was first public on 2025-06-18 and the key experimental paper (PubMed:38382015) was published in 2024; the annotation may postdate the benchmark construction window, though the sequence itself is stable (sequence version 1 unchanged).
-- The evidence code ECO:0000269 (inferred from direct assay) indicates experimental characterization, not mere computational prediction.
-- The 'hydrolyzing' qualifier distinguishes EC 3.2.1.183 from the more common non-hydrolyzing UDP-GlcNAc 2-epimerase (EC 5.1.3.14); this distinction is itself a specialized biochemical point.
-- Reviewer-only evidence was used to confirm the key; the evaluated model received only the raw sequence and four reaction choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could partially eliminate distractors from sequence: absence of a PLP-binding lysine in a conserved aromatic-decarboxylase context weakens Choice A; absence of a radical SAM CX3CX2C motif weakens Choice C. However, positively identifying the hydrolyzing UDP-GlcNAc 2-epimerase (EC 3.2.1.183) and distinguishing it from an N-acetyltransferase (Choice B) requires recognizing a specific, relatively obscure enzyme family fold or recalling the 2024 experimental characterization. No widely-taught sequence motif in the provided sequence unambiguously points to this rare hydrolyzing epimerase reaction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific family assignment (UDP-GlcNAc 2-epimerase / hydrolyzing variant, EC 3.2.1.183) and the 2024 experimental demonstration (PubMed:38382015) that this Campylobacter protein catalyzes the hydrolyzing epimerization of UDP-GlcNAc to aldehydo-GlcNAc. This is a recently characterized, specialized reaction not inferable from generic sequence features without prior knowledge of this enzyme family.",
-    "reason": "The question requires identifying a recently characterized (2024/2025) and relatively obscure enzyme activity from a 373-aa sequence lacking broadly recognizable catalytic motifs. While negative reasoning can eliminate A (no PLP motif) and C (no radical SAM motif), the positive identification of D over B depends on knowing the specific protein family or its experimental annotation rather than on generalizable sequence-to-function inference."
-  },
-  "case_id": "catalytic_activity_0059",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The benchmark sequence (373 aa, SHA256 matched) corresponds exactly to UniProt P0DY05 (UAEPH_CAMJ8) from Campylobacter jejuni strain 81116. The UniProt entry annotates this protein as 'UDP-N-acetylglucosamine 2-epimerase' (EC 3.2.1.183, 'Hydrolyzing UDP-GlcNAc 2-epimerase') with the catalytic reaction 'UDP-N-acetyl-alpha-D-glucosamine + H2O = aldehydo-N-acetyl-D-mannosamine + UDP + H(+)' (Rhea:RHEA:30683), supported by experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel 2024 Biochemistry). Choice D matches this reaction verbatim."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public on 2025-06-18 and the key experimental paper (PubMed:38382015) was published in 2024; the annotation may postdate the benchmark construction window, though the sequence itself is stable (sequence version 1 unchanged).",
-    "The evidence code ECO:0000269 (inferred from direct assay) indicates experimental characterization, not mere computational prediction.",
-    "The 'hydrolyzing' qualifier distinguishes EC 3.2.1.183 from the more common non-hydrolyzing UDP-GlcNAc 2-epimerase (EC 5.1.3.14); this distinction is itself a specialized biochemical point.",
-    "Reviewer-only evidence was used to confirm the key; the evaluated model received only the raw sequence and four reaction choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent mechanistically distinct enzyme classes (PLP decarboxylase, acyltransferase, radical SAM enzyme, glycosidase/epimerase). Only D matches the annotated activity. No other option is defensible for this protein given the experimental evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0059",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The benchmark sequence (373 aa, SHA256 matched) corresponds exactly to UniProt P0DY05 (UAEPH_CAMJ8) from Campylobacter jejuni strain 81116. The UniProt entry annotates this protein as 'UDP-N-acetylglucosamine 2-epimerase' (EC 3.2.1.183, 'Hydrolyzing UDP-GlcNAc 2-epimerase') with the catalytic reaction 'UDP-N-acetyl-alpha-D-glucosamine + H2O = aldehydo-N-acetyl-D-mannosamine + UDP + H(+)' (Rhea:RHEA:30683), supported by experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel 2024 Biochemistry). Choice D matches this reaction verbatim.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could partially eliminate distractors from sequence: absence of a PLP-binding lysine in a conserved aromatic-decarboxylase context weakens Choice A; absence of a radical SAM CX3CX2C motif weakens Choice C. However, positively identifying the hydrolyzing UDP-GlcNAc 2-epimerase (EC 3.2.1.183) and distinguishing it from an N-acetyltransferase (Choice B) requires recognizing a specific, relatively obscure enzyme family fold or recalling the 2024 experimental characterization. No widely-taught sequence motif in the provided sequence unambiguously points to this rare hydrolyzing epimerase reaction.",
-    "missing_item_specific_fact": "The specific family assignment (UDP-GlcNAc 2-epimerase / hydrolyzing variant, EC 3.2.1.183) and the 2024 experimental demonstration (PubMed:38382015) that this Campylobacter protein catalyzes the hydrolyzing epimerization of UDP-GlcNAc to aldehydo-GlcNAc. This is a recently characterized, specialized reaction not inferable from generic sequence features without prior knowledge of this enzyme family.",
-    "reason": "The question requires identifying a recently characterized (2024/2025) and relatively obscure enzyme activity from a 373-aa sequence lacking broadly recognizable catalytic motifs. While negative reasoning can eliminate A (no PLP motif) and C (no radical SAM motif), the positive identification of D over B depends on knowing the specific protein family or its experimental annotation rather than on generalizable sequence-to-function inference."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent mechanistically distinct enzyme classes (PLP decarboxylase, acyltransferase, radical SAM enzyme, glycosidase/epimerase). Only D matches the annotated activity. No other option is defensible for this protein given the experimental evidence."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public on 2025-06-18 and the key experimental paper (PubMed:38382015) was published in 2024; the annotation may postdate the benchmark construction window, though the sequence itself is stable (sequence version 1 unchanged).",
-    "The evidence code ECO:0000269 (inferred from direct assay) indicates experimental characterization, not mere computational prediction.",
-    "The 'hydrolyzing' qualifier distinguishes EC 3.2.1.183 from the more common non-hydrolyzing UDP-GlcNAc 2-epimerase (EC 5.1.3.14); this distinction is itself a specialized biochemical point.",
-    "Reviewer-only evidence was used to confirm the key; the evaluated model received only the raw sequence and four reaction choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DY05",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 373,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -538,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "current_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 373,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DY05",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "selected_historical_source_sequence_length": 373,
+  "selected_historical_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
   "selected_historical_version": {
     "accession": "P0DY05",
     "database": "Swiss-Prot",
@@ -556,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UAEPH_CAMJ8",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "selected_historical_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
-  "selected_historical_source_sequence_length": 373,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DY05\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -606,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -625,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Campylobacterota\",\"Epsilonproteobacteria\",\"Campylobacterales\",\"Campylobacteraceae\",\"Campylobacter\"],\"scientificName\":\"Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC 11828)\",\"taxonId\":407148}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -644,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"Hydrolyzing UDP-GlcNAc 2-epimerase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.183\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"UDP-N-acetylglucosamine 2-epimerase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -663,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:30684\"}}],\"reaction\":{\"ecNumber\":\"3.2.1.183\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"name\":\"UDP-N-acetyl-alpha-D-glucosamine + H2O = aldehydo-N-acetyl-D-mannosamine + UDP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:30683\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17122\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57705\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58223\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -682,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Ghosh M.K.\",\"Raushel F.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38382015\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.3c00664\"}],\"citationType\":\"journal article\",\"firstPage\":\"688\",\"id\":\"38382015\",\"journal\":\"Biochemistry\",\"lastPage\":\"698\",\"publicationDate\":\"2024\",\"title\":\"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter jejuni.\",\"volume\":\"63\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"81116 / NCTC 11828\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -700,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2",
-  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   UAEPH_CAMJ8             Reviewed;         373 AA.\nAC   P0DY05;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=UDP-N-acetylglucosamine 2-epimerase {ECO:0000305};\nDE            EC=3.2.1.183 {ECO:0000269|PubMed:38382015};\nDE   AltName: Full=Hydrolyzing UDP-GlcNAc 2-epimerase {ECO:0000303|PubMed:38382015};\nGN   Name=HS6.10 {ECO:0000303|PubMed:38382015};\nGN   OrderedLocusNames=C8J_1338 {ECO:0000312|EMBL:ABV52936.1};\nOS   Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC\nOS   11828).\nOC   Bacteria; Pseudomonadati; Campylobacterota; Epsilonproteobacteria;\nOC   Campylobacterales; Campylobacteraceae; Campylobacter.\nOX   NCBI_TaxID=407148;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2"
 }
 ```
 
@@ -721,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2",
-  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=UDP-N-acetylglucosamine 2-epimerase {ECO:0000305};\nDE            EC=3.2.1.183 {ECO:0000269|PubMed:38382015};\nDE   AltName: Full=Hydrolyzing UDP-GlcNAc 2-epimerase {ECO:0000303|PubMed:38382015};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2"
 }
 ```
 
@@ -742,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2",
-  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
-  "source_locator": "lines 25-33",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND PATHWAY.\nRC   STRAIN=81116 / NCTC 11828;\nRX   PubMed=38382015; DOI=10.1021/acs.biochem.3c00664;\nRA   Ghosh M.K., Raushel F.M.;\nRT   \"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-\nRT   Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter\nRT   jejuni.\";\nRL   Biochemistry 63:688-698(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2"
 }
 ```
 
@@ -763,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2",
-  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
-  "source_locator": "lines 40-47",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=UDP-N-acetyl-alpha-D-glucosamine + H2O = aldehydo-N-acetyl-D-\nCC         mannosamine + UDP + H(+); Xref=Rhea:RHEA:30683, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:17122, ChEBI:CHEBI:57705,\nCC         ChEBI:CHEBI:58223; EC=3.2.1.183;\nCC         Evidence={ECO:0000269|PubMed:38382015};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:30684;\nCC         Evidence={ECO:0000269|PubMed:38382015};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2"
 }
 ```
 

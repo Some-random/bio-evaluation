@@ -1,18 +1,16 @@
-# cofactor_0057: before and after transfer clarification
+# cofactor_0057
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0057.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0057.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — pyridoxal 5&#x27;-phosphate
+**Expected answer:** **B** — pyridoxal 5&#x27;-phosphate
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the UniProt entry annotated as an L-tyrosine/L-DOPA decarboxylase, with pyridoxal 5'-phosphate listed as its cofactor. The cofactor annotation is explicitly based on similarity to UniProtKB:P20711 (ECO:0000250), so this supports the key as a family-based inference, not as direct experimental evidence for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not supply an explicit function or an unmistakable cofactor identity. PLP would be a reasonable choice once the protein is identified as an aromatic amino acid decarboxylase, but identifying that enzyme family requires protein-specific sequence homology or annotation.
-
-
-**Missing item-specific fact**
-
-> The needed fact is that this sequence is an L-tyrosine/L-DOPA decarboxylase, a family whose cofactor annotation is PLP.
-
-
-**Reason**
-
-> The relevant enzyme identity and cofactor annotation are absent from the question. Merely recognizing or retrieving this exact protein's database entry would be lookup, not reasoning from the supplied context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein annotation identifies PLP; the evidence provided does not support another listed cofactor.
-
-
-### Important caveats
-
-- The exact sequence match is established in reviewer-only evidence and was not provided to the evaluated model as an accession.
-- The cited cofactor annotation is transferred by similarity; the excerpts do not independently establish direct experimental measurement of PLP binding for this exact protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not supply an explicit function or an unmistakable cofactor identity. PLP would be a reasonable choice once the protein is identified as an aromatic amino acid decarboxylase, but identifying that enzyme family requires protein-specific sequence homology or annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The needed fact is that this sequence is an L-tyrosine/L-DOPA decarboxylase, a family whose cofactor annotation is PLP.",
-    "reason": "The relevant enzyme identity and cofactor annotation are absent from the question. Merely recognizing or retrieving this exact protein's database entry would be lookup, not reasoning from the supplied context."
-  },
-  "case_id": "cofactor_0057",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as an L-tyrosine/L-DOPA decarboxylase, with pyridoxal 5'-phosphate listed as its cofactor. The cofactor annotation is explicitly based on similarity to UniProtKB:P20711 (ECO:0000250), so this supports the key as a family-based inference, not as direct experimental evidence for this exact protein."
-  },
-  "important_caveats": [
-    "The exact sequence match is established in reviewer-only evidence and was not provided to the evaluated model as an accession.",
-    "The cited cofactor annotation is transferred by similarity; the excerpts do not independently establish direct experimental measurement of PLP binding for this exact protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein annotation identifies PLP; the evidence provided does not support another listed cofactor."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0057",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as an L-tyrosine/L-DOPA decarboxylase, with pyridoxal 5'-phosphate listed as its cofactor. The cofactor annotation is explicitly based on similarity to UniProtKB:P20711 (ECO:0000250), so this supports the key as a family-based inference, not as direct experimental evidence for this exact protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not supply an explicit function or an unmistakable cofactor identity. PLP would be a reasonable choice once the protein is identified as an aromatic amino acid decarboxylase, but identifying that enzyme family requires protein-specific sequence homology or annotation.",
-    "missing_item_specific_fact": "The needed fact is that this sequence is an L-tyrosine/L-DOPA decarboxylase, a family whose cofactor annotation is PLP.",
-    "reason": "The relevant enzyme identity and cofactor annotation are absent from the question. Merely recognizing or retrieving this exact protein's database entry would be lookup, not reasoning from the supplied context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein annotation identifies PLP; the evidence provided does not support another listed cofactor."
-  },
-  "important_caveats": [
-    "The exact sequence match is established in reviewer-only evidence and was not provided to the evaluated model as an accession.",
-    "The cited cofactor annotation is transferred by similarity; the excerpts do not independently establish direct experimental measurement of PLP binding for this exact protein."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt A0AA51Z3J4 (TYDC2_LOPWI), an L-tyrosine/L-DOPA decarboxylase (EC 4.1.1.25/4.1.1.28) from Lophophora williamsii. The UniProt cofactor annotation explicitly states pyridoxal 5'-phosphate (CHEBI:597326), annotated via ECO:0000250 (similarity to P20711). Additionally, EC 4.1.1.25 and 4.1.1.28 are experimentally confirmed (ECO:0000269, PubMed:38835170), and aromatic amino acid decarboxylases are universally PLP-dependent enzymes. The expected answer B is well-supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A knowledgeable biochemist could note that PLP fold type III enzymes (aromatic amino acid decarboxylases) contain a conserved Schiff-base lysine and a characteristic two-domain architecture at ~500 aa. However, reliably distinguishing this 522-aa sequence as belonging to the PLP fold type III family—rather than an Fe(2+)-containing oxidoreductase, a tungstopterin-dependent anaerobic enzyme, or a pantetheine-4'-phosphate-dependent acyltransferase—from sequence alone requires recognizing specific conserved motifs (e.g., the PLP-binding lysine in a context like 'GSDQTHCSFFK') or, more practically, identifying the exact protein/family via database lookup.
-
-
-**Missing item-specific fact**
-
-> Identification of this specific 522-aa sequence as an aromatic amino acid decarboxylase (LwTyDC2) from the mescaline biosynthetic pathway. Without this identification, the sequence does not unambiguously signal PLP dependence over the other three cofactor options to a model lacking prior knowledge of this protein or its family.
-
-
-**Reason**
-
-> While PLP-dependent enzymes share some general sequence features, the primary discriminator among the four options (tungstopterin, PLP, Fe2+, pantetheine-4'-phosphate) is recognizing the protein as a member of the aromatic amino acid decarboxylase family. This identification is essentially a lookup/memorization task rather than a step-by-step deduction from general biological principles applied to the raw sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent cofactors for fundamentally different enzyme classes (anaerobic oxidoreductases, PLP-dependent lyases/transferases, metalloenzymes, acyltransferases). Once the protein is correctly identified as an aromatic amino acid decarboxylase, only PLP is defensible. No genuine ambiguity exists among the choices.
-
-
-### Important caveats
-
-- The cofactor annotation uses ECO:0000250 (inferred by similarity to P20711), not direct experimental cofactor measurement for this specific protein. However, the EC numbers are experimentally confirmed, and PLP dependence is an inherent mechanistic requirement of aromatic amino acid decarboxylases.
-- The UniProt entry was first publicly released 2025-06-18; the benchmark author's source snapshot is unknown but the sequence matches.
-- The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A knowledgeable biochemist could note that PLP fold type III enzymes (aromatic amino acid decarboxylases) contain a conserved Schiff-base lysine and a characteristic two-domain architecture at ~500 aa. However, reliably distinguishing this 522-aa sequence as belonging to the PLP fold type III family—rather than an Fe(2+)-containing oxidoreductase, a tungstopterin-dependent anaerobic enzyme, or a pantetheine-4'-phosphate-dependent acyltransferase—from sequence alone requires recognizing specific conserved motifs (e.g., the PLP-binding lysine in a context like 'GSDQTHCSFFK') or, more practically, identifying the exact protein/family via database lookup.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identification of this specific 522-aa sequence as an aromatic amino acid decarboxylase (LwTyDC2) from the mescaline biosynthetic pathway. Without this identification, the sequence does not unambiguously signal PLP dependence over the other three cofactor options to a model lacking prior knowledge of this protein or its family.",
-    "reason": "While PLP-dependent enzymes share some general sequence features, the primary discriminator among the four options (tungstopterin, PLP, Fe2+, pantetheine-4'-phosphate) is recognizing the protein as a member of the aromatic amino acid decarboxylase family. This identification is essentially a lookup/memorization task rather than a step-by-step deduction from general biological principles applied to the raw sequence."
-  },
-  "case_id": "cofactor_0057",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A0AA51Z3J4 (TYDC2_LOPWI), an L-tyrosine/L-DOPA decarboxylase (EC 4.1.1.25/4.1.1.28) from Lophophora williamsii. The UniProt cofactor annotation explicitly states pyridoxal 5'-phosphate (CHEBI:597326), annotated via ECO:0000250 (similarity to P20711). Additionally, EC 4.1.1.25 and 4.1.1.28 are experimentally confirmed (ECO:0000269, PubMed:38835170), and aromatic amino acid decarboxylases are universally PLP-dependent enzymes. The expected answer B is well-supported."
-  },
-  "important_caveats": [
-    "The cofactor annotation uses ECO:0000250 (inferred by similarity to P20711), not direct experimental cofactor measurement for this specific protein. However, the EC numbers are experimentally confirmed, and PLP dependence is an inherent mechanistic requirement of aromatic amino acid decarboxylases.",
-    "The UniProt entry was first publicly released 2025-06-18; the benchmark author's source snapshot is unknown but the sequence matches.",
-    "The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent cofactors for fundamentally different enzyme classes (anaerobic oxidoreductases, PLP-dependent lyases/transferases, metalloenzymes, acyltransferases). Once the protein is correctly identified as an aromatic amino acid decarboxylase, only PLP is defensible. No genuine ambiguity exists among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0057",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A0AA51Z3J4 (TYDC2_LOPWI), an L-tyrosine/L-DOPA decarboxylase (EC 4.1.1.25/4.1.1.28) from Lophophora williamsii. The UniProt cofactor annotation explicitly states pyridoxal 5'-phosphate (CHEBI:597326), annotated via ECO:0000250 (similarity to P20711). Additionally, EC 4.1.1.25 and 4.1.1.28 are experimentally confirmed (ECO:0000269, PubMed:38835170), and aromatic amino acid decarboxylases are universally PLP-dependent enzymes. The expected answer B is well-supported.",
-    "evidence_ids": ["C4", "C5", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A knowledgeable biochemist could note that PLP fold type III enzymes (aromatic amino acid decarboxylases) contain a conserved Schiff-base lysine and a characteristic two-domain architecture at ~500 aa. However, reliably distinguishing this 522-aa sequence as belonging to the PLP fold type III family—rather than an Fe(2+)-containing oxidoreductase, a tungstopterin-dependent anaerobic enzyme, or a pantetheine-4'-phosphate-dependent acyltransferase—from sequence alone requires recognizing specific conserved motifs (e.g., the PLP-binding lysine in a context like 'GSDQTHCSFFK') or, more practically, identifying the exact protein/family via database lookup.",
-    "missing_item_specific_fact": "Identification of this specific 522-aa sequence as an aromatic amino acid decarboxylase (LwTyDC2) from the mescaline biosynthetic pathway. Without this identification, the sequence does not unambiguously signal PLP dependence over the other three cofactor options to a model lacking prior knowledge of this protein or its family.",
-    "reason": "While PLP-dependent enzymes share some general sequence features, the primary discriminator among the four options (tungstopterin, PLP, Fe2+, pantetheine-4'-phosphate) is recognizing the protein as a member of the aromatic amino acid decarboxylase family. This identification is essentially a lookup/memorization task rather than a step-by-step deduction from general biological principles applied to the raw sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent cofactors for fundamentally different enzyme classes (anaerobic oxidoreductases, PLP-dependent lyases/transferases, metalloenzymes, acyltransferases). Once the protein is correctly identified as an aromatic amino acid decarboxylase, only PLP is defensible. No genuine ambiguity exists among the choices."
-  },
-  "important_caveats": [
-    "The cofactor annotation uses ECO:0000250 (inferred by similarity to P20711), not direct experimental cofactor measurement for this specific protein. However, the EC numbers are experimentally confirmed, and PLP dependence is an inherent mechanistic requirement of aromatic amino acid decarboxylases.",
-    "The UniProt entry was first publicly released 2025-06-18; the benchmark author's source snapshot is unknown but the sequence matches.",
-    "The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -496,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AA51Z3J4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 522,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
   "current_entry_audit": {
     "entryVersion": 11,
     "firstPublicDate": "2025-06-18",
@@ -527,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "current_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 522,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 9,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AA51Z3J4",
   "selected_historical_entry_version": 9,
+  "selected_historical_record_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "selected_historical_source_sequence_length": 522,
+  "selected_historical_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
   "selected_historical_version": {
     "accession": "A0AA51Z3J4",
     "database": "Swiss-Prot",
@@ -545,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TYDC2_LOPWI",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "selected_historical_source_sequence_sha256": "39ec61a6d8642a0a7790dd9cb740bee54c5dd090de950c5c89bb7477e43c264e",
-  "selected_historical_source_sequence_length": 522,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 9,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -576,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AA51Z3J4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -595,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":11,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -614,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Peyote\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Cactineae\",\"Cactaceae\",\"Cactoideae\",\"Cacteae\",\"Lophophora\"],\"scientificName\":\"Lophophora williamsii\",\"synonyms\":[\"Echinocactus williamsii\"],\"taxonId\":130138}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -633,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37675639\",\"source\":\"PubMed\"}],\"value\":\"Aromatic amino acid decarboxylase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37675639\",\"source\":\"PubMed\"}],\"value\":\"LwTyDC1\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.25\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.28\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"L-tyrosine/L-DOPA decarboxylase 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38835170\",\"source\":\"PubMed\"}],\"value\":\"LwTyDC2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -652,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:597326\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P20711\",\"source\":\"UniProtKB\"}],\"name\":\"pyridoxal 5'-phosphate\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -671,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Watkins J.L.\",\"Li Q.\",\"Yeaman S.\",\"Facchini P.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37675639\"},{\"database\":\"DOI\",\"id\":\"10.1111/tpj.16447\"}],\"citationType\":\"journal article\",\"firstPage\":\"635\",\"id\":\"37675639\",\"journal\":\"Plant J.\",\"lastPage\":\"649\",\"publicationDate\":\"2023\",\"title\":\"Elucidation of the mescaline biosynthetic pathway in peyote (Lophophora williamsii).\",\"volume\":\"116\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WMX25288.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. Jourdaniana\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -690,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json",
-  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
-  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Berman P.\",\"de Haro L.A.\",\"Cavaco A.-R.\",\"Panda S.\",\"Dong Y.\",\"Kuzmich N.\",\"Lichtenstein G.\",\"Peleg Y.\",\"Harat H.\",\"Jozwiak A.\",\"Cai J.\",\"Heinig U.\",\"Meir S.\",\"Rogachev I.\",\"Aharoni A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38835170\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.molp.2024.05.012\"}],\"citationType\":\"journal article\",\"firstPage\":\"1129\",\"id\":\"38835170\",\"journal\":\"Mol. Plant\",\"lastPage\":\"1150\",\"publicationDate\":\"2024\",\"title\":\"The biosynthetic pathway of the hallucinogen mescaline and its heterologous reconstruction.\",\"volume\":\"17\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. Rehovot 7\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOTECHNOLOGY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:26:23.611761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df87091c482642dd500c923c44da23a6238f45d97936af1dca1ddc0f7e28eba5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AA51Z3J4.json"
 }
 ```
 
@@ -708,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 1-18",
   "excerpt": "ID   TYDC2_LOPWI             Reviewed;         522 AA.\nAC   A0AA51Z3J4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 2.\nDT   28-JAN-2026, entry version 9.\nDE   RecName: Full=L-tyrosine/L-DOPA decarboxylase 2 {ECO:0000303|PubMed:38835170};\nDE            Short=LwTyDC2 {ECO:0000303|PubMed:38835170};\nDE            EC=4.1.1.25 {ECO:0000269|PubMed:38835170};\nDE            EC=4.1.1.28 {ECO:0000269|PubMed:38835170};\nDE   AltName: Full=Aromatic amino acid decarboxylase 1 {ECO:0000303|PubMed:37675639};\nDE            Short=LwTyDC1 {ECO:0000303|PubMed:37675639};\nGN   Name=TyDC2 {ECO:0000303|PubMed:38835170};\nGN   Synonyms=TyDC1 {ECO:0000303|PubMed:37675639};\nOS   Lophophora williamsii (Peyote) (Echinocactus williamsii).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Cactineae; Cactaceae; Cactoideae; Cacteae; Lophophora.\nOX   NCBI_TaxID=130138;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-18",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -729,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 6-11",
   "excerpt": "DE   RecName: Full=L-tyrosine/L-DOPA decarboxylase 2 {ECO:0000303|PubMed:38835170};\nDE            Short=LwTyDC2 {ECO:0000303|PubMed:38835170};\nDE            EC=4.1.1.25 {ECO:0000269|PubMed:38835170};\nDE            EC=4.1.1.28 {ECO:0000269|PubMed:38835170};\nDE   AltName: Full=Aromatic amino acid decarboxylase 1 {ECO:0000303|PubMed:37675639};\nDE            Short=LwTyDC1 {ECO:0000303|PubMed:37675639};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-11",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -750,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 19-27",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WMX25288.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   TISSUE SPECIFICITY.\nRC   STRAIN=cv. Jourdaniana;\nRX   PubMed=37675639; DOI=10.1111/tpj.16447;\nRA   Watkins J.L., Li Q., Yeaman S., Facchini P.J.;\nRT   \"Elucidation of the mescaline biosynthetic pathway in peyote (Lophophora\nRT   williamsii).\";\nRL   Plant J. 116:635-649(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -771,18 +534,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 28-38",
   "excerpt": "RN   [2]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY,\nRP   BIOTECHNOLOGY, BIOPHYSICOCHEMICAL PROPERTIES, AND TISSUE SPECIFICITY.\nRC   STRAIN=cv. Rehovot 7;\nRX   PubMed=38835170; DOI=10.1016/j.molp.2024.05.012;\nRA   Berman P., de Haro L.A., Cavaco A.-R., Panda S., Dong Y., Kuzmich N.,\nRA   Lichtenstein G., Peleg Y., Harat H., Jozwiak A., Cai J., Heinig U.,\nRA   Meir S., Rogachev I., Aharoni A.;\nRT   \"The biosynthetic pathway of the hallucinogen mescaline and its\nRT   heterologous reconstruction.\";\nRL   Mol. Plant 17:1129-1150(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 
@@ -792,18 +555,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9",
-  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
-  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
-  "source_locator": "lines 60-62",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=pyridoxal 5'-phosphate; Xref=ChEBI:CHEBI:597326;\nCC         Evidence={ECO:0000250|UniProtKB:P20711};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:26:27.253771+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 60-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "19e4ff04ca3b4f42fdb12b700298efb9fc0014c90ac7a93cbc253e504d45c473",
+  "url": "https://rest.uniprot.org/unisave/A0AA51Z3J4?format=txt&versions=9"
 }
 ```
 

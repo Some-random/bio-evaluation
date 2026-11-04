@@ -1,18 +1,16 @@
-# temperature_0034: before and after transfer clarification
+# temperature_0034
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0034.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0034.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **C** — 37-42
+**Expected answer:** **C** — 37-42
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt sequence whose temperature-dependence annotation reports an optimum of 37–42 °C, matching choice C. The annotation cites experimental evidence, though the primary study was not independently checked here.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H8](#evidence-h8).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The bacterial sequence and biological context may suggest a mesophilic protein, but do not distinguish this particular 37–42 °C interval from the nearby alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific experimentally reported optimum temperature range of 37–42 °C.
-
-
-**Reason**
-
-> The matching experimental annotation supports the key, but that measurement is not supplied in the question. Sequence-based general reasoning cannot establish this precise range.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Choice C gives the annotated interval, while broader choice B (31–45 °C) contains that entire interval. If the choices are intended as exact reported ranges, C is the match; if they denote compatible temperature bands, B also encompasses the supported result.
-
-
-### Important caveats
-
-- The evidence identifies a matching sequence and an experimental-evidence-coded UniProt annotation, but does not independently validate the primary study.
-- The exact source snapshot used by the question author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The bacterial sequence and biological context may suggest a mesophilic protein, but do not distinguish this particular 37–42 °C interval from the nearby alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific experimentally reported optimum temperature range of 37–42 °C.",
-    "reason": "The matching experimental annotation supports the key, but that measurement is not supplied in the question. Sequence-based general reasoning cannot establish this precise range."
-  },
-  "case_id": "temperature_0034",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H8"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence whose temperature-dependence annotation reports an optimum of 37–42 °C, matching choice C. The annotation cites experimental evidence, though the primary study was not independently checked here."
-  },
-  "important_caveats": [
-    "The evidence identifies a matching sequence and an experimental-evidence-coded UniProt annotation, but does not independently validate the primary study.",
-    "The exact source snapshot used by the question author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Choice C gives the annotated interval, while broader choice B (31–45 °C) contains that entire interval. If the choices are intended as exact reported ranges, C is the match; if they denote compatible temperature bands, B also encompasses the supported result."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0034",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence whose temperature-dependence annotation reports an optimum of 37–42 °C, matching choice C. The annotation cites experimental evidence, though the primary study was not independently checked here.",
-    "evidence_ids": ["C5", "C6", "H8"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The bacterial sequence and biological context may suggest a mesophilic protein, but do not distinguish this particular 37–42 °C interval from the nearby alternatives.",
-    "missing_item_specific_fact": "The protein-specific experimentally reported optimum temperature range of 37–42 °C.",
-    "reason": "The matching experimental annotation supports the key, but that measurement is not supplied in the question. Sequence-based general reasoning cannot establish this precise range."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Choice C gives the annotated interval, while broader choice B (31–45 °C) contains that entire interval. If the choices are intended as exact reported ranges, C is the match; if they denote compatible temperature bands, B also encompasses the supported result."
-  },
-  "important_caveats": [
-    "The evidence identifies a matching sequence and an experimental-evidence-coded UniProt annotation, but does not independently validate the primary study.",
-    "The exact source snapshot used by the question author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q8KN66 (WbpP, Pseudomonas aeruginosa) explicitly annotates 'Optimum temperature is between 37 and 42 degrees Celsius' with experimental evidence code ECO:0000269 from PubMed:10747995 (Creuzenet et al., J. Biol. Chem. 2000). The sequence SHA256 matches the benchmark input exactly (341 aa). The expected answer C (37-42) directly reproduces this experimentally determined value.
-
-Citations as saved: [C5](#evidence-c5), [H8](#evidence-h8), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General knowledge that P. aeruginosa is a mesophilic organism with optimal growth at ~37°C can eliminate option A (49-61°C, thermophilic) and make D (42-50°C) less likely, since the protein's optimum should be near the organism's growth temperature. However, this reasoning cannot distinguish C (37-42) from B (31-45), as both ranges encompass 37°C and represent plausible mesophilic optima. The precise upper bound of 42°C and the narrow window are experimental measurements that cannot be inferred from amino acid composition, bond potential, or sequence patterns.
-
-
-**Missing item-specific fact**
-
-> The experimentally measured optimum temperature range of 37-42°C for WbpP, determined by enzyme activity assays at varying temperatures (PubMed:10747995). No sequence-based heuristic can produce the specific numerical boundaries 37 and 42.
-
-
-**Reason**
-
-> While knowing the organism is mesophilic narrows the plausible range, the question demands selection among overlapping mesophilic windows (B: 31-45 vs C: 37-42 vs D: 42-50). The precise boundaries are experimental values from a specific biochemical characterization. Sequence features of a UDP-sugar epimerase do not encode a unique thermal optimum to ±5°C resolution. Answering correctly requires either recognizing the protein and recalling its database annotation, or having memorized the experimental result.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Both B (31-45) and C (37-42) are consistent with a mesophilic protein from P. aeruginosa growing at 37°C. Without the specific experimental measurement, a reasoner applying general biological knowledge would find both ranges plausible. The question's framing ('subtle patterns in the amino acid sequence') implies sequence-based prediction is sufficient, but the fine-grained numerical distinction between these ranges is not derivable from sequence.
-
-
-### Important caveats
-
-- The UniProt annotation is backed by experimental evidence (ECO:0000269) from the original 2000 characterization paper, not computational inference.
-- The reviewer-only evidence was absent from the evaluated model's input; the model received only the 341-aa sequence and four temperature-range choices.
-- The accession Q8KN66 was inferred from dataset metadata and was not provided to the model; the model must identify the protein from sequence alone or apply general reasoning.
-- The question's system prompt claims thermal adaptation is 'encoded by subtle patterns in the amino acid sequence,' but the actual answer is a discrete experimental measurement that sequence heuristics cannot resolve to the required precision.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General knowledge that P. aeruginosa is a mesophilic organism with optimal growth at ~37°C can eliminate option A (49-61°C, thermophilic) and make D (42-50°C) less likely, since the protein's optimum should be near the organism's growth temperature. However, this reasoning cannot distinguish C (37-42) from B (31-45), as both ranges encompass 37°C and represent plausible mesophilic optima. The precise upper bound of 42°C and the narrow window are experimental measurements that cannot be inferred from amino acid composition, bond potential, or sequence patterns.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimentally measured optimum temperature range of 37-42°C for WbpP, determined by enzyme activity assays at varying temperatures (PubMed:10747995). No sequence-based heuristic can produce the specific numerical boundaries 37 and 42.",
-    "reason": "While knowing the organism is mesophilic narrows the plausible range, the question demands selection among overlapping mesophilic windows (B: 31-45 vs C: 37-42 vs D: 42-50). The precise boundaries are experimental values from a specific biochemical characterization. Sequence features of a UDP-sugar epimerase do not encode a unique thermal optimum to ±5°C resolution. Answering correctly requires either recognizing the protein and recalling its database annotation, or having memorized the experimental result."
-  },
-  "case_id": "temperature_0034",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H8",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q8KN66 (WbpP, Pseudomonas aeruginosa) explicitly annotates 'Optimum temperature is between 37 and 42 degrees Celsius' with experimental evidence code ECO:0000269 from PubMed:10747995 (Creuzenet et al., J. Biol. Chem. 2000). The sequence SHA256 matches the benchmark input exactly (341 aa). The expected answer C (37-42) directly reproduces this experimentally determined value."
-  },
-  "important_caveats": [
-    "The UniProt annotation is backed by experimental evidence (ECO:0000269) from the original 2000 characterization paper, not computational inference.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model received only the 341-aa sequence and four temperature-range choices.",
-    "The accession Q8KN66 was inferred from dataset metadata and was not provided to the model; the model must identify the protein from sequence alone or apply general reasoning.",
-    "The question's system prompt claims thermal adaptation is 'encoded by subtle patterns in the amino acid sequence,' but the actual answer is a discrete experimental measurement that sequence heuristics cannot resolve to the required precision."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Both B (31-45) and C (37-42) are consistent with a mesophilic protein from P. aeruginosa growing at 37°C. Without the specific experimental measurement, a reasoner applying general biological knowledge would find both ranges plausible. The question's framing ('subtle patterns in the amino acid sequence') implies sequence-based prediction is sufficient, but the fine-grained numerical distinction between these ranges is not derivable from sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0034",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q8KN66 (WbpP, Pseudomonas aeruginosa) explicitly annotates 'Optimum temperature is between 37 and 42 degrees Celsius' with experimental evidence code ECO:0000269 from PubMed:10747995 (Creuzenet et al., J. Biol. Chem. 2000). The sequence SHA256 matches the benchmark input exactly (341 aa). The expected answer C (37-42) directly reproduces this experimentally determined value.",
-    "evidence_ids": ["C5", "H8", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General knowledge that P. aeruginosa is a mesophilic organism with optimal growth at ~37°C can eliminate option A (49-61°C, thermophilic) and make D (42-50°C) less likely, since the protein's optimum should be near the organism's growth temperature. However, this reasoning cannot distinguish C (37-42) from B (31-45), as both ranges encompass 37°C and represent plausible mesophilic optima. The precise upper bound of 42°C and the narrow window are experimental measurements that cannot be inferred from amino acid composition, bond potential, or sequence patterns.",
-    "missing_item_specific_fact": "The experimentally measured optimum temperature range of 37-42°C for WbpP, determined by enzyme activity assays at varying temperatures (PubMed:10747995). No sequence-based heuristic can produce the specific numerical boundaries 37 and 42.",
-    "reason": "While knowing the organism is mesophilic narrows the plausible range, the question demands selection among overlapping mesophilic windows (B: 31-45 vs C: 37-42 vs D: 42-50). The precise boundaries are experimental values from a specific biochemical characterization. Sequence features of a UDP-sugar epimerase do not encode a unique thermal optimum to ±5°C resolution. Answering correctly requires either recognizing the protein and recalling its database annotation, or having memorized the experimental result."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Both B (31-45) and C (37-42) are consistent with a mesophilic protein from P. aeruginosa growing at 37°C. Without the specific experimental measurement, a reasoner applying general biological knowledge would find both ranges plausible. The question's framing ('subtle patterns in the amino acid sequence') implies sequence-based prediction is sufficient, but the fine-grained numerical distinction between these ranges is not derivable from sequence."
-  },
-  "important_caveats": [
-    "The UniProt annotation is backed by experimental evidence (ECO:0000269) from the original 2000 characterization paper, not computational inference.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model received only the 341-aa sequence and four temperature-range choices.",
-    "The accession Q8KN66 was inferred from dataset metadata and was not provided to the model; the model must identify the protein from sequence alone or apply general reasoning.",
-    "The question's system prompt claims thermal adaptation is 'encoded by subtle patterns in the amino acid sequence,' but the actual answer is a discrete experimental measurement that sequence heuristics cannot resolve to the required precision."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +163,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +260,17 @@ Citations as saved: [C5](#evidence-c5), [H8](#evidence-h8).
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8KN66",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "89a20333193e2023e3eb938fc67c5a1fcdbb1a54c07d86617c4a4c0b17109406",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 341,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "89a20333193e2023e3eb938fc67c5a1fcdbb1a54c07d86617c4a4c0b17109406",
   "current_entry_audit": {
     "entryVersion": 89,
     "firstPublicDate": "2025-02-05",
@@ -531,14 +278,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2002-10-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "current_source_sequence_sha256": "89a20333193e2023e3eb938fc67c5a1fcdbb1a54c07d86617c4a4c0b17109406",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 341,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "89a20333193e2023e3eb938fc67c5a1fcdbb1a54c07d86617c4a4c0b17109406",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 87,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8KN66",
   "selected_historical_entry_version": 87,
+  "selected_historical_record_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "selected_historical_source_sequence_length": 341,
+  "selected_historical_source_sequence_sha256": "89a20333193e2023e3eb938fc67c5a1fcdbb1a54c07d86617c4a4c0b17109406",
   "selected_historical_version": {
     "accession": "Q8KN66",
     "database": "Swiss-Prot",
@@ -549,24 +312,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "WBPP_PSEAI",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "selected_historical_source_sequence_sha256": "89a20333193e2023e3eb938fc67c5a1fcdbb1a54c07d86617c4a4c0b17109406",
-  "selected_historical_source_sequence_length": 341,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 87,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +330,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8KN66\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -599,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":89,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2002-10-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -618,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Pseudomonadales\",\"Pseudomonadaceae\",\"Pseudomonas\"],\"scientificName\":\"Pseudomonas aeruginosa\",\"taxonId\":287}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -637,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"15016816\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"15752069\",\"source\":\"PubMed\"}],\"value\":\"5.1.3.7\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"15752069\",\"source\":\"PubMed\"}],\"value\":\"UDP-N-acetylglucosamine C4 epimerase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"value\":\"UDP-GlcNAc C4 epimerase\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18065759\",\"source\":\"PubMed\"}],\"value\":\"5.1.3.45\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"UDP-N-acetyl-alpha-D-glucosaminouronate 4-epimerase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"UDP-GlcNAcA 4-epimerase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -656,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"kineticParameters\":{\"michaelisConstants\":[{\"constant\":197.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"substrate\":\"UDP-N-acetylgalactosamine\",\"unit\":\"uM\"},{\"constant\":224.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"substrate\":\"UDP-N-acetylglucosamine\",\"unit\":\"uM\"},{\"constant\":251.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"substrate\":\"UDP-galactose\",\"unit\":\"uM\"},{\"constant\":237.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"substrate\":\"UDP-glucose\",\"unit\":\"uM\"}],\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"value\":\"kcat is 271 min(-1) with UDP-N-acetylgalactosamine as substrate. kcat is 120 min(-1) with UDP-N-acetylglucosamine as substrate. kcat is 0.188 min(-1) with UDP-galactose as substrate. kcat is 0.124 min(-1) with UDP-glucose as substrate.\"}]}},\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is between 7 and 8.\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10747995\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is between 37 and 42 degrees Celsius.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -675,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Creuzenet C.\",\"Belanger M.\",\"Wakarchuk W.W.\",\"Lam J.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"10747995\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m001171200\"}],\"citationType\":\"journal article\",\"firstPage\":\"19060\",\"id\":\"10747995\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"19067\",\"publicationDate\":\"2000\",\"title\":\"Expression, purification, and biochemical characterization of WbpP, a new UDP-GlcNAc C4 epimerase from Pseudomonas aeruginosa serotype O6.\",\"volume\":\"275\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Serotype O6\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -694,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Demendi M.\",\"Ishiyama N.\",\"Lam J.S.\",\"Berghuis A.M.\",\"Creuzenet C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"15752069\"},{\"database\":\"DOI\",\"id\":\"10.1042/bj20050263\"}],\"citationType\":\"journal article\",\"firstPage\":\"173\",\"id\":\"15752069\",\"journal\":\"Biochem. J.\",\"lastPage\":\"180\",\"publicationDate\":\"2005\",\"title\":\"Towards a better understanding of the substrate specificity of the UDP-N-acetylglucosamine C4 epimerase WbpP.\",\"volume\":\"389\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Serotype O6\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"MUTAGENESIS OF GLY-102; SER-143; SER-144; GLN-201 AND ALA-209\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -713,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Miller W.L.\",\"Matewish M.J.\",\"McNally D.J.\",\"Ishiyama N.\",\"Anderson E.M.\",\"Brewer D.\",\"Brisson J.R.\",\"Berghuis A.M.\",\"Lam J.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18065759\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m708894200\"}],\"citationType\":\"journal article\",\"firstPage\":\"3507\",\"id\":\"18065759\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"3518\",\"publicationDate\":\"2008\",\"title\":\"Flagellin glycosylation in Pseudomonas aeruginosa PAK requires the O-antigen biosynthesis enzyme WbpO.\",\"volume\":\"283\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"PAK / Serotype O6\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -732,15 +482,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json",
-  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
-  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Ishiyama N.\",\"Creuzenet C.\",\"Lam J.S.\",\"Berghuis A.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"15016816\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m401642200\"}],\"citationType\":\"journal article\",\"firstPage\":\"22635\",\"id\":\"15016816\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"22642\",\"publicationDate\":\"2004\",\"title\":\"Crystal structure of WbpP, a genuine UDP-N-acetylglucosamine 4-epimerase from Pseudomonas aeruginosa: substrate specificity in UDP-hexose 4-epimerases.\",\"volume\":\"279\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"1SB8\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"1SB9\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Serotype O6\"}],\"referenceNumber\":6,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.10 ANGSTROMS) IN COMPLEXES WITH NAD(+); UDP-N-ACETYL-ALPHA-D-GALACTOSAMINE AND UDP-GLUCOSE\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBUNIT\",\"MUTAGENESIS OF ALA-209 AND SER-306\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-01T06:25:25.367428+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f67b2500389a81025c9be1998ba5bdf0c0e6d0d7f2971007bc6e11f741355b05",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8KN66.json"
 }
 ```
 
@@ -750,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   WBPP_PSEAI              Reviewed;         341 AA.\nAC   Q8KN66; Q9RHD6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2002, sequence version 1.\nDT   28-JAN-2026, entry version 87.\nDE   RecName: Full=UDP-N-acetyl-alpha-D-glucosaminouronate 4-epimerase {ECO:0000305};\nDE            Short=UDP-GlcNAcA 4-epimerase {ECO:0000305};\nDE            EC=5.1.3.45 {ECO:0000269|PubMed:18065759};\nDE   AltName: Full=UDP-N-acetylglucosamine C4 epimerase {ECO:0000303|PubMed:15752069};\nDE            Short=UDP-GlcNAc C4 epimerase {ECO:0000303|PubMed:10747995};\nDE            EC=5.1.3.7 {ECO:0000269|PubMed:10747995, ECO:0000269|PubMed:15016816, ECO:0000269|PubMed:15752069};\nGN   Name=wbpP {ECO:0000303|PubMed:10627048, ECO:0000303|PubMed:12057956};\nOS   Pseudomonas aeruginosa.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Pseudomonadales; Pseudomonadaceae; Pseudomonas.\nOX   NCBI_TaxID=287;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 
@@ -771,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 17-25",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:AAF23998.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, PATHWAY, AND DISRUPTION\nRP   PHENOTYPE.\nRC   STRAIN=ATCC 33354 / Serotype O6;\nRX   PubMed=10627048; DOI=10.1099/00221287-145-12-3505;\nRA   Belanger M., Burrows L.L., Lam J.S.;\nRT   \"Functional analysis of genes responsible for the synthesis of the B-band O\nRT   antigen of Pseudomonas aeruginosa serotype O6 lipopolysaccharide.\";\nRL   Microbiology 145:3505-3521(1999).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-25",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 
@@ -792,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 26-34",
   "excerpt": "RN   [2] {ECO:0000312|EMBL:AAM27817.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].\nRC   STRAIN=Serotype O6;\nRX   PubMed=12057956; DOI=10.1128/jb.184.13.3614-3622.2002;\nRA   Raymond C.K., Sims E.H., Kas A., Spencer D.H., Kutyavin T.V., Ivey R.G.,\nRA   Zhou Y., Kaul R., Clendenning J.B., Olson M.V.;\nRT   \"Genetic variation at the O-antigen biosynthetic locus in Pseudomonas\nRT   aeruginosa.\";\nRL   J. Bacteriol. 184:3614-3622(2002).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 
@@ -813,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 35-43",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, BIOPHYSICOCHEMICAL PROPERTIES, AND\nRP   SUBUNIT.\nRC   STRAIN=Serotype O6;\nRX   PubMed=10747995; DOI=10.1074/jbc.m001171200;\nRA   Creuzenet C., Belanger M., Wakarchuk W.W., Lam J.S.;\nRT   \"Expression, purification, and biochemical characterization of WbpP, a new\nRT   UDP-GlcNAc C4 epimerase from Pseudomonas aeruginosa serotype O6.\";\nRL   J. Biol. Chem. 275:19060-19067(2000).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 
@@ -834,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 44-52",
   "excerpt": "RN   [4]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND MUTAGENESIS OF GLY-102; SER-143; SER-144;\nRP   GLN-201 AND ALA-209.\nRC   STRAIN=Serotype O6;\nRX   PubMed=15752069; DOI=10.1042/bj20050263;\nRA   Demendi M., Ishiyama N., Lam J.S., Berghuis A.M., Creuzenet C.;\nRT   \"Towards a better understanding of the substrate specificity of the UDP-N-\nRT   acetylglucosamine C4 epimerase WbpP.\";\nRL   Biochem. J. 389:173-180(2005).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 
@@ -855,18 +605,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 53-61",
   "excerpt": "RN   [5]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=PAK / Serotype O6;\nRX   PubMed=18065759; DOI=10.1074/jbc.m708894200;\nRA   Miller W.L., Matewish M.J., McNally D.J., Ishiyama N., Anderson E.M.,\nRA   Brewer D., Brisson J.R., Berghuis A.M., Lam J.S.;\nRT   \"Flagellin glycosylation in Pseudomonas aeruginosa PAK requires the O-\nRT   antigen biosynthesis enzyme WbpO.\";\nRL   J. Biol. Chem. 283:3507-3518(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 
@@ -876,18 +626,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 62-72",
   "excerpt": "RN   [6] {ECO:0007744|PDB:1SB8, ECO:0007744|PDB:1SB9}\nRP   X-RAY CRYSTALLOGRAPHY (2.10 ANGSTROMS) IN COMPLEXES WITH NAD(+);\nRP   UDP-N-ACETYL-ALPHA-D-GALACTOSAMINE AND UDP-GLUCOSE, FUNCTION, CATALYTIC\nRP   ACTIVITY, COFACTOR, SUBUNIT, AND MUTAGENESIS OF ALA-209 AND SER-306.\nRC   STRAIN=Serotype O6;\nRX   PubMed=15016816; DOI=10.1074/jbc.m401642200;\nRA   Ishiyama N., Creuzenet C., Lam J.S., Berghuis A.M.;\nRT   \"Crystal structure of WbpP, a genuine UDP-N-acetylglucosamine 4-epimerase\nRT   from Pseudomonas aeruginosa: substrate specificity in UDP-hexose 4-\nRT   epimerases.\";\nRL   J. Biol. Chem. 279:22635-22642(2004).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 
@@ -897,18 +647,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87",
-  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
-  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
-  "source_locator": "lines 100-115",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Kinetic parameters:\nCC         KM=197 uM for UDP-N-acetylgalactosamine\nCC         {ECO:0000269|PubMed:10747995};\nCC         KM=224 uM for UDP-N-acetylglucosamine {ECO:0000269|PubMed:10747995};\nCC         KM=251 uM for UDP-galactose {ECO:0000269|PubMed:10747995};\nCC         KM=237 uM for UDP-glucose {ECO:0000269|PubMed:10747995};\nCC         Note=kcat is 271 min(-1) with UDP-N-acetylgalactosamine as substrate.\nCC         kcat is 120 min(-1) with UDP-N-acetylglucosamine as substrate. kcat\nCC         is 0.188 min(-1) with UDP-galactose as substrate. kcat is 0.124 min(-\nCC         1) with UDP-glucose as substrate. {ECO:0000269|PubMed:10747995};\nCC       pH dependence:\nCC         Optimum pH is between 7 and 8. {ECO:0000269|PubMed:10747995};\nCC       Temperature dependence:\nCC         Optimum temperature is between 37 and 42 degrees Celsius.\nCC         {ECO:0000269|PubMed:10747995};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:28:41.451179+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 100-115",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d549ed0cf621d2667a5b18f1c61cab90f3244af9d4301b29345d83da21267e72",
+  "url": "https://rest.uniprot.org/unisave/Q8KN66?format=txt&versions=87"
 }
 ```
 

@@ -1,18 +1,16 @@
-# catalytic_activity_0111: before and after transfer clarification
+# catalytic_activity_0111
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0111.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0111.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **C** — adenosine(in) = adenosine(out)
+**Expected answer:** **C** — adenosine(in) = adenosine(out)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry annotated as adenosine transporter 1, whose catalytic activity is listed as adenosine(in) = adenosine(out). That annotation cites experimental evidence from the publication on CfAT1; it supports the keyed transport reaction, though the primary paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence's many hydrophobic transmembrane regions support a membrane transporter rather than the soluble or non-transporter enzymes suggested by A, B, and D. This is useful broad discrimination but does not establish adenosine as the transported substrate.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity and substrate specificity of this transporter—adenosine transport—are not stated in the input and are needed to distinguish C at the reaction level.
-
-
-**Reason**
-
-> Sequence topology can suggest transport, but it cannot by itself resolve the particular transported molecule. Selecting the exact reaction therefore depends on protein-specific annotation or prior knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices contrast transport with unrelated chemical transformations, and the matched protein annotation supports C. No other listed choice is comparably defensible.
-
-
-### Important caveats
-
-- The supporting database record is reviewer-only and was not supplied to the evaluated model.
-- The annotation cites experimental evidence, but the primary study was not independently assessed.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence's many hydrophobic transmembrane regions support a membrane transporter rather than the soluble or non-transporter enzymes suggested by A, B, and D. This is useful broad discrimination but does not establish adenosine as the transported substrate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity and substrate specificity of this transporter—adenosine transport—are not stated in the input and are needed to distinguish C at the reaction level.",
-    "reason": "Sequence topology can suggest transport, but it cannot by itself resolve the particular transported molecule. Selecting the exact reaction therefore depends on protein-specific annotation or prior knowledge."
-  },
-  "case_id": "catalytic_activity_0111",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated as adenosine transporter 1, whose catalytic activity is listed as adenosine(in) = adenosine(out). That annotation cites experimental evidence from the publication on CfAT1; it supports the keyed transport reaction, though the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The supporting database record is reviewer-only and was not supplied to the evaluated model.",
-    "The annotation cites experimental evidence, but the primary study was not independently assessed."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices contrast transport with unrelated chemical transformations, and the matched protein annotation supports C. No other listed choice is comparably defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0111",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated as adenosine transporter 1, whose catalytic activity is listed as adenosine(in) = adenosine(out). That annotation cites experimental evidence from the publication on CfAT1; it supports the keyed transport reaction, though the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence's many hydrophobic transmembrane regions support a membrane transporter rather than the soluble or non-transporter enzymes suggested by A, B, and D. This is useful broad discrimination but does not establish adenosine as the transported substrate.",
-    "missing_item_specific_fact": "The protein-specific identity and substrate specificity of this transporter—adenosine transport—are not stated in the input and are needed to distinguish C at the reaction level.",
-    "reason": "Sequence topology can suggest transport, but it cannot by itself resolve the particular transported molecule. Selecting the exact reaction therefore depends on protein-specific annotation or prior knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices contrast transport with unrelated chemical transformations, and the matched protein annotation supports C. No other listed choice is comparably defensible."
-  },
-  "important_caveats": [
-    "The supporting database record is reviewer-only and was not supplied to the evaluated model.",
-    "The annotation cites experimental evidence, but the primary study was not independently assessed."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt J9UD11 (AT1_CRIFA), annotated as 'Adenosine transporter 1' (CfAT1) from Crithidia fasciculata. The catalytic activity 'adenosine(in) = adenosine(out)' is annotated with evidence code ECO:0000269 (direct experimental assay) from PubMed:24120444 (Arendt 2013). The sequence SHA256 matches exactly in both current and historical (v26) records.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 496-aa sequence contains numerous long hydrophobic stretches consistent with a multi-pass transmembrane transporter topology. Among the four choices, only C (adenosine(in) = adenosine(out)) represents a transmembrane transport process; A (NADP-dependent dehydrogenase), B (phosphatase), and D (carotenoid dehydration) are all soluble or single-pass enzymatic catalytic reactions. The multi-TM architecture is incompatible with a Rossmann-fold dehydrogenase (A), a soluble phosphatase (B), or a single/few-pass carotenoid oxidase (D), making the transport answer the only topologically consistent choice.
-
-
-**Missing item-specific fact**
-
-> The specific substrate selectivity for adenosine (vs. other nucleosides) cannot be determined from sequence alone; however, since C is the only transport option, the substrate identity is not the discriminating factor among the given choices.
-
-
-**Reason**
-
-> The multi-pass transmembrane topology visible in the sequence provides a concrete, general biological argument (transporters have many TM helices; soluble enzymes do not) that eliminates A, B, and D. The final step of identifying 'adenosine' specifically is lookup-dependent, but it is not needed to distinguish among the four provided options since only C describes a transport event.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices span fundamentally different protein classes (dehydrogenase, phosphatase, transporter, carotenoid enzyme), and the multi-TM topology uniquely selects the transporter option. No other choice is topologically compatible.
-
-
-### Important caveats
-
-- The specific adenosine selectivity (vs. general nucleoside transport) is an experimental finding (ECO:0000269) not derivable from sequence alone, but this does not affect the answer given the choice set.
-- The annotation was integrated into Swiss-Prot on 2025-02-05; if the benchmark was constructed before that date, the protein would have been TrEMBL-only with no curated catalytic activity annotation.
-- The reviewer-only evidence confirms the key but was not available to the evaluated model; the reasoning argument from topology is independent of this annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 496-aa sequence contains numerous long hydrophobic stretches consistent with a multi-pass transmembrane transporter topology. Among the four choices, only C (adenosine(in) = adenosine(out)) represents a transmembrane transport process; A (NADP-dependent dehydrogenase), B (phosphatase), and D (carotenoid dehydration) are all soluble or single-pass enzymatic catalytic reactions. The multi-TM architecture is incompatible with a Rossmann-fold dehydrogenase (A), a soluble phosphatase (B), or a single/few-pass carotenoid oxidase (D), making the transport answer the only topologically consistent choice.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific substrate selectivity for adenosine (vs. other nucleosides) cannot be determined from sequence alone; however, since C is the only transport option, the substrate identity is not the discriminating factor among the given choices.",
-    "reason": "The multi-pass transmembrane topology visible in the sequence provides a concrete, general biological argument (transporters have many TM helices; soluble enzymes do not) that eliminates A, B, and D. The final step of identifying 'adenosine' specifically is lookup-dependent, but it is not needed to distinguish among the four provided options since only C describes a transport event."
-  },
-  "case_id": "catalytic_activity_0111",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt J9UD11 (AT1_CRIFA), annotated as 'Adenosine transporter 1' (CfAT1) from Crithidia fasciculata. The catalytic activity 'adenosine(in) = adenosine(out)' is annotated with evidence code ECO:0000269 (direct experimental assay) from PubMed:24120444 (Arendt 2013). The sequence SHA256 matches exactly in both current and historical (v26) records."
-  },
-  "important_caveats": [
-    "The specific adenosine selectivity (vs. general nucleoside transport) is an experimental finding (ECO:0000269) not derivable from sequence alone, but this does not affect the answer given the choice set.",
-    "The annotation was integrated into Swiss-Prot on 2025-02-05; if the benchmark was constructed before that date, the protein would have been TrEMBL-only with no curated catalytic activity annotation.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the reasoning argument from topology is independent of this annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span fundamentally different protein classes (dehydrogenase, phosphatase, transporter, carotenoid enzyme), and the multi-TM topology uniquely selects the transporter option. No other choice is topologically compatible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0111",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt J9UD11 (AT1_CRIFA), annotated as 'Adenosine transporter 1' (CfAT1) from Crithidia fasciculata. The catalytic activity 'adenosine(in) = adenosine(out)' is annotated with evidence code ECO:0000269 (direct experimental assay) from PubMed:24120444 (Arendt 2013). The sequence SHA256 matches exactly in both current and historical (v26) records.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 496-aa sequence contains numerous long hydrophobic stretches consistent with a multi-pass transmembrane transporter topology. Among the four choices, only C (adenosine(in) = adenosine(out)) represents a transmembrane transport process; A (NADP-dependent dehydrogenase), B (phosphatase), and D (carotenoid dehydration) are all soluble or single-pass enzymatic catalytic reactions. The multi-TM architecture is incompatible with a Rossmann-fold dehydrogenase (A), a soluble phosphatase (B), or a single/few-pass carotenoid oxidase (D), making the transport answer the only topologically consistent choice.",
-    "missing_item_specific_fact": "The specific substrate selectivity for adenosine (vs. other nucleosides) cannot be determined from sequence alone; however, since C is the only transport option, the substrate identity is not the discriminating factor among the given choices.",
-    "reason": "The multi-pass transmembrane topology visible in the sequence provides a concrete, general biological argument (transporters have many TM helices; soluble enzymes do not) that eliminates A, B, and D. The final step of identifying 'adenosine' specifically is lookup-dependent, but it is not needed to distinguish among the four provided options since only C describes a transport event."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span fundamentally different protein classes (dehydrogenase, phosphatase, transporter, carotenoid enzyme), and the multi-TM topology uniquely selects the transporter option. No other choice is topologically compatible."
-  },
-  "important_caveats": [
-    "The specific adenosine selectivity (vs. general nucleoside transport) is an experimental finding (ECO:0000269) not derivable from sequence alone, but this does not affect the answer given the choice set.",
-    "The annotation was integrated into Swiss-Prot on 2025-02-05; if the benchmark was constructed before that date, the protein would have been TrEMBL-only with no curated catalytic activity annotation.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the reasoning argument from topology is independent of this annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -498,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "J9UD11",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "7c36d5c7fae62fcbb8bf70a0ab3d89954fbfbbc6fd19a54c7c3dda630ce5c242",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 496,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "7c36d5c7fae62fcbb8bf70a0ab3d89954fbfbbc6fd19a54c7c3dda630ce5c242",
   "current_entry_audit": {
     "entryVersion": 26,
     "firstPublicDate": "2025-02-05",
@@ -529,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-11-28",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
-  "current_source_sequence_sha256": "7c36d5c7fae62fcbb8bf70a0ab3d89954fbfbbc6fd19a54c7c3dda630ce5c242",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 496,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "7c36d5c7fae62fcbb8bf70a0ab3d89954fbfbbc6fd19a54c7c3dda630ce5c242",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 26,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "J9UD11",
   "selected_historical_entry_version": 26,
+  "selected_historical_record_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
+  "selected_historical_source_sequence_length": 496,
+  "selected_historical_source_sequence_sha256": "7c36d5c7fae62fcbb8bf70a0ab3d89954fbfbbc6fd19a54c7c3dda630ce5c242",
   "selected_historical_version": {
     "accession": "J9UD11",
     "database": "Swiss-Prot",
@@ -547,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AT1_CRIFA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
-  "selected_historical_source_sequence_sha256": "7c36d5c7fae62fcbb8bf70a0ab3d89954fbfbbc6fd19a54c7c3dda630ce5c242",
-  "selected_historical_source_sequence_length": 496,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 26,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -578,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json",
-  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
-  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"J9UD11\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
+  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json"
 }
 ```
 
@@ -597,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json",
-  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
-  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":26,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-01-28\",\"lastSequenceUpdateDate\":\"2012-11-28\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
+  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json"
 }
 ```
 
@@ -616,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json",
-  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
-  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AFR68832.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Discoba\",\"Euglenozoa\",\"Kinetoplastea\",\"Metakinetoplastina\",\"Trypanosomatida\",\"Trypanosomatidae\",\"Leishmaniinae\",\"Crithidia\"],\"scientificName\":\"Crithidia fasciculata\",\"taxonId\":5656}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
+  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json"
 }
 ```
 
@@ -635,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json",
-  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
-  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24120444\",\"source\":\"PubMed\"}],\"value\":\"Adenosine transporter 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24120444\",\"source\":\"PubMed\"}],\"value\":\"CfAT1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
+  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json"
 }
 ```
 
@@ -654,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json",
-  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
-  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24120444\",\"source\":\"PubMed\"}],\"name\":\"adenosine(in) = adenosine(out)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75343\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16335\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
+  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json"
 }
 ```
 
@@ -673,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json",
-  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
-  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Arendt C.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24120444\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.molbiopara.2013.09.007\"}],\"citationType\":\"journal article\",\"firstPage\":\"75\",\"id\":\"24120444\",\"journal\":\"Mol. Biochem. Parasitol.\",\"lastPage\":\"79\",\"publicationDate\":\"2013\",\"title\":\"Crithidia fasciculata adenosine transporter 1 (CfAT1), a novel high-affinity equilibrative nucleoside transporter specific for adenosine.\",\"volume\":\"191\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AFR68832.1\",\"source\":\"EMBL\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AFR68833.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"TRANSPORTER ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"MUTAGENESIS OF LYS-153\",\"VARIANTS MET-433 AND VAL-481\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:28:53.178363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8a834408fc72a31b2ce6a3190a6f2a1e7030d828c3ec7442331408414d4777c",
+  "url": "https://rest.uniprot.org/uniprotkb/J9UD11.json"
 }
 ```
 
@@ -691,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26",
-  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
-  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   AT1_CRIFA               Reviewed;         496 AA.\nAC   J9UD11; J9U6P1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   28-NOV-2012, sequence version 1.\nDT   28-JAN-2026, entry version 26.\nDE   RecName: Full=Adenosine transporter 1 {ECO:0000303|PubMed:24120444};\nDE            Short=CfAT1 {ECO:0000303|PubMed:24120444};\nGN   Name=AT1 {ECO:0000312|EMBL:AFR68832.1};\nGN   Synonyms=AT1.2 {ECO:0000312|EMBL:AFR68833.1};\nOS   Crithidia fasciculata.\nOC   Eukaryota; Discoba; Euglenozoa; Kinetoplastea; Metakinetoplastina;\nOC   Trypanosomatida; Trypanosomatidae; Leishmaniinae; Crithidia.\nOX   NCBI_TaxID=5656 {ECO:0000312|EMBL:AFR68832.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
+  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26"
 }
 ```
 
@@ -712,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26",
-  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
-  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Adenosine transporter 1 {ECO:0000303|PubMed:24120444};\nDE            Short=CfAT1 {ECO:0000303|PubMed:24120444};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
+  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26"
 }
 ```
 
@@ -733,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26",
-  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
-  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
-  "source_locator": "lines 14-22",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:AFR68832.1, ECO:0000312|EMBL:AFR68833.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, TRANSPORTER ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, MUTAGENESIS OF LYS-153, AND VARIANTS MET-433\nRP   AND VAL-481.\nRX   PubMed=24120444; DOI=10.1016/j.molbiopara.2013.09.007;\nRA   Arendt C.S.;\nRT   \"Crithidia fasciculata adenosine transporter 1 (CfAT1), a novel high-\nRT   affinity equilibrative nucleoside transporter specific for adenosine.\";\nRL   Mol. Biochem. Parasitol. 191:75-79(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
+  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26"
 }
 ```
 
@@ -754,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26",
-  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
-  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
-  "source_locator": "lines 24-26",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=adenosine(in) = adenosine(out); Xref=Rhea:RHEA:75343,\nCC         ChEBI:CHEBI:16335; Evidence={ECO:0000269|PubMed:24120444};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:28:56.181587+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "52f5c9978ed3814d8396e7feee320cd18c812e512a57459050eeb591ed24b7a6",
+  "url": "https://rest.uniprot.org/unisave/J9UD11?format=txt&versions=26"
 }
 ```
 

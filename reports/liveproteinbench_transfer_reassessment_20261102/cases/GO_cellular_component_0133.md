@@ -1,18 +1,16 @@
-# GO_cellular_component_0133: before and after transfer clarification
+# GO_cellular_component_0133
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0133.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0133.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — nucleoplasm
+**Expected answer:** **A** — nucleoplasm
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,255 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the chicken FANCI sequence, which has a UniProt GO annotation for nucleoplasm (TAS:Reactome). This supports A, though the annotation is not direct experimental evidence.
-
-Citations as saved: [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support a broad inference of a nuclear DNA-repair protein, but it does not meaningfully distinguish nucleoplasm from association with a protein-containing complex.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization or GO annotation is needed to distinguish the listed choices; no such annotation or experimental localization evidence is included in the question.
-
-
-**Reason**
-
-> The supplied sequence alone does not establish which of these overlapping GO cellular-component descriptions should be selected as the primary one.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> The matched protein is annotated both to nucleoplasm and, with IDA evidence, to the Fanconi anaemia nuclear complex, a specific nuclear protein-containing complex. Thus A and the broader B can both describe this protein; the question does not define how to choose a single primary term.
-
-
-### Important caveats
-
-- The nucleoplasm annotation is TAS:Reactome, whereas the Fanconi anaemia nuclear complex annotation is IDA:MGI.
-- Reviewer-only accession and database evidence were not present in the evaluated input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support a broad inference of a nuclear DNA-repair protein, but it does not meaningfully distinguish nucleoplasm from association with a protein-containing complex.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization or GO annotation is needed to distinguish the listed choices; no such annotation or experimental localization evidence is included in the question.",
-    "reason": "The supplied sequence alone does not establish which of these overlapping GO cellular-component descriptions should be selected as the primary one."
-  },
-  "case_id": "GO_cellular_component_0133",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the chicken FANCI sequence, which has a UniProt GO annotation for nucleoplasm (TAS:Reactome). This supports A, though the annotation is not direct experimental evidence."
-  },
-  "important_caveats": [
-    "The nucleoplasm annotation is TAS:Reactome, whereas the Fanconi anaemia nuclear complex annotation is IDA:MGI.",
-    "Reviewer-only accession and database evidence were not present in the evaluated input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "The matched protein is annotated both to nucleoplasm and, with IDA evidence, to the Fanconi anaemia nuclear complex, a specific nuclear protein-containing complex. Thus A and the broader B can both describe this protein; the question does not define how to choose a single primary term."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0133",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the chicken FANCI sequence, which has a UniProt GO annotation for nucleoplasm (TAS:Reactome). This supports A, though the annotation is not direct experimental evidence.",
-    "evidence_ids": ["C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support a broad inference of a nuclear DNA-repair protein, but it does not meaningfully distinguish nucleoplasm from association with a protein-containing complex.",
-    "missing_item_specific_fact": "The protein-specific localization or GO annotation is needed to distinguish the listed choices; no such annotation or experimental localization evidence is included in the question.",
-    "reason": "The supplied sequence alone does not establish which of these overlapping GO cellular-component descriptions should be selected as the primary one."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "The matched protein is annotated both to nucleoplasm and, with IDA evidence, to the Fanconi anaemia nuclear complex, a specific nuclear protein-containing complex. Thus A and the broader B can both describe this protein; the question does not define how to choose a single primary term."
-  },
-  "important_caveats": [
-    "The nucleoplasm annotation is TAS:Reactome, whereas the Fanconi anaemia nuclear complex annotation is IDA:MGI.",
-    "Reviewer-only accession and database evidence were not present in the evaluated input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry B0I564 (FANCI_CHICK) carries a direct GO CC annotation of GO:0005654 (nucleoplasm) with evidence code TAS:Reactome (evidence C6/H3). The protein is also annotated with GO:0043240 (Fanconi anaemia nuclear complex, IDA:MGI, evidence C5/H2), which is_a nuclear protein-containing complex, which is_a protein-containing complex (option B). Thus nucleoplasm is explicitly annotated for this protein, supporting the expected answer, though option B is also ontology-supported.
-
-Citations as saved: [C6](#evidence-c6), [H3](#evidence-h3), [C5](#evidence-c5), [H2](#evidence-h2), [GO2](#evidence-go2), [GO4](#evidence-go4), [GO6](#evidence-go6), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence lacks mitochondrial/ER targeting signals and is large (~1338 AA), consistent with a nuclear protein. However, among the four nuclear options (nucleoplasm, protein-containing complex, euchromatin, nuclear pore nuclear basket), the sequence provides no clear distinguishing features. Coiled-coil-like regions hint at complex formation (favoring B), while the absence of nucleolar or nuclear-pore targeting motifs weakly disfavors D. Distinguishing nucleoplasm (A) from protein-containing complex (B) requires knowing this is FANCI and its specific GO annotation, not general sequence reasoning.
-
-
-**Missing item-specific fact**
-
-> The identity of the protein as FANCI (Fanconi anemia group I protein) and its specific UniProt/GO annotation assigning 'nucleoplasm' as a primary CC term (TAS:Reactome) rather than or in addition to 'protein-containing complex.' Without this item-specific annotation, the sequence alone cannot resolve A vs. B.
-
-
-**Reason**
-
-> All four options are nuclear/local nuclear terms. The sequence does not contain features (e.g., nucleolar localization signals, nuclear pore transmembrane domains, histone-like motifs) that would let general biological reasoning distinguish nucleoplasm from protein-containing complex for this particular protein. Selection of A over B depends on the specific database annotation for FANCI.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> FANCI is annotated with both GO:0005654 (nucleoplasm, TAS:Reactome) and GO:0043240 (Fanconi anaemia nuclear complex, IDA:MGI). The latter is_a nuclear protein-containing complex is_a protein-containing complex (option B). The word 'primary' in the prompt does not clearly resolve whether the compartment (nucleoplasm) or the complex membership (protein-containing complex) is the 'primary' annotation. Both A and B are defensible from the annotation record.
-
-
-### Important caveats
-
-- The nucleoplasm annotation (TAS:Reactome) is a traceable author statement, a lower evidence level than the IDA:MGI evidence for the FA nuclear complex annotation.
-- The protein-containing complex annotation (option B) is supported via ontology hierarchy (Fanconi anaemia nuclear complex → nuclear protein-containing complex → protein-containing complex) rather than a direct annotation of GO:0032991.
-- Sequence identity was confirmed (SHA-256 match) between the benchmark input and UniProt B0I564.
-- The GO ontology version used by the benchmark authors is unknown; the reviewer consulted the current 2026 ontology.
-- The identity origin (UniProt accession inferred from dataset metadata) was absent from the evaluated model's input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks mitochondrial/ER targeting signals and is large (~1338 AA), consistent with a nuclear protein. However, among the four nuclear options (nucleoplasm, protein-containing complex, euchromatin, nuclear pore nuclear basket), the sequence provides no clear distinguishing features. Coiled-coil-like regions hint at complex formation (favoring B), while the absence of nucleolar or nuclear-pore targeting motifs weakly disfavors D. Distinguishing nucleoplasm (A) from protein-containing complex (B) requires knowing this is FANCI and its specific GO annotation, not general sequence reasoning.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of the protein as FANCI (Fanconi anemia group I protein) and its specific UniProt/GO annotation assigning 'nucleoplasm' as a primary CC term (TAS:Reactome) rather than or in addition to 'protein-containing complex.' Without this item-specific annotation, the sequence alone cannot resolve A vs. B.",
-    "reason": "All four options are nuclear/local nuclear terms. The sequence does not contain features (e.g., nucleolar localization signals, nuclear pore transmembrane domains, histone-like motifs) that would let general biological reasoning distinguish nucleoplasm from protein-containing complex for this particular protein. Selection of A over B depends on the specific database annotation for FANCI."
-  },
-  "case_id": "GO_cellular_component_0133",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H3",
-      "C5",
-      "H2",
-      "GO2",
-      "GO4",
-      "GO6",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry B0I564 (FANCI_CHICK) carries a direct GO CC annotation of GO:0005654 (nucleoplasm) with evidence code TAS:Reactome (evidence C6/H3). The protein is also annotated with GO:0043240 (Fanconi anaemia nuclear complex, IDA:MGI, evidence C5/H2), which is_a nuclear protein-containing complex, which is_a protein-containing complex (option B). Thus nucleoplasm is explicitly annotated for this protein, supporting the expected answer, though option B is also ontology-supported."
-  },
-  "important_caveats": [
-    "The nucleoplasm annotation (TAS:Reactome) is a traceable author statement, a lower evidence level than the IDA:MGI evidence for the FA nuclear complex annotation.",
-    "The protein-containing complex annotation (option B) is supported via ontology hierarchy (Fanconi anaemia nuclear complex → nuclear protein-containing complex → protein-containing complex) rather than a direct annotation of GO:0032991.",
-    "Sequence identity was confirmed (SHA-256 match) between the benchmark input and UniProt B0I564.",
-    "The GO ontology version used by the benchmark authors is unknown; the reviewer consulted the current 2026 ontology.",
-    "The identity origin (UniProt accession inferred from dataset metadata) was absent from the evaluated model's input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "FANCI is annotated with both GO:0005654 (nucleoplasm, TAS:Reactome) and GO:0043240 (Fanconi anaemia nuclear complex, IDA:MGI). The latter is_a nuclear protein-containing complex is_a protein-containing complex (option B). The word 'primary' in the prompt does not clearly resolve whether the compartment (nucleoplasm) or the complex membership (protein-containing complex) is the 'primary' annotation. Both A and B are defensible from the annotation record."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0133",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry B0I564 (FANCI_CHICK) carries a direct GO CC annotation of GO:0005654 (nucleoplasm) with evidence code TAS:Reactome (evidence C6/H3). The protein is also annotated with GO:0043240 (Fanconi anaemia nuclear complex, IDA:MGI, evidence C5/H2), which is_a nuclear protein-containing complex, which is_a protein-containing complex (option B). Thus nucleoplasm is explicitly annotated for this protein, supporting the expected answer, though option B is also ontology-supported.",
-    "evidence_ids": ["C6", "H3", "C5", "H2", "GO2", "GO4", "GO6", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence lacks mitochondrial/ER targeting signals and is large (~1338 AA), consistent with a nuclear protein. However, among the four nuclear options (nucleoplasm, protein-containing complex, euchromatin, nuclear pore nuclear basket), the sequence provides no clear distinguishing features. Coiled-coil-like regions hint at complex formation (favoring B), while the absence of nucleolar or nuclear-pore targeting motifs weakly disfavors D. Distinguishing nucleoplasm (A) from protein-containing complex (B) requires knowing this is FANCI and its specific GO annotation, not general sequence reasoning.",
-    "missing_item_specific_fact": "The identity of the protein as FANCI (Fanconi anemia group I protein) and its specific UniProt/GO annotation assigning 'nucleoplasm' as a primary CC term (TAS:Reactome) rather than or in addition to 'protein-containing complex.' Without this item-specific annotation, the sequence alone cannot resolve A vs. B.",
-    "reason": "All four options are nuclear/local nuclear terms. The sequence does not contain features (e.g., nucleolar localization signals, nuclear pore transmembrane domains, histone-like motifs) that would let general biological reasoning distinguish nucleoplasm from protein-containing complex for this particular protein. Selection of A over B depends on the specific database annotation for FANCI."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "FANCI is annotated with both GO:0005654 (nucleoplasm, TAS:Reactome) and GO:0043240 (Fanconi anaemia nuclear complex, IDA:MGI). The latter is_a nuclear protein-containing complex is_a protein-containing complex (option B). The word 'primary' in the prompt does not clearly resolve whether the compartment (nucleoplasm) or the complex membership (protein-containing complex) is the 'primary' annotation. Both A and B are defensible from the annotation record."
-  },
-  "important_caveats": [
-    "The nucleoplasm annotation (TAS:Reactome) is a traceable author statement, a lower evidence level than the IDA:MGI evidence for the FA nuclear complex annotation.",
-    "The protein-containing complex annotation (option B) is supported via ontology hierarchy (Fanconi anaemia nuclear complex → nuclear protein-containing complex → protein-containing complex) rather than a direct annotation of GO:0032991.",
-    "Sequence identity was confirmed (SHA-256 match) between the benchmark input and UniProt B0I564.",
-    "The GO ontology version used by the benchmark authors is unknown; the reviewer consulted the current 2026 ontology.",
-    "The identity origin (UniProt accession inferred from dataset metadata) was absent from the evaluated model's input."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -411,10 +165,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -534,30 +287,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B0I564",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8c41e69c8c7b8936c938f58008042f511ba6287e458cd50a9a79332bcf805cdf",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1338,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8c41e69c8c7b8936c938f58008042f511ba6287e458cd50a9a79332bcf805cdf",
   "current_entry_audit": {
     "entryVersion": 73,
     "firstPublicDate": "2025-06-18",
@@ -565,14 +305,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2008-03-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
-  "current_source_sequence_sha256": "8c41e69c8c7b8936c938f58008042f511ba6287e458cd50a9a79332bcf805cdf",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1338,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8c41e69c8c7b8936c938f58008042f511ba6287e458cd50a9a79332bcf805cdf",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 72,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B0I564",
   "selected_historical_entry_version": 72,
+  "selected_historical_record_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
+  "selected_historical_source_sequence_length": 1338,
+  "selected_historical_source_sequence_sha256": "8c41e69c8c7b8936c938f58008042f511ba6287e458cd50a9a79332bcf805cdf",
   "selected_historical_version": {
     "accession": "B0I564",
     "database": "Swiss-Prot",
@@ -583,24 +339,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FANCI_CHICK",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
-  "selected_historical_source_sequence_sha256": "8c41e69c8c7b8936c938f58008042f511ba6287e458cd50a9a79332bcf805cdf",
-  "selected_historical_source_sequence_length": 1338,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 72,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -618,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json",
-  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
-  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B0I564\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
+  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json"
 }
 ```
 
@@ -637,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json",
-  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
-  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":73,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2008-03-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
+  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json"
 }
 ```
 
@@ -656,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json",
-  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
-  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Chicken\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Archelosauria\",\"Archosauria\",\"Dinosauria\",\"Saurischia\",\"Theropoda\",\"Coelurosauria\",\"Aves\",\"Neognathae\",\"Galloanserae\",\"Galliformes\",\"Phasianidae\",\"Phasianinae\",\"Gallus\"],\"scientificName\":\"Gallus gallus\",\"taxonId\":9031}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
+  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json"
 }
 ```
 
@@ -675,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json",
-  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
-  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9NVI1\",\"source\":\"UniProtKB\"}],\"value\":\"Fanconi anemia group I protein\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
+  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json"
 }
 ```
 
@@ -694,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json",
-  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
-  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/30",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"18931676\",\"source\":\"PubMed\"}],\"id\":\"GO:0043240\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:Fanconi anaemia nuclear complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:MGI\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/30",
+  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
+  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json"
 }
 ```
 
@@ -713,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json",
-  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
-  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/31",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005654\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleoplasm\"},{\"key\":\"GoEvidenceType\",\"value\":\"TAS:Reactome\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/31",
+  "retrieved_utc": "2026-11-02T04:27:13.236985+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "930b8c9dc8b101a42561b9ac061f1b2e0e96406be484cad8495768d62800c72f",
+  "url": "https://rest.uniprot.org/uniprotkb/B0I564.json"
 }
 ```
 
@@ -731,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 72,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B0I564?format=txt&versions=72",
-  "source_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
-  "retrieved_utc": "2026-11-02T04:27:15.248105+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   FANCI_CHICK             Reviewed;        1338 AA.\nAC   B0I564;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-MAR-2008, sequence version 1.\nDT   28-JAN-2026, entry version 72.\nDE   RecName: Full=Fanconi anemia group I protein {ECO:0000250|UniProtKB:Q9NVI1};\nGN   Name=FANCI {ECO:0000250|UniProtKB:Q9NVI1};\nOS   Gallus gallus (Chicken).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;\nOC   Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;\nOC   Coelurosauria; Aves; Neognathae; Galloanserae; Galliformes; Phasianidae;\nOC   Phasianinae; Gallus.\nOX   NCBI_TaxID=9031;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 72,
+  "retrieved_utc": "2026-11-02T04:27:15.248105+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
+  "url": "https://rest.uniprot.org/unisave/B0I564?format=txt&versions=72"
 }
 ```
 
@@ -752,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 72,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B0I564?format=txt&versions=72",
-  "source_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
-  "retrieved_utc": "2026-11-02T04:27:15.248105+00:00",
-  "source_locator": "lines 117-117",
   "excerpt": "DR   GO; GO:0043240; C:Fanconi anaemia nuclear complex; IDA:MGI.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 72,
+  "retrieved_utc": "2026-11-02T04:27:15.248105+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 117-117",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
+  "url": "https://rest.uniprot.org/unisave/B0I564?format=txt&versions=72"
 }
 ```
 
@@ -773,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 72,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B0I564?format=txt&versions=72",
-  "source_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
-  "retrieved_utc": "2026-11-02T04:27:15.248105+00:00",
-  "source_locator": "lines 118-118",
   "excerpt": "DR   GO; GO:0005654; C:nucleoplasm; TAS:Reactome.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 72,
+  "retrieved_utc": "2026-11-02T04:27:15.248105+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 118-118",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fdcce5f2431525c3d58eddd2017ac848c6453be87c533c91e1499a652021475c",
+  "url": "https://rest.uniprot.org/unisave/B0I564?format=txt&versions=72"
 }
 ```
 
@@ -795,15 +538,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 5934-5946",
   "excerpt": "[Term]\nid: GO:0000791\nname: euchromatin\nnamespace: cellular_component\nalt_id: GO:0005719\nalt_id: GO:0035327\ndef: \"A dispersed and relatively uncompacted form of chromatin that is in a transcription-competent conformation.\" [PMID:32017156]\nsynonym: \"nuclear euchromatin\" RELATED []\nsynonym: \"transcriptionally active chromatin\" EXACT []\nxref: NIF_Subcellular:sao445485807\nxref: Wikipedia:Euchromatin\nis_a: GO:0000785 ! chromatin\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000791",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 5934-5946",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000791"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -814,15 +557,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58222-58234",
   "excerpt": "[Term]\nid: GO:0005654\nname: nucleoplasm\nnamespace: cellular_component\ndef: \"That part of the nuclear content other than the chromosomes or the nucleolus.\" [GOC:ma, ISBN:0124325653]\nsubset: goslim_chembl\nsubset: goslim_generic\nsubset: goslim_plant\nxref: NIF_Subcellular:sao661522542\nxref: Wikipedia:Nucleoplasm\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0031981 ! nuclear lumen\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005654",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58222-58234",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005654"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -833,15 +576,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 192667-192686",
   "excerpt": "[Term]\nid: GO:0032991\nname: protein-containing complex\nnamespace: cellular_component\nalt_id: GO:0043234\ndef: \"A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.\" [GOC:dos, GOC:mah]\ncomment: A protein complex in this context is meant as a stable set of interacting proteins which can be co-purified by an acceptable method, and where the complex has been shown to exist as an isolated, functional unit in vivo. Acceptable experimental methods include stringent protein purification followed by detection of protein interaction. The following methods should be considered non-acceptable: simple immunoprecipitation, pull-down experiments from cell extracts without further purification, colocalization and 2-hybrid screening. Interactions that should not be captured as protein complexes include: 1) enzyme/substrate, receptor/ligand or any similar transient interactions, unless these are a critical part of the complex assembly or are required e.g. for the receptor to be functional; 2) proteins associated in a pull-down/co-immunoprecipitation assay with no functional link or any evidence that this is a defined biological entity rather than a loose-affinity complex; 3) any complex where the only evidence is based on genetic interaction data; 4) partial complexes, where some subunits (e.g. transmembrane ones) cannot be expressed as recombinant proteins and are excluded from experiments (in this case, independent evidence is necessary to find out the composition of the full complex, if known). Interactions that may be captured as protein complexes include: 1) enzyme/substrate or receptor/ligand if the complex can only assemble and become functional in the presence of both classes of subunits; 2) complexes where one of the members has not been shown to be physically linked to the other(s), but is a homologue of, and has the same functionality as, a protein that has been experimentally demonstrated to form a complex with the other member(s); 3) complexes whose existence is accepted based on localization and pharmacological studies, but for which experimental evidence is not yet available for the complex as a whole.\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_mouse\nsubset: goslim_pir\nsynonym: \"macromolecular complex\" EXACT []\nsynonym: \"macromolecule complex\" EXACT []\nsynonym: \"protein complex\" NARROW []\nsynonym: \"protein containing complex\" EXACT []\nsynonym: \"protein-protein complex\" NARROW []\nis_a: GO:0005575 ! cellular_component\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032991",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 192667-192686",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032991"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -852,15 +595,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 245217-245227",
   "excerpt": "[Term]\nid: GO:0043240\nname: Fanconi anaemia nuclear complex\nnamespace: cellular_component\ndef: \"A protein complex composed of the Fanconi anaemia (FA) proteins including A, C, E, G and F (FANCA-F). Functions in the activation of the downstream protein FANCD2 by monoubiquitylation, and is essential for protection against chromosome breakage.\" [GOC:jl, PMID:12093742]\nsynonym: \"FA complex\" EXACT []\nsynonym: \"FA core complex\" EXACT []\nsynonym: \"FA nuclear complex\" EXACT []\nsynonym: \"Fanconi anaemia complex\" EXACT []\nis_a: GO:0140513 ! nuclear protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043240",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 245217-245227",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043240"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -871,15 +614,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 258897-258904",
   "excerpt": "[Term]\nid: GO:0044615\nname: nuclear pore nuclear basket\nnamespace: cellular_component\ndef: \"A filamentous, cage-like assembly on the nuclear face of the nuclear pore complex (NPC). In S. cerevisiae, Mlp1p and Mlp2p are two major components of the NPC nuclear basket. In vertebrates, Tpr is a major component.\" [GOC:dgf, PMID:18046406, PMID:19524430, PMID:20947011, PMID:22419078]\nis_a: GO:0140513 ! nuclear protein-containing complex\nrelationship: part_of GO:0005643 ! nuclear pore\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044615",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 258897-258904",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044615"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -890,15 +633,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO6",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 441123-441132",
   "excerpt": "[Term]\nid: GO:0140513\nname: nuclear protein-containing complex\nnamespace: cellular_component\ndef: \"A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together in the nucleus.\" [GOC:pg]\nsubset: gocheck_do_not_annotate\nsynonym: \"nuclear complex\" EXACT []\nis_a: GO:0032991 ! protein-containing complex\nrelationship: part_of GO:0005634 ! nucleus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0140513",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 441123-441132",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0140513"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

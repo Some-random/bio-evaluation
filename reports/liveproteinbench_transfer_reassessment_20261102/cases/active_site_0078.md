@@ -1,18 +1,16 @@
-# active_site_0078: before and after transfer clarification
+# active_site_0078
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0078.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0078.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 67 (Proton acceptor)
+**Expected answer:** **B** — Position 67 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-sequence UniProt entry annotates position 67 as the proton acceptor. That annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation, not as direct experimental validation of that residue’s role.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Position 67 is cysteine, whose thiol can participate in acid-base chemistry, but this does not establish its specific catalytic role or distinguish it decisively from the other chemically plausible candidate.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment of position 67 as the proton acceptor, which is absent from the supplied sequence and choices.
-
-
-**Reason**
-
-> The sequence alone does not identify this enzyme’s catalytic mechanism or establish which candidate residue performs the stated role. The exact role requires an item-specific annotation or experimental/mechanistic evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied information does not establish multiple choices as correct; the reviewer-only annotation supports B. The options provide no basis for reliably selecting B over other chemically plausible candidates.
-
-
-### Important caveats
-
-- The supporting site annotation is inferred by similarity to UniProtKB:Q8RI81, rather than shown here to be experimentally established for this exact protein.
-- The sequence matches the cited UniProt entry, but the author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Position 67 is cysteine, whose thiol can participate in acid-base chemistry, but this does not establish its specific catalytic role or distinguish it decisively from the other chemically plausible candidate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment of position 67 as the proton acceptor, which is absent from the supplied sequence and choices.",
-    "reason": "The sequence alone does not identify this enzyme’s catalytic mechanism or establish which candidate residue performs the stated role. The exact role requires an item-specific annotation or experimental/mechanistic evidence."
-  },
-  "case_id": "active_site_0078",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-sequence UniProt entry annotates position 67 as the proton acceptor. That annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation, not as direct experimental validation of that residue’s role."
-  },
-  "important_caveats": [
-    "The supporting site annotation is inferred by similarity to UniProtKB:Q8RI81, rather than shown here to be experimentally established for this exact protein.",
-    "The sequence matches the cited UniProt entry, but the author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied information does not establish multiple choices as correct; the reviewer-only annotation supports B. The options provide no basis for reliably selecting B over other chemically plausible candidates."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0078",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-sequence UniProt entry annotates position 67 as the proton acceptor. That annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation, not as direct experimental validation of that residue’s role.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Position 67 is cysteine, whose thiol can participate in acid-base chemistry, but this does not establish its specific catalytic role or distinguish it decisively from the other chemically plausible candidate.",
-    "missing_item_specific_fact": "The protein-specific assignment of position 67 as the proton acceptor, which is absent from the supplied sequence and choices.",
-    "reason": "The sequence alone does not identify this enzyme’s catalytic mechanism or establish which candidate residue performs the stated role. The exact role requires an item-specific annotation or experimental/mechanistic evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied information does not establish multiple choices as correct; the reviewer-only annotation supports B. The options provide no basis for reliably selecting B over other chemically plausible candidates."
-  },
-  "important_caveats": [
-    "The supporting site annotation is inferred by similarity to UniProtKB:Q8RI81, rather than shown here to be experimentally established for this exact protein.",
-    "The sequence matches the cited UniProt entry, but the author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry D5RFM4 (Histidine racemase, EC 5.1.1.24, Fusobacterium nucleatum) annotates position 67 as 'Proton acceptor' (Active site) with evidence code ECO:0000250 (similarity transfer from Q8RI81). The sequence at position 67 is indeed Cysteine, which is chemically consistent with a proton-acceptor role in a cofactor-independent racemase. The answer is supported by the database annotation, though the evidence is computational (similarity-based) rather than directly experimental for this specific protein.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Options A (Gly64 as nucleophile) and C (Leu8 as nucleophile) can be eliminated by basic biochemistry: Glycine lacks a nucleophilic side chain and Leucine is purely hydrophobic, so neither can serve as a nucleophile. However, distinguishing B (Cys67, proton acceptor) from D (Ser143, proton donor) requires knowing the specific catalytic mechanism of histidine racemase and which residue serves which role. Both Cys-as-base and Ser-as-acid are chemically plausible in abstract, and the sequence alone does not unambiguously assign the proton-acceptor role to Cys67 over Ser143 as proton donor.
-
-
-**Missing item-specific fact**
-
-> The specific assignment of proton acceptor to Cys67 and proton donor to Cys209 (not Ser143) in this histidine racemase family, which is a protein-family-specific mechanistic annotation transferred by similarity from Q8RI81. Without knowing the enzyme identity and its established catalytic mechanism, the B-vs-D distinction cannot be resolved from sequence alone.
-
-
-**Reason**
-
-> While general biochemistry eliminates A and C (Gly and Leu cannot be nucleophiles), the critical B-vs-D choice depends on knowing the specific catalytic mechanism of this racemase family—namely that the proton acceptor is a Cys in the 'GGEFCGNASRS' motif at position 67 and the proton donor is Cys209, not Ser143. This is an item-specific annotation, not derivable by general reasoning from the 263-aa sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> A and C are clearly eliminated on biochemical grounds (Gly and Leu lack nucleophilic side chains). D is eliminated because the actual proton donor in this enzyme family is Cys209, not Ser143. B is the only option consistent with the established mechanism. No genuine ambiguity remains once the enzyme identity and mechanism are known.
-
-
-### Important caveats
-
-- The active-site annotation uses evidence code ECO:0000250 (similarity transfer from UniProtKB:Q8RI81), meaning it is a computational inference, not a direct experimental determination for D5RFM4 itself. However, a 2024 JBC paper (PubMed 39424140) reports functional characterization of this enzyme, lending experimental support to the overall catalytic assignment.
-- The reviewer-only evidence was not available to the evaluated model; the model sees only the 263-aa sequence and four choices.
-- The sequence matches the UniProt entry exactly (SHA-256 confirmed), so numbering is canonical and unambiguous.
-- Position 209 is also Cys and annotated as proton donor; option D's 'position 143, proton donor' is a plausible-sounding but incorrect distractor that could mislead without specific knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Options A (Gly64 as nucleophile) and C (Leu8 as nucleophile) can be eliminated by basic biochemistry: Glycine lacks a nucleophilic side chain and Leucine is purely hydrophobic, so neither can serve as a nucleophile. However, distinguishing B (Cys67, proton acceptor) from D (Ser143, proton donor) requires knowing the specific catalytic mechanism of histidine racemase and which residue serves which role. Both Cys-as-base and Ser-as-acid are chemically plausible in abstract, and the sequence alone does not unambiguously assign the proton-acceptor role to Cys67 over Ser143 as proton donor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific assignment of proton acceptor to Cys67 and proton donor to Cys209 (not Ser143) in this histidine racemase family, which is a protein-family-specific mechanistic annotation transferred by similarity from Q8RI81. Without knowing the enzyme identity and its established catalytic mechanism, the B-vs-D distinction cannot be resolved from sequence alone.",
-    "reason": "While general biochemistry eliminates A and C (Gly and Leu cannot be nucleophiles), the critical B-vs-D choice depends on knowing the specific catalytic mechanism of this racemase family—namely that the proton acceptor is a Cys in the 'GGEFCGNASRS' motif at position 67 and the proton donor is Cys209, not Ser143. This is an item-specific annotation, not derivable by general reasoning from the 263-aa sequence."
-  },
-  "case_id": "active_site_0078",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry D5RFM4 (Histidine racemase, EC 5.1.1.24, Fusobacterium nucleatum) annotates position 67 as 'Proton acceptor' (Active site) with evidence code ECO:0000250 (similarity transfer from Q8RI81). The sequence at position 67 is indeed Cysteine, which is chemically consistent with a proton-acceptor role in a cofactor-independent racemase. The answer is supported by the database annotation, though the evidence is computational (similarity-based) rather than directly experimental for this specific protein."
-  },
-  "important_caveats": [
-    "The active-site annotation uses evidence code ECO:0000250 (similarity transfer from UniProtKB:Q8RI81), meaning it is a computational inference, not a direct experimental determination for D5RFM4 itself. However, a 2024 JBC paper (PubMed 39424140) reports functional characterization of this enzyme, lending experimental support to the overall catalytic assignment.",
-    "The reviewer-only evidence was not available to the evaluated model; the model sees only the 263-aa sequence and four choices.",
-    "The sequence matches the UniProt entry exactly (SHA-256 confirmed), so numbering is canonical and unambiguous.",
-    "Position 209 is also Cys and annotated as proton donor; option D's 'position 143, proton donor' is a plausible-sounding but incorrect distractor that could mislead without specific knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "A and C are clearly eliminated on biochemical grounds (Gly and Leu lack nucleophilic side chains). D is eliminated because the actual proton donor in this enzyme family is Cys209, not Ser143. B is the only option consistent with the established mechanism. No genuine ambiguity remains once the enzyme identity and mechanism are known."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0078",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry D5RFM4 (Histidine racemase, EC 5.1.1.24, Fusobacterium nucleatum) annotates position 67 as 'Proton acceptor' (Active site) with evidence code ECO:0000250 (similarity transfer from Q8RI81). The sequence at position 67 is indeed Cysteine, which is chemically consistent with a proton-acceptor role in a cofactor-independent racemase. The answer is supported by the database annotation, though the evidence is computational (similarity-based) rather than directly experimental for this specific protein.",
-    "evidence_ids": ["C5", "H3", "C4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Options A (Gly64 as nucleophile) and C (Leu8 as nucleophile) can be eliminated by basic biochemistry: Glycine lacks a nucleophilic side chain and Leucine is purely hydrophobic, so neither can serve as a nucleophile. However, distinguishing B (Cys67, proton acceptor) from D (Ser143, proton donor) requires knowing the specific catalytic mechanism of histidine racemase and which residue serves which role. Both Cys-as-base and Ser-as-acid are chemically plausible in abstract, and the sequence alone does not unambiguously assign the proton-acceptor role to Cys67 over Ser143 as proton donor.",
-    "missing_item_specific_fact": "The specific assignment of proton acceptor to Cys67 and proton donor to Cys209 (not Ser143) in this histidine racemase family, which is a protein-family-specific mechanistic annotation transferred by similarity from Q8RI81. Without knowing the enzyme identity and its established catalytic mechanism, the B-vs-D distinction cannot be resolved from sequence alone.",
-    "reason": "While general biochemistry eliminates A and C (Gly and Leu cannot be nucleophiles), the critical B-vs-D choice depends on knowing the specific catalytic mechanism of this racemase family—namely that the proton acceptor is a Cys in the 'GGEFCGNASRS' motif at position 67 and the proton donor is Cys209, not Ser143. This is an item-specific annotation, not derivable by general reasoning from the 263-aa sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "A and C are clearly eliminated on biochemical grounds (Gly and Leu lack nucleophilic side chains). D is eliminated because the actual proton donor in this enzyme family is Cys209, not Ser143. B is the only option consistent with the established mechanism. No genuine ambiguity remains once the enzyme identity and mechanism are known."
-  },
-  "important_caveats": [
-    "The active-site annotation uses evidence code ECO:0000250 (similarity transfer from UniProtKB:Q8RI81), meaning it is a computational inference, not a direct experimental determination for D5RFM4 itself. However, a 2024 JBC paper (PubMed 39424140) reports functional characterization of this enzyme, lending experimental support to the overall catalytic assignment.",
-    "The reviewer-only evidence was not available to the evaluated model; the model sees only the 263-aa sequence and four choices.",
-    "The sequence matches the UniProt entry exactly (SHA-256 confirmed), so numbering is canonical and unambiguous.",
-    "Position 209 is also Cys and annotated as proton donor; option D's 'position 143, proton donor' is a plausible-sounding but incorrect distractor that could mislead without specific knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "D5RFM4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c3c062f84cb504706da4f93fc7c25a17790dd9bc3a42419a61e2a9462719a5f8",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 263,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c3c062f84cb504706da4f93fc7c25a17790dd9bc3a42419a61e2a9462719a5f8",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-04-09",
@@ -532,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-07-13",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "current_source_sequence_sha256": "c3c062f84cb504706da4f93fc7c25a17790dd9bc3a42419a61e2a9462719a5f8",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 263,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c3c062f84cb504706da4f93fc7c25a17790dd9bc3a42419a61e2a9462719a5f8",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 32,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "D5RFM4",
   "selected_historical_entry_version": 32,
+  "selected_historical_record_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
+  "selected_historical_source_sequence_length": 263,
+  "selected_historical_source_sequence_sha256": "c3c062f84cb504706da4f93fc7c25a17790dd9bc3a42419a61e2a9462719a5f8",
   "selected_historical_version": {
     "accession": "D5RFM4",
     "database": "Swiss-Prot",
@@ -550,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HISR_FUSN2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
-  "selected_historical_source_sequence_sha256": "c3c062f84cb504706da4f93fc7c25a17790dd9bc3a42419a61e2a9462719a5f8",
-  "selected_historical_source_sequence_length": 263,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 32,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json",
-  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"D5RFM4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
+  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json"
 }
 ```
 
@@ -600,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json",
-  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-07-13\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
+  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json"
 }
 ```
 
@@ -619,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json",
-  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Fusobacteriati\",\"Fusobacteriota\",\"Fusobacteriia\",\"Fusobacteriales\",\"Fusobacteriaceae\",\"Fusobacterium\"],\"scientificName\":\"Fusobacterium nucleatum subsp. nucleatum (strain ATCC 23726 / VPI 4351)\",\"taxonId\":525283}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
+  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json"
 }
 ```
 
@@ -638,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json",
-  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39424140\",\"source\":\"PubMed\"}],\"value\":\"5.1.1.24\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39424140\",\"source\":\"PubMed\"}],\"value\":\"Histidine racemase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
+  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json"
 }
 ```
 
@@ -657,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json",
-  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8RI81\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":67},\"start\":{\"modifier\":\"EXACT\",\"value\":67}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
+  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json"
 }
 ```
 
@@ -676,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json",
-  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8RI81\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":209},\"start\":{\"modifier\":\"EXACT\",\"value\":209}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
+  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json"
 }
 ```
 
@@ -695,15 +457,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json",
-  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
-  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lamer T.\",\"Chen P.\",\"Venter M.J.\",\"van Belkum M.J.\",\"Wijewardane A.\",\"Wu C.\",\"Lemieux M.J.\",\"Vederas J.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39424140\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jbc.2024.107896\"}],\"citationType\":\"journal article\",\"firstPage\":\"107896\",\"id\":\"39424140\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"107896\",\"publicationDate\":\"2024\",\"title\":\"Discovery, characterization, and structure of a cofactor-independent histidine racemase from the oral pathogen Fusobacterium nucleatum.\",\"volume\":\"300\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 23726 / VPI 4351\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:49.723120+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd",
+  "url": "https://rest.uniprot.org/uniprotkb/D5RFM4.json"
 }
 ```
 
@@ -713,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32",
-  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
-  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   HISR_FUSN2              Reviewed;         263 AA.\nAC   D5RFM4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   13-JUL-2010, sequence version 1.\nDT   28-JAN-2026, entry version 32.\nDE   RecName: Full=Histidine racemase {ECO:0000303|PubMed:39424140};\nDE            EC=5.1.1.24 {ECO:0000269|PubMed:39424140};\nGN   Name=hisR {ECO:0000303|PubMed:39424140};\nGN   ORFNames=HMPREF0397_2009 {ECO:0000312|EMBL:EFG94488.1};\nOS   Fusobacterium nucleatum subsp. nucleatum (strain ATCC 23726 / VPI 4351).\nOC   Bacteria; Fusobacteriati; Fusobacteriota; Fusobacteriia; Fusobacteriales;\nOC   Fusobacteriaceae; Fusobacterium.\nOX   NCBI_TaxID=525283;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
+  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32"
 }
 ```
 
@@ -734,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32",
-  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
-  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
-  "source_locator": "lines 28-37",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND DISRUPTION\nRP   PHENOTYPE.\nRC   STRAIN=ATCC 23726 / VPI 4351;\nRX   PubMed=39424140; DOI=10.1016/j.jbc.2024.107896;\nRA   Lamer T., Chen P., Venter M.J., van Belkum M.J., Wijewardane A., Wu C.,\nRA   Lemieux M.J., Vederas J.C.;\nRT   \"Discovery, characterization, and structure of a cofactor-independent\nRT   histidine racemase from the oral pathogen Fusobacterium nucleatum.\";\nRL   J. Biol. Chem. 300:107896-107896(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
+  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32"
 }
 ```
 
@@ -755,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32",
-  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
-  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
-  "source_locator": "lines 79-81",
   "excerpt": "FT   ACT_SITE        67\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8RI81\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 79-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
+  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32"
 }
 ```
 
@@ -776,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32",
-  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
-  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
-  "source_locator": "lines 82-84",
   "excerpt": "FT   ACT_SITE        209\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8RI81\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:27:51.450216+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-84",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc",
+  "url": "https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32"
 }
 ```
 

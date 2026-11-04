@@ -1,18 +1,16 @@
-# EC_number_0095: before and after transfer clarification
+# EC_number_0095
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0095.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0095.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **B** — 1.14.18.1
+**Expected answer:** **B** — 1.14.18.1
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for tyrosinase HcTyr2, annotated EC 1.14.18.1. The annotation cites experimental evidence for tyrosinase catalytic reactions, including oxidation of L-tyrosine and L-DOPA.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence has a soluble-enzyme architecture and a pattern of histidines consistent with the conserved copper-binding sites of type-3 copper tyrosinases. That family-level evidence favors tyrosinase over the listed dehydrogenase and other oxidoreductase alternatives.
-
-
-**Missing item-specific fact**
-
-> No external item-specific fact is strictly necessary to distinguish the options at the family level, although a database annotation or assay would provide stronger confirmation of the exact catalytic activity.
-
-
-**Reason**
-
-> Sequence features support a recognizable copper-dependent tyrosinase family assignment, which is a meaningful biological basis for selecting the tyrosinase EC option rather than merely recalling the exact sequence's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence's tyrosinase-family features distinguish the keyed option from the listed alternatives.
-
-
-### Important caveats
-
-- The reviewer-only UniProt evidence matches the sequence and cites experimental evidence, but the primary paper was not independently reviewed here.
-- The exact author data-source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has a soluble-enzyme architecture and a pattern of histidines consistent with the conserved copper-binding sites of type-3 copper tyrosinases. That family-level evidence favors tyrosinase over the listed dehydrogenase and other oxidoreductase alternatives.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "No external item-specific fact is strictly necessary to distinguish the options at the family level, although a database annotation or assay would provide stronger confirmation of the exact catalytic activity.",
-    "reason": "Sequence features support a recognizable copper-dependent tyrosinase family assignment, which is a meaningful biological basis for selecting the tyrosinase EC option rather than merely recalling the exact sequence's database entry."
-  },
-  "case_id": "EC_number_0095",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for tyrosinase HcTyr2, annotated EC 1.14.18.1. The annotation cites experimental evidence for tyrosinase catalytic reactions, including oxidation of L-tyrosine and L-DOPA."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt evidence matches the sequence and cites experimental evidence, but the primary paper was not independently reviewed here.",
-    "The exact author data-source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence's tyrosinase-family features distinguish the keyed option from the listed alternatives."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0095",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for tyrosinase HcTyr2, annotated EC 1.14.18.1. The annotation cites experimental evidence for tyrosinase catalytic reactions, including oxidation of L-tyrosine and L-DOPA.",
-    "evidence_ids": ["C1", "C4", "C5", "H4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence has a soluble-enzyme architecture and a pattern of histidines consistent with the conserved copper-binding sites of type-3 copper tyrosinases. That family-level evidence favors tyrosinase over the listed dehydrogenase and other oxidoreductase alternatives.",
-    "missing_item_specific_fact": "No external item-specific fact is strictly necessary to distinguish the options at the family level, although a database annotation or assay would provide stronger confirmation of the exact catalytic activity.",
-    "reason": "Sequence features support a recognizable copper-dependent tyrosinase family assignment, which is a meaningful biological basis for selecting the tyrosinase EC option rather than merely recalling the exact sequence's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence's tyrosinase-family features distinguish the keyed option from the listed alternatives."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt evidence matches the sequence and cites experimental evidence, but the primary paper was not independently reviewed here.",
-    "The exact author data-source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The reviewer evidence confirms the sequence (SHA256 match) corresponds to UniProt entry A0A261GVB1 (TYR2_HAHS4), annotated as Tyrosinase HcTyr2 with EC 1.14.18.1. The annotation carries experimental evidence (ECO:0000269, PubMed:39382070, a 2024 FEBS Open Bio paper characterizing bacterial tyrosinases from Hahella sp. CCB-MM4). The catalytic activities listed (L-tyrosine + O2 → L-dopaquinone + H2O; 2 L-tyrosine + O2 → 2 L-dopa; 2 L-dopa + O2 → 2 L-dopaquinone + 2 H2O) are consistent with EC 1.14.18.1 (monophenol monooxygenase/tyrosinase). The answer is supported by experimental evidence, not merely computational inference.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Partial reasoning is possible: the sequence contains conserved histidine-rich motifs (HHC at ~position 230, CNCLTH at ~position 430) suggestive of a binuclear copper site characteristic of the tyrosinase superfamily. The absence of a P450 heme-binding motif (FxxGxxxCxG) argues against EC 1.14.19.80, and the absence of a Rossmann-fold NAD-binding motif (GxGxxG) argues against EC 1.1.1.138. However, these negative observations alone do not positively identify EC 1.14.18.1 over other copper-dependent oxidoreductases or rule out EC 1.97.1.14 without knowing the specific substrate (monophenol/tyrosine) and reaction mechanism.
-
-
-**Missing item-specific fact**
-
-> The exact mapping of the tyrosinase enzyme family to EC 1.14.18.1 (as opposed to other EC 1.14 or 1.97 entries) is a database/classification fact. Additionally, distinguishing EC 1.14.18.1 from EC 1.97.1.14 by sequence alone requires knowing the specific substrate specificity (monophenol vs. other substrates) and the ascorbate/reduced-pteridine electron-donor classification criterion for subclass 1.14.18, which is not derivable from the sequence without external knowledge.
-
-
-**Reason**
-
-> While the copper-binding motifs provide a weak positive signal toward a tyrosinase-like enzyme, the final step of assigning the precise 4-digit EC number (1.14.18.1) from the family-level identification is a memorization/database-lookup task. The distractors are not all trivially eliminable by general sequence heuristics alone; in particular, EC 1.97.1.14 cannot be excluded without knowing its specific substrate and mechanism.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the experimental annotation, EC 1.14.18.1 is the correct answer. The distractors (P450, dehydrogenase, and a different oxidoreductase class) are mechanistically distinct from a copper-dependent tyrosinase, so the answer is unambiguous once the protein is correctly identified.
-
-
-### Important caveats
-
-- The annotation evidence (PubMed:39382070, 2024) postdates many training cutoffs; a model trained on earlier data may not have encountered this specific entry.
-- The sequence match is exact (SHA256 confirmed), so the reviewer evidence applies directly to the benchmark sequence.
-- The EC 1.14.18 subclass definition ('with ascorbate or a reduced pteridine as one donor') is a classification convention that is not self-evident from the catalytic reaction alone and requires knowledge of the EC nomenclature rules.
-- The reviewer-only evidence was not available to the evaluated model; the model must rely solely on the 550-residue sequence and four EC choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Partial reasoning is possible: the sequence contains conserved histidine-rich motifs (HHC at ~position 230, CNCLTH at ~position 430) suggestive of a binuclear copper site characteristic of the tyrosinase superfamily. The absence of a P450 heme-binding motif (FxxGxxxCxG) argues against EC 1.14.19.80, and the absence of a Rossmann-fold NAD-binding motif (GxGxxG) argues against EC 1.1.1.138. However, these negative observations alone do not positively identify EC 1.14.18.1 over other copper-dependent oxidoreductases or rule out EC 1.97.1.14 without knowing the specific substrate (monophenol/tyrosine) and reaction mechanism.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact mapping of the tyrosinase enzyme family to EC 1.14.18.1 (as opposed to other EC 1.14 or 1.97 entries) is a database/classification fact. Additionally, distinguishing EC 1.14.18.1 from EC 1.97.1.14 by sequence alone requires knowing the specific substrate specificity (monophenol vs. other substrates) and the ascorbate/reduced-pteridine electron-donor classification criterion for subclass 1.14.18, which is not derivable from the sequence without external knowledge.",
-    "reason": "While the copper-binding motifs provide a weak positive signal toward a tyrosinase-like enzyme, the final step of assigning the precise 4-digit EC number (1.14.18.1) from the family-level identification is a memorization/database-lookup task. The distractors are not all trivially eliminable by general sequence heuristics alone; in particular, EC 1.97.1.14 cannot be excluded without knowing its specific substrate and mechanism."
-  },
-  "case_id": "EC_number_0095",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "H1",
-      "H2",
-      "H4",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The reviewer evidence confirms the sequence (SHA256 match) corresponds to UniProt entry A0A261GVB1 (TYR2_HAHS4), annotated as Tyrosinase HcTyr2 with EC 1.14.18.1. The annotation carries experimental evidence (ECO:0000269, PubMed:39382070, a 2024 FEBS Open Bio paper characterizing bacterial tyrosinases from Hahella sp. CCB-MM4). The catalytic activities listed (L-tyrosine + O2 → L-dopaquinone + H2O; 2 L-tyrosine + O2 → 2 L-dopa; 2 L-dopa + O2 → 2 L-dopaquinone + 2 H2O) are consistent with EC 1.14.18.1 (monophenol monooxygenase/tyrosinase). The answer is supported by experimental evidence, not merely computational inference."
-  },
-  "important_caveats": [
-    "The annotation evidence (PubMed:39382070, 2024) postdates many training cutoffs; a model trained on earlier data may not have encountered this specific entry.",
-    "The sequence match is exact (SHA256 confirmed), so the reviewer evidence applies directly to the benchmark sequence.",
-    "The EC 1.14.18 subclass definition ('with ascorbate or a reduced pteridine as one donor') is a classification convention that is not self-evident from the catalytic reaction alone and requires knowledge of the EC nomenclature rules.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must rely solely on the 550-residue sequence and four EC choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the experimental annotation, EC 1.14.18.1 is the correct answer. The distractors (P450, dehydrogenase, and a different oxidoreductase class) are mechanistically distinct from a copper-dependent tyrosinase, so the answer is unambiguous once the protein is correctly identified."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0095",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The reviewer evidence confirms the sequence (SHA256 match) corresponds to UniProt entry A0A261GVB1 (TYR2_HAHS4), annotated as Tyrosinase HcTyr2 with EC 1.14.18.1. The annotation carries experimental evidence (ECO:0000269, PubMed:39382070, a 2024 FEBS Open Bio paper characterizing bacterial tyrosinases from Hahella sp. CCB-MM4). The catalytic activities listed (L-tyrosine + O2 → L-dopaquinone + H2O; 2 L-tyrosine + O2 → 2 L-dopa; 2 L-dopa + O2 → 2 L-dopaquinone + 2 H2O) are consistent with EC 1.14.18.1 (monophenol monooxygenase/tyrosinase). The answer is supported by experimental evidence, not merely computational inference.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "C8", "H1", "H2", "H4", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Partial reasoning is possible: the sequence contains conserved histidine-rich motifs (HHC at ~position 230, CNCLTH at ~position 430) suggestive of a binuclear copper site characteristic of the tyrosinase superfamily. The absence of a P450 heme-binding motif (FxxGxxxCxG) argues against EC 1.14.19.80, and the absence of a Rossmann-fold NAD-binding motif (GxGxxG) argues against EC 1.1.1.138. However, these negative observations alone do not positively identify EC 1.14.18.1 over other copper-dependent oxidoreductases or rule out EC 1.97.1.14 without knowing the specific substrate (monophenol/tyrosine) and reaction mechanism.",
-    "missing_item_specific_fact": "The exact mapping of the tyrosinase enzyme family to EC 1.14.18.1 (as opposed to other EC 1.14 or 1.97 entries) is a database/classification fact. Additionally, distinguishing EC 1.14.18.1 from EC 1.97.1.14 by sequence alone requires knowing the specific substrate specificity (monophenol vs. other substrates) and the ascorbate/reduced-pteridine electron-donor classification criterion for subclass 1.14.18, which is not derivable from the sequence without external knowledge.",
-    "reason": "While the copper-binding motifs provide a weak positive signal toward a tyrosinase-like enzyme, the final step of assigning the precise 4-digit EC number (1.14.18.1) from the family-level identification is a memorization/database-lookup task. The distractors are not all trivially eliminable by general sequence heuristics alone; in particular, EC 1.97.1.14 cannot be excluded without knowing its specific substrate and mechanism."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the experimental annotation, EC 1.14.18.1 is the correct answer. The distractors (P450, dehydrogenase, and a different oxidoreductase class) are mechanistically distinct from a copper-dependent tyrosinase, so the answer is unambiguous once the protein is correctly identified."
-  },
-  "important_caveats": [
-    "The annotation evidence (PubMed:39382070, 2024) postdates many training cutoffs; a model trained on earlier data may not have encountered this specific entry.",
-    "The sequence match is exact (SHA256 confirmed), so the reviewer evidence applies directly to the benchmark sequence.",
-    "The EC 1.14.18 subclass definition ('with ascorbate or a reduced pteridine as one donor') is a classification convention that is not self-evident from the catalytic reaction alone and requires knowledge of the EC nomenclature rules.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must rely solely on the 550-residue sequence and four EC choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -396,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A261GVB1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3e9cf334f797629a6f09510c423430c3310a1f7d249df8e7e9f540b25e4e1ee7",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 550,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3e9cf334f797629a6f09510c423430c3310a1f7d249df8e7e9f540b25e4e1ee7",
   "current_entry_audit": {
     "entryVersion": 19,
     "firstPublicDate": "2025-02-05",
@@ -543,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-12-20",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "current_source_sequence_sha256": "3e9cf334f797629a6f09510c423430c3310a1f7d249df8e7e9f540b25e4e1ee7",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 550,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3e9cf334f797629a6f09510c423430c3310a1f7d249df8e7e9f540b25e4e1ee7",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 18,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A261GVB1",
   "selected_historical_entry_version": 18,
+  "selected_historical_record_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
+  "selected_historical_source_sequence_length": 550,
+  "selected_historical_source_sequence_sha256": "3e9cf334f797629a6f09510c423430c3310a1f7d249df8e7e9f540b25e4e1ee7",
   "selected_historical_version": {
     "accession": "A0A261GVB1",
     "database": "Swiss-Prot",
@@ -561,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "TYR2_HAHS4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
-  "selected_historical_source_sequence_sha256": "3e9cf334f797629a6f09510c423430c3310a1f7d249df8e7e9f540b25e4e1ee7",
-  "selected_historical_source_sequence_length": 550,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 18,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A261GVB1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -611,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":19,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-12-20\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -630,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Oceanospirillales\",\"Hahellaceae\",\"Hahella\"],\"scientificName\":\"Hahella sp. (strain CCB-MM4)\",\"taxonId\":1926491}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -649,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39382070\",\"source\":\"PubMed\"}],\"value\":\"1.14.18.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39382070\",\"source\":\"PubMed\"}],\"value\":\"Tyrosinase HcTyr2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -668,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.14.18.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39382070\",\"source\":\"PubMed\"}],\"name\":\"L-tyrosine + O2 = L-dopaquinone + H2O\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:18117\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57924\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58315\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -687,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39382070\",\"source\":\"PubMed\"}],\"name\":\"2 L-tyrosine + O2 = 2 L-dopa\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:34283\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57504\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58315\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -706,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.14.18.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39382070\",\"source\":\"PubMed\"}],\"name\":\"2 L-dopa + O2 = 2 L-dopaquinone + 2 H2O\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:34287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57504\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57924\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -725,15 +477,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json",
-  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
-  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"de Almeida Santos G.\",\"Englund A.N.B.\",\"Dalleywater E.L.\",\"Roehr A.K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39382070\"},{\"database\":\"DOI\",\"id\":\"10.1002/2211-5463.13906\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"39382070\",\"journal\":\"FEBS Open Bio\",\"lastPage\":\"0\",\"publicationDate\":\"2024\",\"title\":\"Characterization of two bacterial tyrosinases from the halophilic bacterium Hahella sp. CCB MM4 relevant for phenolic compounds oxidation in wetlands.\",\"volume\":\"0\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"CCB-MM4\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"DOMAIN\",\"MUTAGENESIS OF 426-THR--ASP-550\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:44.082570+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09d130bfdce053511ac8c67319a6b3e3b5ffbca8bcd3153677567a716e079201",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A261GVB1.json"
 }
 ```
 
@@ -743,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18",
-  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
-  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   TYR2_HAHS4              Reviewed;         550 AA.\nAC   A0A261GVB1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   20-DEC-2017, sequence version 1.\nDT   28-JAN-2026, entry version 18.\nDE   RecName: Full=Tyrosinase HcTyr2 {ECO:0000303|PubMed:39382070};\nDE            EC=1.14.18.1 {ECO:0000269|PubMed:39382070};\nGN   ORFNames=BTA51_03560 {ECO:0000312|EMBL:OZG75462.1};\nOS   Hahella sp. (strain CCB-MM4).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Oceanospirillales; Hahellaceae; Hahella.\nOX   NCBI_TaxID=1926491;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
+  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18"
 }
 ```
 
@@ -764,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18",
-  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
-  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Tyrosinase HcTyr2 {ECO:0000303|PubMed:39382070};\nDE            EC=1.14.18.1 {ECO:0000269|PubMed:39382070};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
+  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18"
 }
 ```
 
@@ -785,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18",
-  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
-  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
-  "source_locator": "lines 21-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, BIOPHYSICOCHEMICAL PROPERTIES,\nRP   DOMAIN, AND MUTAGENESIS OF 426-THR--ASP-550.\nRC   STRAIN=CCB-MM4;\nRX   PubMed=39382070; DOI=10.1002/2211-5463.13906;\nRA   de Almeida Santos G., Englund A.N.B., Dalleywater E.L., Roehr A.K.;\nRT   \"Characterization of two bacterial tyrosinases from the halophilic\nRT   bacterium Hahella sp. CCB MM4 relevant for phenolic compounds oxidation in\nRT   wetlands.\";\nRL   FEBS Open Bio 0:0-0(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
+  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18"
 }
 ```
 
@@ -806,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18",
-  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
-  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
-  "source_locator": "lines 37-41",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-tyrosine + O2 = L-dopaquinone + H2O; Xref=Rhea:RHEA:18117,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15379, ChEBI:CHEBI:57924,\nCC         ChEBI:CHEBI:58315; EC=1.14.18.1;\nCC         Evidence={ECO:0000269|PubMed:39382070};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
+  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18"
 }
 ```
 
@@ -827,18 +579,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18",
-  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
-  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
-  "source_locator": "lines 42-45",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=2 L-tyrosine + O2 = 2 L-dopa; Xref=Rhea:RHEA:34283,\nCC         ChEBI:CHEBI:15379, ChEBI:CHEBI:57504, ChEBI:CHEBI:58315;\nCC         Evidence={ECO:0000269|PubMed:39382070};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
+  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18"
 }
 ```
 
@@ -848,18 +600,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18",
-  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
-  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
-  "source_locator": "lines 46-50",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=2 L-dopa + O2 = 2 L-dopaquinone + 2 H2O; Xref=Rhea:RHEA:34287,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15379, ChEBI:CHEBI:57504,\nCC         ChEBI:CHEBI:57924; EC=1.14.18.1;\nCC         Evidence={ECO:0000269|PubMed:39382070};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-01T06:27:24.733923+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c794a3cbf945cd4e479d9430b2d9c1e3d32924055d9812812fc36602c8f48b9",
+  "url": "https://rest.uniprot.org/unisave/A0A261GVB1?format=txt&versions=18"
 }
 ```
 

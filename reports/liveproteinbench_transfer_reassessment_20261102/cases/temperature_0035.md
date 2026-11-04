@@ -1,18 +1,16 @@
-# temperature_0035: before and after transfer clarification
+# temperature_0035
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0035.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0035.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **B** — 40
+**Expected answer:** **B** — 40
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence is annotated with an optimum temperature of 40°C, attributed to PubMed:20351782 with experimental evidence code ECO:0000269. This directly supports choice B.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a defensible way to distinguish an optimum of 40°C from the nearby alternatives of 37°C or 49°C.
-
-
-**Missing item-specific fact**
-
-> The experimentally measured temperature optimum for this particular protein.
-
-
-**Reason**
-
-> Broad sequence or organism-level thermal tendencies cannot justify selecting an exact optimum among these values. The distinguishing evidence is a protein-specific measurement absent from the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Interpreting the choices as candidate optimum temperatures, the sequence-matched annotation specifically reports 40°C.
-
-
-### Important caveats
-
-- The supporting temperature value is an experimental annotation attributed to a cited publication, not an inference from the sequence.
-- Reviewer-only accession and annotation evidence was not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish an optimum of 40°C from the nearby alternatives of 37°C or 49°C.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimentally measured temperature optimum for this particular protein.",
-    "reason": "Broad sequence or organism-level thermal tendencies cannot justify selecting an exact optimum among these values. The distinguishing evidence is a protein-specific measurement absent from the question."
-  },
-  "case_id": "temperature_0035",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated with an optimum temperature of 40°C, attributed to PubMed:20351782 with experimental evidence code ECO:0000269. This directly supports choice B."
-  },
-  "important_caveats": [
-    "The supporting temperature value is an experimental annotation attributed to a cited publication, not an inference from the sequence.",
-    "Reviewer-only accession and annotation evidence was not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Interpreting the choices as candidate optimum temperatures, the sequence-matched annotation specifically reports 40°C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0035",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated with an optimum temperature of 40°C, attributed to PubMed:20351782 with experimental evidence code ECO:0000269. This directly supports choice B.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish an optimum of 40°C from the nearby alternatives of 37°C or 49°C.",
-    "missing_item_specific_fact": "The experimentally measured temperature optimum for this particular protein.",
-    "reason": "Broad sequence or organism-level thermal tendencies cannot justify selecting an exact optimum among these values. The distinguishing evidence is a protein-specific measurement absent from the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Interpreting the choices as candidate optimum temperatures, the sequence-matched annotation specifically reports 40°C."
-  },
-  "important_caveats": [
-    "The supporting temperature value is an experimental annotation attributed to a cited publication, not an inference from the sequence.",
-    "Reviewer-only accession and annotation evidence was not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q95P65 (5'-nucleotidase-related protein from Glossina morsitans morsitans, sequence matched exactly) explicitly states 'Optimum temperature is 40 degrees Celsius. Active from 20 to 47 degrees Celsius' with experimental evidence code ECO:0000269 citing PubMed:20351782. The expected answer of 40°C is directly supported by experimental measurement.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One can eliminate D (49°C, thermophile range) since the organism is a tropical ectothermic insect, and eliminate A (23-32°C, cold-adapted) since the tsetse fly inhabits warm tropical environments. However, between B (40°C) and C (37°C), no general biological reasoning from amino acid sequence composition can reliably distinguish these two closely spaced values. The enzyme functions in saliva during feeding on warm-blooded hosts (~37°C), which might even suggest 37°C as a plausible answer. The actual optimum of 40°C is an experimental measurement that exceeds ambient insect body temperature.
-
-
-**Missing item-specific fact**
-
-> The experimentally determined optimum temperature of 40°C for this specific 5'-nucleotidase (from Caljon et al. 2010, PLoS ONE 5:e9671). Without this measurement, the sequence provides no principled basis to prefer 40°C over 37°C.
-
-
-**Reason**
-
-> The question requires distinguishing between 37°C and 40°C for a specific enzyme. While organismal context (tropical insect) eliminates extremes A and D, the choice between 37 and 40 depends entirely on the item-specific experimental measurement. No amino acid composition heuristic or general thermal-adaptation principle can resolve a 3-degree difference for a particular enzyme.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Both 37°C and 40°C represent moderate-temperature adaptation. For a tropical ectothermic insect enzyme that functions during feeding on warm-blooded hosts, 37°C is arguably at least as defensible a priori as 40°C. Only the specific experimental result (40°C optimum) breaks this tie, making the question effectively a lookup rather than a reasoning task.
-
-
-### Important caveats
-
-- The UniProt annotation reports the optimum as 40°C with activity range 20-47°C, based on a single experimental study (PubMed:20351782).
-- The protein is a salivary enzyme from an ectothermic insect; its 40°C optimum exceeds typical ambient tsetse fly body temperature, suggesting adaptation to the host's blood meal temperature rather than the fly's own physiology.
-- The benchmark presents specific numeric values (37, 40, 49) rather than broad categories, which increases the lookup burden and reduces the role of general biological reasoning.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One can eliminate D (49°C, thermophile range) since the organism is a tropical ectothermic insect, and eliminate A (23-32°C, cold-adapted) since the tsetse fly inhabits warm tropical environments. However, between B (40°C) and C (37°C), no general biological reasoning from amino acid sequence composition can reliably distinguish these two closely spaced values. The enzyme functions in saliva during feeding on warm-blooded hosts (~37°C), which might even suggest 37°C as a plausible answer. The actual optimum of 40°C is an experimental measurement that exceeds ambient insect body temperature.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimentally determined optimum temperature of 40°C for this specific 5'-nucleotidase (from Caljon et al. 2010, PLoS ONE 5:e9671). Without this measurement, the sequence provides no principled basis to prefer 40°C over 37°C.",
-    "reason": "The question requires distinguishing between 37°C and 40°C for a specific enzyme. While organismal context (tropical insect) eliminates extremes A and D, the choice between 37 and 40 depends entirely on the item-specific experimental measurement. No amino acid composition heuristic or general thermal-adaptation principle can resolve a 3-degree difference for a particular enzyme."
-  },
-  "case_id": "temperature_0035",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C6",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q95P65 (5'-nucleotidase-related protein from Glossina morsitans morsitans, sequence matched exactly) explicitly states 'Optimum temperature is 40 degrees Celsius. Active from 20 to 47 degrees Celsius' with experimental evidence code ECO:0000269 citing PubMed:20351782. The expected answer of 40°C is directly supported by experimental measurement."
-  },
-  "important_caveats": [
-    "The UniProt annotation reports the optimum as 40°C with activity range 20-47°C, based on a single experimental study (PubMed:20351782).",
-    "The protein is a salivary enzyme from an ectothermic insect; its 40°C optimum exceeds typical ambient tsetse fly body temperature, suggesting adaptation to the host's blood meal temperature rather than the fly's own physiology.",
-    "The benchmark presents specific numeric values (37, 40, 49) rather than broad categories, which increases the lookup burden and reduces the role of general biological reasoning."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Both 37°C and 40°C represent moderate-temperature adaptation. For a tropical ectothermic insect enzyme that functions during feeding on warm-blooded hosts, 37°C is arguably at least as defensible a priori as 40°C. Only the specific experimental result (40°C optimum) breaks this tie, making the question effectively a lookup rather than a reasoning task."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0035",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q95P65 (5'-nucleotidase-related protein from Glossina morsitans morsitans, sequence matched exactly) explicitly states 'Optimum temperature is 40 degrees Celsius. Active from 20 to 47 degrees Celsius' with experimental evidence code ECO:0000269 citing PubMed:20351782. The expected answer of 40°C is directly supported by experimental measurement.",
-    "evidence_ids": ["C5", "H3", "C6", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One can eliminate D (49°C, thermophile range) since the organism is a tropical ectothermic insect, and eliminate A (23-32°C, cold-adapted) since the tsetse fly inhabits warm tropical environments. However, between B (40°C) and C (37°C), no general biological reasoning from amino acid sequence composition can reliably distinguish these two closely spaced values. The enzyme functions in saliva during feeding on warm-blooded hosts (~37°C), which might even suggest 37°C as a plausible answer. The actual optimum of 40°C is an experimental measurement that exceeds ambient insect body temperature.",
-    "missing_item_specific_fact": "The experimentally determined optimum temperature of 40°C for this specific 5'-nucleotidase (from Caljon et al. 2010, PLoS ONE 5:e9671). Without this measurement, the sequence provides no principled basis to prefer 40°C over 37°C.",
-    "reason": "The question requires distinguishing between 37°C and 40°C for a specific enzyme. While organismal context (tropical insect) eliminates extremes A and D, the choice between 37 and 40 depends entirely on the item-specific experimental measurement. No amino acid composition heuristic or general thermal-adaptation principle can resolve a 3-degree difference for a particular enzyme."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Both 37°C and 40°C represent moderate-temperature adaptation. For a tropical ectothermic insect enzyme that functions during feeding on warm-blooded hosts, 37°C is arguably at least as defensible a priori as 40°C. Only the specific experimental result (40°C optimum) breaks this tie, making the question effectively a lookup rather than a reasoning task."
-  },
-  "important_caveats": [
-    "The UniProt annotation reports the optimum as 40°C with activity range 20-47°C, based on a single experimental study (PubMed:20351782).",
-    "The protein is a salivary enzyme from an ectothermic insect; its 40°C optimum exceeds typical ambient tsetse fly body temperature, suggesting adaptation to the host's blood meal temperature rather than the fly's own physiology.",
-    "The benchmark presents specific numeric values (37, 40, 49) rather than broad categories, which increases the lookup burden and reduces the role of general biological reasoning."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q95P65",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 555,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "current_entry_audit": {
     "entryVersion": 84,
     "firstPublicDate": "2025-02-05",
@@ -539,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-12-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 555,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q95P65",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "selected_historical_source_sequence_length": 555,
+  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "selected_historical_version": {
     "accession": "Q95P65",
     "database": "Swiss-Prot",
@@ -557,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "APY_GLOMM",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
-  "selected_historical_source_sequence_length": 555,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q95P65\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -607,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":84,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-12-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -626,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Savannah tsetse fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAK63848.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Hippoboscoidea\",\"Glossinidae\",\"Glossina\"],\"scientificName\":\"Glossina morsitans morsitans\",\"taxonId\":37546}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -645,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"3.6.1.5\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'-nucleotidase-related protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'Nuc\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -664,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"kineticParameters\":{\"maximumVelocities\":[{\"enzyme\":\"enzyme with ATP as substrate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"unit\":\"nmol/min/mg\",\"velocity\":684.0},{\"enzyme\":\"enzyme with ADP as substrate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"unit\":\"nmol/min/mg\",\"velocity\":177.0}],\"michaelisConstants\":[{\"constant\":43.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"substrate\":\"ATP\",\"unit\":\"uM\"},{\"constant\":49.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"substrate\":\"ADP\",\"unit\":\"uM\"}],\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"kcat is 48.9 min(-1) with ATP as substrate. kcat is 12.7 min(-1) with ADP as substrate.\"}]}},\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is 8.0.\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 40 degrees Celsius. Active from 20 to 47 degrees Celsius.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -683,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Caljon G.\",\"De Ridder K.\",\"De Baetselier P.\",\"Coosemans M.\",\"Van Den Abbeele J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20351782\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0009671\"}],\"citationType\":\"journal article\",\"firstPage\":\"e9671\",\"id\":\"20351782\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e9671\",\"publicationDate\":\"2010\",\"title\":\"Identification of a tsetse fly salivary protein with dual inhibitory action on human platelet aggregation.\",\"volume\":\"5\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -701,18 +460,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   APY_GLOMM               Reviewed;         555 AA.\nAC   Q95P65; D3TRV7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-DEC-2001, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=5'-nucleotidase-related protein {ECO:0000303|PubMed:20351782};\nDE            Short=5'Nuc {ECO:0000303|PubMed:20351782};\nDE            EC=3.6.1.5 {ECO:0000269|PubMed:20351782};\nDE   Flags: Precursor;\nOS   Glossina morsitans morsitans (Savannah tsetse fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Hippoboscoidea;\nOC   Glossinidae; Glossina.\nOX   NCBI_TaxID=37546 {ECO:0000312|EMBL:AAK63848.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -722,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBCELLULAR LOCATION, TISSUE SPECIFICITY,\nRP   AND DISRUPTION PHENOTYPE.\nRX   PubMed=20351782; DOI=10.1371/journal.pone.0009671;\nRA   Caljon G., De Ridder K., De Baetselier P., Coosemans M.,\nRA   Van Den Abbeele J.;\nRT   \"Identification of a tsetse fly salivary protein with dual inhibitory\nRT   action on human platelet aggregation.\";\nRL   PLoS ONE 5:e9671-e9671(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -743,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 62-76",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Kinetic parameters:\nCC         KM=43 uM for ATP {ECO:0000269|PubMed:20351782};\nCC         KM=49 uM for ADP {ECO:0000269|PubMed:20351782};\nCC         Vmax=684 nmol/min/mg enzyme with ATP as substrate\nCC         {ECO:0000269|PubMed:20351782};\nCC         Vmax=177 nmol/min/mg enzyme with ADP as substrate\nCC         {ECO:0000269|PubMed:20351782};\nCC         Note=kcat is 48.9 min(-1) with ATP as substrate. kcat is 12.7 min(-1)\nCC         with ADP as substrate. {ECO:0000269|PubMed:20351782};\nCC       pH dependence:\nCC         Optimum pH is 8.0. {ECO:0000269|PubMed:20351782};\nCC       Temperature dependence:\nCC         Optimum temperature is 40 degrees Celsius. Active from 20 to 47\nCC         degrees Celsius. {ECO:0000269|PubMed:20351782};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-76",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 

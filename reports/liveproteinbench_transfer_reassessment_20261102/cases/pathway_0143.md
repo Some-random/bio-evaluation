@@ -1,18 +1,16 @@
-# pathway_0143: before and after transfer clarification
+# pathway_0143
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0143.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0143.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Secondary metabolite biosynthesis
+**Expected answer:** **A** — Secondary metabolite biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 449-aa sequence matches the UniProt entry for SoGH1, whose pathway annotation is “Secondary metabolite biosynthesis; terpenoid biosynthesis.” The annotation cites PubMed evidence coded ECO:0000269, supporting the key while remaining a database-reported, literature-backed annotation rather than independently verified experimental evidence here.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest an enzyme involved in glycosyl-related chemistry, but that does not establish which pathway it serves. The supplied input gives no organism or pathway context that would connect it specifically to secondary-metabolite biosynthesis.
-
-
-**Missing item-specific fact**
-
-> The protein-specific characterization of SoGH1 in soapwort saponin/terpenoid biosynthesis, as reported in the cited literature and pathway annotation.
-
-
-**Reason**
-
-> Choosing A over the other biosynthetic pathways depends on an item-specific pathway assignment absent from the sequence and choices; recognizing the exact sequence or its database entry would be lookup or memorization, not sequence-based reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence's pathway annotation explicitly includes secondary metabolite biosynthesis, and none of the other listed options is equally supported by the supplied evidence.
-
-
-### Important caveats
-
-- Reviewer-only annotations and accession information were not supplied to the evaluated model.
-- The cited pathway annotation is literature-backed in UniProt, but the underlying paper was not independently reviewed here.
-- The author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest an enzyme involved in glycosyl-related chemistry, but that does not establish which pathway it serves. The supplied input gives no organism or pathway context that would connect it specifically to secondary-metabolite biosynthesis.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific characterization of SoGH1 in soapwort saponin/terpenoid biosynthesis, as reported in the cited literature and pathway annotation.",
-    "reason": "Choosing A over the other biosynthetic pathways depends on an item-specific pathway assignment absent from the sequence and choices; recognizing the exact sequence or its database entry would be lookup or memorization, not sequence-based reasoning."
-  },
-  "case_id": "pathway_0143",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 449-aa sequence matches the UniProt entry for SoGH1, whose pathway annotation is “Secondary metabolite biosynthesis; terpenoid biosynthesis.” The annotation cites PubMed evidence coded ECO:0000269, supporting the key while remaining a database-reported, literature-backed annotation rather than independently verified experimental evidence here."
-  },
-  "important_caveats": [
-    "Reviewer-only annotations and accession information were not supplied to the evaluated model.",
-    "The cited pathway annotation is literature-backed in UniProt, but the underlying paper was not independently reviewed here.",
-    "The author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's pathway annotation explicitly includes secondary metabolite biosynthesis, and none of the other listed options is equally supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0143",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 449-aa sequence matches the UniProt entry for SoGH1, whose pathway annotation is “Secondary metabolite biosynthesis; terpenoid biosynthesis.” The annotation cites PubMed evidence coded ECO:0000269, supporting the key while remaining a database-reported, literature-backed annotation rather than independently verified experimental evidence here.",
-    "evidence_ids": ["C5", "H3", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest an enzyme involved in glycosyl-related chemistry, but that does not establish which pathway it serves. The supplied input gives no organism or pathway context that would connect it specifically to secondary-metabolite biosynthesis.",
-    "missing_item_specific_fact": "The protein-specific characterization of SoGH1 in soapwort saponin/terpenoid biosynthesis, as reported in the cited literature and pathway annotation.",
-    "reason": "Choosing A over the other biosynthetic pathways depends on an item-specific pathway assignment absent from the sequence and choices; recognizing the exact sequence or its database entry would be lookup or memorization, not sequence-based reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's pathway annotation explicitly includes secondary metabolite biosynthesis, and none of the other listed options is equally supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "Reviewer-only annotations and accession information were not supplied to the evaluated model.",
-    "The cited pathway annotation is literature-backed in UniProt, but the underlying paper was not independently reviewed here.",
-    "The author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0AAW1I778 (sequence matched, 449 AA) carries the PATHWAY annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39043959, Nat. Chem. Biol. 2025 'Unlocking saponin biosynthesis in soapwort'). The protein is a glycosyl hydrolase-like protein (SoGH1) from Saponaria officinalis involved in saponin (a terpenoid secondary metabolite) biosynthesis. The expected answer 'Secondary metabolite biosynthesis' is directly and experimentally supported.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence encodes a GH1-family glycosyl hydrolase. In principle, plant GH1 enzymes participate in diverse pathways (cell-wall remodeling, hormone activation, secondary metabolite sugar modification, GPI-anchor processing). However, the sequence alone does not provide a concrete argument that uniquely selects 'secondary metabolite biosynthesis' over the other three options. A model would need to know the source organism is Saponaria officinalis (a saponin-producing plant) and that this specific GH1 was experimentally placed in the saponin/terpenoid pathway.
-
-
-**Missing item-specific fact**
-
-> The identity of the organism (Saponaria officinalis, known for saponin production) and the experimental finding from PubMed:39043959 that this particular GH1 protein functions in saponin (terpenoid secondary metabolite) biosynthesis. Without the organism label or the specific paper, the sequence of a generic GH1 enzyme does not permit confident discrimination among the four pathway choices.
-
-
-**Reason**
-
-> Selecting the correct answer requires recognizing this exact sequence and recalling its database annotation or the associated 2025 experimental study. General knowledge that GH1 enzymes exist in plants does not meaningfully distinguish secondary metabolite biosynthesis from GPI-anchor biosynthesis, chorismate biosynthesis, or L-homoserine biosynthesis, all of which can involve glycosyl-transfer/hydrolase activities.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Once the organism and experimental context are known, only option A is correct. The other three options (GPI-anchor biosynthesis, chorismate biosynthesis, L-homoserine from L-aspartate step 2/3) describe fundamentally different enzyme classes and pathways that do not match a plant GH1 involved in saponin tailoring. No genuine ambiguity exists among the choices given the correct biological context.
-
-
-### Important caveats
-
-- The evaluated model receives only the amino acid sequence and four pathway labels; it is not told the organism, the protein name, or any functional annotation.
-- The UniProt pathway annotation is based on experimental evidence (ECO:0000269) from a single 2025 paper, which is a legitimate basis for the key.
-- The sequence is a 449-aa GH1 glycosyl hydrolase; without organism context, a model might reasonably associate GH1 activity with several pathways, making the question heavily dependent on item-specific knowledge.
-- The author's source snapshot date is unknown; the Swiss-Prot entry was first released in January 2026, so timing of annotation availability relative to benchmark construction is uncertain.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence encodes a GH1-family glycosyl hydrolase. In principle, plant GH1 enzymes participate in diverse pathways (cell-wall remodeling, hormone activation, secondary metabolite sugar modification, GPI-anchor processing). However, the sequence alone does not provide a concrete argument that uniquely selects 'secondary metabolite biosynthesis' over the other three options. A model would need to know the source organism is Saponaria officinalis (a saponin-producing plant) and that this specific GH1 was experimentally placed in the saponin/terpenoid pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of the organism (Saponaria officinalis, known for saponin production) and the experimental finding from PubMed:39043959 that this particular GH1 protein functions in saponin (terpenoid secondary metabolite) biosynthesis. Without the organism label or the specific paper, the sequence of a generic GH1 enzyme does not permit confident discrimination among the four pathway choices.",
-    "reason": "Selecting the correct answer requires recognizing this exact sequence and recalling its database annotation or the associated 2025 experimental study. General knowledge that GH1 enzymes exist in plants does not meaningfully distinguish secondary metabolite biosynthesis from GPI-anchor biosynthesis, chorismate biosynthesis, or L-homoserine biosynthesis, all of which can involve glycosyl-transfer/hydrolase activities."
-  },
-  "case_id": "pathway_0143",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0AAW1I778 (sequence matched, 449 AA) carries the PATHWAY annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39043959, Nat. Chem. Biol. 2025 'Unlocking saponin biosynthesis in soapwort'). The protein is a glycosyl hydrolase-like protein (SoGH1) from Saponaria officinalis involved in saponin (a terpenoid secondary metabolite) biosynthesis. The expected answer 'Secondary metabolite biosynthesis' is directly and experimentally supported."
-  },
-  "important_caveats": [
-    "The evaluated model receives only the amino acid sequence and four pathway labels; it is not told the organism, the protein name, or any functional annotation.",
-    "The UniProt pathway annotation is based on experimental evidence (ECO:0000269) from a single 2025 paper, which is a legitimate basis for the key.",
-    "The sequence is a 449-aa GH1 glycosyl hydrolase; without organism context, a model might reasonably associate GH1 activity with several pathways, making the question heavily dependent on item-specific knowledge.",
-    "The author's source snapshot date is unknown; the Swiss-Prot entry was first released in January 2026, so timing of annotation availability relative to benchmark construction is uncertain."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the organism and experimental context are known, only option A is correct. The other three options (GPI-anchor biosynthesis, chorismate biosynthesis, L-homoserine from L-aspartate step 2/3) describe fundamentally different enzyme classes and pathways that do not match a plant GH1 involved in saponin tailoring. No genuine ambiguity exists among the choices given the correct biological context."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0143",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0AAW1I778 (sequence matched, 449 AA) carries the PATHWAY annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39043959, Nat. Chem. Biol. 2025 'Unlocking saponin biosynthesis in soapwort'). The protein is a glycosyl hydrolase-like protein (SoGH1) from Saponaria officinalis involved in saponin (a terpenoid secondary metabolite) biosynthesis. The expected answer 'Secondary metabolite biosynthesis' is directly and experimentally supported.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence encodes a GH1-family glycosyl hydrolase. In principle, plant GH1 enzymes participate in diverse pathways (cell-wall remodeling, hormone activation, secondary metabolite sugar modification, GPI-anchor processing). However, the sequence alone does not provide a concrete argument that uniquely selects 'secondary metabolite biosynthesis' over the other three options. A model would need to know the source organism is Saponaria officinalis (a saponin-producing plant) and that this specific GH1 was experimentally placed in the saponin/terpenoid pathway.",
-    "missing_item_specific_fact": "The identity of the organism (Saponaria officinalis, known for saponin production) and the experimental finding from PubMed:39043959 that this particular GH1 protein functions in saponin (terpenoid secondary metabolite) biosynthesis. Without the organism label or the specific paper, the sequence of a generic GH1 enzyme does not permit confident discrimination among the four pathway choices.",
-    "reason": "Selecting the correct answer requires recognizing this exact sequence and recalling its database annotation or the associated 2025 experimental study. General knowledge that GH1 enzymes exist in plants does not meaningfully distinguish secondary metabolite biosynthesis from GPI-anchor biosynthesis, chorismate biosynthesis, or L-homoserine biosynthesis, all of which can involve glycosyl-transfer/hydrolase activities."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the organism and experimental context are known, only option A is correct. The other three options (GPI-anchor biosynthesis, chorismate biosynthesis, L-homoserine from L-aspartate step 2/3) describe fundamentally different enzyme classes and pathways that do not match a plant GH1 involved in saponin tailoring. No genuine ambiguity exists among the choices given the correct biological context."
-  },
-  "important_caveats": [
-    "The evaluated model receives only the amino acid sequence and four pathway labels; it is not told the organism, the protein name, or any functional annotation.",
-    "The UniProt pathway annotation is based on experimental evidence (ECO:0000269) from a single 2025 paper, which is a legitimate basis for the key.",
-    "The sequence is a 449-aa GH1 glycosyl hydrolase; without organism context, a model might reasonably associate GH1 activity with several pathways, making the question heavily dependent on item-specific knowledge.",
-    "The author's source snapshot date is unknown; the Swiss-Prot entry was first released in January 2026, so timing of annotation availability relative to benchmark construction is uncertain."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAW1I778",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "dbde96162e07c4bc2cf12569813f95c3ba7a3a98e55757ed498dcdc9af566214",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 449,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "dbde96162e07c4bc2cf12569813f95c3ba7a3a98e55757ed498dcdc9af566214",
   "current_entry_audit": {
     "entryVersion": 7,
     "firstPublicDate": "2025-06-18",
@@ -539,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-11-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
-  "current_source_sequence_sha256": "dbde96162e07c4bc2cf12569813f95c3ba7a3a98e55757ed498dcdc9af566214",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 449,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "dbde96162e07c4bc2cf12569813f95c3ba7a3a98e55757ed498dcdc9af566214",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAW1I778",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
+  "selected_historical_source_sequence_length": 449,
+  "selected_historical_source_sequence_sha256": "dbde96162e07c4bc2cf12569813f95c3ba7a3a98e55757ed498dcdc9af566214",
   "selected_historical_version": {
     "accession": "A0AAW1I778",
     "database": "Swiss-Prot",
@@ -557,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GH1_SAPOF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
-  "selected_historical_source_sequence_sha256": "dbde96162e07c4bc2cf12569813f95c3ba7a3a98e55757ed498dcdc9af566214",
-  "selected_historical_source_sequence_length": 449,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json",
-  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
-  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAW1I778\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json"
 }
 ```
 
@@ -607,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json",
-  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
-  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":7,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2024-11-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json"
 }
 ```
 
@@ -626,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json",
-  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
-  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Common soapwort\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Caryophyllaceae\",\"Caryophylleae\",\"Saponaria\"],\"scientificName\":\"Saponaria officinalis\",\"synonyms\":[\"Lychnis saponaria\"],\"taxonId\":3572}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json"
 }
 ```
 
@@ -645,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json",
-  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
-  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"2.4.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Glycosyl hydrolase-like protein 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"SoGH1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json"
 }
 ```
 
@@ -664,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json",
-  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
-  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json"
 }
 ```
 
@@ -683,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json",
-  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
-  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Jo S.\",\"El-Demerdash A.\",\"Owen C.\",\"Srivastava V.\",\"Wu D.\",\"Kikuchi S.\",\"Reed J.\",\"Hodgson H.\",\"Harkess A.\",\"Shu S.\",\"Plott C.\",\"Jenkins J.\",\"Williams M.\",\"Boston L.-B.\",\"Lacchini E.\",\"Qu T.\",\"Goossens A.\",\"Grimwood J.\",\"Schmutz J.\",\"Leebens-Mack J.\",\"Osbourn A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39043959\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-024-01681-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"215\",\"id\":\"39043959\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"226\",\"publicationDate\":\"2025\",\"title\":\"Unlocking saponin biosynthesis in soapwort.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WWM48151.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"TISSUE SPECIFICITY\",\"SUBCELLULAR LOCATION\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:30.134986+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d22cd9c7375b6893468cf4fe1337927b3c7c8e643c1da67a1d632f6b833638e0",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1I778.json"
 }
 ```
 
@@ -701,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1I778?format=txt&versions=5",
-  "source_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
-  "retrieved_utc": "2026-11-02T04:26:36.143043+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   GH1_SAPOF               Reviewed;         449 AA.\nAC   A0AAW1I778;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-NOV-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=Glycosyl hydrolase-like protein 1 {ECO:0000303|PubMed:39043959};\nDE            Short=SoGH1 {ECO:0000303|PubMed:39043959};\nDE            EC=2.4.1.- {ECO:0000269|PubMed:39043959};\nGN   Name=GH1 {ECO:0000303|PubMed:39043959};\nGN   Synonyms=Saoffv11054913m {ECO:0000303|PubMed:39043959};\nGN   ORFNames=RND81_10G213900 {ECO:0000312|EMBL:KAK9684494.1};\nOS   Saponaria officinalis (Common soapwort) (Lychnis saponaria).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Caryophyllaceae; Caryophylleae; Saponaria.\nOX   NCBI_TaxID=3572;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:36.143043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1I778?format=txt&versions=5"
 }
 ```
 
@@ -722,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1I778?format=txt&versions=5",
-  "source_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
-  "retrieved_utc": "2026-11-02T04:26:36.143043+00:00",
-  "source_locator": "lines 17-26",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WWM48151.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, TISSUE\nRP   SPECIFICITY, SUBCELLULAR LOCATION, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39043959; DOI=10.1038/s41589-024-01681-7;\nRA   Jo S., El-Demerdash A., Owen C., Srivastava V., Wu D., Kikuchi S., Reed J.,\nRA   Hodgson H., Harkess A., Shu S., Plott C., Jenkins J., Williams M.,\nRA   Boston L.-B., Lacchini E., Qu T., Goossens A., Grimwood J., Schmutz J.,\nRA   Leebens-Mack J., Osbourn A.;\nRT   \"Unlocking saponin biosynthesis in soapwort.\";\nRL   Nat. Chem. Biol. 21:215-226(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:36.143043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1I778?format=txt&versions=5"
 }
 ```
 
@@ -743,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1I778?format=txt&versions=5",
-  "source_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
-  "retrieved_utc": "2026-11-02T04:26:36.143043+00:00",
-  "source_locator": "lines 41-42",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:39043959}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:36.143043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c7ca0832007e22d89941a95ac8b35a4ce0c5a8531725045ef236385b2578847f",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1I778?format=txt&versions=5"
 }
 ```
 

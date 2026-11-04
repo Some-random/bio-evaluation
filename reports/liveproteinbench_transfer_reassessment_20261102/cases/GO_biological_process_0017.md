@@ -1,18 +1,16 @@
-# GO_biological_process_0017: before and after transfer clarification
+# GO_biological_process_0017
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0017.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0017.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — regulation of gene expression
+**Expected answer:** **B** — regulation of gene expression
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the Drosophila Jarid2 protein. Its annotation describes roles in chromatin and transcription regulation, including an experimentally supported PRC2-associated function; the broader option B is therefore supported. The GO annotation for regulation of gene expression is computationally transferred, while specific transcription-related annotations include experimental evidence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C9](#evidence-c9), [H4](#evidence-h4), [H6](#evidence-h6), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence's basic, low-complexity regions and a possible chromatin-associated catalytic domain may make a nuclear regulatory role plausible, but these clues do not establish its primary biological process.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and established role of Jarid2 as a chromatin and PRC2-associated regulator of transcription are not supplied in the question.
-
-
-**Reason**
-
-> Choosing B over the metabolic and mitophagy options depends on recognizing or looking up this protein's specific biological role; generic sequence features alone do not establish that role.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options are broad, but the matched protein's supported chromatin and transcription-regulatory functions favor B; the supplied evidence does not make the other choices comparably defensible.
-
-
-### Important caveats
-
-- The functional evidence applies to the exact matched sequence, but the author's precise annotation snapshot is unknown.
-- The evidence for the broad GO term includes an IBA annotation; specific transcription-related annotations also include experimentally supported evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence's basic, low-complexity regions and a possible chromatin-associated catalytic domain may make a nuclear regulatory role plausible, but these clues do not establish its primary biological process.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and established role of Jarid2 as a chromatin and PRC2-associated regulator of transcription are not supplied in the question.",
-    "reason": "Choosing B over the metabolic and mitophagy options depends on recognizing or looking up this protein's specific biological role; generic sequence features alone do not establish that role."
-  },
-  "case_id": "GO_biological_process_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C9",
-      "H4",
-      "H6",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the Drosophila Jarid2 protein. Its annotation describes roles in chromatin and transcription regulation, including an experimentally supported PRC2-associated function; the broader option B is therefore supported. The GO annotation for regulation of gene expression is computationally transferred, while specific transcription-related annotations include experimental evidence."
-  },
-  "important_caveats": [
-    "The functional evidence applies to the exact matched sequence, but the author's precise annotation snapshot is unknown.",
-    "The evidence for the broad GO term includes an IBA annotation; specific transcription-related annotations also include experimentally supported evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options are broad, but the matched protein's supported chromatin and transcription-regulatory functions favor B; the supplied evidence does not make the other choices comparably defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the Drosophila Jarid2 protein. Its annotation describes roles in chromatin and transcription regulation, including an experimentally supported PRC2-associated function; the broader option B is therefore supported. The GO annotation for regulation of gene expression is computationally transferred, while specific transcription-related annotations include experimental evidence.",
-    "evidence_ids": ["C1", "C5", "C9", "H4", "H6", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence's basic, low-complexity regions and a possible chromatin-associated catalytic domain may make a nuclear regulatory role plausible, but these clues do not establish its primary biological process.",
-    "missing_item_specific_fact": "The protein-specific identification and established role of Jarid2 as a chromatin and PRC2-associated regulator of transcription are not supplied in the question.",
-    "reason": "Choosing B over the metabolic and mitophagy options depends on recognizing or looking up this protein's specific biological role; generic sequence features alone do not establish that role."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options are broad, but the matched protein's supported chromatin and transcription-regulatory functions favor B; the supplied evidence does not make the other choices comparably defensible."
-  },
-  "important_caveats": [
-    "The functional evidence applies to the exact matched sequence, but the author's precise annotation snapshot is unknown.",
-    "The evidence for the broad GO term includes an IBA annotation; specific transcription-related annotations also include experimentally supported evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q9VT00 (JARD2_DROME, Jarid2) has a direct GO annotation GO:0010468 (regulation of gene expression; IBA:GO_Central) (H7). Additionally, its experimentally supported annotations (chromatin remodeling GO:0006338 IMP, positive regulation of DNA-templated transcription GO:0045893 IMP, heterochromatin formation GO:0031507, negative regulation of transcription by RNA Pol II GO:0000122) all have is_a paths to GO:0010468. The FUNCTION comment describes it as an accessory component of PRC2 involved in transcriptional repression and activation. None of the other options (lipid biosynthesis, mitophagy, ubiquinone biosynthesis) have any annotation support.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [H7](#evidence-h7), [C6](#evidence-c6), [H5](#evidence-h5), [C9](#evidence-c9), [H6](#evidence-h6), [C7](#evidence-c7), [C8](#evidence-c8), [GO7](#evidence-go7).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 2351-AA sequence exhibits hallmarks of a nuclear transcriptional regulator: extreme intrinsic disorder (vast stretches of S/T/P/K/E-rich low-complexity regions), multiple basic NLS-like motifs, and a C-terminal region with a JmjC-type domain fold (conserved His/Asp/Glu residues in a β-sheet/α-helical arrangement). Crucially, the sequence lacks transmembrane helices, mitochondrial targeting signals, or catalytic motifs characteristic of lipid/ubiquinone biosynthetic enzymes (Coq-family), and lacks the kinase/E3-ligase/UBA domain architecture of mitophagy machinery (PINK1/Parkin). These general domain-architecture observations allow a knowledgeable reasoner to exclude A, C, and D and select B (regulation of gene expression) as the only option consistent with a nuclear, disordered, chromatin-associated protein.
-
-
-**Missing item-specific fact**
-
-> Precise recognition of the JmjC domain within this particular 2351-AA disordered sequence by eye is non-trivial; however, the broad functional category (transcriptional regulation vs. metabolic/autophagy) is distinguishable from general sequence characteristics without needing the exact Jarid2/PRC2 identification.
-
-
-**Reason**
-
-> The three distractors represent fundamentally different protein classes (metabolic enzymes, autophagy receptors, mitochondrial biosynthetic enzymes) whose defining structural features (transmembrane segments, kinase domains, E3 ligase motifs, mitochondrial targeting peptides) are absent from this sequence. The correct answer's class (nuclear transcriptional regulator) is positively supported by the observed disorder, NLS motifs, and chromatin-associated domain fold. This constitutes a meaningful biological argument from the sequence itself.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, C, and D describe processes carried out by structurally distinct protein classes (membrane enzymes, autophagy adaptors, mitochondrial Coq enzymes) that are clearly inconsistent with the observed sequence features. Only B is compatible with a large, disordered, nuclear protein containing a JmjC-type domain. No ambiguity among the four choices.
-
-
-### Important caveats
-
-- The direct GO:0010468 annotation is IBA (inferred by ancestor), not experimentally determined; the experimentally supported annotations are more specific (chromatin remodeling, transcription regulation) but all fall under the GO:0010468 umbrella.
-- The JmjC domain recognition from a raw sequence without computational tools is challenging given the extreme disorder; however, the exclusion of the three distractors relies on simpler, more robust observations (absence of TM domains, absence of kinase/E3 ligase architecture).
-- The reviewer-only evidence confirms the protein identity and annotations; the evaluated model had only the sequence and choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 2351-AA sequence exhibits hallmarks of a nuclear transcriptional regulator: extreme intrinsic disorder (vast stretches of S/T/P/K/E-rich low-complexity regions), multiple basic NLS-like motifs, and a C-terminal region with a JmjC-type domain fold (conserved His/Asp/Glu residues in a β-sheet/α-helical arrangement). Crucially, the sequence lacks transmembrane helices, mitochondrial targeting signals, or catalytic motifs characteristic of lipid/ubiquinone biosynthetic enzymes (Coq-family), and lacks the kinase/E3-ligase/UBA domain architecture of mitophagy machinery (PINK1/Parkin). These general domain-architecture observations allow a knowledgeable reasoner to exclude A, C, and D and select B (regulation of gene expression) as the only option consistent with a nuclear, disordered, chromatin-associated protein.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise recognition of the JmjC domain within this particular 2351-AA disordered sequence by eye is non-trivial; however, the broad functional category (transcriptional regulation vs. metabolic/autophagy) is distinguishable from general sequence characteristics without needing the exact Jarid2/PRC2 identification.",
-    "reason": "The three distractors represent fundamentally different protein classes (metabolic enzymes, autophagy receptors, mitochondrial biosynthetic enzymes) whose defining structural features (transmembrane segments, kinase domains, E3 ligase motifs, mitochondrial targeting peptides) are absent from this sequence. The correct answer's class (nuclear transcriptional regulator) is positively supported by the observed disorder, NLS motifs, and chromatin-associated domain fold. This constitutes a meaningful biological argument from the sequence itself."
-  },
-  "case_id": "GO_biological_process_0017",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "H7",
-      "C6",
-      "H5",
-      "C9",
-      "H6",
-      "C7",
-      "C8",
-      "GO7"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VT00 (JARD2_DROME, Jarid2) has a direct GO annotation GO:0010468 (regulation of gene expression; IBA:GO_Central) (H7). Additionally, its experimentally supported annotations (chromatin remodeling GO:0006338 IMP, positive regulation of DNA-templated transcription GO:0045893 IMP, heterochromatin formation GO:0031507, negative regulation of transcription by RNA Pol II GO:0000122) all have is_a paths to GO:0010468. The FUNCTION comment describes it as an accessory component of PRC2 involved in transcriptional repression and activation. None of the other options (lipid biosynthesis, mitophagy, ubiquinone biosynthesis) have any annotation support."
-  },
-  "important_caveats": [
-    "The direct GO:0010468 annotation is IBA (inferred by ancestor), not experimentally determined; the experimentally supported annotations are more specific (chromatin remodeling, transcription regulation) but all fall under the GO:0010468 umbrella.",
-    "The JmjC domain recognition from a raw sequence without computational tools is challenging given the extreme disorder; however, the exclusion of the three distractors relies on simpler, more robust observations (absence of TM domains, absence of kinase/E3 ligase architecture).",
-    "The reviewer-only evidence confirms the protein identity and annotations; the evaluated model had only the sequence and choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D describe processes carried out by structurally distinct protein classes (membrane enzymes, autophagy adaptors, mitochondrial Coq enzymes) that are clearly inconsistent with the observed sequence features. Only B is compatible with a large, disordered, nuclear protein containing a JmjC-type domain. No ambiguity among the four choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0017",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VT00 (JARD2_DROME, Jarid2) has a direct GO annotation GO:0010468 (regulation of gene expression; IBA:GO_Central) (H7). Additionally, its experimentally supported annotations (chromatin remodeling GO:0006338 IMP, positive regulation of DNA-templated transcription GO:0045893 IMP, heterochromatin formation GO:0031507, negative regulation of transcription by RNA Pol II GO:0000122) all have is_a paths to GO:0010468. The FUNCTION comment describes it as an accessory component of PRC2 involved in transcriptional repression and activation. None of the other options (lipid biosynthesis, mitophagy, ubiquinone biosynthesis) have any annotation support.",
-    "evidence_ids": ["C5", "H4", "H7", "C6", "H5", "C9", "H6", "C7", "C8", "GO7"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 2351-AA sequence exhibits hallmarks of a nuclear transcriptional regulator: extreme intrinsic disorder (vast stretches of S/T/P/K/E-rich low-complexity regions), multiple basic NLS-like motifs, and a C-terminal region with a JmjC-type domain fold (conserved His/Asp/Glu residues in a β-sheet/α-helical arrangement). Crucially, the sequence lacks transmembrane helices, mitochondrial targeting signals, or catalytic motifs characteristic of lipid/ubiquinone biosynthetic enzymes (Coq-family), and lacks the kinase/E3-ligase/UBA domain architecture of mitophagy machinery (PINK1/Parkin). These general domain-architecture observations allow a knowledgeable reasoner to exclude A, C, and D and select B (regulation of gene expression) as the only option consistent with a nuclear, disordered, chromatin-associated protein.",
-    "missing_item_specific_fact": "Precise recognition of the JmjC domain within this particular 2351-AA disordered sequence by eye is non-trivial; however, the broad functional category (transcriptional regulation vs. metabolic/autophagy) is distinguishable from general sequence characteristics without needing the exact Jarid2/PRC2 identification.",
-    "reason": "The three distractors represent fundamentally different protein classes (metabolic enzymes, autophagy receptors, mitochondrial biosynthetic enzymes) whose defining structural features (transmembrane segments, kinase domains, E3 ligase motifs, mitochondrial targeting peptides) are absent from this sequence. The correct answer's class (nuclear transcriptional regulator) is positively supported by the observed disorder, NLS motifs, and chromatin-associated domain fold. This constitutes a meaningful biological argument from the sequence itself."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D describe processes carried out by structurally distinct protein classes (membrane enzymes, autophagy adaptors, mitochondrial Coq enzymes) that are clearly inconsistent with the observed sequence features. Only B is compatible with a large, disordered, nuclear protein containing a JmjC-type domain. No ambiguity among the four choices."
-  },
-  "important_caveats": [
-    "The direct GO:0010468 annotation is IBA (inferred by ancestor), not experimentally determined; the experimentally supported annotations are more specific (chromatin remodeling, transcription regulation) but all fall under the GO:0010468 umbrella.",
-    "The JmjC domain recognition from a raw sequence without computational tools is challenging given the extreme disorder; however, the exclusion of the three distractors relies on simpler, more robust observations (absence of TM domains, absence of kinase/E3 ligase architecture).",
-    "The reviewer-only evidence confirms the protein identity and annotations; the evaluated model had only the sequence and choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +161,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +283,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VT00",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "be658148c13eab3c3a1fc603695de8fcdf3c06d589b81be2a18610404321fae9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 2351,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "be658148c13eab3c3a1fc603695de8fcdf3c06d589b81be2a18610404321fae9",
   "current_entry_audit": {
     "entryVersion": 183,
     "firstPublicDate": "2025-04-09",
@@ -549,14 +301,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2002-10-01",
     "sequenceVersion": 3
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "current_source_sequence_sha256": "be658148c13eab3c3a1fc603695de8fcdf3c06d589b81be2a18610404321fae9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 2351,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "be658148c13eab3c3a1fc603695de8fcdf3c06d589b81be2a18610404321fae9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 181,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 3
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VT00",
   "selected_historical_entry_version": 181,
+  "selected_historical_record_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "selected_historical_source_sequence_length": 2351,
+  "selected_historical_source_sequence_sha256": "be658148c13eab3c3a1fc603695de8fcdf3c06d589b81be2a18610404321fae9",
   "selected_historical_version": {
     "accession": "Q9VT00",
     "database": "Swiss-Prot",
@@ -567,24 +335,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "JARD2_DROME",
     "sequenceVersion": 3
-  },
-  "selected_historical_record_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "selected_historical_source_sequence_sha256": "be658148c13eab3c3a1fc603695de8fcdf3c06d589b81be2a18610404321fae9",
-  "selected_historical_source_sequence_length": 2351,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 181,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 3
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -602,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VT00\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -621,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":183,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2002-10-01\",\"sequenceVersion\":3}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -640,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -659,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17970746\",\"source\":\"PubMed\"}],\"value\":\"Protein jumonji\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17970746\",\"source\":\"PubMed\"}],\"value\":\"dJmj\"}]}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0036004\",\"source\":\"FlyBase\"}],\"value\":\"Jumonji, AT rich interactive domain protein 2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -678,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q92833\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17970746\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22354997\",\"source\":\"PubMed\"}],\"value\":\"Regulator of histone methyltransferase complexes (By similarity). Involved in the establishment or maintenance of higher order chromosome compaction and closed euchromatin structure (PubMed:17970746). Accessory component of the polycomb repressive complex 2 (PRC2) involved in maintenance of transcriptional repression and regulation of transcriptional activation or elongation; functions in a PRC2-dependent and PRC2-independent manner (PubMed:22354997). Reduces levels of H3K27me3 histone modification (PubMed:22354997)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -697,15 +452,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/42",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000315\",\"id\":\"22354997\",\"source\":\"PubMed\"}],\"id\":\"GO:0006338\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:chromatin remodeling\"},{\"key\":\"GoEvidenceType\",\"value\":\"IMP:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/42",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -716,15 +471,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/43",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35193659\",\"source\":\"PubMed\"}],\"id\":\"GO:0031507\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:heterochromatin formation\"},{\"key\":\"GoEvidenceType\",\"value\":\"NAS:ComplexPortal\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/43",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -735,15 +490,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/44",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35193659\",\"source\":\"PubMed\"}],\"id\":\"GO:0000122\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:negative regulation of transcription by RNA polymerase II\"},{\"key\":\"GoEvidenceType\",\"value\":\"NAS:ComplexPortal\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/44",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -754,15 +509,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/45",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000315\",\"id\":\"22354997\",\"source\":\"PubMed\"}],\"id\":\"GO:0045893\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:positive regulation of DNA-templated transcription\"},{\"key\":\"GoEvidenceType\",\"value\":\"IMP:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/45",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -773,15 +528,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Sasai N.\",\"Kato Y.\",\"Kimura G.\",\"Takeuchi T.\",\"Yamaguchi M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17970746\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1742-4658.2007.06135.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"6139\",\"id\":\"17970746\",\"journal\":\"FEBS J.\",\"lastPage\":\"6151\",\"publicationDate\":\"2007\",\"title\":\"The Drosophila jumonji gene encodes a JmjC-containing nuclear protein that is required for metamorphosis.\",\"volume\":\"274\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -792,15 +547,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json",
-  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
-  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Herz H.M.\",\"Mohan M.\",\"Garrett A.S.\",\"Miller C.\",\"Casto D.\",\"Zhang Y.\",\"Seidel C.\",\"Haug J.S.\",\"Florens L.\",\"Washburn M.P.\",\"Yamaguchi M.\",\"Shiekhattar R.\",\"Shilatifard A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22354997\"},{\"database\":\"DOI\",\"id\":\"10.1128/mcb.06503-11\"}],\"citationType\":\"journal article\",\"firstPage\":\"1683\",\"id\":\"22354997\",\"journal\":\"Mol. Cell. Biol.\",\"lastPage\":\"1693\",\"publicationDate\":\"2012\",\"title\":\"Polycomb repressive complex 2-dependent and -independent functions of Jarid2 in transcriptional regulation in Drosophila.\",\"volume\":\"32\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":7,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN THE PRC2.2 COMPLEX\",\"SUBCELLULAR LOCATION\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-02T04:33:46.888531+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c86e5e80115e7796b503e35b30646564a15b8efa38bb5243f064f111b4da1811",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VT00.json"
 }
 ```
 
@@ -810,18 +565,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181",
-  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   JARD2_DROME             Reviewed;        2351 AA.\nAC   Q9VT00; Q6AWH4; Q8SXP6;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2002, sequence version 3.\nDT   28-JAN-2026, entry version 181.\nDE   RecName: Full=Jumonji, AT rich interactive domain protein 2 {ECO:0000312|FlyBase:FBgn0036004};\nDE   AltName: Full=Protein jumonji {ECO:0000303|PubMed:17970746};\nDE            Short=dJmj {ECO:0000303|PubMed:17970746};\nGN   Name=Jarid2 {ECO:0000312|FlyBase:FBgn0036004};\nGN   Synonyms=Jmj {ECO:0000303|PubMed:17970746};\nGN   ORFNames=CG3654 {ECO:0000312|FlyBase:FBgn0036004};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181"
 }
 ```
 
@@ -831,18 +586,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181",
-  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
-  "source_locator": "lines 86-93",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   FUNCTION, SUBCELLULAR LOCATION, DEVELOPMENTAL STAGE, AND DISRUPTION\nRP   PHENOTYPE.\nRX   PubMed=17970746; DOI=10.1111/j.1742-4658.2007.06135.x;\nRA   Sasai N., Kato Y., Kimura G., Takeuchi T., Yamaguchi M.;\nRT   \"The Drosophila jumonji gene encodes a JmjC-containing nuclear protein that\nRT   is required for metamorphosis.\";\nRL   FEBS J. 274:6139-6151(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181"
 }
 ```
 
@@ -852,18 +607,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181",
-  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
-  "source_locator": "lines 102-111",
   "excerpt": "RN   [7] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN THE PRC2.2 COMPLEX, SUBCELLULAR LOCATION, AND\nRP   IDENTIFICATION BY MASS SPECTROMETRY.\nRX   PubMed=22354997; DOI=10.1128/mcb.06503-11;\nRA   Herz H.M., Mohan M., Garrett A.S., Miller C., Casto D., Zhang Y.,\nRA   Seidel C., Haug J.S., Florens L., Washburn M.P., Yamaguchi M.,\nRA   Shiekhattar R., Shilatifard A.;\nRT   \"Polycomb repressive complex 2-dependent and -independent functions of\nRT   Jarid2 in transcriptional regulation in Drosophila.\";\nRL   Mol. Cell. Biol. 32:1683-1693(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 102-111",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181"
 }
 ```
 
@@ -873,18 +628,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181",
-  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
-  "source_locator": "lines 121-130",
   "excerpt": "CC   -!- FUNCTION: Regulator of histone methyltransferase complexes (By\nCC       similarity). Involved in the establishment or maintenance of higher\nCC       order chromosome compaction and closed euchromatin structure\nCC       (PubMed:17970746). Accessory component of the polycomb repressive\nCC       complex 2 (PRC2) involved in maintenance of transcriptional repression\nCC       and regulation of transcriptional activation or elongation; functions\nCC       in a PRC2-dependent and PRC2-independent manner (PubMed:22354997).\nCC       Reduces levels of H3K27me3 histone modification (PubMed:22354997).\nCC       {ECO:0000250|UniProtKB:Q92833, ECO:0000269|PubMed:17970746,\nCC       ECO:0000269|PubMed:22354997}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 121-130",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181"
 }
 ```
 
@@ -894,18 +649,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181",
-  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
-  "source_locator": "lines 200-200",
   "excerpt": "DR   GO; GO:0006338; P:chromatin remodeling; IMP:FlyBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 200-200",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181"
 }
 ```
 
@@ -915,18 +670,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181",
-  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
-  "source_locator": "lines 201-201",
   "excerpt": "DR   GO; GO:0045893; P:positive regulation of DNA-templated transcription; IMP:FlyBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 201-201",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181"
 }
 ```
 
@@ -936,18 +691,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181",
-  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
-  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
-  "source_locator": "lines 202-202",
   "excerpt": "DR   GO; GO:0010468; P:regulation of gene expression; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:33:51.212926+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 3,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 202-202",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c5087eab6edce35d6fcd43bbaa274b8a4b6eff0c95c51ede05e9f3ff14a504ae",
+  "url": "https://rest.uniprot.org/unisave/Q9VT00?format=txt&versions=181"
 }
 ```
 
@@ -958,15 +713,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 1216-1241",
   "excerpt": "[Term]\nid: GO:0000122\nname: negative regulation of transcription by RNA polymerase II\nnamespace: biological_process\nalt_id: GO:0010553\nalt_id: GO:0045816\ndef: \"Any process that stops, prevents, or reduces the frequency, rate or extent of transcription mediated by RNA polymerase II.\" [GOC:curators, GOC:txnOH]\nsynonym: \"down regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"down regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"down-regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"down-regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"downregulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"downregulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"inhibition of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"inhibition of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"negative regulation of gene-specific transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"negative regulation of global transcription from Pol II promoter\" RELATED []\nsynonym: \"negative regulation of transcription from Pol II promoter\" EXACT []\nsynonym: \"negative regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"negative regulation of transcription from RNA polymerase II promoter, global\" RELATED []\nxref: Reactome:R-HSA-2173795 \"Downregulation of SMAD2/3:SMAD4 transcriptional activity\"\nxref: Reactome:R-HSA-8866904 \"Negative regulation of activity of TFAP2 (AP-2) family transcription factors\"\nis_a: GO:0006357 ! regulation of transcription by RNA polymerase II\nis_a: GO:0045892 ! negative regulation of DNA-templated transcription\nrelationship: negatively_regulates GO:0006366 ! transcription by RNA polymerase II\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000122",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 1216-1241",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000122"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -977,15 +732,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 4330-4341",
   "excerpt": "[Term]\nid: GO:0000423\nname: mitophagy\nnamespace: biological_process\ndef: \"The selective autophagy process in which a mitochondrion is degraded by macroautophagy.\" [PMID:15798367]\ncomment: Note that this terms refers to the macroautophagy process and is named by common usage. Be aware that there are a separate micromitophagy and mitophagy by induced vacuole formation processes.\nsynonym: \"macromitophagy\" EXACT []\nxref: Reactome:R-HSA-5205647 \"Mitophagy\"\nxref: Wikipedia:Mitophagy\nis_a: GO:0000422 ! autophagy of mitochondrion\nis_a: GO:0016236 ! macroautophagy\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000423",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 4330-4341",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000423"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -996,15 +751,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 65393-65416",
   "excerpt": "[Term]\nid: GO:0006355\nname: regulation of DNA-templated transcription\nnamespace: biological_process\nalt_id: GO:0032583\nalt_id: GO:0045449\nalt_id: GO:0061019\ndef: \"Any process that modulates the frequency, rate or extent of cellular DNA-templated transcription.\" [GOC:curators, GOC:txnOH]\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsynonym: \"regulation of cellular transcription, DNA-dependent\" EXACT []\nsynonym: \"regulation of gene-specific transcription\" RELATED []\nsynonym: \"regulation of transcription, DNA-dependent\" EXACT [GOC:txnOH]\nsynonym: \"regulation of transcription, DNA-templated\" EXACT []\nsynonym: \"transcriptional control\" BROAD []\nxref: Reactome:R-HSA-9013695 \"NOTCH4 Intracellular Domain Regulates Transcription\"\nxref: Reactome:R-HSA-9708530 \"Regulation of BACH1 activity\"\nxref: Reactome:R-HSA-9762293 \"Regulation of CDH11 gene transcription\"\nis_a: GO:0010468 ! regulation of gene expression\nis_a: GO:2001141 ! regulation of RNA biosynthetic process\nrelationship: regulates GO:0006351 ! DNA-templated transcription\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006355",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 65393-65416",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006355"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1015,15 +770,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 65427-65443",
   "excerpt": "[Term]\nid: GO:0006357\nname: regulation of transcription by RNA polymerase II\nnamespace: biological_process\nalt_id: GO:0006358\nalt_id: GO:0010551\ndef: \"Any process that modulates the frequency, rate or extent of transcription mediated by RNA polymerase II.\" [GOC:curators, GOC:txnOH]\nsynonym: \"global transcription regulation from Pol II promoter\" RELATED []\nsynonym: \"regulation of gene-specific transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"regulation of global transcription from Pol II promoter\" RELATED []\nsynonym: \"regulation of transcription from Pol II promoter\" EXACT []\nsynonym: \"regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"regulation of transcription from RNA polymerase II promoter, global\" RELATED []\nxref: Reactome:R-HSA-8864260 \"Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors\"\nis_a: GO:0006355 ! regulation of DNA-templated transcription\nrelationship: regulates GO:0006366 ! transcription by RNA polymerase II\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006357",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 65427-65443",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006357"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1034,15 +789,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 69876-69901",
   "excerpt": "[Term]\nid: GO:0006744\nname: ubiquinone biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of ubiquinone, a lipid-soluble electron-transporting coenzyme.\" [GOC:mah]\nsubset: goslim_drosophila\nsubset: goslim_pombe\nsynonym: \"coenzyme Q biosynthesis\" EXACT []\nsynonym: \"coenzyme Q biosynthetic process\" EXACT []\nsynonym: \"coenzyme Q10 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q10 biosynthetic process\" NARROW []\nsynonym: \"coenzyme Q6 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q6 biosynthetic process\" NARROW []\nsynonym: \"coenzyme Q8 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q8 biosynthetic process\" NARROW []\nsynonym: \"coenzyme Q9 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q9 biosynthetic process\" NARROW []\nsynonym: \"ubiquinone anabolism\" EXACT []\nsynonym: \"ubiquinone biosynthesis\" EXACT []\nsynonym: \"ubiquinone formation\" EXACT []\nsynonym: \"ubiquinone synthesis\" EXACT []\nxref: MetaCyc:UBISYN-PWY\nxref: Reactome:R-HSA-2142789 \"Ubiquinol biosynthesis\"\nis_a: GO:0006743 ! ubiquinone metabolic process\nis_a: GO:1901663 ! quinone biosynthetic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006744",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 69876-69901",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006744"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1053,15 +808,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO6",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 85448-85460",
   "excerpt": "[Term]\nid: GO:0008610\nname: lipid biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of lipids, compounds soluble in an organic solvent but not, or sparingly, in an aqueous solvent.\" [GOC:curators]\nsynonym: \"lipid anabolism\" EXACT []\nsynonym: \"lipid biosynthesis\" EXACT []\nsynonym: \"lipid formation\" EXACT []\nsynonym: \"lipid synthesis\" EXACT []\nsynonym: \"lipogenesis\" EXACT [GOC:sl]\nis_a: GO:0006629 ! lipid metabolic process\nis_a: GO:0009058 ! biosynthetic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008610",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 85448-85460",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008610"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1072,15 +827,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO7",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 106270-106286",
   "excerpt": "[Term]\nid: GO:0010468\nname: regulation of gene expression\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product (protein or RNA).\" [GOC:txnOH-2018]\ncomment: This class covers any process that regulates the rate of production of a mature gene product, and so includes processes that regulate that rate by regulating the level, stability or availability of intermediates in the process of gene expression. For example, it covers any process that regulates the level, stability or availability of mRNA or circRNA for translation and thereby regulates the rate of production of the encoded protein via translation.\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_plant_ribbon\nsynonym: \"gene regulation\" RELATED [GOC:cjm]\nsynonym: \"regulation of gene product expression\" RELATED []\nsynonym: \"regulation of protein expression\" NARROW []\nxref: Reactome:R-HSA-163767 \"PP2A-mediated dephosphorylation of key metabolic factors\"\nxref: Reactome:R-HSA-9752946 \"Expression and translocation of olfactory receptors\"\nxref: Wikipedia:Regulation_of_gene_expression\nis_a: GO:0010556 ! regulation of macromolecule biosynthetic process\nrelationship: regulates GO:0010467 ! gene expression\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0010468",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 106270-106286",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0010468"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1091,15 +846,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO8",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 107605-107615",
   "excerpt": "[Term]\nid: GO:0010629\nname: negative regulation of gene expression\nnamespace: biological_process\ndef: \"Any process that decreases the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product (protein or RNA).\" [GOC:txnOH-2018]\ncomment: This term covers any process that negatively regulates the rate of production of a mature gene product, and so includes processes that negatively regulate that rate by reducing the level, stability or availability of intermediates in the process of gene expression. For example, it covers any process that reduces the level, stability or availability of mRNA or circRNA for translation and thereby reduces the rate of production of the encoded protein via translation.\nsynonym: \"gene silencing\" RELATED []\nis_a: GO:0010468 ! regulation of gene expression\nis_a: GO:0010558 ! negative regulation of macromolecule biosynthetic process\nrelationship: negatively_regulates GO:0010467 ! gene expression\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0010629",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 107605-107615",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0010629"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1110,15 +865,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO9",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 177195-177227",
   "excerpt": "[Term]\nid: GO:0031507\nname: heterochromatin formation\nnamespace: biological_process\nalt_id: GO:0006342\nalt_id: GO:0006343\nalt_id: GO:0016440\nalt_id: GO:0070869\nalt_id: GO:1904497\ndef: \"An epigenetic gene silencing mechanism in which chromatin is compacted into heterochromatin, resulting in a chromatin conformation refractory to transcription. This process starts with heterochromatin nucleation, its spreading, and ends with heterochromatin boundary formation.\" [PMID:25192661, PMID:33827924]\nsynonym: \"chromatin silencing\" EXACT []\nsynonym: \"chromatin-mediated silencing\" EXACT []\nsynonym: \"establishment of chromatin silencing\" RELATED []\nsynonym: \"establishment of heterochromatic silencing\" RELATED []\nsynonym: \"establishment of heterochromatin architecture\" EXACT [GOC:mah]\nsynonym: \"establishment of heterochromatin architecture involved in chromatin silencing at centromere outer repeat region\" NARROW [GOC:TermGenie]\nsynonym: \"establishment of heterochromatin architecture involved in chromatin silencing at pericentric region\" NARROW [GOC:TermGenie]\nsynonym: \"heterochromatic silencing\" RELATED []\nsynonym: \"heterochromatin assembly\" EXACT []\nsynonym: \"heterochromatin assembly involved in chromatin silencing\" RELATED []\nsynonym: \"heterochromatin assembly involved in chromatin silencing at centromere outer repeat region\" NARROW []\nsynonym: \"heterochromatin assembly involved in chromatin silencing at pericentric region\" NARROW [GOC:TermGenie]\nsynonym: \"heterochromatin formation involved in chromatin silencing\" RELATED []\nsynonym: \"heterochromatin formation involved in chromatin silencing at centromere outer repeat region\" NARROW [GOC:TermGenie]\nsynonym: \"heterochromatin formation involved in chromatin silencing at pericentric region\" NARROW [GOC:TermGenie]\nsynonym: \"heterochromatin maintenance\" BROAD []\nsynonym: \"TGS\" BROAD []\nsynonym: \"transcriptional gene silencing\" RELATED []\nxref: Reactome:R-HSA-5334118 \"DNA methylation\"\nis_a: GO:0022607 ! cellular component assembly\nis_a: GO:0045814 ! negative regulation of gene expression, epigenetic\nis_a: GO:0070828 ! heterochromatin organization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031507",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 177195-177227",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031507"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1129,15 +884,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO10",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 269020-269034",
   "excerpt": "[Term]\nid: GO:0045814\nname: negative regulation of gene expression, epigenetic\nnamespace: biological_process\ndef: \"An epigenetic process that silences gene expression at specific genomic regions through chromatin remodeling either by modifying higher order chromatin fiber structure, nucleosomal histones, or the cytosine DNA methylation.\" [PMID:22243696]\nsynonym: \"down regulation of gene expression, epigenetic\" EXACT []\nsynonym: \"down-regulation of gene expression, epigenetic\" EXACT []\nsynonym: \"downregulation of gene expression, epigenetic\" EXACT []\nsynonym: \"gene silencing\" RELATED []\nsynonym: \"inhibition of gene expression, epigenetic\" NARROW []\nxref: Reactome:R-HSA-212300 \"PRC2 methylates histones and DNA\"\nxref: Reactome:R-HSA-5250941 \"Negative epigenetic regulation of rRNA expression\"\nis_a: GO:0010629 ! negative regulation of gene expression\nis_a: GO:0040029 ! epigenetic regulation of gene expression\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045814",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 269020-269034",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045814"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1148,15 +903,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO11",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 270063-270089",
   "excerpt": "[Term]\nid: GO:0045893\nname: positive regulation of DNA-templated transcription\nnamespace: biological_process\nalt_id: GO:0043193\nalt_id: GO:0045941\nalt_id: GO:0061020\ndef: \"Any process that activates or increases the frequency, rate or extent of cellular DNA-templated transcription.\" [GOC:curators, GOC:txnOH]\nsynonym: \"activation of gene-specific transcription\" RELATED []\nsynonym: \"activation of transcription, DNA-dependent\" NARROW []\nsynonym: \"positive regulation of cellular transcription, DNA-dependent\" EXACT []\nsynonym: \"positive regulation of gene-specific transcription\" RELATED []\nsynonym: \"positive regulation of transcription, DNA-dependent\" EXACT [GOC:txnOH]\nsynonym: \"positive regulation of transcription, DNA-templated\" EXACT []\nsynonym: \"stimulation of gene-specific transcription\" NARROW []\nsynonym: \"stimulation of transcription, DNA-dependent\" NARROW []\nsynonym: \"transcription activator activity\" RELATED []\nsynonym: \"up regulation of gene-specific transcription\" RELATED []\nsynonym: \"up regulation of transcription, DNA-dependent\" EXACT []\nsynonym: \"up-regulation of gene-specific transcription\" RELATED []\nsynonym: \"up-regulation of transcription, DNA-dependent\" EXACT []\nsynonym: \"upregulation of gene-specific transcription\" RELATED []\nsynonym: \"upregulation of transcription, DNA-dependent\" EXACT []\nis_a: GO:0006355 ! regulation of DNA-templated transcription\nis_a: GO:1902680 ! positive regulation of RNA biosynthetic process\nrelationship: positively_regulates GO:0006351 ! DNA-templated transcription\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045893",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 270063-270089",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045893"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

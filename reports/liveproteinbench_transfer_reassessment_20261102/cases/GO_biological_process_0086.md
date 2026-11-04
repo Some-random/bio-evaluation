@@ -1,18 +1,16 @@
-# GO_biological_process_0086: before and after transfer clarification
+# GO_biological_process_0086
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0086.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0086.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — negative stranded viral RNA replication
+**Expected answer:** **D** — negative stranded viral RNA replication
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the 391-aa mumps orthorubulavirus phosphoprotein. Its UniProt record describes a role in viral RNA replication, and assigns negative stranded viral RNA replication with IDA evidence linked to PMID 24501400. This supports choice D; it is not merely a computational prediction.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices concern very different contexts, so recognizing that the sequence belongs to a viral protein could favor D over plant- or chromatin-related processes. But the sequence alone does not provide a sufficiently specific basis to identify this protein's role in negative-strand viral RNA replication.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific identity as the mumps virus phosphoprotein and its established participation in replication of the negative-strand viral RNA genome.
-
-
-**Reason**
-
-> The decisive identity and functional annotation are item-specific facts absent from the prompt. Inferring them from an exact sequence match or a database record would be lookup or memorization, not reasoning from the supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein is annotated for viral RNA replication and transcription, but the RNA polymerase II option specifies a distinct host DNA-templated process and does not describe the viral RNA synthesis role. The listed choices therefore leave D as the supported answer.
-
-
-### Important caveats
-
-- Reviewer-only database evidence supports the answer key but was not supplied to the evaluated model.
-- The functional description in the protein record is partly stated as being by similarity; the GO replication annotation is separately marked IDA and linked to a publication.
-- The author's exact database snapshot is unknown, although the sequence matches both the current record and the checked historical record.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices concern very different contexts, so recognizing that the sequence belongs to a viral protein could favor D over plant- or chromatin-related processes. But the sequence alone does not provide a sufficiently specific basis to identify this protein's role in negative-strand viral RNA replication.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific identity as the mumps virus phosphoprotein and its established participation in replication of the negative-strand viral RNA genome.",
-    "reason": "The decisive identity and functional annotation are item-specific facts absent from the prompt. Inferring them from an exact sequence match or a database record would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "case_id": "GO_biological_process_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the 391-aa mumps orthorubulavirus phosphoprotein. Its UniProt record describes a role in viral RNA replication, and assigns negative stranded viral RNA replication with IDA evidence linked to PMID 24501400. This supports choice D; it is not merely a computational prediction."
-  },
-  "important_caveats": [
-    "Reviewer-only database evidence supports the answer key but was not supplied to the evaluated model.",
-    "The functional description in the protein record is partly stated as being by similarity; the GO replication annotation is separately marked IDA and linked to a publication.",
-    "The author's exact database snapshot is unknown, although the sequence matches both the current record and the checked historical record."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein is annotated for viral RNA replication and transcription, but the RNA polymerase II option specifies a distinct host DNA-templated process and does not describe the viral RNA synthesis role. The listed choices therefore leave D as the supported answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the 391-aa mumps orthorubulavirus phosphoprotein. Its UniProt record describes a role in viral RNA replication, and assigns negative stranded viral RNA replication with IDA evidence linked to PMID 24501400. This supports choice D; it is not merely a computational prediction.",
-    "evidence_ids": ["C1", "C3", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices concern very different contexts, so recognizing that the sequence belongs to a viral protein could favor D over plant- or chromatin-related processes. But the sequence alone does not provide a sufficiently specific basis to identify this protein's role in negative-strand viral RNA replication.",
-    "missing_item_specific_fact": "The sequence-specific identity as the mumps virus phosphoprotein and its established participation in replication of the negative-strand viral RNA genome.",
-    "reason": "The decisive identity and functional annotation are item-specific facts absent from the prompt. Inferring them from an exact sequence match or a database record would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein is annotated for viral RNA replication and transcription, but the RNA polymerase II option specifies a distinct host DNA-templated process and does not describe the viral RNA synthesis role. The listed choices therefore leave D as the supported answer."
-  },
-  "important_caveats": [
-    "Reviewer-only database evidence supports the answer key but was not supplied to the evaluated model.",
-    "The functional description in the protein record is partly stated as being by similarity; the GO replication annotation is separately marked IDA and linked to a publication.",
-    "The author's exact database snapshot is unknown, although the sequence matches both the current record and the checked historical record."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt F8V2V0 (Phosphoprotein of Mumps orthorubulavirus, a (-)ssRNA virus in family Paramyxoviridae). The entry carries GO:0039689 'negative stranded viral RNA replication' annotated with IDA:UniProtKB evidence (Inferred from Direct Assay), citing PubMed:24501400. The FUNCTION comment describes the protein as an 'Essential cofactor of the RNA polymerase L that plays a central role in the transcription and replication by forming the polymerase complex with RNA polymerase L and recruiting L to the genomic N-RNA template for RNA synthesis.' The virus lineage (Negarnaviricota, Mononegavirales) confirms negative-stranded RNA virus biology. The expected answer D is directly and strongly supported.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could weakly argue from sequence features: the protein is small (391 AA), has a highly disordered N-terminal region rich in S/T/P/G (phosphorylation sites), lacks DNA-binding domains, enzymatic chromatin-modifier domains, RNA Pol II subunit motifs, and plant-specific features. By elimination of A (no chromatin-modifying domains), C (not an RNA Pol II component or general transcription factor), and B (no plant-specific signatures), one might narrow toward a viral replication cofactor. However, this elimination is weak and does not positively identify the protein as a (-)ssRNA virus phosphoprotein without recognizing the specific sequence or knowing paramyxovirus P protein architecture.
-
-
-**Missing item-specific fact**
-
-> Identification of this exact 391-aa sequence as the Phosphoprotein (P/V) of Mumps orthorubulavirus (UniProt F8V2V0), a member of Paramyxoviridae (Mononegavirales, Negarnaviricota), which is a negative-stranded RNA virus. Without this protein-specific annotation or recognition of the paramyxovirus P protein fold/composition, the sequence alone does not positively and reliably distinguish option D from the alternatives.
-
-
-**Reason**
-
-> While the distractors are from clearly different biological contexts (epigenetic regulation, plant biology, cellular DNA-templated transcription), positively identifying the protein as a viral replication cofactor from a raw 391-aa sequence requires either recognizing the exact protein or possessing specialized knowledge of paramyxovirus phosphoprotein sequence features. General biological reasoning provides only weak eliminative arguments, not a positive identification pathway.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span entirely different biological contexts (epigenetic regulation, plant senescence, cellular Pol II transcription, viral (-)ssRNA replication). Once the protein is identified as viral, D is unambiguously correct and A, B, C are clearly inapplicable. The UniProt entry also annotates GO:0039697 (negative stranded viral RNA transcription), but that term is not among the options, so it does not create ambiguity with the given choices.
-
-
-### Important caveats
-
-- The GO:0039689 annotation carries IDA:UniProtKB evidence (Inferred from Direct Assay) citing PubMed:24501400, a mutagenesis/phosphorylation study of mumps P protein roles in transcription and replication — this is experimental evidence, not purely computational transfer.
-- The FUNCTION comment itself is annotated 'By similarity' (ECO:0000250) to P06162 (Sendai virus P) and P16072 (Measles virus P), but the GO:0039689 annotation is IDA (direct assay), which is a stronger evidence class.
-- The sequence was first publicly released in UniProt on 2025-04-09 (entry version 47); the historical snapshot at entry version 45 (2026-01-28) also matches. The author's construction date is unknown.
-- The identity of the protein (accession F8V2V0) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could weakly argue from sequence features: the protein is small (391 AA), has a highly disordered N-terminal region rich in S/T/P/G (phosphorylation sites), lacks DNA-binding domains, enzymatic chromatin-modifier domains, RNA Pol II subunit motifs, and plant-specific features. By elimination of A (no chromatin-modifying domains), C (not an RNA Pol II component or general transcription factor), and B (no plant-specific signatures), one might narrow toward a viral replication cofactor. However, this elimination is weak and does not positively identify the protein as a (-)ssRNA virus phosphoprotein without recognizing the specific sequence or knowing paramyxovirus P protein architecture.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identification of this exact 391-aa sequence as the Phosphoprotein (P/V) of Mumps orthorubulavirus (UniProt F8V2V0), a member of Paramyxoviridae (Mononegavirales, Negarnaviricota), which is a negative-stranded RNA virus. Without this protein-specific annotation or recognition of the paramyxovirus P protein fold/composition, the sequence alone does not positively and reliably distinguish option D from the alternatives.",
-    "reason": "While the distractors are from clearly different biological contexts (epigenetic regulation, plant biology, cellular DNA-templated transcription), positively identifying the protein as a viral replication cofactor from a raw 391-aa sequence requires either recognizing the exact protein or possessing specialized knowledge of paramyxovirus phosphoprotein sequence features. General biological reasoning provides only weak eliminative arguments, not a positive identification pathway."
-  },
-  "case_id": "GO_biological_process_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C6",
-      "C8",
-      "H1",
-      "H2",
-      "H3",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt F8V2V0 (Phosphoprotein of Mumps orthorubulavirus, a (-)ssRNA virus in family Paramyxoviridae). The entry carries GO:0039689 'negative stranded viral RNA replication' annotated with IDA:UniProtKB evidence (Inferred from Direct Assay), citing PubMed:24501400. The FUNCTION comment describes the protein as an 'Essential cofactor of the RNA polymerase L that plays a central role in the transcription and replication by forming the polymerase complex with RNA polymerase L and recruiting L to the genomic N-RNA template for RNA synthesis.' The virus lineage (Negarnaviricota, Mononegavirales) confirms negative-stranded RNA virus biology. The expected answer D is directly and strongly supported."
-  },
-  "important_caveats": [
-    "The GO:0039689 annotation carries IDA:UniProtKB evidence (Inferred from Direct Assay) citing PubMed:24501400, a mutagenesis/phosphorylation study of mumps P protein roles in transcription and replication — this is experimental evidence, not purely computational transfer.",
-    "The FUNCTION comment itself is annotated 'By similarity' (ECO:0000250) to P06162 (Sendai virus P) and P16072 (Measles virus P), but the GO:0039689 annotation is IDA (direct assay), which is a stronger evidence class.",
-    "The sequence was first publicly released in UniProt on 2025-04-09 (entry version 47); the historical snapshot at entry version 45 (2026-01-28) also matches. The author's construction date is unknown.",
-    "The identity of the protein (accession F8V2V0) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span entirely different biological contexts (epigenetic regulation, plant senescence, cellular Pol II transcription, viral (-)ssRNA replication). Once the protein is identified as viral, D is unambiguously correct and A, B, C are clearly inapplicable. The UniProt entry also annotates GO:0039697 (negative stranded viral RNA transcription), but that term is not among the options, so it does not create ambiguity with the given choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt F8V2V0 (Phosphoprotein of Mumps orthorubulavirus, a (-)ssRNA virus in family Paramyxoviridae). The entry carries GO:0039689 'negative stranded viral RNA replication' annotated with IDA:UniProtKB evidence (Inferred from Direct Assay), citing PubMed:24501400. The FUNCTION comment describes the protein as an 'Essential cofactor of the RNA polymerase L that plays a central role in the transcription and replication by forming the polymerase complex with RNA polymerase L and recruiting L to the genomic N-RNA template for RNA synthesis.' The virus lineage (Negarnaviricota, Mononegavirales) confirms negative-stranded RNA virus biology. The expected answer D is directly and strongly supported.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C6", "C8", "H1", "H2", "H3", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could weakly argue from sequence features: the protein is small (391 AA), has a highly disordered N-terminal region rich in S/T/P/G (phosphorylation sites), lacks DNA-binding domains, enzymatic chromatin-modifier domains, RNA Pol II subunit motifs, and plant-specific features. By elimination of A (no chromatin-modifying domains), C (not an RNA Pol II component or general transcription factor), and B (no plant-specific signatures), one might narrow toward a viral replication cofactor. However, this elimination is weak and does not positively identify the protein as a (-)ssRNA virus phosphoprotein without recognizing the specific sequence or knowing paramyxovirus P protein architecture.",
-    "missing_item_specific_fact": "Identification of this exact 391-aa sequence as the Phosphoprotein (P/V) of Mumps orthorubulavirus (UniProt F8V2V0), a member of Paramyxoviridae (Mononegavirales, Negarnaviricota), which is a negative-stranded RNA virus. Without this protein-specific annotation or recognition of the paramyxovirus P protein fold/composition, the sequence alone does not positively and reliably distinguish option D from the alternatives.",
-    "reason": "While the distractors are from clearly different biological contexts (epigenetic regulation, plant biology, cellular DNA-templated transcription), positively identifying the protein as a viral replication cofactor from a raw 391-aa sequence requires either recognizing the exact protein or possessing specialized knowledge of paramyxovirus phosphoprotein sequence features. General biological reasoning provides only weak eliminative arguments, not a positive identification pathway."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span entirely different biological contexts (epigenetic regulation, plant senescence, cellular Pol II transcription, viral (-)ssRNA replication). Once the protein is identified as viral, D is unambiguously correct and A, B, C are clearly inapplicable. The UniProt entry also annotates GO:0039697 (negative stranded viral RNA transcription), but that term is not among the options, so it does not create ambiguity with the given choices."
-  },
-  "important_caveats": [
-    "The GO:0039689 annotation carries IDA:UniProtKB evidence (Inferred from Direct Assay) citing PubMed:24501400, a mutagenesis/phosphorylation study of mumps P protein roles in transcription and replication — this is experimental evidence, not purely computational transfer.",
-    "The FUNCTION comment itself is annotated 'By similarity' (ECO:0000250) to P06162 (Sendai virus P) and P16072 (Measles virus P), but the GO:0039689 annotation is IDA (direct assay), which is a stronger evidence class.",
-    "The sequence was first publicly released in UniProt on 2025-04-09 (entry version 47); the historical snapshot at entry version 45 (2026-01-28) also matches. The author's construction date is unknown.",
-    "The identity of the protein (accession F8V2V0) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -398,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -516,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "F8V2V0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "627fbf1a8979f5d5df32fee6dd298d7ed1a7a3ca4b818c286e8dd27091a23d90",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 391,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "627fbf1a8979f5d5df32fee6dd298d7ed1a7a3ca4b818c286e8dd27091a23d90",
   "current_entry_audit": {
     "entryVersion": 47,
     "firstPublicDate": "2025-04-09",
@@ -547,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-09-21",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "current_source_sequence_sha256": "627fbf1a8979f5d5df32fee6dd298d7ed1a7a3ca4b818c286e8dd27091a23d90",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 391,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "627fbf1a8979f5d5df32fee6dd298d7ed1a7a3ca4b818c286e8dd27091a23d90",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 45,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "F8V2V0",
   "selected_historical_entry_version": 45,
+  "selected_historical_record_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
+  "selected_historical_source_sequence_length": 391,
+  "selected_historical_source_sequence_sha256": "627fbf1a8979f5d5df32fee6dd298d7ed1a7a3ca4b818c286e8dd27091a23d90",
   "selected_historical_version": {
     "accession": "F8V2V0",
     "database": "Swiss-Prot",
@@ -565,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PHOSP_MUMPV",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
-  "selected_historical_source_sequence_sha256": "627fbf1a8979f5d5df32fee6dd298d7ed1a7a3ca4b818c286e8dd27091a23d90",
-  "selected_historical_source_sequence_length": 391,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 45,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"F8V2V0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -619,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":47,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-09-21\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -638,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"MuV\",\"lineage\":[\"Viruses\",\"Riboviria\",\"Orthornavirae\",\"Negarnaviricota\",\"Haploviricotina\",\"Monjiviricetes\",\"Mononegavirales\",\"Paramyxoviridae\",\"Rubulavirinae\",\"Orthorubulavirus\",\"Orthorubulavirus parotitidis\"],\"scientificName\":\"Mumps orthorubulavirus\",\"taxonId\":2560602}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -657,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"value\":\"Phosphoprotein\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -676,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P06162\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P16072\",\"source\":\"UniProtKB\"}],\"value\":\"Essential cofactor of the RNA polymerase L that plays a central role in the transcription and replication by forming the polymerase complex with RNA polymerase L and recruiting L to the genomic N-RNA template for RNA synthesis (By similarity). Also plays a central role in the encapsidation of nascent RNA chains by forming the encapsidation complex with the nucleocapsid protein N (N-P complex). Acts as a chaperone for newly synthesized free N protein, so-called N0, allowing encapsidation of nascent RNA chains during replication (By similarity). The nucleoprotein protein N prevents excessive phosphorylation of P, which leads to down-regulation of viral transcription/ replication. Participates, together with N, in the formation of viral factories (viroplasms), which are large inclusions in the host cytoplasm where replication takes place (By similarity)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -695,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"24501400\",\"source\":\"PubMed\"}],\"id\":\"GO:0039689\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:negative stranded viral RNA replication\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -714,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/18",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"24501400\",\"source\":\"PubMed\"}],\"id\":\"GO:0039697\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:negative stranded viral RNA transcription\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/18",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -733,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json",
-  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
-  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
-  "json_pointer": "/references/7",
   "excerpt": "{\"citation\":{\"authors\":[\"Pickar A.\",\"Xu P.\",\"Elson A.\",\"Li Z.\",\"Zengel J.\",\"He B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24501400\"},{\"database\":\"DOI\",\"id\":\"10.1128/jvi.03673-13\"}],\"citationType\":\"journal article\",\"firstPage\":\"4414\",\"id\":\"24501400\",\"journal\":\"J. Virol.\",\"lastPage\":\"4422\",\"publicationDate\":\"2014\",\"title\":\"Roles of serine and threonine residues of mumps virus P protein in viral transcription and replication.\",\"volume\":\"88\"},\"referenceNumber\":8,\"referencePositions\":[\"IDENTIFICATION BY MASS SPECTROMETRY\",\"MUTAGENESIS OF THR-101\",\"PHOSPHORYLATION AT THR-10; THR-16; THR-39; SER-69; THR-91; THR-150; THR-165; SER-188; THR-250; SER-257; THR-258; THR-282; SER-374 AND THR-375\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/7",
+  "retrieved_utc": "2026-11-02T04:28:19.040321+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "56857522ea5f5b710f455232a0b818fb905cf20618243ede6b9fd62313bc5ed7",
+  "url": "https://rest.uniprot.org/uniprotkb/F8V2V0.json"
 }
 ```
 
@@ -751,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45",
-  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
-  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   PHOSP_MUMPV             Reviewed;         391 AA.\nAC   F8V2V0;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   21-SEP-2011, sequence version 1.\nDT   28-JAN-2026, entry version 45.\nDE   RecName: Full=Phosphoprotein;\nGN   Name=V/P; Synonyms=P, V;\nOS   Mumps orthorubulavirus (MuV).\nOC   Viruses; Riboviria; Orthornavirae; Negarnaviricota; Haploviricotina;\nOC   Monjiviricetes; Mononegavirales; Paramyxoviridae; Rubulavirinae;\nOC   Orthorubulavirus; Orthorubulavirus parotitidis.\nOX   NCBI_TaxID=2560602;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
+  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45"
 }
 ```
 
@@ -772,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45",
-  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
-  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
-  "source_locator": "lines 84-97",
   "excerpt": "CC   -!- FUNCTION: Essential cofactor of the RNA polymerase L that plays a\nCC       central role in the transcription and replication by forming the\nCC       polymerase complex with RNA polymerase L and recruiting L to the\nCC       genomic N-RNA template for RNA synthesis (By similarity). Also plays a\nCC       central role in the encapsidation of nascent RNA chains by forming the\nCC       encapsidation complex with the nucleocapsid protein N (N-P complex).\nCC       Acts as a chaperone for newly synthesized free N protein, so-called N0,\nCC       allowing encapsidation of nascent RNA chains during replication (By\nCC       similarity). The nucleoprotein protein N prevents excessive\nCC       phosphorylation of P, which leads to down-regulation of viral\nCC       transcription/ replication. Participates, together with N, in the\nCC       formation of viral factories (viroplasms), which are large inclusions\nCC       in the host cytoplasm where replication takes place (By similarity).\nCC       {ECO:0000250|UniProtKB:P06162, ECO:0000250|UniProtKB:P16072}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 84-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
+  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45"
 }
 ```
 
@@ -793,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45",
-  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
-  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
-  "source_locator": "lines 154-154",
   "excerpt": "DR   GO; GO:0039689; P:negative stranded viral RNA replication; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 154-154",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
+  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45"
 }
 ```
 
@@ -814,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45",
-  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
-  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
-  "source_locator": "lines 155-155",
   "excerpt": "DR   GO; GO:0039697; P:negative stranded viral RNA transcription; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:21.959103+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 155-155",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dd84ed0caab5d00246d29d76a498798af374cc0b04d5c2f26441769c2956c54e",
+  "url": "https://rest.uniprot.org/unisave/F8V2V0?format=txt&versions=45"
 }
 ```
 
@@ -836,15 +586,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 65522-65538",
   "excerpt": "[Term]\nid: GO:0006366\nname: transcription by RNA polymerase II\nnamespace: biological_process\nalt_id: GO:0032568\nalt_id: GO:0032569\ndef: \"The synthesis of RNA from a DNA template by RNA polymerase II (RNAP II), originating at an RNA polymerase II promoter. Includes transcription of messenger RNA (mRNA) and certain small nuclear RNAs (snRNAs).\" [GOC:jl, GOC:txnOH, ISBN:0321000382]\nsubset: goslim_yeast\nsynonym: \"gene-specific transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"general transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"RNA polymerase II transcription factor activity\" RELATED []\nsynonym: \"specific transcription from RNA polymerase II promoter\" RELATED [GOC:mah]\nsynonym: \"transcription from Pol II promoter\" EXACT []\nsynonym: \"transcription from RNA polymerase II promoter\" EXACT []\nxref: Reactome:R-HSA-73857 \"RNA Polymerase II Transcription\"\nis_a: GO:0006351 ! DNA-templated transcription\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006366",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 65522-65538",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006366"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -855,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 176664-176680",
   "excerpt": "[Term]\nid: GO:0031452\nname: negative regulation of heterochromatin formation\nnamespace: biological_process\ndef: \"Any process that stops, prevents, or reduces the frequency, rate or extent of heterochromatin formation.\" [PMID:16855380]\nsynonym: \"chromatin decompaction\" EXACT []\nsynonym: \"chromatin decondensation\" EXACT [PMID:16855380]\nsynonym: \"down regulation of heterochromatin formation\" EXACT []\nsynonym: \"down-regulation of heterochromatin formation\" EXACT []\nsynonym: \"downregulation of heterochromatin formation\" EXACT []\nsynonym: \"inhibition of heterochromatin formation\" NARROW []\nsynonym: \"negative regulation of heterochromatin assembly\" EXACT []\nis_a: GO:0010628 ! positive regulation of gene expression\nis_a: GO:0031445 ! regulation of heterochromatin formation\nis_a: GO:0120262 ! negative regulation of heterochromatin organization\nrelationship: negatively_regulates GO:0031507 ! heterochromatin formation\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031452",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 176664-176680",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031452"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -874,15 +624,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 232753-232761",
   "excerpt": "[Term]\nid: GO:0039689\nname: negative stranded viral RNA replication\nnamespace: biological_process\ndef: \"A viral genome replication process where the template genome is negative stranded, single stranded RNA ((-)ssRNA).\" [GOC:bf, GOC:jl, VZ:1096]\nsynonym: \"(-)ss viral RNA replication\" EXACT [VZ:1096]\nxref: VZ:1096 \"Negative stranded RNA virus replication\"\nis_a: GO:0039694 ! viral RNA genome replication\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0039689",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 232753-232761",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0039689"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -893,15 +643,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 453684-453691",
   "excerpt": "[Term]\nid: GO:1900055\nname: regulation of leaf senescence\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of leaf senescence.\" [GOC:TermGenie]\nis_a: GO:0050793 ! regulation of developmental process\nrelationship: regulates GO:0010150 ! leaf senescence\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1900055",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 453684-453691",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1900055"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

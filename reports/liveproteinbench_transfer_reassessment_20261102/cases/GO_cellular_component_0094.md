@@ -1,18 +1,16 @@
-# GO_cellular_component_0094: before and after transfer clarification
+# GO_cellular_component_0094
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0094.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0094.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — plasma membrane
+**Expected answer:** **B** — plasma membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record annotates cell membrane localization, corresponding to plasma membrane (B). This is similarity-transferred evidence, not direct experimental confirmation of the protein's primary location; the record also lists other locations.
-
-Citations as saved: [C5](#evidence-c5), [C8](#evidence-c8), [H4](#evidence-h4), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with a signal peptide and a secretory route, making a cell-surface destination plausible and the bacterial cell-wall and kinetoplast choices poor fits. That signal alone does not establish plasma membrane residence or that it is the primary location.
-
-
-**Missing item-specific fact**
-
-> Protein-specific localization or trafficking evidence establishing plasma membrane localization and prioritizing it over secretion or other destinations.
-
-
-**Reason**
-
-> The sequence supports a broad secretory-pathway inference, but distinguishing the specific primary compartment requires protein-specific information absent from the input. The supporting database annotation is reviewer-only and similarity-transferred.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The annotation lists multiple locations, but among the offered choices only plasma membrane is explicitly supported; host cytoplasm does not specifically establish the perinuclear region.
-
-
-### Important caveats
-
-- The membrane annotation is transferred by similarity and should not be presented as direct experimental evidence for this sequence.
-- The evidence supports plasma membrane as a location but does not rank it as the protein's primary location.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a signal peptide and a secretory route, making a cell-surface destination plausible and the bacterial cell-wall and kinetoplast choices poor fits. That signal alone does not establish plasma membrane residence or that it is the primary location.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Protein-specific localization or trafficking evidence establishing plasma membrane localization and prioritizing it over secretion or other destinations.",
-    "reason": "The sequence supports a broad secretory-pathway inference, but distinguishing the specific primary compartment requires protein-specific information absent from the input. The supporting database annotation is reviewer-only and similarity-transferred."
-  },
-  "case_id": "GO_cellular_component_0094",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C8",
-      "H4",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates cell membrane localization, corresponding to plasma membrane (B). This is similarity-transferred evidence, not direct experimental confirmation of the protein's primary location; the record also lists other locations."
-  },
-  "important_caveats": [
-    "The membrane annotation is transferred by similarity and should not be presented as direct experimental evidence for this sequence.",
-    "The evidence supports plasma membrane as a location but does not rank it as the protein's primary location."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The annotation lists multiple locations, but among the offered choices only plasma membrane is explicitly supported; host cytoplasm does not specifically establish the perinuclear region."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0094",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates cell membrane localization, corresponding to plasma membrane (B). This is similarity-transferred evidence, not direct experimental confirmation of the protein's primary location; the record also lists other locations.",
-    "evidence_ids": ["C5", "C8", "H4", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a signal peptide and a secretory route, making a cell-surface destination plausible and the bacterial cell-wall and kinetoplast choices poor fits. That signal alone does not establish plasma membrane residence or that it is the primary location.",
-    "missing_item_specific_fact": "Protein-specific localization or trafficking evidence establishing plasma membrane localization and prioritizing it over secretion or other destinations.",
-    "reason": "The sequence supports a broad secretory-pathway inference, but distinguishing the specific primary compartment requires protein-specific information absent from the input. The supporting database annotation is reviewer-only and similarity-transferred."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The annotation lists multiple locations, but among the offered choices only plasma membrane is explicitly supported; host cytoplasm does not specifically establish the perinuclear region."
-  },
-  "important_caveats": [
-    "The membrane annotation is transferred by similarity and should not be presented as direct experimental evidence for this sequence.",
-    "The evidence supports plasma membrane as a location but does not rank it as the protein's primary location."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A509AC44 (P. berghei SERA3) explicitly annotates GO:0005886 (plasma membrane) as a cellular component (C8/H7), and the subcellular location comment lists 'Cell membrane; Peripheral membrane protein' (C5/H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). However, the evidence code is ECO:0000250 (inferred by similarity to P. falciparum SERA5, Q9TY95) and the GO annotation is IEA (Inferred from Electronic Annotation). The only experimental evidence (ECO:0000269, PubMed:18419771) supports 'Host cytoplasm,' not plasma membrane specifically. The answer is database-supported but computationally transferred rather than directly experimentally validated for this protein.
-
-Citations as saved: [C5](#evidence-c5), [C8](#evidence-c8), [H4](#evidence-h4), [H7](#evidence-h7), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General reasoning can eliminate A (Plasmodium is eukaryotic, no peptidoglycan) and D (kinetoplasts are exclusive to kinetoplastids, not apicomplexans). The N-terminal signal peptide (MARLSSIVFIICLLLCNNAISDE...) suggests secretion/export, weakening C (perinuclear cytoplasm) as the primary location. However, a signal peptide indicates the protein exits the cell but does not specifically predict 'plasma membrane' over extracellular space, parasitophorous vacuole, or host cytoplasm. The specific assignment to plasma membrane (as a peripheral membrane protein) requires knowledge that SERA-family proteins associate with the host erythrocyte/cell membrane after secretion—an item-specific fact about SERA protein biology not derivable from sequence features alone.
-
-
-**Missing item-specific fact**
-
-> The knowledge that Plasmodium SERA proteins, after secretion into the parasitophorous vacuole, associate peripherally with the host cell plasma membrane (as documented for P. falciparum SERA5 and transferred to P. berghei SERA3). The actual experimental evidence for SERA3 points to 'Host cytoplasm,' not plasma membrane.
-
-
-**Reason**
-
-> While elimination of A and D is straightforward and the signal peptide weakly argues against C, the specific selection of 'plasma membrane' over other secreted/extracellular localizations depends on knowing SERA protein membrane-association biology. The annotation itself is IEA/similarity-based, and the experimental data support a different primary location (host cytoplasm). A model cannot determine from the sequence alone that this secreted protease specifically localizes to the plasma membrane rather than remaining in the parasitophorous vacuole or host cytoplasm.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> The experimental evidence (PubMed:18419771) places SERA3 in 'Host cytoplasm,' which could be loosely mapped to 'perinuclear region of cytoplasm' (C) if interpreted as the cytoplasm of the infected host cell. Meanwhile, 'plasma membrane' (B) is only supported by computational transfer. Among the four choices, B is the most defensible by elimination, but the question's framing of 'primary Cellular Component' is somewhat misleading given that the protein's experimentally determined primary location is the host cytoplasm/parasitophorous vacuole, not the plasma membrane.
-
-
-### Important caveats
-
-- The 'Cell membrane; Peripheral membrane protein' annotation is ECO:0000250 (similarity to P. falciparum SERA5), not direct experimental evidence for P. berghei SERA3.
-- The GO:0005886 annotation carries IEA evidence (Inferred from Electronic Annotation), the lowest-confidence evidence class.
-- The only experimental subcellular location evidence (ECO:0000269, PubMed:18419771) supports 'Host cytoplasm,' which is not among the answer choices.
-- The protein is a secreted protease (papain-like Cys protease domain) with serine repeats; its membrane association is peripheral and context-dependent (erythrocyte membrane during blood stage, hepatocyte membrane during liver stage).
-- The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General reasoning can eliminate A (Plasmodium is eukaryotic, no peptidoglycan) and D (kinetoplasts are exclusive to kinetoplastids, not apicomplexans). The N-terminal signal peptide (MARLSSIVFIICLLLCNNAISDE...) suggests secretion/export, weakening C (perinuclear cytoplasm) as the primary location. However, a signal peptide indicates the protein exits the cell but does not specifically predict 'plasma membrane' over extracellular space, parasitophorous vacuole, or host cytoplasm. The specific assignment to plasma membrane (as a peripheral membrane protein) requires knowledge that SERA-family proteins associate with the host erythrocyte/cell membrane after secretion—an item-specific fact about SERA protein biology not derivable from sequence features alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The knowledge that Plasmodium SERA proteins, after secretion into the parasitophorous vacuole, associate peripherally with the host cell plasma membrane (as documented for P. falciparum SERA5 and transferred to P. berghei SERA3). The actual experimental evidence for SERA3 points to 'Host cytoplasm,' not plasma membrane.",
-    "reason": "While elimination of A and D is straightforward and the signal peptide weakly argues against C, the specific selection of 'plasma membrane' over other secreted/extracellular localizations depends on knowing SERA protein membrane-association biology. The annotation itself is IEA/similarity-based, and the experimental data support a different primary location (host cytoplasm). A model cannot determine from the sequence alone that this secreted protease specifically localizes to the plasma membrane rather than remaining in the parasitophorous vacuole or host cytoplasm."
-  },
-  "case_id": "GO_cellular_component_0094",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C8",
-      "H4",
-      "H7",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A509AC44 (P. berghei SERA3) explicitly annotates GO:0005886 (plasma membrane) as a cellular component (C8/H7), and the subcellular location comment lists 'Cell membrane; Peripheral membrane protein' (C5/H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). However, the evidence code is ECO:0000250 (inferred by similarity to P. falciparum SERA5, Q9TY95) and the GO annotation is IEA (Inferred from Electronic Annotation). The only experimental evidence (ECO:0000269, PubMed:18419771) supports 'Host cytoplasm,' not plasma membrane specifically. The answer is database-supported but computationally transferred rather than directly experimentally validated for this protein."
-  },
-  "important_caveats": [
-    "The 'Cell membrane; Peripheral membrane protein' annotation is ECO:0000250 (similarity to P. falciparum SERA5), not direct experimental evidence for P. berghei SERA3.",
-    "The GO:0005886 annotation carries IEA evidence (Inferred from Electronic Annotation), the lowest-confidence evidence class.",
-    "The only experimental subcellular location evidence (ECO:0000269, PubMed:18419771) supports 'Host cytoplasm,' which is not among the answer choices.",
-    "The protein is a secreted protease (papain-like Cys protease domain) with serine repeats; its membrane association is peripheral and context-dependent (erythrocyte membrane during blood stage, hepatocyte membrane during liver stage).",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "The experimental evidence (PubMed:18419771) places SERA3 in 'Host cytoplasm,' which could be loosely mapped to 'perinuclear region of cytoplasm' (C) if interpreted as the cytoplasm of the infected host cell. Meanwhile, 'plasma membrane' (B) is only supported by computational transfer. Among the four choices, B is the most defensible by elimination, but the question's framing of 'primary Cellular Component' is somewhat misleading given that the protein's experimentally determined primary location is the host cytoplasm/parasitophorous vacuole, not the plasma membrane."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0094",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A509AC44 (P. berghei SERA3) explicitly annotates GO:0005886 (plasma membrane) as a cellular component (C8/H7), and the subcellular location comment lists 'Cell membrane; Peripheral membrane protein' (C5/H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). However, the evidence code is ECO:0000250 (inferred by similarity to P. falciparum SERA5, Q9TY95) and the GO annotation is IEA (Inferred from Electronic Annotation). The only experimental evidence (ECO:0000269, PubMed:18419771) supports 'Host cytoplasm,' not plasma membrane specifically. The answer is database-supported but computationally transferred rather than directly experimentally validated for this protein.",
-    "evidence_ids": ["C5", "C8", "H4", "H7", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General reasoning can eliminate A (Plasmodium is eukaryotic, no peptidoglycan) and D (kinetoplasts are exclusive to kinetoplastids, not apicomplexans). The N-terminal signal peptide (MARLSSIVFIICLLLCNNAISDE...) suggests secretion/export, weakening C (perinuclear cytoplasm) as the primary location. However, a signal peptide indicates the protein exits the cell but does not specifically predict 'plasma membrane' over extracellular space, parasitophorous vacuole, or host cytoplasm. The specific assignment to plasma membrane (as a peripheral membrane protein) requires knowledge that SERA-family proteins associate with the host erythrocyte/cell membrane after secretion—an item-specific fact about SERA protein biology not derivable from sequence features alone.",
-    "missing_item_specific_fact": "The knowledge that Plasmodium SERA proteins, after secretion into the parasitophorous vacuole, associate peripherally with the host cell plasma membrane (as documented for P. falciparum SERA5 and transferred to P. berghei SERA3). The actual experimental evidence for SERA3 points to 'Host cytoplasm,' not plasma membrane.",
-    "reason": "While elimination of A and D is straightforward and the signal peptide weakly argues against C, the specific selection of 'plasma membrane' over other secreted/extracellular localizations depends on knowing SERA protein membrane-association biology. The annotation itself is IEA/similarity-based, and the experimental data support a different primary location (host cytoplasm). A model cannot determine from the sequence alone that this secreted protease specifically localizes to the plasma membrane rather than remaining in the parasitophorous vacuole or host cytoplasm."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "The experimental evidence (PubMed:18419771) places SERA3 in 'Host cytoplasm,' which could be loosely mapped to 'perinuclear region of cytoplasm' (C) if interpreted as the cytoplasm of the infected host cell. Meanwhile, 'plasma membrane' (B) is only supported by computational transfer. Among the four choices, B is the most defensible by elimination, but the question's framing of 'primary Cellular Component' is somewhat misleading given that the protein's experimentally determined primary location is the host cytoplasm/parasitophorous vacuole, not the plasma membrane."
-  },
-  "important_caveats": [
-    "The 'Cell membrane; Peripheral membrane protein' annotation is ECO:0000250 (similarity to P. falciparum SERA5), not direct experimental evidence for P. berghei SERA3.",
-    "The GO:0005886 annotation carries IEA evidence (Inferred from Electronic Annotation), the lowest-confidence evidence class.",
-    "The only experimental subcellular location evidence (ECO:0000269, PubMed:18419771) supports 'Host cytoplasm,' which is not among the answer choices.",
-    "The protein is a secreted protease (papain-like Cys protease domain) with serine repeats; its membrane association is peripheral and context-dependent (erythrocyte membrane during blood stage, hepatocyte membrane during liver stage).",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -399,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -519,30 +279,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A509AC44",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1096,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
   "current_entry_audit": {
     "entryVersion": 27,
     "firstPublicDate": "2025-04-09",
@@ -550,14 +297,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-09-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "current_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1096,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 26,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A509AC44",
   "selected_historical_entry_version": 26,
+  "selected_historical_record_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "selected_historical_source_sequence_length": 1096,
+  "selected_historical_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
   "selected_historical_version": {
     "accession": "A0A509AC44",
     "database": "Swiss-Prot",
@@ -568,24 +331,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "SERA3_PLABA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "selected_historical_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
-  "selected_historical_source_sequence_length": 1096,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 26,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -603,15 +353,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A509AC44\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -622,15 +372,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":27,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-09-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -641,15 +391,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000074855\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Vinckeia\"],\"scientificName\":\"Plasmodium berghei (strain Anka)\",\"taxonId\":5823}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -660,15 +410,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30941868\",\"source\":\"PubMed\"}],\"value\":\"Serine repeat antigen 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18419771\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30941868\",\"source\":\"PubMed\"}],\"value\":\"PbSERA3\"}]}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Serine-repeat antigen protein 3\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -679,15 +429,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9TY95\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0039\",\"value\":\"Cell membrane\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9TY95\",\"source\":\"UniProtKB\"}],\"id\":\"SL-9903\",\"value\":\"Peripheral membrane protein\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9TY95\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0194\",\"value\":\"Parasitophorous vacuole\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9TY95\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18419771\",\"source\":\"PubMed\"}],\"id\":\"SL-0381\",\"value\":\"Host cytoplasm\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -698,15 +448,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/10",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/10",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -717,15 +467,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/11",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0030430\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:host cell cytoplasm\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/11",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -736,15 +486,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/12",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/12",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -755,15 +505,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0020003\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:symbiont-containing vacuole\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -774,15 +524,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Schmidt-Christensen A.\",\"Sturm A.\",\"Horstmann S.\",\"Heussler V.T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18419771\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1462-5822.2008.01162.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"1723\",\"id\":\"18419771\",\"journal\":\"Cell. Microbiol.\",\"lastPage\":\"1734\",\"publicationDate\":\"2008\",\"title\":\"Expression and processing of Plasmodium berghei SERA3 during liver stages.\",\"volume\":\"10\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -793,15 +543,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Pace T.\",\"Grasso F.\",\"Camarda G.\",\"Suarez C.\",\"Blackman M.J.\",\"Ponzi M.\",\"Olivieri A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30941868\"},{\"database\":\"DOI\",\"id\":\"10.1111/cmi.13028\"}],\"citationType\":\"journal article\",\"firstPage\":\"e13028\",\"id\":\"30941868\",\"journal\":\"Cell. Microbiol.\",\"lastPage\":\"e13028\",\"publicationDate\":\"2019\",\"title\":\"The Plasmodium berghei serine protease PbSUB1 plays an important role in male gamete egress.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"DEVELOPMENTAL STAGE\",\"PROTEOLYTIC CLEAVAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -811,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   SERA3_PLABA             Reviewed;        1096 AA.\nAC   A0A509AC44;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-SEP-2019, sequence version 1.\nDT   28-JAN-2026, entry version 26.\nDE   RecName: Full=Serine-repeat antigen protein 3 {ECO:0000305};\nDE   AltName: Full=Serine repeat antigen 3 {ECO:0000303|PubMed:30941868};\nDE            Short=PbSERA3 {ECO:0000303|PubMed:18419771, ECO:0000303|PubMed:30941868};\nDE   Flags: Precursor;\nGN   Name=SERA3 {ECO:0000305};\nGN   ORFNames=PBANKA_0304900 {ECO:0000312|EMBL:VUC54088.1};\nOS   Plasmodium berghei (strain Anka).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Vinckeia).\nOX   NCBI_TaxID=5823 {ECO:0000312|Proteomes:UP000074855};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -832,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 28-34",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   SUBCELLULAR LOCATION, AND DEVELOPMENTAL STAGE.\nRX   PubMed=18419771; DOI=10.1111/j.1462-5822.2008.01162.x;\nRA   Schmidt-Christensen A., Sturm A., Horstmann S., Heussler V.T.;\nRT   \"Expression and processing of Plasmodium berghei SERA3 during liver\nRT   stages.\";\nRL   Cell. Microbiol. 10:1723-1734(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -853,18 +603,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 43-50",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, DEVELOPMENTAL STAGE, AND PROTEOLYTIC CLEAVAGE.\nRX   PubMed=30941868; DOI=10.1111/cmi.13028;\nRA   Pace T., Grasso F., Camarda G., Suarez C., Blackman M.J., Ponzi M.,\nRA   Olivieri A.;\nRT   \"The Plasmodium berghei serine protease PbSUB1 plays an important role in\nRT   male gamete egress.\";\nRL   Cell. Microbiol. 21:e13028-e13028(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -874,18 +624,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 55-59",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cell membrane {ECO:0000250|UniProtKB:Q9TY95};\nCC       Peripheral membrane protein {ECO:0000250|UniProtKB:Q9TY95}.\nCC       Parasitophorous vacuole {ECO:0000250|UniProtKB:Q9TY95}. Secreted\nCC       {ECO:0000250|UniProtKB:Q9TY95}. Host cytoplasm\nCC       {ECO:0000269|PubMed:18419771}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 55-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -895,18 +645,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 87-87",
   "excerpt": "DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -916,18 +666,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 88-88",
   "excerpt": "DR   GO; GO:0030430; C:host cell cytoplasm; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 88-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -937,18 +687,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 89-89",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 89-89",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -958,18 +708,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 90-90",
   "excerpt": "DR   GO; GO:0020003; C:symbiont-containing vacuole; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 90-90",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -980,15 +730,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60420-60454",
   "excerpt": "[Term]\nid: GO:0005886\nname: plasma membrane\nnamespace: cellular_component\nalt_id: GO:0005887\nalt_id: GO:0005904\ndef: \"The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.\" [ISBN:0716731363]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"bacterial inner membrane\" NARROW []\nsynonym: \"cell membrane\" EXACT []\nsynonym: \"cellular membrane\" EXACT [NIF_Subcellular:sao6433132645]\nsynonym: \"cytoplasmic membrane\" EXACT []\nsynonym: \"inner endospore membrane\" NARROW []\nsynonym: \"integral component of plasma membrane\" NARROW []\nsynonym: \"integral to plasma membrane\" NARROW []\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"plasma membrane lipid bilayer\" NARROW [GOC:mah]\nsynonym: \"plasmalemma\" EXACT []\nxref: NIF_Subcellular:sao1663586795\nxref: Wikipedia:Cell_membrane\nis_a: GO:0016020 ! membrane\nrelationship: part_of GO:0071944 ! cell periphery\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60420-60454",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -999,15 +749,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 94735-94744",
   "excerpt": "[Term]\nid: GO:0009274\nname: peptidoglycan-based cell wall\nnamespace: cellular_component\ndef: \"A protective structure outside the cytoplasmic membrane composed of peptidoglycan (also known as murein), a molecule made up of a glycan (sugar) backbone of repetitively alternating N-acetylglucosamine and N-acetylmuramic acid with short, attached, cross-linked peptide chains containing unusual amino acids. An example of this component is found in Escherichia coli.\" [GOC:mlg, ISBN:0815108893]\nsynonym: \"envelope\" BROAD []\nsynonym: \"murein sacculus\" RELATED []\nsynonym: \"peptidoglycan\" NARROW []\nis_a: GO:0005618 ! cell wall\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009274",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 94735-94744",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009274"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1018,15 +768,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 155291-155299",
   "excerpt": "[Term]\nid: GO:0020023\nname: kinetoplast\nnamespace: cellular_component\ndef: \"A sub-structure within the large single mitochondrion of kinetoplastid parasites and which is closely associated with the flagellar pocket and basal body of the flagellum.\" [GOC:mb]\nxref: Wikipedia:Kinetoplast\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005739 ! mitochondrion\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0020023",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 155291-155299",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0020023"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1037,15 +787,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 303515-303523",
   "excerpt": "[Term]\nid: GO:0048471\nname: perinuclear region of cytoplasm\nnamespace: cellular_component\ndef: \"Cytoplasm situated near, or occurring around, the nucleus.\" [GOC:jid]\ncomment: Note that this term should not be confused with the cellular component term 'nuclear membrane lumen ; GO:0005641', which has the synonym 'perinuclear space'.\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048471",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 303515-303523",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048471"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

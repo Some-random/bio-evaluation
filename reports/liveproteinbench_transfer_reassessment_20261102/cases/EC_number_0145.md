@@ -1,18 +1,16 @@
-# EC_number_0145: before and after transfer clarification
+# EC_number_0145
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0145.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0145.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 2.1.1.395
+**Expected answer:** **C** — 2.1.1.395
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the annotated Carapichea ipecacuanha CiOMT entry. The annotation assigns EC 2.1.1.395 to an experimentally evidenced methylation reaction, supporting choice C; the cited evidence is database annotation linked to PubMed, not independent review of the primary study here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features may support a methyltransferase-like function and make the broad transferase class more plausible than the oxidoreductase or phosphotransferase options, but they do not establish the particular substrate and methylation site required for EC 2.1.1.395.
-
-
-**Missing item-specific fact**
-
-> The enzyme's specific catalytic activity on 7'-O-demethylcephaeline, as established by protein-specific functional evidence or an external annotation, is not supplied.
-
-
-**Reason**
-
-> Distinguishing this precise EC subnumber from other methyltransferase choices requires substrate-specific information absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed options, the supplied reviewer evidence supports C. The entry also assigns this protein EC 2.1.1.396 for a distinct cephaeline methylation reaction, but that EC number is not offered.
-
-
-### Important caveats
-
-- The exact sequence match and functional annotation are reviewer-only evidence, not information provided to the evaluated model.
-- The source annotates the protein with both EC 2.1.1.395 and EC 2.1.1.396, so the singular framing omits a second annotated catalytic activity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features may support a methyltransferase-like function and make the broad transferase class more plausible than the oxidoreductase or phosphotransferase options, but they do not establish the particular substrate and methylation site required for EC 2.1.1.395.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The enzyme's specific catalytic activity on 7'-O-demethylcephaeline, as established by protein-specific functional evidence or an external annotation, is not supplied.",
-    "reason": "Distinguishing this precise EC subnumber from other methyltransferase choices requires substrate-specific information absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization."
-  },
-  "case_id": "EC_number_0145",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated Carapichea ipecacuanha CiOMT entry. The annotation assigns EC 2.1.1.395 to an experimentally evidenced methylation reaction, supporting choice C; the cited evidence is database annotation linked to PubMed, not independent review of the primary study here."
-  },
-  "important_caveats": [
-    "The exact sequence match and functional annotation are reviewer-only evidence, not information provided to the evaluated model.",
-    "The source annotates the protein with both EC 2.1.1.395 and EC 2.1.1.396, so the singular framing omits a second annotated catalytic activity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, the supplied reviewer evidence supports C. The entry also assigns this protein EC 2.1.1.396 for a distinct cephaeline methylation reaction, but that EC number is not offered."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0145",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated Carapichea ipecacuanha CiOMT entry. The annotation assigns EC 2.1.1.395 to an experimentally evidenced methylation reaction, supporting choice C; the cited evidence is database annotation linked to PubMed, not independent review of the primary study here.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features may support a methyltransferase-like function and make the broad transferase class more plausible than the oxidoreductase or phosphotransferase options, but they do not establish the particular substrate and methylation site required for EC 2.1.1.395.",
-    "missing_item_specific_fact": "The enzyme's specific catalytic activity on 7'-O-demethylcephaeline, as established by protein-specific functional evidence or an external annotation, is not supplied.",
-    "reason": "Distinguishing this precise EC subnumber from other methyltransferase choices requires substrate-specific information absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, the supplied reviewer evidence supports C. The entry also assigns this protein EC 2.1.1.396 for a distinct cephaeline methylation reaction, but that EC number is not offered."
-  },
-  "important_caveats": [
-    "The exact sequence match and functional annotation are reviewer-only evidence, not information provided to the evaluated model.",
-    "The source annotates the protein with both EC 2.1.1.395 and EC 2.1.1.396, so the singular framing omits a second annotated catalytic activity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry E7FL15 (CIOMT_CARIP) from Carapichea ipecacuanha is experimentally annotated with EC 2.1.1.395 (7'-O-demethylcephaeline + SAM → cephaeline + SAH + H⁺; ECO:0000269|PubMed:21228475) as an alternative name, alongside EC 2.1.1.396 as the recommended name. EC 2.1.1.395 is a valid, experimentally supported EC number for this protein. Since EC 2.1.1.396 is not among the answer choices, option C is the only choice matching this protein's annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a plant-type SAM-binding motif (e.g., 'GDMFDRVPSADAILLKIVLHDWSD' region) and a Rossmann-like fold architecture consistent with a class 2.1.1 O-methyltransferase. This general reasoning can eliminate option B (EC 1.14.13.247, an oxidoreductase/monooxygenase) and option D (EC 2.7.8.7, a phosphorus-transferase). However, distinguishing between EC 2.1.1.353 (option A) and EC 2.1.1.395 (option C) requires knowledge of the exact substrate specificity (7'-O-demethylcephaeline as acceptor) and the specific reaction position of methylation, which is a protein-specific experimental fact not derivable from sequence motifs alone.
-
-
-**Missing item-specific fact**
-
-> The precise substrate identity (7'-O-demethylcephaeline) and methylation position (7'-O) that define EC 2.1.1.395 versus other EC 2.1.1.x methyltransferases. This requires knowing that this particular Carapichea ipecacuanha enzyme is the 'cephaeline synthase' acting at the 7'-hydroxyl, an experimental finding from Cheong et al. 2011 (PubMed:21228475).
-
-
-**Reason**
-
-> While general methyltransferase motifs allow narrowing to the 2.1.1.x class, the final distinction between two EC 2.1.1.xxx numbers depends on protein-specific substrate-reaction knowledge that cannot be deduced from sequence alone without database lookup or memorization of this enzyme's characterization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, only EC 2.1.1.395 matches this protein. The enzyme also carries EC 2.1.1.396 (recommended name) but that number is not offered as an option, so no ambiguity arises within the given choices. Options A, B, and D correspond to unrelated enzyme classes or unrelated methyltransferase reactions.
-
-
-### Important caveats
-
-- The UniProt recommended name for E7FL15 is EC 2.1.1.396 (Cephaeline 6'-O-methyltransferase / Emetine synthase), while EC 2.1.1.395 is listed as an alternative name. Both are experimentally supported (ECO:0000269). The question's phrasing 'the most accurate EC number' could arguably favor 2.1.1.396, but since it is absent from the choices, C remains the only valid answer.
-- The enzyme is bifunctional, catalyzing two sequential methylation steps in the emetine biosynthetic pathway. Assigning a single EC number is inherently incomplete.
-- The sequence-match is confirmed (SHA-256 identical between benchmark input and UniProt entry E7FL15, 350 aa).
-- EC 2.1.1.353 is a valid methyltransferase EC number but corresponds to a different substrate/reaction, making it a plausible but incorrect distractor for someone who identifies the enzyme class but not the specific substrate.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a plant-type SAM-binding motif (e.g., 'GDMFDRVPSADAILLKIVLHDWSD' region) and a Rossmann-like fold architecture consistent with a class 2.1.1 O-methyltransferase. This general reasoning can eliminate option B (EC 1.14.13.247, an oxidoreductase/monooxygenase) and option D (EC 2.7.8.7, a phosphorus-transferase). However, distinguishing between EC 2.1.1.353 (option A) and EC 2.1.1.395 (option C) requires knowledge of the exact substrate specificity (7'-O-demethylcephaeline as acceptor) and the specific reaction position of methylation, which is a protein-specific experimental fact not derivable from sequence motifs alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The precise substrate identity (7'-O-demethylcephaeline) and methylation position (7'-O) that define EC 2.1.1.395 versus other EC 2.1.1.x methyltransferases. This requires knowing that this particular Carapichea ipecacuanha enzyme is the 'cephaeline synthase' acting at the 7'-hydroxyl, an experimental finding from Cheong et al. 2011 (PubMed:21228475).",
-    "reason": "While general methyltransferase motifs allow narrowing to the 2.1.1.x class, the final distinction between two EC 2.1.1.xxx numbers depends on protein-specific substrate-reaction knowledge that cannot be deduced from sequence alone without database lookup or memorization of this enzyme's characterization."
-  },
-  "case_id": "EC_number_0145",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry E7FL15 (CIOMT_CARIP) from Carapichea ipecacuanha is experimentally annotated with EC 2.1.1.395 (7'-O-demethylcephaeline + SAM → cephaeline + SAH + H⁺; ECO:0000269|PubMed:21228475) as an alternative name, alongside EC 2.1.1.396 as the recommended name. EC 2.1.1.395 is a valid, experimentally supported EC number for this protein. Since EC 2.1.1.396 is not among the answer choices, option C is the only choice matching this protein's annotation."
-  },
-  "important_caveats": [
-    "The UniProt recommended name for E7FL15 is EC 2.1.1.396 (Cephaeline 6'-O-methyltransferase / Emetine synthase), while EC 2.1.1.395 is listed as an alternative name. Both are experimentally supported (ECO:0000269). The question's phrasing 'the most accurate EC number' could arguably favor 2.1.1.396, but since it is absent from the choices, C remains the only valid answer.",
-    "The enzyme is bifunctional, catalyzing two sequential methylation steps in the emetine biosynthetic pathway. Assigning a single EC number is inherently incomplete.",
-    "The sequence-match is confirmed (SHA-256 identical between benchmark input and UniProt entry E7FL15, 350 aa).",
-    "EC 2.1.1.353 is a valid methyltransferase EC number but corresponds to a different substrate/reaction, making it a plausible but incorrect distractor for someone who identifies the enzyme class but not the specific substrate."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only EC 2.1.1.395 matches this protein. The enzyme also carries EC 2.1.1.396 (recommended name) but that number is not offered as an option, so no ambiguity arises within the given choices. Options A, B, and D correspond to unrelated enzyme classes or unrelated methyltransferase reactions."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0145",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry E7FL15 (CIOMT_CARIP) from Carapichea ipecacuanha is experimentally annotated with EC 2.1.1.395 (7'-O-demethylcephaeline + SAM → cephaeline + SAH + H⁺; ECO:0000269|PubMed:21228475) as an alternative name, alongside EC 2.1.1.396 as the recommended name. EC 2.1.1.395 is a valid, experimentally supported EC number for this protein. Since EC 2.1.1.396 is not among the answer choices, option C is the only choice matching this protein's annotation.",
-    "evidence_ids": ["C4", "C5", "C7", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a plant-type SAM-binding motif (e.g., 'GDMFDRVPSADAILLKIVLHDWSD' region) and a Rossmann-like fold architecture consistent with a class 2.1.1 O-methyltransferase. This general reasoning can eliminate option B (EC 1.14.13.247, an oxidoreductase/monooxygenase) and option D (EC 2.7.8.7, a phosphorus-transferase). However, distinguishing between EC 2.1.1.353 (option A) and EC 2.1.1.395 (option C) requires knowledge of the exact substrate specificity (7'-O-demethylcephaeline as acceptor) and the specific reaction position of methylation, which is a protein-specific experimental fact not derivable from sequence motifs alone.",
-    "missing_item_specific_fact": "The precise substrate identity (7'-O-demethylcephaeline) and methylation position (7'-O) that define EC 2.1.1.395 versus other EC 2.1.1.x methyltransferases. This requires knowing that this particular Carapichea ipecacuanha enzyme is the 'cephaeline synthase' acting at the 7'-hydroxyl, an experimental finding from Cheong et al. 2011 (PubMed:21228475).",
-    "reason": "While general methyltransferase motifs allow narrowing to the 2.1.1.x class, the final distinction between two EC 2.1.1.xxx numbers depends on protein-specific substrate-reaction knowledge that cannot be deduced from sequence alone without database lookup or memorization of this enzyme's characterization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only EC 2.1.1.395 matches this protein. The enzyme also carries EC 2.1.1.396 (recommended name) but that number is not offered as an option, so no ambiguity arises within the given choices. Options A, B, and D correspond to unrelated enzyme classes or unrelated methyltransferase reactions."
-  },
-  "important_caveats": [
-    "The UniProt recommended name for E7FL15 is EC 2.1.1.396 (Cephaeline 6'-O-methyltransferase / Emetine synthase), while EC 2.1.1.395 is listed as an alternative name. Both are experimentally supported (ECO:0000269). The question's phrasing 'the most accurate EC number' could arguably favor 2.1.1.396, but since it is absent from the choices, C remains the only valid answer.",
-    "The enzyme is bifunctional, catalyzing two sequential methylation steps in the emetine biosynthetic pathway. Assigning a single EC number is inherently incomplete.",
-    "The sequence-match is confirmed (SHA-256 identical between benchmark input and UniProt entry E7FL15, 350 aa).",
-    "EC 2.1.1.353 is a valid methyltransferase EC number but corresponds to a different substrate/reaction, making it a plausible but incorrect distractor for someone who identifies the enzyme class but not the specific substrate."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +156,9 @@ Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E7FL15",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 350,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-06-18",
@@ -533,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-04-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "current_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 350,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E7FL15",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "selected_historical_source_sequence_length": 350,
+  "selected_historical_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
   "selected_historical_version": {
     "accession": "E7FL15",
     "database": "Swiss-Prot",
@@ -551,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CIOMT_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "selected_historical_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
-  "selected_historical_source_sequence_length": 350,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -582,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E7FL15\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -601,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-04-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -620,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -639,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.395\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"7'-O-demethylcephaeline 7'-O-methyltransferase CiOMT\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"Cephaeline synthase CiOMT\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ72588.1\",\"source\":\"EMBL\"}],\"value\":\"7'-O-demethylcephaeline/cephaeline O-methyltransferase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ72588.1\",\"source\":\"EMBL\"}],\"value\":\"7'OMT\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"CiOMT\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.396\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"Cephaeline 6'-O-methyltransferase CiOMT\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"Emetine synthase CiOMT\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -658,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:80556\"}}],\"reaction\":{\"ecNumber\":\"2.1.1.395\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"name\":\"7'-O-demethylcephaeline + S-adenosyl-L-methionine = cephaeline + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:80555\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231587\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231589\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -677,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:80660\"}}],\"reaction\":{\"ecNumber\":\"2.1.1.396\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"name\":\"cephaeline + S-adenosyl-L-methionine = emetine + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:80659\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:149548\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231587\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -696,15 +454,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Cheong B.E.\",\"Takemura T.\",\"Yoshimatsu K.\",\"Sato F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21228475\"},{\"database\":\"DOI\",\"id\":\"10.1271/bbb.100605\"}],\"citationType\":\"journal article\",\"firstPage\":\"107\",\"id\":\"21228475\",\"journal\":\"Biosci. Biotechnol. Biochem.\",\"lastPage\":\"113\",\"publicationDate\":\"2011\",\"title\":\"Molecular cloning of an O-methyltransferase from adventitious roots of Carapichea ipecacuanha.\",\"volume\":\"75\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ72588.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -714,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 1-21",
   "excerpt": "ID   CIOMT_CARIP             Reviewed;         350 AA.\nAC   E7FL15;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-APR-2011, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=Cephaeline 6'-O-methyltransferase CiOMT {ECO:0000303|PubMed:21228475};\nDE            Short=Emetine synthase CiOMT {ECO:0000303|PubMed:21228475};\nDE            EC=2.1.1.396 {ECO:0000269|PubMed:21228475};\nDE   AltName: Full=7'-O-demethylcephaeline 7'-O-methyltransferase CiOMT {ECO:0000303|PubMed:21228475};\nDE            Short=Cephaeline synthase CiOMT {ECO:0000303|PubMed:21228475};\nDE            EC=2.1.1.395 {ECO:0000269|PubMed:21228475};\nDE   AltName: Full=7'-O-demethylcephaeline/cephaeline O-methyltransferase {ECO:0000303|PubMed:21228475, ECO:0000312|EMBL:BAJ72588.1};\nDE            Short=7'OMT {ECO:0000312|EMBL:BAJ72588.1};\nDE            Short=CiOMT {ECO:0000303|PubMed:21228475};\nGN   Name=OMT {ECO:0000303|PubMed:21228475};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -735,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 6-14",
   "excerpt": "DE   RecName: Full=Cephaeline 6'-O-methyltransferase CiOMT {ECO:0000303|PubMed:21228475};\nDE            Short=Emetine synthase CiOMT {ECO:0000303|PubMed:21228475};\nDE            EC=2.1.1.396 {ECO:0000269|PubMed:21228475};\nDE   AltName: Full=7'-O-demethylcephaeline 7'-O-methyltransferase CiOMT {ECO:0000303|PubMed:21228475};\nDE            Short=Cephaeline synthase CiOMT {ECO:0000303|PubMed:21228475};\nDE            EC=2.1.1.395 {ECO:0000269|PubMed:21228475};\nDE   AltName: Full=7'-O-demethylcephaeline/cephaeline O-methyltransferase {ECO:0000303|PubMed:21228475, ECO:0000312|EMBL:BAJ72588.1};\nDE            Short=7'OMT {ECO:0000312|EMBL:BAJ72588.1};\nDE            Short=CiOMT {ECO:0000303|PubMed:21228475};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -756,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 22-30",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAJ72588.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, AND ACTIVITY REGULATION.\nRC   TISSUE=Root;\nRX   PubMed=21228475; DOI=10.1271/bbb.100605;\nRA   Cheong B.E., Takemura T., Yoshimatsu K., Sato F.;\nRT   \"Molecular cloning of an O-methyltransferase from adventitious roots of\nRT   Carapichea ipecacuanha.\";\nRL   Biosci. Biotechnol. Biochem. 75:107-113(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -777,18 +535,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 39-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=7'-O-demethylcephaeline + S-adenosyl-L-methionine = cephaeline\nCC         + S-adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:80555,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231587, ChEBI:CHEBI:231589; EC=2.1.1.395;\nCC         Evidence={ECO:0000269|PubMed:21228475};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:80556;\nCC         Evidence={ECO:0000269|PubMed:21228475};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -798,18 +556,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 47-54",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=cephaeline + S-adenosyl-L-methionine = emetine + S-adenosyl-L-\nCC         homocysteine + H(+); Xref=Rhea:RHEA:80659, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:57856, ChEBI:CHEBI:59789, ChEBI:CHEBI:149548,\nCC         ChEBI:CHEBI:231587; EC=2.1.1.396;\nCC         Evidence={ECO:0000269|PubMed:21228475};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:80660;\nCC         Evidence={ECO:0000269|PubMed:21228475};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 

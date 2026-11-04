@@ -1,18 +1,16 @@
-# GO_cellular_component_0038: before and after transfer clarification
+# GO_cellular_component_0038
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0038.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0038.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — transcription regulator complex
+**Expected answer:** **B** — transcription regulator complex
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,255 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact matched sequence has a UniProt GO annotation for transcription regulator complex (GO:0005667), but that annotation is computationally inferred (IEA:TreeGrafter), not experimental evidence of membership in a particular complex. Experimental evidence supports nuclear localization, not the complex annotation itself.
-
-Citations as saved: [C8](#evidence-c8), [H6](#evidence-h6), [C5](#evidence-c5), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence's C2H2 zinc-finger motifs and basic regions are consistent with a DNA-binding transcription factor, favoring transcription-related choices over axon. They do not establish which transcription-regulator complex it occupies or whether it specifically acts in an RNA polymerase II regulator complex.
-
-
-**Missing item-specific fact**
-
-> The protein-specific complex annotation or evidence of its complex membership and RNA polymerase II regulatory specificity is absent from the supplied input.
-
-
-**Reason**
-
-> Sequence-based reasoning supports a broad transcription-factor role but does not distinguish the nested choices A and B. Selecting B as the assigned GO term depends on the protein-specific annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> A is a narrower subtype of B. The sequence does not resolve whether this transcription factor acts specifically in an RNA polymerase II transcription regulator complex; the supplied choices and wording do not provide that distinction.
-
-
-### Important caveats
-
-- The sequence matches the cited UniProt record, including the historical entry; the author’s exact source snapshot is unknown.
-- The experimental nuclear localization annotation does not itself establish localization in either listed transcription-regulator complex.
-- The GO annotation supports B as the database-assigned term, but its computational evidence should not be mistaken for an experimental complex-membership measurement.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence's C2H2 zinc-finger motifs and basic regions are consistent with a DNA-binding transcription factor, favoring transcription-related choices over axon. They do not establish which transcription-regulator complex it occupies or whether it specifically acts in an RNA polymerase II regulator complex.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific complex annotation or evidence of its complex membership and RNA polymerase II regulatory specificity is absent from the supplied input.",
-    "reason": "Sequence-based reasoning supports a broad transcription-factor role but does not distinguish the nested choices A and B. Selecting B as the assigned GO term depends on the protein-specific annotation."
-  },
-  "case_id": "GO_cellular_component_0038",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C8",
-      "H6",
-      "C5",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The exact matched sequence has a UniProt GO annotation for transcription regulator complex (GO:0005667), but that annotation is computationally inferred (IEA:TreeGrafter), not experimental evidence of membership in a particular complex. Experimental evidence supports nuclear localization, not the complex annotation itself."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt record, including the historical entry; the author’s exact source snapshot is unknown.",
-    "The experimental nuclear localization annotation does not itself establish localization in either listed transcription-regulator complex.",
-    "The GO annotation supports B as the database-assigned term, but its computational evidence should not be mistaken for an experimental complex-membership measurement."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "A is a narrower subtype of B. The sequence does not resolve whether this transcription factor acts specifically in an RNA polymerase II transcription regulator complex; the supplied choices and wording do not provide that distinction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0038",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact matched sequence has a UniProt GO annotation for transcription regulator complex (GO:0005667), but that annotation is computationally inferred (IEA:TreeGrafter), not experimental evidence of membership in a particular complex. Experimental evidence supports nuclear localization, not the complex annotation itself.",
-    "evidence_ids": ["C8", "H6", "C5", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence's C2H2 zinc-finger motifs and basic regions are consistent with a DNA-binding transcription factor, favoring transcription-related choices over axon. They do not establish which transcription-regulator complex it occupies or whether it specifically acts in an RNA polymerase II regulator complex.",
-    "missing_item_specific_fact": "The protein-specific complex annotation or evidence of its complex membership and RNA polymerase II regulatory specificity is absent from the supplied input.",
-    "reason": "Sequence-based reasoning supports a broad transcription-factor role but does not distinguish the nested choices A and B. Selecting B as the assigned GO term depends on the protein-specific annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "A is a narrower subtype of B. The sequence does not resolve whether this transcription factor acts specifically in an RNA polymerase II transcription regulator complex; the supplied choices and wording do not provide that distinction."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt record, including the historical entry; the author’s exact source snapshot is unknown.",
-    "The experimental nuclear localization annotation does not itself establish localization in either listed transcription-regulator complex.",
-    "The GO annotation supports B as the database-assigned term, but its computational evidence should not be mistaken for an experimental complex-membership measurement."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry (A0A9P4XV22) annotates GO:0005667 'transcription regulator complex' (C8/H6) for this protein. The protein is identified as a C2H2-type transcription factor ZAP1 (C4), and the sequence contains multiple canonical C2H2 zinc finger motifs (e.g., 'CGKGFARRSDLARHERIHTGVRPHVCEYPNCGKQFIQRSALTVHQRVHTGEKPHMCERCGKPFSDSSSLARHRRIHSGKRPYKCPYADCQKTFTRRTTLTRHQNHHTG'). The annotation evidence is IEA:TreeGrafter (computational inference), while the experimental evidence (ECO:0000269, PubMed:39611846) supports 'Nucleus' (GO:0005634, C7/H5), which is not among the choices. Among the four options, B is the only term actually annotated for this protein and is biologically appropriate for a zinc finger transcription factor.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H6](#evidence-h6), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains multiple canonical C2H2 zinc finger motifs (C-x2-4-C-x12-H-x3-5-H patterns), identifying this as a DNA-binding transcription factor. This eliminates C (axon: a neuronal structure absent in fungi, and irrelevant to a nuclear TF) and D (protein-DNA complex: the GO definition explicitly states 'Protein complexes that interact with DNA e.g. transcription factor complexes should not be classified here'). Between A and B, B ('transcription regulator complex') is the parent GO term and the broader, more conservative classification for a general zinc finger TF without demonstrated specific Pol II complex membership. Choosing the parent term over the child term (A, 'RNA polymerase II transcription regulator complex') is defensible without specific experimental evidence of Pol II-specific complex assembly.
-
-
-**Missing item-specific fact**
-
-> The specific experimental demonstration that this ZAP1 protein is part of a Pol II-specific regulatory complex (which would justify A over B) is absent. However, the absence of such evidence supports the broader term B.
-
-
-**Reason**
-
-> The C2H2 zinc finger motif recognition from the raw sequence provides a concrete biological argument to identify this as a transcription factor. The GO term definitions (GO1, GO3) provide explicit criteria to eliminate D. The fungal origin (inferable from sequence composition and the absence of neuronal context) eliminates C. The A-vs-B distinction is resolved by the principle of choosing the broader annotated term absent specific Pol II complex evidence. This constitutes a multi-step biological reasoning chain, though the A-vs-B margin is narrower than the C/D eliminations.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> In fungi, all protein-coding genes are transcribed by RNA Pol II, so a fungal zinc finger TF could arguably be classified under the more specific term A ('RNA polymerase II transcription regulator complex'). However, the UniProt annotation assigns only the broader term B (GO:0005667, IEA:TreeGrafter), and A (GO:0090575) is not annotated. The distinction between A and B depends on whether one requires explicit evidence of Pol II-specific complex membership or accepts the broader functional classification. This is a genuine but non-fatal ambiguity; B remains the annotated and more conservative choice.
-
-
-### Important caveats
-
-- The GO:0005667 annotation is IEA:TreeGrafter (computational phylogenetic grafting), not experimental. The only experimental subcellular localization evidence is for 'Nucleus' (GO:0005634), which is not offered as a choice.
-- The sequence is 388 aa from Cryphonectria parasitica (a fungus); the organism context is not provided in the question input but is inferable from sequence composition.
-- The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot is unknown but the historical entry version 11 (released 2026-01-28) contains the same annotation.
-- The identity of the accession (A0A9P4XV22) was inferred by the reviewer from dataset metadata; this was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains multiple canonical C2H2 zinc finger motifs (C-x2-4-C-x12-H-x3-5-H patterns), identifying this as a DNA-binding transcription factor. This eliminates C (axon: a neuronal structure absent in fungi, and irrelevant to a nuclear TF) and D (protein-DNA complex: the GO definition explicitly states 'Protein complexes that interact with DNA e.g. transcription factor complexes should not be classified here'). Between A and B, B ('transcription regulator complex') is the parent GO term and the broader, more conservative classification for a general zinc finger TF without demonstrated specific Pol II complex membership. Choosing the parent term over the child term (A, 'RNA polymerase II transcription regulator complex') is defensible without specific experimental evidence of Pol II-specific complex assembly.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific experimental demonstration that this ZAP1 protein is part of a Pol II-specific regulatory complex (which would justify A over B) is absent. However, the absence of such evidence supports the broader term B.",
-    "reason": "The C2H2 zinc finger motif recognition from the raw sequence provides a concrete biological argument to identify this as a transcription factor. The GO term definitions (GO1, GO3) provide explicit criteria to eliminate D. The fungal origin (inferable from sequence composition and the absence of neuronal context) eliminates C. The A-vs-B distinction is resolved by the principle of choosing the broader annotated term absent specific Pol II complex evidence. This constitutes a multi-step biological reasoning chain, though the A-vs-B margin is narrower than the C/D eliminations."
-  },
-  "case_id": "GO_cellular_component_0038",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "H6",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A9P4XV22) annotates GO:0005667 'transcription regulator complex' (C8/H6) for this protein. The protein is identified as a C2H2-type transcription factor ZAP1 (C4), and the sequence contains multiple canonical C2H2 zinc finger motifs (e.g., 'CGKGFARRSDLARHERIHTGVRPHVCEYPNCGKQFIQRSALTVHQRVHTGEKPHMCERCGKPFSDSSSLARHRRIHSGKRPYKCPYADCQKTFTRRTTLTRHQNHHTG'). The annotation evidence is IEA:TreeGrafter (computational inference), while the experimental evidence (ECO:0000269, PubMed:39611846) supports 'Nucleus' (GO:0005634, C7/H5), which is not among the choices. Among the four options, B is the only term actually annotated for this protein and is biologically appropriate for a zinc finger transcription factor."
-  },
-  "important_caveats": [
-    "The GO:0005667 annotation is IEA:TreeGrafter (computational phylogenetic grafting), not experimental. The only experimental subcellular localization evidence is for 'Nucleus' (GO:0005634), which is not offered as a choice.",
-    "The sequence is 388 aa from Cryphonectria parasitica (a fungus); the organism context is not provided in the question input but is inferable from sequence composition.",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot is unknown but the historical entry version 11 (released 2026-01-28) contains the same annotation.",
-    "The identity of the accession (A0A9P4XV22) was inferred by the reviewer from dataset metadata; this was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "In fungi, all protein-coding genes are transcribed by RNA Pol II, so a fungal zinc finger TF could arguably be classified under the more specific term A ('RNA polymerase II transcription regulator complex'). However, the UniProt annotation assigns only the broader term B (GO:0005667, IEA:TreeGrafter), and A (GO:0090575) is not annotated. The distinction between A and B depends on whether one requires explicit evidence of Pol II-specific complex membership or accepts the broader functional classification. This is a genuine but non-fatal ambiguity; B remains the annotated and more conservative choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0038",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A9P4XV22) annotates GO:0005667 'transcription regulator complex' (C8/H6) for this protein. The protein is identified as a C2H2-type transcription factor ZAP1 (C4), and the sequence contains multiple canonical C2H2 zinc finger motifs (e.g., 'CGKGFARRSDLARHERIHTGVRPHVCEYPNCGKQFIQRSALTVHQRVHTGEKPHMCERCGKPFSDSSSLARHRRIHSGKRPYKCPYADCQKTFTRRTTLTRHQNHHTG'). The annotation evidence is IEA:TreeGrafter (computational inference), while the experimental evidence (ECO:0000269, PubMed:39611846) supports 'Nucleus' (GO:0005634, C7/H5), which is not among the choices. Among the four options, B is the only term actually annotated for this protein and is biologically appropriate for a zinc finger transcription factor.",
-    "evidence_ids": ["C4", "C5", "C7", "C8", "H6", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains multiple canonical C2H2 zinc finger motifs (C-x2-4-C-x12-H-x3-5-H patterns), identifying this as a DNA-binding transcription factor. This eliminates C (axon: a neuronal structure absent in fungi, and irrelevant to a nuclear TF) and D (protein-DNA complex: the GO definition explicitly states 'Protein complexes that interact with DNA e.g. transcription factor complexes should not be classified here'). Between A and B, B ('transcription regulator complex') is the parent GO term and the broader, more conservative classification for a general zinc finger TF without demonstrated specific Pol II complex membership. Choosing the parent term over the child term (A, 'RNA polymerase II transcription regulator complex') is defensible without specific experimental evidence of Pol II-specific complex assembly.",
-    "missing_item_specific_fact": "The specific experimental demonstration that this ZAP1 protein is part of a Pol II-specific regulatory complex (which would justify A over B) is absent. However, the absence of such evidence supports the broader term B.",
-    "reason": "The C2H2 zinc finger motif recognition from the raw sequence provides a concrete biological argument to identify this as a transcription factor. The GO term definitions (GO1, GO3) provide explicit criteria to eliminate D. The fungal origin (inferable from sequence composition and the absence of neuronal context) eliminates C. The A-vs-B distinction is resolved by the principle of choosing the broader annotated term absent specific Pol II complex evidence. This constitutes a multi-step biological reasoning chain, though the A-vs-B margin is narrower than the C/D eliminations."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "In fungi, all protein-coding genes are transcribed by RNA Pol II, so a fungal zinc finger TF could arguably be classified under the more specific term A ('RNA polymerase II transcription regulator complex'). However, the UniProt annotation assigns only the broader term B (GO:0005667, IEA:TreeGrafter), and A (GO:0090575) is not annotated. The distinction between A and B depends on whether one requires explicit evidence of Pol II-specific complex membership or accepts the broader functional classification. This is a genuine but non-fatal ambiguity; B remains the annotated and more conservative choice."
-  },
-  "important_caveats": [
-    "The GO:0005667 annotation is IEA:TreeGrafter (computational phylogenetic grafting), not experimental. The only experimental subcellular localization evidence is for 'Nucleus' (GO:0005634), which is not offered as a choice.",
-    "The sequence is 388 aa from Cryphonectria parasitica (a fungus); the organism context is not provided in the question input but is inferable from sequence composition.",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot is unknown but the historical entry version 11 (released 2026-01-28) contains the same annotation.",
-    "The identity of the accession (A0A9P4XV22) was inferred by the reviewer from dataset metadata; this was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -409,10 +163,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -534,30 +287,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9P4XV22",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4bcf4b06c81e67c28e273b2697c49580d95ca989162e84b86e6d6f4cc541ab9f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 388,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4bcf4b06c81e67c28e273b2697c49580d95ca989162e84b86e6d6f4cc541ab9f",
   "current_entry_audit": {
     "entryVersion": 13,
     "firstPublicDate": "2025-04-09",
@@ -565,14 +305,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-09-13",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "current_source_sequence_sha256": "4bcf4b06c81e67c28e273b2697c49580d95ca989162e84b86e6d6f4cc541ab9f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 388,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4bcf4b06c81e67c28e273b2697c49580d95ca989162e84b86e6d6f4cc541ab9f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 11,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9P4XV22",
   "selected_historical_entry_version": 11,
+  "selected_historical_record_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
+  "selected_historical_source_sequence_length": 388,
+  "selected_historical_source_sequence_sha256": "4bcf4b06c81e67c28e273b2697c49580d95ca989162e84b86e6d6f4cc541ab9f",
   "selected_historical_version": {
     "accession": "A0A9P4XV22",
     "database": "Swiss-Prot",
@@ -583,24 +339,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ZAP1_CRYP1",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
-  "selected_historical_source_sequence_sha256": "4bcf4b06c81e67c28e273b2697c49580d95ca989162e84b86e6d6f4cc541ab9f",
-  "selected_historical_source_sequence_length": 388,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 11,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -618,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9P4XV22\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -637,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":13,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2023-09-13\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -656,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Diaporthales\",\"Cryphonectriaceae\",\"Cryphonectria-Endothia species complex\",\"Cryphonectria\"],\"scientificName\":\"Cryphonectria parasitica (strain ATCC 38755 / EP155)\",\"taxonId\":660469}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -675,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39611846\",\"source\":\"PubMed\"}],\"value\":\"C2H2-type transcription factor ZAP1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -694,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39611846\",\"source\":\"PubMed\"}],\"id\":\"SL-0191\",\"value\":\"Nucleus\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -713,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/5",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0000785\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:chromatin\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/5",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -732,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/6",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39611846\",\"source\":\"PubMed\"}],\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/6",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -751,15 +494,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/7",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005667\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:transcription regulator complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/7",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -770,15 +513,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json",
-  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
-  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhao L.\",\"Wei X.\",\"Chen F.\",\"Chen B.\",\"Li R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39611846\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.01844-24\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0184424\",\"id\":\"39611846\",\"journal\":\"MBio\",\"lastPage\":\"e0184424\",\"publicationDate\":\"2025\",\"title\":\"m6A demethylase CpALKBH regulates CpZap1 mRNA stability to modulate the development and virulence of chestnut blight fungus.\",\"volume\":\"16\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:26:16.008633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eb112fe54186da42ef70d1d66ed09d8890bc8ad2e336ba13391e7372aaac0732",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9P4XV22.json"
 }
 ```
 
@@ -788,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11",
-  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
-  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   ZAP1_CRYP1              Reviewed;         388 AA.\nAC   A0A9P4XV22;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   13-SEP-2023, sequence version 1.\nDT   28-JAN-2026, entry version 11.\nDE   RecName: Full=C2H2-type transcription factor ZAP1 {ECO:0000303|PubMed:39611846};\nGN   Name=ZAP1 {ECO:0000303|PubMed:39611846}; ORFNames=M406DRAFT_281560;\nOS   Cryphonectria parasitica (strain ATCC 38755 / EP155).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Diaporthales; Cryphonectriaceae;\nOC   Cryphonectria-Endothia species complex; Cryphonectria.\nOX   NCBI_TaxID=660469;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
+  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11"
 }
 ```
 
@@ -809,18 +552,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11",
-  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
-  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
-  "source_locator": "lines 24-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, SUBCELLULAR LOCATION, INDUCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=39611846; DOI=10.1128/mbio.01844-24;\nRA   Zhao L., Wei X., Chen F., Chen B., Li R.;\nRT   \"m6A demethylase CpALKBH regulates CpZap1 mRNA stability to modulate the\nRT   development and virulence of chestnut blight fungus.\";\nRL   MBio 16:e0184424-e0184424(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
+  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11"
 }
 ```
 
@@ -830,18 +573,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11",
-  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
-  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
-  "source_locator": "lines 33-33",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Nucleus {ECO:0000269|PubMed:39611846}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
+  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11"
 }
 ```
 
@@ -851,18 +594,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11",
-  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
-  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
-  "source_locator": "lines 52-52",
   "excerpt": "DR   GO; GO:0000785; C:chromatin; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
+  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11"
 }
 ```
 
@@ -872,18 +615,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11",
-  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
-  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
-  "source_locator": "lines 53-53",
   "excerpt": "DR   GO; GO:0005634; C:nucleus; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
+  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11"
 }
 ```
 
@@ -893,18 +636,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11",
-  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
-  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
-  "source_locator": "lines 54-54",
   "excerpt": "DR   GO; GO:0005667; C:transcription regulator complex; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:26:18.672095+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 54-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ca54309309117c1baaf6e783eddf9a63f645605d769672bf9109d1945016d803",
+  "url": "https://rest.uniprot.org/unisave/A0A9P4XV22?format=txt&versions=11"
 }
 ```
 
@@ -915,15 +658,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58346-58358",
   "excerpt": "[Term]\nid: GO:0005667\nname: transcription regulator complex\nnamespace: cellular_component\nalt_id: GO:0044797\nalt_id: GO:0044798\ndef: \"A protein complex that is capable of associating with DNA by direct binding, or via other DNA-binding proteins or complexes, and regulating transcription.\" [GOC:jl]\nsubset: goslim_pir\nsynonym: \"cytoplasmic transcription factor complex\" RELATED []\nsynonym: \"nuclear transcription factor complex\" RELATED []\nsynonym: \"transcription factor complex\" RELATED []\nis_a: GO:0032991 ! protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005667",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58346-58358",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005667"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -934,15 +677,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 166061-166069",
   "excerpt": "[Term]\nid: GO:0030424\nname: axon\nnamespace: cellular_component\ndef: \"The long process of a neuron that conducts nerve impulses, usually away from the cell body to the terminals and varicosities, which are sites of storage and release of neurotransmitter.\" [GOC:nln, ISBN:0198506732]\nxref: NIF_Subcellular:sao1770195789\nxref: Wikipedia:Axon\nis_a: GO:0043005 ! neuron projection\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030424",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 166061-166069",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030424"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -953,15 +696,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 192695-192704",
   "excerpt": "[Term]\nid: GO:0032993\nname: protein-DNA complex\nnamespace: cellular_component\ndef: \"A macromolecular complex containing both protein and DNA molecules.\" [GOC:mah]\ncomment: Note that this term is intended to classify complexes that have DNA as one of the members of the complex, that is, the complex does not exist if DNA is not present. Protein complexes that interact with DNA e.g. transcription factor complexes should not be classified here.\nsubset: goslim_pir\nsynonym: \"DNA-protein complex\" EXACT [GOC:mah]\nis_a: GO:0032991 ! protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032993",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 192695-192704",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032993"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -972,15 +715,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 400139-400147",
   "excerpt": "[Term]\nid: GO:0090575\nname: RNA polymerase II transcription regulator complex\nnamespace: cellular_component\ndef: \"A transcription factor complex that acts at a regulatory region of a gene transcribed by RNA polymerase II.\" [GOC:tb]\nsynonym: \"RNA polymerase II transcription factor complex\" NARROW []\nis_a: GO:0005667 ! transcription regulator complex\nis_a: GO:0140513 ! nuclear protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0090575",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 400139-400147",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0090575"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

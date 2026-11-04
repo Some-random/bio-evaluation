@@ -1,18 +1,16 @@
-# EC_number_0001: before and after transfer clarification
+# EC_number_0001
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0001.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0001.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 4.4.1.11
+**Expected answer:** **C** — 4.4.1.11
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as L-methionine gamma-lyase, EC 4.4.1.11, with the corresponding catalytic reaction. The annotation is transferred by similarity from another UniProt entry (ECO:0000250), not direct experimental evidence for this sequence.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support identifying a related enzyme family, but that alone does not establish which specific reaction—and thus which complete EC number—the protein catalyzes.
-
-
-**Missing item-specific fact**
-
-> A protein-specific functional annotation or experimental determination distinguishing methionine gamma-lyase activity from related sulfur-amino-acid reactions.
-
-
-**Reason**
-
-> The input supplies only the sequence and choices. Selecting the reaction-specific EC number requires protein-specific functional knowledge; recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from supplied context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, only C matches the supported annotation. The source also lists EC 4.4.1.2 as an alternative name/activity, but that number is not among the choices.
-
-
-### Important caveats
-
-- The UniProt functional and catalytic annotations are similarity-transferred rather than direct experimental evidence for the supplied protein.
-- The sequence match and historical record support that this annotation applied to the sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support identifying a related enzyme family, but that alone does not establish which specific reaction—and thus which complete EC number—the protein catalyzes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "A protein-specific functional annotation or experimental determination distinguishing methionine gamma-lyase activity from related sulfur-amino-acid reactions.",
-    "reason": "The input supplies only the sequence and choices. Selecting the reaction-specific EC number requires protein-specific functional knowledge; recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from supplied context."
-  },
-  "case_id": "EC_number_0001",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as L-methionine gamma-lyase, EC 4.4.1.11, with the corresponding catalytic reaction. The annotation is transferred by similarity from another UniProt entry (ECO:0000250), not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The UniProt functional and catalytic annotations are similarity-transferred rather than direct experimental evidence for the supplied protein.",
-    "The sequence match and historical record support that this annotation applied to the sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, only C matches the supported annotation. The source also lists EC 4.4.1.2 as an alternative name/activity, but that number is not among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0001",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as L-methionine gamma-lyase, EC 4.4.1.11, with the corresponding catalytic reaction. The annotation is transferred by similarity from another UniProt entry (ECO:0000250), not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C4", "C5", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support identifying a related enzyme family, but that alone does not establish which specific reaction—and thus which complete EC number—the protein catalyzes.",
-    "missing_item_specific_fact": "A protein-specific functional annotation or experimental determination distinguishing methionine gamma-lyase activity from related sulfur-amino-acid reactions.",
-    "reason": "The input supplies only the sequence and choices. Selecting the reaction-specific EC number requires protein-specific functional knowledge; recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from supplied context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, only C matches the supported annotation. The source also lists EC 4.4.1.2 as an alternative name/activity, but that number is not among the choices."
-  },
-  "important_caveats": [
-    "The UniProt functional and catalytic annotations are similarity-transferred rather than direct experimental evidence for the supplied protein.",
-    "The sequence match and historical record support that this annotation applied to the sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A1H1YBL2 (MEGL_BRESA, Brevibacterium sandarakinum) annotates this 393-aa protein with EC 4.4.1.11 (L-methionine gamma-lyase) as the recommended name. The sequence matches exactly (SHA256 confirmed). However, the annotation evidence code is ECO:0000250 (inferred by similarity from A0A2H1K3G9), meaning this is a computational transfer rather than direct experimental verification. The entry also lists EC 4.4.1.2 (homocysteine desulfhydrase) as an alternative name, indicating the enzyme may have dual substrate specificity. The annotation supports 4.4.1.11 as the primary EC assignment, but it is a database inference, not experimental proof.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains conserved motifs characteristic of the Cys/Met metabolism PLP-dependent lyase family (~393 aa, PLP-binding lysine motif, characteristic fold). This family catalyzes C-S bond cleavage (EC class 4.4, sulfur-lyases). This reasoning eliminates D (EC 2.7.13.3, a transferase — completely different EC class), B (EC 4.2.1.70, a carbon-oxygen lyase/hydroxynitrile lyase with a different fold and substrate chemistry), and A (EC 4.3.1.24, a carbon-nitrogen lyase — different bond cleaved). Only C (4.4.1.11) falls in the correct EC subclass (4.4, carbon-sulfur lyases) for a Cys/Met metabolism PLP-dependent lyase.
-
-
-**Missing item-specific fact**
-
-> The precise 4-digit assignment (4.4.1.11 vs 4.4.1.2) depends on substrate specificity data (methionine vs homocysteine preference), which is an experimental measurement not derivable from sequence alone. The UniProt annotation itself assigns both EC numbers to this protein via similarity inference. However, since 4.4.1.2 is not among the answer choices, this ambiguity does not affect selection among the given options.
-
-
-**Reason**
-
-> Elimination of three options in different EC classes (2, 4.2, 4.3) is achievable through general knowledge of enzyme classification and recognition of the Cys/Met metabolism PLP-dependent lyase family. The only remaining option (C, 4.4.1.11) is in the correct subclass. The 4-digit precision is somewhat aided by the absence of other 4.4.1.x distractors, but the family-level identification and EC class elimination constitute a meaningful biological argument.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span three different EC main classes (2, 4.2, 4.3, 4.4). Only C falls in the carbon-sulfur lyase subclass (4.4) appropriate for the Cys/Met metabolism PLP-dependent lyase family. While the protein also has EC 4.4.1.2 activity per annotation, that number is not offered as a choice, so no ambiguity exists among the provided options.
-
-
-### Important caveats
-
-- The UniProt annotation for EC 4.4.1.11 is based on similarity inference (ECO:0000250 from A0A2H1K3G9), not direct experimental characterization of this Brevibacterium protein.
-- The same UniProt entry lists EC 4.4.1.2 (homocysteine desulfhydrase) as an alternative name, indicating the enzyme may act on both methionine and homocysteine. The distinction between 4.4.1.11 and 4.4.1.2 is a substrate-specificity judgment not resolvable from sequence.
-- The source snapshot used by the question author is unknown; the current UniProt entry (version 34) and the archived version 32 both carry the same EC annotation, but the original dataset construction date is unconfirmed.
-- Recognition of the Cys/Met metabolism PLP-dependent lyase family from a raw 393-aa sequence without database tools requires substantial prior knowledge of conserved motifs; this is general biological knowledge but not trivially obvious to all practitioners.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains conserved motifs characteristic of the Cys/Met metabolism PLP-dependent lyase family (~393 aa, PLP-binding lysine motif, characteristic fold). This family catalyzes C-S bond cleavage (EC class 4.4, sulfur-lyases). This reasoning eliminates D (EC 2.7.13.3, a transferase — completely different EC class), B (EC 4.2.1.70, a carbon-oxygen lyase/hydroxynitrile lyase with a different fold and substrate chemistry), and A (EC 4.3.1.24, a carbon-nitrogen lyase — different bond cleaved). Only C (4.4.1.11) falls in the correct EC subclass (4.4, carbon-sulfur lyases) for a Cys/Met metabolism PLP-dependent lyase.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The precise 4-digit assignment (4.4.1.11 vs 4.4.1.2) depends on substrate specificity data (methionine vs homocysteine preference), which is an experimental measurement not derivable from sequence alone. The UniProt annotation itself assigns both EC numbers to this protein via similarity inference. However, since 4.4.1.2 is not among the answer choices, this ambiguity does not affect selection among the given options.",
-    "reason": "Elimination of three options in different EC classes (2, 4.2, 4.3) is achievable through general knowledge of enzyme classification and recognition of the Cys/Met metabolism PLP-dependent lyase family. The only remaining option (C, 4.4.1.11) is in the correct subclass. The 4-digit precision is somewhat aided by the absence of other 4.4.1.x distractors, but the family-level identification and EC class elimination constitute a meaningful biological argument."
-  },
-  "case_id": "EC_number_0001",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A1H1YBL2 (MEGL_BRESA, Brevibacterium sandarakinum) annotates this 393-aa protein with EC 4.4.1.11 (L-methionine gamma-lyase) as the recommended name. The sequence matches exactly (SHA256 confirmed). However, the annotation evidence code is ECO:0000250 (inferred by similarity from A0A2H1K3G9), meaning this is a computational transfer rather than direct experimental verification. The entry also lists EC 4.4.1.2 (homocysteine desulfhydrase) as an alternative name, indicating the enzyme may have dual substrate specificity. The annotation supports 4.4.1.11 as the primary EC assignment, but it is a database inference, not experimental proof."
-  },
-  "important_caveats": [
-    "The UniProt annotation for EC 4.4.1.11 is based on similarity inference (ECO:0000250 from A0A2H1K3G9), not direct experimental characterization of this Brevibacterium protein.",
-    "The same UniProt entry lists EC 4.4.1.2 (homocysteine desulfhydrase) as an alternative name, indicating the enzyme may act on both methionine and homocysteine. The distinction between 4.4.1.11 and 4.4.1.2 is a substrate-specificity judgment not resolvable from sequence.",
-    "The source snapshot used by the question author is unknown; the current UniProt entry (version 34) and the archived version 32 both carry the same EC annotation, but the original dataset construction date is unconfirmed.",
-    "Recognition of the Cys/Met metabolism PLP-dependent lyase family from a raw 393-aa sequence without database tools requires substantial prior knowledge of conserved motifs; this is general biological knowledge but not trivially obvious to all practitioners."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span three different EC main classes (2, 4.2, 4.3, 4.4). Only C falls in the carbon-sulfur lyase subclass (4.4) appropriate for the Cys/Met metabolism PLP-dependent lyase family. While the protein also has EC 4.4.1.2 activity per annotation, that number is not offered as a choice, so no ambiguity exists among the provided options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0001",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A1H1YBL2 (MEGL_BRESA, Brevibacterium sandarakinum) annotates this 393-aa protein with EC 4.4.1.11 (L-methionine gamma-lyase) as the recommended name. The sequence matches exactly (SHA256 confirmed). However, the annotation evidence code is ECO:0000250 (inferred by similarity from A0A2H1K3G9), meaning this is a computational transfer rather than direct experimental verification. The entry also lists EC 4.4.1.2 (homocysteine desulfhydrase) as an alternative name, indicating the enzyme may have dual substrate specificity. The annotation supports 4.4.1.11 as the primary EC assignment, but it is a database inference, not experimental proof.",
-    "evidence_ids": ["C4", "C5", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains conserved motifs characteristic of the Cys/Met metabolism PLP-dependent lyase family (~393 aa, PLP-binding lysine motif, characteristic fold). This family catalyzes C-S bond cleavage (EC class 4.4, sulfur-lyases). This reasoning eliminates D (EC 2.7.13.3, a transferase — completely different EC class), B (EC 4.2.1.70, a carbon-oxygen lyase/hydroxynitrile lyase with a different fold and substrate chemistry), and A (EC 4.3.1.24, a carbon-nitrogen lyase — different bond cleaved). Only C (4.4.1.11) falls in the correct EC subclass (4.4, carbon-sulfur lyases) for a Cys/Met metabolism PLP-dependent lyase.",
-    "missing_item_specific_fact": "The precise 4-digit assignment (4.4.1.11 vs 4.4.1.2) depends on substrate specificity data (methionine vs homocysteine preference), which is an experimental measurement not derivable from sequence alone. The UniProt annotation itself assigns both EC numbers to this protein via similarity inference. However, since 4.4.1.2 is not among the answer choices, this ambiguity does not affect selection among the given options.",
-    "reason": "Elimination of three options in different EC classes (2, 4.2, 4.3) is achievable through general knowledge of enzyme classification and recognition of the Cys/Met metabolism PLP-dependent lyase family. The only remaining option (C, 4.4.1.11) is in the correct subclass. The 4-digit precision is somewhat aided by the absence of other 4.4.1.x distractors, but the family-level identification and EC class elimination constitute a meaningful biological argument."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span three different EC main classes (2, 4.2, 4.3, 4.4). Only C falls in the carbon-sulfur lyase subclass (4.4) appropriate for the Cys/Met metabolism PLP-dependent lyase family. While the protein also has EC 4.4.1.2 activity per annotation, that number is not offered as a choice, so no ambiguity exists among the provided options."
-  },
-  "important_caveats": [
-    "The UniProt annotation for EC 4.4.1.11 is based on similarity inference (ECO:0000250 from A0A2H1K3G9), not direct experimental characterization of this Brevibacterium protein.",
-    "The same UniProt entry lists EC 4.4.1.2 (homocysteine desulfhydrase) as an alternative name, indicating the enzyme may act on both methionine and homocysteine. The distinction between 4.4.1.11 and 4.4.1.2 is a substrate-specificity judgment not resolvable from sequence.",
-    "The source snapshot used by the question author is unknown; the current UniProt entry (version 34) and the archived version 32 both carry the same EC annotation, but the original dataset construction date is unconfirmed.",
-    "Recognition of the Cys/Met metabolism PLP-dependent lyase family from a raw 393-aa sequence without database tools requires substantial prior knowledge of conserved motifs; this is general biological knowledge but not trivially obvious to all practitioners."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A1H1YBL2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d62ef1248b2c7e60f020a849ac08272c51994b6267c0d401825afaddef80c605",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 393,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d62ef1248b2c7e60f020a849ac08272c51994b6267c0d401825afaddef80c605",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-04-09",
@@ -542,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-01-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
-  "current_source_sequence_sha256": "d62ef1248b2c7e60f020a849ac08272c51994b6267c0d401825afaddef80c605",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 393,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d62ef1248b2c7e60f020a849ac08272c51994b6267c0d401825afaddef80c605",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 32,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A1H1YBL2",
   "selected_historical_entry_version": 32,
+  "selected_historical_record_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
+  "selected_historical_source_sequence_length": 393,
+  "selected_historical_source_sequence_sha256": "d62ef1248b2c7e60f020a849ac08272c51994b6267c0d401825afaddef80c605",
   "selected_historical_version": {
     "accession": "A0A1H1YBL2",
     "database": "Swiss-Prot",
@@ -560,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MEGL_BRESA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
-  "selected_historical_source_sequence_sha256": "d62ef1248b2c7e60f020a849ac08272c51994b6267c0d401825afaddef80c605",
-  "selected_historical_source_sequence_length": 393,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 32,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json",
-  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
-  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A1H1YBL2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json"
 }
 ```
 
@@ -610,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json",
-  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
-  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-01-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json"
 }
 ```
 
@@ -629,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json",
-  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
-  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Micrococcales\",\"Brevibacteriaceae\",\"Brevibacterium\"],\"scientificName\":\"Brevibacterium sandarakinum\",\"taxonId\":629680}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json"
 }
 ```
 
@@ -648,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json",
-  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
-  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"value\":\"4.4.1.2\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"value\":\"Homocysteine desulfhydrase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"value\":\"4.4.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"value\":\"L-methionine gamma-lyase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"value\":\"MGL\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json"
 }
 ```
 
@@ -667,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json",
-  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
-  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:23801\"}}],\"reaction\":{\"ecNumber\":\"4.4.1.11\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"name\":\"L-methionine + H2O = methanethiol + 2-oxobutanoate + NH4(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:23800\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16007\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16763\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:28938\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57844\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json"
 }
 ```
 
@@ -686,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json",
-  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
-  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:14502\"}}],\"reaction\":{\"ecNumber\":\"4.4.1.2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A2H1K3G9\",\"source\":\"UniProtKB\"}],\"name\":\"L-homocysteine + H2O = 2-oxobutanoate + hydrogen sulfide + NH4(+) + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:14501\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16763\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:28938\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29919\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58199\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:24:35.559742+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8f5674fa9408e7d3987f379a501b18c3e46ccc978eeb5437c6fe35fdcc0e36ab",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1H1YBL2.json"
 }
 ```
 
@@ -704,18 +463,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32",
-  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
-  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   MEGL_BRESA              Reviewed;         393 AA.\nAC   A0A1H1YBL2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JAN-2017, sequence version 1.\nDT   28-JAN-2026, entry version 32.\nDE   RecName: Full=L-methionine gamma-lyase {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE            Short=MGL {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE            EC=4.4.1.11 {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE   AltName: Full=Homocysteine desulfhydrase {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE            EC=4.4.1.2 {ECO:0000250|UniProtKB:A0A2H1K3G9};\nGN   ORFNames=SAMN04489751_4033 {ECO:0000312|EMBL:SDT18406.1};\nOS   Brevibacterium sandarakinum.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Micrococcales;\nOC   Brevibacteriaceae; Brevibacterium.\nOX   NCBI_TaxID=629680;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
+  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32"
 }
 ```
 
@@ -725,18 +484,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32",
-  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
-  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=L-methionine gamma-lyase {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE            Short=MGL {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE            EC=4.4.1.11 {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE   AltName: Full=Homocysteine desulfhydrase {ECO:0000250|UniProtKB:A0A2H1K3G9};\nDE            EC=4.4.1.2 {ECO:0000250|UniProtKB:A0A2H1K3G9};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
+  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32"
 }
 ```
 
@@ -746,18 +505,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32",
-  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
-  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
-  "source_locator": "lines 25-31",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-methionine + H2O = methanethiol + 2-oxobutanoate + NH4(+);\nCC         Xref=Rhea:RHEA:23800, ChEBI:CHEBI:15377, ChEBI:CHEBI:16007,\nCC         ChEBI:CHEBI:16763, ChEBI:CHEBI:28938, ChEBI:CHEBI:57844; EC=4.4.1.11;\nCC         Evidence={ECO:0000250|UniProtKB:A0A2H1K3G9};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:23801;\nCC         Evidence={ECO:0000250|UniProtKB:A0A2H1K3G9};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
+  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32"
 }
 ```
 
@@ -767,18 +526,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32",
-  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
-  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
-  "source_locator": "lines 32-39",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-homocysteine + H2O = 2-oxobutanoate + hydrogen sulfide +\nCC         NH4(+) + H(+); Xref=Rhea:RHEA:14501, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:16763, ChEBI:CHEBI:28938,\nCC         ChEBI:CHEBI:29919, ChEBI:CHEBI:58199; EC=4.4.1.2;\nCC         Evidence={ECO:0000250|UniProtKB:A0A2H1K3G9};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:14502;\nCC         Evidence={ECO:0000250|UniProtKB:A0A2H1K3G9};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-02T04:24:37.341815+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5e5688fed3c5afbeb1081e5c750f61df902b7913de336d8e81a8000a21e4f8f2",
+  "url": "https://rest.uniprot.org/unisave/A0A1H1YBL2?format=txt&versions=32"
 }
 ```
 

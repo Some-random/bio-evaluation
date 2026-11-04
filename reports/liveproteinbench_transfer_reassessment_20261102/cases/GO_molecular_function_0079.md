@@ -1,18 +1,16 @@
-# GO_molecular_function_0079: before and after transfer clarification
+# GO_molecular_function_0079
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0079.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0079.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **B** — isomerase activity
+**Expected answer:** **B** — isomerase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for terpene cyclase resF, whose EC number is 5.4.99.-, an isomerase class. UniProt also assigns GO:0016853, though that GO annotation is marked IEA:UniProtKB-KW; the function record cites both similarity-based and publication-based evidence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is strongly hydrophobic, suggesting a membrane-associated protein, but that does not establish isomerase activity or distinguish it decisively from the listed catalytic functions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and functional annotation as terpene cyclase resF, including its isomerase-class EC number, are absent from the question input.
-
-
-**Reason**
-
-> The supplied sequence and choices provide no decisive, recognizable functional motif or biological context that supports the specific isomerase answer. Selecting B depends on the protein-specific function annotation, not merely on general reasoning from the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only evidence supports B; the other choices describe distinct activities not supported by the matched protein record.
-
-
-### Important caveats
-
-- The GO isomerase annotation is computationally assigned by keyword (IEA), while the function record combines similarity-based and publication-based evidence.
-- The reviewer-only accession and annotations were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic, suggesting a membrane-associated protein, but that does not establish isomerase activity or distinguish it decisively from the listed catalytic functions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and functional annotation as terpene cyclase resF, including its isomerase-class EC number, are absent from the question input.",
-    "reason": "The supplied sequence and choices provide no decisive, recognizable functional motif or biological context that supports the specific isomerase answer. Selecting B depends on the protein-specific function annotation, not merely on general reasoning from the sequence."
-  },
-  "case_id": "GO_molecular_function_0079",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for terpene cyclase resF, whose EC number is 5.4.99.-, an isomerase class. UniProt also assigns GO:0016853, though that GO annotation is marked IEA:UniProtKB-KW; the function record cites both similarity-based and publication-based evidence."
-  },
-  "important_caveats": [
-    "The GO isomerase annotation is computationally assigned by keyword (IEA), while the function record combines similarity-based and publication-based evidence.",
-    "The reviewer-only accession and annotations were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports B; the other choices describe distinct activities not supported by the matched protein record."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0079",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for terpene cyclase resF, whose EC number is 5.4.99.-, an isomerase class. UniProt also assigns GO:0016853, though that GO annotation is marked IEA:UniProtKB-KW; the function record cites both similarity-based and publication-based evidence.",
-    "evidence_ids": ["C1", "C4", "C5", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic, suggesting a membrane-associated protein, but that does not establish isomerase activity or distinguish it decisively from the listed catalytic functions.",
-    "missing_item_specific_fact": "The protein-specific identification and functional annotation as terpene cyclase resF, including its isomerase-class EC number, are absent from the question input.",
-    "reason": "The supplied sequence and choices provide no decisive, recognizable functional motif or biological context that supports the specific isomerase answer. Selecting B depends on the protein-specific function annotation, not merely on general reasoning from the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports B; the other choices describe distinct activities not supported by the matched protein record."
-  },
-  "important_caveats": [
-    "The GO isomerase annotation is computationally assigned by keyword (IEA), while the function record combines similarity-based and publication-based evidence.",
-    "The reviewer-only accession and annotations were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXW0 (sequence matched, 342 AA) annotates this protein as 'Terpene cyclase resF' with EC 5.4.99.- (isomerase class) and assigns GO:0016853 (isomerase activity). The function comment describes a 6-endo cyclization via epoxide opening, which is an intramolecular rearrangement consistent with EC 5 (isomerases). The GO annotation carries evidence code IEA:UniProtKB-KW (inferred from keyword), and the EC number carries ECO:0000305 (curator-inferred). The PubMed reference (39105744) provides experimental support for the cyclase function in the restricticin biosynthetic pathway. While the GO assignment itself is electronic inference from the 'Isomerase' keyword rather than direct experimental GO curation, the underlying biochemical activity (intramolecular cyclization/rearrangement) is experimentally supported, making 'isomerase activity' a defensible annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> By elimination, one could argue the sequence lacks PLP-binding motifs (ruling out threonine synthase), lacks RNase III domain architecture (ruling out RNase III), and lacks restriction-enzyme catalytic centers (ruling out dsDNA endonuclease). The hydrophobic transmembrane-like segments and small size are loosely consistent with a terpene cyclase. However, this negative reasoning does not positively identify the protein as an isomerase; 'isomerase activity' (GO:0016853, EC 5) is an extremely broad umbrella covering many unrelated folds. Positive assignment requires recognizing the terpene cyclase superfamily fold or knowing the specific protein.
-
-
-**Missing item-specific fact**
-
-> Recognition of the terpene cyclase fold (or the specific identity of resF from the restricticin biosynthetic cluster) and the knowledge that 6-endo cyclization via epoxide opening is classified under EC 5.4.99.- (intramolecular transferases, a subclass of isomerases). Without this protein-family-level identification, the broad term 'isomerase activity' cannot be positively assigned from sequence features alone.
-
-
-**Reason**
-
-> The four options are mechanistically distinct, and elimination of A, C, and D is somewhat possible from sequence (no nuclease motifs, no PLP-binding site, no RNase III domain). However, positively selecting 'isomerase activity' from the remaining option requires recognizing the terpene cyclase architecture or having prior knowledge of this protein's EC classification. The GO annotation itself is IEA (electronic inference from keyword), confirming that even the database assignment is a lookup/annotation transfer rather than a sequence-derived prediction. A model would essentially need to identify this specific protein or its family to answer correctly.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent mechanistically distinct enzyme classes (hydrolase acting on DNA, isomerase, lyase, hydrolase acting on RNA). There is no genuine ambiguity in which class a terpene cyclase belongs to. The main concern is not ambiguity between options but the difficulty of positive identification from sequence alone.
-
-
-### Important caveats
-
-- The GO annotation GO:0016853 carries evidence code IEA:UniProtKB-KW, meaning it was assigned by automated keyword mapping, not by direct experimental GO curation. The underlying EC 5.4.99.- carries ECO:0000305 (inferred by curator).
-- The protein was first released in UniProt in February 2025 (entry version 1, published 2025-02-05), making it a very recent annotation. The PubMed paper (2024) provides experimental pathway context but the GO assignment is electronic inference.
-- The sequence contains multiple hydrophobic segments suggestive of membrane association, consistent with a terpene cyclase acting on hydrophobic polyketide intermediates, but this is not diagnostic of isomerase activity per se.
-- The benchmark sequence matches the UniProt canonical sequence exactly (SHA256 confirmed), so the annotation applies directly to the queried sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "By elimination, one could argue the sequence lacks PLP-binding motifs (ruling out threonine synthase), lacks RNase III domain architecture (ruling out RNase III), and lacks restriction-enzyme catalytic centers (ruling out dsDNA endonuclease). The hydrophobic transmembrane-like segments and small size are loosely consistent with a terpene cyclase. However, this negative reasoning does not positively identify the protein as an isomerase; 'isomerase activity' (GO:0016853, EC 5) is an extremely broad umbrella covering many unrelated folds. Positive assignment requires recognizing the terpene cyclase superfamily fold or knowing the specific protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Recognition of the terpene cyclase fold (or the specific identity of resF from the restricticin biosynthetic cluster) and the knowledge that 6-endo cyclization via epoxide opening is classified under EC 5.4.99.- (intramolecular transferases, a subclass of isomerases). Without this protein-family-level identification, the broad term 'isomerase activity' cannot be positively assigned from sequence features alone.",
-    "reason": "The four options are mechanistically distinct, and elimination of A, C, and D is somewhat possible from sequence (no nuclease motifs, no PLP-binding site, no RNase III domain). However, positively selecting 'isomerase activity' from the remaining option requires recognizing the terpene cyclase architecture or having prior knowledge of this protein's EC classification. The GO annotation itself is IEA (electronic inference from keyword), confirming that even the database assignment is a lookup/annotation transfer rather than a sequence-derived prediction. A model would essentially need to identify this specific protein or its family to answer correctly."
-  },
-  "case_id": "GO_molecular_function_0079",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H3",
-      "H4",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXW0 (sequence matched, 342 AA) annotates this protein as 'Terpene cyclase resF' with EC 5.4.99.- (isomerase class) and assigns GO:0016853 (isomerase activity). The function comment describes a 6-endo cyclization via epoxide opening, which is an intramolecular rearrangement consistent with EC 5 (isomerases). The GO annotation carries evidence code IEA:UniProtKB-KW (inferred from keyword), and the EC number carries ECO:0000305 (curator-inferred). The PubMed reference (39105744) provides experimental support for the cyclase function in the restricticin biosynthetic pathway. While the GO assignment itself is electronic inference from the 'Isomerase' keyword rather than direct experimental GO curation, the underlying biochemical activity (intramolecular cyclization/rearrangement) is experimentally supported, making 'isomerase activity' a defensible annotation."
-  },
-  "important_caveats": [
-    "The GO annotation GO:0016853 carries evidence code IEA:UniProtKB-KW, meaning it was assigned by automated keyword mapping, not by direct experimental GO curation. The underlying EC 5.4.99.- carries ECO:0000305 (inferred by curator).",
-    "The protein was first released in UniProt in February 2025 (entry version 1, published 2025-02-05), making it a very recent annotation. The PubMed paper (2024) provides experimental pathway context but the GO assignment is electronic inference.",
-    "The sequence contains multiple hydrophobic segments suggestive of membrane association, consistent with a terpene cyclase acting on hydrophobic polyketide intermediates, but this is not diagnostic of isomerase activity per se.",
-    "The benchmark sequence matches the UniProt canonical sequence exactly (SHA256 confirmed), so the annotation applies directly to the queried sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent mechanistically distinct enzyme classes (hydrolase acting on DNA, isomerase, lyase, hydrolase acting on RNA). There is no genuine ambiguity in which class a terpene cyclase belongs to. The main concern is not ambiguity between options but the difficulty of positive identification from sequence alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0079",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXW0 (sequence matched, 342 AA) annotates this protein as 'Terpene cyclase resF' with EC 5.4.99.- (isomerase class) and assigns GO:0016853 (isomerase activity). The function comment describes a 6-endo cyclization via epoxide opening, which is an intramolecular rearrangement consistent with EC 5 (isomerases). The GO annotation carries evidence code IEA:UniProtKB-KW (inferred from keyword), and the EC number carries ECO:0000305 (curator-inferred). The PubMed reference (39105744) provides experimental support for the cyclase function in the restricticin biosynthetic pathway. While the GO assignment itself is electronic inference from the 'Isomerase' keyword rather than direct experimental GO curation, the underlying biochemical activity (intramolecular cyclization/rearrangement) is experimentally supported, making 'isomerase activity' a defensible annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H3", "H4", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "By elimination, one could argue the sequence lacks PLP-binding motifs (ruling out threonine synthase), lacks RNase III domain architecture (ruling out RNase III), and lacks restriction-enzyme catalytic centers (ruling out dsDNA endonuclease). The hydrophobic transmembrane-like segments and small size are loosely consistent with a terpene cyclase. However, this negative reasoning does not positively identify the protein as an isomerase; 'isomerase activity' (GO:0016853, EC 5) is an extremely broad umbrella covering many unrelated folds. Positive assignment requires recognizing the terpene cyclase superfamily fold or knowing the specific protein.",
-    "missing_item_specific_fact": "Recognition of the terpene cyclase fold (or the specific identity of resF from the restricticin biosynthetic cluster) and the knowledge that 6-endo cyclization via epoxide opening is classified under EC 5.4.99.- (intramolecular transferases, a subclass of isomerases). Without this protein-family-level identification, the broad term 'isomerase activity' cannot be positively assigned from sequence features alone.",
-    "reason": "The four options are mechanistically distinct, and elimination of A, C, and D is somewhat possible from sequence (no nuclease motifs, no PLP-binding site, no RNase III domain). However, positively selecting 'isomerase activity' from the remaining option requires recognizing the terpene cyclase architecture or having prior knowledge of this protein's EC classification. The GO annotation itself is IEA (electronic inference from keyword), confirming that even the database assignment is a lookup/annotation transfer rather than a sequence-derived prediction. A model would essentially need to identify this specific protein or its family to answer correctly."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent mechanistically distinct enzyme classes (hydrolase acting on DNA, isomerase, lyase, hydrolase acting on RNA). There is no genuine ambiguity in which class a terpene cyclase belongs to. The main concern is not ambiguity between options but the difficulty of positive identification from sequence alone."
-  },
-  "important_caveats": [
-    "The GO annotation GO:0016853 carries evidence code IEA:UniProtKB-KW, meaning it was assigned by automated keyword mapping, not by direct experimental GO curation. The underlying EC 5.4.99.- carries ECO:0000305 (inferred by curator).",
-    "The protein was first released in UniProt in February 2025 (entry version 1, published 2025-02-05), making it a very recent annotation. The PubMed paper (2024) provides experimental pathway context but the GO assignment is electronic inference.",
-    "The sequence contains multiple hydrophobic segments suggestive of membrane association, consistent with a terpene cyclase acting on hydrophobic polyketide intermediates, but this is not diagnostic of isomerase activity per se.",
-    "The benchmark sequence matches the UniProt canonical sequence exactly (SHA256 confirmed), so the annotation applies directly to the queried sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXW0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ed325be2f8ee79598c0abcb873dca733c54a3c7abec00f6bf398603cd44c5b21",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 342,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ed325be2f8ee79598c0abcb873dca733c54a3c7abec00f6bf398603cd44c5b21",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-02-05",
@@ -541,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
-  "current_source_sequence_sha256": "ed325be2f8ee79598c0abcb873dca733c54a3c7abec00f6bf398603cd44c5b21",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 342,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ed325be2f8ee79598c0abcb873dca733c54a3c7abec00f6bf398603cd44c5b21",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXW0",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
+  "selected_historical_source_sequence_length": 342,
+  "selected_historical_source_sequence_sha256": "ed325be2f8ee79598c0abcb873dca733c54a3c7abec00f6bf398603cd44c5b21",
   "selected_historical_version": {
     "accession": "P0DXW0",
     "database": "Swiss-Prot",
@@ -559,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RESF_ASPSL",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
-  "selected_historical_source_sequence_sha256": "ed325be2f8ee79598c0abcb873dca733c54a3c7abec00f6bf398603cd44c5b21",
-  "selected_historical_source_sequence_length": 342,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json",
-  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
-  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXW0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json"
 }
 ```
 
@@ -613,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json",
-  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
-  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json"
 }
 ```
 
@@ -632,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json",
-  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
-  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus sclerotiorum\",\"taxonId\":138282}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json"
 }
 ```
 
@@ -651,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json",
-  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
-  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Restricticin biosynthesis cluster protein F\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"5.4.99.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Terpene cyclase resF\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json"
 }
 ```
 
@@ -670,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json",
-  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
-  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P9WEG7\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Cyclase; part of the gene cluster that mediates the biosynthesis of the tetrahydropyranyl antifungal agent restricticin that acts as an inhibitor of CYP51 and blocks the ergosterol biosynthesis (PubMed:39105744). The highly reducing polyketide synthase resH, the short chain dehydrogenase resG, the cyclase resF, the FAD-dependent monooxygenase resA and the enoylreductase resD are required to generate the first stable intermediate desmethylrestrictinol. ResH with resD biosynthesize the first polyketide chain intermediate that is reduced by resG, followed by epoxidation by resA before 6-endo cyclization via epoxide opening by resF leads to desmethylrestrictinol. The methyltransferase resE then catalyzes the C4 O-methylation of desmethylrestrictinol to produce restrictinol, and the nonribosomal peptide synthetase resC catalyzes the C3 esterification of restrictinol with glycine that leads to restricticin (By similarity)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json"
 }
 ```
 
@@ -689,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json",
-  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
-  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Lu Y.\",\"Li Y.\",\"Dou M.\",\"Liu D.\",\"Lin W.\",\"Fan A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39105744\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c04244\"}],\"citationType\":\"journal article\",\"firstPage\":\"18520\",\"id\":\"39105744\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"18527\",\"publicationDate\":\"2024\",\"title\":\"Discovery of a hybrid molecule with phytotoxic activity by genome mining, heterologous expression, and OSMAC strategy.\",\"volume\":\"72\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:50.537709+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "20826975e15383c7e7ed9a18e9833743bdc1e763a65798dcc5e4dbb145fcc991",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXW0.json"
 }
 ```
 
@@ -707,18 +463,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2",
-  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
-  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   RESF_ASPSL              Reviewed;         342 AA.\nAC   P0DXW0;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   09-APR-2025, entry version 2.\nDE   RecName: Full=Terpene cyclase resF {ECO:0000303|PubMed:39105744};\nDE            EC=5.4.99.- {ECO:0000305|PubMed:39105744};\nDE   AltName: Full=Restricticin biosynthesis cluster protein F {ECO:0000303|PubMed:39105744};\nGN   Name=resF {ECO:0000303|PubMed:39105744};\nOS   Aspergillus sclerotiorum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=138282;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
+  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2"
 }
 ```
 
@@ -728,18 +484,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2",
-  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
-  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
-  "source_locator": "lines 15-21",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND PATHWAY.\nRX   PubMed=39105744; DOI=10.1021/acs.jafc.4c04244;\nRA   Lu Y., Li Y., Dou M., Liu D., Lin W., Fan A.;\nRT   \"Discovery of a hybrid molecule with phytotoxic activity by genome mining,\nRT   heterologous expression, and OSMAC strategy.\";\nRL   J. Agric. Food Chem. 72:18520-18527(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
+  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2"
 }
 ```
 
@@ -749,18 +505,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2",
-  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
-  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
-  "source_locator": "lines 22-36",
   "excerpt": "CC   -!- FUNCTION: Cyclase; part of the gene cluster that mediates the\nCC       biosynthesis of the tetrahydropyranyl antifungal agent restricticin\nCC       that acts as an inhibitor of CYP51 and blocks the ergosterol\nCC       biosynthesis (PubMed:39105744). The highly reducing polyketide synthase\nCC       resH, the short chain dehydrogenase resG, the cyclase resF, the FAD-\nCC       dependent monooxygenase resA and the enoylreductase resD are required\nCC       to generate the first stable intermediate desmethylrestrictinol. ResH\nCC       with resD biosynthesize the first polyketide chain intermediate that is\nCC       reduced by resG, followed by epoxidation by resA before 6-endo\nCC       cyclization via epoxide opening by resF leads to desmethylrestrictinol.\nCC       The methyltransferase resE then catalyzes the C4 O-methylation of\nCC       desmethylrestrictinol to produce restrictinol, and the nonribosomal\nCC       peptide synthetase resC catalyzes the C3 esterification of restrictinol\nCC       with glycine that leads to restricticin (By similarity).\nCC       {ECO:0000250|UniProtKB:P9WEG7, ECO:0000269|PubMed:39105744}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
+  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2"
 }
 ```
 
@@ -770,18 +526,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2",
-  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
-  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
-  "source_locator": "lines 47-47",
   "excerpt": "DR   GO; GO:0016853; F:isomerase activity; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:54.246056+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4ee0148ff929a45fee99461aa9272fe9ea0eed8e9ecc9ee53739e76044ec61c4",
+  "url": "https://rest.uniprot.org/unisave/P0DXW0?format=txt&versions=2"
 }
 ```
 
@@ -792,15 +548,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 43975-43994",
   "excerpt": "[Term]\nid: GO:0004525\nname: ribonuclease III activity\nnamespace: molecular_function\ndef: \"Catalysis of the endonucleolytic cleavage of RNA with 5'-phosphomonoesters and 3'-OH termini; makes two staggered cuts in both strands of dsRNA, leaving a 3' overhang of 2 nt.\" [PMID:11157775, PMID:15242644]\nsynonym: \"pre-mRNA 3'-end processing endonuclease\" NARROW []\nsynonym: \"ribonuclease 3 activity\" RELATED [EC:3.1.26.3]\nsynonym: \"RNase III activity\" RELATED [EC:3.1.26.3]\nxref: EC:3.1.26.3\nxref: MetaCyc:3.1.26.3-RXN\nxref: Reactome:R-HSA-203862 \"Dicer cleaves pre-miRNA to yield duplex miRNA\"\nxref: Reactome:R-HSA-203893 \"Microprocessor complex cleaves pri-miRNA to pre-miRNA\"\nxref: Reactome:R-HSA-426464 \"Dicer cleaves double-stranded RNA to yield double-stranded siRNA\"\nxref: Reactome:R-HSA-9708292 \"DICER1 cleaves tRNA\"\nxref: Reactome:R-HSA-9708408 \"DICER1 cleaves tRNA Lys TTT 3 in tRNA:HIV RNA hybrid\"\nxref: Reactome:R-HSA-9820840 \"DICER1 hydrolyzes maternal mRNA:lncRNA to yield endosiRNA\"\nis_a: GO:0016891 ! RNA endonuclease activity producing 5'-phosphomonoesters, hydrolytic mechanism\nis_a: GO:0032296 ! double-stranded RNA-specific ribonuclease activity\nproperty_value: skos:exactMatch EC:3.1.26.3\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004525",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 43975-43994",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004525"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -811,15 +567,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 49992-50006",
   "excerpt": "[Term]\nid: GO:0004795\nname: threonine synthase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: O-phospho-L-homoserine + H2O = L-threonine + phosphate.\" [EC:4.2.3.1]\nsynonym: \"O-phospho-L-homoserine phospho-lyase (adding water)\" RELATED [EC:4.2.3.1]\nsynonym: \"O-phospho-L-homoserine phospho-lyase (adding water; L-threonine-forming)\" RELATED [EC:4.2.3.1]\nsynonym: \"threonine synthetase activity\" RELATED [EC:4.2.3.1]\nxref: EC:4.2.3.1\nxref: MetaCyc:THRESYN-RXN\nxref: RHEA:10840\nis_a: GO:0016838 ! carbon-oxygen lyase activity, acting on phosphates\nproperty_value: skos:exactMatch EC:4.2.3.1\nproperty_value: skos:exactMatch RHEA:10840\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004795",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 49992-50006",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004795"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -830,15 +586,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 130892-130912",
   "excerpt": "[Term]\nid: GO:0016853\nname: isomerase activity\nnamespace: molecular_function\ndef: \"Catalysis of the geometric or structural changes within one molecule. Isomerase is the systematic name for any enzyme of EC class 5.\" [ISBN:0198506732]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_prokaryote\nsubset: goslim_yeast\nsynonym: \"other isomerase activity\" NARROW []\nxref: EC:5.-.-.-\nxref: Reactome:R-HSA-2161666 \"PGA2 is isomerised to PGC2\"\nxref: Reactome:R-HSA-2161735 \"PGC2 is isomerised to PGB2\"\nxref: Reactome:R-HSA-6787623 \"GFUS dimer epimerises GDP-DHDMan to GDP-KDGal\"\nis_a: GO:0003824 ! catalytic activity\nproperty_value: skos:exactMatch EC:5.-.-.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016853",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 130892-130912",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016853"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -849,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 550453-550462",
   "excerpt": "[Term]\nid: GO:1990238\nname: double-stranded DNA endonuclease activity\nnamespace: molecular_function\ndef: \"Catalysis of the hydrolysis of ester linkages within a double-stranded DNA molecule by creating internal breaks.\" [PMID:22885404]\nsynonym: \"double-stranded DNA endodeoxyribonuclease activity\" EXACT []\nsynonym: \"dsDNA-specific endodeoxyribonuclease activity\" RELATED []\nis_a: GO:0004520 ! DNA endonuclease activity\nis_a: GO:0016788 ! hydrolase activity, acting on ester bonds\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990238",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 550453-550462",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990238"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

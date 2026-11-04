@@ -1,18 +1,16 @@
-# GO_biological_process_0185: before and after transfer clarification
+# GO_biological_process_0185
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0185.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0185.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **C** — negative stranded viral RNA transcription
+**Expected answer:** **C** — negative stranded viral RNA transcription
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the mumps virus nucleoprotein in the current and archived UniProt records. That record annotates negative stranded viral RNA transcription; the current annotation has IDA evidence, and the term also appears in the archived record.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C7](#evidence-c7), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Once identified as a nucleoprotein of a negative-strand RNA virus, its association with the encapsidated genome used for transcription makes C biologically plausible. The supplied sequence alone does not establish that identity or specific role.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as mumps virus nucleoprotein and its documented participation in negative-strand viral RNA transcription.
-
-
-**Reason**
-
-> Distinguishing C requires a protein-specific identification or annotation not supplied in the question; sequence inspection alone offers no decisive basis for this process among the choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> C is supported for this sequence, while the other choices do not describe the documented viral nucleoprotein role.
-
-
-### Important caveats
-
-- The GO annotation is reviewer-only evidence and was not available to the evaluated model.
-- The archived record establishes that the term was present by the historical cutoff, but the author's exact source snapshot is unknown.
-- The annotation supports the protein's contribution to transcription; it does not imply that the nucleoprotein itself catalyzes RNA synthesis.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Once identified as a nucleoprotein of a negative-strand RNA virus, its association with the encapsidated genome used for transcription makes C biologically plausible. The supplied sequence alone does not establish that identity or specific role.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as mumps virus nucleoprotein and its documented participation in negative-strand viral RNA transcription.",
-    "reason": "Distinguishing C requires a protein-specific identification or annotation not supplied in the question; sequence inspection alone offers no decisive basis for this process among the choices."
-  },
-  "case_id": "GO_biological_process_0185",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C7",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the mumps virus nucleoprotein in the current and archived UniProt records. That record annotates negative stranded viral RNA transcription; the current annotation has IDA evidence, and the term also appears in the archived record."
-  },
-  "important_caveats": [
-    "The GO annotation is reviewer-only evidence and was not available to the evaluated model.",
-    "The archived record establishes that the term was present by the historical cutoff, but the author's exact source snapshot is unknown.",
-    "The annotation supports the protein's contribution to transcription; it does not imply that the nucleoprotein itself catalyzes RNA synthesis."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "C is supported for this sequence, while the other choices do not describe the documented viral nucleoprotein role."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0185",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the mumps virus nucleoprotein in the current and archived UniProt records. That record annotates negative stranded viral RNA transcription; the current annotation has IDA evidence, and the term also appears in the archived record.",
-    "evidence_ids": ["C1", "C3", "C4", "C7", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Once identified as a nucleoprotein of a negative-strand RNA virus, its association with the encapsidated genome used for transcription makes C biologically plausible. The supplied sequence alone does not establish that identity or specific role.",
-    "missing_item_specific_fact": "The protein's identity as mumps virus nucleoprotein and its documented participation in negative-strand viral RNA transcription.",
-    "reason": "Distinguishing C requires a protein-specific identification or annotation not supplied in the question; sequence inspection alone offers no decisive basis for this process among the choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "C is supported for this sequence, while the other choices do not describe the documented viral nucleoprotein role."
-  },
-  "important_caveats": [
-    "The GO annotation is reviewer-only evidence and was not available to the evaluated model.",
-    "The archived record establishes that the term was present by the historical cutoff, but the author's exact source snapshot is unknown.",
-    "The annotation supports the protein's contribution to transcription; it does not imply that the nucleoprotein itself catalyzes RNA synthesis."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein sequence matches UniProt Q9DQA5 (NCAP_MUMPV), the Mumps virus Nucleoprotein, a paramyxovirus (Mononegavirales, negative-stranded RNA virus). UniProt annotates this protein with GO:0039697 'negative stranded viral RNA transcription' with IDA:UniProtKB evidence (PubMed:25948749, Zengel et al. 2015, demonstrating roles of N phosphorylation in regulating viral RNA transcription and replication). The FUNCTION comment confirms the encapsidated genomic RNA serves as template for transcription and replication. The GO term definition (GO:0039697) is 'A viral transcription process that uses negative stranded (-) single stranded (ss) RNA as a template,' which matches the protein's role. The IDA evidence code indicates direct experimental support.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C9](#evidence-c9), [H1](#evidence-h1), [H3](#evidence-h3), [H5](#evidence-h5), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A knowledgeable biologist could partially eliminate options B (no mitochondrial transit peptide or respiratory chain complex assembly motifs) and D (no cobalamin/vitamin B12 binding motifs). The protein also lacks canonical signal transduction domains (no kinase, GTPase, phosphatase, SH2/SH3, or receptor-like domains), weakening option A. However, arriving at the specific answer 'negative stranded viral RNA transcription' requires recognizing this as a paramyxovirus nucleoprotein involved in RNA encapsidation and transcription, which is a protein-specific identification rather than a general reasoning chain from sequence features.
-
-
-**Missing item-specific fact**
-
-> The identification of this 549-aa sequence as the Mumps virus (or paramyxovirus) Nucleoprotein, a component of the negative-stranded RNA virus nucleocapsid complex that serves as template for viral transcription. Without this specific protein identity, the sequence's composition (basic patches, helical regions, C-terminal acidic tail) is not uniquely diagnostic of 'negative stranded viral RNA transcription' versus other broad categories.
-
-
-**Reason**
-
-> While negative elimination of B and D is feasible, and the absence of canonical signaling domains weakens A, the positive assignment to 'negative stranded viral RNA transcription' requires recognizing this specific protein as a paramyxovirus N protein. The sequence does not contain a unique, unambiguous motif that would lead a biologist to this precise GO term through general reasoning alone. This is essentially a protein identification task followed by annotation lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, C is clearly the best fit. GO:0039689 'negative stranded viral RNA replication' is also annotated to this protein but is not offered as an option. Options A, B, and D are well-motivated distractors that can be eliminated. No ambiguity in the correct answer among the given choices.
-
-
-### Important caveats
-
-- The UniProt entry was first publicly released on 2025-04-09 (entry version 77 current); the benchmark may have been constructed from an earlier data source or different annotation snapshot.
-- The GO annotation evidence code is IDA (Inferred from Direct Assay) referencing PubMed:25948749, indicating experimental support rather than purely computational inference.
-- The protein is also annotated to GO:0039689 (negative stranded viral RNA replication), indicating it participates in both transcription and replication; the question asks for the 'primary' process and selects transcription, which is defensible but somewhat arbitrary given the dual annotation.
-- The sequence match is confirmed (SHA256 match between benchmark and UniProt entry), so the annotation applies directly to the supplied sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A knowledgeable biologist could partially eliminate options B (no mitochondrial transit peptide or respiratory chain complex assembly motifs) and D (no cobalamin/vitamin B12 binding motifs). The protein also lacks canonical signal transduction domains (no kinase, GTPase, phosphatase, SH2/SH3, or receptor-like domains), weakening option A. However, arriving at the specific answer 'negative stranded viral RNA transcription' requires recognizing this as a paramyxovirus nucleoprotein involved in RNA encapsidation and transcription, which is a protein-specific identification rather than a general reasoning chain from sequence features.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identification of this 549-aa sequence as the Mumps virus (or paramyxovirus) Nucleoprotein, a component of the negative-stranded RNA virus nucleocapsid complex that serves as template for viral transcription. Without this specific protein identity, the sequence's composition (basic patches, helical regions, C-terminal acidic tail) is not uniquely diagnostic of 'negative stranded viral RNA transcription' versus other broad categories.",
-    "reason": "While negative elimination of B and D is feasible, and the absence of canonical signaling domains weakens A, the positive assignment to 'negative stranded viral RNA transcription' requires recognizing this specific protein as a paramyxovirus N protein. The sequence does not contain a unique, unambiguous motif that would lead a biologist to this precise GO term through general reasoning alone. This is essentially a protein identification task followed by annotation lookup."
-  },
-  "case_id": "GO_biological_process_0185",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C7",
-      "C9",
-      "H1",
-      "H3",
-      "H5",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "The protein sequence matches UniProt Q9DQA5 (NCAP_MUMPV), the Mumps virus Nucleoprotein, a paramyxovirus (Mononegavirales, negative-stranded RNA virus). UniProt annotates this protein with GO:0039697 'negative stranded viral RNA transcription' with IDA:UniProtKB evidence (PubMed:25948749, Zengel et al. 2015, demonstrating roles of N phosphorylation in regulating viral RNA transcription and replication). The FUNCTION comment confirms the encapsidated genomic RNA serves as template for transcription and replication. The GO term definition (GO:0039697) is 'A viral transcription process that uses negative stranded (-) single stranded (ss) RNA as a template,' which matches the protein's role. The IDA evidence code indicates direct experimental support."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released on 2025-04-09 (entry version 77 current); the benchmark may have been constructed from an earlier data source or different annotation snapshot.",
-    "The GO annotation evidence code is IDA (Inferred from Direct Assay) referencing PubMed:25948749, indicating experimental support rather than purely computational inference.",
-    "The protein is also annotated to GO:0039689 (negative stranded viral RNA replication), indicating it participates in both transcription and replication; the question asks for the 'primary' process and selects transcription, which is defensible but somewhat arbitrary given the dual annotation.",
-    "The sequence match is confirmed (SHA256 match between benchmark and UniProt entry), so the annotation applies directly to the supplied sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, C is clearly the best fit. GO:0039689 'negative stranded viral RNA replication' is also annotated to this protein but is not offered as an option. Options A, B, and D are well-motivated distractors that can be eliminated. No ambiguity in the correct answer among the given choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0185",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein sequence matches UniProt Q9DQA5 (NCAP_MUMPV), the Mumps virus Nucleoprotein, a paramyxovirus (Mononegavirales, negative-stranded RNA virus). UniProt annotates this protein with GO:0039697 'negative stranded viral RNA transcription' with IDA:UniProtKB evidence (PubMed:25948749, Zengel et al. 2015, demonstrating roles of N phosphorylation in regulating viral RNA transcription and replication). The FUNCTION comment confirms the encapsidated genomic RNA serves as template for transcription and replication. The GO term definition (GO:0039697) is 'A viral transcription process that uses negative stranded (-) single stranded (ss) RNA as a template,' which matches the protein's role. The IDA evidence code indicates direct experimental support.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C7", "C9", "H1", "H3", "H5", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A knowledgeable biologist could partially eliminate options B (no mitochondrial transit peptide or respiratory chain complex assembly motifs) and D (no cobalamin/vitamin B12 binding motifs). The protein also lacks canonical signal transduction domains (no kinase, GTPase, phosphatase, SH2/SH3, or receptor-like domains), weakening option A. However, arriving at the specific answer 'negative stranded viral RNA transcription' requires recognizing this as a paramyxovirus nucleoprotein involved in RNA encapsidation and transcription, which is a protein-specific identification rather than a general reasoning chain from sequence features.",
-    "missing_item_specific_fact": "The identification of this 549-aa sequence as the Mumps virus (or paramyxovirus) Nucleoprotein, a component of the negative-stranded RNA virus nucleocapsid complex that serves as template for viral transcription. Without this specific protein identity, the sequence's composition (basic patches, helical regions, C-terminal acidic tail) is not uniquely diagnostic of 'negative stranded viral RNA transcription' versus other broad categories.",
-    "reason": "While negative elimination of B and D is feasible, and the absence of canonical signaling domains weakens A, the positive assignment to 'negative stranded viral RNA transcription' requires recognizing this specific protein as a paramyxovirus N protein. The sequence does not contain a unique, unambiguous motif that would lead a biologist to this precise GO term through general reasoning alone. This is essentially a protein identification task followed by annotation lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, C is clearly the best fit. GO:0039689 'negative stranded viral RNA replication' is also annotated to this protein but is not offered as an option. Options A, B, and D are well-motivated distractors that can be eliminated. No ambiguity in the correct answer among the given choices."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released on 2025-04-09 (entry version 77 current); the benchmark may have been constructed from an earlier data source or different annotation snapshot.",
-    "The GO annotation evidence code is IDA (Inferred from Direct Assay) referencing PubMed:25948749, indicating experimental support rather than purely computational inference.",
-    "The protein is also annotated to GO:0039689 (negative stranded viral RNA replication), indicating it participates in both transcription and replication; the question asks for the 'primary' process and selects transcription, which is defensible but somewhat arbitrary given the dual annotation.",
-    "The sequence match is confirmed (SHA256 match between benchmark and UniProt entry), so the annotation applies directly to the supplied sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9DQA5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "18418287a16cca166d4e5bae0f2f353943efeab547402e568b96af5c45479baf",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 549,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "18418287a16cca166d4e5bae0f2f353943efeab547402e568b96af5c45479baf",
   "current_entry_audit": {
     "entryVersion": 77,
     "firstPublicDate": "2025-04-09",
@@ -546,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "current_source_sequence_sha256": "18418287a16cca166d4e5bae0f2f353943efeab547402e568b96af5c45479baf",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 549,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "18418287a16cca166d4e5bae0f2f353943efeab547402e568b96af5c45479baf",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 75,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9DQA5",
   "selected_historical_entry_version": 75,
+  "selected_historical_record_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
+  "selected_historical_source_sequence_length": 549,
+  "selected_historical_source_sequence_sha256": "18418287a16cca166d4e5bae0f2f353943efeab547402e568b96af5c45479baf",
   "selected_historical_version": {
     "accession": "Q9DQA5",
     "database": "Swiss-Prot",
@@ -564,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NCAP_MUMPV",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
-  "selected_historical_source_sequence_sha256": "18418287a16cca166d4e5bae0f2f353943efeab547402e568b96af5c45479baf",
-  "selected_historical_source_sequence_length": 549,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 75,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -599,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9DQA5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -618,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":77,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -637,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"MuV\",\"lineage\":[\"Viruses\",\"Riboviria\",\"Orthornavirae\",\"Negarnaviricota\",\"Haploviricotina\",\"Monjiviricetes\",\"Mononegavirales\",\"Paramyxoviridae\",\"Rubulavirinae\",\"Orthorubulavirus\",\"Orthorubulavirus parotitidis\"],\"scientificName\":\"Mumps orthorubulavirus\",\"taxonId\":2560602}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -656,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Nucleocapsid protein\"},\"shortNames\":[{\"value\":\"NP\"},{\"value\":\"Protein N\"}]}],\"recommendedName\":{\"fullName\":{\"value\":\"Nucleoprotein\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -675,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P06159\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25288750\",\"source\":\"PubMed\"}],\"value\":\"Forms the helical nucleocapsid (NC) with 12.71 N subunits per helical turn and a rise of 5.3 Angstrom per N subunit, protecting the genome from nucleases (PubMed:25288750). The encapsidated genomic RNA serves as template for transcription and replication; encapsidation by N is coupled to RNA synthesis (By similarity). Forms the encapsidation complex with the phosphoprotein protein P (PubMed:25288750). Before encapsidation, the newly synthesized free N protein, so-called N0, is chaperoned by P (By similarity)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -694,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/14",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"25948749\",\"source\":\"PubMed\"}],\"id\":\"GO:0039689\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:negative stranded viral RNA replication\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/14",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -713,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/15",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"25948749\",\"source\":\"PubMed\"}],\"id\":\"GO:0039697\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:negative stranded viral RNA transcription\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/15",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -732,15 +482,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Cox R.\",\"Pickar A.\",\"Qiu S.\",\"Tsao J.\",\"Rodenburg C.\",\"Dokland T.\",\"Elson A.\",\"He B.\",\"Luo M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25288750\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.1413268111\"}],\"citationType\":\"journal article\",\"firstPage\":\"15208\",\"id\":\"25288750\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"15213\",\"publicationDate\":\"2014\",\"title\":\"Structural studies on the authentic mumps virus nucleocapsid showing uncoiling by the phosphoprotein.\",\"volume\":\"111\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"MuV/Iowa.USA/06\"}],\"referenceNumber\":4,\"referencePositions\":[\"STRUCTURE BY ELECTRON MICROSCOPY (18.0 ANGSTROMS) OF THE NUCLEOCAPSID\",\"INTERACTION WITH THE PHOSPHOPROTEIN\",\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -751,15 +501,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json",
-  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
-  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Zengel J.\",\"Pickar A.\",\"Xu P.\",\"Lin A.\",\"He B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25948749\"},{\"database\":\"DOI\",\"id\":\"10.1128/jvi.00686-15\"}],\"citationType\":\"journal article\",\"firstPage\":\"7338\",\"id\":\"25948749\",\"journal\":\"J. Virol.\",\"lastPage\":\"7347\",\"publicationDate\":\"2015\",\"title\":\"Roles of Phosphorylation of the Nucleocapsid Protein of Mumps Virus in Regulating Viral RNA Transcription and Replication.\",\"volume\":\"89\"},\"referenceNumber\":5,\"referencePositions\":[\"PHOSPHORYLATION AT SER-439\",\"MUTAGENESIS OF SER-439\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:32:44.717580+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d7d60030e8c6f9e92350899ae5875332c9af57d1cad52452c8575db188eb0616",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9DQA5.json"
 }
 ```
 
@@ -769,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75",
-  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
-  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   NCAP_MUMPV              Reviewed;         549 AA.\nAC   Q9DQA5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2001, sequence version 1.\nDT   18-JUN-2025, entry version 75.\nDE   RecName: Full=Nucleoprotein;\nDE   AltName: Full=Nucleocapsid protein;\nDE            Short=NP;\nDE            Short=Protein N;\nGN   Name=N; Synonyms=NP;\nOS   Mumps orthorubulavirus (MuV).\nOC   Viruses; Riboviria; Orthornavirae; Negarnaviricota; Haploviricotina;\nOC   Monjiviricetes; Mononegavirales; Paramyxoviridae; Rubulavirinae;\nOC   Orthorubulavirus; Orthorubulavirus parotitidis.\nOX   NCBI_TaxID=2560602;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
+  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75"
 }
 ```
 
@@ -790,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75",
-  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
-  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
-  "source_locator": "lines 41-50",
   "excerpt": "RN   [4]\nRP   STRUCTURE BY ELECTRON MICROSCOPY (18.0 ANGSTROMS) OF THE NUCLEOCAPSID,\nRP   INTERACTION WITH THE PHOSPHOPROTEIN, AND FUNCTION.\nRC   STRAIN=MuV/Iowa.USA/06;\nRX   PubMed=25288750; DOI=10.1073/pnas.1413268111;\nRA   Cox R., Pickar A., Qiu S., Tsao J., Rodenburg C., Dokland T., Elson A.,\nRA   He B., Luo M.;\nRT   \"Structural studies on the authentic mumps virus nucleocapsid showing\nRT   uncoiling by the phosphoprotein.\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 111:15208-15213(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
+  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75"
 }
 ```
 
@@ -811,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75",
-  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
-  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
-  "source_locator": "lines 58-66",
   "excerpt": "CC   -!- FUNCTION: Forms the helical nucleocapsid (NC) with 12.71 N subunits per\nCC       helical turn and a rise of 5.3 Angstrom per N subunit, protecting the\nCC       genome from nucleases (PubMed:25288750). The encapsidated genomic RNA\nCC       serves as template for transcription and replication; encapsidation by\nCC       N is coupled to RNA synthesis (By similarity). Forms the encapsidation\nCC       complex with the phosphoprotein protein P (PubMed:25288750). Before\nCC       encapsidation, the newly synthesized free N protein, so-called N0, is\nCC       chaperoned by P (By similarity). {ECO:0000250|UniProtKB:P06159,\nCC       ECO:0000269|PubMed:25288750}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-66",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
+  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75"
 }
 ```
 
@@ -832,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75",
-  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
-  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
-  "source_locator": "lines 108-108",
   "excerpt": "DR   GO; GO:0039689; P:negative stranded viral RNA replication; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 108-108",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
+  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75"
 }
 ```
 
@@ -853,18 +603,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75",
-  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
-  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
-  "source_locator": "lines 109-109",
   "excerpt": "DR   GO; GO:0039697; P:negative stranded viral RNA transcription; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:32:47.340950+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 109-109",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "763472111d52213635ee889993d7006bb0d23458afc3514f6dcc2c0e7d58510d",
+  "url": "https://rest.uniprot.org/unisave/Q9DQA5?format=txt&versions=75"
 }
 ```
 
@@ -875,15 +625,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 73889-73916",
   "excerpt": "[Term]\nid: GO:0007165\nname: signal transduction\nnamespace: biological_process\nalt_id: GO:0023014\nalt_id: GO:0023015\nalt_id: GO:0023016\nalt_id: GO:0023033\nalt_id: GO:0023045\ndef: \"The cellular process in which a signal is conveyed to trigger a change in the activity or state of a cell. Signal transduction begins with reception of a signal (e.g. a ligand binding to a receptor or receptor activation by a stimulus such as light), or for signal transduction in the absence of ligand, signal-withdrawal or the activity of a constitutively active receptor. Signal transduction ends with regulation of a downstream cellular process, e.g. regulation of transcription or regulation of a metabolic process. Signal transduction covers signaling from receptors located on the surface of the cell and signaling via molecules located within the cell. For signaling between cells, signal transduction is restricted to events at and within the receiving cell.\" [GOC:curators, GOC:mtg_signaling_feb11]\ncomment: Note that signal transduction is defined broadly to include a ligand interacting with a receptor, downstream signaling steps and a response being triggered. A change in form of the signal in every step is not necessary. Note that in many cases the end of this process is regulation of the initiation of transcription. Note that specific transcription factors may be annotated to this term, but core/general transcription machinery such as RNA polymerase should not.\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_metagenomics\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsynonym: \"signaling cascade\" NARROW []\nsynonym: \"signaling pathway\" RELATED []\nsynonym: \"signalling cascade\" NARROW []\nsynonym: \"signalling pathway\" RELATED []\nxref: Reactome:R-HSA-212718 \"EGFR interacts with phospholipase C-gamma\"\nxref: Wikipedia:Signal_transduction\nis_a: GO:0009987 ! cellular process\nis_a: GO:0050794 ! regulation of cellular process\nrelationship: part_of GO:0007154 ! cell communication\nrelationship: part_of GO:0023052 ! signaling\nrelationship: part_of GO:0051716 ! cellular response to stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0007165",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 73889-73916",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0007165"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -894,15 +644,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 193816-193823",
   "excerpt": "[Term]\nid: GO:0033108\nname: mitochondrial respiratory chain complex assembly\nnamespace: biological_process\ndef: \"The aggregation, arrangement and bonding together of a set of components to form a mitochondrial respiratory chain complex or between respiratory chain complexes to form high-order structures.\" [GOC:mah]\nis_a: GO:0065003 ! protein-containing complex assembly\nrelationship: part_of GO:0007005 ! mitochondrion organization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0033108",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 193816-193823",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0033108"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -913,15 +663,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 198746-198755",
   "excerpt": "[Term]\nid: GO:0033590\nname: response to cobalamin\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a cobalamin (vitamin B12) stimulus.\" [GOC:sl]\nsynonym: \"response to vitamin B12\" EXACT []\nis_a: GO:0033273 ! response to vitamin\nis_a: GO:1901698 ! response to nitrogen compound\nis_a: GO:1901700 ! response to oxygen-containing compound\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0033590",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 198746-198755",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0033590"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -932,15 +682,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 232826-232833",
   "excerpt": "[Term]\nid: GO:0039697\nname: negative stranded viral RNA transcription\nnamespace: biological_process\ndef: \"A viral transcription process that uses negative stranded (-) single stranded (ss) RNA as a template.\" [VZ:1096]\nxref: VZ:1096 \"Negative stranded RNA virus replication\"\nis_a: GO:0039696 ! RNA-templated viral transcription\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0039697",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 232826-232833",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0039697"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

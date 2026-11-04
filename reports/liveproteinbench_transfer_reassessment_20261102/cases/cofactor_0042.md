@@ -1,18 +1,16 @@
-# cofactor_0042: before and after transfer clarification
+# cofactor_0042
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0042.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0042.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — heme
+**Expected answer:** **A** — heme
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,250 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as a cytochrome P450 monooxygenase with heme as cofactor. The annotation cites evidence transferred from another UniProt entry, so this supports the key as an annotation but is not direct experimental confirmation for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a cytochrome P450, whose catalytic cofactor is heme; this argues against an iron-sulfur cluster or a free iron cation.
-
-
-**Missing item-specific fact**
-
-> The input does not provide the protein-specific cofactor annotation or experimental characterization needed to choose the database's generic label “heme” over the overlapping option “heme b.”
-
-
-**Reason**
-
-> Biological knowledge can narrow the choices to heme, but it does not meaningfully distinguish A from D: heme b is a form of heme. Selecting the keyed label therefore depends on item-specific annotation, while the wording leaves the two choices overlapping.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Heme b is a type of heme, and the supplied evidence annotates the cofactor only as “heme”; it does not rule out describing that cofactor more specifically as heme b.
-
-
-### Important caveats
-
-- The annotation's cofactor evidence is transferred by similarity from UniProtKB:P04798, rather than shown here as a direct measurement for this protein.
-- Both the historical and current records match the supplied sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a cytochrome P450, whose catalytic cofactor is heme; this argues against an iron-sulfur cluster or a free iron cation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The input does not provide the protein-specific cofactor annotation or experimental characterization needed to choose the database's generic label “heme” over the overlapping option “heme b.”",
-    "reason": "Biological knowledge can narrow the choices to heme, but it does not meaningfully distinguish A from D: heme b is a form of heme. Selecting the keyed label therefore depends on item-specific annotation, while the wording leaves the two choices overlapping."
-  },
-  "case_id": "cofactor_0042",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as a cytochrome P450 monooxygenase with heme as cofactor. The annotation cites evidence transferred from another UniProt entry, so this supports the key as an annotation but is not direct experimental confirmation for this sequence."
-  },
-  "important_caveats": [
-    "The annotation's cofactor evidence is transferred by similarity from UniProtKB:P04798, rather than shown here as a direct measurement for this protein.",
-    "Both the historical and current records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Heme b is a type of heme, and the supplied evidence annotates the cofactor only as “heme”; it does not rule out describing that cofactor more specifically as heme b."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0042",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as a cytochrome P450 monooxygenase with heme as cofactor. The annotation cites evidence transferred from another UniProt entry, so this supports the key as an annotation but is not direct experimental confirmation for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a cytochrome P450, whose catalytic cofactor is heme; this argues against an iron-sulfur cluster or a free iron cation.",
-    "missing_item_specific_fact": "The input does not provide the protein-specific cofactor annotation or experimental characterization needed to choose the database's generic label “heme” over the overlapping option “heme b.”",
-    "reason": "Biological knowledge can narrow the choices to heme, but it does not meaningfully distinguish A from D: heme b is a form of heme. Selecting the keyed label therefore depends on item-specific annotation, while the wording leaves the two choices overlapping."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Heme b is a type of heme, and the supplied evidence annotates the cofactor only as “heme”; it does not rule out describing that cofactor more specifically as heme b."
-  },
-  "important_caveats": [
-    "The annotation's cofactor evidence is transferred by similarity from UniProtKB:P04798, rather than shown here as a direct measurement for this protein.",
-    "Both the historical and current records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt annotation (C5, H4) explicitly lists the cofactor as 'heme' (ChEBI:CHEBI:30413) with evidence code ECO:0000250 (inferred from similarity to P04798, a characterized cytochrome P450). The protein is annotated as 'Cytochrome P450 monooxygenase FrzL' (C4, H2), and the P450 superfamily's dependence on a heme prosthetic group is one of the most well-established facts in enzymology. Although the evidence is transferred (not directly experimental for this specific protein), the P450–heme association is universally accepted. The sequence contains the canonical P450 heme-binding motif 'FGFG' and the conserved heme-ligating cysteine in 'ICPGRH', consistent with a heme-containing P450.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains hallmark cytochrome P450 motifs: the conserved 'FxxGxxxCxG' heme-binding region (visible as 'AFGFGTRICPGRH' with the critical heme-ligating cysteine in 'CPG'), a ~512-aa length typical of fungal P450s, and a membrane-targeting N-terminal region. Recognizing these features identifies the protein as a cytochrome P450, whose catalytic mechanism obligately requires a heme prosthetic group (iron coordinated by the cysteine thiolate). This reasoning eliminates &#91;2Fe-2S&#93; cluster (B, found in ferredoxins/radical SAM enzymes) and free Fe cation (C, a cofactor for non-heme iron enzymes like dioxygenases without a porphyrin).
-
-
-**Missing item-specific fact**
-
-> Distinguishing between 'heme' (A) and 'heme b' (D) purely from sequence is not feasible; both are chemically correct for P450s (all P450s use protoporphyrin IX, i.e., heme b). The choice between A and D depends on the annotation naming convention (UniProt uses 'heme' as the display name while cross-referencing ChEBI:30413, which is specifically 'heme b'). No sequence feature distinguishes these two labels.
-
-
-**Reason**
-
-> A model with knowledge of P450 signature motifs can reason its way to 'heme' and eliminate B and C. However, the A-vs-D distinction (heme vs heme b) is a nomenclature-granularity issue with no sequence-based discriminator; both are scientifically valid for P450s. The broad reasoning chain (P450 motifs → heme cofactor) is intact, but the precise A/D selection relies on matching the UniProt annotation convention rather than on a biological argument derivable from the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> All cytochrome P450s use heme b (iron(II) protoporphyrin IX with cysteine thiolate ligation). 'Heme' (A) is the general class term used in the UniProt annotation name field; 'heme b' (D) is the specific chemical species (ChEBI:30413, which is what the annotation actually cross-references). Both are scientifically correct descriptions of the P450 cofactor. A model that correctly identifies the protein as a P450 and knows P450s use protoporphyrin IX could defensibly select either A or D. The author's key follows the UniProt display name 'heme' rather than the ChEBI-specific term 'heme b'.
-
-
-### Important caveats
-
-- The cofactor annotation evidence code is ECO:0000250 (inferred from similarity to P04798), not direct experimental measurement on FrzL. However, the P450–heme association is universally established across the superfamily.
-- The A (heme) vs D (heme b) distinction is a naming-granularity issue inherent to the question design; both refer to the same prosthetic group in the P450 context. The UniProt annotation uses 'heme' as the display name but cross-references ChEBI:30413, which is specifically 'heme b.'
-- The reviewer-only evidence was absent from the evaluated model input; the model must rely on sequence motifs and general P450 biology.
-- The historical entry (version 17, released 2026-01-28) and current entry (version 19) both carry the same cofactor annotation with identical evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains hallmark cytochrome P450 motifs: the conserved 'FxxGxxxCxG' heme-binding region (visible as 'AFGFGTRICPGRH' with the critical heme-ligating cysteine in 'CPG'), a ~512-aa length typical of fungal P450s, and a membrane-targeting N-terminal region. Recognizing these features identifies the protein as a cytochrome P450, whose catalytic mechanism obligately requires a heme prosthetic group (iron coordinated by the cysteine thiolate). This reasoning eliminates [2Fe-2S] cluster (B, found in ferredoxins/radical SAM enzymes) and free Fe cation (C, a cofactor for non-heme iron enzymes like dioxygenases without a porphyrin).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Distinguishing between 'heme' (A) and 'heme b' (D) purely from sequence is not feasible; both are chemically correct for P450s (all P450s use protoporphyrin IX, i.e., heme b). The choice between A and D depends on the annotation naming convention (UniProt uses 'heme' as the display name while cross-referencing ChEBI:30413, which is specifically 'heme b'). No sequence feature distinguishes these two labels.",
-    "reason": "A model with knowledge of P450 signature motifs can reason its way to 'heme' and eliminate B and C. However, the A-vs-D distinction (heme vs heme b) is a nomenclature-granularity issue with no sequence-based discriminator; both are scientifically valid for P450s. The broad reasoning chain (P450 motifs → heme cofactor) is intact, but the precise A/D selection relies on matching the UniProt annotation convention rather than on a biological argument derivable from the sequence."
-  },
-  "case_id": "cofactor_0042",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt annotation (C5, H4) explicitly lists the cofactor as 'heme' (ChEBI:CHEBI:30413) with evidence code ECO:0000250 (inferred from similarity to P04798, a characterized cytochrome P450). The protein is annotated as 'Cytochrome P450 monooxygenase FrzL' (C4, H2), and the P450 superfamily's dependence on a heme prosthetic group is one of the most well-established facts in enzymology. Although the evidence is transferred (not directly experimental for this specific protein), the P450–heme association is universally accepted. The sequence contains the canonical P450 heme-binding motif 'FGFG' and the conserved heme-ligating cysteine in 'ICPGRH', consistent with a heme-containing P450."
-  },
-  "important_caveats": [
-    "The cofactor annotation evidence code is ECO:0000250 (inferred from similarity to P04798), not direct experimental measurement on FrzL. However, the P450–heme association is universally established across the superfamily.",
-    "The A (heme) vs D (heme b) distinction is a naming-granularity issue inherent to the question design; both refer to the same prosthetic group in the P450 context. The UniProt annotation uses 'heme' as the display name but cross-references ChEBI:30413, which is specifically 'heme b.'",
-    "The reviewer-only evidence was absent from the evaluated model input; the model must rely on sequence motifs and general P450 biology.",
-    "The historical entry (version 17, released 2026-01-28) and current entry (version 19) both carry the same cofactor annotation with identical evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "All cytochrome P450s use heme b (iron(II) protoporphyrin IX with cysteine thiolate ligation). 'Heme' (A) is the general class term used in the UniProt annotation name field; 'heme b' (D) is the specific chemical species (ChEBI:30413, which is what the annotation actually cross-references). Both are scientifically correct descriptions of the P450 cofactor. A model that correctly identifies the protein as a P450 and knows P450s use protoporphyrin IX could defensibly select either A or D. The author's key follows the UniProt display name 'heme' rather than the ChEBI-specific term 'heme b'."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0042",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt annotation (C5, H4) explicitly lists the cofactor as 'heme' (ChEBI:CHEBI:30413) with evidence code ECO:0000250 (inferred from similarity to P04798, a characterized cytochrome P450). The protein is annotated as 'Cytochrome P450 monooxygenase FrzL' (C4, H2), and the P450 superfamily's dependence on a heme prosthetic group is one of the most well-established facts in enzymology. Although the evidence is transferred (not directly experimental for this specific protein), the P450–heme association is universally accepted. The sequence contains the canonical P450 heme-binding motif 'FGFG' and the conserved heme-ligating cysteine in 'ICPGRH', consistent with a heme-containing P450.",
-    "evidence_ids": ["C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains hallmark cytochrome P450 motifs: the conserved 'FxxGxxxCxG' heme-binding region (visible as 'AFGFGTRICPGRH' with the critical heme-ligating cysteine in 'CPG'), a ~512-aa length typical of fungal P450s, and a membrane-targeting N-terminal region. Recognizing these features identifies the protein as a cytochrome P450, whose catalytic mechanism obligately requires a heme prosthetic group (iron coordinated by the cysteine thiolate). This reasoning eliminates [2Fe-2S] cluster (B, found in ferredoxins/radical SAM enzymes) and free Fe cation (C, a cofactor for non-heme iron enzymes like dioxygenases without a porphyrin).",
-    "missing_item_specific_fact": "Distinguishing between 'heme' (A) and 'heme b' (D) purely from sequence is not feasible; both are chemically correct for P450s (all P450s use protoporphyrin IX, i.e., heme b). The choice between A and D depends on the annotation naming convention (UniProt uses 'heme' as the display name while cross-referencing ChEBI:30413, which is specifically 'heme b'). No sequence feature distinguishes these two labels.",
-    "reason": "A model with knowledge of P450 signature motifs can reason its way to 'heme' and eliminate B and C. However, the A-vs-D distinction (heme vs heme b) is a nomenclature-granularity issue with no sequence-based discriminator; both are scientifically valid for P450s. The broad reasoning chain (P450 motifs → heme cofactor) is intact, but the precise A/D selection relies on matching the UniProt annotation convention rather than on a biological argument derivable from the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "All cytochrome P450s use heme b (iron(II) protoporphyrin IX with cysteine thiolate ligation). 'Heme' (A) is the general class term used in the UniProt annotation name field; 'heme b' (D) is the specific chemical species (ChEBI:30413, which is what the annotation actually cross-references). Both are scientifically correct descriptions of the P450 cofactor. A model that correctly identifies the protein as a P450 and knows P450s use protoporphyrin IX could defensibly select either A or D. The author's key follows the UniProt display name 'heme' rather than the ChEBI-specific term 'heme b'."
-  },
-  "important_caveats": [
-    "The cofactor annotation evidence code is ECO:0000250 (inferred from similarity to P04798), not direct experimental measurement on FrzL. However, the P450–heme association is universally established across the superfamily.",
-    "The A (heme) vs D (heme b) distinction is a naming-granularity issue inherent to the question design; both refer to the same prosthetic group in the P450 context. The UniProt annotation uses 'heme' as the display name but cross-references ChEBI:30413, which is specifically 'heme b.'",
-    "The reviewer-only evidence was absent from the evaluated model input; the model must rely on sequence motifs and general P450 biology.",
-    "The historical entry (version 17, released 2026-01-28) and current entry (version 19) both carry the same cofactor annotation with identical evidence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -407,10 +166,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -527,30 +285,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7T8F1L2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "02f6775f75a6bde5b1b4a75830d1b42077d392027632296a27a40235aff1c6f1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 512,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "02f6775f75a6bde5b1b4a75830d1b42077d392027632296a27a40235aff1c6f1",
   "current_entry_audit": {
     "entryVersion": 19,
     "firstPublicDate": "2025-06-18",
@@ -558,14 +303,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
-  "current_source_sequence_sha256": "02f6775f75a6bde5b1b4a75830d1b42077d392027632296a27a40235aff1c6f1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 512,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "02f6775f75a6bde5b1b4a75830d1b42077d392027632296a27a40235aff1c6f1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 17,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7T8F1L2",
   "selected_historical_entry_version": 17,
+  "selected_historical_record_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
+  "selected_historical_source_sequence_length": 512,
+  "selected_historical_source_sequence_sha256": "02f6775f75a6bde5b1b4a75830d1b42077d392027632296a27a40235aff1c6f1",
   "selected_historical_version": {
     "accession": "A0A7T8F1L2",
     "database": "Swiss-Prot",
@@ -576,24 +337,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FRZL_CLASX",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
-  "selected_historical_source_sequence_sha256": "02f6775f75a6bde5b1b4a75830d1b42077d392027632296a27a40235aff1c6f1",
-  "selected_historical_source_sequence_length": 512,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 17,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -607,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json",
-  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
-  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7T8F1L2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json"
 }
 ```
 
@@ -626,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json",
-  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
-  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":19,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json"
 }
 ```
 
@@ -645,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json",
-  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
-  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Hypocreaceae\",\"Cladobotryum\"],\"scientificName\":\"Cladobotryum sp\",\"taxonId\":2040732}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json"
 }
 ```
 
@@ -664,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json",
-  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
-  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"FR901483 biosynthesis cluster protein L\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase FrzL\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json"
 }
 ```
 
@@ -683,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json",
-  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
-  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:30413\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P04798\",\"source\":\"UniProtKB\"}],\"name\":\"heme\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json"
 }
 ```
 
@@ -702,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json",
-  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
-  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang Z.\",\"Tamura Y.\",\"Tang M.\",\"Qiao T.\",\"Sato M.\",\"Otsu Y.\",\"Sasamura S.\",\"Taniguchi M.\",\"Watanabe K.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33372776\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.0c12352\"}],\"citationType\":\"journal article\",\"firstPage\":\"132\",\"id\":\"33372776\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"136\",\"publicationDate\":\"2021\",\"title\":\"Biosynthesis of the Immunosuppressant (-)-FR901483.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"11231\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:50.474399+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f00aff6a17b374aa36f10df5183bfa2190858ab4d3bbd58363dfccc724cff906",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L2.json"
 }
 ```
 
@@ -720,18 +468,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17",
-  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
-  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   FRZL_CLASX              Reviewed;         512 AA.\nAC   A0A7T8F1L2;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 17.\nDE   RecName: Full=Cytochrome P450 monooxygenase FrzL {ECO:0000303|PubMed:33372776};\nDE            EC=1.-.-.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein L {ECO:0000303|PubMed:33372776};\nOS   Cladobotryum sp.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Hypocreaceae; Cladobotryum.\nOX   NCBI_TaxID=2040732;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17"
 }
 ```
 
@@ -741,18 +489,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17",
-  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
-  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Cytochrome P450 monooxygenase FrzL {ECO:0000303|PubMed:33372776};\nDE            EC=1.-.-.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein L {ECO:0000303|PubMed:33372776};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17"
 }
 ```
 
@@ -762,18 +510,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17",
-  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
-  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
-  "source_locator": "lines 13-20",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], AND FUNCTION.\nRC   STRAIN=11231;\nRX   PubMed=33372776; DOI=10.1021/jacs.0c12352;\nRA   Zhang Z., Tamura Y., Tang M., Qiao T., Sato M., Otsu Y., Sasamura S.,\nRA   Taniguchi M., Watanabe K., Tang Y.;\nRT   \"Biosynthesis of the Immunosuppressant (-)-FR901483.\";\nRL   J. Am. Chem. Soc. 143:132-136(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 13-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17"
 }
 ```
 
@@ -783,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17",
-  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
-  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
-  "source_locator": "lines 51-53",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=heme; Xref=ChEBI:CHEBI:30413;\nCC         Evidence={ECO:0000250|UniProtKB:P04798};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-01T06:27:34.520828+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f0424c9067ab83539c73301f9b9c22ba80b885df6566cdc9a868e3422019628c",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L2?format=txt&versions=17"
 }
 ```
 

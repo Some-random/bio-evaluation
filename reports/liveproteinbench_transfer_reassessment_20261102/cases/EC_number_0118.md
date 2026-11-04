@@ -1,18 +1,16 @@
-# EC_number_0118: before and after transfer clarification
+# EC_number_0118
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0118.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0118.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **B** — 3.6.1.5
+**Expected answer:** **B** — 3.6.1.5
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt sequence annotated with EC 3.6.1.5. The annotation reports this EC and its catalytic reaction with experimental-evidence code ECO:0000269, citing PubMed 20351782. This supports choice B, though the primary paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and options do not provide a reliable way to infer the protein's specific substrate and catalytic reaction, which are needed to distinguish the exact EC number.
-
-
-**Missing item-specific fact**
-
-> The protein-specific activity reported as hydrolysis of ribonucleoside 5′-triphosphates to 5′-phosphate and phosphate, or an equivalent annotation or experimental result.
-
-
-**Reason**
-
-> General sequence reasoning may suggest a protein family or broad enzyme class, but it does not establish this exact EC activity. Selecting B depends on a protein-specific fact absent from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not identify an exact EC number, but the choices specify distinct activities; the matched-sequence annotation supports B.
-
-
-### Important caveats
-
-- The sequence match and database annotation are reviewer-only evidence, not information supplied to the evaluated model.
-- The cited annotation carries experimental-evidence status, but the primary publication was not independently assessed; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and options do not provide a reliable way to infer the protein's specific substrate and catalytic reaction, which are needed to distinguish the exact EC number.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific activity reported as hydrolysis of ribonucleoside 5′-triphosphates to 5′-phosphate and phosphate, or an equivalent annotation or experimental result.",
-    "reason": "General sequence reasoning may suggest a protein family or broad enzyme class, but it does not establish this exact EC activity. Selecting B depends on a protein-specific fact absent from the input."
-  },
-  "case_id": "EC_number_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated with EC 3.6.1.5. The annotation reports this EC and its catalytic reaction with experimental-evidence code ECO:0000269, citing PubMed 20351782. This supports choice B, though the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence match and database annotation are reviewer-only evidence, not information supplied to the evaluated model.",
-    "The cited annotation carries experimental-evidence status, but the primary publication was not independently assessed; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not identify an exact EC number, but the choices specify distinct activities; the matched-sequence annotation supports B."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated with EC 3.6.1.5. The annotation reports this EC and its catalytic reaction with experimental-evidence code ECO:0000269, citing PubMed 20351782. This supports choice B, though the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and options do not provide a reliable way to infer the protein's specific substrate and catalytic reaction, which are needed to distinguish the exact EC number.",
-    "missing_item_specific_fact": "The protein-specific activity reported as hydrolysis of ribonucleoside 5′-triphosphates to 5′-phosphate and phosphate, or an equivalent annotation or experimental result.",
-    "reason": "General sequence reasoning may suggest a protein family or broad enzyme class, but it does not establish this exact EC activity. Selecting B depends on a protein-specific fact absent from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not identify an exact EC number, but the choices specify distinct activities; the matched-sequence annotation supports B."
-  },
-  "important_caveats": [
-    "The sequence match and database annotation are reviewer-only evidence, not information supplied to the evaluated model.",
-    "The cited annotation carries experimental-evidence status, but the primary publication was not independently assessed; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence (555 aa) matches UniProt Q95P65 (APY_GLOMM, tsetse fly 5'-nucleotidase-related protein) exactly (SHA-256 confirmed). The UniProt entry assigns EC 3.6.1.5 with experimental evidence (ECO:0000269, PubMed:20351782), catalyzing: a ribonucleoside 5'-triphosphate + 2 H2O = a ribonucleoside 5'-phosphate + 2 phosphate + 2 H(+). Both current (v84) and historical (v83) records confirm this annotation. The expected answer B (3.6.1.5) is directly supported.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a region 'NHEFDHGID' (~residues 120-130) consistent with the HD catalytic motif of the HD-superfamily phosphatases. EC 3.6.1.5 (triphosphatase) belongs to this superfamily. This motif is incompatible with: (A) EC 3.4.21.62, a trypsin-like serine protease requiring a His-Asp-Ser catalytic triad in a chymotrypsin fold; (C) EC 5.3.1.8, glucose-6-phosphate isomerase requiring sugar-binding and isomerization active-site residues; (D) EC 5.6.2.1, a DNA helicase requiring Walker A/B ATP-binding motifs. The presence of an HD-like phosphatase motif and absence of protease triad, isomerase, or helicase motifs provides a general biological argument eliminating A, C, and D, leaving B as the only phosphatase-class option.
-
-
-**Missing item-specific fact**
-
-> Precise confirmation that the HD motif in this sequence is catalytically active and specifically hydrolyzes NTPs to NMPs (rather than other phosphatase substrates) requires the experimental data from PubMed:20351782. However, among the four provided choices, only B is a phosphatase, so motif-based elimination suffices for selection.
-
-
-**Reason**
-
-> A knowledgeable biologist could identify the HD-like motif and use general enzyme-family knowledge to eliminate the protease, isomerase, and helicase options, arriving at the sole phosphatase choice. This relies on general biological reasoning about catalytic motifs rather than memorizing this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices span very different enzyme classes (serine protease, phosphatase, isomerase, helicase). The HD-motif reasoning cleanly eliminates A, C, and D. No other option is defensible given the sequence features.
-
-
-### Important caveats
-
-- The HD motif identification from raw sequence requires familiarity with the HD phosphatase superfamily; a model without this knowledge would struggle.
-- The UniProt annotation is '5'-nucleotidase-related protein' with EC 3.6.1.5, supported by experimental evidence (ECO:0000269), not purely computational inference.
-- The protein is a precursor (signal peptide present); mature protein numbering may differ, but this does not affect EC assignment.
-- The entry was first publicly released 2025-02-05; if the benchmark was constructed before this date, the annotation may have been sourced differently.
-- Reviewer-only evidence was absent from the model's input; the reasoning-supported judgment is based on whether general sequence analysis could distinguish the choices, not on access to UniProt.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a region 'NHEFDHGID' (~residues 120-130) consistent with the HD catalytic motif of the HD-superfamily phosphatases. EC 3.6.1.5 (triphosphatase) belongs to this superfamily. This motif is incompatible with: (A) EC 3.4.21.62, a trypsin-like serine protease requiring a His-Asp-Ser catalytic triad in a chymotrypsin fold; (C) EC 5.3.1.8, glucose-6-phosphate isomerase requiring sugar-binding and isomerization active-site residues; (D) EC 5.6.2.1, a DNA helicase requiring Walker A/B ATP-binding motifs. The presence of an HD-like phosphatase motif and absence of protease triad, isomerase, or helicase motifs provides a general biological argument eliminating A, C, and D, leaving B as the only phosphatase-class option.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise confirmation that the HD motif in this sequence is catalytically active and specifically hydrolyzes NTPs to NMPs (rather than other phosphatase substrates) requires the experimental data from PubMed:20351782. However, among the four provided choices, only B is a phosphatase, so motif-based elimination suffices for selection.",
-    "reason": "A knowledgeable biologist could identify the HD-like motif and use general enzyme-family knowledge to eliminate the protease, isomerase, and helicase options, arriving at the sole phosphatase choice. This relies on general biological reasoning about catalytic motifs rather than memorizing this specific protein's database entry."
-  },
-  "case_id": "EC_number_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence (555 aa) matches UniProt Q95P65 (APY_GLOMM, tsetse fly 5'-nucleotidase-related protein) exactly (SHA-256 confirmed). The UniProt entry assigns EC 3.6.1.5 with experimental evidence (ECO:0000269, PubMed:20351782), catalyzing: a ribonucleoside 5'-triphosphate + 2 H2O = a ribonucleoside 5'-phosphate + 2 phosphate + 2 H(+). Both current (v84) and historical (v83) records confirm this annotation. The expected answer B (3.6.1.5) is directly supported."
-  },
-  "important_caveats": [
-    "The HD motif identification from raw sequence requires familiarity with the HD phosphatase superfamily; a model without this knowledge would struggle.",
-    "The UniProt annotation is '5'-nucleotidase-related protein' with EC 3.6.1.5, supported by experimental evidence (ECO:0000269), not purely computational inference.",
-    "The protein is a precursor (signal peptide present); mature protein numbering may differ, but this does not affect EC assignment.",
-    "The entry was first publicly released 2025-02-05; if the benchmark was constructed before this date, the annotation may have been sourced differently.",
-    "Reviewer-only evidence was absent from the model's input; the reasoning-supported judgment is based on whether general sequence analysis could distinguish the choices, not on access to UniProt."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span very different enzyme classes (serine protease, phosphatase, isomerase, helicase). The HD-motif reasoning cleanly eliminates A, C, and D. No other option is defensible given the sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence (555 aa) matches UniProt Q95P65 (APY_GLOMM, tsetse fly 5'-nucleotidase-related protein) exactly (SHA-256 confirmed). The UniProt entry assigns EC 3.6.1.5 with experimental evidence (ECO:0000269, PubMed:20351782), catalyzing: a ribonucleoside 5'-triphosphate + 2 H2O = a ribonucleoside 5'-phosphate + 2 phosphate + 2 H(+). Both current (v84) and historical (v83) records confirm this annotation. The expected answer B (3.6.1.5) is directly supported.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a region 'NHEFDHGID' (~residues 120-130) consistent with the HD catalytic motif of the HD-superfamily phosphatases. EC 3.6.1.5 (triphosphatase) belongs to this superfamily. This motif is incompatible with: (A) EC 3.4.21.62, a trypsin-like serine protease requiring a His-Asp-Ser catalytic triad in a chymotrypsin fold; (C) EC 5.3.1.8, glucose-6-phosphate isomerase requiring sugar-binding and isomerization active-site residues; (D) EC 5.6.2.1, a DNA helicase requiring Walker A/B ATP-binding motifs. The presence of an HD-like phosphatase motif and absence of protease triad, isomerase, or helicase motifs provides a general biological argument eliminating A, C, and D, leaving B as the only phosphatase-class option.",
-    "missing_item_specific_fact": "Precise confirmation that the HD motif in this sequence is catalytically active and specifically hydrolyzes NTPs to NMPs (rather than other phosphatase substrates) requires the experimental data from PubMed:20351782. However, among the four provided choices, only B is a phosphatase, so motif-based elimination suffices for selection.",
-    "reason": "A knowledgeable biologist could identify the HD-like motif and use general enzyme-family knowledge to eliminate the protease, isomerase, and helicase options, arriving at the sole phosphatase choice. This relies on general biological reasoning about catalytic motifs rather than memorizing this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span very different enzyme classes (serine protease, phosphatase, isomerase, helicase). The HD-motif reasoning cleanly eliminates A, C, and D. No other option is defensible given the sequence features."
-  },
-  "important_caveats": [
-    "The HD motif identification from raw sequence requires familiarity with the HD phosphatase superfamily; a model without this knowledge would struggle.",
-    "The UniProt annotation is '5'-nucleotidase-related protein' with EC 3.6.1.5, supported by experimental evidence (ECO:0000269), not purely computational inference.",
-    "The protein is a precursor (signal peptide present); mature protein numbering may differ, but this does not affect EC assignment.",
-    "The entry was first publicly released 2025-02-05; if the benchmark was constructed before this date, the annotation may have been sourced differently.",
-    "Reviewer-only evidence was absent from the model's input; the reasoning-supported judgment is based on whether general sequence analysis could distinguish the choices, not on access to UniProt."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q95P65",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 555,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "current_entry_audit": {
     "entryVersion": 84,
     "firstPublicDate": "2025-02-05",
@@ -543,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-12-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 555,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q95P65",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "selected_historical_source_sequence_length": 555,
+  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "selected_historical_version": {
     "accession": "Q95P65",
     "database": "Swiss-Prot",
@@ -561,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "APY_GLOMM",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
-  "selected_historical_source_sequence_length": 555,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q95P65\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -611,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":84,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-12-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -630,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Savannah tsetse fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAK63848.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Hippoboscoidea\",\"Glossinidae\",\"Glossina\"],\"scientificName\":\"Glossina morsitans morsitans\",\"taxonId\":37546}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -649,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"3.6.1.5\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'-nucleotidase-related protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'Nuc\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -668,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.6.1.5\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"name\":\"a ribonucleoside 5'-triphosphate + 2 H2O = a ribonucleoside 5'-phosphate + 2 phosphate + 2 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:36795\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58043\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61557\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -687,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Caljon G.\",\"De Ridder K.\",\"De Baetselier P.\",\"Coosemans M.\",\"Van Den Abbeele J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20351782\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0009671\"}],\"citationType\":\"journal article\",\"firstPage\":\"e9671\",\"id\":\"20351782\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e9671\",\"publicationDate\":\"2010\",\"title\":\"Identification of a tsetse fly salivary protein with dual inhibitory action on human platelet aggregation.\",\"volume\":\"5\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -705,18 +459,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   APY_GLOMM               Reviewed;         555 AA.\nAC   Q95P65; D3TRV7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-DEC-2001, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=5'-nucleotidase-related protein {ECO:0000303|PubMed:20351782};\nDE            Short=5'Nuc {ECO:0000303|PubMed:20351782};\nDE            EC=3.6.1.5 {ECO:0000269|PubMed:20351782};\nDE   Flags: Precursor;\nOS   Glossina morsitans morsitans (Savannah tsetse fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Hippoboscoidea;\nOC   Glossinidae; Glossina.\nOX   NCBI_TaxID=37546 {ECO:0000312|EMBL:AAK63848.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -726,18 +480,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=5'-nucleotidase-related protein {ECO:0000303|PubMed:20351782};\nDE            Short=5'Nuc {ECO:0000303|PubMed:20351782};\nDE            EC=3.6.1.5 {ECO:0000269|PubMed:20351782};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -747,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBCELLULAR LOCATION, TISSUE SPECIFICITY,\nRP   AND DISRUPTION PHENOTYPE.\nRX   PubMed=20351782; DOI=10.1371/journal.pone.0009671;\nRA   Caljon G., De Ridder K., De Baetselier P., Coosemans M.,\nRA   Van Den Abbeele J.;\nRT   \"Identification of a tsetse fly salivary protein with dual inhibitory\nRT   action on human platelet aggregation.\";\nRL   PLoS ONE 5:e9671-e9671(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -768,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 47-52",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a ribonucleoside 5'-triphosphate + 2 H2O = a ribonucleoside\nCC         5'-phosphate + 2 phosphate + 2 H(+); Xref=Rhea:RHEA:36795,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:43474,\nCC         ChEBI:CHEBI:58043, ChEBI:CHEBI:61557; EC=3.6.1.5;\nCC         Evidence={ECO:0000269|PubMed:20351782};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 

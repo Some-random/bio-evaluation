@@ -1,18 +1,16 @@
-# motif_position_0015: before and after transfer clarification
+# motif_position_0015
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/motif_position_0015.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/motif_position_0015.txt)
 
 **Task:** `motif_position`  
-**Author key, unchanged:** **D** — 133..139
+**Expected answer:** **D** — 133..139
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt sequence, whose annotation places a vacuolar targeting signal at residues 133–139, matching D. This is a database annotation with computational evidence, not direct experimental confirmation in the supplied evidence.
-
-Citations as saved: [C8](#evidence-c8), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The input provides no named motif or context that would allow general biological reasoning to identify residues 133–139 as the target motif.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation identifying residues 133–139 as a vacuolar targeting signal.
-
-
-**Reason**
-
-> Choosing D depends on an external, protein-specific motif annotation absent from the question; sequence recognition or a generic predictor would not supply reasoning grounded in the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The target motif is not named, and the sequence has other annotated motif regions, but none of the other choices gives an exact matching annotated feature boundary.
-
-
-### Important caveats
-
-- The annotation is computationally supported (ECO:0000255); the supplied evidence does not establish experimental validation of this motif.
-- The historical and current database records match the supplied sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The input provides no named motif or context that would allow general biological reasoning to identify residues 133–139 as the target motif.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation identifying residues 133–139 as a vacuolar targeting signal.",
-    "reason": "Choosing D depends on an external, protein-specific motif annotation absent from the question; sequence recognition or a generic predictor would not supply reasoning grounded in the provided input."
-  },
-  "case_id": "motif_position_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C8",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt sequence, whose annotation places a vacuolar targeting signal at residues 133–139, matching D. This is a database annotation with computational evidence, not direct experimental confirmation in the supplied evidence."
-  },
-  "important_caveats": [
-    "The annotation is computationally supported (ECO:0000255); the supplied evidence does not establish experimental validation of this motif.",
-    "The historical and current database records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The target motif is not named, and the sequence has other annotated motif regions, but none of the other choices gives an exact matching annotated feature boundary."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "motif_position_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt sequence, whose annotation places a vacuolar targeting signal at residues 133–139, matching D. This is a database annotation with computational evidence, not direct experimental confirmation in the supplied evidence.",
-    "evidence_ids": ["C8", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The input provides no named motif or context that would allow general biological reasoning to identify residues 133–139 as the target motif.",
-    "missing_item_specific_fact": "The protein-specific annotation identifying residues 133–139 as a vacuolar targeting signal.",
-    "reason": "Choosing D depends on an external, protein-specific motif annotation absent from the question; sequence recognition or a generic predictor would not supply reasoning grounded in the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The target motif is not named, and the sequence has other annotated motif regions, but none of the other choices gives an exact matching annotated feature boundary."
-  },
-  "important_caveats": [
-    "The annotation is computationally supported (ECO:0000255); the supplied evidence does not establish experimental validation of this motif.",
-    "The historical and current database records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation (evidence C8/H6) explicitly records a MOTIF at positions 133..139 described as 'Vacuolar targeting signal' with evidence code ECO:0000255 (inferred by similarity). The sequence matches the supplied protein (291 AA, sha256 confirmed). The expected answer D (133..139) corresponds exactly to this annotated motif. Note that the evidence code indicates computational inference rather than direct experimental validation.
-
-Citations as saved: [C8](#evidence-c8), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One can eliminate B (316..323) because the protein is only 291 residues long, and eliminate A (74..119, 46 residues) as implausibly long for a 'motif.' Between C (128..147, 20 residues) and D (133..139, 7 residues), general knowledge that motifs are typically short (5–15 residues) mildly favors D. However, this does not uniquely determine the exact boundaries 133–139.
-
-
-**Missing item-specific fact**
-
-> The precise start and end coordinates of the vacuolar targeting signal motif (133..139) are a protein-specific annotation in UniProt (ECO:0000255, inferred by similarity). Without this database entry, one cannot determine from the raw sequence alone why the motif begins at residue 133 and ends at 139 rather than, say, 128–147 or 134–142 (SAM motif II). The sequence context around these positions does not contain a universally recognized, unambiguous targeting-signal consensus that would allow exact boundary determination without annotation.
-
-
-**Reason**
-
-> While general reasoning eliminates two choices (out-of-range and implausibly long), distinguishing the exact boundaries of a 7-residue vacuolar targeting signal from a nearby 20-residue region requires knowledge of the specific UniProt annotation for this protein. The sequence alone does not provide a clear consensus pattern whose boundaries can be unambiguously read off.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C"
-]
-```
-
-> The question asks for 'a conserved motif' without specifying which motif. The protein has multiple annotated features (SAM motifs I/II/III, vacuolar targeting signal). Choice C (128..147) partially overlaps SAM motif II (134..142) and could be argued as a broader functional region. However, C does not exactly match any single annotated motif, and its 20-residue length is atypical for what is conventionally called a 'motif,' making D the more defensible answer. The ambiguity is mild but present in the question wording.
-
-
-### Important caveats
-
-- The vacuolar targeting signal annotation carries evidence code ECO:0000255 (inferred by sequence/structure similarity), not direct experimental validation.
-- The question does not specify which motif is being asked about, relying on the answer choices to disambiguate.
-- Choice B (316..323) is trivially eliminable since the protein is only 291 residues, making it a very easy distractor.
-- The SAM motif II (134..142) overlaps with the vacuolar targeting signal (133..139), which could cause confusion but does not affect the answer since neither 134..142 nor 128..147 is offered as an exact match.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One can eliminate B (316..323) because the protein is only 291 residues long, and eliminate A (74..119, 46 residues) as implausibly long for a 'motif.' Between C (128..147, 20 residues) and D (133..139, 7 residues), general knowledge that motifs are typically short (5–15 residues) mildly favors D. However, this does not uniquely determine the exact boundaries 133–139.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The precise start and end coordinates of the vacuolar targeting signal motif (133..139) are a protein-specific annotation in UniProt (ECO:0000255, inferred by similarity). Without this database entry, one cannot determine from the raw sequence alone why the motif begins at residue 133 and ends at 139 rather than, say, 128–147 or 134–142 (SAM motif II). The sequence context around these positions does not contain a universally recognized, unambiguous targeting-signal consensus that would allow exact boundary determination without annotation.",
-    "reason": "While general reasoning eliminates two choices (out-of-range and implausibly long), distinguishing the exact boundaries of a 7-residue vacuolar targeting signal from a nearby 20-residue region requires knowledge of the specific UniProt annotation for this protein. The sequence alone does not provide a clear consensus pattern whose boundaries can be unambiguously read off."
-  },
-  "case_id": "motif_position_0015",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C8",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation (evidence C8/H6) explicitly records a MOTIF at positions 133..139 described as 'Vacuolar targeting signal' with evidence code ECO:0000255 (inferred by similarity). The sequence matches the supplied protein (291 AA, sha256 confirmed). The expected answer D (133..139) corresponds exactly to this annotated motif. Note that the evidence code indicates computational inference rather than direct experimental validation."
-  },
-  "important_caveats": [
-    "The vacuolar targeting signal annotation carries evidence code ECO:0000255 (inferred by sequence/structure similarity), not direct experimental validation.",
-    "The question does not specify which motif is being asked about, relying on the answer choices to disambiguate.",
-    "Choice B (316..323) is trivially eliminable since the protein is only 291 residues, making it a very easy distractor.",
-    "The SAM motif II (134..142) overlaps with the vacuolar targeting signal (133..139), which could cause confusion but does not affect the answer since neither 134..142 nor 128..147 is offered as an exact match."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C"
-    ],
-    "reason": "The question asks for 'a conserved motif' without specifying which motif. The protein has multiple annotated features (SAM motifs I/II/III, vacuolar targeting signal). Choice C (128..147) partially overlaps SAM motif II (134..142) and could be argued as a broader functional region. However, C does not exactly match any single annotated motif, and its 20-residue length is atypical for what is conventionally called a 'motif,' making D the more defensible answer. The ambiguity is mild but present in the question wording."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "motif_position_0015",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotation (evidence C8/H6) explicitly records a MOTIF at positions 133..139 described as 'Vacuolar targeting signal' with evidence code ECO:0000255 (inferred by similarity). The sequence matches the supplied protein (291 AA, sha256 confirmed). The expected answer D (133..139) corresponds exactly to this annotated motif. Note that the evidence code indicates computational inference rather than direct experimental validation.",
-    "evidence_ids": ["C8", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One can eliminate B (316..323) because the protein is only 291 residues long, and eliminate A (74..119, 46 residues) as implausibly long for a 'motif.' Between C (128..147, 20 residues) and D (133..139, 7 residues), general knowledge that motifs are typically short (5–15 residues) mildly favors D. However, this does not uniquely determine the exact boundaries 133–139.",
-    "missing_item_specific_fact": "The precise start and end coordinates of the vacuolar targeting signal motif (133..139) are a protein-specific annotation in UniProt (ECO:0000255, inferred by similarity). Without this database entry, one cannot determine from the raw sequence alone why the motif begins at residue 133 and ends at 139 rather than, say, 128–147 or 134–142 (SAM motif II). The sequence context around these positions does not contain a universally recognized, unambiguous targeting-signal consensus that would allow exact boundary determination without annotation.",
-    "reason": "While general reasoning eliminates two choices (out-of-range and implausibly long), distinguishing the exact boundaries of a 7-residue vacuolar targeting signal from a nearby 20-residue region requires knowledge of the specific UniProt annotation for this protein. The sequence alone does not provide a clear consensus pattern whose boundaries can be unambiguously read off."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C"],
-    "reason": "The question asks for 'a conserved motif' without specifying which motif. The protein has multiple annotated features (SAM motifs I/II/III, vacuolar targeting signal). Choice C (128..147) partially overlaps SAM motif II (134..142) and could be argued as a broader functional region. However, C does not exactly match any single annotated motif, and its 20-residue length is atypical for what is conventionally called a 'motif,' making D the more defensible answer. The ambiguity is mild but present in the question wording."
-  },
-  "important_caveats": [
-    "The vacuolar targeting signal annotation carries evidence code ECO:0000255 (inferred by sequence/structure similarity), not direct experimental validation.",
-    "The question does not specify which motif is being asked about, relying on the answer choices to disambiguate.",
-    "Choice B (316..323) is trivially eliminable since the protein is only 291 residues, making it a very easy distractor.",
-    "The SAM motif II (134..142) overlaps with the vacuolar targeting signal (133..139), which could cause confusion but does not affect the answer since neither 134..142 nor 128..147 is offered as an exact match."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +164,9 @@ Citations as saved: [C8](#evidence-c8), [H6](#evidence-h6).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +284,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A075D654",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 291,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-06-18",
@@ -545,14 +302,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-10-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "current_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 291,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 32,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A075D654",
   "selected_historical_entry_version": 32,
+  "selected_historical_record_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "selected_historical_source_sequence_length": 291,
+  "selected_historical_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
   "selected_historical_version": {
     "accession": "A0A075D654",
     "database": "Swiss-Prot",
@@ -563,24 +336,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ANMT_RAUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "selected_historical_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
-  "selected_historical_source_sequence_length": 291,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 32,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A075D654\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -613,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-10-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -632,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Serpentine wood\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Vinceae\",\"Rauvolfiinae\",\"Rauvolfia\"],\"scientificName\":\"Rauvolfia serpentina\",\"synonyms\":[\"Ophioxylon serpentinum\"],\"taxonId\":4060}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -651,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AHH02777.1\",\"source\":\"EMBL\"}],\"value\":\"Gamma-tocopherol-like methyltransferase ANMT\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.393\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"Ajmaline N-methyltransferase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"RsANMT\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -670,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"SAM motif I\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00914\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":80},\"start\":{\"modifier\":\"EXACT\",\"value\":71}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -689,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"SAM motif II\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00914\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":142},\"start\":{\"modifier\":\"EXACT\",\"value\":134}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -708,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"SAM motif III\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00914\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":170},\"start\":{\"modifier\":\"EXACT\",\"value\":161}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -727,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Vacuolar targeting signal\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":139},\"start\":{\"modifier\":\"EXACT\",\"value\":133}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -746,15 +506,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Cazares-Flores P.\",\"Levac D.\",\"De Luca V.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27122470\"},{\"database\":\"DOI\",\"id\":\"10.1111/tpj.13186\"}],\"citationType\":\"journal article\",\"firstPage\":\"335\",\"id\":\"27122470\",\"journal\":\"Plant J.\",\"lastPage\":\"342\",\"publicationDate\":\"2016\",\"title\":\"Rauvolfia serpentina N-methyltransferases involved in ajmaline and Nbeta -methylajmaline biosynthesis belong to a gene family derived from gamma-tocopherol C-methyltransferase.\",\"volume\":\"87\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -764,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   ANMT_RAUSE              Reviewed;         291 AA.\nAC   A0A075D654;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-OCT-2014, sequence version 1.\nDT   28-JAN-2026, entry version 32.\nDE   RecName: Full=Ajmaline N-methyltransferase {ECO:0000303|PubMed:27122470};\nDE            Short=RsANMT {ECO:0000303|PubMed:27122470};\nDE            EC=2.1.1.393 {ECO:0000269|PubMed:27122470};\nDE   AltName: Full=Gamma-tocopherol-like methyltransferase ANMT {ECO:0000312|EMBL:AHH02777.1};\nGN   Name=ANMT {ECO:0000303|PubMed:27122470};\nGN   Synonyms=Rs820 {ECO:0000312|EMBL:AHH02777.1};\nOS   Rauvolfia serpentina (Serpentine wood) (Ophioxylon serpentinum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Vinceae;\nOC   Rauvolfiinae; Rauvolfia.\nOX   NCBI_TaxID=4060;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -785,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 26-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, PATHWAY, AND\nRP   TISSUE SPECIFICITY.\nRX   PubMed=27122470; DOI=10.1111/tpj.13186;\nRA   Cazares-Flores P., Levac D., De Luca V.;\nRT   \"Rauvolfia serpentina N-methyltransferases involved in ajmaline and Nbeta\nRT   -methylajmaline biosynthesis belong to a gene family derived from gamma-\nRT   tocopherol C-methyltransferase.\";\nRL   Plant J. 87:335-342(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -806,18 +566,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 112-114",
   "excerpt": "FT   REGION          71..80\nFT                   /note=\"SAM motif I\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00914\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 112-114",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -827,18 +587,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 115-117",
   "excerpt": "FT   REGION          134..142\nFT                   /note=\"SAM motif II\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00914\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 115-117",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -848,18 +608,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 118-120",
   "excerpt": "FT   REGION          161..170\nFT                   /note=\"SAM motif III\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00914\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 118-120",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -869,18 +629,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 121-123",
   "excerpt": "FT   MOTIF           133..139\nFT                   /note=\"Vacuolar targeting signal\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 121-123",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 

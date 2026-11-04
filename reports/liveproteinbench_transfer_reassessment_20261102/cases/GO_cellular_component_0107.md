@@ -1,18 +1,16 @@
-# GO_cellular_component_0107: before and after transfer clarification
+# GO_cellular_component_0107
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0107.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0107.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — cytosolic large ribosomal subunit
+**Expected answer:** **B** — cytosolic large ribosomal subunit
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the reviewed Thermococcus kodakarensis protein annotated as large ribosomal subunit protein eL42. Its GO annotation is cytosolic large ribosomal subunit, supporting choice B. This support is annotation-based: the protein name uses a HAMAP computational rule, and the GO annotation has IBA evidence, not direct experimental localization in the supplied evidence.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The short, Lys/Arg-rich sequence lacks an obvious transmembrane segment or secretory signal, which weighs against the mitochondrial inner membrane and Golgi choices; its basic character is compatible with a ribosomal protein. But those broad features do not identify it specifically as a large-subunit ribosomal protein.
-
-
-**Missing item-specific fact**
-
-> Identifying the sequence as archaeal ribosomal protein eL42, or otherwise establishing its membership in the large ribosomal subunit, requires protein-family or homology information not provided in the question.
-
-
-**Reason**
-
-> Sequence composition can make B plausible and the membrane/secretory options less plausible, but the precise ribosomal-subunit localization depends on identifying this particular protein family.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied annotation supports B, and the other choices are not comparably supported by the sequence. The sequence-only evidence is less decisive than the reviewer-only protein annotation.
-
-
-### Important caveats
-
-- Reviewer-only accession and annotation evidence was not available to the evaluated model.
-- The GO evidence is IBA, so it should not be represented as direct experimental localization.
-- The GO term has a prokaryotic large-ribosomal-subunit synonym, making its use for this archaeal protein appropriate.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The short, Lys/Arg-rich sequence lacks an obvious transmembrane segment or secretory signal, which weighs against the mitochondrial inner membrane and Golgi choices; its basic character is compatible with a ribosomal protein. But those broad features do not identify it specifically as a large-subunit ribosomal protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying the sequence as archaeal ribosomal protein eL42, or otherwise establishing its membership in the large ribosomal subunit, requires protein-family or homology information not provided in the question.",
-    "reason": "Sequence composition can make B plausible and the membrane/secretory options less plausible, but the precise ribosomal-subunit localization depends on identifying this particular protein family."
-  },
-  "case_id": "GO_cellular_component_0107",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the reviewed Thermococcus kodakarensis protein annotated as large ribosomal subunit protein eL42. Its GO annotation is cytosolic large ribosomal subunit, supporting choice B. This support is annotation-based: the protein name uses a HAMAP computational rule, and the GO annotation has IBA evidence, not direct experimental localization in the supplied evidence."
-  },
-  "important_caveats": [
-    "Reviewer-only accession and annotation evidence was not available to the evaluated model.",
-    "The GO evidence is IBA, so it should not be represented as direct experimental localization.",
-    "The GO term has a prokaryotic large-ribosomal-subunit synonym, making its use for this archaeal protein appropriate."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied annotation supports B, and the other choices are not comparably supported by the sequence. The sequence-only evidence is less decisive than the reviewer-only protein annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0107",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the reviewed Thermococcus kodakarensis protein annotated as large ribosomal subunit protein eL42. Its GO annotation is cytosolic large ribosomal subunit, supporting choice B. This support is annotation-based: the protein name uses a HAMAP computational rule, and the GO annotation has IBA evidence, not direct experimental localization in the supplied evidence.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The short, Lys/Arg-rich sequence lacks an obvious transmembrane segment or secretory signal, which weighs against the mitochondrial inner membrane and Golgi choices; its basic character is compatible with a ribosomal protein. But those broad features do not identify it specifically as a large-subunit ribosomal protein.",
-    "missing_item_specific_fact": "Identifying the sequence as archaeal ribosomal protein eL42, or otherwise establishing its membership in the large ribosomal subunit, requires protein-family or homology information not provided in the question.",
-    "reason": "Sequence composition can make B plausible and the membrane/secretory options less plausible, but the precise ribosomal-subunit localization depends on identifying this particular protein family."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied annotation supports B, and the other choices are not comparably supported by the sequence. The sequence-only evidence is less decisive than the reviewer-only protein annotation."
-  },
-  "important_caveats": [
-    "Reviewer-only accession and annotation evidence was not available to the evaluated model.",
-    "The GO evidence is IBA, so it should not be represented as direct experimental localization.",
-    "The GO term has a prokaryotic large-ribosomal-subunit synonym, making its use for this archaeal protein appropriate."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q5JE51 is named 'Large ribosomal subunit protein eL42' (gene rpl44e) with GO annotation GO:0022625 'cytosolic large ribosomal subunit'. The sequence matches exactly (94 aa, SHA256 confirmed). The annotation evidence code is IBA:GO_Central (computational transfer), not direct experimental evidence, but the protein name, zinc-binding motifs (C-x-x-C patterns consistent with eL42), and highly basic character are consistent with a ribosomal protein. The expected answer B aligns with the database annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 94-aa sequence is extremely short, highly basic (many K/R residues), and contains paired cysteine motifs (CPFCKR...CTVCGKAHTRGQGFRVKKFELVEV) characteristic of zinc-binding ribosomal proteins. It lacks any signal peptide, transmembrane domain, mitochondrial targeting sequence, or Golgi retention signal, making options C (mitochondrial inner membrane) and D (Golgi apparatus) inconsistent with the sequence's biophysical properties. Option A (neuromuscular junction) is a vertebrate/invertebrate synaptic structure with no plausible connection to a small, basic, zinc-binding protein. The basic, compact, rRNA-interacting character is a well-known hallmark of ribosomal proteins, making B the only biologically coherent option. Additionally, if the model recognizes the organism as archaeal (Thermococcus kodakarensis), options A, C, and D can be eliminated outright since archaea lack neuromuscular junctions, mitochondria, and Golgi apparatus.
-
-
-**Missing item-specific fact**
-
-> The exact distinction between 'large' and 'small' ribosomal subunit membership, and the precise GO term 'cytosolic large ribosomal subunit' vs. a more generic 'ribosome' annotation, would benefit from knowing the specific eL42 zinc-binding motif. However, B is the only ribosomal option among the choices, so this granularity is not required to select the correct answer.
-
-
-**Reason**
-
-> General biological reasoning about protein biophysics (basic charge, zinc-binding motifs, absence of organelle-targeting signals) and cell biology (archaea lack mitochondria, Golgi, and neuromuscular junctions) provides meaningful grounds to eliminate A, C, and D and select B. The sequence itself carries sufficient structural and compositional information to support this inference without requiring memorization of the specific UniProt annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, C, and D describe eukaryotic-specific structures or compartments with no plausible association to a small, basic, zinc-binding archaeal protein. B is the only option consistent with the sequence's biophysical properties and biological context. No ambiguity among choices.
-
-
-### Important caveats
-
-- The GO annotation uses evidence code IBA:GO_Central (inferred by biological aspect from another annotation), meaning the 'cytosolic large ribosomal subunit' assignment is computationally transferred rather than experimentally verified for this specific archaeal protein.
-- The term 'cytosolic large ribosomal subunit' (GO:0022625) is eukaryotic-centric; archaeal ribosomes are structurally related but taxonomically distinct. UniProt nonetheless assigns this term via IBA transfer, so the expected answer matches the database annotation despite this taxonomic nuance.
-- The organism identity (Thermococcus kodakarensis, an archaeon) is not provided in the evaluated model input; the model must infer prokaryotic/archaeal origin from sequence features or general knowledge to fully leverage the elimination of eukaryotic-specific compartments.
-- The reviewer identified the accession (Q5JE51) from dataset metadata absent from the model input; this identification is reviewer-only and does not affect the model's reasoning pathway.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 94-aa sequence is extremely short, highly basic (many K/R residues), and contains paired cysteine motifs (CPFCKR...CTVCGKAHTRGQGFRVKKFELVEV) characteristic of zinc-binding ribosomal proteins. It lacks any signal peptide, transmembrane domain, mitochondrial targeting sequence, or Golgi retention signal, making options C (mitochondrial inner membrane) and D (Golgi apparatus) inconsistent with the sequence's biophysical properties. Option A (neuromuscular junction) is a vertebrate/invertebrate synaptic structure with no plausible connection to a small, basic, zinc-binding protein. The basic, compact, rRNA-interacting character is a well-known hallmark of ribosomal proteins, making B the only biologically coherent option. Additionally, if the model recognizes the organism as archaeal (Thermococcus kodakarensis), options A, C, and D can be eliminated outright since archaea lack neuromuscular junctions, mitochondria, and Golgi apparatus.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The exact distinction between 'large' and 'small' ribosomal subunit membership, and the precise GO term 'cytosolic large ribosomal subunit' vs. a more generic 'ribosome' annotation, would benefit from knowing the specific eL42 zinc-binding motif. However, B is the only ribosomal option among the choices, so this granularity is not required to select the correct answer.",
-    "reason": "General biological reasoning about protein biophysics (basic charge, zinc-binding motifs, absence of organelle-targeting signals) and cell biology (archaea lack mitochondria, Golgi, and neuromuscular junctions) provides meaningful grounds to eliminate A, C, and D and select B. The sequence itself carries sufficient structural and compositional information to support this inference without requiring memorization of the specific UniProt annotation."
-  },
-  "case_id": "GO_cellular_component_0107",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q5JE51 is named 'Large ribosomal subunit protein eL42' (gene rpl44e) with GO annotation GO:0022625 'cytosolic large ribosomal subunit'. The sequence matches exactly (94 aa, SHA256 confirmed). The annotation evidence code is IBA:GO_Central (computational transfer), not direct experimental evidence, but the protein name, zinc-binding motifs (C-x-x-C patterns consistent with eL42), and highly basic character are consistent with a ribosomal protein. The expected answer B aligns with the database annotation."
-  },
-  "important_caveats": [
-    "The GO annotation uses evidence code IBA:GO_Central (inferred by biological aspect from another annotation), meaning the 'cytosolic large ribosomal subunit' assignment is computationally transferred rather than experimentally verified for this specific archaeal protein.",
-    "The term 'cytosolic large ribosomal subunit' (GO:0022625) is eukaryotic-centric; archaeal ribosomes are structurally related but taxonomically distinct. UniProt nonetheless assigns this term via IBA transfer, so the expected answer matches the database annotation despite this taxonomic nuance.",
-    "The organism identity (Thermococcus kodakarensis, an archaeon) is not provided in the evaluated model input; the model must infer prokaryotic/archaeal origin from sequence features or general knowledge to fully leverage the elimination of eukaryotic-specific compartments.",
-    "The reviewer identified the accession (Q5JE51) from dataset metadata absent from the model input; this identification is reviewer-only and does not affect the model's reasoning pathway."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D describe eukaryotic-specific structures or compartments with no plausible association to a small, basic, zinc-binding archaeal protein. B is the only option consistent with the sequence's biophysical properties and biological context. No ambiguity among choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0107",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q5JE51 is named 'Large ribosomal subunit protein eL42' (gene rpl44e) with GO annotation GO:0022625 'cytosolic large ribosomal subunit'. The sequence matches exactly (94 aa, SHA256 confirmed). The annotation evidence code is IBA:GO_Central (computational transfer), not direct experimental evidence, but the protein name, zinc-binding motifs (C-x-x-C patterns consistent with eL42), and highly basic character are consistent with a ribosomal protein. The expected answer B aligns with the database annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 94-aa sequence is extremely short, highly basic (many K/R residues), and contains paired cysteine motifs (CPFCKR...CTVCGKAHTRGQGFRVKKFELVEV) characteristic of zinc-binding ribosomal proteins. It lacks any signal peptide, transmembrane domain, mitochondrial targeting sequence, or Golgi retention signal, making options C (mitochondrial inner membrane) and D (Golgi apparatus) inconsistent with the sequence's biophysical properties. Option A (neuromuscular junction) is a vertebrate/invertebrate synaptic structure with no plausible connection to a small, basic, zinc-binding protein. The basic, compact, rRNA-interacting character is a well-known hallmark of ribosomal proteins, making B the only biologically coherent option. Additionally, if the model recognizes the organism as archaeal (Thermococcus kodakarensis), options A, C, and D can be eliminated outright since archaea lack neuromuscular junctions, mitochondria, and Golgi apparatus.",
-    "missing_item_specific_fact": "The exact distinction between 'large' and 'small' ribosomal subunit membership, and the precise GO term 'cytosolic large ribosomal subunit' vs. a more generic 'ribosome' annotation, would benefit from knowing the specific eL42 zinc-binding motif. However, B is the only ribosomal option among the choices, so this granularity is not required to select the correct answer.",
-    "reason": "General biological reasoning about protein biophysics (basic charge, zinc-binding motifs, absence of organelle-targeting signals) and cell biology (archaea lack mitochondria, Golgi, and neuromuscular junctions) provides meaningful grounds to eliminate A, C, and D and select B. The sequence itself carries sufficient structural and compositional information to support this inference without requiring memorization of the specific UniProt annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D describe eukaryotic-specific structures or compartments with no plausible association to a small, basic, zinc-binding archaeal protein. B is the only option consistent with the sequence's biophysical properties and biological context. No ambiguity among choices."
-  },
-  "important_caveats": [
-    "The GO annotation uses evidence code IBA:GO_Central (inferred by biological aspect from another annotation), meaning the 'cytosolic large ribosomal subunit' assignment is computationally transferred rather than experimentally verified for this specific archaeal protein.",
-    "The term 'cytosolic large ribosomal subunit' (GO:0022625) is eukaryotic-centric; archaeal ribosomes are structurally related but taxonomically distinct. UniProt nonetheless assigns this term via IBA transfer, so the expected answer matches the database annotation despite this taxonomic nuance.",
-    "The organism identity (Thermococcus kodakarensis, an archaeon) is not provided in the evaluated model input; the model must infer prokaryotic/archaeal origin from sequence features or general knowledge to fully leverage the elimination of eukaryotic-specific compartments.",
-    "The reviewer identified the accession (Q5JE51) from dataset metadata absent from the model input; this identification is reviewer-only and does not affect the model's reasoning pathway."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -396,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5JE51",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c0a362a3050d93d98be75f3ac1029e6c8fd68639ca3f45c8eda8bc47cee0a113",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 94,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c0a362a3050d93d98be75f3ac1029e6c8fd68639ca3f45c8eda8bc47cee0a113",
   "current_entry_audit": {
     "entryVersion": 109,
     "firstPublicDate": "2025-02-05",
@@ -545,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-02-15",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
-  "current_source_sequence_sha256": "c0a362a3050d93d98be75f3ac1029e6c8fd68639ca3f45c8eda8bc47cee0a113",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 94,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c0a362a3050d93d98be75f3ac1029e6c8fd68639ca3f45c8eda8bc47cee0a113",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 107,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5JE51",
   "selected_historical_entry_version": 107,
+  "selected_historical_record_sha256": "54b03ede26cd2994aa8e16a71cdff8115aa30c55b07be10c28b083c9be3d4ed5",
+  "selected_historical_source_sequence_length": 94,
+  "selected_historical_source_sequence_sha256": "c0a362a3050d93d98be75f3ac1029e6c8fd68639ca3f45c8eda8bc47cee0a113",
   "selected_historical_version": {
     "accession": "Q5JE51",
     "database": "Swiss-Prot",
@@ -563,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RL44E_THEKO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "54b03ede26cd2994aa8e16a71cdff8115aa30c55b07be10c28b083c9be3d4ed5",
-  "selected_historical_source_sequence_sha256": "c0a362a3050d93d98be75f3ac1029e6c8fd68639ca3f45c8eda8bc47cee0a113",
-  "selected_historical_source_sequence_length": 94,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 107,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json",
-  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
-  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5JE51\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json"
 }
 ```
 
@@ -617,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json",
-  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
-  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":109,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-02-15\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json"
 }
 ```
 
@@ -636,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json",
-  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
-  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Pyrococcus kodakaraensis (strain KOD1)\",\"lineage\":[\"Archaea\",\"Methanobacteriati\",\"Methanobacteriota\",\"Thermococci\",\"Thermococcales\",\"Thermococcaceae\",\"Thermococcus\"],\"scientificName\":\"Thermococcus kodakarensis (strain ATCC BAA-918 / JCM 12380 / KOD1)\",\"taxonId\":69014}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json"
 }
 ```
 
@@ -655,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json",
-  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
-  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_01476\",\"source\":\"HAMAP-Rule\"}],\"value\":\"Large ribosomal subunit protein eL42\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json"
 }
 ```
 
@@ -674,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json",
-  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
-  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/25",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0022625\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosolic large ribosomal subunit\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/25",
+  "retrieved_utc": "2026-11-02T04:31:15.985869+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f4f49f4fdcd815348ad11724d3db6ac5069cf1b1096d21c9283e9d4baee6a33",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5JE51.json"
 }
 ```
 
@@ -692,18 +445,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JE51?format=txt&versions=107",
-  "source_sha256": "54b03ede26cd2994aa8e16a71cdff8115aa30c55b07be10c28b083c9be3d4ed5",
-  "retrieved_utc": "2026-11-02T04:31:20.329246+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   RL44E_THEKO             Reviewed;          94 AA.\nAC   Q5JE51;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   15-FEB-2005, sequence version 1.\nDT   28-JAN-2026, entry version 107.\nDE   RecName: Full=Large ribosomal subunit protein eL42 {ECO:0000255|HAMAP-Rule:MF_01476};\nGN   Name=rpl44e {ECO:0000255|HAMAP-Rule:MF_01476};\nGN   OrderedLocusNames=TK1098 {ECO:0000312|EMBL:BAD85287.1};\nOS   Thermococcus kodakarensis (strain ATCC BAA-918 / JCM 12380 / KOD1)\nOS   (Pyrococcus kodakaraensis (strain KOD1)).\nOC   Archaea; Methanobacteriati; Methanobacteriota; Thermococci; Thermococcales;\nOC   Thermococcaceae; Thermococcus.\nOX   NCBI_TaxID=69014;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-02T04:31:20.329246+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "54b03ede26cd2994aa8e16a71cdff8115aa30c55b07be10c28b083c9be3d4ed5",
+  "url": "https://rest.uniprot.org/unisave/Q5JE51?format=txt&versions=107"
 }
 ```
 
@@ -713,18 +466,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5JE51?format=txt&versions=107",
-  "source_sha256": "54b03ede26cd2994aa8e16a71cdff8115aa30c55b07be10c28b083c9be3d4ed5",
-  "retrieved_utc": "2026-11-02T04:31:20.329246+00:00",
-  "source_locator": "lines 75-75",
   "excerpt": "DR   GO; GO:0022625; C:cytosolic large ribosomal subunit; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-02T04:31:20.329246+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 75-75",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "54b03ede26cd2994aa8e16a71cdff8115aa30c55b07be10c28b083c9be3d4ed5",
+  "url": "https://rest.uniprot.org/unisave/Q5JE51?format=txt&versions=107"
 }
 ```
 
@@ -735,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 1791-1800",
   "excerpt": "[Term]\nid: GO:0000180\nname: obsolete cytosolic large ribosomal subunit\nnamespace: cellular_component\ndef: \"OBSOLETE. (Was not defined before being made obsolete).\" [GOC:ai]\ncomment: This term was made obsolete because more specific children exist.\nsynonym: \"cytosolic large ribosomal subunit\" EXACT []\nis_obsolete: true\nconsider: GO:0022625\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000180",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 1791-1800",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000180"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -754,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59031-59043",
   "excerpt": "[Term]\nid: GO:0005743\nname: mitochondrial inner membrane\nnamespace: cellular_component\ndef: \"The inner, i.e. lumen-facing, lipid bilayer of the mitochondrial envelope. It is highly folded to form cristae.\" [GOC:ai]\nsynonym: \"inner mitochondrial membrane\" EXACT []\nsynonym: \"inner mitochondrion membrane\" EXACT []\nsynonym: \"mitochondrion inner membrane\" EXACT []\nxref: NIF_Subcellular:sao1371347282\nxref: Wikipedia:Inner_mitochondrial_membrane\nis_a: GO:0019866 ! organelle inner membrane\nis_a: GO:0031966 ! mitochondrial membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005743",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59031-59043",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005743"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -773,15 +526,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59587-59612",
   "excerpt": "[Term]\nid: GO:0005794\nname: Golgi apparatus\nnamespace: cellular_component\ndef: \"A membrane-bound cytoplasmic organelle of the endomembrane system that further processes the core oligosaccharides (e.g. N-glycans) added to proteins in the endoplasmic reticulum and packages them into membrane-bound vesicles. The Golgi apparatus operates at the intersection of the secretory, lysosomal, and endocytic pathways.\" [ISBN:0198506732, PMID:9695800]\ncomment: Note that the Golgi apparatus can be located in various places in the cytoplasm. In plants and lower animal cells, the Golgi apparatus exists as many copies of discrete stacks dispersed throughout the cytoplasm, while the Golgi apparatus of interphase mammalian cells is a juxtanuclear, often pericentriolar reticulum, where the discrete Golgi stacks are stitched together to form a compact and interconnected ribbon, sometimes called the Golgi ribbon.\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_yeast\nsynonym: \"Golgi\" BROAD []\nsynonym: \"Golgi complex\" EXACT []\nsynonym: \"Golgi ribbon\" NARROW []\nxref: NIF_Subcellular:sao451912436\nxref: Wikipedia:Golgi_apparatus\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\nrelationship: part_of GO:0005737 ! cytoplasm\nrelationship: part_of GO:0012505 ! endomembrane system\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005794",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59587-59612",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005794"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -792,15 +545,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 160556-160571",
   "excerpt": "[Term]\nid: GO:0022625\nname: cytosolic large ribosomal subunit\nnamespace: cellular_component\nalt_id: GO:0005842\nalt_id: GO:0009282\nalt_id: GO:0030498\nalt_id: GO:0030872\ndef: \"The large subunit of a ribosome located in the cytosol.\" [GOC:mtg_sensu]\nsynonym: \"50S ribosomal subunit\" NARROW []\nsynonym: \"60S ribosomal subunit\" NARROW []\nsynonym: \"eukaryotic ribosomal LSU\" NARROW []\nsynonym: \"prokaryotic large ribosomal subunit\" NARROW []\nis_a: GO:0015934 ! large ribosomal subunit\nrelationship: part_of GO:0022626 ! cytosolic ribosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0022625",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 160556-160571",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0022625"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -811,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 178139-178150",
   "excerpt": "[Term]\nid: GO:0031594\nname: neuromuscular junction\nnamespace: cellular_component\ndef: \"The junction between the axon of a motor neuron and a muscle fiber. In response to the arrival of action potentials, the presynaptic button releases molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane of the muscle fiber, leading to a change in post-synaptic potential.\" [GOC:nln]\ncomment: In vertebrates, the term 'neuromuscular junction' is limited to synapses targeting skeletal muscle fibers - all of which are cholinergic and excitatory. Both inhibitory and excitatory neuromuscular junctions exist in invertebrates, utilizing a range of neurotransmitters including glutamate, GABA and 5-HT.\nsynonym: \"motor endplate\" RELATED [NIF_Subcellular:nlx_subcell_20090512]\nsynonym: \"NMJ\" RELATED [GOC:ha]\nxref: NIF_Subcellular:sao1124888485\nxref: Wikipedia:Neuromuscular_junction\nis_a: GO:0045202 ! synapse\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031594",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 178139-178150",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031594"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

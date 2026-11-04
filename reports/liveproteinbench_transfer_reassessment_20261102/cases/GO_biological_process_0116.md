@@ -1,18 +1,16 @@
-# GO_biological_process_0116: before and after transfer clarification
+# GO_biological_process_0116
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0116.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0116.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — negative regulation of G1/S transition of mitotic cell cycle
+**Expected answer:** **D** — negative regulation of G1/S transition of mitotic cell cycle
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the mouse ZNF655 record, which carries the GO annotation for negative regulation of the G1/S transition. The annotation is supported by UniProtKB via ISS (inference from sequence or structural similarity), not by experimental evidence shown here.
-
-Citations as saved: [H3](#evidence-h3), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence’s many Cys/His-rich zinc-finger motifs are consistent with a DNA-binding transcription factor, which makes the cell-cycle option more plausible than ion transport or swimming behavior. Those features do not establish the specific negative regulation of G1/S transition.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation linking this sequence to negative regulation of G1/S transition, or equivalent experimental evidence, is absent from the input.
-
-
-**Reason**
-
-> General sequence reasoning can suggest transcriptional regulation, but distinguishing this particular biological process from other cellular roles requires a protein-specific fact not supplied in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not establish the exact process, but the sequence-matched annotation specifically supports D; the other options are not supported by the supplied evidence.
-
-
-### Important caveats
-
-- The supporting GO annotation is computationally inferred (ISS), not independently validated experimental evidence.
-- The annotation supports participation in the named process; it does not establish that this is the protein’s uniquely primary process.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence’s many Cys/His-rich zinc-finger motifs are consistent with a DNA-binding transcription factor, which makes the cell-cycle option more plausible than ion transport or swimming behavior. Those features do not establish the specific negative regulation of G1/S transition.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation linking this sequence to negative regulation of G1/S transition, or equivalent experimental evidence, is absent from the input.",
-    "reason": "General sequence reasoning can suggest transcriptional regulation, but distinguishing this particular biological process from other cellular roles requires a protein-specific fact not supplied in the question."
-  },
-  "case_id": "GO_biological_process_0116",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the mouse ZNF655 record, which carries the GO annotation for negative regulation of the G1/S transition. The annotation is supported by UniProtKB via ISS (inference from sequence or structural similarity), not by experimental evidence shown here."
-  },
-  "important_caveats": [
-    "The supporting GO annotation is computationally inferred (ISS), not independently validated experimental evidence.",
-    "The annotation supports participation in the named process; it does not establish that this is the protein’s uniquely primary process."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not establish the exact process, but the sequence-matched annotation specifically supports D; the other options are not supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0116",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the mouse ZNF655 record, which carries the GO annotation for negative regulation of the G1/S transition. The annotation is supported by UniProtKB via ISS (inference from sequence or structural similarity), not by experimental evidence shown here.",
-    "evidence_ids": ["H3", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence’s many Cys/His-rich zinc-finger motifs are consistent with a DNA-binding transcription factor, which makes the cell-cycle option more plausible than ion transport or swimming behavior. Those features do not establish the specific negative regulation of G1/S transition.",
-    "missing_item_specific_fact": "The protein-specific functional annotation linking this sequence to negative regulation of G1/S transition, or equivalent experimental evidence, is absent from the input.",
-    "reason": "General sequence reasoning can suggest transcriptional regulation, but distinguishing this particular biological process from other cellular roles requires a protein-specific fact not supplied in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not establish the exact process, but the sequence-matched annotation specifically supports D; the other options are not supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The supporting GO annotation is computationally inferred (ISS), not independently validated experimental evidence.",
-    "The annotation supports participation in the named process; it does not establish that this is the protein’s uniquely primary process."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProtKB entry Q9CZP3 (Zinc finger protein 655, ZNF655, Mus musculus) carries the GO annotation GO:2000134 'negative regulation of G1/S transition of mitotic cell cycle' with evidence code ISS:UniProtKB. The sequence matches exactly (541 AA, SHA256 confirmed). The annotation is present in both the current entry and the historical archived version (v181). However, the evidence code is ISS (Inferred by Sequence Similarity), meaning this is a computational inference rather than direct experimental evidence. The function comment states only 'Probable transcription factor' (ECO:0000305, no biological aspect evidence). The key is supported by database annotation but rests on computational inference.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence clearly reveals a multi-C2H2 zinc finger protein (repeated 'C-x2-C-x12-H-x3-H' motifs), indicating a transcription factor. This allows elimination of B (swimming behavior) and C (cobalt ion transport) as implausible for a mammalian zinc finger DNA-binding protein. However, the critical distinction between A (cell population proliferation) and D (negative regulation of G1/S transition of mitotic cell cycle) cannot be resolved from sequence features alone. Both are plausible transcription-factor-mediated processes, and the specific direction (negative) and specific cell-cycle phase (G1/S transition) are not encoded in the zinc finger architecture.
-
-
-**Missing item-specific fact**
-
-> The specific experimental or computational annotation that ZNF655 (Q9CZP3) participates in negative regulation of G1/S transition rather than general cell population proliferation. This is an item-specific GO annotation (ISS:UniProtKB) that cannot be derived from general knowledge of C2H2 zinc finger transcription factors.
-
-
-**Reason**
-
-> While the zinc finger domains allow reasoning that this is a transcription factor (eliminating B and C), distinguishing between general 'cell population proliferation' (A) and the highly specific 'negative regulation of G1/S transition' (D) requires knowing the particular gene's annotated function. No sequence feature distinguishes a cell-cycle-negative-regulator zinc finger from a proliferation-related zinc finger.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Without the specific annotation, both 'cell population proliferation' (A) and 'negative regulation of G1/S transition of mitotic cell cycle' (D) are plausible primary biological processes for a transcription factor. D is more specific and is the annotated term, but from sequence alone, a model could reasonably argue for A as a broader category encompassing cell-cycle regulation. B and C are clearly eliminable as implausible for a mammalian C2H2 zinc finger protein.
-
-
-### Important caveats
-
-- The GO annotation supporting the key uses evidence code ISS:UniProtKB (Inferred by Sequence Similarity), not direct experimental evidence. The function is annotated as 'Probable transcription factor' with no experimental evidence code (ECO:0000305).
-- The identity of the protein (Q9CZP3) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no accession or organism information.
-- The current UniProt entry was first publicly released 2025-04-09 (entry version 183); the historical archived version (v181, released 2026-01-28) also contains the same GO annotation. The exact author source snapshot is unknown.
-- The protein has 541 residues with numerous C2H2 zinc finger domains, consistent with a large multi-finger transcription factor, but this does not specify which particular biological process it regulates.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence clearly reveals a multi-C2H2 zinc finger protein (repeated 'C-x2-C-x12-H-x3-H' motifs), indicating a transcription factor. This allows elimination of B (swimming behavior) and C (cobalt ion transport) as implausible for a mammalian zinc finger DNA-binding protein. However, the critical distinction between A (cell population proliferation) and D (negative regulation of G1/S transition of mitotic cell cycle) cannot be resolved from sequence features alone. Both are plausible transcription-factor-mediated processes, and the specific direction (negative) and specific cell-cycle phase (G1/S transition) are not encoded in the zinc finger architecture.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimental or computational annotation that ZNF655 (Q9CZP3) participates in negative regulation of G1/S transition rather than general cell population proliferation. This is an item-specific GO annotation (ISS:UniProtKB) that cannot be derived from general knowledge of C2H2 zinc finger transcription factors.",
-    "reason": "While the zinc finger domains allow reasoning that this is a transcription factor (eliminating B and C), distinguishing between general 'cell population proliferation' (A) and the highly specific 'negative regulation of G1/S transition' (D) requires knowing the particular gene's annotated function. No sequence feature distinguishes a cell-cycle-negative-regulator zinc finger from a proliferation-related zinc finger."
-  },
-  "case_id": "GO_biological_process_0116",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProtKB entry Q9CZP3 (Zinc finger protein 655, ZNF655, Mus musculus) carries the GO annotation GO:2000134 'negative regulation of G1/S transition of mitotic cell cycle' with evidence code ISS:UniProtKB. The sequence matches exactly (541 AA, SHA256 confirmed). The annotation is present in both the current entry and the historical archived version (v181). However, the evidence code is ISS (Inferred by Sequence Similarity), meaning this is a computational inference rather than direct experimental evidence. The function comment states only 'Probable transcription factor' (ECO:0000305, no biological aspect evidence). The key is supported by database annotation but rests on computational inference."
-  },
-  "important_caveats": [
-    "The GO annotation supporting the key uses evidence code ISS:UniProtKB (Inferred by Sequence Similarity), not direct experimental evidence. The function is annotated as 'Probable transcription factor' with no experimental evidence code (ECO:0000305).",
-    "The identity of the protein (Q9CZP3) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no accession or organism information.",
-    "The current UniProt entry was first publicly released 2025-04-09 (entry version 183); the historical archived version (v181, released 2026-01-28) also contains the same GO annotation. The exact author source snapshot is unknown.",
-    "The protein has 541 residues with numerous C2H2 zinc finger domains, consistent with a large multi-finger transcription factor, but this does not specify which particular biological process it regulates."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Without the specific annotation, both 'cell population proliferation' (A) and 'negative regulation of G1/S transition of mitotic cell cycle' (D) are plausible primary biological processes for a transcription factor. D is more specific and is the annotated term, but from sequence alone, a model could reasonably argue for A as a broader category encompassing cell-cycle regulation. B and C are clearly eliminable as implausible for a mammalian C2H2 zinc finger protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0116",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProtKB entry Q9CZP3 (Zinc finger protein 655, ZNF655, Mus musculus) carries the GO annotation GO:2000134 'negative regulation of G1/S transition of mitotic cell cycle' with evidence code ISS:UniProtKB. The sequence matches exactly (541 AA, SHA256 confirmed). The annotation is present in both the current entry and the historical archived version (v181). However, the evidence code is ISS (Inferred by Sequence Similarity), meaning this is a computational inference rather than direct experimental evidence. The function comment states only 'Probable transcription factor' (ECO:0000305, no biological aspect evidence). The key is supported by database annotation but rests on computational inference.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence clearly reveals a multi-C2H2 zinc finger protein (repeated 'C-x2-C-x12-H-x3-H' motifs), indicating a transcription factor. This allows elimination of B (swimming behavior) and C (cobalt ion transport) as implausible for a mammalian zinc finger DNA-binding protein. However, the critical distinction between A (cell population proliferation) and D (negative regulation of G1/S transition of mitotic cell cycle) cannot be resolved from sequence features alone. Both are plausible transcription-factor-mediated processes, and the specific direction (negative) and specific cell-cycle phase (G1/S transition) are not encoded in the zinc finger architecture.",
-    "missing_item_specific_fact": "The specific experimental or computational annotation that ZNF655 (Q9CZP3) participates in negative regulation of G1/S transition rather than general cell population proliferation. This is an item-specific GO annotation (ISS:UniProtKB) that cannot be derived from general knowledge of C2H2 zinc finger transcription factors.",
-    "reason": "While the zinc finger domains allow reasoning that this is a transcription factor (eliminating B and C), distinguishing between general 'cell population proliferation' (A) and the highly specific 'negative regulation of G1/S transition' (D) requires knowing the particular gene's annotated function. No sequence feature distinguishes a cell-cycle-negative-regulator zinc finger from a proliferation-related zinc finger."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Without the specific annotation, both 'cell population proliferation' (A) and 'negative regulation of G1/S transition of mitotic cell cycle' (D) are plausible primary biological processes for a transcription factor. D is more specific and is the annotated term, but from sequence alone, a model could reasonably argue for A as a broader category encompassing cell-cycle regulation. B and C are clearly eliminable as implausible for a mammalian C2H2 zinc finger protein."
-  },
-  "important_caveats": [
-    "The GO annotation supporting the key uses evidence code ISS:UniProtKB (Inferred by Sequence Similarity), not direct experimental evidence. The function is annotated as 'Probable transcription factor' with no experimental evidence code (ECO:0000305).",
-    "The identity of the protein (Q9CZP3) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no accession or organism information.",
-    "The current UniProt entry was first publicly released 2025-04-09 (entry version 183); the historical archived version (v181, released 2026-01-28) also contains the same GO annotation. The exact author source snapshot is unknown.",
-    "The protein has 541 residues with numerous C2H2 zinc finger domains, consistent with a large multi-finger transcription factor, but this does not specify which particular biological process it regulates."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -516,30 +279,17 @@ Citations as saved: [C6](#evidence-c6), [H3](#evidence-h3), [C5](#evidence-c5).
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9CZP3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "bf82325a5c9bb49e626d306451ff8b480f83c6433e20950902e6ff50f8a8c3d9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 541,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "bf82325a5c9bb49e626d306451ff8b480f83c6433e20950902e6ff50f8a8c3d9",
   "current_entry_audit": {
     "entryVersion": 183,
     "firstPublicDate": "2025-04-09",
@@ -547,14 +297,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-06-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "current_source_sequence_sha256": "bf82325a5c9bb49e626d306451ff8b480f83c6433e20950902e6ff50f8a8c3d9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 541,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "bf82325a5c9bb49e626d306451ff8b480f83c6433e20950902e6ff50f8a8c3d9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 181,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9CZP3",
   "selected_historical_entry_version": 181,
+  "selected_historical_record_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
+  "selected_historical_source_sequence_length": 541,
+  "selected_historical_source_sequence_sha256": "bf82325a5c9bb49e626d306451ff8b480f83c6433e20950902e6ff50f8a8c3d9",
   "selected_historical_version": {
     "accession": "Q9CZP3",
     "database": "Swiss-Prot",
@@ -565,24 +331,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ZN655_MOUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
-  "selected_historical_source_sequence_sha256": "bf82325a5c9bb49e626d306451ff8b480f83c6433e20950902e6ff50f8a8c3d9",
-  "selected_historical_source_sequence_length": 541,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 181,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +353,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json",
-  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9CZP3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json"
 }
 ```
 
@@ -619,15 +372,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json",
-  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":183,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-06-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json"
 }
 ```
 
@@ -638,15 +391,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json",
-  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mouse\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Mus\",\"Mus\"],\"scientificName\":\"Mus musculus\",\"taxonId\":10090}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json"
 }
 ```
 
@@ -657,15 +410,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json",
-  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"value\":\"Zinc finger protein 655\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json"
 }
 ```
 
@@ -676,15 +429,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json",
-  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Probable transcription factor\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json"
 }
 ```
 
@@ -695,15 +448,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json",
-  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/55",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:2000134\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:negative regulation of G1/S transition of mitotic cell cycle\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/55",
+  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json"
 }
 ```
 
@@ -714,15 +467,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json",
-  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
-  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/56",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0006357\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:regulation of transcription by RNA polymerase II\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/56",
+  "retrieved_utc": "2026-11-02T04:32:42.305140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ca31e0f5c903aa1dcca1d2d4a2878b8fcd4f497cf9c92e1b82d18b304eecae31",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9CZP3.json"
 }
 ```
 
@@ -732,18 +485,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181",
-  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
-  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   ZN655_MOUSE             Reviewed;         541 AA.\nAC   Q9CZP3; A0A0G2JE56; A0A0G2JEF7; A0A0G2JEM1; Q5DTG8; Q6P8W7; Q6P9P9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JUN-2001, sequence version 1.\nDT   28-JAN-2026, entry version 181.\nDE   RecName: Full=Zinc finger protein 655;\nGN   Name=Znf655;\nGN   Synonyms=Kiaa4222 {ECO:0000303|Ref.2},\nGN   Zfp655 {ECO:0000312|MGI:MGI:1919861};\nOS   Mus musculus (Mouse).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Mus; Mus.\nOX   NCBI_TaxID=10090;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
+  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181"
 }
 ```
 
@@ -753,18 +506,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181",
-  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
-  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
-  "source_locator": "lines 93-93",
   "excerpt": "CC   -!- FUNCTION: Probable transcription factor. {ECO:0000305}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 93-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
+  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181"
 }
 ```
 
@@ -774,18 +527,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181",
-  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
-  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
-  "source_locator": "lines 164-164",
   "excerpt": "DR   GO; GO:2000134; P:negative regulation of G1/S transition of mitotic cell cycle; ISS:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 164-164",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
+  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181"
 }
 ```
 
@@ -795,18 +548,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 181,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181",
-  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
-  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
-  "source_locator": "lines 165-165",
   "excerpt": "DR   GO; GO:0006357; P:regulation of transcription by RNA polymerase II; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 181,
+  "retrieved_utc": "2026-11-02T04:32:47.254020+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 165-165",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e15389d62334fed782376ad057fd046906526edc53c9b39a8af317429d9b40cd",
+  "url": "https://rest.uniprot.org/unisave/Q9CZP3?format=txt&versions=181"
 }
 ```
 
@@ -817,15 +570,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 70716-70724",
   "excerpt": "[Term]\nid: GO:0006824\nname: cobalt ion transport\nnamespace: biological_process\ndef: \"The directed movement of cobalt (Co2+) ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore.\" [GOC:ai]\nsynonym: \"cobalt transport\" EXACT []\nis_a: GO:0000041 ! transition metal ion transport\nis_a: GO:0098655 ! monoatomic cation transmembrane transport\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006824",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 70716-70724",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006824"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -836,15 +589,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 81569-81583",
   "excerpt": "[Term]\nid: GO:0008283\nname: cell population proliferation\nnamespace: biological_process\ndef: \"The multiplication or reproduction of cells, resulting in the expansion of a cell population.\" [GOC:mah, GOC:mb]\ncomment: This term was moved out from being a child of 'cellular process' because it is a cell population-level process, and cellular processes are restricted to those processes that involve individual cells. Also note that this term is intended to be used for the proliferation of cells within a multicellular organism, not for the expansion of a population of single-celled organisms.\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_flybase_ribbon\nsubset: goslim_mouse\nsubset: goslim_pir\nsynonym: \"cell proliferation\" RELATED []\nis_a: GO:0009987 ! cellular process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008283",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 81569-81583",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008283"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -855,15 +608,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 226062-226069",
   "excerpt": "[Term]\nid: GO:0036269\nname: swimming behavior\nnamespace: biological_process\ndef: \"The response to external or internal stimuli that results in the locomotory process of swimming. Swimming is the self-propelled movement of an organism through the water.\" [GOC:cvs, PMID:16764679]\nsynonym: \"swimming behaviour\" EXACT [PMID:16764679]\nis_a: GO:0007626 ! locomotory behavior\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0036269",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 226062-226069",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0036269"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -874,15 +627,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 558206-558215",
   "excerpt": "[Term]\nid: GO:2000134\nname: negative regulation of G1/S transition of mitotic cell cycle\nnamespace: biological_process\ndef: \"Any signaling pathway that decreases or inhibits the activity of a cell cycle cyclin-dependent protein kinase to modulate the switch from G1 phase to S phase of the mitotic cell cycle.\" [GOC:mtg_cell_cycle]\nis_a: GO:1901991 ! negative regulation of mitotic cell cycle phase transition\nis_a: GO:1902807 ! negative regulation of cell cycle G1/S phase transition\nis_a: GO:2000045 ! regulation of G1/S transition of mitotic cell cycle\nrelationship: negatively_regulates GO:0000082 ! G1/S transition of mitotic cell cycle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:2000134",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 558206-558215",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:2000134"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

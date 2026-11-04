@@ -1,18 +1,16 @@
-# motif_position_0032: before and after transfer clarification
+# motif_position_0032
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/motif_position_0032.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/motif_position_0032.txt)
 
 **Task:** `motif_position`  
-**Author key, unchanged:** **A** — 8..15
+**Expected answer:** **A** — 8..15
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched UniProt entry annotates residues 8..15 as Nuclear localization signal 1, supporting choice A as a database motif annotation. The annotation is attributed to a PROSITE-ProRule computational rule, not experimental validation.
-
-Citations as saved: [C7](#evidence-c7), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is rich in basic residues, which is compatible with nuclear-localization signals, but that general feature does not establish which specific motif or exact boundaries the question intends.
-
-
-**Missing item-specific fact**
-
-> The intended motif identity and its annotated coordinates for this particular protein are absent from the input.
-
-
-**Reason**
-
-> Selecting A depends on the protein-specific motif annotation; the sequence and choices do not state what motif to locate. Remembering or retrieving the matching database entry is not reasoning from supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The target motif is not named or otherwise specified. The reviewer-only annotation supports A as an exact annotated interval, but the input itself does not define the motif being asked about.
-
-
-### Important caveats
-
-- The source sequence matches the supplied sequence, but the author’s exact source snapshot is unknown.
-- The supporting motif annotation is computational; it should not be presented as direct experimental evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is rich in basic residues, which is compatible with nuclear-localization signals, but that general feature does not establish which specific motif or exact boundaries the question intends.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The intended motif identity and its annotated coordinates for this particular protein are absent from the input.",
-    "reason": "Selecting A depends on the protein-specific motif annotation; the sequence and choices do not state what motif to locate. Remembering or retrieving the matching database entry is not reasoning from supplied information."
-  },
-  "case_id": "motif_position_0032",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The matched UniProt entry annotates residues 8..15 as Nuclear localization signal 1, supporting choice A as a database motif annotation. The annotation is attributed to a PROSITE-ProRule computational rule, not experimental validation."
-  },
-  "important_caveats": [
-    "The source sequence matches the supplied sequence, but the author’s exact source snapshot is unknown.",
-    "The supporting motif annotation is computational; it should not be presented as direct experimental evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The target motif is not named or otherwise specified. The reviewer-only annotation supports A as an exact annotated interval, but the input itself does not define the motif being asked about."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "motif_position_0032",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched UniProt entry annotates residues 8..15 as Nuclear localization signal 1, supporting choice A as a database motif annotation. The annotation is attributed to a PROSITE-ProRule computational rule, not experimental validation.",
-    "evidence_ids": ["C7", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is rich in basic residues, which is compatible with nuclear-localization signals, but that general feature does not establish which specific motif or exact boundaries the question intends.",
-    "missing_item_specific_fact": "The intended motif identity and its annotated coordinates for this particular protein are absent from the input.",
-    "reason": "Selecting A depends on the protein-specific motif annotation; the sequence and choices do not state what motif to locate. Remembering or retrieving the matching database entry is not reasoning from supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The target motif is not named or otherwise specified. The reviewer-only annotation supports A as an exact annotated interval, but the input itself does not define the motif being asked about."
-  },
-  "important_caveats": [
-    "The source sequence matches the supplied sequence, but the author’s exact source snapshot is unknown.",
-    "The supporting motif annotation is computational; it should not be presented as direct experimental evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A3Q7EKL1 (AGL6_SOLLC) annotates 'Nuclear localization signal 1' as a Motif at positions 8..15 (evidence: ECO:0000255|PROSITE-ProRule:PRU00768). The sequence at positions 8-15 is LKRIENKI, which contains a cluster of basic residues (K, R, K) consistent with a monopartite NLS pattern. The annotation is computational (PROSITE-ProRule), not experimentally validated, but it is a recognized database annotation. The expected answer A (8..15) matches this annotation exactly.
-
-Citations as saved: [C7](#evidence-c7), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could attempt to scan for NLS-like basic-residue clusters: position 8-15 (LKRIENKI) has K, R, K and position 24-31 (RRNGLLKK) has R, R, K, K. Both contain basic residues. Distinguishing which specific 8-residue window constitutes 'the' NLS motif requires knowledge of the exact PROSITE-ProRule PRU00768 pattern rules (e.g., spacing constraints, exclusion of regions within larger structural domains like the MADS-box). The question does not specify which motif to identify, and the protein contains multiple annotated features (MADS-box domain 1-61, K-box domain 85-175, NLS 1 at 8-15, NLS 2 at 138-145).
-
-
-**Missing item-specific fact**
-
-> The specific PROSITE-ProRule PRU00768 pattern definition that would allow a model to definitively assign positions 8-15 as an NLS motif while excluding the basic-residue-rich region at 24-31 (which lies within the MADS-box domain). Additionally, the question does not specify which motif is being sought among the multiple annotated features.
-
-
-**Reason**
-
-> While general NLS pattern recognition (basic residue clusters) is possible from sequence, the question's ambiguity ('a conserved motif' without specifying which) and the presence of multiple basic-residue regions make the correct choice dependent on knowing the specific PROSITE-ProRule annotation that designates 8-15 as 'Motif' type rather than 'Domain' type, and that the 24-31 region is subsumed within the MADS-box domain rather than being a separate motif.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> The question asks for 'a conserved motif' without specifying which one. Position 24-31 (RRNGLLKK) contains 4 basic residues in an 8-residue window, which superficially resembles an NLS pattern even more strongly than 8-15 (3 basic residues). However, 24-31 falls within the MADS-box domain (1-61), and in UniProt terminology 'Motif' is a specific feature type distinct from 'Domain.' Option C (92-94, VSK, 3 residues) is too short for a typical motif. Option D (128-147, 20 residues) is too long. A remains the best answer but B is not trivially excluded by pure sequence reasoning alone.
-
-
-### Important caveats
-
-- The NLS annotation at 8-15 is computational (ECO:0000255, PROSITE-ProRule), not experimentally validated.
-- The question does not specify which motif among the multiple annotated features (MADS-box, K-box, NLS 1, NLS 2) is being requested.
-- The UniProt distinction between 'Motif' and 'Domain' feature types is an annotation convention that may not be obvious from general biological reasoning.
-- The PROSITE-ProRule evidence code (ECO:0000255) indicates pattern-based computational prediction, not site-directed mutagenesis or functional assay confirmation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could attempt to scan for NLS-like basic-residue clusters: position 8-15 (LKRIENKI) has K, R, K and position 24-31 (RRNGLLKK) has R, R, K, K. Both contain basic residues. Distinguishing which specific 8-residue window constitutes 'the' NLS motif requires knowledge of the exact PROSITE-ProRule PRU00768 pattern rules (e.g., spacing constraints, exclusion of regions within larger structural domains like the MADS-box). The question does not specify which motif to identify, and the protein contains multiple annotated features (MADS-box domain 1-61, K-box domain 85-175, NLS 1 at 8-15, NLS 2 at 138-145).",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific PROSITE-ProRule PRU00768 pattern definition that would allow a model to definitively assign positions 8-15 as an NLS motif while excluding the basic-residue-rich region at 24-31 (which lies within the MADS-box domain). Additionally, the question does not specify which motif is being sought among the multiple annotated features.",
-    "reason": "While general NLS pattern recognition (basic residue clusters) is possible from sequence, the question's ambiguity ('a conserved motif' without specifying which) and the presence of multiple basic-residue regions make the correct choice dependent on knowing the specific PROSITE-ProRule annotation that designates 8-15 as 'Motif' type rather than 'Domain' type, and that the 24-31 region is subsumed within the MADS-box domain rather than being a separate motif."
-  },
-  "case_id": "motif_position_0032",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A3Q7EKL1 (AGL6_SOLLC) annotates 'Nuclear localization signal 1' as a Motif at positions 8..15 (evidence: ECO:0000255|PROSITE-ProRule:PRU00768). The sequence at positions 8-15 is LKRIENKI, which contains a cluster of basic residues (K, R, K) consistent with a monopartite NLS pattern. The annotation is computational (PROSITE-ProRule), not experimentally validated, but it is a recognized database annotation. The expected answer A (8..15) matches this annotation exactly."
-  },
-  "important_caveats": [
-    "The NLS annotation at 8-15 is computational (ECO:0000255, PROSITE-ProRule), not experimentally validated.",
-    "The question does not specify which motif among the multiple annotated features (MADS-box, K-box, NLS 1, NLS 2) is being requested.",
-    "The UniProt distinction between 'Motif' and 'Domain' feature types is an annotation convention that may not be obvious from general biological reasoning.",
-    "The PROSITE-ProRule evidence code (ECO:0000255) indicates pattern-based computational prediction, not site-directed mutagenesis or functional assay confirmation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "The question asks for 'a conserved motif' without specifying which one. Position 24-31 (RRNGLLKK) contains 4 basic residues in an 8-residue window, which superficially resembles an NLS pattern even more strongly than 8-15 (3 basic residues). However, 24-31 falls within the MADS-box domain (1-61), and in UniProt terminology 'Motif' is a specific feature type distinct from 'Domain.' Option C (92-94, VSK, 3 residues) is too short for a typical motif. Option D (128-147, 20 residues) is too long. A remains the best answer but B is not trivially excluded by pure sequence reasoning alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "motif_position_0032",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A3Q7EKL1 (AGL6_SOLLC) annotates 'Nuclear localization signal 1' as a Motif at positions 8..15 (evidence: ECO:0000255|PROSITE-ProRule:PRU00768). The sequence at positions 8-15 is LKRIENKI, which contains a cluster of basic residues (K, R, K) consistent with a monopartite NLS pattern. The annotation is computational (PROSITE-ProRule), not experimentally validated, but it is a recognized database annotation. The expected answer A (8..15) matches this annotation exactly.",
-    "evidence_ids": ["C7", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could attempt to scan for NLS-like basic-residue clusters: position 8-15 (LKRIENKI) has K, R, K and position 24-31 (RRNGLLKK) has R, R, K, K. Both contain basic residues. Distinguishing which specific 8-residue window constitutes 'the' NLS motif requires knowledge of the exact PROSITE-ProRule PRU00768 pattern rules (e.g., spacing constraints, exclusion of regions within larger structural domains like the MADS-box). The question does not specify which motif to identify, and the protein contains multiple annotated features (MADS-box domain 1-61, K-box domain 85-175, NLS 1 at 8-15, NLS 2 at 138-145).",
-    "missing_item_specific_fact": "The specific PROSITE-ProRule PRU00768 pattern definition that would allow a model to definitively assign positions 8-15 as an NLS motif while excluding the basic-residue-rich region at 24-31 (which lies within the MADS-box domain). Additionally, the question does not specify which motif is being sought among the multiple annotated features.",
-    "reason": "While general NLS pattern recognition (basic residue clusters) is possible from sequence, the question's ambiguity ('a conserved motif' without specifying which) and the presence of multiple basic-residue regions make the correct choice dependent on knowing the specific PROSITE-ProRule annotation that designates 8-15 as 'Motif' type rather than 'Domain' type, and that the 24-31 region is subsumed within the MADS-box domain rather than being a separate motif."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "The question asks for 'a conserved motif' without specifying which one. Position 24-31 (RRNGLLKK) contains 4 basic residues in an 8-residue window, which superficially resembles an NLS pattern even more strongly than 8-15 (3 basic residues). However, 24-31 falls within the MADS-box domain (1-61), and in UniProt terminology 'Motif' is a specific feature type distinct from 'Domain.' Option C (92-94, VSK, 3 residues) is too short for a typical motif. Option D (128-147, 20 residues) is too long. A remains the best answer but B is not trivially excluded by pure sequence reasoning alone."
-  },
-  "important_caveats": [
-    "The NLS annotation at 8-15 is computational (ECO:0000255, PROSITE-ProRule), not experimentally validated.",
-    "The question does not specify which motif among the multiple annotated features (MADS-box, K-box, NLS 1, NLS 2) is being requested.",
-    "The UniProt distinction between 'Motif' and 'Domain' feature types is an annotation convention that may not be obvious from general biological reasoning.",
-    "The PROSITE-ProRule evidence code (ECO:0000255) indicates pattern-based computational prediction, not site-directed mutagenesis or functional assay confirmation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A3Q7EKL1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 252,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-02-05",
@@ -541,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-04-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "current_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 252,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 29,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A3Q7EKL1",
   "selected_historical_entry_version": 29,
+  "selected_historical_record_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "selected_historical_source_sequence_length": 252,
+  "selected_historical_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
   "selected_historical_version": {
     "accession": "A0A3Q7EKL1",
     "database": "Swiss-Prot",
@@ -559,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AGL6_SOLLC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "selected_historical_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
-  "selected_historical_source_sequence_length": 252,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 29,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A3Q7EKL1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -609,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-04-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -628,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Tomato\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Solanales\",\"Solanaceae\",\"Solanoideae\",\"Solaneae\",\"Solanum\",\"Solanum subgen. Lycopersicon\"],\"scientificName\":\"Solanum lycopersicum\",\"synonyms\":[\"Lycopersicon esculentum\"],\"taxonId\":4081}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -647,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Agamous-like MADS-box protein AGL6\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27862876\",\"source\":\"PubMed\"}],\"value\":\"Protein AGAMOUS-LIKE 6\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27862876\",\"source\":\"PubMed\"}],\"value\":\"SlAGAMOUS-LIKE 6\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27862876\",\"source\":\"PubMed\"}],\"value\":\"SlAGL6\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -666,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"MADS-box\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00251\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":61},\"start\":{\"modifier\":\"EXACT\",\"value\":1}},\"type\":\"Domain\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -685,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"K-box\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00629\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":175},\"start\":{\"modifier\":\"EXACT\",\"value\":85}},\"type\":\"Domain\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -704,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Nuclear localization signal 1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00768\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":15},\"start\":{\"modifier\":\"EXACT\",\"value\":8}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -723,15 +481,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Nuclear localization signal 2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00768\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":145},\"start\":{\"modifier\":\"EXACT\",\"value\":138}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -742,15 +500,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Klap C.\",\"Yeshayahou E.\",\"Bolger A.M.\",\"Arazi T.\",\"Gupta S.K.\",\"Shabtai S.\",\"Usadel B.\",\"Salts Y.\",\"Barg R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27862876\"},{\"database\":\"DOI\",\"id\":\"10.1111/pbi.12662\"}],\"citationType\":\"journal article\",\"firstPage\":\"634\",\"id\":\"27862876\",\"journal\":\"Plant Biotechnol. J.\",\"lastPage\":\"647\",\"publicationDate\":\"2017\",\"title\":\"Tomato facultative parthenocarpy results from SlAGAMOUS-LIKE 6 loss of function.\",\"volume\":\"15\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. M82\"},{\"type\":\"STRAIN\",\"value\":\"cv. Marmande\"},{\"type\":\"STRAIN\",\"value\":\"cv. MP-1\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"BIOTECHNOLOGY\",\"TISSUE SPECIFICITY\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -760,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   AGL6_SOLLC              Reviewed;         252 AA.\nAC   A0A3Q7EKL1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-APR-2019, sequence version 1.\nDT   28-JAN-2026, entry version 29.\nDE   RecName: Full=Protein AGAMOUS-LIKE 6 {ECO:0000303|PubMed:27862876};\nDE            Short=SlAGAMOUS-LIKE 6 {ECO:0000303|PubMed:27862876};\nDE            Short=SlAGL6 {ECO:0000303|PubMed:27862876};\nDE   AltName: Full=Agamous-like MADS-box protein AGL6 {ECO:0000305};\nGN   Name=AGL6 {ECO:0000303|PubMed:27862876};\nGN   OrderedLocusNames=Solyc01g093960 {ECO:0000305};\nOS   Solanum lycopersicum (Tomato) (Lycopersicon esculentum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Solanales; Solanaceae; Solanoideae; Solaneae; Solanum;\nOC   Solanum subgen. Lycopersicon.\nOX   NCBI_TaxID=4081;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -781,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 34-43",
   "excerpt": "RN   [3]\nRP   FUNCTION, DISRUPTION PHENOTYPE, BIOTECHNOLOGY, TISSUE SPECIFICITY, AND\nRP   DEVELOPMENTAL STAGE.\nRC   STRAIN=cv. M82, cv. Marmande, and cv. MP-1;\nRX   PubMed=27862876; DOI=10.1111/pbi.12662;\nRA   Klap C., Yeshayahou E., Bolger A.M., Arazi T., Gupta S.K., Shabtai S.,\nRA   Usadel B., Salts Y., Barg R.;\nRT   \"Tomato facultative parthenocarpy results from SlAGAMOUS-LIKE 6 loss of\nRT   function.\";\nRL   Plant Biotechnol. J. 15:634-647(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -802,18 +560,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 115-117",
   "excerpt": "FT   DOMAIN          1..61\nFT                   /note=\"MADS-box\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00251\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 115-117",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -823,18 +581,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 118-120",
   "excerpt": "FT   DOMAIN          85..175\nFT                   /note=\"K-box\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00629\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 118-120",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -844,18 +602,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 121-123",
   "excerpt": "FT   MOTIF           8..15\nFT                   /note=\"Nuclear localization signal 1\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00768\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 121-123",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -865,18 +623,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 124-126",
   "excerpt": "FT   MOTIF           138..145\nFT                   /note=\"Nuclear localization signal 2\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00768\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 124-126",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 

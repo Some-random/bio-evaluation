@@ -1,18 +1,16 @@
-# catalytic_activity_0121: before and after transfer clarification
+# catalytic_activity_0121
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0121.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0121.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **C** — a quinone + NADH + H(+) = a quinol + NAD(+)
+**Expected answer:** **C** — a quinone + NADH + H(+) = a quinol + NAD(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for Drosophila RTN4IP1, which annotates the NADH-dependent quinone-to-quinol reaction given in choice C. The annotation is transferred from a homolog (ECO:0000250), so this supports the key but is not direct experimental confirmation for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may be consistent with an enzyme, but the supplied input gives no specific functional context or decisive motif that identifies quinone reduction rather than the other listed reactions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and functional annotation of this sequence as RTN4IP1, including its quinone-reductase activity, are absent from the question.
-
-
-**Reason**
-
-> Selecting C requires knowing or externally identifying this protein's specific function; general sequence reasoning alone does not meaningfully distinguish the reaction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed options, C is the reaction matching the sequence-specific annotation. The annotation also lists a related NADPH-dependent reaction, but that reaction is not another offered choice.
-
-
-### Important caveats
-
-- The UniProt catalytic-activity annotation cites evidence transferred from a homolog rather than direct evidence for this exact sequence.
-- A recent cited study concerns RTN4IP1/OPA10 as an oxidoreductase in coenzyme Q synthesis, but the supplied excerpts do not independently establish the exact NADH reaction experimentally for this Drosophila protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may be consistent with an enzyme, but the supplied input gives no specific functional context or decisive motif that identifies quinone reduction rather than the other listed reactions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and functional annotation of this sequence as RTN4IP1, including its quinone-reductase activity, are absent from the question.",
-    "reason": "Selecting C requires knowing or externally identifying this protein's specific function; general sequence reasoning alone does not meaningfully distinguish the reaction."
-  },
-  "case_id": "catalytic_activity_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for Drosophila RTN4IP1, which annotates the NADH-dependent quinone-to-quinol reaction given in choice C. The annotation is transferred from a homolog (ECO:0000250), so this supports the key but is not direct experimental confirmation for this sequence."
-  },
-  "important_caveats": [
-    "The UniProt catalytic-activity annotation cites evidence transferred from a homolog rather than direct evidence for this exact sequence.",
-    "A recent cited study concerns RTN4IP1/OPA10 as an oxidoreductase in coenzyme Q synthesis, but the supplied excerpts do not independently establish the exact NADH reaction experimentally for this Drosophila protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, C is the reaction matching the sequence-specific annotation. The annotation also lists a related NADPH-dependent reaction, but that reaction is not another offered choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for Drosophila RTN4IP1, which annotates the NADH-dependent quinone-to-quinol reaction given in choice C. The annotation is transferred from a homolog (ECO:0000250), so this supports the key but is not direct experimental confirmation for this sequence.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may be consistent with an enzyme, but the supplied input gives no specific functional context or decisive motif that identifies quinone reduction rather than the other listed reactions.",
-    "missing_item_specific_fact": "The protein-specific identification and functional annotation of this sequence as RTN4IP1, including its quinone-reductase activity, are absent from the question.",
-    "reason": "Selecting C requires knowing or externally identifying this protein's specific function; general sequence reasoning alone does not meaningfully distinguish the reaction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, C is the reaction matching the sequence-specific annotation. The annotation also lists a related NADPH-dependent reaction, but that reaction is not another offered choice."
-  },
-  "important_caveats": [
-    "The UniProt catalytic-activity annotation cites evidence transferred from a homolog rather than direct evidence for this exact sequence.",
-    "A recent cited study concerns RTN4IP1/OPA10 as an oxidoreductase in coenzyme Q synthesis, but the supplied excerpts do not independently establish the exact NADH reaction experimentally for this Drosophila protein."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches UniProt Q8IPZ3 (RT4I1_DROME, NAD(P)H oxidoreductase RTN4IP1, mitochondrial; EC 1.6.5.2). The UniProt catalytic activity annotation explicitly states 'a quinone + NADH + H(+) = a quinol + NAD(+)' (evidence C5/H4), matching Choice C verbatim. The annotation evidence code is ECO:0000250 (transferred by similarity from human ortholog Q8WWV3), but a 2024 Nat. Chem. Biol. paper (PubMed:37884807) provides experimental characterization of RTN4IP1/OPA10 as an oxidoreductase in coenzyme Q synthesis. A second catalytic activity with NADPH is also annotated (C6/H5), but Choice C's NADH reaction is the primary listed activity and matches the expected answer exactly.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 413-aa sequence contains an N-terminal mitochondrial targeting signal (basic residues) and a Rossmann-like nucleotide-binding motif (GSGGVGT region), identifying it as a small mitochondrial NAD(P)H-dependent oxidoreductase. This eliminates A (tRNA acetyltransferase; no acetyl-CoA/ATP-binding motifs, wrong enzyme class) and D (PLP-dependent decarboxylase; no PLP-binding motifs, wrong enzyme class). Between B (a flavin/heme-dependent monooxygenase acting on a specific alkaloid) and C (a simple two-electron quinone reductase), the absence of heme-binding Cys-Pro-Pro-Gly motifs, P450 signatures, or large FAD-dependent monooxygenase domains, combined with the small size and simple Rossmann fold architecture, is more consistent with a quinone reductase (EC 1.6.5.2) than with a monooxygenase (EC 1.14.x.x). Quinone reduction is a common function of small mitochondrial NAD(P)H oxidoreductases.
-
-
-**Missing item-specific fact**
-
-> The specific identification of 'quinone' (particularly coenzyme Q) as the substrate, as opposed to other possible two-electron acceptors, relies on knowledge of this protein family's role in coenzyme Q biosynthesis, which is not derivable from generic sequence motifs alone.
-
-
-**Reason**
-
-> General biological knowledge of enzyme classes, cofactor requirements, and structural motifs allows meaningful elimination of A and D, and structural reasoning (small size, Rossmann fold, absence of monooxygenase features) provides a defensible preference for C over B. The positive identification of 'quinone' as the specific acceptor is the weakest inferential link but is the most parsimonious assignment for a small mitochondrial NAD(P)H oxidoreductase lacking monooxygenase features.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choices A (tRNA modification), B (specific alkaloid monooxygenation), and D (decarboxylation) are clearly distinct enzyme classes that do not match the observed sequence features. Choice B is the closest distractor but requires monooxygenase structural features absent from this sequence. Choice C is the only remaining option consistent with a small mitochondrial NAD(P)H oxidoreductase.
-
-
-### Important caveats
-
-- The UniProt annotation for this Drosophila protein is transferred by similarity (ECO:0000250) from the human ortholog Q8WWV3, not directly experimentally determined for the fly protein, though the 2024 Nat. Chem. Biol. paper provides experimental support for the oxidoreductase function.
-- The positive identification of 'quinone' as the specific substrate is the least sequence-derivable aspect; the reasoning primarily works by elimination of incompatible enzyme classes.
-- The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the reasoning assessment considers only what a model could infer from the sequence and general biological knowledge.
-- The 2024 experimental paper characterizes RTN4IP1/OPA10 in coenzyme Q synthesis, which is consistent with but broader than the generic 'quinone' description in the EC reaction.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 413-aa sequence contains an N-terminal mitochondrial targeting signal (basic residues) and a Rossmann-like nucleotide-binding motif (GSGGVGT region), identifying it as a small mitochondrial NAD(P)H-dependent oxidoreductase. This eliminates A (tRNA acetyltransferase; no acetyl-CoA/ATP-binding motifs, wrong enzyme class) and D (PLP-dependent decarboxylase; no PLP-binding motifs, wrong enzyme class). Between B (a flavin/heme-dependent monooxygenase acting on a specific alkaloid) and C (a simple two-electron quinone reductase), the absence of heme-binding Cys-Pro-Pro-Gly motifs, P450 signatures, or large FAD-dependent monooxygenase domains, combined with the small size and simple Rossmann fold architecture, is more consistent with a quinone reductase (EC 1.6.5.2) than with a monooxygenase (EC 1.14.x.x). Quinone reduction is a common function of small mitochondrial NAD(P)H oxidoreductases.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific identification of 'quinone' (particularly coenzyme Q) as the substrate, as opposed to other possible two-electron acceptors, relies on knowledge of this protein family's role in coenzyme Q biosynthesis, which is not derivable from generic sequence motifs alone.",
-    "reason": "General biological knowledge of enzyme classes, cofactor requirements, and structural motifs allows meaningful elimination of A and D, and structural reasoning (small size, Rossmann fold, absence of monooxygenase features) provides a defensible preference for C over B. The positive identification of 'quinone' as the specific acceptor is the weakest inferential link but is the most parsimonious assignment for a small mitochondrial NAD(P)H oxidoreductase lacking monooxygenase features."
-  },
-  "case_id": "catalytic_activity_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches UniProt Q8IPZ3 (RT4I1_DROME, NAD(P)H oxidoreductase RTN4IP1, mitochondrial; EC 1.6.5.2). The UniProt catalytic activity annotation explicitly states 'a quinone + NADH + H(+) = a quinol + NAD(+)' (evidence C5/H4), matching Choice C verbatim. The annotation evidence code is ECO:0000250 (transferred by similarity from human ortholog Q8WWV3), but a 2024 Nat. Chem. Biol. paper (PubMed:37884807) provides experimental characterization of RTN4IP1/OPA10 as an oxidoreductase in coenzyme Q synthesis. A second catalytic activity with NADPH is also annotated (C6/H5), but Choice C's NADH reaction is the primary listed activity and matches the expected answer exactly."
-  },
-  "important_caveats": [
-    "The UniProt annotation for this Drosophila protein is transferred by similarity (ECO:0000250) from the human ortholog Q8WWV3, not directly experimentally determined for the fly protein, though the 2024 Nat. Chem. Biol. paper provides experimental support for the oxidoreductase function.",
-    "The positive identification of 'quinone' as the specific substrate is the least sequence-derivable aspect; the reasoning primarily works by elimination of incompatible enzyme classes.",
-    "The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the reasoning assessment considers only what a model could infer from the sequence and general biological knowledge.",
-    "The 2024 experimental paper characterizes RTN4IP1/OPA10 in coenzyme Q synthesis, which is consistent with but broader than the generic 'quinone' description in the EC reaction."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A (tRNA modification), B (specific alkaloid monooxygenation), and D (decarboxylation) are clearly distinct enzyme classes that do not match the observed sequence features. Choice B is the closest distractor but requires monooxygenase structural features absent from this sequence. Choice C is the only remaining option consistent with a small mitochondrial NAD(P)H oxidoreductase."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches UniProt Q8IPZ3 (RT4I1_DROME, NAD(P)H oxidoreductase RTN4IP1, mitochondrial; EC 1.6.5.2). The UniProt catalytic activity annotation explicitly states 'a quinone + NADH + H(+) = a quinol + NAD(+)' (evidence C5/H4), matching Choice C verbatim. The annotation evidence code is ECO:0000250 (transferred by similarity from human ortholog Q8WWV3), but a 2024 Nat. Chem. Biol. paper (PubMed:37884807) provides experimental characterization of RTN4IP1/OPA10 as an oxidoreductase in coenzyme Q synthesis. A second catalytic activity with NADPH is also annotated (C6/H5), but Choice C's NADH reaction is the primary listed activity and matches the expected answer exactly.",
-    "evidence_ids": ["C4", "C5", "C7", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 413-aa sequence contains an N-terminal mitochondrial targeting signal (basic residues) and a Rossmann-like nucleotide-binding motif (GSGGVGT region), identifying it as a small mitochondrial NAD(P)H-dependent oxidoreductase. This eliminates A (tRNA acetyltransferase; no acetyl-CoA/ATP-binding motifs, wrong enzyme class) and D (PLP-dependent decarboxylase; no PLP-binding motifs, wrong enzyme class). Between B (a flavin/heme-dependent monooxygenase acting on a specific alkaloid) and C (a simple two-electron quinone reductase), the absence of heme-binding Cys-Pro-Pro-Gly motifs, P450 signatures, or large FAD-dependent monooxygenase domains, combined with the small size and simple Rossmann fold architecture, is more consistent with a quinone reductase (EC 1.6.5.2) than with a monooxygenase (EC 1.14.x.x). Quinone reduction is a common function of small mitochondrial NAD(P)H oxidoreductases.",
-    "missing_item_specific_fact": "The specific identification of 'quinone' (particularly coenzyme Q) as the substrate, as opposed to other possible two-electron acceptors, relies on knowledge of this protein family's role in coenzyme Q biosynthesis, which is not derivable from generic sequence motifs alone.",
-    "reason": "General biological knowledge of enzyme classes, cofactor requirements, and structural motifs allows meaningful elimination of A and D, and structural reasoning (small size, Rossmann fold, absence of monooxygenase features) provides a defensible preference for C over B. The positive identification of 'quinone' as the specific acceptor is the weakest inferential link but is the most parsimonious assignment for a small mitochondrial NAD(P)H oxidoreductase lacking monooxygenase features."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A (tRNA modification), B (specific alkaloid monooxygenation), and D (decarboxylation) are clearly distinct enzyme classes that do not match the observed sequence features. Choice B is the closest distractor but requires monooxygenase structural features absent from this sequence. Choice C is the only remaining option consistent with a small mitochondrial NAD(P)H oxidoreductase."
-  },
-  "important_caveats": [
-    "The UniProt annotation for this Drosophila protein is transferred by similarity (ECO:0000250) from the human ortholog Q8WWV3, not directly experimentally determined for the fly protein, though the 2024 Nat. Chem. Biol. paper provides experimental support for the oxidoreductase function.",
-    "The positive identification of 'quinone' as the specific substrate is the least sequence-derivable aspect; the reasoning primarily works by elimination of incompatible enzyme classes.",
-    "The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the reasoning assessment considers only what a model could infer from the sequence and general biological knowledge.",
-    "The 2024 experimental paper characterizes RTN4IP1/OPA10 in coenzyme Q synthesis, which is consistent with but broader than the generic 'quinone' description in the EC reaction."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IPZ3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "99137aa525ccbf4bc6bd0d532928424a9bf9102dfb71fa5a05d92a378269611d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 413,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "99137aa525ccbf4bc6bd0d532928424a9bf9102dfb71fa5a05d92a378269611d",
   "current_entry_audit": {
     "entryVersion": 180,
     "firstPublicDate": "2025-04-09",
@@ -533,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "current_source_sequence_sha256": "99137aa525ccbf4bc6bd0d532928424a9bf9102dfb71fa5a05d92a378269611d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 413,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "99137aa525ccbf4bc6bd0d532928424a9bf9102dfb71fa5a05d92a378269611d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 178,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IPZ3",
   "selected_historical_entry_version": 178,
+  "selected_historical_record_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
+  "selected_historical_source_sequence_length": 413,
+  "selected_historical_source_sequence_sha256": "99137aa525ccbf4bc6bd0d532928424a9bf9102dfb71fa5a05d92a378269611d",
   "selected_historical_version": {
     "accession": "Q8IPZ3",
     "database": "Swiss-Prot",
@@ -551,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RT4I1_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
-  "selected_historical_source_sequence_sha256": "99137aa525ccbf4bc6bd0d532928424a9bf9102dfb71fa5a05d92a378269611d",
-  "selected_historical_source_sequence_length": 413,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 178,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -582,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json",
-  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IPZ3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json"
 }
 ```
 
@@ -601,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json",
-  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":180,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json"
 }
 ```
 
@@ -620,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json",
-  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json"
 }
 ```
 
@@ -639,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json",
-  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Reticulon-4-interacting protein 1 homolog\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37884807\",\"source\":\"PubMed\"}],\"value\":\"dRtn4ip1\"}]}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8WWV3\",\"source\":\"UniProtKB\"}],\"value\":\"1.6.5.2\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"NAD(P)H oxidoreductase RTN4IP1, mitochondrial\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json"
 }
 ```
 
@@ -658,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json",
-  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.6.5.2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8WWV3\",\"source\":\"UniProtKB\"}],\"name\":\"a quinone + NADH + H(+) = a quinol + NAD(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:46160\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:24646\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132124\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json"
 }
 ```
 
@@ -677,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json",
-  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.6.5.2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8WWV3\",\"source\":\"UniProtKB\"}],\"name\":\"a quinone + NADPH + H(+) = a quinol + NADP(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:46164\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:24646\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:132124\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json"
 }
 ```
 
@@ -696,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json",
-  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
-  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Park I.\",\"Kim K.E.\",\"Kim J.\",\"Kim A.K.\",\"Bae S.\",\"Jung M.\",\"Choi J.\",\"Mishra P.K.\",\"Kim T.M.\",\"Kwak C.\",\"Kang M.G.\",\"Yoo C.M.\",\"Mun J.Y.\",\"Liu K.H.\",\"Lee K.S.\",\"Kim J.S.\",\"Suh J.M.\",\"Rhee H.W.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37884807\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-023-01452-w\"}],\"citationType\":\"journal article\",\"firstPage\":\"221\",\"id\":\"37884807\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"233\",\"publicationDate\":\"2024\",\"title\":\"Mitochondrial matrix RTN4IP1/OPA10 is an oxidoreductase for coenzyme Q synthesis.\",\"volume\":\"20\"},\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"PATHWAY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:32:18.576763+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e86069a21d68baee355342320a6ffe2ad016abdc8d4f641d55cad548579f2ea3",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPZ3.json"
 }
 ```
 
@@ -714,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178",
-  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
-  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   RT4I1_DROME             Reviewed;         413 AA.\nAC   Q8IPZ3; Q8SZK7; Q9VQL4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 178.\nDE   RecName: Full=NAD(P)H oxidoreductase RTN4IP1, mitochondrial {ECO:0000305};\nDE            EC=1.6.5.2 {ECO:0000250|UniProtKB:Q8WWV3};\nDE   AltName: Full=Reticulon-4-interacting protein 1 homolog;\nDE            Short=dRtn4ip1 {ECO:0000303|PubMed:37884807};\nDE   Flags: Precursor;\nGN   Name=Rtn4ip1 {ECO:0000312|FlyBase:FBgn0031500};\nGN   ORFNames=CG17221 {ECO:0000312|FlyBase:FBgn0031500};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
+  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178"
 }
 ```
 
@@ -735,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178",
-  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
-  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=NAD(P)H oxidoreductase RTN4IP1, mitochondrial {ECO:0000305};\nDE            EC=1.6.5.2 {ECO:0000250|UniProtKB:Q8WWV3};\nDE   AltName: Full=Reticulon-4-interacting protein 1 homolog;\nDE            Short=dRtn4ip1 {ECO:0000303|PubMed:37884807};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
+  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178"
 }
 ```
 
@@ -756,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178",
-  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
-  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
-  "source_locator": "lines 85-93",
   "excerpt": "RN   [5]\nRP   FUNCTION, PATHWAY, AND DISRUPTION PHENOTYPE.\nRX   PubMed=37884807; DOI=10.1038/s41589-023-01452-w;\nRA   Park I., Kim K.E., Kim J., Kim A.K., Bae S., Jung M., Choi J., Mishra P.K.,\nRA   Kim T.M., Kwak C., Kang M.G., Yoo C.M., Mun J.Y., Liu K.H., Lee K.S.,\nRA   Kim J.S., Suh J.M., Rhee H.W.;\nRT   \"Mitochondrial matrix RTN4IP1/OPA10 is an oxidoreductase for coenzyme Q\nRT   synthesis.\";\nRL   Nat. Chem. Biol. 20:221-233(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
+  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178"
 }
 ```
 
@@ -777,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178",
-  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
-  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
-  "source_locator": "lines 97-101",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a quinone + NADH + H(+) = a quinol + NAD(+);\nCC         Xref=Rhea:RHEA:46160, ChEBI:CHEBI:15378, ChEBI:CHEBI:24646,\nCC         ChEBI:CHEBI:57540, ChEBI:CHEBI:57945, ChEBI:CHEBI:132124; EC=1.6.5.2;\nCC         Evidence={ECO:0000250|UniProtKB:Q8WWV3};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 97-101",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
+  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178"
 }
 ```
 
@@ -798,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178",
-  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
-  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
-  "source_locator": "lines 102-106",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a quinone + NADPH + H(+) = a quinol + NADP(+);\nCC         Xref=Rhea:RHEA:46164, ChEBI:CHEBI:15378, ChEBI:CHEBI:24646,\nCC         ChEBI:CHEBI:57783, ChEBI:CHEBI:58349, ChEBI:CHEBI:132124; EC=1.6.5.2;\nCC         Evidence={ECO:0000250|UniProtKB:Q8WWV3};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:32:22.972608+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 102-106",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c2044f60ca3ef3b11b8d9eda94d95aa716930f1e71581317ce51caed3192aef1",
+  "url": "https://rest.uniprot.org/unisave/Q8IPZ3?format=txt&versions=178"
 }
 ```
 

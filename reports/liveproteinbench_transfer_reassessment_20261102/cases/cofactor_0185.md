@@ -1,18 +1,16 @@
-# cofactor_0185: before and after transfer clarification
+# cofactor_0185
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0185.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0185.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Zn(2+)
+**Expected answer:** **B** — Zn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the UniProt entry, which annotates one Zn(2+) ion per subunit. This is a computational HAMAP-rule annotation, not direct experimental evidence in the supplied excerpts.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains cysteines, but that alone does not establish zinc binding or distinguish Zn(2+) from the other listed cofactors.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation that UBA4 binds one Zn(2+) ion per subunit.
-
-
-**Reason**
-
-> The sequence and choices provide no decisive general biological argument for the specific cofactor; identifying Zn(2+) depends on protein-specific knowledge or an external annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation specifically identifies Zn(2+); the evidence provided does not support another listed option.
-
-
-### Important caveats
-
-- The cofactor evidence is computationally assigned by a HAMAP rule, not independently confirmed here by experimental data.
-- The reviewer-only annotation was not part of the evaluated model input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains cysteines, but that alone does not establish zinc binding or distinguish Zn(2+) from the other listed cofactors.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation that UBA4 binds one Zn(2+) ion per subunit.",
-    "reason": "The sequence and choices provide no decisive general biological argument for the specific cofactor; identifying Zn(2+) depends on protein-specific knowledge or an external annotation."
-  },
-  "case_id": "cofactor_0185",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry, which annotates one Zn(2+) ion per subunit. This is a computational HAMAP-rule annotation, not direct experimental evidence in the supplied excerpts."
-  },
-  "important_caveats": [
-    "The cofactor evidence is computationally assigned by a HAMAP rule, not independently confirmed here by experimental data.",
-    "The reviewer-only annotation was not part of the evaluated model input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation specifically identifies Zn(2+); the evidence provided does not support another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0185",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry, which annotates one Zn(2+) ion per subunit. This is a computational HAMAP-rule annotation, not direct experimental evidence in the supplied excerpts.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains cysteines, but that alone does not establish zinc binding or distinguish Zn(2+) from the other listed cofactors.",
-    "missing_item_specific_fact": "The protein-specific annotation that UBA4 binds one Zn(2+) ion per subunit.",
-    "reason": "The sequence and choices provide no decisive general biological argument for the specific cofactor; identifying Zn(2+) depends on protein-specific knowledge or an external annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation specifically identifies Zn(2+); the evidence provided does not support another listed option."
-  },
-  "important_caveats": [
-    "The cofactor evidence is computationally assigned by a HAMAP rule, not independently confirmed here by experimental data.",
-    "The reviewer-only annotation was not part of the evaluated model input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry W1QET1 (UBA4_OGAPD) explicitly annotates Zn(2+) as the cofactor: 'Name=Zn(2+); Xref=ChEBI:CHEBI:29105; Note=Binds 1 zinc ion per subunit.' The sequence matches the benchmark exactly (SHA-256 match). However, the evidence code is ECO:0000255 (inferred by similarity via HAMAP-Rule MF_03049), meaning this is a computational/annotation inference transferred from characterized homologs (e.g., human UBA4 O95396), not a direct experimental measurement on this specific yeast protein. The annotation is consistent with the known architecture of UBA4 proteins (rhodanese-like sulfurtransferase domain + nucleotidyltransferase domain), where a structural zinc site coordinated by cysteine residues is well established.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C1](#evidence-c1), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a rhodanese-like sulfurtransferase domain (identifiable by the catalytic Cys motif 'CRFGNDSQ' near the C-terminus and clustered cysteines 'CYRCFY', 'CGKMDY') and a nucleotidyltransferase/adenylyltransferase domain (GxGxxG-like motifs 'GAGGLGCPAL', 'GAGFGTVGIV'). Sulfurtransferases and rhodanese-type enzymes commonly coordinate a structural Zn(2+) ion via cysteine residues in the active-site region. Among the four options: FAD is characteristic of oxidoreductases (dehydrogenases/oxidases), PLP of aminotransferases/decarboxylases, and Fe(2+) of oxygenases or certain hydrolases—none of which match the adenylyltransferase/sulfurtransferase enzyme class evident here. Zn(2+) is the cofactor most consistent with a sulfurtransferase/rhodanese domain, and the multiple clustered cysteine residues in the sequence are consistent with zinc coordination.
-
-
-**Missing item-specific fact**
-
-> None critical. The specific HAMAP-rule annotation of Zn(2+) for UBA4 is an annotation-level fact, but the broader biological principle that rhodanese/sulfurtransferase domains coordinate structural zinc is general biochemistry knowledge sufficient to distinguish Zn(2+) from FAD, Fe(2+), and PLP.
-
-
-**Reason**
-
-> A knowledgeable model can identify the enzyme class (sulfurtransferase + adenylyltransferase) from sequence motifs and reason that Zn(2+) is the cofactor associated with rhodanese-type sulfurtransferases, while eliminating FAD (oxidoreductases), PLP (amino-group transferases), and Fe(2+) (oxygenases) as mismatched to this enzyme class. The reasoning is not airtight for every sulfurtransferase, but it meaningfully narrows the choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> FAD, Fe(2+), and PLP are strongly associated with different enzyme classes (oxidoreductases, oxygenases, and amino-group transferases respectively) and do not match the adenylyltransferase/sulfurtransferase architecture evident in the sequence. Zn(2+) is the only option consistent with a rhodanese-type sulfurtransferase domain. No alternative choice is defensible.
-
-
-### Important caveats
-
-- The Zn(2+) annotation is based on HAMAP similarity inference (ECO:0000255), not direct experimental measurement on the Ogataea parapolymorpha UBA4 protein itself.
-- The zinc in UBA4 is structural (coordinated by cysteine residues in the rhodanese domain) rather than catalytic; the question asks for 'cofactor required for catalytic activity,' which could be interpreted narrowly, though structural zinc is standardly listed as a cofactor in UniProt.
-- The reviewer-only UniProt accession (W1QET1) and all annotation excerpts were absent from the evaluated model input; the model must rely solely on sequence analysis and general biological knowledge.
-- The sequence is 389 aa and matches the UniProt entry exactly; no truncation or construct issues affect the analysis.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a rhodanese-like sulfurtransferase domain (identifiable by the catalytic Cys motif 'CRFGNDSQ' near the C-terminus and clustered cysteines 'CYRCFY', 'CGKMDY') and a nucleotidyltransferase/adenylyltransferase domain (GxGxxG-like motifs 'GAGGLGCPAL', 'GAGFGTVGIV'). Sulfurtransferases and rhodanese-type enzymes commonly coordinate a structural Zn(2+) ion via cysteine residues in the active-site region. Among the four options: FAD is characteristic of oxidoreductases (dehydrogenases/oxidases), PLP of aminotransferases/decarboxylases, and Fe(2+) of oxygenases or certain hydrolases—none of which match the adenylyltransferase/sulfurtransferase enzyme class evident here. Zn(2+) is the cofactor most consistent with a sulfurtransferase/rhodanese domain, and the multiple clustered cysteine residues in the sequence are consistent with zinc coordination.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The specific HAMAP-rule annotation of Zn(2+) for UBA4 is an annotation-level fact, but the broader biological principle that rhodanese/sulfurtransferase domains coordinate structural zinc is general biochemistry knowledge sufficient to distinguish Zn(2+) from FAD, Fe(2+), and PLP.",
-    "reason": "A knowledgeable model can identify the enzyme class (sulfurtransferase + adenylyltransferase) from sequence motifs and reason that Zn(2+) is the cofactor associated with rhodanese-type sulfurtransferases, while eliminating FAD (oxidoreductases), PLP (amino-group transferases), and Fe(2+) (oxygenases) as mismatched to this enzyme class. The reasoning is not airtight for every sulfurtransferase, but it meaningfully narrows the choices."
-  },
-  "case_id": "cofactor_0185",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C1",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry W1QET1 (UBA4_OGAPD) explicitly annotates Zn(2+) as the cofactor: 'Name=Zn(2+); Xref=ChEBI:CHEBI:29105; Note=Binds 1 zinc ion per subunit.' The sequence matches the benchmark exactly (SHA-256 match). However, the evidence code is ECO:0000255 (inferred by similarity via HAMAP-Rule MF_03049), meaning this is a computational/annotation inference transferred from characterized homologs (e.g., human UBA4 O95396), not a direct experimental measurement on this specific yeast protein. The annotation is consistent with the known architecture of UBA4 proteins (rhodanese-like sulfurtransferase domain + nucleotidyltransferase domain), where a structural zinc site coordinated by cysteine residues is well established."
-  },
-  "important_caveats": [
-    "The Zn(2+) annotation is based on HAMAP similarity inference (ECO:0000255), not direct experimental measurement on the Ogataea parapolymorpha UBA4 protein itself.",
-    "The zinc in UBA4 is structural (coordinated by cysteine residues in the rhodanese domain) rather than catalytic; the question asks for 'cofactor required for catalytic activity,' which could be interpreted narrowly, though structural zinc is standardly listed as a cofactor in UniProt.",
-    "The reviewer-only UniProt accession (W1QET1) and all annotation excerpts were absent from the evaluated model input; the model must rely solely on sequence analysis and general biological knowledge.",
-    "The sequence is 389 aa and matches the UniProt entry exactly; no truncation or construct issues affect the analysis."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "FAD, Fe(2+), and PLP are strongly associated with different enzyme classes (oxidoreductases, oxygenases, and amino-group transferases respectively) and do not match the adenylyltransferase/sulfurtransferase architecture evident in the sequence. Zn(2+) is the only option consistent with a rhodanese-type sulfurtransferase domain. No alternative choice is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0185",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry W1QET1 (UBA4_OGAPD) explicitly annotates Zn(2+) as the cofactor: 'Name=Zn(2+); Xref=ChEBI:CHEBI:29105; Note=Binds 1 zinc ion per subunit.' The sequence matches the benchmark exactly (SHA-256 match). However, the evidence code is ECO:0000255 (inferred by similarity via HAMAP-Rule MF_03049), meaning this is a computational/annotation inference transferred from characterized homologs (e.g., human UBA4 O95396), not a direct experimental measurement on this specific yeast protein. The annotation is consistent with the known architecture of UBA4 proteins (rhodanese-like sulfurtransferase domain + nucleotidyltransferase domain), where a structural zinc site coordinated by cysteine residues is well established.",
-    "evidence_ids": ["C5", "H4", "C1", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a rhodanese-like sulfurtransferase domain (identifiable by the catalytic Cys motif 'CRFGNDSQ' near the C-terminus and clustered cysteines 'CYRCFY', 'CGKMDY') and a nucleotidyltransferase/adenylyltransferase domain (GxGxxG-like motifs 'GAGGLGCPAL', 'GAGFGTVGIV'). Sulfurtransferases and rhodanese-type enzymes commonly coordinate a structural Zn(2+) ion via cysteine residues in the active-site region. Among the four options: FAD is characteristic of oxidoreductases (dehydrogenases/oxidases), PLP of aminotransferases/decarboxylases, and Fe(2+) of oxygenases or certain hydrolases—none of which match the adenylyltransferase/sulfurtransferase enzyme class evident here. Zn(2+) is the cofactor most consistent with a sulfurtransferase/rhodanese domain, and the multiple clustered cysteine residues in the sequence are consistent with zinc coordination.",
-    "missing_item_specific_fact": "None critical. The specific HAMAP-rule annotation of Zn(2+) for UBA4 is an annotation-level fact, but the broader biological principle that rhodanese/sulfurtransferase domains coordinate structural zinc is general biochemistry knowledge sufficient to distinguish Zn(2+) from FAD, Fe(2+), and PLP.",
-    "reason": "A knowledgeable model can identify the enzyme class (sulfurtransferase + adenylyltransferase) from sequence motifs and reason that Zn(2+) is the cofactor associated with rhodanese-type sulfurtransferases, while eliminating FAD (oxidoreductases), PLP (amino-group transferases), and Fe(2+) (oxygenases) as mismatched to this enzyme class. The reasoning is not airtight for every sulfurtransferase, but it meaningfully narrows the choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "FAD, Fe(2+), and PLP are strongly associated with different enzyme classes (oxidoreductases, oxygenases, and amino-group transferases respectively) and do not match the adenylyltransferase/sulfurtransferase architecture evident in the sequence. Zn(2+) is the only option consistent with a rhodanese-type sulfurtransferase domain. No alternative choice is defensible."
-  },
-  "important_caveats": [
-    "The Zn(2+) annotation is based on HAMAP similarity inference (ECO:0000255), not direct experimental measurement on the Ogataea parapolymorpha UBA4 protein itself.",
-    "The zinc in UBA4 is structural (coordinated by cysteine residues in the rhodanese domain) rather than catalytic; the question asks for 'cofactor required for catalytic activity,' which could be interpreted narrowly, though structural zinc is standardly listed as a cofactor in UniProt.",
-    "The reviewer-only UniProt accession (W1QET1) and all annotation excerpts were absent from the evaluated model input; the model must rely solely on sequence analysis and general biological knowledge.",
-    "The sequence is 389 aa and matches the UniProt entry exactly; no truncation or construct issues affect the analysis."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "W1QET1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 389,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
   "current_entry_audit": {
     "entryVersion": 69,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-03-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "current_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 389,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 67,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "W1QET1",
   "selected_historical_entry_version": 67,
+  "selected_historical_record_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "selected_historical_source_sequence_length": 389,
+  "selected_historical_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
   "selected_historical_version": {
     "accession": "W1QET1",
     "database": "Swiss-Prot",
@@ -550,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UBA4_OGAPD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "selected_historical_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
-  "selected_historical_source_sequence_length": 389,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 67,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"W1QET1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -600,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":69,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-03-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -619,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Yeast\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000008673\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Pichiomycetes\",\"Pichiales\",\"Pichiaceae\",\"Ogataea\"],\"scientificName\":\"Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL Y-7560 / DL-1)\",\"synonyms\":[\"Hansenula polymorpha\"],\"taxonId\":871575}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -638,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Ubiquitin-like protein activator 4\"}}],\"includes\":[{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Adenylyltransferase UBA4\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Sulfur carrier protein MOCS2A adenylyltransferase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O95396\",\"source\":\"UniProtKB\"}],\"value\":\"2.7.7.80\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Molybdopterin-synthase adenylyltransferase\"}}},{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Sulfur carrier protein MOCS2A sulfurtransferase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Sulfurtransferase UBA4\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O95396\",\"source\":\"UniProtKB\"}],\"value\":\"2.8.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Molybdopterin-synthase sulfurtransferase\"}}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Adenylyltransferase and sulfurtransferase uba4\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -657,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"name\":\"Zn(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"value\":\"Binds 1 zinc ion per subunit.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -675,18 +436,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 1-24",
   "excerpt": "ID   UBA4_OGAPD              Reviewed;         389 AA.\nAC   W1QET1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-MAR-2014, sequence version 1.\nDT   28-JAN-2026, entry version 67.\nDE   RecName: Full=Adenylyltransferase and sulfurtransferase uba4 {ECO:0000305};\nDE   AltName: Full=Ubiquitin-like protein activator 4 {ECO:0000305};\nDE   Includes:\nDE     RecName: Full=Molybdopterin-synthase adenylyltransferase {ECO:0000305};\nDE              EC=2.7.7.80 {ECO:0000250|UniProtKB:O95396};\nDE     AltName: Full=Adenylyltransferase UBA4 {ECO:0000305};\nDE     AltName: Full=Sulfur carrier protein MOCS2A adenylyltransferase {ECO:0000305};\nDE   Includes:\nDE     RecName: Full=Molybdopterin-synthase sulfurtransferase {ECO:0000305};\nDE              EC=2.8.1.11 {ECO:0000250|UniProtKB:O95396};\nDE     AltName: Full=Sulfur carrier protein MOCS2A sulfurtransferase {ECO:0000305};\nDE     AltName: Full=Sulfurtransferase UBA4 {ECO:0000305};\nGN   Name=UBA4 {ECO:0000305}; Synonyms=CNX4 {ECO:0000303|PubMed:33617956};\nGN   ORFNames=HPODL_00948 {ECO:0000312|EMBL:ESX00063.1};\nOS   Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL\nOS   Y-7560 / DL-1) (Yeast) (Hansenula polymorpha).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Pichiomycetes;\nOC   Pichiales; Pichiaceae; Ogataea.\nOX   NCBI_TaxID=871575 {ECO:0000312|Proteomes:UP000008673};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -696,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 6-17",
   "excerpt": "DE   RecName: Full=Adenylyltransferase and sulfurtransferase uba4 {ECO:0000305};\nDE   AltName: Full=Ubiquitin-like protein activator 4 {ECO:0000305};\nDE   Includes:\nDE     RecName: Full=Molybdopterin-synthase adenylyltransferase {ECO:0000305};\nDE              EC=2.7.7.80 {ECO:0000250|UniProtKB:O95396};\nDE     AltName: Full=Adenylyltransferase UBA4 {ECO:0000305};\nDE     AltName: Full=Sulfur carrier protein MOCS2A adenylyltransferase {ECO:0000305};\nDE   Includes:\nDE     RecName: Full=Molybdopterin-synthase sulfurtransferase {ECO:0000305};\nDE              EC=2.8.1.11 {ECO:0000250|UniProtKB:O95396};\nDE     AltName: Full=Sulfur carrier protein MOCS2A sulfurtransferase {ECO:0000305};\nDE     AltName: Full=Sulfurtransferase UBA4 {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -717,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 36-44",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, AND PATHWAY.\nRX   PubMed=33617956; DOI=10.1016/j.ymben.2021.02.004;\nRA   Perli T., van der Vorm D.N.A., Wassink M., van den Broek M., Pronk J.T.,\nRA   Daran J.M.;\nRT   \"Engineering heterologous molybdenum-cofactor-biosynthesis and nitrate-\nRT   assimilation pathways enables nitrate utilization by Saccharomyces\nRT   cerevisiae.\";\nRL   Metab. Eng. 65:11-29(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -738,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 80-83",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;\nCC         Evidence={ECO:0000255|HAMAP-Rule:MF_03049};\nCC       Note=Binds 1 zinc ion per subunit. {ECO:0000255|HAMAP-Rule:MF_03049};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 80-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 

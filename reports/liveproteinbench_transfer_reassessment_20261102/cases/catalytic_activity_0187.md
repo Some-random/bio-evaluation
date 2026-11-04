@@ -1,18 +1,16 @@
-# catalytic_activity_0187: before and after transfer clarification
+# catalytic_activity_0187
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0187.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0187.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — 4-nitrobenzoyl-CoA + 6 (S)-methylmalonyl-CoA + malonyl-CoA + 6 NADPH + 12 H(+) = demethyldeoxyspectinabilin + 7 CO2 + 6 NADP(+) + 8 CoA + 5 H2O
+**Expected answer:** **B** — 4-nitrobenzoyl-CoA + 6 (S)-methylmalonyl-CoA + malonyl-CoA + 6 NADPH + 12 H(+) = demethyldeoxyspectinabilin + 7 CO2 + 6 NADP(+) + 8 CoA + 5 H2O
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the NorA entry, whose catalytic-activity annotation gives reaction B. That annotation cites PubMed 17763486; it supports the key, though the cited primary study was not independently checked here.
-
-Citations as saved: [H4](#evidence-h4), [H3](#evidence-h3), [C5](#evidence-c5), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The unusually long sequence is compatible with a multidomain biosynthetic enzyme, and B is the only polyketide-assembly reaction among the choices. This may suggest B’s broad enzyme class, but does not establish the specific substrates or product.
-
-
-**Missing item-specific fact**
-
-> The protein-specific NorA annotation linking this sequence to formation of demethyldeoxyspectinabilin from the listed CoA substrates.
-
-
-**Reason**
-
-> Choosing the precise named reaction requires an item-specific functional assignment not supplied in the question. Broad sequence architecture alone does not determine this reaction’s substrates, product, or stoichiometry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The annotated reaction matches B; the other choices describe unrelated reaction classes.
-
-
-### Important caveats
-
-- The cited database catalytic-activity annotation is literature-supported, but the evidence provided does not independently establish the underlying experimental details.
-- The exact sequence match establishes applicability of the annotation to this sequence, not that the evaluated model was given the accession or annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The unusually long sequence is compatible with a multidomain biosynthetic enzyme, and B is the only polyketide-assembly reaction among the choices. This may suggest B’s broad enzyme class, but does not establish the specific substrates or product.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific NorA annotation linking this sequence to formation of demethyldeoxyspectinabilin from the listed CoA substrates.",
-    "reason": "Choosing the precise named reaction requires an item-specific functional assignment not supplied in the question. Broad sequence architecture alone does not determine this reaction’s substrates, product, or stoichiometry."
-  },
-  "case_id": "catalytic_activity_0187",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H4",
-      "H3",
-      "C5",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the NorA entry, whose catalytic-activity annotation gives reaction B. That annotation cites PubMed 17763486; it supports the key, though the cited primary study was not independently checked here."
-  },
-  "important_caveats": [
-    "The cited database catalytic-activity annotation is literature-supported, but the evidence provided does not independently establish the underlying experimental details.",
-    "The exact sequence match establishes applicability of the annotation to this sequence, not that the evaluated model was given the accession or annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The annotated reaction matches B; the other choices describe unrelated reaction classes."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0187",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the NorA entry, whose catalytic-activity annotation gives reaction B. That annotation cites PubMed 17763486; it supports the key, though the cited primary study was not independently checked here.",
-    "evidence_ids": ["H4", "H3", "C5", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The unusually long sequence is compatible with a multidomain biosynthetic enzyme, and B is the only polyketide-assembly reaction among the choices. This may suggest B’s broad enzyme class, but does not establish the specific substrates or product.",
-    "missing_item_specific_fact": "The protein-specific NorA annotation linking this sequence to formation of demethyldeoxyspectinabilin from the listed CoA substrates.",
-    "reason": "Choosing the precise named reaction requires an item-specific functional assignment not supplied in the question. Broad sequence architecture alone does not determine this reaction’s substrates, product, or stoichiometry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The annotated reaction matches B; the other choices describe unrelated reaction classes."
-  },
-  "important_caveats": [
-    "The cited database catalytic-activity annotation is literature-supported, but the evidence provided does not independently establish the underlying experimental details.",
-    "The exact sequence match establishes applicability of the annotation to this sequence, not that the evaluated model was given the accession or annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry B4ER92 (NORA_STRON, sequence matched exactly at 1897 AA) lists the exact reaction in Choice B as the CATALYTIC ACTIVITY for this protein, with EC 2.3.1.290. The evidence code is ECO:0000305 (curator inference) citing PubMed:17763486 (Traitcheva et al., ChemBioChem 2007), which characterized the spectinabilin/aureothin PKS pathway. The reaction is annotated as physiologically left-to-right (RHEA:58945). The sequence in the question matches the UniProt sequence exactly (SHA-256 confirmed).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The supplied sequence is 1897 amino acids, far exceeding the size of any enzyme catalyzing Choices A (nucleotide phosphodiesterase, ~300-500 AA), C (tubulin, ~440 AA), or D (UDP-GlcNAc hydrolase, small enzyme). The sequence contains recognizable modular PKS domain signatures: a ketosynthase motif (Cys-His-His triad region 'GGMGCRLPGDVRSPEGLWRLVHNG'), an acyltransferase-like segment ('GSMPSVASGRL'), an acyl-carrier protein serine region ('GSAVNQDG'), a dehydratase motif ('GQGSQWPG'), and a long C-terminal reductase/thioesterase region. This multi-domain architecture of a very large enzyme is characteristic of a modular polyketide synthase. Among the four choices, only B describes a PKS-type condensation/reduction reaction. The other choices can be eliminated by protein size and domain architecture alone.
-
-
-**Missing item-specific fact**
-
-> The exact substrate identity (4-nitrobenzoyl-CoA) and product name (demethyldeoxyspectinabilin) cannot be deduced from sequence without database lookup or AT-domain specificity prediction. However, among the given choices, only B is a PKS reaction, so the specific product name is not needed to select the correct option.
-
-
-**Reason**
-
-> A trained biologist can recognize that a ~1900 AA multi-domain protein with KS/AT/ACP/DH/KR/TE-like motifs is a modular PKS, and among the four options only B represents a PKS reaction. The elimination of A, C, and D relies on general protein-size and domain-architecture reasoning. The exact chemical names in B are not independently derivable from sequence, but they are not needed to distinguish B from the clearly non-PKS alternatives.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choices A, C, and D describe reactions catalyzed by small, single-domain enzymes (phosphodiesterase, tubulin GTPase, UDP-sugar hydrolase) that are incompatible with a 1897 AA multi-domain protein. Choice C additionally contains a factual error (ATP instead of GTP for tubulin). Only B is consistent with the observed protein architecture.
-
-
-### Important caveats
-
-- The UniProt annotation uses evidence code ECO:0000305 (inferred by curator from PubMed:17763486), meaning the reaction assignment is based on pathway characterization in the cited paper rather than direct in vitro kinetics of the isolated NorA protein alone.
-- The specific substrate/product names in Choice B (4-nitrobenzoyl-CoA, demethyldeoxyspectinabilin) are pathway-level assignments; recognizing the protein as a PKS narrows the answer to B among the choices, but the exact chemical identities require specialized PKS biology knowledge or database lookup.
-- Reviewer-only evidence (UniProt accession, annotation) was absent from the evaluated model input; the reasoning argument relies solely on sequence-derived domain inference and elimination of incompatible choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied sequence is 1897 amino acids, far exceeding the size of any enzyme catalyzing Choices A (nucleotide phosphodiesterase, ~300-500 AA), C (tubulin, ~440 AA), or D (UDP-GlcNAc hydrolase, small enzyme). The sequence contains recognizable modular PKS domain signatures: a ketosynthase motif (Cys-His-His triad region 'GGMGCRLPGDVRSPEGLWRLVHNG'), an acyltransferase-like segment ('GSMPSVASGRL'), an acyl-carrier protein serine region ('GSAVNQDG'), a dehydratase motif ('GQGSQWPG'), and a long C-terminal reductase/thioesterase region. This multi-domain architecture of a very large enzyme is characteristic of a modular polyketide synthase. Among the four choices, only B describes a PKS-type condensation/reduction reaction. The other choices can be eliminated by protein size and domain architecture alone.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The exact substrate identity (4-nitrobenzoyl-CoA) and product name (demethyldeoxyspectinabilin) cannot be deduced from sequence without database lookup or AT-domain specificity prediction. However, among the given choices, only B is a PKS reaction, so the specific product name is not needed to select the correct option.",
-    "reason": "A trained biologist can recognize that a ~1900 AA multi-domain protein with KS/AT/ACP/DH/KR/TE-like motifs is a modular PKS, and among the four options only B represents a PKS reaction. The elimination of A, C, and D relies on general protein-size and domain-architecture reasoning. The exact chemical names in B are not independently derivable from sequence, but they are not needed to distinguish B from the clearly non-PKS alternatives."
-  },
-  "case_id": "catalytic_activity_0187",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry B4ER92 (NORA_STRON, sequence matched exactly at 1897 AA) lists the exact reaction in Choice B as the CATALYTIC ACTIVITY for this protein, with EC 2.3.1.290. The evidence code is ECO:0000305 (curator inference) citing PubMed:17763486 (Traitcheva et al., ChemBioChem 2007), which characterized the spectinabilin/aureothin PKS pathway. The reaction is annotated as physiologically left-to-right (RHEA:58945). The sequence in the question matches the UniProt sequence exactly (SHA-256 confirmed)."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses evidence code ECO:0000305 (inferred by curator from PubMed:17763486), meaning the reaction assignment is based on pathway characterization in the cited paper rather than direct in vitro kinetics of the isolated NorA protein alone.",
-    "The specific substrate/product names in Choice B (4-nitrobenzoyl-CoA, demethyldeoxyspectinabilin) are pathway-level assignments; recognizing the protein as a PKS narrows the answer to B among the choices, but the exact chemical identities require specialized PKS biology knowledge or database lookup.",
-    "Reviewer-only evidence (UniProt accession, annotation) was absent from the evaluated model input; the reasoning argument relies solely on sequence-derived domain inference and elimination of incompatible choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A, C, and D describe reactions catalyzed by small, single-domain enzymes (phosphodiesterase, tubulin GTPase, UDP-sugar hydrolase) that are incompatible with a 1897 AA multi-domain protein. Choice C additionally contains a factual error (ATP instead of GTP for tubulin). Only B is consistent with the observed protein architecture."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0187",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry B4ER92 (NORA_STRON, sequence matched exactly at 1897 AA) lists the exact reaction in Choice B as the CATALYTIC ACTIVITY for this protein, with EC 2.3.1.290. The evidence code is ECO:0000305 (curator inference) citing PubMed:17763486 (Traitcheva et al., ChemBioChem 2007), which characterized the spectinabilin/aureothin PKS pathway. The reaction is annotated as physiologically left-to-right (RHEA:58945). The sequence in the question matches the UniProt sequence exactly (SHA-256 confirmed).",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The supplied sequence is 1897 amino acids, far exceeding the size of any enzyme catalyzing Choices A (nucleotide phosphodiesterase, ~300-500 AA), C (tubulin, ~440 AA), or D (UDP-GlcNAc hydrolase, small enzyme). The sequence contains recognizable modular PKS domain signatures: a ketosynthase motif (Cys-His-His triad region 'GGMGCRLPGDVRSPEGLWRLVHNG'), an acyltransferase-like segment ('GSMPSVASGRL'), an acyl-carrier protein serine region ('GSAVNQDG'), a dehydratase motif ('GQGSQWPG'), and a long C-terminal reductase/thioesterase region. This multi-domain architecture of a very large enzyme is characteristic of a modular polyketide synthase. Among the four choices, only B describes a PKS-type condensation/reduction reaction. The other choices can be eliminated by protein size and domain architecture alone.",
-    "missing_item_specific_fact": "The exact substrate identity (4-nitrobenzoyl-CoA) and product name (demethyldeoxyspectinabilin) cannot be deduced from sequence without database lookup or AT-domain specificity prediction. However, among the given choices, only B is a PKS reaction, so the specific product name is not needed to select the correct option.",
-    "reason": "A trained biologist can recognize that a ~1900 AA multi-domain protein with KS/AT/ACP/DH/KR/TE-like motifs is a modular PKS, and among the four options only B represents a PKS reaction. The elimination of A, C, and D relies on general protein-size and domain-architecture reasoning. The exact chemical names in B are not independently derivable from sequence, but they are not needed to distinguish B from the clearly non-PKS alternatives."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A, C, and D describe reactions catalyzed by small, single-domain enzymes (phosphodiesterase, tubulin GTPase, UDP-sugar hydrolase) that are incompatible with a 1897 AA multi-domain protein. Choice C additionally contains a factual error (ATP instead of GTP for tubulin). Only B is consistent with the observed protein architecture."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses evidence code ECO:0000305 (inferred by curator from PubMed:17763486), meaning the reaction assignment is based on pathway characterization in the cited paper rather than direct in vitro kinetics of the isolated NorA protein alone.",
-    "The specific substrate/product names in Choice B (4-nitrobenzoyl-CoA, demethyldeoxyspectinabilin) are pathway-level assignments; recognizing the protein as a PKS narrows the answer to B among the choices, but the exact chemical identities require specialized PKS biology knowledge or database lookup.",
-    "Reviewer-only evidence (UniProt accession, annotation) was absent from the evaluated model input; the reasoning argument relies solely on sequence-derived domain inference and elimination of incompatible choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B4ER92",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1897,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
   "current_entry_audit": {
     "entryVersion": 85,
     "firstPublicDate": "2025-02-05",
@@ -530,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2008-09-23",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "current_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1897,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B4ER92",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "selected_historical_source_sequence_length": 1897,
+  "selected_historical_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
   "selected_historical_version": {
     "accession": "B4ER92",
     "database": "Swiss-Prot",
@@ -548,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NORA_STRON",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "selected_historical_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
-  "selected_historical_source_sequence_length": 1897,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B4ER92\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -598,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":85,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2008-09-23\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -617,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Streptoverticillium orinoci\",\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces orinoci\",\"taxonId\":67339}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -636,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAO85893.1\",\"source\":\"EMBL\"}],\"value\":\"Modular polyketide synthase NorA\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"17763486\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.290\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Spectinabilin polyketide synthase system protein NorA\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Spectinabilin PKS system protein NorA\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -655,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"17763486\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:58945\"}}],\"reaction\":{\"ecNumber\":\"2.3.1.290\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"17763486\",\"source\":\"PubMed\"}],\"name\":\"4-nitrobenzoyl-CoA + 6 (S)-methylmalonyl-CoA + malonyl-CoA + 6 NADPH + 12 H(+) = demethyldeoxyspectinabilin + 7 CO2 + 6 NADP(+) + 8 CoA + 5 H2O\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:58944\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57327\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57384\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:142871\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:142872\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -674,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Traitcheva N.\",\"Jenke-Kodama H.\",\"He J.\",\"Dittmann E.\",\"Hertweck C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17763486\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.200700309\"}],\"citationType\":\"journal article\",\"firstPage\":\"1841\",\"id\":\"17763486\",\"journal\":\"ChemBioChem\",\"lastPage\":\"1849\",\"publicationDate\":\"2007\",\"title\":\"Non-colinear polyketide biosynthesis in the aureothin and neoaureothin pathways: an evolutionary perspective.\",\"volume\":\"8\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAO85893.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"HKI-0260\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -692,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   NORA_STRON              Reviewed;        1897 AA.\nAC   B4ER92;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   23-SEP-2008, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=Spectinabilin polyketide synthase system protein NorA {ECO:0000305};\nDE            Short=Spectinabilin PKS system protein NorA {ECO:0000305};\nDE            EC=2.3.1.290 {ECO:0000305|PubMed:17763486};\nDE   AltName: Full=Modular polyketide synthase NorA {ECO:0000312|EMBL:CAO85893.1};\nGN   Name=norA {ECO:0000303|PubMed:17763486};\nOS   Streptomyces orinoci (Streptoverticillium orinoci).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=67339;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -713,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Spectinabilin polyketide synthase system protein NorA {ECO:0000305};\nDE            Short=Spectinabilin PKS system protein NorA {ECO:0000305};\nDE            EC=2.3.1.290 {ECO:0000305|PubMed:17763486};\nDE   AltName: Full=Modular polyketide synthase NorA {ECO:0000312|EMBL:CAO85893.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -734,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 15-22",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAO85893.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND SUBUNIT.\nRC   STRAIN=HKI-0260;\nRX   PubMed=17763486; DOI=10.1002/cbic.200700309;\nRA   Traitcheva N., Jenke-Kodama H., He J., Dittmann E., Hertweck C.;\nRT   \"Non-colinear polyketide biosynthesis in the aureothin and neoaureothin\nRT   pathways: an evolutionary perspective.\";\nRL   ChemBioChem 8:1841-1849(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -755,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 31-40",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=4-nitrobenzoyl-CoA + 6 (S)-methylmalonyl-CoA + malonyl-CoA + 6\nCC         NADPH + 12 H(+) = demethyldeoxyspectinabilin + 7 CO2 + 6 NADP(+) + 8\nCC         CoA + 5 H2O; Xref=Rhea:RHEA:58944, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:16526, ChEBI:CHEBI:57287,\nCC         ChEBI:CHEBI:57327, ChEBI:CHEBI:57384, ChEBI:CHEBI:57783,\nCC         ChEBI:CHEBI:58349, ChEBI:CHEBI:142871, ChEBI:CHEBI:142872;\nCC         EC=2.3.1.290; Evidence={ECO:0000305|PubMed:17763486};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:58945;\nCC         Evidence={ECO:0000305|PubMed:17763486};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 

@@ -1,18 +1,16 @@
-# pathway_0085: before and after transfer clarification
+# pathway_0085
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0085.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0085.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Amino-acid degradation
+**Expected answer:** **C** — Amino-acid degradation
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as mitochondrial methylglutaconyl-CoA hydratase, with a pathway annotation for amino-acid degradation and L-leucine degradation. This supports the keyed broad category, though the cited annotation is curator-inferred rather than independently verified by the supplied excerpts.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices include both a broad category and a specific pathway: L-leucine degradation is a form of amino-acid degradation. The sequence does not supply an evident, generally interpretable cue that identifies this enzyme and its pathway.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as methylglutaconyl-CoA hydratase and its pathway annotation are needed to connect it to leucine catabolism.
-
-
-**Reason**
-
-> Distinguishing the pathway from this sequence requires protein-specific functional identification or an external annotation; recognizing the exact sequence from a database would not constitute reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> The annotation explicitly places the protein in both L-leucine degradation and the broader amino-acid degradation category, so both listed options describe its pathway at different levels of specificity.
-
-
-### Important caveats
-
-- The sequence matches both the current UniProt record and the cited historical record.
-- The pathway annotation is attributed to a publication through a curator-inference evidence code; the excerpts do not establish direct experimental validation of the protein's activity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices include both a broad category and a specific pathway: L-leucine degradation is a form of amino-acid degradation. The sequence does not supply an evident, generally interpretable cue that identifies this enzyme and its pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as methylglutaconyl-CoA hydratase and its pathway annotation are needed to connect it to leucine catabolism.",
-    "reason": "Distinguishing the pathway from this sequence requires protein-specific functional identification or an external annotation; recognizing the exact sequence from a database would not constitute reasoning from the supplied input."
-  },
-  "case_id": "pathway_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as mitochondrial methylglutaconyl-CoA hydratase, with a pathway annotation for amino-acid degradation and L-leucine degradation. This supports the keyed broad category, though the cited annotation is curator-inferred rather than independently verified by the supplied excerpts."
-  },
-  "important_caveats": [
-    "The sequence matches both the current UniProt record and the cited historical record.",
-    "The pathway annotation is attributed to a publication through a curator-inference evidence code; the excerpts do not establish direct experimental validation of the protein's activity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "The annotation explicitly places the protein in both L-leucine degradation and the broader amino-acid degradation category, so both listed options describe its pathway at different levels of specificity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as mitochondrial methylglutaconyl-CoA hydratase, with a pathway annotation for amino-acid degradation and L-leucine degradation. This supports the keyed broad category, though the cited annotation is curator-inferred rather than independently verified by the supplied excerpts.",
-    "evidence_ids": ["C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices include both a broad category and a specific pathway: L-leucine degradation is a form of amino-acid degradation. The sequence does not supply an evident, generally interpretable cue that identifies this enzyme and its pathway.",
-    "missing_item_specific_fact": "The protein's identity as methylglutaconyl-CoA hydratase and its pathway annotation are needed to connect it to leucine catabolism.",
-    "reason": "Distinguishing the pathway from this sequence requires protein-specific functional identification or an external annotation; recognizing the exact sequence from a database would not constitute reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "The annotation explicitly places the protein in both L-leucine degradation and the broader amino-acid degradation category, so both listed options describe its pathway at different levels of specificity."
-  },
-  "important_caveats": [
-    "The sequence matches both the current UniProt record and the cited historical record.",
-    "The pathway annotation is attributed to a publication through a curator-inference evidence code; the excerpts do not establish direct experimental validation of the protein's activity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt pathway annotation for G4N954 (Methylglutaconyl-CoA hydratase 1, mitochondrial, EC 4.2.1.18) reads: 'Amino-acid degradation; L-leucine degradation; (S)-3-hydroxy-3-methylglutaryl-CoA from 3-isovaleryl-CoA: step 3/3.' The phrase 'Amino-acid degradation' does appear in the annotation as the top-level pathway class, so choice C is textually supported. However, 'L-leucine degradation' (choice B) is the specific sub-pathway within that class and is equally present in the same annotation string. The key is supported but not uniquely so.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence encodes a crotonase-superfamily hydratase (consistent with the methylglutaconyl-CoA hydratase fold). Recognizing it as a hydratase could narrow the pathway to amino-acid catabolism broadly, but cannot by itself distinguish the broad class 'Amino-acid degradation' (C) from the specific sub-pathway 'L-leucine degradation' (B), because both are true descriptions of the same enzyme's role. The distinction hinges entirely on how one maps the UniProt hierarchical annotation string ('Amino-acid degradation; L-leucine degradation; …') onto the question's phrasing 'primary metabolic or signaling pathway'—a question of annotation-hierarchy interpretation, not of biological inference from the sequence.
-
-
-**Missing item-specific fact**
-
-> The exact UniProt pathway annotation string and the convention that semicolons delimit hierarchical levels (class → pathway → step), which is needed to decide whether 'primary pathway' refers to the broad class (C) or the specific named pathway (B).
-
-
-**Reason**
-
-> From the sequence alone, a model can plausibly identify a crotonase/hydratase fold and infer involvement in amino-acid catabolism, but cannot rationally prefer the broad category label over the specific sub-pathway label without knowing the annotation hierarchy convention. Selection between B and C depends on an external, item-specific annotation convention rather than general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> The UniProt annotation string contains both 'Amino-acid degradation' and 'L-leucine degradation' as part of the same pathway designation. 'L-leucine degradation' is the specific named pathway; 'Amino-acid degradation' is the broader pathway class. The question asks for the 'primary metabolic or signaling pathway,' which does not unambiguously indicate whether the broad class (C) or the specific pathway (B) is intended. Both choices are factually correct descriptions of the enzyme's pathway context.
-
-
-### Important caveats
-
-- The UniProt annotation uses a semicolon-delimited hierarchy: &#91;class&#93;; &#91;specific pathway&#93;; &#91;reaction step&#93;. Under this convention, 'L-leucine degradation' is the pathway proper and 'Amino-acid degradation' is the class, which would arguably make B the more precise answer.
-- The pathway annotation carries evidence code ECO:0000305 (inferred by curator from literature), linked to PubMed 32431008, indicating the functional assignment is literature-supported rather than purely computational.
-- The sequence match is exact (SHA-256 confirmed) between the benchmark input and UniProt G4N954, so the annotation applies directly to the supplied sequence.
-- The reviewer-only evidence was absent from the evaluated model's input; the model had only the raw 349-aa sequence and four pathway labels to work with.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence encodes a crotonase-superfamily hydratase (consistent with the methylglutaconyl-CoA hydratase fold). Recognizing it as a hydratase could narrow the pathway to amino-acid catabolism broadly, but cannot by itself distinguish the broad class 'Amino-acid degradation' (C) from the specific sub-pathway 'L-leucine degradation' (B), because both are true descriptions of the same enzyme's role. The distinction hinges entirely on how one maps the UniProt hierarchical annotation string ('Amino-acid degradation; L-leucine degradation; …') onto the question's phrasing 'primary metabolic or signaling pathway'—a question of annotation-hierarchy interpretation, not of biological inference from the sequence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact UniProt pathway annotation string and the convention that semicolons delimit hierarchical levels (class → pathway → step), which is needed to decide whether 'primary pathway' refers to the broad class (C) or the specific named pathway (B).",
-    "reason": "From the sequence alone, a model can plausibly identify a crotonase/hydratase fold and infer involvement in amino-acid catabolism, but cannot rationally prefer the broad category label over the specific sub-pathway label without knowing the annotation hierarchy convention. Selection between B and C depends on an external, item-specific annotation convention rather than general biological reasoning."
-  },
-  "case_id": "pathway_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt pathway annotation for G4N954 (Methylglutaconyl-CoA hydratase 1, mitochondrial, EC 4.2.1.18) reads: 'Amino-acid degradation; L-leucine degradation; (S)-3-hydroxy-3-methylglutaryl-CoA from 3-isovaleryl-CoA: step 3/3.' The phrase 'Amino-acid degradation' does appear in the annotation as the top-level pathway class, so choice C is textually supported. However, 'L-leucine degradation' (choice B) is the specific sub-pathway within that class and is equally present in the same annotation string. The key is supported but not uniquely so."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses a semicolon-delimited hierarchy: [class]; [specific pathway]; [reaction step]. Under this convention, 'L-leucine degradation' is the pathway proper and 'Amino-acid degradation' is the class, which would arguably make B the more precise answer.",
-    "The pathway annotation carries evidence code ECO:0000305 (inferred by curator from literature), linked to PubMed 32431008, indicating the functional assignment is literature-supported rather than purely computational.",
-    "The sequence match is exact (SHA-256 confirmed) between the benchmark input and UniProt G4N954, so the annotation applies directly to the supplied sequence.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model had only the raw 349-aa sequence and four pathway labels to work with."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "The UniProt annotation string contains both 'Amino-acid degradation' and 'L-leucine degradation' as part of the same pathway designation. 'L-leucine degradation' is the specific named pathway; 'Amino-acid degradation' is the broader pathway class. The question asks for the 'primary metabolic or signaling pathway,' which does not unambiguously indicate whether the broad class (C) or the specific pathway (B) is intended. Both choices are factually correct descriptions of the enzyme's pathway context."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt pathway annotation for G4N954 (Methylglutaconyl-CoA hydratase 1, mitochondrial, EC 4.2.1.18) reads: 'Amino-acid degradation; L-leucine degradation; (S)-3-hydroxy-3-methylglutaryl-CoA from 3-isovaleryl-CoA: step 3/3.' The phrase 'Amino-acid degradation' does appear in the annotation as the top-level pathway class, so choice C is textually supported. However, 'L-leucine degradation' (choice B) is the specific sub-pathway within that class and is equally present in the same annotation string. The key is supported but not uniquely so.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence encodes a crotonase-superfamily hydratase (consistent with the methylglutaconyl-CoA hydratase fold). Recognizing it as a hydratase could narrow the pathway to amino-acid catabolism broadly, but cannot by itself distinguish the broad class 'Amino-acid degradation' (C) from the specific sub-pathway 'L-leucine degradation' (B), because both are true descriptions of the same enzyme's role. The distinction hinges entirely on how one maps the UniProt hierarchical annotation string ('Amino-acid degradation; L-leucine degradation; …') onto the question's phrasing 'primary metabolic or signaling pathway'—a question of annotation-hierarchy interpretation, not of biological inference from the sequence.",
-    "missing_item_specific_fact": "The exact UniProt pathway annotation string and the convention that semicolons delimit hierarchical levels (class → pathway → step), which is needed to decide whether 'primary pathway' refers to the broad class (C) or the specific named pathway (B).",
-    "reason": "From the sequence alone, a model can plausibly identify a crotonase/hydratase fold and infer involvement in amino-acid catabolism, but cannot rationally prefer the broad category label over the specific sub-pathway label without knowing the annotation hierarchy convention. Selection between B and C depends on an external, item-specific annotation convention rather than general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "The UniProt annotation string contains both 'Amino-acid degradation' and 'L-leucine degradation' as part of the same pathway designation. 'L-leucine degradation' is the specific named pathway; 'Amino-acid degradation' is the broader pathway class. The question asks for the 'primary metabolic or signaling pathway,' which does not unambiguously indicate whether the broad class (C) or the specific pathway (B) is intended. Both choices are factually correct descriptions of the enzyme's pathway context."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses a semicolon-delimited hierarchy: [class]; [specific pathway]; [reaction step]. Under this convention, 'L-leucine degradation' is the pathway proper and 'Amino-acid degradation' is the class, which would arguably make B the more precise answer.",
-    "The pathway annotation carries evidence code ECO:0000305 (inferred by curator from literature), linked to PubMed 32431008, indicating the functional assignment is literature-supported rather than purely computational.",
-    "The sequence match is exact (SHA-256 confirmed) between the benchmark input and UniProt G4N954, so the annotation applies directly to the supplied sequence.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model had only the raw 349-aa sequence and four pathway labels to work with."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +164,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -520,30 +281,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G4N954",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 349,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
   "current_entry_audit": {
     "entryVersion": 56,
     "firstPublicDate": "2025-06-18",
@@ -551,14 +299,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-12-14",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "current_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 349,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 54,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G4N954",
   "selected_historical_entry_version": 54,
+  "selected_historical_record_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "selected_historical_source_sequence_length": 349,
+  "selected_historical_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
   "selected_historical_version": {
     "accession": "G4N954",
     "database": "Swiss-Prot",
@@ -569,24 +333,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AUH1_PYRO7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "selected_historical_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
-  "selected_historical_source_sequence_length": 349,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 54,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G4N954\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -619,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":56,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-12-14\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -638,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rice blast fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Magnaporthales\",\"Pyriculariaceae\",\"Pyricularia\"],\"scientificName\":\"Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958)\",\"synonyms\":[\"Magnaporthe oryzae\"],\"taxonId\":242507}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -657,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32431008\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.18\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32431008\",\"source\":\"PubMed\"}],\"value\":\"Methylglutaconyl-CoA hydratase 1, mitochondrial\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -676,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32431008\",\"source\":\"PubMed\"}],\"value\":\"Amino-acid degradation; L-leucine degradation; (S)-3-hydroxy-3-methylglutaryl-CoA from 3-isovaleryl-CoA: step 3/3\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -695,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Xiao Y.\",\"Liu L.\",\"Zhang T.\",\"Zhou R.\",\"Ren Y.\",\"Li X.\",\"Shu H.\",\"Ye W.\",\"Zheng X.\",\"Zhang Z.\",\"Zhang H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32431008\"},{\"database\":\"DOI\",\"id\":\"10.1111/1462-2920.15088\"}],\"citationType\":\"journal article\",\"firstPage\":\"774\",\"id\":\"32431008\",\"journal\":\"Environ. Microbiol.\",\"lastPage\":\"790\",\"publicationDate\":\"2021\",\"title\":\"Transcription factor MoMsn2 targets the putative 3-methylglutaconyl-CoA hydratase-encoding gene MoAUH1 to govern infectious growth via mitochondrial fusion/fission balance in Magnaporthe oryzae.\",\"volume\":\"23\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -713,18 +464,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54",
-  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   AUH1_PYRO7              Reviewed;         349 AA.\nAC   G4N954;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   14-DEC-2011, sequence version 1.\nDT   28-JAN-2026, entry version 54.\nDE   RecName: Full=Methylglutaconyl-CoA hydratase 1, mitochondrial {ECO:0000303|PubMed:32431008};\nDE            EC=4.2.1.18 {ECO:0000305|PubMed:32431008};\nDE   Flags: Precursor;\nGN   Name=AUH1 {ECO:0000303|PubMed:32431008}; ORFNames=MGG_03335;\nOS   Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice blast\nOS   fungus) (Magnaporthe oryzae).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Magnaporthales; Pyriculariaceae; Pyricularia.\nOX   NCBI_TaxID=242507;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54"
 }
 ```
 
@@ -734,18 +485,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54",
-  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND SUBCELLULAR LOCATION.\nRX   PubMed=32431008; DOI=10.1111/1462-2920.15088;\nRA   Xiao Y., Liu L., Zhang T., Zhou R., Ren Y., Li X., Shu H., Ye W., Zheng X.,\nRA   Zhang Z., Zhang H.;\nRT   \"Transcription factor MoMsn2 targets the putative 3-methylglutaconyl-CoA\nRT   hydratase-encoding gene MoAUH1 to govern infectious growth via\nRT   mitochondrial fusion/fission balance in Magnaporthe oryzae.\";\nRL   Environ. Microbiol. 23:774-790(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54"
 }
 ```
 
@@ -755,18 +506,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54",
-  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
-  "source_locator": "lines 49-51",
   "excerpt": "CC   -!- PATHWAY: Amino-acid degradation; L-leucine degradation; (S)-3-hydroxy-\nCC       3-methylglutaryl-CoA from 3-isovaleryl-CoA: step 3/3.\nCC       {ECO:0000305|PubMed:32431008}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 49-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54"
 }
 ```
 

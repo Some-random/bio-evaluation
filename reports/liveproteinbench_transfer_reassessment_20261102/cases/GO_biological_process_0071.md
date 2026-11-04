@@ -1,18 +1,16 @@
-# GO_biological_process_0071: before and after transfer clarification
+# GO_biological_process_0071
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0071.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0071.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — glucan catabolic process
+**Expected answer:** **B** — glucan catabolic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt protein, which has a direct-assay GO annotation for glucan catabolic process (IDA). This supports the keyed option as an annotation-based answer, though the provided functional description emphasizes activity on small alkaloidal glucosides rather than glucan polymers.
-
-Citations as saved: [C1](#evidence-c1), [C7](#evidence-c7), [H5](#evidence-h5), [C5](#evidence-c5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a beta-glucosidase, but that enzyme-level clue does not establish which biological process this particular protein is annotated to participate in. The choices require protein-specific functional information.
-
-
-**Missing item-specific fact**
-
-> The protein-specific GO annotation assigning glucan catabolic process, or equivalent evidence about this enzyme's relevant substrate and biological role, is not supplied in the question.
-
-
-**Reason**
-
-> The sequence alone does not meaningfully distinguish the keyed GO process from other plausible roles of a beta-glucosidase; recognizing the exact protein or recalling its database annotation would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The keyed option has a direct-assay GO annotation. The protein's described alkaloid role is in isoquinoline alkaloid biosynthesis, which is not the indole alkaloid process in option C.
-
-
-### Important caveats
-
-- The direct-assay annotation is evidence for the database assignment, but the supplied functional description does not explain how activity on alkaloidal glucosides supports catabolism of glucans, which are glucose-residue polysaccharides.
-- The evidence confirms sequence identity and a historical annotation, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a beta-glucosidase, but that enzyme-level clue does not establish which biological process this particular protein is annotated to participate in. The choices require protein-specific functional information.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific GO annotation assigning glucan catabolic process, or equivalent evidence about this enzyme's relevant substrate and biological role, is not supplied in the question.",
-    "reason": "The sequence alone does not meaningfully distinguish the keyed GO process from other plausible roles of a beta-glucosidase; recognizing the exact protein or recalling its database annotation would be lookup or memorization."
-  },
-  "case_id": "GO_biological_process_0071",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C7",
-      "H5",
-      "C5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt protein, which has a direct-assay GO annotation for glucan catabolic process (IDA). This supports the keyed option as an annotation-based answer, though the provided functional description emphasizes activity on small alkaloidal glucosides rather than glucan polymers."
-  },
-  "important_caveats": [
-    "The direct-assay annotation is evidence for the database assignment, but the supplied functional description does not explain how activity on alkaloidal glucosides supports catabolism of glucans, which are glucose-residue polysaccharides.",
-    "The evidence confirms sequence identity and a historical annotation, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The keyed option has a direct-assay GO annotation. The protein's described alkaloid role is in isoquinoline alkaloid biosynthesis, which is not the indole alkaloid process in option C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0071",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt protein, which has a direct-assay GO annotation for glucan catabolic process (IDA). This supports the keyed option as an annotation-based answer, though the provided functional description emphasizes activity on small alkaloidal glucosides rather than glucan polymers.",
-    "evidence_ids": ["C1", "C7", "H5", "C5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a beta-glucosidase, but that enzyme-level clue does not establish which biological process this particular protein is annotated to participate in. The choices require protein-specific functional information.",
-    "missing_item_specific_fact": "The protein-specific GO annotation assigning glucan catabolic process, or equivalent evidence about this enzyme's relevant substrate and biological role, is not supplied in the question.",
-    "reason": "The sequence alone does not meaningfully distinguish the keyed GO process from other plausible roles of a beta-glucosidase; recognizing the exact protein or recalling its database annotation would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The keyed option has a direct-assay GO annotation. The protein's described alkaloid role is in isoquinoline alkaloid biosynthesis, which is not the indole alkaloid process in option C."
-  },
-  "important_caveats": [
-    "The direct-assay annotation is evidence for the database assignment, but the supplied functional description does not explain how activity on alkaloidal glucosides supports catabolism of glucans, which are glucose-residue polysaccharides.",
-    "The evidence confirms sequence identity and a historical annotation, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry B6ZKM3 (sequence matched) annotates this protein (Ipecoside beta-D-glucosidase IpeGLU1) to GO:0009251 'glucan catabolic process' with IDA:UniProtKB evidence (C7, H5). The protein is a beta-glucosidase (EC 3.2.1.220) that hydrolyzes beta-D-glucosidic bonds, consistent with the GO term. Among the four options, only B matches an actual GO annotation for this protein. Option C ('indole alkaloid biosynthetic process') does NOT match the annotated term, which is 'isoquinoline alkaloid biosynthetic process' (GO:0033075, C8, H6). The ipecac alkaloids (emetine, cephaeline, ipecoside) are monoterpenoid-isoquinoline alkaloids, not indole alkaloids. Thus B is the only option consistent with the experimental annotation.
-
-Citations as saved: [C7](#evidence-c7), [C8](#evidence-c8), [H5](#evidence-h5), [H6](#evidence-h6), [C4](#evidence-c4), [C5](#evidence-c5), [GO1](#evidence-go1), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains conserved glycoside hydrolase family 1 (GH1) motifs (e.g., the 'WDTF' motif near residues 50-55 and the 'NEP' motif around residues 230-235), identifying the protein as a beta-glucosidase. A beta-glucosidase catalyzes hydrolysis of beta-glucosidic bonds, which is a catabolic reaction. Among the four options, 'glucan catabolic process' (B) directly describes the enzymatic mechanism of a glucosidase. Option C ('indole alkaloid biosynthetic process') is a biosynthetic pathway term; while the enzyme participates in alkaloid biosynthesis, its catalytic mechanism is hydrolysis (catabolic), and critically, the specific alkaloid class here is isoquinoline, not indole. The GH1 identification → glucosidase → catabolic glucoside hydrolysis chain provides a concrete biological argument favoring B over the other options.
-
-
-**Missing item-specific fact**
-
-> Full certainty that the alkaloid pathway is isoquinoline (not indole) requires protein-specific knowledge about ipecac alkaloid chemistry. However, the GH1 motif identification and the enzymatic mechanism (hydrolysis, not synthesis) provide a defensible reasoning path to B without needing to memorize the exact alkaloid subclass.
-
-
-**Reason**
-
-> A model can identify GH1 beta-glucosidase motifs from the sequence, reason that glucosidase activity corresponds to 'glucan catabolic process' as a biological process, and note that the enzyme's mechanism is hydrolysis (catabolic) rather than synthesis. The elimination of C is partially supported by the mechanistic argument (hydrolase vs. biosynthetic enzyme) and the fact that 'indole' is a specific alkaloid class not obviously implied by a plant beta-glucosidase without additional context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option C ('indole alkaloid biosynthetic process') could superficially seem plausible if one knows the protein is in alkaloid biosynthesis, but the specific term 'indole' is incorrect (the pathway is isoquinoline-type). Options A and D are clearly unrelated. B is the only option matching an experimental GO annotation. The phrasing 'overall biological objective' could arguably favor a biosynthetic pathway annotation, but since the correct biosynthetic term (isoquinoline) is not offered and the offered biosynthetic term (indole) is wrong, B remains the uniquely defensible choice.
-
-
-### Important caveats
-
-- The GO annotation 'glucan catabolic process' (GO:0009251) is defined as breakdown of glucans (polysaccharides of glucose), but this enzyme actually hydrolyzes beta-glucosidic bonds in alkaloid glucosides (ipecoside, strictosidine), not glucan polymers. The annotation reflects GO convention for glucosidases but is mechanistically imprecise for this substrate.
-- The protein's true biological role is as the first committed step in monoterpenoid-isoquinoline alkaloid biosynthesis (strictosidine → strictosidine aglycone). The 'glucan catabolic process' annotation captures the enzymatic mechanism rather than the biological purpose.
-- Both GO:0009251 and GO:0033075 are annotated with IDA evidence; the question's phrasing 'overall biological objective' could arguably favor the alkaloid biosynthesis annotation, but the offered option C uses 'indole' instead of 'isoquinoline,' making it incorrect.
-- The accession B6ZKM3 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must rely on sequence features alone.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains conserved glycoside hydrolase family 1 (GH1) motifs (e.g., the 'WDTF' motif near residues 50-55 and the 'NEP' motif around residues 230-235), identifying the protein as a beta-glucosidase. A beta-glucosidase catalyzes hydrolysis of beta-glucosidic bonds, which is a catabolic reaction. Among the four options, 'glucan catabolic process' (B) directly describes the enzymatic mechanism of a glucosidase. Option C ('indole alkaloid biosynthetic process') is a biosynthetic pathway term; while the enzyme participates in alkaloid biosynthesis, its catalytic mechanism is hydrolysis (catabolic), and critically, the specific alkaloid class here is isoquinoline, not indole. The GH1 identification → glucosidase → catabolic glucoside hydrolysis chain provides a concrete biological argument favoring B over the other options.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Full certainty that the alkaloid pathway is isoquinoline (not indole) requires protein-specific knowledge about ipecac alkaloid chemistry. However, the GH1 motif identification and the enzymatic mechanism (hydrolysis, not synthesis) provide a defensible reasoning path to B without needing to memorize the exact alkaloid subclass.",
-    "reason": "A model can identify GH1 beta-glucosidase motifs from the sequence, reason that glucosidase activity corresponds to 'glucan catabolic process' as a biological process, and note that the enzyme's mechanism is hydrolysis (catabolic) rather than synthesis. The elimination of C is partially supported by the mechanistic argument (hydrolase vs. biosynthetic enzyme) and the fact that 'indole' is a specific alkaloid class not obviously implied by a plant beta-glucosidase without additional context."
-  },
-  "case_id": "GO_biological_process_0071",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "C8",
-      "H5",
-      "H6",
-      "C4",
-      "C5",
-      "GO1",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry B6ZKM3 (sequence matched) annotates this protein (Ipecoside beta-D-glucosidase IpeGLU1) to GO:0009251 'glucan catabolic process' with IDA:UniProtKB evidence (C7, H5). The protein is a beta-glucosidase (EC 3.2.1.220) that hydrolyzes beta-D-glucosidic bonds, consistent with the GO term. Among the four options, only B matches an actual GO annotation for this protein. Option C ('indole alkaloid biosynthetic process') does NOT match the annotated term, which is 'isoquinoline alkaloid biosynthetic process' (GO:0033075, C8, H6). The ipecac alkaloids (emetine, cephaeline, ipecoside) are monoterpenoid-isoquinoline alkaloids, not indole alkaloids. Thus B is the only option consistent with the experimental annotation."
-  },
-  "important_caveats": [
-    "The GO annotation 'glucan catabolic process' (GO:0009251) is defined as breakdown of glucans (polysaccharides of glucose), but this enzyme actually hydrolyzes beta-glucosidic bonds in alkaloid glucosides (ipecoside, strictosidine), not glucan polymers. The annotation reflects GO convention for glucosidases but is mechanistically imprecise for this substrate.",
-    "The protein's true biological role is as the first committed step in monoterpenoid-isoquinoline alkaloid biosynthesis (strictosidine → strictosidine aglycone). The 'glucan catabolic process' annotation captures the enzymatic mechanism rather than the biological purpose.",
-    "Both GO:0009251 and GO:0033075 are annotated with IDA evidence; the question's phrasing 'overall biological objective' could arguably favor the alkaloid biosynthesis annotation, but the offered option C uses 'indole' instead of 'isoquinoline,' making it incorrect.",
-    "The accession B6ZKM3 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must rely on sequence features alone."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option C ('indole alkaloid biosynthetic process') could superficially seem plausible if one knows the protein is in alkaloid biosynthesis, but the specific term 'indole' is incorrect (the pathway is isoquinoline-type). Options A and D are clearly unrelated. B is the only option matching an experimental GO annotation. The phrasing 'overall biological objective' could arguably favor a biosynthetic pathway annotation, but since the correct biosynthetic term (isoquinoline) is not offered and the offered biosynthetic term (indole) is wrong, B remains the uniquely defensible choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0071",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry B6ZKM3 (sequence matched) annotates this protein (Ipecoside beta-D-glucosidase IpeGLU1) to GO:0009251 'glucan catabolic process' with IDA:UniProtKB evidence (C7, H5). The protein is a beta-glucosidase (EC 3.2.1.220) that hydrolyzes beta-D-glucosidic bonds, consistent with the GO term. Among the four options, only B matches an actual GO annotation for this protein. Option C ('indole alkaloid biosynthetic process') does NOT match the annotated term, which is 'isoquinoline alkaloid biosynthetic process' (GO:0033075, C8, H6). The ipecac alkaloids (emetine, cephaeline, ipecoside) are monoterpenoid-isoquinoline alkaloids, not indole alkaloids. Thus B is the only option consistent with the experimental annotation.",
-    "evidence_ids": ["C7", "C8", "H5", "H6", "C4", "C5", "GO1", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains conserved glycoside hydrolase family 1 (GH1) motifs (e.g., the 'WDTF' motif near residues 50-55 and the 'NEP' motif around residues 230-235), identifying the protein as a beta-glucosidase. A beta-glucosidase catalyzes hydrolysis of beta-glucosidic bonds, which is a catabolic reaction. Among the four options, 'glucan catabolic process' (B) directly describes the enzymatic mechanism of a glucosidase. Option C ('indole alkaloid biosynthetic process') is a biosynthetic pathway term; while the enzyme participates in alkaloid biosynthesis, its catalytic mechanism is hydrolysis (catabolic), and critically, the specific alkaloid class here is isoquinoline, not indole. The GH1 identification → glucosidase → catabolic glucoside hydrolysis chain provides a concrete biological argument favoring B over the other options.",
-    "missing_item_specific_fact": "Full certainty that the alkaloid pathway is isoquinoline (not indole) requires protein-specific knowledge about ipecac alkaloid chemistry. However, the GH1 motif identification and the enzymatic mechanism (hydrolysis, not synthesis) provide a defensible reasoning path to B without needing to memorize the exact alkaloid subclass.",
-    "reason": "A model can identify GH1 beta-glucosidase motifs from the sequence, reason that glucosidase activity corresponds to 'glucan catabolic process' as a biological process, and note that the enzyme's mechanism is hydrolysis (catabolic) rather than synthesis. The elimination of C is partially supported by the mechanistic argument (hydrolase vs. biosynthetic enzyme) and the fact that 'indole' is a specific alkaloid class not obviously implied by a plant beta-glucosidase without additional context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option C ('indole alkaloid biosynthetic process') could superficially seem plausible if one knows the protein is in alkaloid biosynthesis, but the specific term 'indole' is incorrect (the pathway is isoquinoline-type). Options A and D are clearly unrelated. B is the only option matching an experimental GO annotation. The phrasing 'overall biological objective' could arguably favor a biosynthetic pathway annotation, but since the correct biosynthetic term (isoquinoline) is not offered and the offered biosynthetic term (indole) is wrong, B remains the uniquely defensible choice."
-  },
-  "important_caveats": [
-    "The GO annotation 'glucan catabolic process' (GO:0009251) is defined as breakdown of glucans (polysaccharides of glucose), but this enzyme actually hydrolyzes beta-glucosidic bonds in alkaloid glucosides (ipecoside, strictosidine), not glucan polymers. The annotation reflects GO convention for glucosidases but is mechanistically imprecise for this substrate.",
-    "The protein's true biological role is as the first committed step in monoterpenoid-isoquinoline alkaloid biosynthesis (strictosidine → strictosidine aglycone). The 'glucan catabolic process' annotation captures the enzymatic mechanism rather than the biological purpose.",
-    "Both GO:0009251 and GO:0033075 are annotated with IDA evidence; the question's phrasing 'overall biological objective' could arguably favor the alkaloid biosynthesis annotation, but the offered option C uses 'indole' instead of 'isoquinoline,' making it incorrect.",
-    "The accession B6ZKM3 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must rely on sequence features alone."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +281,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B6ZKM3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ab13c398554479e37a5b23b4bb7283787edc8daa96c0ed91353c450298922f32",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 543,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ab13c398554479e37a5b23b4bb7283787edc8daa96c0ed91353c450298922f32",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-06-18",
@@ -546,14 +299,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-02-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "current_source_sequence_sha256": "ab13c398554479e37a5b23b4bb7283787edc8daa96c0ed91353c450298922f32",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 543,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ab13c398554479e37a5b23b4bb7283787edc8daa96c0ed91353c450298922f32",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B6ZKM3",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
+  "selected_historical_source_sequence_length": 543,
+  "selected_historical_source_sequence_sha256": "ab13c398554479e37a5b23b4bb7283787edc8daa96c0ed91353c450298922f32",
   "selected_historical_version": {
     "accession": "B6ZKM3",
     "database": "Swiss-Prot",
@@ -564,24 +333,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GLU1_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
-  "selected_historical_source_sequence_sha256": "ab13c398554479e37a5b23b4bb7283787edc8daa96c0ed91353c450298922f32",
-  "selected_historical_source_sequence_length": 543,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -599,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B6ZKM3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -618,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-02-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -637,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -656,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Ipecac alkaloid beta-glucosidase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAH02544.1\",\"source\":\"EMBL\"}],\"value\":\"IpeGLU1\"}]},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.105\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Strictosidine beta-glucosidase IpeGLU1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.220\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Ipecoside beta-D-glucosidase IpeGLU1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -675,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Beta-glucosidase involved in the biosynthesis of ipecac and benzylisoquinoline monoterpenoid-isoquinoline alkaloids natural products, starting by the condensation of dopamine and secologanin, and including emetine and cephaeline, drugs used both as anti-protozoal (e.g. treatment of ameobiasis) and as emetic agents (PubMed:18927081). In response to pathogen and herbivore attack, triggers the release of toxic ipecoside aglycon to trigger defense responses (PubMed:18927081). Catalyzes deglucosylation both on (1S)-diastereomer and (1R)-diastereomer substrates, including ipecoside, the main alkaloidal glucoside (PubMed:18927081). Also active on N-deacetylisoipecoside, 6-O-methyl-N-deacetylisoipecoside, 6-O-methyl-N-deacetylipecoside and N-deacetylipecoside (PubMed:18927081)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -694,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/comments/9",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/9",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -713,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/12",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"id\":\"GO:0009251\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:glucan catabolic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/12",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -732,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"id\":\"GO:0033075\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:isoquinoline alkaloid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -751,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json",
-  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
-  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Nomura T.\",\"Quesada A.L.\",\"Kutchan T.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18927081\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m806953200\"}],\"citationType\":\"journal article\",\"firstPage\":\"34650\",\"id\":\"18927081\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"34659\",\"publicationDate\":\"2008\",\"title\":\"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis in Psychotria ipecacuanha.\",\"volume\":\"283\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAH02544.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"},{\"type\":\"TISSUE\",\"value\":\"Shoot\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:01.419788+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4dc990c5f2650c1e16f2454dc482e32dd840c6fdb37b2ea511a19a97fd3b4b4",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM3.json"
 }
 ```
 
@@ -769,18 +525,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51",
-  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
-  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
-  "source_locator": "lines 1-18",
   "excerpt": "ID   GLU1_CARIP              Reviewed;         543 AA.\nAC   B6ZKM3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-FEB-2009, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=Ipecoside beta-D-glucosidase IpeGLU1 {ECO:0000303|PubMed:18927081};\nDE            EC=3.2.1.220 {ECO:0000269|PubMed:18927081};\nDE   AltName: Full=Ipecac alkaloid beta-glucosidase 1 {ECO:0000303|PubMed:18927081};\nDE            Short=IpeGLU1 {ECO:0000303|PubMed:18927081, ECO:0000312|EMBL:BAH02544.1};\nDE   AltName: Full=Strictosidine beta-glucosidase IpeGLU1 {ECO:0000303|PubMed:18927081};\nDE            EC=3.2.1.105 {ECO:0000269|PubMed:18927081};\nGN   Name=GLU1 {ECO:0000303|PubMed:18927081};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-18",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51"
 }
 ```
 
@@ -790,18 +546,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51",
-  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
-  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
-  "source_locator": "lines 19-27",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAH02544.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, AND ACTIVITY REGULATION.\nRC   TISSUE=Root, and Shoot;\nRX   PubMed=18927081; DOI=10.1074/jbc.m806953200;\nRA   Nomura T., Quesada A.L., Kutchan T.M.;\nRT   \"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis\nRT   in Psychotria ipecacuanha.\";\nRL   J. Biol. Chem. 283:34650-34659(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51"
 }
 ```
 
@@ -811,18 +567,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51",
-  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
-  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
-  "source_locator": "lines 37-48",
   "excerpt": "CC   -!- FUNCTION: Beta-glucosidase involved in the biosynthesis of ipecac and\nCC       benzylisoquinoline monoterpenoid-isoquinoline alkaloids natural\nCC       products, starting by the condensation of dopamine and secologanin, and\nCC       including emetine and cephaeline, drugs used both as anti-protozoal\nCC       (e.g. treatment of ameobiasis) and as emetic agents (PubMed:18927081).\nCC       In response to pathogen and herbivore attack, triggers the release of\nCC       toxic ipecoside aglycon to trigger defense responses (PubMed:18927081).\nCC       Catalyzes deglucosylation both on (1S)-diastereomer and (1R)-\nCC       diastereomer substrates, including ipecoside, the main alkaloidal\nCC       glucoside (PubMed:18927081). Also active on N-deacetylisoipecoside, 6-\nCC       O-methyl-N-deacetylisoipecoside, 6-O-methyl-N-deacetylipecoside and N-\nCC       deacetylipecoside (PubMed:18927081). {ECO:0000269|PubMed:18927081}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51"
 }
 ```
 
@@ -832,18 +588,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51",
-  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
-  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
-  "source_locator": "lines 175-175",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:18927081}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 175-175",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51"
 }
 ```
 
@@ -853,18 +609,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51",
-  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
-  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
-  "source_locator": "lines 194-194",
   "excerpt": "DR   GO; GO:0009251; P:glucan catabolic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 194-194",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51"
 }
 ```
 
@@ -874,18 +630,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51",
-  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
-  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
-  "source_locator": "lines 195-195",
   "excerpt": "DR   GO; GO:0033075; P:isoquinoline alkaloid biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:27:52.619495+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 195-195",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "90ae349be568c2efc5445de22d0fd39250b75a79ab4620dfe4d50cedde82d831",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM3?format=txt&versions=51"
 }
 ```
 
@@ -896,15 +652,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 94480-94490",
   "excerpt": "[Term]\nid: GO:0009251\nname: glucan catabolic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the breakdown of glucans, polysaccharides consisting only of glucose residues.\" [GOC:curators]\nsynonym: \"glucan breakdown\" EXACT []\nsynonym: \"glucan catabolism\" EXACT []\nsynonym: \"glucan degradation\" EXACT []\nis_a: GO:0000272 ! polysaccharide catabolic process\nis_a: GO:0044042 ! glucan metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009251",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 94480-94490",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009251"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -915,15 +671,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 101185-101194",
   "excerpt": "[Term]\nid: GO:0009934\nname: regulation of meristem structural organization\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of meristem organization.\" [GOC:jid]\nsynonym: \"regulation of meristem organisation\" EXACT []\nsynonym: \"regulation of meristem organization\" BROAD [GOC:dph, GOC:tb]\nis_a: GO:0050793 ! regulation of developmental process\nrelationship: regulates GO:0009933 ! meristem structural organization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009934",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 101185-101194",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009934"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -934,15 +690,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 221717-221728",
   "excerpt": "[Term]\nid: GO:0035835\nname: indole alkaloid biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of an indole alkaloid, an alkaloid containing an indole skeleton.\" [GOC:yaf]\nsynonym: \"indole alkaloid anabolism\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid biosynthesis\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid formation\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid synthesis\" EXACT [GOC:bf]\nis_a: GO:0009821 ! alkaloid biosynthetic process\nis_a: GO:0035834 ! indole alkaloid metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035835",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 221717-221728",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035835"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -953,15 +709,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 279516-279527",
   "excerpt": "[Term]\nid: GO:0046677\nname: response to antibiotic\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an antibiotic stimulus. An antibiotic is a chemical substance produced by a microorganism which has the capacity to inhibit the growth of or to kill other microorganisms.\" [GOC:ai, GOC:ef]\nsubset: goslim_chembl\nsynonym: \"antibiotic susceptibility/resistance\" RELATED []\nxref: Reactome:R-HSA-9638771 \"Action of antimicrobials\"\nxref: Reactome:R-HSA-9639775 \"Antimicrobial action and antimicrobial resistance in Mtb\"\nxref: Reactome:R-HSA-9913143 \"Antimicrobial resistance\"\nis_a: GO:0042221 ! response to chemical\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046677",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 279516-279527",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046677"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

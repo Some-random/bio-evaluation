@@ -1,18 +1,16 @@
-# catalytic_activity_0096: before and after transfer clarification
+# catalytic_activity_0096
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0096.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0096.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — 3-oxoadipate + acetyl-CoA = acetoacetate + succinyl-CoA
+**Expected answer:** **B** — 3-oxoadipate + acetyl-CoA = acetoacetate + succinyl-CoA
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | no saved label | no saved label | output error (invalid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | Unusable review | Unusable review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,13 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `invalid_review`.
 
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the cited UniProt entry, which assigns this enzyme the reaction in choice B and cites experimental evidence (ECO:0000269, PubMed:24240508). The primary paper was not independently reviewed here.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The input provides a sequence but no biological context or distinctive evidence that identifies this exact substrate-to-product transformation over the alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic activity, established by annotation or experimental characterization, is needed to select the 3-oxoadipate:acetyl-CoA reaction.
-
-
-**Reason**
-
-> The key is supported by reviewer-only evidence, but that evidence was not supplied to the evaluated model. The specific reaction cannot be confidently inferred from general biological knowledge alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence-specific annotation supports B; the other choices describe distinct reactions with no supplied evidence linking them to this protein.
-
-
-### Important caveats
-
-- The cited UniProt evidence assigns an experimental evidence code and references PubMed:24240508, but the primary paper was not independently validated.
-- The current and historical UniProt records match the sequence; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The input provides a sequence but no biological context or distinctive evidence that identifies this exact substrate-to-product transformation over the alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic activity, established by annotation or experimental characterization, is needed to select the 3-oxoadipate:acetyl-CoA reaction.",
-    "reason": "The key is supported by reviewer-only evidence, but that evidence was not supplied to the evaluated model. The specific reaction cannot be confidently inferred from general biological knowledge alone."
-  },
-  "case_id": "catalytic_activity_0096",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited UniProt entry, which assigns this enzyme the reaction in choice B and cites experimental evidence (ECO:0000269, PubMed:24240508). The primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The cited UniProt evidence assigns an experimental evidence code and references PubMed:24240508, but the primary paper was not independently validated.",
-    "The current and historical UniProt records match the sequence; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence-specific annotation supports B; the other choices describe distinct reactions with no supplied evidence linking them to this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0096",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited UniProt entry, which assigns this enzyme the reaction in choice B and cites experimental evidence (ECO:0000269, PubMed:24240508). The primary paper was not independently reviewed here.",
-    "evidence_ids": ["C5", "H4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The input provides a sequence but no biological context or distinctive evidence that identifies this exact substrate-to-product transformation over the alternatives.",
-    "missing_item_specific_fact": "The protein-specific catalytic activity, established by annotation or experimental characterization, is needed to select the 3-oxoadipate:acetyl-CoA reaction.",
-    "reason": "The key is supported by reviewer-only evidence, but that evidence was not supplied to the evaluated model. The specific reaction cannot be confidently inferred from general biological knowledge alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence-specific annotation supports B; the other choices describe distinct reactions with no supplied evidence linking them to this protein."
-  },
-  "important_caveats": [
-    "The cited UniProt evidence assigns an experimental evidence code and references PubMed:24240508, but the primary paper was not independently validated.",
-    "The current and historical UniProt records match the sequence; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied 284-aa sequence matches UniProt Q0KAA1 (3OXCE_CUPNH, Cupriavidus necator) exactly. The reviewed Swiss-Prot entry annotates the catalytic activity as '3-oxoadipate + acetyl-CoA = acetoacetate + succinyl-CoA' (EC 2.3.1.318) with evidence code ECO:0000269 (in vitro experiment, PubMed:24240508, Bastard et al. 2014 Nat Chem Biol). The expected answer B is a verbatim match to the experimentally determined reaction.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the canonical thiolase-superfamily catalytic motif GGRSG (visible around residues ~80–86) together with the characteristic CoA-binding/thiolase fold architecture (GKIDGALHIQFVMGIKNAMPVDREVLAFYVHTLRRLAPDATWTGAGIGRDQLTMARWSLELGGHCRTGLEDNVRLDKQTLAPSNAALVSQVAALCEEYGRPVATVAQARALLGLPSMEIDGRSPW). This identifies the protein as a member of the thiolase/CoA-transferase superfamily. Among the four choices, only B is a CoA-transferase/thiolase-type reaction. Choice A (peptidyl transferase on tRNA), C (phenylalanine ammonia-lyase, a lyase), and D (potassium channel, a membrane transporter) belong to entirely unrelated enzyme/protein classes and are incompatible with a thiolase fold. Elimination by enzyme-class matching yields B.
-
-
-**Missing item-specific fact**
-
-> The specific novel substrate 3-oxoadipate (rather than the classical acetyl-CoA dimerization substrate of thiolases) is a 2014 discovery not predictable from sequence alone, but it is not needed to select B because B is the only CoA-transferase option among the four distractors.
-
-
-**Reason**
-
-> A model that recognizes the GGRSG thiolase motif and CoA-binding features can eliminate A, C, and D as belonging to unrelated protein families, leaving B as the only mechanistically consistent choice. The reasoning does not require memorizing the specific 3-oxoadipate substrate; it requires only identifying the enzyme superfamily and matching it to the sole CoA-transferase reaction listed.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices span four distinct protein/enzyme classes (peptidyl transferase, thiolase/CoA-transferase, ammonia-lyase, ion channel). Only B is consistent with a thiolase-superfamily sequence. No other option is defensible for a protein bearing the GGRSG catalytic motif and CoA-binding architecture.
-
-
-### Important caveats
-
-- The specific reaction with 3-oxoadipate as substrate was a novel discovery (2014, Nat Chem Biol) revealing 'hidden functional diversity' within the thiolase family; a model could identify the thiolase fold but might not predict the unusual substrate without prior knowledge. However, the question is answerable by elimination because no other choice represents a CoA-transferase reaction.
-- The UniProt entry was first publicly released in 2025-02-05; the benchmark author's source snapshot is unknown, but the sequence and annotation have been stable since sequence version 1 (2006-10-03).
-- Evidence is experimental (ECO:0000269, in vitro assay), not merely computational or similarity-based transfer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the canonical thiolase-superfamily catalytic motif GGRSG (visible around residues ~80–86) together with the characteristic CoA-binding/thiolase fold architecture (GKIDGALHIQFVMGIKNAMPVDREVLAFYVHTLRRLAPDATWTGAGIGRDQLTMARWSLELGGHCRTGLEDNVRLDKQTLAPSNAALVSQVAALCEEYGRPVATVAQARALLGLPSMEIDGRSPW). This identifies the protein as a member of the thiolase/CoA-transferase superfamily. Among the four choices, only B is a CoA-transferase/thiolase-type reaction. Choice A (peptidyl transferase on tRNA), C (phenylalanine ammonia-lyase, a lyase), and D (potassium channel, a membrane transporter) belong to entirely unrelated enzyme/protein classes and are incompatible with a thiolase fold. Elimination by enzyme-class matching yields B.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific novel substrate 3-oxoadipate (rather than the classical acetyl-CoA dimerization substrate of thiolases) is a 2014 discovery not predictable from sequence alone, but it is not needed to select B because B is the only CoA-transferase option among the four distractors.",
-    "reason": "A model that recognizes the GGRSG thiolase motif and CoA-binding features can eliminate A, C, and D as belonging to unrelated protein families, leaving B as the only mechanistically consistent choice. The reasoning does not require memorizing the specific 3-oxoadipate substrate; it requires only identifying the enzyme superfamily and matching it to the sole CoA-transferase reaction listed."
-  },
-  "case_id": "catalytic_activity_0096",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied 284-aa sequence matches UniProt Q0KAA1 (3OXCE_CUPNH, Cupriavidus necator) exactly. The reviewed Swiss-Prot entry annotates the catalytic activity as '3-oxoadipate + acetyl-CoA = acetoacetate + succinyl-CoA' (EC 2.3.1.318) with evidence code ECO:0000269 (in vitro experiment, PubMed:24240508, Bastard et al. 2014 Nat Chem Biol). The expected answer B is a verbatim match to the experimentally determined reaction."
-  },
-  "important_caveats": [
-    "The specific reaction with 3-oxoadipate as substrate was a novel discovery (2014, Nat Chem Biol) revealing 'hidden functional diversity' within the thiolase family; a model could identify the thiolase fold but might not predict the unusual substrate without prior knowledge. However, the question is answerable by elimination because no other choice represents a CoA-transferase reaction.",
-    "The UniProt entry was first publicly released in 2025-02-05; the benchmark author's source snapshot is unknown, but the sequence and annotation have been stable since sequence version 1 (2006-10-03).",
-    "Evidence is experimental (ECO:0000269, in vitro assay), not merely computational or similarity-based transfer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span four distinct protein/enzyme classes (peptidyl transferase, thiolase/CoA-transferase, ammonia-lyase, ion channel). Only B is consistent with a thiolase-superfamily sequence. No other option is defensible for a protein bearing the GGRSG catalytic motif and CoA-binding architecture."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0096",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied 284-aa sequence matches UniProt Q0KAA1 (3OXCE_CUPNH, Cupriavidus necator) exactly. The reviewed Swiss-Prot entry annotates the catalytic activity as '3-oxoadipate + acetyl-CoA = acetoacetate + succinyl-CoA' (EC 2.3.1.318) with evidence code ECO:0000269 (in vitro experiment, PubMed:24240508, Bastard et al. 2014 Nat Chem Biol). The expected answer B is a verbatim match to the experimentally determined reaction.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the canonical thiolase-superfamily catalytic motif GGRSG (visible around residues ~80–86) together with the characteristic CoA-binding/thiolase fold architecture (GKIDGALHIQFVMGIKNAMPVDREVLAFYVHTLRRLAPDATWTGAGIGRDQLTMARWSLELGGHCRTGLEDNVRLDKQTLAPSNAALVSQVAALCEEYGRPVATVAQARALLGLPSMEIDGRSPW). This identifies the protein as a member of the thiolase/CoA-transferase superfamily. Among the four choices, only B is a CoA-transferase/thiolase-type reaction. Choice A (peptidyl transferase on tRNA), C (phenylalanine ammonia-lyase, a lyase), and D (potassium channel, a membrane transporter) belong to entirely unrelated enzyme/protein classes and are incompatible with a thiolase fold. Elimination by enzyme-class matching yields B.",
-    "missing_item_specific_fact": "The specific novel substrate 3-oxoadipate (rather than the classical acetyl-CoA dimerization substrate of thiolases) is a 2014 discovery not predictable from sequence alone, but it is not needed to select B because B is the only CoA-transferase option among the four distractors.",
-    "reason": "A model that recognizes the GGRSG thiolase motif and CoA-binding features can eliminate A, C, and D as belonging to unrelated protein families, leaving B as the only mechanistically consistent choice. The reasoning does not require memorizing the specific 3-oxoadipate substrate; it requires only identifying the enzyme superfamily and matching it to the sole CoA-transferase reaction listed."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span four distinct protein/enzyme classes (peptidyl transferase, thiolase/CoA-transferase, ammonia-lyase, ion channel). Only B is consistent with a thiolase-superfamily sequence. No other option is defensible for a protein bearing the GGRSG catalytic motif and CoA-binding architecture."
-  },
-  "important_caveats": [
-    "The specific reaction with 3-oxoadipate as substrate was a novel discovery (2014, Nat Chem Biol) revealing 'hidden functional diversity' within the thiolase family; a model could identify the thiolase fold but might not predict the unusual substrate without prior knowledge. However, the question is answerable by elimination because no other choice represents a CoA-transferase reaction.",
-    "The UniProt entry was first publicly released in 2025-02-05; the benchmark author's source snapshot is unknown, but the sequence and annotation have been stable since sequence version 1 (2006-10-03).",
-    "Evidence is experimental (ECO:0000269, in vitro assay), not merely computational or similarity-based transfer."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
+**This response is not a usable structured review.** Its saved text is preserved below; any labels in that text are excluded from the summary counts.
 
 **Validation errors:** `invalid_json:Expecting property name enclosed in double quotes: line 13 column 3 (char 1377)`.
 
@@ -321,10 +92,9 @@ Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), 
 
 **Saved parsed visible review:** `null`.
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -436,30 +206,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q0KAA1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "578ee40d19a4187b96bbd813dd5b2ad6c5cd4952c2e58954fc66e0445da2dd06",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 284,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "578ee40d19a4187b96bbd813dd5b2ad6c5cd4952c2e58954fc66e0445da2dd06",
   "current_entry_audit": {
     "entryVersion": 89,
     "firstPublicDate": "2025-02-05",
@@ -467,14 +224,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-10-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
-  "current_source_sequence_sha256": "578ee40d19a4187b96bbd813dd5b2ad6c5cd4952c2e58954fc66e0445da2dd06",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 284,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "578ee40d19a4187b96bbd813dd5b2ad6c5cd4952c2e58954fc66e0445da2dd06",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 87,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q0KAA1",
   "selected_historical_entry_version": 87,
+  "selected_historical_record_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
+  "selected_historical_source_sequence_length": 284,
+  "selected_historical_source_sequence_sha256": "578ee40d19a4187b96bbd813dd5b2ad6c5cd4952c2e58954fc66e0445da2dd06",
   "selected_historical_version": {
     "accession": "Q0KAA1",
     "database": "Swiss-Prot",
@@ -485,24 +258,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "3OXCE_CUPNH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
-  "selected_historical_source_sequence_sha256": "578ee40d19a4187b96bbd813dd5b2ad6c5cd4952c2e58954fc66e0445da2dd06",
-  "selected_historical_source_sequence_length": 284,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 87,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -516,15 +276,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json",
-  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
-  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q0KAA1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json"
 }
 ```
 
@@ -535,15 +295,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json",
-  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
-  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":89,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-10-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json"
 }
 ```
 
@@ -554,15 +314,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json",
-  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
-  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ralstonia eutropha\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Burkholderiales\",\"Burkholderiaceae\",\"Cupriavidus\"],\"scientificName\":\"Cupriavidus necator (strain ATCC 17699 / DSM 428 / KCTC 22496 / NCIMB 10442 / H16 / Stanier 337)\",\"taxonId\":381666}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json"
 }
 ```
 
@@ -573,15 +333,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json",
-  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
-  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"3-oxoadipate cleavage enzyme\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24240508\",\"source\":\"PubMed\"}],\"value\":\"BKACE_378\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24240508\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.318\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"3-oxoadipate:acetyl-CoA acetyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json"
 }
 ```
 
@@ -592,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json",
-  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
-  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.3.1.318\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24240508\",\"source\":\"PubMed\"}],\"name\":\"3-oxoadipate + acetyl-CoA = acetoacetate + succinyl-CoA\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:79651\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:13705\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15775\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57292\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json"
 }
 ```
 
@@ -611,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json",
-  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
-  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bastard K.\",\"Smith A.A.\",\"Vergne-Vaxelaire C.\",\"Perret A.\",\"Zaparucha A.\",\"De Melo-Minardi R.\",\"Mariage A.\",\"Boutard M.\",\"Debard A.\",\"Lechaplais C.\",\"Pelle C.\",\"Pellouin V.\",\"Perchat N.\",\"Petit J.L.\",\"Kreimeyer A.\",\"Medigue C.\",\"Weissenbach J.\",\"Artiguenave F.\",\"De Berardinis V.\",\"Vallenet D.\",\"Salanoubat M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24240508\"},{\"database\":\"DOI\",\"id\":\"10.1038/nchembio.1387\"}],\"citationType\":\"journal article\",\"firstPage\":\"42\",\"id\":\"24240508\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"49\",\"publicationDate\":\"2014\",\"title\":\"Revealing the hidden functional diversity of an enzyme family.\",\"volume\":\"10\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:30:26.682394+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8f71ccfa4b417ca33bf6e9e7b333cdb179beaa73d1bbbba6e6d86bbeaaac140",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0KAA1.json"
 }
 ```
 
@@ -629,18 +389,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87",
-  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
-  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   3OXCE_CUPNH             Reviewed;         284 AA.\nAC   Q0KAA1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-OCT-2006, sequence version 1.\nDT   28-JAN-2026, entry version 87.\nDE   RecName: Full=3-oxoadipate:acetyl-CoA acetyltransferase {ECO:0000305};\nDE            EC=2.3.1.318 {ECO:0000269|PubMed:24240508};\nDE   AltName: Full=3-oxoadipate cleavage enzyme {ECO:0000305};\nDE   AltName: Full=BKACE_378 {ECO:0000303|PubMed:24240508};\nGN   OrderedLocusNames=H16_A1969 {ECO:0000312|EMBL:CAJ93070.1};\nGN   ORFNames=E6A55_10065 {ECO:0000312|EMBL:QCC00902.1};\nOS   Cupriavidus necator (strain ATCC 17699 / DSM 428 / KCTC 22496 / NCIMB 10442\nOS   / H16 / Stanier 337) (Ralstonia eutropha).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria;\nOC   Burkholderiales; Burkholderiaceae; Cupriavidus.\nOX   NCBI_TaxID=381666;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
+  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87"
 }
 ```
 
@@ -650,18 +410,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87",
-  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
-  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=3-oxoadipate:acetyl-CoA acetyltransferase {ECO:0000305};\nDE            EC=2.3.1.318 {ECO:0000269|PubMed:24240508};\nDE   AltName: Full=3-oxoadipate cleavage enzyme {ECO:0000305};\nDE   AltName: Full=BKACE_378 {ECO:0000303|PubMed:24240508};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
+  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87"
 }
 ```
 
@@ -671,18 +431,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87",
-  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
-  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
-  "source_locator": "lines 34-43",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=24240508; DOI=10.1038/nchembio.1387;\nRA   Bastard K., Smith A.A., Vergne-Vaxelaire C., Perret A., Zaparucha A.,\nRA   De Melo-Minardi R., Mariage A., Boutard M., Debard A., Lechaplais C.,\nRA   Pelle C., Pellouin V., Perchat N., Petit J.L., Kreimeyer A., Medigue C.,\nRA   Weissenbach J., Artiguenave F., De Berardinis V., Vallenet D.,\nRA   Salanoubat M.;\nRT   \"Revealing the hidden functional diversity of an enzyme family.\";\nRL   Nat. Chem. Biol. 10:42-49(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
+  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87"
 }
 ```
 
@@ -692,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87",
-  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
-  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
-  "source_locator": "lines 49-53",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=3-oxoadipate + acetyl-CoA = acetoacetate + succinyl-CoA;\nCC         Xref=Rhea:RHEA:79651, ChEBI:CHEBI:13705, ChEBI:CHEBI:15775,\nCC         ChEBI:CHEBI:57288, ChEBI:CHEBI:57292; EC=2.3.1.318;\nCC         Evidence={ECO:0000269|PubMed:24240508};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-02T04:30:29.925890+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 49-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6f05fdb130e65dbd4fe594e672961fa4042d9e020ec6cf0253a116bc497dc13e",
+  "url": "https://rest.uniprot.org/unisave/Q0KAA1?format=txt&versions=87"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_cellular_component_0129: before and after transfer clarification
+# GO_cellular_component_0129
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0129.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0129.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **C** — plasma membrane
+**Expected answer:** **C** — plasma membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record annotates plasma membrane localization with IDA evidence, supporting choice C as a location. However, the record also reports cell membrane and nucleus localization, so it does not establish that the plasma membrane is the protein’s exclusive or predominant location.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence lacks an obvious N-terminal secretion signal or transmembrane segment, which may make a conventional integral membrane protein less likely, but that does not establish or rule out peripheral plasma-membrane localization.
-
-
-**Missing item-specific fact**
-
-> The protein-specific experimental localization annotation identifying cell/plasma membrane localization is absent from the supplied sequence and choices.
-
-
-**Reason**
-
-> Sequence heuristics do not meaningfully distinguish plasma-membrane association from the alternatives with enough confidence to identify this protein’s reported localization; the supported selection depends on an item-specific localization fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only choice C among the listed options has direct localization support in the matched record. The record also reports nucleus localization, but that is not an offered choice. The evidence does not specify which reported location is primary.
-
-
-### Important caveats
-
-- The plasma-membrane GO annotation carries IDA evidence, but the excerpts do not independently validate the underlying experiment.
-- Evidence for plasma-membrane localization does not by itself establish that it is the protein’s primary location.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks an obvious N-terminal secretion signal or transmembrane segment, which may make a conventional integral membrane protein less likely, but that does not establish or rule out peripheral plasma-membrane localization.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific experimental localization annotation identifying cell/plasma membrane localization is absent from the supplied sequence and choices.",
-    "reason": "Sequence heuristics do not meaningfully distinguish plasma-membrane association from the alternatives with enough confidence to identify this protein’s reported localization; the supported selection depends on an item-specific localization fact."
-  },
-  "case_id": "GO_cellular_component_0129",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C7",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates plasma membrane localization with IDA evidence, supporting choice C as a location. However, the record also reports cell membrane and nucleus localization, so it does not establish that the plasma membrane is the protein’s exclusive or predominant location."
-  },
-  "important_caveats": [
-    "The plasma-membrane GO annotation carries IDA evidence, but the excerpts do not independently validate the underlying experiment.",
-    "Evidence for plasma-membrane localization does not by itself establish that it is the protein’s primary location."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only choice C among the listed options has direct localization support in the matched record. The record also reports nucleus localization, but that is not an offered choice. The evidence does not specify which reported location is primary."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0129",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates plasma membrane localization with IDA evidence, supporting choice C as a location. However, the record also reports cell membrane and nucleus localization, so it does not establish that the plasma membrane is the protein’s exclusive or predominant location.",
-    "evidence_ids": ["C1", "C5", "C7", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence lacks an obvious N-terminal secretion signal or transmembrane segment, which may make a conventional integral membrane protein less likely, but that does not establish or rule out peripheral plasma-membrane localization.",
-    "missing_item_specific_fact": "The protein-specific experimental localization annotation identifying cell/plasma membrane localization is absent from the supplied sequence and choices.",
-    "reason": "Sequence heuristics do not meaningfully distinguish plasma-membrane association from the alternatives with enough confidence to identify this protein’s reported localization; the supported selection depends on an item-specific localization fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only choice C among the listed options has direct localization support in the matched record. The record also reports nucleus localization, but that is not an offered choice. The evidence does not specify which reported location is primary."
-  },
-  "important_caveats": [
-    "The plasma-membrane GO annotation carries IDA evidence, but the excerpts do not independently validate the underlying experiment.",
-    "Evidence for plasma-membrane localization does not by itself establish that it is the protein’s primary location."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A0R0H9T5 (CYP2_SOYBN, Glycine max) annotates GO:0005886 (plasma membrane) with IDA:UniProtKB evidence (C7, H5), and the SUBCELLULAR LOCATION comment lists 'Cell membrane' with experimental evidence ECO:0000269|Ref.2 (C5, H2). The protein is also annotated as nuclear (GO:0005634, IDA), but plasma membrane is a valid, experimentally supported location. The expected answer C is supported.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is from Glycine max (a plant). Option A (presynaptic active zone) is a specialized neuronal structure absent in plants. Option D (microvillus membrane) is a feature of animal epithelial cells (intestine, kidney) and not a standard plant cell structure. Option B (mitochondrial matrix) requires an N-terminal mitochondrial targeting sequence (amphipathic helix rich in Arg/Ser/Thr, lacking acidic residues); the N-terminus 'MPNPKVFFDMTIGGQ' lacks these hallmarks, and the protein is only 172 aa with no N-terminal extension typical of mitochondrial cyclophilins (e.g., CypD). By elimination of A, B, and D through general biological reasoning, C (plasma membrane) remains the only viable option among the four choices.
-
-
-**Missing item-specific fact**
-
-> The positive experimental evidence that this specific cyclophilin (GmCYP2) localizes to the plasma membrane rather than the cytoplasm (which is not among the choices) is an item-specific experimental finding (IDA from Ref.2). However, since cytoplasm is not offered as an option, the elimination argument suffices to select C.
-
-
-**Reason**
-
-> A model with general biological knowledge can eliminate A (plant, no synapses), D (animal-specific microvilli), and B (no mitochondrial targeting signal in the sequence) to arrive at C. The positive evidence for plasma membrane is lookup-dependent, but the elimination logic provides meaningful grounds to distinguish the answer without memorizing this protein's specific annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and D are animal-cell-specific structures clearly inapplicable to a soybean protein. Option B is disfavored by the absence of a mitochondrial targeting signal. Option C is the only remaining viable choice. The protein is also annotated as nuclear, but 'nucleus' is not among the options, so no ambiguity arises among the four choices.
-
-
-### Important caveats
-
-- The protein is annotated at BOTH plasma membrane and nucleus with experimental evidence (IDA). The question asks for 'primary' location, and the annotation does not clearly rank them. However, since nucleus is not an option, this does not create ambiguity among the given choices.
-- Cyclophilins are typically cytoplasmic; plasma membrane localization is unusual and was determined experimentally (Ref.2). A model relying solely on family-level priors might expect cytoplasm, but cytoplasm is not among the choices.
-- The elimination of B relies on the absence of a canonical mitochondrial targeting signal, which is suggestive but not absolutely definitive (some weak MTS exist). However, the 172-aa length and compact cyclophilin domain architecture make mitochondrial import unlikely.
-- All UniProt evidence is reviewer-only and was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is from Glycine max (a plant). Option A (presynaptic active zone) is a specialized neuronal structure absent in plants. Option D (microvillus membrane) is a feature of animal epithelial cells (intestine, kidney) and not a standard plant cell structure. Option B (mitochondrial matrix) requires an N-terminal mitochondrial targeting sequence (amphipathic helix rich in Arg/Ser/Thr, lacking acidic residues); the N-terminus 'MPNPKVFFDMTIGGQ' lacks these hallmarks, and the protein is only 172 aa with no N-terminal extension typical of mitochondrial cyclophilins (e.g., CypD). By elimination of A, B, and D through general biological reasoning, C (plasma membrane) remains the only viable option among the four choices.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The positive experimental evidence that this specific cyclophilin (GmCYP2) localizes to the plasma membrane rather than the cytoplasm (which is not among the choices) is an item-specific experimental finding (IDA from Ref.2). However, since cytoplasm is not offered as an option, the elimination argument suffices to select C.",
-    "reason": "A model with general biological knowledge can eliminate A (plant, no synapses), D (animal-specific microvilli), and B (no mitochondrial targeting signal in the sequence) to arrive at C. The positive evidence for plasma membrane is lookup-dependent, but the elimination logic provides meaningful grounds to distinguish the answer without memorizing this protein's specific annotation."
-  },
-  "case_id": "GO_cellular_component_0129",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0R0H9T5 (CYP2_SOYBN, Glycine max) annotates GO:0005886 (plasma membrane) with IDA:UniProtKB evidence (C7, H5), and the SUBCELLULAR LOCATION comment lists 'Cell membrane' with experimental evidence ECO:0000269|Ref.2 (C5, H2). The protein is also annotated as nuclear (GO:0005634, IDA), but plasma membrane is a valid, experimentally supported location. The expected answer C is supported."
-  },
-  "important_caveats": [
-    "The protein is annotated at BOTH plasma membrane and nucleus with experimental evidence (IDA). The question asks for 'primary' location, and the annotation does not clearly rank them. However, since nucleus is not an option, this does not create ambiguity among the given choices.",
-    "Cyclophilins are typically cytoplasmic; plasma membrane localization is unusual and was determined experimentally (Ref.2). A model relying solely on family-level priors might expect cytoplasm, but cytoplasm is not among the choices.",
-    "The elimination of B relies on the absence of a canonical mitochondrial targeting signal, which is suggestive but not absolutely definitive (some weak MTS exist). However, the 172-aa length and compact cyclophilin domain architecture make mitochondrial import unlikely.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are animal-cell-specific structures clearly inapplicable to a soybean protein. Option B is disfavored by the absence of a mitochondrial targeting signal. Option C is the only remaining viable choice. The protein is also annotated as nuclear, but 'nucleus' is not among the options, so no ambiguity arises among the four choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0129",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0R0H9T5 (CYP2_SOYBN, Glycine max) annotates GO:0005886 (plasma membrane) with IDA:UniProtKB evidence (C7, H5), and the SUBCELLULAR LOCATION comment lists 'Cell membrane' with experimental evidence ECO:0000269|Ref.2 (C5, H2). The protein is also annotated as nuclear (GO:0005634, IDA), but plasma membrane is a valid, experimentally supported location. The expected answer C is supported.",
-    "evidence_ids": ["C5", "C7", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is from Glycine max (a plant). Option A (presynaptic active zone) is a specialized neuronal structure absent in plants. Option D (microvillus membrane) is a feature of animal epithelial cells (intestine, kidney) and not a standard plant cell structure. Option B (mitochondrial matrix) requires an N-terminal mitochondrial targeting sequence (amphipathic helix rich in Arg/Ser/Thr, lacking acidic residues); the N-terminus 'MPNPKVFFDMTIGGQ' lacks these hallmarks, and the protein is only 172 aa with no N-terminal extension typical of mitochondrial cyclophilins (e.g., CypD). By elimination of A, B, and D through general biological reasoning, C (plasma membrane) remains the only viable option among the four choices.",
-    "missing_item_specific_fact": "The positive experimental evidence that this specific cyclophilin (GmCYP2) localizes to the plasma membrane rather than the cytoplasm (which is not among the choices) is an item-specific experimental finding (IDA from Ref.2). However, since cytoplasm is not offered as an option, the elimination argument suffices to select C.",
-    "reason": "A model with general biological knowledge can eliminate A (plant, no synapses), D (animal-specific microvilli), and B (no mitochondrial targeting signal in the sequence) to arrive at C. The positive evidence for plasma membrane is lookup-dependent, but the elimination logic provides meaningful grounds to distinguish the answer without memorizing this protein's specific annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are animal-cell-specific structures clearly inapplicable to a soybean protein. Option B is disfavored by the absence of a mitochondrial targeting signal. Option C is the only remaining viable choice. The protein is also annotated as nuclear, but 'nucleus' is not among the options, so no ambiguity arises among the four choices."
-  },
-  "important_caveats": [
-    "The protein is annotated at BOTH plasma membrane and nucleus with experimental evidence (IDA). The question asks for 'primary' location, and the annotation does not clearly rank them. However, since nucleus is not an option, this does not create ambiguity among the given choices.",
-    "Cyclophilins are typically cytoplasmic; plasma membrane localization is unusual and was determined experimentally (Ref.2). A model relying solely on family-level priors might expect cytoplasm, but cytoplasm is not among the choices.",
-    "The elimination of B relies on the absence of a canonical mitochondrial targeting signal, which is suggestive but not absolutely definitive (some weak MTS exist). However, the 172-aa length and compact cyclophilin domain architecture make mitochondrial import unlikely.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +160,9 @@ Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0R0H9T5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "15f4f693a49e94758c12a146f81dfe672d4a7a350d20925457cc6e0fb22324ba",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 172,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "15f4f693a49e94758c12a146f81dfe672d4a7a350d20925457cc6e0fb22324ba",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-04-09",
@@ -538,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2016-01-20",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "current_source_sequence_sha256": "15f4f693a49e94758c12a146f81dfe672d4a7a350d20925457cc6e0fb22324ba",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 172,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "15f4f693a49e94758c12a146f81dfe672d4a7a350d20925457cc6e0fb22324ba",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0R0H9T5",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
+  "selected_historical_source_sequence_length": 172,
+  "selected_historical_source_sequence_sha256": "15f4f693a49e94758c12a146f81dfe672d4a7a350d20925457cc6e0fb22324ba",
   "selected_historical_version": {
     "accession": "A0A0R0H9T5",
     "database": "Swiss-Prot",
@@ -556,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CYP2_SOYBN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
-  "selected_historical_source_sequence_sha256": "15f4f693a49e94758c12a146f81dfe672d4a7a350d20925457cc6e0fb22324ba",
-  "selected_historical_source_sequence_length": 172,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json",
-  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0R0H9T5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json"
 }
 ```
 
@@ -610,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json",
-  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2016-01-20\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json"
 }
 ```
 
@@ -629,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json",
-  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soybean\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"rosids\",\"fabids\",\"Fabales\",\"Fabaceae\",\"Papilionoideae\",\"50 kb inversion clade\",\"NPAAA clade\",\"indigoferoid/millettioid clade\",\"Phaseoleae\",\"Glycine\",\"Glycine subgen. Soja\"],\"scientificName\":\"Glycine max\",\"synonyms\":[\"Glycine hispida\"],\"taxonId\":3847}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json"
 }
 ```
 
@@ -648,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json",
-  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.2\",\"source\":\"Reference\"}],\"value\":\"Cyclophilin 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.2\",\"source\":\"Reference\"}],\"value\":\"GmCYP2\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P62937\",\"source\":\"UniProtKB\"}],\"value\":\"5.2.1.8\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O49886\",\"source\":\"UniProtKB\"}],\"value\":\"Peptidyl-prolyl cis-trans isomerase 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O49886\",\"source\":\"UniProtKB\"}],\"value\":\"PPIase 2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json"
 }
 ```
 
@@ -667,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json",
-  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"Ref.2\",\"source\":\"Reference\"}],\"id\":\"SL-0039\",\"value\":\"Cell membrane\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"Ref.2\",\"source\":\"Reference\"}],\"id\":\"SL-0191\",\"value\":\"Nucleus\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json"
 }
 ```
 
@@ -686,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json",
-  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/15",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/15",
+  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json"
 }
 ```
 
@@ -705,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json",
-  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
-  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-02T04:24:20.433774+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f7f163e0c9917e55f2d65f7bb18771151c70abedc4d5d7bc728cc814cefd22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0R0H9T5.json"
 }
 ```
 
@@ -723,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51",
-  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
-  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   CYP2_SOYBN              Reviewed;         172 AA.\nAC   A0A0R0H9T5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   20-JAN-2016, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=Peptidyl-prolyl cis-trans isomerase 2 {ECO:0000250|UniProtKB:O49886};\nDE            Short=PPIase 2 {ECO:0000250|UniProtKB:O49886};\nDE            EC=5.2.1.8 {ECO:0000250|UniProtKB:P62937};\nDE   AltName: Full=Cyclophilin 2 {ECO:0000303|Ref.2};\nDE            Short=GmCYP2 {ECO:0000303|Ref.2};\nGN   Name=CYP2 {ECO:0000303|Ref.2};\nGN   ORFNames=GLYMA_12G024700 {ECO:0000312|EMBL:KRH24153.1};\nOS   Glycine max (Soybean) (Glycine hispida).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   rosids; fabids; Fabales; Fabaceae; Papilionoideae; 50 kb inversion clade;\nOC   NPAAA clade; indigoferoid/millettioid clade; Phaseoleae; Glycine;\nOC   Glycine subgen. Soja.\nOX   NCBI_TaxID=3847;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
+  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51"
 }
 ```
 
@@ -744,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51",
-  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
-  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
-  "source_locator": "lines 61-62",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cell membrane {ECO:0000269|Ref.2}. Nucleus\nCC       {ECO:0000269|Ref.2}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
+  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51"
 }
 ```
 
@@ -765,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51",
-  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
-  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
-  "source_locator": "lines 91-91",
   "excerpt": "DR   GO; GO:0005737; C:cytoplasm; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 91-91",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
+  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51"
 }
 ```
 
@@ -786,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51",
-  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
-  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
-  "source_locator": "lines 92-92",
   "excerpt": "DR   GO; GO:0005634; C:nucleus; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 92-92",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
+  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51"
 }
 ```
 
@@ -807,18 +566,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51",
-  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
-  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
-  "source_locator": "lines 93-93",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:24:22.440712+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 93-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8a831b41ee7356d273422a7e40a6b035b2f08ac1f009b688f9f6f295b13e7e66",
+  "url": "https://rest.uniprot.org/unisave/A0A0R0H9T5?format=txt&versions=51"
 }
 ```
 
@@ -829,15 +588,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59194-59206",
   "excerpt": "[Term]\nid: GO:0005759\nname: mitochondrial matrix\nnamespace: cellular_component\nalt_id: GO:0031980\ndef: \"The gel-like material, with considerable fine structure, that lies in the matrix space, or lumen, of a mitochondrion. It contains the enzymes of the tricarboxylic acid cycle and, in some organisms, the enzymes concerned with fatty acid oxidation.\" [GOC:as, ISBN:0198506732]\nsynonym: \"mitochondrial lumen\" EXACT []\nsynonym: \"mitochondrial stroma\" NARROW []\nxref: NIF_Subcellular:sao1804523077\nxref: Wikipedia:Mitochondrial_matrix\nis_a: GO:0070013 ! intracellular organelle lumen\nrelationship: part_of GO:0005739 ! mitochondrion\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005759",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59194-59206",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005759"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -848,15 +607,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60420-60454",
   "excerpt": "[Term]\nid: GO:0005886\nname: plasma membrane\nnamespace: cellular_component\nalt_id: GO:0005887\nalt_id: GO:0005904\ndef: \"The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.\" [ISBN:0716731363]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"bacterial inner membrane\" NARROW []\nsynonym: \"cell membrane\" EXACT []\nsynonym: \"cellular membrane\" EXACT [NIF_Subcellular:sao6433132645]\nsynonym: \"cytoplasmic membrane\" EXACT []\nsynonym: \"inner endospore membrane\" NARROW []\nsynonym: \"integral component of plasma membrane\" NARROW []\nsynonym: \"integral to plasma membrane\" NARROW []\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"plasma membrane lipid bilayer\" NARROW [GOC:mah]\nsynonym: \"plasmalemma\" EXACT []\nxref: NIF_Subcellular:sao1663586795\nxref: Wikipedia:Cell_membrane\nis_a: GO:0016020 ! membrane\nrelationship: part_of GO:0071944 ! cell periphery\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60420-60454",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -867,15 +626,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 177423-177430",
   "excerpt": "[Term]\nid: GO:0031528\nname: microvillus membrane\nnamespace: cellular_component\ndef: \"The portion of the plasma membrane surrounding a microvillus.\" [GOC:mah]\nis_a: GO:0031253 ! cell projection membrane\nrelationship: part_of GO:0005902 ! microvillus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031528",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 177423-177430",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031528"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -886,15 +645,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 306510-306522",
   "excerpt": "[Term]\nid: GO:0048786\nname: presynaptic active zone\nnamespace: cellular_component\ndef: \"A specialized region of the plasma membrane and cell cortex of a presynaptic neuron; encompasses a region of the plasma membrane where synaptic vesicles dock and fuse, and a specialized cortical cytoskeletal matrix.\" [GOC:dh, GOC:dl, GOC:ef, GOC:jid, GOC:pr, PMID:3152289]\nsubset: goslim_synapse\nsynonym: \"pre-synaptic active zone\" EXACT []\nsynonym: \"pre-synaptic active zone component\" NARROW [NIF_Subcellular:sao1911631652]\nsynonym: \"presynaptic specialization\" EXACT []\nxref: NIF_Subcellular:sao792027222\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0098793 ! presynapse\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048786",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 306510-306522",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048786"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

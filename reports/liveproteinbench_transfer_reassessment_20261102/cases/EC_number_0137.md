@@ -1,18 +1,16 @@
-# EC_number_0137: before and after transfer clarification
+# EC_number_0137
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0137.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0137.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 2.7.11.1
+**Expected answer:** **C** — 2.7.11.1
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as EC 2.7.11.1. The EC assignment is supported by a PROSITE-ProRule computational annotation; the cited catalytic activity is also annotated with that evidence code, so this does not establish an independent experimental EC determination.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has a protein-kinase domain, which supports a protein-phosphorylation function and distinguishes it from the methyltransferase and oxidoreductase choices. That general inference does not establish the precise EC assignment among kinase choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific kinase-family or functional annotation needed to distinguish EC 2.7.11.1 from the other kinase option.
-
-
-**Reason**
-
-> Selecting the complete EC number requires a protein-specific classification not supplied in the prompt. Recognizing the generic kinase motifs does not by itself establish the exact EC subclass.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Reviewer-only, sequence-matched annotation supports C. The sequence alone provides general kinase evidence but does not independently establish a competing EC assignment.
-
-
-### Important caveats
-
-- The annotation is computationally supported by PROSITE-ProRule, not demonstrated here by independent experimental evidence.
-- The source accession and its annotations were reviewer-only and absent from the evaluated input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has a protein-kinase domain, which supports a protein-phosphorylation function and distinguishes it from the methyltransferase and oxidoreductase choices. That general inference does not establish the precise EC assignment among kinase choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific kinase-family or functional annotation needed to distinguish EC 2.7.11.1 from the other kinase option.",
-    "reason": "Selecting the complete EC number requires a protein-specific classification not supplied in the prompt. Recognizing the generic kinase motifs does not by itself establish the exact EC subclass."
-  },
-  "case_id": "EC_number_0137",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as EC 2.7.11.1. The EC assignment is supported by a PROSITE-ProRule computational annotation; the cited catalytic activity is also annotated with that evidence code, so this does not establish an independent experimental EC determination."
-  },
-  "important_caveats": [
-    "The annotation is computationally supported by PROSITE-ProRule, not demonstrated here by independent experimental evidence.",
-    "The source accession and its annotations were reviewer-only and absent from the evaluated input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Reviewer-only, sequence-matched annotation supports C. The sequence alone provides general kinase evidence but does not independently establish a competing EC assignment."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0137",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as EC 2.7.11.1. The EC assignment is supported by a PROSITE-ProRule computational annotation; the cited catalytic activity is also annotated with that evidence code, so this does not establish an independent experimental EC determination.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has a protein-kinase domain, which supports a protein-phosphorylation function and distinguishes it from the methyltransferase and oxidoreductase choices. That general inference does not establish the precise EC assignment among kinase choices.",
-    "missing_item_specific_fact": "The protein-specific kinase-family or functional annotation needed to distinguish EC 2.7.11.1 from the other kinase option.",
-    "reason": "Selecting the complete EC number requires a protein-specific classification not supplied in the prompt. Recognizing the generic kinase motifs does not by itself establish the exact EC subclass."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Reviewer-only, sequence-matched annotation supports C. The sequence alone provides general kinase evidence but does not independently establish a competing EC assignment."
-  },
-  "important_caveats": [
-    "The annotation is computationally supported by PROSITE-ProRule, not demonstrated here by independent experimental evidence.",
-    "The source accession and its annotations were reviewer-only and absent from the evaluated input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A5J5T2N2 (GbEIR5A, Gossypium barbadense) is annotated with EC 2.7.11.1 (non-specific serine/threonine-protein kinase), supported by catalytic activity reactions for both Ser and Thr phosphorylation. The sequence contains canonical protein kinase motifs: glycine-rich loop (GGFGPVHKGF), DFG motif (DFGLAK), activation segment, and APE motif (AAPEYIMT). The annotation evidence code is ECO:0000255 (PROSITE-ProRule:PRU10027), indicating pattern-based computational inference rather than direct experimental substrate characterization, but the sequence motifs are unambiguous for a Ser/Thr protein kinase.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains unmistakable protein kinase motifs: a glycine-rich loop (GGFGPVHKGF), the catalytic DFG motif (DFGLAK), an activation segment (DSDYSAKLSDFGLAKDGPEGDKTHVSTRVMGTRGYAAPEYIMTGHLTAMSDVYSFGVVLLELLTGRRSLDK), and an APE motif. These definitively identify the protein as a protein kinase, eliminating EC 2.1.1.395 (methyltransferase, option B) and EC 1.14.15.9 (oxidoreductase/cytochrome P450, option D). Between options A (2.7.11.11, MAP3K) and C (2.7.11.1, non-specific Ser/Thr kinase): plant receptor-like cytoplasmic kinases (RLCKs) are a well-known class of general Ser/Thr kinases in plant immunity, not MAP3Ks. The absence of the characteristic MAP3K-specific docking domains and the overall RLCK architecture favor 2.7.11.1.
-
-
-**Missing item-specific fact**
-
-> The precise distinction between 2.7.11.1 and 2.7.11.11 ultimately rests on experimentally determined substrate specificity (whether it phosphorylates MAP2Ks). However, the general classification of plant RLCKs as non-specific Ser/Thr kinases is well-established biological knowledge.
-
-
-**Reason**
-
-> The kinase motifs are clearly identifiable from the sequence, allowing elimination of B and D. The plant RLCK context and general Ser/Thr kinase architecture support C over A through general biological knowledge of plant immune signaling kinases.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While the distinction between 2.7.11.1 and 2.7.11.11 is not trivially obvious from sequence alone, the plant RLCK context and the general convention of classifying such kinases as non-specific Ser/Thr kinases make C the most defensible answer. Options B and D are clearly eliminated by the kinase motifs.
-
-
-### Important caveats
-
-- The UniProt EC annotation uses ECO:0000255 (PROSITE-ProRule pattern matching), not direct experimental substrate specificity data. The 2.7.11.1 assignment is computational/pattern-based.
-- The distinction between 2.7.11.1 and 2.7.11.11 in EC classification is partly a matter of annotation convention; 2.7.11.1 serves as a catch-all for Ser/Thr kinases lacking a more specific classification.
-- The PubMed reference (39488762) documents function, interaction with V. dahliae EPD1, and phosphorylation sites but the EC assignment itself relies on PROSITE-ProRule pattern matching rather than in vitro substrate specificity assays.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains unmistakable protein kinase motifs: a glycine-rich loop (GGFGPVHKGF), the catalytic DFG motif (DFGLAK), an activation segment (DSDYSAKLSDFGLAKDGPEGDKTHVSTRVMGTRGYAAPEYIMTGHLTAMSDVYSFGVVLLELLTGRRSLDK), and an APE motif. These definitively identify the protein as a protein kinase, eliminating EC 2.1.1.395 (methyltransferase, option B) and EC 1.14.15.9 (oxidoreductase/cytochrome P450, option D). Between options A (2.7.11.11, MAP3K) and C (2.7.11.1, non-specific Ser/Thr kinase): plant receptor-like cytoplasmic kinases (RLCKs) are a well-known class of general Ser/Thr kinases in plant immunity, not MAP3Ks. The absence of the characteristic MAP3K-specific docking domains and the overall RLCK architecture favor 2.7.11.1.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The precise distinction between 2.7.11.1 and 2.7.11.11 ultimately rests on experimentally determined substrate specificity (whether it phosphorylates MAP2Ks). However, the general classification of plant RLCKs as non-specific Ser/Thr kinases is well-established biological knowledge.",
-    "reason": "The kinase motifs are clearly identifiable from the sequence, allowing elimination of B and D. The plant RLCK context and general Ser/Thr kinase architecture support C over A through general biological knowledge of plant immune signaling kinases."
-  },
-  "case_id": "EC_number_0137",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A5J5T2N2 (GbEIR5A, Gossypium barbadense) is annotated with EC 2.7.11.1 (non-specific serine/threonine-protein kinase), supported by catalytic activity reactions for both Ser and Thr phosphorylation. The sequence contains canonical protein kinase motifs: glycine-rich loop (GGFGPVHKGF), DFG motif (DFGLAK), activation segment, and APE motif (AAPEYIMT). The annotation evidence code is ECO:0000255 (PROSITE-ProRule:PRU10027), indicating pattern-based computational inference rather than direct experimental substrate characterization, but the sequence motifs are unambiguous for a Ser/Thr protein kinase."
-  },
-  "important_caveats": [
-    "The UniProt EC annotation uses ECO:0000255 (PROSITE-ProRule pattern matching), not direct experimental substrate specificity data. The 2.7.11.1 assignment is computational/pattern-based.",
-    "The distinction between 2.7.11.1 and 2.7.11.11 in EC classification is partly a matter of annotation convention; 2.7.11.1 serves as a catch-all for Ser/Thr kinases lacking a more specific classification.",
-    "The PubMed reference (39488762) documents function, interaction with V. dahliae EPD1, and phosphorylation sites but the EC assignment itself relies on PROSITE-ProRule pattern matching rather than in vitro substrate specificity assays."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While the distinction between 2.7.11.1 and 2.7.11.11 is not trivially obvious from sequence alone, the plant RLCK context and the general convention of classifying such kinases as non-specific Ser/Thr kinases make C the most defensible answer. Options B and D are clearly eliminated by the kinase motifs."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0137",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A5J5T2N2 (GbEIR5A, Gossypium barbadense) is annotated with EC 2.7.11.1 (non-specific serine/threonine-protein kinase), supported by catalytic activity reactions for both Ser and Thr phosphorylation. The sequence contains canonical protein kinase motifs: glycine-rich loop (GGFGPVHKGF), DFG motif (DFGLAK), activation segment, and APE motif (AAPEYIMT). The annotation evidence code is ECO:0000255 (PROSITE-ProRule:PRU10027), indicating pattern-based computational inference rather than direct experimental substrate characterization, but the sequence motifs are unambiguous for a Ser/Thr protein kinase.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains unmistakable protein kinase motifs: a glycine-rich loop (GGFGPVHKGF), the catalytic DFG motif (DFGLAK), an activation segment (DSDYSAKLSDFGLAKDGPEGDKTHVSTRVMGTRGYAAPEYIMTGHLTAMSDVYSFGVVLLELLTGRRSLDK), and an APE motif. These definitively identify the protein as a protein kinase, eliminating EC 2.1.1.395 (methyltransferase, option B) and EC 1.14.15.9 (oxidoreductase/cytochrome P450, option D). Between options A (2.7.11.11, MAP3K) and C (2.7.11.1, non-specific Ser/Thr kinase): plant receptor-like cytoplasmic kinases (RLCKs) are a well-known class of general Ser/Thr kinases in plant immunity, not MAP3Ks. The absence of the characteristic MAP3K-specific docking domains and the overall RLCK architecture favor 2.7.11.1.",
-    "missing_item_specific_fact": "The precise distinction between 2.7.11.1 and 2.7.11.11 ultimately rests on experimentally determined substrate specificity (whether it phosphorylates MAP2Ks). However, the general classification of plant RLCKs as non-specific Ser/Thr kinases is well-established biological knowledge.",
-    "reason": "The kinase motifs are clearly identifiable from the sequence, allowing elimination of B and D. The plant RLCK context and general Ser/Thr kinase architecture support C over A through general biological knowledge of plant immune signaling kinases."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While the distinction between 2.7.11.1 and 2.7.11.11 is not trivially obvious from sequence alone, the plant RLCK context and the general convention of classifying such kinases as non-specific Ser/Thr kinases make C the most defensible answer. Options B and D are clearly eliminated by the kinase motifs."
-  },
-  "important_caveats": [
-    "The UniProt EC annotation uses ECO:0000255 (PROSITE-ProRule pattern matching), not direct experimental substrate specificity data. The 2.7.11.1 assignment is computational/pattern-based.",
-    "The distinction between 2.7.11.1 and 2.7.11.11 in EC classification is partly a matter of annotation convention; 2.7.11.1 serves as a catch-all for Ser/Thr kinases lacking a more specific classification.",
-    "The PubMed reference (39488762) documents function, interaction with V. dahliae EPD1, and phosphorylation sites but the EC assignment itself relies on PROSITE-ProRule pattern matching rather than in vitro substrate specificity assays."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A5J5T2N2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "42162c00b0c88b29ae0a2c6b6adef777a99920387ab33bc301c1b0921d93ed86",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 462,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "42162c00b0c88b29ae0a2c6b6adef777a99920387ab33bc301c1b0921d93ed86",
   "current_entry_audit": {
     "entryVersion": 19,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-12-11",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "current_source_sequence_sha256": "42162c00b0c88b29ae0a2c6b6adef777a99920387ab33bc301c1b0921d93ed86",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 462,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "42162c00b0c88b29ae0a2c6b6adef777a99920387ab33bc301c1b0921d93ed86",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 17,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A5J5T2N2",
   "selected_historical_entry_version": 17,
+  "selected_historical_record_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
+  "selected_historical_source_sequence_length": 462,
+  "selected_historical_source_sequence_sha256": "42162c00b0c88b29ae0a2c6b6adef777a99920387ab33bc301c1b0921d93ed86",
   "selected_historical_version": {
     "accession": "A0A5J5T2N2",
     "database": "Swiss-Prot",
@@ -550,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "EIR5A_GOSBA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
-  "selected_historical_source_sequence_sha256": "42162c00b0c88b29ae0a2c6b6adef777a99920387ab33bc301c1b0921d93ed86",
-  "selected_historical_source_sequence_length": 462,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 17,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json",
-  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A5J5T2N2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json"
 }
 ```
 
@@ -600,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json",
-  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":19,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-12-11\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json"
 }
 ```
 
@@ -619,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json",
-  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Sea Island cotton\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"rosids\",\"malvids\",\"Malvales\",\"Malvaceae\",\"Malvoideae\",\"Gossypium\"],\"scientificName\":\"Gossypium barbadense\",\"synonyms\":[\"Hibiscus barbadensis\"],\"taxonId\":3634}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json"
 }
 ```
 
@@ -638,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json",
-  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10027\",\"source\":\"PROSITE-ProRule\"}],\"value\":\"2.7.11.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39488762\",\"source\":\"PubMed\"}],\"value\":\"EPD1-interacting receptor-like cytoplasmic serine/threonine-protein kinase 5A\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39488762\",\"source\":\"PubMed\"}],\"value\":\"GbEIR5A\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json"
 }
 ```
 
@@ -657,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json",
-  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.11.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10027\",\"source\":\"PROSITE-ProRule\"}],\"name\":\"L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:17989\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:9863\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11604\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29999\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:83421\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json"
 }
 ```
 
@@ -676,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json",
-  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.11.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10027\",\"source\":\"PROSITE-ProRule\"}],\"name\":\"L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:46608\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11060\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11605\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30013\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61977\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json"
 }
 ```
 
@@ -695,15 +454,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json",
-  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
-  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Sun L.\",\"Li X.\",\"Zhong J.\",\"Wang Y.\",\"Li B.\",\"Ye Z.\",\"Zhang J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39488762\"},{\"database\":\"DOI\",\"id\":\"10.1002/advs.202407787\"}],\"citationType\":\"journal article\",\"firstPage\":\"e2407787\",\"id\":\"39488762\",\"journal\":\"Adv. Sci.\",\"lastPage\":\"e2407787\",\"publicationDate\":\"2025\",\"title\":\"Recognition of a fungal effector potentiates pathogen-associated molecular pattern-triggered immunity in cotton.\",\"volume\":\"12\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. Hai7124\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"INTERACTION WITH V.DAHLIAE EPD1\",\"INDUCTION BY V.DAHLIAE EPD1\",\"TISSUE SPECIFICITY\",\"PHOSPHORYLATION AT TYR-165 AND TYR-167\",\"MUTAGENESIS OF TYR-165; TYR-167; SER-172; SER-219; SER-225; SER-291 AND SER-421\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:28.786512+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ece754385a5f041030f1f4fddbd86bd00446105777fa2aac740d0360cfceeb6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A5J5T2N2.json"
 }
 ```
 
@@ -713,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17",
-  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
-  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   EIR5A_GOSBA             Reviewed;         462 AA.\nAC   A0A5J5T2N2;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   11-DEC-2019, sequence version 1.\nDT   28-JAN-2026, entry version 17.\nDE   RecName: Full=EPD1-interacting receptor-like cytoplasmic serine/threonine-protein kinase 5A {ECO:0000303|PubMed:39488762};\nDE            Short=GbEIR5A {ECO:0000303|PubMed:39488762};\nDE            EC=2.7.11.1 {ECO:0000255|PROSITE-ProRule:PRU10027};\nGN   Name=EIR5A {ECO:0000303|PubMed:39488762};\nGN   ORFNames=ES319_A13G211700v1 {ECO:0000312|EMBL:KAB2049947.1};\nOS   Gossypium barbadense (Sea Island cotton) (Hibiscus barbadensis).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   rosids; malvids; Malvales; Malvaceae; Malvoideae; Gossypium.\nOX   NCBI_TaxID=3634;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
+  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17"
 }
 ```
 
@@ -734,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17",
-  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
-  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=EPD1-interacting receptor-like cytoplasmic serine/threonine-protein kinase 5A {ECO:0000303|PubMed:39488762};\nDE            Short=GbEIR5A {ECO:0000303|PubMed:39488762};\nDE            EC=2.7.11.1 {ECO:0000255|PROSITE-ProRule:PRU10027};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
+  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17"
 }
 ```
 
@@ -755,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17",
-  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
-  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
-  "source_locator": "lines 29-39",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, INTERACTION WITH V.DAHLIAE EPD1, INDUCTION\nRP   BY V.DAHLIAE EPD1, TISSUE SPECIFICITY, PHOSPHORYLATION AT TYR-165 AND\nRP   TYR-167, AND MUTAGENESIS OF TYR-165; TYR-167; SER-172; SER-219; SER-225;\nRP   SER-291 AND SER-421.\nRC   STRAIN=cv. Hai7124;\nRX   PubMed=39488762; DOI=10.1002/advs.202407787;\nRA   Sun L., Li X., Zhong J., Wang Y., Li B., Ye Z., Zhang J.;\nRT   \"Recognition of a fungal effector potentiates pathogen-associated molecular\nRT   pattern-triggered immunity in cotton.\";\nRL   Adv. Sci. 12:e2407787-e2407787(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
+  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17"
 }
 ```
 
@@ -776,18 +535,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17",
-  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
-  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
-  "source_locator": "lines 52-57",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP +\nCC         H(+); Xref=Rhea:RHEA:17989, Rhea:RHEA-COMP:9863, Rhea:RHEA-\nCC         COMP:11604, ChEBI:CHEBI:15378, ChEBI:CHEBI:29999, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:83421, ChEBI:CHEBI:456216; EC=2.7.11.1;\nCC         Evidence={ECO:0000255|PROSITE-ProRule:PRU10027};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
+  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17"
 }
 ```
 
@@ -797,18 +556,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17",
-  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
-  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
-  "source_locator": "lines 58-63",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] +\nCC         ADP + H(+); Xref=Rhea:RHEA:46608, Rhea:RHEA-COMP:11060, Rhea:RHEA-\nCC         COMP:11605, ChEBI:CHEBI:15378, ChEBI:CHEBI:30013, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:61977, ChEBI:CHEBI:456216; EC=2.7.11.1;\nCC         Evidence={ECO:0000255|PROSITE-ProRule:PRU10027};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:25:31.043989+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a27cf5e5e496f33f777075570513133dd9cab456f6ea93a4b85764e616bd6633",
+  "url": "https://rest.uniprot.org/unisave/A0A5J5T2N2?format=txt&versions=17"
 }
 ```
 

@@ -1,18 +1,16 @@
-# catalytic_activity_0159: before and after transfer clarification
+# catalytic_activity_0159
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0159.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0159.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — Endohydrolysis of (1-&gt;4)-beta-D-xylosidic linkages in xylans.
+**Expected answer:** **D** — Endohydrolysis of (1-&gt;4)-beta-D-xylosidic linkages in xylans.
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the UniProt entry annotated as endo-1,4-beta-xylanase A, and its catalytic-activity annotation gives the reaction in choice D. The annotation cites a publication with experimental evidence code ECO:0000269; this supports the key, though the primary paper was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with a secreted precursor, which is compatible with an extracellular xylanase, but that broad clue does not establish the enzyme's substrate or exact reaction.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific identification as a xylanase and its experimentally characterized catalytic reaction are absent from the question input.
-
-
-**Reason**
-
-> Selecting D requires identifying this particular protein or its enzyme family and linking it to its annotated or experimentally reported activity; the supplied sequence alone does not provide a sufficiently concrete basis for that exact reaction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The cited sequence-matched annotation specifies choice D; the other choices describe unrelated reactions.
-
-
-### Important caveats
-
-- The reviewer-only database annotation and accession were not supplied to the evaluated model.
-- The database evidence cites a publication, but the primary study was not independently validated in the provided evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a secreted precursor, which is compatible with an extracellular xylanase, but that broad clue does not establish the enzyme's substrate or exact reaction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific identification as a xylanase and its experimentally characterized catalytic reaction are absent from the question input.",
-    "reason": "Selecting D requires identifying this particular protein or its enzyme family and linking it to its annotated or experimentally reported activity; the supplied sequence alone does not provide a sufficiently concrete basis for that exact reaction."
-  },
-  "case_id": "catalytic_activity_0159",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as endo-1,4-beta-xylanase A, and its catalytic-activity annotation gives the reaction in choice D. The annotation cites a publication with experimental evidence code ECO:0000269; this supports the key, though the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reviewer-only database annotation and accession were not supplied to the evaluated model.",
-    "The database evidence cites a publication, but the primary study was not independently validated in the provided evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited sequence-matched annotation specifies choice D; the other choices describe unrelated reactions."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0159",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as endo-1,4-beta-xylanase A, and its catalytic-activity annotation gives the reaction in choice D. The annotation cites a publication with experimental evidence code ECO:0000269; this supports the key, though the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a secreted precursor, which is compatible with an extracellular xylanase, but that broad clue does not establish the enzyme's substrate or exact reaction.",
-    "missing_item_specific_fact": "The sequence-specific identification as a xylanase and its experimentally characterized catalytic reaction are absent from the question input.",
-    "reason": "Selecting D requires identifying this particular protein or its enzyme family and linking it to its annotated or experimentally reported activity; the supplied sequence alone does not provide a sufficiently concrete basis for that exact reaction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited sequence-matched annotation specifies choice D; the other choices describe unrelated reactions."
-  },
-  "important_caveats": [
-    "The reviewer-only database annotation and accession were not supplied to the evaluated model.",
-    "The database evidence cites a publication, but the primary study was not independently validated in the provided evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches UniProt M4MGK7 (XYNA_HUMIN) exactly (SHA-256 confirmed, sequence version 1, 376 AA). The entry is annotated as Endo-1,4-beta-xylanase A, EC 3.2.1.8, with catalytic activity 'Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.' backed by experimental evidence (ECO:0000269, PubMed:23306124). The expected answer D is a verbatim match to the curated catalytic-activity annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Several general-biology arguments converge on D. (1) The N-terminal 'MHLASSLFLLATLPFGFAAG' is a classic eukaryotic signal peptide, indicating a secreted protein; this eliminates B (Co²⁺ transporter), which requires multiple transmembrane helices absent here. (2) Lipoxygenases (option C) are >1000-residue proteins with conserved Fe-binding His clusters; at 376 AA the protein is far too small, eliminating C. (3) Muconolactone isomerase (option A) is a small (~150-200 AA) bacterial cytosolic enzyme; the fungal secreted context and size are inconsistent. (4) The mature region contains the 'EGEG' dipeptide motif flanked by aromatic residues (W, F, Y) in a pattern characteristic of the GH11 β-jelly-roll xylanase catalytic cleft, where two glutamates serve as nucleophile and acid/base. Together these features—secreted fungal glycoside hydrolase of ~340 mature residues with the GH11 catalytic signature—point to xylanase activity (EC 3.2.1.8).
-
-
-**Missing item-specific fact**
-
-> None strictly required; the reasoning relies on general protein-structure and enzymology knowledge (signal peptide recognition, size constraints for lipoxygenases, GH11 'EGEG' motif). However, confidently assigning the 'EGEG' motif specifically to GH11 rather than another hydrolase family does draw on specialized biochemistry knowledge.
-
-
-**Reason**
-
-> The four options span four distinct enzyme classes (isomerase, transporter, lipoxygenase, glycoside hydrolase). General reasoning about protein topology, size, and the recognizable GH11 catalytic motif meaningfully distinguishes D from A, B, and C without needing to recall the UniProt accession.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices represent mechanistically and structurally distinct enzyme classes. The secreted nature, size, and GH11-like catalytic motif of the sequence make D the only biologically consistent option; no other choice is defensible given the sequence features.
-
-
-### Important caveats
-
-- The EC 3.2.1.8 assignment is supported by experimental evidence (ECO:0000269, PubMed:23306124), not merely by computational annotation, strengthening the expected-answer key.
-- The 'EGEG' motif recognition is a well-known GH11 signature but is somewhat specialized; a model lacking training on glycoside-hydrolase family motifs might rely more heavily on process-of-elimination reasoning.
-- The UniProt entry was first publicly released on 2025-02-05; the author data-construction date and exact source snapshot are unknown, though the sequence has been stable since 2013-05-29 (sequence version 1).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Several general-biology arguments converge on D. (1) The N-terminal 'MHLASSLFLLATLPFGFAAG' is a classic eukaryotic signal peptide, indicating a secreted protein; this eliminates B (Co²⁺ transporter), which requires multiple transmembrane helices absent here. (2) Lipoxygenases (option C) are >1000-residue proteins with conserved Fe-binding His clusters; at 376 AA the protein is far too small, eliminating C. (3) Muconolactone isomerase (option A) is a small (~150-200 AA) bacterial cytosolic enzyme; the fungal secreted context and size are inconsistent. (4) The mature region contains the 'EGEG' dipeptide motif flanked by aromatic residues (W, F, Y) in a pattern characteristic of the GH11 β-jelly-roll xylanase catalytic cleft, where two glutamates serve as nucleophile and acid/base. Together these features—secreted fungal glycoside hydrolase of ~340 mature residues with the GH11 catalytic signature—point to xylanase activity (EC 3.2.1.8).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; the reasoning relies on general protein-structure and enzymology knowledge (signal peptide recognition, size constraints for lipoxygenases, GH11 'EGEG' motif). However, confidently assigning the 'EGEG' motif specifically to GH11 rather than another hydrolase family does draw on specialized biochemistry knowledge.",
-    "reason": "The four options span four distinct enzyme classes (isomerase, transporter, lipoxygenase, glycoside hydrolase). General reasoning about protein topology, size, and the recognizable GH11 catalytic motif meaningfully distinguishes D from A, B, and C without needing to recall the UniProt accession."
-  },
-  "case_id": "catalytic_activity_0159",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches UniProt M4MGK7 (XYNA_HUMIN) exactly (SHA-256 confirmed, sequence version 1, 376 AA). The entry is annotated as Endo-1,4-beta-xylanase A, EC 3.2.1.8, with catalytic activity 'Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.' backed by experimental evidence (ECO:0000269, PubMed:23306124). The expected answer D is a verbatim match to the curated catalytic-activity annotation."
-  },
-  "important_caveats": [
-    "The EC 3.2.1.8 assignment is supported by experimental evidence (ECO:0000269, PubMed:23306124), not merely by computational annotation, strengthening the expected-answer key.",
-    "The 'EGEG' motif recognition is a well-known GH11 signature but is somewhat specialized; a model lacking training on glycoside-hydrolase family motifs might rely more heavily on process-of-elimination reasoning.",
-    "The UniProt entry was first publicly released on 2025-02-05; the author data-construction date and exact source snapshot are unknown, though the sequence has been stable since 2013-05-29 (sequence version 1)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent mechanistically and structurally distinct enzyme classes. The secreted nature, size, and GH11-like catalytic motif of the sequence make D the only biologically consistent option; no other choice is defensible given the sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0159",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches UniProt M4MGK7 (XYNA_HUMIN) exactly (SHA-256 confirmed, sequence version 1, 376 AA). The entry is annotated as Endo-1,4-beta-xylanase A, EC 3.2.1.8, with catalytic activity 'Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.' backed by experimental evidence (ECO:0000269, PubMed:23306124). The expected answer D is a verbatim match to the curated catalytic-activity annotation.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Several general-biology arguments converge on D. (1) The N-terminal 'MHLASSLFLLATLPFGFAAG' is a classic eukaryotic signal peptide, indicating a secreted protein; this eliminates B (Co²⁺ transporter), which requires multiple transmembrane helices absent here. (2) Lipoxygenases (option C) are >1000-residue proteins with conserved Fe-binding His clusters; at 376 AA the protein is far too small, eliminating C. (3) Muconolactone isomerase (option A) is a small (~150-200 AA) bacterial cytosolic enzyme; the fungal secreted context and size are inconsistent. (4) The mature region contains the 'EGEG' dipeptide motif flanked by aromatic residues (W, F, Y) in a pattern characteristic of the GH11 β-jelly-roll xylanase catalytic cleft, where two glutamates serve as nucleophile and acid/base. Together these features—secreted fungal glycoside hydrolase of ~340 mature residues with the GH11 catalytic signature—point to xylanase activity (EC 3.2.1.8).",
-    "missing_item_specific_fact": "None strictly required; the reasoning relies on general protein-structure and enzymology knowledge (signal peptide recognition, size constraints for lipoxygenases, GH11 'EGEG' motif). However, confidently assigning the 'EGEG' motif specifically to GH11 rather than another hydrolase family does draw on specialized biochemistry knowledge.",
-    "reason": "The four options span four distinct enzyme classes (isomerase, transporter, lipoxygenase, glycoside hydrolase). General reasoning about protein topology, size, and the recognizable GH11 catalytic motif meaningfully distinguishes D from A, B, and C without needing to recall the UniProt accession."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent mechanistically and structurally distinct enzyme classes. The secreted nature, size, and GH11-like catalytic motif of the sequence make D the only biologically consistent option; no other choice is defensible given the sequence features."
-  },
-  "important_caveats": [
-    "The EC 3.2.1.8 assignment is supported by experimental evidence (ECO:0000269, PubMed:23306124), not merely by computational annotation, strengthening the expected-answer key.",
-    "The 'EGEG' motif recognition is a well-known GH11 signature but is somewhat specialized; a model lacking training on glycoside-hydrolase family motifs might rely more heavily on process-of-elimination reasoning.",
-    "The UniProt entry was first publicly released on 2025-02-05; the author data-construction date and exact source snapshot are unknown, though the sequence has been stable since 2013-05-29 (sequence version 1)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "M4MGK7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 376,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
   "current_entry_audit": {
     "entryVersion": 33,
     "firstPublicDate": "2025-02-05",
@@ -532,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2013-05-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "current_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 376,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 31,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "M4MGK7",
   "selected_historical_entry_version": 31,
+  "selected_historical_record_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "selected_historical_source_sequence_length": 376,
+  "selected_historical_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
   "selected_historical_version": {
     "accession": "M4MGK7",
     "database": "Swiss-Prot",
@@ -550,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "XYNA_HUMIN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "selected_historical_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
-  "selected_historical_source_sequence_length": 376,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 31,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"M4MGK7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -600,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":33,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2013-05-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -619,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soft-rot fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Mycothermus\"],\"scientificName\":\"Humicola insolens\",\"taxonId\":85995}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -638,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"1,4-beta-D-xylan xylanohydrolase A\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23306124\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.8\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23306124\",\"source\":\"PubMed\"}],\"value\":\"Endo-1,4-beta-xylanase A\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -657,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.8\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23306124\",\"source\":\"PubMed\"}],\"name\":\"Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -676,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Du Y.\",\"Shi P.\",\"Huang H.\",\"Zhang X.\",\"Luo H.\",\"Wang Y.\",\"Yao B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23306124\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.biortech.2012.12.067\"}],\"citationType\":\"journal article\",\"firstPage\":\"161\",\"id\":\"23306124\",\"journal\":\"Bioresour. Technol.\",\"lastPage\":\"167\",\"publicationDate\":\"2013\",\"title\":\"Characterization of three novel thermophilic xylanases from Humicola insolens Y1 with application potentials in the brewing industry.\",\"volume\":\"130\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Y1\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBSTRATE SPECIFICITY\",\"ACTIVITY REGULATION\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -694,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   XYNA_HUMIN              Reviewed;         376 AA.\nAC   M4MGK7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-MAY-2013, sequence version 1.\nDT   28-JAN-2026, entry version 31.\nDE   RecName: Full=Endo-1,4-beta-xylanase A {ECO:0000303|PubMed:23306124};\nDE            EC=3.2.1.8 {ECO:0000269|PubMed:23306124};\nDE   AltName: Full=1,4-beta-D-xylan xylanohydrolase A {ECO:0000305};\nDE   Flags: Precursor;\nGN   Name=XynA {ECO:0000303|PubMed:23306124};\nOS   Humicola insolens (Soft-rot fungus).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Mycothermus.\nOX   NCBI_TaxID=85995;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 
@@ -715,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Endo-1,4-beta-xylanase A {ECO:0000303|PubMed:23306124};\nDE            EC=3.2.1.8 {ECO:0000269|PubMed:23306124};\nDE   AltName: Full=1,4-beta-D-xylan xylanohydrolase A {ECO:0000305};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 
@@ -736,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 15-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBSTRATE SPECIFICITY, ACTIVITY REGULATION,\nRP   AND BIOTECHNOLOGY.\nRC   STRAIN=Y1;\nRX   PubMed=23306124; DOI=10.1016/j.biortech.2012.12.067;\nRA   Du Y., Shi P., Huang H., Zhang X., Luo H., Wang Y., Yao B.;\nRT   \"Characterization of three novel thermophilic xylanases from Humicola\nRT   insolens Y1 with application potentials in the brewing industry.\";\nRL   Bioresour. Technol. 130:161-167(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 
@@ -757,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 45-47",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Endohydrolysis of (1->4)-beta-D-xylosidic linkages in xylans.;\nCC         EC=3.2.1.8; Evidence={ECO:0000269|PubMed:23306124};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 

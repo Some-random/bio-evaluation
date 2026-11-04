@@ -1,18 +1,16 @@
-# transmembrane_0111: before and after transfer clarification
+# transmembrane_0111
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0111.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/transmembrane_0111.txt)
 
 **Task:** `transmembrane`  
-**Author key, unchanged:** **D** — 42..64; 84..103; 110..131; 137..157; 177..195; 201..221; 242..261; 281..301; 313..331; 347..367; 417..438
+**Expected answer:** **D** — 42..64; 84..103; 110..131; 137..157; 177..195; 201..221; 242..261; 281..301; 313..331; 347..367; 417..438
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,279 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the 455-aa UniProt entry, whose annotated transmembrane segments correspond to choice D. These features carry ECO:0000255, indicating computational annotation rather than direct experimental confirmation.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9), [C10](#evidence-c10), [C11](#evidence-c11), [C12](#evidence-c12), [C13](#evidence-c13), [C14](#evidence-c14), [C15](#evidence-c15).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has multiple strongly hydrophobic stretches consistent with membrane-spanning helices, including the regions represented in the choices. That supports identifying likely helices, but does not reliably determine every exact endpoint.
-
-
-**Missing item-specific fact**
-
-> The protein-specific transmembrane annotation, especially the exact boundary at 137 versus 138 and the inclusion of 313..331, is not supplied in the question.
-
-
-**Reason**
-
-> Choosing the complete set and its precise residue boundaries depends on protein-specific annotation or prediction. General hydropathy reasoning can support the broad regions but cannot robustly distinguish the one-residue boundary difference between B and D.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> B and D differ only in whether the fourth segment starts at residue 138 or 137; both are plausible boundaries for a hydrophobic helix from sequence inspection. The database annotation supports D, but the input does not provide enough to establish that exact one-residue distinction.
-
-
-### Important caveats
-
-- The supporting UniProt transmembrane features are computationally annotated (ECO:0000255), not demonstrated here to be experimentally measured.
-- Reviewer-only database evidence supports the key but was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has multiple strongly hydrophobic stretches consistent with membrane-spanning helices, including the regions represented in the choices. That supports identifying likely helices, but does not reliably determine every exact endpoint.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific transmembrane annotation, especially the exact boundary at 137 versus 138 and the inclusion of 313..331, is not supplied in the question.",
-    "reason": "Choosing the complete set and its precise residue boundaries depends on protein-specific annotation or prediction. General hydropathy reasoning can support the broad regions but cannot robustly distinguish the one-residue boundary difference between B and D."
-  },
-  "case_id": "transmembrane_0111",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "C9",
-      "C10",
-      "C11",
-      "C12",
-      "C13",
-      "C14",
-      "C15"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the 455-aa UniProt entry, whose annotated transmembrane segments correspond to choice D. These features carry ECO:0000255, indicating computational annotation rather than direct experimental confirmation."
-  },
-  "important_caveats": [
-    "The supporting UniProt transmembrane features are computationally annotated (ECO:0000255), not demonstrated here to be experimentally measured.",
-    "Reviewer-only database evidence supports the key but was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "B and D differ only in whether the fourth segment starts at residue 138 or 137; both are plausible boundaries for a hydrophobic helix from sequence inspection. The database annotation supports D, but the input does not provide enough to establish that exact one-residue distinction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "transmembrane_0111",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the 455-aa UniProt entry, whose annotated transmembrane segments correspond to choice D. These features carry ECO:0000255, indicating computational annotation rather than direct experimental confirmation.",
-    "evidence_ids": ["C1", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has multiple strongly hydrophobic stretches consistent with membrane-spanning helices, including the regions represented in the choices. That supports identifying likely helices, but does not reliably determine every exact endpoint.",
-    "missing_item_specific_fact": "The protein-specific transmembrane annotation, especially the exact boundary at 137 versus 138 and the inclusion of 313..331, is not supplied in the question.",
-    "reason": "Choosing the complete set and its precise residue boundaries depends on protein-specific annotation or prediction. General hydropathy reasoning can support the broad regions but cannot robustly distinguish the one-residue boundary difference between B and D."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "B and D differ only in whether the fourth segment starts at residue 138 or 137; both are plausible boundaries for a hydrophobic helix from sequence inspection. The database annotation supports D, but the input does not provide enough to establish that exact one-residue distinction."
-  },
-  "important_caveats": [
-    "The supporting UniProt transmembrane features are computationally annotated (ECO:0000255), not demonstrated here to be experimentally measured.",
-    "Reviewer-only database evidence supports the key but was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q8IIK1 (Folate transporter 2, PfFT2, Plasmodium falciparum) annotates exactly 11 transmembrane helices at positions 42..64, 84..103, 110..131, 137..157, 177..195, 201..221, 242..261, 281..301, 313..331, 347..367, 417..438, which matches option D precisely. The sequence length (455 AA) and sequence SHA match the supplied sequence. However, all annotations carry evidence code ECO:0000255 (by similarity), meaning they are computational predictions by homology rather than experimentally determined boundaries.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9), [C10](#evidence-c10), [C11](#evidence-c11), [C12](#evidence-c12), [C13](#evidence-c13), [C14](#evidence-c14), [C15](#evidence-c15), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [H7](#evidence-h7), [H8](#evidence-h8), [H9](#evidence-h9), [H10](#evidence-h10), [H11](#evidence-h11), [H12](#evidence-h12), [H13](#evidence-h13).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Option A is eliminable by noting positions exceed the 455-residue protein length. A general hydrophobicity scan can identify the approximate locations of ~10-11 TM segments. However, the critical distinctions among B, C, and D are: (1) B vs D differ by a single-residue boundary (137 vs 138 at the start of the 4th TM helix, where position 137 is Leu and 138 is Ile — both hydrophobic); (2) C vs D differ by inclusion/exclusion of the 313..331 region, which contains mixed hydrophobic (L,I,I,L,V,F,I,Y,I,I,L) and polar/proline residues (T,T,T,S,P,S,P), making it a genuinely borderline segment. No general biological principle definitively resolves a one-residue helix boundary or whether this mixed-composition segment qualifies as TM.
-
-
-**Missing item-specific fact**
-
-> The exact boundary of the 4th TM helix (whether position 137-L or 138-I is the first residue) and the decision to include the borderline 313-331 segment as a TM helix depend on the specific prediction algorithm (UniProt's homology-based annotation, ECO:0000255). These are annotation-specific outputs not derivable from general hydrophobicity reasoning.
-
-
-**Reason**
-
-> While a trained biologist could narrow from four options to two or three using hydrophobicity analysis and the known ~11-TM topology of MFS-family transporters, the final discrimination between B and D (single-residue boundary) and between C and D (borderline TM inclusion) requires knowledge of the specific computational annotation rather than general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> Options B and D differ only at the start of the 4th TM helix (138..157 vs 137..157). Position 137 is Leucine (hydrophobic) and position 138 is Isoleucine (hydrophobic). A hydrophobicity-based analysis could reasonably include or exclude either boundary. Option C is also arguably defensible as a 'conservative' prediction that excludes the borderline 313-331 region containing multiple polar/proline residues. Only option A is clearly eliminable.
-
-
-### Important caveats
-
-- All UniProt TM annotations carry ECO:0000255 (by similarity), indicating computational homology-based predictions rather than experimental structural determination.
-- The single-residue boundary difference between B and D (137 vs 138) is within the typical ±1-2 residue uncertainty of TM prediction algorithms and cannot be resolved by reasoning.
-- The 313-331 region contains P, S, T, T, T residues interspersed with hydrophobic residues, making its classification as TM algorithm-dependent.
-- The UniProt entry was first publicly released 2025-02-05; the historical annotation at entry version 107 (released 2026-01-28) is identical to the current version regarding TM features.
-- Option A appears to be a distractor drawn from a different (much longer) protein or contains positions exceeding the 455-residue sequence length.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Option A is eliminable by noting positions exceed the 455-residue protein length. A general hydrophobicity scan can identify the approximate locations of ~10-11 TM segments. However, the critical distinctions among B, C, and D are: (1) B vs D differ by a single-residue boundary (137 vs 138 at the start of the 4th TM helix, where position 137 is Leu and 138 is Ile — both hydrophobic); (2) C vs D differ by inclusion/exclusion of the 313..331 region, which contains mixed hydrophobic (L,I,I,L,V,F,I,Y,I,I,L) and polar/proline residues (T,T,T,S,P,S,P), making it a genuinely borderline segment. No general biological principle definitively resolves a one-residue helix boundary or whether this mixed-composition segment qualifies as TM.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact boundary of the 4th TM helix (whether position 137-L or 138-I is the first residue) and the decision to include the borderline 313-331 segment as a TM helix depend on the specific prediction algorithm (UniProt's homology-based annotation, ECO:0000255). These are annotation-specific outputs not derivable from general hydrophobicity reasoning.",
-    "reason": "While a trained biologist could narrow from four options to two or three using hydrophobicity analysis and the known ~11-TM topology of MFS-family transporters, the final discrimination between B and D (single-residue boundary) and between C and D (borderline TM inclusion) requires knowledge of the specific computational annotation rather than general biological reasoning."
-  },
-  "case_id": "transmembrane_0111",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "C9",
-      "C10",
-      "C11",
-      "C12",
-      "C13",
-      "C14",
-      "C15",
-      "H3",
-      "H4",
-      "H5",
-      "H6",
-      "H7",
-      "H8",
-      "H9",
-      "H10",
-      "H11",
-      "H12",
-      "H13"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q8IIK1 (Folate transporter 2, PfFT2, Plasmodium falciparum) annotates exactly 11 transmembrane helices at positions 42..64, 84..103, 110..131, 137..157, 177..195, 201..221, 242..261, 281..301, 313..331, 347..367, 417..438, which matches option D precisely. The sequence length (455 AA) and sequence SHA match the supplied sequence. However, all annotations carry evidence code ECO:0000255 (by similarity), meaning they are computational predictions by homology rather than experimentally determined boundaries."
-  },
-  "important_caveats": [
-    "All UniProt TM annotations carry ECO:0000255 (by similarity), indicating computational homology-based predictions rather than experimental structural determination.",
-    "The single-residue boundary difference between B and D (137 vs 138) is within the typical ±1-2 residue uncertainty of TM prediction algorithms and cannot be resolved by reasoning.",
-    "The 313-331 region contains P, S, T, T, T residues interspersed with hydrophobic residues, making its classification as TM algorithm-dependent.",
-    "The UniProt entry was first publicly released 2025-02-05; the historical annotation at entry version 107 (released 2026-01-28) is identical to the current version regarding TM features.",
-    "Option A appears to be a distractor drawn from a different (much longer) protein or contains positions exceeding the 455-residue sequence length."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "Options B and D differ only at the start of the 4th TM helix (138..157 vs 137..157). Position 137 is Leucine (hydrophobic) and position 138 is Isoleucine (hydrophobic). A hydrophobicity-based analysis could reasonably include or exclude either boundary. Option C is also arguably defensible as a 'conservative' prediction that excludes the borderline 313-331 region containing multiple polar/proline residues. Only option A is clearly eliminable."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "transmembrane_0111",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q8IIK1 (Folate transporter 2, PfFT2, Plasmodium falciparum) annotates exactly 11 transmembrane helices at positions 42..64, 84..103, 110..131, 137..157, 177..195, 201..221, 242..261, 281..301, 313..331, 347..367, 417..438, which matches option D precisely. The sequence length (455 AA) and sequence SHA match the supplied sequence. However, all annotations carry evidence code ECO:0000255 (by similarity), meaning they are computational predictions by homology rather than experimentally determined boundaries.",
-    "evidence_ids": ["C5","C6","C7","C8","C9","C10","C11","C12","C13","C14","C15","H3","H4","H5","H6","H7","H8","H9","H10","H11","H12","H13"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Option A is eliminable by noting positions exceed the 455-residue protein length. A general hydrophobicity scan can identify the approximate locations of ~10-11 TM segments. However, the critical distinctions among B, C, and D are: (1) B vs D differ by a single-residue boundary (137 vs 138 at the start of the 4th TM helix, where position 137 is Leu and 138 is Ile — both hydrophobic); (2) C vs D differ by inclusion/exclusion of the 313..331 region, which contains mixed hydrophobic (L,I,I,L,V,F,I,Y,I,I,L) and polar/proline residues (T,T,T,S,P,S,P), making it a genuinely borderline segment. No general biological principle definitively resolves a one-residue helix boundary or whether this mixed-composition segment qualifies as TM.",
-    "missing_item_specific_fact": "The exact boundary of the 4th TM helix (whether position 137-L or 138-I is the first residue) and the decision to include the borderline 313-331 segment as a TM helix depend on the specific prediction algorithm (UniProt's homology-based annotation, ECO:0000255). These are annotation-specific outputs not derivable from general hydrophobicity reasoning.",
-    "reason": "While a trained biologist could narrow from four options to two or three using hydrophobicity analysis and the known ~11-TM topology of MFS-family transporters, the final discrimination between B and D (single-residue boundary) and between C and D (borderline TM inclusion) requires knowledge of the specific computational annotation rather than general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "Options B and D differ only at the start of the 4th TM helix (138..157 vs 137..157). Position 137 is Leucine (hydrophobic) and position 138 is Isoleucine (hydrophobic). A hydrophobicity-based analysis could reasonably include or exclude either boundary. Option C is also arguably defensible as a 'conservative' prediction that excludes the borderline 313-331 region containing multiple polar/proline residues. Only option A is clearly eliminable."
-  },
-  "important_caveats": [
-    "All UniProt TM annotations carry ECO:0000255 (by similarity), indicating computational homology-based predictions rather than experimental structural determination.",
-    "The single-residue boundary difference between B and D (137 vs 138) is within the typical ±1-2 residue uncertainty of TM prediction algorithms and cannot be resolved by reasoning.",
-    "The 313-331 region contains P, S, T, T, T residues interspersed with hydrophobic residues, making its classification as TM algorithm-dependent.",
-    "The UniProt entry was first publicly released 2025-02-05; the historical annotation at entry version 107 (released 2026-01-28) is identical to the current version regarding TM features.",
-    "Option A appears to be a distractor drawn from a different (much longer) protein or contains positions exceeding the 455-residue sequence length."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -454,10 +184,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -570,30 +299,17 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), 
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IIK1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6872668a1169d79c41e0e3217c7a0afaf399201ad1db1edc0cc760ca366b5635",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 455,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6872668a1169d79c41e0e3217c7a0afaf399201ad1db1edc0cc760ca366b5635",
   "current_entry_audit": {
     "entryVersion": 109,
     "firstPublicDate": "2025-02-05",
@@ -601,14 +317,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "current_source_sequence_sha256": "6872668a1169d79c41e0e3217c7a0afaf399201ad1db1edc0cc760ca366b5635",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 455,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6872668a1169d79c41e0e3217c7a0afaf399201ad1db1edc0cc760ca366b5635",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 107,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IIK1",
   "selected_historical_entry_version": 107,
+  "selected_historical_record_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "selected_historical_source_sequence_length": 455,
+  "selected_historical_source_sequence_sha256": "6872668a1169d79c41e0e3217c7a0afaf399201ad1db1edc0cc760ca366b5635",
   "selected_historical_version": {
     "accession": "Q8IIK1",
     "database": "Swiss-Prot",
@@ -619,24 +351,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FT2_PLAF7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "selected_historical_source_sequence_sha256": "6872668a1169d79c41e0e3217c7a0afaf399201ad1db1edc0cc760ca366b5635",
-  "selected_historical_source_sequence_length": 455,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 107,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -650,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IIK1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -669,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":109,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -688,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001450\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Laverania\"],\"scientificName\":\"Plasmodium falciparum (isolate 3D7)\",\"taxonId\":36329}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -707,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21998306\",\"source\":\"PubMed\"}],\"value\":\"Folate transporter 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21998306\",\"source\":\"PubMed\"}],\"value\":\"PfFT2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -726,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":64},\"start\":{\"modifier\":\"EXACT\",\"value\":42}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -745,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":103},\"start\":{\"modifier\":\"EXACT\",\"value\":84}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -764,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":131},\"start\":{\"modifier\":\"EXACT\",\"value\":110}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -783,15 +502,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":157},\"start\":{\"modifier\":\"EXACT\",\"value\":137}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -802,15 +521,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":195},\"start\":{\"modifier\":\"EXACT\",\"value\":177}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -821,15 +540,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":221},\"start\":{\"modifier\":\"EXACT\",\"value\":201}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -840,15 +559,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":261},\"start\":{\"modifier\":\"EXACT\",\"value\":242}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -859,15 +578,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":301},\"start\":{\"modifier\":\"EXACT\",\"value\":281}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -878,15 +597,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":331},\"start\":{\"modifier\":\"EXACT\",\"value\":313}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -897,15 +616,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":367},\"start\":{\"modifier\":\"EXACT\",\"value\":347}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -916,15 +635,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/features/11",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":438},\"start\":{\"modifier\":\"EXACT\",\"value\":417}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/11",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -935,15 +654,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C16",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json",
-  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
-  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Salcedo-Sora J.E.\",\"Ochong E.\",\"Beveridge S.\",\"Johnson D.\",\"Nzila A.\",\"Biagini G.A.\",\"Stocks P.A.\",\"O'Neill P.M.\",\"Krishna S.\",\"Bray P.G.\",\"Ward S.A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21998306\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m111.286054\"}],\"citationType\":\"journal article\",\"firstPage\":\"44659\",\"id\":\"21998306\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"44668\",\"publicationDate\":\"2011\",\"title\":\"The molecular basis of folate salvage in Plasmodium falciparum: characterization of two folate transporters.\",\"volume\":\"286\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"TRANSPORTER ACTIVITY\",\"ACTIVITY REGULATION\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:24.989052+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8631bdcc6b7274da8651ba15077787a2ccc347d9d53951e8b63a7d9807d07940",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIK1.json"
 }
 ```
 
@@ -953,18 +672,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   FT2_PLAF7               Reviewed;         455 AA.\nAC   Q8IIK1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 107.\nDE   RecName: Full=Folate transporter 2 {ECO:0000303|PubMed:21998306};\nDE            Short=PfFT2 {ECO:0000303|PubMed:21998306};\nGN   ORFNames=PF3D7_1116500 {ECO:0000312|EMBL:CZT98826.1};\nOS   Plasmodium falciparum (isolate 3D7).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Laverania).\nOX   NCBI_TaxID=36329 {ECO:0000312|Proteomes:UP000001450};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -974,18 +693,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, TRANSPORTER ACTIVITY, ACTIVITY REGULATION, AND SUBCELLULAR\nRP   LOCATION.\nRX   PubMed=21998306; DOI=10.1074/jbc.m111.286054;\nRA   Salcedo-Sora J.E., Ochong E., Beveridge S., Johnson D., Nzila A.,\nRA   Biagini G.A., Stocks P.A., O'Neill P.M., Krishna S., Bray P.G., Ward S.A.;\nRT   \"The molecular basis of folate salvage in Plasmodium falciparum:\nRT   characterization of two folate transporters.\";\nRL   J. Biol. Chem. 286:44659-44668(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -995,18 +714,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 98-100",
   "excerpt": "FT   TRANSMEM        42..64\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 98-100",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1016,18 +735,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 101-103",
   "excerpt": "FT   TRANSMEM        84..103\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 101-103",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1037,18 +756,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 104-106",
   "excerpt": "FT   TRANSMEM        110..131\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-106",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1058,18 +777,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 107-109",
   "excerpt": "FT   TRANSMEM        137..157\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 107-109",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1079,18 +798,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 110-112",
   "excerpt": "FT   TRANSMEM        177..195\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 110-112",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1100,18 +819,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 113-115",
   "excerpt": "FT   TRANSMEM        201..221\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 113-115",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1121,18 +840,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 116-118",
   "excerpt": "FT   TRANSMEM        242..261\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 116-118",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1142,18 +861,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 119-121",
   "excerpt": "FT   TRANSMEM        281..301\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 119-121",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1163,18 +882,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 122-124",
   "excerpt": "FT   TRANSMEM        313..331\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 122-124",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1184,18 +903,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 125-127",
   "excerpt": "FT   TRANSMEM        347..367\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 125-127",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 
@@ -1205,18 +924,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H13",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107",
-  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
-  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
-  "source_locator": "lines 128-130",
   "excerpt": "FT   TRANSMEM        417..438\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:40.005689+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 128-130",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c315cecd25012a01e06e0aefb68dd205d1cf053c48966bc36b4c33d3c6385707",
+  "url": "https://rest.uniprot.org/unisave/Q8IIK1?format=txt&versions=107"
 }
 ```
 

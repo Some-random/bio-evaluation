@@ -1,18 +1,16 @@
-# cofactor_0143: before and after transfer clarification
+# cofactor_0143
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0143.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0143.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — pyridoxal 5&#x27;-phosphate
+**Expected answer:** **A** — pyridoxal 5&#x27;-phosphate
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,232 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched-sequence UniProt record identifies the protein as cytosolic serine hydroxymethyltransferase and annotates pyridoxal 5′-phosphate as its cofactor. The cofactor annotation is transferred by similarity from P34896, so it supports the key but is not direct experimental evidence for this exact protein.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Once identified as serine hydroxymethyltransferase, its established PLP dependence distinguishes choice A from the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> The sequence's identity or function as serine hydroxymethyltransferase, or an equivalent protein-specific annotation or homology result, is not supplied.
-
-
-**Reason**
-
-> The sequence is the only input. Connecting it to serine hydroxymethyltransferase requires protein-specific recognition or an external sequence-family lookup; the cofactor annotation used to verify the key is itself similarity-transferred.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the protein's serine hydroxymethyltransferase identity, PLP is the supported choice among the options.
-
-
-### Important caveats
-
-- The source annotation supports PLP for the exact matched sequence, but its cited evidence is transferred from a homolog rather than shown here as a direct cofactor experiment on this protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Once identified as serine hydroxymethyltransferase, its established PLP dependence distinguishes choice A from the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's identity or function as serine hydroxymethyltransferase, or an equivalent protein-specific annotation or homology result, is not supplied.",
-    "reason": "The sequence is the only input. Connecting it to serine hydroxymethyltransferase requires protein-specific recognition or an external sequence-family lookup; the cofactor annotation used to verify the key is itself similarity-transferred."
-  },
-  "case_id": "cofactor_0143",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The matched-sequence UniProt record identifies the protein as cytosolic serine hydroxymethyltransferase and annotates pyridoxal 5′-phosphate as its cofactor. The cofactor annotation is transferred by similarity from P34896, so it supports the key but is not direct experimental evidence for this exact protein."
-  },
-  "important_caveats": [
-    "The source annotation supports PLP for the exact matched sequence, but its cited evidence is transferred from a homolog rather than shown here as a direct cofactor experiment on this protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the protein's serine hydroxymethyltransferase identity, PLP is the supported choice among the options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0143",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched-sequence UniProt record identifies the protein as cytosolic serine hydroxymethyltransferase and annotates pyridoxal 5′-phosphate as its cofactor. The cofactor annotation is transferred by similarity from P34896, so it supports the key but is not direct experimental evidence for this exact protein.",
-    "evidence_ids": ["C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Once identified as serine hydroxymethyltransferase, its established PLP dependence distinguishes choice A from the listed alternatives.",
-    "missing_item_specific_fact": "The sequence's identity or function as serine hydroxymethyltransferase, or an equivalent protein-specific annotation or homology result, is not supplied.",
-    "reason": "The sequence is the only input. Connecting it to serine hydroxymethyltransferase requires protein-specific recognition or an external sequence-family lookup; the cofactor annotation used to verify the key is itself similarity-transferred."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the protein's serine hydroxymethyltransferase identity, PLP is the supported choice among the options."
-  },
-  "important_caveats": [
-    "The source annotation supports PLP for the exact matched sequence, but its cited evidence is transferred from a homolog rather than shown here as a direct cofactor experiment on this protein."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q4WXF4 identifies this protein as Serine hydroxymethyltransferase (EC 2.1.2.1) and explicitly annotates pyridoxal 5'-phosphate (ChEBI:CHEBI:597326) as its cofactor (evidence C5, H4). The annotation uses evidence code ECO:0000250 (inferred by similarity from P34896, rat SHMT), which is a transferred annotation rather than direct experimental proof for this specific fungal protein. However, EC 2.1.2.1 is universally defined as a PLP-dependent enzyme, and PLP is the obligate cofactor for all known SHMT enzymes across all organisms. The PubMed reference (39825596) confirms the enzyme's identity and function in A. fumigatus. The expected answer is well-supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the well-known 'TSAYC' motif (visible at positions ~248-252: 'AGTSAYCRLIDYGRMRKIADKVGAYLIVDMAHISGLVAAGVIPSPFEY'), which is the diagnostic catalytic-serine signature of serine hydroxymethyltransferase within the PLP-dependent enzyme superfamily. The overall sequence length (~471 aa) and domain architecture are consistent with the SHMT fold. A biochemist familiar with PLP-dependent enzyme families could recognize this motif, identify the protein as SHMT (EC 2.1.2.1), and recall that SHMT is a textbook example of a PLP-dependent enzyme. The distractors (Na+, Mn2+, FMN) are not cofactors of any known serine hydroxymethyltransferase, making them clearly distinguishable once the enzyme family is identified.
-
-
-**Missing item-specific fact**
-
-> None critical. Recognition of the TSAYC motif as the SHMT catalytic signature requires specialized but well-established enzyme-family knowledge. The PLP dependence of EC 2.1.2.1 is textbook biochemistry.
-
-
-**Reason**
-
-> The sequence provides concrete, identifiable features (the TSAYC motif, overall fold architecture, length) that a knowledgeable biochemist can use to identify the enzyme family and thereby determine the cofactor. This is pattern recognition within a well-characterized enzyme superfamily rather than retrieval of an obscure database entry. The distractors are readily eliminated for a transferase of this type.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Once the protein is identified as SHMT (EC 2.1.2.1), PLP is the only defensible cofactor. Na+, Mn2+, and FMN have no established role as SHMT cofactors. No ambiguity among the options.
-
-
-### Important caveats
-
-- The cofactor annotation carries evidence code ECO:0000250 (similarity-based transfer from P34896), not direct experimental determination for this specific A. fumigatus protein. However, PLP dependence of EC 2.1.2.1 is universally established and not in dispute.
-- The TSAYC motif is a well-known SHMT signature but its identification requires specialized enzyme-family knowledge; a general biology student might not recognize it from sequence alone.
-- The UniProt entry was first publicly released on 2025-06-18, after the sequence was deposited in 2005. The author's source snapshot date is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the well-known 'TSAYC' motif (visible at positions ~248-252: 'AGTSAYCRLIDYGRMRKIADKVGAYLIVDMAHISGLVAAGVIPSPFEY'), which is the diagnostic catalytic-serine signature of serine hydroxymethyltransferase within the PLP-dependent enzyme superfamily. The overall sequence length (~471 aa) and domain architecture are consistent with the SHMT fold. A biochemist familiar with PLP-dependent enzyme families could recognize this motif, identify the protein as SHMT (EC 2.1.2.1), and recall that SHMT is a textbook example of a PLP-dependent enzyme. The distractors (Na+, Mn2+, FMN) are not cofactors of any known serine hydroxymethyltransferase, making them clearly distinguishable once the enzyme family is identified.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. Recognition of the TSAYC motif as the SHMT catalytic signature requires specialized but well-established enzyme-family knowledge. The PLP dependence of EC 2.1.2.1 is textbook biochemistry.",
-    "reason": "The sequence provides concrete, identifiable features (the TSAYC motif, overall fold architecture, length) that a knowledgeable biochemist can use to identify the enzyme family and thereby determine the cofactor. This is pattern recognition within a well-characterized enzyme superfamily rather than retrieval of an obscure database entry. The distractors are readily eliminated for a transferase of this type."
-  },
-  "case_id": "cofactor_0143",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q4WXF4 identifies this protein as Serine hydroxymethyltransferase (EC 2.1.2.1) and explicitly annotates pyridoxal 5'-phosphate (ChEBI:CHEBI:597326) as its cofactor (evidence C5, H4). The annotation uses evidence code ECO:0000250 (inferred by similarity from P34896, rat SHMT), which is a transferred annotation rather than direct experimental proof for this specific fungal protein. However, EC 2.1.2.1 is universally defined as a PLP-dependent enzyme, and PLP is the obligate cofactor for all known SHMT enzymes across all organisms. The PubMed reference (39825596) confirms the enzyme's identity and function in A. fumigatus. The expected answer is well-supported."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (similarity-based transfer from P34896), not direct experimental determination for this specific A. fumigatus protein. However, PLP dependence of EC 2.1.2.1 is universally established and not in dispute.",
-    "The TSAYC motif is a well-known SHMT signature but its identification requires specialized enzyme-family knowledge; a general biology student might not recognize it from sequence alone.",
-    "The UniProt entry was first publicly released on 2025-06-18, after the sequence was deposited in 2005. The author's source snapshot date is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the protein is identified as SHMT (EC 2.1.2.1), PLP is the only defensible cofactor. Na+, Mn2+, and FMN have no established role as SHMT cofactors. No ambiguity among the options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0143",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q4WXF4 identifies this protein as Serine hydroxymethyltransferase (EC 2.1.2.1) and explicitly annotates pyridoxal 5'-phosphate (ChEBI:CHEBI:597326) as its cofactor (evidence C5, H4). The annotation uses evidence code ECO:0000250 (inferred by similarity from P34896, rat SHMT), which is a transferred annotation rather than direct experimental proof for this specific fungal protein. However, EC 2.1.2.1 is universally defined as a PLP-dependent enzyme, and PLP is the obligate cofactor for all known SHMT enzymes across all organisms. The PubMed reference (39825596) confirms the enzyme's identity and function in A. fumigatus. The expected answer is well-supported.",
-    "evidence_ids": ["C4", "C5", "H2", "H4", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the well-known 'TSAYC' motif (visible at positions ~248-252: 'AGTSAYCRLIDYGRMRKIADKVGAYLIVDMAHISGLVAAGVIPSPFEY'), which is the diagnostic catalytic-serine signature of serine hydroxymethyltransferase within the PLP-dependent enzyme superfamily. The overall sequence length (~471 aa) and domain architecture are consistent with the SHMT fold. A biochemist familiar with PLP-dependent enzyme families could recognize this motif, identify the protein as SHMT (EC 2.1.2.1), and recall that SHMT is a textbook example of a PLP-dependent enzyme. The distractors (Na+, Mn2+, FMN) are not cofactors of any known serine hydroxymethyltransferase, making them clearly distinguishable once the enzyme family is identified.",
-    "missing_item_specific_fact": "None critical. Recognition of the TSAYC motif as the SHMT catalytic signature requires specialized but well-established enzyme-family knowledge. The PLP dependence of EC 2.1.2.1 is textbook biochemistry.",
-    "reason": "The sequence provides concrete, identifiable features (the TSAYC motif, overall fold architecture, length) that a knowledgeable biochemist can use to identify the enzyme family and thereby determine the cofactor. This is pattern recognition within a well-characterized enzyme superfamily rather than retrieval of an obscure database entry. The distractors are readily eliminated for a transferase of this type."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the protein is identified as SHMT (EC 2.1.2.1), PLP is the only defensible cofactor. Na+, Mn2+, and FMN have no established role as SHMT cofactors. No ambiguity among the options."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (similarity-based transfer from P34896), not direct experimental determination for this specific A. fumigatus protein. However, PLP dependence of EC 2.1.2.1 is universally established and not in dispute.",
-    "The TSAYC motif is a well-known SHMT signature but its identification requires specialized enzyme-family knowledge; a general biology student might not recognize it from sequence alone.",
-    "The UniProt entry was first publicly released on 2025-06-18, after the sequence was deposited in 2005. The author's source snapshot date is unknown."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -379,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -488,30 +264,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q4WXF4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 471,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
   "current_entry_audit": {
     "entryVersion": 124,
     "firstPublicDate": "2025-06-18",
@@ -519,14 +282,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "current_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 471,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 122,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q4WXF4",
   "selected_historical_entry_version": 122,
+  "selected_historical_record_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "selected_historical_source_sequence_length": 471,
+  "selected_historical_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
   "selected_historical_version": {
     "accession": "Q4WXF4",
     "database": "Swiss-Prot",
@@ -537,24 +316,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GLYC_ASPFU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "selected_historical_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
-  "selected_historical_source_sequence_length": 471,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 122,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -568,15 +334,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q4WXF4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -587,15 +353,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":124,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -606,15 +372,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Neosartorya fumigata\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Fumigati\"],\"scientificName\":\"Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 / Af293)\",\"taxonId\":330879}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -625,15 +391,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P34896\",\"source\":\"UniProtKB\"}],\"value\":\"2.1.2.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39825596\",\"source\":\"PubMed\"}],\"value\":\"Serine hydroxymethyltransferase, cytosolic\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -644,15 +410,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:597326\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P34896\",\"source\":\"UniProtKB\"}],\"name\":\"pyridoxal 5'-phosphate\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -663,15 +429,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Alharthi R.\",\"Sueiro-Olivares M.\",\"Storer I.\",\"Bin Shuraym H.\",\"Scott J.\",\"Al-Shidhani R.\",\"Fortune-Grant R.\",\"Bignell E.\",\"Tabernero L.\",\"Bromley M.\",\"Zhao C.\",\"Amich J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39825596\"},{\"database\":\"DOI\",\"id\":\"10.1080/21505594.2024.2449075\"}],\"citationType\":\"journal article\",\"firstPage\":\"2449075\",\"id\":\"39825596\",\"journal\":\"Virulence\",\"lastPage\":\"2449075\",\"publicationDate\":\"2025\",\"title\":\"The sulfur-related metabolic status of Aspergillus fumigatus during infection reveals cytosolic serine hydroxymethyltransferase as a promising antifungal target.\",\"volume\":\"16\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -681,18 +447,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122",
-  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   GLYC_ASPFU              Reviewed;         471 AA.\nAC   Q4WXF4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2005, sequence version 1.\nDT   28-JAN-2026, entry version 122.\nDE   RecName: Full=Serine hydroxymethyltransferase, cytosolic {ECO:0000303|PubMed:39825596};\nDE            EC=2.1.2.1 {ECO:0000250|UniProtKB:P34896};\nGN   Name=shmB {ECO:0000303|PubMed:39825596}; ORFNames=AFUA_3G09320;\nOS   Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 /\nOS   Af293) (Neosartorya fumigata).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Fumigati.\nOX   NCBI_TaxID=330879;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122"
 }
 ```
 
@@ -702,18 +468,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122",
-  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Serine hydroxymethyltransferase, cytosolic {ECO:0000303|PubMed:39825596};\nDE            EC=2.1.2.1 {ECO:0000250|UniProtKB:P34896};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122"
 }
 ```
 
@@ -723,18 +489,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122",
-  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
-  "source_locator": "lines 40-50",
   "excerpt": "RN   [2]\nRP   FUNCTION, SUBCELLULAR LOCATION, INDUCTION, DISRUPTION PHENOTYPE, AND\nRP   BIOTECHNOLOGY.\nRX   PubMed=39825596; DOI=10.1080/21505594.2024.2449075;\nRA   Alharthi R., Sueiro-Olivares M., Storer I., Bin Shuraym H., Scott J.,\nRA   Al-Shidhani R., Fortune-Grant R., Bignell E., Tabernero L., Bromley M.,\nRA   Zhao C., Amich J.;\nRT   \"The sulfur-related metabolic status of Aspergillus fumigatus during\nRT   infection reveals cytosolic serine hydroxymethyltransferase as a promising\nRT   antifungal target.\";\nRL   Virulence 16:2449075-2449075(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122"
 }
 ```
 
@@ -744,18 +510,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122",
-  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
-  "source_locator": "lines 61-63",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=pyridoxal 5'-phosphate; Xref=ChEBI:CHEBI:597326;\nCC         Evidence={ECO:0000250|UniProtKB:P34896};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122"
 }
 ```
 

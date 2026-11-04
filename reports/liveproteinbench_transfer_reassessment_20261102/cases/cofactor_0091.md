@@ -1,18 +1,16 @@
-# cofactor_0091: before and after transfer clarification
+# cofactor_0091
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0091.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0091.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **D** — Ca(2+)
+**Expected answer:** **D** — Ca(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Plasmodium vivax subtilisin-like protease SUB1, whose UniProt record explicitly annotates Ca(2+) as a cofactor with experimental evidence. Structural references also report SUB1 complexes containing calcium. This supports choice D, though the supplied excerpts do not independently establish that calcium is strictly essential for catalytic activity rather than stabilizing the enzyme.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C8](#evidence-c8), [H8](#evidence-h8).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Recognizing a subtilisin-like protease can suggest a serine-protease mechanism rather than a transition-metal-dependent catalytic mechanism, and calcium can stabilize subtilases. But those general considerations do not establish that this particular protein uses Ca(2+) or distinguish its specific calcium dependence from sequence alone.
-
-
-**Missing item-specific fact**
-
-> The protein-specific SUB1 cofactor annotation and experimental or structural evidence for calcium association.
-
-
-**Reason**
-
-> The supplied input gives only sequence and ion choices. It does not provide the protein identity, a calcium-binding assay, or a cofactor annotation; the exact choice depends on that item-specific information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports calcium as the annotated cofactor, and no alternative listed ion is supported. However, the excerpts do not fully resolve whether calcium is strictly required for catalytic activity or has a stabilizing role.
-
-
-### Important caveats
-
-- The sequence match and protein identity are established by reviewer-only evidence, not information supplied to the evaluated model.
-- The database cofactor annotation cites experimental evidence, but the excerpts do not independently show an activity measurement demonstrating calcium essentiality.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Recognizing a subtilisin-like protease can suggest a serine-protease mechanism rather than a transition-metal-dependent catalytic mechanism, and calcium can stabilize subtilases. But those general considerations do not establish that this particular protein uses Ca(2+) or distinguish its specific calcium dependence from sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific SUB1 cofactor annotation and experimental or structural evidence for calcium association.",
-    "reason": "The supplied input gives only sequence and ion choices. It does not provide the protein identity, a calcium-binding assay, or a cofactor annotation; the exact choice depends on that item-specific information."
-  },
-  "case_id": "cofactor_0091",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C8",
-      "H8"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Plasmodium vivax subtilisin-like protease SUB1, whose UniProt record explicitly annotates Ca(2+) as a cofactor with experimental evidence. Structural references also report SUB1 complexes containing calcium. This supports choice D, though the supplied excerpts do not independently establish that calcium is strictly essential for catalytic activity rather than stabilizing the enzyme."
-  },
-  "important_caveats": [
-    "The sequence match and protein identity are established by reviewer-only evidence, not information supplied to the evaluated model.",
-    "The database cofactor annotation cites experimental evidence, but the excerpts do not independently show an activity measurement demonstrating calcium essentiality."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports calcium as the annotated cofactor, and no alternative listed ion is supported. However, the excerpts do not fully resolve whether calcium is strictly required for catalytic activity or has a stabilizing role."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0091",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Plasmodium vivax subtilisin-like protease SUB1, whose UniProt record explicitly annotates Ca(2+) as a cofactor with experimental evidence. Structural references also report SUB1 complexes containing calcium. This supports choice D, though the supplied excerpts do not independently establish that calcium is strictly essential for catalytic activity rather than stabilizing the enzyme.",
-    "evidence_ids": ["C1", "C4", "C5", "C8", "H8"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Recognizing a subtilisin-like protease can suggest a serine-protease mechanism rather than a transition-metal-dependent catalytic mechanism, and calcium can stabilize subtilases. But those general considerations do not establish that this particular protein uses Ca(2+) or distinguish its specific calcium dependence from sequence alone.",
-    "missing_item_specific_fact": "The protein-specific SUB1 cofactor annotation and experimental or structural evidence for calcium association.",
-    "reason": "The supplied input gives only sequence and ion choices. It does not provide the protein identity, a calcium-binding assay, or a cofactor annotation; the exact choice depends on that item-specific information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports calcium as the annotated cofactor, and no alternative listed ion is supported. However, the excerpts do not fully resolve whether calcium is strictly required for catalytic activity or has a stabilizing role."
-  },
-  "important_caveats": [
-    "The sequence match and protein identity are established by reviewer-only evidence, not information supplied to the evaluated model.",
-    "The database cofactor annotation cites experimental evidence, but the excerpts do not independently show an activity measurement demonstrating calcium essentiality."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry E6Y8B9 (Plasmodium vivax Subtilisin-like protease 1, SUB1) explicitly annotates Ca(2+) as the cofactor with experimental evidence (ECO:0000269|PubMed:25204226). Multiple X-ray crystal structures (PDB 4TR2 at 2.70 Å, 8COY/8COZ at 1.44 Å, 8QKE/8QKG at 1.50 Å) confirm Ca(2+) bound to the protein. The sequence matches the benchmark exactly (SHA-256 identical, 630 residues).
-
-Citations as saved: [C5](#evidence-c5), [C8](#evidence-c8), [C9](#evidence-c9), [C10](#evidence-c10), [H5](#evidence-h5), [H6](#evidence-h6), [H7](#evidence-h7), [H8](#evidence-h8).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains motifs characteristic of the subtilisin/subtilase family (serine protease fold with catalytic triad region). Subtilases are serine proteases, not metalloproteases, which argues against metals typically associated with hydrolytic metal coordination in metalloproteases. Among the four choices, Ca(2+) is the classic structural cofactor for subtilases (well-documented in biochemistry textbooks for Bacillus subtilisins and homologs). Fe(2+) is associated with redox/oxygen-transport proteins, Cu(2+) with oxidases/SOD, and Mg(2+) with nucleotide-binding enzymes (kinases, polymerases, GTPases). The sequence also contains clusters of Asp and Asn residues (e.g., 'DDDDDLL', 'DDDSNGVVDDVYGANFVNNSGDPMDDNYHGTH', 'GIDYNHPDLRNNIDVNVKELHGRKGVDDDSNG') consistent with Ca(2+) coordination geometry (irregular, 6-8 ligands from carboxylate/amide oxygens). Eliminating the other three metals based on enzyme class (serine protease vs. redox/oxidase/phosphate-transfer) and identifying the subtilase family provides a defensible reasoning path to Ca(2+).
-
-
-**Missing item-specific fact**
-
-> None strictly required. The reasoning relies on family-level knowledge (subtilases commonly bind Ca(2+)) and elimination of metals by enzyme class, both within general biochemistry. Exact PDB structures or the specific PubMed 25204226 paper are confirmatory but not necessary for the inference.
-
-
-**Reason**
-
-> A knowledgeable model can (1) recognize subtilase family features in the sequence, (2) recall that subtilases are serine proteases that commonly use Ca(2+) as a structural cofactor, (3) eliminate Fe(2+)/Cu(2+) as redox/oxidase metals incompatible with protease function, and (4) eliminate Mg(2+) as primarily associated with phosphate-transfer enzymes. The Asp/Asn-rich clusters further support Ca(2+) coordination. This constitutes a concrete biological argument distinguishing the choices without requiring memorization of this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While Mg(2+) and Ca(2+) are both divalent cations that could in principle coordinate Asp/Asn clusters, the subtilase family association with Ca(2+) specifically (rather than Mg(2+)) is well-established. Fe(2+) and Cu(2+) are clearly inappropriate for a serine protease. The four options are sufficiently distinct that the subtilase-Ca(2+) link provides a clear discriminator.
-
-
-### Important caveats
-
-- The subtilase-Ca(2+) association is a family-level generalization; not every subtilase binds Ca(2+). However, among the four provided choices, Ca(2+) is the most defensible for a subtilase.
-- Distinguishing Ca(2+) from Mg(2+) purely from sequence is inherently difficult; the argument relies on family-level knowledge rather than de novo coordination-geometry prediction from sequence.
-- The UniProt annotation (ECO:0000269) is backed by direct experimental evidence (crystallography and activity assays), not merely computational prediction.
-- The reviewer-only evidence was absent from the evaluated model's input; the model must rely on sequence recognition and general knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains motifs characteristic of the subtilisin/subtilase family (serine protease fold with catalytic triad region). Subtilases are serine proteases, not metalloproteases, which argues against metals typically associated with hydrolytic metal coordination in metalloproteases. Among the four choices, Ca(2+) is the classic structural cofactor for subtilases (well-documented in biochemistry textbooks for Bacillus subtilisins and homologs). Fe(2+) is associated with redox/oxygen-transport proteins, Cu(2+) with oxidases/SOD, and Mg(2+) with nucleotide-binding enzymes (kinases, polymerases, GTPases). The sequence also contains clusters of Asp and Asn residues (e.g., 'DDDDDLL', 'DDDSNGVVDDVYGANFVNNSGDPMDDNYHGTH', 'GIDYNHPDLRNNIDVNVKELHGRKGVDDDSNG') consistent with Ca(2+) coordination geometry (irregular, 6-8 ligands from carboxylate/amide oxygens). Eliminating the other three metals based on enzyme class (serine protease vs. redox/oxidase/phosphate-transfer) and identifying the subtilase family provides a defensible reasoning path to Ca(2+).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The reasoning relies on family-level knowledge (subtilases commonly bind Ca(2+)) and elimination of metals by enzyme class, both within general biochemistry. Exact PDB structures or the specific PubMed 25204226 paper are confirmatory but not necessary for the inference.",
-    "reason": "A knowledgeable model can (1) recognize subtilase family features in the sequence, (2) recall that subtilases are serine proteases that commonly use Ca(2+) as a structural cofactor, (3) eliminate Fe(2+)/Cu(2+) as redox/oxidase metals incompatible with protease function, and (4) eliminate Mg(2+) as primarily associated with phosphate-transfer enzymes. The Asp/Asn-rich clusters further support Ca(2+) coordination. This constitutes a concrete biological argument distinguishing the choices without requiring memorization of this specific protein's database entry."
-  },
-  "case_id": "cofactor_0091",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C8",
-      "C9",
-      "C10",
-      "H5",
-      "H6",
-      "H7",
-      "H8"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry E6Y8B9 (Plasmodium vivax Subtilisin-like protease 1, SUB1) explicitly annotates Ca(2+) as the cofactor with experimental evidence (ECO:0000269|PubMed:25204226). Multiple X-ray crystal structures (PDB 4TR2 at 2.70 Å, 8COY/8COZ at 1.44 Å, 8QKE/8QKG at 1.50 Å) confirm Ca(2+) bound to the protein. The sequence matches the benchmark exactly (SHA-256 identical, 630 residues)."
-  },
-  "important_caveats": [
-    "The subtilase-Ca(2+) association is a family-level generalization; not every subtilase binds Ca(2+). However, among the four provided choices, Ca(2+) is the most defensible for a subtilase.",
-    "Distinguishing Ca(2+) from Mg(2+) purely from sequence is inherently difficult; the argument relies on family-level knowledge rather than de novo coordination-geometry prediction from sequence.",
-    "The UniProt annotation (ECO:0000269) is backed by direct experimental evidence (crystallography and activity assays), not merely computational prediction.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model must rely on sequence recognition and general knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While Mg(2+) and Ca(2+) are both divalent cations that could in principle coordinate Asp/Asn clusters, the subtilase family association with Ca(2+) specifically (rather than Mg(2+)) is well-established. Fe(2+) and Cu(2+) are clearly inappropriate for a serine protease. The four options are sufficiently distinct that the subtilase-Ca(2+) link provides a clear discriminator."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0091",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry E6Y8B9 (Plasmodium vivax Subtilisin-like protease 1, SUB1) explicitly annotates Ca(2+) as the cofactor with experimental evidence (ECO:0000269|PubMed:25204226). Multiple X-ray crystal structures (PDB 4TR2 at 2.70 Å, 8COY/8COZ at 1.44 Å, 8QKE/8QKG at 1.50 Å) confirm Ca(2+) bound to the protein. The sequence matches the benchmark exactly (SHA-256 identical, 630 residues).",
-    "evidence_ids": ["C5", "C8", "C9", "C10", "H5", "H6", "H7", "H8"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains motifs characteristic of the subtilisin/subtilase family (serine protease fold with catalytic triad region). Subtilases are serine proteases, not metalloproteases, which argues against metals typically associated with hydrolytic metal coordination in metalloproteases. Among the four choices, Ca(2+) is the classic structural cofactor for subtilases (well-documented in biochemistry textbooks for Bacillus subtilisins and homologs). Fe(2+) is associated with redox/oxygen-transport proteins, Cu(2+) with oxidases/SOD, and Mg(2+) with nucleotide-binding enzymes (kinases, polymerases, GTPases). The sequence also contains clusters of Asp and Asn residues (e.g., 'DDDDDLL', 'DDDSNGVVDDVYGANFVNNSGDPMDDNYHGTH', 'GIDYNHPDLRNNIDVNVKELHGRKGVDDDSNG') consistent with Ca(2+) coordination geometry (irregular, 6-8 ligands from carboxylate/amide oxygens). Eliminating the other three metals based on enzyme class (serine protease vs. redox/oxidase/phosphate-transfer) and identifying the subtilase family provides a defensible reasoning path to Ca(2+).",
-    "missing_item_specific_fact": "None strictly required. The reasoning relies on family-level knowledge (subtilases commonly bind Ca(2+)) and elimination of metals by enzyme class, both within general biochemistry. Exact PDB structures or the specific PubMed 25204226 paper are confirmatory but not necessary for the inference.",
-    "reason": "A knowledgeable model can (1) recognize subtilase family features in the sequence, (2) recall that subtilases are serine proteases that commonly use Ca(2+) as a structural cofactor, (3) eliminate Fe(2+)/Cu(2+) as redox/oxidase metals incompatible with protease function, and (4) eliminate Mg(2+) as primarily associated with phosphate-transfer enzymes. The Asp/Asn-rich clusters further support Ca(2+) coordination. This constitutes a concrete biological argument distinguishing the choices without requiring memorization of this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While Mg(2+) and Ca(2+) are both divalent cations that could in principle coordinate Asp/Asn clusters, the subtilase family association with Ca(2+) specifically (rather than Mg(2+)) is well-established. Fe(2+) and Cu(2+) are clearly inappropriate for a serine protease. The four options are sufficiently distinct that the subtilase-Ca(2+) link provides a clear discriminator."
-  },
-  "important_caveats": [
-    "The subtilase-Ca(2+) association is a family-level generalization; not every subtilase binds Ca(2+). However, among the four provided choices, Ca(2+) is the most defensible for a subtilase.",
-    "Distinguishing Ca(2+) from Mg(2+) purely from sequence is inherently difficult; the argument relies on family-level knowledge rather than de novo coordination-geometry prediction from sequence.",
-    "The UniProt annotation (ECO:0000269) is backed by direct experimental evidence (crystallography and activity assays), not merely computational prediction.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model must rely on sequence recognition and general knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E6Y8B9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "26d75cef4b12afe63e95e1e558255f990bc3a1fb29980dad1ff271270e9bc1c3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 630,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "26d75cef4b12afe63e95e1e558255f990bc3a1fb29980dad1ff271270e9bc1c3",
   "current_entry_audit": {
     "entryVersion": 80,
     "firstPublicDate": "2025-04-09",
@@ -539,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-03-08",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "current_source_sequence_sha256": "26d75cef4b12afe63e95e1e558255f990bc3a1fb29980dad1ff271270e9bc1c3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 630,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "26d75cef4b12afe63e95e1e558255f990bc3a1fb29980dad1ff271270e9bc1c3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 78,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E6Y8B9",
   "selected_historical_entry_version": 78,
+  "selected_historical_record_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "selected_historical_source_sequence_length": 630,
+  "selected_historical_source_sequence_sha256": "26d75cef4b12afe63e95e1e558255f990bc3a1fb29980dad1ff271270e9bc1c3",
   "selected_historical_version": {
     "accession": "E6Y8B9",
     "database": "Swiss-Prot",
@@ -557,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "SUB1_PLAVI",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "selected_historical_source_sequence_sha256": "26d75cef4b12afe63e95e1e558255f990bc3a1fb29980dad1ff271270e9bc1c3",
-  "selected_historical_source_sequence_length": 630,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 78,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E6Y8B9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -607,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":80,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-03-08\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -626,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ACT76164.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Plasmodium\"],\"scientificName\":\"Plasmodium vivax\",\"taxonId\":5855}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -645,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37428845\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38386597\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38503166\",\"source\":\"PubMed\"}],\"value\":\"PvS1\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23653352\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"25204226\",\"source\":\"PubMed\"}],\"value\":\"PvSUB1\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38503166\",\"source\":\"PubMed\"}],\"value\":\"SUB1 protease\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"25204226\",\"source\":\"PubMed\"}],\"value\":\"Subtilase SUB1\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23653352\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25204226\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37428845\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38386597\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38503166\",\"source\":\"PubMed\"}],\"value\":\"3.4.21.62\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37428845\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38386597\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38503166\",\"source\":\"PubMed\"}],\"value\":\"Subtilisin-like protease 1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -664,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25204226\",\"source\":\"PubMed\"}],\"name\":\"Ca(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -683,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bouillon A.\",\"Giganti D.\",\"Benedet C.\",\"Gorgette O.\",\"Petres S.\",\"Crublet E.\",\"Girard-Blanc C.\",\"Witkowski B.\",\"Menard D.\",\"Nilges M.\",\"Mercereau-Puijalon O.\",\"Stoven V.\",\"Barale J.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23653352\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m113.456764\"}],\"citationType\":\"journal article\",\"firstPage\":\"18561\",\"id\":\"23653352\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"18573\",\"publicationDate\":\"2013\",\"title\":\"In Silico screening on the three-dimensional model of the Plasmodium vivax SUB1 protease leads to the validation of a novel anti-parasite compound.\",\"volume\":\"288\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"CATALYTIC ACTIVITY\",\"SUBUNIT\",\"DEVELOPMENTAL STAGE\",\"PROTEOLYTIC CLEAVAGE\",\"CLEAVAGE SITES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -702,15 +457,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Martinez M.\",\"Bouillon A.\",\"Brule S.\",\"Raynal B.\",\"Haouz A.\",\"Alzari P.M.\",\"Barale J.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38386597\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.00198-24\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0019824\",\"id\":\"38386597\",\"journal\":\"MBio\",\"lastPage\":\"e0019824\",\"publicationDate\":\"2024\",\"title\":\"Prodomain-driven enzyme dimerization: a pH-dependent autoinhibition mechanism that controls Plasmodium Sub1 activity before merozoite egress.\",\"volume\":\"15\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -721,15 +476,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Giganti D.\",\"Bouillon A.\",\"Tawk L.\",\"Robert F.\",\"Martinez M.\",\"Crublet E.\",\"Weber P.\",\"Girard-Blanc C.\",\"Petres S.\",\"Haouz A.\",\"Hernandez J.F.\",\"Mercereau-Puijalon O.\",\"Alzari P.M.\",\"Barale J.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25204226\"},{\"database\":\"DOI\",\"id\":\"10.1038/ncomms5833\"}],\"citationType\":\"journal article\",\"firstPage\":\"4833\",\"id\":\"25204226\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"4833\",\"publicationDate\":\"2014\",\"title\":\"A novel Plasmodium-specific prodomain fold regulates the malaria drug target SUB1 subtilase.\",\"volume\":\"5\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"4TR2\",\"source\":\"PDB\"}],\"referenceNumber\":5,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.70 ANGSTROMS) OF 26-630 IN COMPLEX WITH CALCIUM\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"SUBUNIT\",\"PROTEOLYTIC CLEAVAGE\",\"CLEAVAGE SITE\",\"DISULFIDE BONDS\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -740,15 +495,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Martinez M.\",\"Batista F.A.\",\"Maurel M.\",\"Bouillon A.\",\"Ortega Varga L.\",\"Wehenkel A.M.\",\"Le Chevalier-Sontag L.\",\"Blondel A.\",\"Haouz A.\",\"Hernandez J.F.\",\"Alzari P.M.\",\"Barale J.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37428845\"},{\"database\":\"DOI\",\"id\":\"10.1107/s2059798323004710\"}],\"citationType\":\"journal article\",\"firstPage\":\"721\",\"id\":\"37428845\",\"journal\":\"Acta Crystallogr. D Struct. Biol.\",\"lastPage\":\"734\",\"publicationDate\":\"2023\",\"title\":\"3D structures of the Plasmodium vivax subtilisin-like drug target SUB1 reveal conformational changes to accommodate a substrate-derived alpha-ketoamide inhibitor.\",\"volume\":\"79\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8COY\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8COZ\",\"source\":\"PDB\"}],\"referenceNumber\":6,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.44 ANGSTROMS) OF 273-617 IN COMPLEX WITH CA(2+) AND PEPTIDE INHIBITOR\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"PROTEOLYTIC CLEAVAGE\",\"GLYCOSYLATION\",\"GLYCOSYLATION AT ASN-546\",\"DISULFIDE BONDS\",\"MUTAGENESIS OF ASN-361; ASN-432 AND ASN-445\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -759,15 +514,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json",
-  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
-  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Legru A.\",\"Batista F.A.\",\"Puszko A.K.\",\"Bouillon A.\",\"Maurel M.\",\"Martinez M.\",\"Ejjoummany A.\",\"Ortega Varga L.\",\"Adler P.\",\"Mechaly A.\",\"Hadjadj M.\",\"Sosnowski P.\",\"Hopfgartner G.\",\"Alzari P.M.\",\"Blondel A.\",\"Haouz A.\",\"Barale J.C.\",\"Hernandez J.F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38503166\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.ejmech.2024.116308\"}],\"citationType\":\"journal article\",\"firstPage\":\"116308\",\"id\":\"38503166\",\"journal\":\"Eur. J. Med. Chem.\",\"lastPage\":\"116308\",\"publicationDate\":\"2024\",\"title\":\"Insights from structure-activity relationships and the binding mode of peptidic alpha-ketoamide inhibitors of the malaria drug target subtilisin-like SUB1.\",\"volume\":\"269\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8QKE\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8QKG\",\"source\":\"PDB\"}],\"referenceNumber\":7,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.50 ANGSTROMS) OF 26-630 IN COMPLEX WITH CA(2+) AND PEPTIDE INHIBITORS\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"GLYCOSYLATION AT ASN-546\",\"DISULFIDE BONDS\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-02T04:28:01.366318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e9b4af9865155585e28a933302308978b5c5a92dbbd9ce2df61bef40af1c012b",
+  "url": "https://rest.uniprot.org/uniprotkb/E6Y8B9.json"
 }
 ```
 
@@ -777,18 +532,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 1-20",
   "excerpt": "ID   SUB1_PLAVI              Reviewed;         630 AA.\nAC   E6Y8B9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   08-MAR-2011, sequence version 1.\nDT   28-JAN-2026, entry version 78.\nDE   RecName: Full=Subtilisin-like protease 1 {ECO:0000303|PubMed:37428845, ECO:0000303|PubMed:38386597, ECO:0000303|PubMed:38503166};\nDE            EC=3.4.21.62 {ECO:0000269|PubMed:23653352, ECO:0000269|PubMed:25204226, ECO:0000269|PubMed:37428845, ECO:0000269|PubMed:38386597, ECO:0000269|PubMed:38503166};\nDE   AltName: Full=PvS1 {ECO:0000303|PubMed:37428845, ECO:0000303|PubMed:38386597, ECO:0000303|PubMed:38503166};\nDE   AltName: Full=PvSUB1 {ECO:0000303|PubMed:23653352, ECO:0000303|PubMed:25204226};\nDE   AltName: Full=SUB1 protease {ECO:0000303|PubMed:38503166};\nDE   AltName: Full=Subtilase SUB1 {ECO:0000303|PubMed:25204226};\nDE   Flags: Precursor;\nGN   Name=sub1 {ECO:0000312|EMBL:ACT76164.1};\nGN   ORFNames=PVC01_100035100 {ECO:0000312|EMBL:SCO73277.1},\nGN   PVT01_100029100 {ECO:0000312|EMBL:SCO67822.1},\nGN   PVW1_100050600 {ECO:0000312|EMBL:CAG9475055.1};\nOS   Plasmodium vivax.\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Plasmodium).\nOX   NCBI_TaxID=5855 {ECO:0000312|EMBL:ACT76164.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 
@@ -798,18 +553,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 6-12",
   "excerpt": "DE   RecName: Full=Subtilisin-like protease 1 {ECO:0000303|PubMed:37428845, ECO:0000303|PubMed:38386597, ECO:0000303|PubMed:38503166};\nDE            EC=3.4.21.62 {ECO:0000269|PubMed:23653352, ECO:0000269|PubMed:25204226, ECO:0000269|PubMed:37428845, ECO:0000269|PubMed:38386597, ECO:0000269|PubMed:38503166};\nDE   AltName: Full=PvS1 {ECO:0000303|PubMed:37428845, ECO:0000303|PubMed:38386597, ECO:0000303|PubMed:38503166};\nDE   AltName: Full=PvSUB1 {ECO:0000303|PubMed:23653352, ECO:0000303|PubMed:25204226};\nDE   AltName: Full=SUB1 protease {ECO:0000303|PubMed:38503166};\nDE   AltName: Full=Subtilase SUB1 {ECO:0000303|PubMed:25204226};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 
@@ -819,18 +574,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 32-41",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   CATALYTIC ACTIVITY, SUBUNIT, DEVELOPMENTAL STAGE, PROTEOLYTIC CLEAVAGE, AND\nRP   CLEAVAGE SITES.\nRX   PubMed=23653352; DOI=10.1074/jbc.m113.456764;\nRA   Bouillon A., Giganti D., Benedet C., Gorgette O., Petres S., Crublet E.,\nRA   Girard-Blanc C., Witkowski B., Menard D., Nilges M., Mercereau-Puijalon O.,\nRA   Stoven V., Barale J.C.;\nRT   \"In Silico screening on the three-dimensional model of the Plasmodium vivax\nRT   SUB1 protease leads to the validation of a novel anti-parasite compound.\";\nRL   J. Biol. Chem. 288:18561-18573(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 
@@ -840,18 +595,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 42-49",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND SUBUNIT.\nRX   PubMed=38386597; DOI=10.1128/mbio.00198-24;\nRA   Martinez M., Bouillon A., Brule S., Raynal B., Haouz A., Alzari P.M.,\nRA   Barale J.C.;\nRT   \"Prodomain-driven enzyme dimerization: a pH-dependent autoinhibition\nRT   mechanism that controls Plasmodium Sub1 activity before merozoite egress.\";\nRL   MBio 15:e0019824-e0019824(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 
@@ -861,18 +616,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 50-60",
   "excerpt": "RN   [5] {ECO:0007744|PDB:4TR2}\nRP   X-RAY CRYSTALLOGRAPHY (2.70 ANGSTROMS) OF 26-630 IN COMPLEX WITH CALCIUM,\nRP   CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION, SUBUNIT, PROTEOLYTIC\nRP   CLEAVAGE, CLEAVAGE SITE, AND DISULFIDE BONDS.\nRX   PubMed=25204226; DOI=10.1038/ncomms5833;\nRA   Giganti D., Bouillon A., Tawk L., Robert F., Martinez M., Crublet E.,\nRA   Weber P., Girard-Blanc C., Petres S., Haouz A., Hernandez J.F.,\nRA   Mercereau-Puijalon O., Alzari P.M., Barale J.C.;\nRT   \"A novel Plasmodium-specific prodomain fold regulates the malaria drug\nRT   target SUB1 subtilase.\";\nRL   Nat. Commun. 5:4833-4833(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 
@@ -882,18 +637,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 61-73",
   "excerpt": "RN   [6] {ECO:0007744|PDB:8COY, ECO:0007744|PDB:8COZ}\nRP   X-RAY CRYSTALLOGRAPHY (1.44 ANGSTROMS) OF 273-617 IN COMPLEX WITH CA(2+)\nRP   AND PEPTIDE INHIBITOR, CATALYTIC ACTIVITY, ACTIVITY REGULATION, PROTEOLYTIC\nRP   CLEAVAGE, GLYCOSYLATION, GLYCOSYLATION AT ASN-546, DISULFIDE BONDS, AND\nRP   MUTAGENESIS OF ASN-361; ASN-432 AND ASN-445.\nRX   PubMed=37428845; DOI=10.1107/s2059798323004710;\nRA   Martinez M., Batista F.A., Maurel M., Bouillon A., Ortega Varga L.,\nRA   Wehenkel A.M., Le Chevalier-Sontag L., Blondel A., Haouz A.,\nRA   Hernandez J.F., Alzari P.M., Barale J.C.;\nRT   \"3D structures of the Plasmodium vivax subtilisin-like drug target SUB1\nRT   reveal conformational changes to accommodate a substrate-derived alpha-\nRT   ketoamide inhibitor.\";\nRL   Acta Crystallogr. D Struct. Biol. 79:721-734(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-73",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 
@@ -903,18 +658,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 74-86",
   "excerpt": "RN   [7] {ECO:0007744|PDB:8QKE, ECO:0007744|PDB:8QKG}\nRP   X-RAY CRYSTALLOGRAPHY (1.50 ANGSTROMS) OF 26-630 IN COMPLEX WITH CA(2+) AND\nRP   PEPTIDE INHIBITORS, CATALYTIC ACTIVITY, ACTIVITY REGULATION, GLYCOSYLATION\nRP   AT ASN-546, AND DISULFIDE BONDS.\nRX   PubMed=38503166; DOI=10.1016/j.ejmech.2024.116308;\nRA   Legru A., Batista F.A., Puszko A.K., Bouillon A., Maurel M., Martinez M.,\nRA   Ejjoummany A., Ortega Varga L., Adler P., Mechaly A., Hadjadj M.,\nRA   Sosnowski P., Hopfgartner G., Alzari P.M., Blondel A., Haouz A.,\nRA   Barale J.C., Hernandez J.F.;\nRT   \"Insights from structure-activity relationships and the binding mode of\nRT   peptidic alpha-ketoamide inhibitors of the malaria drug target subtilisin-\nRT   like SUB1.\";\nRL   Eur. J. Med. Chem. 269:116308-116308(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 74-86",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 
@@ -924,18 +679,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 78,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78",
-  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
-  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
-  "source_locator": "lines 98-100",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Ca(2+); Xref=ChEBI:CHEBI:29108;\nCC         Evidence={ECO:0000269|PubMed:25204226};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 78,
+  "retrieved_utc": "2026-11-02T04:28:06.789132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 98-100",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8339b9ac9ad20c1f768a45190d5d148406d577b6def1d323a6b83af3754d12d0",
+  "url": "https://rest.uniprot.org/unisave/E6Y8B9?format=txt&versions=78"
 }
 ```
 

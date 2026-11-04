@@ -1,18 +1,16 @@
-# GO_biological_process_0009: before and after transfer clarification
+# GO_biological_process_0009
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0009.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0009.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — L-valine biosynthetic process
+**Expected answer:** **B** — L-valine biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the annotated protein. UniProt reports a DHAD reaction producing 2-oxoisovalerate, a precursor to L-valine, and places the protein at step 3/4 of valine biosynthesis; the GO annotation also assigns the valine-biosynthetic-process term. The functional evidence is cited to a publication, while the GO assignment is computationally inferred via UniPathway.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices describe distinct processes, but the supplied sequence alone does not provide a concrete basis to identify the protein’s specific enzymatic function or its role in valine biosynthesis. General sequence features cannot reliably distinguish these options.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this sequence encodes dihydroxy-acid dehydratase, which catalyzes a step in the branched-chain amino-acid pathway including valine biosynthesis.
-
-
-**Reason**
-
-> Choosing B requires knowing or identifying this particular protein’s function from an external annotation, biochemical evidence, or a sufficiently specific homology match. That reviewer-only evidence supports the key but was not supplied to the model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, valine biosynthesis is supported. Although the enzyme also participates in isoleucine biosynthesis, that process is not an option.
-
-
-### Important caveats
-
-- The reviewer-only annotation is sequence-matched; the exact source snapshot used by the question author is unknown.
-- The GO assignment is inferred (IEA:UniProtKB-UniPathway), whereas the cited functional annotation reports publication-backed biochemical evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices describe distinct processes, but the supplied sequence alone does not provide a concrete basis to identify the protein’s specific enzymatic function or its role in valine biosynthesis. General sequence features cannot reliably distinguish these options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence encodes dihydroxy-acid dehydratase, which catalyzes a step in the branched-chain amino-acid pathway including valine biosynthesis.",
-    "reason": "Choosing B requires knowing or identifying this particular protein’s function from an external annotation, biochemical evidence, or a sufficiently specific homology match. That reviewer-only evidence supports the key but was not supplied to the model."
-  },
-  "case_id": "GO_biological_process_0009",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "C8",
-      "H3",
-      "H5",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the annotated protein. UniProt reports a DHAD reaction producing 2-oxoisovalerate, a precursor to L-valine, and places the protein at step 3/4 of valine biosynthesis; the GO annotation also assigns the valine-biosynthetic-process term. The functional evidence is cited to a publication, while the GO assignment is computationally inferred via UniPathway."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation is sequence-matched; the exact source snapshot used by the question author is unknown.",
-    "The GO assignment is inferred (IEA:UniProtKB-UniPathway), whereas the cited functional annotation reports publication-backed biochemical evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, valine biosynthesis is supported. Although the enzyme also participates in isoleucine biosynthesis, that process is not an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0009",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the annotated protein. UniProt reports a DHAD reaction producing 2-oxoisovalerate, a precursor to L-valine, and places the protein at step 3/4 of valine biosynthesis; the GO annotation also assigns the valine-biosynthetic-process term. The functional evidence is cited to a publication, while the GO assignment is computationally inferred via UniPathway.",
-    "evidence_ids": ["C5", "C7", "C8", "H3", "H5", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices describe distinct processes, but the supplied sequence alone does not provide a concrete basis to identify the protein’s specific enzymatic function or its role in valine biosynthesis. General sequence features cannot reliably distinguish these options.",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence encodes dihydroxy-acid dehydratase, which catalyzes a step in the branched-chain amino-acid pathway including valine biosynthesis.",
-    "reason": "Choosing B requires knowing or identifying this particular protein’s function from an external annotation, biochemical evidence, or a sufficiently specific homology match. That reviewer-only evidence supports the key but was not supplied to the model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, valine biosynthesis is supported. Although the enzyme also participates in isoleucine biosynthesis, that process is not an option."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation is sequence-matched; the exact source snapshot used by the question author is unknown.",
-    "The GO assignment is inferred (IEA:UniProtKB-UniPathway), whereas the cited functional annotation reports publication-backed biochemical evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein (Q0CPG9, ASTD_ASPTN) is a dihydroxy-acid dehydratase (DHAD, EC 4.2.1.9) that catalyzes the dehydration of 2,3-dihydroxyisovalerate to 2-oxoisovalerate, the penultimate precursor to L-valine. UniProt explicitly annotates the pathway as 'L-valine biosynthesis; L-valine from pyruvate: step 3/4' with direct assay evidence (ECO:0000269, PubMed:29995859), and the GO cross-reference GO:0009099 (L-valine biosynthetic process) is present. Note: the protein is equally annotated with L-isoleucine biosynthesis (GO:0009097), but that option is absent from the choices, so B remains the best-supported answer among the four given.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5), [H7](#evidence-h7), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable features of a dihydroxy-acid dehydratase (Fe-S cluster binding motifs such as CENIGEVVKTML, ISCG-type domain architecture, ~598 aa length consistent with DHAD family). A model with general biochemistry knowledge can identify this as a dehydratase involved in branched-chain amino acid (BCAA) biosynthesis. Among the four options, only B (L-valine biosynthetic process) is a BCAA biosynthetic pathway. Option A (plasma membrane organization) is a structural/cellular process incompatible with a soluble dehydratase enzyme. Option C (dUDP biosynthetic process) belongs to pyrimidine nucleotide metabolism with entirely different enzyme classes. Option D (indole alkaloid biosynthetic process) involves plant/fungal secondary metabolism with P450s, decarboxylases, and prenyltransferases, not Fe-S dehydratases. Thus, general enzyme-class and pathway reasoning meaningfully distinguishes B from all distractors.
-
-
-**Missing item-specific fact**
-
-> Precise identification of the enzyme as DHAD (rather than another dehydratase) from raw sequence alone requires either recognizing specific conserved DHAD motifs or database lookup. The specific assignment to valine (vs. isoleucine) as the 'primary' process is a UniProt annotation choice; the protein is equally involved in isoleucine biosynthesis.
-
-
-**Reason**
-
-> While exact enzyme identification from a 598-aa sequence is non-trivial, the four options are sufficiently diverse (membrane organization, pyrimidine metabolism, indole alkaloid, BCAA biosynthesis) that general biological reasoning about enzyme class and pathway membership can eliminate three options and select B. The reasoning chain (dehydratase with Fe-S clusters → BCAA biosynthesis → valine among choices) is a valid general-knowledge argument, not dependent on memorizing this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the protein participates in both L-valine and L-isoleucine biosynthesis, only L-valine biosynthetic process appears among the options. The protein's role in aspterric acid cluster biosynthesis is not an option. Among the four choices, B is unambiguously the best fit; the other three are mechanistically incompatible with a mitochondrial Fe-S dehydratase.
-
-
-### Important caveats
-
-- The GO annotation for L-valine biosynthetic process is IEA (Inferred from Electronic Annotation) via UniProtKB-UniPathway, while the pathway statement itself carries direct assay evidence (ECO:0000269). The annotation is computationally propagated from the pathway assignment.
-- The protein is equally annotated with L-isoleucine biosynthetic process (GO:0009097); the choice of 'primary' process is somewhat arbitrary and depends on the option set.
-- The protein's biological context is dual: it is part of the aspterric acid (herbicide) biosynthesis gene cluster AND performs a core metabolic function in BCAA biosynthesis. The question's framing as 'primary biological process' could arguably favor the cluster context, but that is not among the options.
-- Sequence identity was confirmed matched against both current and archived UniProt entries (Q0CPG9, 598 aa, SHA256 match).
-- The GO annotation evidence code IEA means the specific GO term assignment is computational (pathway-based), not directly experimentally tested for this protein's GO annotation, though the enzymatic function itself has direct experimental support.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable features of a dihydroxy-acid dehydratase (Fe-S cluster binding motifs such as CENIGEVVKTML, ISCG-type domain architecture, ~598 aa length consistent with DHAD family). A model with general biochemistry knowledge can identify this as a dehydratase involved in branched-chain amino acid (BCAA) biosynthesis. Among the four options, only B (L-valine biosynthetic process) is a BCAA biosynthetic pathway. Option A (plasma membrane organization) is a structural/cellular process incompatible with a soluble dehydratase enzyme. Option C (dUDP biosynthetic process) belongs to pyrimidine nucleotide metabolism with entirely different enzyme classes. Option D (indole alkaloid biosynthetic process) involves plant/fungal secondary metabolism with P450s, decarboxylases, and prenyltransferases, not Fe-S dehydratases. Thus, general enzyme-class and pathway reasoning meaningfully distinguishes B from all distractors.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise identification of the enzyme as DHAD (rather than another dehydratase) from raw sequence alone requires either recognizing specific conserved DHAD motifs or database lookup. The specific assignment to valine (vs. isoleucine) as the 'primary' process is a UniProt annotation choice; the protein is equally involved in isoleucine biosynthesis.",
-    "reason": "While exact enzyme identification from a 598-aa sequence is non-trivial, the four options are sufficiently diverse (membrane organization, pyrimidine metabolism, indole alkaloid, BCAA biosynthesis) that general biological reasoning about enzyme class and pathway membership can eliminate three options and select B. The reasoning chain (dehydratase with Fe-S clusters → BCAA biosynthesis → valine among choices) is a valid general-knowledge argument, not dependent on memorizing this specific protein's database entry."
-  },
-  "case_id": "GO_biological_process_0009",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "H3",
-      "H5",
-      "H7",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "The protein (Q0CPG9, ASTD_ASPTN) is a dihydroxy-acid dehydratase (DHAD, EC 4.2.1.9) that catalyzes the dehydration of 2,3-dihydroxyisovalerate to 2-oxoisovalerate, the penultimate precursor to L-valine. UniProt explicitly annotates the pathway as 'L-valine biosynthesis; L-valine from pyruvate: step 3/4' with direct assay evidence (ECO:0000269, PubMed:29995859), and the GO cross-reference GO:0009099 (L-valine biosynthetic process) is present. Note: the protein is equally annotated with L-isoleucine biosynthesis (GO:0009097), but that option is absent from the choices, so B remains the best-supported answer among the four given."
-  },
-  "important_caveats": [
-    "The GO annotation for L-valine biosynthetic process is IEA (Inferred from Electronic Annotation) via UniProtKB-UniPathway, while the pathway statement itself carries direct assay evidence (ECO:0000269). The annotation is computationally propagated from the pathway assignment.",
-    "The protein is equally annotated with L-isoleucine biosynthetic process (GO:0009097); the choice of 'primary' process is somewhat arbitrary and depends on the option set.",
-    "The protein's biological context is dual: it is part of the aspterric acid (herbicide) biosynthesis gene cluster AND performs a core metabolic function in BCAA biosynthesis. The question's framing as 'primary biological process' could arguably favor the cluster context, but that is not among the options.",
-    "Sequence identity was confirmed matched against both current and archived UniProt entries (Q0CPG9, 598 aa, SHA256 match).",
-    "The GO annotation evidence code IEA means the specific GO term assignment is computational (pathway-based), not directly experimentally tested for this protein's GO annotation, though the enzymatic function itself has direct experimental support."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the protein participates in both L-valine and L-isoleucine biosynthesis, only L-valine biosynthetic process appears among the options. The protein's role in aspterric acid cluster biosynthesis is not an option. Among the four choices, B is unambiguously the best fit; the other three are mechanistically incompatible with a mitochondrial Fe-S dehydratase."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0009",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein (Q0CPG9, ASTD_ASPTN) is a dihydroxy-acid dehydratase (DHAD, EC 4.2.1.9) that catalyzes the dehydration of 2,3-dihydroxyisovalerate to 2-oxoisovalerate, the penultimate precursor to L-valine. UniProt explicitly annotates the pathway as 'L-valine biosynthesis; L-valine from pyruvate: step 3/4' with direct assay evidence (ECO:0000269, PubMed:29995859), and the GO cross-reference GO:0009099 (L-valine biosynthetic process) is present. Note: the protein is equally annotated with L-isoleucine biosynthesis (GO:0009097), but that option is absent from the choices, so B remains the best-supported answer among the four given.",
-    "evidence_ids": ["C4", "C5", "C7", "C8", "H3", "H5", "H7", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains recognizable features of a dihydroxy-acid dehydratase (Fe-S cluster binding motifs such as CENIGEVVKTML, ISCG-type domain architecture, ~598 aa length consistent with DHAD family). A model with general biochemistry knowledge can identify this as a dehydratase involved in branched-chain amino acid (BCAA) biosynthesis. Among the four options, only B (L-valine biosynthetic process) is a BCAA biosynthetic pathway. Option A (plasma membrane organization) is a structural/cellular process incompatible with a soluble dehydratase enzyme. Option C (dUDP biosynthetic process) belongs to pyrimidine nucleotide metabolism with entirely different enzyme classes. Option D (indole alkaloid biosynthetic process) involves plant/fungal secondary metabolism with P450s, decarboxylases, and prenyltransferases, not Fe-S dehydratases. Thus, general enzyme-class and pathway reasoning meaningfully distinguishes B from all distractors.",
-    "missing_item_specific_fact": "Precise identification of the enzyme as DHAD (rather than another dehydratase) from raw sequence alone requires either recognizing specific conserved DHAD motifs or database lookup. The specific assignment to valine (vs. isoleucine) as the 'primary' process is a UniProt annotation choice; the protein is equally involved in isoleucine biosynthesis.",
-    "reason": "While exact enzyme identification from a 598-aa sequence is non-trivial, the four options are sufficiently diverse (membrane organization, pyrimidine metabolism, indole alkaloid, BCAA biosynthesis) that general biological reasoning about enzyme class and pathway membership can eliminate three options and select B. The reasoning chain (dehydratase with Fe-S clusters → BCAA biosynthesis → valine among choices) is a valid general-knowledge argument, not dependent on memorizing this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the protein participates in both L-valine and L-isoleucine biosynthesis, only L-valine biosynthetic process appears among the options. The protein's role in aspterric acid cluster biosynthesis is not an option. Among the four choices, B is unambiguously the best fit; the other three are mechanistically incompatible with a mitochondrial Fe-S dehydratase."
-  },
-  "important_caveats": [
-    "The GO annotation for L-valine biosynthetic process is IEA (Inferred from Electronic Annotation) via UniProtKB-UniPathway, while the pathway statement itself carries direct assay evidence (ECO:0000269). The annotation is computationally propagated from the pathway assignment.",
-    "The protein is equally annotated with L-isoleucine biosynthetic process (GO:0009097); the choice of 'primary' process is somewhat arbitrary and depends on the option set.",
-    "The protein's biological context is dual: it is part of the aspterric acid (herbicide) biosynthesis gene cluster AND performs a core metabolic function in BCAA biosynthesis. The question's framing as 'primary biological process' could arguably favor the cluster context, but that is not among the options.",
-    "Sequence identity was confirmed matched against both current and archived UniProt entries (Q0CPG9, 598 aa, SHA256 match).",
-    "The GO annotation evidence code IEA means the specific GO term assignment is computational (pathway-based), not directly experimentally tested for this protein's GO annotation, though the enzymatic function itself has direct experimental support."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -517,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q0CPG9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "fa9e543b4d22dcd970aea00f48d66772e78eab78d909318baa5438958e06b376",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 598,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "fa9e543b4d22dcd970aea00f48d66772e78eab78d909318baa5438958e06b376",
   "current_entry_audit": {
     "entryVersion": 92,
     "firstPublicDate": "2025-04-09",
@@ -548,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-10-17",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "current_source_sequence_sha256": "fa9e543b4d22dcd970aea00f48d66772e78eab78d909318baa5438958e06b376",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 598,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "fa9e543b4d22dcd970aea00f48d66772e78eab78d909318baa5438958e06b376",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 90,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q0CPG9",
   "selected_historical_entry_version": 90,
+  "selected_historical_record_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "selected_historical_source_sequence_length": 598,
+  "selected_historical_source_sequence_sha256": "fa9e543b4d22dcd970aea00f48d66772e78eab78d909318baa5438958e06b376",
   "selected_historical_version": {
     "accession": "Q0CPG9",
     "database": "Swiss-Prot",
@@ -566,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ASTD_ASPTN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "selected_historical_source_sequence_sha256": "fa9e543b4d22dcd970aea00f48d66772e78eab78d909318baa5438958e06b376",
-  "selected_historical_source_sequence_length": 598,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 90,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -601,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q0CPG9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -620,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":92,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-10-17\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -639,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus terreus (strain NIH 2624 / FGSC A1156)\",\"taxonId\":341663}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -658,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein D\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Dihydroxy-acid dehydratase astD, mitochondrial\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"DHAD astD\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -677,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Dihydroxyacid dehydratase; part of the gene cluster that mediates the biosynthesis of the sesquiterpenoid aspterric acid (AA), an inhibitor of dihydroxy-acid dehydratase (DHAD) effective as an herbicide (PubMed:29995859). Performs the third step in the common pathway leading to biosynthesis of branched-chain amino acids (PubMed:29995859). Catalyzes the dehydration of (2R,3R)-2,3-dihydroxy-3-methylpentanoate (2,3-dihydroxy-3-methylvalerate) into 2-oxo-3-methylpentanoate (2-oxo-3-methylvalerate) and of (2R)-2,3-dihydroxy-3-methylbutanoate (2,3-dihydroxyisovalerate) into 2-oxo-3-methylbutanoate (2-oxoisovalerate), the penultimate precursor to L-isoleucine and L-valine, respectively (PubMed:29995859). AstD confers self-resistance in the presence of the dihydroxyacid dehydratase inhibitor aspterric acid (AA) produced by the ast cluster (PubMed:29995859)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -696,15 +447,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Amino-acid biosynthesis; L-isoleucine biosynthesis; L-isoleucine from 2-oxobutanoate: step 3/4\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -715,15 +466,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/comments/7",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Amino-acid biosynthesis; L-valine biosynthesis; L-valine from pyruvate: step 3/4\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/7",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -734,15 +485,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/19",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0009099\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:L-valine biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-UniPathway\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/19",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -753,15 +504,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json",
-  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
-  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yan Y.\",\"Liu Q.\",\"Zang X.\",\"Yuan S.\",\"Bat-Erdene U.\",\"Nguyen C.\",\"Gan J.\",\"Zhou J.\",\"Jacobsen S.E.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29995859\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-018-0319-4\"}],\"citationType\":\"journal article\",\"firstPage\":\"415\",\"id\":\"29995859\",\"journal\":\"Nature\",\"lastPage\":\"418\",\"publicationDate\":\"2018\",\"title\":\"Resistance-gene-directed discovery of a natural-product herbicide with a new mode of action.\",\"volume\":\"559\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"DOMAIN\",\"ACTIVITY REGULATION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:26.147110+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0169738886e0171e22cde2617027b82282487f67fb596ca539c3fec457997b4a",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG9.json"
 }
 ```
 
@@ -771,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 90,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90",
-  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   ASTD_ASPTN              Reviewed;         598 AA.\nAC   Q0CPG9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   17-OCT-2006, sequence version 1.\nDT   28-JAN-2026, entry version 90.\nDE   RecName: Full=Dihydroxy-acid dehydratase astD, mitochondrial {ECO:0000303|PubMed:29995859};\nDE            Short=DHAD astD {ECO:0000303|PubMed:29995859};\nDE            EC=4.2.1.9 {ECO:0000269|PubMed:29995859};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein D {ECO:0000303|PubMed:29995859};\nDE   Flags: Precursor;\nGN   Name=astD {ECO:0000303|PubMed:29995859}; ORFNames=ATEG_04415;\nOS   Aspergillus terreus (strain NIH 2624 / FGSC A1156).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=341663;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 90,
+  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90"
 }
 ```
 
@@ -792,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 90,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90",
-  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
-  "source_locator": "lines 29-37",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, DOMAIN,\nRP   ACTIVITY REGULATION, AND PATHWAY.\nRX   PubMed=29995859; DOI=10.1038/s41586-018-0319-4;\nRA   Yan Y., Liu Q., Zang X., Yuan S., Bat-Erdene U., Nguyen C., Gan J.,\nRA   Zhou J., Jacobsen S.E., Tang Y.;\nRT   \"Resistance-gene-directed discovery of a natural-product herbicide with a\nRT   new mode of action.\";\nRL   Nature 559:415-418(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 90,
+  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90"
 }
 ```
 
@@ -813,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 90,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90",
-  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
-  "source_locator": "lines 38-51",
   "excerpt": "CC   -!- FUNCTION: Dihydroxyacid dehydratase; part of the gene cluster that\nCC       mediates the biosynthesis of the sesquiterpenoid aspterric acid (AA),\nCC       an inhibitor of dihydroxy-acid dehydratase (DHAD) effective as an\nCC       herbicide (PubMed:29995859). Performs the third step in the common\nCC       pathway leading to biosynthesis of branched-chain amino acids\nCC       (PubMed:29995859). Catalyzes the dehydration of (2R,3R)-2,3-dihydroxy-\nCC       3-methylpentanoate (2,3-dihydroxy-3-methylvalerate) into 2-oxo-3-\nCC       methylpentanoate (2-oxo-3-methylvalerate) and of (2R)-2,3-dihydroxy-3-\nCC       methylbutanoate (2,3-dihydroxyisovalerate) into 2-oxo-3-methylbutanoate\nCC       (2-oxoisovalerate), the penultimate precursor to L-isoleucine and L-\nCC       valine, respectively (PubMed:29995859). AstD confers self-resistance in\nCC       the presence of the dihydroxyacid dehydratase inhibitor aspterric acid\nCC       (AA) produced by the ast cluster (PubMed:29995859).\nCC       {ECO:0000269|PubMed:29995859}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 90,
+  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 38-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90"
 }
 ```
 
@@ -834,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 90,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90",
-  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
-  "source_locator": "lines 77-79",
   "excerpt": "CC   -!- PATHWAY: Amino-acid biosynthesis; L-isoleucine biosynthesis; L-\nCC       isoleucine from 2-oxobutanoate: step 3/4.\nCC       {ECO:0000269|PubMed:29995859}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 90,
+  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-79",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90"
 }
 ```
 
@@ -855,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 90,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90",
-  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
-  "source_locator": "lines 80-81",
   "excerpt": "CC   -!- PATHWAY: Amino-acid biosynthesis; L-valine biosynthesis; L-valine from\nCC       pyruvate: step 3/4. {ECO:0000269|PubMed:29995859}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 90,
+  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 80-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90"
 }
 ```
 
@@ -876,18 +627,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 90,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90",
-  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
-  "source_locator": "lines 117-117",
   "excerpt": "DR   GO; GO:0009097; P:isoleucine biosynthetic process; IEA:UniProtKB-UniPathway.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 90,
+  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 117-117",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90"
 }
 ```
 
@@ -897,18 +648,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 90,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90",
-  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
-  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
-  "source_locator": "lines 118-118",
   "excerpt": "DR   GO; GO:0009099; P:L-valine biosynthetic process; IEA:UniProtKB-UniPathway.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 90,
+  "retrieved_utc": "2026-11-02T04:30:28.917378+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 118-118",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9bf655407cf1951ee3eade3f48f59afe8492d4b13add34fd5d783ee9fb63fb58",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG9?format=txt&versions=90"
 }
 ```
 
@@ -919,15 +670,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 64156-64169",
   "excerpt": "[Term]\nid: GO:0006227\nname: dUDP biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of dUDP, deoxyuridine diphosphate (2'-deoxy-5'-uridylyl phosphate).\" [ISBN:0198506732]\nsynonym: \"dUDP anabolism\" EXACT []\nsynonym: \"dUDP biosynthesis\" EXACT []\nsynonym: \"dUDP formation\" EXACT []\nsynonym: \"dUDP synthesis\" EXACT []\nis_a: GO:0009189 ! deoxyribonucleoside diphosphate biosynthetic process\nis_a: GO:0009197 ! pyrimidine deoxyribonucleoside diphosphate biosynthetic process\nis_a: GO:0009221 ! pyrimidine deoxyribonucleotide biosynthetic process\nis_a: GO:0046077 ! dUDP metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006227",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 64156-64169",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006227"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -938,15 +689,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 72411-72421",
   "excerpt": "[Term]\nid: GO:0007009\nname: plasma membrane organization\nnamespace: biological_process\ndef: \"A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the plasma membrane.\" [GOC:dph, GOC:jl, GOC:mah]\nsubset: goslim_chembl\nsynonym: \"plasma membrane organisation\" EXACT []\nsynonym: \"plasma membrane organization and biogenesis\" RELATED [GOC:mah]\nis_a: GO:0061024 ! membrane organization\nrelationship: part_of GO:0010256 ! endomembrane system organization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0007009",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 72411-72421",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0007009"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -957,15 +708,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 92766-92778",
   "excerpt": "[Term]\nid: GO:0009099\nname: L-valine biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of valine, 2-amino-3-methylbutanoic acid.\" [GOC:ai, MetaCyc:VALSYN-PWY]\nsynonym: \"valine anabolism\" EXACT []\nsynonym: \"valine biosynthesis\" EXACT []\nsynonym: \"valine formation\" EXACT []\nsynonym: \"valine synthesis\" EXACT []\nxref: MetaCyc:VALSYN-PWY\nis_a: GO:0009079 ! pyruvate family amino acid biosynthetic process\nis_a: GO:0009082 ! branched-chain amino acid biosynthetic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009099",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 92766-92778",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009099"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -976,15 +727,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 221717-221728",
   "excerpt": "[Term]\nid: GO:0035835\nname: indole alkaloid biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of an indole alkaloid, an alkaloid containing an indole skeleton.\" [GOC:yaf]\nsynonym: \"indole alkaloid anabolism\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid biosynthesis\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid formation\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid synthesis\" EXACT [GOC:bf]\nis_a: GO:0009821 ! alkaloid biosynthetic process\nis_a: GO:0035834 ! indole alkaloid metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035835",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 221717-221728",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035835"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

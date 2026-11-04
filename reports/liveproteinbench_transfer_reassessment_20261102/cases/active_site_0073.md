@@ -1,18 +1,16 @@
-# active_site_0073: before and after transfer clarification
+# active_site_0073
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0073.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0073.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 93 (Proton donor)
+**Expected answer:** **C** — Position 93 (Proton donor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt entry for soybean HAL3a/PPCDC, which annotates residue 93 as a proton donor. This annotation is transferred by similarity from UniProtKB:Q9SWE5, rather than shown here to be direct experimental evidence for this soybean protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may permit protein-family inference, but no supplied context or general biochemical principle identifies residue 93 as the proton donor rather than another candidate position.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site annotation assigning proton-donor function to residue 93.
-
-
-**Reason**
-
-> Choosing C depends on an exact residue-function annotation for this protein or a sufficiently close homolog; that fact is not provided by the sequence and choices alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed options, the supplied reviewer evidence supports C; it does not support the other listed positions. The annotations also identify residue 178 as a proton donor, but that position is not an option.
-
-
-### Important caveats
-
-- The UniProt annotation is evidence by similarity (ECO:0000250), not independently verified direct experimental evidence in the supplied material.
-- The question describes active-site residues in the plural but offers individual-position choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may permit protein-family inference, but no supplied context or general biochemical principle identifies residue 93 as the proton donor rather than another candidate position.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning proton-donor function to residue 93.",
-    "reason": "Choosing C depends on an exact residue-function annotation for this protein or a sufficiently close homolog; that fact is not provided by the sequence and choices alone."
-  },
-  "case_id": "active_site_0073",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for soybean HAL3a/PPCDC, which annotates residue 93 as a proton donor. This annotation is transferred by similarity from UniProtKB:Q9SWE5, rather than shown here to be direct experimental evidence for this soybean protein."
-  },
-  "important_caveats": [
-    "The UniProt annotation is evidence by similarity (ECO:0000250), not independently verified direct experimental evidence in the supplied material.",
-    "The question describes active-site residues in the plural but offers individual-position choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, the supplied reviewer evidence supports C; it does not support the other listed positions. The annotations also identify residue 178 as a proton donor, but that position is not an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0073",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for soybean HAL3a/PPCDC, which annotates residue 93 as a proton donor. This annotation is transferred by similarity from UniProtKB:Q9SWE5, rather than shown here to be direct experimental evidence for this soybean protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may permit protein-family inference, but no supplied context or general biochemical principle identifies residue 93 as the proton donor rather than another candidate position.",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning proton-donor function to residue 93.",
-    "reason": "Choosing C depends on an exact residue-function annotation for this protein or a sufficiently close homolog; that fact is not provided by the sequence and choices alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, the supplied reviewer evidence supports C; it does not support the other listed positions. The annotations also identify residue 178 as a proton donor, but that position is not an option."
-  },
-  "important_caveats": [
-    "The UniProt annotation is evidence by similarity (ECO:0000250), not independently verified direct experimental evidence in the supplied material.",
-    "The question describes active-site residues in the plural but offers individual-position choices."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry C6SZ50 (HAL3A_SOYBN, Phosphopantothenoylcysteine decarboxylase HAL3a, EC 4.1.1.36) annotates position 93 as an Active site with description 'Proton donor' (evidence code ECO:0000250, inferred by similarity from Q9SWE5). The sequence at position 93 is indeed Histidine (H), consistent with a proton-donor role. The annotation is computational (similarity transfer), not direct experimental evidence for this specific protein, but it is the authoritative database annotation supporting the expected answer.
-
-Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The provided sequence is only 211 amino acids long, so options A (position 959) and D (position 4848) are trivially eliminated as positions exceeding the protein length. Between the remaining options, position 93 is Histidine (H), a canonical catalytic residue capable of acting as a proton donor/acceptor, while position 170 is Proline (P), a structurally constrained residue that is not involved in proton transfer catalysis. Additionally, the enzyme is a decarboxylase (EC 4.1.1.36), making descriptions referencing 'dehydratase activity' (options A and D) functionally inconsistent. General knowledge of amino acid catalytic roles suffices to select C.
-
-
-**Missing item-specific fact**
-
-> None critical. The reasoning relies on counting sequence length (trivial) and recognizing His vs Pro catalytic potential (general biochemistry).
-
-
-**Reason**
-
-> A model can eliminate A and D by noting positions 959 and 4848 exceed the 211-residue sequence, then distinguish B from C by recognizing that Histidine is a well-known proton-transfer catalytic residue whereas Proline is not. This is general biological reasoning, not a lookup of a specific database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and D are invalid by sequence length. Option B places a catalytic role on Proline, which is biochemically implausible. Only option C (His93, proton donor) is consistent with both the sequence and general catalytic chemistry. No genuine ambiguity remains.
-
-
-### Important caveats
-
-- The UniProt annotation for position 93 carries evidence code ECO:0000250 (inferred by similarity from Q9SWE5), meaning it is a computational transfer, not a direct experimental determination for this soybean protein.
-- The enzyme also has a second annotated active site at position 178 (also 'Proton donor'), but this position is not offered as a choice, so it does not create ambiguity.
-- Options A and D reference 'dehydratase activity' while the enzyme is classified as a decarboxylase (EC 4.1.1.36), adding another layer of inconsistency beyond the out-of-range positions.
-- The reviewer-only evidence confirms the sequence match (SHA-256 identical) between the benchmark input and UniProt C6SZ50 at both current and historical (entry version 84) snapshots.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The provided sequence is only 211 amino acids long, so options A (position 959) and D (position 4848) are trivially eliminated as positions exceeding the protein length. Between the remaining options, position 93 is Histidine (H), a canonical catalytic residue capable of acting as a proton donor/acceptor, while position 170 is Proline (P), a structurally constrained residue that is not involved in proton transfer catalysis. Additionally, the enzyme is a decarboxylase (EC 4.1.1.36), making descriptions referencing 'dehydratase activity' (options A and D) functionally inconsistent. General knowledge of amino acid catalytic roles suffices to select C.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The reasoning relies on counting sequence length (trivial) and recognizing His vs Pro catalytic potential (general biochemistry).",
-    "reason": "A model can eliminate A and D by noting positions 959 and 4848 exceed the 211-residue sequence, then distinguish B from C by recognizing that Histidine is a well-known proton-transfer catalytic residue whereas Proline is not. This is general biological reasoning, not a lookup of a specific database entry."
-  },
-  "case_id": "active_site_0073",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry C6SZ50 (HAL3A_SOYBN, Phosphopantothenoylcysteine decarboxylase HAL3a, EC 4.1.1.36) annotates position 93 as an Active site with description 'Proton donor' (evidence code ECO:0000250, inferred by similarity from Q9SWE5). The sequence at position 93 is indeed Histidine (H), consistent with a proton-donor role. The annotation is computational (similarity transfer), not direct experimental evidence for this specific protein, but it is the authoritative database annotation supporting the expected answer."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 93 carries evidence code ECO:0000250 (inferred by similarity from Q9SWE5), meaning it is a computational transfer, not a direct experimental determination for this soybean protein.",
-    "The enzyme also has a second annotated active site at position 178 (also 'Proton donor'), but this position is not offered as a choice, so it does not create ambiguity.",
-    "Options A and D reference 'dehydratase activity' while the enzyme is classified as a decarboxylase (EC 4.1.1.36), adding another layer of inconsistency beyond the out-of-range positions.",
-    "The reviewer-only evidence confirms the sequence match (SHA-256 identical) between the benchmark input and UniProt C6SZ50 at both current and historical (entry version 84) snapshots."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are invalid by sequence length. Option B places a catalytic role on Proline, which is biochemically implausible. Only option C (His93, proton donor) is consistent with both the sequence and general catalytic chemistry. No genuine ambiguity remains."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0073",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry C6SZ50 (HAL3A_SOYBN, Phosphopantothenoylcysteine decarboxylase HAL3a, EC 4.1.1.36) annotates position 93 as an Active site with description 'Proton donor' (evidence code ECO:0000250, inferred by similarity from Q9SWE5). The sequence at position 93 is indeed Histidine (H), consistent with a proton-donor role. The annotation is computational (similarity transfer), not direct experimental evidence for this specific protein, but it is the authoritative database annotation supporting the expected answer.",
-    "evidence_ids": ["C5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The provided sequence is only 211 amino acids long, so options A (position 959) and D (position 4848) are trivially eliminated as positions exceeding the protein length. Between the remaining options, position 93 is Histidine (H), a canonical catalytic residue capable of acting as a proton donor/acceptor, while position 170 is Proline (P), a structurally constrained residue that is not involved in proton transfer catalysis. Additionally, the enzyme is a decarboxylase (EC 4.1.1.36), making descriptions referencing 'dehydratase activity' (options A and D) functionally inconsistent. General knowledge of amino acid catalytic roles suffices to select C.",
-    "missing_item_specific_fact": "None critical. The reasoning relies on counting sequence length (trivial) and recognizing His vs Pro catalytic potential (general biochemistry).",
-    "reason": "A model can eliminate A and D by noting positions 959 and 4848 exceed the 211-residue sequence, then distinguish B from C by recognizing that Histidine is a well-known proton-transfer catalytic residue whereas Proline is not. This is general biological reasoning, not a lookup of a specific database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are invalid by sequence length. Option B places a catalytic role on Proline, which is biochemically implausible. Only option C (His93, proton donor) is consistent with both the sequence and general catalytic chemistry. No genuine ambiguity remains."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 93 carries evidence code ECO:0000250 (inferred by similarity from Q9SWE5), meaning it is a computational transfer, not a direct experimental determination for this soybean protein.",
-    "The enzyme also has a second annotated active site at position 178 (also 'Proton donor'), but this position is not offered as a choice, so it does not create ambiguity.",
-    "Options A and D reference 'dehydratase activity' while the enzyme is classified as a decarboxylase (EC 4.1.1.36), adding another layer of inconsistency beyond the out-of-range positions.",
-    "The reviewer-only evidence confirms the sequence match (SHA-256 identical) between the benchmark input and UniProt C6SZ50 at both current and historical (entry version 84) snapshots."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "C6SZ50",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "42d591b72a59644dce840573d469e04fad803877d6364e70afe70b2cffcfd7ad",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 211,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "42d591b72a59644dce840573d469e04fad803877d6364e70afe70b2cffcfd7ad",
   "current_entry_audit": {
     "entryVersion": 86,
     "firstPublicDate": "2025-04-09",
@@ -528,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-09-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "current_source_sequence_sha256": "42d591b72a59644dce840573d469e04fad803877d6364e70afe70b2cffcfd7ad",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 211,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "42d591b72a59644dce840573d469e04fad803877d6364e70afe70b2cffcfd7ad",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 84,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "C6SZ50",
   "selected_historical_entry_version": 84,
+  "selected_historical_record_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "selected_historical_source_sequence_length": 211,
+  "selected_historical_source_sequence_sha256": "42d591b72a59644dce840573d469e04fad803877d6364e70afe70b2cffcfd7ad",
   "selected_historical_version": {
     "accession": "C6SZ50",
     "database": "Swiss-Prot",
@@ -546,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HAL3A_SOYBN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "selected_historical_source_sequence_sha256": "42d591b72a59644dce840573d469e04fad803877d6364e70afe70b2cffcfd7ad",
-  "selected_historical_source_sequence_length": 211,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 84,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"C6SZ50\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -596,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":86,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-09-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -615,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soybean\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"rosids\",\"fabids\",\"Fabales\",\"Fabaceae\",\"Papilionoideae\",\"50 kb inversion clade\",\"NPAAA clade\",\"indigoferoid/millettioid clade\",\"Phaseoleae\",\"Glycine\",\"Glycine subgen. Soja\"],\"scientificName\":\"Glycine max\",\"synonyms\":[\"Glycine hispida\"],\"taxonId\":3847}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -634,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.3\",\"source\":\"Reference\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.4\",\"source\":\"Reference\"}],\"value\":\"Halotolerance protein 3a\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.3\",\"source\":\"Reference\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"Ref.4\",\"source\":\"Reference\"}],\"value\":\"GmHAL3a\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"value\":\"4.1.1.36\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Phosphopantothenoylcysteine decarboxylase HAL3a\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"PPCDC\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -653,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":93},\"start\":{\"modifier\":\"EXACT\",\"value\":93}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -672,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":178},\"start\":{\"modifier\":\"EXACT\",\"value\":178}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -691,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58210\",\"name\":\"FMN\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":33},\"start\":{\"modifier\":\"EXACT\",\"value\":31}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -710,15 +472,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58210\",\"name\":\"FMN\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":58},\"start\":{\"modifier\":\"EXACT\",\"value\":56}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -729,15 +491,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58210\",\"name\":\"FMN\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":112},\"start\":{\"modifier\":\"EXACT\",\"value\":109}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -748,15 +510,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:58210\",\"name\":\"FMN\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":143},\"start\":{\"modifier\":\"EXACT\",\"value\":143}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -767,15 +529,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59458\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59458\",\"name\":\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":145},\"start\":{\"modifier\":\"EXACT\",\"value\":145}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -786,15 +548,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59458\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59458\",\"name\":\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":175},\"start\":{\"modifier\":\"EXACT\",\"value\":175}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -805,15 +567,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59458\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59458\",\"name\":\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":177},\"start\":{\"modifier\":\"EXACT\",\"value\":177}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -824,15 +586,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59458\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59458\",\"name\":\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":186},\"start\":{\"modifier\":\"EXACT\",\"value\":186}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -843,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json",
-  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
-  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
-  "json_pointer": "/features/11",
   "excerpt": "{\"description\":\"Important for catalytic activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SWE5\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":178},\"start\":{\"modifier\":\"EXACT\",\"value\":178}},\"type\":\"Site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/11",
+  "retrieved_utc": "2026-11-02T04:27:34.573952+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d2226dda9179b81f36d4679262e16bb210a289390044f58410d1a107b4408396",
+  "url": "https://rest.uniprot.org/uniprotkb/C6SZ50.json"
 }
 ```
 
@@ -861,18 +623,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   HAL3A_SOYBN             Reviewed;         211 AA.\nAC   C6SZ50;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-SEP-2009, sequence version 1.\nDT   28-JAN-2026, entry version 84.\nDE   RecName: Full=Phosphopantothenoylcysteine decarboxylase HAL3a {ECO:0000305};\nDE            Short=PPCDC {ECO:0000305};\nDE            EC=4.1.1.36 {ECO:0000250|UniProtKB:Q9SWE5};\nDE   AltName: Full=Halotolerance protein 3a {ECO:0000303|Ref.3, ECO:0000303|Ref.4};\nDE            Short=GmHAL3a {ECO:0000303|Ref.3, ECO:0000303|Ref.4};\nGN   Name=HAL3A {ECO:0000303|Ref.3, ECO:0000303|Ref.4};\nGN   OrderedLocusNames=Glyma03g020900 {ECO:0000312|EMBL:KRH65212.1};\nOS   Glycine max (Soybean) (Glycine hispida).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   rosids; fabids; Fabales; Fabaceae; Papilionoideae; 50 kb inversion clade;\nOC   NPAAA clade; indigoferoid/millettioid clade; Phaseoleae; Glycine;\nOC   Glycine subgen. Soja.\nOX   NCBI_TaxID=3847;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -882,18 +644,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 150-152",
   "excerpt": "FT   ACT_SITE        93\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 150-152",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -903,18 +665,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 153-155",
   "excerpt": "FT   ACT_SITE        178\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 153-155",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -924,18 +686,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 156-159",
   "excerpt": "FT   BINDING         31..33\nFT                   /ligand=\"FMN\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58210\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 156-159",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -945,18 +707,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 160-163",
   "excerpt": "FT   BINDING         56..58\nFT                   /ligand=\"FMN\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58210\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 160-163",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -966,18 +728,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 164-167",
   "excerpt": "FT   BINDING         109..112\nFT                   /ligand=\"FMN\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58210\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 164-167",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -987,18 +749,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 168-171",
   "excerpt": "FT   BINDING         143\nFT                   /ligand=\"FMN\"\nFT                   /ligand_id=\"ChEBI:CHEBI:58210\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 168-171",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -1008,18 +770,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 172-175",
   "excerpt": "FT   BINDING         145\nFT                   /ligand=\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59458\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 172-175",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -1029,18 +791,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 176-179",
   "excerpt": "FT   BINDING         175\nFT                   /ligand=\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59458\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 176-179",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -1050,18 +812,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 180-183",
   "excerpt": "FT   BINDING         177\nFT                   /ligand=\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59458\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 180-183",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -1071,18 +833,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 184-187",
   "excerpt": "FT   BINDING         186\nFT                   /ligand=\"N-[(R)-4-phosphopantothenoyl]-L-cysteine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59458\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 184-187",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 
@@ -1092,18 +854,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84",
-  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
-  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
-  "source_locator": "lines 188-190",
   "excerpt": "FT   SITE            178\nFT                   /note=\"Important for catalytic activity\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SWE5\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:27:36.741333+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 188-190",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce346fa691149ee6e809ca984b0d5dbda18272b4eb904ae9e28b38ca8688212",
+  "url": "https://rest.uniprot.org/unisave/C6SZ50?format=txt&versions=84"
 }
 ```
 

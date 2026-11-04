@@ -1,18 +1,16 @@
-# pathway_0135: before and after transfer clarification
+# pathway_0135
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0135.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0135.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — tRNA modification
+**Expected answer:** **B** — tRNA modification
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for ubiquitin-related modifier 1, whose pathway is annotated as tRNA modification and 5-methoxycarbonylmethyl-2-thiouridine-tRNA biosynthesis. This supports B, though the cited pathway annotation is computational (HAMAP), not experimental evidence.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may be recognizable as a ubiquitin-like modifier, but that family-level recognition alone does not establish its specific role in tRNA modification rather than another pathway.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as Urm1 and its pathway-specific role in tRNA modification are not supplied in the question.
-
-
-**Reason**
-
-> Selecting B requires protein-specific functional knowledge or an external annotation; the sequence and choices do not provide a sufficiently discriminating biological argument on their own.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched UniProt annotation supports B; the other listed pathway categories are not supported by the supplied evidence.
-
-
-### Important caveats
-
-- The evidence is a sequence-matched database annotation supported by a computational HAMAP rule, not independently verified experimental evidence.
-- The author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may be recognizable as a ubiquitin-like modifier, but that family-level recognition alone does not establish its specific role in tRNA modification rather than another pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as Urm1 and its pathway-specific role in tRNA modification are not supplied in the question.",
-    "reason": "Selecting B requires protein-specific functional knowledge or an external annotation; the sequence and choices do not provide a sufficiently discriminating biological argument on their own."
-  },
-  "case_id": "pathway_0135",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for ubiquitin-related modifier 1, whose pathway is annotated as tRNA modification and 5-methoxycarbonylmethyl-2-thiouridine-tRNA biosynthesis. This supports B, though the cited pathway annotation is computational (HAMAP), not experimental evidence."
-  },
-  "important_caveats": [
-    "The evidence is a sequence-matched database annotation supported by a computational HAMAP rule, not independently verified experimental evidence.",
-    "The author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched UniProt annotation supports B; the other listed pathway categories are not supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0135",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for ubiquitin-related modifier 1, whose pathway is annotated as tRNA modification and 5-methoxycarbonylmethyl-2-thiouridine-tRNA biosynthesis. This supports B, though the cited pathway annotation is computational (HAMAP), not experimental evidence.",
-    "evidence_ids": ["C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may be recognizable as a ubiquitin-like modifier, but that family-level recognition alone does not establish its specific role in tRNA modification rather than another pathway.",
-    "missing_item_specific_fact": "The protein's identity as Urm1 and its pathway-specific role in tRNA modification are not supplied in the question.",
-    "reason": "Selecting B requires protein-specific functional knowledge or an external annotation; the sequence and choices do not provide a sufficiently discriminating biological argument on their own."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched UniProt annotation supports B; the other listed pathway categories are not supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The evidence is a sequence-matched database annotation supported by a computational HAMAP rule, not independently verified experimental evidence.",
-    "The author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry G0SE11 (URM1_CHATD) explicitly annotates the pathway as 'tRNA modification; 5-methoxycarbonylmethyl-2-thiouridine-tRNA biosynthesis' (evidence code ECO:0000255, inferred by similarity from HAMAP-Rule MF_03048). The protein is identified as Ubiquitin-related modifier 1 (URM1), a well-characterized ubiquitin-like protein whose established role is in the mcm5s2U tRNA thiolation pathway. The sequence matches exactly (110 AA). The annotation is computational (similarity-based) rather than direct experimental, but URM1's role in tRNA modification is well-established in the literature.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a small (~110 aa) protein ending in a C-terminal 'GG' motif, which is a generic hallmark of ubiquitin-like modifiers. By elimination, options A (aromatic compound metabolism), C (antifungal biosynthesis), and D (alkaloid biosynthesis) typically involve much larger enzymes (dioxygenases, PKS/NRPS, P450s) and can be ruled out for a small globular protein. However, the specific assignment to 'tRNA modification' rather than any other pathway requiring a ubiquitin-like modifier (e.g., proteasomal degradation, DNA repair, autophagy) requires knowing that this particular protein is URM1, the ubiquitin-like modifier dedicated to the tRNA thiolation pathway.
-
-
-**Missing item-specific fact**
-
-> Recognition that this specific 110-aa sequence is URM1 (Ubiquitin-related modifier 1) and that URM1's dedicated pathway is tRNA modification (mcm5s2U biosynthesis). The sequence lacks catalytic domains or tRNA-binding motifs that would independently signal a tRNA-modification role.
-
-
-**Reason**
-
-> While the C-terminal GG and small size weakly eliminate the large-enzyme distractors (A, C, D), the positive assignment to 'tRNA modification' specifically requires protein-identity knowledge (this is URM1) and pathway-specific memorization (URM1 → tRNA thiolation). No sequence feature uniquely distinguishes tRNA modification from other ubiquitin-like modifier pathways without that lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The three distractors (aromatic compound metabolism, antifungal biosynthesis, alkaloid biosynthesis) are implausible for a 110-aa protein with a ubiquitin-like C-terminal GG motif, so B is the only viable option by elimination. No other choice is defensible given the protein's size and structural class.
-
-
-### Important caveats
-
-- The UniProt pathway annotation carries evidence code ECO:0000255 (inferred by similarity from HAMAP-Rule MF_03048), meaning it is a computational annotation transfer rather than direct experimental validation for this specific organism.
-- The identity of the accession (G0SE11) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.
-- The C-terminal 'GG' motif is a generic ubiquitin-like feature shared by SUMO, NEDD8, ISG15, and other modifiers; it does not uniquely identify URM1 or the tRNA modification pathway.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a small (~110 aa) protein ending in a C-terminal 'GG' motif, which is a generic hallmark of ubiquitin-like modifiers. By elimination, options A (aromatic compound metabolism), C (antifungal biosynthesis), and D (alkaloid biosynthesis) typically involve much larger enzymes (dioxygenases, PKS/NRPS, P450s) and can be ruled out for a small globular protein. However, the specific assignment to 'tRNA modification' rather than any other pathway requiring a ubiquitin-like modifier (e.g., proteasomal degradation, DNA repair, autophagy) requires knowing that this particular protein is URM1, the ubiquitin-like modifier dedicated to the tRNA thiolation pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Recognition that this specific 110-aa sequence is URM1 (Ubiquitin-related modifier 1) and that URM1's dedicated pathway is tRNA modification (mcm5s2U biosynthesis). The sequence lacks catalytic domains or tRNA-binding motifs that would independently signal a tRNA-modification role.",
-    "reason": "While the C-terminal GG and small size weakly eliminate the large-enzyme distractors (A, C, D), the positive assignment to 'tRNA modification' specifically requires protein-identity knowledge (this is URM1) and pathway-specific memorization (URM1 → tRNA thiolation). No sequence feature uniquely distinguishes tRNA modification from other ubiquitin-like modifier pathways without that lookup."
-  },
-  "case_id": "pathway_0135",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry G0SE11 (URM1_CHATD) explicitly annotates the pathway as 'tRNA modification; 5-methoxycarbonylmethyl-2-thiouridine-tRNA biosynthesis' (evidence code ECO:0000255, inferred by similarity from HAMAP-Rule MF_03048). The protein is identified as Ubiquitin-related modifier 1 (URM1), a well-characterized ubiquitin-like protein whose established role is in the mcm5s2U tRNA thiolation pathway. The sequence matches exactly (110 AA). The annotation is computational (similarity-based) rather than direct experimental, but URM1's role in tRNA modification is well-established in the literature."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation carries evidence code ECO:0000255 (inferred by similarity from HAMAP-Rule MF_03048), meaning it is a computational annotation transfer rather than direct experimental validation for this specific organism.",
-    "The identity of the accession (G0SE11) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
-    "The C-terminal 'GG' motif is a generic ubiquitin-like feature shared by SUMO, NEDD8, ISG15, and other modifiers; it does not uniquely identify URM1 or the tRNA modification pathway."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors (aromatic compound metabolism, antifungal biosynthesis, alkaloid biosynthesis) are implausible for a 110-aa protein with a ubiquitin-like C-terminal GG motif, so B is the only viable option by elimination. No other choice is defensible given the protein's size and structural class."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0135",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry G0SE11 (URM1_CHATD) explicitly annotates the pathway as 'tRNA modification; 5-methoxycarbonylmethyl-2-thiouridine-tRNA biosynthesis' (evidence code ECO:0000255, inferred by similarity from HAMAP-Rule MF_03048). The protein is identified as Ubiquitin-related modifier 1 (URM1), a well-characterized ubiquitin-like protein whose established role is in the mcm5s2U tRNA thiolation pathway. The sequence matches exactly (110 AA). The annotation is computational (similarity-based) rather than direct experimental, but URM1's role in tRNA modification is well-established in the literature.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a small (~110 aa) protein ending in a C-terminal 'GG' motif, which is a generic hallmark of ubiquitin-like modifiers. By elimination, options A (aromatic compound metabolism), C (antifungal biosynthesis), and D (alkaloid biosynthesis) typically involve much larger enzymes (dioxygenases, PKS/NRPS, P450s) and can be ruled out for a small globular protein. However, the specific assignment to 'tRNA modification' rather than any other pathway requiring a ubiquitin-like modifier (e.g., proteasomal degradation, DNA repair, autophagy) requires knowing that this particular protein is URM1, the ubiquitin-like modifier dedicated to the tRNA thiolation pathway.",
-    "missing_item_specific_fact": "Recognition that this specific 110-aa sequence is URM1 (Ubiquitin-related modifier 1) and that URM1's dedicated pathway is tRNA modification (mcm5s2U biosynthesis). The sequence lacks catalytic domains or tRNA-binding motifs that would independently signal a tRNA-modification role.",
-    "reason": "While the C-terminal GG and small size weakly eliminate the large-enzyme distractors (A, C, D), the positive assignment to 'tRNA modification' specifically requires protein-identity knowledge (this is URM1) and pathway-specific memorization (URM1 → tRNA thiolation). No sequence feature uniquely distinguishes tRNA modification from other ubiquitin-like modifier pathways without that lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors (aromatic compound metabolism, antifungal biosynthesis, alkaloid biosynthesis) are implausible for a 110-aa protein with a ubiquitin-like C-terminal GG motif, so B is the only viable option by elimination. No other choice is defensible given the protein's size and structural class."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation carries evidence code ECO:0000255 (inferred by similarity from HAMAP-Rule MF_03048), meaning it is a computational annotation transfer rather than direct experimental validation for this specific organism.",
-    "The identity of the accession (G0SE11) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
-    "The C-terminal 'GG' motif is a generic ubiquitin-like feature shared by SUMO, NEDD8, ISG15, and other modifiers; it does not uniquely identify URM1 or the tRNA modification pathway."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -495,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G0SE11",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b38aba3fb12ec82d94d5fa0551bc63308cc63b7f88d8f4dd468f6e1bb172307d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 110,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b38aba3fb12ec82d94d5fa0551bc63308cc63b7f88d8f4dd468f6e1bb172307d",
   "current_entry_audit": {
     "entryVersion": 65,
     "firstPublicDate": "2025-02-05",
@@ -526,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-10-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
-  "current_source_sequence_sha256": "b38aba3fb12ec82d94d5fa0551bc63308cc63b7f88d8f4dd468f6e1bb172307d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 110,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b38aba3fb12ec82d94d5fa0551bc63308cc63b7f88d8f4dd468f6e1bb172307d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 63,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G0SE11",
   "selected_historical_entry_version": 63,
+  "selected_historical_record_sha256": "71c679b42c74b0e601403501888775dde3d805c76eb8287bdee94903c035ac93",
+  "selected_historical_source_sequence_length": 110,
+  "selected_historical_source_sequence_sha256": "b38aba3fb12ec82d94d5fa0551bc63308cc63b7f88d8f4dd468f6e1bb172307d",
   "selected_historical_version": {
     "accession": "G0SE11",
     "database": "Swiss-Prot",
@@ -544,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "URM1_CHATD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "71c679b42c74b0e601403501888775dde3d805c76eb8287bdee94903c035ac93",
-  "selected_historical_source_sequence_sha256": "b38aba3fb12ec82d94d5fa0551bc63308cc63b7f88d8f4dd468f6e1bb172307d",
-  "selected_historical_source_sequence_length": 110,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 63,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -575,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json",
-  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
-  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G0SE11\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json"
 }
 ```
 
@@ -594,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json",
-  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
-  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":65,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-10-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json"
 }
 ```
 
@@ -613,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json",
-  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
-  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Chaetomium thermophilum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Thermochaetoides\"],\"scientificName\":\"Thermochaetoides thermophila (strain DSM 1495 / CBS 144.50 / DAOM 24625 / IMI 039719)\",\"taxonId\":759272}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json"
 }
 ```
 
@@ -632,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json",
-  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
-  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03048\",\"source\":\"HAMAP-Rule\"}],\"value\":\"Ubiquitin-related modifier 1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json"
 }
 ```
 
@@ -651,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json",
-  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
-  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03048\",\"source\":\"HAMAP-Rule\"}],\"value\":\"tRNA modification; 5-methoxycarbonylmethyl-2-thiouridine-tRNA biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:28:23.878847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4a0617674475f0c7d4b377ce764bec6052b7dca31ac470950fd4a8a088898a3a",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SE11.json"
 }
 ```
 
@@ -669,18 +431,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 63,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0SE11?format=txt&versions=63",
-  "source_sha256": "71c679b42c74b0e601403501888775dde3d805c76eb8287bdee94903c035ac93",
-  "retrieved_utc": "2026-11-02T04:28:26.481143+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   URM1_CHATD              Reviewed;         110 AA.\nAC   G0SE11;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-OCT-2011, sequence version 1.\nDT   18-JUN-2025, entry version 63.\nDE   RecName: Full=Ubiquitin-related modifier 1 {ECO:0000255|HAMAP-Rule:MF_03048};\nGN   Name=URM1 {ECO:0000255|HAMAP-Rule:MF_03048}; ORFNames=CTHT_0062030;\nOS   Chaetomium thermophilum (strain DSM 1495 / CBS 144.50 / IMI 039719)\nOS   (Thermochaetoides thermophila).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Thermochaetoides.\nOX   NCBI_TaxID=759272;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 63,
+  "retrieved_utc": "2026-11-02T04:28:26.481143+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "71c679b42c74b0e601403501888775dde3d805c76eb8287bdee94903c035ac93",
+  "url": "https://rest.uniprot.org/unisave/G0SE11?format=txt&versions=63"
 }
 ```
 
@@ -690,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 63,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0SE11?format=txt&versions=63",
-  "source_sha256": "71c679b42c74b0e601403501888775dde3d805c76eb8287bdee94903c035ac93",
-  "retrieved_utc": "2026-11-02T04:28:26.481143+00:00",
-  "source_locator": "lines 62-63",
   "excerpt": "CC   -!- PATHWAY: tRNA modification; 5-methoxycarbonylmethyl-2-thiouridine-tRNA\nCC       biosynthesis. {ECO:0000255|HAMAP-Rule:MF_03048}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 63,
+  "retrieved_utc": "2026-11-02T04:28:26.481143+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "71c679b42c74b0e601403501888775dde3d805c76eb8287bdee94903c035ac93",
+  "url": "https://rest.uniprot.org/unisave/G0SE11?format=txt&versions=63"
 }
 ```
 

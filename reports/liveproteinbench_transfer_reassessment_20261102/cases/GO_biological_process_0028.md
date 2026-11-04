@@ -1,18 +1,16 @@
-# GO_biological_process_0028: before and after transfer clarification
+# GO_biological_process_0028
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0028.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0028.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — antibacterial innate immune response
+**Expected answer:** **B** — antibacterial innate immune response
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,251 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the cited C. elegans protein. UniProt reports a role in resistance to virulent P. aeruginosa, with experimental evidence cited, and records the GO term antibacterial innate immune response. This supports B, while the exact author source snapshot is unknown.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C5](#evidence-c5), [C6](#evidence-c6), [C9](#evidence-c9), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices do not provide a concrete basis for identifying this protein's specific role in antibacterial innate immunity. General sequence-based reasoning might make viral RNA transcription seem unlikely, but it does not establish B over the other biological-process choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific finding that this C. elegans protein contributes to resistance against P. aeruginosa through innate immunity.
-
-
-**Reason**
-
-> The supporting function and GO annotation come from protein-specific research and database records, not a biological fact supplied in the question. Recognizing the exact sequence or recalling its annotation would be lookup or memorization, not reasoning from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence specifically supports antibacterial innate immune response. Response to lipopolysaccharide is a related but more stimulus-specific process, and the supplied evidence does not establish that process for this protein.
-
-
-### Important caveats
-
-- The matched UniProt record and experimental citations support the key, but the author's exact data-source snapshot is unknown.
-- The reviewer-only annotations and identity information were not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices do not provide a concrete basis for identifying this protein's specific role in antibacterial innate immunity. General sequence-based reasoning might make viral RNA transcription seem unlikely, but it does not establish B over the other biological-process choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific finding that this C. elegans protein contributes to resistance against P. aeruginosa through innate immunity.",
-    "reason": "The supporting function and GO annotation come from protein-specific research and database records, not a biological fact supplied in the question. Recognizing the exact sequence or recalling its annotation would be lookup or memorization, not reasoning from the input."
-  },
-  "case_id": "GO_biological_process_0028",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C5",
-      "C6",
-      "C9",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited C. elegans protein. UniProt reports a role in resistance to virulent P. aeruginosa, with experimental evidence cited, and records the GO term antibacterial innate immune response. This supports B, while the exact author source snapshot is unknown."
-  },
-  "important_caveats": [
-    "The matched UniProt record and experimental citations support the key, but the author's exact data-source snapshot is unknown.",
-    "The reviewer-only annotations and identity information were not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence specifically supports antibacterial innate immune response. Response to lipopolysaccharide is a related but more stimulus-specific process, and the supplied evidence does not establish that process for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0028",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited C. elegans protein. UniProt reports a role in resistance to virulent P. aeruginosa, with experimental evidence cited, and records the GO term antibacterial innate immune response. This supports B, while the exact author source snapshot is unknown.",
-    "evidence_ids": ["C1", "C3", "C5", "C6", "C9", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices do not provide a concrete basis for identifying this protein's specific role in antibacterial innate immunity. General sequence-based reasoning might make viral RNA transcription seem unlikely, but it does not establish B over the other biological-process choices.",
-    "missing_item_specific_fact": "The protein-specific finding that this C. elegans protein contributes to resistance against P. aeruginosa through innate immunity.",
-    "reason": "The supporting function and GO annotation come from protein-specific research and database records, not a biological fact supplied in the question. Recognizing the exact sequence or recalling its annotation would be lookup or memorization, not reasoning from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence specifically supports antibacterial innate immune response. Response to lipopolysaccharide is a related but more stimulus-specific process, and the supplied evidence does not establish that process for this protein."
-  },
-  "important_caveats": [
-    "The matched UniProt record and experimental citations support the key, but the author's exact data-source snapshot is unknown.",
-    "The reviewer-only annotations and identity information were not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry O16327 (C. elegans protein irg-1 / Infection response protein 1) is directly annotated with GO:0140367 'antibacterial innate immune response' (evidence IEP:WormBase, ECO:0000270 from PubMed:20133860). The FUNCTION comment, supported by direct assay evidence (ECO:0000269), states the protein 'Plays a role in innate immunity by conferring resistance to virulent strains of the Gram-negative bacterium P. aeruginosa via the zip-2 pathway.' The GO term is also hierarchically consistent: GO:0140367 is_a GO:0045087 (innate immune response) and is_a GO:0042742 (defense response to bacterium). The sequence matches the benchmark input exactly (SHA-256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [C4](#evidence-c4), [GO4](#evidence-go4), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains coiled-coil-like heptad repeats (e.g., the C-terminal region '…LDKADQRCEDERNWRGSNWLGEVLDQVREELWTRQEFKSNREQILKESLETRCQILEHFSH') suggesting a scaffolding/signaling role rather than enzymatic activity, which could weakly argue against D (viral RNA transcription requires polymerase activity). However, this does not meaningfully distinguish B from C: both involve bacterial responses, and the sequence lacks canonical innate-immune motifs (TIR, NOD, NACHT, LRR, CARD, death domain) or LPS-binding domains that would let one reason toward 'antibacterial innate immune response' versus 'response to lipopolysaccharide' specifically.
-
-
-**Missing item-specific fact**
-
-> Knowledge that irg-1 acts through the zip-2 bZIP pathway detecting P. aeruginosa-induced translational inhibition (a whole-organism antibacterial defense response) rather than sensing LPS as a discrete molecular stimulus. This pathway-specific mechanism, established in PubMed:20133860 and PubMed:22520465, is the key fact distinguishing B from C and cannot be inferred from the 212-residue sequence alone.
-
-
-**Reason**
-
-> The sequence provides no diagnostic domain architecture, motif, or structural feature that uniquely identifies 'antibacterial innate immune response' over 'response to lipopolysaccharide.' Correct selection requires recognizing the protein as C. elegans irg-1 or recalling its specific experimental characterization, which is item-specific lookup rather than general biological reasoning from sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> From sequence alone, both 'antibacterial innate immune response' (B) and 'response to lipopolysaccharide' (C) are plausible for a small coiled-coil protein involved in bacterial defense, since LPS is a major Gram-negative bacterial component and a common immune trigger. The distinction requires knowing that irg-1 responds to P. aeruginosa via the zip-2 translational-inhibition pathway rather than directly to LPS as a molecule. With the UniProt annotation, B is clearly the assigned primary term, but the sequence itself does not resolve B vs. C.
-
-
-### Important caveats
-
-- The GO:0140367 annotation uses evidence code IEP (inferred from expression pattern), which is weaker than direct experimental evidence for the specific GO term, though the FUNCTION comment is backed by ECO:0000269 (direct assay) from two independent papers.
-- GO:0140367 was introduced relatively recently in the GO ontology; the historical benchmark ontology snapshot is unknown, so the term's availability at benchmark construction time is uncertain.
-- The reviewer-only evidence confirms sequence identity (SHA-256 match) and annotation, but the evaluated model received only the raw sequence with no protein name, organism, or accession.
-- Options A and D are clearly non-overlapping and unsupported by any annotation, serving as easy distractors.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains coiled-coil-like heptad repeats (e.g., the C-terminal region '…LDKADQRCEDERNWRGSNWLGEVLDQVREELWTRQEFKSNREQILKESLETRCQILEHFSH') suggesting a scaffolding/signaling role rather than enzymatic activity, which could weakly argue against D (viral RNA transcription requires polymerase activity). However, this does not meaningfully distinguish B from C: both involve bacterial responses, and the sequence lacks canonical innate-immune motifs (TIR, NOD, NACHT, LRR, CARD, death domain) or LPS-binding domains that would let one reason toward 'antibacterial innate immune response' versus 'response to lipopolysaccharide' specifically.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Knowledge that irg-1 acts through the zip-2 bZIP pathway detecting P. aeruginosa-induced translational inhibition (a whole-organism antibacterial defense response) rather than sensing LPS as a discrete molecular stimulus. This pathway-specific mechanism, established in PubMed:20133860 and PubMed:22520465, is the key fact distinguishing B from C and cannot be inferred from the 212-residue sequence alone.",
-    "reason": "The sequence provides no diagnostic domain architecture, motif, or structural feature that uniquely identifies 'antibacterial innate immune response' over 'response to lipopolysaccharide.' Correct selection requires recognizing the protein as C. elegans irg-1 or recalling its specific experimental characterization, which is item-specific lookup rather than general biological reasoning from sequence."
-  },
-  "case_id": "GO_biological_process_0028",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "C4",
-      "GO4",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry O16327 (C. elegans protein irg-1 / Infection response protein 1) is directly annotated with GO:0140367 'antibacterial innate immune response' (evidence IEP:WormBase, ECO:0000270 from PubMed:20133860). The FUNCTION comment, supported by direct assay evidence (ECO:0000269), states the protein 'Plays a role in innate immunity by conferring resistance to virulent strains of the Gram-negative bacterium P. aeruginosa via the zip-2 pathway.' The GO term is also hierarchically consistent: GO:0140367 is_a GO:0045087 (innate immune response) and is_a GO:0042742 (defense response to bacterium). The sequence matches the benchmark input exactly (SHA-256 confirmed)."
-  },
-  "important_caveats": [
-    "The GO:0140367 annotation uses evidence code IEP (inferred from expression pattern), which is weaker than direct experimental evidence for the specific GO term, though the FUNCTION comment is backed by ECO:0000269 (direct assay) from two independent papers.",
-    "GO:0140367 was introduced relatively recently in the GO ontology; the historical benchmark ontology snapshot is unknown, so the term's availability at benchmark construction time is uncertain.",
-    "The reviewer-only evidence confirms sequence identity (SHA-256 match) and annotation, but the evaluated model received only the raw sequence with no protein name, organism, or accession.",
-    "Options A and D are clearly non-overlapping and unsupported by any annotation, serving as easy distractors."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "From sequence alone, both 'antibacterial innate immune response' (B) and 'response to lipopolysaccharide' (C) are plausible for a small coiled-coil protein involved in bacterial defense, since LPS is a major Gram-negative bacterial component and a common immune trigger. The distinction requires knowing that irg-1 responds to P. aeruginosa via the zip-2 translational-inhibition pathway rather than directly to LPS as a molecule. With the UniProt annotation, B is clearly the assigned primary term, but the sequence itself does not resolve B vs. C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0028",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry O16327 (C. elegans protein irg-1 / Infection response protein 1) is directly annotated with GO:0140367 'antibacterial innate immune response' (evidence IEP:WormBase, ECO:0000270 from PubMed:20133860). The FUNCTION comment, supported by direct assay evidence (ECO:0000269), states the protein 'Plays a role in innate immunity by conferring resistance to virulent strains of the Gram-negative bacterium P. aeruginosa via the zip-2 pathway.' The GO term is also hierarchically consistent: GO:0140367 is_a GO:0045087 (innate immune response) and is_a GO:0042742 (defense response to bacterium). The sequence matches the benchmark input exactly (SHA-256 confirmed).",
-    "evidence_ids": ["C5", "C6", "C7", "C8", "C4", "GO4", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains coiled-coil-like heptad repeats (e.g., the C-terminal region '…LDKADQRCEDERNWRGSNWLGEVLDQVREELWTRQEFKSNREQILKESLETRCQILEHFSH') suggesting a scaffolding/signaling role rather than enzymatic activity, which could weakly argue against D (viral RNA transcription requires polymerase activity). However, this does not meaningfully distinguish B from C: both involve bacterial responses, and the sequence lacks canonical innate-immune motifs (TIR, NOD, NACHT, LRR, CARD, death domain) or LPS-binding domains that would let one reason toward 'antibacterial innate immune response' versus 'response to lipopolysaccharide' specifically.",
-    "missing_item_specific_fact": "Knowledge that irg-1 acts through the zip-2 bZIP pathway detecting P. aeruginosa-induced translational inhibition (a whole-organism antibacterial defense response) rather than sensing LPS as a discrete molecular stimulus. This pathway-specific mechanism, established in PubMed:20133860 and PubMed:22520465, is the key fact distinguishing B from C and cannot be inferred from the 212-residue sequence alone.",
-    "reason": "The sequence provides no diagnostic domain architecture, motif, or structural feature that uniquely identifies 'antibacterial innate immune response' over 'response to lipopolysaccharide.' Correct selection requires recognizing the protein as C. elegans irg-1 or recalling its specific experimental characterization, which is item-specific lookup rather than general biological reasoning from sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "From sequence alone, both 'antibacterial innate immune response' (B) and 'response to lipopolysaccharide' (C) are plausible for a small coiled-coil protein involved in bacterial defense, since LPS is a major Gram-negative bacterial component and a common immune trigger. The distinction requires knowing that irg-1 responds to P. aeruginosa via the zip-2 translational-inhibition pathway rather than directly to LPS as a molecule. With the UniProt annotation, B is clearly the assigned primary term, but the sequence itself does not resolve B vs. C."
-  },
-  "important_caveats": [
-    "The GO:0140367 annotation uses evidence code IEP (inferred from expression pattern), which is weaker than direct experimental evidence for the specific GO term, though the FUNCTION comment is backed by ECO:0000269 (direct assay) from two independent papers.",
-    "GO:0140367 was introduced relatively recently in the GO ontology; the historical benchmark ontology snapshot is unknown, so the term's availability at benchmark construction time is uncertain.",
-    "The reviewer-only evidence confirms sequence identity (SHA-256 match) and annotation, but the evaluated model received only the raw sequence with no protein name, organism, or accession.",
-    "Options A and D are clearly non-overlapping and unsupported by any annotation, serving as easy distractors."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -400,10 +158,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -525,30 +282,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "O16327",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "0a9288e66ed4c0845c9c6900519d11707c7c6f46b838b6075cdaa324073ab60f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 212,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "0a9288e66ed4c0845c9c6900519d11707c7c6f46b838b6075cdaa324073ab60f",
   "current_entry_audit": {
     "entryVersion": 137,
     "firstPublicDate": "2025-02-05",
@@ -556,14 +300,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "1998-01-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "current_source_sequence_sha256": "0a9288e66ed4c0845c9c6900519d11707c7c6f46b838b6075cdaa324073ab60f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 212,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "0a9288e66ed4c0845c9c6900519d11707c7c6f46b838b6075cdaa324073ab60f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 135,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "O16327",
   "selected_historical_entry_version": 135,
+  "selected_historical_record_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "selected_historical_source_sequence_length": 212,
+  "selected_historical_source_sequence_sha256": "0a9288e66ed4c0845c9c6900519d11707c7c6f46b838b6075cdaa324073ab60f",
   "selected_historical_version": {
     "accession": "O16327",
     "database": "Swiss-Prot",
@@ -574,24 +334,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "IRG1_CAEEL",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "selected_historical_source_sequence_sha256": "0a9288e66ed4c0845c9c6900519d11707c7c6f46b838b6075cdaa324073ab60f",
-  "selected_historical_source_sequence_length": 212,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 135,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -609,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"O16327\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -628,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":137,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"1998-01-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -647,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001940\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Nematoda\",\"Chromadorea\",\"Rhabditida\",\"Rhabditina\",\"Rhabditomorpha\",\"Rhabditoidea\",\"Rhabditidae\",\"Peloderinae\",\"Caenorhabditis\"],\"scientificName\":\"Caenorhabditis elegans\",\"taxonId\":6239}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -666,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"20133860\",\"source\":\"PubMed\"}],\"value\":\"Infection response protein 1\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Protein irg-1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -685,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20133860\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22520465\",\"source\":\"PubMed\"}],\"value\":\"Plays a role in innate immunity by conferring resistance to virulent strains of the Gram-negative bacterium P.aeruginosa via the zip-2 pathway (PubMed:20133860, PubMed:22520465). Can act independently of several immunity-related pathways including pmk-1 p38MAPK, dbl-1 TGF-beta, kgb-1 JNK and bar-1/beta-catenin pathways (PubMed:20133860, PubMed:22520465)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -704,15 +451,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/25",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000270\",\"id\":\"20133860\",\"source\":\"PubMed\"}],\"id\":\"GO:0140367\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:antibacterial innate immune response\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEP:WormBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/25",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -723,15 +470,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/26",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000270\",\"id\":\"20133860\",\"source\":\"PubMed\"}],\"id\":\"GO:0050829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:defense response to Gram-negative bacterium\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEP:WormBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/26",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -742,15 +489,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/27",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0007007\",\"id\":\"16968778\",\"source\":\"PubMed\"}],\"id\":\"GO:0045087\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:innate immune response\"},{\"key\":\"GoEvidenceType\",\"value\":\"HEP:WormBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/27",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -761,15 +508,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Estes K.A.\",\"Dunbar T.L.\",\"Powell J.R.\",\"Ausubel F.M.\",\"Troemel E.R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20133860\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.0914643107\"}],\"citationType\":\"journal article\",\"firstPage\":\"2153\",\"id\":\"20133860\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"2158\",\"publicationDate\":\"2010\",\"title\":\"bZIP transcription factor zip-2 mediates an early response to Pseudomonas aeruginosa infection in Caenorhabditis elegans.\",\"volume\":\"107\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"TISSUE SPECIFICITY\",\"INDUCTION BY P.AERUGINOSA INFECTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -780,15 +527,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O16327.json",
-  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
-  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Dunbar T.L.\",\"Yan Z.\",\"Balla K.M.\",\"Smelkinson M.G.\",\"Troemel E.R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22520465\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.chom.2012.02.008\"}],\"citationType\":\"journal article\",\"firstPage\":\"375\",\"id\":\"22520465\",\"journal\":\"Cell Host Microbe\",\"lastPage\":\"386\",\"publicationDate\":\"2012\",\"title\":\"C. elegans detects pathogen-induced translational inhibition to activate immune signaling.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"INDUCTION BY P.AERUGINOSA INFECTION; EXOTOXIN A AND CYCLOHEXIMIDE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:29:07.325522+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c33497d2df2f81be7c0d958dbd658b7cf8193d724a992f93ffac3bed631e22ba",
+  "url": "https://rest.uniprot.org/uniprotkb/O16327.json"
 }
 ```
 
@@ -798,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 135,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135",
-  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   IRG1_CAEEL              Reviewed;         212 AA.\nAC   O16327;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JAN-1998, sequence version 1.\nDT   28-JAN-2026, entry version 135.\nDE   RecName: Full=Protein irg-1 {ECO:0000305};\nDE   AltName: Full=Infection response protein 1 {ECO:0000305|PubMed:20133860};\nGN   Name=irg-1 {ECO:0000312|WormBase:C07G3.2};\nGN   ORFNames=C07G3.2 {ECO:0000312|WormBase:C07G3.2};\nOS   Caenorhabditis elegans.\nOC   Eukaryota; Metazoa; Ecdysozoa; Nematoda; Chromadorea; Rhabditida;\nOC   Rhabditina; Rhabditomorpha; Rhabditoidea; Rhabditidae; Peloderinae;\nOC   Caenorhabditis.\nOX   NCBI_TaxID=6239 {ECO:0000312|Proteomes:UP000001940};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 135,
+  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135"
 }
 ```
 
@@ -819,18 +566,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 135,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135",
-  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
-  "source_locator": "lines 23-29",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, TISSUE SPECIFICITY, AND INDUCTION BY P.AERUGINOSA INFECTION.\nRX   PubMed=20133860; DOI=10.1073/pnas.0914643107;\nRA   Estes K.A., Dunbar T.L., Powell J.R., Ausubel F.M., Troemel E.R.;\nRT   \"bZIP transcription factor zip-2 mediates an early response to Pseudomonas\nRT   aeruginosa infection in Caenorhabditis elegans.\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 107:2153-2158(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 135,
+  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135"
 }
 ```
 
@@ -840,18 +587,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 135,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135",
-  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
-  "source_locator": "lines 30-37",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, AND INDUCTION BY P.AERUGINOSA INFECTION; EXOTOXIN A AND\nRP   CYCLOHEXIMIDE.\nRX   PubMed=22520465; DOI=10.1016/j.chom.2012.02.008;\nRA   Dunbar T.L., Yan Z., Balla K.M., Smelkinson M.G., Troemel E.R.;\nRT   \"C. elegans detects pathogen-induced translational inhibition to activate\nRT   immune signaling.\";\nRL   Cell Host Microbe 11:375-386(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 135,
+  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135"
 }
 ```
 
@@ -861,18 +608,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 135,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135",
-  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
-  "source_locator": "lines 38-44",
   "excerpt": "CC   -!- FUNCTION: Plays a role in innate immunity by conferring resistance to\nCC       virulent strains of the Gram-negative bacterium P.aeruginosa via the\nCC       zip-2 pathway (PubMed:20133860, PubMed:22520465). Can act independently\nCC       of several immunity-related pathways including pmk-1 p38MAPK, dbl-1\nCC       TGF-beta, kgb-1 JNK and bar-1/beta-catenin pathways (PubMed:20133860,\nCC       PubMed:22520465). {ECO:0000269|PubMed:20133860,\nCC       ECO:0000269|PubMed:22520465}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 135,
+  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 38-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135"
 }
 ```
 
@@ -882,18 +629,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 135,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135",
-  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
-  "source_locator": "lines 85-85",
   "excerpt": "DR   GO; GO:0140367; P:antibacterial innate immune response; IEP:WormBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 135,
+  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135"
 }
 ```
 
@@ -903,18 +650,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 135,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135",
-  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
-  "source_locator": "lines 86-86",
   "excerpt": "DR   GO; GO:0050829; P:defense response to Gram-negative bacterium; IEP:WormBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 135,
+  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-86",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135"
 }
 ```
 
@@ -924,18 +671,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 135,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135",
-  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
-  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
-  "source_locator": "lines 87-87",
   "excerpt": "DR   GO; GO:0045087; P:innate immune response; HEP:WormBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 135,
+  "retrieved_utc": "2026-11-02T04:29:09.623847+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64620d15f4613127ffecc138d0b87172defc03b29d115f98e22689baf2537018",
+  "url": "https://rest.uniprot.org/unisave/O16327?format=txt&versions=135"
 }
 ```
 
@@ -946,15 +693,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 186788-186798",
   "excerpt": "[Term]\nid: GO:0032496\nname: response to lipopolysaccharide\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a lipopolysaccharide stimulus; lipopolysaccharide is a major component of the cell wall of gram-negative bacteria.\" [GOC:add, ISBN:0721601464]\nsynonym: \"response to endotoxin\" BROAD [GOC:sl]\nsynonym: \"response to LPS\" EXACT []\nis_a: GO:0002237 ! response to molecule of bacterial origin\nis_a: GO:0033993 ! response to lipid\nis_a: GO:1901700 ! response to oxygen-containing compound\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032496",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 186788-186798",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032496"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -965,15 +712,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 232826-232833",
   "excerpt": "[Term]\nid: GO:0039697\nname: negative stranded viral RNA transcription\nnamespace: biological_process\ndef: \"A viral transcription process that uses negative stranded (-) single stranded (ss) RNA as a template.\" [VZ:1096]\nxref: VZ:1096 \"Negative stranded RNA virus replication\"\nis_a: GO:0039696 ! RNA-templated viral transcription\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0039697",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 232826-232833",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0039697"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -984,15 +731,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 307334-307341",
   "excerpt": "[Term]\nid: GO:0048873\nname: homeostasis of number of cells within a tissue\nnamespace: biological_process\ndef: \"Any biological process involved in the maintenance of the steady-state number of cells within a population of cells in a tissue.\" [GOC:isa_complete]\nis_a: GO:0001894 ! tissue homeostasis\nis_a: GO:0048872 ! homeostasis of number of cells\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048873",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 307334-307341",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048873"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1003,15 +750,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 439803-439810",
   "excerpt": "[Term]\nid: GO:0140367\nname: antibacterial innate immune response\nnamespace: biological_process\ndef: \"An defense response against a bacteria mediated through an innate immune response. An innate immune response is mediated by germline encoded components that directly recognize components of potential pathogens.\" [PMID:16177355, PMID:23006328]\nis_a: GO:0042742 ! defense response to bacterium\nis_a: GO:0045087 ! innate immune response\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0140367",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 439803-439810",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0140367"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

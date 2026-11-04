@@ -1,18 +1,16 @@
-# EC_number_0068: before and after transfer clarification
+# EC_number_0068
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0068.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0068.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **A** — 2.7.8.41
+**Expected answer:** **A** — 2.7.8.41
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | output error (invalid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,254 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry annotated as cardiolipin synthase (CMP-forming), EC 2.7.8.41; the entry also specifies the corresponding catalytic reaction. The excerpts cite a publication but do not independently show its experimental results.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The highly hydrophobic sequence is consistent with a membrane protein, but that broad feature does not distinguish the specific lipid-transfer reaction in A from the alternative enzyme in B.
-
-
-**Missing item-specific fact**
-
-> The protein's specific catalytic activity—cardiolipin synthesis rather than the alternative reaction—is absent from the sequence prompt and choices.
-
-
-**Reason**
-
-> Selecting the exact EC number depends on protein-specific functional information or an annotation not supplied in the question; recognizing the sequence from a database would be lookup, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports A for the exact matched sequence. The input alone does not resolve A versus B, but no second option is supported by the supplied reviewer evidence.
-
-
-### Important caveats
-
-- The UniProt EC and catalytic-activity annotations cite PubMed 19439403; the excerpts do not independently validate the underlying experiments.
-- The annotation evidence matches the sequence, including in the historical entry, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The highly hydrophobic sequence is consistent with a membrane protein, but that broad feature does not distinguish the specific lipid-transfer reaction in A from the alternative enzyme in B.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's specific catalytic activity—cardiolipin synthesis rather than the alternative reaction—is absent from the sequence prompt and choices.",
-    "reason": "Selecting the exact EC number depends on protein-specific functional information or an annotation not supplied in the question; recognizing the sequence from a database would be lookup, not reasoning from the provided input."
-  },
-  "case_id": "EC_number_0068",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as cardiolipin synthase (CMP-forming), EC 2.7.8.41; the entry also specifies the corresponding catalytic reaction. The excerpts cite a publication but do not independently show its experimental results."
-  },
-  "important_caveats": [
-    "The UniProt EC and catalytic-activity annotations cite PubMed 19439403; the excerpts do not independently validate the underlying experiments.",
-    "The annotation evidence matches the sequence, including in the historical entry, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports A for the exact matched sequence. The input alone does not resolve A versus B, but no second option is supported by the supplied reviewer evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0068",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as cardiolipin synthase (CMP-forming), EC 2.7.8.41; the entry also specifies the corresponding catalytic reaction. The excerpts cite a publication but do not independently show its experimental results.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The highly hydrophobic sequence is consistent with a membrane protein, but that broad feature does not distinguish the specific lipid-transfer reaction in A from the alternative enzyme in B.",
-    "missing_item_specific_fact": "The protein's specific catalytic activity—cardiolipin synthesis rather than the alternative reaction—is absent from the sequence prompt and choices.",
-    "reason": "Selecting the exact EC number depends on protein-specific functional information or an annotation not supplied in the question; recognizing the sequence from a database would be lookup, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports A for the exact matched sequence. The input alone does not resolve A versus B, but no second option is supported by the supplied reviewer evidence."
-  },
-  "important_caveats": [
-    "The UniProt EC and catalytic-activity annotations cite PubMed 19439403; the excerpts do not independently validate the underlying experiments.",
-    "The annotation evidence matches the sequence, including in the historical entry, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
-
-**Validation errors:** `question_ambiguity:invalid_option_ids`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9KZP3 (CRLS1_STRCO) is annotated with EC 2.7.8.41 (Cardiolipin synthase, CMP-forming), confirmed by sequence match (215 AA, SHA256 identical). The annotation is supported by experimental characterization in Sandoval-Calderon et al. 2009 (PubMed:19439403, J. Biol. Chem. 284:17383-17390), which demonstrated the catalytic reaction: CDP-1,2-diacyl-sn-glycerol + phosphatidylglycerol → cardiolipin + CMP + H(+). Additional functional evidence from Jyothikumar et al. 2012 (disruption phenotype) corroborates the assignment. The evidence code ECO:0000305 indicates curator inference from the cited publication, which is standard for well-characterized enzymes.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable CDP-alcohol phosphatidyltransferase (CDP-AP) domain features (hydrophobic transmembrane segments, conserved GSGW-like motif near the C-terminus), which can narrow the class to EC 2.7.8.x transferases and plausibly exclude EC 2.5.1.160 (alkyltransferase) and EC 1.14.13.247 (oxidoreductase). However, distinguishing EC 2.7.8.41 (CMP-forming cardiolipin synthase) from EC 2.7.8.7 (phosphatidylglycerophosphate synthase) requires knowledge of the specific catalytic mechanism (CDP-DAG + phosphatidylglycerol → cardiolipin + CMP vs. CDP-DAG + glycerol-3-phosphate → phosphatidylglycerophosphate + CMP). These two enzymes belong to the same CDP-AP superfamily, catalyze mechanistically analogous phosphatidyl-transfer reactions, and lack easily distinguishable sequence motifs at the 215-aa level without structural or active-site-level analysis.
-
-
-**Missing item-specific fact**
-
-> The specific catalytic-site residues or structural determinants that differentiate the CMP-forming cardiolipin synthase (2.7.8.41) from phosphatidylglycerophosphate synthase (2.7.8.7) within the CDP-AP superfamily, or prior knowledge of this particular Streptomyces coelicolor protein (SCO1389/clsA) and its 2009 experimental characterization.
-
-
-**Reason**
-
-> While the CDP-AP domain signature allows a knowledgeable model to narrow to EC 2.7.8.x, the critical distinction between choices A (2.7.8.41) and B (2.7.8.7) hinges on recognizing this specific protein or knowing the very recent (2009) discovery of the eukaryote-like CMP-forming cardiolipin synthase in actinobacteria. The two candidate enzymes are close relatives in the same superfamily with analogous chemistry. No general biological reasoning from the 215-aa sequence alone can reliably distinguish them without item-specific annotation knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A (2.7.8.41)",
-  "B (2.7.8.7)"
-]
-```
-
-> Both EC 2.7.8.41 and EC 2.7.8.7 are CDP-AP superfamily phosphatidyltransferases that catalyze closely related phosphatidyl-transfer reactions using CDP-DAG as a substrate. Without specific motif or structural knowledge, a well-reasoned model could plausibly select either. Options C (2.5.1.160, alkyltransferase) and D (1.14.13.247, oxidoreductase) are in fundamentally different EC classes and are more readily excluded if the CDP-AP domain is recognized.
-
-
-### Important caveats
-
-- The EC 2.7.8.41 annotation carries evidence code ECO:0000305 (inferred by curator from PubMed:19439403), not a direct experimental evidence code, though the cited paper reports functional characterization.
-- The CMP-forming cardiolipin synthase was only characterized in 2009, making it a relatively obscure EC entry; most training data predates or has limited coverage of this enzyme class.
-- The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark sequence and Q9KZP3, but the accession was not provided to the evaluated model.
-- The historical UniProt entry (version 118, first Swiss-Prot release 2026-01) post-dates the original 2009 publication; the author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable CDP-alcohol phosphatidyltransferase (CDP-AP) domain features (hydrophobic transmembrane segments, conserved GSGW-like motif near the C-terminus), which can narrow the class to EC 2.7.8.x transferases and plausibly exclude EC 2.5.1.160 (alkyltransferase) and EC 1.14.13.247 (oxidoreductase). However, distinguishing EC 2.7.8.41 (CMP-forming cardiolipin synthase) from EC 2.7.8.7 (phosphatidylglycerophosphate synthase) requires knowledge of the specific catalytic mechanism (CDP-DAG + phosphatidylglycerol → cardiolipin + CMP vs. CDP-DAG + glycerol-3-phosphate → phosphatidylglycerophosphate + CMP). These two enzymes belong to the same CDP-AP superfamily, catalyze mechanistically analogous phosphatidyl-transfer reactions, and lack easily distinguishable sequence motifs at the 215-aa level without structural or active-site-level analysis.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific catalytic-site residues or structural determinants that differentiate the CMP-forming cardiolipin synthase (2.7.8.41) from phosphatidylglycerophosphate synthase (2.7.8.7) within the CDP-AP superfamily, or prior knowledge of this particular Streptomyces coelicolor protein (SCO1389/clsA) and its 2009 experimental characterization.",
-    "reason": "While the CDP-AP domain signature allows a knowledgeable model to narrow to EC 2.7.8.x, the critical distinction between choices A (2.7.8.41) and B (2.7.8.7) hinges on recognizing this specific protein or knowing the very recent (2009) discovery of the eukaryote-like CMP-forming cardiolipin synthase in actinobacteria. The two candidate enzymes are close relatives in the same superfamily with analogous chemistry. No general biological reasoning from the 215-aa sequence alone can reliably distinguish them without item-specific annotation knowledge."
-  },
-  "case_id": "EC_number_0068",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9KZP3 (CRLS1_STRCO) is annotated with EC 2.7.8.41 (Cardiolipin synthase, CMP-forming), confirmed by sequence match (215 AA, SHA256 identical). The annotation is supported by experimental characterization in Sandoval-Calderon et al. 2009 (PubMed:19439403, J. Biol. Chem. 284:17383-17390), which demonstrated the catalytic reaction: CDP-1,2-diacyl-sn-glycerol + phosphatidylglycerol → cardiolipin + CMP + H(+). Additional functional evidence from Jyothikumar et al. 2012 (disruption phenotype) corroborates the assignment. The evidence code ECO:0000305 indicates curator inference from the cited publication, which is standard for well-characterized enzymes."
-  },
-  "important_caveats": [
-    "The EC 2.7.8.41 annotation carries evidence code ECO:0000305 (inferred by curator from PubMed:19439403), not a direct experimental evidence code, though the cited paper reports functional characterization.",
-    "The CMP-forming cardiolipin synthase was only characterized in 2009, making it a relatively obscure EC entry; most training data predates or has limited coverage of this enzyme class.",
-    "The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark sequence and Q9KZP3, but the accession was not provided to the evaluated model.",
-    "The historical UniProt entry (version 118, first Swiss-Prot release 2026-01) post-dates the original 2009 publication; the author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A (2.7.8.41)",
-      "B (2.7.8.7)"
-    ],
-    "reason": "Both EC 2.7.8.41 and EC 2.7.8.7 are CDP-AP superfamily phosphatidyltransferases that catalyze closely related phosphatidyl-transfer reactions using CDP-DAG as a substrate. Without specific motif or structural knowledge, a well-reasoned model could plausibly select either. Options C (2.5.1.160, alkyltransferase) and D (1.14.13.247, oxidoreductase) are in fundamentally different EC classes and are more readily excluded if the CDP-AP domain is recognized."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0068",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9KZP3 (CRLS1_STRCO) is annotated with EC 2.7.8.41 (Cardiolipin synthase, CMP-forming), confirmed by sequence match (215 AA, SHA256 identical). The annotation is supported by experimental characterization in Sandoval-Calderon et al. 2009 (PubMed:19439403, J. Biol. Chem. 284:17383-17390), which demonstrated the catalytic reaction: CDP-1,2-diacyl-sn-glycerol + phosphatidylglycerol → cardiolipin + CMP + H(+). Additional functional evidence from Jyothikumar et al. 2012 (disruption phenotype) corroborates the assignment. The evidence code ECO:0000305 indicates curator inference from the cited publication, which is standard for well-characterized enzymes.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains recognizable CDP-alcohol phosphatidyltransferase (CDP-AP) domain features (hydrophobic transmembrane segments, conserved GSGW-like motif near the C-terminus), which can narrow the class to EC 2.7.8.x transferases and plausibly exclude EC 2.5.1.160 (alkyltransferase) and EC 1.14.13.247 (oxidoreductase). However, distinguishing EC 2.7.8.41 (CMP-forming cardiolipin synthase) from EC 2.7.8.7 (phosphatidylglycerophosphate synthase) requires knowledge of the specific catalytic mechanism (CDP-DAG + phosphatidylglycerol → cardiolipin + CMP vs. CDP-DAG + glycerol-3-phosphate → phosphatidylglycerophosphate + CMP). These two enzymes belong to the same CDP-AP superfamily, catalyze mechanistically analogous phosphatidyl-transfer reactions, and lack easily distinguishable sequence motifs at the 215-aa level without structural or active-site-level analysis.",
-    "missing_item_specific_fact": "The specific catalytic-site residues or structural determinants that differentiate the CMP-forming cardiolipin synthase (2.7.8.41) from phosphatidylglycerophosphate synthase (2.7.8.7) within the CDP-AP superfamily, or prior knowledge of this particular Streptomyces coelicolor protein (SCO1389/clsA) and its 2009 experimental characterization.",
-    "reason": "While the CDP-AP domain signature allows a knowledgeable model to narrow to EC 2.7.8.x, the critical distinction between choices A (2.7.8.41) and B (2.7.8.7) hinges on recognizing this specific protein or knowing the very recent (2009) discovery of the eukaryote-like CMP-forming cardiolipin synthase in actinobacteria. The two candidate enzymes are close relatives in the same superfamily with analogous chemistry. No general biological reasoning from the 215-aa sequence alone can reliably distinguish them without item-specific annotation knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A (2.7.8.41)", "B (2.7.8.7)"],
-    "reason": "Both EC 2.7.8.41 and EC 2.7.8.7 are CDP-AP superfamily phosphatidyltransferases that catalyze closely related phosphatidyl-transfer reactions using CDP-DAG as a substrate. Without specific motif or structural knowledge, a well-reasoned model could plausibly select either. Options C (2.5.1.160, alkyltransferase) and D (1.14.13.247, oxidoreductase) are in fundamentally different EC classes and are more readily excluded if the CDP-AP domain is recognized."
-  },
-  "important_caveats": [
-    "The EC 2.7.8.41 annotation carries evidence code ECO:0000305 (inferred by curator from PubMed:19439403), not a direct experimental evidence code, though the cited paper reports functional characterization.",
-    "The CMP-forming cardiolipin synthase was only characterized in 2009, making it a relatively obscure EC entry; most training data predates or has limited coverage of this enzyme class.",
-    "The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark sequence and Q9KZP3, but the accession was not provided to the evaluated model.",
-    "The historical UniProt entry (version 118, first Swiss-Prot release 2026-01) post-dates the original 2009 publication; the author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -403,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9KZP3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4d7ff8f97540a27b3e75118f82df28e82087f33a3652f781a7c4f3611ee726bb",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 215,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4d7ff8f97540a27b3e75118f82df28e82087f33a3652f781a7c4f3611ee726bb",
   "current_entry_audit": {
     "entryVersion": 120,
     "firstPublicDate": "2025-02-05",
@@ -549,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-10-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
-  "current_source_sequence_sha256": "4d7ff8f97540a27b3e75118f82df28e82087f33a3652f781a7c4f3611ee726bb",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 215,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4d7ff8f97540a27b3e75118f82df28e82087f33a3652f781a7c4f3611ee726bb",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 118,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9KZP3",
   "selected_historical_entry_version": 118,
+  "selected_historical_record_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
+  "selected_historical_source_sequence_length": 215,
+  "selected_historical_source_sequence_sha256": "4d7ff8f97540a27b3e75118f82df28e82087f33a3652f781a7c4f3611ee726bb",
   "selected_historical_version": {
     "accession": "Q9KZP3",
     "database": "Swiss-Prot",
@@ -567,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CRLS1_STRCO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
-  "selected_historical_source_sequence_sha256": "4d7ff8f97540a27b3e75118f82df28e82087f33a3652f781a7c4f3611ee726bb",
-  "selected_historical_source_sequence_length": 215,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 118,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json",
-  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
-  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9KZP3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json"
 }
 ```
 
@@ -617,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json",
-  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
-  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":120,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-10-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json"
 }
 ```
 
@@ -636,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json",
-  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
-  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001973\",\"source\":\"Proteomes\"}],\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\",\"Streptomyces albidoflavus group\"],\"scientificName\":\"Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)\",\"taxonId\":100226}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json"
 }
 ```
 
@@ -655,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json",
-  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
-  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"19439403\",\"source\":\"PubMed\"}],\"value\":\"2.7.8.41\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cardiolipin synthase (CMP-forming)\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"CLS\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json"
 }
 ```
 
@@ -674,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json",
-  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
-  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.8.41\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"19439403\",\"source\":\"PubMed\"}],\"name\":\"a CDP-1,2-diacyl-sn-glycerol + a 1,2-diacyl-sn-glycero-3-phospho-(1'-sn-glycerol) = a cardiolipin + CMP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:32931\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58332\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:60377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:62237\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:64716\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json"
 }
 ```
 
@@ -693,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json",
-  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
-  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Sandoval-Calderon M.\",\"Geiger O.\",\"Guan Z.\",\"Barona-Gomez F.\",\"Sohlenkamp C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19439403\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m109.006072\"}],\"citationType\":\"journal article\",\"firstPage\":\"17383\",\"id\":\"19439403\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"17390\",\"publicationDate\":\"2009\",\"title\":\"A eukaryote-like cardiolipin synthase is present in Streptomyces coelicolor and in most actinobacteria.\",\"volume\":\"284\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:27.611577+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "19159a513ac84423a492087d8961c46891339eef5cec5a9d995ec98e1cfe717c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9KZP3.json"
 }
 ```
 
@@ -711,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 118,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118",
-  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
-  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   CRLS1_STRCO             Reviewed;         215 AA.\nAC   Q9KZP3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2000, sequence version 1.\nDT   28-JAN-2026, entry version 118.\nDE   RecName: Full=Cardiolipin synthase (CMP-forming) {ECO:0000305};\nDE            Short=CLS {ECO:0000305};\nDE            EC=2.7.8.41 {ECO:0000305|PubMed:19439403};\nGN   Name=clsA {ECO:0000303|PubMed:22409773};\nGN   OrderedLocusNames=SCO1389 {ECO:0000312|EMBL:CAB88885.1};\nGN   ORFNames=SC1A8A.09c {ECO:0000312|EMBL:CAB88885.1};\nOS   Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces; Streptomyces albidoflavus group.\nOX   NCBI_TaxID=100226 {ECO:0000312|Proteomes:UP000001973};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 118,
+  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
+  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118"
 }
 ```
 
@@ -732,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 118,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118",
-  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
-  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Cardiolipin synthase (CMP-forming) {ECO:0000305};\nDE            Short=CLS {ECO:0000305};\nDE            EC=2.7.8.41 {ECO:0000305|PubMed:19439403};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 118,
+  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
+  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118"
 }
 ```
 
@@ -753,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 118,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118",
-  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
-  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
-  "source_locator": "lines 31-38",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, BIOPHYSICOCHEMICAL PROPERTIES, AND\nRP   SUBCELLULAR LOCATION.\nRX   PubMed=19439403; DOI=10.1074/jbc.m109.006072;\nRA   Sandoval-Calderon M., Geiger O., Guan Z., Barona-Gomez F., Sohlenkamp C.;\nRT   \"A eukaryote-like cardiolipin synthase is present in Streptomyces\nRT   coelicolor and in most actinobacteria.\";\nRL   J. Biol. Chem. 284:17383-17390(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 118,
+  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
+  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118"
 }
 ```
 
@@ -774,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 118,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118",
-  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
-  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
-  "source_locator": "lines 39-46",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=22409773; DOI=10.1111/j.1365-2958.2012.08018.x;\nRA   Jyothikumar V., Klanbut K., Tiong J., Roxburgh J.S., Hunter I.S.,\nRA   Smith T.K., Herron P.R.;\nRT   \"Cardiolipin synthase is required for Streptomyces coelicolor\nRT   morphogenesis.\";\nRL   Mol. Microbiol. 84:181-197(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 118,
+  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
+  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118"
 }
 ```
 
@@ -795,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 118,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118",
-  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
-  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
-  "source_locator": "lines 51-56",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a CDP-1,2-diacyl-sn-glycerol + a 1,2-diacyl-sn-glycero-3-\nCC         phospho-(1'-sn-glycerol) = a cardiolipin + CMP + H(+);\nCC         Xref=Rhea:RHEA:32931, ChEBI:CHEBI:15378, ChEBI:CHEBI:58332,\nCC         ChEBI:CHEBI:60377, ChEBI:CHEBI:62237, ChEBI:CHEBI:64716; EC=2.7.8.41;\nCC         Evidence={ECO:0000305|PubMed:19439403};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 118,
+  "retrieved_utc": "2026-11-01T06:28:47.509754+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-56",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "40068827609c34109c814e2d2c856e36a3bec9b7c2775a90bbcc5f7a21726d79",
+  "url": "https://rest.uniprot.org/unisave/Q9KZP3?format=txt&versions=118"
 }
 ```
 

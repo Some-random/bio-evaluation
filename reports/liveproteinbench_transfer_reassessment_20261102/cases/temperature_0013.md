@@ -1,18 +1,16 @@
-# temperature_0013: before and after transfer clarification
+# temperature_0013
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0013.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0013.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **C** — 32-37
+**Expected answer:** **C** — 32-37
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry, which reports an optimum temperature of 32–37 °C and cites PubMed evidence coded as experimental. That reported range matches choice C. The cited primary study was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices do not provide a defensible way to infer this particular enzyme’s narrow optimum-temperature range; generic thermal-adaptation tendencies cannot distinguish these intervals reliably.
-
-
-**Missing item-specific fact**
-
-> The experimentally reported optimum temperature for this specific protein, 32–37 °C.
-
-
-**Reason**
-
-> Distinguishing the keyed range requires a protein-specific measurement or annotation absent from the input. Identifying the sequence and recalling its database record would be lookup or memorization, not reasoning from the supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choice C exactly matches the reported 32–37 °C range. Choice B overlaps it partly, but is a different, broader interval; if the task intended any overlap rather than the matching range, that criterion is not stated.
-
-
-### Important caveats
-
-- The database annotation cites experimental evidence, but the primary paper was not independently validated.
-- The sequence match establishes applicability to the supplied sequence; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices do not provide a defensible way to infer this particular enzyme’s narrow optimum-temperature range; generic thermal-adaptation tendencies cannot distinguish these intervals reliably.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimentally reported optimum temperature for this specific protein, 32–37 °C.",
-    "reason": "Distinguishing the keyed range requires a protein-specific measurement or annotation absent from the input. Identifying the sequence and recalling its database record would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "case_id": "temperature_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which reports an optimum temperature of 32–37 °C and cites PubMed evidence coded as experimental. That reported range matches choice C. The cited primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The database annotation cites experimental evidence, but the primary paper was not independently validated.",
-    "The sequence match establishes applicability to the supplied sequence; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choice C exactly matches the reported 32–37 °C range. Choice B overlaps it partly, but is a different, broader interval; if the task intended any overlap rather than the matching range, that criterion is not stated."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which reports an optimum temperature of 32–37 °C and cites PubMed evidence coded as experimental. That reported range matches choice C. The cited primary study was not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices do not provide a defensible way to infer this particular enzyme’s narrow optimum-temperature range; generic thermal-adaptation tendencies cannot distinguish these intervals reliably.",
-    "missing_item_specific_fact": "The experimentally reported optimum temperature for this specific protein, 32–37 °C.",
-    "reason": "Distinguishing the keyed range requires a protein-specific measurement or annotation absent from the input. Identifying the sequence and recalling its database record would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choice C exactly matches the reported 32–37 °C range. Choice B overlaps it partly, but is a different, broader interval; if the task intended any overlap rather than the matching range, that criterion is not stated."
-  },
-  "important_caveats": [
-    "The database annotation cites experimental evidence, but the primary paper was not independently validated.",
-    "The sequence match establishes applicability to the supplied sequence; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A9E7S5E3 (Akuammiline synthase 1 from Alstonia scholaris) explicitly states 'Optimum temperature is 32-37 degrees Celsius' with experimental evidence code ECO:0000269 citing PubMed:36349266. The benchmark sequence (419 AA) matches the source sequence exactly (identical SHA256). The expected answer C (32-37) corresponds precisely to this experimentally measured optimum.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could argue that a plant enzyme (inferable from sequence motifs and domain architecture) is unlikely to have an optimum above 40-45°C, which would make options A (38-49), B (35-49), and D (40-48) implausible due to their upper bounds near 49°C. This crude reasoning could point toward C. However, this argument requires first identifying the organism as a plant from sequence alone, and even then the precise 32-37°C window versus, say, 30-35°C or 33-38°C cannot be resolved from sequence features.
-
-
-**Missing item-specific fact**
-
-> The exact experimentally measured optimum temperature range (32-37°C) for this specific enzyme (akuammiline synthase 1) from the 2022 Wang et al. study (PubMed:36349266). Without this measurement, the model cannot distinguish 32-37 from other moderate ranges, nor can it confirm the organism is a tropical plant from sequence alone with certainty.
-
-
-**Reason**
-
-> The answer is a precise experimental measurement (optimum temperature of a specific enzyme) reported in a single publication. While general biological reasoning about plant enzyme thermostability might eliminate options with implausibly high upper bounds (48-49°C), the model is not told the organism is a plant, and the fine discrimination between 32-37 and other moderate ranges (e.g., 30-35, 33-38) requires the specific experimental datum. The overlapping range of option B (35-49) with C (32-37) further illustrates that only the exact measurement resolves the choice.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B"
-]
-```
-
-> Option B (35-49) overlaps with the correct answer C (32-37) in the 35-37°C sub-range. Without knowing the exact lower bound (32 vs 35) and upper bound (37 vs 49), a model reasoning only about 'moderate' plant enzyme temperatures could plausibly select B. The upper bounds of 48-49°C in A, B, D are arguably implausible for a plant enzyme, but this reasoning requires organism identification not provided in the input.
-
-
-### Important caveats
-
-- The UniProt annotation cites experimental evidence (ECO:0000269, PubMed:36349266), making the 32-37°C value a measured quantity rather than a computational prediction.
-- The organism identity (Alstonia scholaris, a tropical plant) is not provided in the model input; the model must infer it from sequence, which is itself a lookup-like task.
-- The question framing as 'thermal adaptation prediction from sequence' implies a computational reasoning task, but the ground truth is a single experimental measurement from one publication.
-- The reviewer-only evidence was absent from the evaluated model's input; the model had only the 419-AA sequence and four numeric ranges.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could argue that a plant enzyme (inferable from sequence motifs and domain architecture) is unlikely to have an optimum above 40-45°C, which would make options A (38-49), B (35-49), and D (40-48) implausible due to their upper bounds near 49°C. This crude reasoning could point toward C. However, this argument requires first identifying the organism as a plant from sequence alone, and even then the precise 32-37°C window versus, say, 30-35°C or 33-38°C cannot be resolved from sequence features.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact experimentally measured optimum temperature range (32-37°C) for this specific enzyme (akuammiline synthase 1) from the 2022 Wang et al. study (PubMed:36349266). Without this measurement, the model cannot distinguish 32-37 from other moderate ranges, nor can it confirm the organism is a tropical plant from sequence alone with certainty.",
-    "reason": "The answer is a precise experimental measurement (optimum temperature of a specific enzyme) reported in a single publication. While general biological reasoning about plant enzyme thermostability might eliminate options with implausibly high upper bounds (48-49°C), the model is not told the organism is a plant, and the fine discrimination between 32-37 and other moderate ranges (e.g., 30-35, 33-38) requires the specific experimental datum. The overlapping range of option B (35-49) with C (32-37) further illustrates that only the exact measurement resolves the choice."
-  },
-  "case_id": "temperature_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A9E7S5E3 (Akuammiline synthase 1 from Alstonia scholaris) explicitly states 'Optimum temperature is 32-37 degrees Celsius' with experimental evidence code ECO:0000269 citing PubMed:36349266. The benchmark sequence (419 AA) matches the source sequence exactly (identical SHA256). The expected answer C (32-37) corresponds precisely to this experimentally measured optimum."
-  },
-  "important_caveats": [
-    "The UniProt annotation cites experimental evidence (ECO:0000269, PubMed:36349266), making the 32-37°C value a measured quantity rather than a computational prediction.",
-    "The organism identity (Alstonia scholaris, a tropical plant) is not provided in the model input; the model must infer it from sequence, which is itself a lookup-like task.",
-    "The question framing as 'thermal adaptation prediction from sequence' implies a computational reasoning task, but the ground truth is a single experimental measurement from one publication.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model had only the 419-AA sequence and four numeric ranges."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B"
-    ],
-    "reason": "Option B (35-49) overlaps with the correct answer C (32-37) in the 35-37°C sub-range. Without knowing the exact lower bound (32 vs 35) and upper bound (37 vs 49), a model reasoning only about 'moderate' plant enzyme temperatures could plausibly select B. The upper bounds of 48-49°C in A, B, D are arguably implausible for a plant enzyme, but this reasoning requires organism identification not provided in the input."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A9E7S5E3 (Akuammiline synthase 1 from Alstonia scholaris) explicitly states 'Optimum temperature is 32-37 degrees Celsius' with experimental evidence code ECO:0000269 citing PubMed:36349266. The benchmark sequence (419 AA) matches the source sequence exactly (identical SHA256). The expected answer C (32-37) corresponds precisely to this experimentally measured optimum.",
-    "evidence_ids": ["C5", "H3", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could argue that a plant enzyme (inferable from sequence motifs and domain architecture) is unlikely to have an optimum above 40-45°C, which would make options A (38-49), B (35-49), and D (40-48) implausible due to their upper bounds near 49°C. This crude reasoning could point toward C. However, this argument requires first identifying the organism as a plant from sequence alone, and even then the precise 32-37°C window versus, say, 30-35°C or 33-38°C cannot be resolved from sequence features.",
-    "missing_item_specific_fact": "The exact experimentally measured optimum temperature range (32-37°C) for this specific enzyme (akuammiline synthase 1) from the 2022 Wang et al. study (PubMed:36349266). Without this measurement, the model cannot distinguish 32-37 from other moderate ranges, nor can it confirm the organism is a tropical plant from sequence alone with certainty.",
-    "reason": "The answer is a precise experimental measurement (optimum temperature of a specific enzyme) reported in a single publication. While general biological reasoning about plant enzyme thermostability might eliminate options with implausibly high upper bounds (48-49°C), the model is not told the organism is a plant, and the fine discrimination between 32-37 and other moderate ranges (e.g., 30-35, 33-38) requires the specific experimental datum. The overlapping range of option B (35-49) with C (32-37) further illustrates that only the exact measurement resolves the choice."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B"],
-    "reason": "Option B (35-49) overlaps with the correct answer C (32-37) in the 35-37°C sub-range. Without knowing the exact lower bound (32 vs 35) and upper bound (37 vs 49), a model reasoning only about 'moderate' plant enzyme temperatures could plausibly select B. The upper bounds of 48-49°C in A, B, D are arguably implausible for a plant enzyme, but this reasoning requires organism identification not provided in the input."
-  },
-  "important_caveats": [
-    "The UniProt annotation cites experimental evidence (ECO:0000269, PubMed:36349266), making the 32-37°C value a measured quantity rather than a computational prediction.",
-    "The organism identity (Alstonia scholaris, a tropical plant) is not provided in the model input; the model must infer it from sequence, which is itself a lookup-like task.",
-    "The question framing as 'thermal adaptation prediction from sequence' implies a computational reasoning task, but the ground truth is a single experimental measurement from one publication.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model had only the 419-AA sequence and four numeric ranges."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +163,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7S5E3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 419,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
   "current_entry_audit": {
     "entryVersion": 15,
     "firstPublicDate": "2025-06-18",
@@ -537,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "current_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 419,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 13,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7S5E3",
   "selected_historical_entry_version": 13,
+  "selected_historical_record_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "selected_historical_source_sequence_length": 419,
+  "selected_historical_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
   "selected_historical_version": {
     "accession": "A0A9E7S5E3",
     "database": "Swiss-Prot",
@@ -555,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AKS1_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "selected_historical_source_sequence_sha256": "4d53f81259ad6ebf110d3f0389144aaa3ab73e2a4032a10a17048eaa8c40b8bf",
-  "selected_historical_source_sequence_length": 419,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 13,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7S5E3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -605,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":15,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -624,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -643,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.322\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Akuammiline synthase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsAKS1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -662,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is 6.\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 32-37 degrees Celsius.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -681,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json",
-  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
-  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65387.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:54.493793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dccc1e1f78f84ddf8a52309526ec78e3e0e822b2e5e5620c9b28bd1314fc2e3d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S5E3.json"
 }
 ```
 
@@ -699,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   AKS1_ALSSC              Reviewed;         419 AA.\nAC   A0A9E7S5E3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 13.\nDE   RecName: Full=Akuammiline synthase 1 {ECO:0000303|PubMed:36349266};\nDE            Short=AsAKS1 {ECO:0000303|PubMed:36349266};\nDE            EC=2.3.1.322 {ECO:0000269|PubMed:36349266};\nGN   Name=AKS1 {ECO:0000303|PubMed:36349266};\nGN   Synonyms=BAHD3 {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -720,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 17-24",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65387.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 
@@ -741,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13",
-  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
-  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
-  "source_locator": "lines 38-43",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       pH dependence:\nCC         Optimum pH is 6. {ECO:0000269|PubMed:36349266};\nCC       Temperature dependence:\nCC         Optimum temperature is 32-37 degrees Celsius.\nCC         {ECO:0000269|PubMed:36349266};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.651074+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 38-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1462d014137043d064b721b692e151871424684911f566849eb4da04580f0a54",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S5E3?format=txt&versions=13"
 }
 ```
 

@@ -1,18 +1,16 @@
-# EC_number_0121: before and after transfer clarification
+# EC_number_0121
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0121.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0121.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **A** — 2.7.1.39
+**Expected answer:** **A** — 2.7.1.39
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry J9VU26, annotated as homoserine kinase with EC 2.7.1.39 and the corresponding homoserine-phosphorylation reaction. The annotation is transferred by similarity from P17423 (ECO:0000250), not presented here as direct experimental evidence for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with an enzyme and may support a broad kinase inference, which would distinguish kinase options from the isomerase and dehydrogenase choices. That does not establish which specific kinase reaction it catalyzes.
-
-
-**Missing item-specific fact**
-
-> Identifying the protein as homoserine kinase, and thus selecting EC 2.7.1.39 over the other kinase option, requires the protein-specific functional annotation or equivalent substrate-specific evidence.
-
-
-**Reason**
-
-> The sequence alone does not provide a sufficiently specific basis to infer the substrate and reaction needed for the complete EC number.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched-sequence annotation supports A. The remaining uncertainty is whether the supplied sequence alone lets a solver identify that specific function, not evidence that another listed EC number is correct.
-
-
-### Important caveats
-
-- The reviewer-only annotation and accession were not supplied to the evaluated model.
-- The UniProt EC assignment is similarity-based; direct experimental validation for this exact sequence was not established by the supplied evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme and may support a broad kinase inference, which would distinguish kinase options from the isomerase and dehydrogenase choices. That does not establish which specific kinase reaction it catalyzes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying the protein as homoserine kinase, and thus selecting EC 2.7.1.39 over the other kinase option, requires the protein-specific functional annotation or equivalent substrate-specific evidence.",
-    "reason": "The sequence alone does not provide a sufficiently specific basis to infer the substrate and reaction needed for the complete EC number."
-  },
-  "case_id": "EC_number_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry J9VU26, annotated as homoserine kinase with EC 2.7.1.39 and the corresponding homoserine-phosphorylation reaction. The annotation is transferred by similarity from P17423 (ECO:0000250), not presented here as direct experimental evidence for this exact protein."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation and accession were not supplied to the evaluated model.",
-    "The UniProt EC assignment is similarity-based; direct experimental validation for this exact sequence was not established by the supplied evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation supports A. The remaining uncertainty is whether the supplied sequence alone lets a solver identify that specific function, not evidence that another listed EC number is correct."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry J9VU26, annotated as homoserine kinase with EC 2.7.1.39 and the corresponding homoserine-phosphorylation reaction. The annotation is transferred by similarity from P17423 (ECO:0000250), not presented here as direct experimental evidence for this exact protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme and may support a broad kinase inference, which would distinguish kinase options from the isomerase and dehydrogenase choices. That does not establish which specific kinase reaction it catalyzes.",
-    "missing_item_specific_fact": "Identifying the protein as homoserine kinase, and thus selecting EC 2.7.1.39 over the other kinase option, requires the protein-specific functional annotation or equivalent substrate-specific evidence.",
-    "reason": "The sequence alone does not provide a sufficiently specific basis to infer the substrate and reaction needed for the complete EC number."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation supports A. The remaining uncertainty is whether the supplied sequence alone lets a solver identify that specific function, not evidence that another listed EC number is correct."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation and accession were not supplied to the evaluated model.",
-    "The UniProt EC assignment is similarity-based; direct experimental validation for this exact sequence was not established by the supplied evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry J9VU26 (KHSE_CRYN9, Cryptococcus neoformans) annotates this 357-aa protein as Homoserine kinase with EC 2.7.1.39. The annotation is transferred by similarity (ECO:0000250 from P17423, yeast homoserine kinase), and the gene is named THR1 with a reference to threonine biosynthetic pathway studies. The catalytic reaction (L-homoserine + ATP → O-phospho-L-homoserine + ADP + H+) is consistent with EC 2.7.1.39. The sequence matches the benchmark input exactly.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a canonical Walker A / P-loop nucleotide-binding motif (GLGSSGAAVIAGVLLGDLLGNL, ~residues 95-115), characteristic of ATP-binding kinases. EC 2.7.1.39 (homoserine kinase) uses ATP as phosphate donor and requires such a motif. EC 2.7.1.52 (homoserine O-succinyltransferase) uses succinyl-CoA, not ATP, and would not display a P-loop. EC 5.1.3.45 (isomerase) and EC 1.1.1.1 (alcohol dehydrogenase, oxidoreductase) belong to entirely different EC top-level classes and lack the transferase-associated P-loop. Thus the P-loop motif provides a concrete sequence-based argument to select A over B, C, and D.
-
-
-**Missing item-specific fact**
-
-> Precise substrate specificity (homoserine vs. other alcohol substrates among 2.7.1.x kinases) cannot be determined from the sequence alone without domain-level homology knowledge; however, among the four provided choices, the P-loop argument is sufficient to eliminate B, C, and D.
-
-
-**Reason**
-
-> The glycine-rich P-loop in the supplied sequence is a well-known structural signature of ATP-dependent kinases. This allows a model with general biochemical knowledge to eliminate the isomerase (C), the oxidoreductase (D), and the CoA-dependent transferase (B), leaving the ATP-dependent kinase (A) as the only consistent choice. The argument is grounded in observable sequence features and standard enzyme-class biochemistry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The P-loop motif clearly supports an ATP-dependent kinase (class 2.7.1.x) and eliminates the isomerase (5.x), oxidoreductase (1.x), and succinyl-CoA-dependent transferase (B). No other option is consistent with the observed nucleotide-binding motif.
-
-
-### Important caveats
-
-- The UniProt EC annotation for this entry is inferred by similarity (ECO:0000250) to P17423, not from direct experimental characterization of the C. neoformans protein itself.
-- The specific identification of homoserine as the substrate (distinguishing 2.7.1.39 from other 2.7.1.x kinases) relies on fold/domain homology knowledge rather than a unique sequence signature visible to a general reader.
-- The sequence is 357 residues and matches the canonical UniProt entry exactly; no truncation or construct issues are present.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a canonical Walker A / P-loop nucleotide-binding motif (GLGSSGAAVIAGVLLGDLLGNL, ~residues 95-115), characteristic of ATP-binding kinases. EC 2.7.1.39 (homoserine kinase) uses ATP as phosphate donor and requires such a motif. EC 2.7.1.52 (homoserine O-succinyltransferase) uses succinyl-CoA, not ATP, and would not display a P-loop. EC 5.1.3.45 (isomerase) and EC 1.1.1.1 (alcohol dehydrogenase, oxidoreductase) belong to entirely different EC top-level classes and lack the transferase-associated P-loop. Thus the P-loop motif provides a concrete sequence-based argument to select A over B, C, and D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise substrate specificity (homoserine vs. other alcohol substrates among 2.7.1.x kinases) cannot be determined from the sequence alone without domain-level homology knowledge; however, among the four provided choices, the P-loop argument is sufficient to eliminate B, C, and D.",
-    "reason": "The glycine-rich P-loop in the supplied sequence is a well-known structural signature of ATP-dependent kinases. This allows a model with general biochemical knowledge to eliminate the isomerase (C), the oxidoreductase (D), and the CoA-dependent transferase (B), leaving the ATP-dependent kinase (A) as the only consistent choice. The argument is grounded in observable sequence features and standard enzyme-class biochemistry."
-  },
-  "case_id": "EC_number_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry J9VU26 (KHSE_CRYN9, Cryptococcus neoformans) annotates this 357-aa protein as Homoserine kinase with EC 2.7.1.39. The annotation is transferred by similarity (ECO:0000250 from P17423, yeast homoserine kinase), and the gene is named THR1 with a reference to threonine biosynthetic pathway studies. The catalytic reaction (L-homoserine + ATP → O-phospho-L-homoserine + ADP + H+) is consistent with EC 2.7.1.39. The sequence matches the benchmark input exactly."
-  },
-  "important_caveats": [
-    "The UniProt EC annotation for this entry is inferred by similarity (ECO:0000250) to P17423, not from direct experimental characterization of the C. neoformans protein itself.",
-    "The specific identification of homoserine as the substrate (distinguishing 2.7.1.39 from other 2.7.1.x kinases) relies on fold/domain homology knowledge rather than a unique sequence signature visible to a general reader.",
-    "The sequence is 357 residues and matches the canonical UniProt entry exactly; no truncation or construct issues are present."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The P-loop motif clearly supports an ATP-dependent kinase (class 2.7.1.x) and eliminates the isomerase (5.x), oxidoreductase (1.x), and succinyl-CoA-dependent transferase (B). No other option is consistent with the observed nucleotide-binding motif."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry J9VU26 (KHSE_CRYN9, Cryptococcus neoformans) annotates this 357-aa protein as Homoserine kinase with EC 2.7.1.39. The annotation is transferred by similarity (ECO:0000250 from P17423, yeast homoserine kinase), and the gene is named THR1 with a reference to threonine biosynthetic pathway studies. The catalytic reaction (L-homoserine + ATP → O-phospho-L-homoserine + ADP + H+) is consistent with EC 2.7.1.39. The sequence matches the benchmark input exactly.",
-    "evidence_ids": ["C4", "C5", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a canonical Walker A / P-loop nucleotide-binding motif (GLGSSGAAVIAGVLLGDLLGNL, ~residues 95-115), characteristic of ATP-binding kinases. EC 2.7.1.39 (homoserine kinase) uses ATP as phosphate donor and requires such a motif. EC 2.7.1.52 (homoserine O-succinyltransferase) uses succinyl-CoA, not ATP, and would not display a P-loop. EC 5.1.3.45 (isomerase) and EC 1.1.1.1 (alcohol dehydrogenase, oxidoreductase) belong to entirely different EC top-level classes and lack the transferase-associated P-loop. Thus the P-loop motif provides a concrete sequence-based argument to select A over B, C, and D.",
-    "missing_item_specific_fact": "Precise substrate specificity (homoserine vs. other alcohol substrates among 2.7.1.x kinases) cannot be determined from the sequence alone without domain-level homology knowledge; however, among the four provided choices, the P-loop argument is sufficient to eliminate B, C, and D.",
-    "reason": "The glycine-rich P-loop in the supplied sequence is a well-known structural signature of ATP-dependent kinases. This allows a model with general biochemical knowledge to eliminate the isomerase (C), the oxidoreductase (D), and the CoA-dependent transferase (B), leaving the ATP-dependent kinase (A) as the only consistent choice. The argument is grounded in observable sequence features and standard enzyme-class biochemistry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The P-loop motif clearly supports an ATP-dependent kinase (class 2.7.1.x) and eliminates the isomerase (5.x), oxidoreductase (1.x), and succinyl-CoA-dependent transferase (B). No other option is consistent with the observed nucleotide-binding motif."
-  },
-  "important_caveats": [
-    "The UniProt EC annotation for this entry is inferred by similarity (ECO:0000250) to P17423, not from direct experimental characterization of the C. neoformans protein itself.",
-    "The specific identification of homoserine as the substrate (distinguishing 2.7.1.39 from other 2.7.1.x kinases) relies on fold/domain homology knowledge rather than a unique sequence signature visible to a general reader.",
-    "The sequence is 357 residues and matches the canonical UniProt entry exactly; no truncation or construct issues are present."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "J9VU26",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 357,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-02-05",
@@ -530,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-11-28",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "current_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 357,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "J9VU26",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "selected_historical_source_sequence_length": 357,
+  "selected_historical_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
   "selected_historical_version": {
     "accession": "J9VU26",
     "database": "Swiss-Prot",
@@ -548,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "KHSE_CRYN9",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "selected_historical_source_sequence_sha256": "0d5b6ca56754f8b7a34530cb0993479508f4e035318ede70547b7393e120e776",
-  "selected_historical_source_sequence_length": 357,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"J9VU26\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -598,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-11-28\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -617,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Cryptococcus neoformans var. grubii serotype A\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000010091\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Basidiomycota\",\"Agaricomycotina\",\"Tremellomycetes\",\"Tremellales\",\"Cryptococcaceae\",\"Cryptococcus\",\"Cryptococcus neoformans species complex\"],\"scientificName\":\"Cryptococcus neoformans (strain H99 / ATCC 208821 / CBS 10515 / FGSC 9487)\",\"taxonId\":235443}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -636,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17423\",\"source\":\"UniProtKB\"}],\"value\":\"2.7.1.39\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Homoserine kinase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HK\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HSK\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -655,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json",
-  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
-  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17423\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:13986\"}}],\"reaction\":{\"ecNumber\":\"2.7.1.39\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17423\",\"source\":\"UniProtKB\"}],\"name\":\"L-homoserine + ATP = O-phospho-L-homoserine + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:13985\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57476\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57590\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:11.100039+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0e9afaf34be107a1ef4697a7739b7135416509845602d34b04e02d7fb3acefe1",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VU26.json"
 }
 ```
 
@@ -673,18 +434,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   KHSE_CRYN9              Reviewed;         357 AA.\nAC   J9VU26; B2MVI2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   28-NOV-2012, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=Homoserine kinase {ECO:0000305};\nDE            Short=HK {ECO:0000305};\nDE            Short=HSK {ECO:0000305};\nDE            EC=2.7.1.39 {ECO:0000250|UniProtKB:P17423};\nGN   Name=THR1 {ECO:0000303|PubMed:18757810};\nGN   ORFNames=CNAG_04156 {ECO:0000312|EMBL:AFR96886.1};\nOS   Cryptococcus neoformans (strain H99 / ATCC 208821 / CBS 10515 / FGSC 9487)\nOS   (Cryptococcus neoformans var. grubii serotype A).\nOC   Eukaryota; Fungi; Dikarya; Basidiomycota; Agaricomycotina; Tremellomycetes;\nOC   Tremellales; Cryptococcaceae; Cryptococcus;\nOC   Cryptococcus neoformans species complex.\nOX   NCBI_TaxID=235443 {ECO:0000312|Proteomes:UP000010091};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -694,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Homoserine kinase {ECO:0000305};\nDE            Short=HK {ECO:0000305};\nDE            Short=HSK {ECO:0000305};\nDE            EC=2.7.1.39 {ECO:0000250|UniProtKB:P17423};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -715,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 18-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:ACC85591.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, PATHWAY, AND DISRUPTION PHENOTYPE.\nRX   PubMed=18757810; DOI=10.1099/mic.0.2008/019729-0;\nRA   Kingsbury J.M., McCusker J.H.;\nRT   \"Threonine biosynthetic genes are essential in Cryptococcus neoformans.\";\nRL   Microbiology 154:2767-2775(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 18-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 
@@ -736,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51",
-  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
-  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
-  "source_locator": "lines 45-51",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-homoserine + ATP = O-phospho-L-homoserine + ADP + H(+);\nCC         Xref=Rhea:RHEA:13985, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:57476, ChEBI:CHEBI:57590, ChEBI:CHEBI:456216;\nCC         EC=2.7.1.39; Evidence={ECO:0000250|UniProtKB:P17423};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:13986;\nCC         Evidence={ECO:0000250|UniProtKB:P17423};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-01T06:28:15.320227+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fc5fc0e459f5fad429e5682de28d956b045a7721e17c0769394b8a51086bfc87",
+  "url": "https://rest.uniprot.org/unisave/J9VU26?format=txt&versions=51"
 }
 ```
 

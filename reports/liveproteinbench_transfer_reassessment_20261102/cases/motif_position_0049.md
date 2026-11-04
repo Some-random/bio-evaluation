@@ -1,18 +1,16 @@
-# motif_position_0049: before and after transfer clarification
+# motif_position_0049
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/motif_position_0049.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/motif_position_0049.txt)
 
 **Task:** `motif_position`  
-**Author key, unchanged:** **A** — 6..14
+**Expected answer:** **A** — 6..14
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt record annotating a motif at 6..14, and the same annotation appears in a historical entry version. This supports the key as a database annotation, not as experimentally verified evidence.
-
-Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic stretch could suggest a signal peptide, but the prompt gives no motif identity or consensus that would establish the precise boundaries 6..14.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific motif annotation (QXSXEXXXL at 6..14), or an equivalent motif definition, is absent from the prompt.
-
-
-**Reason**
-
-> The supplied sequence and choices do not define which conserved motif to locate. Distinguishing the keyed interval therefore depends on an external motif annotation or other protein-specific information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B",
-  "C"
-]
-```
-
-> The motif is not named or described, so the prompt alone does not distinguish among the in-range candidate intervals. D is outside the 198-residue sequence.
-
-
-### Important caveats
-
-- The reviewer-only UniProt annotation is sequence-matched and present in a historical record, but the author's exact source snapshot is unknown.
-- The cited motif annotation carries evidence code ECO:0000305; the supplied evidence does not establish experimental validation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch could suggest a signal peptide, but the prompt gives no motif identity or consensus that would establish the precise boundaries 6..14.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific motif annotation (QXSXEXXXL at 6..14), or an equivalent motif definition, is absent from the prompt.",
-    "reason": "The supplied sequence and choices do not define which conserved motif to locate. Distinguishing the keyed interval therefore depends on an external motif annotation or other protein-specific information."
-  },
-  "case_id": "motif_position_0049",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt record annotating a motif at 6..14, and the same annotation appears in a historical entry version. This supports the key as a database annotation, not as experimentally verified evidence."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt annotation is sequence-matched and present in a historical record, but the author's exact source snapshot is unknown.",
-    "The cited motif annotation carries evidence code ECO:0000305; the supplied evidence does not establish experimental validation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B",
-      "C"
-    ],
-    "reason": "The motif is not named or described, so the prompt alone does not distinguish among the in-range candidate intervals. D is outside the 198-residue sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "motif_position_0049",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt record annotating a motif at 6..14, and the same annotation appears in a historical entry version. This supports the key as a database annotation, not as experimentally verified evidence.",
-    "evidence_ids": ["C5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch could suggest a signal peptide, but the prompt gives no motif identity or consensus that would establish the precise boundaries 6..14.",
-    "missing_item_specific_fact": "The sequence-specific motif annotation (QXSXEXXXL at 6..14), or an equivalent motif definition, is absent from the prompt.",
-    "reason": "The supplied sequence and choices do not define which conserved motif to locate. Distinguishing the keyed interval therefore depends on an external motif annotation or other protein-specific information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B", "C"],
-    "reason": "The motif is not named or described, so the prompt alone does not distinguish among the in-range candidate intervals. D is outside the 198-residue sequence."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt annotation is sequence-matched and present in a historical record, but the author's exact source snapshot is unknown.",
-    "The cited motif annotation carries evidence code ECO:0000305; the supplied evidence does not establish experimental validation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation (C5, H2) explicitly records a Motif at positions 6..14 with pattern QXSXEXXXL for this sequence (Q6LZC0, 198 AA, sequence matched). The sequence at positions 6-14 is QLSIEMVIL, which matches QXSXEXXXL exactly. Evidence code is ECO:0000305 (inferred by curator), indicating a curatorial/computational annotation rather than direct experimental validation, but the pattern is unambiguously present in the sequence.
-
-Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2), [C1](#evidence-c1), [C4](#evidence-c4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Options C (92..94, only 3 residues) and D (205..208, beyond the 198-residue sequence) can be eliminated by basic reasoning about motif length and sequence bounds. However, distinguishing A (6..14, 9 residues) from B (24..31, 8 residues) requires knowing the specific pilin N-terminal motif pattern QXSXEXXXL, which is not provided in the question. The protein is identified as a 'Probable minor pilin' only in the database annotation, not in the user prompt. Without knowing which motif to search for or that this is a pilin, the model must recall the specific QXSXEXXXL pattern and its typical N-terminal location.
-
-
-**Missing item-specific fact**
-
-> The identity of the specific motif to be located (QXSXEXXXL pilin motif) and the protein's classification as a pilin are not provided in the question input. Distinguishing the 9-residue N-terminal region (A) from the 8-residue region (B) requires knowledge of this particular motif pattern.
-
-
-**Reason**
-
-> While C and D are eliminable through general reasoning (too short / beyond sequence), the A-vs-B discrimination depends on knowing the specific conserved motif pattern for this protein family, which constitutes an item-specific external fact absent from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> D (205..208) is clearly invalid as it exceeds the 198-residue sequence length. C (92..94) is only 3 residues, far too short for a typical conserved motif. A and B are both plausible in length, but only A matches the known QXSXEXXXL pattern. The question does not specify which motif to identify, creating ambiguity, but only one option matches any well-known motif pattern in this context.
-
-
-### Important caveats
-
-- The motif annotation carries evidence code ECO:0000305 (inferred by curator), meaning it is a curatorial/computational assignment, not a direct experimental measurement.
-- The question asks to identify 'a conserved motif' without specifying which motif, making it dependent on the solver knowing the relevant motif pattern for this protein class.
-- Option D (205..208) is trivially invalid for a 198-residue protein, reducing the effective choice set.
-- The protein identity (minor pilin MMP0709) and its taxonomic origin are only available in database annotations, not in the question prompt.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Options C (92..94, only 3 residues) and D (205..208, beyond the 198-residue sequence) can be eliminated by basic reasoning about motif length and sequence bounds. However, distinguishing A (6..14, 9 residues) from B (24..31, 8 residues) requires knowing the specific pilin N-terminal motif pattern QXSXEXXXL, which is not provided in the question. The protein is identified as a 'Probable minor pilin' only in the database annotation, not in the user prompt. Without knowing which motif to search for or that this is a pilin, the model must recall the specific QXSXEXXXL pattern and its typical N-terminal location.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of the specific motif to be located (QXSXEXXXL pilin motif) and the protein's classification as a pilin are not provided in the question input. Distinguishing the 9-residue N-terminal region (A) from the 8-residue region (B) requires knowledge of this particular motif pattern.",
-    "reason": "While C and D are eliminable through general reasoning (too short / beyond sequence), the A-vs-B discrimination depends on knowing the specific conserved motif pattern for this protein family, which constitutes an item-specific external fact absent from the input."
-  },
-  "case_id": "motif_position_0049",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H2",
-      "C1",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H2) explicitly records a Motif at positions 6..14 with pattern QXSXEXXXL for this sequence (Q6LZC0, 198 AA, sequence matched). The sequence at positions 6-14 is QLSIEMVIL, which matches QXSXEXXXL exactly. Evidence code is ECO:0000305 (inferred by curator), indicating a curatorial/computational annotation rather than direct experimental validation, but the pattern is unambiguously present in the sequence."
-  },
-  "important_caveats": [
-    "The motif annotation carries evidence code ECO:0000305 (inferred by curator), meaning it is a curatorial/computational assignment, not a direct experimental measurement.",
-    "The question asks to identify 'a conserved motif' without specifying which motif, making it dependent on the solver knowing the relevant motif pattern for this protein class.",
-    "Option D (205..208) is trivially invalid for a 198-residue protein, reducing the effective choice set.",
-    "The protein identity (minor pilin MMP0709) and its taxonomic origin are only available in database annotations, not in the question prompt."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "D (205..208) is clearly invalid as it exceeds the 198-residue sequence length. C (92..94) is only 3 residues, far too short for a typical conserved motif. A and B are both plausible in length, but only A matches the known QXSXEXXXL pattern. The question does not specify which motif to identify, creating ambiguity, but only one option matches any well-known motif pattern in this context."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "motif_position_0049",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H2) explicitly records a Motif at positions 6..14 with pattern QXSXEXXXL for this sequence (Q6LZC0, 198 AA, sequence matched). The sequence at positions 6-14 is QLSIEMVIL, which matches QXSXEXXXL exactly. Evidence code is ECO:0000305 (inferred by curator), indicating a curatorial/computational annotation rather than direct experimental validation, but the pattern is unambiguously present in the sequence.",
-    "evidence_ids": ["C5", "H2", "C1", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Options C (92..94, only 3 residues) and D (205..208, beyond the 198-residue sequence) can be eliminated by basic reasoning about motif length and sequence bounds. However, distinguishing A (6..14, 9 residues) from B (24..31, 8 residues) requires knowing the specific pilin N-terminal motif pattern QXSXEXXXL, which is not provided in the question. The protein is identified as a 'Probable minor pilin' only in the database annotation, not in the user prompt. Without knowing which motif to search for or that this is a pilin, the model must recall the specific QXSXEXXXL pattern and its typical N-terminal location.",
-    "missing_item_specific_fact": "The identity of the specific motif to be located (QXSXEXXXL pilin motif) and the protein's classification as a pilin are not provided in the question input. Distinguishing the 9-residue N-terminal region (A) from the 8-residue region (B) requires knowledge of this particular motif pattern.",
-    "reason": "While C and D are eliminable through general reasoning (too short / beyond sequence), the A-vs-B discrimination depends on knowing the specific conserved motif pattern for this protein family, which constitutes an item-specific external fact absent from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "D (205..208) is clearly invalid as it exceeds the 198-residue sequence length. C (92..94) is only 3 residues, far too short for a typical conserved motif. A and B are both plausible in length, but only A matches the known QXSXEXXXL pattern. The question does not specify which motif to identify, creating ambiguity, but only one option matches any well-known motif pattern in this context."
-  },
-  "important_caveats": [
-    "The motif annotation carries evidence code ECO:0000305 (inferred by curator), meaning it is a curatorial/computational assignment, not a direct experimental measurement.",
-    "The question asks to identify 'a conserved motif' without specifying which motif, making it dependent on the solver knowing the relevant motif pattern for this protein class.",
-    "Option D (205..208) is trivially invalid for a 198-residue protein, reducing the effective choice set.",
-    "The protein identity (minor pilin MMP0709) and its taxonomic origin are only available in database annotations, not in the question prompt."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +158,9 @@ Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q6LZC0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "415f59d45803ef521c633832bfca744343796ddbd5b6c8382f6f49dc4f641ba6",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 198,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "415f59d45803ef521c633832bfca744343796ddbd5b6c8382f6f49dc4f641ba6",
   "current_entry_audit": {
     "entryVersion": 76,
     "firstPublicDate": "2025-04-09",
@@ -536,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
-  "current_source_sequence_sha256": "415f59d45803ef521c633832bfca744343796ddbd5b6c8382f6f49dc4f641ba6",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 198,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "415f59d45803ef521c633832bfca744343796ddbd5b6c8382f6f49dc4f641ba6",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 75,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q6LZC0",
   "selected_historical_entry_version": 75,
+  "selected_historical_record_sha256": "61362a31ad043a1d4de7160cee8e25e0f26f8c0cb1765bb8133df45d8e8d5e54",
+  "selected_historical_source_sequence_length": 198,
+  "selected_historical_source_sequence_sha256": "415f59d45803ef521c633832bfca744343796ddbd5b6c8382f6f49dc4f641ba6",
   "selected_historical_version": {
     "accession": "Q6LZC0",
     "database": "Swiss-Prot",
@@ -554,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "Y709_METMP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "61362a31ad043a1d4de7160cee8e25e0f26f8c0cb1765bb8133df45d8e8d5e54",
-  "selected_historical_source_sequence_sha256": "415f59d45803ef521c633832bfca744343796ddbd5b6c8382f6f49dc4f641ba6",
-  "selected_historical_source_sequence_length": 198,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 75,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json",
-  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
-  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q6LZC0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json"
 }
 ```
 
@@ -604,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json",
-  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
-  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":76,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2004-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json"
 }
 ```
 
@@ -623,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json",
-  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
-  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Archaea\",\"Methanobacteriati\",\"Methanobacteriota\",\"Methanomada group\",\"Methanococci\",\"Methanococcales\",\"Methanococcaceae\",\"Methanococcus\"],\"scientificName\":\"Methanococcus maripaludis (strain DSM 14266 / JCM 13030 / NBRC 101832 / S2 / LL)\",\"taxonId\":267377}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json"
 }
 ```
 
@@ -642,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json",
-  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
-  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Probable minor pilin MMP0709\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json"
 }
 ```
 
@@ -661,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json",
-  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
-  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"QXSXEXXXL\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":14},\"start\":{\"modifier\":\"EXACT\",\"value\":6}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:31:36.716902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3db999749abf6c20699452461ca055eda952536b51b4b243a842e55072268151",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZC0.json"
 }
 ```
 
@@ -679,18 +433,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6LZC0?format=txt&versions=75",
-  "source_sha256": "61362a31ad043a1d4de7160cee8e25e0f26f8c0cb1765bb8133df45d8e8d5e54",
-  "retrieved_utc": "2026-11-02T04:31:40.518419+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   Y709_METMP              Reviewed;         198 AA.\nAC   Q6LZC0;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2004, sequence version 1.\nDT   28-JAN-2026, entry version 75.\nDE   RecName: Full=Probable minor pilin MMP0709 {ECO:0000305};\nDE   Flags: Precursor;\nGN   OrderedLocusNames=MMP0709 {ECO:0000312|EMBL:CAF30265.1};\nOS   Methanococcus maripaludis (strain DSM 14266 / JCM 13030 / NBRC 101832 / S2\nOS   / LL).\nOC   Archaea; Methanobacteriati; Methanobacteriota; Methanomada group;\nOC   Methanococci; Methanococcales; Methanococcaceae; Methanococcus.\nOX   NCBI_TaxID=267377;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:31:40.518419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "61362a31ad043a1d4de7160cee8e25e0f26f8c0cb1765bb8133df45d8e8d5e54",
+  "url": "https://rest.uniprot.org/unisave/Q6LZC0?format=txt&versions=75"
 }
 ```
 
@@ -700,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6LZC0?format=txt&versions=75",
-  "source_sha256": "61362a31ad043a1d4de7160cee8e25e0f26f8c0cb1765bb8133df45d8e8d5e54",
-  "retrieved_utc": "2026-11-02T04:31:40.518419+00:00",
-  "source_locator": "lines 76-78",
   "excerpt": "FT   MOTIF           6..14\nFT                   /note=\"QXSXEXXXL\"\nFT                   /evidence=\"ECO:0000305\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:31:40.518419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 76-78",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "61362a31ad043a1d4de7160cee8e25e0f26f8c0cb1765bb8133df45d8e8d5e54",
+  "url": "https://rest.uniprot.org/unisave/Q6LZC0?format=txt&versions=75"
 }
 ```
 

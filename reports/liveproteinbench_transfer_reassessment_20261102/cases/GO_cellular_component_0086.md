@@ -1,18 +1,16 @@
-# GO_cellular_component_0086: before and after transfer clarification
+# GO_cellular_component_0086
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0086.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0086.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — cell surface
+**Expected answer:** **A** — cell surface
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated to the cell surface. The annotation is supported by transfer from a related protein (ECO:0000250), and the GO assignment is computational/inferred (ISS historically; IEA in the archived record), not direct experimental evidence. The entry also describes a probable minor pilin and annotates it as secreted and part of a fimbrium, consistent with cell-surface association.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic region and likely signal/anchor sequence are consistent with export or membrane association, but do not by themselves establish that the mature protein is cell-surface-associated rather than another listed location.
-
-
-**Missing item-specific fact**
-
-> Identifying this sequence as the probable minor pilin MMP0601 and knowing its transferred cell-surface annotation are protein-specific facts absent from the question.
-
-
-**Reason**
-
-> The sequence offers a broad localization clue, but distinguishing the keyed cell-surface assignment depends on protein identity/function and its annotation, not on a sufficiently specific general biological inference from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports cell surface among the listed choices. Other annotations for this protein include secreted and fimbrium, but those are not options.
-
-
-### Important caveats
-
-- The localization support is transferred/inferred rather than independently verified experimental evidence in the supplied excerpts.
-- The sequence matches the current and archived UniProt records, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic region and likely signal/anchor sequence are consistent with export or membrane association, but do not by themselves establish that the mature protein is cell-surface-associated rather than another listed location.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying this sequence as the probable minor pilin MMP0601 and knowing its transferred cell-surface annotation are protein-specific facts absent from the question.",
-    "reason": "The sequence offers a broad localization clue, but distinguishing the keyed cell-surface assignment depends on protein identity/function and its annotation, not on a sufficiently specific general biological inference from the supplied input."
-  },
-  "case_id": "GO_cellular_component_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated to the cell surface. The annotation is supported by transfer from a related protein (ECO:0000250), and the GO assignment is computational/inferred (ISS historically; IEA in the archived record), not direct experimental evidence. The entry also describes a probable minor pilin and annotates it as secreted and part of a fimbrium, consistent with cell-surface association."
-  },
-  "important_caveats": [
-    "The localization support is transferred/inferred rather than independently verified experimental evidence in the supplied excerpts.",
-    "The sequence matches the current and archived UniProt records, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports cell surface among the listed choices. Other annotations for this protein include secreted and fimbrium, but those are not options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated to the cell surface. The annotation is supported by transfer from a related protein (ECO:0000250), and the GO assignment is computational/inferred (ISS historically; IEA in the archived record), not direct experimental evidence. The entry also describes a probable minor pilin and annotates it as secreted and part of a fimbrium, consistent with cell-surface association.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic region and likely signal/anchor sequence are consistent with export or membrane association, but do not by themselves establish that the mature protein is cell-surface-associated rather than another listed location.",
-    "missing_item_specific_fact": "Identifying this sequence as the probable minor pilin MMP0601 and knowing its transferred cell-surface annotation are protein-specific facts absent from the question.",
-    "reason": "The sequence offers a broad localization clue, but distinguishing the keyed cell-surface assignment depends on protein identity/function and its annotation, not on a sufficiently specific general biological inference from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports cell surface among the listed choices. Other annotations for this protein include secreted and fimbrium, but those are not options."
-  },
-  "important_caveats": [
-    "The localization support is transferred/inferred rather than independently verified experimental evidence in the supplied excerpts.",
-    "The sequence matches the current and archived UniProt records, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q6LZM3 (Probable minor pilin MMP0601, Methanococcus maripaludis) annotates the protein as Secreted, Cell surface, and Fimbrium (evidence C5, H2). The GO cross-reference GO:0009986 (cell surface) is present (C6, H3), along with GO:0009289 (pilus) and GO:0005576 (extracellular region). The evidence code is ISS (Inferred from Sequence Similarity to Q6LWM4), i.e., computational transfer rather than direct experimental validation, but it is the authoritative database annotation for this sequence. The sequence matches exactly (295 aa, SHA256 confirmed). The expected answer 'cell surface' aligns with the annotation.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Options B (dendrite) and C (axon cytoplasm) are exclusively neuronal compartments found only in animal cells; they are biologically impossible for a prokaryotic/archaeal protein and can be eliminated by general knowledge without any item-specific lookup. Option D (endoplasmic reticulum) is a eukaryotic organelle requiring specific ER targeting/retention signals (e.g., KDEL/HDEL) absent from this sequence. The N-terminal hydrophobic stretch (MLLNSKRGQVSIEMLILILAVLLSGTIFAA) resembles a signal peptide or transmembrane anchor typical of secreted/surface proteins such as pilins, supporting cell surface localization. Cell surface (A) is the only compartment universally applicable to prokaryotes/archaea and consistent with the sequence architecture.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The elimination of B, C, and D relies on general biological knowledge (neuronal vs. prokaryotic compartments, eukaryotic organelle specificity). The positive support for A via the pilin/signal-peptide interpretation is a general sequence-structure inference, not a memorized database entry.
-
-
-**Reason**
-
-> A model with general biological knowledge can reason: (1) dendrite and axon cytoplasm are neuron-specific and irrelevant here; (2) ER is eukaryotic-only and requires retention signals not present; (3) the N-terminal hydrophobic region and overall pilin-like architecture point to secretion/cell surface. This constitutes a concrete biological argument distinguishable from mere lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> B and C are categorically impossible for a non-neuronal (archaeal) protein. D requires eukaryotic ER targeting machinery and retention signals absent from the sequence. A is the sole compartment consistent with both the organismal context (prokaryote/archaeon) and the sequence features (signal-peptide-like N-terminus, pilin architecture). No other option is defensible.
-
-
-### Important caveats
-
-- The UniProt 'cell surface' annotation carries evidence code ISS (Inferred from Sequence Similarity to Q6LWM4), not direct experimental evidence. It is a computational transfer annotation.
-- The protein is annotated as 'Probable' minor pilin, indicating the pilin assignment itself is inferred, not experimentally confirmed.
-- The identity of the protein (Q6LZM3, Methanococcus maripaludis) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must infer organismal context from sequence features alone.
-- The N-terminal hydrophobic region is suggestive of a signal peptide/anchor but is not definitively annotated as a cleaved signal peptide in the UniProt entry (the entry is flagged 'Precursor' but no explicit signal peptide coordinates are provided in the excerpts).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Options B (dendrite) and C (axon cytoplasm) are exclusively neuronal compartments found only in animal cells; they are biologically impossible for a prokaryotic/archaeal protein and can be eliminated by general knowledge without any item-specific lookup. Option D (endoplasmic reticulum) is a eukaryotic organelle requiring specific ER targeting/retention signals (e.g., KDEL/HDEL) absent from this sequence. The N-terminal hydrophobic stretch (MLLNSKRGQVSIEMLILILAVLLSGTIFAA) resembles a signal peptide or transmembrane anchor typical of secreted/surface proteins such as pilins, supporting cell surface localization. Cell surface (A) is the only compartment universally applicable to prokaryotes/archaea and consistent with the sequence architecture.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The elimination of B, C, and D relies on general biological knowledge (neuronal vs. prokaryotic compartments, eukaryotic organelle specificity). The positive support for A via the pilin/signal-peptide interpretation is a general sequence-structure inference, not a memorized database entry.",
-    "reason": "A model with general biological knowledge can reason: (1) dendrite and axon cytoplasm are neuron-specific and irrelevant here; (2) ER is eukaryotic-only and requires retention signals not present; (3) the N-terminal hydrophobic region and overall pilin-like architecture point to secretion/cell surface. This constitutes a concrete biological argument distinguishable from mere lookup."
-  },
-  "case_id": "GO_cellular_component_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C8",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q6LZM3 (Probable minor pilin MMP0601, Methanococcus maripaludis) annotates the protein as Secreted, Cell surface, and Fimbrium (evidence C5, H2). The GO cross-reference GO:0009986 (cell surface) is present (C6, H3), along with GO:0009289 (pilus) and GO:0005576 (extracellular region). The evidence code is ISS (Inferred from Sequence Similarity to Q6LWM4), i.e., computational transfer rather than direct experimental validation, but it is the authoritative database annotation for this sequence. The sequence matches exactly (295 aa, SHA256 confirmed). The expected answer 'cell surface' aligns with the annotation."
-  },
-  "important_caveats": [
-    "The UniProt 'cell surface' annotation carries evidence code ISS (Inferred from Sequence Similarity to Q6LWM4), not direct experimental evidence. It is a computational transfer annotation.",
-    "The protein is annotated as 'Probable' minor pilin, indicating the pilin assignment itself is inferred, not experimentally confirmed.",
-    "The identity of the protein (Q6LZM3, Methanococcus maripaludis) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must infer organismal context from sequence features alone.",
-    "The N-terminal hydrophobic region is suggestive of a signal peptide/anchor but is not definitively annotated as a cleaved signal peptide in the UniProt entry (the entry is flagged 'Precursor' but no explicit signal peptide coordinates are provided in the excerpts)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and C are categorically impossible for a non-neuronal (archaeal) protein. D requires eukaryotic ER targeting machinery and retention signals absent from the sequence. A is the sole compartment consistent with both the organismal context (prokaryote/archaeon) and the sequence features (signal-peptide-like N-terminus, pilin architecture). No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q6LZM3 (Probable minor pilin MMP0601, Methanococcus maripaludis) annotates the protein as Secreted, Cell surface, and Fimbrium (evidence C5, H2). The GO cross-reference GO:0009986 (cell surface) is present (C6, H3), along with GO:0009289 (pilus) and GO:0005576 (extracellular region). The evidence code is ISS (Inferred from Sequence Similarity to Q6LWM4), i.e., computational transfer rather than direct experimental validation, but it is the authoritative database annotation for this sequence. The sequence matches exactly (295 aa, SHA256 confirmed). The expected answer 'cell surface' aligns with the annotation.",
-    "evidence_ids": ["C5", "C6", "C8", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Options B (dendrite) and C (axon cytoplasm) are exclusively neuronal compartments found only in animal cells; they are biologically impossible for a prokaryotic/archaeal protein and can be eliminated by general knowledge without any item-specific lookup. Option D (endoplasmic reticulum) is a eukaryotic organelle requiring specific ER targeting/retention signals (e.g., KDEL/HDEL) absent from this sequence. The N-terminal hydrophobic stretch (MLLNSKRGQVSIEMLILILAVLLSGTIFAA) resembles a signal peptide or transmembrane anchor typical of secreted/surface proteins such as pilins, supporting cell surface localization. Cell surface (A) is the only compartment universally applicable to prokaryotes/archaea and consistent with the sequence architecture.",
-    "missing_item_specific_fact": "None strictly required. The elimination of B, C, and D relies on general biological knowledge (neuronal vs. prokaryotic compartments, eukaryotic organelle specificity). The positive support for A via the pilin/signal-peptide interpretation is a general sequence-structure inference, not a memorized database entry.",
-    "reason": "A model with general biological knowledge can reason: (1) dendrite and axon cytoplasm are neuron-specific and irrelevant here; (2) ER is eukaryotic-only and requires retention signals not present; (3) the N-terminal hydrophobic region and overall pilin-like architecture point to secretion/cell surface. This constitutes a concrete biological argument distinguishable from mere lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and C are categorically impossible for a non-neuronal (archaeal) protein. D requires eukaryotic ER targeting machinery and retention signals absent from the sequence. A is the sole compartment consistent with both the organismal context (prokaryote/archaeon) and the sequence features (signal-peptide-like N-terminus, pilin architecture). No other option is defensible."
-  },
-  "important_caveats": [
-    "The UniProt 'cell surface' annotation carries evidence code ISS (Inferred from Sequence Similarity to Q6LWM4), not direct experimental evidence. It is a computational transfer annotation.",
-    "The protein is annotated as 'Probable' minor pilin, indicating the pilin assignment itself is inferred, not experimentally confirmed.",
-    "The identity of the protein (Q6LZM3, Methanococcus maripaludis) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must infer organismal context from sequence features alone.",
-    "The N-terminal hydrophobic region is suggestive of a signal peptide/anchor but is not definitively annotated as a cleaved signal peptide in the UniProt entry (the entry is flagged 'Precursor' but no explicit signal peptide coordinates are provided in the excerpts)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q6LZM3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "065d2f938129ed7993f2c85bb3e37d96c2a059ca6ef3081a985f035a35e84ef5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 295,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "065d2f938129ed7993f2c85bb3e37d96c2a059ca6ef3081a985f035a35e84ef5",
   "current_entry_audit": {
     "entryVersion": 74,
     "firstPublicDate": "2025-04-09",
@@ -541,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "current_source_sequence_sha256": "065d2f938129ed7993f2c85bb3e37d96c2a059ca6ef3081a985f035a35e84ef5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 295,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "065d2f938129ed7993f2c85bb3e37d96c2a059ca6ef3081a985f035a35e84ef5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 73,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q6LZM3",
   "selected_historical_entry_version": 73,
+  "selected_historical_record_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
+  "selected_historical_source_sequence_length": 295,
+  "selected_historical_source_sequence_sha256": "065d2f938129ed7993f2c85bb3e37d96c2a059ca6ef3081a985f035a35e84ef5",
   "selected_historical_version": {
     "accession": "Q6LZM3",
     "database": "Swiss-Prot",
@@ -559,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "Y601_METMP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
-  "selected_historical_source_sequence_sha256": "065d2f938129ed7993f2c85bb3e37d96c2a059ca6ef3081a985f035a35e84ef5",
-  "selected_historical_source_sequence_length": 295,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 73,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q6LZM3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -613,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":74,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2004-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -632,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Archaea\",\"Methanobacteriati\",\"Methanobacteriota\",\"Methanomada group\",\"Methanococci\",\"Methanococcales\",\"Methanococcaceae\",\"Methanococcus\"],\"scientificName\":\"Methanococcus maripaludis (strain DSM 14266 / JCM 13030 / NBRC 101832 / S2 / LL)\",\"taxonId\":267377}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -651,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Probable minor pilin MMP0601\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -670,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q6LWM4\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q6LWM4\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0310\",\"value\":\"Cell surface\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q6LWM4\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0113\",\"value\":\"Fimbrium\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -689,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/12",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0009986\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cell surface\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/12",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -708,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -727,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json",
-  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
-  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/14",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0009289\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:pilus\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/14",
+  "retrieved_utc": "2026-11-02T04:31:38.071255+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f65d8b6a81e43709b362bb1aff50762f04a31bac8e1a1b7b6ba493af5a50bfb2",
+  "url": "https://rest.uniprot.org/uniprotkb/Q6LZM3.json"
 }
 ```
 
@@ -745,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 73,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73",
-  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
-  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   Y601_METMP              Reviewed;         295 AA.\nAC   Q6LZM3;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2004, sequence version 1.\nDT   28-JAN-2026, entry version 73.\nDE   RecName: Full=Probable minor pilin MMP0601 {ECO:0000305};\nDE   Flags: Precursor;\nGN   OrderedLocusNames=MMP0601 {ECO:0000312|EMBL:CAF30157.1};\nOS   Methanococcus maripaludis (strain DSM 14266 / JCM 13030 / NBRC 101832 / S2\nOS   / LL).\nOC   Archaea; Methanobacteriati; Methanobacteriota; Methanomada group;\nOC   Methanococci; Methanococcales; Methanococcaceae; Methanococcus.\nOX   NCBI_TaxID=267377;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 73,
+  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
+  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73"
 }
 ```
 
@@ -766,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 73,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73",
-  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
-  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
-  "source_locator": "lines 35-37",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000250|UniProtKB:Q6LWM4}. Cell\nCC       surface {ECO:0000250|UniProtKB:Q6LWM4}. Fimbrium\nCC       {ECO:0000250|UniProtKB:Q6LWM4}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 73,
+  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
+  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73"
 }
 ```
 
@@ -787,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 73,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73",
-  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
-  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
-  "source_locator": "lines 64-64",
   "excerpt": "DR   GO; GO:0009986; C:cell surface; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 73,
+  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 64-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
+  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73"
 }
 ```
 
@@ -808,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 73,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73",
-  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
-  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
-  "source_locator": "lines 65-65",
   "excerpt": "DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 73,
+  "retrieved_utc": "2026-11-02T04:31:40.632602+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 65-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "17589c2d3cb1884d286af6f6d4efa07afc0285ac6c6788da5a9fdf05c0f9061a",
+  "url": "https://rest.uniprot.org/unisave/Q6LZM3?format=txt&versions=73"
 }
 ```
 
@@ -830,15 +586,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59450-59472",
   "excerpt": "[Term]\nid: GO:0005783\nname: endoplasmic reticulum\nnamespace: cellular_component\ndef: \"The irregular network of unit membranes, visible only by electron microscopy, that occurs in the cytoplasm of many eukaryotic cells. The membranes form a complex meshwork of tubular channels, which are often expanded into slitlike cavities called cisternae. The ER takes two forms, rough (or granular), with ribosomes adhering to the outer surface, and smooth (with no ribosomes attached).\" [ISBN:0198506732]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_yeast\nsynonym: \"ER\" EXACT []\nxref: NIF_Subcellular:sao1036339110\nxref: Wikipedia:Endoplasmic_reticulum\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\nrelationship: part_of GO:0005737 ! cytoplasm\nrelationship: part_of GO:0012505 ! endomembrane system\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005783",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59450-59472",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005783"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -849,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 101772-101784",
   "excerpt": "[Term]\nid: GO:0009986\nname: cell surface\nnamespace: cellular_component\nalt_id: GO:0009928\nalt_id: GO:0009929\ndef: \"The external part of the cell wall and/or plasma membrane.\" [GOC:jl, GOC:mtg_sensu, GOC:sm]\ncomment: Note that this term is intended to annotate gene products that are attached (integrated or loosely bound) to the plasma membrane or cell wall.\nsubset: goslim_pir\nsynonym: \"cell associated\" EXACT []\nsynonym: \"cell bound\" EXACT []\nis_a: GO:0110165 ! cellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009986",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 101772-101784",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009986"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -868,15 +624,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 166070-166079",
   "excerpt": "[Term]\nid: GO:0030425\nname: dendrite\nnamespace: cellular_component\ndef: \"A neuron projection that has a short, tapering, morphology. Dendrites receive and integrate signals from other neurons or from sensory stimuli, and conduct nerve impulses towards the axon or the cell body. In most neurons, the impulse is conveyed from dendrites to axon via the cell body, but in some types of unipolar neuron, the impulse does not travel via the cell body.\" [GOC:aruk, GOC:bc, GOC:dos, GOC:mah, GOC:nln, ISBN:0198506732]\nxref: NIF_Subcellular:sao1211023249\nxref: Wikipedia:Dendrite\nis_a: GO:0043005 ! neuron projection\nrelationship: part_of GO:0097447 ! dendritic tree\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030425",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 166070-166079",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030425"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -887,15 +643,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 517281-517289",
   "excerpt": "[Term]\nid: GO:1904115\nname: axon cytoplasm\nnamespace: cellular_component\ndef: \"Any cytoplasm that is part of a axon.\" [GO_REF:0000064, GOC:TermGenie, PMID:18667152]\nsynonym: \"axoplasm\" EXACT []\nis_a: GO:0120111 ! neuron projection cytoplasm\nrelationship: part_of GO:0030424 ! axon\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1904115",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 517281-517289",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1904115"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

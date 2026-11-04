@@ -1,18 +1,16 @@
-# GO_cellular_component_0088: before and after transfer clarification
+# GO_cellular_component_0088
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0088.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0088.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — SAGA complex
+**Expected answer:** **D** — SAGA complex
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,253 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Drosophila protein annotated to the SAGA complex. UniProt records a FlyBase IDA annotation for SAGA, and the cited study is described as identifying the protein as a SAGA subunit. This supports D as a cellular component, though the evidence is reviewer-only and the original source snapshot is unknown.
-
-Citations as saved: [C7](#evidence-c7), [C8](#evidence-c8), [H2](#evidence-h2), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence's basic regions are compatible with nuclear localization, and it lacks an obvious long transmembrane segment, which weighs against the membrane options. But those clues do not establish membership in SAGA rather than another transcription-associated complex.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this Drosophila protein is a SAGA subunit, established by annotation and cited experimental work.
-
-
-**Reason**
-
-> Distinguishing the specific SAGA complex from the broader transcription regulator complex requires knowledge of this protein's complex membership; the sequence and choices alone do not provide a reliable discriminator.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> D is the specific supported complex. B is also plausibly defensible as a broader category because SAGA regulates transcription; the question does not specify that only the most specific GO term should be selected.
-
-
-### Important caveats
-
-- The sequence match and cited annotations support the key, but the reviewer-only accession and annotations were not supplied to the evaluated model.
-- The protein is also annotated to the nucleus, which is not among the choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence's basic regions are compatible with nuclear localization, and it lacks an obvious long transmembrane segment, which weighs against the membrane options. But those clues do not establish membership in SAGA rather than another transcription-associated complex.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this Drosophila protein is a SAGA subunit, established by annotation and cited experimental work.",
-    "reason": "Distinguishing the specific SAGA complex from the broader transcription regulator complex requires knowledge of this protein's complex membership; the sequence and choices alone do not provide a reliable discriminator."
-  },
-  "case_id": "GO_cellular_component_0088",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "C8",
-      "H2",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila protein annotated to the SAGA complex. UniProt records a FlyBase IDA annotation for SAGA, and the cited study is described as identifying the protein as a SAGA subunit. This supports D as a cellular component, though the evidence is reviewer-only and the original source snapshot is unknown."
-  },
-  "important_caveats": [
-    "The sequence match and cited annotations support the key, but the reviewer-only accession and annotations were not supplied to the evaluated model.",
-    "The protein is also annotated to the nucleus, which is not among the choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "D is the specific supported complex. B is also plausibly defensible as a broader category because SAGA regulates transcription; the question does not specify that only the most specific GO term should be selected."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0088",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila protein annotated to the SAGA complex. UniProt records a FlyBase IDA annotation for SAGA, and the cited study is described as identifying the protein as a SAGA subunit. This supports D as a cellular component, though the evidence is reviewer-only and the original source snapshot is unknown.",
-    "evidence_ids": ["C7", "C8", "H2", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence's basic regions are compatible with nuclear localization, and it lacks an obvious long transmembrane segment, which weighs against the membrane options. But those clues do not establish membership in SAGA rather than another transcription-associated complex.",
-    "missing_item_specific_fact": "The protein-specific fact that this Drosophila protein is a SAGA subunit, established by annotation and cited experimental work.",
-    "reason": "Distinguishing the specific SAGA complex from the broader transcription regulator complex requires knowledge of this protein's complex membership; the sequence and choices alone do not provide a reliable discriminator."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "D is the specific supported complex. B is also plausibly defensible as a broader category because SAGA regulates transcription; the question does not specify that only the most specific GO term should be selected."
-  },
-  "important_caveats": [
-    "The sequence match and cited annotations support the key, but the reviewer-only accession and annotations were not supplied to the evaluated model.",
-    "The protein is also annotated to the nucleus, which is not among the choices."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q8IPA1 (TAD12_DROME, Transcriptional adapter 1-2, Drosophila melanogaster). GO:0000124 (C:SAGA complex) is annotated with IDA:FlyBase evidence, supported by experimental identification in the SAGA complex via mass spectrometry in three independent studies (PubMed:16980620, 21764853, 24493646). The UniProt SUBCELLULAR LOCATION comment also notes 'Nucleus' (GO:0005634), but among the provided options, SAGA complex is the most specific and directly experimentally supported annotation.
-
-Citations as saved: [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9), [C10](#evidence-c10), [H6](#evidence-h6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence lacks transmembrane domains, which helps rule out options A (microvillus membrane) and C (endoplasmic reticulum membrane) via general biophysical reasoning. However, the critical distinction between B (transcription regulator complex) and D (SAGA complex) cannot be made from sequence features alone. Both are nuclear transcription-associated complexes. The sequence contains no motifs that specifically indicate SAGA complex membership (e.g., specific protein-protein interaction domains unique to SAGA subunits) versus general transcription regulation. Distinguishing B from D requires knowing that this specific protein is Ada1-2, a well-characterized SAGA complex subunit identified experimentally by mass spectrometry.
-
-
-**Missing item-specific fact**
-
-> The specific experimental identification of this protein (Ada1-2/Q8IPA1) as a SAGA complex subunit via mass spectrometry co-purification. Without recognizing the protein identity and recalling its complex membership, the sequence provides no basis to prefer 'SAGA complex' over 'transcription regulator complex.'
-
-
-**Reason**
-
-> While general reasoning can eliminate membrane-localized options (A, C), the choice between the two nuclear transcription-related complexes (B vs D) depends entirely on protein-specific experimental annotation. The sequence does not encode distinguishing features between a generic transcription regulator and a specific SAGA subunit. Recognizing the exact sequence as Ada1-2 and recalling its SAGA membership constitutes memorization of a database entry, not reasoning from sequence properties.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> The SAGA complex is a transcription-regulating coactivator complex. A model reasoning that this is a transcription-related nuclear protein could plausibly select B (transcription regulator complex, GO:0005667) as a general description. In the provided GO ontology, GO:0000124 (SAGA complex) is not listed as a subclass of GO:0005667 (transcription regulator complex), so they are technically separate terms, but biologically the SAGA complex does regulate transcription. Without the specific annotation, B is a reasonable general answer. However, the direct IDA annotation to GO:0000124 makes D the most precise and evidence-supported choice.
-
-
-### Important caveats
-
-- The UniProt annotation for SAGA complex membership (GO:0000124) carries IDA:FlyBase evidence codes, indicating experimental (mass spectrometry) support rather than computational inference.
-- The protein is also annotated to GO:0005634 (nucleus), which is not among the options; the question asks for the 'primary Cellular Component' but the options do not include 'nucleus' itself.
-- The GO ontology excerpt shows SAGA complex (GO:0000124) is_a GO:0070461 (SAGA-type complex) and is_a GO:1905368 (peptidase complex), but does not show it as a subclass of transcription regulator complex (GO:0005667), making B and D formally distinct terms.
-- The protein name 'Transcriptional adapter 1-2' hints at transcription function but does not specify SAGA membership without prior knowledge of the Ada1 protein family.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks transmembrane domains, which helps rule out options A (microvillus membrane) and C (endoplasmic reticulum membrane) via general biophysical reasoning. However, the critical distinction between B (transcription regulator complex) and D (SAGA complex) cannot be made from sequence features alone. Both are nuclear transcription-associated complexes. The sequence contains no motifs that specifically indicate SAGA complex membership (e.g., specific protein-protein interaction domains unique to SAGA subunits) versus general transcription regulation. Distinguishing B from D requires knowing that this specific protein is Ada1-2, a well-characterized SAGA complex subunit identified experimentally by mass spectrometry.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimental identification of this protein (Ada1-2/Q8IPA1) as a SAGA complex subunit via mass spectrometry co-purification. Without recognizing the protein identity and recalling its complex membership, the sequence provides no basis to prefer 'SAGA complex' over 'transcription regulator complex.'",
-    "reason": "While general reasoning can eliminate membrane-localized options (A, C), the choice between the two nuclear transcription-related complexes (B vs D) depends entirely on protein-specific experimental annotation. The sequence does not encode distinguishing features between a generic transcription regulator and a specific SAGA subunit. Recognizing the exact sequence as Ada1-2 and recalling its SAGA membership constitutes memorization of a database entry, not reasoning from sequence properties."
-  },
-  "case_id": "GO_cellular_component_0088",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "C8",
-      "C9",
-      "C10",
-      "H6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q8IPA1 (TAD12_DROME, Transcriptional adapter 1-2, Drosophila melanogaster). GO:0000124 (C:SAGA complex) is annotated with IDA:FlyBase evidence, supported by experimental identification in the SAGA complex via mass spectrometry in three independent studies (PubMed:16980620, 21764853, 24493646). The UniProt SUBCELLULAR LOCATION comment also notes 'Nucleus' (GO:0005634), but among the provided options, SAGA complex is the most specific and directly experimentally supported annotation."
-  },
-  "important_caveats": [
-    "The UniProt annotation for SAGA complex membership (GO:0000124) carries IDA:FlyBase evidence codes, indicating experimental (mass spectrometry) support rather than computational inference.",
-    "The protein is also annotated to GO:0005634 (nucleus), which is not among the options; the question asks for the 'primary Cellular Component' but the options do not include 'nucleus' itself.",
-    "The GO ontology excerpt shows SAGA complex (GO:0000124) is_a GO:0070461 (SAGA-type complex) and is_a GO:1905368 (peptidase complex), but does not show it as a subclass of transcription regulator complex (GO:0005667), making B and D formally distinct terms.",
-    "The protein name 'Transcriptional adapter 1-2' hints at transcription function but does not specify SAGA membership without prior knowledge of the Ada1 protein family."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "The SAGA complex is a transcription-regulating coactivator complex. A model reasoning that this is a transcription-related nuclear protein could plausibly select B (transcription regulator complex, GO:0005667) as a general description. In the provided GO ontology, GO:0000124 (SAGA complex) is not listed as a subclass of GO:0005667 (transcription regulator complex), so they are technically separate terms, but biologically the SAGA complex does regulate transcription. Without the specific annotation, B is a reasonable general answer. However, the direct IDA annotation to GO:0000124 makes D the most precise and evidence-supported choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0088",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q8IPA1 (TAD12_DROME, Transcriptional adapter 1-2, Drosophila melanogaster). GO:0000124 (C:SAGA complex) is annotated with IDA:FlyBase evidence, supported by experimental identification in the SAGA complex via mass spectrometry in three independent studies (PubMed:16980620, 21764853, 24493646). The UniProt SUBCELLULAR LOCATION comment also notes 'Nucleus' (GO:0005634), but among the provided options, SAGA complex is the most specific and directly experimentally supported annotation.",
-    "evidence_ids": ["C7", "C8", "C9", "C10", "H6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence lacks transmembrane domains, which helps rule out options A (microvillus membrane) and C (endoplasmic reticulum membrane) via general biophysical reasoning. However, the critical distinction between B (transcription regulator complex) and D (SAGA complex) cannot be made from sequence features alone. Both are nuclear transcription-associated complexes. The sequence contains no motifs that specifically indicate SAGA complex membership (e.g., specific protein-protein interaction domains unique to SAGA subunits) versus general transcription regulation. Distinguishing B from D requires knowing that this specific protein is Ada1-2, a well-characterized SAGA complex subunit identified experimentally by mass spectrometry.",
-    "missing_item_specific_fact": "The specific experimental identification of this protein (Ada1-2/Q8IPA1) as a SAGA complex subunit via mass spectrometry co-purification. Without recognizing the protein identity and recalling its complex membership, the sequence provides no basis to prefer 'SAGA complex' over 'transcription regulator complex.'",
-    "reason": "While general reasoning can eliminate membrane-localized options (A, C), the choice between the two nuclear transcription-related complexes (B vs D) depends entirely on protein-specific experimental annotation. The sequence does not encode distinguishing features between a generic transcription regulator and a specific SAGA subunit. Recognizing the exact sequence as Ada1-2 and recalling its SAGA membership constitutes memorization of a database entry, not reasoning from sequence properties."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "The SAGA complex is a transcription-regulating coactivator complex. A model reasoning that this is a transcription-related nuclear protein could plausibly select B (transcription regulator complex, GO:0005667) as a general description. In the provided GO ontology, GO:0000124 (SAGA complex) is not listed as a subclass of GO:0005667 (transcription regulator complex), so they are technically separate terms, but biologically the SAGA complex does regulate transcription. Without the specific annotation, B is a reasonable general answer. However, the direct IDA annotation to GO:0000124 makes D the most precise and evidence-supported choice."
-  },
-  "important_caveats": [
-    "The UniProt annotation for SAGA complex membership (GO:0000124) carries IDA:FlyBase evidence codes, indicating experimental (mass spectrometry) support rather than computational inference.",
-    "The protein is also annotated to GO:0005634 (nucleus), which is not among the options; the question asks for the 'primary Cellular Component' but the options do not include 'nucleus' itself.",
-    "The GO ontology excerpt shows SAGA complex (GO:0000124) is_a GO:0070461 (SAGA-type complex) and is_a GO:1905368 (peptidase complex), but does not show it as a subclass of transcription regulator complex (GO:0005667), making B and D formally distinct terms.",
-    "The protein name 'Transcriptional adapter 1-2' hints at transcription function but does not specify SAGA membership without prior knowledge of the Ada1 protein family."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -409,10 +165,9 @@ Citations as saved: [C7](#evidence-c7), [H2](#evidence-h2), [H6](#evidence-h6).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -535,30 +290,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IPA1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "1d9917a21c4cade4f635f32453cfa7d8c133a4e80ba749a31492043a52bd7f9e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 308,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "1d9917a21c4cade4f635f32453cfa7d8c133a4e80ba749a31492043a52bd7f9e",
   "current_entry_audit": {
     "entryVersion": 171,
     "firstPublicDate": "2025-06-18",
@@ -566,14 +308,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "current_source_sequence_sha256": "1d9917a21c4cade4f635f32453cfa7d8c133a4e80ba749a31492043a52bd7f9e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 308,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "1d9917a21c4cade4f635f32453cfa7d8c133a4e80ba749a31492043a52bd7f9e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 169,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IPA1",
   "selected_historical_entry_version": 169,
+  "selected_historical_record_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
+  "selected_historical_source_sequence_length": 308,
+  "selected_historical_source_sequence_sha256": "1d9917a21c4cade4f635f32453cfa7d8c133a4e80ba749a31492043a52bd7f9e",
   "selected_historical_version": {
     "accession": "Q8IPA1",
     "database": "Swiss-Prot",
@@ -584,24 +342,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TAD12_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
-  "selected_historical_source_sequence_sha256": "1d9917a21c4cade4f635f32453cfa7d8c133a4e80ba749a31492043a52bd7f9e",
-  "selected_historical_source_sequence_length": 308,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 169,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -619,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IPA1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -638,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":171,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -657,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -676,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0051866\",\"source\":\"FlyBase\"}],\"value\":\"Transcriptional adapter 1-2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -695,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24493646\",\"source\":\"PubMed\"}],\"id\":\"SL-0191\",\"value\":\"Nucleus\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -714,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/27",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"16980620\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000314\",\"id\":\"21764853\",\"source\":\"PubMed\"}],\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/27",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -733,15 +478,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/28",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"16980620\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000314\",\"id\":\"21764853\",\"source\":\"PubMed\"}],\"id\":\"GO:0000124\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:SAGA complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/28",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -752,15 +497,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Guelman S.\",\"Suganuma T.\",\"Florens L.\",\"Weake V.\",\"Swanson S.K.\",\"Washburn M.P.\",\"Abmayr S.M.\",\"Workman J.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"16980620\"},{\"database\":\"DOI\",\"id\":\"10.1128/mcb.00130-06\"}],\"citationType\":\"journal article\",\"firstPage\":\"7178\",\"id\":\"16980620\",\"journal\":\"Mol. Cell. Biol.\",\"lastPage\":\"7189\",\"publicationDate\":\"2006\",\"title\":\"The essential gene wda encodes a WD40 repeat subunit of Drosophila SAGA required for histone H3 acetylation.\",\"volume\":\"26\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN SAGA COMPLEX\",\"INTERACTION WITH GCN5; SPT3 AND ADA2B\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -771,15 +516,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Weake V.M.\",\"Dyer J.O.\",\"Seidel C.\",\"Box A.\",\"Swanson S.K.\",\"Peak A.\",\"Florens L.\",\"Washburn M.P.\",\"Abmayr S.M.\",\"Workman J.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21764853\"},{\"database\":\"DOI\",\"id\":\"10.1101/gad.2046211\"}],\"citationType\":\"journal article\",\"firstPage\":\"1499\",\"id\":\"21764853\",\"journal\":\"Genes Dev.\",\"lastPage\":\"1509\",\"publicationDate\":\"2011\",\"title\":\"Post-transcription initiation function of the ubiquitous SAGA complex in tissue-specific gene activation.\",\"volume\":\"25\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN SAGA COMPLEX\",\"DEVELOPMENTAL STAGE\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -790,15 +535,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json",
-  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
-  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Mohan R.D.\",\"Dialynas G.\",\"Weake V.M.\",\"Liu J.\",\"Martin-Brown S.\",\"Florens L.\",\"Washburn M.P.\",\"Workman J.L.\",\"Abmayr S.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24493646\"},{\"database\":\"DOI\",\"id\":\"10.1101/gad.225151.113\"}],\"citationType\":\"journal article\",\"firstPage\":\"259\",\"id\":\"24493646\",\"journal\":\"Genes Dev.\",\"lastPage\":\"272\",\"publicationDate\":\"2014\",\"title\":\"Loss of Drosophila Ataxin-7, a SAGA subunit, reduces H2B ubiquitination and leads to neural and retinal degeneration.\",\"volume\":\"28\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":6,\"referencePositions\":[\"FUNCTION\",\"IDENTIFICATION IN THE SAGA COMPLEX\",\"SUBCELLULAR LOCATION\",\"IDENTIFICATION BY MASS SPECTROMETRY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:32:17.256572+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40c1a185721f3b79fef0b945c4adb9dba009ce28a7482b261b9fcc948ecfb70c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IPA1.json"
 }
 ```
 
@@ -808,18 +553,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 169,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169",
-  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
-  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   TAD12_DROME             Reviewed;         308 AA.\nAC   Q8IPA1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 169.\nDE   RecName: Full=Transcriptional adapter 1-2 {ECO:0000312|FlyBase:FBgn0051866};\nGN   Name=Ada1-2 {ECO:0000312|FlyBase:FBgn0051866};\nGN   Synonyms=Ada1 {ECO:0000303|PubMed:16980620},\nGN   Ada2 {ECO:0000312|EMBL:AAN10793.1};\nGN   ORFNames=CG31866 {ECO:0000312|FlyBase:FBgn0051866};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 169,
+  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
+  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169"
 }
 ```
 
@@ -829,18 +574,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 169,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169",
-  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
-  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
-  "source_locator": "lines 75-83",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN SAGA COMPLEX, INTERACTION WITH GCN5; SPT3 AND\nRP   ADA2B, AND IDENTIFICATION BY MASS SPECTROMETRY.\nRX   PubMed=16980620; DOI=10.1128/mcb.00130-06;\nRA   Guelman S., Suganuma T., Florens L., Weake V., Swanson S.K., Washburn M.P.,\nRA   Abmayr S.M., Workman J.L.;\nRT   \"The essential gene wda encodes a WD40 repeat subunit of Drosophila SAGA\nRT   required for histone H3 acetylation.\";\nRL   Mol. Cell. Biol. 26:7178-7189(2006).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 169,
+  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 75-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
+  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169"
 }
 ```
 
@@ -850,18 +595,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 169,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169",
-  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
-  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
-  "source_locator": "lines 93-101",
   "excerpt": "RN   [6] {ECO:0000305}\nRP   FUNCTION, IDENTIFICATION IN THE SAGA COMPLEX, SUBCELLULAR LOCATION, AND\nRP   IDENTIFICATION BY MASS SPECTROMETRY.\nRX   PubMed=24493646; DOI=10.1101/gad.225151.113;\nRA   Mohan R.D., Dialynas G., Weake V.M., Liu J., Martin-Brown S., Florens L.,\nRA   Washburn M.P., Workman J.L., Abmayr S.M.;\nRT   \"Loss of Drosophila Ataxin-7, a SAGA subunit, reduces H2B ubiquitination\nRT   and leads to neural and retinal degeneration.\";\nRL   Genes Dev. 28:259-272(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 169,
+  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 93-101",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
+  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169"
 }
 ```
 
@@ -871,18 +616,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 169,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169",
-  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
-  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
-  "source_locator": "lines 128-128",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Nucleus {ECO:0000269|PubMed:24493646}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 169,
+  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 128-128",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
+  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169"
 }
 ```
 
@@ -892,18 +637,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 169,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169",
-  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
-  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
-  "source_locator": "lines 166-166",
   "excerpt": "DR   GO; GO:0005634; C:nucleus; IDA:FlyBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 169,
+  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 166-166",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
+  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169"
 }
 ```
 
@@ -913,18 +658,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 169,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169",
-  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
-  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
-  "source_locator": "lines 167-167",
   "excerpt": "DR   GO; GO:0000124; C:SAGA complex; IDA:FlyBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 169,
+  "retrieved_utc": "2026-11-02T04:32:22.664157+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 167-167",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "87b4f639978e8cd9a90e850c629bd1d8f14c1311dd821d2e2a5b2077e408431a",
+  "url": "https://rest.uniprot.org/unisave/Q8IPA1?format=txt&versions=169"
 }
 ```
 
@@ -935,15 +680,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 1252-1268",
   "excerpt": "[Term]\nid: GO:0000124\nname: SAGA complex\nnamespace: cellular_component\nalt_id: GO:0000125\nalt_id: GO:0030914\ndef: \"A SAGA-type histone acetyltransferase complex that deubiquitinates H2A and/or H2B. This complex is organized into several functional submodules: a structural core including the activator binding module and consisting of ADA1 or a homolog, members of the SPT and TAF protein families as well as promotor recruitment factor TRRAP/TRA1, a histone acetyltransferase (HAT) module consisting of GCN5/KAT2A or PCAF/KAT2B, ADA2, ADA3/NGG1, and SGF29 or homologues thereof, a histone deubiquitinase (DUB) module consisting of ATXN7/SGF73, ATXN7L3/SGF11, ENY2/SUS1 and USP22/UBP8 or homologues thereof, and in some taxa a splicing module consisting of SF3B3 and SF3B5 or homologues thereof (not in fungi). In budding yeast also contains Spt8 which distinguishes it from SAGA-like (SLIK) complex (GO:0046695).\" [PMID:10637607, PMID:17337012, PMID:19056896, PMID:20838651, PMID:33004486]\nsynonym: \"PCAF complex\" NARROW []\nsynonym: \"PCAF histone acetylase-associated complex\" NARROW []\nsynonym: \"Spt-Ada-Gcn5-acetyltransferase complex\" EXACT []\nsynonym: \"SPT3-TAF9-GCN5 acetylase complex\" RELATED [GOC:rl, PMID:18838386]\nsynonym: \"SPT3-TAF9-PCAF acetylase complex\" NARROW [PMID:18838386]\nsynonym: \"STAGA coactivator complex\" RELATED []\nsynonym: \"STAGA complex\" RELATED [PMID:32616828, PMID:33004486, PMID:34112237]\nis_a: GO:0070461 ! SAGA-type complex\nis_a: GO:1905368 ! peptidase complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000124",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 1252-1268",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000124"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -954,15 +699,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58346-58358",
   "excerpt": "[Term]\nid: GO:0005667\nname: transcription regulator complex\nnamespace: cellular_component\nalt_id: GO:0044797\nalt_id: GO:0044798\ndef: \"A protein complex that is capable of associating with DNA by direct binding, or via other DNA-binding proteins or complexes, and regulating transcription.\" [GOC:jl]\nsubset: goslim_pir\nsynonym: \"cytoplasmic transcription factor complex\" RELATED []\nsynonym: \"nuclear transcription factor complex\" RELATED []\nsynonym: \"transcription factor complex\" RELATED []\nis_a: GO:0032991 ! protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005667",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58346-58358",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005667"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -973,15 +718,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59526-59535",
   "excerpt": "[Term]\nid: GO:0005789\nname: endoplasmic reticulum membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding the endoplasmic reticulum.\" [GOC:mah]\nsynonym: \"ER membrane\" EXACT []\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0042175 ! nuclear outer membrane-endoplasmic reticulum membrane network\nrelationship: part_of GO:0098827 ! endoplasmic reticulum subcompartment\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005789",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59526-59535",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005789"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -992,15 +737,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 177423-177430",
   "excerpt": "[Term]\nid: GO:0031528\nname: microvillus membrane\nnamespace: cellular_component\ndef: \"The portion of the plasma membrane surrounding a microvillus.\" [GOC:mah]\nis_a: GO:0031253 ! cell projection membrane\nrelationship: part_of GO:0005902 ! microvillus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031528",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 177423-177430",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031528"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

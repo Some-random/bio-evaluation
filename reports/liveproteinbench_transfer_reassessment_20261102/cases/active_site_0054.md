@@ -1,18 +1,16 @@
-# active_site_0054: before and after transfer clarification
+# active_site_0054
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0054.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0054.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 156 (Proton acceptor)
+**Expected answer:** **C** — Position 156 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry that annotates position 156 as a proton acceptor. The annotation is transferred by similarity from UniProtKB:Q70PR7, so it supports the key but is not direct experimental validation for this sequence.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices do not provide a defensible way to establish that position 156, rather than another specific position, is the proton acceptor. Broad enzyme-family or sequence-motif reasoning would not verify this exact site assignment.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site annotation assigning proton-acceptor function to residue 156, or equivalent experimental evidence.
-
-
-**Reason**
-
-> The key is supported by a sequence-matched database annotation, but that annotation is absent from the question input; recognizing the exact protein or recalling its annotation would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, position 156 is the one supported by the annotation. A second proton-acceptor annotation exists at position 394, but it is not an offered option.
-
-
-### Important caveats
-
-- The residue-156 annotation is transferred by similarity from Q70PR7, not shown here to be experimentally established for this protein.
-- The sequence match and database evidence are reviewer-only and were not supplied to the evaluated model.
-- The database also annotates position 394 as a proton acceptor, so the single-residue choices may not represent the full catalytic center.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices do not provide a defensible way to establish that position 156, rather than another specific position, is the proton acceptor. Broad enzyme-family or sequence-motif reasoning would not verify this exact site assignment.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning proton-acceptor function to residue 156, or equivalent experimental evidence.",
-    "reason": "The key is supported by a sequence-matched database annotation, but that annotation is absent from the question input; recognizing the exact protein or recalling its annotation would be lookup or memorization."
-  },
-  "case_id": "active_site_0054",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry that annotates position 156 as a proton acceptor. The annotation is transferred by similarity from UniProtKB:Q70PR7, so it supports the key but is not direct experimental validation for this sequence."
-  },
-  "important_caveats": [
-    "The residue-156 annotation is transferred by similarity from Q70PR7, not shown here to be experimentally established for this protein.",
-    "The sequence match and database evidence are reviewer-only and were not supplied to the evaluated model.",
-    "The database also annotates position 394 as a proton acceptor, so the single-residue choices may not represent the full catalytic center."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, position 156 is the one supported by the annotation. A second proton-acceptor annotation exists at position 394, but it is not an offered option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0054",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry that annotates position 156 as a proton acceptor. The annotation is transferred by similarity from UniProtKB:Q70PR7, so it supports the key but is not direct experimental validation for this sequence.",
-    "evidence_ids": ["C5", "H3", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices do not provide a defensible way to establish that position 156, rather than another specific position, is the proton acceptor. Broad enzyme-family or sequence-motif reasoning would not verify this exact site assignment.",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning proton-acceptor function to residue 156, or equivalent experimental evidence.",
-    "reason": "The key is supported by a sequence-matched database annotation, but that annotation is absent from the question input; recognizing the exact protein or recalling its annotation would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, position 156 is the one supported by the annotation. A second proton-acceptor annotation exists at position 394, but it is not an offered option."
-  },
-  "important_caveats": [
-    "The residue-156 annotation is transferred by similarity from Q70PR7, not shown here to be experimentally established for this protein.",
-    "The sequence match and database evidence are reviewer-only and were not supplied to the evaluated model.",
-    "The database also annotates position 394 as a proton acceptor, so the single-residue choices may not represent the full catalytic center."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation (C5, H3) explicitly lists ACT_SITE at position 156 with note 'Proton acceptor', annotated via ECO:0000250 (inferred by similarity from Q70PR7, a characterized BAHD acyltransferase). The residue at position 156 in the supplied sequence is H (Histidine), consistent with the conserved catalytic His in BAHD acyltransferases. The protein is annotated as BAHD acyltransferase 1 (SoBAHD1, EC 2.3.1.-) from Saponaria officinalis, and the PubMed reference (39043959) provides experimental functional characterization. The annotation is computational transfer rather than direct site-directed mutagenesis evidence for this specific protein, but it is consistent with the well-established BAHD catalytic mechanism and the sequence context.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could argue that recognizing the protein as a BAHD acyltransferase (from its overall sequence architecture) and knowing that BAHD enzymes use a conserved His as a general base/proton acceptor would narrow the answer to a His residue. However, the sequence contains multiple His residues, and identifying position 156 specifically as THE catalytic His requires knowing the precise BAHD catalytic motif context (the conserved His within the HxxGH-like region) and its exact position in this particular protein. The sequence alone does not highlight position 156 through any obvious motif that general biology would flag without family-specific knowledge.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as a BAHD acyltransferase and the knowledge that its catalytic proton-accepting His is at position 156 (rather than another His elsewhere in the 459-residue sequence). This requires either recognizing the BAHD family from the sequence and knowing the conserved catalytic His position, or direct database lookup of the UniProt annotation.
-
-
-**Reason**
-
-> While the distractors are somewhat eliminable (position 256 is Leu, position 118 is Asp, position 182 is Ala — none are typical acyltransferase catalytic residues), selecting position 156 among the multiple His residues in the sequence requires item-specific knowledge of the BAHD catalytic mechanism and the conserved His position. Recognizing the protein family from sequence and recalling the exact catalytic His position is protein/family-specific lookup rather than general biological reasoning from the raw sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The distractors are clearly non-catalytic residues: position 256 is Leu (A), position 118 is Asp (B), position 182 is Ala (D). None of these are typical catalytic residues for acyltransferases. The 'beta-ketoacyl synthase activity' descriptor in option D is also mechanistically unrelated to BAHD acyltransferases. Only position 156 (His) is a plausible catalytic residue for this enzyme class, leaving no genuine ambiguity among the choices.
-
-
-### Important caveats
-
-- The active-site annotation uses ECO:0000250 (inferred by similarity from UniProtKB:Q70PR7), meaning it is a computational transfer, not direct experimental evidence (e.g., site-directed mutagenesis or crystallography) for this specific protein.
-- The PubMed reference (39043959) provides experimental functional characterization (catalytic activity, pathway) of SoBAHD1 but the reviewer evidence does not confirm whether the catalytic His at position 156 was specifically validated experimentally in this protein.
-- The reviewer-only evidence was absent from the evaluated model input; the model saw only the raw 459-aa sequence and four choices.
-- The sequence at positions 154-158 reads C-T-H-N-V, which does not perfectly match the canonical BAHD HxxGH motif, though the His at 156 is still annotated as the catalytic proton acceptor by similarity transfer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could argue that recognizing the protein as a BAHD acyltransferase (from its overall sequence architecture) and knowing that BAHD enzymes use a conserved His as a general base/proton acceptor would narrow the answer to a His residue. However, the sequence contains multiple His residues, and identifying position 156 specifically as THE catalytic His requires knowing the precise BAHD catalytic motif context (the conserved His within the HxxGH-like region) and its exact position in this particular protein. The sequence alone does not highlight position 156 through any obvious motif that general biology would flag without family-specific knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as a BAHD acyltransferase and the knowledge that its catalytic proton-accepting His is at position 156 (rather than another His elsewhere in the 459-residue sequence). This requires either recognizing the BAHD family from the sequence and knowing the conserved catalytic His position, or direct database lookup of the UniProt annotation.",
-    "reason": "While the distractors are somewhat eliminable (position 256 is Leu, position 118 is Asp, position 182 is Ala — none are typical acyltransferase catalytic residues), selecting position 156 among the multiple His residues in the sequence requires item-specific knowledge of the BAHD catalytic mechanism and the conserved His position. Recognizing the protein family from sequence and recalling the exact catalytic His position is protein/family-specific lookup rather than general biological reasoning from the raw sequence."
-  },
-  "case_id": "active_site_0054",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H3) explicitly lists ACT_SITE at position 156 with note 'Proton acceptor', annotated via ECO:0000250 (inferred by similarity from Q70PR7, a characterized BAHD acyltransferase). The residue at position 156 in the supplied sequence is H (Histidine), consistent with the conserved catalytic His in BAHD acyltransferases. The protein is annotated as BAHD acyltransferase 1 (SoBAHD1, EC 2.3.1.-) from Saponaria officinalis, and the PubMed reference (39043959) provides experimental functional characterization. The annotation is computational transfer rather than direct site-directed mutagenesis evidence for this specific protein, but it is consistent with the well-established BAHD catalytic mechanism and the sequence context."
-  },
-  "important_caveats": [
-    "The active-site annotation uses ECO:0000250 (inferred by similarity from UniProtKB:Q70PR7), meaning it is a computational transfer, not direct experimental evidence (e.g., site-directed mutagenesis or crystallography) for this specific protein.",
-    "The PubMed reference (39043959) provides experimental functional characterization (catalytic activity, pathway) of SoBAHD1 but the reviewer evidence does not confirm whether the catalytic His at position 156 was specifically validated experimentally in this protein.",
-    "The reviewer-only evidence was absent from the evaluated model input; the model saw only the raw 459-aa sequence and four choices.",
-    "The sequence at positions 154-158 reads C-T-H-N-V, which does not perfectly match the canonical BAHD HxxGH motif, though the His at 156 is still annotated as the catalytic proton acceptor by similarity transfer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors are clearly non-catalytic residues: position 256 is Leu (A), position 118 is Asp (B), position 182 is Ala (D). None of these are typical catalytic residues for acyltransferases. The 'beta-ketoacyl synthase activity' descriptor in option D is also mechanistically unrelated to BAHD acyltransferases. Only position 156 (His) is a plausible catalytic residue for this enzyme class, leaving no genuine ambiguity among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0054",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H3) explicitly lists ACT_SITE at position 156 with note 'Proton acceptor', annotated via ECO:0000250 (inferred by similarity from Q70PR7, a characterized BAHD acyltransferase). The residue at position 156 in the supplied sequence is H (Histidine), consistent with the conserved catalytic His in BAHD acyltransferases. The protein is annotated as BAHD acyltransferase 1 (SoBAHD1, EC 2.3.1.-) from Saponaria officinalis, and the PubMed reference (39043959) provides experimental functional characterization. The annotation is computational transfer rather than direct site-directed mutagenesis evidence for this specific protein, but it is consistent with the well-established BAHD catalytic mechanism and the sequence context.",
-    "evidence_ids": ["C5", "H3", "C4", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could argue that recognizing the protein as a BAHD acyltransferase (from its overall sequence architecture) and knowing that BAHD enzymes use a conserved His as a general base/proton acceptor would narrow the answer to a His residue. However, the sequence contains multiple His residues, and identifying position 156 specifically as THE catalytic His requires knowing the precise BAHD catalytic motif context (the conserved His within the HxxGH-like region) and its exact position in this particular protein. The sequence alone does not highlight position 156 through any obvious motif that general biology would flag without family-specific knowledge.",
-    "missing_item_specific_fact": "The specific identity of this protein as a BAHD acyltransferase and the knowledge that its catalytic proton-accepting His is at position 156 (rather than another His elsewhere in the 459-residue sequence). This requires either recognizing the BAHD family from the sequence and knowing the conserved catalytic His position, or direct database lookup of the UniProt annotation.",
-    "reason": "While the distractors are somewhat eliminable (position 256 is Leu, position 118 is Asp, position 182 is Ala — none are typical acyltransferase catalytic residues), selecting position 156 among the multiple His residues in the sequence requires item-specific knowledge of the BAHD catalytic mechanism and the conserved His position. Recognizing the protein family from sequence and recalling the exact catalytic His position is protein/family-specific lookup rather than general biological reasoning from the raw sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors are clearly non-catalytic residues: position 256 is Leu (A), position 118 is Asp (B), position 182 is Ala (D). None of these are typical catalytic residues for acyltransferases. The 'beta-ketoacyl synthase activity' descriptor in option D is also mechanistically unrelated to BAHD acyltransferases. Only position 156 (His) is a plausible catalytic residue for this enzyme class, leaving no genuine ambiguity among the choices."
-  },
-  "important_caveats": [
-    "The active-site annotation uses ECO:0000250 (inferred by similarity from UniProtKB:Q70PR7), meaning it is a computational transfer, not direct experimental evidence (e.g., site-directed mutagenesis or crystallography) for this specific protein.",
-    "The PubMed reference (39043959) provides experimental functional characterization (catalytic activity, pathway) of SoBAHD1 but the reviewer evidence does not confirm whether the catalytic His at position 156 was specifically validated experimentally in this protein.",
-    "The reviewer-only evidence was absent from the evaluated model input; the model saw only the raw 459-aa sequence and four choices.",
-    "The sequence at positions 154-158 reads C-T-H-N-V, which does not perfectly match the canonical BAHD HxxGH motif, though the His at 156 is still annotated as the catalytic proton acceptor by similarity transfer."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -498,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAW1LG41",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "26ed0fa20fc132fc6d2a47c811d0cd8d71f191da088736328b12b747d0946563",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 459,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "26ed0fa20fc132fc6d2a47c811d0cd8d71f191da088736328b12b747d0946563",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-06-18",
@@ -529,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-11-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "current_source_sequence_sha256": "26ed0fa20fc132fc6d2a47c811d0cd8d71f191da088736328b12b747d0946563",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 459,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "26ed0fa20fc132fc6d2a47c811d0cd8d71f191da088736328b12b747d0946563",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAW1LG41",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
+  "selected_historical_source_sequence_length": 459,
+  "selected_historical_source_sequence_sha256": "26ed0fa20fc132fc6d2a47c811d0cd8d71f191da088736328b12b747d0946563",
   "selected_historical_version": {
     "accession": "A0AAW1LG41",
     "database": "Swiss-Prot",
@@ -547,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BAHD1_SAPOF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
-  "selected_historical_source_sequence_sha256": "26ed0fa20fc132fc6d2a47c811d0cd8d71f191da088736328b12b747d0946563",
-  "selected_historical_source_sequence_length": 459,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -578,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json",
-  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAW1LG41\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json"
 }
 ```
 
@@ -597,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json",
-  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2024-11-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json"
 }
 ```
 
@@ -616,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json",
-  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Common soapwort\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Caryophyllaceae\",\"Caryophylleae\",\"Saponaria\"],\"scientificName\":\"Saponaria officinalis\",\"synonyms\":[\"Lychnis saponaria\"],\"taxonId\":3572}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json"
 }
 ```
 
@@ -635,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json",
-  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"BAHD acyltransferase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"SoBAHD1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json"
 }
 ```
 
@@ -654,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json",
-  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q70PR7\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":156},\"start\":{\"modifier\":\"EXACT\",\"value\":156}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json"
 }
 ```
 
@@ -673,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json",
-  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q70PR7\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":394},\"start\":{\"modifier\":\"EXACT\",\"value\":394}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json"
 }
 ```
 
@@ -692,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json",
-  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
-  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Jo S.\",\"El-Demerdash A.\",\"Owen C.\",\"Srivastava V.\",\"Wu D.\",\"Kikuchi S.\",\"Reed J.\",\"Hodgson H.\",\"Harkess A.\",\"Shu S.\",\"Plott C.\",\"Jenkins J.\",\"Williams M.\",\"Boston L.-B.\",\"Lacchini E.\",\"Qu T.\",\"Goossens A.\",\"Grimwood J.\",\"Schmutz J.\",\"Leebens-Mack J.\",\"Osbourn A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39043959\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-024-01681-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"215\",\"id\":\"39043959\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"226\",\"publicationDate\":\"2025\",\"title\":\"Unlocking saponin biosynthesis in soapwort.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WWM48159.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"TISSUE SPECIFICITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:39.588231+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b43524e63ed1da72c02309ad27ffc883b243d7c3e81fac6494633cb2601b4f3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1LG41.json"
 }
 ```
 
@@ -710,18 +468,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5",
-  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
-  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   BAHD1_SAPOF             Reviewed;         459 AA.\nAC   A0AAW1LG41;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-NOV-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=BAHD acyltransferase 1 {ECO:0000303|PubMed:39043959};\nDE            Short=SoBAHD1 {ECO:0000303|PubMed:39043959};\nDE            EC=2.3.1.- {ECO:0000269|PubMed:39043959};\nGN   Name=BAHD1 {ECO:0000303|PubMed:39043959};\nGN   Synonyms=Saoffv11017477m {ECO:0000303|PubMed:39043959};\nGN   ORFNames=RND81_04G021000 {ECO:0000312|EMBL:KAK9732775.1};\nOS   Saponaria officinalis (Common soapwort) (Lychnis saponaria).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Caryophyllaceae; Caryophylleae; Saponaria.\nOX   NCBI_TaxID=3572;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5"
 }
 ```
 
@@ -731,18 +489,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5",
-  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
-  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
-  "source_locator": "lines 17-26",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WWM48159.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, TISSUE\nRP   SPECIFICITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39043959; DOI=10.1038/s41589-024-01681-7;\nRA   Jo S., El-Demerdash A., Owen C., Srivastava V., Wu D., Kikuchi S., Reed J.,\nRA   Hodgson H., Harkess A., Shu S., Plott C., Jenkins J., Williams M.,\nRA   Boston L.-B., Lacchini E., Qu T., Goossens A., Grimwood J., Schmutz J.,\nRA   Leebens-Mack J., Osbourn A.;\nRT   \"Unlocking saponin biosynthesis in soapwort.\";\nRL   Nat. Chem. Biol. 21:215-226(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5"
 }
 ```
 
@@ -752,18 +510,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5",
-  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
-  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
-  "source_locator": "lines 90-92",
   "excerpt": "FT   ACT_SITE        156\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q70PR7\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 90-92",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5"
 }
 ```
 
@@ -773,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5",
-  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
-  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
-  "source_locator": "lines 93-95",
   "excerpt": "FT   ACT_SITE        394\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q70PR7\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:42.902980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 93-95",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1763f34a6b1ea1393727d13c5c9259bfcd95f16e9b472412e8dd15cf063ba7d3",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1LG41?format=txt&versions=5"
 }
 ```
 

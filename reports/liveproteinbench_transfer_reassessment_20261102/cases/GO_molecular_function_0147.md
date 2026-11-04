@@ -1,18 +1,16 @@
-# GO_molecular_function_0147: before and after transfer clarification
+# GO_molecular_function_0147
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0147.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0147.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — 2 iron, 2 sulfur cluster binding
+**Expected answer:** **D** — 2 iron, 2 sulfur cluster binding
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt entry annotated with GO:0051537, the exact term in choice D. That annotation is IBA (computational inference). Experimental evidence supports this protein's role in Fe-S cluster assembly, including assembly and transfer of &#91;4Fe-4S&#93; clusters, but does not directly establish binding to a 2Fe-2S cluster.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence's cysteine-rich region is suggestive of an Fe-S-associated protein and makes D more plausible than the unrelated enzyme activities. But cysteine richness alone does not establish the specific 2Fe-2S binding activity named in D.
-
-
-**Missing item-specific fact**
-
-> The protein-specific GO:0051537 annotation or equivalent evidence assigning 2Fe-2S binding; that annotation is not provided in the question.
-
-
-**Reason**
-
-> The sequence offers a broad clue to Fe-S involvement, but identifying this protein and its specific GO annotation requires item-specific information. The experimental function cited in reviewer-only evidence supports Fe-S assembly, particularly involving 4Fe-4S clusters, rather than directly resolving the exact 2Fe-2S term.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only D is supported by the matching protein annotation among the listed options. However, the exact 2Fe-2S specificity is inferred by annotation rather than directly demonstrated by the cited experimental function.
-
-
-### Important caveats
-
-- The sequence match and GO annotation support the key, but the GO evidence code IBA denotes computational inference, not direct experimental evidence.
-- Experimental evidence for 4Fe-4S assembly does not itself prove 2Fe-2S binding.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence's cysteine-rich region is suggestive of an Fe-S-associated protein and makes D more plausible than the unrelated enzyme activities. But cysteine richness alone does not establish the specific 2Fe-2S binding activity named in D.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific GO:0051537 annotation or equivalent evidence assigning 2Fe-2S binding; that annotation is not provided in the question.",
-    "reason": "The sequence offers a broad clue to Fe-S involvement, but identifying this protein and its specific GO annotation requires item-specific information. The experimental function cited in reviewer-only evidence supports Fe-S assembly, particularly involving 4Fe-4S clusters, rather than directly resolving the exact 2Fe-2S term."
-  },
-  "case_id": "GO_molecular_function_0147",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry annotated with GO:0051537, the exact term in choice D. That annotation is IBA (computational inference). Experimental evidence supports this protein's role in Fe-S cluster assembly, including assembly and transfer of [4Fe-4S] clusters, but does not directly establish binding to a 2Fe-2S cluster."
-  },
-  "important_caveats": [
-    "The sequence match and GO annotation support the key, but the GO evidence code IBA denotes computational inference, not direct experimental evidence.",
-    "Experimental evidence for 4Fe-4S assembly does not itself prove 2Fe-2S binding."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only D is supported by the matching protein annotation among the listed options. However, the exact 2Fe-2S specificity is inferred by annotation rather than directly demonstrated by the cited experimental function."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0147",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry annotated with GO:0051537, the exact term in choice D. That annotation is IBA (computational inference). Experimental evidence supports this protein's role in Fe-S cluster assembly, including assembly and transfer of [4Fe-4S] clusters, but does not directly establish binding to a 2Fe-2S cluster.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence's cysteine-rich region is suggestive of an Fe-S-associated protein and makes D more plausible than the unrelated enzyme activities. But cysteine richness alone does not establish the specific 2Fe-2S binding activity named in D.",
-    "missing_item_specific_fact": "The protein-specific GO:0051537 annotation or equivalent evidence assigning 2Fe-2S binding; that annotation is not provided in the question.",
-    "reason": "The sequence offers a broad clue to Fe-S involvement, but identifying this protein and its specific GO annotation requires item-specific information. The experimental function cited in reviewer-only evidence supports Fe-S assembly, particularly involving 4Fe-4S clusters, rather than directly resolving the exact 2Fe-2S term."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only D is supported by the matching protein annotation among the listed options. However, the exact 2Fe-2S specificity is inferred by annotation rather than directly demonstrated by the cited experimental function."
-  },
-  "important_caveats": [
-    "The sequence match and GO annotation support the key, but the GO evidence code IBA denotes computational inference, not direct experimental evidence.",
-    "Experimental evidence for 4Fe-4S assembly does not itself prove 2Fe-2S binding."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein (Q8IKT4, PfIscU from Plasmodium falciparum) is annotated with GO:0051537 '2 iron, 2 sulfur cluster binding' via IBA:GO_Central (C6, H4). The protein is experimentally confirmed (ECO:0000269, PubMed:34032321) as a scaffold for &#91;Fe-S&#93; cluster assembly. While the direct experimental evidence emphasizes &#91;4Fe-4S&#93; assembly, IscU proteins are well-known to transiently bind 2Fe-2S clusters during the assembly pathway, making the 2Fe-2S annotation biologically consistent. The GO term is present in the database annotation for this exact sequence (matched). The IBA evidence code indicates computational inference rather than direct measurement, but the annotation is not contradicted by the experimental data.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 162-residue sequence contains an unusually high number of cysteine residues (~9, roughly 5.5% cysteine content, well above the typical 1-2% for most proteins), particularly clustered in the N-terminal region. Cysteine is the primary coordinating ligand for iron-sulfur clusters in proteins. Among the four options, only D (2Fe-2S cluster binding) involves a function that requires cysteine-mediated metal coordination. Option A (estradiol dehydrogenase) is a Rossmann-fold oxidoreductase, Option B (tau binding) involves cytoskeletal protein-protein interactions, and Option C (beta-amyrin synthase) is a large oxidosqualene cyclase — none of which are characterized by cysteine-rich sequences. The visible cysteine density in the input provides a general biological argument favoring Fe-S cluster binding over the other three choices.
-
-
-**Missing item-specific fact**
-
-> The specific distinction between 2Fe-2S and 4Fe-4S binding for this particular IscU scaffold requires annotation-level knowledge (the experimental data in PubMed:34032321 emphasizes 4Fe-4S assembly; the 2Fe-2S annotation is IBA-inferred). However, since 4Fe-4S binding is not among the options, the general Fe-S reasoning suffices to select D over A, B, and C.
-
-
-**Reason**
-
-> The cysteine-rich composition is directly observable in the supplied sequence and connects via general biochemistry to Fe-S cluster binding. This meaningfully distinguishes D from the three non-Fe-S options without requiring memorization of the specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The other three options (steroid dehydrogenase, tau binding, oxidosqualene cyclase) have no plausible connection to a cysteine-rich 162-residue protein. Only D involves iron-sulfur cluster chemistry. No alternative option is defensible given the sequence composition.
-
-
-### Important caveats
-
-- The GO:0051537 annotation is via IBA (Inferred by Biological Aspect), a computational inference method, not direct experimental measurement for this specific protein.
-- The primary experimental evidence (PubMed:34032321, ECO:0000269) describes &#91;4Fe-4S&#93; cluster assembly by PfIscU; the 2Fe-2S assignment is a secondary annotation consistent with the known IscU mechanism but not the headline experimental finding.
-- The sequence identity to Q8IKT4 was inferred from dataset metadata (reviewer-only); the evaluated model received only the raw sequence without accession context.
-- The high cysteine count in the N-terminal region is atypical even for Fe-S proteins and may reflect the unusual Plasmodium IscU structure; however, it still supports the Fe-S binding interpretation over the other three options.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 162-residue sequence contains an unusually high number of cysteine residues (~9, roughly 5.5% cysteine content, well above the typical 1-2% for most proteins), particularly clustered in the N-terminal region. Cysteine is the primary coordinating ligand for iron-sulfur clusters in proteins. Among the four options, only D (2Fe-2S cluster binding) involves a function that requires cysteine-mediated metal coordination. Option A (estradiol dehydrogenase) is a Rossmann-fold oxidoreductase, Option B (tau binding) involves cytoskeletal protein-protein interactions, and Option C (beta-amyrin synthase) is a large oxidosqualene cyclase — none of which are characterized by cysteine-rich sequences. The visible cysteine density in the input provides a general biological argument favoring Fe-S cluster binding over the other three choices.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific distinction between 2Fe-2S and 4Fe-4S binding for this particular IscU scaffold requires annotation-level knowledge (the experimental data in PubMed:34032321 emphasizes 4Fe-4S assembly; the 2Fe-2S annotation is IBA-inferred). However, since 4Fe-4S binding is not among the options, the general Fe-S reasoning suffices to select D over A, B, and C.",
-    "reason": "The cysteine-rich composition is directly observable in the supplied sequence and connects via general biochemistry to Fe-S cluster binding. This meaningfully distinguishes D from the three non-Fe-S options without requiring memorization of the specific UniProt entry."
-  },
-  "case_id": "GO_molecular_function_0147",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "The protein (Q8IKT4, PfIscU from Plasmodium falciparum) is annotated with GO:0051537 '2 iron, 2 sulfur cluster binding' via IBA:GO_Central (C6, H4). The protein is experimentally confirmed (ECO:0000269, PubMed:34032321) as a scaffold for [Fe-S] cluster assembly. While the direct experimental evidence emphasizes [4Fe-4S] assembly, IscU proteins are well-known to transiently bind 2Fe-2S clusters during the assembly pathway, making the 2Fe-2S annotation biologically consistent. The GO term is present in the database annotation for this exact sequence (matched). The IBA evidence code indicates computational inference rather than direct measurement, but the annotation is not contradicted by the experimental data."
-  },
-  "important_caveats": [
-    "The GO:0051537 annotation is via IBA (Inferred by Biological Aspect), a computational inference method, not direct experimental measurement for this specific protein.",
-    "The primary experimental evidence (PubMed:34032321, ECO:0000269) describes [4Fe-4S] cluster assembly by PfIscU; the 2Fe-2S assignment is a secondary annotation consistent with the known IscU mechanism but not the headline experimental finding.",
-    "The sequence identity to Q8IKT4 was inferred from dataset metadata (reviewer-only); the evaluated model received only the raw sequence without accession context.",
-    "The high cysteine count in the N-terminal region is atypical even for Fe-S proteins and may reflect the unusual Plasmodium IscU structure; however, it still supports the Fe-S binding interpretation over the other three options."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The other three options (steroid dehydrogenase, tau binding, oxidosqualene cyclase) have no plausible connection to a cysteine-rich 162-residue protein. Only D involves iron-sulfur cluster chemistry. No alternative option is defensible given the sequence composition."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0147",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein (Q8IKT4, PfIscU from Plasmodium falciparum) is annotated with GO:0051537 '2 iron, 2 sulfur cluster binding' via IBA:GO_Central (C6, H4). The protein is experimentally confirmed (ECO:0000269, PubMed:34032321) as a scaffold for [Fe-S] cluster assembly. While the direct experimental evidence emphasizes [4Fe-4S] assembly, IscU proteins are well-known to transiently bind 2Fe-2S clusters during the assembly pathway, making the 2Fe-2S annotation biologically consistent. The GO term is present in the database annotation for this exact sequence (matched). The IBA evidence code indicates computational inference rather than direct measurement, but the annotation is not contradicted by the experimental data.",
-    "evidence_ids": ["C4", "C5", "C6", "H3", "H4", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 162-residue sequence contains an unusually high number of cysteine residues (~9, roughly 5.5% cysteine content, well above the typical 1-2% for most proteins), particularly clustered in the N-terminal region. Cysteine is the primary coordinating ligand for iron-sulfur clusters in proteins. Among the four options, only D (2Fe-2S cluster binding) involves a function that requires cysteine-mediated metal coordination. Option A (estradiol dehydrogenase) is a Rossmann-fold oxidoreductase, Option B (tau binding) involves cytoskeletal protein-protein interactions, and Option C (beta-amyrin synthase) is a large oxidosqualene cyclase — none of which are characterized by cysteine-rich sequences. The visible cysteine density in the input provides a general biological argument favoring Fe-S cluster binding over the other three choices.",
-    "missing_item_specific_fact": "The specific distinction between 2Fe-2S and 4Fe-4S binding for this particular IscU scaffold requires annotation-level knowledge (the experimental data in PubMed:34032321 emphasizes 4Fe-4S assembly; the 2Fe-2S annotation is IBA-inferred). However, since 4Fe-4S binding is not among the options, the general Fe-S reasoning suffices to select D over A, B, and C.",
-    "reason": "The cysteine-rich composition is directly observable in the supplied sequence and connects via general biochemistry to Fe-S cluster binding. This meaningfully distinguishes D from the three non-Fe-S options without requiring memorization of the specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The other three options (steroid dehydrogenase, tau binding, oxidosqualene cyclase) have no plausible connection to a cysteine-rich 162-residue protein. Only D involves iron-sulfur cluster chemistry. No alternative option is defensible given the sequence composition."
-  },
-  "important_caveats": [
-    "The GO:0051537 annotation is via IBA (Inferred by Biological Aspect), a computational inference method, not direct experimental measurement for this specific protein.",
-    "The primary experimental evidence (PubMed:34032321, ECO:0000269) describes [4Fe-4S] cluster assembly by PfIscU; the 2Fe-2S assignment is a secondary annotation consistent with the known IscU mechanism but not the headline experimental finding.",
-    "The sequence identity to Q8IKT4 was inferred from dataset metadata (reviewer-only); the evaluated model received only the raw sequence without accession context.",
-    "The high cysteine count in the N-terminal region is atypical even for Fe-S proteins and may reflect the unusual Plasmodium IscU structure; however, it still supports the Fe-S binding interpretation over the other three options."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IKT4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 162,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
   "current_entry_audit": {
     "entryVersion": 125,
     "firstPublicDate": "2025-04-09",
@@ -539,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "current_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 162,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 123,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IKT4",
   "selected_historical_entry_version": 123,
+  "selected_historical_record_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "selected_historical_source_sequence_length": 162,
+  "selected_historical_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
   "selected_historical_version": {
     "accession": "Q8IKT4",
     "database": "Swiss-Prot",
@@ -557,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ISCU_PLAF7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "selected_historical_source_sequence_sha256": "8e140c4dbd21b2ba798ee3b637384532a5902af39272bee7a18981ab9ceabe88",
-  "selected_historical_source_sequence_length": 162,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 123,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IKT4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -611,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":125,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -630,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001450\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Laverania\"],\"scientificName\":\"Plasmodium falciparum (isolate 3D7)\",\"taxonId\":36329}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -649,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Iron-sulfur cluster assembly protein IscU\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34032321\",\"source\":\"PubMed\"}],\"value\":\"PfIscU\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -668,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34032321\",\"source\":\"PubMed\"}],\"value\":\"Participates in iron-sulfur cluster formation (ISC) pathway for iron-sulfur (Fe-S) cluster biogenesis (PubMed:34032321). Plays a role of a major scaffold protein for [Fe-S] assembly; assembles [4Fe-4S] clusters directly upon interaction with the catalytic component IscS-Isd11 as part of the scaffold complex (PubMed:34032321). Can transfer [4Fe-4S] clusters to target apo-proteins (PubMed:34032321)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -687,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/21",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0051537\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:2 iron, 2 sulfur cluster binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/21",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -706,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/22",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0008198\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:ferrous iron binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/22",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -725,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/23",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"12368867\",\"source\":\"PubMed\"}],\"id\":\"GO:0005506\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:iron ion binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:GeneDB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/23",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -744,15 +502,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json",
-  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
-  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Sadik M.\",\"Afsar M.\",\"Ramachandran R.\",\"Habib S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34032321\"},{\"database\":\"DOI\",\"id\":\"10.1111/mmi.14735\"}],\"citationType\":\"journal article\",\"firstPage\":\"606\",\"id\":\"34032321\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"623\",\"publicationDate\":\"2021\",\"title\":\"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the Plasmodium falciparum mitochondrion.\",\"volume\":\"116\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"COFACTOR\",\"SUBUNIT\",\"INTERACTION WITH ISCS\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:32:18.665288+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "df58165e5cdc69c588b06d5dc2395f0f91c8805f9c6fc3461d14468ea7329d6f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IKT4.json"
 }
 ```
 
@@ -762,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   ISCU_PLAF7              Reviewed;         162 AA.\nAC   Q8IKT4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 123.\nDE   RecName: Full=Iron-sulfur cluster assembly protein IscU {ECO:0000305};\nDE            Short=PfIscU {ECO:0000303|PubMed:34032321};\nGN   Name=IscU {ECO:0000305};\nGN   ORFNames=PF3D7_1454500 {ECO:0000312|EMBL:CZU00240.1};\nOS   Plasmodium falciparum (isolate 3D7).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Laverania).\nOX   NCBI_TaxID=36329 {ECO:0000312|Proteomes:UP000001450};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -783,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 28-35",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, COFACTOR, SUBUNIT, INTERACTION WITH ISCS, AND SUBCELLULAR\nRP   LOCATION.\nRX   PubMed=34032321; DOI=10.1111/mmi.14735;\nRA   Sadik M., Afsar M., Ramachandran R., Habib S.;\nRT   \"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the\nRT   Plasmodium falciparum mitochondrion.\";\nRL   Mol. Microbiol. 116:606-623(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -804,18 +562,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 45-51",
   "excerpt": "CC   -!- FUNCTION: Participates in iron-sulfur cluster formation (ISC) pathway\nCC       for iron-sulfur (Fe-S) cluster biogenesis (PubMed:34032321). Plays a\nCC       role of a major scaffold protein for [Fe-S] assembly; assembles [4Fe-\nCC       4S] clusters directly upon interaction with the catalytic component\nCC       IscS-Isd11 as part of the scaffold complex (PubMed:34032321). Can\nCC       transfer [4Fe-4S] clusters to target apo-proteins (PubMed:34032321).\nCC       {ECO:0000269|PubMed:34032321}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -825,18 +583,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 91-91",
   "excerpt": "DR   GO; GO:0051537; F:2 iron, 2 sulfur cluster binding; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 91-91",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -846,18 +604,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 92-92",
   "excerpt": "DR   GO; GO:0051539; F:4 iron, 4 sulfur cluster binding; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 92-92",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -867,18 +625,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 93-93",
   "excerpt": "DR   GO; GO:0008198; F:ferrous iron binding; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 93-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -888,18 +646,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 123,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123",
-  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
-  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
-  "source_locator": "lines 94-94",
   "excerpt": "DR   GO; GO:0005506; F:iron ion binding; ISS:GeneDB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 123,
+  "retrieved_utc": "2026-11-02T04:32:21.146174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 94-94",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1486d63f9113029908bdb3693392d31626d9b2ff299d97715a630df1a14b4181",
+  "url": "https://rest.uniprot.org/unisave/Q8IKT4?format=txt&versions=123"
 }
 ```
 
@@ -910,15 +668,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 39377-39408",
   "excerpt": "[Term]\nid: GO:0004303\nname: estradiol 17-beta-dehydrogenase [NAD(P)+] activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: estradiol-17-beta + NAD(P)+ = estrone + NAD(P)H + H+. The activity can use NAD+ or NADP+ as the acceptor.\" [EC:1.1.1.62]\nsynonym: \"17-beta-estradiol dehydrogenase activity\" RELATED [EC:1.1.1.62]\nsynonym: \"17-beta-HSD activity\" BROAD [EC:1.1.1.62]\nsynonym: \"17-beta-hydroxysteroid dehydrogenase activity\" BROAD [EC:1.1.1.62]\nsynonym: \"17beta,20alpha-hydroxysteroid dehydrogenase activity\" RELATED [EC:1.1.1.62]\nsynonym: \"17beta-estradiol dehydrogenase activity\" RELATED [EC:1.1.1.62]\nsynonym: \"17beta-HSD\" RELATED [EC:1.1.1.62]\nsynonym: \"17beta-hydroxysteroid dehydrogenase activity\" RELATED [EC:1.1.1.62]\nsynonym: \"20alpha-hydroxysteroid dehydrogenase\" BROAD [EC:1.1.1.62]\nsynonym: \"estradiol 17-beta-dehydrogenase activity\" RELATED []\nsynonym: \"estradiol 17beta-dehydrogenase activity\" RELATED [EC:1.1.1.62]\nsynonym: \"estradiol dehydrogenase activity\" RELATED [EC:1.1.1.62]\nsynonym: \"estradiol-17beta:NAD(P)+ 17-oxidoreductase activity\" RELATED [EC:1.1.1.62]\nsynonym: \"estrogen 17-oxidoreductase activity\" RELATED [EC:1.1.1.62]\nxref: EC:1.1.1.62\nxref: MetaCyc:ESTRADIOL-17-BETA-DEHYDROGENASE-RXN\nxref: Reactome:R-HSA-5693390 \"HSD17B11 dehydrogenates EST17b to E1\"\nxref: Reactome:R-HSA-5696822 \"AKR1B15 reduces EST17b to E1\"\nxref: Reactome:R-HSA-6810594 \"HSD17B14 tetramer oxidises estradiol (EST17b) to estrone (E1)\"\nxref: Reactome:R-HSA-804969 \"HSD17B1 hydrogenates E1 to EST17b\"\nxref: Reactome:R-HSA-8862137 \"HSD17B2 oxidises estradiol (EST17b) to estrone (E1)\"\nxref: RHEA:24612\nxref: RHEA:24616\nis_a: GO:0033764 ! steroid dehydrogenase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor\nproperty_value: skos:exactMatch EC:1.1.1.62\nproperty_value: skos:narrowMatch RHEA:24612\nproperty_value: skos:narrowMatch RHEA:24616\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004303",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 39377-39408",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004303"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -929,15 +687,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 236107-236120",
   "excerpt": "[Term]\nid: GO:0042300\nname: beta-amyrin synthase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: (S)-2,3-epoxysqualene = beta-amyrin.\" [PMID:9746369, RHEA:31007]\nsynonym: \"2,3-oxidosqualene beta-amyrin cyclase\" EXACT [EC:5.4.99.39]\nsynonym: \"oxidosqualene:beta-amyrin cyclase activity\" EXACT [PMID:18033581]\nxref: EC:5.4.99.39\nxref: MetaCyc:RXN-7570\nxref: RHEA:31007\nis_a: GO:0031559 ! oxidosqualene cyclase activity\nproperty_value: skos:exactMatch EC:5.4.99.39\nproperty_value: skos:exactMatch RHEA:31007\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042300",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 236107-236120",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042300"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -948,15 +706,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 300902-300908",
   "excerpt": "[Term]\nid: GO:0048156\nname: tau protein binding\nnamespace: molecular_function\ndef: \"Binding to tau protein. tau is a microtubule-associated protein, implicated in Alzheimer's disease, Down Syndrome and ALS.\" [GOC:jid]\nis_a: GO:0008092 ! cytoskeletal protein binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048156",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 300902-300908",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048156"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -967,15 +725,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 327878-327891",
   "excerpt": "[Term]\nid: GO:0051537\nname: 2 iron, 2 sulfur cluster binding\nnamespace: molecular_function\ndef: \"Binding to a 2 iron, 2 sulfur (2Fe-2S) cluster; this cluster consists of two iron atoms, with two inorganic sulfur atoms found between the irons and acting as bridging ligands.\" [GOC:ai, PMID:15952888, Wikipedia:Iron-sulfur_cluster]\nsynonym: \"2 Fe 2 S cluster binding\" EXACT []\nsynonym: \"2 iron, 2 sulphur cluster binding\" EXACT []\nsynonym: \"2Fe-2S cluster binding\" EXACT []\nsynonym: \"diiron disulfide cluster binding\" EXACT []\nsynonym: \"diiron disulphide cluster binding\" EXACT []\nsynonym: \"iron-sulfur cluster 2Fe-2S binding\" EXACT []\nsynonym: \"iron-sulphur cluster 2Fe-2S binding\" EXACT []\nis_a: GO:0051536 ! iron-sulfur cluster binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0051537",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 327878-327891",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0051537"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

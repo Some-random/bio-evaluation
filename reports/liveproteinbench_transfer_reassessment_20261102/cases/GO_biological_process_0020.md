@@ -1,18 +1,16 @@
-# GO_biological_process_0020: before and after transfer clarification
+# GO_biological_process_0020
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0020.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0020.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — secondary metabolic process
+**Expected answer:** **D** — secondary metabolic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence is annotated as fungal cytochrome P450 AstC in a pathway for biosynthesis of aspterric acid, a secondary metabolite. UniProt cites literature with experimental evidence for its function and pathway; its GO annotation for secondary metabolic process is separately marked IEA, so that GO annotation is computational rather than direct experimental evidence.
-
-Citations as saved: [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [C5](#evidence-c5), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is compatible with a membrane-associated cytochrome P450, which makes a metabolic enzyme more plausible than a chaperone or surfactant-secretion protein. But P450 family identity alone does not establish that this particular enzyme participates in secondary metabolism.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as AstC and its role in aspterric-acid biosynthesis, established by annotation and cited experimental literature, are absent from the supplied input.
-
-
-**Reason**
-
-> The sequence offers family-level clues, but determining the asked biological process requires the item-specific pathway assignment. Recognizing or retrieving this exact protein's annotation would supply that fact; it is not entailed by the sequence features alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only evidence supports D for this sequence; it provides no comparable support for A, B, or C. The limitation is that the sequence-only input does not establish the protein-specific pathway.
-
-
-### Important caveats
-
-- The sequence matches the current and archived UniProt sequence, but the author's exact annotation snapshot is unknown.
-- The GO secondary-metabolic-process annotation is IEA; the cited functional and pathway annotations carry experimental-evidence codes, but the primary papers were not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is compatible with a membrane-associated cytochrome P450, which makes a metabolic enzyme more plausible than a chaperone or surfactant-secretion protein. But P450 family identity alone does not establish that this particular enzyme participates in secondary metabolism.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as AstC and its role in aspterric-acid biosynthesis, established by annotation and cited experimental literature, are absent from the supplied input.",
-    "reason": "The sequence offers family-level clues, but determining the asked biological process requires the item-specific pathway assignment. Recognizing or retrieving this exact protein's annotation would supply that fact; it is not entailed by the sequence features alone."
-  },
-  "case_id": "GO_biological_process_0020",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H4",
-      "H5",
-      "H6",
-      "C5",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as fungal cytochrome P450 AstC in a pathway for biosynthesis of aspterric acid, a secondary metabolite. UniProt cites literature with experimental evidence for its function and pathway; its GO annotation for secondary metabolic process is separately marked IEA, so that GO annotation is computational rather than direct experimental evidence."
-  },
-  "important_caveats": [
-    "The sequence matches the current and archived UniProt sequence, but the author's exact annotation snapshot is unknown.",
-    "The GO secondary-metabolic-process annotation is IEA; the cited functional and pathway annotations carry experimental-evidence codes, but the primary papers were not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports D for this sequence; it provides no comparable support for A, B, or C. The limitation is that the sequence-only input does not establish the protein-specific pathway."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0020",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as fungal cytochrome P450 AstC in a pathway for biosynthesis of aspterric acid, a secondary metabolite. UniProt cites literature with experimental evidence for its function and pathway; its GO annotation for secondary metabolic process is separately marked IEA, so that GO annotation is computational rather than direct experimental evidence.",
-    "evidence_ids": ["H4", "H5", "H6", "C5", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is compatible with a membrane-associated cytochrome P450, which makes a metabolic enzyme more plausible than a chaperone or surfactant-secretion protein. But P450 family identity alone does not establish that this particular enzyme participates in secondary metabolism.",
-    "missing_item_specific_fact": "The protein-specific identification as AstC and its role in aspterric-acid biosynthesis, established by annotation and cited experimental literature, are absent from the supplied input.",
-    "reason": "The sequence offers family-level clues, but determining the asked biological process requires the item-specific pathway assignment. Recognizing or retrieving this exact protein's annotation would supply that fact; it is not entailed by the sequence features alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports D for this sequence; it provides no comparable support for A, B, or C. The limitation is that the sequence-only input does not establish the protein-specific pathway."
-  },
-  "important_caveats": [
-    "The sequence matches the current and archived UniProt sequence, but the author's exact annotation snapshot is unknown.",
-    "The GO secondary-metabolic-process annotation is IEA; the cited functional and pathway annotations carry experimental-evidence codes, but the primary papers were not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein (Q0CPG6, AstC) is a cytochrome P450 monooxygenase experimentally characterized (ECO:0000269, PubMed:29995859 and 39511739) as part of the aspterric acid (sesquiterpenoid) biosynthesis gene cluster. UniProt explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (C6/H5), and the GO term GO:0019748 'secondary metabolic process' is assigned (C7/H6). The underlying experimental evidence confirms the protein catalyzes a step in secondary metabolite production, directly supporting choice D.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [C9](#evidence-c9), [C10](#evidence-c10).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable cytochrome P450 heme-binding motif (FGHGGHSCPGRF region with the axial-ligand cysteine), identifying the protein as a P450 monooxygenase—an oxidative enzyme catalyzing metabolic transformations. Among the four choices, A (response to cold), B (chaperone-mediated protein folding), and C (surfactant secretion) describe processes fundamentally incompatible with a P450 enzyme's catalytic function. Only D (secondary metabolic process) describes an enzymatic metabolic role consistent with a P450. Thus, identifying the protein class from the heme-binding signature and applying general knowledge that P450s are oxidative metabolic enzymes eliminates A, B, and C, leaving D.
-
-
-**Missing item-specific fact**
-
-> The specific assignment to 'secondary' (rather than primary) metabolism requires knowing the substrate is a sesquiterpenoid (aspterric acid), which is not determinable from sequence alone. However, since D is the only metabolic option among the choices, this distinction does not affect answer selection.
-
-
-**Reason**
-
-> A model can identify the P450 heme-binding motif in the sequence, recognize the protein as an oxidative enzyme, and eliminate the three non-enzymatic/non-metabolic distractors (cold response, chaperone, surfactant secretion) using general biological knowledge. The remaining option D is the only one describing an enzymatic metabolic process. The specific 'secondary' qualifier is not independently derivable but is irrelevant when the other three choices are categorically incompatible with a P450.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and C describe processes (cold sensing, protein folding assistance, surfactant release) that are mechanistically incompatible with a cytochrome P450 monooxygenase. Only D describes a metabolic enzymatic role. No other option is defensible for a P450 enzyme.
-
-
-### Important caveats
-
-- The GO:0019748 annotation carries evidence code IEA:UniProtKB-ARBA (computational transfer), though the underlying pathway assignment is experimentally supported (ECO:0000269).
-- The specific 'secondary' vs. 'primary' metabolic distinction cannot be determined from sequence alone; the answer is selected by elimination of clearly incompatible options rather than positive identification of the sesquiterpenoid pathway.
-- The reviewer identified the accession Q0CPG6 from dataset metadata; this accession was not provided to the evaluated model.
-- The P450 heme-binding motif (FGHGGHSCPGRF) is identifiable in the sequence, enabling protein-class recognition without database lookup.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FGHGGHSCPGRF region with the axial-ligand cysteine), identifying the protein as a P450 monooxygenase—an oxidative enzyme catalyzing metabolic transformations. Among the four choices, A (response to cold), B (chaperone-mediated protein folding), and C (surfactant secretion) describe processes fundamentally incompatible with a P450 enzyme's catalytic function. Only D (secondary metabolic process) describes an enzymatic metabolic role consistent with a P450. Thus, identifying the protein class from the heme-binding signature and applying general knowledge that P450s are oxidative metabolic enzymes eliminates A, B, and C, leaving D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific assignment to 'secondary' (rather than primary) metabolism requires knowing the substrate is a sesquiterpenoid (aspterric acid), which is not determinable from sequence alone. However, since D is the only metabolic option among the choices, this distinction does not affect answer selection.",
-    "reason": "A model can identify the P450 heme-binding motif in the sequence, recognize the protein as an oxidative enzyme, and eliminate the three non-enzymatic/non-metabolic distractors (cold response, chaperone, surfactant secretion) using general biological knowledge. The remaining option D is the only one describing an enzymatic metabolic process. The specific 'secondary' qualifier is not independently derivable but is irrelevant when the other three choices are categorically incompatible with a P450."
-  },
-  "case_id": "GO_biological_process_0020",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H4",
-      "H5",
-      "H6",
-      "C9",
-      "C10"
-    ],
-    "judgment": "supported",
-    "reason": "The protein (Q0CPG6, AstC) is a cytochrome P450 monooxygenase experimentally characterized (ECO:0000269, PubMed:29995859 and 39511739) as part of the aspterric acid (sesquiterpenoid) biosynthesis gene cluster. UniProt explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (C6/H5), and the GO term GO:0019748 'secondary metabolic process' is assigned (C7/H6). The underlying experimental evidence confirms the protein catalyzes a step in secondary metabolite production, directly supporting choice D."
-  },
-  "important_caveats": [
-    "The GO:0019748 annotation carries evidence code IEA:UniProtKB-ARBA (computational transfer), though the underlying pathway assignment is experimentally supported (ECO:0000269).",
-    "The specific 'secondary' vs. 'primary' metabolic distinction cannot be determined from sequence alone; the answer is selected by elimination of clearly incompatible options rather than positive identification of the sesquiterpenoid pathway.",
-    "The reviewer identified the accession Q0CPG6 from dataset metadata; this accession was not provided to the evaluated model.",
-    "The P450 heme-binding motif (FGHGGHSCPGRF) is identifiable in the sequence, enabling protein-class recognition without database lookup."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C describe processes (cold sensing, protein folding assistance, surfactant release) that are mechanistically incompatible with a cytochrome P450 monooxygenase. Only D describes a metabolic enzymatic role. No other option is defensible for a P450 enzyme."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0020",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein (Q0CPG6, AstC) is a cytochrome P450 monooxygenase experimentally characterized (ECO:0000269, PubMed:29995859 and 39511739) as part of the aspterric acid (sesquiterpenoid) biosynthesis gene cluster. UniProt explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (C6/H5), and the GO term GO:0019748 'secondary metabolic process' is assigned (C7/H6). The underlying experimental evidence confirms the protein catalyzes a step in secondary metabolite production, directly supporting choice D.",
-    "evidence_ids": ["C5", "C6", "C7", "H4", "H5", "H6", "C9", "C10"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FGHGGHSCPGRF region with the axial-ligand cysteine), identifying the protein as a P450 monooxygenase—an oxidative enzyme catalyzing metabolic transformations. Among the four choices, A (response to cold), B (chaperone-mediated protein folding), and C (surfactant secretion) describe processes fundamentally incompatible with a P450 enzyme's catalytic function. Only D (secondary metabolic process) describes an enzymatic metabolic role consistent with a P450. Thus, identifying the protein class from the heme-binding signature and applying general knowledge that P450s are oxidative metabolic enzymes eliminates A, B, and C, leaving D.",
-    "missing_item_specific_fact": "The specific assignment to 'secondary' (rather than primary) metabolism requires knowing the substrate is a sesquiterpenoid (aspterric acid), which is not determinable from sequence alone. However, since D is the only metabolic option among the choices, this distinction does not affect answer selection.",
-    "reason": "A model can identify the P450 heme-binding motif in the sequence, recognize the protein as an oxidative enzyme, and eliminate the three non-enzymatic/non-metabolic distractors (cold response, chaperone, surfactant secretion) using general biological knowledge. The remaining option D is the only one describing an enzymatic metabolic process. The specific 'secondary' qualifier is not independently derivable but is irrelevant when the other three choices are categorically incompatible with a P450."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C describe processes (cold sensing, protein folding assistance, surfactant release) that are mechanistically incompatible with a cytochrome P450 monooxygenase. Only D describes a metabolic enzymatic role. No other option is defensible for a P450 enzyme."
-  },
-  "important_caveats": [
-    "The GO:0019748 annotation carries evidence code IEA:UniProtKB-ARBA (computational transfer), though the underlying pathway assignment is experimentally supported (ECO:0000269).",
-    "The specific 'secondary' vs. 'primary' metabolic distinction cannot be determined from sequence alone; the answer is selected by elimination of clearly incompatible options rather than positive identification of the sesquiterpenoid pathway.",
-    "The reviewer identified the accession Q0CPG6 from dataset metadata; this accession was not provided to the evaluated model.",
-    "The P450 heme-binding motif (FGHGGHSCPGRF) is identifiable in the sequence, enabling protein-class recognition without database lookup."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q0CPG6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d64a1263e1e31530d1873b74b304f62355010d457a8b6d79b78a7154c76862f3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 538,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d64a1263e1e31530d1873b74b304f62355010d457a8b6d79b78a7154c76862f3",
   "current_entry_audit": {
     "entryVersion": 98,
     "firstPublicDate": "2025-04-09",
@@ -543,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-10-17",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "current_source_sequence_sha256": "d64a1263e1e31530d1873b74b304f62355010d457a8b6d79b78a7154c76862f3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 538,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d64a1263e1e31530d1873b74b304f62355010d457a8b6d79b78a7154c76862f3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 96,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q0CPG6",
   "selected_historical_entry_version": 96,
+  "selected_historical_record_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
+  "selected_historical_source_sequence_length": 538,
+  "selected_historical_source_sequence_sha256": "d64a1263e1e31530d1873b74b304f62355010d457a8b6d79b78a7154c76862f3",
   "selected_historical_version": {
     "accession": "Q0CPG6",
     "database": "Swiss-Prot",
@@ -561,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ASTC_ASPTN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
-  "selected_historical_source_sequence_sha256": "d64a1263e1e31530d1873b74b304f62355010d457a8b6d79b78a7154c76862f3",
-  "selected_historical_source_sequence_length": 538,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 96,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -596,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q0CPG6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -615,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":98,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-10-17\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -634,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus terreus (strain NIH 2624 / FGSC A1156)\",\"taxonId\":341663}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -653,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein C\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase astC\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -672,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase; part of the gene cluster that mediates the biosynthesis of the sesquiterpenoid aspterric acid (AA), an inhibitor of dihydroxy-acid dehydratase (DHAD) effective as an herbicide (PubMed:29995859, PubMed:39511739). AstC catalyzes the third and last step within the pathway and converts the alpha-epoxy carboxylate intermediate produced by the cytochrome P450 monooxygenase astC from (-)daucane into the tricyclic aspterric acid (PubMed:29995859)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -691,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -710,15 +465,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/19",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0019748\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:secondary metabolic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-ARBA\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/19",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -729,15 +484,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/20",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0016114\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:terpenoid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-UniPathway\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/20",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -748,15 +503,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yan Y.\",\"Liu Q.\",\"Zang X.\",\"Yuan S.\",\"Bat-Erdene U.\",\"Nguyen C.\",\"Gan J.\",\"Zhou J.\",\"Jacobsen S.E.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29995859\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-018-0319-4\"}],\"citationType\":\"journal article\",\"firstPage\":\"415\",\"id\":\"29995859\",\"journal\":\"Nature\",\"lastPage\":\"418\",\"publicationDate\":\"2018\",\"title\":\"Resistance-gene-directed discovery of a natural-product herbicide with a new mode of action.\",\"volume\":\"559\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -767,15 +522,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json",
-  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
-  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhou Z.\",\"Zhang Y.\",\"Wu Q.\",\"Hou X.\",\"Zhang B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39511739\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c08468\"}],\"citationType\":\"journal article\",\"firstPage\":\"25755\",\"id\":\"39511739\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"25766\",\"publicationDate\":\"2024\",\"title\":\"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\",\"volume\":\"72\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:30:22.231293+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5cce9b434216d52e19bdca420e1e007eb4141638d98f34365df82078180206fe",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG6.json"
 }
 ```
 
@@ -785,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96",
-  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
-  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   ASTC_ASPTN              Reviewed;         538 AA.\nAC   Q0CPG6;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   17-OCT-2006, sequence version 1.\nDT   28-JAN-2026, entry version 96.\nDE   RecName: Full=Cytochrome P450 monooxygenase astC {ECO:0000303|PubMed:29995859};\nDE            EC=1.-.-.- {ECO:0000269|PubMed:29995859};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein C {ECO:0000303|PubMed:29995859};\nGN   Name=astC {ECO:0000303|PubMed:29995859}; ORFNames=ATEG_04418;\nOS   Aspergillus terreus (strain NIH 2624 / FGSC A1156).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=341663;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96"
 }
 ```
 
@@ -806,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96",
-  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
-  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
-  "source_locator": "lines 27-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=29995859; DOI=10.1038/s41586-018-0319-4;\nRA   Yan Y., Liu Q., Zang X., Yuan S., Bat-Erdene U., Nguyen C., Gan J.,\nRA   Zhou J., Jacobsen S.E., Tang Y.;\nRT   \"Resistance-gene-directed discovery of a natural-product herbicide with a\nRT   new mode of action.\";\nRL   Nature 559:415-418(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96"
 }
 ```
 
@@ -827,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96",
-  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
-  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
-  "source_locator": "lines 35-40",
   "excerpt": "RN   [3]\nRP   FUNCTION, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39511739; DOI=10.1021/acs.jafc.4c08468;\nRA   Zhou Z., Zhang Y., Wu Q., Hou X., Zhang B.;\nRT   \"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\";\nRL   J. Agric. Food Chem. 72:25755-25766(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96"
 }
 ```
 
@@ -848,18 +603,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96",
-  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
-  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
-  "source_locator": "lines 41-49",
   "excerpt": "CC   -!- FUNCTION: Cytochrome P450 monooxygenase; part of the gene cluster that\nCC       mediates the biosynthesis of the sesquiterpenoid aspterric acid (AA),\nCC       an inhibitor of dihydroxy-acid dehydratase (DHAD) effective as an\nCC       herbicide (PubMed:29995859, PubMed:39511739). AstC catalyzes the third\nCC       and last step within the pathway and converts the alpha-epoxy\nCC       carboxylate intermediate produced by the cytochrome P450 monooxygenase\nCC       astC from (-)daucane into the tricyclic aspterric acid\nCC       (PubMed:29995859). {ECO:0000269|PubMed:29995859,\nCC       ECO:0000269|PubMed:39511739}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96"
 }
 ```
 
@@ -869,18 +624,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96",
-  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
-  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
-  "source_locator": "lines 63-64",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:29995859, ECO:0000269|PubMed:39511739}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96"
 }
 ```
 
@@ -890,18 +645,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 96,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96",
-  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
-  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
-  "source_locator": "lines 95-95",
   "excerpt": "DR   GO; GO:0019748; P:secondary metabolic process; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 96,
+  "retrieved_utc": "2026-11-02T04:30:24.324806+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 95-95",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "482e2797ef6a132bf6ecea28c3af021dd91a0c76f43ab91eddc89822a20eafbd",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG6?format=txt&versions=96"
 }
 ```
 
@@ -912,15 +667,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 95973-95981",
   "excerpt": "[Term]\nid: GO:0009409\nname: response to cold\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a cold stimulus, a temperature stimulus below the optimal temperature for that organism.\" [GOC:lr]\nsynonym: \"freezing tolerance\" RELATED []\nis_a: GO:0006950 ! response to stress\nis_a: GO:0009266 ! response to temperature stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009409",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 95973-95981",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009409"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -931,15 +686,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 152714-152730",
   "excerpt": "[Term]\nid: GO:0019748\nname: secondary metabolic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in many of the chemical changes of compounds that are not necessarily required for growth and maintenance of cells, and are often unique to a taxon. In multicellular organisms secondary metabolism is generally carried out in specific cell types, and may be useful for the organism as a whole. In unicellular organisms, secondary metabolism is often used for the production of antibiotics or for the utilization and acquisition of unusual nutrients.\" [GOC:curators]\nsubset: goslim_chembl\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_pombe\nsynonym: \"secondary metabolism\" EXACT []\nsynonym: \"secondary metabolite metabolic process\" EXACT []\nsynonym: \"secondary metabolite metabolism\" EXACT []\nxref: Wikipedia:Secondary_metabolism\nis_a: GO:0008152 ! metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019748",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 152714-152730",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019748"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -950,15 +705,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 449457-449464",
   "excerpt": "[Term]\nid: GO:0160069\nname: surfactant secretion\nnamespace: biological_process\ndef: \"The regulated release of surfactant by a cell or tissue.\" [PMID:19824815]\nis_a: GO:0046903 ! secretion\nrelationship: part_of GO:0043129 ! surfactant homeostasis\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0160069",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 449457-449464",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0160069"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# active_site_0122: before and after transfer clarification
+# active_site_0122
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0122.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0122.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 109 (Nucleophile)
+**Expected answer:** **B** — Position 109 (Nucleophile)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the UniProt entry, which annotates position 109 as the nucleophile. This annotation is transferred by similarity from another UniProt protein, so it supports the key but is not direct experimental evidence for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a sufficiently unambiguous general rule for assigning the catalytic role to residue 109 rather than the other listed positions; recognizing a family motif would require protein-specific interpretation.
-
-
-**Missing item-specific fact**
-
-> The catalytic-residue annotation or a sufficiently informative homolog/structure mapping identifying position 109 as the nucleophile.
-
-
-**Reason**
-
-> The key is supported by a sequence-matched database annotation, but that annotation and its homolog-based evidence were not supplied in the question. Exact catalytic roles and positions cannot be established from generic sequence heuristics alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence supports B. The annotated proton donor is at position 113, not the offered position 92, and position 975 exceeds the 357-residue sequence.
-
-
-### Important caveats
-
-- The active-site annotation is based on similarity to UniProtKB:P27051 (ECO:0000250), not shown here as direct experimental evidence for this sequence.
-- The historical entry and current entry both match the supplied sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently unambiguous general rule for assigning the catalytic role to residue 109 rather than the other listed positions; recognizing a family motif would require protein-specific interpretation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The catalytic-residue annotation or a sufficiently informative homolog/structure mapping identifying position 109 as the nucleophile.",
-    "reason": "The key is supported by a sequence-matched database annotation, but that annotation and its homolog-based evidence were not supplied in the question. Exact catalytic roles and positions cannot be established from generic sequence heuristics alone."
-  },
-  "case_id": "active_site_0122",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry, which annotates position 109 as the nucleophile. This annotation is transferred by similarity from another UniProt protein, so it supports the key but is not direct experimental evidence for this exact protein."
-  },
-  "important_caveats": [
-    "The active-site annotation is based on similarity to UniProtKB:P27051 (ECO:0000250), not shown here as direct experimental evidence for this sequence.",
-    "The historical entry and current entry both match the supplied sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports B. The annotated proton donor is at position 113, not the offered position 92, and position 975 exceeds the 357-residue sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0122",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry, which annotates position 109 as the nucleophile. This annotation is transferred by similarity from another UniProt protein, so it supports the key but is not direct experimental evidence for this exact protein.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently unambiguous general rule for assigning the catalytic role to residue 109 rather than the other listed positions; recognizing a family motif would require protein-specific interpretation.",
-    "missing_item_specific_fact": "The catalytic-residue annotation or a sufficiently informative homolog/structure mapping identifying position 109 as the nucleophile.",
-    "reason": "The key is supported by a sequence-matched database annotation, but that annotation and its homolog-based evidence were not supplied in the question. Exact catalytic roles and positions cannot be established from generic sequence heuristics alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports B. The annotated proton donor is at position 113, not the offered position 92, and position 975 exceeds the 357-residue sequence."
-  },
-  "important_caveats": [
-    "The active-site annotation is based on similarity to UniProtKB:P27051 (ECO:0000250), not shown here as direct experimental evidence for this sequence.",
-    "The historical entry and current entry both match the supplied sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q4WD22 (Crh-like protein 1, A. fumigatus) annotates position 109 as 'Nucleophile' active site (evidence C5/H3). The residue at position 109 in the supplied sequence is indeed E (glutamic acid), consistent with a nucleophile in glycosidase/transglycosylase catalysis. The protein is annotated as a chitinase (EC 3.2.1.14) and chitin transglycosylase (EC 2.4.-.-). However, the evidence code is ECO:0000250 (inferred by similarity from P27051), meaning this is a computational transfer annotation rather than direct experimental determination on this specific protein. The annotation is nonetheless consistent with the known catalytic mechanism of GH75-family transglycosylases.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein sequence contains recognizable glycoside hydrolase/transglycosylase domain features (e.g., 'IVMESDDLDE' motif region around positions 100-109). Glycosidases and transglycosylases characteristically employ Glu or Asp as the catalytic nucleophile. Position 109 is E (glutamate) located in a conserved catalytic motif region, making it a strong nucleophile candidate. Option C (position 975) is impossible in a 357-residue protein. Option A (position 92 = N, asparagine) is not a typical proton-donating catalytic residue in glycosidases. Option D (position 151 = H, histidine as proton acceptor) is atypical for glycosidase/transglycosylase active sites, which rely on carboxylate residues. By elimination and general glycosidase biochemistry, B is the most defensible choice.
-
-
-**Missing item-specific fact**
-
-> The precise mechanistic distinction between E109 as 'nucleophile' versus E113 as 'proton donor' in the GH75/Crh family requires family-specific mechanistic knowledge not derivable from sequence alone. However, since position 113 is not offered as a competing option, this does not impede selecting B from the four choices.
-
-
-**Reason**
-
-> Options A and C are eliminable by basic checks (wrong residue chemistry; position exceeds protein length). Option D (His as proton acceptor) is inconsistent with glycosidase catalytic chemistry. Option B (Glu as nucleophile) aligns with general glycosidase/transglycosylase mechanism knowledge. A model with general enzyme biochemistry knowledge can meaningfully distinguish B from the distractors without memorizing this specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A (N92 as proton donor) and C (position 975 in a 357-aa protein) are clearly incorrect. Option D (H151 as proton acceptor) is inconsistent with glycosidase catalytic chemistry. Only B is biochemically defensible for a glycosidase/transglycosylase active site among the four choices.
-
-
-### Important caveats
-
-- The UniProt annotation for position 109 as nucleophile is by similarity (ECO:0000250 from P27051), not direct experimental evidence on Crh1 itself. The 2019 Nature Communications paper (PubMed:30971696) provides functional and disruption phenotype data but the active-site residue roles are transferred.
-- The protein is a precursor (signal peptide present); numbering is canonical full-length, which matches the supplied sequence.
-- The specific role labels 'nucleophile' vs 'proton donor' for E109 vs E113 are family-specific (GH75) assignments; a model distinguishing these two positions would need mechanistic knowledge of this particular enzyme family. However, since E113 is not a competing option, this does not affect answerability from the given choices.
-- The reviewer-only evidence was absent from the evaluated model's input; the model must rely on sequence analysis and general biochemical knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein sequence contains recognizable glycoside hydrolase/transglycosylase domain features (e.g., 'IVMESDDLDE' motif region around positions 100-109). Glycosidases and transglycosylases characteristically employ Glu or Asp as the catalytic nucleophile. Position 109 is E (glutamate) located in a conserved catalytic motif region, making it a strong nucleophile candidate. Option C (position 975) is impossible in a 357-residue protein. Option A (position 92 = N, asparagine) is not a typical proton-donating catalytic residue in glycosidases. Option D (position 151 = H, histidine as proton acceptor) is atypical for glycosidase/transglycosylase active sites, which rely on carboxylate residues. By elimination and general glycosidase biochemistry, B is the most defensible choice.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The precise mechanistic distinction between E109 as 'nucleophile' versus E113 as 'proton donor' in the GH75/Crh family requires family-specific mechanistic knowledge not derivable from sequence alone. However, since position 113 is not offered as a competing option, this does not impede selecting B from the four choices.",
-    "reason": "Options A and C are eliminable by basic checks (wrong residue chemistry; position exceeds protein length). Option D (His as proton acceptor) is inconsistent with glycosidase catalytic chemistry. Option B (Glu as nucleophile) aligns with general glycosidase/transglycosylase mechanism knowledge. A model with general enzyme biochemistry knowledge can meaningfully distinguish B from the distractors without memorizing this specific UniProt entry."
-  },
-  "case_id": "active_site_0122",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q4WD22 (Crh-like protein 1, A. fumigatus) annotates position 109 as 'Nucleophile' active site (evidence C5/H3). The residue at position 109 in the supplied sequence is indeed E (glutamic acid), consistent with a nucleophile in glycosidase/transglycosylase catalysis. The protein is annotated as a chitinase (EC 3.2.1.14) and chitin transglycosylase (EC 2.4.-.-). However, the evidence code is ECO:0000250 (inferred by similarity from P27051), meaning this is a computational transfer annotation rather than direct experimental determination on this specific protein. The annotation is nonetheless consistent with the known catalytic mechanism of GH75-family transglycosylases."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 109 as nucleophile is by similarity (ECO:0000250 from P27051), not direct experimental evidence on Crh1 itself. The 2019 Nature Communications paper (PubMed:30971696) provides functional and disruption phenotype data but the active-site residue roles are transferred.",
-    "The protein is a precursor (signal peptide present); numbering is canonical full-length, which matches the supplied sequence.",
-    "The specific role labels 'nucleophile' vs 'proton donor' for E109 vs E113 are family-specific (GH75) assignments; a model distinguishing these two positions would need mechanistic knowledge of this particular enzyme family. However, since E113 is not a competing option, this does not affect answerability from the given choices.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model must rely on sequence analysis and general biochemical knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A (N92 as proton donor) and C (position 975 in a 357-aa protein) are clearly incorrect. Option D (H151 as proton acceptor) is inconsistent with glycosidase catalytic chemistry. Only B is biochemically defensible for a glycosidase/transglycosylase active site among the four choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0122",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q4WD22 (Crh-like protein 1, A. fumigatus) annotates position 109 as 'Nucleophile' active site (evidence C5/H3). The residue at position 109 in the supplied sequence is indeed E (glutamic acid), consistent with a nucleophile in glycosidase/transglycosylase catalysis. The protein is annotated as a chitinase (EC 3.2.1.14) and chitin transglycosylase (EC 2.4.-.-). However, the evidence code is ECO:0000250 (inferred by similarity from P27051), meaning this is a computational transfer annotation rather than direct experimental determination on this specific protein. The annotation is nonetheless consistent with the known catalytic mechanism of GH75-family transglycosylases.",
-    "evidence_ids": ["C5", "H3", "C4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein sequence contains recognizable glycoside hydrolase/transglycosylase domain features (e.g., 'IVMESDDLDE' motif region around positions 100-109). Glycosidases and transglycosylases characteristically employ Glu or Asp as the catalytic nucleophile. Position 109 is E (glutamate) located in a conserved catalytic motif region, making it a strong nucleophile candidate. Option C (position 975) is impossible in a 357-residue protein. Option A (position 92 = N, asparagine) is not a typical proton-donating catalytic residue in glycosidases. Option D (position 151 = H, histidine as proton acceptor) is atypical for glycosidase/transglycosylase active sites, which rely on carboxylate residues. By elimination and general glycosidase biochemistry, B is the most defensible choice.",
-    "missing_item_specific_fact": "The precise mechanistic distinction between E109 as 'nucleophile' versus E113 as 'proton donor' in the GH75/Crh family requires family-specific mechanistic knowledge not derivable from sequence alone. However, since position 113 is not offered as a competing option, this does not impede selecting B from the four choices.",
-    "reason": "Options A and C are eliminable by basic checks (wrong residue chemistry; position exceeds protein length). Option D (His as proton acceptor) is inconsistent with glycosidase catalytic chemistry. Option B (Glu as nucleophile) aligns with general glycosidase/transglycosylase mechanism knowledge. A model with general enzyme biochemistry knowledge can meaningfully distinguish B from the distractors without memorizing this specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A (N92 as proton donor) and C (position 975 in a 357-aa protein) are clearly incorrect. Option D (H151 as proton acceptor) is inconsistent with glycosidase catalytic chemistry. Only B is biochemically defensible for a glycosidase/transglycosylase active site among the four choices."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 109 as nucleophile is by similarity (ECO:0000250 from P27051), not direct experimental evidence on Crh1 itself. The 2019 Nature Communications paper (PubMed:30971696) provides functional and disruption phenotype data but the active-site residue roles are transferred.",
-    "The protein is a precursor (signal peptide present); numbering is canonical full-length, which matches the supplied sequence.",
-    "The specific role labels 'nucleophile' vs 'proton donor' for E109 vs E113 are family-specific (GH75) assignments; a model distinguishing these two positions would need mechanistic knowledge of this particular enzyme family. However, since E113 is not a competing option, this does not affect answerability from the given choices.",
-    "The reviewer-only evidence was absent from the evaluated model's input; the model must rely on sequence analysis and general biochemical knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q4WD22",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ec9eee989d92a990718dcd7214cf49eeaec45c138b491bd8fd04ef815d8dc8af",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 357,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ec9eee989d92a990718dcd7214cf49eeaec45c138b491bd8fd04ef815d8dc8af",
   "current_entry_audit": {
     "entryVersion": 109,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "current_source_sequence_sha256": "ec9eee989d92a990718dcd7214cf49eeaec45c138b491bd8fd04ef815d8dc8af",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 357,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ec9eee989d92a990718dcd7214cf49eeaec45c138b491bd8fd04ef815d8dc8af",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 107,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q4WD22",
   "selected_historical_entry_version": 107,
+  "selected_historical_record_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "selected_historical_source_sequence_length": 357,
+  "selected_historical_source_sequence_sha256": "ec9eee989d92a990718dcd7214cf49eeaec45c138b491bd8fd04ef815d8dc8af",
   "selected_historical_version": {
     "accession": "Q4WD22",
     "database": "Swiss-Prot",
@@ -550,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CRH1_ASPFU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "selected_historical_source_sequence_sha256": "ec9eee989d92a990718dcd7214cf49eeaec45c138b491bd8fd04ef815d8dc8af",
-  "selected_historical_source_sequence_length": 357,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 107,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q4WD22\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -600,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":109,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -619,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Neosartorya fumigata\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Fumigati\"],\"scientificName\":\"Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 / Af293)\",\"taxonId\":330879}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -638,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"includes\":[{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"30971696\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.14\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30971696\",\"source\":\"PubMed\"}],\"value\":\"Chitinase crh1\"}}},{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30971696\",\"source\":\"PubMed\"}],\"value\":\"2.4.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30971696\",\"source\":\"PubMed\"}],\"value\":\"Chitin transglycosylase crh1\"}}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30971696\",\"source\":\"PubMed\"}],\"value\":\"Crh-like protein 1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -657,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Nucleophile\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P27051\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":109},\"start\":{\"modifier\":\"EXACT\",\"value\":109}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -676,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P27051\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":113},\"start\":{\"modifier\":\"EXACT\",\"value\":113}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -695,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8J0P4\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:17029\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:17029\",\"name\":\"chitin\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":113},\"start\":{\"modifier\":\"EXACT\",\"value\":113}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -714,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8J0P4\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:17029\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:17029\",\"name\":\"chitin\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":193},\"start\":{\"modifier\":\"EXACT\",\"value\":193}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -733,15 +494,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8J0P4\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:17029\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:17029\",\"name\":\"chitin\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":197},\"start\":{\"modifier\":\"EXACT\",\"value\":197}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -752,15 +513,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8J0P4\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:17029\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:17029\",\"name\":\"chitin\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":208},\"start\":{\"modifier\":\"EXACT\",\"value\":208}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -771,15 +532,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json",
-  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
-  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Fang W.\",\"Sanz A.B.\",\"Bartual S.G.\",\"Wang B.\",\"Ferenbach A.T.\",\"Farkas V.\",\"Hurtado-Guerrero R.\",\"Arroyo J.\",\"van Aalten D.M.F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30971696\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41467-019-09674-0\"}],\"citationType\":\"journal article\",\"firstPage\":\"1669\",\"id\":\"30971696\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"1669\",\"publicationDate\":\"2019\",\"title\":\"Mechanisms of redundancy and specificity of the Aspergillus fumigatus Crh transglycosylases.\",\"volume\":\"10\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:21.374081+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WD22.json"
 }
 ```
 
@@ -789,18 +550,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 1-20",
   "excerpt": "ID   CRH1_ASPFU              Reviewed;         357 AA.\nAC   Q4WD22;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2005, sequence version 1.\nDT   28-JAN-2026, entry version 107.\nDE   RecName: Full=Crh-like protein 1 {ECO:0000303|PubMed:30971696};\nDE   Includes:\nDE     RecName: Full=Chitinase crh1 {ECO:0000303|PubMed:30971696};\nDE              EC=3.2.1.14 {ECO:0000305|PubMed:30971696};\nDE   Includes:\nDE     RecName: Full=Chitin transglycosylase crh1 {ECO:0000303|PubMed:30971696};\nDE              EC=2.4.-.- {ECO:0000269|PubMed:30971696};\nDE   Flags: Precursor;\nGN   Name=crh1 {ECO:0000303|PubMed:30971696}; ORFNames=AFUA_6G03230;\nOS   Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 /\nOS   Af293) (Neosartorya fumigata).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Fumigati.\nOX   NCBI_TaxID=330879;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 
@@ -810,18 +571,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 46-53",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=30971696; DOI=10.1038/s41467-019-09674-0;\nRA   Fang W., Sanz A.B., Bartual S.G., Wang B., Ferenbach A.T., Farkas V.,\nRA   Hurtado-Guerrero R., Arroyo J., van Aalten D.M.F.;\nRT   \"Mechanisms of redundancy and specificity of the Aspergillus fumigatus Crh\nRT   transglycosylases.\";\nRL   Nat. Commun. 10:1669-1669(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 
@@ -831,18 +592,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 132-134",
   "excerpt": "FT   ACT_SITE        109\nFT                   /note=\"Nucleophile\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P27051\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 132-134",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 
@@ -852,18 +613,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 135-137",
   "excerpt": "FT   ACT_SITE        113\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P27051\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 135-137",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 
@@ -873,18 +634,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 138-141",
   "excerpt": "FT   BINDING         113\nFT                   /ligand=\"chitin\"\nFT                   /ligand_id=\"ChEBI:CHEBI:17029\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8J0P4\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 138-141",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 
@@ -894,18 +655,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 142-145",
   "excerpt": "FT   BINDING         193\nFT                   /ligand=\"chitin\"\nFT                   /ligand_id=\"ChEBI:CHEBI:17029\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8J0P4\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 142-145",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 
@@ -915,18 +676,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 146-149",
   "excerpt": "FT   BINDING         197\nFT                   /ligand=\"chitin\"\nFT                   /ligand_id=\"ChEBI:CHEBI:17029\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8J0P4\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 146-149",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 
@@ -936,18 +697,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 107,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107",
-  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
-  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
-  "source_locator": "lines 150-153",
   "excerpt": "FT   BINDING         208\nFT                   /ligand=\"chitin\"\nFT                   /ligand_id=\"ChEBI:CHEBI:17029\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8J0P4\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 107,
+  "retrieved_utc": "2026-11-01T06:28:34.790448+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 150-153",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77033a3b4dcbfe2a0b079eb850f5fe45877250853ab15f376544c19a4d49ea3b",
+  "url": "https://rest.uniprot.org/unisave/Q4WD22?format=txt&versions=107"
 }
 ```
 

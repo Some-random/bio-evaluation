@@ -1,18 +1,16 @@
-# cofactor_0023: before and after transfer clarification
+# cofactor_0023
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0023.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0023.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — pyridoxal 5&#x27;-phosphate
+**Expected answer:** **A** — pyridoxal 5&#x27;-phosphate
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for L-methionine gamma-lyase, whose cofactor annotation identifies pyridoxal 5'-phosphate with experimental evidence codes linked to two publications. This supports choice A for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H5](#evidence-h5), [C6](#evidence-c6), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> PLP is a plausible cofactor for an enzyme catalyzing amino-acid transformations, but the sequence alone does not provide an unambiguous, independently interpretable cue that establishes this particular protein's cofactor over the choices.
-
-
-**Missing item-specific fact**
-
-> The protein's identity as L-methionine gamma-lyase and its experimentally supported PLP requirement are not given in the input.
-
-
-**Reason**
-
-> Distinguishing the keyed answer requires identifying this particular protein or knowing its cofactor annotation. The reviewer-only database and literature evidence supports the key but was not supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports PLP; although “heme b” is a specific form of heme, neither heme option is supported for this sequence.
-
-
-### Important caveats
-
-- The sequence match and cofactor annotation are reviewer-only evidence, not input available to the evaluated model.
-- The cited UniProt annotation carries experimental evidence codes, but the primary papers were not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "PLP is a plausible cofactor for an enzyme catalyzing amino-acid transformations, but the sequence alone does not provide an unambiguous, independently interpretable cue that establishes this particular protein's cofactor over the choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity as L-methionine gamma-lyase and its experimentally supported PLP requirement are not given in the input.",
-    "reason": "Distinguishing the keyed answer requires identifying this particular protein or knowing its cofactor annotation. The reviewer-only database and literature evidence supports the key but was not supplied to the evaluated model."
-  },
-  "case_id": "cofactor_0023",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H5",
-      "C6",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for L-methionine gamma-lyase, whose cofactor annotation identifies pyridoxal 5'-phosphate with experimental evidence codes linked to two publications. This supports choice A for this protein."
-  },
-  "important_caveats": [
-    "The sequence match and cofactor annotation are reviewer-only evidence, not input available to the evaluated model.",
-    "The cited UniProt annotation carries experimental evidence codes, but the primary papers were not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports PLP; although “heme b” is a specific form of heme, neither heme option is supported for this sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0023",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for L-methionine gamma-lyase, whose cofactor annotation identifies pyridoxal 5'-phosphate with experimental evidence codes linked to two publications. This supports choice A for this protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H5", "C6", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "PLP is a plausible cofactor for an enzyme catalyzing amino-acid transformations, but the sequence alone does not provide an unambiguous, independently interpretable cue that establishes this particular protein's cofactor over the choices.",
-    "missing_item_specific_fact": "The protein's identity as L-methionine gamma-lyase and its experimentally supported PLP requirement are not given in the input.",
-    "reason": "Distinguishing the keyed answer requires identifying this particular protein or knowing its cofactor annotation. The reviewer-only database and literature evidence supports the key but was not supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports PLP; although “heme b” is a specific form of heme, neither heme option is supported for this sequence."
-  },
-  "important_caveats": [
-    "The sequence match and cofactor annotation are reviewer-only evidence, not input available to the evaluated model.",
-    "The cited UniProt annotation carries experimental evidence codes, but the primary papers were not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A2H1K3G9 (sequence SHA256 matched exactly) identifies this protein as L-methionine gamma-lyase (EC 4.4.1.11) from Brevibacterium aurantiacum. The COFACTOR annotation explicitly states pyridoxal 5'-phosphate (ChEBI:CHEBI:597326), supported by experimental evidence (ECO:0000269, inferred from direct assay) from two independent publications (PMID 9726878, 2018 and PMID 30940696, 2019). This is consistent with the universal requirement of PLP for all EC 4.4.1.x gamma-lyase family members.
-
-Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5), [C4](#evidence-c4), [C6](#evidence-c6), [C7](#evidence-c7).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence lacks any heme-binding motifs (no CxxCH for cytochrome c, no bis-His peroxidase coordination, no conserved heme-pocket histidines), eliminating options C and D. It also lacks features of sodium-dependent enzymes (option B). The protein length (~406 aa), the presence of the 'HYPGLKG' motif near the C-terminus (characteristic of the conserved PLP-binding lysine region in fold-type II PLP enzymes), and the overall amino-acid composition are consistent with a PLP-dependent enzyme. Furthermore, all members of the EC 4.4.1.x gamma-lyase family are universally PLP-dependent — a well-established principle in enzymology. By elimination of heme/Na+ and recognition of PLP-enzyme sequence signatures, a knowledgeable model can reason to PLP.
-
-
-**Missing item-specific fact**
-
-Empty string, as saved.
-
-
-**Reason**
-
-> General biochemical knowledge (all gamma-lyases require PLP; heme proteins have distinctive binding motifs absent here; Na+ is not a lyase cofactor) combined with sequence-level pattern recognition (HPG/K motif, absence of heme motifs) provides meaningful grounds to select PLP over the distractors without needing to look up this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options C (heme b) and D (heme) are near-duplicates and both clearly incorrect for a lyase, but they do not create genuine ambiguity with the correct answer. Na+ is an implausible cofactor for any lyase. Only PLP is consistent with the enzyme class and sequence features.
-
-
-### Important caveats
-
-- The reviewer-only UniProt evidence confirms the key with experimental (ECO:0000269) support, but this annotation was not available to the evaluated model.
-- The identification of the HYPGLKG motif as a PLP-binding signature is suggestive but not absolutely diagnostic from sequence alone; however, the elimination of heme and Na+ distractors is robust.
-- The sequence matched exactly (SHA256) to the UniProt entry, so the annotation applies directly to the supplied sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks any heme-binding motifs (no CxxCH for cytochrome c, no bis-His peroxidase coordination, no conserved heme-pocket histidines), eliminating options C and D. It also lacks features of sodium-dependent enzymes (option B). The protein length (~406 aa), the presence of the 'HYPGLKG' motif near the C-terminus (characteristic of the conserved PLP-binding lysine region in fold-type II PLP enzymes), and the overall amino-acid composition are consistent with a PLP-dependent enzyme. Furthermore, all members of the EC 4.4.1.x gamma-lyase family are universally PLP-dependent — a well-established principle in enzymology. By elimination of heme/Na+ and recognition of PLP-enzyme sequence signatures, a knowledgeable model can reason to PLP.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "",
-    "reason": "General biochemical knowledge (all gamma-lyases require PLP; heme proteins have distinctive binding motifs absent here; Na+ is not a lyase cofactor) combined with sequence-level pattern recognition (HPG/K motif, absence of heme motifs) provides meaningful grounds to select PLP over the distractors without needing to look up this specific protein's database entry."
-  },
-  "case_id": "cofactor_0023",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H5",
-      "C4",
-      "C6",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2H1K3G9 (sequence SHA256 matched exactly) identifies this protein as L-methionine gamma-lyase (EC 4.4.1.11) from Brevibacterium aurantiacum. The COFACTOR annotation explicitly states pyridoxal 5'-phosphate (ChEBI:CHEBI:597326), supported by experimental evidence (ECO:0000269, inferred from direct assay) from two independent publications (PMID 9726878, 2018 and PMID 30940696, 2019). This is consistent with the universal requirement of PLP for all EC 4.4.1.x gamma-lyase family members."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt evidence confirms the key with experimental (ECO:0000269) support, but this annotation was not available to the evaluated model.",
-    "The identification of the HYPGLKG motif as a PLP-binding signature is suggestive but not absolutely diagnostic from sequence alone; however, the elimination of heme and Na+ distractors is robust.",
-    "The sequence matched exactly (SHA256) to the UniProt entry, so the annotation applies directly to the supplied sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (heme b) and D (heme) are near-duplicates and both clearly incorrect for a lyase, but they do not create genuine ambiguity with the correct answer. Na+ is an implausible cofactor for any lyase. Only PLP is consistent with the enzyme class and sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0023",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2H1K3G9 (sequence SHA256 matched exactly) identifies this protein as L-methionine gamma-lyase (EC 4.4.1.11) from Brevibacterium aurantiacum. The COFACTOR annotation explicitly states pyridoxal 5'-phosphate (ChEBI:CHEBI:597326), supported by experimental evidence (ECO:0000269, inferred from direct assay) from two independent publications (PMID 9726878, 2018 and PMID 30940696, 2019). This is consistent with the universal requirement of PLP for all EC 4.4.1.x gamma-lyase family members.",
-    "evidence_ids": ["C5", "H5", "C4", "C6", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence lacks any heme-binding motifs (no CxxCH for cytochrome c, no bis-His peroxidase coordination, no conserved heme-pocket histidines), eliminating options C and D. It also lacks features of sodium-dependent enzymes (option B). The protein length (~406 aa), the presence of the 'HYPGLKG' motif near the C-terminus (characteristic of the conserved PLP-binding lysine region in fold-type II PLP enzymes), and the overall amino-acid composition are consistent with a PLP-dependent enzyme. Furthermore, all members of the EC 4.4.1.x gamma-lyase family are universally PLP-dependent — a well-established principle in enzymology. By elimination of heme/Na+ and recognition of PLP-enzyme sequence signatures, a knowledgeable model can reason to PLP.",
-    "missing_item_specific_fact": "",
-    "reason": "General biochemical knowledge (all gamma-lyases require PLP; heme proteins have distinctive binding motifs absent here; Na+ is not a lyase cofactor) combined with sequence-level pattern recognition (HPG/K motif, absence of heme motifs) provides meaningful grounds to select PLP over the distractors without needing to look up this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (heme b) and D (heme) are near-duplicates and both clearly incorrect for a lyase, but they do not create genuine ambiguity with the correct answer. Na+ is an implausible cofactor for any lyase. Only PLP is consistent with the enzyme class and sequence features."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt evidence confirms the key with experimental (ECO:0000269) support, but this annotation was not available to the evaluated model.",
-    "The identification of the HYPGLKG motif as a PLP-binding signature is suggestive but not absolutely diagnostic from sequence alone; however, the elimination of heme and Na+ distractors is robust.",
-    "The sequence matched exactly (SHA256) to the UniProt entry, so the annotation applies directly to the supplied sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2H1K3G9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 406,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-04-09",
@@ -528,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-01-31",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "current_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 406,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 32,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2H1K3G9",
   "selected_historical_entry_version": 32,
+  "selected_historical_record_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "selected_historical_source_sequence_length": 406,
+  "selected_historical_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
   "selected_historical_version": {
     "accession": "A0A2H1K3G9",
     "database": "Swiss-Prot",
@@ -546,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MEGL_BREAU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "selected_historical_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
-  "selected_historical_source_sequence_length": 406,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 32,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2H1K3G9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -596,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-01-31\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -615,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Micrococcales\",\"Brevibacteriaceae\",\"Brevibacterium\"],\"scientificName\":\"Brevibacterium aurantiacum\",\"taxonId\":273384}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -634,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"value\":\"4.4.1.2\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"value\":\"Homocysteine desulfhydrase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"value\":\"MGL-BL929\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"4.4.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"L-methionine gamma-lyase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"MGL\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -653,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:597326\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"name\":\"pyridoxal 5'-phosphate\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -672,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Dias B.\",\"Weimer B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"9726878\"},{\"database\":\"DOI\",\"id\":\"10.1128/aem.64.9.3327-3331.1998\"}],\"citationType\":\"journal article\",\"firstPage\":\"3327\",\"id\":\"9726878\",\"journal\":\"Appl. Environ. Microbiol.\",\"lastPage\":\"3331\",\"publicationDate\":\"1998\",\"title\":\"Purification and characterization of L-methionine gamma-lyase from brevibacterium linens BL2.\",\"volume\":\"64\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"BL2\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBSTRATE SPECIFICITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"ACTIVITY REGULATION\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -691,15 +451,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Machover D.\",\"Rossi L.\",\"Hamelin J.\",\"Desterke C.\",\"Goldschmidt E.\",\"Chadefaux-Vekemans B.\",\"Bonnarme P.\",\"Briozzo P.\",\"Kopecny D.\",\"Pierige F.\",\"Magnani M.\",\"Mollicone R.\",\"Haghighi-Rad F.\",\"Gaston-Mathe Y.\",\"Dairou J.\",\"Boucheix C.\",\"Saffroy R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30940696\"},{\"database\":\"DOI\",\"id\":\"10.1124/jpet.119.256537\"}],\"citationType\":\"journal article\",\"firstPage\":\"489\",\"id\":\"30940696\",\"journal\":\"J. Pharmacol. Exp. Ther.\",\"lastPage\":\"502\",\"publicationDate\":\"2019\",\"title\":\"Effects in Cancer Cells of the Recombinant L-Methionine Gamma-Lyase from Brevibacterium aurantiacum. Encapsulation in Human Erythrocytes for Sustained L-Methionine Elimination.\",\"volume\":\"369\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 9175 / DSM 20426 / JCM 2590 / NBRC 12171 / NCDO 739 / NCIMB 8546 / KC\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBSTRATE SPECIFICITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -709,18 +469,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   MEGL_BREAU              Reviewed;         406 AA.\nAC   A0A2H1K3G9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   31-JAN-2018, sequence version 1.\nDT   28-JAN-2026, entry version 32.\nDE   RecName: Full=L-methionine gamma-lyase {ECO:0000303|PubMed:30940696, ECO:0000303|PubMed:9726878};\nDE            Short=MGL {ECO:0000303|PubMed:30940696, ECO:0000303|PubMed:9726878};\nDE            EC=4.4.1.11 {ECO:0000269|PubMed:30940696, ECO:0000269|PubMed:9726878};\nDE   AltName: Full=Homocysteine desulfhydrase {ECO:0000303|PubMed:30940696};\nDE            EC=4.4.1.2 {ECO:0000269|PubMed:30940696};\nDE   AltName: Full=MGL-BL929 {ECO:0000303|PubMed:30940696};\nGN   ORFNames=BAUR9175_03070 {ECO:0000312|EMBL:SMX94104.1},\nGN   BAUR920_03040 {ECO:0000312|EMBL:SMX97377.1},\nGN   BAURA63_02933 {ECO:0000312|EMBL:SMX94451.1},\nGN   BAURA86_00394 {ECO:0000312|EMBL:SMX72154.1};\nOS   Brevibacterium aurantiacum.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Micrococcales;\nOC   Brevibacteriaceae; Brevibacterium.\nOX   NCBI_TaxID=273384;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 
@@ -730,18 +490,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 6-11",
   "excerpt": "DE   RecName: Full=L-methionine gamma-lyase {ECO:0000303|PubMed:30940696, ECO:0000303|PubMed:9726878};\nDE            Short=MGL {ECO:0000303|PubMed:30940696, ECO:0000303|PubMed:9726878};\nDE            EC=4.4.1.11 {ECO:0000269|PubMed:30940696, ECO:0000269|PubMed:9726878};\nDE   AltName: Full=Homocysteine desulfhydrase {ECO:0000303|PubMed:30940696};\nDE            EC=4.4.1.2 {ECO:0000269|PubMed:30940696};\nDE   AltName: Full=MGL-BL929 {ECO:0000303|PubMed:30940696};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-11",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 
@@ -751,18 +511,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, SUBSTRATE SPECIFICITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, ACTIVITY REGULATION, AND SUBUNIT.\nRC   STRAIN=BL2;\nRX   PubMed=9726878; DOI=10.1128/aem.64.9.3327-3331.1998;\nRA   Dias B., Weimer B.;\nRT   \"Purification and characterization of L-methionine gamma-lyase from\nRT   brevibacterium linens BL2.\";\nRL   Appl. Environ. Microbiol. 64:3327-3331(1998).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 
@@ -772,18 +532,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 36-49",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, SUBSTRATE SPECIFICITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBUNIT, AND BIOTECHNOLOGY.\nRC   STRAIN=ATCC 9175 / DSM 20426 / JCM 2590 / NBRC 12171 / NCDO 739 / NCIMB\nRC   8546 / KC;\nRX   PubMed=30940696; DOI=10.1124/jpet.119.256537;\nRA   Machover D., Rossi L., Hamelin J., Desterke C., Goldschmidt E.,\nRA   Chadefaux-Vekemans B., Bonnarme P., Briozzo P., Kopecny D., Pierige F.,\nRA   Magnani M., Mollicone R., Haghighi-Rad F., Gaston-Mathe Y., Dairou J.,\nRA   Boucheix C., Saffroy R.;\nRT   \"Effects in Cancer Cells of the Recombinant L-Methionine Gamma-Lyase from\nRT   Brevibacterium aurantiacum. Encapsulation in Human Erythrocytes for\nRT   Sustained L-Methionine Elimination.\";\nRL   J. Pharmacol. Exp. Ther. 369:489-502(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 
@@ -793,18 +553,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 75-77",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=pyridoxal 5'-phosphate; Xref=ChEBI:CHEBI:597326;\nCC         Evidence={ECO:0000269|PubMed:30940696, ECO:0000269|PubMed:9726878};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 75-77",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 

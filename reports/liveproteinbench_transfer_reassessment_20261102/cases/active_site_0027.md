@@ -1,18 +1,16 @@
-# active_site_0027: before and after transfer clarification
+# active_site_0027
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0027.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0027.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 153 (Proton acceptor)
+**Expected answer:** **B** — Position 153 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-match UniProt record annotates position 153 as a proton acceptor, supporting choice B. This is a similarity-based annotation, not direct experimental confirmation in the supplied evidence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence length rules out position 405, and the enzyme annotation identifies a reductase rather than a beta-ketoacyl synthase. But the sequence and choices do not establish whether position 31 is a proton donor or position 153 is a proton acceptor.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic-site mapping that identifies residue 153 as the proton acceptor; the reviewer evidence traces this to a similarity-based UniProt annotation.
-
-
-**Reason**
-
-> Choosing B over A requires the specific site annotation or equivalent protein-specific functional evidence, which is not supplied in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence supports B; it does not establish another listed choice as a catalytic-site annotation for this sequence.
-
-
-### Important caveats
-
-- The active-site evidence is annotated by similarity (ECO:0000250), not shown here to be an experimental determination for this protein.
-- The matched UniProt sequence identifies the protein as NADPH-dependent 3-dehydrocapnine reductase; the source snapshot used by the question author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence length rules out position 405, and the enzyme annotation identifies a reductase rather than a beta-ketoacyl synthase. But the sequence and choices do not establish whether position 31 is a proton donor or position 153 is a proton acceptor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic-site mapping that identifies residue 153 as the proton acceptor; the reviewer evidence traces this to a similarity-based UniProt annotation.",
-    "reason": "Choosing B over A requires the specific site annotation or equivalent protein-specific functional evidence, which is not supplied in the question."
-  },
-  "case_id": "active_site_0027",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-match UniProt record annotates position 153 as a proton acceptor, supporting choice B. This is a similarity-based annotation, not direct experimental confirmation in the supplied evidence."
-  },
-  "important_caveats": [
-    "The active-site evidence is annotated by similarity (ECO:0000250), not shown here to be an experimental determination for this protein.",
-    "The matched UniProt sequence identifies the protein as NADPH-dependent 3-dehydrocapnine reductase; the source snapshot used by the question author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports B; it does not establish another listed choice as a catalytic-site annotation for this sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0027",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-match UniProt record annotates position 153 as a proton acceptor, supporting choice B. This is a similarity-based annotation, not direct experimental confirmation in the supplied evidence.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence length rules out position 405, and the enzyme annotation identifies a reductase rather than a beta-ketoacyl synthase. But the sequence and choices do not establish whether position 31 is a proton donor or position 153 is a proton acceptor.",
-    "missing_item_specific_fact": "The protein-specific catalytic-site mapping that identifies residue 153 as the proton acceptor; the reviewer evidence traces this to a similarity-based UniProt annotation.",
-    "reason": "Choosing B over A requires the specific site annotation or equivalent protein-specific functional evidence, which is not supplied in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports B; it does not establish another listed choice as a catalytic-site annotation for this sequence."
-  },
-  "important_caveats": [
-    "The active-site evidence is annotated by similarity (ECO:0000250), not shown here to be an experimental determination for this protein.",
-    "The matched UniProt sequence identifies the protein as NADPH-dependent 3-dehydrocapnine reductase; the source snapshot used by the question author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A3R5XUE6 (CAPC_ORNRH, NADPH-dependent 3-dehydrocapnine reductase, 283 aa) explicitly annotates position 153 as 'Proton acceptor' (Active site). The evidence code is ECO:0000250 (similarity to Q9BPW9), so this is a computational inference by homology rather than direct experimental measurement. However, the annotation is mechanistically consistent: the sequence contains the SDR-family Rossmann-fold motif TGxxxGxG (VSSGIGK at ~positions 7-13) and the catalytic tetrad pattern Tyr-X-X-X-Lys (Y153-S154-S155-S156-K157), which is the well-established SDR catalytic arrangement where the tyrosine serves as proton acceptor/donor. The sequence matches the benchmark input exactly (SHA-256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains two hallmarks of the short-chain dehydrogenase/reductase (SDR) superfamily: (1) the N-terminal Rossmann-fold NAD(P)H-binding motif TGxxxGxG (visible as VSSGIGK at positions ~7-13), and (2) the canonical SDR catalytic tetrad Ser-Tyr-Lys-Asn with the diagnostic Tyr-X-X-X-Lys spacing (Y153-S154-S155-S156-K157). In SDR enzymes, the catalytic tyrosine acts as the proton acceptor during substrate oxidation and the lysine as the proton donor. A model familiar with SDR biochemistry can locate Y153 by scanning the C-terminal region for the Y-X-X-X-K pattern following the Rossmann motif. Additionally, the distractors are eliminable by general knowledge: option C cites position 405 in a 283-residue protein (impossible); option D invokes 'beta-ketoacyl synthase activity,' an entirely different enzyme class (FAS II condensing enzymes use an active-site Cys, not a Tyr); option A assigns 'proton donor' to Ser31, which contradicts the SDR mechanism where the proton donor is the catalytic Lys, not an N-terminal Ser.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The SDR catalytic tetrad geometry and the Tyr-as-proton-acceptor role are general enzymology. The exact residue number 153 is derivable from the sequence by locating the Y-X-X-X-K motif after the Rossmann fold. However, a model without SDR-family knowledge would struggle to distinguish B from A on residue-role grounds alone.
-
-
-**Reason**
-
-> The answer can be reached through general SDR biochemistry: recognizing the TGxxxGxG motif, identifying the Y-X-X-X-K catalytic tetrad, and applying the well-known SDR mechanism (Tyr = proton acceptor, Lys = proton donor). The three distractors are eliminated by elementary checks (position out of range, wrong enzyme class, wrong residue-role assignment). This constitutes a concrete biological argument from the supplied sequence and choices, not a protein-specific lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option C is physically impossible (position 405 exceeds the 283-residue length). Option D names a completely unrelated enzyme class (beta-ketoacyl synthase). Option A misassigns both the residue identity (Ser at 31) and the mechanistic role (proton donor belongs to Lys in SDR enzymes). Only option B is consistent with the SDR catalytic mechanism and the sequence features. No ambiguity among the options.
-
-
-### Important caveats
-
-- The UniProt active-site annotation at position 153 carries evidence code ECO:0000250 (similarity to Q9BPW9), meaning it is a computational inference by homology, not a direct experimental determination on this specific protein. The SDR catalytic mechanism is, however, experimentally established in many family members.
-- The protein is annotated as EC 1.1.1.- (non-specific NADPH-dependent dehydrogenase/reductase); the exact substrate (3-dehydrocapnine) was characterized in PubMed:35414181, but the active-site residue assignment relies on family-level inference.
-- The UniProt accession and annotation were reviewer-only; the evaluated model saw only the raw 283-aa sequence and the four options.
-- Position numbering follows the canonical UniProt entry (sequence version 1, 283 aa), matching the benchmark input exactly.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains two hallmarks of the short-chain dehydrogenase/reductase (SDR) superfamily: (1) the N-terminal Rossmann-fold NAD(P)H-binding motif TGxxxGxG (visible as VSSGIGK at positions ~7-13), and (2) the canonical SDR catalytic tetrad Ser-Tyr-Lys-Asn with the diagnostic Tyr-X-X-X-Lys spacing (Y153-S154-S155-S156-K157). In SDR enzymes, the catalytic tyrosine acts as the proton acceptor during substrate oxidation and the lysine as the proton donor. A model familiar with SDR biochemistry can locate Y153 by scanning the C-terminal region for the Y-X-X-X-K pattern following the Rossmann motif. Additionally, the distractors are eliminable by general knowledge: option C cites position 405 in a 283-residue protein (impossible); option D invokes 'beta-ketoacyl synthase activity,' an entirely different enzyme class (FAS II condensing enzymes use an active-site Cys, not a Tyr); option A assigns 'proton donor' to Ser31, which contradicts the SDR mechanism where the proton donor is the catalytic Lys, not an N-terminal Ser.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The SDR catalytic tetrad geometry and the Tyr-as-proton-acceptor role are general enzymology. The exact residue number 153 is derivable from the sequence by locating the Y-X-X-X-K motif after the Rossmann fold. However, a model without SDR-family knowledge would struggle to distinguish B from A on residue-role grounds alone.",
-    "reason": "The answer can be reached through general SDR biochemistry: recognizing the TGxxxGxG motif, identifying the Y-X-X-X-K catalytic tetrad, and applying the well-known SDR mechanism (Tyr = proton acceptor, Lys = proton donor). The three distractors are eliminated by elementary checks (position out of range, wrong enzyme class, wrong residue-role assignment). This constitutes a concrete biological argument from the supplied sequence and choices, not a protein-specific lookup."
-  },
-  "case_id": "active_site_0027",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A3R5XUE6 (CAPC_ORNRH, NADPH-dependent 3-dehydrocapnine reductase, 283 aa) explicitly annotates position 153 as 'Proton acceptor' (Active site). The evidence code is ECO:0000250 (similarity to Q9BPW9), so this is a computational inference by homology rather than direct experimental measurement. However, the annotation is mechanistically consistent: the sequence contains the SDR-family Rossmann-fold motif TGxxxGxG (VSSGIGK at ~positions 7-13) and the catalytic tetrad pattern Tyr-X-X-X-Lys (Y153-S154-S155-S156-K157), which is the well-established SDR catalytic arrangement where the tyrosine serves as proton acceptor/donor. The sequence matches the benchmark input exactly (SHA-256 confirmed)."
-  },
-  "important_caveats": [
-    "The UniProt active-site annotation at position 153 carries evidence code ECO:0000250 (similarity to Q9BPW9), meaning it is a computational inference by homology, not a direct experimental determination on this specific protein. The SDR catalytic mechanism is, however, experimentally established in many family members.",
-    "The protein is annotated as EC 1.1.1.- (non-specific NADPH-dependent dehydrogenase/reductase); the exact substrate (3-dehydrocapnine) was characterized in PubMed:35414181, but the active-site residue assignment relies on family-level inference.",
-    "The UniProt accession and annotation were reviewer-only; the evaluated model saw only the raw 283-aa sequence and the four options.",
-    "Position numbering follows the canonical UniProt entry (sequence version 1, 283 aa), matching the benchmark input exactly."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option C is physically impossible (position 405 exceeds the 283-residue length). Option D names a completely unrelated enzyme class (beta-ketoacyl synthase). Option A misassigns both the residue identity (Ser at 31) and the mechanistic role (proton donor belongs to Lys in SDR enzymes). Only option B is consistent with the SDR catalytic mechanism and the sequence features. No ambiguity among the options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0027",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A3R5XUE6 (CAPC_ORNRH, NADPH-dependent 3-dehydrocapnine reductase, 283 aa) explicitly annotates position 153 as 'Proton acceptor' (Active site). The evidence code is ECO:0000250 (similarity to Q9BPW9), so this is a computational inference by homology rather than direct experimental measurement. However, the annotation is mechanistically consistent: the sequence contains the SDR-family Rossmann-fold motif TGxxxGxG (VSSGIGK at ~positions 7-13) and the catalytic tetrad pattern Tyr-X-X-X-Lys (Y153-S154-S155-S156-K157), which is the well-established SDR catalytic arrangement where the tyrosine serves as proton acceptor/donor. The sequence matches the benchmark input exactly (SHA-256 confirmed).",
-    "evidence_ids": ["C5", "H3", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains two hallmarks of the short-chain dehydrogenase/reductase (SDR) superfamily: (1) the N-terminal Rossmann-fold NAD(P)H-binding motif TGxxxGxG (visible as VSSGIGK at positions ~7-13), and (2) the canonical SDR catalytic tetrad Ser-Tyr-Lys-Asn with the diagnostic Tyr-X-X-X-Lys spacing (Y153-S154-S155-S156-K157). In SDR enzymes, the catalytic tyrosine acts as the proton acceptor during substrate oxidation and the lysine as the proton donor. A model familiar with SDR biochemistry can locate Y153 by scanning the C-terminal region for the Y-X-X-X-K pattern following the Rossmann motif. Additionally, the distractors are eliminable by general knowledge: option C cites position 405 in a 283-residue protein (impossible); option D invokes 'beta-ketoacyl synthase activity,' an entirely different enzyme class (FAS II condensing enzymes use an active-site Cys, not a Tyr); option A assigns 'proton donor' to Ser31, which contradicts the SDR mechanism where the proton donor is the catalytic Lys, not an N-terminal Ser.",
-    "missing_item_specific_fact": "None strictly required. The SDR catalytic tetrad geometry and the Tyr-as-proton-acceptor role are general enzymology. The exact residue number 153 is derivable from the sequence by locating the Y-X-X-X-K motif after the Rossmann fold. However, a model without SDR-family knowledge would struggle to distinguish B from A on residue-role grounds alone.",
-    "reason": "The answer can be reached through general SDR biochemistry: recognizing the TGxxxGxG motif, identifying the Y-X-X-X-K catalytic tetrad, and applying the well-known SDR mechanism (Tyr = proton acceptor, Lys = proton donor). The three distractors are eliminated by elementary checks (position out of range, wrong enzyme class, wrong residue-role assignment). This constitutes a concrete biological argument from the supplied sequence and choices, not a protein-specific lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option C is physically impossible (position 405 exceeds the 283-residue length). Option D names a completely unrelated enzyme class (beta-ketoacyl synthase). Option A misassigns both the residue identity (Ser at 31) and the mechanistic role (proton donor belongs to Lys in SDR enzymes). Only option B is consistent with the SDR catalytic mechanism and the sequence features. No ambiguity among the options."
-  },
-  "important_caveats": [
-    "The UniProt active-site annotation at position 153 carries evidence code ECO:0000250 (similarity to Q9BPW9), meaning it is a computational inference by homology, not a direct experimental determination on this specific protein. The SDR catalytic mechanism is, however, experimentally established in many family members.",
-    "The protein is annotated as EC 1.1.1.- (non-specific NADPH-dependent dehydrogenase/reductase); the exact substrate (3-dehydrocapnine) was characterized in PubMed:35414181, but the active-site residue assignment relies on family-level inference.",
-    "The UniProt accession and annotation were reviewer-only; the evaluated model saw only the raw 283-aa sequence and the four options.",
-    "Position numbering follows the canonical UniProt entry (sequence version 1, 283 aa), matching the benchmark input exactly."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A3R5XUE6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 283,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
   "current_entry_audit": {
     "entryVersion": 18,
     "firstPublicDate": "2025-04-09",
@@ -534,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-04-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "current_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 283,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 16,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A3R5XUE6",
   "selected_historical_entry_version": 16,
+  "selected_historical_record_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "selected_historical_source_sequence_length": 283,
+  "selected_historical_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
   "selected_historical_version": {
     "accession": "A0A3R5XUE6",
     "database": "Swiss-Prot",
@@ -552,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CAPC_ORNRH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "selected_historical_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
-  "selected_historical_source_sequence_length": 283,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 16,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A3R5XUE6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -602,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":18,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-04-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -621,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Bacteroidota\",\"Flavobacteriia\",\"Flavobacteriales\",\"Weeksellaceae\",\"Ornithobacterium\"],\"scientificName\":\"Ornithobacterium rhinotracheale\",\"taxonId\":28251}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -640,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"NADPH-dependent 3-dehydrocapnine reductase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -659,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPW9\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":153},\"start\":{\"modifier\":\"EXACT\",\"value\":153}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -678,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu Y.\",\"Wei Y.\",\"Teh T.M.\",\"Liu D.\",\"Zhou Y.\",\"Zhao S.\",\"Ang E.L.\",\"Zhao H.\",\"Zhang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35414181\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.2c00102\"}],\"citationType\":\"journal article\",\"firstPage\":\"2861\",\"id\":\"35414181\",\"journal\":\"Biochemistry\",\"lastPage\":\"2869\",\"publicationDate\":\"2022\",\"title\":\"Identification and Characterization of the Biosynthetic Pathway of the Sulfonolipid Capnine.\",\"volume\":\"61\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -696,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16",
-  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   CAPC_ORNRH              Reviewed;         283 AA.\nAC   A0A3R5XUE6;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-APR-2019, sequence version 1.\nDT   28-JAN-2026, entry version 16.\nDE   RecName: Full=NADPH-dependent 3-dehydrocapnine reductase {ECO:0000303|PubMed:35414181};\nDE            EC=1.1.1.- {ECO:0000269|PubMed:35414181};\nGN   Name=capC {ECO:0000303|PubMed:35414181};\nGN   ORFNames=EQP59_04780 {ECO:0000312|EMBL:QAR30703.1};\nOS   Ornithobacterium rhinotracheale.\nOC   Bacteria; Pseudomonadati; Bacteroidota; Flavobacteriia; Flavobacteriales;\nOC   Weeksellaceae; Ornithobacterium.\nOX   NCBI_TaxID=28251;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16"
 }
 ```
 
@@ -717,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16",
-  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
-  "source_locator": "lines 21-28",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND CATALYTIC ACTIVITY.\nRX   PubMed=35414181; DOI=10.1021/acs.biochem.2c00102;\nRA   Liu Y., Wei Y., Teh T.M., Liu D., Zhou Y., Zhao S., Ang E.L., Zhao H.,\nRA   Zhang Y.;\nRT   \"Identification and Characterization of the Biosynthetic Pathway of the\nRT   Sulfonolipid Capnine.\";\nRL   Biochemistry 61:2861-2869(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-28",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16"
 }
 ```
 
@@ -738,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16",
-  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
-  "source_locator": "lines 72-74",
   "excerpt": "FT   ACT_SITE        153\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9BPW9\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 72-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16"
 }
 ```
 

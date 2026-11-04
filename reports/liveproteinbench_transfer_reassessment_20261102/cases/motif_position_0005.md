@@ -1,18 +1,16 @@
-# motif_position_0005: before and after transfer clarification
+# motif_position_0005
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/motif_position_0005.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/motif_position_0005.txt)
 
 **Task:** `motif_position`  
-**Author key, unchanged:** **D** — 300..302
+**Expected answer:** **D** — 300..302
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched UniProt record annotates residues 300–302 as a nuclear localization signal, with experimental evidence cited to a 2012 paper. This supports the keyed position for this sequence, while not independently establishing the underlying experiment.
-
-Citations as saved: [H5](#evidence-h5), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The basic cluster at the keyed position is compatible with a nuclear localization signal, but the prompt never identifies the motif being sought. Sequence composition alone does not establish that these residues are the annotated motif or its exact boundaries.
-
-
-**Missing item-specific fact**
-
-> The motif identity and its annotated or experimentally established coordinates for this protein; reviewer evidence identifies it as an NLS at 300–302.
-
-
-**Reason**
-
-> Choosing the keyed interval depends on knowing the protein-specific motif annotation or evidence, which is absent from the input. The basic-residue pattern makes the interval plausible but does not resolve the unspecified motif.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Because the motif is not named or otherwise specified, the choices do not define what pattern or function should be located. The evidence supports D for the annotated NLS, but the prompt itself does not establish that this is the motif intended.
-
-
-### Important caveats
-
-- The reviewer-only record matches the supplied sequence; its annotation cites experimental evidence, but the primary study was not independently assessed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The basic cluster at the keyed position is compatible with a nuclear localization signal, but the prompt never identifies the motif being sought. Sequence composition alone does not establish that these residues are the annotated motif or its exact boundaries.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The motif identity and its annotated or experimentally established coordinates for this protein; reviewer evidence identifies it as an NLS at 300–302.",
-    "reason": "Choosing the keyed interval depends on knowing the protein-specific motif annotation or evidence, which is absent from the input. The basic-residue pattern makes the interval plausible but does not resolve the unspecified motif."
-  },
-  "case_id": "motif_position_0005",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H5",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The matched UniProt record annotates residues 300–302 as a nuclear localization signal, with experimental evidence cited to a 2012 paper. This supports the keyed position for this sequence, while not independently establishing the underlying experiment."
-  },
-  "important_caveats": [
-    "The reviewer-only record matches the supplied sequence; its annotation cites experimental evidence, but the primary study was not independently assessed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Because the motif is not named or otherwise specified, the choices do not define what pattern or function should be located. The evidence supports D for the annotated NLS, but the prompt itself does not establish that this is the motif intended."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "motif_position_0005",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched UniProt record annotates residues 300–302 as a nuclear localization signal, with experimental evidence cited to a 2012 paper. This supports the keyed position for this sequence, while not independently establishing the underlying experiment.",
-    "evidence_ids": ["H5", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The basic cluster at the keyed position is compatible with a nuclear localization signal, but the prompt never identifies the motif being sought. Sequence composition alone does not establish that these residues are the annotated motif or its exact boundaries.",
-    "missing_item_specific_fact": "The motif identity and its annotated or experimentally established coordinates for this protein; reviewer evidence identifies it as an NLS at 300–302.",
-    "reason": "Choosing the keyed interval depends on knowing the protein-specific motif annotation or evidence, which is absent from the input. The basic-residue pattern makes the interval plausible but does not resolve the unspecified motif."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Because the motif is not named or otherwise specified, the choices do not define what pattern or function should be located. The evidence supports D for the annotated NLS, but the prompt itself does not establish that this is the motif intended."
-  },
-  "important_caveats": [
-    "The reviewer-only record matches the supplied sequence; its annotation cites experimental evidence, but the primary study was not independently assessed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry O96533 (Drosophila Rad9) annotates a Nuclear Localization Signal (NLS) motif at positions 300..302 with experimental evidence (ECO:0000269, PubMed:22666434, Kadir et al. 2012 PLoS ONE). The sequence at positions 300-302 is KRK, a classic basic monopartite NLS. The reference explicitly lists 'NUCLEAR LOCALIZATION SIGNAL' and 'MUTAGENESIS OF … 300-LYS--LYS-302 …' as experimental findings. The sequence match is confirmed (SHA-256 identical). The expected answer D (300..302) aligns with this experimentally supported annotation.
-
-Citations as saved: [C7](#evidence-c7), [H5](#evidence-h5), [C8](#evidence-c8), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Extracting the subsequences at each candidate position reveals: A (66-75) = HSDFYCKISM, B (169-174) = VVAKNY, C (213-215) = EFR, D (300-302) = KRK. Among these, only KRK corresponds to a widely recognized, named protein motif — a basic nuclear localization signal (NLS) of the monopartite type (analogous to the classic SV40 large T-antigen NLS PKKKRKV). A biologist with general knowledge of signal sequences can identify KRK as an NLS from the sequence alone, distinguishing D from the three non-motif subsequences.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The KRK NLS is general biological knowledge. However, confirming that this is the specific annotated motif for this particular protein (rather than, say, a phosphorylation site or other short motif) relies on the UniProt annotation, which is not provided to the model.
-
-
-**Reason**
-
-> The question provides the full sequence and four position ranges. A knowledgeable student can scan each subsequence and recognize that only KRK (at 300-302) matches a well-known motif class (basic NLS). The other three subsequences do not correspond to any recognizable named motif. This constitutes a concrete biological argument from the supplied sequence and choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The question asks for 'a conserved motif' without specifying the motif type. However, among the four choices, only D (KRK) corresponds to a recognizable, named motif (NLS). The other three subsequences (HSDFYCKISM, VVAKNY, EFR) do not match any well-known motif pattern, so the choices are effectively distinguishable.
-
-
-### Important caveats
-
-- The question does not specify which type of motif to identify (NLS, kinase site, SH3-binding, etc.), relying on the student to recognize the motif from the subsequences at the given positions.
-- The term 'conserved motif' is loosely defined; KRK is a common NLS pattern but its evolutionary conservation across Rad9 orthologs is not verifiable from the single sequence provided.
-- The UniProt mutagenesis notation '300-LYS--LYS-302' could be misread as implying KKK, but the actual sequence at 300-302 is KRK (K-R-K); the notation likely denotes the range endpoints being LYS with an intermediate basic residue.
-- The NLS annotation is backed by experimental evidence (ECO:0000269, direct assay from PubMed:22666434), not merely computational prediction.
-- The reviewer-only UniProt accession and annotation were absent from the evaluated model input; the model must rely on sequence-level pattern recognition.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Extracting the subsequences at each candidate position reveals: A (66-75) = HSDFYCKISM, B (169-174) = VVAKNY, C (213-215) = EFR, D (300-302) = KRK. Among these, only KRK corresponds to a widely recognized, named protein motif — a basic nuclear localization signal (NLS) of the monopartite type (analogous to the classic SV40 large T-antigen NLS PKKKRKV). A biologist with general knowledge of signal sequences can identify KRK as an NLS from the sequence alone, distinguishing D from the three non-motif subsequences.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The KRK NLS is general biological knowledge. However, confirming that this is the specific annotated motif for this particular protein (rather than, say, a phosphorylation site or other short motif) relies on the UniProt annotation, which is not provided to the model.",
-    "reason": "The question provides the full sequence and four position ranges. A knowledgeable student can scan each subsequence and recognize that only KRK (at 300-302) matches a well-known motif class (basic NLS). The other three subsequences do not correspond to any recognizable named motif. This constitutes a concrete biological argument from the supplied sequence and choices."
-  },
-  "case_id": "motif_position_0005",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "H5",
-      "C8",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry O96533 (Drosophila Rad9) annotates a Nuclear Localization Signal (NLS) motif at positions 300..302 with experimental evidence (ECO:0000269, PubMed:22666434, Kadir et al. 2012 PLoS ONE). The sequence at positions 300-302 is KRK, a classic basic monopartite NLS. The reference explicitly lists 'NUCLEAR LOCALIZATION SIGNAL' and 'MUTAGENESIS OF … 300-LYS--LYS-302 …' as experimental findings. The sequence match is confirmed (SHA-256 identical). The expected answer D (300..302) aligns with this experimentally supported annotation."
-  },
-  "important_caveats": [
-    "The question does not specify which type of motif to identify (NLS, kinase site, SH3-binding, etc.), relying on the student to recognize the motif from the subsequences at the given positions.",
-    "The term 'conserved motif' is loosely defined; KRK is a common NLS pattern but its evolutionary conservation across Rad9 orthologs is not verifiable from the single sequence provided.",
-    "The UniProt mutagenesis notation '300-LYS--LYS-302' could be misread as implying KKK, but the actual sequence at 300-302 is KRK (K-R-K); the notation likely denotes the range endpoints being LYS with an intermediate basic residue.",
-    "The NLS annotation is backed by experimental evidence (ECO:0000269, direct assay from PubMed:22666434), not merely computational prediction.",
-    "The reviewer-only UniProt accession and annotation were absent from the evaluated model input; the model must rely on sequence-level pattern recognition."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The question asks for 'a conserved motif' without specifying the motif type. However, among the four choices, only D (KRK) corresponds to a recognizable, named motif (NLS). The other three subsequences (HSDFYCKISM, VVAKNY, EFR) do not match any well-known motif pattern, so the choices are effectively distinguishable."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "motif_position_0005",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry O96533 (Drosophila Rad9) annotates a Nuclear Localization Signal (NLS) motif at positions 300..302 with experimental evidence (ECO:0000269, PubMed:22666434, Kadir et al. 2012 PLoS ONE). The sequence at positions 300-302 is KRK, a classic basic monopartite NLS. The reference explicitly lists 'NUCLEAR LOCALIZATION SIGNAL' and 'MUTAGENESIS OF … 300-LYS--LYS-302 …' as experimental findings. The sequence match is confirmed (SHA-256 identical). The expected answer D (300..302) aligns with this experimentally supported annotation.",
-    "evidence_ids": ["C7", "H5", "C8", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Extracting the subsequences at each candidate position reveals: A (66-75) = HSDFYCKISM, B (169-174) = VVAKNY, C (213-215) = EFR, D (300-302) = KRK. Among these, only KRK corresponds to a widely recognized, named protein motif — a basic nuclear localization signal (NLS) of the monopartite type (analogous to the classic SV40 large T-antigen NLS PKKKRKV). A biologist with general knowledge of signal sequences can identify KRK as an NLS from the sequence alone, distinguishing D from the three non-motif subsequences.",
-    "missing_item_specific_fact": "None strictly required. The KRK NLS is general biological knowledge. However, confirming that this is the specific annotated motif for this particular protein (rather than, say, a phosphorylation site or other short motif) relies on the UniProt annotation, which is not provided to the model.",
-    "reason": "The question provides the full sequence and four position ranges. A knowledgeable student can scan each subsequence and recognize that only KRK (at 300-302) matches a well-known motif class (basic NLS). The other three subsequences do not correspond to any recognizable named motif. This constitutes a concrete biological argument from the supplied sequence and choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The question asks for 'a conserved motif' without specifying the motif type. However, among the four choices, only D (KRK) corresponds to a recognizable, named motif (NLS). The other three subsequences (HSDFYCKISM, VVAKNY, EFR) do not match any well-known motif pattern, so the choices are effectively distinguishable."
-  },
-  "important_caveats": [
-    "The question does not specify which type of motif to identify (NLS, kinase site, SH3-binding, etc.), relying on the student to recognize the motif from the subsequences at the given positions.",
-    "The term 'conserved motif' is loosely defined; KRK is a common NLS pattern but its evolutionary conservation across Rad9 orthologs is not verifiable from the single sequence provided.",
-    "The UniProt mutagenesis notation '300-LYS--LYS-302' could be misread as implying KKK, but the actual sequence at 300-302 is KRK (K-R-K); the notation likely denotes the range endpoints being LYS with an intermediate basic residue.",
-    "The NLS annotation is backed by experimental evidence (ECO:0000269, direct assay from PubMed:22666434), not merely computational prediction.",
-    "The reviewer-only UniProt accession and annotation were absent from the evaluated model input; the model must rely on sequence-level pattern recognition."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -496,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "O96533",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "049fbc2622dccdc87ef624b34249d33170a7b8c2b478ce2e3efeaa20707cd08e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 456,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "049fbc2622dccdc87ef624b34249d33170a7b8c2b478ce2e3efeaa20707cd08e",
   "current_entry_audit": {
     "entryVersion": 173,
     "firstPublicDate": "2025-06-18",
@@ -527,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "1999-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "current_source_sequence_sha256": "049fbc2622dccdc87ef624b34249d33170a7b8c2b478ce2e3efeaa20707cd08e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 456,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "049fbc2622dccdc87ef624b34249d33170a7b8c2b478ce2e3efeaa20707cd08e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 171,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "O96533",
   "selected_historical_entry_version": 171,
+  "selected_historical_record_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
+  "selected_historical_source_sequence_length": 456,
+  "selected_historical_source_sequence_sha256": "049fbc2622dccdc87ef624b34249d33170a7b8c2b478ce2e3efeaa20707cd08e",
   "selected_historical_version": {
     "accession": "O96533",
     "database": "Swiss-Prot",
@@ -545,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RAD9_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
-  "selected_historical_source_sequence_sha256": "049fbc2622dccdc87ef624b34249d33170a7b8c2b478ce2e3efeaa20707cd08e",
-  "selected_historical_source_sequence_length": 456,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 171,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -576,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"O96533\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -595,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":173,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"1999-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -614,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -633,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cell cycle checkpoint control protein Rad9\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -652,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Disordered\",\"evidences\":[{\"evidenceCode\":\"ECO:0000256\",\"id\":\"MobiDB-lite\",\"source\":\"SAM\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":331},\"start\":{\"modifier\":\"EXACT\",\"value\":287}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -671,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Disordered\",\"evidences\":[{\"evidenceCode\":\"ECO:0000256\",\"id\":\"MobiDB-lite\",\"source\":\"SAM\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":421},\"start\":{\"modifier\":\"EXACT\",\"value\":391}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -690,15 +452,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Nuclear localization signal\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":302},\"start\":{\"modifier\":\"EXACT\",\"value\":300}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -709,15 +471,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O96533.json",
-  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
-  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
-  "json_pointer": "/references/7",
   "excerpt": "{\"citation\":{\"authors\":[\"Kadir R.\",\"Bakhrat A.\",\"Tokarsky R.\",\"Abdu U.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22666434\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0038010\"}],\"citationType\":\"journal article\",\"firstPage\":\"e38010\",\"id\":\"22666434\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e38010\",\"publicationDate\":\"2012\",\"title\":\"Localization of the Drosophila Rad9 protein to the nuclear membrane is regulated by the C-terminal region and is affected in the meiotic checkpoint.\",\"volume\":\"7\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":8,\"referencePositions\":[\"FUNCTION\",\"INTERACTION WITH RAD1 AND HUS1\",\"SUBCELLULAR LOCATION\",\"ALTERNATIVE SPLICING\",\"DEVELOPMENTAL STAGE\",\"NUCLEAR LOCALIZATION SIGNAL\",\"MUTAGENESIS OF 287-LYS--LYS-289; 300-LYS--LYS-302 AND 314-LYS--ARG-316\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/7",
+  "retrieved_utc": "2026-11-02T04:29:20.443840+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb99e71f5e8a793ade93b27d828f52cb97398645ffefb83e64700635ebcbf030",
+  "url": "https://rest.uniprot.org/uniprotkb/O96533.json"
 }
 ```
 
@@ -727,18 +489,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171",
-  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
-  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   RAD9_DROME              Reviewed;         456 AA.\nAC   O96533; A8JNV5;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-1999, sequence version 1.\nDT   28-JAN-2026, entry version 171.\nDE   RecName: Full=Cell cycle checkpoint control protein Rad9 {ECO:0000305};\nGN   Name=Rad9 {ECO:0000312|FlyBase:FBgn0025807};\nGN   ORFNames=CG3945 {ECO:0000312|FlyBase:FBgn0025807};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
+  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171"
 }
 ```
 
@@ -748,18 +510,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171",
-  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
-  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
-  "source_locator": "lines 104-113",
   "excerpt": "RN   [8] {ECO:0000305}\nRP   FUNCTION, INTERACTION WITH RAD1 AND HUS1, SUBCELLULAR LOCATION, ALTERNATIVE\nRP   SPLICING, DEVELOPMENTAL STAGE, NUCLEAR LOCALIZATION SIGNAL, AND MUTAGENESIS\nRP   OF 287-LYS--LYS-289; 300-LYS--LYS-302 AND 314-LYS--ARG-316.\nRX   PubMed=22666434; DOI=10.1371/journal.pone.0038010;\nRA   Kadir R., Bakhrat A., Tokarsky R., Abdu U.;\nRT   \"Localization of the Drosophila Rad9 protein to the nuclear membrane is\nRT   regulated by the C-terminal region and is affected in the meiotic\nRT   checkpoint.\";\nRL   PLoS ONE 7:e38010-e38010(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-113",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
+  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171"
 }
 ```
 
@@ -769,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171",
-  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
-  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
-  "source_locator": "lines 215-217",
   "excerpt": "FT   REGION          287..331\nFT                   /note=\"Disordered\"\nFT                   /evidence=\"ECO:0000256|SAM:MobiDB-lite\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 215-217",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
+  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171"
 }
 ```
 
@@ -790,18 +552,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171",
-  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
-  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
-  "source_locator": "lines 218-220",
   "excerpt": "FT   REGION          391..421\nFT                   /note=\"Disordered\"\nFT                   /evidence=\"ECO:0000256|SAM:MobiDB-lite\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 218-220",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
+  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171"
 }
 ```
 
@@ -811,18 +573,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171",
-  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
-  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
-  "source_locator": "lines 221-223",
   "excerpt": "FT   MOTIF           300..302\nFT                   /note=\"Nuclear localization signal\"\nFT                   /evidence=\"ECO:0000269|PubMed:22666434\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:29:22.754069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 221-223",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "382fa0ff4b386f2a325cd0f8b4b5cfa06539582a3119d8a8b62f942b38c935a2",
+  "url": "https://rest.uniprot.org/unisave/O96533?format=txt&versions=171"
 }
 ```
 

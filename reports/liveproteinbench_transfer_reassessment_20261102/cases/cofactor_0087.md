@@ -1,18 +1,16 @@
-# cofactor_0087: before and after transfer clarification
+# cofactor_0087
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0087.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0087.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **D** — heme
+**Expected answer:** **D** — heme
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,234 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry annotates heme as the cofactor. That annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation but is not direct experimental evidence in the supplied material.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Heme is consistent with this protein's CYP74 cytochrome P450 identity, but that identity is not stated in the question and cannot be established from the sequence by a sufficiently unambiguous general argument here.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as CYP74M1 and the family/cofactor annotation linking it to heme.
-
-
-**Reason**
-
-> Choosing heme depends on recognizing or looking up this particular sequence's protein family and its cofactor, rather than on a clearly diagnostic feature supplied in the prompt.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation supports heme; the evidence provided does not support another listed cofactor.
-
-
-### Important caveats
-
-- The cofactor annotation is similarity-transferred, not shown here to derive from a direct assay of this exact protein.
-- Reviewer-only accession and annotation information was absent from the evaluated model input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Heme is consistent with this protein's CYP74 cytochrome P450 identity, but that identity is not stated in the question and cannot be established from the sequence by a sufficiently unambiguous general argument here.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as CYP74M1 and the family/cofactor annotation linking it to heme.",
-    "reason": "Choosing heme depends on recognizing or looking up this particular sequence's protein family and its cofactor, rather than on a clearly diagnostic feature supplied in the prompt."
-  },
-  "case_id": "cofactor_0087",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates heme as the cofactor. That annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation but is not direct experimental evidence in the supplied material."
-  },
-  "important_caveats": [
-    "The cofactor annotation is similarity-transferred, not shown here to derive from a direct assay of this exact protein.",
-    "Reviewer-only accession and annotation information was absent from the evaluated model input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports heme; the evidence provided does not support another listed cofactor."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0087",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates heme as the cofactor. That annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation but is not direct experimental evidence in the supplied material.",
-    "evidence_ids": ["C5", "H4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Heme is consistent with this protein's CYP74 cytochrome P450 identity, but that identity is not stated in the question and cannot be established from the sequence by a sufficiently unambiguous general argument here.",
-    "missing_item_specific_fact": "The protein-specific identification as CYP74M1 and the family/cofactor annotation linking it to heme.",
-    "reason": "Choosing heme depends on recognizing or looking up this particular sequence's protein family and its cofactor, rather than on a clearly diagnostic feature supplied in the prompt."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports heme; the evidence provided does not support another listed cofactor."
-  },
-  "important_caveats": [
-    "The cofactor annotation is similarity-transferred, not shown here to derive from a direct assay of this exact protein.",
-    "Reviewer-only accession and annotation information was absent from the evaluated model input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is Divinyl ether synthase CYP74M1 (UniProt D8S724), a cytochrome P450 enzyme (EC 4.2.1.183). UniProt annotates its cofactor as heme (ChEBI:CHEBI:30413) via ECO:0000250 (similarity transfer from Q96242, another CYP74). This annotation is consistent with the universal, experimentally established fact that all cytochrome P450 enzymes require a heme prosthetic group as their catalytic cofactor. The P450 designation itself derives from the 450 nm Soret absorbance of the heme-thiolate complex.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains multiple well-known cytochrome P450 signature motifs: the conserved 'FGARAR' I-helix motif (visible as 'FGRARQ' in 'GRARQDLE'), the 'FxxGxR' pattern in 'FSFGINTRLGLLKMFPP', and the heme-coordinating axial cysteine in 'HLCKLVKRS'. Recognizing these motifs identifies the protein as a member of the P450 superfamily. A universal biological fact is that all P450 enzymes use heme (iron-protoporphyrin IX) as their prosthetic group. None of the distractors (Cu²⁺, Co²⁺, FAD) serve as the primary catalytic cofactor of any P450. Thus, sequence-motif recognition plus general P450 biochemistry suffices to select heme.
-
-
-**Missing item-specific fact**
-
-> None required. The P450→heme relationship is a universal, textbook-level fact applicable to the entire CYP superfamily, not an item-specific experimental measurement.
-
-
-**Reason**
-
-> The reasoning chain (recognize P450 motifs → conclude P450 family → apply universal P450-heme rule) relies on general structural biology and biochemistry knowledge, not on recalling a specific database annotation for this particular protein. The distractors correspond to cofactors of mechanistically unrelated enzyme classes (Cu²⁺ in oxidases, Co²⁺ in B12-dependent enzymes, FAD in flavoprotein oxidoreductases), making them distinguishable by family-level reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Heme is the obligatory cofactor for all cytochrome P450 enzymes. Cu²⁺, Co²⁺, and FAD are not used as the primary catalytic cofactor by any P450. No alternative choice is biochemically defensible for this enzyme class.
-
-
-### Important caveats
-
-- The UniProt cofactor annotation carries ECO:0000250 (inferred by similarity to Q96242), not a direct experimental measurement on CYP74M1 itself. However, the P450-heme relationship is so universally established across the superfamily that this transfer annotation is scientifically uncontroversial.
-- The reviewer-only evidence (UniProt accession, annotation, literature) was not available to the evaluated model. The model must rely on sequence-motif recognition and general P450 biology.
-- Recognizing P450 motifs from a raw 475-aa sequence without the protein name requires familiarity with the FGARAR, FxxGxR, and axial-Cys signatures, which is standard biochemistry/structural-biology knowledge but may challenge models with limited protein-structure training.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains multiple well-known cytochrome P450 signature motifs: the conserved 'FGARAR' I-helix motif (visible as 'FGRARQ' in 'GRARQDLE'), the 'FxxGxR' pattern in 'FSFGINTRLGLLKMFPP', and the heme-coordinating axial cysteine in 'HLCKLVKRS'. Recognizing these motifs identifies the protein as a member of the P450 superfamily. A universal biological fact is that all P450 enzymes use heme (iron-protoporphyrin IX) as their prosthetic group. None of the distractors (Cu²⁺, Co²⁺, FAD) serve as the primary catalytic cofactor of any P450. Thus, sequence-motif recognition plus general P450 biochemistry suffices to select heme.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None required. The P450→heme relationship is a universal, textbook-level fact applicable to the entire CYP superfamily, not an item-specific experimental measurement.",
-    "reason": "The reasoning chain (recognize P450 motifs → conclude P450 family → apply universal P450-heme rule) relies on general structural biology and biochemistry knowledge, not on recalling a specific database annotation for this particular protein. The distractors correspond to cofactors of mechanistically unrelated enzyme classes (Cu²⁺ in oxidases, Co²⁺ in B12-dependent enzymes, FAD in flavoprotein oxidoreductases), making them distinguishable by family-level reasoning."
-  },
-  "case_id": "cofactor_0087",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is Divinyl ether synthase CYP74M1 (UniProt D8S724), a cytochrome P450 enzyme (EC 4.2.1.183). UniProt annotates its cofactor as heme (ChEBI:CHEBI:30413) via ECO:0000250 (similarity transfer from Q96242, another CYP74). This annotation is consistent with the universal, experimentally established fact that all cytochrome P450 enzymes require a heme prosthetic group as their catalytic cofactor. The P450 designation itself derives from the 450 nm Soret absorbance of the heme-thiolate complex."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation carries ECO:0000250 (inferred by similarity to Q96242), not a direct experimental measurement on CYP74M1 itself. However, the P450-heme relationship is so universally established across the superfamily that this transfer annotation is scientifically uncontroversial.",
-    "The reviewer-only evidence (UniProt accession, annotation, literature) was not available to the evaluated model. The model must rely on sequence-motif recognition and general P450 biology.",
-    "Recognizing P450 motifs from a raw 475-aa sequence without the protein name requires familiarity with the FGARAR, FxxGxR, and axial-Cys signatures, which is standard biochemistry/structural-biology knowledge but may challenge models with limited protein-structure training."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Heme is the obligatory cofactor for all cytochrome P450 enzymes. Cu²⁺, Co²⁺, and FAD are not used as the primary catalytic cofactor by any P450. No alternative choice is biochemically defensible for this enzyme class."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0087",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is Divinyl ether synthase CYP74M1 (UniProt D8S724), a cytochrome P450 enzyme (EC 4.2.1.183). UniProt annotates its cofactor as heme (ChEBI:CHEBI:30413) via ECO:0000250 (similarity transfer from Q96242, another CYP74). This annotation is consistent with the universal, experimentally established fact that all cytochrome P450 enzymes require a heme prosthetic group as their catalytic cofactor. The P450 designation itself derives from the 450 nm Soret absorbance of the heme-thiolate complex.",
-    "evidence_ids": ["C5", "H4", "C4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains multiple well-known cytochrome P450 signature motifs: the conserved 'FGARAR' I-helix motif (visible as 'FGRARQ' in 'GRARQDLE'), the 'FxxGxR' pattern in 'FSFGINTRLGLLKMFPP', and the heme-coordinating axial cysteine in 'HLCKLVKRS'. Recognizing these motifs identifies the protein as a member of the P450 superfamily. A universal biological fact is that all P450 enzymes use heme (iron-protoporphyrin IX) as their prosthetic group. None of the distractors (Cu²⁺, Co²⁺, FAD) serve as the primary catalytic cofactor of any P450. Thus, sequence-motif recognition plus general P450 biochemistry suffices to select heme.",
-    "missing_item_specific_fact": "None required. The P450→heme relationship is a universal, textbook-level fact applicable to the entire CYP superfamily, not an item-specific experimental measurement.",
-    "reason": "The reasoning chain (recognize P450 motifs → conclude P450 family → apply universal P450-heme rule) relies on general structural biology and biochemistry knowledge, not on recalling a specific database annotation for this particular protein. The distractors correspond to cofactors of mechanistically unrelated enzyme classes (Cu²⁺ in oxidases, Co²⁺ in B12-dependent enzymes, FAD in flavoprotein oxidoreductases), making them distinguishable by family-level reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Heme is the obligatory cofactor for all cytochrome P450 enzymes. Cu²⁺, Co²⁺, and FAD are not used as the primary catalytic cofactor by any P450. No alternative choice is biochemically defensible for this enzyme class."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation carries ECO:0000250 (inferred by similarity to Q96242), not a direct experimental measurement on CYP74M1 itself. However, the P450-heme relationship is so universally established across the superfamily that this transfer annotation is scientifically uncontroversial.",
-    "The reviewer-only evidence (UniProt accession, annotation, literature) was not available to the evaluated model. The model must rely on sequence-motif recognition and general P450 biology.",
-    "Recognizing P450 motifs from a raw 475-aa sequence without the protein name requires familiarity with the FGARAR, FxxGxR, and axial-Cys signatures, which is standard biochemistry/structural-biology knowledge but may challenge models with limited protein-structure training."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "D8S724",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "9f49b14cb8368a9ffc643a4692f62ffc62551e339d784cdad52577751ca0370f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 475,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "9f49b14cb8368a9ffc643a4692f62ffc62551e339d784cdad52577751ca0370f",
   "current_entry_audit": {
     "entryVersion": 66,
     "firstPublicDate": "2025-06-18",
@@ -528,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-10-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
-  "current_source_sequence_sha256": "9f49b14cb8368a9ffc643a4692f62ffc62551e339d784cdad52577751ca0370f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 475,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "9f49b14cb8368a9ffc643a4692f62ffc62551e339d784cdad52577751ca0370f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 64,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "D8S724",
   "selected_historical_entry_version": 64,
+  "selected_historical_record_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
+  "selected_historical_source_sequence_length": 475,
+  "selected_historical_source_sequence_sha256": "9f49b14cb8368a9ffc643a4692f62ffc62551e339d784cdad52577751ca0370f",
   "selected_historical_version": {
     "accession": "D8S724",
     "database": "Swiss-Prot",
@@ -546,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "C74M1_SELML",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
-  "selected_historical_source_sequence_sha256": "9f49b14cb8368a9ffc643a4692f62ffc62551e339d784cdad52577751ca0370f",
-  "selected_historical_source_sequence_length": 475,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 64,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json",
-  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
-  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"D8S724\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
+  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json"
 }
 ```
 
@@ -596,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json",
-  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
-  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":66,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-10-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
+  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json"
 }
 ```
 
@@ -615,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json",
-  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
-  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Gemmiferous spikemoss\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Lycopodiopsida\",\"Selaginellales\",\"Selaginellaceae\",\"Selaginelloideae\",\"Selaginella\"],\"scientificName\":\"Selaginella moellendorffii\",\"synonyms\":[\"Kungiselaginella moellendorffii\"],\"taxonId\":88036}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
+  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json"
 }
 ```
 
@@ -634,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json",
-  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
-  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26776054\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.183\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"26776054\",\"source\":\"PubMed\"}],\"value\":\"Etheroleic acid synthase CYP74M1\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26776054\",\"source\":\"PubMed\"}],\"value\":\"Divinyl ether synthase CYP74M1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
+  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json"
 }
 ```
 
@@ -653,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json",
-  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
-  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:30413\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q96242\",\"source\":\"UniProtKB\"}],\"name\":\"heme\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
+  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json"
 }
 ```
 
@@ -672,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json",
-  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
-  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Gorina S.S.\",\"Toporkova Y.Y.\",\"Mukhtarova L.S.\",\"Smirnova E.O.\",\"Chechetkin I.R.\",\"Khairutdinov B.I.\",\"Gogolev Y.V.\",\"Grechkin A.N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26776054\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.bbalip.2016.01.001\"}],\"citationType\":\"journal article\",\"firstPage\":\"301\",\"id\":\"26776054\",\"journal\":\"Biochim. Biophys. Acta\",\"lastPage\":\"309\",\"publicationDate\":\"2016\",\"title\":\"Oxylipin biosynthesis in spikemoss Selaginella moellendorffii: Molecular cloning and identification of divinyl ether synthases CYP74M1 and CYP74M3.\",\"volume\":\"1861\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:52.483973+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce7aa6baed98798a69728414276bfd9599ab5c6274d1a0a96fd5c9206a1de059",
+  "url": "https://rest.uniprot.org/uniprotkb/D8S724.json"
 }
 ```
 
@@ -690,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 64,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64",
-  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
-  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   C74M1_SELML             Reviewed;         475 AA.\nAC   D8S724;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-OCT-2010, sequence version 1.\nDT   28-JAN-2026, entry version 64.\nDE   RecName: Full=Divinyl ether synthase CYP74M1 {ECO:0000303|PubMed:26776054};\nDE   AltName: Full=Etheroleic acid synthase CYP74M1 {ECO:0000305|PubMed:26776054};\nDE            EC=4.2.1.183 {ECO:0000269|PubMed:26776054};\nGN   Name=CYP74M1 {ECO:0000303|PubMed:26776054};\nGN   Synonyms=DES1 {ECO:0000303|PubMed:26776054};\nGN   ORFNames=SELMODRAFT_177485 {ECO:0000312|EMBL:EFJ19674.1};\nOS   Selaginella moellendorffii (Spikemoss).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Lycopodiopsida; Selaginellales; Selaginellaceae; Selaginella.\nOX   NCBI_TaxID=88036;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 64,
+  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
+  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64"
 }
 ```
 
@@ -711,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 64,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64",
-  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
-  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Divinyl ether synthase CYP74M1 {ECO:0000303|PubMed:26776054};\nDE   AltName: Full=Etheroleic acid synthase CYP74M1 {ECO:0000305|PubMed:26776054};\nDE            EC=4.2.1.183 {ECO:0000269|PubMed:26776054};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 64,
+  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
+  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64"
 }
 ```
 
@@ -732,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 64,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64",
-  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
-  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
-  "source_locator": "lines 40-48",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND PATHWAY.\nRX   PubMed=26776054; DOI=10.1016/j.bbalip.2016.01.001;\nRA   Gorina S.S., Toporkova Y.Y., Mukhtarova L.S., Smirnova E.O.,\nRA   Chechetkin I.R., Khairutdinov B.I., Gogolev Y.V., Grechkin A.N.;\nRT   \"Oxylipin biosynthesis in spikemoss Selaginella moellendorffii: Molecular\nRT   cloning and identification of divinyl ether synthases CYP74M1 and\nRT   CYP74M3.\";\nRL   Biochim. Biophys. Acta 1861:301-309(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 64,
+  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
+  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64"
 }
 ```
 
@@ -753,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 64,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64",
-  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
-  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
-  "source_locator": "lines 70-72",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=heme; Xref=ChEBI:CHEBI:30413;\nCC         Evidence={ECO:0000250|UniProtKB:Q96242};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 64,
+  "retrieved_utc": "2026-11-02T04:27:54.936001+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 70-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1097bd32dc09d094cd22c43824a76d7061c1b33dcc4a0916c1eedb76de7e938c",
+  "url": "https://rest.uniprot.org/unisave/D8S724?format=txt&versions=64"
 }
 ```
 

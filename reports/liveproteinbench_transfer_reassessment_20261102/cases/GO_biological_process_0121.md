@@ -1,18 +1,16 @@
-# GO_biological_process_0121: before and after transfer clarification
+# GO_biological_process_0121
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0121.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0121.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — antibiotic biosynthetic process
+**Expected answer:** **A** — antibiotic biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt GfsF sequence. Its function annotation, supported by cited experimental evidence, says it catalyzes modifications involved in synthesis of the macrolide antibiotics FD-891 and FD-892. This supports antibiotic biosynthesis; the GO association itself is marked IEA.
-
-Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A bacterial P450-like sequence can suggest oxidative enzymatic activity, but that broad inference does not identify its substrate or show that it participates in antibiotic biosynthesis rather than another process.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and functional evidence that GfsF modifies intermediates in FD-891/FD-892 biosynthesis.
-
-
-**Reason**
-
-> The sequence alone does not provide a defensible basis to distinguish antibiotic biosynthesis from the alternatives. Choosing A requires the protein-specific function, not merely recognition of a general sequence feature.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein's experimentally supported role in antibiotic biosynthesis directly supports A; the other options describe different processes.
-
-
-### Important caveats
-
-- The cited UniProt function annotation has experimental evidence codes, whereas the listed GO annotation is an IEA association; these evidence types should not be conflated.
-- The exact author source snapshot is unknown, although the sequence matches both the historical and current UniProt records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A bacterial P450-like sequence can suggest oxidative enzymatic activity, but that broad inference does not identify its substrate or show that it participates in antibiotic biosynthesis rather than another process.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and functional evidence that GfsF modifies intermediates in FD-891/FD-892 biosynthesis.",
-    "reason": "The sequence alone does not provide a defensible basis to distinguish antibiotic biosynthesis from the alternatives. Choosing A requires the protein-specific function, not merely recognition of a general sequence feature."
-  },
-  "case_id": "GO_biological_process_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H5",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt GfsF sequence. Its function annotation, supported by cited experimental evidence, says it catalyzes modifications involved in synthesis of the macrolide antibiotics FD-891 and FD-892. This supports antibiotic biosynthesis; the GO association itself is marked IEA."
-  },
-  "important_caveats": [
-    "The cited UniProt function annotation has experimental evidence codes, whereas the listed GO annotation is an IEA association; these evidence types should not be conflated.",
-    "The exact author source snapshot is unknown, although the sequence matches both the historical and current UniProt records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein's experimentally supported role in antibiotic biosynthesis directly supports A; the other options describe different processes."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt GfsF sequence. Its function annotation, supported by cited experimental evidence, says it catalyzes modifications involved in synthesis of the macrolide antibiotics FD-891 and FD-892. This supports antibiotic biosynthesis; the GO association itself is marked IEA.",
-    "evidence_ids": ["C5", "H5", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A bacterial P450-like sequence can suggest oxidative enzymatic activity, but that broad inference does not identify its substrate or show that it participates in antibiotic biosynthesis rather than another process.",
-    "missing_item_specific_fact": "The protein-specific identification and functional evidence that GfsF modifies intermediates in FD-891/FD-892 biosynthesis.",
-    "reason": "The sequence alone does not provide a defensible basis to distinguish antibiotic biosynthesis from the alternatives. Choosing A requires the protein-specific function, not merely recognition of a general sequence feature."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein's experimentally supported role in antibiotic biosynthesis directly supports A; the other options describe different processes."
-  },
-  "important_caveats": [
-    "The cited UniProt function annotation has experimental evidence codes, whereas the listed GO annotation is an IEA association; these evidence types should not be conflated.",
-    "The exact author source snapshot is unknown, although the sequence matches both the historical and current UniProt records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry E0D207 (Cytochrome P450 GfsF from Streptomyces halstedii) is explicitly annotated with GO:0017000 'antibiotic biosynthetic process' (H7). The FUNCTION comment (C5/H5) states it is 'Involved in the synthesis of the 16-membered macrolide antibiotics FD-891 and FD-892,' and the PATHWAY comment (C6/H6) reads 'Antibiotic biosynthesis.' These annotations are backed by experimental evidence (ECO:0000269) from three PubMed references describing in vitro enzymatic characterization and in vivo gene cluster analysis. The sequence matches the benchmark exactly (SHA-256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H5](#evidence-h5), [H6](#evidence-h6), [H7](#evidence-h7), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the conserved P450 heme-binding motif (FGYGVHQCLG...Cys), identifying it as a cytochrome P450 monooxygenase. P450s catalyze oxidative modifications (epoxidation, hydroxylation) of organic substrates. Among the four options: (C) protein quality control requires chaperones/proteases/ubiquitin machinery — incompatible with a P450; (B) killing of cells of another organism implies direct cytotoxic action (e.g., bacteriocins, pore-forming toxins) — a monooxygenase does not directly kill cells; (D) response to antibiotic implies resistance mechanisms such as efflux pumps, drug-modifying transferases (acetyltransferases, phosphotransferases), or target-site mutations — P450s are not canonical resistance enzymes. (A) antibiotic biosynthetic process fits because P450s in actinomycete secondary-metabolite gene clusters perform post-PKS tailoring (epoxidation, hydroxylation) of polyketide intermediates, which is the defining role of biosynthetic P450s in natural-product pathways.
-
-
-**Missing item-specific fact**
-
-> The organism name (Streptomyces) is not provided in the input, and the specific substrate (macrolide intermediate FD-892) is not stated. However, the P450 identification from the heme-binding motif plus general knowledge that P450s in secondary-metabolite contexts perform biosynthetic tailoring (rather than resistance or protein-quality-control roles) provides a defensible reasoning chain to option A.
-
-
-**Reason**
-
-> A model can identify the protein as a P450 from the conserved Cys-containing heme-binding motif visible in the sequence, then apply general biological knowledge: P450s are oxidative tailoring enzymes in natural-product biosynthesis, not protein-quality-control factors (C), not direct cell-killing agents (B), and not typical antibiotic-resistance enzymes (D). This leaves antibiotic biosynthetic process (A) as the best-fitting GO term. The reasoning relies on general P450 biochemistry and the known roles of P450s in secondary metabolism rather than memorizing a specific database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and C are clearly incompatible with P450 monooxygenase enzymology. Option D (response to antibiotic) describes resistance/sensitivity responses, which involve efflux, transferases, or target modification — not P450-mediated oxidative tailoring. Option A is the only choice consistent with a P450 performing regioselective epoxidation/hydroxylation of a natural-product intermediate. No other option is defensible for this enzyme class.
-
-
-### Important caveats
-
-- The organism (Streptomyces halstedii) is not stated in the model input; the reasoning relies on recognizing the P450 fold and applying general knowledge about P450 roles in secondary metabolism.
-- The GO annotation GO:0017000 in UniProt carries an IEA:UniProtKB-KW evidence code (keyword-based inference), though the underlying functional characterization is experimentally supported (ECO:0000269).
-- The benchmark sequence matches the current and historical (v48) UniProt entry exactly (SHA-256 confirmed).
-- Without the organism context, a model must rely on P450 motif recognition and general knowledge that P450s in natural-product pathways are biosynthetic rather than resistance enzymes — this is standard biochemistry but adds a layer of inference beyond pure sequence reading.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the conserved P450 heme-binding motif (FGYGVHQCLG...Cys), identifying it as a cytochrome P450 monooxygenase. P450s catalyze oxidative modifications (epoxidation, hydroxylation) of organic substrates. Among the four options: (C) protein quality control requires chaperones/proteases/ubiquitin machinery — incompatible with a P450; (B) killing of cells of another organism implies direct cytotoxic action (e.g., bacteriocins, pore-forming toxins) — a monooxygenase does not directly kill cells; (D) response to antibiotic implies resistance mechanisms such as efflux pumps, drug-modifying transferases (acetyltransferases, phosphotransferases), or target-site mutations — P450s are not canonical resistance enzymes. (A) antibiotic biosynthetic process fits because P450s in actinomycete secondary-metabolite gene clusters perform post-PKS tailoring (epoxidation, hydroxylation) of polyketide intermediates, which is the defining role of biosynthetic P450s in natural-product pathways.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The organism name (Streptomyces) is not provided in the input, and the specific substrate (macrolide intermediate FD-892) is not stated. However, the P450 identification from the heme-binding motif plus general knowledge that P450s in secondary-metabolite contexts perform biosynthetic tailoring (rather than resistance or protein-quality-control roles) provides a defensible reasoning chain to option A.",
-    "reason": "A model can identify the protein as a P450 from the conserved Cys-containing heme-binding motif visible in the sequence, then apply general biological knowledge: P450s are oxidative tailoring enzymes in natural-product biosynthesis, not protein-quality-control factors (C), not direct cell-killing agents (B), and not typical antibiotic-resistance enzymes (D). This leaves antibiotic biosynthetic process (A) as the best-fitting GO term. The reasoning relies on general P450 biochemistry and the known roles of P450s in secondary metabolism rather than memorizing a specific database entry."
-  },
-  "case_id": "GO_biological_process_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H5",
-      "H6",
-      "H7",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry E0D207 (Cytochrome P450 GfsF from Streptomyces halstedii) is explicitly annotated with GO:0017000 'antibiotic biosynthetic process' (H7). The FUNCTION comment (C5/H5) states it is 'Involved in the synthesis of the 16-membered macrolide antibiotics FD-891 and FD-892,' and the PATHWAY comment (C6/H6) reads 'Antibiotic biosynthesis.' These annotations are backed by experimental evidence (ECO:0000269) from three PubMed references describing in vitro enzymatic characterization and in vivo gene cluster analysis. The sequence matches the benchmark exactly (SHA-256 confirmed)."
-  },
-  "important_caveats": [
-    "The organism (Streptomyces halstedii) is not stated in the model input; the reasoning relies on recognizing the P450 fold and applying general knowledge about P450 roles in secondary metabolism.",
-    "The GO annotation GO:0017000 in UniProt carries an IEA:UniProtKB-KW evidence code (keyword-based inference), though the underlying functional characterization is experimentally supported (ECO:0000269).",
-    "The benchmark sequence matches the current and historical (v48) UniProt entry exactly (SHA-256 confirmed).",
-    "Without the organism context, a model must rely on P450 motif recognition and general knowledge that P450s in natural-product pathways are biosynthetic rather than resistance enzymes — this is standard biochemistry but adds a layer of inference beyond pure sequence reading."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and C are clearly incompatible with P450 monooxygenase enzymology. Option D (response to antibiotic) describes resistance/sensitivity responses, which involve efflux, transferases, or target modification — not P450-mediated oxidative tailoring. Option A is the only choice consistent with a P450 performing regioselective epoxidation/hydroxylation of a natural-product intermediate. No other option is defensible for this enzyme class."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry E0D207 (Cytochrome P450 GfsF from Streptomyces halstedii) is explicitly annotated with GO:0017000 'antibiotic biosynthetic process' (H7). The FUNCTION comment (C5/H5) states it is 'Involved in the synthesis of the 16-membered macrolide antibiotics FD-891 and FD-892,' and the PATHWAY comment (C6/H6) reads 'Antibiotic biosynthesis.' These annotations are backed by experimental evidence (ECO:0000269) from three PubMed references describing in vitro enzymatic characterization and in vivo gene cluster analysis. The sequence matches the benchmark exactly (SHA-256 confirmed).",
-    "evidence_ids": ["C5", "C6", "H5", "H6", "H7", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the conserved P450 heme-binding motif (FGYGVHQCLG...Cys), identifying it as a cytochrome P450 monooxygenase. P450s catalyze oxidative modifications (epoxidation, hydroxylation) of organic substrates. Among the four options: (C) protein quality control requires chaperones/proteases/ubiquitin machinery — incompatible with a P450; (B) killing of cells of another organism implies direct cytotoxic action (e.g., bacteriocins, pore-forming toxins) — a monooxygenase does not directly kill cells; (D) response to antibiotic implies resistance mechanisms such as efflux pumps, drug-modifying transferases (acetyltransferases, phosphotransferases), or target-site mutations — P450s are not canonical resistance enzymes. (A) antibiotic biosynthetic process fits because P450s in actinomycete secondary-metabolite gene clusters perform post-PKS tailoring (epoxidation, hydroxylation) of polyketide intermediates, which is the defining role of biosynthetic P450s in natural-product pathways.",
-    "missing_item_specific_fact": "The organism name (Streptomyces) is not provided in the input, and the specific substrate (macrolide intermediate FD-892) is not stated. However, the P450 identification from the heme-binding motif plus general knowledge that P450s in secondary-metabolite contexts perform biosynthetic tailoring (rather than resistance or protein-quality-control roles) provides a defensible reasoning chain to option A.",
-    "reason": "A model can identify the protein as a P450 from the conserved Cys-containing heme-binding motif visible in the sequence, then apply general biological knowledge: P450s are oxidative tailoring enzymes in natural-product biosynthesis, not protein-quality-control factors (C), not direct cell-killing agents (B), and not typical antibiotic-resistance enzymes (D). This leaves antibiotic biosynthetic process (A) as the best-fitting GO term. The reasoning relies on general P450 biochemistry and the known roles of P450s in secondary metabolism rather than memorizing a specific database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and C are clearly incompatible with P450 monooxygenase enzymology. Option D (response to antibiotic) describes resistance/sensitivity responses, which involve efflux, transferases, or target modification — not P450-mediated oxidative tailoring. Option A is the only choice consistent with a P450 performing regioselective epoxidation/hydroxylation of a natural-product intermediate. No other option is defensible for this enzyme class."
-  },
-  "important_caveats": [
-    "The organism (Streptomyces halstedii) is not stated in the model input; the reasoning relies on recognizing the P450 fold and applying general knowledge about P450 roles in secondary metabolism.",
-    "The GO annotation GO:0017000 in UniProt carries an IEA:UniProtKB-KW evidence code (keyword-based inference), though the underlying functional characterization is experimentally supported (ECO:0000269).",
-    "The benchmark sequence matches the current and historical (v48) UniProt entry exactly (SHA-256 confirmed).",
-    "Without the organism context, a model must rely on P450 motif recognition and general knowledge that P450s in natural-product pathways are biosynthetic rather than resistance enzymes — this is standard biochemistry but adds a layer of inference beyond pure sequence reading."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +157,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H5](#evidence-h5), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E0D207",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6a76135d18108af547c0b1b30fe1be68b183ea6864bb2ad4f5b5e5f3d1dad588",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 414,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6a76135d18108af547c0b1b30fe1be68b183ea6864bb2ad4f5b5e5f3d1dad588",
   "current_entry_audit": {
     "entryVersion": 50,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-11-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "current_source_sequence_sha256": "6a76135d18108af547c0b1b30fe1be68b183ea6864bb2ad4f5b5e5f3d1dad588",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 414,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6a76135d18108af547c0b1b30fe1be68b183ea6864bb2ad4f5b5e5f3d1dad588",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 48,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E0D207",
   "selected_historical_entry_version": 48,
+  "selected_historical_record_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "selected_historical_source_sequence_length": 414,
+  "selected_historical_source_sequence_sha256": "6a76135d18108af547c0b1b30fe1be68b183ea6864bb2ad4f5b5e5f3d1dad588",
   "selected_historical_version": {
     "accession": "E0D207",
     "database": "Swiss-Prot",
@@ -552,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GFSF_STRHA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "selected_historical_source_sequence_sha256": "6a76135d18108af547c0b1b30fe1be68b183ea6864bb2ad4f5b5e5f3d1dad588",
-  "selected_historical_source_sequence_length": 414,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 48,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E0D207\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -606,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":50,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-11-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -625,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces halstedii\",\"taxonId\":1944}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -644,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20589823\",\"source\":\"PubMed\"}],\"value\":\"P450 monooxygenase GfsF\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20589823\",\"source\":\"PubMed\"}],\"value\":\"1.14.-.-\"}],\"fullName\":{\"value\":\"Cytochrome P450 GfsF\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -663,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20589823\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26630077\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28869713\",\"source\":\"PubMed\"}],\"value\":\"Involved in the synthesis of the 16-membered macrolide antibiotics FD-891 and FD-892 (PubMed:20589823, PubMed:26630077, PubMed:28869713). Consecutively catalyzes epoxidation of C8-C9 and then hydroxylation at C10 to convert 25-O-methyl-FD-892 to FD-891 (PubMed:20589823). Consecutively catalyzes epoxidation of C8-C9 and then hydroxylation at C10 to convert 8,9-epoxy-FD-892 to 25-O-demethyl-FD-891 as well as converting 25-oxo-FD-892 to 8,9-epoxy-25-oxo-FD-892 and 8,9-epoxy-10-hydroxy-25-oxo-FD-892 (PubMed:26630077). In vitro is furnished with P.putida putidaredoxin and putidaredoxin reductase to provide the required two-electron reduction (PubMed:20589823, PubMed:26630077, PubMed:28869713)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -682,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20589823\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26630077\",\"source\":\"PubMed\"}],\"value\":\"Antibiotic biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -701,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Kudo F.\",\"Motegi A.\",\"Mizoue K.\",\"Eguchi T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20589823\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201000214\"}],\"citationType\":\"journal article\",\"firstPage\":\"1574\",\"id\":\"20589823\",\"journal\":\"ChemBioChem\",\"lastPage\":\"1582\",\"publicationDate\":\"2010\",\"title\":\"Cloning and characterization of the biosynthetic gene cluster of 16-membered macrolide antibiotic FD-891: involvement of a dual functional cytochrome P450 monooxygenase catalyzing epoxidation and hydroxylation.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ16472.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"A-8890\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -720,15 +479,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Kudo F.\",\"Kawamura K.\",\"Furuya T.\",\"Yamanishi H.\",\"Motegi A.\",\"Komatsubara A.\",\"Numakura M.\",\"Miyanaga A.\",\"Eguchi T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26630077\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201500533\"}],\"citationType\":\"journal article\",\"firstPage\":\"233\",\"id\":\"26630077\",\"journal\":\"ChemBioChem\",\"lastPage\":\"238\",\"publicationDate\":\"2016\",\"title\":\"Parallel Post-Polyketide Synthase Modification Mechanism Involved in FD-891 Biosynthesis in Streptomyces graminofaciens A-8890.\",\"volume\":\"17\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"A-8890\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -739,15 +498,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json",
-  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
-  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Miyanaga A.\",\"Takayanagi R.\",\"Furuya T.\",\"Kawamata A.\",\"Itagaki T.\",\"Iwabuchi Y.\",\"Kanoh N.\",\"Kudo F.\",\"Eguchi T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28869713\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201700429\"}],\"citationType\":\"journal article\",\"firstPage\":\"2179\",\"id\":\"28869713\",\"journal\":\"ChemBioChem\",\"lastPage\":\"2187\",\"publicationDate\":\"2017\",\"title\":\"Substrate Recognition by a Dual-Function P450 Monooxygenase GfsF Involved in FD-891 Biosynthesis.\",\"volume\":\"18\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5Y1I\",\"source\":\"PDB\"}],\"referenceNumber\":6,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.00 ANGSTROMS) OF 16-414 IN COMPLEX WITH HEME B\",\"FUNCTION\",\"SUBUNIT\",\"MUTAGENESIS OF PHE-89 AND THR-300\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:27:54.759416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc5a5ddf81c1b51af907306ca972dbc709d4db40c846bfe03ce3ae8bd6cb3e37",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D207.json"
 }
 ```
 
@@ -757,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 48,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48",
-  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   GFSF_STRHA              Reviewed;         414 AA.\nAC   E0D207;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-NOV-2010, sequence version 1.\nDT   18-JUN-2025, entry version 48.\nDE   RecName: Full=Cytochrome P450 GfsF;\nDE            EC=1.14.-.- {ECO:0000269|PubMed:20589823};\nDE   AltName: Full=P450 monooxygenase GfsF {ECO:0000303|PubMed:20589823};\nGN   Name=gfsF {ECO:0000303|PubMed:20589823};\nOS   Streptomyces halstedii.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=1944;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 48,
+  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48"
 }
 ```
 
@@ -778,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 48,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48",
-  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
-  "source_locator": "lines 14-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAJ16472.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY,\nRP   AND DISRUPTION PHENOTYPE.\nRC   STRAIN=A-8890;\nRX   PubMed=20589823; DOI=10.1002/cbic.201000214;\nRA   Kudo F., Motegi A., Mizoue K., Eguchi T.;\nRT   \"Cloning and characterization of the biosynthetic gene cluster of 16-\nRT   membered macrolide antibiotic FD-891: involvement of a dual functional\nRT   cytochrome P450 monooxygenase catalyzing epoxidation and hydroxylation.\";\nRL   ChemBioChem 11:1574-1582(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 48,
+  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48"
 }
 ```
 
@@ -799,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 48,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48",
-  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
-  "source_locator": "lines 45-53",
   "excerpt": "RN   [5]\nRP   FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=A-8890;\nRX   PubMed=26630077; DOI=10.1002/cbic.201500533;\nRA   Kudo F., Kawamura K., Furuya T., Yamanishi H., Motegi A., Komatsubara A.,\nRA   Numakura M., Miyanaga A., Eguchi T.;\nRT   \"Parallel Post-Polyketide Synthase Modification Mechanism Involved in FD-\nRT   891 Biosynthesis in Streptomyces graminofaciens A-8890.\";\nRL   ChemBioChem 17:233-238(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 48,
+  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48"
 }
 ```
 
@@ -820,18 +579,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 48,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48",
-  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
-  "source_locator": "lines 54-62",
   "excerpt": "RN   [6] {ECO:0007744|PDB:5Y1I}\nRP   X-RAY CRYSTALLOGRAPHY (2.00 ANGSTROMS) OF 16-414 IN COMPLEX WITH HEME B,\nRP   FUNCTION, SUBUNIT, AND MUTAGENESIS OF PHE-89 AND THR-300.\nRX   PubMed=28869713; DOI=10.1002/cbic.201700429;\nRA   Miyanaga A., Takayanagi R., Furuya T., Kawamata A., Itagaki T.,\nRA   Iwabuchi Y., Kanoh N., Kudo F., Eguchi T.;\nRT   \"Substrate Recognition by a Dual-Function P450 Monooxygenase GfsF Involved\nRT   in FD-891 Biosynthesis.\";\nRL   ChemBioChem 18:2179-2187(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 48,
+  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 54-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48"
 }
 ```
 
@@ -841,18 +600,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 48,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48",
-  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
-  "source_locator": "lines 63-74",
   "excerpt": "CC   -!- FUNCTION: Involved in the synthesis of the 16-membered macrolide\nCC       antibiotics FD-891 and FD-892 (PubMed:20589823, PubMed:26630077,\nCC       PubMed:28869713). Consecutively catalyzes epoxidation of C8-C9 and then\nCC       hydroxylation at C10 to convert 25-O-methyl-FD-892 to FD-891\nCC       (PubMed:20589823). Consecutively catalyzes epoxidation of C8-C9 and\nCC       then hydroxylation at C10 to convert 8,9-epoxy-FD-892 to 25-O-demethyl-\nCC       FD-891 as well as converting 25-oxo-FD-892 to 8,9-epoxy-25-oxo-FD-892\nCC       and 8,9-epoxy-10-hydroxy-25-oxo-FD-892 (PubMed:26630077). In vitro is\nCC       furnished with P.putida putidaredoxin and putidaredoxin reductase to\nCC       provide the required two-electron reduction (PubMed:20589823,\nCC       PubMed:26630077, PubMed:28869713). {ECO:0000269|PubMed:20589823,\nCC       ECO:0000269|PubMed:26630077, ECO:0000269|PubMed:28869713}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 48,
+  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48"
 }
 ```
 
@@ -862,18 +621,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 48,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48",
-  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
-  "source_locator": "lines 78-79",
   "excerpt": "CC   -!- PATHWAY: Antibiotic biosynthesis. {ECO:0000269|PubMed:20589823,\nCC       ECO:0000269|PubMed:26630077}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 48,
+  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 78-79",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48"
 }
 ```
 
@@ -883,18 +642,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 48,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48",
-  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
-  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
-  "source_locator": "lines 107-107",
   "excerpt": "DR   GO; GO:0017000; P:antibiotic biosynthetic process; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 48,
+  "retrieved_utc": "2026-11-02T04:27:56.758195+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 107-107",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7ff243274350eac91391be3b79c5530cd2a2ec42701fd8dc7b36bcbeb0f7237",
+  "url": "https://rest.uniprot.org/unisave/E0D207?format=txt&versions=48"
 }
 ```
 
@@ -905,15 +664,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 66954-66967",
   "excerpt": "[Term]\nid: GO:0006515\nname: protein quality control for misfolded or incompletely synthesized proteins\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the breakdown of misfolded or attenuated proteins.\" [GOC:jl]\nsynonym: \"degradation of misfolded or incompletely synthesized proteins\" EXACT []\nsynonym: \"misfolded or incompletely synthesized protein breakdown\" EXACT []\nsynonym: \"misfolded or incompletely synthesized protein catabolic process\" EXACT []\nsynonym: \"misfolded or incompletely synthesized protein catabolism\" EXACT []\nsynonym: \"misfolded or incompletely synthesized protein degradation\" EXACT []\nsynonym: \"protein quality control (PQC)\" EXACT []\nsynonym: \"protein quality control by the ubiquitin-proteasome system\" BROAD []\nis_a: GO:0030163 ! protein catabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006515",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 66954-66967",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006515"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -924,15 +683,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 132339-132351",
   "excerpt": "[Term]\nid: GO:0017000\nname: antibiotic biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of an antibiotic, a substance produced by or derived from certain fungi, bacteria, and other organisms, that can destroy or inhibit the growth of other microorganisms.\" [GOC:curators]\nsubset: goslim_metagenomics\nsynonym: \"antibiotic anabolism\" EXACT []\nsynonym: \"antibiotic biosynthesis\" EXACT []\nsynonym: \"antibiotic formation\" EXACT []\nsynonym: \"antibiotic synthesis\" EXACT []\nis_a: GO:0009058 ! biosynthetic process\nis_a: GO:0016999 ! antibiotic metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0017000",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 132339-132351",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0017000"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -943,15 +702,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 178549-178560",
   "excerpt": "[Term]\nid: GO:0031640\nname: killing of cells of another organism\nnamespace: biological_process\nalt_id: GO:0001908\nalt_id: GO:0051852\ndef: \"Any process in an organism that results in the killing of cells of another organism, including in some cases the death of the other organism. Killing here refers to the induction of death in one cell by another cell, not cell-autonomous death due to internal or other environmental conditions.\" [GOC:add]\nsubset: goslim_pir\nsynonym: \"killing of cells of other organism\" EXACT []\nis_a: GO:0001906 ! cell killing\nis_a: GO:0141061 ! disruption of cell in another organism\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031640",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 178549-178560",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031640"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -962,15 +721,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 279516-279527",
   "excerpt": "[Term]\nid: GO:0046677\nname: response to antibiotic\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an antibiotic stimulus. An antibiotic is a chemical substance produced by a microorganism which has the capacity to inhibit the growth of or to kill other microorganisms.\" [GOC:ai, GOC:ef]\nsubset: goslim_chembl\nsynonym: \"antibiotic susceptibility/resistance\" RELATED []\nxref: Reactome:R-HSA-9638771 \"Action of antimicrobials\"\nxref: Reactome:R-HSA-9639775 \"Antimicrobial action and antimicrobial resistance in Mtb\"\nxref: Reactome:R-HSA-9913143 \"Antimicrobial resistance\"\nis_a: GO:0042221 ! response to chemical\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046677",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 279516-279527",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046677"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

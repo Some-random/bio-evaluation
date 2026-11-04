@@ -1,18 +1,16 @@
-# EC_number_0059: before and after transfer clarification
+# EC_number_0059
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0059.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0059.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **A** — 5.3.1.8
+**Expected answer:** **A** — 5.3.1.8
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,234 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-matching UniProt entry annotates this protein with EC 5.3.1.8 and records the corresponding mannose-6-phosphate isomerization reaction with experimental-evidence codes linked to a publication. The entry also annotates EC 5.3.1.9, which is not among the choices.
-
-Citations as saved: [C4](#evidence-c4), [C6](#evidence-c6), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support a broad prediction of an enzyme function, but it does not provide a defensible basis for distinguishing the precise substrate specificity represented by EC 5.3.1.8 from other candidate EC assignments.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic activity and substrate specificity, including its experimentally reported activity on D-mannose 6-phosphate.
-
-
-**Reason**
-
-> Selecting the precise EC number requires protein-specific functional information not supplied in the question. Recognizing the sequence or recalling its annotation would be lookup or memorization, not reasoning from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, only A is supported by the evidence. However, the protein is annotated as bifunctional, with EC 5.3.1.9 also reported; that second EC number is absent from the choices, so the options do not represent all annotated activities if the task intends a complete classification.
-
-
-### Important caveats
-
-- The sequence matches the reviewer-only database record exactly; the accession and annotation were not supplied to the evaluated model.
-- The evidence is a UniProt annotation linked to experimental-evidence codes and a publication; the primary study was not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support a broad prediction of an enzyme function, but it does not provide a defensible basis for distinguishing the precise substrate specificity represented by EC 5.3.1.8 from other candidate EC assignments.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic activity and substrate specificity, including its experimentally reported activity on D-mannose 6-phosphate.",
-    "reason": "Selecting the precise EC number requires protein-specific functional information not supplied in the question. Recognizing the sequence or recalling its annotation would be lookup or memorization, not reasoning from the input."
-  },
-  "case_id": "EC_number_0059",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C6",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matching UniProt entry annotates this protein with EC 5.3.1.8 and records the corresponding mannose-6-phosphate isomerization reaction with experimental-evidence codes linked to a publication. The entry also annotates EC 5.3.1.9, which is not among the choices."
-  },
-  "important_caveats": [
-    "The sequence matches the reviewer-only database record exactly; the accession and annotation were not supplied to the evaluated model.",
-    "The evidence is a UniProt annotation linked to experimental-evidence codes and a publication; the primary study was not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, only A is supported by the evidence. However, the protein is annotated as bifunctional, with EC 5.3.1.9 also reported; that second EC number is absent from the choices, so the options do not represent all annotated activities if the task intends a complete classification."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0059",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matching UniProt entry annotates this protein with EC 5.3.1.8 and records the corresponding mannose-6-phosphate isomerization reaction with experimental-evidence codes linked to a publication. The entry also annotates EC 5.3.1.9, which is not among the choices.",
-    "evidence_ids": ["C4", "C6", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support a broad prediction of an enzyme function, but it does not provide a defensible basis for distinguishing the precise substrate specificity represented by EC 5.3.1.8 from other candidate EC assignments.",
-    "missing_item_specific_fact": "The protein-specific catalytic activity and substrate specificity, including its experimentally reported activity on D-mannose 6-phosphate.",
-    "reason": "Selecting the precise EC number requires protein-specific functional information not supplied in the question. Recognizing the sequence or recalling its annotation would be lookup or memorization, not reasoning from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, only A is supported by the evidence. However, the protein is annotated as bifunctional, with EC 5.3.1.9 also reported; that second EC number is absent from the choices, so the options do not represent all annotated activities if the task intends a complete classification."
-  },
-  "important_caveats": [
-    "The sequence matches the reviewer-only database record exactly; the accession and annotation were not supplied to the evaluated model.",
-    "The evidence is a UniProt annotation linked to experimental-evidence codes and a publication; the primary study was not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A3MTR6 (sequence matched, 299 AA) annotates this protein as 'Bifunctional phosphoglucose/phosphomannose isomerase' with experimental evidence (ECO:0000269, PubMed:39208883) for both EC 5.3.1.8 (D-mannose 6-phosphate = D-fructose 6-phosphate) and EC 5.3.1.9 (alpha-D-glucose 6-phosphate = beta-D-fructose 6-phosphate). Since EC 5.3.1.8 is among the choices and is experimentally confirmed for this exact sequence, the author key is supported.
-
-Citations as saved: [C4](#evidence-c4), [C6](#evidence-c6), [H2](#evidence-h2), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the hallmark 'GGSGVVGD' / 'VSGMGGSG' motif embedded in a TIM-barrel isomerase architecture, which is the defining structural signature of the PGI/PMI superfamily (phosphoglucose/phosphomannose isomerase family, EC 5.3.1.x). This eliminates EC 1.1.1.195 (oxidoreductase, requires Rossmann NAD-binding fold) and EC 2.7.7.43 (nucleotidyltransferase, requires distinct catalytic motifs). Between EC 5.3.1.8 and EC 5.3.99.13, the TIM-barrel + GGSG signature specifically identifies the PGI/PMI family classified under EC 5.3.1.x, not the unrelated 5.3.99.x class. Recognizing a well-known family motif and its associated EC class is general biochemistry knowledge.
-
-
-**Missing item-specific fact**
-
-> None critical. The GGSG/TIM-barrel family signature is sufficient to narrow to EC 5.3.1.x, and only 5.3.1.8 appears among the options.
-
-
-**Reason**
-
-> A knowledgeable model can identify the PGI/PMI TIM-barrel family from the GGSG motif and general fold architecture, then eliminate non-isomerase classes (C, D) and the unrelated 5.3.99.x class (B), arriving at 5.3.1.8 without needing to look up this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the protein is bifunctional (5.3.1.8 AND 5.3.1.9), only 5.3.1.8 appears among the four choices. The other three options belong to entirely different enzyme classes or unrelated isomerase sub-families, so the wording unambiguously points to A.
-
-
-### Important caveats
-
-- The protein is bifunctional; EC 5.3.1.9 is equally valid experimentally but is not offered as a distractor, so the question is answerable from the given options.
-- The GGSG motif identification relies on general family-level knowledge; a model unfamiliar with PGI/PMI structural signatures might struggle, but this is a standard biochemistry teaching point, not an obscure item-specific fact.
-- All reviewer evidence is UniProt annotation with experimental evidence codes (ECO:0000269); the underlying paper (PubMed:39208883, 2024) provides structural and functional characterization.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the hallmark 'GGSGVVGD' / 'VSGMGGSG' motif embedded in a TIM-barrel isomerase architecture, which is the defining structural signature of the PGI/PMI superfamily (phosphoglucose/phosphomannose isomerase family, EC 5.3.1.x). This eliminates EC 1.1.1.195 (oxidoreductase, requires Rossmann NAD-binding fold) and EC 2.7.7.43 (nucleotidyltransferase, requires distinct catalytic motifs). Between EC 5.3.1.8 and EC 5.3.99.13, the TIM-barrel + GGSG signature specifically identifies the PGI/PMI family classified under EC 5.3.1.x, not the unrelated 5.3.99.x class. Recognizing a well-known family motif and its associated EC class is general biochemistry knowledge.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The GGSG/TIM-barrel family signature is sufficient to narrow to EC 5.3.1.x, and only 5.3.1.8 appears among the options.",
-    "reason": "A knowledgeable model can identify the PGI/PMI TIM-barrel family from the GGSG motif and general fold architecture, then eliminate non-isomerase classes (C, D) and the unrelated 5.3.99.x class (B), arriving at 5.3.1.8 without needing to look up this specific protein's database entry."
-  },
-  "case_id": "EC_number_0059",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C6",
-      "H2",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A3MTR6 (sequence matched, 299 AA) annotates this protein as 'Bifunctional phosphoglucose/phosphomannose isomerase' with experimental evidence (ECO:0000269, PubMed:39208883) for both EC 5.3.1.8 (D-mannose 6-phosphate = D-fructose 6-phosphate) and EC 5.3.1.9 (alpha-D-glucose 6-phosphate = beta-D-fructose 6-phosphate). Since EC 5.3.1.8 is among the choices and is experimentally confirmed for this exact sequence, the author key is supported."
-  },
-  "important_caveats": [
-    "The protein is bifunctional; EC 5.3.1.9 is equally valid experimentally but is not offered as a distractor, so the question is answerable from the given options.",
-    "The GGSG motif identification relies on general family-level knowledge; a model unfamiliar with PGI/PMI structural signatures might struggle, but this is a standard biochemistry teaching point, not an obscure item-specific fact.",
-    "All reviewer evidence is UniProt annotation with experimental evidence codes (ECO:0000269); the underlying paper (PubMed:39208883, 2024) provides structural and functional characterization."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the protein is bifunctional (5.3.1.8 AND 5.3.1.9), only 5.3.1.8 appears among the four choices. The other three options belong to entirely different enzyme classes or unrelated isomerase sub-families, so the wording unambiguously points to A."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0059",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A3MTR6 (sequence matched, 299 AA) annotates this protein as 'Bifunctional phosphoglucose/phosphomannose isomerase' with experimental evidence (ECO:0000269, PubMed:39208883) for both EC 5.3.1.8 (D-mannose 6-phosphate = D-fructose 6-phosphate) and EC 5.3.1.9 (alpha-D-glucose 6-phosphate = beta-D-fructose 6-phosphate). Since EC 5.3.1.8 is among the choices and is experimentally confirmed for this exact sequence, the author key is supported.",
-    "evidence_ids": ["C4", "C6", "H2", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the hallmark 'GGSGVVGD' / 'VSGMGGSG' motif embedded in a TIM-barrel isomerase architecture, which is the defining structural signature of the PGI/PMI superfamily (phosphoglucose/phosphomannose isomerase family, EC 5.3.1.x). This eliminates EC 1.1.1.195 (oxidoreductase, requires Rossmann NAD-binding fold) and EC 2.7.7.43 (nucleotidyltransferase, requires distinct catalytic motifs). Between EC 5.3.1.8 and EC 5.3.99.13, the TIM-barrel + GGSG signature specifically identifies the PGI/PMI family classified under EC 5.3.1.x, not the unrelated 5.3.99.x class. Recognizing a well-known family motif and its associated EC class is general biochemistry knowledge.",
-    "missing_item_specific_fact": "None critical. The GGSG/TIM-barrel family signature is sufficient to narrow to EC 5.3.1.x, and only 5.3.1.8 appears among the options.",
-    "reason": "A knowledgeable model can identify the PGI/PMI TIM-barrel family from the GGSG motif and general fold architecture, then eliminate non-isomerase classes (C, D) and the unrelated 5.3.99.x class (B), arriving at 5.3.1.8 without needing to look up this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the protein is bifunctional (5.3.1.8 AND 5.3.1.9), only 5.3.1.8 appears among the four choices. The other three options belong to entirely different enzyme classes or unrelated isomerase sub-families, so the wording unambiguously points to A."
-  },
-  "important_caveats": [
-    "The protein is bifunctional; EC 5.3.1.9 is equally valid experimentally but is not offered as a distractor, so the question is answerable from the given options.",
-    "The GGSG motif identification relies on general family-level knowledge; a model unfamiliar with PGI/PMI structural signatures might struggle, but this is a standard biochemistry teaching point, not an obscure item-specific fact.",
-    "All reviewer evidence is UniProt annotation with experimental evidence codes (ECO:0000269); the underlying paper (PubMed:39208883, 2024) provides structural and functional characterization."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -379,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -493,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A3MTR6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 299,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
   "current_entry_audit": {
     "entryVersion": 75,
     "firstPublicDate": "2025-02-05",
@@ -524,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-04-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "current_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 299,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 74,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A3MTR6",
   "selected_historical_entry_version": 74,
+  "selected_historical_record_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "selected_historical_source_sequence_length": 299,
+  "selected_historical_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
   "selected_historical_version": {
     "accession": "A3MTR6",
     "database": "Swiss-Prot",
@@ -542,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PGMI_PYRCJ",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "selected_historical_source_sequence_sha256": "c1fe40d32c9a8ace25b121d1ae83f544553f7aee96a73eb13f919f4b78b80f91",
-  "selected_historical_source_sequence_length": 299,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 74,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -573,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A3MTR6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -592,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":75,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-04-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -611,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Archaea\",\"Thermoproteota\",\"Thermoprotei\",\"Thermoproteales\",\"Thermoproteaceae\",\"Pyrobaculum\"],\"scientificName\":\"Pyrobaculum calidifontis (strain DSM 21063 / JCM 11548 / VA1)\",\"taxonId\":410359}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -630,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"Glucose-6-phosphate isomerase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"GPI\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Mannose-6-phosphate isomerase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"5.3.1.8\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"5.3.1.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"value\":\"Bifunctional phosphoglucose/phosphomannose isomerase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Bifunctional PGI/PMI\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -649,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"5.3.1.9\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"name\":\"alpha-D-glucose 6-phosphate = beta-D-fructose 6-phosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:11816\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57634\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58225\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -668,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"5.3.1.8\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39208883\",\"source\":\"PubMed\"}],\"name\":\"D-mannose 6-phosphate = D-fructose 6-phosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:12356\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58735\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61527\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -687,15 +451,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json",
-  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
-  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Maqsood A.\",\"Shakir N.A.\",\"Aslam M.\",\"Rahman M.\",\"Rashid N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39208883\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.ijbiomac.2024.135127\"}],\"citationType\":\"journal article\",\"firstPage\":\"135127\",\"id\":\"39208883\",\"journal\":\"Int. J. Biol. Macromol.\",\"lastPage\":\"135127\",\"publicationDate\":\"2024\",\"title\":\"Structural and functional investigations of Pcal_0606, a bifunctional phosphoglucose/phosphomannose isomerase from Pyrobaculum calidifontis.\",\"volume\":\"279\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 21063 / JCM 11548 / VA1\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:26:58.786987+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ab4d5d4975cecc6a04c1957b13bd9283e2ef63f3360c1922d6682cfab0917db3",
+  "url": "https://rest.uniprot.org/uniprotkb/A3MTR6.json"
 }
 ```
 
@@ -705,18 +469,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   PGMI_PYRCJ              Reviewed;         299 AA.\nAC   A3MTR6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-APR-2007, sequence version 1.\nDT   28-JAN-2026, entry version 74.\nDE   RecName: Full=Bifunctional phosphoglucose/phosphomannose isomerase {ECO:0000303|PubMed:39208883};\nDE            Short=Bifunctional PGI/PMI {ECO:0000305};\nDE            EC=5.3.1.8 {ECO:0000269|PubMed:39208883};\nDE            EC=5.3.1.9 {ECO:0000269|PubMed:39208883};\nDE   AltName: Full=Glucose-6-phosphate isomerase {ECO:0000303|PubMed:39208883};\nDE            Short=GPI {ECO:0000305};\nDE   AltName: Full=Mannose-6-phosphate isomerase {ECO:0000305};\nGN   OrderedLocusNames=Pcal_0606 {ECO:0000312|EMBL:ABO08033.1};\nOS   Pyrobaculum calidifontis (strain DSM 21063 / JCM 11548 / VA1).\nOC   Archaea; Thermoproteota; Thermoprotei; Thermoproteales; Thermoproteaceae;\nOC   Pyrobaculum.\nOX   NCBI_TaxID=410359;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 
@@ -726,18 +490,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 6-12",
   "excerpt": "DE   RecName: Full=Bifunctional phosphoglucose/phosphomannose isomerase {ECO:0000303|PubMed:39208883};\nDE            Short=Bifunctional PGI/PMI {ECO:0000305};\nDE            EC=5.3.1.8 {ECO:0000269|PubMed:39208883};\nDE            EC=5.3.1.9 {ECO:0000269|PubMed:39208883};\nDE   AltName: Full=Glucose-6-phosphate isomerase {ECO:0000303|PubMed:39208883};\nDE            Short=GPI {ECO:0000305};\nDE   AltName: Full=Mannose-6-phosphate isomerase {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 
@@ -747,18 +511,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 28-36",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, BIOPHYSICOCHEMICAL\nRP   PROPERTIES, AND SUBUNIT.\nRC   STRAIN=DSM 21063 / JCM 11548 / VA1;\nRX   PubMed=39208883; DOI=10.1016/j.ijbiomac.2024.135127;\nRA   Maqsood A., Shakir N.A., Aslam M., Rahman M., Rashid N.;\nRT   \"Structural and functional investigations of Pcal_0606, a bifunctional\nRT   phosphoglucose/phosphomannose isomerase from Pyrobaculum calidifontis.\";\nRL   Int. J. Biol. Macromol. 279:135127-135127(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 
@@ -768,18 +532,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 44-47",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=alpha-D-glucose 6-phosphate = beta-D-fructose 6-phosphate;\nCC         Xref=Rhea:RHEA:11816, ChEBI:CHEBI:57634, ChEBI:CHEBI:58225;\nCC         EC=5.3.1.9; Evidence={ECO:0000269|PubMed:39208883};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 
@@ -789,18 +553,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74",
-  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
-  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
-  "source_locator": "lines 48-51",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=D-mannose 6-phosphate = D-fructose 6-phosphate;\nCC         Xref=Rhea:RHEA:12356, ChEBI:CHEBI:58735, ChEBI:CHEBI:61527;\nCC         EC=5.3.1.8; Evidence={ECO:0000269|PubMed:39208883};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:27:04.156488+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 48-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9c472af706932a5c4dae44d3e7eaa83f12d4956caae5979ddee1e4be573d0761",
+  "url": "https://rest.uniprot.org/unisave/A3MTR6?format=txt&versions=74"
 }
 ```
 

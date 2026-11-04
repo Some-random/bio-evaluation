@@ -1,18 +1,16 @@
-# GO_cellular_component_0131: before and after transfer clarification
+# GO_cellular_component_0131
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0131.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0131.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **C** — nematocyst
+**Expected answer:** **C** — nematocyst
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 75-residue sequence matches a sea-anemone U-stichotoxin precursor whose UniProt record assigns it to the nematocyst and whose GO annotation is GO:0042151 (nematocyst). The GO assignment is computational (IEA); the record also gives a subcellular-location annotation, but the cited paper excerpt documents toxin characterization rather than independently demonstrating localization. Thus the key is supported as an annotation, not established here by direct localization evidence.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with a signal peptide, and the cysteine-rich mature region is compatible with a secreted toxin. That supports secretion but does not, from sequence alone, specifically distinguish nematocyst storage from other secretory destinations.
-
-
-**Missing item-specific fact**
-
-> The sequence's identity as a Heteractis aurora stichotoxin and its protein-specific nematocyst annotation/localization are needed to select C over other possible secretory destinations.
-
-
-**Reason**
-
-> The question supplies no organism or functional context, and the sequence features do not uniquely identify a nematocyst. Selecting the keyed compartment depends on item-specific protein identity or annotation, rather than a sufficiently discriminating biological inference from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only matched-sequence annotation supports C. Although the sequence suggests secretion rather than a specific organelle, no other listed choice is comparably supported by the supplied evidence.
-
-
-### Important caveats
-
-- The GO nematocyst assignment is IEA, and the source snapshot used by the author is unknown.
-- The matched database record lists both secreted and nematocyst locations; the cited publication excerpt does not itself establish localization experimentally.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a signal peptide, and the cysteine-rich mature region is compatible with a secreted toxin. That supports secretion but does not, from sequence alone, specifically distinguish nematocyst storage from other secretory destinations.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's identity as a Heteractis aurora stichotoxin and its protein-specific nematocyst annotation/localization are needed to select C over other possible secretory destinations.",
-    "reason": "The question supplies no organism or functional context, and the sequence features do not uniquely identify a nematocyst. Selecting the keyed compartment depends on item-specific protein identity or annotation, rather than a sufficiently discriminating biological inference from the input."
-  },
-  "case_id": "GO_cellular_component_0131",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 75-residue sequence matches a sea-anemone U-stichotoxin precursor whose UniProt record assigns it to the nematocyst and whose GO annotation is GO:0042151 (nematocyst). The GO assignment is computational (IEA); the record also gives a subcellular-location annotation, but the cited paper excerpt documents toxin characterization rather than independently demonstrating localization. Thus the key is supported as an annotation, not established here by direct localization evidence."
-  },
-  "important_caveats": [
-    "The GO nematocyst assignment is IEA, and the source snapshot used by the author is unknown.",
-    "The matched database record lists both secreted and nematocyst locations; the cited publication excerpt does not itself establish localization experimentally."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only matched-sequence annotation supports C. Although the sequence suggests secretion rather than a specific organelle, no other listed choice is comparably supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0131",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 75-residue sequence matches a sea-anemone U-stichotoxin precursor whose UniProt record assigns it to the nematocyst and whose GO annotation is GO:0042151 (nematocyst). The GO assignment is computational (IEA); the record also gives a subcellular-location annotation, but the cited paper excerpt documents toxin characterization rather than independently demonstrating localization. Thus the key is supported as an annotation, not established here by direct localization evidence.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C7", "C8", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a signal peptide, and the cysteine-rich mature region is compatible with a secreted toxin. That supports secretion but does not, from sequence alone, specifically distinguish nematocyst storage from other secretory destinations.",
-    "missing_item_specific_fact": "The sequence's identity as a Heteractis aurora stichotoxin and its protein-specific nematocyst annotation/localization are needed to select C over other possible secretory destinations.",
-    "reason": "The question supplies no organism or functional context, and the sequence features do not uniquely identify a nematocyst. Selecting the keyed compartment depends on item-specific protein identity or annotation, rather than a sufficiently discriminating biological inference from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only matched-sequence annotation supports C. Although the sequence suggests secretion rather than a specific organelle, no other listed choice is comparably supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The GO nematocyst assignment is IEA, and the source snapshot used by the author is unknown.",
-    "The matched database record lists both secreted and nematocyst locations; the cited publication excerpt does not itself establish localization experimentally."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A0N7KBN8 (U-stichotoxin-Hau3a from Heteractis aurora, banded sea anemone) annotates the subcellular location as 'Secreted' and 'Nematocyst' (ECO:0000305, curator inference), with a corresponding GO cross-reference to GO:0042151 C:nematocyst (IEA:UniProtKB-SubCell). The sequence matches exactly (75 aa, SHA-256 confirmed in both current and historical snapshots). The evidence code is curator inference rather than direct experimental localization, but the biological context (a cnidarian peptide toxin isolated from sea anemone tissue) makes nematocyst storage well-established. The expected answer C is supported by the database annotation.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H1](#evidence-h1), [H3](#evidence-h3), [H5](#evidence-h5), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Weak elimination reasoning is possible: the N-terminal hydrophobic stretch (MNHLIILVVAAVFLGMASA) resembles a secretory signal peptide rather than a mitochondrial targeting sequence, arguing against B; there are no sperm-specific or acrosome-targeting features, arguing against D; and the inner membrane pellicle complex is exclusive to apicomplexan parasites, arguing against A. This leaves C. However, the positive identification of 'nematocyst' requires recognizing the cysteine-rich 75-aa peptide as a cnidarian toxin (the organism is not stated in the prompt), which is an item-specific fact.
-
-
-**Missing item-specific fact**
-
-> The organism identity (Cnidaria: Heteractis aurora, a sea anemone) and the recognition that this specific cysteine framework corresponds to a cnidarian stichotoxin family are not provided in the question input. Without organism context, the sequence's signal peptide + disulfide-rich small-peptide architecture is consistent with secreted toxins across many phyla, not uniquely with nematocyst storage.
-
-
-**Reason**
-
-> While the four distractors can be partially eliminated by general reasoning (signal peptide ≠ mitochondrial import; no acrosomal or apicomplexan features), the positive selection of 'nematocyst' over other possible secretory compartments (e.g., venom granules, secretory vesicles) depends on knowing this protein is a cnidarian toxin. Recognizing the specific cysteine pattern as a sea anemone toxin without organism metadata is effectively memorization of toxin-family sequence signatures, not general biological reasoning derivable from the prompt alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four provided choices, only nematocyst (C) matches the UniProt/GO annotation. The protein is also annotated as 'Secreted' (GO:0005576, extracellular region), but that term is not among the options, so no ambiguity arises within the given choices. The other three options (mitochondrion, acrosomal membrane, inner membrane pellicle complex) are clearly incompatible with a secreted cysteine-rich peptide.
-
-
-### Important caveats
-
-- The UniProt subcellular-location annotation carries evidence code ECO:0000305 (inferred by curator), not direct experimental localization (e.g., immunoelectron microscopy of nematocyst contents). The GO annotation is IEA (electronic annotation mapped from UniProt subcellular location).
-- The organism (Heteractis aurora, Cnidaria) is absent from the evaluated model input; the reviewer identified it via accession metadata not shown to the model.
-- The entry was first released in Swiss-Prot in April 2025; the benchmark construction date and author source snapshot are unknown, though the historical record (entry version 27, released by 2026-05-07) already contains the nematocyst annotation.
-- The sequence is a precursor (75 aa including a 26-residue signal peptide); the mature toxin is residues 27–75. This does not affect the compartment annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Weak elimination reasoning is possible: the N-terminal hydrophobic stretch (MNHLIILVVAAVFLGMASA) resembles a secretory signal peptide rather than a mitochondrial targeting sequence, arguing against B; there are no sperm-specific or acrosome-targeting features, arguing against D; and the inner membrane pellicle complex is exclusive to apicomplexan parasites, arguing against A. This leaves C. However, the positive identification of 'nematocyst' requires recognizing the cysteine-rich 75-aa peptide as a cnidarian toxin (the organism is not stated in the prompt), which is an item-specific fact.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The organism identity (Cnidaria: Heteractis aurora, a sea anemone) and the recognition that this specific cysteine framework corresponds to a cnidarian stichotoxin family are not provided in the question input. Without organism context, the sequence's signal peptide + disulfide-rich small-peptide architecture is consistent with secreted toxins across many phyla, not uniquely with nematocyst storage.",
-    "reason": "While the four distractors can be partially eliminated by general reasoning (signal peptide ≠ mitochondrial import; no acrosomal or apicomplexan features), the positive selection of 'nematocyst' over other possible secretory compartments (e.g., venom granules, secretory vesicles) depends on knowing this protein is a cnidarian toxin. Recognizing the specific cysteine pattern as a sea anemone toxin without organism metadata is effectively memorization of toxin-family sequence signatures, not general biological reasoning derivable from the prompt alone."
-  },
-  "case_id": "GO_cellular_component_0131",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C7",
-      "H1",
-      "H3",
-      "H5",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0N7KBN8 (U-stichotoxin-Hau3a from Heteractis aurora, banded sea anemone) annotates the subcellular location as 'Secreted' and 'Nematocyst' (ECO:0000305, curator inference), with a corresponding GO cross-reference to GO:0042151 C:nematocyst (IEA:UniProtKB-SubCell). The sequence matches exactly (75 aa, SHA-256 confirmed in both current and historical snapshots). The evidence code is curator inference rather than direct experimental localization, but the biological context (a cnidarian peptide toxin isolated from sea anemone tissue) makes nematocyst storage well-established. The expected answer C is supported by the database annotation."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation carries evidence code ECO:0000305 (inferred by curator), not direct experimental localization (e.g., immunoelectron microscopy of nematocyst contents). The GO annotation is IEA (electronic annotation mapped from UniProt subcellular location).",
-    "The organism (Heteractis aurora, Cnidaria) is absent from the evaluated model input; the reviewer identified it via accession metadata not shown to the model.",
-    "The entry was first released in Swiss-Prot in April 2025; the benchmark construction date and author source snapshot are unknown, though the historical record (entry version 27, released by 2026-05-07) already contains the nematocyst annotation.",
-    "The sequence is a precursor (75 aa including a 26-residue signal peptide); the mature toxin is residues 27–75. This does not affect the compartment annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four provided choices, only nematocyst (C) matches the UniProt/GO annotation. The protein is also annotated as 'Secreted' (GO:0005576, extracellular region), but that term is not among the options, so no ambiguity arises within the given choices. The other three options (mitochondrion, acrosomal membrane, inner membrane pellicle complex) are clearly incompatible with a secreted cysteine-rich peptide."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0131",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0N7KBN8 (U-stichotoxin-Hau3a from Heteractis aurora, banded sea anemone) annotates the subcellular location as 'Secreted' and 'Nematocyst' (ECO:0000305, curator inference), with a corresponding GO cross-reference to GO:0042151 C:nematocyst (IEA:UniProtKB-SubCell). The sequence matches exactly (75 aa, SHA-256 confirmed in both current and historical snapshots). The evidence code is curator inference rather than direct experimental localization, but the biological context (a cnidarian peptide toxin isolated from sea anemone tissue) makes nematocyst storage well-established. The expected answer C is supported by the database annotation.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C7", "H1", "H3", "H5", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Weak elimination reasoning is possible: the N-terminal hydrophobic stretch (MNHLIILVVAAVFLGMASA) resembles a secretory signal peptide rather than a mitochondrial targeting sequence, arguing against B; there are no sperm-specific or acrosome-targeting features, arguing against D; and the inner membrane pellicle complex is exclusive to apicomplexan parasites, arguing against A. This leaves C. However, the positive identification of 'nematocyst' requires recognizing the cysteine-rich 75-aa peptide as a cnidarian toxin (the organism is not stated in the prompt), which is an item-specific fact.",
-    "missing_item_specific_fact": "The organism identity (Cnidaria: Heteractis aurora, a sea anemone) and the recognition that this specific cysteine framework corresponds to a cnidarian stichotoxin family are not provided in the question input. Without organism context, the sequence's signal peptide + disulfide-rich small-peptide architecture is consistent with secreted toxins across many phyla, not uniquely with nematocyst storage.",
-    "reason": "While the four distractors can be partially eliminated by general reasoning (signal peptide ≠ mitochondrial import; no acrosomal or apicomplexan features), the positive selection of 'nematocyst' over other possible secretory compartments (e.g., venom granules, secretory vesicles) depends on knowing this protein is a cnidarian toxin. Recognizing the specific cysteine pattern as a sea anemone toxin without organism metadata is effectively memorization of toxin-family sequence signatures, not general biological reasoning derivable from the prompt alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four provided choices, only nematocyst (C) matches the UniProt/GO annotation. The protein is also annotated as 'Secreted' (GO:0005576, extracellular region), but that term is not among the options, so no ambiguity arises within the given choices. The other three options (mitochondrion, acrosomal membrane, inner membrane pellicle complex) are clearly incompatible with a secreted cysteine-rich peptide."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation carries evidence code ECO:0000305 (inferred by curator), not direct experimental localization (e.g., immunoelectron microscopy of nematocyst contents). The GO annotation is IEA (electronic annotation mapped from UniProt subcellular location).",
-    "The organism (Heteractis aurora, Cnidaria) is absent from the evaluated model input; the reviewer identified it via accession metadata not shown to the model.",
-    "The entry was first released in Swiss-Prot in April 2025; the benchmark construction date and author source snapshot are unknown, though the historical record (entry version 27, released by 2026-05-07) already contains the nematocyst annotation.",
-    "The sequence is a precursor (75 aa including a 26-residue signal peptide); the mature toxin is residues 27–75. This does not affect the compartment annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -399,10 +161,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0N7KBN8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d3ba29f7945503c50d555d8ce56e2e55320acdae069660dcd918d4cebfc05b41",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 75,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d3ba29f7945503c50d555d8ce56e2e55320acdae069660dcd918d4cebfc05b41",
   "current_entry_audit": {
     "entryVersion": 28,
     "firstPublicDate": "2025-04-09",
@@ -546,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2016-01-20",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "current_source_sequence_sha256": "d3ba29f7945503c50d555d8ce56e2e55320acdae069660dcd918d4cebfc05b41",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 75,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d3ba29f7945503c50d555d8ce56e2e55320acdae069660dcd918d4cebfc05b41",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 27,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0N7KBN8",
   "selected_historical_entry_version": 27,
+  "selected_historical_record_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
+  "selected_historical_source_sequence_length": 75,
+  "selected_historical_source_sequence_sha256": "d3ba29f7945503c50d555d8ce56e2e55320acdae069660dcd918d4cebfc05b41",
   "selected_historical_version": {
     "accession": "A0A0N7KBN8",
     "database": "Swiss-Prot",
@@ -564,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "NA3A_HETAU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
-  "selected_historical_source_sequence_sha256": "d3ba29f7945503c50d555d8ce56e2e55320acdae069660dcd918d4cebfc05b41",
-  "selected_historical_source_sequence_length": 75,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 27,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -599,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0N7KBN8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -618,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":28,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2016-01-20\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -637,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Banded sea anemone\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Cnidaria\",\"Anthozoa\",\"Hexacorallia\",\"Actiniaria\",\"Stichodactylidae\",\"Heteractis\"],\"scientificName\":\"Heteractis aurora\",\"synonyms\":[\"Actinia aurora\"],\"taxonId\":478399}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -656,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39530114\",\"source\":\"PubMed\"}],\"value\":\"Hau IV\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39530114\",\"source\":\"PubMed\"}],\"value\":\"U-stichotoxin-Hau3a\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39530114\",\"source\":\"PubMed\"}],\"value\":\"U-SHTX-Hau3a\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -675,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"id\":\"SL-0177\",\"value\":\"Nematocyst\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -694,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/3",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/3",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -713,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/4",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0042151\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nematocyst\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/4",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -732,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json",
-  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
-  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Homma T.\",\"Ishida M.\",\"Nagashima Y.\",\"Shiomi K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39530114\"},{\"database\":\"DOI\",\"id\":\"10.1590/1678-9199-jvatitd-2024-0019\"}],\"citationType\":\"journal article\",\"firstPage\":\"e20240019\",\"id\":\"39530114\",\"journal\":\"J. Venom. Anim. Toxins Incl. Trop. Dis.\",\"lastPage\":\"e20240019\",\"publicationDate\":\"2024\",\"title\":\"Isolation and cDNA cloning of four peptide toxins from the sea anemone Heteractis aurora.\",\"volume\":\"30\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAS68535.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"PROTEIN SEQUENCE OF 27-45\",\"MASS SPECTROMETRY\",\"TOXIC DOSE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:24:16.212733+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "14a72a4a372579a74311518be743e4606d83221eb9050f5e99a1d83164f5a731",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0N7KBN8.json"
 }
 ```
 
@@ -750,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 27,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27",
-  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
-  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   NA3A_HETAU              Reviewed;          75 AA.\nAC   A0A0N7KBN8;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   20-JAN-2016, sequence version 1.\nDT   28-JAN-2026, entry version 27.\nDE   RecName: Full=U-stichotoxin-Hau3a {ECO:0000303|PubMed:39530114};\nDE            Short=U-SHTX-Hau3a {ECO:0000303|PubMed:39530114};\nDE   AltName: Full=Hau IV {ECO:0000303|PubMed:39530114};\nDE   Flags: Precursor;\nGN   Name=HAUTX4 {ECO:0000312|EMBL:BAS68535.1};\nOS   Heteractis aurora (Banded sea anemone) (Actinia aurora).\nOC   Eukaryota; Metazoa; Cnidaria; Anthozoa; Hexacorallia; Actiniaria;\nOC   Stichodactylidae; Heteractis.\nOX   NCBI_TaxID=478399;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 27,
+  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
+  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27"
 }
 ```
 
@@ -771,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 27,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27",
-  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
-  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
-  "source_locator": "lines 15-22",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAS68535.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], PROTEIN SEQUENCE OF 27-45, MASS SPECTROMETRY,\nRP   AND TOXIC DOSE.\nRX   PubMed=39530114; DOI=10.1590/1678-9199-jvatitd-2024-0019;\nRA   Homma T., Ishida M., Nagashima Y., Shiomi K.;\nRT   \"Isolation and cDNA cloning of four peptide toxins from the sea anemone\nRT   Heteractis aurora.\";\nRL   J. Venom. Anim. Toxins Incl. Trop. Dis. 30:e20240019-e20240019(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 27,
+  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
+  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27"
 }
 ```
 
@@ -792,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 27,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27",
-  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
-  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
-  "source_locator": "lines 24-24",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000305}. Nematocyst {ECO:0000305}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 27,
+  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
+  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27"
 }
 ```
 
@@ -813,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 27,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27",
-  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
-  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
-  "source_locator": "lines 39-39",
   "excerpt": "DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 27,
+  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
+  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27"
 }
 ```
 
@@ -834,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 27,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27",
-  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
-  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
-  "source_locator": "lines 40-40",
   "excerpt": "DR   GO; GO:0042151; C:nematocyst; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 27,
+  "retrieved_utc": "2026-11-02T04:24:19.138834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ce3ed23eec7f5b61c3571fb00341ae56831d6fb53df52f12c02ae9e520612ac",
+  "url": "https://rest.uniprot.org/unisave/A0A0N7KBN8?format=txt&versions=27"
 }
 ```
 
@@ -856,15 +607,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 14812-14819",
   "excerpt": "[Term]\nid: GO:0002080\nname: acrosomal membrane\nnamespace: cellular_component\ndef: \"The membrane that surrounds the acrosomal lumen. The acrosome is a special type of lysosome in the head of a spermatozoon that contains acid hydrolases and is concerned with the breakdown of the outer membrane of the ovum during fertilization.\" [GOC:dph]\nis_a: GO:0030667 ! secretory granule membrane\nrelationship: part_of GO:0001669 ! acrosomal vesicle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0002080",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 14812-14819",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0002080"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -875,15 +626,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58975-58998",
   "excerpt": "[Term]\nid: GO:0005739\nname: mitochondrion\nnamespace: cellular_component\ndef: \"A semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration.\" [GOC:giardia, ISBN:0198506732]\ncomment: Some anaerobic or microaerophilic organisms (e.g. Entamoeba histolytica, Giardia intestinalis and several Microsporidia species) do not have mitochondria, and contain mitochondrion-related organelles (MROs) instead, called mitosomes or hydrogenosomes, very likely derived from mitochondria. To annotate gene products located in these mitochondrial relics in species such as Entamoeba histolytica, Giardia intestinalis or others, please use GO:0032047 'mitosome' or GO:0042566 'hydrogenosome'. (See PMID:24316280 for a list of species currently known to contain mitochondrion-related organelles.)\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_yeast\nsynonym: \"mitochondria\" EXACT []\nxref: NIF_Subcellular:sao1860313010\nxref: Wikipedia:Mitochondrion\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005739",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58975-58998",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005739"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -894,15 +645,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 234754-234763",
   "excerpt": "[Term]\nid: GO:0042151\nname: nematocyst\nnamespace: cellular_component\ndef: \"An organelle found in cnidoblast (nematoblast) cells. When matured, these stinging organelles store toxins and can deliver them when the cnidocil (a short extension of the cnidocyst) is stimulated by a prey or another stimulus.\" [DOI:10.1139/z02-135, GOC:jl]\nsynonym: \"cnidocyst\" EXACT []\nxref: Wikipedia:Cnidocyte\nis_a: GO:0043232 ! intracellular membraneless organelle\nrelationship: part_of GO:0005938 ! cell cortex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042151",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 234754-234763",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042151"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -913,15 +664,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 365849-365857",
   "excerpt": "[Term]\nid: GO:0070258\nname: inner membrane pellicle complex\nnamespace: cellular_component\ndef: \"A membrane structure formed of two closely aligned lipid bilayers that lie beneath the plasma membrane and form part of the pellicle surrounding an apicomplexan parasite cell.\" [GOC:mah, PMID:12456714]\nsynonym: \"inner membrane complex\" BROAD []\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0020039 ! pellicle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0070258",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 365849-365857",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0070258"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

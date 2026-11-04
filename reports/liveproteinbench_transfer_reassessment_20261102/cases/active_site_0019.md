@@ -1,18 +1,16 @@
-# active_site_0019: before and after transfer clarification
+# active_site_0019
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0019.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0019.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 291 (Proton acceptor)
+**Expected answer:** **C** — Position 291 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt entry, which annotates position 291 as a proton acceptor. This supports choice C, but the annotation is computationally inferred via PROSITE-ProRule, not identified here as direct experimental evidence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices provide no clear general biological argument for assigning the proton-acceptor role specifically to position 291 rather than the other listed positions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site annotation assigning position 291 as a proton acceptor.
-
-
-**Reason**
-
-> Although the sequence identifies the protein’s amino-acid positions, determining which residue performs this catalytic role requires a protein-specific annotation or equivalent evidence absent from the prompt.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence specifically supports position 291; it does not support another listed choice. The prompt itself lacks evidence to distinguish them, but that is a lookup dependence rather than evidence that multiple choices are correct.
-
-
-### Important caveats
-
-- The active-site assignment is a PROSITE-ProRule computational annotation (ECO:0000255), not an experimental measurement established by the supplied evidence.
-- The matched current and archived UniProt records support the sequence-position correspondence; the author’s exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices provide no clear general biological argument for assigning the proton-acceptor role specifically to position 291 rather than the other listed positions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning position 291 as a proton acceptor.",
-    "reason": "Although the sequence identifies the protein’s amino-acid positions, determining which residue performs this catalytic role requires a protein-specific annotation or equivalent evidence absent from the prompt."
-  },
-  "case_id": "active_site_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry, which annotates position 291 as a proton acceptor. This supports choice C, but the annotation is computationally inferred via PROSITE-ProRule, not identified here as direct experimental evidence."
-  },
-  "important_caveats": [
-    "The active-site assignment is a PROSITE-ProRule computational annotation (ECO:0000255), not an experimental measurement established by the supplied evidence.",
-    "The matched current and archived UniProt records support the sequence-position correspondence; the author’s exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports position 291; it does not support another listed choice. The prompt itself lacks evidence to distinguish them, but that is a lookup dependence rather than evidence that multiple choices are correct."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry, which annotates position 291 as a proton acceptor. This supports choice C, but the annotation is computationally inferred via PROSITE-ProRule, not identified here as direct experimental evidence.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices provide no clear general biological argument for assigning the proton-acceptor role specifically to position 291 rather than the other listed positions.",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning position 291 as a proton acceptor.",
-    "reason": "Although the sequence identifies the protein’s amino-acid positions, determining which residue performs this catalytic role requires a protein-specific annotation or equivalent evidence absent from the prompt."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports position 291; it does not support another listed choice. The prompt itself lacks evidence to distinguish them, but that is a lookup dependence rather than evidence that multiple choices are correct."
-  },
-  "important_caveats": [
-    "The active-site assignment is a PROSITE-ProRule computational annotation (ECO:0000255), not an experimental measurement established by the supplied evidence.",
-    "The matched current and archived UniProt records support the sequence-position correspondence; the author’s exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A2Z5UFJ1 (O-methyltransferase okaF, Penicillium ochrochloron) explicitly annotates position 291 as an Active site with description 'Proton acceptor' (evidence ECO:0000255, PROSITE-ProRule PRU01020). The residue at position 291 in the supplied 382-aa sequence is Histidine (H), consistent with the known catalytic base role in SAM-dependent O-methyltransferases. The annotation is rule-based (PROSITE-ProRule) rather than directly experimental, but the protein's overall function (O-methyltransferase, EC 2.1.1.-) was experimentally characterized (PubMed 28631282). The sequence match is confirmed (SHA256 match, 382 aa).
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C8](#evidence-c8), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could recognize the VLDVGGGTG SAM-binding motif (~positions 224-231) to infer this is a SAM-dependent methyltransferase, and general knowledge that class I O-methyltransferases often employ a catalytic His as proton acceptor. However, the sequence contains multiple His residues (positions ~12, 68, 183, 190, 291, 370) and multiple Asp/Glu residues. Distinguishing position 291 (H) from position 324 (D) as THE proton acceptor requires knowledge of the specific PROSITE-ProRule PRU01020 pattern or the structural geometry of this particular enzyme's active site, neither of which is derivable from general biological reasoning on the raw sequence alone.
-
-
-**Missing item-specific fact**
-
-> The specific PROSITE-ProRule PRU01020 pattern match identifying His-291 (rather than Asp-324 or other residues) as the catalytic base, or equivalently the 3D structural information showing which residue is positioned to deprotonate the substrate hydroxyl in the active site of okaF.
-
-
-**Reason**
-
-> While one can infer the enzyme class (SAM-dependent O-methyltransferase) from the GxGxG motif, pinpointing the exact catalytic residue among multiple candidate His/Asp positions from a linear sequence without structural data or the specific PROSITE rule annotation constitutes a database lookup. The question does not state the enzyme identity or provide structural context, making the precise positional answer dependent on memorizing the UniProt/PROSITE annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C",
-  "D"
-]
-```
-
-> Both options C (H at 291, proton acceptor) and D (D at 324, proton acceptor) describe a proton acceptor role. In some methyltransferase subfamilies, Asp or Glu serves as the catalytic base instead of His. Without structural information or the specific PROSITE-ProRule annotation, a model cannot definitively exclude D from sequence alone. However, the PROSITE-ProRule annotation specifically designates H291, and His is the more common catalytic base in class I O-methyltransferases, giving C a stronger prior.
-
-
-### Important caveats
-
-- The active site annotation at position 291 carries evidence code ECO:0000255 (PROSITE-ProRule), meaning it is a computational/rule-based prediction, not a direct experimental measurement of catalytic mechanism.
-- The protein's overall function as an O-methyltransferase was experimentally validated (PubMed 28631282, 2017), but the specific residue-level active site assignment is inferred by similarity/rule.
-- The question does not identify the protein or its enzyme class; the model must infer this from sequence motifs.
-- The reviewer-only UniProt accession (A0A2Z5UFJ1) was not available to the evaluated model; the sequence must be identified de novo.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could recognize the VLDVGGGTG SAM-binding motif (~positions 224-231) to infer this is a SAM-dependent methyltransferase, and general knowledge that class I O-methyltransferases often employ a catalytic His as proton acceptor. However, the sequence contains multiple His residues (positions ~12, 68, 183, 190, 291, 370) and multiple Asp/Glu residues. Distinguishing position 291 (H) from position 324 (D) as THE proton acceptor requires knowledge of the specific PROSITE-ProRule PRU01020 pattern or the structural geometry of this particular enzyme's active site, neither of which is derivable from general biological reasoning on the raw sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific PROSITE-ProRule PRU01020 pattern match identifying His-291 (rather than Asp-324 or other residues) as the catalytic base, or equivalently the 3D structural information showing which residue is positioned to deprotonate the substrate hydroxyl in the active site of okaF.",
-    "reason": "While one can infer the enzyme class (SAM-dependent O-methyltransferase) from the GxGxG motif, pinpointing the exact catalytic residue among multiple candidate His/Asp positions from a linear sequence without structural data or the specific PROSITE rule annotation constitutes a database lookup. The question does not state the enzyme identity or provide structural context, making the precise positional answer dependent on memorizing the UniProt/PROSITE annotation."
-  },
-  "case_id": "active_site_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C8",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2Z5UFJ1 (O-methyltransferase okaF, Penicillium ochrochloron) explicitly annotates position 291 as an Active site with description 'Proton acceptor' (evidence ECO:0000255, PROSITE-ProRule PRU01020). The residue at position 291 in the supplied 382-aa sequence is Histidine (H), consistent with the known catalytic base role in SAM-dependent O-methyltransferases. The annotation is rule-based (PROSITE-ProRule) rather than directly experimental, but the protein's overall function (O-methyltransferase, EC 2.1.1.-) was experimentally characterized (PubMed 28631282). The sequence match is confirmed (SHA256 match, 382 aa)."
-  },
-  "important_caveats": [
-    "The active site annotation at position 291 carries evidence code ECO:0000255 (PROSITE-ProRule), meaning it is a computational/rule-based prediction, not a direct experimental measurement of catalytic mechanism.",
-    "The protein's overall function as an O-methyltransferase was experimentally validated (PubMed 28631282, 2017), but the specific residue-level active site assignment is inferred by similarity/rule.",
-    "The question does not identify the protein or its enzyme class; the model must infer this from sequence motifs.",
-    "The reviewer-only UniProt accession (A0A2Z5UFJ1) was not available to the evaluated model; the sequence must be identified de novo."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C",
-      "D"
-    ],
-    "reason": "Both options C (H at 291, proton acceptor) and D (D at 324, proton acceptor) describe a proton acceptor role. In some methyltransferase subfamilies, Asp or Glu serves as the catalytic base instead of His. Without structural information or the specific PROSITE-ProRule annotation, a model cannot definitively exclude D from sequence alone. However, the PROSITE-ProRule annotation specifically designates H291, and His is the more common catalytic base in class I O-methyltransferases, giving C a stronger prior."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2Z5UFJ1 (O-methyltransferase okaF, Penicillium ochrochloron) explicitly annotates position 291 as an Active site with description 'Proton acceptor' (evidence ECO:0000255, PROSITE-ProRule PRU01020). The residue at position 291 in the supplied 382-aa sequence is Histidine (H), consistent with the known catalytic base role in SAM-dependent O-methyltransferases. The annotation is rule-based (PROSITE-ProRule) rather than directly experimental, but the protein's overall function (O-methyltransferase, EC 2.1.1.-) was experimentally characterized (PubMed 28631282). The sequence match is confirmed (SHA256 match, 382 aa).",
-    "evidence_ids": ["C5", "H3", "C4", "C8", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could recognize the VLDVGGGTG SAM-binding motif (~positions 224-231) to infer this is a SAM-dependent methyltransferase, and general knowledge that class I O-methyltransferases often employ a catalytic His as proton acceptor. However, the sequence contains multiple His residues (positions ~12, 68, 183, 190, 291, 370) and multiple Asp/Glu residues. Distinguishing position 291 (H) from position 324 (D) as THE proton acceptor requires knowledge of the specific PROSITE-ProRule PRU01020 pattern or the structural geometry of this particular enzyme's active site, neither of which is derivable from general biological reasoning on the raw sequence alone.",
-    "missing_item_specific_fact": "The specific PROSITE-ProRule PRU01020 pattern match identifying His-291 (rather than Asp-324 or other residues) as the catalytic base, or equivalently the 3D structural information showing which residue is positioned to deprotonate the substrate hydroxyl in the active site of okaF.",
-    "reason": "While one can infer the enzyme class (SAM-dependent O-methyltransferase) from the GxGxG motif, pinpointing the exact catalytic residue among multiple candidate His/Asp positions from a linear sequence without structural data or the specific PROSITE rule annotation constitutes a database lookup. The question does not state the enzyme identity or provide structural context, making the precise positional answer dependent on memorizing the UniProt/PROSITE annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C", "D"],
-    "reason": "Both options C (H at 291, proton acceptor) and D (D at 324, proton acceptor) describe a proton acceptor role. In some methyltransferase subfamilies, Asp or Glu serves as the catalytic base instead of His. Without structural information or the specific PROSITE-ProRule annotation, a model cannot definitively exclude D from sequence alone. However, the PROSITE-ProRule annotation specifically designates H291, and His is the more common catalytic base in class I O-methyltransferases, giving C a stronger prior."
-  },
-  "important_caveats": [
-    "The active site annotation at position 291 carries evidence code ECO:0000255 (PROSITE-ProRule), meaning it is a computational/rule-based prediction, not a direct experimental measurement of catalytic mechanism.",
-    "The protein's overall function as an O-methyltransferase was experimentally validated (PubMed 28631282, 2017), but the specific residue-level active site assignment is inferred by similarity/rule.",
-    "The question does not identify the protein or its enzyme class; the model must infer this from sequence motifs.",
-    "The reviewer-only UniProt accession (A0A2Z5UFJ1) was not available to the evaluated model; the sequence must be identified de novo."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2Z5UFJ1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "650bfb4a0af4a222f41efdc6d2b35558a83853924e2811fb1fda2d9bd799ca23",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 382,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "650bfb4a0af4a222f41efdc6d2b35558a83853924e2811fb1fda2d9bd799ca23",
   "current_entry_audit": {
     "entryVersion": 22,
     "firstPublicDate": "2025-02-05",
@@ -539,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-10-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "current_source_sequence_sha256": "650bfb4a0af4a222f41efdc6d2b35558a83853924e2811fb1fda2d9bd799ca23",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 382,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "650bfb4a0af4a222f41efdc6d2b35558a83853924e2811fb1fda2d9bd799ca23",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2Z5UFJ1",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
+  "selected_historical_source_sequence_length": 382,
+  "selected_historical_source_sequence_sha256": "650bfb4a0af4a222f41efdc6d2b35558a83853924e2811fb1fda2d9bd799ca23",
   "selected_historical_version": {
     "accession": "A0A2Z5UFJ1",
     "database": "Swiss-Prot",
@@ -557,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "OKAF_PENOH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
-  "selected_historical_source_sequence_sha256": "650bfb4a0af4a222f41efdc6d2b35558a83853924e2811fb1fda2d9bd799ca23",
-  "selected_historical_source_sequence_length": 382,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2Z5UFJ1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -607,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":22,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-10-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -626,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium ochrochloron\",\"taxonId\":69780}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -645,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Okaramines biosynthesis cluster protein F\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"O-methyltransferase okaF\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -664,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":291},\"start\":{\"modifier\":\"EXACT\",\"value\":291}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -683,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O04385\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59789\",\"name\":\"S-adenosyl-L-methionine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":249},\"start\":{\"modifier\":\"EXACT\",\"value\":249}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -702,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O04385\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59789\",\"name\":\"S-adenosyl-L-methionine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":287},\"start\":{\"modifier\":\"EXACT\",\"value\":287}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -721,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json",
-  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
-  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lai C.Y.\",\"Lo I.W.\",\"Hewage R.T.\",\"Chen Y.C.\",\"Chen C.T.\",\"Lee C.F.\",\"Lin S.\",\"Tang M.C.\",\"Lin H.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28631282\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.201705501\"}],\"citationType\":\"journal article\",\"firstPage\":\"9478\",\"id\":\"28631282\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"9482\",\"publicationDate\":\"2017\",\"title\":\"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise Pathway of Okaramines.\",\"volume\":\"56\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:55.698053+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c40d9c24a5fbe42fadb160394d41d0c1f4f16e074c83ea5d3aad3451b0a1c99",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5UFJ1.json"
 }
 ```
 
@@ -739,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21",
-  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
-  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   OKAF_PENOH              Reviewed;         382 AA.\nAC   A0A2Z5UFJ1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-OCT-2018, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=O-methyltransferase okaF {ECO:0000303|PubMed:28631282};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein F {ECO:0000303|PubMed:28631282};\nGN   Name=okaF {ECO:0000303|PubMed:28631282};\nOS   Penicillium ochrochloron.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=69780;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21"
 }
 ```
 
@@ -760,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21",
-  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
-  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
-  "source_locator": "lines 23-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=28631282; DOI=10.1002/anie.201705501;\nRA   Lai C.Y., Lo I.W., Hewage R.T., Chen Y.C., Chen C.T., Lee C.F., Lin S.,\nRA   Tang M.C., Lin H.C.;\nRT   \"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise\nRT   Pathway of Okaramines.\";\nRL   Angew. Chem. Int. Ed. 56:9478-9482(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21"
 }
 ```
 
@@ -781,18 +535,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21",
-  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
-  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
-  "source_locator": "lines 103-105",
   "excerpt": "FT   ACT_SITE        291\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01020\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 103-105",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21"
 }
 ```
 
@@ -802,18 +556,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21",
-  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
-  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
-  "source_locator": "lines 106-109",
   "excerpt": "FT   BINDING         249\nFT                   /ligand=\"S-adenosyl-L-methionine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59789\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O04385\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 106-109",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21"
 }
 ```
 
@@ -823,18 +577,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21",
-  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
-  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
-  "source_locator": "lines 110-113",
   "excerpt": "FT   BINDING         287\nFT                   /ligand=\"S-adenosyl-L-methionine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59789\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O04385\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:57.706737+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 110-113",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1a62de7f3d5b2124ffd30a7c9e4b82e694d58188d716a4429114528e9f01ce3f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5UFJ1?format=txt&versions=21"
 }
 ```
 

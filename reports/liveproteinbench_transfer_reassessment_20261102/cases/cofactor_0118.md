@@ -1,18 +1,16 @@
-# cofactor_0118: before and after transfer clarification
+# cofactor_0118
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0118.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0118.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — &#91;4Fe-4S&#93; cluster
+**Expected answer:** **B** — &#91;4Fe-4S&#93; cluster
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry that annotates one &#91;4Fe-4S&#93; cluster per monomer, with ECO:0000269 evidence linked to a biochemical-analysis paper. This supports choice B, though the cited primary study was not independently checked here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C8](#evidence-c8), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a sufficiently specific, reliable basis for distinguishing a &#91;4Fe-4S&#93; cluster from the other listed cofactors. Possible cysteine-based metal-binding hints would not establish this particular cofactor.
-
-
-**Missing item-specific fact**
-
-> The protein-specific cofactor characterization or annotation identifying this sequence as binding a &#91;4Fe-4S&#93; cluster.
-
-
-**Reason**
-
-> The sequence is supplied without organism, function, or other context that identifies the protein's unusual cofactor requirement. Selecting B depends on a protein-specific fact not established by general sequence reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, the matching entry's experimentally supported &#91;4Fe-4S&#93; annotation distinguishes B. The entry also lists FAD and FMN, but neither is an option; their annotations have a different evidence code and do not establish another listed choice.
-
-
-### Important caveats
-
-- The matched UniProt sequence and the historical entry support the key, but the exact author source snapshot is unknown.
-- The &#91;4Fe-4S&#93; annotation is linked to experimental evidence in the database; this review did not independently validate the primary paper.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific, reliable basis for distinguishing a [4Fe-4S] cluster from the other listed cofactors. Possible cysteine-based metal-binding hints would not establish this particular cofactor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific cofactor characterization or annotation identifying this sequence as binding a [4Fe-4S] cluster.",
-    "reason": "The sequence is supplied without organism, function, or other context that identifies the protein's unusual cofactor requirement. Selecting B depends on a protein-specific fact not established by general sequence reasoning."
-  },
-  "case_id": "cofactor_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C8",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry that annotates one [4Fe-4S] cluster per monomer, with ECO:0000269 evidence linked to a biochemical-analysis paper. This supports choice B, though the cited primary study was not independently checked here."
-  },
-  "important_caveats": [
-    "The matched UniProt sequence and the historical entry support the key, but the exact author source snapshot is unknown.",
-    "The [4Fe-4S] annotation is linked to experimental evidence in the database; this review did not independently validate the primary paper."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the matching entry's experimentally supported [4Fe-4S] annotation distinguishes B. The entry also lists FAD and FMN, but neither is an option; their annotations have a different evidence code and do not establish another listed choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry that annotates one [4Fe-4S] cluster per monomer, with ECO:0000269 evidence linked to a biochemical-analysis paper. This supports choice B, though the cited primary study was not independently checked here.",
-    "evidence_ids": ["C1", "C5", "C8", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific, reliable basis for distinguishing a [4Fe-4S] cluster from the other listed cofactors. Possible cysteine-based metal-binding hints would not establish this particular cofactor.",
-    "missing_item_specific_fact": "The protein-specific cofactor characterization or annotation identifying this sequence as binding a [4Fe-4S] cluster.",
-    "reason": "The sequence is supplied without organism, function, or other context that identifies the protein's unusual cofactor requirement. Selecting B depends on a protein-specific fact not established by general sequence reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the matching entry's experimentally supported [4Fe-4S] annotation distinguishes B. The entry also lists FAD and FMN, but neither is an option; their annotations have a different evidence code and do not establish another listed choice."
-  },
-  "important_caveats": [
-    "The matched UniProt sequence and the historical entry support the key, but the exact author source snapshot is unknown.",
-    "The [4Fe-4S] annotation is linked to experimental evidence in the database; this review did not independently validate the primary paper."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXY1 (sequence matched, 674 AA) explicitly annotates &#91;4Fe-4S&#93; cluster as a cofactor with experimental evidence (ECO:0000269, PubMed:39867842, 2025), noting 'Binds 1 &#91;4Fe-4S&#93; cluster per monomer via a modified motif.' The sequence SHA256 matches between the benchmark input and the source entry. The expected answer B is directly supported by experimental characterization.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C8](#evidence-c8), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The protein is recognizably an Old Yellow Enzyme (OYE) family oxidoreductase. One could weakly reason that oxidoreductases are more likely to use electron-transfer cofactors (Fe-S clusters) than PLP (transferases) or Zn2+ (hydrolases), and that 'Fe cation' is a generic term for free metal ions rather than a cluster. However, this does not specifically distinguish &#91;4Fe-4S&#93; from other iron-containing cofactors, and the canonical OYE cofactor (FAD/FMN) is absent from the options entirely.
-
-
-**Missing item-specific fact**
-
-> The &#91;4Fe-4S&#93; cluster in this 2-ER OYE subfamily is a recently discovered (2025) and unusual feature characterized by a 'modified motif' that deviates from canonical Cys4 Fe-S cluster coordination patterns. Identifying this specific cofactor requires knowledge of the 2025 biochemical study (PubMed:39867842) or the UniProt annotation itself; it cannot be reliably inferred from sequence motifs alone.
-
-
-**Reason**
-
-> The &#91;4Fe-4S&#93; cluster annotation is a protein-family-specific experimental finding published in 2025, described as binding 'via a modified motif.' No standard sequence heuristic (e.g., canonical CxxC motifs) reliably identifies this cluster from the provided sequence. The distinction between options B and D (Fe cation) cannot be made from general biological reasoning without knowing the specific biochemical characterization of this OYE subfamily.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent distinct cofactor classes (metal ion, iron-sulfur cluster, organic vitamin cofactor, generic metal). While the typical OYE cofactor (FAD/FMN) is notably absent from the choices, among the given options only &#91;4Fe-4S&#93; cluster is experimentally confirmed for this protein. Zn2+ and PLP are inconsistent with oxidoreductase chemistry of this family, and 'Fe cation' refers to a free ion rather than a cluster. No genuine ambiguity among the provided options.
-
-
-### Important caveats
-
-- The &#91;4Fe-4S&#93; cluster is an unusual feature for OYE-family enzymes; the canonical flavin cofactors (FAD, FMN) are also annotated but absent from the answer choices, making the question test knowledge of a recently discovered atypical feature.
-- The evidence code ECO:0000269 indicates experimental support, while FAD and FMN annotations carry ECO:0000305 (inferred by similarity), giving the &#91;4Fe-4S&#93; claim stronger evidentiary weight.
-- The 2025 publication date means this annotation postdates most training data cutoffs, increasing lookup dependence.
-- The 'modified motif' language suggests the Fe-S cluster binding site may not follow canonical Cys4 patterns, further limiting sequence-based inference.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is recognizably an Old Yellow Enzyme (OYE) family oxidoreductase. One could weakly reason that oxidoreductases are more likely to use electron-transfer cofactors (Fe-S clusters) than PLP (transferases) or Zn2+ (hydrolases), and that 'Fe cation' is a generic term for free metal ions rather than a cluster. However, this does not specifically distinguish [4Fe-4S] from other iron-containing cofactors, and the canonical OYE cofactor (FAD/FMN) is absent from the options entirely.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The [4Fe-4S] cluster in this 2-ER OYE subfamily is a recently discovered (2025) and unusual feature characterized by a 'modified motif' that deviates from canonical Cys4 Fe-S cluster coordination patterns. Identifying this specific cofactor requires knowledge of the 2025 biochemical study (PubMed:39867842) or the UniProt annotation itself; it cannot be reliably inferred from sequence motifs alone.",
-    "reason": "The [4Fe-4S] cluster annotation is a protein-family-specific experimental finding published in 2025, described as binding 'via a modified motif.' No standard sequence heuristic (e.g., canonical CxxC motifs) reliably identifies this cluster from the provided sequence. The distinction between options B and D (Fe cation) cannot be made from general biological reasoning without knowing the specific biochemical characterization of this OYE subfamily."
-  },
-  "case_id": "cofactor_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C8",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXY1 (sequence matched, 674 AA) explicitly annotates [4Fe-4S] cluster as a cofactor with experimental evidence (ECO:0000269, PubMed:39867842, 2025), noting 'Binds 1 [4Fe-4S] cluster per monomer via a modified motif.' The sequence SHA256 matches between the benchmark input and the source entry. The expected answer B is directly supported by experimental characterization."
-  },
-  "important_caveats": [
-    "The [4Fe-4S] cluster is an unusual feature for OYE-family enzymes; the canonical flavin cofactors (FAD, FMN) are also annotated but absent from the answer choices, making the question test knowledge of a recently discovered atypical feature.",
-    "The evidence code ECO:0000269 indicates experimental support, while FAD and FMN annotations carry ECO:0000305 (inferred by similarity), giving the [4Fe-4S] claim stronger evidentiary weight.",
-    "The 2025 publication date means this annotation postdates most training data cutoffs, increasing lookup dependence.",
-    "The 'modified motif' language suggests the Fe-S cluster binding site may not follow canonical Cys4 patterns, further limiting sequence-based inference."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent distinct cofactor classes (metal ion, iron-sulfur cluster, organic vitamin cofactor, generic metal). While the typical OYE cofactor (FAD/FMN) is notably absent from the choices, among the given options only [4Fe-4S] cluster is experimentally confirmed for this protein. Zn2+ and PLP are inconsistent with oxidoreductase chemistry of this family, and 'Fe cation' refers to a free ion rather than a cluster. No genuine ambiguity among the provided options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXY1 (sequence matched, 674 AA) explicitly annotates [4Fe-4S] cluster as a cofactor with experimental evidence (ECO:0000269, PubMed:39867842, 2025), noting 'Binds 1 [4Fe-4S] cluster per monomer via a modified motif.' The sequence SHA256 matches between the benchmark input and the source entry. The expected answer B is directly supported by experimental characterization.",
-    "evidence_ids": ["C5", "H4", "C8", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The protein is recognizably an Old Yellow Enzyme (OYE) family oxidoreductase. One could weakly reason that oxidoreductases are more likely to use electron-transfer cofactors (Fe-S clusters) than PLP (transferases) or Zn2+ (hydrolases), and that 'Fe cation' is a generic term for free metal ions rather than a cluster. However, this does not specifically distinguish [4Fe-4S] from other iron-containing cofactors, and the canonical OYE cofactor (FAD/FMN) is absent from the options entirely.",
-    "missing_item_specific_fact": "The [4Fe-4S] cluster in this 2-ER OYE subfamily is a recently discovered (2025) and unusual feature characterized by a 'modified motif' that deviates from canonical Cys4 Fe-S cluster coordination patterns. Identifying this specific cofactor requires knowledge of the 2025 biochemical study (PubMed:39867842) or the UniProt annotation itself; it cannot be reliably inferred from sequence motifs alone.",
-    "reason": "The [4Fe-4S] cluster annotation is a protein-family-specific experimental finding published in 2025, described as binding 'via a modified motif.' No standard sequence heuristic (e.g., canonical CxxC motifs) reliably identifies this cluster from the provided sequence. The distinction between options B and D (Fe cation) cannot be made from general biological reasoning without knowing the specific biochemical characterization of this OYE subfamily."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent distinct cofactor classes (metal ion, iron-sulfur cluster, organic vitamin cofactor, generic metal). While the typical OYE cofactor (FAD/FMN) is notably absent from the choices, among the given options only [4Fe-4S] cluster is experimentally confirmed for this protein. Zn2+ and PLP are inconsistent with oxidoreductase chemistry of this family, and 'Fe cation' refers to a free ion rather than a cluster. No genuine ambiguity among the provided options."
-  },
-  "important_caveats": [
-    "The [4Fe-4S] cluster is an unusual feature for OYE-family enzymes; the canonical flavin cofactors (FAD, FMN) are also annotated but absent from the answer choices, making the question test knowledge of a recently discovered atypical feature.",
-    "The evidence code ECO:0000269 indicates experimental support, while FAD and FMN annotations carry ECO:0000305 (inferred by similarity), giving the [4Fe-4S] claim stronger evidentiary weight.",
-    "The 2025 publication date means this annotation postdates most training data cutoffs, increasing lookup dependence.",
-    "The 'modified motif' language suggests the Fe-S cluster binding site may not follow canonical Cys4 patterns, further limiting sequence-based inference."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXY1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d0a9daceb358a7ab215246a52585cb052774e4be4676ac0c90d1d7ce1289a52e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 674,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d0a9daceb358a7ab215246a52585cb052774e4be4676ac0c90d1d7ce1289a52e",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -530,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "current_source_sequence_sha256": "d0a9daceb358a7ab215246a52585cb052774e4be4676ac0c90d1d7ce1289a52e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 674,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d0a9daceb358a7ab215246a52585cb052774e4be4676ac0c90d1d7ce1289a52e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXY1",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
+  "selected_historical_source_sequence_length": 674,
+  "selected_historical_source_sequence_sha256": "d0a9daceb358a7ab215246a52585cb052774e4be4676ac0c90d1d7ce1289a52e",
   "selected_historical_version": {
     "accession": "P0DXY1",
     "database": "Swiss-Prot",
@@ -548,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "OYE_CABCO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
-  "selected_historical_source_sequence_sha256": "d0a9daceb358a7ab215246a52585cb052774e4be4676ac0c90d1d7ce1289a52e",
-  "selected_historical_source_sequence_length": 674,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXY1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -598,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -617,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Burkholderia cordobensis\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Burkholderiales\",\"Burkholderiaceae\",\"Caballeronia\"],\"scientificName\":\"Caballeronia cordobensis\",\"taxonId\":1353886}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -636,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"value\":\"Old yellow enzyme\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"value\":\"OYE\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"value\":\"1.14.13.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"value\":\"1.3.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Multifunctional alkene reductase/demethylase OYE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -655,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:49883\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"name\":\"[4Fe-4S] cluster\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"value\":\"Binds 1 [4Fe-4S] cluster per monomer via a modified motif.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -674,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:57692\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"name\":\"FAD\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -693,15 +453,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39867842\",\"source\":\"PubMed\"}],\"name\":\"FMN\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -712,15 +472,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json",
-  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
-  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Blue-Lahom T.C.\",\"Jones S.K.\",\"Davis K.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39867842\"},{\"database\":\"DOI\",\"id\":\"10.1039/d4cb00289j\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"39867842\",\"journal\":\"RSC Chem. Biol.\",\"lastPage\":\"0\",\"publicationDate\":\"2025\",\"title\":\"Bioinformatic and biochemical analysis uncovers novel activity in the 2-ER subfamily of OYEs.\",\"volume\":\"0\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"RPE67\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PROBABLE ACTIVE SITE\",\"COFACTORS\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:16.880149+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3fba688935042654968bdf1fadb0a0c52f92e43252c7775d80a434e6cfed86b1",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXY1.json"
 }
 ```
 
@@ -730,18 +490,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2",
-  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
-  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   OYE_CABCO               Reviewed;         674 AA.\nAC   P0DXY1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=Multifunctional alkene reductase/demethylase OYE {ECO:0000305};\nDE            EC=1.14.13.- {ECO:0000269|PubMed:39867842};\nDE            EC=1.3.1.- {ECO:0000269|PubMed:39867842};\nDE   AltName: Full=Old yellow enzyme {ECO:0000303|PubMed:39867842};\nDE            Short=OYE {ECO:0000303|PubMed:39867842};\nGN   ORFNames=BRPE67_CCDS01850;\nOS   Caballeronia cordobensis (Burkholderia cordobensis).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria;\nOC   Burkholderiales; Burkholderiaceae; Caballeronia.\nOX   NCBI_TaxID=1353886;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
+  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2"
 }
 ```
 
@@ -751,18 +511,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2",
-  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
-  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Multifunctional alkene reductase/demethylase OYE {ECO:0000305};\nDE            EC=1.14.13.- {ECO:0000269|PubMed:39867842};\nDE            EC=1.3.1.- {ECO:0000269|PubMed:39867842};\nDE   AltName: Full=Old yellow enzyme {ECO:0000303|PubMed:39867842};\nDE            Short=OYE {ECO:0000303|PubMed:39867842};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
+  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2"
 }
 ```
 
@@ -772,18 +532,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2",
-  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
-  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
-  "source_locator": "lines 25-33",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, PROBABLE ACTIVE SITE, COFACTORS, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRC   STRAIN=RPE67;\nRX   PubMed=39867842; DOI=10.1039/d4cb00289j;\nRA   Blue-Lahom T.C., Jones S.K., Davis K.M.;\nRT   \"Bioinformatic and biochemical analysis uncovers novel activity in the 2-ER\nRT   subfamily of OYEs.\";\nRL   RSC Chem. Biol. 0:0-0(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
+  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2"
 }
 ```
 
@@ -793,18 +553,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2",
-  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
-  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
-  "source_locator": "lines 54-58",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=[4Fe-4S] cluster; Xref=ChEBI:CHEBI:49883;\nCC         Evidence={ECO:0000269|PubMed:39867842};\nCC       Note=Binds 1 [4Fe-4S] cluster per monomer via a modified motif.\nCC       {ECO:0000269|PubMed:39867842};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 54-58",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
+  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2"
 }
 ```
 
@@ -814,18 +574,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2",
-  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
-  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
-  "source_locator": "lines 59-61",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=FAD; Xref=ChEBI:CHEBI:57692;\nCC         Evidence={ECO:0000305|PubMed:39867842};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 59-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
+  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2"
 }
 ```
 
@@ -835,18 +595,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2",
-  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
-  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
-  "source_locator": "lines 62-64",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=FMN; Xref=ChEBI:CHEBI:58210;\nCC         Evidence={ECO:0000305|PubMed:39867842};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.698464+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "82b8b06905ea45150fa9b6f70f9b288d08c0b0848d8de03baf3ae90bcfae3ac1",
+  "url": "https://rest.uniprot.org/unisave/P0DXY1?format=txt&versions=2"
 }
 ```
 

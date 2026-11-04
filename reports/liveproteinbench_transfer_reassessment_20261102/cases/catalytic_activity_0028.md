@@ -1,18 +1,16 @@
-# catalytic_activity_0028: before and after transfer clarification
+# catalytic_activity_0028
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0028.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0028.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **A** — N(omega)-(ADP-D-ribosyl)-L-arginyl-&#91;protein&#93; + H2O = ADP-D-ribose + L-arginyl-&#91;protein&#93;
+**Expected answer:** **A** — N(omega)-(ADP-D-ribosyl)-L-arginyl-&#91;protein&#93; + H2O = ADP-D-ribose + L-arginyl-&#91;protein&#93;
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt entry for Drosophila ADP-ribosylarginine hydrolase CG2909, whose annotated catalytic reaction is choice A. The reaction annotation cites experimental evidence (ECO:0000269); the primary paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices describe different enzyme activities, but the input provides no biological context or explicit substrate evidence that establishes this protein's particular activity.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification or experimental annotation that this sequence encodes an ADP-ribosylarginine hydrolase.
-
-
-**Reason**
-
-> Choosing A depends on knowing the identity or functional annotation of this particular sequence. The reviewer-only database match supports the key but was not supplied to the evaluated model; exact-sequence recognition or a predictor's output would not itself make the question reasoning-supported.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence's cited catalytic-activity annotation specifies choice A; no competing reaction is supported by the supplied reviewer evidence.
-
-
-### Important caveats
-
-- The sequence match is exact in both current and historical UniProt records, but the author's source snapshot is unknown.
-- The cited experimental evidence is represented through UniProt annotation; the primary paper was not independently validated.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices describe different enzyme activities, but the input provides no biological context or explicit substrate evidence that establishes this protein's particular activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification or experimental annotation that this sequence encodes an ADP-ribosylarginine hydrolase.",
-    "reason": "Choosing A depends on knowing the identity or functional annotation of this particular sequence. The reviewer-only database match supports the key but was not supplied to the evaluated model; exact-sequence recognition or a predictor's output would not itself make the question reasoning-supported."
-  },
-  "case_id": "catalytic_activity_0028",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry for Drosophila ADP-ribosylarginine hydrolase CG2909, whose annotated catalytic reaction is choice A. The reaction annotation cites experimental evidence (ECO:0000269); the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both current and historical UniProt records, but the author's source snapshot is unknown.",
-    "The cited experimental evidence is represented through UniProt annotation; the primary paper was not independently validated."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's cited catalytic-activity annotation specifies choice A; no competing reaction is supported by the supplied reviewer evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0028",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry for Drosophila ADP-ribosylarginine hydrolase CG2909, whose annotated catalytic reaction is choice A. The reaction annotation cites experimental evidence (ECO:0000269); the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices describe different enzyme activities, but the input provides no biological context or explicit substrate evidence that establishes this protein's particular activity.",
-    "missing_item_specific_fact": "The protein-specific identification or experimental annotation that this sequence encodes an ADP-ribosylarginine hydrolase.",
-    "reason": "Choosing A depends on knowing the identity or functional annotation of this particular sequence. The reviewer-only database match supports the key but was not supplied to the evaluated model; exact-sequence recognition or a predictor's output would not itself make the question reasoning-supported."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence's cited catalytic-activity annotation specifies choice A; no competing reaction is supported by the supplied reviewer evidence."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both current and historical UniProt records, but the author's source snapshot is unknown.",
-    "The cited experimental evidence is represented through UniProt annotation; the primary paper was not independently validated."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9W2W5 (ADPR1_DROME) is annotated as 'ADP-ribosylarginine hydrolase CG2909' with EC 3.2.2.19. The catalytic activity is explicitly stated as 'N(omega)-(ADP-D-ribosyl)-L-arginyl-&#91;protein&#93; + H2O = ADP-D-ribose + L-arginyl-&#91;protein&#93;' (Rhea:RHEA:14885), matching Choice A verbatim. The annotation carries evidence code ECO:0000269 (direct assay) from PubMed:38503748 and is corroborated by X-ray crystallography (PDB 8DMT, 2.28 Å). Sequence match is exact (505 aa, SHA256 identical).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> No obvious sequence motif in the 505-aa sequence uniquely identifies ADP-ribosylarginine hydrolase activity over the three distractors. While the sequence contains nucleotide-binding-like elements (e.g., 'GNSVKVY', 'SGESGASGF' P-loop-like region), these are shared across many nucleotide-binding enzymes and do not distinguish a macrodomain hydrolase from an ACP synthase (B), a quinone reductase (C), or a cap methyltransferase (D). The macrodomain fold responsible for arginine-specific ADP-ribosyl hydrolysis is a structural feature not reliably identifiable from primary sequence by general biological reasoning.
-
-
-**Missing item-specific fact**
-
-> The specific identification of this Drosophila CG2909 protein as a macrodomain-containing ADP-ribosylarginine hydrolase (EC 3.2.2.19) requires either database lookup of the sequence or specialized knowledge of macrodomain structural signatures, neither of which is derivable from general enzymology reasoning about the provided sequence.
-
-
-**Reason**
-
-> The four choices represent entirely different enzyme classes (glycosyl hydrolase, transferase, oxidoreductase, methyltransferase). Distinguishing them from a raw 505-aa sequence without structural context or recognizable class-specific motifs demands item-specific annotation knowledge rather than general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The UniProt annotation with direct experimental evidence (ECO:0000269) and crystallographic confirmation uniquely identifies Choice A. The other three choices describe mechanistically unrelated reactions that are not supported for this protein.
-
-
-### Important caveats
-
-- The UniProt entry was first publicly released in 2025-02-05; the catalytic activity annotation (PubMed:38503748, 2024) may postdate the original benchmark construction, though the sequence itself has been in databases since 2000.
-- The accession Q9W2W5 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.
-- The annotation evidence is experimental (direct assay + crystallography), not merely computational inference, strengthening the key's reliability.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "No obvious sequence motif in the 505-aa sequence uniquely identifies ADP-ribosylarginine hydrolase activity over the three distractors. While the sequence contains nucleotide-binding-like elements (e.g., 'GNSVKVY', 'SGESGASGF' P-loop-like region), these are shared across many nucleotide-binding enzymes and do not distinguish a macrodomain hydrolase from an ACP synthase (B), a quinone reductase (C), or a cap methyltransferase (D). The macrodomain fold responsible for arginine-specific ADP-ribosyl hydrolysis is a structural feature not reliably identifiable from primary sequence by general biological reasoning.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of this Drosophila CG2909 protein as a macrodomain-containing ADP-ribosylarginine hydrolase (EC 3.2.2.19) requires either database lookup of the sequence or specialized knowledge of macrodomain structural signatures, neither of which is derivable from general enzymology reasoning about the provided sequence.",
-    "reason": "The four choices represent entirely different enzyme classes (glycosyl hydrolase, transferase, oxidoreductase, methyltransferase). Distinguishing them from a raw 505-aa sequence without structural context or recognizable class-specific motifs demands item-specific annotation knowledge rather than general biological reasoning."
-  },
-  "case_id": "catalytic_activity_0028",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9W2W5 (ADPR1_DROME) is annotated as 'ADP-ribosylarginine hydrolase CG2909' with EC 3.2.2.19. The catalytic activity is explicitly stated as 'N(omega)-(ADP-D-ribosyl)-L-arginyl-[protein] + H2O = ADP-D-ribose + L-arginyl-[protein]' (Rhea:RHEA:14885), matching Choice A verbatim. The annotation carries evidence code ECO:0000269 (direct assay) from PubMed:38503748 and is corroborated by X-ray crystallography (PDB 8DMT, 2.28 Å). Sequence match is exact (505 aa, SHA256 identical)."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released in 2025-02-05; the catalytic activity annotation (PubMed:38503748, 2024) may postdate the original benchmark construction, though the sequence itself has been in databases since 2000.",
-    "The accession Q9W2W5 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
-    "The annotation evidence is experimental (direct assay + crystallography), not merely computational inference, strengthening the key's reliability."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt annotation with direct experimental evidence (ECO:0000269) and crystallographic confirmation uniquely identifies Choice A. The other three choices describe mechanistically unrelated reactions that are not supported for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0028",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9W2W5 (ADPR1_DROME) is annotated as 'ADP-ribosylarginine hydrolase CG2909' with EC 3.2.2.19. The catalytic activity is explicitly stated as 'N(omega)-(ADP-D-ribosyl)-L-arginyl-[protein] + H2O = ADP-D-ribose + L-arginyl-[protein]' (Rhea:RHEA:14885), matching Choice A verbatim. The annotation carries evidence code ECO:0000269 (direct assay) from PubMed:38503748 and is corroborated by X-ray crystallography (PDB 8DMT, 2.28 Å). Sequence match is exact (505 aa, SHA256 identical).",
-    "evidence_ids": ["C4", "C5", "C7", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "No obvious sequence motif in the 505-aa sequence uniquely identifies ADP-ribosylarginine hydrolase activity over the three distractors. While the sequence contains nucleotide-binding-like elements (e.g., 'GNSVKVY', 'SGESGASGF' P-loop-like region), these are shared across many nucleotide-binding enzymes and do not distinguish a macrodomain hydrolase from an ACP synthase (B), a quinone reductase (C), or a cap methyltransferase (D). The macrodomain fold responsible for arginine-specific ADP-ribosyl hydrolysis is a structural feature not reliably identifiable from primary sequence by general biological reasoning.",
-    "missing_item_specific_fact": "The specific identification of this Drosophila CG2909 protein as a macrodomain-containing ADP-ribosylarginine hydrolase (EC 3.2.2.19) requires either database lookup of the sequence or specialized knowledge of macrodomain structural signatures, neither of which is derivable from general enzymology reasoning about the provided sequence.",
-    "reason": "The four choices represent entirely different enzyme classes (glycosyl hydrolase, transferase, oxidoreductase, methyltransferase). Distinguishing them from a raw 505-aa sequence without structural context or recognizable class-specific motifs demands item-specific annotation knowledge rather than general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt annotation with direct experimental evidence (ECO:0000269) and crystallographic confirmation uniquely identifies Choice A. The other three choices describe mechanistically unrelated reactions that are not supported for this protein."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released in 2025-02-05; the catalytic activity annotation (PubMed:38503748, 2024) may postdate the original benchmark construction, though the sequence itself has been in databases since 2000.",
-    "The accession Q9W2W5 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
-    "The annotation evidence is experimental (direct assay + crystallography), not merely computational inference, strengthening the key's reliability."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9W2W5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6d00535c3ebbeff04d3af934c13233820562fce90c7ddf3c72a7af047ff7f6fb",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 505,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6d00535c3ebbeff04d3af934c13233820562fce90c7ddf3c72a7af047ff7f6fb",
   "current_entry_audit": {
     "entryVersion": 175,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "current_source_sequence_sha256": "6d00535c3ebbeff04d3af934c13233820562fce90c7ddf3c72a7af047ff7f6fb",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 505,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6d00535c3ebbeff04d3af934c13233820562fce90c7ddf3c72a7af047ff7f6fb",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 173,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9W2W5",
   "selected_historical_entry_version": 173,
+  "selected_historical_record_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
+  "selected_historical_source_sequence_length": 505,
+  "selected_historical_source_sequence_sha256": "6d00535c3ebbeff04d3af934c13233820562fce90c7ddf3c72a7af047ff7f6fb",
   "selected_historical_version": {
     "accession": "Q9W2W5",
     "database": "Swiss-Prot",
@@ -552,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ADPR1_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
-  "selected_historical_source_sequence_sha256": "6d00535c3ebbeff04d3af934c13233820562fce90c7ddf3c72a7af047ff7f6fb",
-  "selected_historical_source_sequence_length": 505,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 173,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json",
-  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9W2W5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json"
 }
 ```
 
@@ -602,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json",
-  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":175,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json"
 }
 ```
 
@@ -621,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json",
-  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json"
 }
 ```
 
@@ -640,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json",
-  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38503748\",\"source\":\"PubMed\"}],\"value\":\"3.2.2.19\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"ADP-ribosylarginine hydrolase CG2909\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json"
 }
 ```
 
@@ -659,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json",
-  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.2.19\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38503748\",\"source\":\"PubMed\"}],\"name\":\"N(omega)-(ADP-D-ribosyl)-L-arginyl-[protein] + H2O = ADP-D-ribose + L-arginyl-[protein]\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:14885\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:10532\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:15087\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57967\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:142554\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json"
 }
 ```
 
@@ -678,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json",
-  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.2.19\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38503748\",\"source\":\"PubMed\"}],\"name\":\"N(omega)-(ADP-D-ribosyl)-L-arginine + H2O = ADP-D-ribose + L-arginine\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:20784\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:32682\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57967\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:60267\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json"
 }
 ```
 
@@ -697,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json",
-  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
-  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang Z.\",\"Fu J.\",\"Rack J.G.M.\",\"Li C.\",\"Voorneveld J.\",\"Filippov D.V.\",\"Ahel I.\",\"Luo Z.Q.\",\"Das C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38503748\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41467-024-46649-2\"}],\"citationType\":\"journal article\",\"firstPage\":\"2452\",\"id\":\"38503748\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"2452\",\"publicationDate\":\"2024\",\"title\":\"Legionella metaeffector MavL reverses ubiquitin ADP-ribosylation via a conserved arginine-specific macrodomain.\",\"volume\":\"15\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8DMT\",\"source\":\"PDB\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.28 ANGSTROMS) OF 12-498\",\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:33:49.227169+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8c4b1ff81ea684e2da8c73dc92c892e3febdbf00a6956c5246fef6a8101ec96b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W2W5.json"
 }
 ```
 
@@ -715,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 173,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173",
-  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
-  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   ADPR1_DROME             Reviewed;         505 AA.\nAC   Q9W2W5;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 173.\nDE   RecName: Full=ADP-ribosylarginine hydrolase CG2909 {ECO:0000305};\nDE            EC=3.2.2.19 {ECO:0000269|PubMed:38503748};\nGN   ORFNames=CG2909 {ECO:0000312|FlyBase:FBgn0030189};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 173,
+  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
+  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173"
 }
 ```
 
@@ -736,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 173,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173",
-  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
-  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=ADP-ribosylarginine hydrolase CG2909 {ECO:0000305};\nDE            EC=3.2.2.19 {ECO:0000269|PubMed:38503748};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 173,
+  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
+  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173"
 }
 ```
 
@@ -757,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 173,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173",
-  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
-  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
-  "source_locator": "lines 77-85",
   "excerpt": "RN   [4] {ECO:0007744|PDB:8DMT}\nRP   X-RAY CRYSTALLOGRAPHY (2.28 ANGSTROMS) OF 12-498, FUNCTION, AND CATALYTIC\nRP   ACTIVITY.\nRX   PubMed=38503748; DOI=10.1038/s41467-024-46649-2;\nRA   Zhang Z., Fu J., Rack J.G.M., Li C., Voorneveld J., Filippov D.V., Ahel I.,\nRA   Luo Z.Q., Das C.;\nRT   \"Legionella metaeffector MavL reverses ubiquitin ADP-ribosylation via a\nRT   conserved arginine-specific macrodomain.\";\nRL   Nat. Commun. 15:2452-2452(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 173,
+  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
+  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173"
 }
 ```
 
@@ -778,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 173,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173",
-  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
-  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
-  "source_locator": "lines 89-94",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N(omega)-(ADP-D-ribosyl)-L-arginyl-[protein] + H2O = ADP-D-\nCC         ribose + L-arginyl-[protein]; Xref=Rhea:RHEA:14885, Rhea:RHEA-\nCC         COMP:10532, Rhea:RHEA-COMP:15087, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:29965, ChEBI:CHEBI:57967, ChEBI:CHEBI:142554;\nCC         EC=3.2.2.19; Evidence={ECO:0000269|PubMed:38503748};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 173,
+  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 89-94",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
+  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173"
 }
 ```
 
@@ -799,18 +560,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 173,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173",
-  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
-  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
-  "source_locator": "lines 95-103",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N(omega)-(ADP-D-ribosyl)-L-arginine + H2O = ADP-D-ribose + L-\nCC         arginine; Xref=Rhea:RHEA:20784, ChEBI:CHEBI:15377, ChEBI:CHEBI:32682,\nCC         ChEBI:CHEBI:57967, ChEBI:CHEBI:60267; EC=3.2.2.19;\nCC         Evidence={ECO:0000269|PubMed:38503748};\nCC   ---------------------------------------------------------------------------\nCC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms\nCC   Distributed under the Creative Commons Attribution (CC BY 4.0) License\nCC   ---------------------------------------------------------------------------\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 173,
+  "retrieved_utc": "2026-11-02T04:33:51.554411+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 95-103",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d3e88c24a09fe094e0e6b61003b0b7cb6a21443d379625c0284868d597f8c494",
+  "url": "https://rest.uniprot.org/unisave/Q9W2W5?format=txt&versions=173"
 }
 ```
 

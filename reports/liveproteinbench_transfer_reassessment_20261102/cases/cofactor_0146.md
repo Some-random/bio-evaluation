@@ -1,18 +1,16 @@
-# cofactor_0146: before and after transfer clarification
+# cofactor_0146
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0146.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0146.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Zn(2+)
+**Expected answer:** **B** — Zn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | no saved label | no saved label | output error (invalid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | Unusable review | Unusable review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,13 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `invalid_review`.
 
-### Expected-answer support: supported
-
-> The exact sequence matches the annotated Neisseria gonorrhoeae Mpg protein. UniProt annotates Zn(2+) as its cofactor and says it binds one zinc ion per subunit; the cofactor evidence is transferred by similarity (ECO:0000250), not a direct measurement established here for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C4](#evidence-c4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A zinc metalloprotease would use Zn(2+), but identifying this sequence as that particular metalloprotease requires recognizing its protein family or obtaining its annotation; the input supplies no function or organism context.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity/function and its zinc-cofactor annotation are absent from the question.
-
-
-**Reason**
-
-> The sequence alone does not provide an unambiguous, readily interpretable basis for identifying the enzyme family and its cofactor. Remembering or retrieving the exact sequence's annotation would distinguish the options, but that is lookup or memorization rather than reasoning from supplied context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation supports Zn(2+); the other listed options are not supported by the supplied reviewer evidence.
-
-
-### Important caveats
-
-- The cofactor annotation is similarity-transferred; the evidence excerpts do not establish a direct zinc-binding experiment on this exact protein.
-- The reviewer-only accession and annotations were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A zinc metalloprotease would use Zn(2+), but identifying this sequence as that particular metalloprotease requires recognizing its protein family or obtaining its annotation; the input supplies no function or organism context.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity/function and its zinc-cofactor annotation are absent from the question.",
-    "reason": "The sequence alone does not provide an unambiguous, readily interpretable basis for identifying the enzyme family and its cofactor. Remembering or retrieving the exact sequence's annotation would distinguish the options, but that is lookup or memorization rather than reasoning from supplied context."
-  },
-  "case_id": "cofactor_0146",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C4",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated Neisseria gonorrhoeae Mpg protein. UniProt annotates Zn(2+) as its cofactor and says it binds one zinc ion per subunit; the cofactor evidence is transferred by similarity (ECO:0000250), not a direct measurement established here for this exact protein."
-  },
-  "important_caveats": [
-    "The cofactor annotation is similarity-transferred; the evidence excerpts do not establish a direct zinc-binding experiment on this exact protein.",
-    "The reviewer-only accession and annotations were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports Zn(2+); the other listed options are not supported by the supplied reviewer evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0146",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated Neisseria gonorrhoeae Mpg protein. UniProt annotates Zn(2+) as its cofactor and says it binds one zinc ion per subunit; the cofactor evidence is transferred by similarity (ECO:0000250), not a direct measurement established here for this exact protein.",
-    "evidence_ids": ["C1", "C5", "C4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A zinc metalloprotease would use Zn(2+), but identifying this sequence as that particular metalloprotease requires recognizing its protein family or obtaining its annotation; the input supplies no function or organism context.",
-    "missing_item_specific_fact": "The protein-specific identity/function and its zinc-cofactor annotation are absent from the question.",
-    "reason": "The sequence alone does not provide an unambiguous, readily interpretable basis for identifying the enzyme family and its cofactor. Remembering or retrieving the exact sequence's annotation would distinguish the options, but that is lookup or memorization rather than reasoning from supplied context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports Zn(2+); the other listed options are not supported by the supplied reviewer evidence."
-  },
-  "important_caveats": [
-    "The cofactor annotation is similarity-transferred; the evidence excerpts do not establish a direct zinc-binding experiment on this exact protein.",
-    "The reviewer-only accession and annotations were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q5F676 explicitly annotates Zn(2+) as the cofactor (CHEBI:29105, 'Binds 1 zinc ion per subunit'). The protein is named 'Zinc metallopeptidase'/'Zinc metalloprotease' with EC 3.4.24.- (metalloendopeptidase). The M23B family designation (PubMed:22334697) and mutagenesis of His-295, Asp-299, His-373, His-375 confirm zinc coordination. The cofactor annotation itself uses ECO:0000250 (similarity to E0N688), but the referenced experimental work on the M23B family and the His/Asp/H/H mutagenesis data provide strong indirect experimental support. The His-rich motif (HANGVETLYAHLSAF...GPHLHYEARING) visible in the sequence is consistent with the M23 zinc-binding architecture.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H4](#evidence-h4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The C-terminal region of the sequence contains a conserved His-Asp-His-His cluster (HANGVETLYAHLSAF...GPHLHYEARING) characteristic of the M23-family zinc-binding site. A model with general metalloenzyme knowledge can recognize this His cluster as a metal-coordination motif. Additionally, the N-terminal hydrophobic signal peptide suggests a secreted/exported protein, and many exported peptidases (especially those acting on peptidoglycan) are zinc-dependent. The other three options are cofactors for entirely different enzyme classes: pantetheine 4'-phosphate for acyl-transfer reactions, Mo-bis-MGD for molybdenum oxidoreductases, and Na+ is not a recognized catalytic cofactor for peptidases. Eliminating these leaves Zn(2+) as the only chemically plausible cofactor for a peptidase.
-
-
-**Missing item-specific fact**
-
-> None strictly required. Identifying the exact M23B family assignment would benefit from database lookup, but the His/Asp zinc-binding motif is visible in the sequence and general knowledge of metallopeptidase cofactor requirements suffices to select Zn(2+) over the other options.
-
-
-**Reason**
-
-> The zinc-binding His cluster is present in the supplied sequence and recognizable through pattern recognition. The elimination of pantetheine, Mo-bis-MGD, and Na+ relies on general knowledge of which enzyme classes use those cofactors. A model need not know the specific protein name to reason that a peptidase-like domain with a His/Asp cluster requires zinc.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The three distractors (pantetheine 4'-phosphate, Mo-bis-MGD, Na+) are cofactors for acyltransferases, molybdenum oxidoreductases, and non-enzymatic/transport roles respectively—none are associated with peptidase catalysis. Zn(2+) is the only cofactor consistent with a metallopeptidase. No ambiguity exists.
-
-
-### Important caveats
-
-- The UniProt cofactor annotation uses ECO:0000250 (inferred by similarity to E0N688), not direct experimental determination on this protein. However, the M23B family is well-established as zinc-dependent, and the mutagenesis data on the His/Asp residues (PubMed:22334697) provide strong experimental corroboration.
-- The protein was only integrated into Swiss-Prot in February 2025; at the time of benchmark construction, the author may have relied on TrEMBL annotation or literature rather than a curated Swiss-Prot entry.
-- The sequence-match between the benchmark input and UniProt Q5F676 is confirmed (430 aa, SHA-256 match).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The C-terminal region of the sequence contains a conserved His-Asp-His-His cluster (HANGVETLYAHLSAF...GPHLHYEARING) characteristic of the M23-family zinc-binding site. A model with general metalloenzyme knowledge can recognize this His cluster as a metal-coordination motif. Additionally, the N-terminal hydrophobic signal peptide suggests a secreted/exported protein, and many exported peptidases (especially those acting on peptidoglycan) are zinc-dependent. The other three options are cofactors for entirely different enzyme classes: pantetheine 4'-phosphate for acyl-transfer reactions, Mo-bis-MGD for molybdenum oxidoreductases, and Na+ is not a recognized catalytic cofactor for peptidases. Eliminating these leaves Zn(2+) as the only chemically plausible cofactor for a peptidase.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. Identifying the exact M23B family assignment would benefit from database lookup, but the His/Asp zinc-binding motif is visible in the sequence and general knowledge of metallopeptidase cofactor requirements suffices to select Zn(2+) over the other options.",
-    "reason": "The zinc-binding His cluster is present in the supplied sequence and recognizable through pattern recognition. The elimination of pantetheine, Mo-bis-MGD, and Na+ relies on general knowledge of which enzyme classes use those cofactors. A model need not know the specific protein name to reason that a peptidase-like domain with a His/Asp cluster requires zinc."
-  },
-  "case_id": "cofactor_0146",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H2",
-      "H4",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q5F676 explicitly annotates Zn(2+) as the cofactor (CHEBI:29105, 'Binds 1 zinc ion per subunit'). The protein is named 'Zinc metallopeptidase'/'Zinc metalloprotease' with EC 3.4.24.- (metalloendopeptidase). The M23B family designation (PubMed:22334697) and mutagenesis of His-295, Asp-299, His-373, His-375 confirm zinc coordination. The cofactor annotation itself uses ECO:0000250 (similarity to E0N688), but the referenced experimental work on the M23B family and the His/Asp/H/H mutagenesis data provide strong indirect experimental support. The His-rich motif (HANGVETLYAHLSAF...GPHLHYEARING) visible in the sequence is consistent with the M23 zinc-binding architecture."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation uses ECO:0000250 (inferred by similarity to E0N688), not direct experimental determination on this protein. However, the M23B family is well-established as zinc-dependent, and the mutagenesis data on the His/Asp residues (PubMed:22334697) provide strong experimental corroboration.",
-    "The protein was only integrated into Swiss-Prot in February 2025; at the time of benchmark construction, the author may have relied on TrEMBL annotation or literature rather than a curated Swiss-Prot entry.",
-    "The sequence-match between the benchmark input and UniProt Q5F676 is confirmed (430 aa, SHA-256 match)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors (pantetheine 4'-phosphate, Mo-bis-MGD, Na+) are cofactors for acyltransferases, molybdenum oxidoreductases, and non-enzymatic/transport roles respectively—none are associated with peptidase catalysis. Zn(2+) is the only cofactor consistent with a metallopeptidase. No ambiguity exists."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0146",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q5F676 explicitly annotates Zn(2+) as the cofactor (CHEBI:29105, 'Binds 1 zinc ion per subunit'). The protein is named 'Zinc metallopeptidase'/'Zinc metalloprotease' with EC 3.4.24.- (metalloendopeptidase). The M23B family designation (PubMed:22334697) and mutagenesis of His-295, Asp-299, His-373, His-375 confirm zinc coordination. The cofactor annotation itself uses ECO:0000250 (similarity to E0N688), but the referenced experimental work on the M23B family and the His/Asp/H/H mutagenesis data provide strong indirect experimental support. The His-rich motif (HANGVETLYAHLSAF...GPHLHYEARING) visible in the sequence is consistent with the M23 zinc-binding architecture.",
-    "evidence_ids": ["C4", "C5", "C7", "H2", "H4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The C-terminal region of the sequence contains a conserved His-Asp-His-His cluster (HANGVETLYAHLSAF...GPHLHYEARING) characteristic of the M23-family zinc-binding site. A model with general metalloenzyme knowledge can recognize this His cluster as a metal-coordination motif. Additionally, the N-terminal hydrophobic signal peptide suggests a secreted/exported protein, and many exported peptidases (especially those acting on peptidoglycan) are zinc-dependent. The other three options are cofactors for entirely different enzyme classes: pantetheine 4'-phosphate for acyl-transfer reactions, Mo-bis-MGD for molybdenum oxidoreductases, and Na+ is not a recognized catalytic cofactor for peptidases. Eliminating these leaves Zn(2+) as the only chemically plausible cofactor for a peptidase.",
-    "missing_item_specific_fact": "None strictly required. Identifying the exact M23B family assignment would benefit from database lookup, but the His/Asp zinc-binding motif is visible in the sequence and general knowledge of metallopeptidase cofactor requirements suffices to select Zn(2+) over the other options.",
-    "reason": "The zinc-binding His cluster is present in the supplied sequence and recognizable through pattern recognition. The elimination of pantetheine, Mo-bis-MGD, and Na+ relies on general knowledge of which enzyme classes use those cofactors. A model need not know the specific protein name to reason that a peptidase-like domain with a His/Asp cluster requires zinc."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors (pantetheine 4'-phosphate, Mo-bis-MGD, Na+) are cofactors for acyltransferases, molybdenum oxidoreductases, and non-enzymatic/transport roles respectively—none are associated with peptidase catalysis. Zn(2+) is the only cofactor consistent with a metallopeptidase. No ambiguity exists."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation uses ECO:0000250 (inferred by similarity to E0N688), not direct experimental determination on this protein. However, the M23B family is well-established as zinc-dependent, and the mutagenesis data on the His/Asp residues (PubMed:22334697) provide strong experimental corroboration.",
-    "The protein was only integrated into Swiss-Prot in February 2025; at the time of benchmark construction, the author may have relied on TrEMBL annotation or literature rather than a curated Swiss-Prot entry.",
-    "The sequence-match between the benchmark input and UniProt Q5F676 is confirmed (430 aa, SHA-256 match)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
+**This response is not a usable structured review.** Its saved text is preserved below; any labels in that text are excluded from the summary counts.
 
 **Validation errors:** `invalid_json:Expecting property name enclosed in double quotes: line 13 column 3 (char 1127)`.
 
@@ -319,10 +91,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), 
 
 **Saved parsed visible review:** `null`.
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -434,30 +205,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5F676",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "69e7a45357ac9f20734736f0f30bb74890972c0311fb90e7d268f0a51f998813",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 430,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "69e7a45357ac9f20734736f0f30bb74890972c0311fb90e7d268f0a51f998813",
   "current_entry_audit": {
     "entryVersion": 90,
     "firstPublicDate": "2025-02-05",
@@ -465,14 +223,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-03-15",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "current_source_sequence_sha256": "69e7a45357ac9f20734736f0f30bb74890972c0311fb90e7d268f0a51f998813",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 430,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "69e7a45357ac9f20734736f0f30bb74890972c0311fb90e7d268f0a51f998813",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 88,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5F676",
   "selected_historical_entry_version": 88,
+  "selected_historical_record_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
+  "selected_historical_source_sequence_length": 430,
+  "selected_historical_source_sequence_sha256": "69e7a45357ac9f20734736f0f30bb74890972c0311fb90e7d268f0a51f998813",
   "selected_historical_version": {
     "accession": "Q5F676",
     "database": "Swiss-Prot",
@@ -483,24 +257,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MPG_NEIG1",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
-  "selected_historical_source_sequence_sha256": "69e7a45357ac9f20734736f0f30bb74890972c0311fb90e7d268f0a51f998813",
-  "selected_historical_source_sequence_length": 430,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 88,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -514,15 +275,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5F676\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -533,15 +294,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":90,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-03-15\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -552,15 +313,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAW90311.1\",\"source\":\"EMBL\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000535\",\"source\":\"Proteomes\"}],\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Neisseriales\",\"Neisseriaceae\",\"Neisseria\"],\"scientificName\":\"Neisseria gonorrhoeae (strain ATCC 700825 / FA 1090)\",\"taxonId\":242231}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -571,15 +332,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23839218\",\"source\":\"PubMed\"}],\"value\":\"Metalloprotease NGO1686\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23839218\",\"source\":\"PubMed\"}],\"value\":\"Metalloprotease active against peptidoglycan\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Outer membrane protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"OMP\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22334697\",\"source\":\"PubMed\"}],\"value\":\"Virulence factor NG1686\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22334697\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23839218\",\"source\":\"PubMed\"}],\"value\":\"Zinc metallopeptidase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"16194237\",\"source\":\"PubMed\"}],\"value\":\"Zinc metalloprotease\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Zinc-dependent metallopeptidase\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22334697\",\"source\":\"PubMed\"}],\"value\":\"3.4.17.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22334697\",\"source\":\"PubMed\"}],\"value\":\"3.4.24.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DD-carboxypeptidase/endopeptidase Mpg\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -590,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"E0N688\",\"source\":\"UniProtKB\"}],\"name\":\"Zn(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"E0N688\",\"source\":\"UniProtKB\"}],\"value\":\"Binds 1 zinc ion per subunit.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -609,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Stohl E.A.\",\"Criss A.K.\",\"Seifert H.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"16194237\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1365-2958.2005.04839.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"520\",\"id\":\"16194237\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"532\",\"publicationDate\":\"2005\",\"title\":\"The transcriptome response of Neisseria gonorrhoeae to hydrogen peroxide reveals genes with previously uncharacterized roles in oxidative damage protection.\",\"volume\":\"58\"},\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"16194237\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"ATCC 700825 / FA 1090\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -628,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Stohl E.A.\",\"Chan Y.A.\",\"Hackett K.T.\",\"Kohler P.L.\",\"Dillard J.P.\",\"Seifert H.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22334697\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m111.338830\"}],\"citationType\":\"journal article\",\"firstPage\":\"11222\",\"id\":\"22334697\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"11233\",\"publicationDate\":\"2012\",\"title\":\"Neisseria gonorrhoeae virulence factor NG1686 is a bifunctional M23B family metallopeptidase that influences resistance to hydrogen peroxide and colony morphology.\",\"volume\":\"287\"},\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22334697\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"ATCC 700825 / FA 1090\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF HIS-295; ASP-299; HIS-373 AND HIS-375\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -647,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json",
-  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
-  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Stohl E.A.\",\"Dale E.M.\",\"Criss A.K.\",\"Seifert H.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23839218\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.00399-13\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"23839218\",\"journal\":\"MBio\",\"lastPage\":\"0\",\"publicationDate\":\"2013\",\"title\":\"Neisseria gonorrhoeae metalloprotease NGO1686 is required for full piliation, and piliation is required for resistance to H2O2- and neutrophil-mediated killing.\",\"volume\":\"4\"},\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23839218\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"ATCC 700825 / FA 1090\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:31:11.230902+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb861969d91ac7cb49b42e1ec2a04ceb76231816638b32a5169beda68ec7a6ec",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F676.json"
 }
 ```
 
@@ -665,18 +426,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 88,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88",
-  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
-  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
-  "source_locator": "lines 1-23",
   "excerpt": "ID   MPG_NEIG1               Reviewed;         430 AA.\nAC   Q5F676;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   15-MAR-2005, sequence version 1.\nDT   28-JAN-2026, entry version 88.\nDE   RecName: Full=DD-carboxypeptidase/endopeptidase Mpg {ECO:0000305};\nDE            EC=3.4.17.- {ECO:0000269|PubMed:22334697};\nDE            EC=3.4.24.- {ECO:0000269|PubMed:22334697};\nDE   AltName: Full=Metalloprotease NGO1686 {ECO:0000303|PubMed:23839218};\nDE   AltName: Full=Metalloprotease active against peptidoglycan {ECO:0000303|PubMed:23839218};\nDE   AltName: Full=Outer membrane protein {ECO:0000305};\nDE            Short=OMP {ECO:0000305};\nDE   AltName: Full=Virulence factor NG1686 {ECO:0000303|PubMed:22334697};\nDE   AltName: Full=Zinc metallopeptidase {ECO:0000303|PubMed:22334697, ECO:0000303|PubMed:23839218};\nDE   AltName: Full=Zinc metalloprotease {ECO:0000303|PubMed:16194237};\nDE   AltName: Full=Zinc-dependent metallopeptidase {ECO:0000305};\nDE   Flags: Precursor;\nGN   Name=mpg {ECO:0000303|PubMed:23839218};\nGN   OrderedLocusNames=NGO_1686 {ECO:0000312|EMBL:AAW90311.1};\nOS   Neisseria gonorrhoeae (strain ATCC 700825 / FA 1090).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria; Neisseriales;\nOC   Neisseriaceae; Neisseria.\nOX   NCBI_TaxID=242231 {ECO:0000312|EMBL:AAW90311.1, ECO:0000312|Proteomes:UP000000535};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 88,
+  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
+  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88"
 }
 ```
 
@@ -686,18 +447,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 88,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88",
-  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
-  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
-  "source_locator": "lines 6-17",
   "excerpt": "DE   RecName: Full=DD-carboxypeptidase/endopeptidase Mpg {ECO:0000305};\nDE            EC=3.4.17.- {ECO:0000269|PubMed:22334697};\nDE            EC=3.4.24.- {ECO:0000269|PubMed:22334697};\nDE   AltName: Full=Metalloprotease NGO1686 {ECO:0000303|PubMed:23839218};\nDE   AltName: Full=Metalloprotease active against peptidoglycan {ECO:0000303|PubMed:23839218};\nDE   AltName: Full=Outer membrane protein {ECO:0000305};\nDE            Short=OMP {ECO:0000305};\nDE   AltName: Full=Virulence factor NG1686 {ECO:0000303|PubMed:22334697};\nDE   AltName: Full=Zinc metallopeptidase {ECO:0000303|PubMed:22334697, ECO:0000303|PubMed:23839218};\nDE   AltName: Full=Zinc metalloprotease {ECO:0000303|PubMed:16194237};\nDE   AltName: Full=Zinc-dependent metallopeptidase {ECO:0000305};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 88,
+  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
+  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88"
 }
 ```
 
@@ -707,18 +468,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 88,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88",
-  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
-  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
-  "source_locator": "lines 33-41",
   "excerpt": "RN   [2]\nRP   FUNCTION, INDUCTION, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC 700825 / FA 1090 {ECO:0000303|PubMed:16194237};\nRX   PubMed=16194237; DOI=10.1111/j.1365-2958.2005.04839.x;\nRA   Stohl E.A., Criss A.K., Seifert H.S.;\nRT   \"The transcriptome response of Neisseria gonorrhoeae to hydrogen peroxide\nRT   reveals genes with previously uncharacterized roles in oxidative damage\nRT   protection.\";\nRL   Mol. Microbiol. 58:520-532(2005).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 88,
+  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
+  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88"
 }
 ```
 
@@ -728,18 +489,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 88,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88",
-  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
-  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
-  "source_locator": "lines 50-60",
   "excerpt": "RN   [4]\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, DISRUPTION PHENOTYPE,\nRP   AND MUTAGENESIS OF HIS-295; ASP-299; HIS-373 AND HIS-375.\nRC   STRAIN=ATCC 700825 / FA 1090 {ECO:0000303|PubMed:22334697};\nRX   PubMed=22334697; DOI=10.1074/jbc.m111.338830;\nRA   Stohl E.A., Chan Y.A., Hackett K.T., Kohler P.L., Dillard J.P.,\nRA   Seifert H.S.;\nRT   \"Neisseria gonorrhoeae virulence factor NG1686 is a bifunctional M23B\nRT   family metallopeptidase that influences resistance to hydrogen peroxide and\nRT   colony morphology.\";\nRL   J. Biol. Chem. 287:11222-11233(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 88,
+  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
+  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88"
 }
 ```
 
@@ -749,18 +510,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 88,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88",
-  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
-  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
-  "source_locator": "lines 61-69",
   "excerpt": "RN   [5]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=ATCC 700825 / FA 1090 {ECO:0000303|PubMed:23839218};\nRX   PubMed=23839218; DOI=10.1128/mbio.00399-13;\nRA   Stohl E.A., Dale E.M., Criss A.K., Seifert H.S.;\nRT   \"Neisseria gonorrhoeae metalloprotease NGO1686 is required for full\nRT   piliation, and piliation is required for resistance to H2O2- and\nRT   neutrophil-mediated killing.\";\nRL   MBio 4:0-0(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 88,
+  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
+  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88"
 }
 ```
 
@@ -770,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 88,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88",
-  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
-  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
-  "source_locator": "lines 96-99",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;\nCC         Evidence={ECO:0000250|UniProtKB:E0N688};\nCC       Note=Binds 1 zinc ion per subunit. {ECO:0000250|UniProtKB:E0N688};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 88,
+  "retrieved_utc": "2026-11-02T04:31:15.062188+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 96-99",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1017096d3fe4aad03188356cc0c1ec3da8e606828eca694bd37794091f70cb15",
+  "url": "https://rest.uniprot.org/unisave/Q5F676?format=txt&versions=88"
 }
 ```
 

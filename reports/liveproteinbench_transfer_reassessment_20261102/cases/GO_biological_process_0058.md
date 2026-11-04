@@ -1,18 +1,16 @@
-# GO_biological_process_0058: before and after transfer clarification
+# GO_biological_process_0058
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0058.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0058.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — positive regulation of transcription by RNA polymerase II
+**Expected answer:** **B** — positive regulation of transcription by RNA polymerase II
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches the annotated tomato AGL6 protein. Its record assigns positive regulation of transcription by RNA polymerase II to this protein, but that GO assignment is computational (IEA:InterPro); the cited functional description calls it a probable transcription factor and discusses fruit development, rather than directly establishing this exact positive-regulation term experimentally.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal MADS-box-like region provides a sequence-based reason to suspect a transcription factor, favoring B over the membrane-transport and GPCR choices. It does not establish that this protein positively regulates Pol II transcription, rather than regulating it in another way.
-
-
-**Missing item-specific fact**
-
-> That this particular protein is associated with positive regulation of Pol II transcription; the supplied sequence does not specify the direction or biological-process annotation.
-
-
-**Reason**
-
-> Choosing B at the broad level is biologically plausible from the sequence, but distinguishing the exact positive-regulation process relies on protein-specific functional knowledge or annotation not supplied in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> B is the only option broadly consistent with a MADS-box transcription factor. The sequence alone does not establish the positive-regulation qualifier, but the other listed choices are not comparably supported.
-
-
-### Important caveats
-
-- The cited functional record describes AGL6 as a probable transcription factor involved in fruit development; that is not direct experimental confirmation of the exact GO term.
-- The exact positive-regulation GO assignment is computational, and the author's historical annotation snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal MADS-box-like region provides a sequence-based reason to suspect a transcription factor, favoring B over the membrane-transport and GPCR choices. It does not establish that this protein positively regulates Pol II transcription, rather than regulating it in another way.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this particular protein is associated with positive regulation of Pol II transcription; the supplied sequence does not specify the direction or biological-process annotation.",
-    "reason": "Choosing B at the broad level is biologically plausible from the sequence, but distinguishing the exact positive-regulation process relies on protein-specific functional knowledge or annotation not supplied in the question."
-  },
-  "case_id": "GO_biological_process_0058",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the annotated tomato AGL6 protein. Its record assigns positive regulation of transcription by RNA polymerase II to this protein, but that GO assignment is computational (IEA:InterPro); the cited functional description calls it a probable transcription factor and discusses fruit development, rather than directly establishing this exact positive-regulation term experimentally."
-  },
-  "important_caveats": [
-    "The cited functional record describes AGL6 as a probable transcription factor involved in fruit development; that is not direct experimental confirmation of the exact GO term.",
-    "The exact positive-regulation GO assignment is computational, and the author's historical annotation snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B is the only option broadly consistent with a MADS-box transcription factor. The sequence alone does not establish the positive-regulation qualifier, but the other listed choices are not comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0058",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the annotated tomato AGL6 protein. Its record assigns positive regulation of transcription by RNA polymerase II to this protein, but that GO assignment is computational (IEA:InterPro); the cited functional description calls it a probable transcription factor and discusses fruit development, rather than directly establishing this exact positive-regulation term experimentally.",
-    "evidence_ids": ["C1", "C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal MADS-box-like region provides a sequence-based reason to suspect a transcription factor, favoring B over the membrane-transport and GPCR choices. It does not establish that this protein positively regulates Pol II transcription, rather than regulating it in another way.",
-    "missing_item_specific_fact": "That this particular protein is associated with positive regulation of Pol II transcription; the supplied sequence does not specify the direction or biological-process annotation.",
-    "reason": "Choosing B at the broad level is biologically plausible from the sequence, but distinguishing the exact positive-regulation process relies on protein-specific functional knowledge or annotation not supplied in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B is the only option broadly consistent with a MADS-box transcription factor. The sequence alone does not establish the positive-regulation qualifier, but the other listed choices are not comparably supported."
-  },
-  "important_caveats": [
-    "The cited functional record describes AGL6 as a probable transcription factor involved in fruit development; that is not direct experimental confirmation of the exact GO term.",
-    "The exact positive-regulation GO assignment is computational, and the author's historical annotation snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is identified as SlAGAMOUS-LIKE 6 (SlAGL6), a MADS-box transcription factor from tomato (experimental evidence ECO:0000269|PubMed:27862876). UniProt annotates GO:0045944 'positive regulation of transcription by RNA polymerase II' with IEA:InterPro evidence (computational inference from domain match). The protein's role as a transcription factor is experimentally confirmed; the 'positive' qualifier is a computational inference from InterPro. The broader term GO:0006357 'regulation of transcription by RNA polymerase II' is also annotated (IBA:GO_Central). The expected answer B is present in the annotation and consistent with the protein's confirmed function as a transcription factor.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a highly conserved MADS-box DNA-binding domain signature (residues ~15-70: 'KRRNGLLKKAYELSVLCEAEVALIIFSSRGKLYEFGSAGITKTLERYQRCC'), which is a hallmark of the MADS-box family of transcription factors. General biological knowledge establishes that MADS-box proteins are sequence-specific DNA-binding transcription factors that regulate RNA polymerase II transcription. Among the four options, only B (positive regulation of transcription by RNA polymerase II) is consistent with a transcription factor. Option A (photoreceptor cell maintenance) is an animal retina-specific process irrelevant to a plant protein. Option C (regulation of monoatomic ion transmembrane transport) requires ion channel/transporter structural features absent from this sequence. Option D (Rho-activating GPCR signaling) requires a 7-transmembrane GPCR architecture, which is absent. The elimination of A, C, and D and the positive selection of B follow from domain recognition and general biological reasoning.
-
-
-**Missing item-specific fact**
-
-> The 'positive' qualifier (as opposed to general 'regulation') is a computational inference from InterPro rather than a directly experimentally determined directionality, but among the given choices B is the only transcription-related option, making the positive/negative distinction moot for selection.
-
-
-**Reason**
-
-> Recognizing the MADS-box domain from sequence and connecting it to transcription-factor function is general biological knowledge, not memorization of a specific database entry. The elimination of the three distractors relies on general structural/biological reasoning (no GPCR topology, no ion-channel motifs, plant organism excludes animal photoreceptor maintenance).
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The three distractors (A, C, D) describe processes with no structural or functional basis in a 252-aa plant MADS-box protein. Only option B aligns with the protein's domain architecture and biological role. No ambiguity among choices.
-
-
-### Important caveats
-
-- The GO:0045944 annotation carries IEA:InterPro evidence (computational inference from domain match), not direct experimental evidence for the 'positive' directionality.
-- The protein's transcription-factor role is experimentally supported (PubMed:27862876), but the specific GO term assignment is computational.
-- The MADS-box domain recognition from raw sequence is a well-established pattern in molecular biology; this is general domain knowledge rather than item-specific lookup.
-- The 'positive' qualifier is inferred from InterPro annotation of MADS-box proteins as transcriptional activators; a more conservative annotation would be GO:0006357 (regulation of transcription by RNA polymerase II), which is also present but not offered as a choice.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a highly conserved MADS-box DNA-binding domain signature (residues ~15-70: 'KRRNGLLKKAYELSVLCEAEVALIIFSSRGKLYEFGSAGITKTLERYQRCC'), which is a hallmark of the MADS-box family of transcription factors. General biological knowledge establishes that MADS-box proteins are sequence-specific DNA-binding transcription factors that regulate RNA polymerase II transcription. Among the four options, only B (positive regulation of transcription by RNA polymerase II) is consistent with a transcription factor. Option A (photoreceptor cell maintenance) is an animal retina-specific process irrelevant to a plant protein. Option C (regulation of monoatomic ion transmembrane transport) requires ion channel/transporter structural features absent from this sequence. Option D (Rho-activating GPCR signaling) requires a 7-transmembrane GPCR architecture, which is absent. The elimination of A, C, and D and the positive selection of B follow from domain recognition and general biological reasoning.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The 'positive' qualifier (as opposed to general 'regulation') is a computational inference from InterPro rather than a directly experimentally determined directionality, but among the given choices B is the only transcription-related option, making the positive/negative distinction moot for selection.",
-    "reason": "Recognizing the MADS-box domain from sequence and connecting it to transcription-factor function is general biological knowledge, not memorization of a specific database entry. The elimination of the three distractors relies on general structural/biological reasoning (no GPCR topology, no ion-channel motifs, plant organism excludes animal photoreceptor maintenance)."
-  },
-  "case_id": "GO_biological_process_0058",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "C8",
-      "H3",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is identified as SlAGAMOUS-LIKE 6 (SlAGL6), a MADS-box transcription factor from tomato (experimental evidence ECO:0000269|PubMed:27862876). UniProt annotates GO:0045944 'positive regulation of transcription by RNA polymerase II' with IEA:InterPro evidence (computational inference from domain match). The protein's role as a transcription factor is experimentally confirmed; the 'positive' qualifier is a computational inference from InterPro. The broader term GO:0006357 'regulation of transcription by RNA polymerase II' is also annotated (IBA:GO_Central). The expected answer B is present in the annotation and consistent with the protein's confirmed function as a transcription factor."
-  },
-  "important_caveats": [
-    "The GO:0045944 annotation carries IEA:InterPro evidence (computational inference from domain match), not direct experimental evidence for the 'positive' directionality.",
-    "The protein's transcription-factor role is experimentally supported (PubMed:27862876), but the specific GO term assignment is computational.",
-    "The MADS-box domain recognition from raw sequence is a well-established pattern in molecular biology; this is general domain knowledge rather than item-specific lookup.",
-    "The 'positive' qualifier is inferred from InterPro annotation of MADS-box proteins as transcriptional activators; a more conservative annotation would be GO:0006357 (regulation of transcription by RNA polymerase II), which is also present but not offered as a choice."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors (A, C, D) describe processes with no structural or functional basis in a 252-aa plant MADS-box protein. Only option B aligns with the protein's domain architecture and biological role. No ambiguity among choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0058",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is identified as SlAGAMOUS-LIKE 6 (SlAGL6), a MADS-box transcription factor from tomato (experimental evidence ECO:0000269|PubMed:27862876). UniProt annotates GO:0045944 'positive regulation of transcription by RNA polymerase II' with IEA:InterPro evidence (computational inference from domain match). The protein's role as a transcription factor is experimentally confirmed; the 'positive' qualifier is a computational inference from InterPro. The broader term GO:0006357 'regulation of transcription by RNA polymerase II' is also annotated (IBA:GO_Central). The expected answer B is present in the annotation and consistent with the protein's confirmed function as a transcription factor.",
-    "evidence_ids": ["C5", "C7", "C8", "H3", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a highly conserved MADS-box DNA-binding domain signature (residues ~15-70: 'KRRNGLLKKAYELSVLCEAEVALIIFSSRGKLYEFGSAGITKTLERYQRCC'), which is a hallmark of the MADS-box family of transcription factors. General biological knowledge establishes that MADS-box proteins are sequence-specific DNA-binding transcription factors that regulate RNA polymerase II transcription. Among the four options, only B (positive regulation of transcription by RNA polymerase II) is consistent with a transcription factor. Option A (photoreceptor cell maintenance) is an animal retina-specific process irrelevant to a plant protein. Option C (regulation of monoatomic ion transmembrane transport) requires ion channel/transporter structural features absent from this sequence. Option D (Rho-activating GPCR signaling) requires a 7-transmembrane GPCR architecture, which is absent. The elimination of A, C, and D and the positive selection of B follow from domain recognition and general biological reasoning.",
-    "missing_item_specific_fact": "The 'positive' qualifier (as opposed to general 'regulation') is a computational inference from InterPro rather than a directly experimentally determined directionality, but among the given choices B is the only transcription-related option, making the positive/negative distinction moot for selection.",
-    "reason": "Recognizing the MADS-box domain from sequence and connecting it to transcription-factor function is general biological knowledge, not memorization of a specific database entry. The elimination of the three distractors relies on general structural/biological reasoning (no GPCR topology, no ion-channel motifs, plant organism excludes animal photoreceptor maintenance)."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The three distractors (A, C, D) describe processes with no structural or functional basis in a 252-aa plant MADS-box protein. Only option B aligns with the protein's domain architecture and biological role. No ambiguity among choices."
-  },
-  "important_caveats": [
-    "The GO:0045944 annotation carries IEA:InterPro evidence (computational inference from domain match), not direct experimental evidence for the 'positive' directionality.",
-    "The protein's transcription-factor role is experimentally supported (PubMed:27862876), but the specific GO term assignment is computational.",
-    "The MADS-box domain recognition from raw sequence is a well-established pattern in molecular biology; this is general domain knowledge rather than item-specific lookup.",
-    "The 'positive' qualifier is inferred from InterPro annotation of MADS-box proteins as transcriptional activators; a more conservative annotation would be GO:0006357 (regulation of transcription by RNA polymerase II), which is also present but not offered as a choice."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A3Q7EKL1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 252,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-04-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "current_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 252,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 29,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A3Q7EKL1",
   "selected_historical_entry_version": 29,
+  "selected_historical_record_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "selected_historical_source_sequence_length": 252,
+  "selected_historical_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
   "selected_historical_version": {
     "accession": "A0A3Q7EKL1",
     "database": "Swiss-Prot",
@@ -553,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AGL6_SOLLC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "selected_historical_source_sequence_sha256": "bc6c2009a018016632e04e6729699a50d79a11a42eb2d56772d205cff0944374",
-  "selected_historical_source_sequence_length": 252,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 29,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A3Q7EKL1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -607,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-04-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -626,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Tomato\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Solanales\",\"Solanaceae\",\"Solanoideae\",\"Solaneae\",\"Solanum\",\"Solanum subgen. Lycopersicon\"],\"scientificName\":\"Solanum lycopersicum\",\"synonyms\":[\"Lycopersicon esculentum\"],\"taxonId\":4081}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -645,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Agamous-like MADS-box protein AGL6\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27862876\",\"source\":\"PubMed\"}],\"value\":\"Protein AGAMOUS-LIKE 6\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27862876\",\"source\":\"PubMed\"}],\"value\":\"SlAGAMOUS-LIKE 6\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27862876\",\"source\":\"PubMed\"}],\"value\":\"SlAGL6\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -664,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27862876\",\"source\":\"PubMed\"}],\"value\":\"Probable transcription factor involved in fruit development (PubMed:27862876). Key regulator of the transition between the state of 'ovary arrest' imposed towards anthesis and the fertilization-triggered fruit set (PubMed:27862876)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -683,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/18",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0048440\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:carpel development\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-ARBA\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/18",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -702,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/19",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0045944\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:positive regulation of transcription by RNA polymerase II\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/19",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -721,15 +478,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/20",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0006357\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:regulation of transcription by RNA polymerase II\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/20",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -740,15 +497,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json",
-  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
-  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Klap C.\",\"Yeshayahou E.\",\"Bolger A.M.\",\"Arazi T.\",\"Gupta S.K.\",\"Shabtai S.\",\"Usadel B.\",\"Salts Y.\",\"Barg R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27862876\"},{\"database\":\"DOI\",\"id\":\"10.1111/pbi.12662\"}],\"citationType\":\"journal article\",\"firstPage\":\"634\",\"id\":\"27862876\",\"journal\":\"Plant Biotechnol. J.\",\"lastPage\":\"647\",\"publicationDate\":\"2017\",\"title\":\"Tomato facultative parthenocarpy results from SlAGAMOUS-LIKE 6 loss of function.\",\"volume\":\"15\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"cv. M82\"},{\"type\":\"STRAIN\",\"value\":\"cv. Marmande\"},{\"type\":\"STRAIN\",\"value\":\"cv. MP-1\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"BIOTECHNOLOGY\",\"TISSUE SPECIFICITY\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:24:46.176115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json"
 }
 ```
 
@@ -758,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   AGL6_SOLLC              Reviewed;         252 AA.\nAC   A0A3Q7EKL1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-APR-2019, sequence version 1.\nDT   28-JAN-2026, entry version 29.\nDE   RecName: Full=Protein AGAMOUS-LIKE 6 {ECO:0000303|PubMed:27862876};\nDE            Short=SlAGAMOUS-LIKE 6 {ECO:0000303|PubMed:27862876};\nDE            Short=SlAGL6 {ECO:0000303|PubMed:27862876};\nDE   AltName: Full=Agamous-like MADS-box protein AGL6 {ECO:0000305};\nGN   Name=AGL6 {ECO:0000303|PubMed:27862876};\nGN   OrderedLocusNames=Solyc01g093960 {ECO:0000305};\nOS   Solanum lycopersicum (Tomato) (Lycopersicon esculentum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Solanales; Solanaceae; Solanoideae; Solaneae; Solanum;\nOC   Solanum subgen. Lycopersicon.\nOX   NCBI_TaxID=4081;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -779,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 34-43",
   "excerpt": "RN   [3]\nRP   FUNCTION, DISRUPTION PHENOTYPE, BIOTECHNOLOGY, TISSUE SPECIFICITY, AND\nRP   DEVELOPMENTAL STAGE.\nRC   STRAIN=cv. M82, cv. Marmande, and cv. MP-1;\nRX   PubMed=27862876; DOI=10.1111/pbi.12662;\nRA   Klap C., Yeshayahou E., Bolger A.M., Arazi T., Gupta S.K., Shabtai S.,\nRA   Usadel B., Salts Y., Barg R.;\nRT   \"Tomato facultative parthenocarpy results from SlAGAMOUS-LIKE 6 loss of\nRT   function.\";\nRL   Plant Biotechnol. J. 15:634-647(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -800,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 44-47",
   "excerpt": "CC   -!- FUNCTION: Probable transcription factor involved in fruit development\nCC       (PubMed:27862876). Key regulator of the transition between the state of\nCC       'ovary arrest' imposed towards anthesis and the fertilization-triggered\nCC       fruit set (PubMed:27862876). {ECO:0000269|PubMed:27862876}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -821,18 +578,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 89-89",
   "excerpt": "DR   GO; GO:0048440; P:carpel development; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 89-89",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -842,18 +599,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 90-90",
   "excerpt": "DR   GO; GO:0045944; P:positive regulation of transcription by RNA polymerase II; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 90-90",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -863,18 +620,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29",
-  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
-  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
-  "source_locator": "lines 91-91",
   "excerpt": "DR   GO; GO:0006357; P:regulation of transcription by RNA polymerase II; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-01T06:27:28.559166+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 91-91",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865",
+  "url": "https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29"
 }
 ```
 
@@ -885,15 +642,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 212058-212069",
   "excerpt": "[Term]\nid: GO:0034765\nname: regulation of monoatomic ion transmembrane transport\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of the directed movement of ions from one side of a membrane to the other.\" [GOC:mah]\nsynonym: \"regulation of ion membrane transport\" EXACT []\nsynonym: \"regulation of ion transmembrane transport\" BROAD []\nsynonym: \"regulation of transmembrane ion transport\" EXACT [GOC:dph, GOC:tb]\nis_a: GO:0034762 ! regulation of transmembrane transport\nis_a: GO:0043269 ! regulation of monoatomic ion transport\nrelationship: regulates GO:0034220 ! monoatomic ion transmembrane transport\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0034765",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 212058-212069",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0034765"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -904,15 +661,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 265175-265182",
   "excerpt": "[Term]\nid: GO:0045494\nname: photoreceptor cell maintenance\nnamespace: biological_process\ndef: \"Any process preventing the degeneration of the photoreceptor, a specialized cell type that is sensitive to light.\" [CL:0000210, GOC:bf, GOC:rl]\nis_a: GO:0032501 ! multicellular organismal process\nrelationship: part_of GO:0001895 ! retina homeostasis\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045494",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 265175-265182",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045494"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -923,15 +680,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 270753-270781",
   "excerpt": "[Term]\nid: GO:0045944\nname: positive regulation of transcription by RNA polymerase II\nnamespace: biological_process\nalt_id: GO:0010552\nalt_id: GO:0045817\ndef: \"Any process that activates or increases the frequency, rate or extent of transcription from an RNA polymerase II promoter.\" [GOC:curators, GOC:txnOH]\nsynonym: \"activation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"activation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"positive regulation of gene-specific transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"positive regulation of global transcription from Pol II promoter\" RELATED []\nsynonym: \"positive regulation of transcription from Pol II promoter\" EXACT []\nsynonym: \"positive regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"positive regulation of transcription from RNA polymerase II promoter, global\" RELATED []\nsynonym: \"stimulation of global transcription from RNA polymerase II promoter\" NARROW []\nsynonym: \"stimulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"up regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"up regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"up-regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"up-regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"upregulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"upregulation of transcription from RNA polymerase II promoter\" EXACT []\nxref: Reactome:R-HSA-2173796 \"SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription\"\nxref: Reactome:R-HSA-8866906 \"TFAP2 (AP-2) family regulates transcription of other transcription factors\"\nxref: Reactome:R-HSA-8866907 \"Activation of the TFAP2 (AP-2) family of transcription factors\"\nis_a: GO:0006357 ! regulation of transcription by RNA polymerase II\nis_a: GO:0045893 ! positive regulation of DNA-templated transcription\nrelationship: positively_regulates GO:0006366 ! transcription by RNA polymerase II\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045944",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 270753-270781",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045944"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -942,15 +699,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 450812-450818",
   "excerpt": "[Term]\nid: GO:0160221\nname: Rho-activating G protein-coupled receptor signaling pathway\nnamespace: biological_process\ndef: \"A G protein-coupled receptor signaling pathway in which the signal is transmitted via the activation of Rho activity. Rho is a family of small (~21 kDa) signaling G proteins that include RhoA, Cdc42, and Rac1.\" [PMID:10836144, PMID:33849392]\nis_a: GO:0007186 ! G protein-coupled receptor signaling pathway\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0160221",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 450812-450818",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0160221"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

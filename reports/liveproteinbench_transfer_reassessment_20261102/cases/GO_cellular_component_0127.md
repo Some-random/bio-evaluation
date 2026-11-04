@@ -1,18 +1,16 @@
-# GO_cellular_component_0127: before and after transfer clarification
+# GO_cellular_component_0127
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0127.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0127.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — cytosol
+**Expected answer:** **B** — cytosol
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record assigns GO:0005829 (cytosol), but with ISS evidence, so this is a computational/inferred annotation rather than direct experimental proof of cytosolic localization. The cited experimental localization is to cytoplasm/P-bodies, which supports a cytoplasmic location but is not itself an exact cytosol measurement.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has no obvious transmembrane segment or clear organelle-targeting peptide, which favors a soluble intracellular protein over a lysosomal membrane protein. That does not distinguish cytosol from other intracellular locations or establish the specific localization.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization annotation or experimental observation that this sequence-matched protein is cytoplasmic/P-body-associated, and its inferred cytosol GO assignment.
-
-
-**Reason**
-
-> The sequence and choices support only broad solubility-related inference; selecting cytosol over other intracellular possibilities depends on protein-specific localization information not supplied to the model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available sequence-matched annotation supports the keyed cytosol option. The localization evidence also mentions P-bodies, but that location is not an offered choice; the other choices are not comparably supported.
-
-
-### Important caveats
-
-- The sequence match and protein identity were established using reviewer-only sources; they were not available in the evaluated input.
-- The experimental annotation is for cytoplasm/P-bodies, whereas the cytosol GO annotation is ISS-based; these are related but not identical evidence claims.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has no obvious transmembrane segment or clear organelle-targeting peptide, which favors a soluble intracellular protein over a lysosomal membrane protein. That does not distinguish cytosol from other intracellular locations or establish the specific localization.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental observation that this sequence-matched protein is cytoplasmic/P-body-associated, and its inferred cytosol GO assignment.",
-    "reason": "The sequence and choices support only broad solubility-related inference; selecting cytosol over other intracellular possibilities depends on protein-specific localization information not supplied to the model."
-  },
-  "case_id": "GO_cellular_component_0127",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record assigns GO:0005829 (cytosol), but with ISS evidence, so this is a computational/inferred annotation rather than direct experimental proof of cytosolic localization. The cited experimental localization is to cytoplasm/P-bodies, which supports a cytoplasmic location but is not itself an exact cytosol measurement."
-  },
-  "important_caveats": [
-    "The sequence match and protein identity were established using reviewer-only sources; they were not available in the evaluated input.",
-    "The experimental annotation is for cytoplasm/P-bodies, whereas the cytosol GO annotation is ISS-based; these are related but not identical evidence claims."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence-matched annotation supports the keyed cytosol option. The localization evidence also mentions P-bodies, but that location is not an offered choice; the other choices are not comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0127",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record assigns GO:0005829 (cytosol), but with ISS evidence, so this is a computational/inferred annotation rather than direct experimental proof of cytosolic localization. The cited experimental localization is to cytoplasm/P-bodies, which supports a cytoplasmic location but is not itself an exact cytosol measurement.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has no obvious transmembrane segment or clear organelle-targeting peptide, which favors a soluble intracellular protein over a lysosomal membrane protein. That does not distinguish cytosol from other intracellular locations or establish the specific localization.",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental observation that this sequence-matched protein is cytoplasmic/P-body-associated, and its inferred cytosol GO assignment.",
-    "reason": "The sequence and choices support only broad solubility-related inference; selecting cytosol over other intracellular possibilities depends on protein-specific localization information not supplied to the model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence-matched annotation supports the keyed cytosol option. The localization evidence also mentions P-bodies, but that location is not an offered choice; the other choices are not comparably supported."
-  },
-  "important_caveats": [
-    "The sequence match and protein identity were established using reviewer-only sources; they were not available in the evaluated input.",
-    "The experimental annotation is for cytoplasm/P-bodies, whereas the cytosol GO annotation is ISS-based; these are related but not identical evidence claims."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The experimental subcellular location annotation (ECO:0000269, PubMed:30535195) places this protein in 'Cytoplasm, P-body' (C5/H3). P-bodies are cytoplasmic structures, and the GO cytosol term (GO:0005829, C6/H4) is a component of cytoplasm. Among the four options, cytosol is the closest match to the experimentally determined cytoplasmic/P-body localization. The other options (centrosome, RNA Pol II transcription regulator complex, lysosomal membrane) have no supporting annotation. The GO cytosol annotation itself is ISS (inferred), but the underlying experimental evidence for cytoplasmic/P-body localization is solid.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [C9](#evidence-c9).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence encodes a 353-aa soluble enzyme (Fe(II)/α-ketoglutarate dioxygenase fold, characteristic AlkB-family 'HRD...H...H' facial triad motifs visible in the sequence). It lacks transmembrane segments (eliminating lysosomal membrane, D), lacks DNA-binding or multi-subunit complex-forming domains typical of transcription regulator complexes (eliminating C), and lacks centrosomal protein motifs or coiled-coil/γ-tubulin-binding regions (eliminating A). With no signal peptide, mitochondrial targeting sequence, or nuclear localization signal, and being a small soluble enzyme, cytosol is the default and only remaining viable compartment among the options.
-
-
-**Missing item-specific fact**
-
-> The specific experimental finding that this RNA demethylase localizes to cytoplasmic P-bodies rather than the nucleus (where one might intuitively expect an RNA-modifying enzyme to act) is a protein-specific experimental result. However, since 'nucleus' is not among the answer choices, this nuance does not affect the answer selection.
-
-
-**Reason**
-
-> Elimination of the three distractors relies on general biological knowledge: no TM domains rules out membrane localization; the protein is a small catalytic enzyme, not a transcription complex subunit; and it lacks centrosomal structural motifs. The remaining option (cytosol) is the default for a soluble enzyme with no targeting signals. The reasoning is primarily by elimination but is grounded in standard protein-localization biology.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> No other option is defensible. The experimental evidence clearly places the protein in the cytoplasm (P-body). Centrosome is implausible for a fungal enzyme with no centrosomal motifs; lysosomal membrane is excluded by the absence of TM domains; RNA Pol II transcription regulator complex is a nuclear multi-subunit complex incompatible with a small soluble dioxygenase. The slight imprecision between 'P-body' (experimental) and 'cytosol' (answer) is acceptable since P-bodies reside in the cytosol and P-body is not an option.
-
-
-### Important caveats
-
-- The experimental annotation specifies 'Cytoplasm, P-body' while the answer is 'cytosol.' P-bodies are cytoplasmic ribonucleoprotein granules, and cytosol (GO:0005829) is part_of cytoplasm (GO:0005737), so the mapping is reasonable but not perfectly precise.
-- A GO nucleus annotation (ISS:PAMGO_MGG) also exists (C7/H5), but 'nucleus' is not among the options, so it does not create ambiguity in answer selection.
-- The GO cytosol annotation is ISS (inferred by similarity), while the experimental evidence is for 'Cytoplasm, P-body.' The answer relies on the experimental cytoplasmic evidence rather than the ISS cytosol annotation per se.
-- The organism is Pyricularia oryzae (a fungus); fungi lack canonical centrosomes, further weakening option A, though this organism-specific fact is not stated in the question input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence encodes a 353-aa soluble enzyme (Fe(II)/α-ketoglutarate dioxygenase fold, characteristic AlkB-family 'HRD...H...H' facial triad motifs visible in the sequence). It lacks transmembrane segments (eliminating lysosomal membrane, D), lacks DNA-binding or multi-subunit complex-forming domains typical of transcription regulator complexes (eliminating C), and lacks centrosomal protein motifs or coiled-coil/γ-tubulin-binding regions (eliminating A). With no signal peptide, mitochondrial targeting sequence, or nuclear localization signal, and being a small soluble enzyme, cytosol is the default and only remaining viable compartment among the options.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific experimental finding that this RNA demethylase localizes to cytoplasmic P-bodies rather than the nucleus (where one might intuitively expect an RNA-modifying enzyme to act) is a protein-specific experimental result. However, since 'nucleus' is not among the answer choices, this nuance does not affect the answer selection.",
-    "reason": "Elimination of the three distractors relies on general biological knowledge: no TM domains rules out membrane localization; the protein is a small catalytic enzyme, not a transcription complex subunit; and it lacks centrosomal structural motifs. The remaining option (cytosol) is the default for a soluble enzyme with no targeting signals. The reasoning is primarily by elimination but is grounded in standard protein-localization biology."
-  },
-  "case_id": "GO_cellular_component_0127",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "C9"
-    ],
-    "judgment": "supported",
-    "reason": "The experimental subcellular location annotation (ECO:0000269, PubMed:30535195) places this protein in 'Cytoplasm, P-body' (C5/H3). P-bodies are cytoplasmic structures, and the GO cytosol term (GO:0005829, C6/H4) is a component of cytoplasm. Among the four options, cytosol is the closest match to the experimentally determined cytoplasmic/P-body localization. The other options (centrosome, RNA Pol II transcription regulator complex, lysosomal membrane) have no supporting annotation. The GO cytosol annotation itself is ISS (inferred), but the underlying experimental evidence for cytoplasmic/P-body localization is solid."
-  },
-  "important_caveats": [
-    "The experimental annotation specifies 'Cytoplasm, P-body' while the answer is 'cytosol.' P-bodies are cytoplasmic ribonucleoprotein granules, and cytosol (GO:0005829) is part_of cytoplasm (GO:0005737), so the mapping is reasonable but not perfectly precise.",
-    "A GO nucleus annotation (ISS:PAMGO_MGG) also exists (C7/H5), but 'nucleus' is not among the options, so it does not create ambiguity in answer selection.",
-    "The GO cytosol annotation is ISS (inferred by similarity), while the experimental evidence is for 'Cytoplasm, P-body.' The answer relies on the experimental cytoplasmic evidence rather than the ISS cytosol annotation per se.",
-    "The organism is Pyricularia oryzae (a fungus); fungi lack canonical centrosomes, further weakening option A, though this organism-specific fact is not stated in the question input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No other option is defensible. The experimental evidence clearly places the protein in the cytoplasm (P-body). Centrosome is implausible for a fungal enzyme with no centrosomal motifs; lysosomal membrane is excluded by the absence of TM domains; RNA Pol II transcription regulator complex is a nuclear multi-subunit complex incompatible with a small soluble dioxygenase. The slight imprecision between 'P-body' (experimental) and 'cytosol' (answer) is acceptable since P-bodies reside in the cytosol and P-body is not an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0127",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The experimental subcellular location annotation (ECO:0000269, PubMed:30535195) places this protein in 'Cytoplasm, P-body' (C5/H3). P-bodies are cytoplasmic structures, and the GO cytosol term (GO:0005829, C6/H4) is a component of cytoplasm. Among the four options, cytosol is the closest match to the experimentally determined cytoplasmic/P-body localization. The other options (centrosome, RNA Pol II transcription regulator complex, lysosomal membrane) have no supporting annotation. The GO cytosol annotation itself is ISS (inferred), but the underlying experimental evidence for cytoplasmic/P-body localization is solid.",
-    "evidence_ids": ["C5", "C6", "H3", "H4", "C9"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence encodes a 353-aa soluble enzyme (Fe(II)/α-ketoglutarate dioxygenase fold, characteristic AlkB-family 'HRD...H...H' facial triad motifs visible in the sequence). It lacks transmembrane segments (eliminating lysosomal membrane, D), lacks DNA-binding or multi-subunit complex-forming domains typical of transcription regulator complexes (eliminating C), and lacks centrosomal protein motifs or coiled-coil/γ-tubulin-binding regions (eliminating A). With no signal peptide, mitochondrial targeting sequence, or nuclear localization signal, and being a small soluble enzyme, cytosol is the default and only remaining viable compartment among the options.",
-    "missing_item_specific_fact": "The specific experimental finding that this RNA demethylase localizes to cytoplasmic P-bodies rather than the nucleus (where one might intuitively expect an RNA-modifying enzyme to act) is a protein-specific experimental result. However, since 'nucleus' is not among the answer choices, this nuance does not affect the answer selection.",
-    "reason": "Elimination of the three distractors relies on general biological knowledge: no TM domains rules out membrane localization; the protein is a small catalytic enzyme, not a transcription complex subunit; and it lacks centrosomal structural motifs. The remaining option (cytosol) is the default for a soluble enzyme with no targeting signals. The reasoning is primarily by elimination but is grounded in standard protein-localization biology."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No other option is defensible. The experimental evidence clearly places the protein in the cytoplasm (P-body). Centrosome is implausible for a fungal enzyme with no centrosomal motifs; lysosomal membrane is excluded by the absence of TM domains; RNA Pol II transcription regulator complex is a nuclear multi-subunit complex incompatible with a small soluble dioxygenase. The slight imprecision between 'P-body' (experimental) and 'cytosol' (answer) is acceptable since P-bodies reside in the cytosol and P-body is not an option."
-  },
-  "important_caveats": [
-    "The experimental annotation specifies 'Cytoplasm, P-body' while the answer is 'cytosol.' P-bodies are cytoplasmic ribonucleoprotein granules, and cytosol (GO:0005829) is part_of cytoplasm (GO:0005737), so the mapping is reasonable but not perfectly precise.",
-    "A GO nucleus annotation (ISS:PAMGO_MGG) also exists (C7/H5), but 'nucleus' is not among the options, so it does not create ambiguity in answer selection.",
-    "The GO cytosol annotation is ISS (inferred by similarity), while the experimental evidence is for 'Cytoplasm, P-body.' The answer relies on the experimental cytoplasmic evidence rather than the ISS cytosol annotation per se.",
-    "The organism is Pyricularia oryzae (a fungus); fungi lack canonical centrosomes, further weakening option A, though this organism-specific fact is not stated in the question input."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G4MZ21",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 353,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
   "current_entry_audit": {
     "entryVersion": 56,
     "firstPublicDate": "2025-04-09",
@@ -538,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-12-14",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "current_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 353,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 55,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G4MZ21",
   "selected_historical_entry_version": 55,
+  "selected_historical_record_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "selected_historical_source_sequence_length": 353,
+  "selected_historical_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
   "selected_historical_version": {
     "accession": "G4MZ21",
     "database": "Swiss-Prot",
@@ -556,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "ALKB1_PYRO7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "selected_historical_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
-  "selected_historical_source_sequence_length": 353,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 55,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G4MZ21\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -610,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":56,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-12-14\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -629,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rice blast fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Magnaporthales\",\"Pyriculariaceae\",\"Pyricularia\"],\"scientificName\":\"Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958)\",\"synonyms\":[\"Magnaporthe oryzae\"],\"taxonId\":242507}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -648,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"M6A eraser ALKB1\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Nucleic acid dioxygenase ALKB1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30535195\",\"source\":\"PubMed\"}],\"value\":\"1.14.11.53\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30535195\",\"source\":\"PubMed\"}],\"value\":\"N6-methyladenosine RNA demethylase ALKB1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -667,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30535195\",\"source\":\"PubMed\"}],\"id\":\"SL-0230\",\"value\":\"Cytoplasm, P-body\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -686,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:PAMGO_MGG\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -705,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:PAMGO_MGG\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -724,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/18",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0000932\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:P-body\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/18",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -743,15 +502,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Shi Y.\",\"Wang H.\",\"Wang J.\",\"Liu X.\",\"Lin F.\",\"Lu J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30535195\"},{\"database\":\"DOI\",\"id\":\"10.1093/femsle/fny286\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"30535195\",\"journal\":\"FEMS Microbiol. Lett.\",\"lastPage\":\"0\",\"publicationDate\":\"2019\",\"title\":\"N6-methyladenosine RNA methylation is involved in virulence of the rice blast fungus Pyricularia oryzae (syn. Magnaporthe oryzae).\",\"volume\":\"366\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -761,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   ALKB1_PYRO7             Reviewed;         353 AA.\nAC   G4MZ21;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   14-DEC-2011, sequence version 1.\nDT   28-JAN-2026, entry version 55.\nDE   RecName: Full=N6-methyladenosine RNA demethylase ALKB1 {ECO:0000303|PubMed:30535195};\nDE            EC=1.14.11.53 {ECO:0000269|PubMed:30535195};\nDE   AltName: Full=M6A eraser ALKB1 {ECO:0000305};\nDE   AltName: Full=Nucleic acid dioxygenase ALKB1 {ECO:0000305};\nGN   Name=ALKB1 {ECO:0000303|PubMed:30535195}; ORFNames=MGG_01363;\nOS   Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice blast\nOS   fungus) (Magnaporthe oryzae).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Magnaporthales; Pyriculariaceae; Pyricularia.\nOX   NCBI_TaxID=242507;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -782,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 28-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND SUBCELLULAR LOCATION.\nRX   PubMed=30535195; DOI=10.1093/femsle/fny286;\nRA   Shi Y., Wang H., Wang J., Liu X., Lin F., Lu J.;\nRT   \"N6-methyladenosine RNA methylation is involved in virulence of the rice\nRT   blast fungus Pyricularia oryzae (syn. Magnaporthe oryzae).\";\nRL   FEMS Microbiol. Lett. 366:0-0(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -803,18 +562,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 56-56",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cytoplasm, P-body {ECO:0000269|PubMed:30535195}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 56-56",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -824,18 +583,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 81-81",
   "excerpt": "DR   GO; GO:0005829; C:cytosol; ISS:PAMGO_MGG.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -845,18 +604,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 82-82",
   "excerpt": "DR   GO; GO:0005634; C:nucleus; ISS:PAMGO_MGG.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-82",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -866,18 +625,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 83-83",
   "excerpt": "DR   GO; GO:0000932; C:P-body; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 83-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -888,15 +647,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59259-59267",
   "excerpt": "[Term]\nid: GO:0005765\nname: lysosomal membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding the lysosome and separating its contents from the cell cytoplasm.\" [GOC:ai]\nsynonym: \"lysosome membrane\" EXACT []\nis_a: GO:0098852 ! lytic vacuole membrane\nrelationship: part_of GO:0005764 ! lysosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005765",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59259-59267",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005765"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -907,15 +666,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59790-59798",
   "excerpt": "[Term]\nid: GO:0005813\nname: centrosome\nnamespace: cellular_component\ndef: \"A structure comprised of a core structure (in most organisms, a pair of centrioles) and peripheral material from which a microtubule-based structure, such as a spindle apparatus, is organized. Centrosomes occur close to the nucleus during interphase in many eukaryotic cells, though in animal cells it changes continually during the cell-division cycle.\" [GOC:mah, ISBN:0198547684]\nsubset: goslim_pir\nxref: Wikipedia:Centrosome\nis_a: GO:0005815 ! microtubule organizing center\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005813",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59790-59798",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005813"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -926,15 +685,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59936-59953",
   "excerpt": "[Term]\nid: GO:0005829\nname: cytosol\nnamespace: cellular_component\ndef: \"The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.\" [GOC:hjd, GOC:jl]\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_plant\nxref: NIF_Subcellular:sao101633890\nxref: Wikipedia:Cytosol\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005829",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59936-59953",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005829"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -945,15 +704,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 400139-400147",
   "excerpt": "[Term]\nid: GO:0090575\nname: RNA polymerase II transcription regulator complex\nnamespace: cellular_component\ndef: \"A transcription factor complex that acts at a regulatory region of a gene transcribed by RNA polymerase II.\" [GOC:tb]\nsynonym: \"RNA polymerase II transcription factor complex\" NARROW []\nis_a: GO:0005667 ! transcription regulator complex\nis_a: GO:0140513 ! nuclear protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0090575",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 400139-400147",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0090575"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# active_site_0097: before and after transfer clarification
+# active_site_0097
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0097.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0097.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 170 (Proton donor)
+**Expected answer:** **B** — Position 170 (Proton donor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry, which annotates position 170 as the proton donor. This is a database annotation based on a PROSITE-ProRule, not independent experimental validation in the supplied evidence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices allow some exclusions, such as position 735 being beyond the 376-residue sequence, but do not by themselves establish position 170's catalytic role.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment of residue 170 as the proton donor, supplied by the external PROSITE-ProRule-based annotation.
-
-
-**Reason**
-
-> Identifying the precise catalytic role at position 170 requires protein-specific functional annotation or equivalent evidence not provided to the model; recognizing the sequence from a database would be lookup, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports B among the listed options. However, the wording asks for residues constituting the catalytic center, while B names only one residue; the source also annotates position 277 as a nucleophile, which no option lists.
-
-
-### Important caveats
-
-- The sequence match supports applying the cited annotation to this sequence, but the actual author source snapshot is unknown.
-- The cited active-site assignments are computational annotations; the supplied evidence does not independently establish them experimentally.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices allow some exclusions, such as position 735 being beyond the 376-residue sequence, but do not by themselves establish position 170's catalytic role.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment of residue 170 as the proton donor, supplied by the external PROSITE-ProRule-based annotation.",
-    "reason": "Identifying the precise catalytic role at position 170 requires protein-specific functional annotation or equivalent evidence not provided to the model; recognizing the sequence from a database would be lookup, not reasoning from the supplied input."
-  },
-  "case_id": "active_site_0097",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which annotates position 170 as the proton donor. This is a database annotation based on a PROSITE-ProRule, not independent experimental validation in the supplied evidence."
-  },
-  "important_caveats": [
-    "The sequence match supports applying the cited annotation to this sequence, but the actual author source snapshot is unknown.",
-    "The cited active-site assignments are computational annotations; the supplied evidence does not independently establish them experimentally."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports B among the listed options. However, the wording asks for residues constituting the catalytic center, while B names only one residue; the source also annotates position 277 as a nucleophile, which no option lists."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0097",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which annotates position 170 as the proton donor. This is a database annotation based on a PROSITE-ProRule, not independent experimental validation in the supplied evidence.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices allow some exclusions, such as position 735 being beyond the 376-residue sequence, but do not by themselves establish position 170's catalytic role.",
-    "missing_item_specific_fact": "The protein-specific assignment of residue 170 as the proton donor, supplied by the external PROSITE-ProRule-based annotation.",
-    "reason": "Identifying the precise catalytic role at position 170 requires protein-specific functional annotation or equivalent evidence not provided to the model; recognizing the sequence from a database would be lookup, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports B among the listed options. However, the wording asks for residues constituting the catalytic center, while B names only one residue; the source also annotates position 277 as a nucleophile, which no option lists."
-  },
-  "important_caveats": [
-    "The sequence match supports applying the cited annotation to this sequence, but the actual author source snapshot is unknown.",
-    "The cited active-site assignments are computational annotations; the supplied evidence does not independently establish them experimentally."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry M4MGK7 (Endo-1,4-beta-xylanase A, EC 3.2.1.8) annotates position 170 as an 'Active site' with description 'Proton donor' (evidence ECO:0000255|PROSITE-ProRule:PRU01096). The sequence at position 170 is Glu (E), consistent with the catalytic proton donor in GH10 xylanases. The annotation is computational (PROSITE-ProRule pattern match), not experimental, but it is the authoritative database annotation for this entry. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Three of four options can be eliminated by sequence-level reasoning: (1) C is impossible because position 735 exceeds the 376-residue sequence length; (2) D (position 27) falls within the N-terminal signal peptide (MHLASSLFLLATLPFGFAAGKGKGKGK…), a region that is cleaved and cannot form a catalytic center; (3) A describes 'Lowers pKa of active site Tyr' but position 217 in the sequence is Trp (W), not Tyr, and tyrosinase-type Tyr chemistry is irrelevant to a glycoside hydrolase. This leaves B (position 170, Proton donor), and position 170 is indeed Glu (E), consistent with the known two-Glu retaining mechanism of GH10 xylanases where the N-terminal Glu acts as general acid/proton donor.
-
-
-**Missing item-specific fact**
-
-> Positive confirmation that position 170 (rather than position 277, the nucleophile Glu) is specifically the proton donor requires knowledge of GH10 family active-site geometry or database annotation. However, since 277 is not offered as an option, the elimination path is sufficient to select B uniquely.
-
-
-**Reason**
-
-> The distractors are constructed to be eliminable through arithmetic (C), signal-peptide recognition (D), and residue-type/chemistry mismatch (A). The surviving answer B is internally consistent with GH10 xylanase catalytic chemistry. A model with general glycoside-hydrolase knowledge and careful sequence inspection can reach B without memorizing this particular UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only one option (B) survives elimination. C is arithmetically impossible, D is in a cleaved signal peptide, and A mismatches both the residue identity at position 217 and the enzyme class. No genuine ambiguity remains.
-
-
-### Important caveats
-
-- The active-site annotation carries evidence code ECO:0000255 (PROSITE-ProRule), indicating computational inference by family-pattern matching rather than direct experimental mutagenesis or structural determination.
-- The UniProt entry was first publicly released 2025-02-05; the author's source snapshot date is unknown. The sequence itself (version 1, 2013-05-29) predates the annotation.
-- The question asks for 'the enzyme's catalytic center' (singular), but a complete GH10 active site comprises two Glu residues (positions 170 and 277). The answer key lists only the proton donor, which is acceptable given the single-answer format but is an incomplete description of the catalytic center.
-- Counting to position 170 in a 376-residue sequence is error-prone for language models; the reasoning path is logically valid but practically demanding.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Three of four options can be eliminated by sequence-level reasoning: (1) C is impossible because position 735 exceeds the 376-residue sequence length; (2) D (position 27) falls within the N-terminal signal peptide (MHLASSLFLLATLPFGFAAGKGKGKGK…), a region that is cleaved and cannot form a catalytic center; (3) A describes 'Lowers pKa of active site Tyr' but position 217 in the sequence is Trp (W), not Tyr, and tyrosinase-type Tyr chemistry is irrelevant to a glycoside hydrolase. This leaves B (position 170, Proton donor), and position 170 is indeed Glu (E), consistent with the known two-Glu retaining mechanism of GH10 xylanases where the N-terminal Glu acts as general acid/proton donor.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Positive confirmation that position 170 (rather than position 277, the nucleophile Glu) is specifically the proton donor requires knowledge of GH10 family active-site geometry or database annotation. However, since 277 is not offered as an option, the elimination path is sufficient to select B uniquely.",
-    "reason": "The distractors are constructed to be eliminable through arithmetic (C), signal-peptide recognition (D), and residue-type/chemistry mismatch (A). The surviving answer B is internally consistent with GH10 xylanase catalytic chemistry. A model with general glycoside-hydrolase knowledge and careful sequence inspection can reach B without memorizing this particular UniProt entry."
-  },
-  "case_id": "active_site_0097",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry M4MGK7 (Endo-1,4-beta-xylanase A, EC 3.2.1.8) annotates position 170 as an 'Active site' with description 'Proton donor' (evidence ECO:0000255|PROSITE-ProRule:PRU01096). The sequence at position 170 is Glu (E), consistent with the catalytic proton donor in GH10 xylanases. The annotation is computational (PROSITE-ProRule pattern match), not experimental, but it is the authoritative database annotation for this entry. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed)."
-  },
-  "important_caveats": [
-    "The active-site annotation carries evidence code ECO:0000255 (PROSITE-ProRule), indicating computational inference by family-pattern matching rather than direct experimental mutagenesis or structural determination.",
-    "The UniProt entry was first publicly released 2025-02-05; the author's source snapshot date is unknown. The sequence itself (version 1, 2013-05-29) predates the annotation.",
-    "The question asks for 'the enzyme's catalytic center' (singular), but a complete GH10 active site comprises two Glu residues (positions 170 and 277). The answer key lists only the proton donor, which is acceptable given the single-answer format but is an incomplete description of the catalytic center.",
-    "Counting to position 170 in a 376-residue sequence is error-prone for language models; the reasoning path is logically valid but practically demanding."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only one option (B) survives elimination. C is arithmetically impossible, D is in a cleaved signal peptide, and A mismatches both the residue identity at position 217 and the enzyme class. No genuine ambiguity remains."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0097",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry M4MGK7 (Endo-1,4-beta-xylanase A, EC 3.2.1.8) annotates position 170 as an 'Active site' with description 'Proton donor' (evidence ECO:0000255|PROSITE-ProRule:PRU01096). The sequence at position 170 is Glu (E), consistent with the catalytic proton donor in GH10 xylanases. The annotation is computational (PROSITE-ProRule pattern match), not experimental, but it is the authoritative database annotation for this entry. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed).",
-    "evidence_ids": ["C5", "H3", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Three of four options can be eliminated by sequence-level reasoning: (1) C is impossible because position 735 exceeds the 376-residue sequence length; (2) D (position 27) falls within the N-terminal signal peptide (MHLASSLFLLATLPFGFAAGKGKGKGK…), a region that is cleaved and cannot form a catalytic center; (3) A describes 'Lowers pKa of active site Tyr' but position 217 in the sequence is Trp (W), not Tyr, and tyrosinase-type Tyr chemistry is irrelevant to a glycoside hydrolase. This leaves B (position 170, Proton donor), and position 170 is indeed Glu (E), consistent with the known two-Glu retaining mechanism of GH10 xylanases where the N-terminal Glu acts as general acid/proton donor.",
-    "missing_item_specific_fact": "Positive confirmation that position 170 (rather than position 277, the nucleophile Glu) is specifically the proton donor requires knowledge of GH10 family active-site geometry or database annotation. However, since 277 is not offered as an option, the elimination path is sufficient to select B uniquely.",
-    "reason": "The distractors are constructed to be eliminable through arithmetic (C), signal-peptide recognition (D), and residue-type/chemistry mismatch (A). The surviving answer B is internally consistent with GH10 xylanase catalytic chemistry. A model with general glycoside-hydrolase knowledge and careful sequence inspection can reach B without memorizing this particular UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only one option (B) survives elimination. C is arithmetically impossible, D is in a cleaved signal peptide, and A mismatches both the residue identity at position 217 and the enzyme class. No genuine ambiguity remains."
-  },
-  "important_caveats": [
-    "The active-site annotation carries evidence code ECO:0000255 (PROSITE-ProRule), indicating computational inference by family-pattern matching rather than direct experimental mutagenesis or structural determination.",
-    "The UniProt entry was first publicly released 2025-02-05; the author's source snapshot date is unknown. The sequence itself (version 1, 2013-05-29) predates the annotation.",
-    "The question asks for 'the enzyme's catalytic center' (singular), but a complete GH10 active site comprises two Glu residues (positions 170 and 277). The answer key lists only the proton donor, which is acceptable given the single-answer format but is an incomplete description of the catalytic center.",
-    "Counting to position 170 in a 376-residue sequence is error-prone for language models; the reasoning path is logically valid but practically demanding."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -494,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "M4MGK7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 376,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
   "current_entry_audit": {
     "entryVersion": 33,
     "firstPublicDate": "2025-02-05",
@@ -525,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2013-05-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "current_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 376,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 31,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "M4MGK7",
   "selected_historical_entry_version": 31,
+  "selected_historical_record_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "selected_historical_source_sequence_length": 376,
+  "selected_historical_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
   "selected_historical_version": {
     "accession": "M4MGK7",
     "database": "Swiss-Prot",
@@ -543,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "XYNA_HUMIN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "selected_historical_source_sequence_sha256": "099e0d9d31b95aad01d9114eec635a5ba258509622920c5ebd279553304abc33",
-  "selected_historical_source_sequence_length": 376,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 31,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -574,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"M4MGK7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -593,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":33,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2013-05-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -612,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soft-rot fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Mycothermus\"],\"scientificName\":\"Humicola insolens\",\"taxonId\":85995}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -631,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"1,4-beta-D-xylan xylanohydrolase A\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23306124\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.8\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23306124\",\"source\":\"PubMed\"}],\"value\":\"Endo-1,4-beta-xylanase A\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -650,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01096\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":170},\"start\":{\"modifier\":\"EXACT\",\"value\":170}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -669,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Nucleophile\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01096\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":277},\"start\":{\"modifier\":\"EXACT\",\"value\":277}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -688,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json",
-  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
-  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Du Y.\",\"Shi P.\",\"Huang H.\",\"Zhang X.\",\"Luo H.\",\"Wang Y.\",\"Yao B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23306124\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.biortech.2012.12.067\"}],\"citationType\":\"journal article\",\"firstPage\":\"161\",\"id\":\"23306124\",\"journal\":\"Bioresour. Technol.\",\"lastPage\":\"167\",\"publicationDate\":\"2013\",\"title\":\"Characterization of three novel thermophilic xylanases from Humicola insolens Y1 with application potentials in the brewing industry.\",\"volume\":\"130\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Y1\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBSTRATE SPECIFICITY\",\"ACTIVITY REGULATION\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:05.622631+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d0eb386047796a4c6d2cf2618df1e68195ff8e1f1d846dddec1115d408f18e15",
+  "url": "https://rest.uniprot.org/uniprotkb/M4MGK7.json"
 }
 ```
 
@@ -706,18 +468,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   XYNA_HUMIN              Reviewed;         376 AA.\nAC   M4MGK7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-MAY-2013, sequence version 1.\nDT   28-JAN-2026, entry version 31.\nDE   RecName: Full=Endo-1,4-beta-xylanase A {ECO:0000303|PubMed:23306124};\nDE            EC=3.2.1.8 {ECO:0000269|PubMed:23306124};\nDE   AltName: Full=1,4-beta-D-xylan xylanohydrolase A {ECO:0000305};\nDE   Flags: Precursor;\nGN   Name=XynA {ECO:0000303|PubMed:23306124};\nOS   Humicola insolens (Soft-rot fungus).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Mycothermus.\nOX   NCBI_TaxID=85995;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 
@@ -727,18 +489,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 15-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBSTRATE SPECIFICITY, ACTIVITY REGULATION,\nRP   AND BIOTECHNOLOGY.\nRC   STRAIN=Y1;\nRX   PubMed=23306124; DOI=10.1016/j.biortech.2012.12.067;\nRA   Du Y., Shi P., Huang H., Zhang X., Luo H., Wang Y., Yao B.;\nRT   \"Characterization of three novel thermophilic xylanases from Humicola\nRT   insolens Y1 with application potentials in the brewing industry.\";\nRL   Bioresour. Technol. 130:161-167(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 
@@ -748,18 +510,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 116-118",
   "excerpt": "FT   ACT_SITE        170\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01096\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 116-118",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 
@@ -769,18 +531,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31",
-  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
-  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
-  "source_locator": "lines 119-121",
   "excerpt": "FT   ACT_SITE        277\nFT                   /note=\"Nucleophile\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01096\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:29:07.720781+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 119-121",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ec5a9552d4e5401ddcbb6f19ae0b5460a5e468847c5025d55b7f1a6cab2cd96",
+  "url": "https://rest.uniprot.org/unisave/M4MGK7?format=txt&versions=31"
 }
 ```
 

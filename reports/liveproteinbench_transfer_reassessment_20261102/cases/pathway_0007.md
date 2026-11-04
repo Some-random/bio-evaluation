@@ -1,18 +1,16 @@
-# pathway_0007: before and after transfer clarification
+# pathway_0007
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0007.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0007.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Secondary metabolite biosynthesis. .
+**Expected answer:** **C** — Secondary metabolite biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for cytochrome P450 monooxygenase ppzE, annotated to secondary metabolite biosynthesis. The annotation cites a study on pyrrolopyrazine-producing biosynthetic gene clusters, supporting choice C, though this is database annotation rather than independently verified experimental evidence here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with an enzyme, and its P450-like features could suggest oxidative metabolism, but P450s participate in many pathways. Those features do not distinguish secondary-metabolite biosynthesis from the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity and functional association of ppzE with pyrrolopyrazine biosynthesis, which are absent from the supplied sequence and choices.
-
-
-**Reason**
-
-> Selecting C requires a protein-specific annotation or equivalent external functional evidence; generic sequence-based reasoning does not identify this pathway.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports C for the exact sequence; no competing pathway annotation is provided.
-
-
-### Important caveats
-
-- Reviewer-only database evidence was not available to the evaluated model.
-- The UniProt pathway annotation cites a publication, but the primary study was not independently assessed here.
-- The author’s exact source snapshot is unknown, although the historical and current records both match the supplied sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, and its P450-like features could suggest oxidative metabolism, but P450s participate in many pathways. Those features do not distinguish secondary-metabolite biosynthesis from the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity and functional association of ppzE with pyrrolopyrazine biosynthesis, which are absent from the supplied sequence and choices.",
-    "reason": "Selecting C requires a protein-specific annotation or equivalent external functional evidence; generic sequence-based reasoning does not identify this pathway."
-  },
-  "case_id": "pathway_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for cytochrome P450 monooxygenase ppzE, annotated to secondary metabolite biosynthesis. The annotation cites a study on pyrrolopyrazine-producing biosynthetic gene clusters, supporting choice C, though this is database annotation rather than independently verified experimental evidence here."
-  },
-  "important_caveats": [
-    "Reviewer-only database evidence was not available to the evaluated model.",
-    "The UniProt pathway annotation cites a publication, but the primary study was not independently assessed here.",
-    "The author’s exact source snapshot is unknown, although the historical and current records both match the supplied sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports C for the exact sequence; no competing pathway annotation is provided."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for cytochrome P450 monooxygenase ppzE, annotated to secondary metabolite biosynthesis. The annotation cites a study on pyrrolopyrazine-producing biosynthetic gene clusters, supporting choice C, though this is database annotation rather than independently verified experimental evidence here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, and its P450-like features could suggest oxidative metabolism, but P450s participate in many pathways. Those features do not distinguish secondary-metabolite biosynthesis from the listed alternatives.",
-    "missing_item_specific_fact": "The protein-specific identity and functional association of ppzE with pyrrolopyrazine biosynthesis, which are absent from the supplied sequence and choices.",
-    "reason": "Selecting C requires a protein-specific annotation or equivalent external functional evidence; generic sequence-based reasoning does not identify this pathway."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports C for the exact sequence; no competing pathway annotation is provided."
-  },
-  "important_caveats": [
-    "Reviewer-only database evidence was not available to the evaluated model.",
-    "The UniProt pathway annotation cites a publication, but the primary study was not independently assessed here.",
-    "The author’s exact source snapshot is unknown, although the historical and current records both match the supplied sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A455ZIK8 (PPZE_METMF) explicitly annotates the pathway as 'Secondary metabolite biosynthesis' (evidence C5, H3, ECO:0000305|PubMed:30452111). The protein is named 'Cytochrome P450 monooxygenase ppzE' / 'Pyrrolopyrazine biosynthesis cluster protein E' (C4, H1). Pyrrolopyrazines are fungal secondary metabolites, and the pathway assignment is supported by the primary literature (Berry et al. 2019, PubMed:30452111). The sequence matches exactly (476 aa, SHA256 confirmed).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The C-terminal region contains the well-known P450 heme-binding signature 'FSKGSRYCLG' (evidence: 'FSKGSRYCLGMHCRCTTCLALPASVRNGTRGY'), which allows identification of the protein as a cytochrome P450 monooxygenase. This eliminates options A (dTTP biosynthesis – nucleotide metabolism, no P450s) and D (L-leucine degradation – amino acid catabolism, no P450s). However, P450 monooxygenases participate in both membrane lipid metabolism (option B; e.g., sterol hydroxylation, fatty acid ω-hydroxylation) and secondary metabolite biosynthesis (option C). Distinguishing between these two requires knowing that this specific P450 is ppzE, a pyrrolopyrazine biosynthetic gene cluster enzyme from Metarhizium majus, which is an item-specific database annotation not derivable from general sequence features alone.
-
-
-**Missing item-specific fact**
-
-> The identity of this P450 as ppzE, a member of the pyrrolopyrazine biosynthetic gene cluster in Metarhizium majus, and its specific assignment to secondary metabolite biosynthesis rather than primary lipid metabolism. No organism context, gene cluster context, or pathway annotation is provided in the model input.
-
-
-**Reason**
-
-> While the P450 family assignment is achievable from the conserved FSKGSRYCLG motif, the critical distinction between options B and C (both P450-mediated pathways) depends on knowing the specific protein identity and its biosynthetic gene cluster membership. The sequence alone does not provide organism context or gene cluster context that would allow a model to prefer secondary metabolite biosynthesis over membrane lipid metabolism without recalling or looking up the specific UniProt annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Both membrane lipid metabolism (B) and secondary metabolite biosynthesis (C) commonly involve cytochrome P450 monooxygenases. Without organism context or gene cluster information, a model identifying only 'P450 monooxygenase' from the sequence could reasonably consider either pathway. The correct answer C is supported by the specific ppzE annotation, but option B is not eliminable from sequence motifs alone.
-
-
-### Important caveats
-
-- The UniProt pathway annotation uses evidence code ECO:0000305 (curator inference based on PubMed:30452111), not direct experimental measurement of the pathway in isolation; the primary paper characterized the BGC and assigned pathway context.
-- The organism (Metarhizium majus, a fungus) is not provided in the model input, removing a key contextual clue that fungal P450s in BGCs are frequently secondary metabolite enzymes.
-- The P450 heme-binding motif 'FSKGSRYCLG' is identifiable in the sequence, but P450 family assignment alone does not resolve the pathway sub-classification between B and C.
-- The entry was first released in Swiss-Prot on 2025-02-05; the author's source snapshot date is unknown, though the sequence itself has been in databases since 2019.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The C-terminal region contains the well-known P450 heme-binding signature 'FSKGSRYCLG' (evidence: 'FSKGSRYCLGMHCRCTTCLALPASVRNGTRGY'), which allows identification of the protein as a cytochrome P450 monooxygenase. This eliminates options A (dTTP biosynthesis – nucleotide metabolism, no P450s) and D (L-leucine degradation – amino acid catabolism, no P450s). However, P450 monooxygenases participate in both membrane lipid metabolism (option B; e.g., sterol hydroxylation, fatty acid ω-hydroxylation) and secondary metabolite biosynthesis (option C). Distinguishing between these two requires knowing that this specific P450 is ppzE, a pyrrolopyrazine biosynthetic gene cluster enzyme from Metarhizium majus, which is an item-specific database annotation not derivable from general sequence features alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of this P450 as ppzE, a member of the pyrrolopyrazine biosynthetic gene cluster in Metarhizium majus, and its specific assignment to secondary metabolite biosynthesis rather than primary lipid metabolism. No organism context, gene cluster context, or pathway annotation is provided in the model input.",
-    "reason": "While the P450 family assignment is achievable from the conserved FSKGSRYCLG motif, the critical distinction between options B and C (both P450-mediated pathways) depends on knowing the specific protein identity and its biosynthetic gene cluster membership. The sequence alone does not provide organism context or gene cluster context that would allow a model to prefer secondary metabolite biosynthesis over membrane lipid metabolism without recalling or looking up the specific UniProt annotation."
-  },
-  "case_id": "pathway_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A455ZIK8 (PPZE_METMF) explicitly annotates the pathway as 'Secondary metabolite biosynthesis' (evidence C5, H3, ECO:0000305|PubMed:30452111). The protein is named 'Cytochrome P450 monooxygenase ppzE' / 'Pyrrolopyrazine biosynthesis cluster protein E' (C4, H1). Pyrrolopyrazines are fungal secondary metabolites, and the pathway assignment is supported by the primary literature (Berry et al. 2019, PubMed:30452111). The sequence matches exactly (476 aa, SHA256 confirmed)."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation uses evidence code ECO:0000305 (curator inference based on PubMed:30452111), not direct experimental measurement of the pathway in isolation; the primary paper characterized the BGC and assigned pathway context.",
-    "The organism (Metarhizium majus, a fungus) is not provided in the model input, removing a key contextual clue that fungal P450s in BGCs are frequently secondary metabolite enzymes.",
-    "The P450 heme-binding motif 'FSKGSRYCLG' is identifiable in the sequence, but P450 family assignment alone does not resolve the pathway sub-classification between B and C.",
-    "The entry was first released in Swiss-Prot on 2025-02-05; the author's source snapshot date is unknown, though the sequence itself has been in databases since 2019."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Both membrane lipid metabolism (B) and secondary metabolite biosynthesis (C) commonly involve cytochrome P450 monooxygenases. Without organism context or gene cluster information, a model identifying only 'P450 monooxygenase' from the sequence could reasonably consider either pathway. The correct answer C is supported by the specific ppzE annotation, but option B is not eliminable from sequence motifs alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A455ZIK8 (PPZE_METMF) explicitly annotates the pathway as 'Secondary metabolite biosynthesis' (evidence C5, H3, ECO:0000305|PubMed:30452111). The protein is named 'Cytochrome P450 monooxygenase ppzE' / 'Pyrrolopyrazine biosynthesis cluster protein E' (C4, H1). Pyrrolopyrazines are fungal secondary metabolites, and the pathway assignment is supported by the primary literature (Berry et al. 2019, PubMed:30452111). The sequence matches exactly (476 aa, SHA256 confirmed).",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The C-terminal region contains the well-known P450 heme-binding signature 'FSKGSRYCLG' (evidence: 'FSKGSRYCLGMHCRCTTCLALPASVRNGTRGY'), which allows identification of the protein as a cytochrome P450 monooxygenase. This eliminates options A (dTTP biosynthesis – nucleotide metabolism, no P450s) and D (L-leucine degradation – amino acid catabolism, no P450s). However, P450 monooxygenases participate in both membrane lipid metabolism (option B; e.g., sterol hydroxylation, fatty acid ω-hydroxylation) and secondary metabolite biosynthesis (option C). Distinguishing between these two requires knowing that this specific P450 is ppzE, a pyrrolopyrazine biosynthetic gene cluster enzyme from Metarhizium majus, which is an item-specific database annotation not derivable from general sequence features alone.",
-    "missing_item_specific_fact": "The identity of this P450 as ppzE, a member of the pyrrolopyrazine biosynthetic gene cluster in Metarhizium majus, and its specific assignment to secondary metabolite biosynthesis rather than primary lipid metabolism. No organism context, gene cluster context, or pathway annotation is provided in the model input.",
-    "reason": "While the P450 family assignment is achievable from the conserved FSKGSRYCLG motif, the critical distinction between options B and C (both P450-mediated pathways) depends on knowing the specific protein identity and its biosynthetic gene cluster membership. The sequence alone does not provide organism context or gene cluster context that would allow a model to prefer secondary metabolite biosynthesis over membrane lipid metabolism without recalling or looking up the specific UniProt annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Both membrane lipid metabolism (B) and secondary metabolite biosynthesis (C) commonly involve cytochrome P450 monooxygenases. Without organism context or gene cluster information, a model identifying only 'P450 monooxygenase' from the sequence could reasonably consider either pathway. The correct answer C is supported by the specific ppzE annotation, but option B is not eliminable from sequence motifs alone."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation uses evidence code ECO:0000305 (curator inference based on PubMed:30452111), not direct experimental measurement of the pathway in isolation; the primary paper characterized the BGC and assigned pathway context.",
-    "The organism (Metarhizium majus, a fungus) is not provided in the model input, removing a key contextual clue that fungal P450s in BGCs are frequently secondary metabolite enzymes.",
-    "The P450 heme-binding motif 'FSKGSRYCLG' is identifiable in the sequence, but P450 family assignment alone does not resolve the pathway sub-classification between B and C.",
-    "The entry was first released in Swiss-Prot on 2025-02-05; the author's source snapshot date is unknown, though the sequence itself has been in databases since 2019."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -400,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A455ZIK8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "1fcf124c6af1a1ae3c9cc65efd0c7e27b3e95d4c128b261f2675580e165f0de2",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 476,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "1fcf124c6af1a1ae3c9cc65efd0c7e27b3e95d4c128b261f2675580e165f0de2",
   "current_entry_audit": {
     "entryVersion": 24,
     "firstPublicDate": "2025-02-05",
@@ -545,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-06-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
-  "current_source_sequence_sha256": "1fcf124c6af1a1ae3c9cc65efd0c7e27b3e95d4c128b261f2675580e165f0de2",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 476,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "1fcf124c6af1a1ae3c9cc65efd0c7e27b3e95d4c128b261f2675580e165f0de2",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 23,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A455ZIK8",
   "selected_historical_entry_version": 23,
+  "selected_historical_record_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
+  "selected_historical_source_sequence_length": 476,
+  "selected_historical_source_sequence_sha256": "1fcf124c6af1a1ae3c9cc65efd0c7e27b3e95d4c128b261f2675580e165f0de2",
   "selected_historical_version": {
     "accession": "A0A455ZIK8",
     "database": "Swiss-Prot",
@@ -563,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PPZE_METMF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
-  "selected_historical_source_sequence_sha256": "1fcf124c6af1a1ae3c9cc65efd0c7e27b3e95d4c128b261f2675580e165f0de2",
-  "selected_historical_source_sequence_length": 476,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 23,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json",
-  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
-  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A455ZIK8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json"
 }
 ```
 
@@ -613,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json",
-  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
-  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":24,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-06-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json"
 }
 ```
 
@@ -632,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json",
-  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
-  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"DAC76721.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Clavicipitaceae\",\"Metarhizium\",\"Metarhizium majus\"],\"scientificName\":\"Metarhizium majus (strain ARSEF 297)\",\"taxonId\":1276143}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json"
 }
 ```
 
@@ -651,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json",
-  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
-  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"Pyrrolopyrazine biosynthesis cluster protein E\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase ppzE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json"
 }
 ```
 
@@ -670,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json",
-  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
-  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json"
 }
 ```
 
@@ -689,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json",
-  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
-  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Berry D.\",\"Mace W.\",\"Rehner S.A.\",\"Grage K.\",\"Dijkwel P.P.\",\"Young C.A.\",\"Scott B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30452111\"},{\"database\":\"DOI\",\"id\":\"10.1111/1462-2920.14483\"}],\"citationType\":\"journal article\",\"firstPage\":\"928\",\"id\":\"30452111\",\"journal\":\"Environ. Microbiol.\",\"lastPage\":\"939\",\"publicationDate\":\"2019\",\"title\":\"Orthologous peramine and pyrrolopyrazine-producing biosynthetic gene clusters in Metarhizium rileyi, Metarhizium majus and Cladonia grayi.\",\"volume\":\"21\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ARSEF 297\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:12.579944+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c2a8aaa8bdb109947f9f5a47b1951c69aaf96c57998f03880669ff292a4051e7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZIK8.json"
 }
 ```
 
@@ -707,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZIK8?format=txt&versions=23",
-  "source_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
-  "retrieved_utc": "2026-11-02T04:25:16.735081+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   PPZE_METMF              Reviewed;         476 AA.\nAC   A0A455ZIK8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUN-2019, sequence version 1.\nDT   05-FEB-2025, entry version 23.\nDE   RecName: Full=Cytochrome P450 monooxygenase ppzE {ECO:0000303|PubMed:30452111};\nDE            EC=1.-.-.- {ECO:0000305|PubMed:30452111};\nDE   AltName: Full=Pyrrolopyrazine biosynthesis cluster protein E {ECO:0000303|PubMed:30452111};\nGN   Name=ppzE {ECO:0000303|PubMed:30452111};\nOS   Metarhizium majus (strain ARSEF 297).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Clavicipitaceae; Metarhizium;\nOC   Metarhizium majus.\nOX   NCBI_TaxID=1276143 {ECO:0000312|EMBL:DAC76721.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:25:16.735081+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZIK8?format=txt&versions=23"
 }
 ```
 
@@ -728,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZIK8?format=txt&versions=23",
-  "source_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
-  "retrieved_utc": "2026-11-02T04:25:16.735081+00:00",
-  "source_locator": "lines 15-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND PATHWAY.\nRC   STRAIN=ARSEF 297;\nRX   PubMed=30452111; DOI=10.1111/1462-2920.14483;\nRA   Berry D., Mace W., Rehner S.A., Grage K., Dijkwel P.P., Young C.A.,\nRA   Scott B.;\nRT   \"Orthologous peramine and pyrrolopyrazine-producing biosynthetic gene\nRT   clusters in Metarhizium rileyi, Metarhizium majus and Cladonia grayi.\";\nRL   Environ. Microbiol. 21:928-939(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:25:16.735081+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZIK8?format=txt&versions=23"
 }
 ```
 
@@ -749,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZIK8?format=txt&versions=23",
-  "source_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
-  "retrieved_utc": "2026-11-02T04:25:16.735081+00:00",
-  "source_locator": "lines 53-54",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis.\nCC       {ECO:0000305|PubMed:30452111}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:25:16.735081+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d9a23aa96c9d27dcf6dee8b101909d437a113b00ab8996e2204980d630610008",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZIK8?format=txt&versions=23"
 }
 ```
 

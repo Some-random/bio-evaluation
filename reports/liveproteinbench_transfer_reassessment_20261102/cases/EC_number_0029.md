@@ -1,18 +1,16 @@
-# EC_number_0029: before and after transfer clarification
+# EC_number_0029
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0029.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0029.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **A** — 1.14.11.65
+**Expected answer:** **A** — 1.14.11.65
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,251 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the Drosophila KDM3 entry, whose annotated EC number is 1.14.11.65. The annotation assigns histone H3 lysine demethylation to this enzyme, supporting choice A. However, the EC assignment is transferred by similarity from UniProtKB Q9Y4C1 (ECO:0000250), not shown here as direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a JmjC-family, 2-oxoglutarate-dependent demethylase, which helps distinguish it from the methyltransferase option. That general evidence does not establish the precise substrate-specific EC subclass.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental evidence assigning this KDM3 protein to EC 1.14.11.65 rather than the closely related listed EC 1.14.11.63.
-
-
-**Reason**
-
-> Choosing between the similar demethylase EC options depends on protein-specific substrate/function information absent from the supplied sequence and choices; recognizing or retrieving the exact protein annotation is lookup, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> The sequence-level evidence supplied supports a JmjC demethylase but does not distinguish the substrate-specific EC assignments represented by A and B. The reviewer-only annotation supports A, but that annotation was not part of the evaluated input.
-
-
-### Important caveats
-
-- The sequence match and source identity are established by reviewer-only evidence, not by information supplied to the evaluated model.
-- The EC annotation is similarity-transferred; the excerpts do not establish direct experimental validation for this particular Drosophila protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a JmjC-family, 2-oxoglutarate-dependent demethylase, which helps distinguish it from the methyltransferase option. That general evidence does not establish the precise substrate-specific EC subclass.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence assigning this KDM3 protein to EC 1.14.11.65 rather than the closely related listed EC 1.14.11.63.",
-    "reason": "Choosing between the similar demethylase EC options depends on protein-specific substrate/function information absent from the supplied sequence and choices; recognizing or retrieving the exact protein annotation is lookup, not reasoning from the provided input."
-  },
-  "case_id": "EC_number_0029",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the Drosophila KDM3 entry, whose annotated EC number is 1.14.11.65. The annotation assigns histone H3 lysine demethylation to this enzyme, supporting choice A. However, the EC assignment is transferred by similarity from UniProtKB Q9Y4C1 (ECO:0000250), not shown here as direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The sequence match and source identity are established by reviewer-only evidence, not by information supplied to the evaluated model.",
-    "The EC annotation is similarity-transferred; the excerpts do not establish direct experimental validation for this particular Drosophila protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "The sequence-level evidence supplied supports a JmjC demethylase but does not distinguish the substrate-specific EC assignments represented by A and B. The reviewer-only annotation supports A, but that annotation was not part of the evaluated input."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0029",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the Drosophila KDM3 entry, whose annotated EC number is 1.14.11.65. The annotation assigns histone H3 lysine demethylation to this enzyme, supporting choice A. However, the EC assignment is transferred by similarity from UniProtKB Q9Y4C1 (ECO:0000250), not shown here as direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a JmjC-family, 2-oxoglutarate-dependent demethylase, which helps distinguish it from the methyltransferase option. That general evidence does not establish the precise substrate-specific EC subclass.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence assigning this KDM3 protein to EC 1.14.11.65 rather than the closely related listed EC 1.14.11.63.",
-    "reason": "Choosing between the similar demethylase EC options depends on protein-specific substrate/function information absent from the supplied sequence and choices; recognizing or retrieving the exact protein annotation is lookup, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "The sequence-level evidence supplied supports a JmjC demethylase but does not distinguish the substrate-specific EC assignments represented by A and B. The reviewer-only annotation supports A, but that annotation was not part of the evaluated input."
-  },
-  "important_caveats": [
-    "The sequence match and source identity are established by reviewer-only evidence, not by information supplied to the evaluated model.",
-    "The EC annotation is similarity-transferred; the excerpts do not establish direct experimental validation for this particular Drosophila protein."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt entry Q9VHC5 (KDM3_DROME, Drosophila melanogaster) with identical SHA256. The annotation assigns EC 1.14.11.65 (Lysine-specific demethylase 3) with evidence code ECO:0000250 (transferred by similarity from human KDM3A/Q9Y4C1). The catalytic reaction (H3K9me2 demethylation via 2-oxoglutarate-dependent dioxygenase mechanism) is consistent with EC 1.14.11.65. The annotation is computational/similarity-based rather than directly experimental on the fly protein, but it is the established database assignment.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a JmjN-JmjC-PHD domain architecture, which is characteristic of 2-oxoglutarate-dependent histone lysine demethylases (EC 1.14.11.x). This reasoning eliminates option C (2.1.1.34, a methyltransferase) and option D (1.97.1.14, a reductase). However, distinguishing between EC 1.14.11.65 (KDM3, H3K9me2 demethylase) and EC 1.14.11.63 (KDM4B, H3K36me3/me2 demethylase) requires knowing the specific substrate residue targeted by this particular JmjC domain variant. Both share the same domain architecture (JmjN-JmjC-PHD) and catalytic mechanism; the substrate specificity is determined by subtle active-site residue differences not reliably inferable from linear sequence alone.
-
-
-**Missing item-specific fact**
-
-> The specific histone lysine residue (H3K9 vs H3K36) demethylated by this particular JmjC-domain protein, which determines the final two digits of the EC number. This is a protein-specific experimental/biochemical fact not derivable from general domain recognition.
-
-
-**Reason**
-
-> While general biological knowledge about JmjC-domain proteins can narrow the answer to the 1.14.11.x class and eliminate options C and D, the final choice between 1.14.11.65 and 1.14.11.63 depends on recognizing this specific protein (Drosophila Kdm3) and recalling its experimentally determined substrate specificity (H3K9me2). The domain architectures of KDM3 and KDM4 families are too similar for reliable sequence-based discrimination at the EC sub-subclass level.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> Both 1.14.11.65 (KDM3, H3K9me2 demethylase) and 1.14.11.63 (KDM4B, H3K36me3/me2 demethylase) describe JmjC-domain 2-oxoglutarate-dependent lysine demethylases with similar domain architectures. Without protein-specific substrate data, a knowledgeable model could reasonably assign either EC number based on general JmjC-domain features. The distinction requires item-specific knowledge of which histone residue this particular enzyme targets.
-
-
-### Important caveats
-
-- The EC annotation is transferred by similarity (ECO:0000250) from human KDM3A (Q9Y4C1), not from direct experimental characterization of the Drosophila protein.
-- The sequence match is exact (SHA256 identical) between the benchmark input and UniProt Q9VHC5.
-- The historical annotation (entry version 180, released Jan 2026) already carried EC 1.14.11.65, so the key was available at the time of benchmark construction.
-- Options C and D are clearly eliminable by domain recognition, reducing the effective discrimination to a binary A vs B choice that requires protein-specific knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a JmjN-JmjC-PHD domain architecture, which is characteristic of 2-oxoglutarate-dependent histone lysine demethylases (EC 1.14.11.x). This reasoning eliminates option C (2.1.1.34, a methyltransferase) and option D (1.97.1.14, a reductase). However, distinguishing between EC 1.14.11.65 (KDM3, H3K9me2 demethylase) and EC 1.14.11.63 (KDM4B, H3K36me3/me2 demethylase) requires knowing the specific substrate residue targeted by this particular JmjC domain variant. Both share the same domain architecture (JmjN-JmjC-PHD) and catalytic mechanism; the substrate specificity is determined by subtle active-site residue differences not reliably inferable from linear sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific histone lysine residue (H3K9 vs H3K36) demethylated by this particular JmjC-domain protein, which determines the final two digits of the EC number. This is a protein-specific experimental/biochemical fact not derivable from general domain recognition.",
-    "reason": "While general biological knowledge about JmjC-domain proteins can narrow the answer to the 1.14.11.x class and eliminate options C and D, the final choice between 1.14.11.65 and 1.14.11.63 depends on recognizing this specific protein (Drosophila Kdm3) and recalling its experimentally determined substrate specificity (H3K9me2). The domain architectures of KDM3 and KDM4 families are too similar for reliable sequence-based discrimination at the EC sub-subclass level."
-  },
-  "case_id": "EC_number_0029",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry Q9VHC5 (KDM3_DROME, Drosophila melanogaster) with identical SHA256. The annotation assigns EC 1.14.11.65 (Lysine-specific demethylase 3) with evidence code ECO:0000250 (transferred by similarity from human KDM3A/Q9Y4C1). The catalytic reaction (H3K9me2 demethylation via 2-oxoglutarate-dependent dioxygenase mechanism) is consistent with EC 1.14.11.65. The annotation is computational/similarity-based rather than directly experimental on the fly protein, but it is the established database assignment."
-  },
-  "important_caveats": [
-    "The EC annotation is transferred by similarity (ECO:0000250) from human KDM3A (Q9Y4C1), not from direct experimental characterization of the Drosophila protein.",
-    "The sequence match is exact (SHA256 identical) between the benchmark input and UniProt Q9VHC5.",
-    "The historical annotation (entry version 180, released Jan 2026) already carried EC 1.14.11.65, so the key was available at the time of benchmark construction.",
-    "Options C and D are clearly eliminable by domain recognition, reducing the effective discrimination to a binary A vs B choice that requires protein-specific knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "Both 1.14.11.65 (KDM3, H3K9me2 demethylase) and 1.14.11.63 (KDM4B, H3K36me3/me2 demethylase) describe JmjC-domain 2-oxoglutarate-dependent lysine demethylases with similar domain architectures. Without protein-specific substrate data, a knowledgeable model could reasonably assign either EC number based on general JmjC-domain features. The distinction requires item-specific knowledge of which histone residue this particular enzyme targets."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0029",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry Q9VHC5 (KDM3_DROME, Drosophila melanogaster) with identical SHA256. The annotation assigns EC 1.14.11.65 (Lysine-specific demethylase 3) with evidence code ECO:0000250 (transferred by similarity from human KDM3A/Q9Y4C1). The catalytic reaction (H3K9me2 demethylation via 2-oxoglutarate-dependent dioxygenase mechanism) is consistent with EC 1.14.11.65. The annotation is computational/similarity-based rather than directly experimental on the fly protein, but it is the established database assignment.",
-    "evidence_ids": ["C4", "C5", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a JmjN-JmjC-PHD domain architecture, which is characteristic of 2-oxoglutarate-dependent histone lysine demethylases (EC 1.14.11.x). This reasoning eliminates option C (2.1.1.34, a methyltransferase) and option D (1.97.1.14, a reductase). However, distinguishing between EC 1.14.11.65 (KDM3, H3K9me2 demethylase) and EC 1.14.11.63 (KDM4B, H3K36me3/me2 demethylase) requires knowing the specific substrate residue targeted by this particular JmjC domain variant. Both share the same domain architecture (JmjN-JmjC-PHD) and catalytic mechanism; the substrate specificity is determined by subtle active-site residue differences not reliably inferable from linear sequence alone.",
-    "missing_item_specific_fact": "The specific histone lysine residue (H3K9 vs H3K36) demethylated by this particular JmjC-domain protein, which determines the final two digits of the EC number. This is a protein-specific experimental/biochemical fact not derivable from general domain recognition.",
-    "reason": "While general biological knowledge about JmjC-domain proteins can narrow the answer to the 1.14.11.x class and eliminate options C and D, the final choice between 1.14.11.65 and 1.14.11.63 depends on recognizing this specific protein (Drosophila Kdm3) and recalling its experimentally determined substrate specificity (H3K9me2). The domain architectures of KDM3 and KDM4 families are too similar for reliable sequence-based discrimination at the EC sub-subclass level."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "Both 1.14.11.65 (KDM3, H3K9me2 demethylase) and 1.14.11.63 (KDM4B, H3K36me3/me2 demethylase) describe JmjC-domain 2-oxoglutarate-dependent lysine demethylases with similar domain architectures. Without protein-specific substrate data, a knowledgeable model could reasonably assign either EC number based on general JmjC-domain features. The distinction requires item-specific knowledge of which histone residue this particular enzyme targets."
-  },
-  "important_caveats": [
-    "The EC annotation is transferred by similarity (ECO:0000250) from human KDM3A (Q9Y4C1), not from direct experimental characterization of the Drosophila protein.",
-    "The sequence match is exact (SHA256 identical) between the benchmark input and UniProt Q9VHC5.",
-    "The historical annotation (entry version 180, released Jan 2026) already carried EC 1.14.11.65, so the key was available at the time of benchmark construction.",
-    "Options C and D are clearly eliminable by domain recognition, reducing the effective discrimination to a binary A vs B choice that requires protein-specific knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -400,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VHC5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "dd3548960b1682de998fc074af92b0ccddb61dace402f81acf39413836fe202f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 854,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "dd3548960b1682de998fc074af92b0ccddb61dace402f81acf39413836fe202f",
   "current_entry_audit": {
     "entryVersion": 182,
     "firstPublicDate": "2025-04-09",
@@ -546,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
-  "current_source_sequence_sha256": "dd3548960b1682de998fc074af92b0ccddb61dace402f81acf39413836fe202f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 854,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "dd3548960b1682de998fc074af92b0ccddb61dace402f81acf39413836fe202f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 180,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VHC5",
   "selected_historical_entry_version": 180,
+  "selected_historical_record_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
+  "selected_historical_source_sequence_length": 854,
+  "selected_historical_source_sequence_sha256": "dd3548960b1682de998fc074af92b0ccddb61dace402f81acf39413836fe202f",
   "selected_historical_version": {
     "accession": "Q9VHC5",
     "database": "Swiss-Prot",
@@ -564,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "KDM3_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
-  "selected_historical_source_sequence_sha256": "dd3548960b1682de998fc074af92b0ccddb61dace402f81acf39413836fe202f",
-  "selected_historical_source_sequence_length": 854,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 180,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -595,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json",
-  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
-  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VHC5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json"
 }
 ```
 
@@ -614,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json",
-  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
-  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":182,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json"
 }
 ```
 
@@ -633,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json",
-  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
-  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json"
 }
 ```
 
@@ -652,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json",
-  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
-  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9Y4C1\",\"source\":\"UniProtKB\"}],\"value\":\"1.14.11.65\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0037703\",\"source\":\"FlyBase\"}],\"value\":\"Lysine-specific demethylase 3\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json"
 }
 ```
 
@@ -671,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json",
-  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
-  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"1.14.11.65\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9Y4C1\",\"source\":\"UniProtKB\"}],\"name\":\"N(6),N(6)-dimethyl-L-lysyl(9)-[histone H3] + 2 2-oxoglutarate + 2 O2 = L-lysyl(9)-[histone H3] + 2 formaldehyde + 2 succinate + 2 CO2\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:60188\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:15541\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:15546\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16810\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16842\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29969\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30031\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61976\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:18.636093+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "988cd450ac6d94115d3a0a907f3be7bea9fa1fb8ec7323334e09bde36a991b80",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHC5.json"
 }
 ```
 
@@ -689,18 +436,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 180,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VHC5?format=txt&versions=180",
-  "source_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
-  "retrieved_utc": "2026-11-02T04:33:24.066442+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   KDM3_DROME              Reviewed;         854 AA.\nAC   Q9VHC5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 180.\nDE   RecName: Full=Lysine-specific demethylase 3 {ECO:0000312|FlyBase:FBgn0037703};\nDE            EC=1.14.11.65 {ECO:0000250|UniProtKB:Q9Y4C1};\nGN   Name=Kdm3 {ECO:0000312|FlyBase:FBgn0037703};\nGN   Synonyms=JHDM2 {ECO:0000312|FlyBase:FBgn0037703};\nGN   ORFNames=CG8165 {ECO:0000312|FlyBase:FBgn0037703};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 180,
+  "retrieved_utc": "2026-11-02T04:33:24.066442+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
+  "url": "https://rest.uniprot.org/unisave/Q9VHC5?format=txt&versions=180"
 }
 ```
 
@@ -710,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 180,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VHC5?format=txt&versions=180",
-  "source_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
-  "retrieved_utc": "2026-11-02T04:33:24.066442+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Lysine-specific demethylase 3 {ECO:0000312|FlyBase:FBgn0037703};\nDE            EC=1.14.11.65 {ECO:0000250|UniProtKB:Q9Y4C1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 180,
+  "retrieved_utc": "2026-11-02T04:33:24.066442+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
+  "url": "https://rest.uniprot.org/unisave/Q9VHC5?format=txt&versions=180"
 }
 ```
 
@@ -731,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 180,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VHC5?format=txt&versions=180",
-  "source_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
-  "retrieved_utc": "2026-11-02T04:33:24.066442+00:00",
-  "source_locator": "lines 122-129",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N(6),N(6)-dimethyl-L-lysyl(9)-[histone H3] + 2 2-oxoglutarate\nCC         + 2 O2 = L-lysyl(9)-[histone H3] + 2 formaldehyde + 2 succinate + 2\nCC         CO2; Xref=Rhea:RHEA:60188, Rhea:RHEA-COMP:15541, Rhea:RHEA-\nCC         COMP:15546, ChEBI:CHEBI:15379, ChEBI:CHEBI:16526, ChEBI:CHEBI:16810,\nCC         ChEBI:CHEBI:16842, ChEBI:CHEBI:29969, ChEBI:CHEBI:30031,\nCC         ChEBI:CHEBI:61976; EC=1.14.11.65;\nCC         Evidence={ECO:0000250|UniProtKB:Q9Y4C1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 180,
+  "retrieved_utc": "2026-11-02T04:33:24.066442+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 122-129",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f5da474d2b6eef609a1e0f06b8a3e0427dad5c78083068d262116ce5e8a89bbd",
+  "url": "https://rest.uniprot.org/unisave/Q9VHC5?format=txt&versions=180"
 }
 ```
 

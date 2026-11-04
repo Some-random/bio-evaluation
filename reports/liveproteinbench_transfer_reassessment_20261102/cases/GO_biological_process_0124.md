@@ -1,18 +1,16 @@
-# GO_biological_process_0124: before and after transfer clarification
+# GO_biological_process_0124
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0124.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0124.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — positive regulation of transcription by RNA polymerase II
+**Expected answer:** **A** — positive regulation of transcription by RNA polymerase II
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-sequence UniProt record annotates positive regulation of transcription by RNA polymerase II, but the annotation is computational (IEA:TreeGrafter), not direct experimental confirmation. Experimental evidence describes LFC1 as a transcription factor that represses genes involved in basidioma development; that does not rule out positive regulation of other transcription targets.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The cysteine-rich region and low-complexity sequence are compatible with a transcriptional regulator, which favors a transcription-related process over iron transport or microtubule organization. They do not establish that this protein positively regulates transcription, rather than repressing it.
-
-
-**Missing item-specific fact**
-
-> The protein-specific regulatory direction and target processes, or an external annotation assigning the positive-regulation GO term, are not supplied in the question.
-
-
-**Reason**
-
-> Sequence-based clues may suggest transcription-factor activity, but the polarity required by option A depends on protein-specific functional evidence or annotation absent from the model input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not establish the positive regulatory direction, but the supplied choices do not provide another option clearly supported by the available sequence clues.
-
-
-### Important caveats
-
-- The matching GO annotation is an inferred database annotation, not experimental proof of positive regulation.
-- The reported experimental repression of particular developmental genes does not establish that LFC1 never positively regulates transcription in other contexts.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The cysteine-rich region and low-complexity sequence are compatible with a transcriptional regulator, which favors a transcription-related process over iron transport or microtubule organization. They do not establish that this protein positively regulates transcription, rather than repressing it.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific regulatory direction and target processes, or an external annotation assigning the positive-regulation GO term, are not supplied in the question.",
-    "reason": "Sequence-based clues may suggest transcription-factor activity, but the polarity required by option A depends on protein-specific functional evidence or annotation absent from the model input."
-  },
-  "case_id": "GO_biological_process_0124",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-sequence UniProt record annotates positive regulation of transcription by RNA polymerase II, but the annotation is computational (IEA:TreeGrafter), not direct experimental confirmation. Experimental evidence describes LFC1 as a transcription factor that represses genes involved in basidioma development; that does not rule out positive regulation of other transcription targets."
-  },
-  "important_caveats": [
-    "The matching GO annotation is an inferred database annotation, not experimental proof of positive regulation.",
-    "The reported experimental repression of particular developmental genes does not establish that LFC1 never positively regulates transcription in other contexts."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not establish the positive regulatory direction, but the supplied choices do not provide another option clearly supported by the available sequence clues."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0124",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-sequence UniProt record annotates positive regulation of transcription by RNA polymerase II, but the annotation is computational (IEA:TreeGrafter), not direct experimental confirmation. Experimental evidence describes LFC1 as a transcription factor that represses genes involved in basidioma development; that does not rule out positive regulation of other transcription targets.",
-    "evidence_ids": ["C1", "C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The cysteine-rich region and low-complexity sequence are compatible with a transcriptional regulator, which favors a transcription-related process over iron transport or microtubule organization. They do not establish that this protein positively regulates transcription, rather than repressing it.",
-    "missing_item_specific_fact": "The protein-specific regulatory direction and target processes, or an external annotation assigning the positive-regulation GO term, are not supplied in the question.",
-    "reason": "Sequence-based clues may suggest transcription-factor activity, but the polarity required by option A depends on protein-specific functional evidence or annotation absent from the model input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not establish the positive regulatory direction, but the supplied choices do not provide another option clearly supported by the available sequence clues."
-  },
-  "important_caveats": [
-    "The matching GO annotation is an inferred database annotation, not experimental proof of positive regulation.",
-    "The reported experimental repression of particular developmental genes does not establish that LFC1 never positively regulates transcription in other contexts."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A455LJ99 (Transcription factor lfc1, Flammulina velutipes) carries GO:0045944 'positive regulation of transcription by RNA polymerase II' as an annotation (evidence C6, H4), matching the author key exactly. The protein is experimentally confirmed as a transcription factor (PubMed:32356196, evidence C5/H3). However, the GO annotation carries evidence code IEA:TreeGrafter (computational transfer by phylogenetic similarity), and the experimental FUNCTION comment describes the protein as repressing expression of genes involved in basidioma development, which is more consistent with negative regulation of transcription. The 'positive' qualifier in the GO term is therefore in tension with the experimental evidence, but the annotation is present in the database and the overall category (transcription regulation by Pol II) is correct. Among the four options, A is the only transcription-related term.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a cysteine-rich motif (CLTCRMKKIKCDETKPTCARCTHGQRECT) resembling a zinc-finger or zinc-coordinating DNA-binding domain, along with clusters of basic residues (RRR, RRR, RRR) consistent with nuclear localization and DNA interaction. The sequence lacks transmembrane helices (ruling out C: iron ion transmembrane transport), lacks tubulin-binding motifs such as SxGG or acidic tubulin-binding repeats (ruling out D: microtubule cytoskeleton regulation), and lacks features typical of protein-complex assembly regulators such as coiled-coil domains or WD40 repeats (arguing against B). The zinc-finger-like motif plus basic regions strongly indicate a DNA-binding transcription factor, pointing to A as the transcription-related option.
-
-
-**Missing item-specific fact**
-
-> None critical for distinguishing among the four choices. The specific 'positive' vs 'negative' qualifier of transcription regulation cannot be determined from sequence alone, but since A is the only transcription-related option, identifying the protein as a transcription factor suffices to select A.
-
-
-**Reason**
-
-> A trained biologist can recognize the zinc-finger-like cysteine cluster and basic regions as hallmarks of a transcription factor, and can eliminate iron transporters (no TM domains), microtubule regulators (no tubulin-binding motifs), and protein-complex assembly regulators (no coiled-coil/WD40 features) from the sequence. This provides a concrete biological argument distinguishing A from B, C, and D without needing to look up the specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span distinct functional categories (transcription, protein complex assembly, ion transport, cytoskeleton). The sequence features (zinc-finger-like motif, basic regions, absence of TM domains and tubulin-binding motifs) clearly favor a transcription factor, making A the only defensible choice. The 'positive' vs 'negative' qualifier within transcription regulation is not independently assessable from sequence, but no other option addresses transcription at all.
-
-
-### Important caveats
-
-- The GO:0045944 annotation is IEA:TreeGrafter (computational phylogenetic transfer), not experimental. The experimental evidence (PubMed:32356196) describes the protein as repressing gene expression, which is more consistent with negative regulation of transcription. The 'positive' qualifier in the key may be inaccurate.
-- The protein is from Flammulina velutipes (winter mushroom), a basidiomycete fungus. The GO annotation for Pol II transcription regulation is appropriate for eukaryotic fungi.
-- The sequence-match is confirmed (SHA256 match between benchmark sequence and UniProt entry A0A455LJ99, 281 aa).
-- The identity of the accession was inferred by the reviewer from dataset metadata, not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a cysteine-rich motif (CLTCRMKKIKCDETKPTCARCTHGQRECT) resembling a zinc-finger or zinc-coordinating DNA-binding domain, along with clusters of basic residues (RRR, RRR, RRR) consistent with nuclear localization and DNA interaction. The sequence lacks transmembrane helices (ruling out C: iron ion transmembrane transport), lacks tubulin-binding motifs such as SxGG or acidic tubulin-binding repeats (ruling out D: microtubule cytoskeleton regulation), and lacks features typical of protein-complex assembly regulators such as coiled-coil domains or WD40 repeats (arguing against B). The zinc-finger-like motif plus basic regions strongly indicate a DNA-binding transcription factor, pointing to A as the transcription-related option.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical for distinguishing among the four choices. The specific 'positive' vs 'negative' qualifier of transcription regulation cannot be determined from sequence alone, but since A is the only transcription-related option, identifying the protein as a transcription factor suffices to select A.",
-    "reason": "A trained biologist can recognize the zinc-finger-like cysteine cluster and basic regions as hallmarks of a transcription factor, and can eliminate iron transporters (no TM domains), microtubule regulators (no tubulin-binding motifs), and protein-complex assembly regulators (no coiled-coil/WD40 features) from the sequence. This provides a concrete biological argument distinguishing A from B, C, and D without needing to look up the specific UniProt entry."
-  },
-  "case_id": "GO_biological_process_0124",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A455LJ99 (Transcription factor lfc1, Flammulina velutipes) carries GO:0045944 'positive regulation of transcription by RNA polymerase II' as an annotation (evidence C6, H4), matching the author key exactly. The protein is experimentally confirmed as a transcription factor (PubMed:32356196, evidence C5/H3). However, the GO annotation carries evidence code IEA:TreeGrafter (computational transfer by phylogenetic similarity), and the experimental FUNCTION comment describes the protein as repressing expression of genes involved in basidioma development, which is more consistent with negative regulation of transcription. The 'positive' qualifier in the GO term is therefore in tension with the experimental evidence, but the annotation is present in the database and the overall category (transcription regulation by Pol II) is correct. Among the four options, A is the only transcription-related term."
-  },
-  "important_caveats": [
-    "The GO:0045944 annotation is IEA:TreeGrafter (computational phylogenetic transfer), not experimental. The experimental evidence (PubMed:32356196) describes the protein as repressing gene expression, which is more consistent with negative regulation of transcription. The 'positive' qualifier in the key may be inaccurate.",
-    "The protein is from Flammulina velutipes (winter mushroom), a basidiomycete fungus. The GO annotation for Pol II transcription regulation is appropriate for eukaryotic fungi.",
-    "The sequence-match is confirmed (SHA256 match between benchmark sequence and UniProt entry A0A455LJ99, 281 aa).",
-    "The identity of the accession was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span distinct functional categories (transcription, protein complex assembly, ion transport, cytoskeleton). The sequence features (zinc-finger-like motif, basic regions, absence of TM domains and tubulin-binding motifs) clearly favor a transcription factor, making A the only defensible choice. The 'positive' vs 'negative' qualifier within transcription regulation is not independently assessable from sequence, but no other option addresses transcription at all."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0124",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A455LJ99 (Transcription factor lfc1, Flammulina velutipes) carries GO:0045944 'positive regulation of transcription by RNA polymerase II' as an annotation (evidence C6, H4), matching the author key exactly. The protein is experimentally confirmed as a transcription factor (PubMed:32356196, evidence C5/H3). However, the GO annotation carries evidence code IEA:TreeGrafter (computational transfer by phylogenetic similarity), and the experimental FUNCTION comment describes the protein as repressing expression of genes involved in basidioma development, which is more consistent with negative regulation of transcription. The 'positive' qualifier in the GO term is therefore in tension with the experimental evidence, but the annotation is present in the database and the overall category (transcription regulation by Pol II) is correct. Among the four options, A is the only transcription-related term.",
-    "evidence_ids": ["C4", "C5", "C6", "H3", "H4", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a cysteine-rich motif (CLTCRMKKIKCDETKPTCARCTHGQRECT) resembling a zinc-finger or zinc-coordinating DNA-binding domain, along with clusters of basic residues (RRR, RRR, RRR) consistent with nuclear localization and DNA interaction. The sequence lacks transmembrane helices (ruling out C: iron ion transmembrane transport), lacks tubulin-binding motifs such as SxGG or acidic tubulin-binding repeats (ruling out D: microtubule cytoskeleton regulation), and lacks features typical of protein-complex assembly regulators such as coiled-coil domains or WD40 repeats (arguing against B). The zinc-finger-like motif plus basic regions strongly indicate a DNA-binding transcription factor, pointing to A as the transcription-related option.",
-    "missing_item_specific_fact": "None critical for distinguishing among the four choices. The specific 'positive' vs 'negative' qualifier of transcription regulation cannot be determined from sequence alone, but since A is the only transcription-related option, identifying the protein as a transcription factor suffices to select A.",
-    "reason": "A trained biologist can recognize the zinc-finger-like cysteine cluster and basic regions as hallmarks of a transcription factor, and can eliminate iron transporters (no TM domains), microtubule regulators (no tubulin-binding motifs), and protein-complex assembly regulators (no coiled-coil/WD40 features) from the sequence. This provides a concrete biological argument distinguishing A from B, C, and D without needing to look up the specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span distinct functional categories (transcription, protein complex assembly, ion transport, cytoskeleton). The sequence features (zinc-finger-like motif, basic regions, absence of TM domains and tubulin-binding motifs) clearly favor a transcription factor, making A the only defensible choice. The 'positive' vs 'negative' qualifier within transcription regulation is not independently assessable from sequence, but no other option addresses transcription at all."
-  },
-  "important_caveats": [
-    "The GO:0045944 annotation is IEA:TreeGrafter (computational phylogenetic transfer), not experimental. The experimental evidence (PubMed:32356196) describes the protein as repressing gene expression, which is more consistent with negative regulation of transcription. The 'positive' qualifier in the key may be inaccurate.",
-    "The protein is from Flammulina velutipes (winter mushroom), a basidiomycete fungus. The GO annotation for Pol II transcription regulation is appropriate for eukaryotic fungi.",
-    "The sequence-match is confirmed (SHA256 match between benchmark sequence and UniProt entry A0A455LJ99, 281 aa).",
-    "The identity of the accession was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A455LJ99",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "843bea094755124cc0ea5a2f6fb216c7c0c8ec057bd13807d0f19987780dd8b5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 281,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "843bea094755124cc0ea5a2f6fb216c7c0c8ec057bd13807d0f19987780dd8b5",
   "current_entry_audit": {
     "entryVersion": 20,
     "firstPublicDate": "2025-06-18",
@@ -539,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-06-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "current_source_sequence_sha256": "843bea094755124cc0ea5a2f6fb216c7c0c8ec057bd13807d0f19987780dd8b5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 281,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "843bea094755124cc0ea5a2f6fb216c7c0c8ec057bd13807d0f19987780dd8b5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 18,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A455LJ99",
   "selected_historical_entry_version": 18,
+  "selected_historical_record_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
+  "selected_historical_source_sequence_length": 281,
+  "selected_historical_source_sequence_sha256": "843bea094755124cc0ea5a2f6fb216c7c0c8ec057bd13807d0f19987780dd8b5",
   "selected_historical_version": {
     "accession": "A0A455LJ99",
     "database": "Swiss-Prot",
@@ -557,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "LFC1_FLAVE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
-  "selected_historical_source_sequence_sha256": "843bea094755124cc0ea5a2f6fb216c7c0c8ec057bd13807d0f19987780dd8b5",
-  "selected_historical_source_sequence_length": 281,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 18,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json",
-  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A455LJ99\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json"
 }
 ```
 
@@ -611,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json",
-  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":20,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-06-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json"
 }
 ```
 
@@ -630,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json",
-  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Agaricus velutipes\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Basidiomycota\",\"Agaricomycotina\",\"Agaricomycetes\",\"Agaricomycetidae\",\"Agaricales\",\"Marasmiineae\",\"Physalacriaceae\",\"Flammulina\"],\"scientificName\":\"Flammulina velutipes\",\"taxonId\":38945}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json"
 }
 ```
 
@@ -649,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json",
-  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32356196\",\"source\":\"PubMed\"}],\"value\":\"Large fruiting body cap protein 1\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32356196\",\"source\":\"PubMed\"}],\"value\":\"Transcription factor lfc1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json"
 }
 ```
 
@@ -668,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json",
-  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32356196\",\"source\":\"PubMed\"}],\"value\":\"Transcription factor that acts as a negative regulator of basidioma development via repressing the expression of genes involved in basidioma development, including hydrophobins such as Hyd-1 and Hyd-8, lectins such as JRL1, as well as the fruiting body differentiation gene FVFD16\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json"
 }
 ```
 
@@ -687,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json",
-  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/7",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0045944\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:positive regulation of transcription by RNA polymerase II\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/7",
+  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json"
 }
 ```
 
@@ -706,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json",
-  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
-  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wu T.\",\"Hu C.\",\"Xie B.\",\"Wei S.\",\"Zhang L.\",\"Zhu Z.\",\"Zhang Z.\",\"Li S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32356196\"},{\"database\":\"DOI\",\"id\":\"10.1007/s00253-020-10642-8\"}],\"citationType\":\"journal article\",\"firstPage\":\"5827\",\"id\":\"32356196\",\"journal\":\"Appl. Microbiol. Biotechnol.\",\"lastPage\":\"5844\",\"publicationDate\":\"2020\",\"title\":\"A putative transcription factor LFC1 negatively regulates development and yield of winter mushroom.\",\"volume\":\"104\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"L11\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"DEVELOPMENTAL STAGE\",\"DISRUPTION PHENOTYPE\",\"FUNCTION\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:09.588019+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "70f6439760de5a8713c23482870cab8c670797bd523c56d26ae7fe6f245fce0a",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455LJ99.json"
 }
 ```
 
@@ -724,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18",
-  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
-  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   LFC1_FLAVE              Reviewed;         281 AA.\nAC   A0A455LJ99;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUN-2019, sequence version 1.\nDT   28-JAN-2026, entry version 18.\nDE   RecName: Full=Transcription factor lfc1 {ECO:0000303|PubMed:32356196};\nDE   AltName: Full=Large fruiting body cap protein 1 {ECO:0000303|PubMed:32356196};\nGN   Name=lfc1 {ECO:0000303|PubMed:32356196};\nOS   Flammulina velutipes (Agaricus velutipes).\nOC   Eukaryota; Fungi; Dikarya; Basidiomycota; Agaricomycotina; Agaricomycetes;\nOC   Agaricomycetidae; Agaricales; Marasmiineae; Physalacriaceae; Flammulina.\nOX   NCBI_TaxID=38945;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
+  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18"
 }
 ```
 
@@ -745,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18",
-  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
-  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
-  "source_locator": "lines 13-21",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], DEVELOPMENTAL STAGE, DISRUPTION\nRP   PHENOTYPE, FUNCTION, AND BIOTECHNOLOGY.\nRC   STRAIN=L11;\nRX   PubMed=32356196; DOI=10.1007/s00253-020-10642-8;\nRA   Wu T., Hu C., Xie B., Wei S., Zhang L., Zhu Z., Zhang Z., Li S.;\nRT   \"A putative transcription factor LFC1 negatively regulates development and\nRT   yield of winter mushroom.\";\nRL   Appl. Microbiol. Biotechnol. 104:5827-5844(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 13-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
+  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18"
 }
 ```
 
@@ -766,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18",
-  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
-  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
-  "source_locator": "lines 22-26",
   "excerpt": "CC   -!- FUNCTION: Transcription factor that acts as a negative regulator of\nCC       basidioma development via repressing the expression of genes involved\nCC       in basidioma development, including hydrophobins such as Hyd-1 and Hyd-\nCC       8, lectins such as JRL1, as well as the fruiting body differentiation\nCC       gene FVFD16. {ECO:0000269|PubMed:32356196}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
+  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18"
 }
 ```
 
@@ -787,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18",
-  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
-  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
-  "source_locator": "lines 46-46",
   "excerpt": "DR   GO; GO:0045944; P:positive regulation of transcription by RNA polymerase II; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:14.052349+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "daaf88f094d9b5325c5e9aaa51fbadc98d75f2178ae3069b0cc1923b8b102c47",
+  "url": "https://rest.uniprot.org/unisave/A0A455LJ99?format=txt&versions=18"
 }
 ```
 
@@ -809,15 +566,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 175435-175448",
   "excerpt": "[Term]\nid: GO:0031333\nname: negative regulation of protein-containing complex assembly\nnamespace: biological_process\ndef: \"Any process that stops, prevents, or reduces the frequency, rate or extent of protein complex assembly.\" [GOC:mah]\nsynonym: \"down regulation of protein complex assembly\" EXACT []\nsynonym: \"down-regulation of protein complex assembly\" EXACT []\nsynonym: \"downregulation of protein complex assembly\" EXACT []\nsynonym: \"inhibition of protein complex assembly\" NARROW []\nsynonym: \"negative regulation of protein complex assembly\" RELATED []\nis_a: GO:0043254 ! regulation of protein-containing complex assembly\nis_a: GO:0051129 ! negative regulation of cellular component organization\nrelationship: negatively_regulates GO:0065003 ! protein-containing complex assembly\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031333",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 175435-175448",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031333"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -828,15 +585,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 211901-211926",
   "excerpt": "[Term]\nid: GO:0034755\nname: iron ion transmembrane transport\nnamespace: biological_process\nalt_id: GO:0000040\nalt_id: GO:0006827\nalt_id: GO:0061839\nalt_id: GO:1903874\ndef: \"A process in which an iron ion is transported from one side of a membrane to the other by means of some agent such as a transporter or pore.\" [GOC:mah, PMID:11390404]\ncomment: Note that this term is not intended for use in annotating lateral movement within membranes.\nsynonym: \"ferrous ion transmembrane transport\" NARROW []\nsynonym: \"ferrous iron transmembrane transport\" NARROW []\nsynonym: \"high affinity ferrous ion transmembrane transport\" NARROW []\nsynonym: \"high affinity iron ion transport\" NARROW []\nsynonym: \"high-affinity ferrous ion transmembrane transport\" NARROW []\nsynonym: \"high-affinity iron ion transmembrane transport\" NARROW []\nsynonym: \"high-affinity iron ion transport\" NARROW []\nsynonym: \"iron ion membrane transport\" EXACT []\nsynonym: \"iron(2+) transmembrane transport\" NARROW []\nsynonym: \"low affinity iron ion transport\" NARROW []\nsynonym: \"low-affinity iron ion transmembrane transport\" NARROW []\nsynonym: \"low-affinity iron ion transport\" NARROW []\nsynonym: \"transmembrane iron transport\" EXACT []\nis_a: GO:0006826 ! iron ion transport\nis_a: GO:0098655 ! monoatomic cation transmembrane transport\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0034755",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 211901-211926",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0034755"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -847,15 +604,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 270753-270781",
   "excerpt": "[Term]\nid: GO:0045944\nname: positive regulation of transcription by RNA polymerase II\nnamespace: biological_process\nalt_id: GO:0010552\nalt_id: GO:0045817\ndef: \"Any process that activates or increases the frequency, rate or extent of transcription from an RNA polymerase II promoter.\" [GOC:curators, GOC:txnOH]\nsynonym: \"activation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"activation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"positive regulation of gene-specific transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"positive regulation of global transcription from Pol II promoter\" RELATED []\nsynonym: \"positive regulation of transcription from Pol II promoter\" EXACT []\nsynonym: \"positive regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"positive regulation of transcription from RNA polymerase II promoter, global\" RELATED []\nsynonym: \"stimulation of global transcription from RNA polymerase II promoter\" NARROW []\nsynonym: \"stimulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"up regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"up regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"up-regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"up-regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"upregulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"upregulation of transcription from RNA polymerase II promoter\" EXACT []\nxref: Reactome:R-HSA-2173796 \"SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription\"\nxref: Reactome:R-HSA-8866906 \"TFAP2 (AP-2) family regulates transcription of other transcription factors\"\nxref: Reactome:R-HSA-8866907 \"Activation of the TFAP2 (AP-2) family of transcription factors\"\nis_a: GO:0006357 ! regulation of transcription by RNA polymerase II\nis_a: GO:0045893 ! positive regulation of DNA-templated transcription\nrelationship: positively_regulates GO:0006366 ! transcription by RNA polymerase II\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045944",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 270753-270781",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045944"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -866,15 +623,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 368369-368379",
   "excerpt": "[Term]\nid: GO:0070507\nname: regulation of microtubule cytoskeleton organization\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of the formation, arrangement of constituent parts, or disassembly of cytoskeletal structures comprising microtubules and their associated proteins.\" [GOC:mah]\nsynonym: \"regulation of microtubule cytoskeleton organisation\" EXACT [GOC:mah]\nsynonym: \"regulation of microtubule dynamics\" EXACT [GOC:dph, GOC:tb]\nis_a: GO:0032886 ! regulation of microtubule-based process\nis_a: GO:0051493 ! regulation of cytoskeleton organization\nrelationship: regulates GO:0000226 ! microtubule cytoskeleton organization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0070507",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 368369-368379",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0070507"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

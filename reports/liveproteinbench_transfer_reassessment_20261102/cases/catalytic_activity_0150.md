@@ -1,18 +1,16 @@
-# catalytic_activity_0150: before and after transfer clarification
+# catalytic_activity_0150
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0150.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0150.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — L-homocysteine + glycine betaine = N,N-dimethylglycine + L-methionine
+**Expected answer:** **D** — L-homocysteine + glycine betaine = N,N-dimethylglycine + L-methionine
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches Drosophila melanogaster UniProt entry Q9VJ31, annotated as betaine-homocysteine S-methyltransferase (EC 2.1.1.5), with the reaction in choice D. The annotation is transferred by similarity from Q93088 (ECO:0000250), so it supports the expected answer but is not direct experimental confirmation for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a soluble enzyme rather than an obvious membrane transporter, making choice A less plausible, but its amino-acid sequence alone does not establish the specific methyl-transfer reaction or substrates in D.
-
-
-**Missing item-specific fact**
-
-> The protein's identification as betaine-homocysteine S-methyltransferase, or equivalent protein-specific functional/homology annotation, is needed to select D.
-
-
-**Reason**
-
-> The choices require identifying the enzyme's particular catalytic activity. General sequence inspection does not meaningfully distinguish this exact reaction from other enzyme reactions; the matching database annotation is reviewer-only and was not provided to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices describe distinct reactions, and the sequence-matched enzyme annotation specifies choice D.
-
-
-### Important caveats
-
-- The Drosophila reaction annotation is based on similarity evidence from Q93088 rather than direct experimental evidence shown here.
-- The sequence match is exact, but the author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a soluble enzyme rather than an obvious membrane transporter, making choice A less plausible, but its amino-acid sequence alone does not establish the specific methyl-transfer reaction or substrates in D.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identification as betaine-homocysteine S-methyltransferase, or equivalent protein-specific functional/homology annotation, is needed to select D.",
-    "reason": "The choices require identifying the enzyme's particular catalytic activity. General sequence inspection does not meaningfully distinguish this exact reaction from other enzyme reactions; the matching database annotation is reviewer-only and was not provided to the evaluated model."
-  },
-  "case_id": "catalytic_activity_0150",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches Drosophila melanogaster UniProt entry Q9VJ31, annotated as betaine-homocysteine S-methyltransferase (EC 2.1.1.5), with the reaction in choice D. The annotation is transferred by similarity from Q93088 (ECO:0000250), so it supports the expected answer but is not direct experimental confirmation for this sequence."
-  },
-  "important_caveats": [
-    "The Drosophila reaction annotation is based on similarity evidence from Q93088 rather than direct experimental evidence shown here.",
-    "The sequence match is exact, but the author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reactions, and the sequence-matched enzyme annotation specifies choice D."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0150",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches Drosophila melanogaster UniProt entry Q9VJ31, annotated as betaine-homocysteine S-methyltransferase (EC 2.1.1.5), with the reaction in choice D. The annotation is transferred by similarity from Q93088 (ECO:0000250), so it supports the expected answer but is not direct experimental confirmation for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a soluble enzyme rather than an obvious membrane transporter, making choice A less plausible, but its amino-acid sequence alone does not establish the specific methyl-transfer reaction or substrates in D.",
-    "missing_item_specific_fact": "The protein's identification as betaine-homocysteine S-methyltransferase, or equivalent protein-specific functional/homology annotation, is needed to select D.",
-    "reason": "The choices require identifying the enzyme's particular catalytic activity. General sequence inspection does not meaningfully distinguish this exact reaction from other enzyme reactions; the matching database annotation is reviewer-only and was not provided to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reactions, and the sequence-matched enzyme annotation specifies choice D."
-  },
-  "important_caveats": [
-    "The Drosophila reaction annotation is based on similarity evidence from Q93088 rather than direct experimental evidence shown here.",
-    "The sequence match is exact, but the author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9VJ31 (BHMT_DROME) explicitly annotates the catalytic activity as 'L-homocysteine + glycine betaine = N,N-dimethylglycine + L-methionine' (EC 2.1.1.5, RHEA:22336/22337), matching choice D verbatim. The benchmark sequence (331 AA, SHA256 match) corresponds exactly to this entry. However, the evidence code is ECO:0000250 (inferred by similarity from Q93088, a human BHMT), meaning this is a computational annotation transfer rather than direct experimental characterization of the Drosophila enzyme. The annotation is nonetheless consistent and unambiguous.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One can weakly argue from general principles: the 331-residue soluble protein lacks transmembrane helices (disfavoring A, a transporter) and lacks the large lipid-transfer domains of cardiolipin synthase (disfavoring C). The absence of the canonical SAM-binding motif (VLDLGCG) might hint at a non-SAM methyltransferase, and BHMT is the classic example. However, this chain of reasoning does not uniquely identify BHMT among all non-SAM methyltransferases or confidently exclude choice B (an oxidative demethylase). Distinguishing D from B requires knowing that BHMT uses betaine as a direct methyl donor without redox cofactors.
-
-
-**Missing item-specific fact**
-
-> Recognition of BHMT-specific conserved sequence motifs (e.g., the zinc-binding Cys/His cluster near the C-terminus in 'GGCCRVYPTDVLAIRKYVDGLNIKP') or prior knowledge that this exact Drosophila 331-aa sequence corresponds to BHMT. Without these, the sequence provides no strong positive evidence uniquely pointing to betaine-homocysteine S-methyltransferase over other methyl-transfer or demethylation reactions.
-
-
-**Reason**
-
-> The question requires identifying a specific enzyme (BHMT) from a 331-residue Drosophila sequence. General biological knowledge can eliminate choices A and C with moderate confidence, but distinguishing D from B (both methyl-group chemistry) demands either memorization of BHMT's sequence/fold features or recognition of the exact protein. No general biological argument from the raw sequence alone robustly selects D over B.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choices A (transporter) and C (cardiolipin synthase) are clearly incompatible with the sequence's size, lack of TM domains, and lack of lipid-transfer motifs. Choice B (oxidative demethylase requiring NADH/O2) is less defensible than D for a protein lacking obvious FAD/NAD-binding Rossmann folds, but it is not trivially excluded by sequence alone. Choice D is the annotated answer. No two options are equally defensible given the annotation.
-
-
-### Important caveats
-
-- The catalytic activity annotation carries evidence code ECO:0000250 (similarity to human BHMT Q93088), not direct experimental validation on the Drosophila enzyme. The annotation is a computational transfer.
-- The UniProt entry was first public in 2025-02-05; the benchmark author's source snapshot is unknown. The sequence has been stable since 2000-05-01 (sequence version 1).
-- The reviewer-only evidence (accession, annotation) was not available to the evaluated model; the model saw only the raw sequence and four choices.
-- The identity origin (accession inferred from dataset image-path metadata) is mechanical and not independently verified by the reviewer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One can weakly argue from general principles: the 331-residue soluble protein lacks transmembrane helices (disfavoring A, a transporter) and lacks the large lipid-transfer domains of cardiolipin synthase (disfavoring C). The absence of the canonical SAM-binding motif (VLDLGCG) might hint at a non-SAM methyltransferase, and BHMT is the classic example. However, this chain of reasoning does not uniquely identify BHMT among all non-SAM methyltransferases or confidently exclude choice B (an oxidative demethylase). Distinguishing D from B requires knowing that BHMT uses betaine as a direct methyl donor without redox cofactors.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Recognition of BHMT-specific conserved sequence motifs (e.g., the zinc-binding Cys/His cluster near the C-terminus in 'GGCCRVYPTDVLAIRKYVDGLNIKP') or prior knowledge that this exact Drosophila 331-aa sequence corresponds to BHMT. Without these, the sequence provides no strong positive evidence uniquely pointing to betaine-homocysteine S-methyltransferase over other methyl-transfer or demethylation reactions.",
-    "reason": "The question requires identifying a specific enzyme (BHMT) from a 331-residue Drosophila sequence. General biological knowledge can eliminate choices A and C with moderate confidence, but distinguishing D from B (both methyl-group chemistry) demands either memorization of BHMT's sequence/fold features or recognition of the exact protein. No general biological argument from the raw sequence alone robustly selects D over B."
-  },
-  "case_id": "catalytic_activity_0150",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VJ31 (BHMT_DROME) explicitly annotates the catalytic activity as 'L-homocysteine + glycine betaine = N,N-dimethylglycine + L-methionine' (EC 2.1.1.5, RHEA:22336/22337), matching choice D verbatim. The benchmark sequence (331 AA, SHA256 match) corresponds exactly to this entry. However, the evidence code is ECO:0000250 (inferred by similarity from Q93088, a human BHMT), meaning this is a computational annotation transfer rather than direct experimental characterization of the Drosophila enzyme. The annotation is nonetheless consistent and unambiguous."
-  },
-  "important_caveats": [
-    "The catalytic activity annotation carries evidence code ECO:0000250 (similarity to human BHMT Q93088), not direct experimental validation on the Drosophila enzyme. The annotation is a computational transfer.",
-    "The UniProt entry was first public in 2025-02-05; the benchmark author's source snapshot is unknown. The sequence has been stable since 2000-05-01 (sequence version 1).",
-    "The reviewer-only evidence (accession, annotation) was not available to the evaluated model; the model saw only the raw sequence and four choices.",
-    "The identity origin (accession inferred from dataset image-path metadata) is mechanical and not independently verified by the reviewer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A (transporter) and C (cardiolipin synthase) are clearly incompatible with the sequence's size, lack of TM domains, and lack of lipid-transfer motifs. Choice B (oxidative demethylase requiring NADH/O2) is less defensible than D for a protein lacking obvious FAD/NAD-binding Rossmann folds, but it is not trivially excluded by sequence alone. Choice D is the annotated answer. No two options are equally defensible given the annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0150",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VJ31 (BHMT_DROME) explicitly annotates the catalytic activity as 'L-homocysteine + glycine betaine = N,N-dimethylglycine + L-methionine' (EC 2.1.1.5, RHEA:22336/22337), matching choice D verbatim. The benchmark sequence (331 AA, SHA256 match) corresponds exactly to this entry. However, the evidence code is ECO:0000250 (inferred by similarity from Q93088, a human BHMT), meaning this is a computational annotation transfer rather than direct experimental characterization of the Drosophila enzyme. The annotation is nonetheless consistent and unambiguous.",
-    "evidence_ids": ["C4", "C5", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One can weakly argue from general principles: the 331-residue soluble protein lacks transmembrane helices (disfavoring A, a transporter) and lacks the large lipid-transfer domains of cardiolipin synthase (disfavoring C). The absence of the canonical SAM-binding motif (VLDLGCG) might hint at a non-SAM methyltransferase, and BHMT is the classic example. However, this chain of reasoning does not uniquely identify BHMT among all non-SAM methyltransferases or confidently exclude choice B (an oxidative demethylase). Distinguishing D from B requires knowing that BHMT uses betaine as a direct methyl donor without redox cofactors.",
-    "missing_item_specific_fact": "Recognition of BHMT-specific conserved sequence motifs (e.g., the zinc-binding Cys/His cluster near the C-terminus in 'GGCCRVYPTDVLAIRKYVDGLNIKP') or prior knowledge that this exact Drosophila 331-aa sequence corresponds to BHMT. Without these, the sequence provides no strong positive evidence uniquely pointing to betaine-homocysteine S-methyltransferase over other methyl-transfer or demethylation reactions.",
-    "reason": "The question requires identifying a specific enzyme (BHMT) from a 331-residue Drosophila sequence. General biological knowledge can eliminate choices A and C with moderate confidence, but distinguishing D from B (both methyl-group chemistry) demands either memorization of BHMT's sequence/fold features or recognition of the exact protein. No general biological argument from the raw sequence alone robustly selects D over B."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A (transporter) and C (cardiolipin synthase) are clearly incompatible with the sequence's size, lack of TM domains, and lack of lipid-transfer motifs. Choice B (oxidative demethylase requiring NADH/O2) is less defensible than D for a protein lacking obvious FAD/NAD-binding Rossmann folds, but it is not trivially excluded by sequence alone. Choice D is the annotated answer. No two options are equally defensible given the annotation."
-  },
-  "important_caveats": [
-    "The catalytic activity annotation carries evidence code ECO:0000250 (similarity to human BHMT Q93088), not direct experimental validation on the Drosophila enzyme. The annotation is a computational transfer.",
-    "The UniProt entry was first public in 2025-02-05; the benchmark author's source snapshot is unknown. The sequence has been stable since 2000-05-01 (sequence version 1).",
-    "The reviewer-only evidence (accession, annotation) was not available to the evaluated model; the model saw only the raw sequence and four choices.",
-    "The identity origin (accession inferred from dataset image-path metadata) is mechanical and not independently verified by the reviewer."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VJ31",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6bd107edc9e34f66f2c22eae9672febecece9154557d102db3fa92c074ab48db",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 331,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6bd107edc9e34f66f2c22eae9672febecece9154557d102db3fa92c074ab48db",
   "current_entry_audit": {
     "entryVersion": 181,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
-  "current_source_sequence_sha256": "6bd107edc9e34f66f2c22eae9672febecece9154557d102db3fa92c074ab48db",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 331,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6bd107edc9e34f66f2c22eae9672febecece9154557d102db3fa92c074ab48db",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 179,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VJ31",
   "selected_historical_entry_version": 179,
+  "selected_historical_record_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
+  "selected_historical_source_sequence_length": 331,
+  "selected_historical_source_sequence_sha256": "6bd107edc9e34f66f2c22eae9672febecece9154557d102db3fa92c074ab48db",
   "selected_historical_version": {
     "accession": "Q9VJ31",
     "database": "Swiss-Prot",
@@ -552,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BHMT_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
-  "selected_historical_source_sequence_sha256": "6bd107edc9e34f66f2c22eae9672febecece9154557d102db3fa92c074ab48db",
-  "selected_historical_source_sequence_length": 331,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 179,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json",
-  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
-  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VJ31\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json"
 }
 ```
 
@@ -602,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json",
-  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
-  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":181,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json"
 }
 ```
 
@@ -621,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json",
-  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
-  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json"
 }
 ```
 
@@ -640,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json",
-  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
-  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q93088\",\"source\":\"UniProtKB\"}],\"value\":\"2.1.1.5\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0032727\",\"source\":\"FlyBase\"}],\"value\":\"Betaine-homocysteine S-methyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json"
 }
 ```
 
@@ -659,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json",
-  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
-  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q93088\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:22337\"}}],\"reaction\":{\"ecNumber\":\"2.1.1.5\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q93088\",\"source\":\"UniProtKB\"}],\"name\":\"L-homocysteine + glycine betaine = N,N-dimethylglycine + L-methionine\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:22336\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17750\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57844\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58199\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58251\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:22.549548+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9e7ae75552fc6f8c0b82b0818c27c06ccc38e4edbafe213c0d1073bb6cc0f26",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ31.json"
 }
 ```
 
@@ -677,18 +436,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 179,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VJ31?format=txt&versions=179",
-  "source_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
-  "retrieved_utc": "2026-11-02T04:33:24.773902+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   BHMT_DROME              Reviewed;         331 AA.\nAC   Q9VJ31;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 179.\nDE   RecName: Full=Betaine-homocysteine S-methyltransferase {ECO:0000312|FlyBase:FBgn0032727};\nDE            EC=2.1.1.5 {ECO:0000250|UniProtKB:Q93088};\nGN   Name=Bhmt {ECO:0000312|FlyBase:FBgn0032727};\nGN   ORFNames=CG10623 {ECO:0000312|FlyBase:FBgn0032727};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 179,
+  "retrieved_utc": "2026-11-02T04:33:24.773902+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
+  "url": "https://rest.uniprot.org/unisave/Q9VJ31?format=txt&versions=179"
 }
 ```
 
@@ -698,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 179,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VJ31?format=txt&versions=179",
-  "source_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
-  "retrieved_utc": "2026-11-02T04:33:24.773902+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Betaine-homocysteine S-methyltransferase {ECO:0000312|FlyBase:FBgn0032727};\nDE            EC=2.1.1.5 {ECO:0000250|UniProtKB:Q93088};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 179,
+  "retrieved_utc": "2026-11-02T04:33:24.773902+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
+  "url": "https://rest.uniprot.org/unisave/Q9VJ31?format=txt&versions=179"
 }
 ```
 
@@ -719,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 179,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VJ31?format=txt&versions=179",
-  "source_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
-  "retrieved_utc": "2026-11-02T04:33:24.773902+00:00",
-  "source_locator": "lines 109-115",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-homocysteine + glycine betaine = N,N-dimethylglycine + L-\nCC         methionine; Xref=Rhea:RHEA:22336, ChEBI:CHEBI:17750,\nCC         ChEBI:CHEBI:57844, ChEBI:CHEBI:58199, ChEBI:CHEBI:58251; EC=2.1.1.5;\nCC         Evidence={ECO:0000250|UniProtKB:Q93088};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:22337;\nCC         Evidence={ECO:0000250|UniProtKB:Q93088};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 179,
+  "retrieved_utc": "2026-11-02T04:33:24.773902+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 109-115",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0137a301084f29c9ad250967ed17fe809b86d9f9bf9482cf841c048eb041de62",
+  "url": "https://rest.uniprot.org/unisave/Q9VJ31?format=txt&versions=179"
 }
 ```
 

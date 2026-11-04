@@ -1,18 +1,16 @@
-# GO_biological_process_0187: before and after transfer clarification
+# GO_biological_process_0187
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0187.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0187.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — symbiont entry into host cell
+**Expected answer:** **D** — symbiont entry into host cell
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry identifying the protein as a Bacillus phage tail tube protein, with GO:0046718 (symbiont entry into host cell) annotated in both the archived and current records. The annotation is IEA:UniProtKB-KW, so it supports the key as a computational database annotation, not as direct experimental evidence.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The supplied sequence and choices do not provide a clear, general biological feature that identifies this protein's specific role. Distinguishing viral entry from attachment requires knowing the protein's identity or its specific annotation.
-
-
-**Missing item-specific fact**
-
-> The sequence's association with a phage tail tube protein and its GO annotation for symbiont entry into host cell are absent from the input.
-
-
-**Reason**
-
-> The reviewer evidence supports D for this matched sequence, but that protein-specific identification and annotation are external facts. Recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied input alone does not establish another option, although it also does not provide enough information to distinguish D from the alternatives without protein-specific knowledge.
-
-
-### Important caveats
-
-- The GO annotation uses IEA:UniProtKB-KW evidence; it is computationally assigned rather than direct experimental evidence.
-- The archived record and exact sequence match support the key, but the author's precise source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied sequence and choices do not provide a clear, general biological feature that identifies this protein's specific role. Distinguishing viral entry from attachment requires knowing the protein's identity or its specific annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's association with a phage tail tube protein and its GO annotation for symbiont entry into host cell are absent from the input.",
-    "reason": "The reviewer evidence supports D for this matched sequence, but that protein-specific identification and annotation are external facts. Recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "GO_biological_process_0187",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry identifying the protein as a Bacillus phage tail tube protein, with GO:0046718 (symbiont entry into host cell) annotated in both the archived and current records. The annotation is IEA:UniProtKB-KW, so it supports the key as a computational database annotation, not as direct experimental evidence."
-  },
-  "important_caveats": [
-    "The GO annotation uses IEA:UniProtKB-KW evidence; it is computationally assigned rather than direct experimental evidence.",
-    "The archived record and exact sequence match support the key, but the author's precise source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied input alone does not establish another option, although it also does not provide enough information to distinguish D from the alternatives without protein-specific knowledge."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0187",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry identifying the protein as a Bacillus phage tail tube protein, with GO:0046718 (symbiont entry into host cell) annotated in both the archived and current records. The annotation is IEA:UniProtKB-KW, so it supports the key as a computational database annotation, not as direct experimental evidence.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The supplied sequence and choices do not provide a clear, general biological feature that identifies this protein's specific role. Distinguishing viral entry from attachment requires knowing the protein's identity or its specific annotation.",
-    "missing_item_specific_fact": "The sequence's association with a phage tail tube protein and its GO annotation for symbiont entry into host cell are absent from the input.",
-    "reason": "The reviewer evidence supports D for this matched sequence, but that protein-specific identification and annotation are external facts. Recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied input alone does not establish another option, although it also does not provide enough information to distinguish D from the alternatives without protein-specific knowledge."
-  },
-  "important_caveats": [
-    "The GO annotation uses IEA:UniProtKB-KW evidence; it is computationally assigned rather than direct experimental evidence.",
-    "The archived record and exact sequence match support the key, but the author's precise source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is annotated in UniProt (A0AAE9G628) as a 'Tail tube protein' of Bacillus phage SPR, with GO:0046718 'symbiont entry into host cell' (evidence code IEA:UniProtKB-KW). Biologically, the tail tube of a bacteriophage serves as the conduit through which the phage genome is injected into the host cell during infection, which aligns with the GO definition of symbiont entry: 'The process by which a symbiont breaches the plasma membrane or cell envelope and enters the host cell.' The GO term even lists 'phage translocation' as a synonym. However, the annotation is keyword-derived (IEA), not experimentally validated.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> If one recognizes the protein as a phage tail tube (the DNA-injection conduit) rather than a tail fiber or spike (attachment mediator), then D (entry/translocation) is clearly favored over C (attachment). The GO comment on GO:0046718 explicitly separates attachment from entry. However, distinguishing 'tail tube' from 'tail fiber' or other phage structural proteins from a 264-aa sequence alone is not reliably achievable through general biological reasoning.
-
-
-**Missing item-specific fact**
-
-> The specific structural role of this protein as a 'tail tube' (DNA injection channel) versus a 'tail fiber/spike' (attachment structure) is an item-specific annotation. Without knowing this protein is a tail tube rather than another phage structural component, the sequence alone does not clearly distinguish option C (attachment) from option D (entry). The IEA keyword annotation encodes this distinction, but it is not derivable from general sequence features.
-
-
-**Reason**
-
-> Options A and B can be eliminated by general reasoning (no neuromuscular motifs; no transmembrane helices; GO 'transmembrane transport' refers to solute transport, not DNA injection). However, the critical C-vs-D distinction requires knowing the protein's specific structural role in the phage tail architecture (tube = entry conduit vs. fiber = attachment). This is a protein-specific structural annotation not recoverable from sequence features alone through general biological knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C",
-  "D"
-]
-```
-
-> Without prior knowledge that this is specifically a tail TUBE protein (the DNA injection channel) rather than a tail fiber or other attachment structure, both 'virion attachment to host cell' (C) and 'symbiont entry into host cell' (D) are plausible for a phage structural protein. The GO ontology explicitly separates these steps, but the sequence does not unambiguously encode which step this protein mediates. A knowledgeable model could argue for C if it misidentifies the protein as an attachment structure.
-
-
-### Important caveats
-
-- The GO annotation is IEA:UniProtKB-KW (Inferred from Electronic Annotation via keyword), not experimentally determined. No direct experimental evidence for the specific GO term was found in the supplied excerpts.
-- The protein was first integrated into Swiss-Prot on 2025-02-05; the author's source snapshot is unknown, and the benchmark may have been constructed before this entry existed in curated form.
-- The sequence-match is confirmed (SHA256 match at both current and historical entry versions), so the annotation applies to the exact sequence provided.
-- The tail tube protein's role in DNA injection is well-established in phage structural biology literature, providing biological plausibility beyond the IEA annotation alone.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "If one recognizes the protein as a phage tail tube (the DNA-injection conduit) rather than a tail fiber or spike (attachment mediator), then D (entry/translocation) is clearly favored over C (attachment). The GO comment on GO:0046718 explicitly separates attachment from entry. However, distinguishing 'tail tube' from 'tail fiber' or other phage structural proteins from a 264-aa sequence alone is not reliably achievable through general biological reasoning.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific structural role of this protein as a 'tail tube' (DNA injection channel) versus a 'tail fiber/spike' (attachment structure) is an item-specific annotation. Without knowing this protein is a tail tube rather than another phage structural component, the sequence alone does not clearly distinguish option C (attachment) from option D (entry). The IEA keyword annotation encodes this distinction, but it is not derivable from general sequence features.",
-    "reason": "Options A and B can be eliminated by general reasoning (no neuromuscular motifs; no transmembrane helices; GO 'transmembrane transport' refers to solute transport, not DNA injection). However, the critical C-vs-D distinction requires knowing the protein's specific structural role in the phage tail architecture (tube = entry conduit vs. fiber = attachment). This is a protein-specific structural annotation not recoverable from sequence features alone through general biological knowledge."
-  },
-  "case_id": "GO_biological_process_0187",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is annotated in UniProt (A0AAE9G628) as a 'Tail tube protein' of Bacillus phage SPR, with GO:0046718 'symbiont entry into host cell' (evidence code IEA:UniProtKB-KW). Biologically, the tail tube of a bacteriophage serves as the conduit through which the phage genome is injected into the host cell during infection, which aligns with the GO definition of symbiont entry: 'The process by which a symbiont breaches the plasma membrane or cell envelope and enters the host cell.' The GO term even lists 'phage translocation' as a synonym. However, the annotation is keyword-derived (IEA), not experimentally validated."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA:UniProtKB-KW (Inferred from Electronic Annotation via keyword), not experimentally determined. No direct experimental evidence for the specific GO term was found in the supplied excerpts.",
-    "The protein was first integrated into Swiss-Prot on 2025-02-05; the author's source snapshot is unknown, and the benchmark may have been constructed before this entry existed in curated form.",
-    "The sequence-match is confirmed (SHA256 match at both current and historical entry versions), so the annotation applies to the exact sequence provided.",
-    "The tail tube protein's role in DNA injection is well-established in phage structural biology literature, providing biological plausibility beyond the IEA annotation alone."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C",
-      "D"
-    ],
-    "reason": "Without prior knowledge that this is specifically a tail TUBE protein (the DNA injection channel) rather than a tail fiber or other attachment structure, both 'virion attachment to host cell' (C) and 'symbiont entry into host cell' (D) are plausible for a phage structural protein. The GO ontology explicitly separates these steps, but the sequence does not unambiguously encode which step this protein mediates. A knowledgeable model could argue for C if it misidentifies the protein as an attachment structure."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0187",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is annotated in UniProt (A0AAE9G628) as a 'Tail tube protein' of Bacillus phage SPR, with GO:0046718 'symbiont entry into host cell' (evidence code IEA:UniProtKB-KW). Biologically, the tail tube of a bacteriophage serves as the conduit through which the phage genome is injected into the host cell during infection, which aligns with the GO definition of symbiont entry: 'The process by which a symbiont breaches the plasma membrane or cell envelope and enters the host cell.' The GO term even lists 'phage translocation' as a synonym. However, the annotation is keyword-derived (IEA), not experimentally validated.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "H1", "H2", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "If one recognizes the protein as a phage tail tube (the DNA-injection conduit) rather than a tail fiber or spike (attachment mediator), then D (entry/translocation) is clearly favored over C (attachment). The GO comment on GO:0046718 explicitly separates attachment from entry. However, distinguishing 'tail tube' from 'tail fiber' or other phage structural proteins from a 264-aa sequence alone is not reliably achievable through general biological reasoning.",
-    "missing_item_specific_fact": "The specific structural role of this protein as a 'tail tube' (DNA injection channel) versus a 'tail fiber/spike' (attachment structure) is an item-specific annotation. Without knowing this protein is a tail tube rather than another phage structural component, the sequence alone does not clearly distinguish option C (attachment) from option D (entry). The IEA keyword annotation encodes this distinction, but it is not derivable from general sequence features.",
-    "reason": "Options A and B can be eliminated by general reasoning (no neuromuscular motifs; no transmembrane helices; GO 'transmembrane transport' refers to solute transport, not DNA injection). However, the critical C-vs-D distinction requires knowing the protein's specific structural role in the phage tail architecture (tube = entry conduit vs. fiber = attachment). This is a protein-specific structural annotation not recoverable from sequence features alone through general biological knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C", "D"],
-    "reason": "Without prior knowledge that this is specifically a tail TUBE protein (the DNA injection channel) rather than a tail fiber or other attachment structure, both 'virion attachment to host cell' (C) and 'symbiont entry into host cell' (D) are plausible for a phage structural protein. The GO ontology explicitly separates these steps, but the sequence does not unambiguously encode which step this protein mediates. A knowledgeable model could argue for C if it misidentifies the protein as an attachment structure."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA:UniProtKB-KW (Inferred from Electronic Annotation via keyword), not experimentally determined. No direct experimental evidence for the specific GO term was found in the supplied excerpts.",
-    "The protein was first integrated into Swiss-Prot on 2025-02-05; the author's source snapshot is unknown, and the benchmark may have been constructed before this entry existed in curated form.",
-    "The sequence-match is confirmed (SHA256 match at both current and historical entry versions), so the annotation applies to the exact sequence provided.",
-    "The tail tube protein's role in DNA injection is well-established in phage structural biology literature, providing biological plausibility beyond the IEA annotation alone."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -400,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -524,30 +283,17 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), 
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAE9G628",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 264,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
   "current_entry_audit": {
     "entryVersion": 9,
     "firstPublicDate": "2025-02-05",
@@ -555,14 +301,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-05-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "current_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 264,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 7,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAE9G628",
   "selected_historical_entry_version": 7,
+  "selected_historical_record_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
+  "selected_historical_source_sequence_length": 264,
+  "selected_historical_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
   "selected_historical_version": {
     "accession": "A0AAE9G628",
     "database": "Swiss-Prot",
@@ -573,24 +335,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TUBE_BPSPR",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
-  "selected_historical_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
-  "selected_historical_source_sequence_length": 264,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 7,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -608,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAE9G628\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -627,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":9,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2024-05-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -646,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bacteriophage SPR\",\"lineage\":[\"Viruses\",\"Duplodnaviria\",\"Heunggongvirae\",\"Uroviricota\",\"Caudoviricetes\",\"Caudoviricetes incertae sedis\",\"Spbetavirus\"],\"scientificName\":\"Bacillus phage SPR\",\"taxonId\":10725}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -665,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"value\":\"Tail tube protein\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -684,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/27",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0046718\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:symbiont entry into host cell\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-KW\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/27",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -702,18 +451,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 7,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7",
-  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
-  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   TUBE_BPSPR              Reviewed;         264 AA.\nAC   A0AAE9G628;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-MAY-2024, sequence version 1.\nDT   28-JAN-2026, entry version 7.\nDE   RecName: Full=Tail tube protein;\nGN   ORFNames=spr_64 {ECO:0000312|EMBL:UNY48585.1};\nOS   Bacillus phage SPR (Bacteriophage SPR).\nOC   Viruses; Duplodnaviria; Heunggongvirae; Uroviricota; Caudoviricetes;\nOC   Spbetavirus.\nOX   NCBI_TaxID=10725 {ECO:0000312|EMBL:UNY48585.1, ECO:0000312|Proteomes:UP000831086};\nOH   NCBI_TaxID=1423; Bacillus subtilis.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 7,
+  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
+  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7"
 }
 ```
 
@@ -723,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 7,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7",
-  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
-  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
-  "source_locator": "lines 115-115",
   "excerpt": "DR   GO; GO:0046718; P:symbiont entry into host cell; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 7,
+  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 115-115",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
+  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7"
 }
 ```
 
@@ -745,15 +494,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 145019-145031",
   "excerpt": "[Term]\nid: GO:0019062\nname: virion attachment to host cell\nnamespace: biological_process\ndef: \"The process by which a virion protein binds to molecules on the host cellular surface or host cell surface projection.\" [GOC:bf, GOC:jl, UniProtKB-KW:KW-1161, VZ:956]\nsubset: goslim_virus\nsynonym: \"viral absorption\" EXACT []\nsynonym: \"viral attachment to host cell\" RELATED [GOC:bf, GOC:jl]\nsynonym: \"virion attachment to host cell surface receptor\" NARROW []\nxref: VZ:956 \"Viral attachment to host cell\"\nis_a: GO:0044650 ! adhesion of symbiont to host cell\nrelationship: part_of GO:0019058 ! viral life cycle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019062",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 145019-145031",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019062"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -764,15 +513,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 279905-279925",
   "excerpt": "[Term]\nid: GO:0046718\nname: symbiont entry into host cell\nnamespace: biological_process\nalt_id: GO:0019063\ndef: \"The process by which a symbiont breaches the plasma membrane or cell envelope and enters the host cell. The process ends when the symbiont or its genome is released into the host cell.\" [GOC:jl]\ncomment: Viral attachment to the host cell is not part of viral entry in GO because virus attachment does not always lead to viral entry: attachment can also result in the virion being carried by the host cell to another location.\nsubset: goslim_metagenomics\nsynonym: \"entry of virus into host cell\" NARROW []\nsynonym: \"phage translocation\" NARROW []\nsynonym: \"viral entry into host cell\" NARROW []\nsynonym: \"viral penetration\" NARROW []\nsynonym: \"virion penetration\" NARROW []\nsynonym: \"virion penetration into host cell\" NARROW []\nsynonym: \"virus entry into host cell\" NARROW []\nxref: Reactome:R-HSA-168270 \"Fusion and Uncoating of the Influenza Virion\"\nxref: Reactome:R-HSA-8876384 \"Listeria monocytogenes entry into host cells\"\nxref: VZ:936 \"Virus entry\"\nis_a: GO:0044409 ! symbiont entry into host\nrelationship: part_of GO:0019058 ! viral life cycle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046718",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 279905-279925",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046718"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -783,15 +532,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 343246-343266",
   "excerpt": "[Term]\nid: GO:0055085\nname: transmembrane transport\nnamespace: biological_process\nalt_id: GO:0090662\ndef: \"The process in which a solute is transported across a lipid bilayer, from one side of a membrane to the other.\" [GOC:dph, GOC:jid]\ncomment: Transmembrane transport is the transport of a solute across a lipid bilayer. Note that transport through the nuclear pore complex is not transmembrane because the nuclear membrane is a double membrane and is not traversed. For transport through the nuclear pore, consider instead the term 'nucleocytoplasmic transport ; GO:0006913' and its children. Note also that this term is not intended for use in annotating lateral movement within membranes.\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_pombe\nsubset: goslim_yeast\nsynonym: \"ATP hydrolysis coupled transmembrane transport\" NARROW []\nsynonym: \"membrane transport\" EXACT []\nxref: Reactome:R-HSA-382556 \"ABC-family proteins mediated transport\"\nxref: Reactome:R-HSA-425407 \"SLC-mediated transmembrane transport\"\nxref: Reactome:R-HSA-5223345 \"Miscellaneous transport and binding events\"\nis_a: GO:0006810 ! transport\nis_a: GO:0009987 ! cellular process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0055085",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 343246-343266",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0055085"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -802,15 +551,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 454062-454074",
   "excerpt": "[Term]\nid: GO:1900074\nname: negative regulation of neuromuscular synaptic transmission\nnamespace: biological_process\ndef: \"Any process that stops, prevents or reduces the frequency, rate or extent of neuromuscular synaptic transmission.\" [GOC:kmv, GOC:TermGenie]\nsynonym: \"down regulation of neuromuscular synaptic transmission\" RELATED [GOC:TermGenie]\nsynonym: \"down-regulation of neuromuscular synaptic transmission\" RELATED [GOC:TermGenie]\nsynonym: \"downregulation of neuromuscular synaptic transmission\" RELATED [GOC:TermGenie]\nsynonym: \"inhibition of neuromuscular synaptic transmission\" RELATED [GOC:TermGenie]\nis_a: GO:0050805 ! negative regulation of synaptic transmission\nis_a: GO:1900073 ! regulation of neuromuscular synaptic transmission\nrelationship: negatively_regulates GO:0007274 ! neuromuscular synaptic transmission\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1900074",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 454062-454074",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1900074"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

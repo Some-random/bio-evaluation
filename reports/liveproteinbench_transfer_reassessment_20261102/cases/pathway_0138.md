@@ -1,18 +1,16 @@
-# pathway_0138: before and after transfer clarification
+# pathway_0138
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0138.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0138.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **D** — Secondary metabolite biosynthesis. .
+**Expected answer:** **D** — Secondary metabolite biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for FrzH, annotated to secondary metabolite biosynthesis. The pathway annotation carries an experimental evidence code and cites a paper on FR901483 biosynthesis, supporting choice D; this is database-reported experimental evidence, not an independently verified assessment of the paper.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone gives no defensible way to identify which of these specific pathways this protein participates in. Recognizing a general enzyme-like sequence would not distinguish secondary-metabolite biosynthesis from the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that FrzH functions in FR901483 biosynthesis and is annotated to secondary metabolite biosynthesis is absent from the input.
-
-
-**Reason**
-
-> Selecting D depends on a protein-specific pathway annotation or equivalent external knowledge; the answer is not meaningfully distinguished by the supplied sequence and choices through general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports D for the matched sequence; none of the other choices is similarly supported.
-
-
-### Important caveats
-
-- Reviewer-only accession and annotation evidence establishes support for the key but was not available to the evaluated model.
-- The annotation cites experimental evidence, but the primary paper was not independently retrieved and validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone gives no defensible way to identify which of these specific pathways this protein participates in. Recognizing a general enzyme-like sequence would not distinguish secondary-metabolite biosynthesis from the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that FrzH functions in FR901483 biosynthesis and is annotated to secondary metabolite biosynthesis is absent from the input.",
-    "reason": "Selecting D depends on a protein-specific pathway annotation or equivalent external knowledge; the answer is not meaningfully distinguished by the supplied sequence and choices through general biological reasoning."
-  },
-  "case_id": "pathway_0138",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for FrzH, annotated to secondary metabolite biosynthesis. The pathway annotation carries an experimental evidence code and cites a paper on FR901483 biosynthesis, supporting choice D; this is database-reported experimental evidence, not an independently verified assessment of the paper."
-  },
-  "important_caveats": [
-    "Reviewer-only accession and annotation evidence establishes support for the key but was not available to the evaluated model.",
-    "The annotation cites experimental evidence, but the primary paper was not independently retrieved and validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports D for the matched sequence; none of the other choices is similarly supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0138",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for FrzH, annotated to secondary metabolite biosynthesis. The pathway annotation carries an experimental evidence code and cites a paper on FR901483 biosynthesis, supporting choice D; this is database-reported experimental evidence, not an independently verified assessment of the paper.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone gives no defensible way to identify which of these specific pathways this protein participates in. Recognizing a general enzyme-like sequence would not distinguish secondary-metabolite biosynthesis from the listed alternatives.",
-    "missing_item_specific_fact": "The protein-specific fact that FrzH functions in FR901483 biosynthesis and is annotated to secondary metabolite biosynthesis is absent from the input.",
-    "reason": "Selecting D depends on a protein-specific pathway annotation or equivalent external knowledge; the answer is not meaningfully distinguished by the supplied sequence and choices through general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports D for the matched sequence; none of the other choices is similarly supported."
-  },
-  "important_caveats": [
-    "Reviewer-only accession and annotation evidence establishes support for the key but was not available to the evaluated model.",
-    "The annotation cites experimental evidence, but the primary paper was not independently retrieved and validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProtKB entry A0A7T8F1L1 (FRZH_CLASX) explicitly annotates the pathway as 'Secondary metabolite biosynthesis' with experimental evidence (ECO:0000269) from PubMed:33372776 (Zhang et al., JACS 2021). The protein is Aldolase FrzH, a component of the FR901483 (immunosuppressant) biosynthetic gene cluster in Cladobotryum sp. The sequence matches exactly (125 AA, SHA256 confirmed). The annotation is experimentally grounded, not merely computational.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [C4](#evidence-c4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence reveals a class I aldolase fold (conserved GGIYGYVDGEFKGGSISNLFDFLDQSPEGHKIKAHLDVIAMTPTTAIVKTEVEMNPPETDYTDFLGMVKIDGKWQIVSKIFHSYPR motif with the catalytic Schiff-base lysine). This eliminates terpenoid biosynthesis (which uses terpene synthases/prenyltransferases) and LPS O-antigen biosynthesis (glycosyltransferases/polymerases). However, both L-fucose degradation (which employs a class I fucose-1-phosphate aldolase) and secondary metabolite biosynthesis (which can employ aldolases) remain plausible for an aldolase sequence. Distinguishing D from A requires knowing this is specifically FrzH from the FR901483 gene cluster.
-
-
-**Missing item-specific fact**
-
-> The identity of this protein as FrzH, a member of the FR901483 biosynthetic gene cluster in Cladobotryum sp., is a protein-specific annotation (from PubMed:33372776) that cannot be inferred from the 125-residue sequence alone. The sequence does not encode organism information, gene-cluster context, or pathway-specific metabolite identity.
-
-
-**Reason**
-
-> While the aldolase fold narrows the field from four to two plausible options (A and D), selecting 'secondary metabolite biosynthesis' over 'L-fucose degradation' requires knowing the specific gene-cluster membership of this protein. This is an item-specific database fact, not derivable from general biochemical reasoning about aldolase sequences.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Both L-fucose degradation and secondary metabolite biosynthesis involve class I aldolases. From the sequence alone, one can identify the aldolase fold but cannot determine whether the aldolase acts on fucose-1-phosphate (option A) or on a secondary metabolite intermediate (option D). The organism (fungus, not bacterium) would argue against LPS O-antigen (B), and the aldolase chemistry argues against terpenoid biosynthesis (C), but A vs. D remains ambiguous without protein-specific annotation.
-
-
-### Important caveats
-
-- The UniProt annotation (ECO:0000269) is experimentally supported, not merely inferred by homology, strengthening the key's validity.
-- The protein is only 125 residues; the N-terminal ~25 residues (MAKHITSSEYDAVIATAYCYVEAMEKGSSKRAKEGFHPDGG) lack obvious catalytic motifs, making the sequence less informative for pathway assignment.
-- The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must rely solely on the 125-aa sequence and four pathway names.
-- The source snapshot used by the benchmark authors is unknown; the current entry (version 8) and the historical version 6 both carry the same pathway annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence reveals a class I aldolase fold (conserved GGIYGYVDGEFKGGSISNLFDFLDQSPEGHKIKAHLDVIAMTPTTAIVKTEVEMNPPETDYTDFLGMVKIDGKWQIVSKIFHSYPR motif with the catalytic Schiff-base lysine). This eliminates terpenoid biosynthesis (which uses terpene synthases/prenyltransferases) and LPS O-antigen biosynthesis (glycosyltransferases/polymerases). However, both L-fucose degradation (which employs a class I fucose-1-phosphate aldolase) and secondary metabolite biosynthesis (which can employ aldolases) remain plausible for an aldolase sequence. Distinguishing D from A requires knowing this is specifically FrzH from the FR901483 gene cluster.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of this protein as FrzH, a member of the FR901483 biosynthetic gene cluster in Cladobotryum sp., is a protein-specific annotation (from PubMed:33372776) that cannot be inferred from the 125-residue sequence alone. The sequence does not encode organism information, gene-cluster context, or pathway-specific metabolite identity.",
-    "reason": "While the aldolase fold narrows the field from four to two plausible options (A and D), selecting 'secondary metabolite biosynthesis' over 'L-fucose degradation' requires knowing the specific gene-cluster membership of this protein. This is an item-specific database fact, not derivable from general biochemical reasoning about aldolase sequences."
-  },
-  "case_id": "pathway_0138",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProtKB entry A0A7T8F1L1 (FRZH_CLASX) explicitly annotates the pathway as 'Secondary metabolite biosynthesis' with experimental evidence (ECO:0000269) from PubMed:33372776 (Zhang et al., JACS 2021). The protein is Aldolase FrzH, a component of the FR901483 (immunosuppressant) biosynthetic gene cluster in Cladobotryum sp. The sequence matches exactly (125 AA, SHA256 confirmed). The annotation is experimentally grounded, not merely computational."
-  },
-  "important_caveats": [
-    "The UniProt annotation (ECO:0000269) is experimentally supported, not merely inferred by homology, strengthening the key's validity.",
-    "The protein is only 125 residues; the N-terminal ~25 residues (MAKHITSSEYDAVIATAYCYVEAMEKGSSKRAKEGFHPDGG) lack obvious catalytic motifs, making the sequence less informative for pathway assignment.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must rely solely on the 125-aa sequence and four pathway names.",
-    "The source snapshot used by the benchmark authors is unknown; the current entry (version 8) and the historical version 6 both carry the same pathway annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Both L-fucose degradation and secondary metabolite biosynthesis involve class I aldolases. From the sequence alone, one can identify the aldolase fold but cannot determine whether the aldolase acts on fucose-1-phosphate (option A) or on a secondary metabolite intermediate (option D). The organism (fungus, not bacterium) would argue against LPS O-antigen (B), and the aldolase chemistry argues against terpenoid biosynthesis (C), but A vs. D remains ambiguous without protein-specific annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0138",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProtKB entry A0A7T8F1L1 (FRZH_CLASX) explicitly annotates the pathway as 'Secondary metabolite biosynthesis' with experimental evidence (ECO:0000269) from PubMed:33372776 (Zhang et al., JACS 2021). The protein is Aldolase FrzH, a component of the FR901483 (immunosuppressant) biosynthetic gene cluster in Cladobotryum sp. The sequence matches exactly (125 AA, SHA256 confirmed). The annotation is experimentally grounded, not merely computational.",
-    "evidence_ids": ["C5", "C6", "H3", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence reveals a class I aldolase fold (conserved GGIYGYVDGEFKGGSISNLFDFLDQSPEGHKIKAHLDVIAMTPTTAIVKTEVEMNPPETDYTDFLGMVKIDGKWQIVSKIFHSYPR motif with the catalytic Schiff-base lysine). This eliminates terpenoid biosynthesis (which uses terpene synthases/prenyltransferases) and LPS O-antigen biosynthesis (glycosyltransferases/polymerases). However, both L-fucose degradation (which employs a class I fucose-1-phosphate aldolase) and secondary metabolite biosynthesis (which can employ aldolases) remain plausible for an aldolase sequence. Distinguishing D from A requires knowing this is specifically FrzH from the FR901483 gene cluster.",
-    "missing_item_specific_fact": "The identity of this protein as FrzH, a member of the FR901483 biosynthetic gene cluster in Cladobotryum sp., is a protein-specific annotation (from PubMed:33372776) that cannot be inferred from the 125-residue sequence alone. The sequence does not encode organism information, gene-cluster context, or pathway-specific metabolite identity.",
-    "reason": "While the aldolase fold narrows the field from four to two plausible options (A and D), selecting 'secondary metabolite biosynthesis' over 'L-fucose degradation' requires knowing the specific gene-cluster membership of this protein. This is an item-specific database fact, not derivable from general biochemical reasoning about aldolase sequences."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Both L-fucose degradation and secondary metabolite biosynthesis involve class I aldolases. From the sequence alone, one can identify the aldolase fold but cannot determine whether the aldolase acts on fucose-1-phosphate (option A) or on a secondary metabolite intermediate (option D). The organism (fungus, not bacterium) would argue against LPS O-antigen (B), and the aldolase chemistry argues against terpenoid biosynthesis (C), but A vs. D remains ambiguous without protein-specific annotation."
-  },
-  "important_caveats": [
-    "The UniProt annotation (ECO:0000269) is experimentally supported, not merely inferred by homology, strengthening the key's validity.",
-    "The protein is only 125 residues; the N-terminal ~25 residues (MAKHITSSEYDAVIATAYCYVEAMEKGSSKRAKEGFHPDGG) lack obvious catalytic motifs, making the sequence less informative for pathway assignment.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must rely solely on the 125-aa sequence and four pathway names.",
-    "The source snapshot used by the benchmark authors is unknown; the current entry (version 8) and the historical version 6 both carry the same pathway annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7T8F1L1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "fd2b2a39502654b711d2fb262c2b33707a22b59849246d3490791e71564be189",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 125,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "fd2b2a39502654b711d2fb262c2b33707a22b59849246d3490791e71564be189",
   "current_entry_audit": {
     "entryVersion": 8,
     "firstPublicDate": "2025-06-18",
@@ -542,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
-  "current_source_sequence_sha256": "fd2b2a39502654b711d2fb262c2b33707a22b59849246d3490791e71564be189",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 125,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "fd2b2a39502654b711d2fb262c2b33707a22b59849246d3490791e71564be189",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 6,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7T8F1L1",
   "selected_historical_entry_version": 6,
+  "selected_historical_record_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
+  "selected_historical_source_sequence_length": 125,
+  "selected_historical_source_sequence_sha256": "fd2b2a39502654b711d2fb262c2b33707a22b59849246d3490791e71564be189",
   "selected_historical_version": {
     "accession": "A0A7T8F1L1",
     "database": "Swiss-Prot",
@@ -560,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FRZH_CLASX",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
-  "selected_historical_source_sequence_sha256": "fd2b2a39502654b711d2fb262c2b33707a22b59849246d3490791e71564be189",
-  "selected_historical_source_sequence_length": 125,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 6,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json",
-  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
-  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7T8F1L1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json"
 }
 ```
 
@@ -610,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json",
-  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
-  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":8,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json"
 }
 ```
 
@@ -629,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json",
-  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
-  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Hypocreaceae\",\"Cladobotryum\"],\"scientificName\":\"Cladobotryum sp\",\"taxonId\":2040732}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json"
 }
 ```
 
@@ -648,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json",
-  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
-  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"FR901483 biosynthesis clusters protein H\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"5.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Aldolase FrzH\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json"
 }
 ```
 
@@ -667,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json",
-  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
-  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json"
 }
 ```
 
@@ -686,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json",
-  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
-  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang Z.\",\"Tamura Y.\",\"Tang M.\",\"Qiao T.\",\"Sato M.\",\"Otsu Y.\",\"Sasamura S.\",\"Taniguchi M.\",\"Watanabe K.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33372776\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.0c12352\"}],\"citationType\":\"journal article\",\"firstPage\":\"132\",\"id\":\"33372776\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"136\",\"publicationDate\":\"2021\",\"title\":\"Biosynthesis of the Immunosuppressant (-)-FR901483.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"11231\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:45.781236+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "65d93d3bfa27a42f8823305c275c089c19f5650e91e41714cd776e35ace36fc5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1L1.json"
 }
 ```
 
@@ -704,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L1?format=txt&versions=6",
-  "source_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
-  "retrieved_utc": "2026-11-02T04:25:48.823356+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   FRZH_CLASX              Reviewed;         125 AA.\nAC   A0A7T8F1L1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 6.\nDE   RecName: Full=Aldolase FrzH {ECO:0000303|PubMed:33372776};\nDE            EC=5.5.1.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis clusters protein H {ECO:0000303|PubMed:33372776};\nGN   Name=FrzH {ECO:0000303|PubMed:33372776};\nOS   Cladobotryum sp.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Hypocreaceae; Cladobotryum.\nOX   NCBI_TaxID=2040732;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:48.823356+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L1?format=txt&versions=6"
 }
 ```
 
@@ -725,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L1?format=txt&versions=6",
-  "source_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
-  "retrieved_utc": "2026-11-02T04:25:48.823356+00:00",
-  "source_locator": "lines 14-22",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, AND\nRP   PATHWAY.\nRC   STRAIN=11231;\nRX   PubMed=33372776; DOI=10.1021/jacs.0c12352;\nRA   Zhang Z., Tamura Y., Tang M., Qiao T., Sato M., Otsu Y., Sasamura S.,\nRA   Taniguchi M., Watanabe K., Tang Y.;\nRT   \"Biosynthesis of the Immunosuppressant (-)-FR901483.\";\nRL   J. Am. Chem. Soc. 143:132-136(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:48.823356+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L1?format=txt&versions=6"
 }
 ```
 
@@ -746,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L1?format=txt&versions=6",
-  "source_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
-  "retrieved_utc": "2026-11-02T04:25:48.823356+00:00",
-  "source_locator": "lines 63-68",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis.\nCC       {ECO:0000269|PubMed:33372776}.\nCC   ---------------------------------------------------------------------------\nCC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms\nCC   Distributed under the Creative Commons Attribution (CC BY 4.0) License\nCC   ---------------------------------------------------------------------------\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:25:48.823356+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f933491bfdac906afc2e85fa0f5596d30c0172dce7f588e79f7a575176f16727",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1L1?format=txt&versions=6"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_cellular_component_0112: before and after transfer clarification
+# GO_cellular_component_0112
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0112.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0112.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — kinetoplast
+**Expected answer:** **D** — kinetoplast
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a historical UniProt record annotated with GO:0020023 (kinetoplast), with evidence code IDA:GeneDB. The same record reports experimental localization to the mitochondrial inner membrane, consistent with a kinetoplast-associated mitochondrial protein.
-
-Citations as saved: [H4](#evidence-h4), [H3](#evidence-h3), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest a membrane-associated protein, but it does not provide a reliable basis for distinguishing a kinetoplast from other cellular membranes or compartments.
-
-
-**Missing item-specific fact**
-
-> The protein-specific kinetoplast localization annotation or equivalent experimental localization evidence is absent from the prompt.
-
-
-**Reason**
-
-> Selecting D depends on an item-specific localization fact. A general sequence heuristic or recognition of a membrane-associated protein does not establish localization to this particular mitochondrial substructure.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence specifically supports the kinetoplast annotation; the other options are not comparably supported.
-
-
-### Important caveats
-
-- The supporting UniProt record matches the sequence, but the author's exact source snapshot is unknown.
-- The archived GO annotation is IDA:GeneDB; the separate mitochondrial inner-membrane localization is attributed to experimental evidence. These annotations support the key but are not independent validation here of the primary paper.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest a membrane-associated protein, but it does not provide a reliable basis for distinguishing a kinetoplast from other cellular membranes or compartments.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific kinetoplast localization annotation or equivalent experimental localization evidence is absent from the prompt.",
-    "reason": "Selecting D depends on an item-specific localization fact. A general sequence heuristic or recognition of a membrane-associated protein does not establish localization to this particular mitochondrial substructure."
-  },
-  "case_id": "GO_cellular_component_0112",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H4",
-      "H3",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a historical UniProt record annotated with GO:0020023 (kinetoplast), with evidence code IDA:GeneDB. The same record reports experimental localization to the mitochondrial inner membrane, consistent with a kinetoplast-associated mitochondrial protein."
-  },
-  "important_caveats": [
-    "The supporting UniProt record matches the sequence, but the author's exact source snapshot is unknown.",
-    "The archived GO annotation is IDA:GeneDB; the separate mitochondrial inner-membrane localization is attributed to experimental evidence. These annotations support the key but are not independent validation here of the primary paper."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports the kinetoplast annotation; the other options are not comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0112",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a historical UniProt record annotated with GO:0020023 (kinetoplast), with evidence code IDA:GeneDB. The same record reports experimental localization to the mitochondrial inner membrane, consistent with a kinetoplast-associated mitochondrial protein.",
-    "evidence_ids": ["H4", "H3", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest a membrane-associated protein, but it does not provide a reliable basis for distinguishing a kinetoplast from other cellular membranes or compartments.",
-    "missing_item_specific_fact": "The protein-specific kinetoplast localization annotation or equivalent experimental localization evidence is absent from the prompt.",
-    "reason": "Selecting D depends on an item-specific localization fact. A general sequence heuristic or recognition of a membrane-associated protein does not establish localization to this particular mitochondrial substructure."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports the kinetoplast annotation; the other options are not comparably supported."
-  },
-  "important_caveats": [
-    "The supporting UniProt record matches the sequence, but the author's exact source snapshot is unknown.",
-    "The archived GO annotation is IDA:GeneDB; the separate mitochondrial inner-membrane localization is attributed to experimental evidence. These annotations support the key but are not independent validation here of the primary paper."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q584D1 (Cardiolipin synthetase, Trypanosoma brucei). The UniProt entry carries GO:0020023 (kinetoplast) with IDA:GeneDB evidence (C6/H4). The primary experimental evidence (PubMed:22451910) places the protein at the 'Mitochondrion inner membrane' (C5/H3), and the kinetoplast is defined as a sub-structure within the mitochondrion of kinetoplastid parasites (GO3). Among the four choices, kinetoplast is the only mitochondrion-related option, and the GO annotation explicitly assigns this term. The answer is supported by database annotation, though the more precise experimental localization is 'mitochondrial inner membrane' rather than specifically the kinetoplast sub-region.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> If one could identify the organism as a kinetoplastid (e.g., Trypanosoma), then knowing that (i) cardiolipin synthetase is a mitochondrial inner-membrane enzyme and (ii) the kinetoplast is a mitochondrial sub-structure unique to kinetoplastids, one could reason to D over A. The distractors B (viral nucleocapsid) and C (striated muscle dense body) are trivially eliminable for any eukaryotic enzyme.
-
-
-**Missing item-specific fact**
-
-> Identifying the sequence as originating from a kinetoplastid organism (Trypanosoma brucei) from the amino-acid sequence alone requires either memorization of kinetoplastid sequence signatures or a database lookup. Without this organism identification, the presence of 'kinetoplast' as an option is unmotivated, and the protein could be a generic mitochondrial membrane protein of any eukaryote.
-
-
-**Reason**
-
-> The biological reasoning chain (mitochondrial enzyme → kinetoplast sub-compartment) is valid but is gated on first recognizing the organism as a kinetoplastid. Sequence composition alone (e.g., unusual residue frequencies in Trypanosoma) is not a reliable, general-knowledge signal for most solvers. The decisive step—linking this particular sequence to a kinetoplastid organism and hence to the kinetoplast compartment—depends on item-specific identification rather than generalizable biological inference.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B (viral nucleocapsid) and C (striated muscle dense body) are clearly irrelevant for a eukaryotic mitochondrial enzyme. Option A (plasma membrane) is eliminable once the protein is recognized as mitochondrial. Among the given choices, D is the only defensible answer, though 'mitochondrial inner membrane' (the primary experimental annotation) would have been more precise and is not offered.
-
-
-### Important caveats
-
-- The primary experimental evidence (PubMed:22451910, ECO:0000269) specifies 'Mitochondrion inner membrane,' not specifically the kinetoplast sub-region. The kinetoplast GO annotation (GO:0020023) carries IDA:GeneDB evidence, which is experimental but from a different source.
-- The kinetoplast is a sub-compartment of the mitochondrion in kinetoplastids; not every mitochondrial inner-membrane protein in Trypanosoma is necessarily at the kinetoplast. The GeneDB annotation assigns this protein there, but the primary paper's localization statement is broader.
-- The organism identification (Trypanosoma brucei, kinetoplastid) is not stated in the model input and must be inferred from the sequence or retrieved from a database.
-- The UniProt entry was first publicly released 2025-02-05; the benchmark author's source snapshot is unknown but the sequence has been stable since 2005-05-10.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "If one could identify the organism as a kinetoplastid (e.g., Trypanosoma), then knowing that (i) cardiolipin synthetase is a mitochondrial inner-membrane enzyme and (ii) the kinetoplast is a mitochondrial sub-structure unique to kinetoplastids, one could reason to D over A. The distractors B (viral nucleocapsid) and C (striated muscle dense body) are trivially eliminable for any eukaryotic enzyme.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying the sequence as originating from a kinetoplastid organism (Trypanosoma brucei) from the amino-acid sequence alone requires either memorization of kinetoplastid sequence signatures or a database lookup. Without this organism identification, the presence of 'kinetoplast' as an option is unmotivated, and the protein could be a generic mitochondrial membrane protein of any eukaryote.",
-    "reason": "The biological reasoning chain (mitochondrial enzyme → kinetoplast sub-compartment) is valid but is gated on first recognizing the organism as a kinetoplastid. Sequence composition alone (e.g., unusual residue frequencies in Trypanosoma) is not a reliable, general-knowledge signal for most solvers. The decisive step—linking this particular sequence to a kinetoplastid organism and hence to the kinetoplast compartment—depends on item-specific identification rather than generalizable biological inference."
-  },
-  "case_id": "GO_cellular_component_0112",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "H3",
-      "H4",
-      "H5",
-      "H6",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q584D1 (Cardiolipin synthetase, Trypanosoma brucei). The UniProt entry carries GO:0020023 (kinetoplast) with IDA:GeneDB evidence (C6/H4). The primary experimental evidence (PubMed:22451910) places the protein at the 'Mitochondrion inner membrane' (C5/H3), and the kinetoplast is defined as a sub-structure within the mitochondrion of kinetoplastid parasites (GO3). Among the four choices, kinetoplast is the only mitochondrion-related option, and the GO annotation explicitly assigns this term. The answer is supported by database annotation, though the more precise experimental localization is 'mitochondrial inner membrane' rather than specifically the kinetoplast sub-region."
-  },
-  "important_caveats": [
-    "The primary experimental evidence (PubMed:22451910, ECO:0000269) specifies 'Mitochondrion inner membrane,' not specifically the kinetoplast sub-region. The kinetoplast GO annotation (GO:0020023) carries IDA:GeneDB evidence, which is experimental but from a different source.",
-    "The kinetoplast is a sub-compartment of the mitochondrion in kinetoplastids; not every mitochondrial inner-membrane protein in Trypanosoma is necessarily at the kinetoplast. The GeneDB annotation assigns this protein there, but the primary paper's localization statement is broader.",
-    "The organism identification (Trypanosoma brucei, kinetoplastid) is not stated in the model input and must be inferred from the sequence or retrieved from a database.",
-    "The UniProt entry was first publicly released 2025-02-05; the benchmark author's source snapshot is unknown but the sequence has been stable since 2005-05-10."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B (viral nucleocapsid) and C (striated muscle dense body) are clearly irrelevant for a eukaryotic mitochondrial enzyme. Option A (plasma membrane) is eliminable once the protein is recognized as mitochondrial. Among the given choices, D is the only defensible answer, though 'mitochondrial inner membrane' (the primary experimental annotation) would have been more precise and is not offered."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0112",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q584D1 (Cardiolipin synthetase, Trypanosoma brucei). The UniProt entry carries GO:0020023 (kinetoplast) with IDA:GeneDB evidence (C6/H4). The primary experimental evidence (PubMed:22451910) places the protein at the 'Mitochondrion inner membrane' (C5/H3), and the kinetoplast is defined as a sub-structure within the mitochondrion of kinetoplastid parasites (GO3). Among the four choices, kinetoplast is the only mitochondrion-related option, and the GO annotation explicitly assigns this term. The answer is supported by database annotation, though the more precise experimental localization is 'mitochondrial inner membrane' rather than specifically the kinetoplast sub-region.",
-    "evidence_ids": ["C5", "C6", "C7", "C8", "H3", "H4", "H5", "H6", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "If one could identify the organism as a kinetoplastid (e.g., Trypanosoma), then knowing that (i) cardiolipin synthetase is a mitochondrial inner-membrane enzyme and (ii) the kinetoplast is a mitochondrial sub-structure unique to kinetoplastids, one could reason to D over A. The distractors B (viral nucleocapsid) and C (striated muscle dense body) are trivially eliminable for any eukaryotic enzyme.",
-    "missing_item_specific_fact": "Identifying the sequence as originating from a kinetoplastid organism (Trypanosoma brucei) from the amino-acid sequence alone requires either memorization of kinetoplastid sequence signatures or a database lookup. Without this organism identification, the presence of 'kinetoplast' as an option is unmotivated, and the protein could be a generic mitochondrial membrane protein of any eukaryote.",
-    "reason": "The biological reasoning chain (mitochondrial enzyme → kinetoplast sub-compartment) is valid but is gated on first recognizing the organism as a kinetoplastid. Sequence composition alone (e.g., unusual residue frequencies in Trypanosoma) is not a reliable, general-knowledge signal for most solvers. The decisive step—linking this particular sequence to a kinetoplastid organism and hence to the kinetoplast compartment—depends on item-specific identification rather than generalizable biological inference."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B (viral nucleocapsid) and C (striated muscle dense body) are clearly irrelevant for a eukaryotic mitochondrial enzyme. Option A (plasma membrane) is eliminable once the protein is recognized as mitochondrial. Among the given choices, D is the only defensible answer, though 'mitochondrial inner membrane' (the primary experimental annotation) would have been more precise and is not offered."
-  },
-  "important_caveats": [
-    "The primary experimental evidence (PubMed:22451910, ECO:0000269) specifies 'Mitochondrion inner membrane,' not specifically the kinetoplast sub-region. The kinetoplast GO annotation (GO:0020023) carries IDA:GeneDB evidence, which is experimental but from a different source.",
-    "The kinetoplast is a sub-compartment of the mitochondrion in kinetoplastids; not every mitochondrial inner-membrane protein in Trypanosoma is necessarily at the kinetoplast. The GeneDB annotation assigns this protein there, but the primary paper's localization statement is broader.",
-    "The organism identification (Trypanosoma brucei, kinetoplastid) is not stated in the model input and must be inferred from the sequence or retrieved from a database.",
-    "The UniProt entry was first publicly released 2025-02-05; the benchmark author's source snapshot is unknown but the sequence has been stable since 2005-05-10."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +159,9 @@ Citations as saved: [C6](#evidence-c6), [H4](#evidence-h4), [C5](#evidence-c5).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q584D1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 639,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
   "current_entry_audit": {
     "entryVersion": 104,
     "firstPublicDate": "2025-02-05",
@@ -545,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-05-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "current_source_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 639,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 102,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q584D1",
   "selected_historical_entry_version": 102,
+  "selected_historical_record_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "selected_historical_source_sequence_length": 639,
+  "selected_historical_source_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
   "selected_historical_version": {
     "accession": "Q584D1",
     "database": "Swiss-Prot",
@@ -563,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CLS_TRYB2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
-  "selected_historical_source_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
-  "selected_historical_source_sequence_length": 639,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 102,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q584D1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -617,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":104,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-05-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -636,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000008524\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Discoba\",\"Euglenozoa\",\"Kinetoplastea\",\"Metakinetoplastina\",\"Trypanosomatida\",\"Trypanosomatidae\",\"Trypanosoma\"],\"scientificName\":\"Trypanosoma brucei brucei (strain 927/4 GUTat10.1)\",\"taxonId\":185431}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -655,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"22451910\",\"source\":\"PubMed\"}],\"value\":\"2.7.8.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cardiolipin synthetase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"CL synthase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -674,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22451910\",\"source\":\"PubMed\"}],\"id\":\"SL-0168\",\"value\":\"Mitochondrion inner membrane\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"id\":\"SL-9904\",\"value\":\"Single-pass membrane protein\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -693,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/15",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0020023\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:kinetoplast\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:GeneDB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/15",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -712,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22451910\",\"source\":\"PubMed\"}],\"id\":\"GO:0005743\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrial inner membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -731,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"22451910\",\"source\":\"PubMed\"}],\"id\":\"GO:0005739\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrion\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:GeneDB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -750,15 +506,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
-  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
-  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Serricchio M.\",\"Buetikofer P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22451910\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.1121528109\"}],\"citationType\":\"journal article\",\"firstPage\":\"E954\",\"id\":\"22451910\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"E961\",\"publicationDate\":\"2012\",\"title\":\"An essential bacterial-type cardiolipin synthase mediates cardiolipin formation in a eukaryote.\",\"volume\":\"109\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBUNIT\",\"SUBCELLULAR LOCATION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json"
 }
 ```
 
@@ -768,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 102,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
-  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
-  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   CLS_TRYB2               Reviewed;         639 AA.\nAC   Q584D1; D6XFJ2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-MAY-2005, sequence version 1.\nDT   28-JAN-2026, entry version 102.\nDE   RecName: Full=Cardiolipin synthetase {ECO:0000305};\nDE            Short=CL synthase {ECO:0000305};\nDE            EC=2.7.8.- {ECO:0000305|PubMed:22451910};\nDE   Flags: Precursor;\nGN   Name=CLS {ECO:0000303|PubMed:22451910};\nGN   ORFNames=Tb04.1H19.1130 {ECO:0000312|EMBL:AAZ10847.1},\nGN   Tb927.4.2560 {ECO:0000312|EMBL:AAX79074.1};\nOS   Trypanosoma brucei brucei (strain 927/4 GUTat10.1).\nOC   Eukaryota; Discoba; Euglenozoa; Kinetoplastea; Metakinetoplastina;\nOC   Trypanosomatida; Trypanosomatidae; Trypanosoma.\nOX   NCBI_TaxID=185431 {ECO:0000312|Proteomes:UP000008524};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 102,
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102"
 }
 ```
 
@@ -789,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 102,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
-  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
-  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
-  "source_locator": "lines 65-72",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, SUBUNIT, SUBCELLULAR LOCATION, AND DISRUPTION\nRP   PHENOTYPE.\nRX   PubMed=22451910; DOI=10.1073/pnas.1121528109;\nRA   Serricchio M., Buetikofer P.;\nRT   \"An essential bacterial-type cardiolipin synthase mediates cardiolipin\nRT   formation in a eukaryote.\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 109:E954-E961(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 102,
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 65-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102"
 }
 ```
 
@@ -810,18 +566,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 102,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
-  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
-  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
-  "source_locator": "lines 95-97",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Mitochondrion inner membrane\nCC       {ECO:0000269|PubMed:22451910}; Single-pass membrane protein\nCC       {ECO:0000255}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 102,
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 95-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102"
 }
 ```
 
@@ -831,18 +587,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 102,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
-  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
-  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
-  "source_locator": "lines 126-126",
   "excerpt": "DR   GO; GO:0020023; C:kinetoplast; IDA:GeneDB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 102,
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 126-126",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102"
 }
 ```
 
@@ -852,18 +608,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 102,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
-  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
-  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
-  "source_locator": "lines 127-127",
   "excerpt": "DR   GO; GO:0005743; C:mitochondrial inner membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 102,
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 127-127",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102"
 }
 ```
 
@@ -873,18 +629,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 102,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
-  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
-  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
-  "source_locator": "lines 128-128",
   "excerpt": "DR   GO; GO:0005739; C:mitochondrion; IDA:GeneDB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 102,
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 128-128",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102"
 }
 ```
 
@@ -895,15 +651,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60420-60454",
   "excerpt": "[Term]\nid: GO:0005886\nname: plasma membrane\nnamespace: cellular_component\nalt_id: GO:0005887\nalt_id: GO:0005904\ndef: \"The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.\" [ISBN:0716731363]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"bacterial inner membrane\" NARROW []\nsynonym: \"cell membrane\" EXACT []\nsynonym: \"cellular membrane\" EXACT [NIF_Subcellular:sao6433132645]\nsynonym: \"cytoplasmic membrane\" EXACT []\nsynonym: \"inner endospore membrane\" NARROW []\nsynonym: \"integral component of plasma membrane\" NARROW []\nsynonym: \"integral to plasma membrane\" NARROW []\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"plasma membrane lipid bilayer\" NARROW [GOC:mah]\nsynonym: \"plasmalemma\" EXACT []\nxref: NIF_Subcellular:sao1663586795\nxref: Wikipedia:Cell_membrane\nis_a: GO:0016020 ! membrane\nrelationship: part_of GO:0071944 ! cell periphery\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60420-60454",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -914,15 +670,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 144539-144550",
   "excerpt": "[Term]\nid: GO:0019013\nname: viral nucleocapsid\nnamespace: cellular_component\nalt_id: GO:0019014\ndef: \"The complete protein-nucleic acid complex that is the packaged form of the genome in a virus particle.\" [ISBN:0781702534]\nsubset: goslim_chembl\nsynonym: \"core\" BROAD []\nsynonym: \"nucleocapsid\" EXACT []\nis_a: GO:0044423 ! virion component\nrelationship: part_of GO:0019028 ! viral capsid\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019013",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 144539-144550",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019013"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -933,15 +689,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 155291-155299",
   "excerpt": "[Term]\nid: GO:0020023\nname: kinetoplast\nnamespace: cellular_component\ndef: \"A sub-structure within the large single mitochondrion of kinetoplastid parasites and which is closely associated with the flagellar pocket and basal body of the flagellum.\" [GOC:mb]\nxref: Wikipedia:Kinetoplast\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005739 ! mitochondrion\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0020023",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 155291-155299",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0020023"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -952,15 +708,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 343547-343554",
   "excerpt": "[Term]\nid: GO:0055120\nname: striated muscle dense body\nnamespace: cellular_component\ndef: \"A vinculin-containing myofibril attachment structure of striated muscle that connects sarcomeres to the extracellular matrix. In nematode body wall muscle, the dense body performs the dual role of Z-disk and costamere.\" [GOC:kmv, PMID:17492481]\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0043292 ! contractile muscle fiber\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0055120",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 343547-343554",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0055120"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

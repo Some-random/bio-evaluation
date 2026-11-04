@@ -1,18 +1,16 @@
-# GO_cellular_component_0147: before and after transfer clarification
+# GO_cellular_component_0147
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0147.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0147.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — virus tail, tube
+**Expected answer:** **A** — virus tail, tube
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt record named “Tail tube protein,” with a GO annotation to “virus tail, tube.” The GO annotation is IEA:UniProtKB-KW, so this supports the key as a database annotation, not as a demonstrated experimental localization. The archived record also annotates subcellular location as virion.
-
-Citations as saved: [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices contrast a viral structural component with host-cell structures, but the supplied sequence and prompt provide no clear viral identity or specific tail-tube signal that meaningfully establishes which applies.
-
-
-**Missing item-specific fact**
-
-> That this exact sequence is the tail tube protein of Bacillus phage SPR, along with its associated GO annotation.
-
-
-**Reason**
-
-> Selecting A depends on the protein-specific identification or annotation; recognizing the sequence from an external record would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation specifically supports A; the other choices describe host-cell structures and are not supported by the supplied sequence.
-
-
-### Important caveats
-
-- The sequence match is exact in both the current and retrieved historical UniProt records.
-- The GO term is annotated with an IEA evidence code; the record’s virion localization annotation is not presented here as experimental evidence.
-- The author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices contrast a viral structural component with host-cell structures, but the supplied sequence and prompt provide no clear viral identity or specific tail-tube signal that meaningfully establishes which applies.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this exact sequence is the tail tube protein of Bacillus phage SPR, along with its associated GO annotation.",
-    "reason": "Selecting A depends on the protein-specific identification or annotation; recognizing the sequence from an external record would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "GO_cellular_component_0147",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H1",
-      "H2",
-      "H3",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt record named “Tail tube protein,” with a GO annotation to “virus tail, tube.” The GO annotation is IEA:UniProtKB-KW, so this supports the key as a database annotation, not as a demonstrated experimental localization. The archived record also annotates subcellular location as virion."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both the current and retrieved historical UniProt records.",
-    "The GO term is annotated with an IEA evidence code; the record’s virion localization annotation is not presented here as experimental evidence.",
-    "The author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation specifically supports A; the other choices describe host-cell structures and are not supported by the supplied sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0147",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt record named “Tail tube protein,” with a GO annotation to “virus tail, tube.” The GO annotation is IEA:UniProtKB-KW, so this supports the key as a database annotation, not as a demonstrated experimental localization. The archived record also annotates subcellular location as virion.",
-    "evidence_ids": ["H1", "H2", "H3", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices contrast a viral structural component with host-cell structures, but the supplied sequence and prompt provide no clear viral identity or specific tail-tube signal that meaningfully establishes which applies.",
-    "missing_item_specific_fact": "That this exact sequence is the tail tube protein of Bacillus phage SPR, along with its associated GO annotation.",
-    "reason": "Selecting A depends on the protein-specific identification or annotation; recognizing the sequence from an external record would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation specifically supports A; the other choices describe host-cell structures and are not supported by the supplied sequence."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both the current and retrieved historical UniProt records.",
-    "The GO term is annotated with an IEA evidence code; the record’s virion localization annotation is not presented here as experimental evidence.",
-    "The author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence (264 AA) matches UniProtKB A0AAE9G628 exactly (SHA256 confirmed). The entry is a reviewed Swiss-Prot record named 'Tail tube protein' from Bacillus phage SPR (C4, H1). The subcellular location is annotated as 'Virion' (C5, H2), and GO:0098026 'virus tail, tube' is directly assigned (C6, H3) with evidence code IEA:UniProtKB-KW. The protein name, organism (bacteriophage), and GO annotation all consistently support option A. The IEA evidence code indicates computational inference from keyword rather than direct experimental localization, but the protein is explicitly named 'Tail tube protein' and belongs to a Caudoviricetes phage, making the annotation highly reliable.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could eliminate options B, C, and D by noting the absence of transmembrane domains or signal peptides (ruling out host cell plasma membrane and microvillus membrane) and the absence of actin-like sequence motifs or actin-binding domains (ruling out actin cytoskeleton). However, this elimination only narrows to 'the remaining viral option' without positively identifying the protein as specifically a tail tube protein versus other viral structural proteins (capsid, tail fiber, baseplate). The sequence lacks distinctive features that would allow a general reasoner to positively identify 'tail tube' architecture.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this 264-residue sequence as the Bacillus phage SPR tail tube protein (UniProt A0AAE9G628, ORF spr_64). Without database lookup or memorization of this particular phage genome annotation, a model cannot positively assign the protein to the 'virus tail, tube' compartment rather than other possible viral structural roles. The sequence itself does not contain a recognizable 'tail tube' motif distinguishable from other phage structural proteins.
-
-
-**Reason**
-
-> While elimination of the three eukaryotic/host-cell options is feasible through general biological knowledge (no membrane domains, no actin motifs), the positive identification of 'tail tube' specifically requires knowing this exact protein's annotation. The answer is reachable by elimination only because 'virus tail, tube' is the sole viral option among the four choices; if other viral compartments were offered, elimination would fail. The core identification depends on recognizing this specific sequence's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B, C, and D are clearly incompatible with the sequence: no transmembrane helices or signal peptide (excludes C and D), and no resemblance to actin or actin-associated proteins (excludes B). Option A is the only remaining choice and is consistent with the protein being a small, soluble viral structural protein. No ambiguity among the given options.
-
-
-### Important caveats
-
-- The GO annotation evidence code is IEA:UniProtKB-KW (inferred from electronic annotation based on keyword), not direct experimental evidence. However, the protein is explicitly named 'Tail tube protein' in a reviewed Swiss-Prot entry, providing strong support.
-- The sequence is from a bacteriophage (Bacillus phage SPR), not a eukaryotic host protein, which is not obvious from sequence features alone without database knowledge.
-- The elimination-based reasoning path works only because 'virus tail, tube' is the single viral option among four choices; this is a structural artifact of the question design rather than a feature of the protein sequence itself.
-- The UniProt entry was first public on 2025-02-05; the benchmark construction date is unknown, so the annotation may or may not have been available when the benchmark was assembled.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could eliminate options B, C, and D by noting the absence of transmembrane domains or signal peptides (ruling out host cell plasma membrane and microvillus membrane) and the absence of actin-like sequence motifs or actin-binding domains (ruling out actin cytoskeleton). However, this elimination only narrows to 'the remaining viral option' without positively identifying the protein as specifically a tail tube protein versus other viral structural proteins (capsid, tail fiber, baseplate). The sequence lacks distinctive features that would allow a general reasoner to positively identify 'tail tube' architecture.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this 264-residue sequence as the Bacillus phage SPR tail tube protein (UniProt A0AAE9G628, ORF spr_64). Without database lookup or memorization of this particular phage genome annotation, a model cannot positively assign the protein to the 'virus tail, tube' compartment rather than other possible viral structural roles. The sequence itself does not contain a recognizable 'tail tube' motif distinguishable from other phage structural proteins.",
-    "reason": "While elimination of the three eukaryotic/host-cell options is feasible through general biological knowledge (no membrane domains, no actin motifs), the positive identification of 'tail tube' specifically requires knowing this exact protein's annotation. The answer is reachable by elimination only because 'virus tail, tube' is the sole viral option among the four choices; if other viral compartments were offered, elimination would fail. The core identification depends on recognizing this specific sequence's database entry."
-  },
-  "case_id": "GO_cellular_component_0147",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence (264 AA) matches UniProtKB A0AAE9G628 exactly (SHA256 confirmed). The entry is a reviewed Swiss-Prot record named 'Tail tube protein' from Bacillus phage SPR (C4, H1). The subcellular location is annotated as 'Virion' (C5, H2), and GO:0098026 'virus tail, tube' is directly assigned (C6, H3) with evidence code IEA:UniProtKB-KW. The protein name, organism (bacteriophage), and GO annotation all consistently support option A. The IEA evidence code indicates computational inference from keyword rather than direct experimental localization, but the protein is explicitly named 'Tail tube protein' and belongs to a Caudoviricetes phage, making the annotation highly reliable."
-  },
-  "important_caveats": [
-    "The GO annotation evidence code is IEA:UniProtKB-KW (inferred from electronic annotation based on keyword), not direct experimental evidence. However, the protein is explicitly named 'Tail tube protein' in a reviewed Swiss-Prot entry, providing strong support.",
-    "The sequence is from a bacteriophage (Bacillus phage SPR), not a eukaryotic host protein, which is not obvious from sequence features alone without database knowledge.",
-    "The elimination-based reasoning path works only because 'virus tail, tube' is the single viral option among four choices; this is a structural artifact of the question design rather than a feature of the protein sequence itself.",
-    "The UniProt entry was first public on 2025-02-05; the benchmark construction date is unknown, so the annotation may or may not have been available when the benchmark was assembled."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D are clearly incompatible with the sequence: no transmembrane helices or signal peptide (excludes C and D), and no resemblance to actin or actin-associated proteins (excludes B). Option A is the only remaining choice and is consistent with the protein being a small, soluble viral structural protein. No ambiguity among the given options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0147",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence (264 AA) matches UniProtKB A0AAE9G628 exactly (SHA256 confirmed). The entry is a reviewed Swiss-Prot record named 'Tail tube protein' from Bacillus phage SPR (C4, H1). The subcellular location is annotated as 'Virion' (C5, H2), and GO:0098026 'virus tail, tube' is directly assigned (C6, H3) with evidence code IEA:UniProtKB-KW. The protein name, organism (bacteriophage), and GO annotation all consistently support option A. The IEA evidence code indicates computational inference from keyword rather than direct experimental localization, but the protein is explicitly named 'Tail tube protein' and belongs to a Caudoviricetes phage, making the annotation highly reliable.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C6", "H1", "H2", "H3", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could eliminate options B, C, and D by noting the absence of transmembrane domains or signal peptides (ruling out host cell plasma membrane and microvillus membrane) and the absence of actin-like sequence motifs or actin-binding domains (ruling out actin cytoskeleton). However, this elimination only narrows to 'the remaining viral option' without positively identifying the protein as specifically a tail tube protein versus other viral structural proteins (capsid, tail fiber, baseplate). The sequence lacks distinctive features that would allow a general reasoner to positively identify 'tail tube' architecture.",
-    "missing_item_specific_fact": "The specific identity of this 264-residue sequence as the Bacillus phage SPR tail tube protein (UniProt A0AAE9G628, ORF spr_64). Without database lookup or memorization of this particular phage genome annotation, a model cannot positively assign the protein to the 'virus tail, tube' compartment rather than other possible viral structural roles. The sequence itself does not contain a recognizable 'tail tube' motif distinguishable from other phage structural proteins.",
-    "reason": "While elimination of the three eukaryotic/host-cell options is feasible through general biological knowledge (no membrane domains, no actin motifs), the positive identification of 'tail tube' specifically requires knowing this exact protein's annotation. The answer is reachable by elimination only because 'virus tail, tube' is the sole viral option among the four choices; if other viral compartments were offered, elimination would fail. The core identification depends on recognizing this specific sequence's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D are clearly incompatible with the sequence: no transmembrane helices or signal peptide (excludes C and D), and no resemblance to actin or actin-associated proteins (excludes B). Option A is the only remaining choice and is consistent with the protein being a small, soluble viral structural protein. No ambiguity among the given options."
-  },
-  "important_caveats": [
-    "The GO annotation evidence code is IEA:UniProtKB-KW (inferred from electronic annotation based on keyword), not direct experimental evidence. However, the protein is explicitly named 'Tail tube protein' in a reviewed Swiss-Prot entry, providing strong support.",
-    "The sequence is from a bacteriophage (Bacillus phage SPR), not a eukaryotic host protein, which is not obvious from sequence features alone without database knowledge.",
-    "The elimination-based reasoning path works only because 'virus tail, tube' is the single viral option among four choices; this is a structural artifact of the question design rather than a feature of the protein sequence itself.",
-    "The UniProt entry was first public on 2025-02-05; the benchmark construction date is unknown, so the annotation may or may not have been available when the benchmark was assembled."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -514,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAE9G628",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 264,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
   "current_entry_audit": {
     "entryVersion": 9,
     "firstPublicDate": "2025-02-05",
@@ -545,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-05-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "current_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 264,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 7,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAE9G628",
   "selected_historical_entry_version": 7,
+  "selected_historical_record_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
+  "selected_historical_source_sequence_length": 264,
+  "selected_historical_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
   "selected_historical_version": {
     "accession": "A0AAE9G628",
     "database": "Swiss-Prot",
@@ -563,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TUBE_BPSPR",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
-  "selected_historical_source_sequence_sha256": "e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944",
-  "selected_historical_source_sequence_length": 264,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 7,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAE9G628\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -617,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":9,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2024-05-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -636,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bacteriophage SPR\",\"lineage\":[\"Viruses\",\"Duplodnaviria\",\"Heunggongvirae\",\"Uroviricota\",\"Caudoviricetes\",\"Caudoviricetes incertae sedis\",\"Spbetavirus\"],\"scientificName\":\"Bacillus phage SPR\",\"taxonId\":10725}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -655,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"value\":\"Tail tube protein\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -674,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"id\":\"SL-0274\",\"value\":\"Virion\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -693,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json",
-  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
-  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/26",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0098026\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:virus tail, tube\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-KW\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/26",
+  "retrieved_utc": "2026-11-02T04:26:26.141304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4475df5f43a35856bdc9052cbc30827ee69fe8a43237be8ce3c790d160dd3264",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAE9G628.json"
 }
 ```
 
@@ -711,18 +462,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 7,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7",
-  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
-  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   TUBE_BPSPR              Reviewed;         264 AA.\nAC   A0AAE9G628;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-MAY-2024, sequence version 1.\nDT   28-JAN-2026, entry version 7.\nDE   RecName: Full=Tail tube protein;\nGN   ORFNames=spr_64 {ECO:0000312|EMBL:UNY48585.1};\nOS   Bacillus phage SPR (Bacteriophage SPR).\nOC   Viruses; Duplodnaviria; Heunggongvirae; Uroviricota; Caudoviricetes;\nOC   Spbetavirus.\nOX   NCBI_TaxID=10725 {ECO:0000312|EMBL:UNY48585.1, ECO:0000312|Proteomes:UP000831086};\nOH   NCBI_TaxID=1423; Bacillus subtilis.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 7,
+  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
+  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7"
 }
 ```
 
@@ -732,18 +483,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 7,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7",
-  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
-  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
-  "source_locator": "lines 79-83",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Virion {ECO:0000305}.\nCC   ---------------------------------------------------------------------------\nCC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms\nCC   Distributed under the Creative Commons Attribution (CC BY 4.0) License\nCC   ---------------------------------------------------------------------------\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 7,
+  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 79-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
+  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7"
 }
 ```
 
@@ -753,18 +504,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 7,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7",
-  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
-  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
-  "source_locator": "lines 114-114",
   "excerpt": "DR   GO; GO:0098026; C:virus tail, tube; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 7,
+  "retrieved_utc": "2026-11-02T04:26:28.241173+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 114-114",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "26705b5d417d3c322399eae942edabb8ae0ff902980f43d35c91029f8fb74650",
+  "url": "https://rest.uniprot.org/unisave/A0AAE9G628?format=txt&versions=7"
 }
 ```
 
@@ -775,15 +526,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 119402-119408",
   "excerpt": "[Term]\nid: GO:0015629\nname: actin cytoskeleton\nnamespace: cellular_component\ndef: \"The part of the cytoskeleton (the internal framework of a cell) composed of actin and associated proteins. Includes actin cytoskeleton-associated complexes.\" [GOC:jl, ISBN:0395825172, ISBN:0815316194]\nis_a: GO:0005856 ! cytoskeleton\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0015629",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 119402-119408",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0015629"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -794,15 +545,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 155120-155127",
   "excerpt": "[Term]\nid: GO:0020002\nname: host cell plasma membrane\nnamespace: cellular_component\ndef: \"The plasma membrane surrounding a host cell.\" [GOC:mb]\nsubset: goslim_virus\nis_a: GO:0033644 ! host cell membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0020002",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 155120-155127",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0020002"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -813,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 177423-177430",
   "excerpt": "[Term]\nid: GO:0031528\nname: microvillus membrane\nnamespace: cellular_component\ndef: \"The portion of the plasma membrane surrounding a microvillus.\" [GOC:mah]\nis_a: GO:0031253 ! cell projection membrane\nrelationship: part_of GO:0005902 ! microvillus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031528",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 177423-177430",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031528"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -832,15 +583,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 408367-408377",
   "excerpt": "[Term]\nid: GO:0098026\nname: virus tail, tube\nnamespace: cellular_component\ndef: \"The internal tube of the tail of some viruses. The virus tail tube is the channel for DNA ejection into the host cytoplasm.\" [PMID:33188213, VZ:3960]\ncomment: Applies in particular the Myoviridae bacteriophages. Many bacteriophages with dsDNA genomes, or Caudovirales, have a tail. The viral tail can be short (Podoviridae), long and non-contractile (Siphoviridae) or long and contractile (Myoviridae). The tail is the channel through which the phage genome is injected into the host bacterial cell.\nsynonym: \"bacteriophage tail tube\" NARROW [GOC:bm]\nxref: VZ:3960 \"Viral tail tube protein\"\nis_a: GO:0044423 ! virion component\nrelationship: part_of GO:0098015 ! virus tail\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0098026",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 408367-408377",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0098026"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

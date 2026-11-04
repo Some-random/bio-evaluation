@@ -1,18 +1,16 @@
-# cofactor_0120: before and after transfer clarification
+# cofactor_0120
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0120.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0120.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **D** — Mg(2+)
+**Expected answer:** **D** — Mg(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched UniProt entry annotates this sequence as binding one Mg(2+) ion per subunit, supporting choice D. The annotation is transferred by similarity from Q8A861, not shown here as a direct cofactor measurement for this protein.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices provide no clear basis for distinguishing Mg(2+) from other divalent cations; recognizing or inferring the enzyme family alone would not establish this specific cofactor.
-
-
-**Missing item-specific fact**
-
-> The protein-specific cofactor annotation, or direct evidence that this enzyme binds Mg(2+), is absent from the input.
-
-
-**Reason**
-
-> Selecting Mg(2+) over the other listed cations depends on an item-specific annotation or measurement not supplied to the model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> A divalent metal cation includes Mg(2+), so choice A is broadly true alongside the more specific choice D.
-
-
-### Important caveats
-
-- The sequence matches the annotated protein, but the cited cofactor evidence is transferred from Q8A861 (ECO:0000250), rather than a direct measurement for this sequence.
-- The supporting annotation establishes Mg(2+) as the recorded cofactor; it does not show that other ions were experimentally excluded.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices provide no clear basis for distinguishing Mg(2+) from other divalent cations; recognizing or inferring the enzyme family alone would not establish this specific cofactor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation, or direct evidence that this enzyme binds Mg(2+), is absent from the input.",
-    "reason": "Selecting Mg(2+) over the other listed cations depends on an item-specific annotation or measurement not supplied to the model."
-  },
-  "case_id": "cofactor_0120",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The matched UniProt entry annotates this sequence as binding one Mg(2+) ion per subunit, supporting choice D. The annotation is transferred by similarity from Q8A861, not shown here as a direct cofactor measurement for this protein."
-  },
-  "important_caveats": [
-    "The sequence matches the annotated protein, but the cited cofactor evidence is transferred from Q8A861 (ECO:0000250), rather than a direct measurement for this sequence.",
-    "The supporting annotation establishes Mg(2+) as the recorded cofactor; it does not show that other ions were experimentally excluded."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "A divalent metal cation includes Mg(2+), so choice A is broadly true alongside the more specific choice D."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0120",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched UniProt entry annotates this sequence as binding one Mg(2+) ion per subunit, supporting choice D. The annotation is transferred by similarity from Q8A861, not shown here as a direct cofactor measurement for this protein.",
-    "evidence_ids": ["C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices provide no clear basis for distinguishing Mg(2+) from other divalent cations; recognizing or inferring the enzyme family alone would not establish this specific cofactor.",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation, or direct evidence that this enzyme binds Mg(2+), is absent from the input.",
-    "reason": "Selecting Mg(2+) over the other listed cations depends on an item-specific annotation or measurement not supplied to the model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "A divalent metal cation includes Mg(2+), so choice A is broadly true alongside the more specific choice D."
-  },
-  "important_caveats": [
-    "The sequence matches the annotated protein, but the cited cofactor evidence is transferred from Q8A861 (ECO:0000250), rather than a direct measurement for this sequence.",
-    "The supporting annotation establishes Mg(2+) as the recorded cofactor; it does not show that other ions were experimentally excluded."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry P0DXZ2 (sequence matched, 315 aa) explicitly annotates Mg(2+) as the cofactor (C5, H4). However, the evidence code is ECO:0000250 (inferred by similarity to Q8A861), meaning the Mg(2+) assignment is a computational transfer rather than direct experimental measurement of this specific protein. The primary paper (PubMed:36690779) documents function and catalytic activity but the cofactor annotation itself is not experimentally derived for P0DXZ2. The database annotation supports the key, but with the caveat that it rests on similarity inference.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One can recognize from the ~315-aa sequence containing Cys/His-rich motifs and the overall fold that this is likely a member of the glutamate racemase superfamily (EC 5.1.1.x). However, glutamate racemases across organisms use different divalent metals: Zn(2+) (e.g., H. pylori), Mn(2+), Fe(2+), or Mg(2+). No general sequence heuristic reliably distinguishes Mg(2+) from Zn(2+) or Fe(2+) for this specific N-acetyl-D-glutamate racemase (EC 5.1.1.25). The metal preference is an enzyme-family-specific fact not encoded in a generalizable sequence motif.
-
-
-**Missing item-specific fact**
-
-> The specific metal preference of N-acetyl-D-glutamate racemase (EC 5.1.1.25) as a class, or the database annotation of P0DXZ2 / its homolog Q8A861 as Mg(2+)-dependent. Without knowing that this particular racemase subfamily uses Mg(2+) rather than Zn(2+) or Fe(2+), the sequence alone does not provide a decisive argument to select D over B or C.
-
-
-**Reason**
-
-> While the sequence supports identification as a racemase (and thus a divalent-metal-dependent enzyme), the jump from 'racemase' to 'specifically Mg(2+)' rather than Zn(2+) or Fe(2+) requires item-specific knowledge of this enzyme's metal preference. The UniProt annotation itself is by similarity (ECO:0000250), underscoring that this is a transferable annotation fact rather than a sequence-derivable property.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Option A ('a divalent metal cation') is technically correct since Mg(2+) is a divalent cation, and all known glutamate racemases require a divalent metal. The question asks for the 'specific cofactor,' which should favor D over A, but the wording does not explicitly exclude a generic category answer. Additionally, because the Mg(2+) assignment is by similarity rather than direct experiment, and because Zn(2+) and Fe(2+) are also documented cofactors for other glutamate racemase family members, a knowledgeable respondent could argue for C or B without the specific EC 5.1.1.25 metal-preference fact.
-
-
-### Important caveats
-
-- The Mg(2+) cofactor annotation carries evidence code ECO:0000250 (similarity to Q8A861), not direct experimental evidence for P0DXZ2.
-- The primary paper (PubMed:36690779) documents catalytic activity and function but the cofactor line is transferred by similarity, not from the paper's own metal-dependence experiments.
-- The UniProt entry was first public in April 2025; the author's source snapshot date is unknown, so the annotation may not have existed at benchmark construction time.
-- Sequence match is confirmed (SHA-256 identical across current and historical entries), so the annotation does apply to the exact sequence presented.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One can recognize from the ~315-aa sequence containing Cys/His-rich motifs and the overall fold that this is likely a member of the glutamate racemase superfamily (EC 5.1.1.x). However, glutamate racemases across organisms use different divalent metals: Zn(2+) (e.g., H. pylori), Mn(2+), Fe(2+), or Mg(2+). No general sequence heuristic reliably distinguishes Mg(2+) from Zn(2+) or Fe(2+) for this specific N-acetyl-D-glutamate racemase (EC 5.1.1.25). The metal preference is an enzyme-family-specific fact not encoded in a generalizable sequence motif.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific metal preference of N-acetyl-D-glutamate racemase (EC 5.1.1.25) as a class, or the database annotation of P0DXZ2 / its homolog Q8A861 as Mg(2+)-dependent. Without knowing that this particular racemase subfamily uses Mg(2+) rather than Zn(2+) or Fe(2+), the sequence alone does not provide a decisive argument to select D over B or C.",
-    "reason": "While the sequence supports identification as a racemase (and thus a divalent-metal-dependent enzyme), the jump from 'racemase' to 'specifically Mg(2+)' rather than Zn(2+) or Fe(2+) requires item-specific knowledge of this enzyme's metal preference. The UniProt annotation itself is by similarity (ECO:0000250), underscoring that this is a transferable annotation fact rather than a sequence-derivable property."
-  },
-  "case_id": "cofactor_0120",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXZ2 (sequence matched, 315 aa) explicitly annotates Mg(2+) as the cofactor (C5, H4). However, the evidence code is ECO:0000250 (inferred by similarity to Q8A861), meaning the Mg(2+) assignment is a computational transfer rather than direct experimental measurement of this specific protein. The primary paper (PubMed:36690779) documents function and catalytic activity but the cofactor annotation itself is not experimentally derived for P0DXZ2. The database annotation supports the key, but with the caveat that it rests on similarity inference."
-  },
-  "important_caveats": [
-    "The Mg(2+) cofactor annotation carries evidence code ECO:0000250 (similarity to Q8A861), not direct experimental evidence for P0DXZ2.",
-    "The primary paper (PubMed:36690779) documents catalytic activity and function but the cofactor line is transferred by similarity, not from the paper's own metal-dependence experiments.",
-    "The UniProt entry was first public in April 2025; the author's source snapshot date is unknown, so the annotation may not have existed at benchmark construction time.",
-    "Sequence match is confirmed (SHA-256 identical across current and historical entries), so the annotation does apply to the exact sequence presented."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Option A ('a divalent metal cation') is technically correct since Mg(2+) is a divalent cation, and all known glutamate racemases require a divalent metal. The question asks for the 'specific cofactor,' which should favor D over A, but the wording does not explicitly exclude a generic category answer. Additionally, because the Mg(2+) assignment is by similarity rather than direct experiment, and because Zn(2+) and Fe(2+) are also documented cofactors for other glutamate racemase family members, a knowledgeable respondent could argue for C or B without the specific EC 5.1.1.25 metal-preference fact."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0120",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXZ2 (sequence matched, 315 aa) explicitly annotates Mg(2+) as the cofactor (C5, H4). However, the evidence code is ECO:0000250 (inferred by similarity to Q8A861), meaning the Mg(2+) assignment is a computational transfer rather than direct experimental measurement of this specific protein. The primary paper (PubMed:36690779) documents function and catalytic activity but the cofactor annotation itself is not experimentally derived for P0DXZ2. The database annotation supports the key, but with the caveat that it rests on similarity inference.",
-    "evidence_ids": ["C5", "H4", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One can recognize from the ~315-aa sequence containing Cys/His-rich motifs and the overall fold that this is likely a member of the glutamate racemase superfamily (EC 5.1.1.x). However, glutamate racemases across organisms use different divalent metals: Zn(2+) (e.g., H. pylori), Mn(2+), Fe(2+), or Mg(2+). No general sequence heuristic reliably distinguishes Mg(2+) from Zn(2+) or Fe(2+) for this specific N-acetyl-D-glutamate racemase (EC 5.1.1.25). The metal preference is an enzyme-family-specific fact not encoded in a generalizable sequence motif.",
-    "missing_item_specific_fact": "The specific metal preference of N-acetyl-D-glutamate racemase (EC 5.1.1.25) as a class, or the database annotation of P0DXZ2 / its homolog Q8A861 as Mg(2+)-dependent. Without knowing that this particular racemase subfamily uses Mg(2+) rather than Zn(2+) or Fe(2+), the sequence alone does not provide a decisive argument to select D over B or C.",
-    "reason": "While the sequence supports identification as a racemase (and thus a divalent-metal-dependent enzyme), the jump from 'racemase' to 'specifically Mg(2+)' rather than Zn(2+) or Fe(2+) requires item-specific knowledge of this enzyme's metal preference. The UniProt annotation itself is by similarity (ECO:0000250), underscoring that this is a transferable annotation fact rather than a sequence-derivable property."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Option A ('a divalent metal cation') is technically correct since Mg(2+) is a divalent cation, and all known glutamate racemases require a divalent metal. The question asks for the 'specific cofactor,' which should favor D over A, but the wording does not explicitly exclude a generic category answer. Additionally, because the Mg(2+) assignment is by similarity rather than direct experiment, and because Zn(2+) and Fe(2+) are also documented cofactors for other glutamate racemase family members, a knowledgeable respondent could argue for C or B without the specific EC 5.1.1.25 metal-preference fact."
-  },
-  "important_caveats": [
-    "The Mg(2+) cofactor annotation carries evidence code ECO:0000250 (similarity to Q8A861), not direct experimental evidence for P0DXZ2.",
-    "The primary paper (PubMed:36690779) documents catalytic activity and function but the cofactor line is transferred by similarity, not from the paper's own metal-dependence experiments.",
-    "The UniProt entry was first public in April 2025; the author's source snapshot date is unknown, so the annotation may not have existed at benchmark construction time.",
-    "Sequence match is confirmed (SHA-256 identical across current and historical entries), so the annotation does apply to the exact sequence presented."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -403,10 +164,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -522,30 +282,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXZ2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 315,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
   "current_entry_audit": {
     "entryVersion": 5,
     "firstPublicDate": "2025-04-09",
@@ -553,14 +300,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-04-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "current_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 315,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 3,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXZ2",
   "selected_historical_entry_version": 3,
+  "selected_historical_record_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "selected_historical_source_sequence_length": 315,
+  "selected_historical_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
   "selected_historical_version": {
     "accession": "P0DXZ2",
     "database": "Swiss-Prot",
@@ -571,24 +334,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DGCA_PSEAS",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "selected_historical_source_sequence_sha256": "0d1eb3735d239531b3217901b0448f4b6bbb8ed844687491961a764ee0e557df",
-  "selected_historical_source_sequence_length": 315,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 3,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -602,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXZ2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -621,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":5,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-04-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -640,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Alteromonadales\",\"Pseudoalteromonadaceae\",\"Pseudoalteromonas\"],\"scientificName\":\"Pseudoalteromonas sp\",\"taxonId\":53249}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -659,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"5.1.1.25\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"N-acetyl-D-glutamate racemase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"N-acetyl-D-Glu racemase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -678,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:18420\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8A861\",\"source\":\"UniProtKB\"}],\"name\":\"Mg(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8A861\",\"source\":\"UniProtKB\"}],\"value\":\"Binds 1 Mg(2+) ion per subunit.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -697,15 +447,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json",
-  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
-  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Yu Y.\",\"Wang P.\",\"Cao H.Y.\",\"Teng Z.J.\",\"Zhu Y.\",\"Wang M.\",\"McMinn A.\",\"Chen Y.\",\"Xiang H.\",\"Zhang Y.Z.\",\"Chen X.L.\",\"Zhang Y.Q.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36690779\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41396-023-01364-6\"}],\"citationType\":\"journal article\",\"firstPage\":\"537\",\"id\":\"36690779\",\"journal\":\"ISME J.\",\"lastPage\":\"548\",\"publicationDate\":\"2023\",\"title\":\"Novel D-glutamate catabolic pathway in marine Proteobacteria and halophilic archaea.\",\"volume\":\"17\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"CF6-2\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:09.095372+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ce4ce37f5eba503f3ded1200adaf39a2c1cec4022ddf9b32af66f9212c2586ea",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXZ2.json"
 }
 ```
 
@@ -715,18 +465,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3",
-  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   DGCA_PSEAS              Reviewed;         315 AA.\nAC   P0DXZ2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-APR-2025, sequence version 1.\nDT   28-JAN-2026, entry version 3.\nDE   RecName: Full=N-acetyl-D-glutamate racemase {ECO:0000303|PubMed:36690779};\nDE            Short=N-acetyl-D-Glu racemase {ECO:0000303|PubMed:36690779};\nDE            EC=5.1.1.25 {ECO:0000269|PubMed:36690779};\nGN   Name=dgcA {ECO:0000303|PubMed:36690779};\nOS   Pseudoalteromonas sp.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Alteromonadales; Pseudoalteromonadaceae; Pseudoalteromonas.\nOX   NCBI_TaxID=53249;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3"
 }
 ```
 
@@ -736,18 +486,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3",
-  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=N-acetyl-D-glutamate racemase {ECO:0000303|PubMed:36690779};\nDE            Short=N-acetyl-D-Glu racemase {ECO:0000303|PubMed:36690779};\nDE            EC=5.1.1.25 {ECO:0000269|PubMed:36690779};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3"
 }
 ```
 
@@ -757,18 +507,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3",
-  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
-  "source_locator": "lines 14-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, INDUCTION,\nRP   AND DISRUPTION PHENOTYPE.\nRC   STRAIN=CF6-2;\nRX   PubMed=36690779; DOI=10.1038/s41396-023-01364-6;\nRA   Yu Y., Wang P., Cao H.Y., Teng Z.J., Zhu Y., Wang M., McMinn A., Chen Y.,\nRA   Xiang H., Zhang Y.Z., Chen X.L., Zhang Y.Q.;\nRT   \"Novel D-glutamate catabolic pathway in marine Proteobacteria and\nRT   halophilic archaea.\";\nRL   ISME J. 17:537-548(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3"
 }
 ```
 
@@ -778,18 +528,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3",
-  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
-  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
-  "source_locator": "lines 37-40",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mg(2+); Xref=ChEBI:CHEBI:18420;\nCC         Evidence={ECO:0000250|UniProtKB:Q8A861};\nCC       Note=Binds 1 Mg(2+) ion per subunit. {ECO:0000250|UniProtKB:Q8A861};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-01T06:41:59.066573+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e4cce17ff5162859998568df20b58b36b0722c6040f9c24adb62cf5a2aed600d",
+  "url": "https://rest.uniprot.org/unisave/P0DXZ2?format=txt&versions=3"
 }
 ```
 

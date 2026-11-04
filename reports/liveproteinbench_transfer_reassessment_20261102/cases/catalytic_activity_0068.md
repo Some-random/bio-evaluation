@@ -1,18 +1,16 @@
-# catalytic_activity_0068: before and after transfer clarification
+# catalytic_activity_0068
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0068.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0068.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — Hydrolysis of (1-&gt;4)-beta-D-xylans, to remove successive D-xylose residues from the non-reducing termini.
+**Expected answer:** **B** — Hydrolysis of (1-&gt;4)-beta-D-xylans, to remove successive D-xylose residues from the non-reducing termini.
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry V9TNS0. Its catalytic-activity annotation gives reaction B and cites PubMed 24262572 with experimental-evidence code ECO:0000269. The entry also reports alpha-L-arabinofuranosidase activity, which is not among the choices.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence’s length and enzyme-like composition may make a glycoside hydrolase more plausible than a DNA helicase or carotenoid oxygenase, but that does not establish the substrate specificity needed to choose B over another glycosidase reaction.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and experimentally reported substrate activity as a beta-xylosidase are absent from the input.
-
-
-**Reason**
-
-> Selecting the specific xylan-derived reaction requires protein-specific functional or substrate-specificity information, not merely general sequence reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein annotation supports B among the listed reactions. The sequence-only input does not distinguish B from the other glycosidase choice, but that is a lookup dependence rather than evidence that multiple options describe this protein.
-
-
-### Important caveats
-
-- The supporting annotation is sequence-matched and cites experimental evidence, but the primary paper was not independently reviewed here.
-- The source snapshot used by the question author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence’s length and enzyme-like composition may make a glycoside hydrolase more plausible than a DNA helicase or carotenoid oxygenase, but that does not establish the substrate specificity needed to choose B over another glycosidase reaction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and experimentally reported substrate activity as a beta-xylosidase are absent from the input.",
-    "reason": "Selecting the specific xylan-derived reaction requires protein-specific functional or substrate-specificity information, not merely general sequence reasoning."
-  },
-  "case_id": "catalytic_activity_0068",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "C7",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry V9TNS0. Its catalytic-activity annotation gives reaction B and cites PubMed 24262572 with experimental-evidence code ECO:0000269. The entry also reports alpha-L-arabinofuranosidase activity, which is not among the choices."
-  },
-  "important_caveats": [
-    "The supporting annotation is sequence-matched and cites experimental evidence, but the primary paper was not independently reviewed here.",
-    "The source snapshot used by the question author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein annotation supports B among the listed reactions. The sequence-only input does not distinguish B from the other glycosidase choice, but that is a lookup dependence rather than evidence that multiple options describe this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0068",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry V9TNS0. Its catalytic-activity annotation gives reaction B and cites PubMed 24262572 with experimental-evidence code ECO:0000269. The entry also reports alpha-L-arabinofuranosidase activity, which is not among the choices.",
-    "evidence_ids": ["C1", "C5", "C6", "C7", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence’s length and enzyme-like composition may make a glycoside hydrolase more plausible than a DNA helicase or carotenoid oxygenase, but that does not establish the substrate specificity needed to choose B over another glycosidase reaction.",
-    "missing_item_specific_fact": "The protein-specific identification and experimentally reported substrate activity as a beta-xylosidase are absent from the input.",
-    "reason": "Selecting the specific xylan-derived reaction requires protein-specific functional or substrate-specificity information, not merely general sequence reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein annotation supports B among the listed reactions. The sequence-only input does not distinguish B from the other glycosidase choice, but that is a lookup dependence rather than evidence that multiple options describe this protein."
-  },
-  "important_caveats": [
-    "The supporting annotation is sequence-matched and cites experimental evidence, but the primary paper was not independently reviewed here.",
-    "The source snapshot used by the question author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry V9TNS0 (sequence exactly matched, 327 AA) annotates this protein as 'Xylosidase/arabinosidase 43A' from Humicola insolens with EC 3.2.1.37 catalytic activity described as 'Hydrolysis of (1->4)-beta-D-xylans, to remove successive D-xylose residues from the non-reducing termini.' The evidence code is ECO:0000269 (direct assay) from PubMed:24262572, confirming experimental validation. Choice B text matches the annotation verbatim.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains repeated 'GKY' motifs (GKYYLYFP, GKYYFSYS) and 'GDS'/'DGS' motifs (DGSAYMYFGGLWGG, GDSPYGPFTYGG) characteristic of the five-bladed beta-propeller fold of Glycoside Hydrolase family 43 (GH43). GH43 members are known to act on xylan/arabinan hemicellulose substrates (xylosidases and arabinosidases), not on glucose polymers. This distinguishes Choice B (xylosidase) from Choice C (beta-glucosidase, typically GH1/GH3/GH5 with different folds). Choices A (carotenoid oxygenase) and D (DNA helicase) are eliminated by the absence of 4-His iron-binding motifs and Walker A/B helicase motifs respectively.
-
-
-**Missing item-specific fact**
-
-Empty string, as saved.
-
-
-**Reason**
-
-> The GH43 beta-propeller sequence signature (repeated GKY and GDS motifs forming blade-like units) provides a concrete structural argument linking the sequence to a xylan-active glycoside hydrolase. While recognizing GH43 specifically requires specialized glycoside hydrolase knowledge, the reasoning chain from identifiable sequence motifs → GH43 family → xylan/xylose substrate specificity is a defensible biological argument that meaningfully distinguishes B from C, A, and D.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the protein is bifunctional (also EC 3.2.1.55 arabinosidase activity), only EC 3.2.1.37 (xylosidase, Choice B) appears among the four options. The other three choices describe entirely unrelated enzyme classes (carotenoid oxygenase, beta-glucosidase, DNA helicase) that cannot be confused with a GH43 xylosidase.
-
-
-### Important caveats
-
-- The protein is bifunctional (EC 3.2.1.37 and EC 3.2.1.55); the arabinosidase activity is not represented among the choices, but this does not create ambiguity since only the xylosidase activity is offered.
-- Recognition of GH43 beta-propeller motifs from sequence alone requires specialized knowledge of glycoside hydrolase family signatures; this is domain expertise rather than general biology, but constitutes a legitimate reasoning pathway.
-- All UniProt evidence is reviewer-only and was not available to the evaluated model; the model must rely on sequence-intrinsic features.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains repeated 'GKY' motifs (GKYYLYFP, GKYYFSYS) and 'GDS'/'DGS' motifs (DGSAYMYFGGLWGG, GDSPYGPFTYGG) characteristic of the five-bladed beta-propeller fold of Glycoside Hydrolase family 43 (GH43). GH43 members are known to act on xylan/arabinan hemicellulose substrates (xylosidases and arabinosidases), not on glucose polymers. This distinguishes Choice B (xylosidase) from Choice C (beta-glucosidase, typically GH1/GH3/GH5 with different folds). Choices A (carotenoid oxygenase) and D (DNA helicase) are eliminated by the absence of 4-His iron-binding motifs and Walker A/B helicase motifs respectively.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "",
-    "reason": "The GH43 beta-propeller sequence signature (repeated GKY and GDS motifs forming blade-like units) provides a concrete structural argument linking the sequence to a xylan-active glycoside hydrolase. While recognizing GH43 specifically requires specialized glycoside hydrolase knowledge, the reasoning chain from identifiable sequence motifs → GH43 family → xylan/xylose substrate specificity is a defensible biological argument that meaningfully distinguishes B from C, A, and D."
-  },
-  "case_id": "catalytic_activity_0068",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry V9TNS0 (sequence exactly matched, 327 AA) annotates this protein as 'Xylosidase/arabinosidase 43A' from Humicola insolens with EC 3.2.1.37 catalytic activity described as 'Hydrolysis of (1->4)-beta-D-xylans, to remove successive D-xylose residues from the non-reducing termini.' The evidence code is ECO:0000269 (direct assay) from PubMed:24262572, confirming experimental validation. Choice B text matches the annotation verbatim."
-  },
-  "important_caveats": [
-    "The protein is bifunctional (EC 3.2.1.37 and EC 3.2.1.55); the arabinosidase activity is not represented among the choices, but this does not create ambiguity since only the xylosidase activity is offered.",
-    "Recognition of GH43 beta-propeller motifs from sequence alone requires specialized knowledge of glycoside hydrolase family signatures; this is domain expertise rather than general biology, but constitutes a legitimate reasoning pathway.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model; the model must rely on sequence-intrinsic features."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the protein is bifunctional (also EC 3.2.1.55 arabinosidase activity), only EC 3.2.1.37 (xylosidase, Choice B) appears among the four options. The other three choices describe entirely unrelated enzyme classes (carotenoid oxygenase, beta-glucosidase, DNA helicase) that cannot be confused with a GH43 xylosidase."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0068",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry V9TNS0 (sequence exactly matched, 327 AA) annotates this protein as 'Xylosidase/arabinosidase 43A' from Humicola insolens with EC 3.2.1.37 catalytic activity described as 'Hydrolysis of (1->4)-beta-D-xylans, to remove successive D-xylose residues from the non-reducing termini.' The evidence code is ECO:0000269 (direct assay) from PubMed:24262572, confirming experimental validation. Choice B text matches the annotation verbatim.",
-    "evidence_ids": ["C4", "C5", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains repeated 'GKY' motifs (GKYYLYFP, GKYYFSYS) and 'GDS'/'DGS' motifs (DGSAYMYFGGLWGG, GDSPYGPFTYGG) characteristic of the five-bladed beta-propeller fold of Glycoside Hydrolase family 43 (GH43). GH43 members are known to act on xylan/arabinan hemicellulose substrates (xylosidases and arabinosidases), not on glucose polymers. This distinguishes Choice B (xylosidase) from Choice C (beta-glucosidase, typically GH1/GH3/GH5 with different folds). Choices A (carotenoid oxygenase) and D (DNA helicase) are eliminated by the absence of 4-His iron-binding motifs and Walker A/B helicase motifs respectively.",
-    "missing_item_specific_fact": "",
-    "reason": "The GH43 beta-propeller sequence signature (repeated GKY and GDS motifs forming blade-like units) provides a concrete structural argument linking the sequence to a xylan-active glycoside hydrolase. While recognizing GH43 specifically requires specialized glycoside hydrolase knowledge, the reasoning chain from identifiable sequence motifs → GH43 family → xylan/xylose substrate specificity is a defensible biological argument that meaningfully distinguishes B from C, A, and D."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the protein is bifunctional (also EC 3.2.1.55 arabinosidase activity), only EC 3.2.1.37 (xylosidase, Choice B) appears among the four options. The other three choices describe entirely unrelated enzyme classes (carotenoid oxygenase, beta-glucosidase, DNA helicase) that cannot be confused with a GH43 xylosidase."
-  },
-  "important_caveats": [
-    "The protein is bifunctional (EC 3.2.1.37 and EC 3.2.1.55); the arabinosidase activity is not represented among the choices, but this does not create ambiguity since only the xylosidase activity is offered.",
-    "Recognition of GH43 beta-propeller motifs from sequence alone requires specialized knowledge of glycoside hydrolase family signatures; this is domain expertise rather than general biology, but constitutes a legitimate reasoning pathway.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model; the model must rely on sequence-intrinsic features."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -498,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "V9TNS0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 327,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
   "current_entry_audit": {
     "entryVersion": 23,
     "firstPublicDate": "2025-02-05",
@@ -529,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-03-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "current_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 327,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "V9TNS0",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "selected_historical_source_sequence_length": 327,
+  "selected_historical_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
   "selected_historical_version": {
     "accession": "V9TNS0",
     "database": "Swiss-Prot",
@@ -547,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "XY43A_HUMIN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "selected_historical_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
-  "selected_historical_source_sequence_length": 327,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -578,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"V9TNS0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -597,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":23,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-03-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -616,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soft-rot fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Mycothermus\"],\"scientificName\":\"Humicola insolens\",\"taxonId\":85995}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -635,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"includes\":[{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"1,4-beta-D-xylan xylohydrolase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Xylan 1,4-beta-xylosidase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.37\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Beta-xylosidase\"}}},{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.55\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Alpha-L-arabinofuranosidase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Arabinosidase\"}]}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Xylosidase/arabinosidase 43A\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -654,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.37\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"name\":\"Hydrolysis of (1->4)-beta-D-xylans, to remove successive D-xylose residues from the non-reducing termini.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -673,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.55\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"name\":\"Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside residues in alpha-L-arabinosides.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -692,15 +452,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Yang X.\",\"Shi P.\",\"Huang H.\",\"Luo H.\",\"Wang Y.\",\"Zhang W.\",\"Yao B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24262572\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.foodchem.2013.10.062\"}],\"citationType\":\"journal article\",\"firstPage\":\"381\",\"id\":\"24262572\",\"journal\":\"Food Chem.\",\"lastPage\":\"387\",\"publicationDate\":\"2014\",\"title\":\"Two xylose-tolerant GH43 bifunctional ?-xylosidase/?-arabinosidases and one GH11 xylanase from Humicola insolens and their synergy in the degradation of xylan.\",\"volume\":\"148\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Y1\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBSTRATE SPECIFICITY\",\"ACTIVITY REGULATION\",\"SUBCELLULAR LOCATION\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -710,18 +470,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 1-20",
   "excerpt": "ID   XY43A_HUMIN             Reviewed;         327 AA.\nAC   V9TNS0;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-MAR-2014, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=Xylosidase/arabinosidase 43A {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.37 {ECO:0000269|PubMed:24262572};\nDE     AltName: Full=1,4-beta-D-xylan xylohydrolase {ECO:0000303|PubMed:24262572};\nDE     AltName: Full=Xylan 1,4-beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Alpha-L-arabinofuranosidase {ECO:0000303|PubMed:24262572};\nDE              Short=Arabinosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.55 {ECO:0000269|PubMed:24262572};\nGN   Name=XylL43A {ECO:0000303|PubMed:24262572};\nOS   Humicola insolens (Soft-rot fungus).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Mycothermus.\nOX   NCBI_TaxID=85995;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 
@@ -731,18 +491,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 6-15",
   "excerpt": "DE   RecName: Full=Xylosidase/arabinosidase 43A {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.37 {ECO:0000269|PubMed:24262572};\nDE     AltName: Full=1,4-beta-D-xylan xylohydrolase {ECO:0000303|PubMed:24262572};\nDE     AltName: Full=Xylan 1,4-beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Alpha-L-arabinofuranosidase {ECO:0000303|PubMed:24262572};\nDE              Short=Arabinosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.55 {ECO:0000269|PubMed:24262572};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 
@@ -752,18 +512,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 21-31",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBSTRATE SPECIFICITY, ACTIVITY REGULATION,\nRP   SUBCELLULAR LOCATION, AND BIOTECHNOLOGY.\nRC   STRAIN=Y1;\nRX   PubMed=24262572; DOI=10.1016/j.foodchem.2013.10.062;\nRA   Yang X., Shi P., Huang H., Luo H., Wang Y., Zhang W., Yao B.;\nRT   \"Two xylose-tolerant GH43 bifunctional ?-xylosidase/?-arabinosidases and\nRT   one GH11 xylanase from Humicola insolens and their synergy in the\nRT   degradation of xylan.\";\nRL   Food Chem. 148:381-387(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 
@@ -773,18 +533,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 46-49",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Hydrolysis of (1->4)-beta-D-xylans, to remove successive D-\nCC         xylose residues from the non-reducing termini.; EC=3.2.1.37;\nCC         Evidence={ECO:0000269|PubMed:24262572};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 
@@ -794,18 +554,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 50-53",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside\nCC         residues in alpha-L-arabinosides.; EC=3.2.1.55;\nCC         Evidence={ECO:0000269|PubMed:24262572};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 

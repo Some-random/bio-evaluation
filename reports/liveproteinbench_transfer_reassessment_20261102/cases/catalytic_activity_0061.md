@@ -1,18 +1,16 @@
-# catalytic_activity_0061: before and after transfer clarification
+# catalytic_activity_0061
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0061.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0061.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **A** — (1S,3S,6S,7S,8S,9S)-6-&#91;(4-methoxyphenyl)methyl&#93;-3-(methylamino)-5-azatricyclo&#91;6.3.1.0(1,5)&#93;dodecane-7,9-diol + ATP = (-)-FR901483 + ADP + 2 H(+)
+**Expected answer:** **A** — (1S,3S,6S,7S,8S,9S)-6-&#91;(4-methoxyphenyl)methyl&#93;-3-(methylamino)-5-azatricyclo&#91;6.3.1.0(1,5)&#93;dodecane-7,9-diol + ATP = (-)-FR901483 + ADP + 2 H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry annotated as phosphotransferase FrzJ, whose catalytic reaction is choice A. The reaction annotation carries ECO:0000269 and cites a paper whose reference includes function and catalytic activity; this supports the key, though the primary paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices describe distinct reaction classes, but the sequence and prompt provide no biological context or sufficiently specific, recognizable feature that identifies FrzJ's particular substrate and product.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic annotation or experimental identification of FrzJ's reaction with the FR901483 precursor and ATP.
-
-
-**Reason**
-
-> Selecting the precise reaction requires a protein-specific functional fact absent from the input. A general sequence-based guess about enzyme class would not establish this specific substrate-to-product transformation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options state distinct reactions, and the matched annotation supports choice A; no evidence indicates that another listed reaction is also catalyzed by this protein.
-
-
-### Important caveats
-
-- The sequence match is exact, and a historical UniProt entry available by the stated cutoff also records choice A.
-- The UniProt evidence code and citation support an experimental basis for the annotation, but the cited primary study was not independently examined.
-- The exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices describe distinct reaction classes, but the sequence and prompt provide no biological context or sufficiently specific, recognizable feature that identifies FrzJ's particular substrate and product.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic annotation or experimental identification of FrzJ's reaction with the FR901483 precursor and ATP.",
-    "reason": "Selecting the precise reaction requires a protein-specific functional fact absent from the input. A general sequence-based guess about enzyme class would not establish this specific substrate-to-product transformation."
-  },
-  "case_id": "catalytic_activity_0061",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as phosphotransferase FrzJ, whose catalytic reaction is choice A. The reaction annotation carries ECO:0000269 and cites a paper whose reference includes function and catalytic activity; this supports the key, though the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence match is exact, and a historical UniProt entry available by the stated cutoff also records choice A.",
-    "The UniProt evidence code and citation support an experimental basis for the annotation, but the cited primary study was not independently examined.",
-    "The exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options state distinct reactions, and the matched annotation supports choice A; no evidence indicates that another listed reaction is also catalyzed by this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0061",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as phosphotransferase FrzJ, whose catalytic reaction is choice A. The reaction annotation carries ECO:0000269 and cites a paper whose reference includes function and catalytic activity; this supports the key, though the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices describe distinct reaction classes, but the sequence and prompt provide no biological context or sufficiently specific, recognizable feature that identifies FrzJ's particular substrate and product.",
-    "missing_item_specific_fact": "The protein-specific catalytic annotation or experimental identification of FrzJ's reaction with the FR901483 precursor and ATP.",
-    "reason": "Selecting the precise reaction requires a protein-specific functional fact absent from the input. A general sequence-based guess about enzyme class would not establish this specific substrate-to-product transformation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options state distinct reactions, and the matched annotation supports choice A; no evidence indicates that another listed reaction is also catalyzed by this protein."
-  },
-  "important_caveats": [
-    "The sequence match is exact, and a historical UniProt entry available by the stated cutoff also records choice A.",
-    "The UniProt evidence code and citation support an experimental basis for the annotation, but the cited primary study was not independently examined.",
-    "The exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches UniProt entry A0A7T8F1J6 (FRZJ_CLASX, Phosphotransferase FrzJ, EC 2.7.1.-). The catalytic activity is annotated with experimental evidence (ECO:0000269|PubMed:33372776, Zhang et al. 2021 JACS) as precisely the reaction in Choice A. Both current and historical (entry version 6) UniProt records confirm the identical reaction string.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could weakly argue by elimination: the sequence lacks a canonical P450 heme-binding motif (CXXGXXC) or ferredoxin-interaction surface expected for a carotenoid hydroxylase (B); it lacks the DXD…GD…HG…GD phosphatase motif of a Ser/Thr protein phosphatase (C); and it lacks PLP-dependent enzyme signatures expected for a histidine racemase (D). A fragment 'HGD' in 'VHGDILSRK' is superficially kinase-like, hinting at a phosphotransferase (A). However, this reasoning is extremely weak and speculative.
-
-
-**Missing item-specific fact**
-
-> The specific identity of the substrate (the named azatricyclo-dodecane diol) and the product (FR901483) cannot be inferred from the amino acid sequence. Even correctly classifying the enzyme as a kinase does not reveal that it phosphorylates this particular exotic natural-product precursor in the FR901483 biosynthetic pathway. This requires the item-specific annotation of FrzJ from the 2021 JACS paper.
-
-
-**Reason**
-
-> The positive identification of the exact reaction—specifically the exotic named substrate and FR901483 product—depends entirely on knowing the protein's database annotation or the published biosynthetic pathway. General sequence-based reasoning cannot predict that a 385-residue fungal phosphotransferase acts on this particular complex organic molecule. The elimination of distractors B, C, D by motif absence is suggestive but insufficient for confident positive identification of A.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices span fundamentally different enzyme classes (kinase, carotenoid hydroxylase, protein phosphatase, racemase), making them structurally distinct. The correct answer is unambiguous given the annotation; the distractors are not genuinely competitive once the enzyme class is known.
-
-
-### Important caveats
-
-- The UniProt entry was first public in June 2025 and the experimental paper is from 2021; the annotation carries experimental evidence (ECO:0000269), not merely computational inference.
-- The sequence match between the benchmark input and the UniProt entry is confirmed by SHA-256 hash.
-- The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was absent from the evaluated model input.
-- While weak motif-based elimination of B, C, D is possible, it does not constitute reliable reasoning to positively select A over any other phosphotransferase reaction.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could weakly argue by elimination: the sequence lacks a canonical P450 heme-binding motif (CXXGXXC) or ferredoxin-interaction surface expected for a carotenoid hydroxylase (B); it lacks the DXD…GD…HG…GD phosphatase motif of a Ser/Thr protein phosphatase (C); and it lacks PLP-dependent enzyme signatures expected for a histidine racemase (D). A fragment 'HGD' in 'VHGDILSRK' is superficially kinase-like, hinting at a phosphotransferase (A). However, this reasoning is extremely weak and speculative.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of the substrate (the named azatricyclo-dodecane diol) and the product (FR901483) cannot be inferred from the amino acid sequence. Even correctly classifying the enzyme as a kinase does not reveal that it phosphorylates this particular exotic natural-product precursor in the FR901483 biosynthetic pathway. This requires the item-specific annotation of FrzJ from the 2021 JACS paper.",
-    "reason": "The positive identification of the exact reaction—specifically the exotic named substrate and FR901483 product—depends entirely on knowing the protein's database annotation or the published biosynthetic pathway. General sequence-based reasoning cannot predict that a 385-residue fungal phosphotransferase acts on this particular complex organic molecule. The elimination of distractors B, C, D by motif absence is suggestive but insufficient for confident positive identification of A."
-  },
-  "case_id": "catalytic_activity_0061",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches UniProt entry A0A7T8F1J6 (FRZJ_CLASX, Phosphotransferase FrzJ, EC 2.7.1.-). The catalytic activity is annotated with experimental evidence (ECO:0000269|PubMed:33372776, Zhang et al. 2021 JACS) as precisely the reaction in Choice A. Both current and historical (entry version 6) UniProt records confirm the identical reaction string."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public in June 2025 and the experimental paper is from 2021; the annotation carries experimental evidence (ECO:0000269), not merely computational inference.",
-    "The sequence match between the benchmark input and the UniProt entry is confirmed by SHA-256 hash.",
-    "The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was absent from the evaluated model input.",
-    "While weak motif-based elimination of B, C, D is possible, it does not constitute reliable reasoning to positively select A over any other phosphotransferase reaction."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span fundamentally different enzyme classes (kinase, carotenoid hydroxylase, protein phosphatase, racemase), making them structurally distinct. The correct answer is unambiguous given the annotation; the distractors are not genuinely competitive once the enzyme class is known."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0061",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches UniProt entry A0A7T8F1J6 (FRZJ_CLASX, Phosphotransferase FrzJ, EC 2.7.1.-). The catalytic activity is annotated with experimental evidence (ECO:0000269|PubMed:33372776, Zhang et al. 2021 JACS) as precisely the reaction in Choice A. Both current and historical (entry version 6) UniProt records confirm the identical reaction string.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could weakly argue by elimination: the sequence lacks a canonical P450 heme-binding motif (CXXGXXC) or ferredoxin-interaction surface expected for a carotenoid hydroxylase (B); it lacks the DXD…GD…HG…GD phosphatase motif of a Ser/Thr protein phosphatase (C); and it lacks PLP-dependent enzyme signatures expected for a histidine racemase (D). A fragment 'HGD' in 'VHGDILSRK' is superficially kinase-like, hinting at a phosphotransferase (A). However, this reasoning is extremely weak and speculative.",
-    "missing_item_specific_fact": "The specific identity of the substrate (the named azatricyclo-dodecane diol) and the product (FR901483) cannot be inferred from the amino acid sequence. Even correctly classifying the enzyme as a kinase does not reveal that it phosphorylates this particular exotic natural-product precursor in the FR901483 biosynthetic pathway. This requires the item-specific annotation of FrzJ from the 2021 JACS paper.",
-    "reason": "The positive identification of the exact reaction—specifically the exotic named substrate and FR901483 product—depends entirely on knowing the protein's database annotation or the published biosynthetic pathway. General sequence-based reasoning cannot predict that a 385-residue fungal phosphotransferase acts on this particular complex organic molecule. The elimination of distractors B, C, D by motif absence is suggestive but insufficient for confident positive identification of A."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span fundamentally different enzyme classes (kinase, carotenoid hydroxylase, protein phosphatase, racemase), making them structurally distinct. The correct answer is unambiguous given the annotation; the distractors are not genuinely competitive once the enzyme class is known."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public in June 2025 and the experimental paper is from 2021; the annotation carries experimental evidence (ECO:0000269), not merely computational inference.",
-    "The sequence match between the benchmark input and the UniProt entry is confirmed by SHA-256 hash.",
-    "The identity origin (accession inferred from dataset image-path metadata) is reviewer-only and was absent from the evaluated model input.",
-    "While weak motif-based elimination of B, C, D is possible, it does not constitute reliable reasoning to positively select A over any other phosphotransferase reaction."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7T8F1J6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c12954e7dfb6e61db6f47103df90fa231f2f74664773e0f3f3cd83cda3251164",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 385,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c12954e7dfb6e61db6f47103df90fa231f2f74664773e0f3f3cd83cda3251164",
   "current_entry_audit": {
     "entryVersion": 8,
     "firstPublicDate": "2025-06-18",
@@ -549,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
-  "current_source_sequence_sha256": "c12954e7dfb6e61db6f47103df90fa231f2f74664773e0f3f3cd83cda3251164",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 385,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c12954e7dfb6e61db6f47103df90fa231f2f74664773e0f3f3cd83cda3251164",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 6,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7T8F1J6",
   "selected_historical_entry_version": 6,
+  "selected_historical_record_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
+  "selected_historical_source_sequence_length": 385,
+  "selected_historical_source_sequence_sha256": "c12954e7dfb6e61db6f47103df90fa231f2f74664773e0f3f3cd83cda3251164",
   "selected_historical_version": {
     "accession": "A0A7T8F1J6",
     "database": "Swiss-Prot",
@@ -567,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FRZJ_CLASX",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
-  "selected_historical_source_sequence_sha256": "c12954e7dfb6e61db6f47103df90fa231f2f74664773e0f3f3cd83cda3251164",
-  "selected_historical_source_sequence_length": 385,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 6,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json",
-  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
-  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7T8F1J6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json"
 }
 ```
 
@@ -617,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json",
-  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
-  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":8,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json"
 }
 ```
 
@@ -636,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json",
-  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
-  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Hypocreaceae\",\"Cladobotryum\"],\"scientificName\":\"Cladobotryum sp\",\"taxonId\":2040732}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json"
 }
 ```
 
@@ -655,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json",
-  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
-  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"FR901483 biosynthesis clusters protein J\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"2.7.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Phosphotransferase FrzJ\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json"
 }
 ```
 
@@ -674,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json",
-  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
-  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:83616\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"name\":\"(1S,3S,6S,7S,8S,9S)-6-[(4-methoxyphenyl)methyl]-3-(methylamino)-5-azatricyclo[6.3.1.0(1,5)]dodecane-7,9-diol + ATP = (-)-FR901483 + ADP + 2 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:83615\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:233173\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:233182\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json"
 }
 ```
 
@@ -693,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json",
-  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
-  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang Z.\",\"Tamura Y.\",\"Tang M.\",\"Qiao T.\",\"Sato M.\",\"Otsu Y.\",\"Sasamura S.\",\"Taniguchi M.\",\"Watanabe K.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33372776\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.0c12352\"}],\"citationType\":\"journal article\",\"firstPage\":\"132\",\"id\":\"33372776\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"136\",\"publicationDate\":\"2021\",\"title\":\"Biosynthesis of the Immunosuppressant (-)-FR901483.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"11231\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:50.675828+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c8973cce1ed0e2fab533a94cb1b8b2dc4cfa81417a13963fef0bf5204d549a83",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1J6.json"
 }
 ```
 
@@ -711,18 +463,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6",
-  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
-  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   FRZJ_CLASX              Reviewed;         385 AA.\nAC   A0A7T8F1J6;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 6.\nDE   RecName: Full=Phosphotransferase FrzJ {ECO:0000303|PubMed:33372776};\nDE            EC=2.7.1.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis clusters protein J {ECO:0000303|PubMed:33372776};\nGN   Name=FrzJ {ECO:0000303|PubMed:33372776};\nOS   Cladobotryum sp.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Hypocreaceae; Cladobotryum.\nOX   NCBI_TaxID=2040732;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6"
 }
 ```
 
@@ -732,18 +484,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6",
-  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
-  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Phosphotransferase FrzJ {ECO:0000303|PubMed:33372776};\nDE            EC=2.7.1.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis clusters protein J {ECO:0000303|PubMed:33372776};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6"
 }
 ```
 
@@ -753,18 +505,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6",
-  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
-  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
-  "source_locator": "lines 14-22",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, AND\nRP   PATHWAY.\nRC   STRAIN=11231;\nRX   PubMed=33372776; DOI=10.1021/jacs.0c12352;\nRA   Zhang Z., Tamura Y., Tang M., Qiao T., Sato M., Otsu Y., Sasamura S.,\nRA   Taniguchi M., Watanabe K., Tang Y.;\nRT   \"Biosynthesis of the Immunosuppressant (-)-FR901483.\";\nRL   J. Am. Chem. Soc. 143:132-136(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6"
 }
 ```
 
@@ -774,18 +526,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6",
-  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
-  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
-  "source_locator": "lines 53-60",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=(1S,3S,6S,7S,8S,9S)-6-[(4-methoxyphenyl)methyl]-3-\nCC         (methylamino)-5-azatricyclo[6.3.1.0(1,5)]dodecane-7,9-diol + ATP =\nCC         (-)-FR901483 + ADP + 2 H(+); Xref=Rhea:RHEA:83615, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:30616, ChEBI:CHEBI:233173, ChEBI:CHEBI:233182,\nCC         ChEBI:CHEBI:456216; Evidence={ECO:0000269|PubMed:33372776};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:83616;\nCC         Evidence={ECO:0000269|PubMed:33372776};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-01T06:27:33.489845+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a3c8964073737ce02aefe4d7b1c7dc5803711f2bade9edceed980e3bae3f99f8",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1J6?format=txt&versions=6"
 }
 ```
 

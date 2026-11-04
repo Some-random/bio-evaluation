@@ -1,18 +1,16 @@
-# catalytic_activity_0132: before and after transfer clarification
+# catalytic_activity_0132
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0132.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0132.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **A** — Couples ATP hydrolysis with the unwinding of duplex DNA by translocating in the 3&#x27;-5&#x27; direction.
+**Expected answer:** **A** — Couples ATP hydrolysis with the unwinding of duplex DNA by translocating in the 3&#x27;-5&#x27; direction.
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for ATP-dependent helicase Lhr-Core, whose catalytic-activity annotation gives the reaction in choice A and cites experimental evidence (ECO:0000269). This supports the key for this sequence, though the primary study was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The long sequence may offer clues to an ATP-dependent helicase, making A more plausible than the methyltransferase and transporter alternatives. But those clues do not establish this protein's DNA-unwinding activity or its specific 3′-to-5′ direction.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental evidence that this sequence encodes Lhr-Core, a helicase that couples ATP hydrolysis to duplex-DNA unwinding with 3′-to-5′ translocation.
-
-
-**Reason**
-
-> Choosing the precise reaction requires a protein-specific functional fact not supplied in the question. Recognizing generic helicase-like sequence features would not by itself determine the stated substrate, coupling, and directionality.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched-sequence annotation supports choice A; the other options describe distinct activities.
-
-
-### Important caveats
-
-- The supporting UniProt annotation is sequence-matched and cites experimental evidence, but the cited primary paper was not independently validated here.
-- Reviewer-only accession and annotation information was not present in the original question and does not make the question reasoning-supported.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The long sequence may offer clues to an ATP-dependent helicase, making A more plausible than the methyltransferase and transporter alternatives. But those clues do not establish this protein's DNA-unwinding activity or its specific 3′-to-5′ direction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence that this sequence encodes Lhr-Core, a helicase that couples ATP hydrolysis to duplex-DNA unwinding with 3′-to-5′ translocation.",
-    "reason": "Choosing the precise reaction requires a protein-specific functional fact not supplied in the question. Recognizing generic helicase-like sequence features would not by itself determine the stated substrate, coupling, and directionality."
-  },
-  "case_id": "catalytic_activity_0132",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for ATP-dependent helicase Lhr-Core, whose catalytic-activity annotation gives the reaction in choice A and cites experimental evidence (ECO:0000269). This supports the key for this sequence, though the primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation is sequence-matched and cites experimental evidence, but the cited primary paper was not independently validated here.",
-    "Reviewer-only accession and annotation information was not present in the original question and does not make the question reasoning-supported."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation supports choice A; the other options describe distinct activities."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0132",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for ATP-dependent helicase Lhr-Core, whose catalytic-activity annotation gives the reaction in choice A and cites experimental evidence (ECO:0000269). This supports the key for this sequence, though the primary study was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The long sequence may offer clues to an ATP-dependent helicase, making A more plausible than the methyltransferase and transporter alternatives. But those clues do not establish this protein's DNA-unwinding activity or its specific 3′-to-5′ direction.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence that this sequence encodes Lhr-Core, a helicase that couples ATP hydrolysis to duplex-DNA unwinding with 3′-to-5′ translocation.",
-    "reason": "Choosing the precise reaction requires a protein-specific functional fact not supplied in the question. Recognizing generic helicase-like sequence features would not by itself determine the stated substrate, coupling, and directionality."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence annotation supports choice A; the other options describe distinct activities."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation is sequence-matched and cites experimental evidence, but the cited primary paper was not independently validated here.",
-    "Reviewer-only accession and annotation information was not present in the original question and does not make the question reasoning-supported."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q88NV1 (LHRC_PSEPK, ATP-dependent helicase Lhr-Core from Pseudomonas putida KT2440) with exact sequence match confirmed in both current and historical entries. The catalytic activity annotation (EC 5.6.2.4) explicitly states 'Couples ATP hydrolysis with the unwinding of duplex DNA by translocating in the 3'-5' direction,' supported by experimental evidence (ECO:0000269, PubMed:30224353, Ejaz & Shuman 2018). This is direct experimental evidence, not computational inference.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 816-residue sequence contains motifs suggestive of a RecA-like helicase: a Walker B-like motif (VVVDEW in a hydrophobic context), a Motif VI-like 'GSAK' element, and a large RecA-fold-sized architecture. The methyltransferase distractors (B, C) require a Rossmann-like SAM-binding fold (VIGXG motif) and act on highly specific unusual spiro substrates—neither the fold nor the substrate context is evident. The methionine transporter (D) would require multiple transmembrane helices, which are absent from this soluble protein. Among the four choices, only A describes an ATP-dependent nucleic acid motor, consistent with the recognizable helicase motifs. The specific '3'-5' translocation directionality is a database-annotated fact, but since no 5'-3' helicase option is offered, identifying the protein as a helicase is sufficient to select A.
-
-
-**Missing item-specific fact**
-
-> The precise 3'-5' translocation directionality of Lhr-Core is an experimentally determined property (PubMed:30224353) not trivially deducible from sequence motifs alone; however, this detail is not the distinguishing factor among the provided choices since no opposing-direction helicase option exists.
-
-
-**Reason**
-
-> A model with general knowledge of RecA-like helicase motifs (Walker B, Motif VI) and the structural requirements of methyltransferases and membrane transporters can meaningfully narrow the choices to A. The distractors belong to entirely different enzyme classes with incompatible structural signatures. The specific directionality embedded in A's text is an annotation fact, but it does not create ambiguity among the offered options.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and C are methyltransferases acting on exotic spiro compounds requiring a Rossmann fold; option D is a membrane transporter. None of these structural or functional features are present in the sequence. Only A (ATP-dependent helicase) is consistent with the observable RecA-like motifs and the protein's soluble, large-domain architecture.
-
-
-### Important caveats
-
-- The specific '3'-5' directionality in option A is an experimentally determined annotation (ECO:0000269) and is not independently derivable from sequence motifs alone; however, this does not affect answer selection because no 5'-3' helicase alternative is provided.
-- The Walker A motif in this sequence is degenerate and not a textbook GxxxxGKT; identification relies on a combination of Walker B (VVVDEW), Motif VI (GSAK), and overall RecA-fold architecture.
-- The methyltransferase substrates in B and C are highly unusual spiro compounds; even if a model recognized a SAM-binding motif, these specific substrates would be implausible without the exact enzyme identity.
-- Sequence match to Q88NV1 is confirmed (SHA-256 match, 816 AA, both current and historical entries).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 816-residue sequence contains motifs suggestive of a RecA-like helicase: a Walker B-like motif (VVVDEW in a hydrophobic context), a Motif VI-like 'GSAK' element, and a large RecA-fold-sized architecture. The methyltransferase distractors (B, C) require a Rossmann-like SAM-binding fold (VIGXG motif) and act on highly specific unusual spiro substrates—neither the fold nor the substrate context is evident. The methionine transporter (D) would require multiple transmembrane helices, which are absent from this soluble protein. Among the four choices, only A describes an ATP-dependent nucleic acid motor, consistent with the recognizable helicase motifs. The specific '3'-5' translocation directionality is a database-annotated fact, but since no 5'-3' helicase option is offered, identifying the protein as a helicase is sufficient to select A.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The precise 3'-5' translocation directionality of Lhr-Core is an experimentally determined property (PubMed:30224353) not trivially deducible from sequence motifs alone; however, this detail is not the distinguishing factor among the provided choices since no opposing-direction helicase option exists.",
-    "reason": "A model with general knowledge of RecA-like helicase motifs (Walker B, Motif VI) and the structural requirements of methyltransferases and membrane transporters can meaningfully narrow the choices to A. The distractors belong to entirely different enzyme classes with incompatible structural signatures. The specific directionality embedded in A's text is an annotation fact, but it does not create ambiguity among the offered options."
-  },
-  "case_id": "catalytic_activity_0132",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C7",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q88NV1 (LHRC_PSEPK, ATP-dependent helicase Lhr-Core from Pseudomonas putida KT2440) with exact sequence match confirmed in both current and historical entries. The catalytic activity annotation (EC 5.6.2.4) explicitly states 'Couples ATP hydrolysis with the unwinding of duplex DNA by translocating in the 3'-5' direction,' supported by experimental evidence (ECO:0000269, PubMed:30224353, Ejaz & Shuman 2018). This is direct experimental evidence, not computational inference."
-  },
-  "important_caveats": [
-    "The specific '3'-5' directionality in option A is an experimentally determined annotation (ECO:0000269) and is not independently derivable from sequence motifs alone; however, this does not affect answer selection because no 5'-3' helicase alternative is provided.",
-    "The Walker A motif in this sequence is degenerate and not a textbook GxxxxGKT; identification relies on a combination of Walker B (VVVDEW), Motif VI (GSAK), and overall RecA-fold architecture.",
-    "The methyltransferase substrates in B and C are highly unusual spiro compounds; even if a model recognized a SAM-binding motif, these specific substrates would be implausible without the exact enzyme identity.",
-    "Sequence match to Q88NV1 is confirmed (SHA-256 match, 816 AA, both current and historical entries)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and C are methyltransferases acting on exotic spiro compounds requiring a Rossmann fold; option D is a membrane transporter. None of these structural or functional features are present in the sequence. Only A (ATP-dependent helicase) is consistent with the observable RecA-like motifs and the protein's soluble, large-domain architecture."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0132",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q88NV1 (LHRC_PSEPK, ATP-dependent helicase Lhr-Core from Pseudomonas putida KT2440) with exact sequence match confirmed in both current and historical entries. The catalytic activity annotation (EC 5.6.2.4) explicitly states 'Couples ATP hydrolysis with the unwinding of duplex DNA by translocating in the 3'-5' direction,' supported by experimental evidence (ECO:0000269, PubMed:30224353, Ejaz & Shuman 2018). This is direct experimental evidence, not computational inference.",
-    "evidence_ids": ["C1", "C4", "C5", "C7", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 816-residue sequence contains motifs suggestive of a RecA-like helicase: a Walker B-like motif (VVVDEW in a hydrophobic context), a Motif VI-like 'GSAK' element, and a large RecA-fold-sized architecture. The methyltransferase distractors (B, C) require a Rossmann-like SAM-binding fold (VIGXG motif) and act on highly specific unusual spiro substrates—neither the fold nor the substrate context is evident. The methionine transporter (D) would require multiple transmembrane helices, which are absent from this soluble protein. Among the four choices, only A describes an ATP-dependent nucleic acid motor, consistent with the recognizable helicase motifs. The specific '3'-5' translocation directionality is a database-annotated fact, but since no 5'-3' helicase option is offered, identifying the protein as a helicase is sufficient to select A.",
-    "missing_item_specific_fact": "The precise 3'-5' translocation directionality of Lhr-Core is an experimentally determined property (PubMed:30224353) not trivially deducible from sequence motifs alone; however, this detail is not the distinguishing factor among the provided choices since no opposing-direction helicase option exists.",
-    "reason": "A model with general knowledge of RecA-like helicase motifs (Walker B, Motif VI) and the structural requirements of methyltransferases and membrane transporters can meaningfully narrow the choices to A. The distractors belong to entirely different enzyme classes with incompatible structural signatures. The specific directionality embedded in A's text is an annotation fact, but it does not create ambiguity among the offered options."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and C are methyltransferases acting on exotic spiro compounds requiring a Rossmann fold; option D is a membrane transporter. None of these structural or functional features are present in the sequence. Only A (ATP-dependent helicase) is consistent with the observable RecA-like motifs and the protein's soluble, large-domain architecture."
-  },
-  "important_caveats": [
-    "The specific '3'-5' directionality in option A is an experimentally determined annotation (ECO:0000269) and is not independently derivable from sequence motifs alone; however, this does not affect answer selection because no 5'-3' helicase alternative is provided.",
-    "The Walker A motif in this sequence is degenerate and not a textbook GxxxxGKT; identification relies on a combination of Walker B (VVVDEW), Motif VI (GSAK), and overall RecA-fold architecture.",
-    "The methyltransferase substrates in B and C are highly unusual spiro compounds; even if a model recognized a SAM-binding motif, these specific substrates would be implausible without the exact enzyme identity.",
-    "Sequence match to Q88NV1 is confirmed (SHA-256 match, 816 AA, both current and historical entries)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q88NV1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "04b81b45ba26233790ff428a795f481711ac7e3aac4c98668894f3efbb9df8b6",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 816,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "04b81b45ba26233790ff428a795f481711ac7e3aac4c98668894f3efbb9df8b6",
   "current_entry_audit": {
     "entryVersion": 136,
     "firstPublicDate": "2025-06-18",
@@ -531,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-06-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "current_source_sequence_sha256": "04b81b45ba26233790ff428a795f481711ac7e3aac4c98668894f3efbb9df8b6",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 816,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "04b81b45ba26233790ff428a795f481711ac7e3aac4c98668894f3efbb9df8b6",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 134,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q88NV1",
   "selected_historical_entry_version": 134,
+  "selected_historical_record_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
+  "selected_historical_source_sequence_length": 816,
+  "selected_historical_source_sequence_sha256": "04b81b45ba26233790ff428a795f481711ac7e3aac4c98668894f3efbb9df8b6",
   "selected_historical_version": {
     "accession": "Q88NV1",
     "database": "Swiss-Prot",
@@ -549,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "LHRC_PSEPK",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
-  "selected_historical_source_sequence_sha256": "04b81b45ba26233790ff428a795f481711ac7e3aac4c98668894f3efbb9df8b6",
-  "selected_historical_source_sequence_length": 816,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 134,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json",
-  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q88NV1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
+  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json"
 }
 ```
 
@@ -599,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json",
-  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":136,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-06-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
+  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json"
 }
 ```
 
@@ -618,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json",
-  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Pseudomonadales\",\"Pseudomonadaceae\",\"Pseudomonas\"],\"scientificName\":\"Pseudomonas putida (strain ATCC 47054 / DSM 6125 / CFBP 8728 / NCIMB 11950 / KT2440)\",\"taxonId\":160488}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
+  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json"
 }
 ```
 
@@ -637,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json",
-  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DNA and RNA:DNA 3'-5' helicase Lhr-Core\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30224353\",\"source\":\"PubMed\"}],\"value\":\"5.6.2.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30224353\",\"source\":\"PubMed\"}],\"value\":\"5.6.2.4\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30224353\",\"source\":\"PubMed\"}],\"value\":\"ATP-dependent helicase Lhr-Core\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30224353\",\"source\":\"PubMed\"}],\"value\":\"Lhr-Core\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
+  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json"
 }
 ```
 
@@ -656,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json",
-  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"5.6.2.4\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30224353\",\"source\":\"PubMed\"}],\"name\":\"Couples ATP hydrolysis with the unwinding of duplex DNA by translocating in the 3'-5' direction.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
+  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json"
 }
 ```
 
@@ -675,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json",
-  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"5.6.2.4\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30224353\",\"source\":\"PubMed\"}],\"name\":\"ATP + H2O = ADP + phosphate + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:13065\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
+  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json"
 }
 ```
 
@@ -694,15 +451,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json",
-  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
-  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Ejaz A.\",\"Shuman S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30224353\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.ra118.005296\"}],\"citationType\":\"journal article\",\"firstPage\":\"17491\",\"id\":\"30224353\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"17504\",\"publicationDate\":\"2018\",\"title\":\"Characterization of Lhr-Core DNA helicase and manganese- dependent DNA nuclease components of a bacterial gene cluster encoding nucleic acid repair enzymes.\",\"volume\":\"293\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 47054 / DSM 6125 / CFBP 8728 / NCIMB 11950 / KT2440\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION AS A HELICASE\",\"FUNCTION AS AN ATPASE\",\"COFACTOR\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:31:56.411071+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6d8894082892e958a6d474c6369d1253a40ea091c6c725a7684d7987f6ec7875",
+  "url": "https://rest.uniprot.org/uniprotkb/Q88NV1.json"
 }
 ```
 
@@ -712,18 +469,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 134,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134",
-  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
-  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   LHRC_PSEPK              Reviewed;         816 AA.\nAC   Q88NV1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JUN-2003, sequence version 1.\nDT   28-JAN-2026, entry version 134.\nDE   RecName: Full=ATP-dependent helicase Lhr-Core {ECO:0000303|PubMed:30224353};\nDE            Short=Lhr-Core {ECO:0000303|PubMed:30224353};\nDE            EC=5.6.2.- {ECO:0000269|PubMed:30224353};\nDE            EC=5.6.2.4 {ECO:0000269|PubMed:30224353};\nDE   AltName: Full=DNA and RNA:DNA 3'-5' helicase Lhr-Core {ECO:0000305};\nGN   OrderedLocusNames=PP_1103 {ECO:0000312|EMBL:AAN66728.1};\nOS   Pseudomonas putida (strain ATCC 47054 / DSM 6125 / CFBP 8728 / NCIMB 11950\nOS   / KT2440).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Pseudomonadales; Pseudomonadaceae; Pseudomonas.\nOX   NCBI_TaxID=160488;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 134,
+  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
+  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134"
 }
 ```
 
@@ -733,18 +490,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 134,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134",
-  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
-  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=ATP-dependent helicase Lhr-Core {ECO:0000303|PubMed:30224353};\nDE            Short=Lhr-Core {ECO:0000303|PubMed:30224353};\nDE            EC=5.6.2.- {ECO:0000269|PubMed:30224353};\nDE            EC=5.6.2.4 {ECO:0000269|PubMed:30224353};\nDE   AltName: Full=DNA and RNA:DNA 3'-5' helicase Lhr-Core {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 134,
+  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
+  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134"
 }
 ```
 
@@ -754,18 +511,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 134,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134",
-  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
-  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
-  "source_locator": "lines 32-41",
   "excerpt": "RN   [2]\nRP   FUNCTION AS A HELICASE, FUNCTION AS AN ATPASE, COFACTOR, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRC   STRAIN=ATCC 47054 / DSM 6125 / CFBP 8728 / NCIMB 11950 / KT2440;\nRX   PubMed=30224353; DOI=10.1074/jbc.ra118.005296;\nRA   Ejaz A., Shuman S.;\nRT   \"Characterization of Lhr-Core DNA helicase and manganese- dependent DNA\nRT   nuclease components of a bacterial gene cluster encoding nucleic acid\nRT   repair enzymes.\";\nRL   J. Biol. Chem. 293:17491-17504(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 134,
+  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
+  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134"
 }
 ```
 
@@ -775,18 +532,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 134,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134",
-  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
-  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
-  "source_locator": "lines 49-52",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Couples ATP hydrolysis with the unwinding of duplex DNA by\nCC         translocating in the 3'-5' direction.; EC=5.6.2.4;\nCC         Evidence={ECO:0000269|PubMed:30224353};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 134,
+  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 49-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
+  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134"
 }
 ```
 
@@ -796,18 +553,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 134,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134",
-  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
-  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
-  "source_locator": "lines 53-57",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=ATP + H2O = ADP + phosphate + H(+); Xref=Rhea:RHEA:13065,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:43474, ChEBI:CHEBI:456216; EC=5.6.2.4;\nCC         Evidence={ECO:0000269|PubMed:30224353};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 134,
+  "retrieved_utc": "2026-11-02T04:32:03.031844+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "abb725c0c25289242145250b8c248a3dabbf40cb4984bd0802e1533569e5a66f",
+  "url": "https://rest.uniprot.org/unisave/Q88NV1?format=txt&versions=134"
 }
 ```
 

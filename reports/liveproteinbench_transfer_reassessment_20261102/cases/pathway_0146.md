@@ -1,18 +1,16 @@
-# pathway_0146: before and after transfer clarification
+# pathway_0146
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0146.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0146.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Cofactor biosynthesis
+**Expected answer:** **B** — Cofactor biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Drosophila IscU iron-sulfur cluster assembly enzyme. Its pathway annotation places it in cofactor biosynthesis, specifically iron-sulfur cluster biosynthesis, supporting choice B. The cited annotation is linked to an experimental study, though that study was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Knowing that IscU is an iron-sulfur cluster assembly scaffold would distinguish cofactor biosynthesis from the listed methionine, NAD, and oxylipin pathways.
-
-
-**Missing item-specific fact**
-
-> The input does not identify the protein as IscU or state its iron-sulfur cluster assembly function; that protein-specific identity or functional annotation is needed to select B.
-
-
-**Reason**
-
-> The sequence alone supplies no sufficiently distinctive, general biological clue for assigning this precise pathway without recognizing the protein or relying on a protein-specific annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although B is broad, the other options name pathways not supported for this protein; the evidence specifically associates IscU with iron-sulfur cluster biosynthesis.
-
-
-### Important caveats
-
-- The reviewer-only sources match the supplied sequence but were not available to the evaluated model.
-- The exact author source snapshot is unknown; both a historical record and the current entry support the pathway annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Knowing that IscU is an iron-sulfur cluster assembly scaffold would distinguish cofactor biosynthesis from the listed methionine, NAD, and oxylipin pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The input does not identify the protein as IscU or state its iron-sulfur cluster assembly function; that protein-specific identity or functional annotation is needed to select B.",
-    "reason": "The sequence alone supplies no sufficiently distinctive, general biological clue for assigning this precise pathway without recognizing the protein or relying on a protein-specific annotation."
-  },
-  "case_id": "pathway_0146",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila IscU iron-sulfur cluster assembly enzyme. Its pathway annotation places it in cofactor biosynthesis, specifically iron-sulfur cluster biosynthesis, supporting choice B. The cited annotation is linked to an experimental study, though that study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reviewer-only sources match the supplied sequence but were not available to the evaluated model.",
-    "The exact author source snapshot is unknown; both a historical record and the current entry support the pathway annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although B is broad, the other options name pathways not supported for this protein; the evidence specifically associates IscU with iron-sulfur cluster biosynthesis."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0146",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila IscU iron-sulfur cluster assembly enzyme. Its pathway annotation places it in cofactor biosynthesis, specifically iron-sulfur cluster biosynthesis, supporting choice B. The cited annotation is linked to an experimental study, though that study was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Knowing that IscU is an iron-sulfur cluster assembly scaffold would distinguish cofactor biosynthesis from the listed methionine, NAD, and oxylipin pathways.",
-    "missing_item_specific_fact": "The input does not identify the protein as IscU or state its iron-sulfur cluster assembly function; that protein-specific identity or functional annotation is needed to select B.",
-    "reason": "The sequence alone supplies no sufficiently distinctive, general biological clue for assigning this precise pathway without recognizing the protein or relying on a protein-specific annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although B is broad, the other options name pathways not supported for this protein; the evidence specifically associates IscU with iron-sulfur cluster biosynthesis."
-  },
-  "important_caveats": [
-    "The reviewer-only sources match the supplied sequence but were not available to the evaluated model.",
-    "The exact author source snapshot is unknown; both a historical record and the current entry support the pathway annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9VHK6 (ISCU_DROME) annotates the pathway as 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' with direct assay evidence (ECO:0000269, PubMed:27738674). The protein is the Iron-sulfur cluster assembly enzyme IscU from Drosophila melanogaster, experimentally characterized for de novo FeS-cluster formation. Choice B ('Cofactor biosynthesis') directly matches the UniProt pathway category.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the conserved 'GTGLVG' motif and cysteine residues at positions consistent with the IscU/Isu scaffold protein family (e.g., C in 'APACGDVMK' and 'LHCSMLAEDAIKAALADYK'), which coordinate Fe-S clusters. The small ~154-aa size and overall fold are hallmarks of IscU scaffold proteins. A biologist familiar with protein-family signatures could recognize these features, assign the protein to the IscU family, and conclude it participates in iron-sulfur cluster assembly—a cofactor biosynthesis pathway. The distractors (methionine biosynthesis, NAD biosynthesis, oxylipin biosynthesis) involve entirely different enzyme classes and cofactor chemistries not suggested by the sequence motifs.
-
-
-**Missing item-specific fact**
-
-> None strictly missing; the conserved IscU family motifs (GTGLVG, cysteine spacing) are present in the supplied sequence and are general protein-family knowledge rather than an item-specific annotation.
-
-
-**Reason**
-
-> Recognition of the GTGLVG motif and Fe-S-coordinating cysteine pattern as hallmarks of the IscU scaffold family constitutes application of general protein-family knowledge, not memorization of a single database entry. From family assignment, the pathway (iron-sulfur cluster biosynthesis under 'Cofactor biosynthesis') follows logically. The task is somewhat specialized but does not require an item-specific lookup beyond well-established family signatures.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent highly distinct metabolic contexts (amino acid biosynthesis, cofactor/Fe-S cluster assembly, NAD salvage, plant oxylipin signaling). Once the protein is identified as an IscU scaffold, only Choice B is defensible. Choices A and D are primarily plant/microbial pathways implausible in Drosophila; Choice C describes a single NAD-salvage reaction step unrelated to Fe-S chemistry.
-
-
-### Important caveats
-
-- The pathway annotation carries experimental evidence (ECO:0000269, direct assay from PubMed:27738674), not merely computational transfer.
-- The GTGLVG motif and cysteine spacing are family-level signatures; a model without protein-family training data would struggle to assign the pathway from sequence alone, making this a specialized-knowledge task even if technically reasoning-supported.
-- Choice C's wording ('deamido-NAD(+) from nicotinate D-ribonucleotide: step 1/1') describes a single reaction step rather than a pathway name, which is a minor formatting oddity but does not create genuine ambiguity.
-- The identity origin (UniProt accession inferred from dataset image-path metadata) is reviewer-only and was absent from the evaluated model's input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the conserved 'GTGLVG' motif and cysteine residues at positions consistent with the IscU/Isu scaffold protein family (e.g., C in 'APACGDVMK' and 'LHCSMLAEDAIKAALADYK'), which coordinate Fe-S clusters. The small ~154-aa size and overall fold are hallmarks of IscU scaffold proteins. A biologist familiar with protein-family signatures could recognize these features, assign the protein to the IscU family, and conclude it participates in iron-sulfur cluster assembly—a cofactor biosynthesis pathway. The distractors (methionine biosynthesis, NAD biosynthesis, oxylipin biosynthesis) involve entirely different enzyme classes and cofactor chemistries not suggested by the sequence motifs.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly missing; the conserved IscU family motifs (GTGLVG, cysteine spacing) are present in the supplied sequence and are general protein-family knowledge rather than an item-specific annotation.",
-    "reason": "Recognition of the GTGLVG motif and Fe-S-coordinating cysteine pattern as hallmarks of the IscU scaffold family constitutes application of general protein-family knowledge, not memorization of a single database entry. From family assignment, the pathway (iron-sulfur cluster biosynthesis under 'Cofactor biosynthesis') follows logically. The task is somewhat specialized but does not require an item-specific lookup beyond well-established family signatures."
-  },
-  "case_id": "pathway_0146",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VHK6 (ISCU_DROME) annotates the pathway as 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' with direct assay evidence (ECO:0000269, PubMed:27738674). The protein is the Iron-sulfur cluster assembly enzyme IscU from Drosophila melanogaster, experimentally characterized for de novo FeS-cluster formation. Choice B ('Cofactor biosynthesis') directly matches the UniProt pathway category."
-  },
-  "important_caveats": [
-    "The pathway annotation carries experimental evidence (ECO:0000269, direct assay from PubMed:27738674), not merely computational transfer.",
-    "The GTGLVG motif and cysteine spacing are family-level signatures; a model without protein-family training data would struggle to assign the pathway from sequence alone, making this a specialized-knowledge task even if technically reasoning-supported.",
-    "Choice C's wording ('deamido-NAD(+) from nicotinate D-ribonucleotide: step 1/1') describes a single reaction step rather than a pathway name, which is a minor formatting oddity but does not create genuine ambiguity.",
-    "The identity origin (UniProt accession inferred from dataset image-path metadata) is reviewer-only and was absent from the evaluated model's input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent highly distinct metabolic contexts (amino acid biosynthesis, cofactor/Fe-S cluster assembly, NAD salvage, plant oxylipin signaling). Once the protein is identified as an IscU scaffold, only Choice B is defensible. Choices A and D are primarily plant/microbial pathways implausible in Drosophila; Choice C describes a single NAD-salvage reaction step unrelated to Fe-S chemistry."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0146",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VHK6 (ISCU_DROME) annotates the pathway as 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' with direct assay evidence (ECO:0000269, PubMed:27738674). The protein is the Iron-sulfur cluster assembly enzyme IscU from Drosophila melanogaster, experimentally characterized for de novo FeS-cluster formation. Choice B ('Cofactor biosynthesis') directly matches the UniProt pathway category.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the conserved 'GTGLVG' motif and cysteine residues at positions consistent with the IscU/Isu scaffold protein family (e.g., C in 'APACGDVMK' and 'LHCSMLAEDAIKAALADYK'), which coordinate Fe-S clusters. The small ~154-aa size and overall fold are hallmarks of IscU scaffold proteins. A biologist familiar with protein-family signatures could recognize these features, assign the protein to the IscU family, and conclude it participates in iron-sulfur cluster assembly—a cofactor biosynthesis pathway. The distractors (methionine biosynthesis, NAD biosynthesis, oxylipin biosynthesis) involve entirely different enzyme classes and cofactor chemistries not suggested by the sequence motifs.",
-    "missing_item_specific_fact": "None strictly missing; the conserved IscU family motifs (GTGLVG, cysteine spacing) are present in the supplied sequence and are general protein-family knowledge rather than an item-specific annotation.",
-    "reason": "Recognition of the GTGLVG motif and Fe-S-coordinating cysteine pattern as hallmarks of the IscU scaffold family constitutes application of general protein-family knowledge, not memorization of a single database entry. From family assignment, the pathway (iron-sulfur cluster biosynthesis under 'Cofactor biosynthesis') follows logically. The task is somewhat specialized but does not require an item-specific lookup beyond well-established family signatures."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent highly distinct metabolic contexts (amino acid biosynthesis, cofactor/Fe-S cluster assembly, NAD salvage, plant oxylipin signaling). Once the protein is identified as an IscU scaffold, only Choice B is defensible. Choices A and D are primarily plant/microbial pathways implausible in Drosophila; Choice C describes a single NAD-salvage reaction step unrelated to Fe-S chemistry."
-  },
-  "important_caveats": [
-    "The pathway annotation carries experimental evidence (ECO:0000269, direct assay from PubMed:27738674), not merely computational transfer.",
-    "The GTGLVG motif and cysteine spacing are family-level signatures; a model without protein-family training data would struggle to assign the pathway from sequence alone, making this a specialized-knowledge task even if technically reasoning-supported.",
-    "Choice C's wording ('deamido-NAD(+) from nicotinate D-ribonucleotide: step 1/1') describes a single reaction step rather than a pathway name, which is a minor formatting oddity but does not create genuine ambiguity.",
-    "The identity origin (UniProt accession inferred from dataset image-path metadata) is reviewer-only and was absent from the evaluated model's input."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VHK6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "05d96ad7f89c4b2d79479233554410215049beb269b097bdc3f1d62855a807c4",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 154,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "05d96ad7f89c4b2d79479233554410215049beb269b097bdc3f1d62855a807c4",
   "current_entry_audit": {
     "entryVersion": 198,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
-  "current_source_sequence_sha256": "05d96ad7f89c4b2d79479233554410215049beb269b097bdc3f1d62855a807c4",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 154,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "05d96ad7f89c4b2d79479233554410215049beb269b097bdc3f1d62855a807c4",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 196,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VHK6",
   "selected_historical_entry_version": 196,
+  "selected_historical_record_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
+  "selected_historical_source_sequence_length": 154,
+  "selected_historical_source_sequence_sha256": "05d96ad7f89c4b2d79479233554410215049beb269b097bdc3f1d62855a807c4",
   "selected_historical_version": {
     "accession": "Q9VHK6",
     "database": "Swiss-Prot",
@@ -552,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ISCU_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
-  "selected_historical_source_sequence_sha256": "05d96ad7f89c4b2d79479233554410215049beb269b097bdc3f1d62855a807c4",
-  "selected_historical_source_sequence_length": 154,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 196,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json",
-  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
-  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VHK6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json"
 }
 ```
 
@@ -602,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json",
-  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
-  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":198,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json"
 }
 ```
 
@@ -621,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json",
-  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
-  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json"
 }
 ```
 
@@ -640,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json",
-  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
-  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0037637\",\"source\":\"FlyBase\"}],\"value\":\"Iron-sulfur cluster assembly enzyme IscU\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27738674\",\"source\":\"PubMed\"}],\"value\":\"fIscU\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json"
 }
 ```
 
@@ -659,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json",
-  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
-  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27738674\",\"source\":\"PubMed\"}],\"value\":\"Cofactor biosynthesis; iron-sulfur cluster biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json"
 }
 ```
 
@@ -678,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json",
-  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
-  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Dzul S.P.\",\"Rocha A.G.\",\"Rawat S.\",\"Kandegedara A.\",\"Kusowski A.\",\"Pain J.\",\"Murari A.\",\"Pain D.\",\"Dancis A.\",\"Stemmler T.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27738674\"},{\"database\":\"DOI\",\"id\":\"10.1039/c6mt00163g\"}],\"citationType\":\"journal article\",\"firstPage\":\"48\",\"id\":\"27738674\",\"journal\":\"Metallomics\",\"lastPage\":\"60\",\"publicationDate\":\"2017\",\"title\":\"In vitro characterization of a novel Isu homologue from Drosophila melanogaster for de novo FeS-cluster formation.\",\"volume\":\"9\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"COFACTOR\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:33:20.640117+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b19888860b6b7334262a7e391a64d052f6aaf30b31bf5475636fe359508915c5",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VHK6.json"
 }
 ```
 
@@ -696,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 196,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VHK6?format=txt&versions=196",
-  "source_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
-  "retrieved_utc": "2026-11-02T04:33:26.936483+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   ISCU_DROME              Reviewed;         154 AA.\nAC   Q9VHK6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 196.\nDE   RecName: Full=Iron-sulfur cluster assembly enzyme IscU {ECO:0000312|FlyBase:FBgn0037637};\nDE            Short=fIscU {ECO:0000303|PubMed:27738674};\nGN   Name=IscU {ECO:0000312|FlyBase:FBgn0037637};\nGN   Synonyms=Isu1 {ECO:0000312|FlyBase:FBgn0037637};\nGN   ORFNames=CG9836 {ECO:0000312|FlyBase:FBgn0037637};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 196,
+  "retrieved_utc": "2026-11-02T04:33:26.936483+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
+  "url": "https://rest.uniprot.org/unisave/Q9VHK6?format=txt&versions=196"
 }
 ```
 
@@ -717,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 196,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VHK6?format=txt&versions=196",
-  "source_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
-  "retrieved_utc": "2026-11-02T04:33:26.936483+00:00",
-  "source_locator": "lines 85-92",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   FUNCTION, COFACTOR, AND PATHWAY.\nRX   PubMed=27738674; DOI=10.1039/c6mt00163g;\nRA   Dzul S.P., Rocha A.G., Rawat S., Kandegedara A., Kusowski A., Pain J.,\nRA   Murari A., Pain D., Dancis A., Stemmler T.L.;\nRT   \"In vitro characterization of a novel Isu homologue from Drosophila\nRT   melanogaster for de novo FeS-cluster formation.\";\nRL   Metallomics 9:48-60(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 196,
+  "retrieved_utc": "2026-11-02T04:33:26.936483+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-92",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
+  "url": "https://rest.uniprot.org/unisave/Q9VHK6?format=txt&versions=196"
 }
 ```
 
@@ -738,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 196,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VHK6?format=txt&versions=196",
-  "source_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
-  "retrieved_utc": "2026-11-02T04:33:26.936483+00:00",
-  "source_locator": "lines 115-116",
   "excerpt": "CC   -!- PATHWAY: Cofactor biosynthesis; iron-sulfur cluster biosynthesis.\nCC       {ECO:0000269|PubMed:27738674}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 196,
+  "retrieved_utc": "2026-11-02T04:33:26.936483+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 115-116",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4a0c43d94d803f18617308f73644d45abb03d9ffba8aafb11bcad71275354d68",
+  "url": "https://rest.uniprot.org/unisave/Q9VHK6?format=txt&versions=196"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_cellular_component_0144: before and after transfer clarification
+# GO_cellular_component_0144
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0144.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0144.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — other organism cell membrane
+**Expected answer:** **B** — other organism cell membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched historical UniProt entry assigns GO:0044218, “other organism cell membrane,” to this protein. This is a keyword-based database annotation, not direct experimental proof of that specific GO term; the entry separately describes the protein as secreted and its location as the target cell membrane.
-
-Citations as saved: [H4](#evidence-h4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic stretch is consistent with secretion, and the basic short sequence is compatible with a secreted antimicrobial peptide. That may suggest interaction with microbial membranes, but it does not establish the protein’s specific target or distinguish a foreign cell membrane from the external side of a plasma membrane.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this scorpion peptide is secreted and associates with a target organism’s cell membrane, as reflected in the database annotation.
-
-
-**Reason**
-
-> The supplied sequence supports a broad secretion or membrane-interaction hypothesis, but selecting the specific cellular-component term requires protein-specific functional or annotation information absent from the prompt.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> The target-cell-membrane annotation supports B. If the peptide is attached to the extracellular-facing surface of that target’s plasma membrane, C may also describe its location; the prompt does not specify whether the intended term is the foreign membrane as a whole or its external-facing side.
-
-
-### Important caveats
-
-- The current and historical source records match the supplied sequence.
-- The GO annotation for B is computationally assigned by UniProtKB-KW; the source’s target-cell-membrane location statement is not itself a GO annotation for B.
-- The source also reports an experimentally supported secreted location, which is not one of the options.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with secretion, and the basic short sequence is compatible with a secreted antimicrobial peptide. That may suggest interaction with microbial membranes, but it does not establish the protein’s specific target or distinguish a foreign cell membrane from the external side of a plasma membrane.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this scorpion peptide is secreted and associates with a target organism’s cell membrane, as reflected in the database annotation.",
-    "reason": "The supplied sequence supports a broad secretion or membrane-interaction hypothesis, but selecting the specific cellular-component term requires protein-specific functional or annotation information absent from the prompt."
-  },
-  "case_id": "GO_cellular_component_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H4",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched historical UniProt entry assigns GO:0044218, “other organism cell membrane,” to this protein. This is a keyword-based database annotation, not direct experimental proof of that specific GO term; the entry separately describes the protein as secreted and its location as the target cell membrane."
-  },
-  "important_caveats": [
-    "The current and historical source records match the supplied sequence.",
-    "The GO annotation for B is computationally assigned by UniProtKB-KW; the source’s target-cell-membrane location statement is not itself a GO annotation for B.",
-    "The source also reports an experimentally supported secreted location, which is not one of the options."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "The target-cell-membrane annotation supports B. If the peptide is attached to the extracellular-facing surface of that target’s plasma membrane, C may also describe its location; the prompt does not specify whether the intended term is the foreign membrane as a whole or its external-facing side."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched historical UniProt entry assigns GO:0044218, “other organism cell membrane,” to this protein. This is a keyword-based database annotation, not direct experimental proof of that specific GO term; the entry separately describes the protein as secreted and its location as the target cell membrane.",
-    "evidence_ids": ["H4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with secretion, and the basic short sequence is compatible with a secreted antimicrobial peptide. That may suggest interaction with microbial membranes, but it does not establish the protein’s specific target or distinguish a foreign cell membrane from the external side of a plasma membrane.",
-    "missing_item_specific_fact": "The protein-specific fact that this scorpion peptide is secreted and associates with a target organism’s cell membrane, as reflected in the database annotation.",
-    "reason": "The supplied sequence supports a broad secretion or membrane-interaction hypothesis, but selecting the specific cellular-component term requires protein-specific functional or annotation information absent from the prompt."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "The target-cell-membrane annotation supports B. If the peptide is attached to the extracellular-facing surface of that target’s plasma membrane, C may also describe its location; the prompt does not specify whether the intended term is the foreign membrane as a whole or its external-facing side."
-  },
-  "important_caveats": [
-    "The current and historical source records match the supplied sequence.",
-    "The GO annotation for B is computationally assigned by UniProtKB-KW; the source’s target-cell-membrane location statement is not itself a GO annotation for B.",
-    "The source also reports an experimentally supported secreted location, which is not one of the options."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry (A0A059U8Y9) annotates GO:0044218 (other organism cell membrane) via IEA:UniProtKB-KW, derived from the subcellular location comment 'Target cell membrane' (ECO:0000305, curator inference). The protein is antimicrobial peptide megicin-18 from scorpion venom, experimentally shown (PubMed:29896190) to target Gram-positive bacterial membranes. The GO:0044218 annotation is electronic/inferred rather than directly experimental, but the underlying biology (AMP targeting foreign bacterial membranes) is well-supported by the bioassay data in the cited paper. The annotation is present in both current (C6 context, H6) and historical (entry version 9) records.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [H3](#evidence-h3), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 77-aa sequence exhibits a hydrophobic N-terminal signal peptide (MQLKKQLIVIFFTYFIVVNESEAFFGALFKLATKIIPSLF...) followed by a short cationic amphipathic mature region (RKRKGREVMMKRDLEQLFDPYQRNLELDRLLKQLPNY), characteristic of a secreted antimicrobial peptide. General biological knowledge establishes that AMPs exert their function by targeting bacterial cell membranes. GO:0044218 'other organism cell membrane' is defined as the cell membrane of a secondary organism with which the first organism interacts, which precisely describes the bacterial target membrane of an AMP. Option C (external side of plasma membrane, GO:0009897) refers to the host cell's own membrane external leaflet, not a foreign organism's membrane, and is therefore distinguishable. Options A (cartilage matrilin complex) and D (CoA biosynthesis enzyme complex) are categorically incompatible with a small cationic venom peptide.
-
-
-**Missing item-specific fact**
-
-> None strictly required; the reasoning chain (signal peptide → secreted AMP → bacterial membrane target → 'other organism cell membrane') is accessible through general biological knowledge and GO term definitions.
-
-
-**Reason**
-
-> A knowledgeable model can eliminate A and D as functionally irrelevant, distinguish C (host's own membrane) from B (foreign organism's membrane) based on the biological role of antimicrobial peptides targeting bacterial membranes, and select B. The sequence features (small size, cationic amphipathic mature region, signal peptide) provide concrete grounds for identifying this as an AMP without memorizing the specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While B and C both involve membranes, the GO definitions clearly distinguish them: GO:0044218 refers to a foreign organism's membrane (the bacterial target), while GO:0009897 refers to the external leaflet of the protein-producing organism's own plasma membrane. An antimicrobial peptide does not reside on its host's external membrane surface; it is secreted and acts on bacterial membranes. A and D are categorically incompatible with the protein's identity.
-
-
-### Important caveats
-
-- The GO:0044218 annotation is IEA (inferred from electronic annotation via keyword mapping), not direct experimental evidence. The experimental evidence (ECO:0000269) supports 'Secreted' and 'extracellular region' (GO:0005576). The 'Target cell membrane' annotation is ECO:0000305 (curator inference).
-- The sequence in the question is the full 77-aa precursor; the mature antimicrobial peptide corresponds to residues 24-41 per the reference. The signal peptide and propeptide are present in the supplied sequence.
-- The GO term name 'other organism cell membrane' is somewhat non-intuitive; a model unfamiliar with this specific GO term nomenclature might struggle even with correct biological reasoning.
-- The primary GO annotation in the current entry is GO:0005576 (extracellular region, EXP), which is not among the options. The question forces selection among four choices, none of which is the most directly experimentally supported annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 77-aa sequence exhibits a hydrophobic N-terminal signal peptide (MQLKKQLIVIFFTYFIVVNESEAFFGALFKLATKIIPSLF...) followed by a short cationic amphipathic mature region (RKRKGREVMMKRDLEQLFDPYQRNLELDRLLKQLPNY), characteristic of a secreted antimicrobial peptide. General biological knowledge establishes that AMPs exert their function by targeting bacterial cell membranes. GO:0044218 'other organism cell membrane' is defined as the cell membrane of a secondary organism with which the first organism interacts, which precisely describes the bacterial target membrane of an AMP. Option C (external side of plasma membrane, GO:0009897) refers to the host cell's own membrane external leaflet, not a foreign organism's membrane, and is therefore distinguishable. Options A (cartilage matrilin complex) and D (CoA biosynthesis enzyme complex) are categorically incompatible with a small cationic venom peptide.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; the reasoning chain (signal peptide → secreted AMP → bacterial membrane target → 'other organism cell membrane') is accessible through general biological knowledge and GO term definitions.",
-    "reason": "A knowledgeable model can eliminate A and D as functionally irrelevant, distinguish C (host's own membrane) from B (foreign organism's membrane) based on the biological role of antimicrobial peptides targeting bacterial membranes, and select B. The sequence features (small size, cationic amphipathic mature region, signal peptide) provide concrete grounds for identifying this as an AMP without memorizing the specific UniProt entry."
-  },
-  "case_id": "GO_cellular_component_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H4",
-      "H5",
-      "H6",
-      "H3",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A059U8Y9) annotates GO:0044218 (other organism cell membrane) via IEA:UniProtKB-KW, derived from the subcellular location comment 'Target cell membrane' (ECO:0000305, curator inference). The protein is antimicrobial peptide megicin-18 from scorpion venom, experimentally shown (PubMed:29896190) to target Gram-positive bacterial membranes. The GO:0044218 annotation is electronic/inferred rather than directly experimental, but the underlying biology (AMP targeting foreign bacterial membranes) is well-supported by the bioassay data in the cited paper. The annotation is present in both current (C6 context, H6) and historical (entry version 9) records."
-  },
-  "important_caveats": [
-    "The GO:0044218 annotation is IEA (inferred from electronic annotation via keyword mapping), not direct experimental evidence. The experimental evidence (ECO:0000269) supports 'Secreted' and 'extracellular region' (GO:0005576). The 'Target cell membrane' annotation is ECO:0000305 (curator inference).",
-    "The sequence in the question is the full 77-aa precursor; the mature antimicrobial peptide corresponds to residues 24-41 per the reference. The signal peptide and propeptide are present in the supplied sequence.",
-    "The GO term name 'other organism cell membrane' is somewhat non-intuitive; a model unfamiliar with this specific GO term nomenclature might struggle even with correct biological reasoning.",
-    "The primary GO annotation in the current entry is GO:0005576 (extracellular region, EXP), which is not among the options. The question forces selection among four choices, none of which is the most directly experimentally supported annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While B and C both involve membranes, the GO definitions clearly distinguish them: GO:0044218 refers to a foreign organism's membrane (the bacterial target), while GO:0009897 refers to the external leaflet of the protein-producing organism's own plasma membrane. An antimicrobial peptide does not reside on its host's external membrane surface; it is secreted and acts on bacterial membranes. A and D are categorically incompatible with the protein's identity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A059U8Y9) annotates GO:0044218 (other organism cell membrane) via IEA:UniProtKB-KW, derived from the subcellular location comment 'Target cell membrane' (ECO:0000305, curator inference). The protein is antimicrobial peptide megicin-18 from scorpion venom, experimentally shown (PubMed:29896190) to target Gram-positive bacterial membranes. The GO:0044218 annotation is electronic/inferred rather than directly experimental, but the underlying biology (AMP targeting foreign bacterial membranes) is well-supported by the bioassay data in the cited paper. The annotation is present in both current (C6 context, H6) and historical (entry version 9) records.",
-    "evidence_ids": ["C5", "C6", "H4", "H5", "H6", "H3", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 77-aa sequence exhibits a hydrophobic N-terminal signal peptide (MQLKKQLIVIFFTYFIVVNESEAFFGALFKLATKIIPSLF...) followed by a short cationic amphipathic mature region (RKRKGREVMMKRDLEQLFDPYQRNLELDRLLKQLPNY), characteristic of a secreted antimicrobial peptide. General biological knowledge establishes that AMPs exert their function by targeting bacterial cell membranes. GO:0044218 'other organism cell membrane' is defined as the cell membrane of a secondary organism with which the first organism interacts, which precisely describes the bacterial target membrane of an AMP. Option C (external side of plasma membrane, GO:0009897) refers to the host cell's own membrane external leaflet, not a foreign organism's membrane, and is therefore distinguishable. Options A (cartilage matrilin complex) and D (CoA biosynthesis enzyme complex) are categorically incompatible with a small cationic venom peptide.",
-    "missing_item_specific_fact": "None strictly required; the reasoning chain (signal peptide → secreted AMP → bacterial membrane target → 'other organism cell membrane') is accessible through general biological knowledge and GO term definitions.",
-    "reason": "A knowledgeable model can eliminate A and D as functionally irrelevant, distinguish C (host's own membrane) from B (foreign organism's membrane) based on the biological role of antimicrobial peptides targeting bacterial membranes, and select B. The sequence features (small size, cationic amphipathic mature region, signal peptide) provide concrete grounds for identifying this as an AMP without memorizing the specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While B and C both involve membranes, the GO definitions clearly distinguish them: GO:0044218 refers to a foreign organism's membrane (the bacterial target), while GO:0009897 refers to the external leaflet of the protein-producing organism's own plasma membrane. An antimicrobial peptide does not reside on its host's external membrane surface; it is secreted and acts on bacterial membranes. A and D are categorically incompatible with the protein's identity."
-  },
-  "important_caveats": [
-    "The GO:0044218 annotation is IEA (inferred from electronic annotation via keyword mapping), not direct experimental evidence. The experimental evidence (ECO:0000269) supports 'Secreted' and 'extracellular region' (GO:0005576). The 'Target cell membrane' annotation is ECO:0000305 (curator inference).",
-    "The sequence in the question is the full 77-aa precursor; the mature antimicrobial peptide corresponds to residues 24-41 per the reference. The signal peptide and propeptide are present in the supplied sequence.",
-    "The GO term name 'other organism cell membrane' is somewhat non-intuitive; a model unfamiliar with this specific GO term nomenclature might struggle even with correct biological reasoning.",
-    "The primary GO annotation in the current entry is GO:0005576 (extracellular region, EXP), which is not among the options. The question forces selection among four choices, none of which is the most directly experimentally supported annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -520,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A059U8Y9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "440eadef25b34c45b7ee569d11735cb43e037d0a2d30350701c97e1c5937c39e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 77,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "440eadef25b34c45b7ee569d11735cb43e037d0a2d30350701c97e1c5937c39e",
   "current_entry_audit": {
     "entryVersion": 10,
     "firstPublicDate": "2025-02-05",
@@ -551,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-09-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "current_source_sequence_sha256": "440eadef25b34c45b7ee569d11735cb43e037d0a2d30350701c97e1c5937c39e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 77,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "440eadef25b34c45b7ee569d11735cb43e037d0a2d30350701c97e1c5937c39e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 9,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A059U8Y9",
   "selected_historical_entry_version": 9,
+  "selected_historical_record_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
+  "selected_historical_source_sequence_length": 77,
+  "selected_historical_source_sequence_sha256": "440eadef25b34c45b7ee569d11735cb43e037d0a2d30350701c97e1c5937c39e",
   "selected_historical_version": {
     "accession": "A0A059U8Y9",
     "database": "Swiss-Prot",
@@ -569,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "NDBM_MESGB",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
-  "selected_historical_source_sequence_sha256": "440eadef25b34c45b7ee569d11735cb43e037d0a2d30350701c97e1c5937c39e",
-  "selected_historical_source_sequence_length": 77,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 9,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -604,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A059U8Y9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -623,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":10,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-09-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -642,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mediterranean checkered scorpion\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Chelicerata\",\"Arachnida\",\"Scorpiones\",\"Buthida\",\"Buthoidea\",\"Buthidae\",\"Mesobuthus\"],\"scientificName\":\"Mesobuthus gibbosus\",\"synonyms\":[\"Buthus gibbosus\"],\"taxonId\":123226}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -661,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24746279\",\"source\":\"PubMed\"}],\"value\":\"MgibC1\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24746279\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29896190\",\"source\":\"PubMed\"}],\"value\":\"Antimicrobial peptide megicin-18\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -680,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29896190\",\"source\":\"PubMed\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"id\":\"SL-0451\",\"value\":\"Target cell membrane\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -699,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/3",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29896190\",\"source\":\"PubMed\"}],\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/3",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -718,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Diego-Garcia E.\",\"Caliskan F.\",\"Tytgat J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24746279\"},{\"database\":\"DOI\",\"id\":\"10.1186/1471-2164-15-295\"}],\"citationType\":\"journal article\",\"firstPage\":\"295\",\"id\":\"24746279\",\"journal\":\"BMC Genomics\",\"lastPage\":\"295\",\"publicationDate\":\"2014\",\"title\":\"The Mediterranean scorpion Mesobuthus gibbosus (Scorpiones, Buthidae): transcriptome analysis and organization of the genome encoding chlorotoxin-like peptides.\",\"volume\":\"15\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AHZ63106.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Venom gland\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -737,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json",
-  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
-  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu G.\",\"Yang F.\",\"Li F.\",\"Li Z.\",\"Lang Y.\",\"Shen B.\",\"Wu Y.\",\"Li W.\",\"Harrison P.L.\",\"Strong P.N.\",\"Xie Y.\",\"Miller K.\",\"Cao Z.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29896190\"},{\"database\":\"DOI\",\"id\":\"10.3389/fmicb.2018.01159\"}],\"citationType\":\"journal article\",\"firstPage\":\"1159\",\"id\":\"29896190\",\"journal\":\"Front. Microbiol.\",\"lastPage\":\"1159\",\"publicationDate\":\"2018\",\"title\":\"Therapeutic potential of a scorpion venom-derived antimicrobial peptide and its homologs against antibiotic-resistant Gram-positive bacteria.\",\"volume\":\"9\"},\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Venom\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"BIOASSAY\",\"SYNTHESIS OF 24-41\",\"CIRCULAR DICHROISM ANALYSIS\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:36.328913+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0b37ec804df1d887a8fc20a4b9656eb96110b34fcfa95ba257de4953debbdb01",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A059U8Y9.json"
 }
 ```
 
@@ -755,18 +505,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9",
-  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
-  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   NDBM_MESGB              Reviewed;          77 AA.\nAC   A0A059U8Y9;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-SEP-2014, sequence version 1.\nDT   28-JAN-2026, entry version 9.\nDE   RecName: Full=Antimicrobial peptide megicin-18 {ECO:0000303|PubMed:24746279, ECO:0000303|PubMed:29896190};\nDE   AltName: Full=MgibC1 {ECO:0000303|PubMed:24746279};\nDE   Flags: Precursor;\nOS   Mesobuthus gibbosus (Mediterranean checkered scorpion) (Buthus gibbosus).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Chelicerata; Arachnida;\nOC   Scorpiones; Buthida; Buthoidea; Buthidae; Mesobuthus.\nOX   NCBI_TaxID=123226;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
+  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9"
 }
 ```
 
@@ -776,18 +526,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9",
-  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
-  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
-  "source_locator": "lines 13-21",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:AHZ63106.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA].\nRC   TISSUE=Venom gland;\nRX   PubMed=24746279; DOI=10.1186/1471-2164-15-295;\nRA   Diego-Garcia E., Caliskan F., Tytgat J.;\nRT   \"The Mediterranean scorpion Mesobuthus gibbosus (Scorpiones, Buthidae):\nRT   transcriptome analysis and organization of the genome encoding chlorotoxin-\nRT   like peptides.\";\nRL   BMC Genomics 15:295-295(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 13-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
+  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9"
 }
 ```
 
@@ -797,18 +547,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9",
-  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
-  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
-  "source_locator": "lines 22-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, BIOASSAY, SYNTHESIS OF 24-41, AND CIRCULAR DICHROISM ANALYSIS.\nRC   TISSUE=Venom;\nRX   PubMed=29896190; DOI=10.3389/fmicb.2018.01159;\nRA   Liu G., Yang F., Li F., Li Z., Lang Y., Shen B., Wu Y., Li W.,\nRA   Harrison P.L., Strong P.N., Xie Y., Miller K., Cao Z.;\nRT   \"Therapeutic potential of a scorpion venom-derived antimicrobial peptide\nRT   and its homologs against antibiotic-resistant Gram-positive bacteria.\";\nRL   Front. Microbiol. 9:1159-1159(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
+  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9"
 }
 ```
 
@@ -818,18 +568,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9",
-  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
-  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
-  "source_locator": "lines 44-45",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000269|PubMed:29896190}. Target\nCC       cell membrane {ECO:0000305}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
+  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9"
 }
 ```
 
@@ -839,18 +589,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9",
-  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
-  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
-  "source_locator": "lines 60-60",
   "excerpt": "DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 60-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
+  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9"
 }
 ```
 
@@ -860,18 +610,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9",
-  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
-  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
-  "source_locator": "lines 61-61",
   "excerpt": "DR   GO; GO:0044218; C:other organism cell membrane; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-01T06:27:15.104172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c4fa05fc93cbfcb42e459444d45c0bd60c528143457d820a39266c26a506b617",
+  "url": "https://rest.uniprot.org/unisave/A0A059U8Y9?format=txt&versions=9"
 }
 ```
 
@@ -882,15 +632,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 100773-100784",
   "excerpt": "[Term]\nid: GO:0009897\nname: external side of plasma membrane\nnamespace: cellular_component\ndef: \"The leaflet of the plasma membrane that faces the extracellular side of the cell, including any protein embedded in, attached to, or peripherally associated with it.\" [GOC:dos, GOC:tb]\nsynonym: \"external leaflet of plasma membrane\" EXACT [GOC:ab]\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"outer surface of cytoplasmic membrane\" EXACT []\nis_a: GO:0098552 ! side of membrane\nrelationship: part_of GO:0005886 ! plasma membrane\nrelationship: part_of GO:0009986 ! cell surface\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009897",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 100773-100784",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009897"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -901,15 +651,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 255298-255307",
   "excerpt": "[Term]\nid: GO:0044218\nname: other organism cell membrane\nnamespace: cellular_component\nalt_id: GO:0044279\ndef: \"The cell membrane of a secondary organism with which the first organism is interacting.\" [GOC:jl]\nsynonym: \"foreign membrane\" RELATED []\nsynonym: \"other organism membrane\" BROAD []\nis_a: GO:0044217 ! other organism part\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044218",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 255298-255307",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044218"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -920,15 +670,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 377848-377856",
   "excerpt": "[Term]\nid: GO:0071513\nname: phosphopantothenoylcysteine decarboxylase complex\nnamespace: cellular_component\ndef: \"A protein complex that catalyzes decarboxylation of 4'-phosphopantothenoylcysteine to yield 4'-phosphopantetheine; this is the third step in the biosynthesis of Coenzyme A. The complex is homotrimeric in many eukaryotes, but is a heterotrimer in Saccharomyces.\" [GOC:jh, PMID:19915539]\ncomment: See also the molecular function term 'acetolactate synthase activity ; GO:0003984'.\nis_a: GO:1902494 ! catalytic complex\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0071513",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 377848-377856",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0071513"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -939,15 +689,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 434047-434059",
   "excerpt": "[Term]\nid: GO:0120216\nname: matrilin complex\nnamespace: cellular_component\ndef: \"A cartilage extracellular matrix complex that mediates interactions between major components of the extracellular matrix such as collagens and proteoglycans and contributes to their fibrillar network. Exists as an obligate homotrimer.\" [PMID:10367731, PMID:15075323, PMID:29310791, PMID:9699631]\nsynonym: \"matrilin family complex\" RELATED [GOC:bhm]\nsynonym: \"matrilin-1 complex\" NARROW [GOC:bhm]\nsynonym: \"matrilin-2 complex\" NARROW [GOC:bhm]\nsynonym: \"matrilin-3 complex\" NARROW [GOC:bhm]\nsynonym: \"matrilin-4 complex\" NARROW [GOC:bhm]\nis_a: GO:0140392 ! extracellular protein-containing complex\nrelationship: part_of GO:0140149 ! non-collagenous component of interstitial matrix\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0120216",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 434047-434059",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0120216"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

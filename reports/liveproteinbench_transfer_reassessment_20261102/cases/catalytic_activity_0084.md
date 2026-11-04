@@ -1,18 +1,16 @@
-# catalytic_activity_0084: before and after transfer clarification
+# catalytic_activity_0084
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0084.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0084.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — okaramine C + 2 reduced &#91;NADPH--hemoprotein reductase&#93; + 2 O2 = okaramine A + 2 oxidized &#91;NADPH--hemoprotein reductase&#93; + 4 H2O + 2 H(+)
+**Expected answer:** **B** — okaramine C + 2 reduced &#91;NADPH--hemoprotein reductase&#93; + 2 O2 = okaramine A + 2 oxidized &#91;NADPH--hemoprotein reductase&#93; + 4 H2O + 2 H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,251 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for cytochrome P450 monooxygenase okaD. That entry annotates the okaramine C-to-A reaction and cites experimental evidence (ECO:0000269, PubMed 28631282), supporting choice B.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable P450 heme-binding motif (around FGFGLRGCPG), and choice B is the option with NADPH-reductase-supported P450 monooxygenation chemistry. That provides a concrete family-level basis to distinguish B from the glycosylation, hydrolysis, and 2Fe-2S-dependent alternatives.
-
-
-**Missing item-specific fact**
-
-> The motif does not itself establish okaramine C as the substrate or okaramine A as the product; those exact substrate and product identities are protein-specific.
-
-
-**Reason**
-
-> The sequence and choices provide meaningful grounds for selecting the P450-compatible reaction, although the exact transformation is not derivable from the motif alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed reactions, B is the one consistent with the sequence's P450-family signal; the alternatives describe different enzyme classes or cofactor chemistry.
-
-
-### Important caveats
-
-- The sequence match is exact in both the current and historical UniProt records, but the author's source snapshot is unknown.
-- The cited experimental evidence is reported in the UniProt annotation; the primary study was not independently retrieved or assessed here.
-- Family-level sequence evidence supports choosing B among these options but does not independently establish its precise okaramine substrate and product.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable P450 heme-binding motif (around FGFGLRGCPG), and choice B is the option with NADPH-reductase-supported P450 monooxygenation chemistry. That provides a concrete family-level basis to distinguish B from the glycosylation, hydrolysis, and 2Fe-2S-dependent alternatives.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The motif does not itself establish okaramine C as the substrate or okaramine A as the product; those exact substrate and product identities are protein-specific.",
-    "reason": "The sequence and choices provide meaningful grounds for selecting the P450-compatible reaction, although the exact transformation is not derivable from the motif alone."
-  },
-  "case_id": "catalytic_activity_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for cytochrome P450 monooxygenase okaD. That entry annotates the okaramine C-to-A reaction and cites experimental evidence (ECO:0000269, PubMed 28631282), supporting choice B."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both the current and historical UniProt records, but the author's source snapshot is unknown.",
-    "The cited experimental evidence is reported in the UniProt annotation; the primary study was not independently retrieved or assessed here.",
-    "Family-level sequence evidence supports choosing B among these options but does not independently establish its precise okaramine substrate and product."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed reactions, B is the one consistent with the sequence's P450-family signal; the alternatives describe different enzyme classes or cofactor chemistry."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for cytochrome P450 monooxygenase okaD. That entry annotates the okaramine C-to-A reaction and cites experimental evidence (ECO:0000269, PubMed 28631282), supporting choice B.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a recognizable P450 heme-binding motif (around FGFGLRGCPG), and choice B is the option with NADPH-reductase-supported P450 monooxygenation chemistry. That provides a concrete family-level basis to distinguish B from the glycosylation, hydrolysis, and 2Fe-2S-dependent alternatives.",
-    "missing_item_specific_fact": "The motif does not itself establish okaramine C as the substrate or okaramine A as the product; those exact substrate and product identities are protein-specific.",
-    "reason": "The sequence and choices provide meaningful grounds for selecting the P450-compatible reaction, although the exact transformation is not derivable from the motif alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed reactions, B is the one consistent with the sequence's P450-family signal; the alternatives describe different enzyme classes or cofactor chemistry."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both the current and historical UniProt records, but the author's source snapshot is unknown.",
-    "The cited experimental evidence is reported in the UniProt annotation; the primary study was not independently retrieved or assessed here.",
-    "Family-level sequence evidence supports choosing B among these options but does not independently establish its precise okaramine substrate and product."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A2Z5U6I9 (sequence matched exactly, 529 aa) annotates this protein as 'Cytochrome P450 monooxygenase okaD' (EC 1.14.99.-) from Penicillium ochrochloron. The CATALYTIC ACTIVITY comment explicitly states the reaction 'okaramine C + 2 reduced &#91;NADPH--hemoprotein reductase&#93; + 2 O2 = okaramine A + 2 oxidized &#91;NADPH--hemoprotein reductase&#93; + 4 H2O + 2 H(+)' with evidence code ECO:0000269 (experimental evidence) from PubMed:28631282 (Lai et al., 2017, Angew. Chem. Int. Ed. 56:9478-9482). The annotation is backed by experimental evidence from the primary literature.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could recognize P450-like sequence features (heme-binding region, ~500 aa length, fungal origin) to eliminate Choice A (mannosyltransferase/GT reaction) and Choice C (esterase/hydrolase reaction). Additionally, cofactor logic could partially distinguish B from D: fungal/microbial P450s typically use NADPH--hemoprotein reductase (Choice B), whereas &#91;2Fe-2S&#93;-ferredoxin-dependent P450s (Choice D) are characteristic of plant chloroplast systems. However, this reasoning cannot identify the specific substrates 'okaramine C' and 'okaramine A'—highly specialized indole alkaloid intermediates unique to the Penicillium ochrochloron okaramine biosynthetic pathway.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this P450 as okaD and its experimentally determined substrate/product pair (okaramine C → okaramine A) from the 2017 biosynthetic pathway elucidation study. No general biological reasoning from the amino acid sequence can predict that this particular fungal P450 acts on okaramine intermediates rather than other fungal secondary metabolites.
-
-
-**Reason**
-
-> While P450 recognition and cofactor-type reasoning can narrow four choices to two (B vs D), the final identification of okaramine C as substrate and okaramine A as product is an item-specific experimental finding (PubMed:28631282) that cannot be deduced from sequence features alone. The substrate names appear nowhere in the sequence and are not inferable from general pathway logic.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> Both B and D describe P450-type oxygenation reactions. A model recognizing P450 features could eliminate A (transferase) and C (hydrolase), but distinguishing B from D requires either (a) knowing the specific pathway (lookup) or (b) applying the heuristic that fungal P450s use NADPH-hemoprotein reductase while plant P450s use ferredoxin. The latter is a reasonable general-knowledge inference but does not confirm the specific okaramine substrates. Without the pathway-specific fact, D remains a superficially plausible P450 reaction.
-
-
-### Important caveats
-
-- The UniProt annotation carries ECO:0000269 (experimental evidence) from PubMed:28631282, so the key is experimentally grounded, not merely computational.
-- The sequence-to-accession match is exact (SHA-256 identical), confirming the annotation applies to this exact protein.
-- The first public date of this Swiss-Prot entry is 2025-02-05, meaning the curated annotation post-dates the 2017 primary paper by ~8 years; the benchmark may have been constructed from the primary paper directly or from the curated entry.
-- The okaramine pathway is a narrow fungal natural-product biosynthesis topic; general enzymology knowledge provides cofactor-level discrimination but not substrate-level identification.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could recognize P450-like sequence features (heme-binding region, ~500 aa length, fungal origin) to eliminate Choice A (mannosyltransferase/GT reaction) and Choice C (esterase/hydrolase reaction). Additionally, cofactor logic could partially distinguish B from D: fungal/microbial P450s typically use NADPH--hemoprotein reductase (Choice B), whereas [2Fe-2S]-ferredoxin-dependent P450s (Choice D) are characteristic of plant chloroplast systems. However, this reasoning cannot identify the specific substrates 'okaramine C' and 'okaramine A'—highly specialized indole alkaloid intermediates unique to the Penicillium ochrochloron okaramine biosynthetic pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this P450 as okaD and its experimentally determined substrate/product pair (okaramine C → okaramine A) from the 2017 biosynthetic pathway elucidation study. No general biological reasoning from the amino acid sequence can predict that this particular fungal P450 acts on okaramine intermediates rather than other fungal secondary metabolites.",
-    "reason": "While P450 recognition and cofactor-type reasoning can narrow four choices to two (B vs D), the final identification of okaramine C as substrate and okaramine A as product is an item-specific experimental finding (PubMed:28631282) that cannot be deduced from sequence features alone. The substrate names appear nowhere in the sequence and are not inferable from general pathway logic."
-  },
-  "case_id": "catalytic_activity_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U6I9 (sequence matched exactly, 529 aa) annotates this protein as 'Cytochrome P450 monooxygenase okaD' (EC 1.14.99.-) from Penicillium ochrochloron. The CATALYTIC ACTIVITY comment explicitly states the reaction 'okaramine C + 2 reduced [NADPH--hemoprotein reductase] + 2 O2 = okaramine A + 2 oxidized [NADPH--hemoprotein reductase] + 4 H2O + 2 H(+)' with evidence code ECO:0000269 (experimental evidence) from PubMed:28631282 (Lai et al., 2017, Angew. Chem. Int. Ed. 56:9478-9482). The annotation is backed by experimental evidence from the primary literature."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries ECO:0000269 (experimental evidence) from PubMed:28631282, so the key is experimentally grounded, not merely computational.",
-    "The sequence-to-accession match is exact (SHA-256 identical), confirming the annotation applies to this exact protein.",
-    "The first public date of this Swiss-Prot entry is 2025-02-05, meaning the curated annotation post-dates the 2017 primary paper by ~8 years; the benchmark may have been constructed from the primary paper directly or from the curated entry.",
-    "The okaramine pathway is a narrow fungal natural-product biosynthesis topic; general enzymology knowledge provides cofactor-level discrimination but not substrate-level identification."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "Both B and D describe P450-type oxygenation reactions. A model recognizing P450 features could eliminate A (transferase) and C (hydrolase), but distinguishing B from D requires either (a) knowing the specific pathway (lookup) or (b) applying the heuristic that fungal P450s use NADPH-hemoprotein reductase while plant P450s use ferredoxin. The latter is a reasonable general-knowledge inference but does not confirm the specific okaramine substrates. Without the pathway-specific fact, D remains a superficially plausible P450 reaction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U6I9 (sequence matched exactly, 529 aa) annotates this protein as 'Cytochrome P450 monooxygenase okaD' (EC 1.14.99.-) from Penicillium ochrochloron. The CATALYTIC ACTIVITY comment explicitly states the reaction 'okaramine C + 2 reduced [NADPH--hemoprotein reductase] + 2 O2 = okaramine A + 2 oxidized [NADPH--hemoprotein reductase] + 4 H2O + 2 H(+)' with evidence code ECO:0000269 (experimental evidence) from PubMed:28631282 (Lai et al., 2017, Angew. Chem. Int. Ed. 56:9478-9482). The annotation is backed by experimental evidence from the primary literature.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could recognize P450-like sequence features (heme-binding region, ~500 aa length, fungal origin) to eliminate Choice A (mannosyltransferase/GT reaction) and Choice C (esterase/hydrolase reaction). Additionally, cofactor logic could partially distinguish B from D: fungal/microbial P450s typically use NADPH--hemoprotein reductase (Choice B), whereas [2Fe-2S]-ferredoxin-dependent P450s (Choice D) are characteristic of plant chloroplast systems. However, this reasoning cannot identify the specific substrates 'okaramine C' and 'okaramine A'—highly specialized indole alkaloid intermediates unique to the Penicillium ochrochloron okaramine biosynthetic pathway.",
-    "missing_item_specific_fact": "The specific identity of this P450 as okaD and its experimentally determined substrate/product pair (okaramine C → okaramine A) from the 2017 biosynthetic pathway elucidation study. No general biological reasoning from the amino acid sequence can predict that this particular fungal P450 acts on okaramine intermediates rather than other fungal secondary metabolites.",
-    "reason": "While P450 recognition and cofactor-type reasoning can narrow four choices to two (B vs D), the final identification of okaramine C as substrate and okaramine A as product is an item-specific experimental finding (PubMed:28631282) that cannot be deduced from sequence features alone. The substrate names appear nowhere in the sequence and are not inferable from general pathway logic."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "Both B and D describe P450-type oxygenation reactions. A model recognizing P450 features could eliminate A (transferase) and C (hydrolase), but distinguishing B from D requires either (a) knowing the specific pathway (lookup) or (b) applying the heuristic that fungal P450s use NADPH-hemoprotein reductase while plant P450s use ferredoxin. The latter is a reasonable general-knowledge inference but does not confirm the specific okaramine substrates. Without the pathway-specific fact, D remains a superficially plausible P450 reaction."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries ECO:0000269 (experimental evidence) from PubMed:28631282, so the key is experimentally grounded, not merely computational.",
-    "The sequence-to-accession match is exact (SHA-256 identical), confirming the annotation applies to this exact protein.",
-    "The first public date of this Swiss-Prot entry is 2025-02-05, meaning the curated annotation post-dates the 2017 primary paper by ~8 years; the benchmark may have been constructed from the primary paper directly or from the curated entry.",
-    "The okaramine pathway is a narrow fungal natural-product biosynthesis topic; general enzymology knowledge provides cofactor-level discrimination but not substrate-level identification."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -401,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -513,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2Z5U6I9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "99280cdea8196dec317d2f18830c1825fab94ad5dea0f68ec9b853bab5214ffd",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 529,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "99280cdea8196dec317d2f18830c1825fab94ad5dea0f68ec9b853bab5214ffd",
   "current_entry_audit": {
     "entryVersion": 24,
     "firstPublicDate": "2025-02-05",
@@ -544,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-10-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
-  "current_source_sequence_sha256": "99280cdea8196dec317d2f18830c1825fab94ad5dea0f68ec9b853bab5214ffd",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 529,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "99280cdea8196dec317d2f18830c1825fab94ad5dea0f68ec9b853bab5214ffd",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 23,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2Z5U6I9",
   "selected_historical_entry_version": 23,
+  "selected_historical_record_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
+  "selected_historical_source_sequence_length": 529,
+  "selected_historical_source_sequence_sha256": "99280cdea8196dec317d2f18830c1825fab94ad5dea0f68ec9b853bab5214ffd",
   "selected_historical_version": {
     "accession": "A0A2Z5U6I9",
     "database": "Swiss-Prot",
@@ -562,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "OKAD_PENOH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
-  "selected_historical_source_sequence_sha256": "99280cdea8196dec317d2f18830c1825fab94ad5dea0f68ec9b853bab5214ffd",
-  "selected_historical_source_sequence_length": 529,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 23,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json",
-  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
-  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2Z5U6I9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json"
 }
 ```
 
@@ -612,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json",
-  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
-  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":24,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-10-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json"
 }
 ```
 
@@ -631,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json",
-  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
-  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium ochrochloron\",\"taxonId\":69780}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json"
 }
 ```
 
@@ -650,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json",
-  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
-  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Okaramines biosynthesis cluster protein D\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"1.14.99.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase okaD\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json"
 }
 ```
 
@@ -669,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json",
-  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
-  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:82704\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"name\":\"okaramine C + 2 reduced [NADPH--hemoprotein reductase] + 2 O2 = okaramine A + 2 oxidized [NADPH--hemoprotein reductase] + 4 H2O + 2 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:82703\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:193028\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:232464\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json"
 }
 ```
 
@@ -688,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json",
-  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
-  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lai C.Y.\",\"Lo I.W.\",\"Hewage R.T.\",\"Chen Y.C.\",\"Chen C.T.\",\"Lee C.F.\",\"Lin S.\",\"Tang M.C.\",\"Lin H.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28631282\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.201705501\"}],\"citationType\":\"journal article\",\"firstPage\":\"9478\",\"id\":\"28631282\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"9482\",\"publicationDate\":\"2017\",\"title\":\"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise Pathway of Okaramines.\",\"volume\":\"56\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:54.111891+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40a05d7310f4d79d3d8cc83398d816d9e515e9003ac315147b668ca6050d9c84",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U6I9.json"
 }
 ```
 
@@ -706,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23",
-  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
-  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   OKAD_PENOH              Reviewed;         529 AA.\nAC   A0A2Z5U6I9;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-OCT-2018, sequence version 1.\nDT   28-JAN-2026, entry version 23.\nDE   RecName: Full=Cytochrome P450 monooxygenase okaD {ECO:0000303|PubMed:28631282};\nDE            EC=1.14.99.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein D {ECO:0000303|PubMed:28631282};\nGN   Name=okaD {ECO:0000303|PubMed:28631282};\nOS   Penicillium ochrochloron.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=69780;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23"
 }
 ```
 
@@ -727,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23",
-  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
-  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Cytochrome P450 monooxygenase okaD {ECO:0000303|PubMed:28631282};\nDE            EC=1.14.99.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein D {ECO:0000303|PubMed:28631282};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23"
 }
 ```
 
@@ -748,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23",
-  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
-  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=28631282; DOI=10.1002/anie.201705501;\nRA   Lai C.Y., Lo I.W., Hewage R.T., Chen Y.C., Chen C.T., Lee C.F., Lin S.,\nRA   Tang M.C., Lin H.C.;\nRT   \"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise\nRT   Pathway of Okaramines.\";\nRL   Angew. Chem. Int. Ed. 56:9478-9482(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23"
 }
 ```
 
@@ -769,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23",
-  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
-  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
-  "source_locator": "lines 58-66",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=okaramine C + 2 reduced [NADPH--hemoprotein reductase] + 2 O2\nCC         = okaramine A + 2 oxidized [NADPH--hemoprotein reductase] + 4 H2O + 2\nCC         H(+); Xref=Rhea:RHEA:82703, Rhea:RHEA-COMP:11964, Rhea:RHEA-\nCC         COMP:11965, ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:193028,\nCC         ChEBI:CHEBI:232464; Evidence={ECO:0000269|PubMed:28631282};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:82704;\nCC         Evidence={ECO:0000269|PubMed:28631282};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:57.209412+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-66",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "325b1f9f1545fcf13c71c1f0abd0af2223be88dff7649f9a3b61a997d58cc16f",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U6I9?format=txt&versions=23"
 }
 ```
 

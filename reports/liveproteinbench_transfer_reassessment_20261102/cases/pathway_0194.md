@@ -1,18 +1,16 @@
-# pathway_0194: before and after transfer clarification
+# pathway_0194
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0194.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0194.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Amino-acid biosynthesis
+**Expected answer:** **B** — Amino-acid biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,253 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence is annotated as dihydroxy-acid dehydratase, with pathway annotations for isoleucine and valine biosynthesis. Those annotations are transferred by similarity (ECO:0000250), so they support amino-acid biosynthesis but are not direct experimental evidence for this protein.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest an enzyme, but the input provides no organism, gene identity, or pathway annotation that establishes which pathway role applies.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as mitochondrial dihydroxy-acid dehydratase and its annotated roles in amino-acid biosynthesis and an aspterric-acid biosynthesis cluster.
-
-
-**Reason**
-
-> Distinguishing the broad pathway choices requires protein-specific functional or annotation information absent from the sequence-and-choices prompt; generic sequence reasoning does not establish the pathway role.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> B is supported by the isoleucine and valine pathway annotations. D is also defensible because the protein is identified as an aspterric-acid biosynthesis cluster protein, although the supplied evidence does not establish which role is primary.
-
-
-### Important caveats
-
-- The source sequence matches exactly, but the available pathway annotations for amino-acid biosynthesis are similarity-transferred.
-- The precise evidence for a secondary-metabolite role here is the cited cluster-protein designation; it does not independently establish relative pathway importance.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but the input provides no organism, gene identity, or pathway annotation that establishes which pathway role applies.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as mitochondrial dihydroxy-acid dehydratase and its annotated roles in amino-acid biosynthesis and an aspterric-acid biosynthesis cluster.",
-    "reason": "Distinguishing the broad pathway choices requires protein-specific functional or annotation information absent from the sequence-and-choices prompt; generic sequence reasoning does not establish the pathway role."
-  },
-  "case_id": "pathway_0194",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as dihydroxy-acid dehydratase, with pathway annotations for isoleucine and valine biosynthesis. Those annotations are transferred by similarity (ECO:0000250), so they support amino-acid biosynthesis but are not direct experimental evidence for this protein."
-  },
-  "important_caveats": [
-    "The source sequence matches exactly, but the available pathway annotations for amino-acid biosynthesis are similarity-transferred.",
-    "The precise evidence for a secondary-metabolite role here is the cited cluster-protein designation; it does not independently establish relative pathway importance."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "B is supported by the isoleucine and valine pathway annotations. D is also defensible because the protein is identified as an aspterric-acid biosynthesis cluster protein, although the supplied evidence does not establish which role is primary."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0194",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as dihydroxy-acid dehydratase, with pathway annotations for isoleucine and valine biosynthesis. Those annotations are transferred by similarity (ECO:0000250), so they support amino-acid biosynthesis but are not direct experimental evidence for this protein.",
-    "evidence_ids": ["C4", "C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but the input provides no organism, gene identity, or pathway annotation that establishes which pathway role applies.",
-    "missing_item_specific_fact": "The protein-specific identification as mitochondrial dihydroxy-acid dehydratase and its annotated roles in amino-acid biosynthesis and an aspterric-acid biosynthesis cluster.",
-    "reason": "Distinguishing the broad pathway choices requires protein-specific functional or annotation information absent from the sequence-and-choices prompt; generic sequence reasoning does not establish the pathway role."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "B is supported by the isoleucine and valine pathway annotations. D is also defensible because the protein is identified as an aspterric-acid biosynthesis cluster protein, although the supplied evidence does not establish which role is primary."
-  },
-  "important_caveats": [
-    "The source sequence matches exactly, but the available pathway annotations for amino-acid biosynthesis are similarity-transferred.",
-    "The precise evidence for a secondary-metabolite role here is the cited cluster-protein designation; it does not independently establish relative pathway importance."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence contains hallmark dihydroxy-acid dehydratase (DHAD, EC 4.2.1.9) motifs, including the Fe-S cluster-binding 'GAGLGQDVALLTDGRFSGG' and the 'ACPGKGACGG' signature. UniProt entry A0A0F7TWW9 (PBRD_PENBI) annotates the pathway as 'Amino-acid biosynthesis; L-isoleucine biosynthesis' and 'Amino-acid biosynthesis; L-valine biosynthesis' (evidence ECO:0000250, similarity-based). The recommended name is 'Dihydroxy-acid dehydratase pbrD, mitochondrial' with EC 4.2.1.9 (ECO:0000305, PubMed:39511739). Choice B ('Amino-acid biosynthesis') matches the UniProt pathway annotation. The alternative name 'Aspterric acid biosynthesis cluster protein D' links the protein to a secondary-metabolite gene cluster, but the enzymatic function and pathway assignment remain amino-acid biosynthesis.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence displays canonical DHAD/IlvD domain signatures: the Fe-S cluster-binding motif 'GAGLGQDVALLTDGRFSGG' (residues ~470-490), the 'ACPGKGACGG' loop, and the overall ~250-residue catalytic fold. DHAD catalyzes the dehydration of 2,3-dihydroxy-isovalerate → 2-keto-isovalerate (valine pathway) and 2,3-dihydroxy-3-methylvalerate → 2-keto-3-methylvalerate (isoleucine pathway), both well-established steps in branched-chain amino-acid biosynthesis. This allows elimination of A (glycolipid biosynthesis involves glycosyltransferases, not dehydratases of this type) and C (threonine from aspartate involves homoserine dehydrogenase, homoserine kinase, threonine synthase — no DHAD step). Distinguishing B from D requires recognizing that while the gene sits in an aspterric-acid cluster, the enzyme's catalytic reaction is a canonical amino-acid biosynthetic dehydration.
-
-
-**Missing item-specific fact**
-
-> The specific organism (Penicillium brasilianum) and the fact that this DHAD paralog is embedded in an aspterric-acid secondary-metabolite gene cluster are not derivable from the sequence alone. However, the primary enzymatic function (DHAD → amino-acid biosynthesis) is inferable from the domain architecture without knowing the cluster context.
-
-
-**Reason**
-
-> A knowledgeable model can recognize the DHAD domain from conserved motifs and map it to branched-chain amino-acid biosynthesis using standard biochemistry. The B-vs-D distinction is somewhat subtle (the protein participates in a secondary-metabolite cluster) but the question asks for the 'primary metabolic pathway,' and DHAD's reaction is unambiguously an amino-acid biosynthetic step.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> The protein is named 'Aspterric acid biosynthesis cluster protein D' (PubMed:39511739), placing it within a secondary-metabolite biosynthetic gene cluster. A model aware of this cluster context could argue for D (Secondary metabolite biosynthesis). However, the UniProt pathway annotation, the EC number (4.2.1.9), and the enzymatic reaction all point to amino-acid biosynthesis as the primary pathway. The question phrasing 'primary metabolic or signaling pathway' favors B, but the secondary-metabolite cluster context introduces mild ambiguity.
-
-
-### Important caveats
-
-- The UniProt pathway annotations carry evidence code ECO:0000250 (similarity-based inference from Q0CPG9), not direct experimental pathway assignment. The experimental evidence (ECO:0000305, PubMed:39511739) supports the DHAD enzymatic function but the specific pathway step assignment is by homology.
-- The protein's role in the aspterric-acid secondary-metabolite cluster (alternative name, PubMed:39511739) means it may serve a repurposed function in secondary metabolism in P. brasilianum, adding nuance to the B-vs-D choice.
-- The sequence match to UniProt A0A0F7TWW9 is exact (SHA-256 match confirmed in both current and historical snapshots), so the annotation applies directly.
-- The entry was first publicly released in April 2025; the author's source snapshot date is unknown, so the annotation available to the benchmark author may differ from the current entry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence displays canonical DHAD/IlvD domain signatures: the Fe-S cluster-binding motif 'GAGLGQDVALLTDGRFSGG' (residues ~470-490), the 'ACPGKGACGG' loop, and the overall ~250-residue catalytic fold. DHAD catalyzes the dehydration of 2,3-dihydroxy-isovalerate → 2-keto-isovalerate (valine pathway) and 2,3-dihydroxy-3-methylvalerate → 2-keto-3-methylvalerate (isoleucine pathway), both well-established steps in branched-chain amino-acid biosynthesis. This allows elimination of A (glycolipid biosynthesis involves glycosyltransferases, not dehydratases of this type) and C (threonine from aspartate involves homoserine dehydrogenase, homoserine kinase, threonine synthase — no DHAD step). Distinguishing B from D requires recognizing that while the gene sits in an aspterric-acid cluster, the enzyme's catalytic reaction is a canonical amino-acid biosynthetic dehydration.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific organism (Penicillium brasilianum) and the fact that this DHAD paralog is embedded in an aspterric-acid secondary-metabolite gene cluster are not derivable from the sequence alone. However, the primary enzymatic function (DHAD → amino-acid biosynthesis) is inferable from the domain architecture without knowing the cluster context.",
-    "reason": "A knowledgeable model can recognize the DHAD domain from conserved motifs and map it to branched-chain amino-acid biosynthesis using standard biochemistry. The B-vs-D distinction is somewhat subtle (the protein participates in a secondary-metabolite cluster) but the question asks for the 'primary metabolic pathway,' and DHAD's reaction is unambiguously an amino-acid biosynthetic step."
-  },
-  "case_id": "pathway_0194",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence contains hallmark dihydroxy-acid dehydratase (DHAD, EC 4.2.1.9) motifs, including the Fe-S cluster-binding 'GAGLGQDVALLTDGRFSGG' and the 'ACPGKGACGG' signature. UniProt entry A0A0F7TWW9 (PBRD_PENBI) annotates the pathway as 'Amino-acid biosynthesis; L-isoleucine biosynthesis' and 'Amino-acid biosynthesis; L-valine biosynthesis' (evidence ECO:0000250, similarity-based). The recommended name is 'Dihydroxy-acid dehydratase pbrD, mitochondrial' with EC 4.2.1.9 (ECO:0000305, PubMed:39511739). Choice B ('Amino-acid biosynthesis') matches the UniProt pathway annotation. The alternative name 'Aspterric acid biosynthesis cluster protein D' links the protein to a secondary-metabolite gene cluster, but the enzymatic function and pathway assignment remain amino-acid biosynthesis."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotations carry evidence code ECO:0000250 (similarity-based inference from Q0CPG9), not direct experimental pathway assignment. The experimental evidence (ECO:0000305, PubMed:39511739) supports the DHAD enzymatic function but the specific pathway step assignment is by homology.",
-    "The protein's role in the aspterric-acid secondary-metabolite cluster (alternative name, PubMed:39511739) means it may serve a repurposed function in secondary metabolism in P. brasilianum, adding nuance to the B-vs-D choice.",
-    "The sequence match to UniProt A0A0F7TWW9 is exact (SHA-256 match confirmed in both current and historical snapshots), so the annotation applies directly.",
-    "The entry was first publicly released in April 2025; the author's source snapshot date is unknown, so the annotation available to the benchmark author may differ from the current entry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "The protein is named 'Aspterric acid biosynthesis cluster protein D' (PubMed:39511739), placing it within a secondary-metabolite biosynthetic gene cluster. A model aware of this cluster context could argue for D (Secondary metabolite biosynthesis). However, the UniProt pathway annotation, the EC number (4.2.1.9), and the enzymatic reaction all point to amino-acid biosynthesis as the primary pathway. The question phrasing 'primary metabolic or signaling pathway' favors B, but the secondary-metabolite cluster context introduces mild ambiguity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0194",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence contains hallmark dihydroxy-acid dehydratase (DHAD, EC 4.2.1.9) motifs, including the Fe-S cluster-binding 'GAGLGQDVALLTDGRFSGG' and the 'ACPGKGACGG' signature. UniProt entry A0A0F7TWW9 (PBRD_PENBI) annotates the pathway as 'Amino-acid biosynthesis; L-isoleucine biosynthesis' and 'Amino-acid biosynthesis; L-valine biosynthesis' (evidence ECO:0000250, similarity-based). The recommended name is 'Dihydroxy-acid dehydratase pbrD, mitochondrial' with EC 4.2.1.9 (ECO:0000305, PubMed:39511739). Choice B ('Amino-acid biosynthesis') matches the UniProt pathway annotation. The alternative name 'Aspterric acid biosynthesis cluster protein D' links the protein to a secondary-metabolite gene cluster, but the enzymatic function and pathway assignment remain amino-acid biosynthesis.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence displays canonical DHAD/IlvD domain signatures: the Fe-S cluster-binding motif 'GAGLGQDVALLTDGRFSGG' (residues ~470-490), the 'ACPGKGACGG' loop, and the overall ~250-residue catalytic fold. DHAD catalyzes the dehydration of 2,3-dihydroxy-isovalerate → 2-keto-isovalerate (valine pathway) and 2,3-dihydroxy-3-methylvalerate → 2-keto-3-methylvalerate (isoleucine pathway), both well-established steps in branched-chain amino-acid biosynthesis. This allows elimination of A (glycolipid biosynthesis involves glycosyltransferases, not dehydratases of this type) and C (threonine from aspartate involves homoserine dehydrogenase, homoserine kinase, threonine synthase — no DHAD step). Distinguishing B from D requires recognizing that while the gene sits in an aspterric-acid cluster, the enzyme's catalytic reaction is a canonical amino-acid biosynthetic dehydration.",
-    "missing_item_specific_fact": "The specific organism (Penicillium brasilianum) and the fact that this DHAD paralog is embedded in an aspterric-acid secondary-metabolite gene cluster are not derivable from the sequence alone. However, the primary enzymatic function (DHAD → amino-acid biosynthesis) is inferable from the domain architecture without knowing the cluster context.",
-    "reason": "A knowledgeable model can recognize the DHAD domain from conserved motifs and map it to branched-chain amino-acid biosynthesis using standard biochemistry. The B-vs-D distinction is somewhat subtle (the protein participates in a secondary-metabolite cluster) but the question asks for the 'primary metabolic pathway,' and DHAD's reaction is unambiguously an amino-acid biosynthetic step."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "The protein is named 'Aspterric acid biosynthesis cluster protein D' (PubMed:39511739), placing it within a secondary-metabolite biosynthetic gene cluster. A model aware of this cluster context could argue for D (Secondary metabolite biosynthesis). However, the UniProt pathway annotation, the EC number (4.2.1.9), and the enzymatic reaction all point to amino-acid biosynthesis as the primary pathway. The question phrasing 'primary metabolic or signaling pathway' favors B, but the secondary-metabolite cluster context introduces mild ambiguity."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotations carry evidence code ECO:0000250 (similarity-based inference from Q0CPG9), not direct experimental pathway assignment. The experimental evidence (ECO:0000305, PubMed:39511739) supports the DHAD enzymatic function but the specific pathway step assignment is by homology.",
-    "The protein's role in the aspterric-acid secondary-metabolite cluster (alternative name, PubMed:39511739) means it may serve a repurposed function in secondary metabolism in P. brasilianum, adding nuance to the B-vs-D choice.",
-    "The sequence match to UniProt A0A0F7TWW9 is exact (SHA-256 match confirmed in both current and historical snapshots), so the annotation applies directly.",
-    "The entry was first publicly released in April 2025; the author's source snapshot date is unknown, so the annotation available to the benchmark author may differ from the current entry."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -521,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0F7TWW9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 596,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-04-09",
@@ -552,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-04-09",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "current_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 596,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 30,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0F7TWW9",
   "selected_historical_entry_version": 30,
+  "selected_historical_record_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "selected_historical_source_sequence_length": 596,
+  "selected_historical_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
   "selected_historical_version": {
     "accession": "A0A0F7TWW9",
     "database": "Swiss-Prot",
@@ -570,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PBRD_PENBI",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "selected_historical_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
-  "selected_historical_source_sequence_length": 596,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 30,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -601,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0F7TWW9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -620,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-04-09\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -639,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium brasilianum\",\"taxonId\":104259}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -658,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein D\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Dihydroxy-acid dehydratase pbrD, mitochondrial\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"DHAD astD\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -677,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q0CPG9\",\"source\":\"UniProtKB\"}],\"value\":\"Amino-acid biosynthesis; L-isoleucine biosynthesis; L-isoleucine from 2-oxobutanoate: step 3/4\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -696,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/comments/7",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q0CPG9\",\"source\":\"UniProtKB\"}],\"value\":\"Amino-acid biosynthesis; L-valine biosynthesis; L-valine from pyruvate: step 3/4\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/7",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -715,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhou Z.\",\"Zhang Y.\",\"Wu Q.\",\"Hou X.\",\"Zhang B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39511739\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c08468\"}],\"citationType\":\"journal article\",\"firstPage\":\"25755\",\"id\":\"39511739\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"25766\",\"publicationDate\":\"2024\",\"title\":\"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\",\"volume\":\"72\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -733,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   PBRD_PENBI              Reviewed;         596 AA.\nAC   A0A0F7TWW9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-APR-2025, sequence version 2.\nDT   28-JAN-2026, entry version 30.\nDE   RecName: Full=Dihydroxy-acid dehydratase pbrD, mitochondrial {ECO:0000303|PubMed:39511739};\nDE            Short=DHAD astD {ECO:0000303|PubMed:39511739};\nDE            EC=4.2.1.9 {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein D {ECO:0000303|PubMed:39511739};\nDE   Flags: Precursor;\nGN   Name=pbrD {ECO:0000303|PubMed:39511739}; ORFNames=PMG11_09713;\nOS   Penicillium brasilianum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=104259;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 
@@ -754,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 24-29",
   "excerpt": "RN   [2]\nRP   FUNCTION.\nRX   PubMed=39511739; DOI=10.1021/acs.jafc.4c08468;\nRA   Zhou Z., Zhang Y., Wu Q., Hou X., Zhang B.;\nRT   \"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\";\nRL   J. Agric. Food Chem. 72:25755-25766(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 
@@ -775,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 69-71",
   "excerpt": "CC   -!- PATHWAY: Amino-acid biosynthesis; L-isoleucine biosynthesis; L-\nCC       isoleucine from 2-oxobutanoate: step 3/4.\nCC       {ECO:0000250|UniProtKB:Q0CPG9}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 69-71",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 
@@ -796,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 72-73",
   "excerpt": "CC   -!- PATHWAY: Amino-acid biosynthesis; L-valine biosynthesis; L-valine from\nCC       pyruvate: step 3/4. {ECO:0000250|UniProtKB:Q0CPG9}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 72-73",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 

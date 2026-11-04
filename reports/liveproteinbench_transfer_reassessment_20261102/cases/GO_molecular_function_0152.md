@@ -1,18 +1,16 @@
-# GO_molecular_function_0152: before and after transfer clarification
+# GO_molecular_function_0152
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0152.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0152.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — S-adenosylmethionine-dependent methyltransferase activity
+**Expected answer:** **C** — S-adenosylmethionine-dependent methyltransferase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the cited UniProt entry for Rauvolfia serpentina ajmaline N-methyltransferase. The entry reports experimentally supported methylation using S-adenosyl-L-methionine, which supports choice C; its GO annotation for that activity is computationally assigned by InterPro.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may be compatible with a methyltransferase, but the input supplies no organism, substrate, or other context that identifies its particular activity. Sequence-based general knowledge does not establish that this protein methylates ajmaline rather than performing one of the other listed functions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and functional annotation as an S-adenosylmethionine-dependent ajmaline N-methyltransferase.
-
-
-**Reason**
-
-> The correct choice is supported by reviewer-only evidence for the exact sequence, but that evidence is absent from the evaluated input. Recognizing the sequence or relying on a predictor would not make the distinction reasoning-supported.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports C for this protein. Although option C is broad, the sequence-specific evidence identifies an activity matching it, not the specific tRNA methyltransferase activity in D.
-
-
-### Important caveats
-
-- The cited functional and catalytic annotations are linked to a publication with experimental evidence; the GO term itself is marked IEA:InterPro.
-- The exact author data-source snapshot is unknown, though the sequence matches both current and archived UniProt records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may be compatible with a methyltransferase, but the input supplies no organism, substrate, or other context that identifies its particular activity. Sequence-based general knowledge does not establish that this protein methylates ajmaline rather than performing one of the other listed functions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and functional annotation as an S-adenosylmethionine-dependent ajmaline N-methyltransferase.",
-    "reason": "The correct choice is supported by reviewer-only evidence for the exact sequence, but that evidence is absent from the evaluated input. Recognizing the sequence or relying on a predictor would not make the distinction reasoning-supported."
-  },
-  "case_id": "GO_molecular_function_0152",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "C8"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited UniProt entry for Rauvolfia serpentina ajmaline N-methyltransferase. The entry reports experimentally supported methylation using S-adenosyl-L-methionine, which supports choice C; its GO annotation for that activity is computationally assigned by InterPro."
-  },
-  "important_caveats": [
-    "The cited functional and catalytic annotations are linked to a publication with experimental evidence; the GO term itself is marked IEA:InterPro.",
-    "The exact author data-source snapshot is unknown, though the sequence matches both current and archived UniProt records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports C for this protein. Although option C is broad, the sequence-specific evidence identifies an activity matching it, not the specific tRNA methyltransferase activity in D."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0152",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the cited UniProt entry for Rauvolfia serpentina ajmaline N-methyltransferase. The entry reports experimentally supported methylation using S-adenosyl-L-methionine, which supports choice C; its GO annotation for that activity is computationally assigned by InterPro.",
-    "evidence_ids": ["C1", "C5", "C6", "C8"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may be compatible with a methyltransferase, but the input supplies no organism, substrate, or other context that identifies its particular activity. Sequence-based general knowledge does not establish that this protein methylates ajmaline rather than performing one of the other listed functions.",
-    "missing_item_specific_fact": "The protein-specific identification and functional annotation as an S-adenosylmethionine-dependent ajmaline N-methyltransferase.",
-    "reason": "The correct choice is supported by reviewer-only evidence for the exact sequence, but that evidence is absent from the evaluated input. Recognizing the sequence or relying on a predictor would not make the distinction reasoning-supported."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports C for this protein. Although option C is broad, the sequence-specific evidence identifies an activity matching it, not the specific tRNA methyltransferase activity in D."
-  },
-  "important_caveats": [
-    "The cited functional and catalytic annotations are linked to a publication with experimental evidence; the GO term itself is marked IEA:InterPro.",
-    "The exact author data-source snapshot is unknown, though the sequence matches both current and archived UniProt records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A075D654 (sequence matched, 291 aa) identifies this protein as Ajmaline N-methyltransferase (EC 2.1.1.393) from Rauvolfia serpentina. Experimental evidence (ECO:0000269, PubMed:27122470) confirms the catalytic reaction: ajmaline + S-adenosyl-L-methionine → 4-methylajmaline + S-adenosyl-L-homocysteine + H(+). This is unambiguously an S-adenosylmethionine-dependent methyltransferase reaction. GO:0008757 (S-adenosylmethionine-dependent methyltransferase activity) is annotated to this entry. The answer C is well-supported by experimental evidence.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains hallmark motifs of class I SAM-dependent methyltransferases: a GxGxG Rossmann-fold motif (GCGIGGT at ~residues 78-84) and a DWS motif (IADWS at ~residues 228-232). These are textbook signatures of the Rossmann-fold methyltransferase superfamily that uses SAM as methyl donor, directly supporting option C. Option A (2-oxoglutarate-dependent dioxygenase) requires a different fold (cupin/β-barrel) and Fe(II)/2-oxoglutarate-binding motifs (HxD/E...H) absent here. Option B (phosphopantothenoylcysteine decarboxylase) is a flavin-dependent decarboxylase with no SAM-binding architecture. Option D (tRNA guanine(18)-2'-O-methyltransferase, Trm13) uses a class III methyltransferase fold (not Rossmann) and would be expected to contain tRNA-recognition elements; the observed Rossmann-fold architecture with DWS motif is inconsistent with a tRNA 2'-O-methyltransferase. Thus, general knowledge of methyltransferase fold classification meaningfully distinguishes C from the other options.
-
-
-**Missing item-specific fact**
-
-> The exact substrate identity (ajmaline alkaloid) cannot be determined from sequence alone, but the question only requires identifying the general molecular function category (SAM-dependent methyltransferase), which the fold motifs support.
-
-
-**Reason**
-
-> The GxGxG and DWS motifs are well-established, general biochemical signatures of class I SAM-dependent methyltransferases. Their presence rules out dioxygenase (A) and decarboxylase (B) activities. The Rossmann-fold architecture is inconsistent with the class III fold of Trm13-type tRNA 2'-O-methyltransferases (D). This provides a concrete, general biological argument to select C without needing to recognize the exact protein or recall a specific database annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and B are clearly incompatible with the observed methyltransferase fold motifs. Option D (tRNA 2'-O-methyltransferase) uses a fundamentally different structural fold (class III) and is inconsistent with the Rossmann-fold architecture evident in the sequence. Option C is the only defensible choice given the sequence features. While C is a broad category that technically encompasses D's parent, the fold evidence argues specifically against D, leaving C as the uniquely supported answer.
-
-
-### Important caveats
-
-- The GO:0008757 annotation in UniProt carries IEA:InterPro evidence code (computational inference from domain match), while the underlying enzymatic activity is experimentally confirmed (ECO:0000269, PubMed:27122470). The answer is supported at the experimental level.
-- The distinction between C and D relies on fold-class knowledge (class I Rossmann vs. class III for Trm13); a model lacking this structural biology knowledge might find C and D both plausible as 'methyltransferase' answers.
-- The sequence-match is confirmed (291 aa, SHA256 matched in both current and historical entry versions).
-- The identity of the protein as Ajmaline N-methyltransferase specifically (vs. another SAM-dependent methyltransferase) would require substrate-level information not derivable from sequence alone, but this level of specificity is not required by the question.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains hallmark motifs of class I SAM-dependent methyltransferases: a GxGxG Rossmann-fold motif (GCGIGGT at ~residues 78-84) and a DWS motif (IADWS at ~residues 228-232). These are textbook signatures of the Rossmann-fold methyltransferase superfamily that uses SAM as methyl donor, directly supporting option C. Option A (2-oxoglutarate-dependent dioxygenase) requires a different fold (cupin/β-barrel) and Fe(II)/2-oxoglutarate-binding motifs (HxD/E...H) absent here. Option B (phosphopantothenoylcysteine decarboxylase) is a flavin-dependent decarboxylase with no SAM-binding architecture. Option D (tRNA guanine(18)-2'-O-methyltransferase, Trm13) uses a class III methyltransferase fold (not Rossmann) and would be expected to contain tRNA-recognition elements; the observed Rossmann-fold architecture with DWS motif is inconsistent with a tRNA 2'-O-methyltransferase. Thus, general knowledge of methyltransferase fold classification meaningfully distinguishes C from the other options.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The exact substrate identity (ajmaline alkaloid) cannot be determined from sequence alone, but the question only requires identifying the general molecular function category (SAM-dependent methyltransferase), which the fold motifs support.",
-    "reason": "The GxGxG and DWS motifs are well-established, general biochemical signatures of class I SAM-dependent methyltransferases. Their presence rules out dioxygenase (A) and decarboxylase (B) activities. The Rossmann-fold architecture is inconsistent with the class III fold of Trm13-type tRNA 2'-O-methyltransferases (D). This provides a concrete, general biological argument to select C without needing to recognize the exact protein or recall a specific database annotation."
-  },
-  "case_id": "GO_molecular_function_0152",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "H3",
-      "H4",
-      "H5",
-      "H6",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A075D654 (sequence matched, 291 aa) identifies this protein as Ajmaline N-methyltransferase (EC 2.1.1.393) from Rauvolfia serpentina. Experimental evidence (ECO:0000269, PubMed:27122470) confirms the catalytic reaction: ajmaline + S-adenosyl-L-methionine → 4-methylajmaline + S-adenosyl-L-homocysteine + H(+). This is unambiguously an S-adenosylmethionine-dependent methyltransferase reaction. GO:0008757 (S-adenosylmethionine-dependent methyltransferase activity) is annotated to this entry. The answer C is well-supported by experimental evidence."
-  },
-  "important_caveats": [
-    "The GO:0008757 annotation in UniProt carries IEA:InterPro evidence code (computational inference from domain match), while the underlying enzymatic activity is experimentally confirmed (ECO:0000269, PubMed:27122470). The answer is supported at the experimental level.",
-    "The distinction between C and D relies on fold-class knowledge (class I Rossmann vs. class III for Trm13); a model lacking this structural biology knowledge might find C and D both plausible as 'methyltransferase' answers.",
-    "The sequence-match is confirmed (291 aa, SHA256 matched in both current and historical entry versions).",
-    "The identity of the protein as Ajmaline N-methyltransferase specifically (vs. another SAM-dependent methyltransferase) would require substrate-level information not derivable from sequence alone, but this level of specificity is not required by the question."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and B are clearly incompatible with the observed methyltransferase fold motifs. Option D (tRNA 2'-O-methyltransferase) uses a fundamentally different structural fold (class III) and is inconsistent with the Rossmann-fold architecture evident in the sequence. Option C is the only defensible choice given the sequence features. While C is a broad category that technically encompasses D's parent, the fold evidence argues specifically against D, leaving C as the uniquely supported answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0152",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A075D654 (sequence matched, 291 aa) identifies this protein as Ajmaline N-methyltransferase (EC 2.1.1.393) from Rauvolfia serpentina. Experimental evidence (ECO:0000269, PubMed:27122470) confirms the catalytic reaction: ajmaline + S-adenosyl-L-methionine → 4-methylajmaline + S-adenosyl-L-homocysteine + H(+). This is unambiguously an S-adenosylmethionine-dependent methyltransferase reaction. GO:0008757 (S-adenosylmethionine-dependent methyltransferase activity) is annotated to this entry. The answer C is well-supported by experimental evidence.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "C8", "H3", "H4", "H5", "H6", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains hallmark motifs of class I SAM-dependent methyltransferases: a GxGxG Rossmann-fold motif (GCGIGGT at ~residues 78-84) and a DWS motif (IADWS at ~residues 228-232). These are textbook signatures of the Rossmann-fold methyltransferase superfamily that uses SAM as methyl donor, directly supporting option C. Option A (2-oxoglutarate-dependent dioxygenase) requires a different fold (cupin/β-barrel) and Fe(II)/2-oxoglutarate-binding motifs (HxD/E...H) absent here. Option B (phosphopantothenoylcysteine decarboxylase) is a flavin-dependent decarboxylase with no SAM-binding architecture. Option D (tRNA guanine(18)-2'-O-methyltransferase, Trm13) uses a class III methyltransferase fold (not Rossmann) and would be expected to contain tRNA-recognition elements; the observed Rossmann-fold architecture with DWS motif is inconsistent with a tRNA 2'-O-methyltransferase. Thus, general knowledge of methyltransferase fold classification meaningfully distinguishes C from the other options.",
-    "missing_item_specific_fact": "The exact substrate identity (ajmaline alkaloid) cannot be determined from sequence alone, but the question only requires identifying the general molecular function category (SAM-dependent methyltransferase), which the fold motifs support.",
-    "reason": "The GxGxG and DWS motifs are well-established, general biochemical signatures of class I SAM-dependent methyltransferases. Their presence rules out dioxygenase (A) and decarboxylase (B) activities. The Rossmann-fold architecture is inconsistent with the class III fold of Trm13-type tRNA 2'-O-methyltransferases (D). This provides a concrete, general biological argument to select C without needing to recognize the exact protein or recall a specific database annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and B are clearly incompatible with the observed methyltransferase fold motifs. Option D (tRNA 2'-O-methyltransferase) uses a fundamentally different structural fold (class III) and is inconsistent with the Rossmann-fold architecture evident in the sequence. Option C is the only defensible choice given the sequence features. While C is a broad category that technically encompasses D's parent, the fold evidence argues specifically against D, leaving C as the uniquely supported answer."
-  },
-  "important_caveats": [
-    "The GO:0008757 annotation in UniProt carries IEA:InterPro evidence code (computational inference from domain match), while the underlying enzymatic activity is experimentally confirmed (ECO:0000269, PubMed:27122470). The answer is supported at the experimental level.",
-    "The distinction between C and D relies on fold-class knowledge (class I Rossmann vs. class III for Trm13); a model lacking this structural biology knowledge might find C and D both plausible as 'methyltransferase' answers.",
-    "The sequence-match is confirmed (291 aa, SHA256 matched in both current and historical entry versions).",
-    "The identity of the protein as Ajmaline N-methyltransferase specifically (vs. another SAM-dependent methyltransferase) would require substrate-level information not derivable from sequence alone, but this level of specificity is not required by the question."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -513,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A075D654",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 291,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-06-18",
@@ -544,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-10-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "current_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 291,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 32,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A075D654",
   "selected_historical_entry_version": 32,
+  "selected_historical_record_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "selected_historical_source_sequence_length": 291,
+  "selected_historical_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
   "selected_historical_version": {
     "accession": "A0A075D654",
     "database": "Swiss-Prot",
@@ -562,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ANMT_RAUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "selected_historical_source_sequence_sha256": "5f6fbe2b81552f7e7a28ff221c30e08ac1e1a42a47658afec5692cdd83f04885",
-  "selected_historical_source_sequence_length": 291,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 32,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -597,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A075D654\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -616,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-10-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -635,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Serpentine wood\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Vinceae\",\"Rauvolfiinae\",\"Rauvolfia\"],\"scientificName\":\"Rauvolfia serpentina\",\"synonyms\":[\"Ophioxylon serpentinum\"],\"taxonId\":4060}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -654,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AHH02777.1\",\"source\":\"EMBL\"}],\"value\":\"Gamma-tocopherol-like methyltransferase ANMT\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.393\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"Ajmaline N-methyltransferase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"RsANMT\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -673,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"value\":\"N-methyltransferase involved in the biosynthesis of ajmaline-type monoterpenoid indole alkaloids (MIAs) natural products, important plant-derived pharmaceuticals used in the therapy of heart disorders (PubMed:27122470). Catalyzes the indole N-methylation of ajmaline to produce 4-methylajmaline (PubMed:27122470). Also able, with a lower efficiency, to mediate the conversion of norajmaline to 4-methylnorajmaline (PubMed:27122470)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -692,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:79632\"}}],\"reaction\":{\"ecNumber\":\"2.1.1.393\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"name\":\"ajmaline + S-adenosyl-L-methionine = 4-methylajmaline + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:79631\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58567\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:230509\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -711,15 +465,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:79628\"}}],\"reaction\":{\"ecNumber\":\"2.1.1.393\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27122470\",\"source\":\"PubMed\"}],\"name\":\"norajmaline + S-adenosyl-L-methionine = 4-methylnorajmaline + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:79627\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:77618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:230510\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -730,15 +484,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/7",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0008757\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:S-adenosylmethionine-dependent methyltransferase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/7",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -749,15 +503,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json",
-  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
-  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Cazares-Flores P.\",\"Levac D.\",\"De Luca V.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27122470\"},{\"database\":\"DOI\",\"id\":\"10.1111/tpj.13186\"}],\"citationType\":\"journal article\",\"firstPage\":\"335\",\"id\":\"27122470\",\"journal\":\"Plant J.\",\"lastPage\":\"342\",\"publicationDate\":\"2016\",\"title\":\"Rauvolfia serpentina N-methyltransferases involved in ajmaline and Nbeta -methylajmaline biosynthesis belong to a gene family derived from gamma-tocopherol C-methyltransferase.\",\"volume\":\"87\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:36.410454+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "124df2385940e2e796356809e8af1e8fa6c895c01f7e6fd2fc1c87d9a5dbcf22",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A075D654.json"
 }
 ```
 
@@ -767,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   ANMT_RAUSE              Reviewed;         291 AA.\nAC   A0A075D654;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-OCT-2014, sequence version 1.\nDT   28-JAN-2026, entry version 32.\nDE   RecName: Full=Ajmaline N-methyltransferase {ECO:0000303|PubMed:27122470};\nDE            Short=RsANMT {ECO:0000303|PubMed:27122470};\nDE            EC=2.1.1.393 {ECO:0000269|PubMed:27122470};\nDE   AltName: Full=Gamma-tocopherol-like methyltransferase ANMT {ECO:0000312|EMBL:AHH02777.1};\nGN   Name=ANMT {ECO:0000303|PubMed:27122470};\nGN   Synonyms=Rs820 {ECO:0000312|EMBL:AHH02777.1};\nOS   Rauvolfia serpentina (Serpentine wood) (Ophioxylon serpentinum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Vinceae;\nOC   Rauvolfiinae; Rauvolfia.\nOX   NCBI_TaxID=4060;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -788,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 26-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, PATHWAY, AND\nRP   TISSUE SPECIFICITY.\nRX   PubMed=27122470; DOI=10.1111/tpj.13186;\nRA   Cazares-Flores P., Levac D., De Luca V.;\nRT   \"Rauvolfia serpentina N-methyltransferases involved in ajmaline and Nbeta\nRT   -methylajmaline biosynthesis belong to a gene family derived from gamma-\nRT   tocopherol C-methyltransferase.\";\nRL   Plant J. 87:335-342(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -809,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 35-41",
   "excerpt": "CC   -!- FUNCTION: N-methyltransferase involved in the biosynthesis of ajmaline-\nCC       type monoterpenoid indole alkaloids (MIAs) natural products, important\nCC       plant-derived pharmaceuticals used in the therapy of heart disorders\nCC       (PubMed:27122470). Catalyzes the indole N-methylation of ajmaline to\nCC       produce 4-methylajmaline (PubMed:27122470). Also able, with a lower\nCC       efficiency, to mediate the conversion of norajmaline to 4-\nCC       methylnorajmaline (PubMed:27122470). {ECO:0000269|PubMed:27122470}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -830,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 42-49",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=ajmaline + S-adenosyl-L-methionine = 4-methylajmaline + S-\nCC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:79631,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:58567,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:230509; EC=2.1.1.393;\nCC         Evidence={ECO:0000269|PubMed:27122470};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:79632;\nCC         Evidence={ECO:0000269|PubMed:27122470};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -851,18 +605,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 50-57",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=norajmaline + S-adenosyl-L-methionine = 4-methylnorajmaline +\nCC         S-adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:79627,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:77618, ChEBI:CHEBI:230510; EC=2.1.1.393;\nCC         Evidence={ECO:0000269|PubMed:27122470};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:79628;\nCC         Evidence={ECO:0000269|PubMed:27122470};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -872,18 +626,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32",
-  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
-  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
-  "source_locator": "lines 93-93",
   "excerpt": "DR   GO; GO:0008757; F:S-adenosylmethionine-dependent methyltransferase activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:15.419855+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 93-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "15b1ec6a186650c4d2bc97d8a1e63645a9b1f63fb122c34f7abac877a8922eb4",
+  "url": "https://rest.uniprot.org/unisave/A0A075D654?format=txt&versions=32"
 }
 ```
 
@@ -894,15 +648,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 45927-45946",
   "excerpt": "[Term]\nid: GO:0004633\nname: phosphopantothenoylcysteine decarboxylase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: N-[(R)-4-phosphonatopantothenoyl]-L-cysteinate + H+ = CO2 + pantetheine 4'-phosphate.\" [EC:4.1.1.36, RHEA:16793]\nsynonym: \"4-phosphopantothenoyl-L-cysteine decarboxylase activity\" RELATED [EC:4.1.1.36]\nsynonym: \"4-phosphopantotheoylcysteine decarboxylase activity\" RELATED [EC:4.1.1.36]\nsynonym: \"N-((R)-4'-phosphopantothenoyl)-L-cysteine carboxy-lyase activity\" RELATED [EC:4.1.1.36]\nsynonym: \"N-[(R)-4'-phosphopantothenoyl]-L-cysteine carboxy-lyase (pantotheine-4'-phosphate-forming)\" RELATED [EC:4.1.1.36]\nsynonym: \"N-[(R)-4'-phosphopantothenoyl]-L-cysteine carboxy-lyase activity\" RELATED [EC:4.1.1.36]\nsynonym: \"PPC-decarboxylase activity\" RELATED [EC:4.1.1.36]\nxref: EC:4.1.1.36\nxref: KEGG_REACTION:R03269\nxref: MetaCyc:P-PANTOCYSDECARB-RXN\nxref: Reactome:R-HSA-196840 \"3xPPCDC:3FMN decarboxylates PPC\"\nxref: RHEA:16793\nis_a: GO:0016831 ! carboxy-lyase activity\nproperty_value: skos:exactMatch EC:4.1.1.36\nproperty_value: skos:exactMatch RHEA:16793\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004633",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 45927-45946",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004633"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -913,15 +667,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 87421-87429",
   "excerpt": "[Term]\nid: GO:0008757\nname: S-adenosylmethionine-dependent methyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a methyl group from S-adenosyl-L-methionine to a substrate.\" [GOC:mah]\nsynonym: \"S-adenosyl methionine-dependent methyltransferase activity\" EXACT []\nsynonym: \"SAM-dependent methyltransferase activity\" EXACT []\nis_a: GO:0008168 ! methyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008757",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 87421-87429",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008757"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -932,15 +686,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 129228-129242",
   "excerpt": "[Term]\nid: GO:0016706\nname: 2-oxoglutarate-dependent dioxygenase activity\nnamespace: molecular_function\nalt_id: GO:0010302\ndef: \"Catalysis of the reaction: A + 2-oxoglutarate + O2 = B + succinate + CO2. This is an oxidation-reduction (redox) reaction in which hydrogen or electrons are transferred from 2-oxoglutarate and one other donor, and one atom of oxygen is incorporated into each donor.\" [GOC:mah]\nsynonym: \"2-oxoglutarate dioxygenase activity\" EXACT []\nsynonym: \"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, 2-oxoglutarate as one donor, and incorporation of one atom each of oxygen into both donors\" EXACT []\nxref: EC:1.14.11.-\nxref: Reactome:R-HSA-1234164 \"Cytosolic HIF1AN (FIH1) hydroxylates asparagine residues of Hypoxia-inducible Factor Alpha (HIF1A,HIF2A)\"\nxref: Reactome:R-HSA-6783455 \"TYW5 hydroxylates yW-72 yielding OHyW-72 at nucleotide 37 of tRNA(Phe)\"\nis_a: GO:0016705 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen\nis_a: GO:0051213 ! dioxygenase activity\nproperty_value: skos:exactMatch EC:1.14.11.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016706",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 129228-129242",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016706"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

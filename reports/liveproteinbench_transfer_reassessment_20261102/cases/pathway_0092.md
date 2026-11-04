@@ -1,18 +1,16 @@
-# pathway_0092: before and after transfer clarification
+# pathway_0092
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0092.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0092.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Lipid metabolism
+**Expected answer:** **C** — Lipid metabolism
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,220 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the 472-aa UniProt entry for garlic divinyl ether synthase, whose pathway annotation is lipid metabolism; oxylipin biosynthesis. The annotation cites experimental literature, supporting choice C, though it does not establish what source snapshot the question author used.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices include a broad lipid-metabolism category and more specific alternatives, but the supplied sequence and prompt provide no organism, function, or pathway context that meaningfully identifies this particular enzyme's role.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity and pathway annotation as divinyl ether synthase involved in oxylipin biosynthesis.
-
-
-**Reason**
-
-> The key is supported by reviewer-only annotation and cited experimental literature, but that information is absent from the evaluated input. Recognizing the exact sequence or recalling its database entry would be lookup or memorization, not reasoning from supplied context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the documented oxylipin pathway annotation, choice C is the only option that fits; the narrower distractors do not describe the annotated pathway.
-
-
-### Important caveats
-
-- The reviewer-only evidence is not information supplied to the evaluated model.
-- The exact author source snapshot is unknown, although the supplied sequence matches the historical and current records cited.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices include a broad lipid-metabolism category and more specific alternatives, but the supplied sequence and prompt provide no organism, function, or pathway context that meaningfully identifies this particular enzyme's role.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity and pathway annotation as divinyl ether synthase involved in oxylipin biosynthesis.",
-    "reason": "The key is supported by reviewer-only annotation and cited experimental literature, but that information is absent from the evaluated input. Recognizing the exact sequence or recalling its database entry would be lookup or memorization, not reasoning from supplied context."
-  },
-  "case_id": "pathway_0092",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the 472-aa UniProt entry for garlic divinyl ether synthase, whose pathway annotation is lipid metabolism; oxylipin biosynthesis. The annotation cites experimental literature, supporting choice C, though it does not establish what source snapshot the question author used."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence is not information supplied to the evaluated model.",
-    "The exact author source snapshot is unknown, although the supplied sequence matches the historical and current records cited."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the documented oxylipin pathway annotation, choice C is the only option that fits; the narrower distractors do not describe the annotated pathway."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0092",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the 472-aa UniProt entry for garlic divinyl ether synthase, whose pathway annotation is lipid metabolism; oxylipin biosynthesis. The annotation cites experimental literature, supporting choice C, though it does not establish what source snapshot the question author used.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices include a broad lipid-metabolism category and more specific alternatives, but the supplied sequence and prompt provide no organism, function, or pathway context that meaningfully identifies this particular enzyme's role.",
-    "missing_item_specific_fact": "The protein-specific identity and pathway annotation as divinyl ether synthase involved in oxylipin biosynthesis.",
-    "reason": "The key is supported by reviewer-only annotation and cited experimental literature, but that information is absent from the evaluated input. Recognizing the exact sequence or recalling its database entry would be lookup or memorization, not reasoning from supplied context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the documented oxylipin pathway annotation, choice C is the only option that fits; the narrower distractors do not describe the annotated pathway."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence is not information supplied to the evaluated model.",
-    "The exact author source snapshot is unknown, although the supplied sequence matches the historical and current records cited."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation (Q2WE96, CP74_ALLSA) explicitly states the pathway as 'Lipid metabolism; oxylipin biosynthesis' with experimental evidence codes (ECO:0000269) from four independent PubMed studies (18326559, 7672118, 8690066, 9128734). The protein is Divinyl ether synthase CYP74, a cytochrome P450 that converts fatty acid hydroperoxides into divinyl ether oxylipins. This falls squarely under 'Lipid metabolism.' Options A (L-leucine degradation) and D (L-valine biosynthesis) involve amino acid metabolism enzymes (dehydrogenases, transaminases), not P450s. Option B (fatty acid beta-oxidation) involves a distinct enzyme set (acyl-CoA dehydrogenases, hydratases, thiolases), not P450-mediated oxylipin synthesis. The sequence matches the UniProt entry (472 aa, SHA256 confirmed).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H6](#evidence-h6), [C1](#evidence-c1), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence (~472 aa) displays hallmarks of a cytochrome P450 enzyme: appropriate length for P450s (400-600 aa), multiple transmembrane/hydrophobic segments consistent with ER-membrane anchoring, and a C-terminal region with P450-like domain architecture. P450s are NOT involved in amino acid catabolism (eliminates A) or amino acid biosynthesis (eliminates D); those pathways use dehydrogenases, transaminases, and synthases. P450s are also NOT components of the beta-oxidation spiral (eliminates B), which relies on acyl-CoA oxidases, hydratases, and thiolases. Plant P450s are well-known for lipid modification reactions (desaturation, oxylipin synthesis, terpenoid cyclization), placing them under 'Lipid metabolism' (C). The elimination logic—P450 → not amino acid pathways → not beta-oxidation → lipid modification—is a valid general biological argument.
-
-
-**Missing item-specific fact**
-
-> Precise identification of this as a CYP74-family (divinyl ether synthase) enzyme from sequence alone is non-trivial because the canonical heme-binding motif FxxGxxxCxG is degenerate in this sequence (the region 'GKTMEE' lacks the expected Cys). However, the pathway-level answer (Lipid metabolism) can still be reached by the elimination reasoning above without identifying the exact CYP family.
-
-
-**Reason**
-
-> The four choices can be meaningfully distinguished by general biological knowledge: P450 enzymes are not amino acid metabolism enzymes (eliminates A, D) and are not beta-oxidation enzymes (eliminates B). This leaves 'Lipid metabolism' as the only viable pathway for a P450 acting on lipid-derived substrates. The reasoning does not require memorizing this specific protein's UniProt entry, though confident P450 identification from the sequence adds difficulty.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option B (fatty acid beta-oxidation) might superficially seem related since the enzyme uses fatty acid hydroperoxide substrates, but beta-oxidation is a specific multi-enzyme catabolic cycle (CoA activation → oxidation → hydration → oxidation → thiolysis) that does not involve P450s. Option C (Lipid metabolism) is the correct broad category encompassing oxylipin biosynthesis. No other option is defensible given the enzyme class.
-
-
-### Important caveats
-
-- The P450 heme-binding motif is not perfectly canonical in this sequence (CYP74 family degeneracy), making P450 identification from sequence alone moderately challenging but not impossible given overall architecture.
-- 'Lipid metabolism' is a very broad UniProt pathway category; the specific sub-pathway is 'oxylipin biosynthesis.' The question's answer choice C matches the UniProt top-level pathway exactly.
-- All reviewer evidence is from UniProt current and archived entries; the author's original source snapshot is unknown but sequence match is confirmed.
-- The pathway annotation is experimentally supported (ECO:0000269) by four independent biochemical studies on garlic bulb divinyl ether synthesis.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence (~472 aa) displays hallmarks of a cytochrome P450 enzyme: appropriate length for P450s (400-600 aa), multiple transmembrane/hydrophobic segments consistent with ER-membrane anchoring, and a C-terminal region with P450-like domain architecture. P450s are NOT involved in amino acid catabolism (eliminates A) or amino acid biosynthesis (eliminates D); those pathways use dehydrogenases, transaminases, and synthases. P450s are also NOT components of the beta-oxidation spiral (eliminates B), which relies on acyl-CoA oxidases, hydratases, and thiolases. Plant P450s are well-known for lipid modification reactions (desaturation, oxylipin synthesis, terpenoid cyclization), placing them under 'Lipid metabolism' (C). The elimination logic—P450 → not amino acid pathways → not beta-oxidation → lipid modification—is a valid general biological argument.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise identification of this as a CYP74-family (divinyl ether synthase) enzyme from sequence alone is non-trivial because the canonical heme-binding motif FxxGxxxCxG is degenerate in this sequence (the region 'GKTMEE' lacks the expected Cys). However, the pathway-level answer (Lipid metabolism) can still be reached by the elimination reasoning above without identifying the exact CYP family.",
-    "reason": "The four choices can be meaningfully distinguished by general biological knowledge: P450 enzymes are not amino acid metabolism enzymes (eliminates A, D) and are not beta-oxidation enzymes (eliminates B). This leaves 'Lipid metabolism' as the only viable pathway for a P450 acting on lipid-derived substrates. The reasoning does not require memorizing this specific protein's UniProt entry, though confident P450 identification from the sequence adds difficulty."
-  },
-  "case_id": "pathway_0092",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H6",
-      "C1",
-      "C6",
-      "C7",
-      "C8",
-      "C9"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation (Q2WE96, CP74_ALLSA) explicitly states the pathway as 'Lipid metabolism; oxylipin biosynthesis' with experimental evidence codes (ECO:0000269) from four independent PubMed studies (18326559, 7672118, 8690066, 9128734). The protein is Divinyl ether synthase CYP74, a cytochrome P450 that converts fatty acid hydroperoxides into divinyl ether oxylipins. This falls squarely under 'Lipid metabolism.' Options A (L-leucine degradation) and D (L-valine biosynthesis) involve amino acid metabolism enzymes (dehydrogenases, transaminases), not P450s. Option B (fatty acid beta-oxidation) involves a distinct enzyme set (acyl-CoA dehydrogenases, hydratases, thiolases), not P450-mediated oxylipin synthesis. The sequence matches the UniProt entry (472 aa, SHA256 confirmed)."
-  },
-  "important_caveats": [
-    "The P450 heme-binding motif is not perfectly canonical in this sequence (CYP74 family degeneracy), making P450 identification from sequence alone moderately challenging but not impossible given overall architecture.",
-    "'Lipid metabolism' is a very broad UniProt pathway category; the specific sub-pathway is 'oxylipin biosynthesis.' The question's answer choice C matches the UniProt top-level pathway exactly.",
-    "All reviewer evidence is from UniProt current and archived entries; the author's original source snapshot is unknown but sequence match is confirmed.",
-    "The pathway annotation is experimentally supported (ECO:0000269) by four independent biochemical studies on garlic bulb divinyl ether synthesis."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option B (fatty acid beta-oxidation) might superficially seem related since the enzyme uses fatty acid hydroperoxide substrates, but beta-oxidation is a specific multi-enzyme catabolic cycle (CoA activation → oxidation → hydration → oxidation → thiolysis) that does not involve P450s. Option C (Lipid metabolism) is the correct broad category encompassing oxylipin biosynthesis. No other option is defensible given the enzyme class."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{"case_id":"pathway_0092","expected_answer_check":{"judgment":"supported","reason":"UniProt annotation (Q2WE96, CP74_ALLSA) explicitly states the pathway as 'Lipid metabolism; oxylipin biosynthesis' with experimental evidence codes (ECO:0000269) from four independent PubMed studies (18326559, 7672118, 8690066, 9128734). The protein is Divinyl ether synthase CYP74, a cytochrome P450 that converts fatty acid hydroperoxides into divinyl ether oxylipins. This falls squarely under 'Lipid metabolism.' Options A (L-leucine degradation) and D (L-valine biosynthesis) involve amino acid metabolism enzymes (dehydrogenases, transaminases), not P450s. Option B (fatty acid beta-oxidation) involves a distinct enzyme set (acyl-CoA dehydrogenases, hydratases, thiolases), not P450-mediated oxylipin synthesis. The sequence matches the UniProt entry (472 aa, SHA256 confirmed).","evidence_ids":["C4","C5","H6","C1","C6","C7","C8","C9"]},"answerability_check":{"judgment":"reasoning_supported","discriminating_biological_argument":"The sequence (~472 aa) displays hallmarks of a cytochrome P450 enzyme: appropriate length for P450s (400-600 aa), multiple transmembrane/hydrophobic segments consistent with ER-membrane anchoring, and a C-terminal region with P450-like domain architecture. P450s are NOT involved in amino acid catabolism (eliminates A) or amino acid biosynthesis (eliminates D); those pathways use dehydrogenases, transaminases, and synthases. P450s are also NOT components of the beta-oxidation spiral (eliminates B), which relies on acyl-CoA oxidases, hydratases, and thiolases. Plant P450s are well-known for lipid modification reactions (desaturation, oxylipin synthesis, terpenoid cyclization), placing them under 'Lipid metabolism' (C). The elimination logic—P450 → not amino acid pathways → not beta-oxidation → lipid modification—is a valid general biological argument.","missing_item_specific_fact":"Precise identification of this as a CYP74-family (divinyl ether synthase) enzyme from sequence alone is non-trivial because the canonical heme-binding motif FxxGxxxCxG is degenerate in this sequence (the region 'GKTMEE' lacks the expected Cys). However, the pathway-level answer (Lipid metabolism) can still be reached by the elimination reasoning above without identifying the exact CYP family.","reason":"The four choices can be meaningfully distinguished by general biological knowledge: P450 enzymes are not amino acid metabolism enzymes (eliminates A, D) and are not beta-oxidation enzymes (eliminates B). This leaves 'Lipid metabolism' as the only viable pathway for a P450 acting on lipid-derived substrates. The reasoning does not require memorizing this specific protein's UniProt entry, though confident P450 identification from the sequence adds difficulty."},"question_ambiguity":{"multiple_defensible_options":[],"reason":"Option B (fatty acid beta-oxidation) might superficially seem related since the enzyme uses fatty acid hydroperoxide substrates, but beta-oxidation is a specific multi-enzyme catabolic cycle (CoA activation → oxidation → hydration → oxidation → thiolysis) that does not involve P450s. Option C (Lipid metabolism) is the correct broad category encompassing oxylipin biosynthesis. No other option is defensible given the enzyme class."},"important_caveats":["The P450 heme-binding motif is not perfectly canonical in this sequence (CYP74 family degeneracy), making P450 identification from sequence alone moderately challenging but not impossible given overall architecture.","'Lipid metabolism' is a very broad UniProt pathway category; the specific sub-pathway is 'oxylipin biosynthesis.' The question's answer choice C matches the UniProt top-level pathway exactly.","All reviewer evidence is from UniProt current and archived entries; the author's original source snapshot is unknown but sequence match is confirmed.","The pathway annotation is experimentally supported (ECO:0000269) by four independent biochemical studies on garlic bulb divinyl ether synthesis."]}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -367,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -484,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q2WE96",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "cc94de63a12f978e7f97483dcbf56ff963db7489be85ed11fc3191fd4619fd2a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 472,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "cc94de63a12f978e7f97483dcbf56ff963db7489be85ed11fc3191fd4619fd2a",
   "current_entry_audit": {
     "entryVersion": 77,
     "firstPublicDate": "2025-06-18",
@@ -515,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-01-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "current_source_sequence_sha256": "cc94de63a12f978e7f97483dcbf56ff963db7489be85ed11fc3191fd4619fd2a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 472,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "cc94de63a12f978e7f97483dcbf56ff963db7489be85ed11fc3191fd4619fd2a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 75,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q2WE96",
   "selected_historical_entry_version": 75,
+  "selected_historical_record_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
+  "selected_historical_source_sequence_length": 472,
+  "selected_historical_source_sequence_sha256": "cc94de63a12f978e7f97483dcbf56ff963db7489be85ed11fc3191fd4619fd2a",
   "selected_historical_version": {
     "accession": "Q2WE96",
     "database": "Swiss-Prot",
@@ -533,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CP74_ALLSA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
-  "selected_historical_source_sequence_sha256": "cc94de63a12f978e7f97483dcbf56ff963db7489be85ed11fc3191fd4619fd2a",
-  "selected_historical_source_sequence_length": 472,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 75,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -564,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q2WE96\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -583,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":77,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-01-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -602,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Garlic\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"Liliopsida\",\"Asparagales\",\"Amaryllidaceae\",\"Allioideae\",\"Allieae\",\"Allium\"],\"scientificName\":\"Allium sativum\",\"taxonId\":4682}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -621,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18326559\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.121\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18326559\",\"source\":\"PubMed\"}],\"value\":\"Colneleate synthase\"}},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18326559\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"7672118\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"8690066\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9128734\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.183\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"18326559\",\"source\":\"PubMed\"}],\"value\":\"Etheroleic acid synthase CYP74\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18326559\",\"source\":\"PubMed\"}],\"value\":\"Divinyl ether synthase CYP74\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18326559\",\"source\":\"PubMed\"}],\"value\":\"AsDES\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -640,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/comments/7",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18326559\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"7672118\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"8690066\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9128734\",\"source\":\"PubMed\"}],\"value\":\"Lipid metabolism; oxylipin biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/7",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -659,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Stumpe M.\",\"Carsjens J.G.\",\"Goebel C.\",\"Feussner I.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18326559\"},{\"database\":\"DOI\",\"id\":\"10.1093/jxb/ern010\"}],\"citationType\":\"journal article\",\"firstPage\":\"907\",\"id\":\"18326559\",\"journal\":\"J. Exp. Bot.\",\"lastPage\":\"915\",\"publicationDate\":\"2008\",\"title\":\"Divinyl ether synthesis in garlic bulbs.\",\"volume\":\"59\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"TISSUE SPECIFICITY\",\"INDUCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -678,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Grechkin A.N.\",\"Fazliev F.N.\",\"Mukhtarova L.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"7672118\"},{\"database\":\"DOI\",\"id\":\"10.1016/0014-5793(95)00895-g\"}],\"citationType\":\"journal article\",\"firstPage\":\"159\",\"id\":\"7672118\",\"journal\":\"FEBS Lett.\",\"lastPage\":\"162\",\"publicationDate\":\"1995\",\"title\":\"The lipoxygenase pathway in garlic (Allium sativum L.) bulbs: detection of the novel divinyl ether oxylipins.\",\"volume\":\"371\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -697,15 +475,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Grechkin A.N.\",\"Hamberg M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"8690066\"},{\"database\":\"DOI\",\"id\":\"10.1016/0014-5793(96)00536-4\"}],\"citationType\":\"journal article\",\"firstPage\":\"112\",\"id\":\"8690066\",\"journal\":\"FEBS Lett.\",\"lastPage\":\"114\",\"publicationDate\":\"1996\",\"title\":\"Divinyl ether synthase from garlic (Allium sativum L.) bulbs: sub-cellular localization and substrate regio-and stereospecificity.\",\"volume\":\"388\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -716,15 +494,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json",
-  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
-  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Grechkin A.N.\",\"Ilyasov A.V.\",\"Hamberg M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"9128734\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1432-1033.1997.00137.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"137\",\"id\":\"9128734\",\"journal\":\"Eur. J. Biochem.\",\"lastPage\":\"142\",\"publicationDate\":\"1997\",\"title\":\"On the mechanism of biosynthesis of divinyl ether oxylipins by enzyme from garlic bulbs.\",\"volume\":\"245\"},\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:30:45.939008+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fc101e59b646632c56412a88dd991512655f84d6ab0a59b5df563fac508adb41",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2WE96.json"
 }
 ```
 
@@ -734,18 +512,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75",
-  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
-  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
-  "source_locator": "lines 1-18",
   "excerpt": "ID   CP74_ALLSA              Reviewed;         472 AA.\nAC   Q2WE96;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-JAN-2006, sequence version 1.\nDT   28-JAN-2026, entry version 75.\nDE   RecName: Full=Divinyl ether synthase CYP74 {ECO:0000303|PubMed:18326559};\nDE            Short=AsDES {ECO:0000303|PubMed:18326559};\nDE   AltName: Full=Colneleate synthase {ECO:0000303|PubMed:18326559};\nDE            EC=4.2.1.121 {ECO:0000269|PubMed:18326559};\nDE   AltName: Full=Etheroleic acid synthase CYP74 {ECO:0000305|PubMed:18326559};\nDE            EC=4.2.1.183 {ECO:0000269|PubMed:18326559, ECO:0000269|PubMed:7672118, ECO:0000269|PubMed:8690066, ECO:0000269|PubMed:9128734};\nGN   Name=CYP74 {ECO:0000303|PubMed:18326559};\nGN   Synonyms=DES {ECO:0000303|PubMed:18326559};\nOS   Allium sativum (Garlic).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; Liliopsida; Asparagales; Amaryllidaceae;\nOC   Allioideae; Allieae; Allium.\nOX   NCBI_TaxID=4682;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-18",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
+  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75"
 }
 ```
 
@@ -755,18 +533,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75",
-  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
-  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
-  "source_locator": "lines 19-25",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, PATHWAY, TISSUE SPECIFICITY, AND INDUCTION.\nRX   PubMed=18326559; DOI=10.1093/jxb/ern010;\nRA   Stumpe M., Carsjens J.G., Goebel C., Feussner I.;\nRT   \"Divinyl ether synthesis in garlic bulbs.\";\nRL   J. Exp. Bot. 59:907-915(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-25",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
+  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75"
 }
 ```
 
@@ -776,18 +554,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75",
-  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
-  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
-  "source_locator": "lines 26-32",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=7672118; DOI=10.1016/0014-5793(95)00895-g;\nRA   Grechkin A.N., Fazliev F.N., Mukhtarova L.S.;\nRT   \"The lipoxygenase pathway in garlic (Allium sativum L.) bulbs: detection of\nRT   the novel divinyl ether oxylipins.\";\nRL   FEBS Lett. 371:159-162(1995).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-32",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
+  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75"
 }
 ```
 
@@ -797,18 +575,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75",
-  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
-  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
-  "source_locator": "lines 33-39",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=8690066; DOI=10.1016/0014-5793(96)00536-4;\nRA   Grechkin A.N., Hamberg M.;\nRT   \"Divinyl ether synthase from garlic (Allium sativum L.) bulbs: sub-cellular\nRT   localization and substrate regio-and stereospecificity.\";\nRL   FEBS Lett. 388:112-114(1996).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
+  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75"
 }
 ```
 
@@ -818,18 +596,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75",
-  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
-  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
-  "source_locator": "lines 40-46",
   "excerpt": "RN   [4]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=9128734; DOI=10.1111/j.1432-1033.1997.00137.x;\nRA   Grechkin A.N., Ilyasov A.V., Hamberg M.;\nRT   \"On the mechanism of biosynthesis of divinyl ether oxylipins by enzyme from\nRT   garlic bulbs.\";\nRL   Eur. J. Biochem. 245:137-142(1997).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
+  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75"
 }
 ```
 
@@ -839,18 +617,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75",
-  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
-  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
-  "source_locator": "lines 108-110",
   "excerpt": "CC   -!- PATHWAY: Lipid metabolism; oxylipin biosynthesis.\nCC       {ECO:0000269|PubMed:18326559, ECO:0000269|PubMed:7672118,\nCC       ECO:0000269|PubMed:8690066, ECO:0000269|PubMed:9128734}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:30:50.045519+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 108-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "529eee09b919f3b5788669e694368548dd1426b011a34543db2180899628437e",
+  "url": "https://rest.uniprot.org/unisave/Q2WE96?format=txt&versions=75"
 }
 ```
 

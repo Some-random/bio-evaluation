@@ -1,18 +1,16 @@
-# pathway_0096: before and after transfer clarification
+# pathway_0096
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0096.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0096.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Alkaloid biosynthesis. .
+**Expected answer:** **B** — Alkaloid biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry annotated as OkaE, an okaramine-biosynthesis protein, with an alkaloid-biosynthesis pathway annotation citing experimental evidence. The cited primary studies are not independently assessed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest an enzyme, but it does not provide a defensible way to identify its specific role in okaramine biosynthesis rather than the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> That this protein is OkaE, a protein involved in okaramine alkaloid biosynthesis.
-
-
-**Reason**
-
-> Distinguishing the pathway requires protein-specific functional knowledge or an annotation absent from the input; recognizing the sequence from an external database would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only evidence directly supports alkaloid biosynthesis. Its broader terpenoid annotation does not establish the specific spheroidene pathway offered as a distractor.
-
-
-### Important caveats
-
-- The sequence matches both current and historical UniProt records, but the author's exact source snapshot is unknown.
-- The pathway annotation cites experimental evidence, but the underlying papers were not independently validated.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but it does not provide a defensible way to identify its specific role in okaramine biosynthesis rather than the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this protein is OkaE, a protein involved in okaramine alkaloid biosynthesis.",
-    "reason": "Distinguishing the pathway requires protein-specific functional knowledge or an annotation absent from the input; recognizing the sequence from an external database would be lookup or memorization."
-  },
-  "case_id": "pathway_0096",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated as OkaE, an okaramine-biosynthesis protein, with an alkaloid-biosynthesis pathway annotation citing experimental evidence. The cited primary studies are not independently assessed here."
-  },
-  "important_caveats": [
-    "The sequence matches both current and historical UniProt records, but the author's exact source snapshot is unknown.",
-    "The pathway annotation cites experimental evidence, but the underlying papers were not independently validated."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence directly supports alkaloid biosynthesis. Its broader terpenoid annotation does not establish the specific spheroidene pathway offered as a distractor."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0096",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated as OkaE, an okaramine-biosynthesis protein, with an alkaloid-biosynthesis pathway annotation citing experimental evidence. The cited primary studies are not independently assessed here.",
-    "evidence_ids": ["C4", "C5", "C7", "C8", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but it does not provide a defensible way to identify its specific role in okaramine biosynthesis rather than the listed alternatives.",
-    "missing_item_specific_fact": "That this protein is OkaE, a protein involved in okaramine alkaloid biosynthesis.",
-    "reason": "Distinguishing the pathway requires protein-specific functional knowledge or an annotation absent from the input; recognizing the sequence from an external database would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence directly supports alkaloid biosynthesis. Its broader terpenoid annotation does not establish the specific spheroidene pathway offered as a distractor."
-  },
-  "important_caveats": [
-    "The sequence matches both current and historical UniProt records, but the author's exact source snapshot is unknown.",
-    "The pathway annotation cites experimental evidence, but the underlying papers were not independently validated."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt A0A2Z5U507 (OKAE_PENOH), an iron/alpha-ketoglutarate-dependent dioxygenase (EC 1.14.20.-) from Penicillium ochrochloron, part of the okaramine biosynthetic gene cluster. Okaramines are complex indole alkaloids. The UniProt PATHWAY annotation 'Alkaloid biosynthesis' is supported by experimental evidence (ECO:0000269) from PubMed:28631282 (Lai et al., 2017, Angew. Chem. Int. Ed.) and PubMed:29384650 (Kato et al., 2018, ACS Chem. Biol.), both of which functionally characterize okaE in the okaramine (indole alkaloid) biosynthetic pathway.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence is ~300 AA and consistent with an Fe(II)/2OG dioxygenase fold (HxD...H facial triad motifs are present). General biological knowledge allows elimination of three distractors: (A) L-histidine biosynthesis uses well-defined enzymes (ATP phosphoribosyltransferase, PR-ATP synthase, imidazoleglycerol-phosphate dehydratase, etc.) and does not involve Fe(II)/2OG dioxygenases as pathway enzymes; (C) spheroidene biosynthesis is a bacterial carotenoid pathway (crtP/crtI-type enzymes) and is implausible for a fungal protein; (D) L-threonine from L-aspartate step 2/5 is homoserine dehydrogenase, an NAD(P)-dependent oxidoreductase of a completely different enzyme class. This leaves (B) alkaloid biosynthesis as the only plausible option, consistent with the strong association of fungal Fe(II)/2OG dioxygenases with indole/terpenoid alkaloid tailoring reactions in Aspergillaceae.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The positive identification of 'alkaloid' rather than a more generic 'secondary metabolite' label benefits from knowing that Penicillium Fe(II)/2OG dioxygenases are disproportionately involved in alkaloid (especially indole alkaloid) biosynthesis, but the elimination of the other three options is sufficient.
-
-
-**Reason**
-
-> A model with general knowledge of enzyme superfamilies, pathway biochemistry, and fungal secondary metabolism can eliminate A, C, and D and arrive at B without needing to recognize the exact sequence as okaE. The reasoning relies on enzyme-class/pathway incompatibility arguments rather than database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The UniProt entry also lists 'Secondary metabolite biosynthesis; terpenoid biosynthesis' as a secondary pathway annotation, but terpenoid biosynthesis is not among the choices. Among the four provided options, only B is consistent with a fungal Fe(II)/2OG dioxygenase involved in secondary metabolism. No other option is defensible.
-
-
-### Important caveats
-
-- The UniProt entry carries a secondary pathway annotation ('terpenoid biosynthesis') without an experimental evidence code in the excerpt; the primary experimental pathway is 'Alkaloid biosynthesis.' This does not create ambiguity among the given options since terpenoid biosynthesis is not offered.
-- The reviewer-only evidence confirms the sequence match and annotation but was not available to the evaluated model; the model must rely on sequence-level reasoning and general knowledge.
-- The Fe(II)/2OG dioxygenase superfamily is very large and shared across many pathways; the positive assignment to 'alkaloid biosynthesis' specifically rests partly on the statistical prevalence of this enzyme class in fungal alkaloid tailoring, which is general knowledge but not a sequence-intrinsic property.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is ~300 AA and consistent with an Fe(II)/2OG dioxygenase fold (HxD...H facial triad motifs are present). General biological knowledge allows elimination of three distractors: (A) L-histidine biosynthesis uses well-defined enzymes (ATP phosphoribosyltransferase, PR-ATP synthase, imidazoleglycerol-phosphate dehydratase, etc.) and does not involve Fe(II)/2OG dioxygenases as pathway enzymes; (C) spheroidene biosynthesis is a bacterial carotenoid pathway (crtP/crtI-type enzymes) and is implausible for a fungal protein; (D) L-threonine from L-aspartate step 2/5 is homoserine dehydrogenase, an NAD(P)-dependent oxidoreductase of a completely different enzyme class. This leaves (B) alkaloid biosynthesis as the only plausible option, consistent with the strong association of fungal Fe(II)/2OG dioxygenases with indole/terpenoid alkaloid tailoring reactions in Aspergillaceae.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The positive identification of 'alkaloid' rather than a more generic 'secondary metabolite' label benefits from knowing that Penicillium Fe(II)/2OG dioxygenases are disproportionately involved in alkaloid (especially indole alkaloid) biosynthesis, but the elimination of the other three options is sufficient.",
-    "reason": "A model with general knowledge of enzyme superfamilies, pathway biochemistry, and fungal secondary metabolism can eliminate A, C, and D and arrive at B without needing to recognize the exact sequence as okaE. The reasoning relies on enzyme-class/pathway incompatibility arguments rather than database lookup."
-  },
-  "case_id": "pathway_0096",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A0A2Z5U507 (OKAE_PENOH), an iron/alpha-ketoglutarate-dependent dioxygenase (EC 1.14.20.-) from Penicillium ochrochloron, part of the okaramine biosynthetic gene cluster. Okaramines are complex indole alkaloids. The UniProt PATHWAY annotation 'Alkaloid biosynthesis' is supported by experimental evidence (ECO:0000269) from PubMed:28631282 (Lai et al., 2017, Angew. Chem. Int. Ed.) and PubMed:29384650 (Kato et al., 2018, ACS Chem. Biol.), both of which functionally characterize okaE in the okaramine (indole alkaloid) biosynthetic pathway."
-  },
-  "important_caveats": [
-    "The UniProt entry carries a secondary pathway annotation ('terpenoid biosynthesis') without an experimental evidence code in the excerpt; the primary experimental pathway is 'Alkaloid biosynthesis.' This does not create ambiguity among the given options since terpenoid biosynthesis is not offered.",
-    "The reviewer-only evidence confirms the sequence match and annotation but was not available to the evaluated model; the model must rely on sequence-level reasoning and general knowledge.",
-    "The Fe(II)/2OG dioxygenase superfamily is very large and shared across many pathways; the positive assignment to 'alkaloid biosynthesis' specifically rests partly on the statistical prevalence of this enzyme class in fungal alkaloid tailoring, which is general knowledge but not a sequence-intrinsic property."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt entry also lists 'Secondary metabolite biosynthesis; terpenoid biosynthesis' as a secondary pathway annotation, but terpenoid biosynthesis is not among the choices. Among the four provided options, only B is consistent with a fungal Fe(II)/2OG dioxygenase involved in secondary metabolism. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0096",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A0A2Z5U507 (OKAE_PENOH), an iron/alpha-ketoglutarate-dependent dioxygenase (EC 1.14.20.-) from Penicillium ochrochloron, part of the okaramine biosynthetic gene cluster. Okaramines are complex indole alkaloids. The UniProt PATHWAY annotation 'Alkaloid biosynthesis' is supported by experimental evidence (ECO:0000269) from PubMed:28631282 (Lai et al., 2017, Angew. Chem. Int. Ed.) and PubMed:29384650 (Kato et al., 2018, ACS Chem. Biol.), both of which functionally characterize okaE in the okaramine (indole alkaloid) biosynthetic pathway.",
-    "evidence_ids": ["C4", "C5", "C7", "C8", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence is ~300 AA and consistent with an Fe(II)/2OG dioxygenase fold (HxD...H facial triad motifs are present). General biological knowledge allows elimination of three distractors: (A) L-histidine biosynthesis uses well-defined enzymes (ATP phosphoribosyltransferase, PR-ATP synthase, imidazoleglycerol-phosphate dehydratase, etc.) and does not involve Fe(II)/2OG dioxygenases as pathway enzymes; (C) spheroidene biosynthesis is a bacterial carotenoid pathway (crtP/crtI-type enzymes) and is implausible for a fungal protein; (D) L-threonine from L-aspartate step 2/5 is homoserine dehydrogenase, an NAD(P)-dependent oxidoreductase of a completely different enzyme class. This leaves (B) alkaloid biosynthesis as the only plausible option, consistent with the strong association of fungal Fe(II)/2OG dioxygenases with indole/terpenoid alkaloid tailoring reactions in Aspergillaceae.",
-    "missing_item_specific_fact": "None strictly required. The positive identification of 'alkaloid' rather than a more generic 'secondary metabolite' label benefits from knowing that Penicillium Fe(II)/2OG dioxygenases are disproportionately involved in alkaloid (especially indole alkaloid) biosynthesis, but the elimination of the other three options is sufficient.",
-    "reason": "A model with general knowledge of enzyme superfamilies, pathway biochemistry, and fungal secondary metabolism can eliminate A, C, and D and arrive at B without needing to recognize the exact sequence as okaE. The reasoning relies on enzyme-class/pathway incompatibility arguments rather than database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt entry also lists 'Secondary metabolite biosynthesis; terpenoid biosynthesis' as a secondary pathway annotation, but terpenoid biosynthesis is not among the choices. Among the four provided options, only B is consistent with a fungal Fe(II)/2OG dioxygenase involved in secondary metabolism. No other option is defensible."
-  },
-  "important_caveats": [
-    "The UniProt entry carries a secondary pathway annotation ('terpenoid biosynthesis') without an experimental evidence code in the excerpt; the primary experimental pathway is 'Alkaloid biosynthesis.' This does not create ambiguity among the given options since terpenoid biosynthesis is not offered.",
-    "The reviewer-only evidence confirms the sequence match and annotation but was not available to the evaluated model; the model must rely on sequence-level reasoning and general knowledge.",
-    "The Fe(II)/2OG dioxygenase superfamily is very large and shared across many pathways; the positive assignment to 'alkaloid biosynthesis' specifically rests partly on the statistical prevalence of this enzyme class in fungal alkaloid tailoring, which is general knowledge but not a sequence-intrinsic property."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2Z5U507",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 300,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
   "current_entry_audit": {
     "entryVersion": 22,
     "firstPublicDate": "2025-02-05",
@@ -533,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-10-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "current_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 300,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2Z5U507",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "selected_historical_source_sequence_length": 300,
+  "selected_historical_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
   "selected_historical_version": {
     "accession": "A0A2Z5U507",
     "database": "Swiss-Prot",
@@ -551,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "OKAE_PENOH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "selected_historical_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
-  "selected_historical_source_sequence_length": 300,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -582,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2Z5U507\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -601,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":22,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-10-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -620,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium ochrochloron\",\"taxonId\":69780}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -639,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Okaramines biosynthesis cluster protein E\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"1.14.20.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Iron/alpha-ketoglutarate-dependent dioxygenase okaE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -658,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29384650\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -677,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -696,15 +454,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Kato N.\",\"Furutani S.\",\"Otaka J.\",\"Noguchi A.\",\"Kinugasa K.\",\"Kai K.\",\"Hayashi H.\",\"Ihara M.\",\"Takahashi S.\",\"Matsuda K.\",\"Osada H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29384650\"},{\"database\":\"DOI\",\"id\":\"10.1021/acschembio.7b00878\"}],\"citationType\":\"journal article\",\"firstPage\":\"561\",\"id\":\"29384650\",\"journal\":\"ACS Chem. Biol.\",\"lastPage\":\"566\",\"publicationDate\":\"2018\",\"title\":\"Biosynthesis and Structure-Activity Relationship Studies of Okaramines That Target Insect Glutamate-Gated Chloride Channels.\",\"volume\":\"13\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 90288 / AK-40\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -715,15 +473,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lai C.Y.\",\"Lo I.W.\",\"Hewage R.T.\",\"Chen Y.C.\",\"Chen C.T.\",\"Lee C.F.\",\"Lin S.\",\"Tang M.C.\",\"Lin H.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28631282\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.201705501\"}],\"citationType\":\"journal article\",\"firstPage\":\"9478\",\"id\":\"28631282\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"9482\",\"publicationDate\":\"2017\",\"title\":\"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise Pathway of Okaramines.\",\"volume\":\"56\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -733,18 +491,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   OKAE_PENOH              Reviewed;         300 AA.\nAC   A0A2Z5U507;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-OCT-2018, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=Iron/alpha-ketoglutarate-dependent dioxygenase okaE {ECO:0000303|PubMed:28631282};\nDE            EC=1.14.20.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein E {ECO:0000303|PubMed:28631282};\nGN   Name=okaE {ECO:0000303|PubMed:28631282};\nOS   Penicillium ochrochloron.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=69780;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 
@@ -754,18 +512,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 14-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, DISRUPTION PHENOTYPE, AND\nRP   PATHWAY.\nRC   STRAIN=ATCC 90288 / AK-40;\nRX   PubMed=29384650; DOI=10.1021/acschembio.7b00878;\nRA   Kato N., Furutani S., Otaka J., Noguchi A., Kinugasa K., Kai K.,\nRA   Hayashi H., Ihara M., Takahashi S., Matsuda K., Osada H.;\nRT   \"Biosynthesis and Structure-Activity Relationship Studies of Okaramines\nRT   That Target Insect Glutamate-Gated Chloride Channels.\";\nRL   ACS Chem. Biol. 13:561-566(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 
@@ -775,18 +533,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=28631282; DOI=10.1002/anie.201705501;\nRA   Lai C.Y., Lo I.W., Hewage R.T., Chen Y.C., Chen C.T., Lee C.F., Lin S.,\nRA   Tang M.C., Lin H.C.;\nRT   \"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise\nRT   Pathway of Okaramines.\";\nRL   Angew. Chem. Int. Ed. 56:9478-9482(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 
@@ -796,18 +554,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 87-88",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:28631282,\nCC       ECO:0000269|PubMed:29384650}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 
@@ -817,18 +575,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 89-89",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 89-89",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 

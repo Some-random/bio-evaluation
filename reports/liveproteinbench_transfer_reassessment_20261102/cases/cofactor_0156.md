@@ -1,18 +1,16 @@
-# cofactor_0156: before and after transfer clarification
+# cofactor_0156
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0156.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0156.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — heme
+**Expected answer:** **C** — heme
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for spheroidene monooxygenase, which annotates heme as a cofactor and says one heme binds per subunit. The annotation is transferred by similarity from UniProtKB:Q3J189 (ECO:0000250), so it supports the key as a database-based inference, not as direct experimental evidence for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone provides no clear, generally interpretable feature that distinguishes heme from the other listed cofactors with confidence. Identifying the protein or its family could lead to the answer, but that requires protein-specific knowledge.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation that this sequence is spheroidene monooxygenase and that its heme-cofactor assignment is transferred by similarity.
-
-
-**Reason**
-
-> The annotation supporting heme is absent from the prompt. The sequence and choices do not supply a sufficiently distinctive biological argument for selecting heme over the alternatives.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence supports heme as the annotated cofactor; no evidence supports another listed option.
-
-
-### Important caveats
-
-- The exact sequence match is established by reviewer-only evidence and was not information supplied to the evaluated model.
-- The heme annotation is inferred by similarity rather than directly evidenced here for this exact protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone provides no clear, generally interpretable feature that distinguishes heme from the other listed cofactors with confidence. Identifying the protein or its family could lead to the answer, but that requires protein-specific knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation that this sequence is spheroidene monooxygenase and that its heme-cofactor assignment is transferred by similarity.",
-    "reason": "The annotation supporting heme is absent from the prompt. The sequence and choices do not supply a sufficiently distinctive biological argument for selecting heme over the alternatives."
-  },
-  "case_id": "cofactor_0156",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for spheroidene monooxygenase, which annotates heme as a cofactor and says one heme binds per subunit. The annotation is transferred by similarity from UniProtKB:Q3J189 (ECO:0000250), so it supports the key as a database-based inference, not as direct experimental evidence for this exact protein."
-  },
-  "important_caveats": [
-    "The exact sequence match is established by reviewer-only evidence and was not information supplied to the evaluated model.",
-    "The heme annotation is inferred by similarity rather than directly evidenced here for this exact protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports heme as the annotated cofactor; no evidence supports another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0156",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for spheroidene monooxygenase, which annotates heme as a cofactor and says one heme binds per subunit. The annotation is transferred by similarity from UniProtKB:Q3J189 (ECO:0000250), so it supports the key as a database-based inference, not as direct experimental evidence for this exact protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone provides no clear, generally interpretable feature that distinguishes heme from the other listed cofactors with confidence. Identifying the protein or its family could lead to the answer, but that requires protein-specific knowledge.",
-    "missing_item_specific_fact": "The protein-specific annotation that this sequence is spheroidene monooxygenase and that its heme-cofactor assignment is transferred by similarity.",
-    "reason": "The annotation supporting heme is absent from the prompt. The sequence and choices do not supply a sufficiently distinctive biological argument for selecting heme over the alternatives."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports heme as the annotated cofactor; no evidence supports another listed option."
-  },
-  "important_caveats": [
-    "The exact sequence match is established by reviewer-only evidence and was not information supplied to the evaluated model.",
-    "The heme annotation is inferred by similarity rather than directly evidenced here for this exact protein."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt Q83YH3 (CrtA, spheroidene monooxygenase, EC 1.14.15.9) annotates heme as the cofactor (ChEBI:30413, 'Binds 1 heme per subunit'). However, the evidence code is ECO:0000250 (inferred from similarity to Q3J189), meaning this is a computational transfer rather than direct experimental measurement on this specific protein. The EC classification 1.14.15.9 (carotenoid monooxygenase) is consistent with heme dependence in this enzyme family, and the catalytic-activity literature (PubMed 19136077) describes it as a monooxygenase requiring a heme-containing system. The annotation is supported but qualified by its similarity-transfer origin.
-
-Citations as saved: [C5](#evidence-c5), [H6](#evidence-h6), [C4](#evidence-c4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a hydrophobic N-terminal membrane-anchoring region (residues ~20–40: VLLLIDVAPAARLWGYGRFVAGTTPALGEPGARFAKQLGTGYEGGFGLRPSATRQGLFVLFEDEAA) characteristic of membrane-associated heme monooxygenases. Within this region, the GGRF and GGFGL glycine/aromatic-rich motifs are consistent with heme-binding pocket architecture in carotenoid hydroxylase/ketolase families. Conversely, no canonical Rossmann-fold motif (GxGxxG) is present to support NAD+, no classic divalent-metal-binding cluster (e.g., DxDxD, HHH) supports Mg2+, and no PLP-specific lysine in a characteristic transaminase/lyase context supports pyridoxal 5'-phosphate. The overall domain architecture (hydrophobic anchor + glycine-rich heme-binding segment + C-terminal catalytic region) is most consistent with a heme-dependent monooxygenase.
-
-
-**Missing item-specific fact**
-
-> Precise identification of the GGRF/GGFGL motifs as the definitive heme-coordination residues in the CrtA carotenoid-monooxygenase family would benefit from family-specific structural knowledge, but the general architectural argument (membrane anchor + absence of alternative cofactor motifs) provides meaningful discrimination.
-
-
-**Reason**
-
-> A model with general knowledge of enzyme architecture can note the hydrophobic membrane anchor and glycine/aromatic-rich motifs suggestive of heme coordination, while systematically ruling out NAD+ (no Rossmann fold), Mg2+ (no metal-binding cluster), and PLP (no PLP-binding lysine context). The reasoning is not trivial but is grounded in observable sequence features rather than pure database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices are mechanistically distinct (metal ion, dinucleotide, porphyrin, vitamin-derived cofactor), and the sequence features most consistently point to heme. No alternative option is strongly supported by the sequence.
-
-
-### Important caveats
-
-- The UniProt heme annotation carries evidence code ECO:0000250 (similarity transfer from Q3J189), not direct experimental proof for Q83YH3 itself.
-- The heme-binding motifs (GGRF, GGFGL) are suggestive but not as unambiguously recognizable as a P450 Cys-coordination motif; family-level knowledge strengthens the inference.
-- The accession Q83YH3 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the raw sequence alone.
-- The protein was first released in Swiss-Prot on 2025-02-05; the author's source snapshot is unknown, so the annotation state at question-creation time cannot be confirmed.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a hydrophobic N-terminal membrane-anchoring region (residues ~20–40: VLLLIDVAPAARLWGYGRFVAGTTPALGEPGARFAKQLGTGYEGGFGLRPSATRQGLFVLFEDEAA) characteristic of membrane-associated heme monooxygenases. Within this region, the GGRF and GGFGL glycine/aromatic-rich motifs are consistent with heme-binding pocket architecture in carotenoid hydroxylase/ketolase families. Conversely, no canonical Rossmann-fold motif (GxGxxG) is present to support NAD+, no classic divalent-metal-binding cluster (e.g., DxDxD, HHH) supports Mg2+, and no PLP-specific lysine in a characteristic transaminase/lyase context supports pyridoxal 5'-phosphate. The overall domain architecture (hydrophobic anchor + glycine-rich heme-binding segment + C-terminal catalytic region) is most consistent with a heme-dependent monooxygenase.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise identification of the GGRF/GGFGL motifs as the definitive heme-coordination residues in the CrtA carotenoid-monooxygenase family would benefit from family-specific structural knowledge, but the general architectural argument (membrane anchor + absence of alternative cofactor motifs) provides meaningful discrimination.",
-    "reason": "A model with general knowledge of enzyme architecture can note the hydrophobic membrane anchor and glycine/aromatic-rich motifs suggestive of heme coordination, while systematically ruling out NAD+ (no Rossmann fold), Mg2+ (no metal-binding cluster), and PLP (no PLP-binding lysine context). The reasoning is not trivial but is grounded in observable sequence features rather than pure database lookup."
-  },
-  "case_id": "cofactor_0156",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H6",
-      "C4",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt Q83YH3 (CrtA, spheroidene monooxygenase, EC 1.14.15.9) annotates heme as the cofactor (ChEBI:30413, 'Binds 1 heme per subunit'). However, the evidence code is ECO:0000250 (inferred from similarity to Q3J189), meaning this is a computational transfer rather than direct experimental measurement on this specific protein. The EC classification 1.14.15.9 (carotenoid monooxygenase) is consistent with heme dependence in this enzyme family, and the catalytic-activity literature (PubMed 19136077) describes it as a monooxygenase requiring a heme-containing system. The annotation is supported but qualified by its similarity-transfer origin."
-  },
-  "important_caveats": [
-    "The UniProt heme annotation carries evidence code ECO:0000250 (similarity transfer from Q3J189), not direct experimental proof for Q83YH3 itself.",
-    "The heme-binding motifs (GGRF, GGFGL) are suggestive but not as unambiguously recognizable as a P450 Cys-coordination motif; family-level knowledge strengthens the inference.",
-    "The accession Q83YH3 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the raw sequence alone.",
-    "The protein was first released in Swiss-Prot on 2025-02-05; the author's source snapshot is unknown, so the annotation state at question-creation time cannot be confirmed."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices are mechanistically distinct (metal ion, dinucleotide, porphyrin, vitamin-derived cofactor), and the sequence features most consistently point to heme. No alternative option is strongly supported by the sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0156",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt Q83YH3 (CrtA, spheroidene monooxygenase, EC 1.14.15.9) annotates heme as the cofactor (ChEBI:30413, 'Binds 1 heme per subunit'). However, the evidence code is ECO:0000250 (inferred from similarity to Q3J189), meaning this is a computational transfer rather than direct experimental measurement on this specific protein. The EC classification 1.14.15.9 (carotenoid monooxygenase) is consistent with heme dependence in this enzyme family, and the catalytic-activity literature (PubMed 19136077) describes it as a monooxygenase requiring a heme-containing system. The annotation is supported but qualified by its similarity-transfer origin.",
-    "evidence_ids": ["C5", "H6", "C4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a hydrophobic N-terminal membrane-anchoring region (residues ~20–40: VLLLIDVAPAARLWGYGRFVAGTTPALGEPGARFAKQLGTGYEGGFGLRPSATRQGLFVLFEDEAA) characteristic of membrane-associated heme monooxygenases. Within this region, the GGRF and GGFGL glycine/aromatic-rich motifs are consistent with heme-binding pocket architecture in carotenoid hydroxylase/ketolase families. Conversely, no canonical Rossmann-fold motif (GxGxxG) is present to support NAD+, no classic divalent-metal-binding cluster (e.g., DxDxD, HHH) supports Mg2+, and no PLP-specific lysine in a characteristic transaminase/lyase context supports pyridoxal 5'-phosphate. The overall domain architecture (hydrophobic anchor + glycine-rich heme-binding segment + C-terminal catalytic region) is most consistent with a heme-dependent monooxygenase.",
-    "missing_item_specific_fact": "Precise identification of the GGRF/GGFGL motifs as the definitive heme-coordination residues in the CrtA carotenoid-monooxygenase family would benefit from family-specific structural knowledge, but the general architectural argument (membrane anchor + absence of alternative cofactor motifs) provides meaningful discrimination.",
-    "reason": "A model with general knowledge of enzyme architecture can note the hydrophobic membrane anchor and glycine/aromatic-rich motifs suggestive of heme coordination, while systematically ruling out NAD+ (no Rossmann fold), Mg2+ (no metal-binding cluster), and PLP (no PLP-binding lysine context). The reasoning is not trivial but is grounded in observable sequence features rather than pure database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices are mechanistically distinct (metal ion, dinucleotide, porphyrin, vitamin-derived cofactor), and the sequence features most consistently point to heme. No alternative option is strongly supported by the sequence."
-  },
-  "important_caveats": [
-    "The UniProt heme annotation carries evidence code ECO:0000250 (similarity transfer from Q3J189), not direct experimental proof for Q83YH3 itself.",
-    "The heme-binding motifs (GGRF, GGFGL) are suggestive but not as unambiguously recognizable as a P450 Cys-coordination motif; family-level knowledge strengthens the inference.",
-    "The accession Q83YH3 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the raw sequence alone.",
-    "The protein was first released in Swiss-Prot on 2025-02-05; the author's source snapshot is unknown, so the annotation state at question-creation time cannot be confirmed."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q83YH3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "a65db65812f53b7088d2d99b943e650ad4c0d7b76ec0cdde3b3dcfcb5bf162d5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 256,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "a65db65812f53b7088d2d99b943e650ad4c0d7b76ec0cdde3b3dcfcb5bf162d5",
   "current_entry_audit": {
     "entryVersion": 42,
     "firstPublicDate": "2025-02-05",
@@ -532,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-06-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "current_source_sequence_sha256": "a65db65812f53b7088d2d99b943e650ad4c0d7b76ec0cdde3b3dcfcb5bf162d5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 256,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "a65db65812f53b7088d2d99b943e650ad4c0d7b76ec0cdde3b3dcfcb5bf162d5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 41,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q83YH3",
   "selected_historical_entry_version": 41,
+  "selected_historical_record_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
+  "selected_historical_source_sequence_length": 256,
+  "selected_historical_source_sequence_sha256": "a65db65812f53b7088d2d99b943e650ad4c0d7b76ec0cdde3b3dcfcb5bf162d5",
   "selected_historical_version": {
     "accession": "Q83YH3",
     "database": "Swiss-Prot",
@@ -550,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "CRTA_RUBGE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
-  "selected_historical_source_sequence_sha256": "a65db65812f53b7088d2d99b943e650ad4c0d7b76ec0cdde3b3dcfcb5bf162d5",
-  "selected_historical_source_sequence_length": 256,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 41,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json",
-  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q83YH3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json"
 }
 ```
 
@@ -600,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json",
-  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":42,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-06-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json"
 }
 ```
 
@@ -619,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json",
-  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rhodocyclus gelatinosus\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Burkholderiales\",\"Sphaerotilaceae\",\"Rubrivivax\"],\"scientificName\":\"Rubrivivax gelatinosus\",\"synonyms\":[\"Rhodopseudomonas gelatinosa\"],\"taxonId\":28068}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json"
 }
 ```
 
@@ -638,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json",
-  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"19136077\",\"source\":\"PubMed\"}],\"value\":\"Acyclic carotenoid 2-ketolase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Spheroidene/spirilloxanthin monooxygenase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19136077\",\"source\":\"PubMed\"}],\"value\":\"1.14.15.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"12664193\",\"source\":\"PubMed\"}],\"value\":\"Spheroidene monooxygenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json"
 }
 ```
 
@@ -657,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json",
-  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
-  "json_pointer": "/comments/13",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:30413\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q3J189\",\"source\":\"UniProtKB\"}],\"name\":\"heme\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q3J189\",\"source\":\"UniProtKB\"}],\"value\":\"Binds 1 heme per subunit.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/13",
+  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json"
 }
 ```
 
@@ -676,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json",
-  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Pinta V.\",\"Ouchane S.\",\"Picaud M.\",\"Takaichi S.\",\"Astier C.\",\"Reiss-Husson F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"12664193\"},{\"database\":\"DOI\",\"id\":\"10.1007/s00203-003-0538-3\"}],\"citationType\":\"journal article\",\"firstPage\":\"354\",\"id\":\"12664193\",\"journal\":\"Arch. Microbiol.\",\"lastPage\":\"362\",\"publicationDate\":\"2003\",\"title\":\"Characterization of unusual hydroxy- and ketocarotenoids in Rubrivivax gelatinosus: involvement of enzyme CrtF or CrtA.\",\"volume\":\"179\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"S1\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json"
 }
 ```
 
@@ -695,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json",
-  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
-  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Gerjets T.\",\"Steiger S.\",\"Sandmann G.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19136077\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.bbalip.2008.12.006\"}],\"citationType\":\"journal article\",\"firstPage\":\"125\",\"id\":\"19136077\",\"journal\":\"Biochim. Biophys. Acta\",\"lastPage\":\"131\",\"publicationDate\":\"2009\",\"title\":\"Catalytic properties of the expressed acyclic carotenoid 2-ketolases from Rhodobacter capsulatus and Rubrivivax gelatinosus.\",\"volume\":\"1791\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"S1\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:31:53.398958+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "415b0c5c709a9871648380468badca26797ea86b5dcd24f2ca939a756b8bbaf9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q83YH3.json"
 }
 ```
 
@@ -713,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41",
-  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
-  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   CRTA_RUBGE              Reviewed;         256 AA.\nAC   Q83YH3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JUN-2003, sequence version 1.\nDT   28-JAN-2026, entry version 41.\nDE   RecName: Full=Spheroidene monooxygenase {ECO:0000303|PubMed:12664193};\nDE            EC=1.14.15.9 {ECO:0000269|PubMed:19136077};\nDE   AltName: Full=Acyclic carotenoid 2-ketolase {ECO:0000303|PubMed:19136077};\nDE   AltName: Full=Spheroidene/spirilloxanthin monooxygenase {ECO:0000305};\nGN   Name=crtA {ECO:0000303|PubMed:8999844};\nOS   Rubrivivax gelatinosus (Rhodocyclus gelatinosus) (Rhodopseudomonas\nOS   gelatinosa).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria;\nOC   Burkholderiales; Sphaerotilaceae; Rubrivivax.\nOX   NCBI_TaxID=28068;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
+  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41"
 }
 ```
 
@@ -734,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41",
-  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
-  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Spheroidene monooxygenase {ECO:0000303|PubMed:12664193};\nDE            EC=1.14.15.9 {ECO:0000269|PubMed:19136077};\nDE   AltName: Full=Acyclic carotenoid 2-ketolase {ECO:0000303|PubMed:19136077};\nDE   AltName: Full=Spheroidene/spirilloxanthin monooxygenase {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
+  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41"
 }
 ```
 
@@ -755,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41",
-  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
-  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
-  "source_locator": "lines 16-24",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:AAO93123.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].\nRC   STRAIN=S1;\nRX   PubMed=8999844; DOI=10.1074/jbc.272.3.1670;\nRA   Ouchane S., Picaud M., Vernotte C., Reiss-Husson F., Astier C.;\nRT   \"Pleiotropic effects of puf interposon mutagenesis on carotenoid\nRT   biosynthesis in Rubrivivax gelatinosus. A new gene organization in purple\nRT   bacteria.\";\nRL   J. Biol. Chem. 272:1670-1676(1997).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
+  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41"
 }
 ```
 
@@ -776,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41",
-  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
-  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
-  "source_locator": "lines 25-32",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=S1;\nRX   PubMed=12664193; DOI=10.1007/s00203-003-0538-3;\nRA   Pinta V., Ouchane S., Picaud M., Takaichi S., Astier C., Reiss-Husson F.;\nRT   \"Characterization of unusual hydroxy- and ketocarotenoids in Rubrivivax\nRT   gelatinosus: involvement of enzyme CrtF or CrtA.\";\nRL   Arch. Microbiol. 179:354-362(2003).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-32",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
+  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41"
 }
 ```
 
@@ -797,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41",
-  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
-  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
-  "source_locator": "lines 33-40",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRC   STRAIN=S1;\nRX   PubMed=19136077; DOI=10.1016/j.bbalip.2008.12.006;\nRA   Gerjets T., Steiger S., Sandmann G.;\nRT   \"Catalytic properties of the expressed acyclic carotenoid 2-ketolases from\nRT   Rhodobacter capsulatus and Rubrivivax gelatinosus.\";\nRL   Biochim. Biophys. Acta 1791:125-131(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
+  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41"
 }
 ```
 
@@ -818,18 +578,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41",
-  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
-  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
-  "source_locator": "lines 153-156",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=heme; Xref=ChEBI:CHEBI:30413;\nCC         Evidence={ECO:0000250|UniProtKB:Q3J189};\nCC       Note=Binds 1 heme per subunit. {ECO:0000250|UniProtKB:Q3J189};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-02T04:31:55.957280+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 153-156",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4cb02fc77dffc8afd3037d666dd2cb6ddcd919a72332edbea1fb5b05014e9bc4",
+  "url": "https://rest.uniprot.org/unisave/Q83YH3?format=txt&versions=41"
 }
 ```
 

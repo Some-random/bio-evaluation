@@ -1,18 +1,16 @@
-# cofactor_0047: before and after transfer clarification
+# cofactor_0047
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0047.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0047.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — Mg(2+)
+**Expected answer:** **A** — Mg(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,233 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-sequence UniProt annotation identifies this protein as a PP2C phosphatase and reports Mg2+ as a cofactor, with highest activity in magnesium. The annotation also reports manganese binding and activity with calcium, so Mg2+ is supported as the keyed answer but is not the only metal-related observation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support recognizing a PP2C-like, metal-dependent phosphatase, making Mg2+ more plausible than NAD+ or the molybdenum cofactor.
-
-
-**Missing item-specific fact**
-
-> Distinguishing Mg2+ from Ca2+ for this protein depends on its particular metal dependence and activity profile, which are not supplied with the sequence.
-
-
-**Reason**
-
-> Family-level reasoning suggests a metal-dependent phosphatase but does not establish this homolog's Mg-versus-Ca behavior. The reported preference for magnesium is an item-specific annotation or experimental fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Mg2+ is the supported cofactor choice. Calcium is reported to support activity, but the evidence does not establish it as a required cofactor; the wording could have been clearer about this distinction.
-
-
-### Important caveats
-
-- The annotation also lists Mn2+ as a cofactor, but it is not among the options.
-- The cited annotation reports calcium-supported activity while identifying magnesium as having the highest activity; activity with calcium alone does not establish that calcium is required.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support recognizing a PP2C-like, metal-dependent phosphatase, making Mg2+ more plausible than NAD+ or the molybdenum cofactor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Distinguishing Mg2+ from Ca2+ for this protein depends on its particular metal dependence and activity profile, which are not supplied with the sequence.",
-    "reason": "Family-level reasoning suggests a metal-dependent phosphatase but does not establish this homolog's Mg-versus-Ca behavior. The reported preference for magnesium is an item-specific annotation or experimental fact."
-  },
-  "case_id": "cofactor_0047",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-sequence UniProt annotation identifies this protein as a PP2C phosphatase and reports Mg2+ as a cofactor, with highest activity in magnesium. The annotation also reports manganese binding and activity with calcium, so Mg2+ is supported as the keyed answer but is not the only metal-related observation."
-  },
-  "important_caveats": [
-    "The annotation also lists Mn2+ as a cofactor, but it is not among the options.",
-    "The cited annotation reports calcium-supported activity while identifying magnesium as having the highest activity; activity with calcium alone does not establish that calcium is required."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mg2+ is the supported cofactor choice. Calcium is reported to support activity, but the evidence does not establish it as a required cofactor; the wording could have been clearer about this distinction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0047",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-sequence UniProt annotation identifies this protein as a PP2C phosphatase and reports Mg2+ as a cofactor, with highest activity in magnesium. The annotation also reports manganese binding and activity with calcium, so Mg2+ is supported as the keyed answer but is not the only metal-related observation.",
-    "evidence_ids": ["C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support recognizing a PP2C-like, metal-dependent phosphatase, making Mg2+ more plausible than NAD+ or the molybdenum cofactor.",
-    "missing_item_specific_fact": "Distinguishing Mg2+ from Ca2+ for this protein depends on its particular metal dependence and activity profile, which are not supplied with the sequence.",
-    "reason": "Family-level reasoning suggests a metal-dependent phosphatase but does not establish this homolog's Mg-versus-Ca behavior. The reported preference for magnesium is an item-specific annotation or experimental fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mg2+ is the supported cofactor choice. Calcium is reported to support activity, but the evidence does not establish it as a required cofactor; the wording could have been clearer about this distinction."
-  },
-  "important_caveats": [
-    "The annotation also lists Mn2+ as a cofactor, but it is not among the options.",
-    "The cited annotation reports calcium-supported activity while identifying magnesium as having the highest activity; activity with calcium alone does not establish that calcium is required."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation (evidence C5/H4, experimental evidence ECO:0000269 from PubMed:37754565) lists Mg(2+) as a cofactor for this PP2C-2 phosphatase (EC 3.1.3.16) and states it has 'highest activity with magnesium.' Mn(2+) is also listed as a cofactor but is not among the choices. Ca(2+) has some activity but is not listed as a primary cofactor. Mo-bis-MGD and NAD(+) are irrelevant to a phosphatase. Among the four options, Mg(2+) is the correct and best-supported answer.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains hallmark PP2C phosphatase motifs, notably the conserved 'DGHGGDK' aspartate-rich metal-binding motif (~residues 55-61) and additional conserved Asp clusters ('DGIWDCQ', 'GRIILLGDGTEL'). PP2C-family phosphatases are universally characterized in biochemistry as divalent-metal-dependent enzymes requiring Mg(2+) or Mn(2+) for catalysis. This allows elimination of Mo-bis-MGD (molybdenum cofactor of oxidoreductases) and NAD(+) (hydride-transfer cofactor of dehydrogenases). Between Mg(2+) and Ca(2+), general PP2C family knowledge establishes Mg(2+)/Mn(2+) as the canonical catalytic ions, with Ca(2+) being atypical for this family. Since Mn(2+) is not among the choices, Mg(2+) is the reasoned answer.
-
-
-**Missing item-specific fact**
-
-Empty string, as saved.
-
-
-**Reason**
-
-> The conserved PP2C aspartate motifs are identifiable from the raw sequence, and the Mg(2+)/Mn(2+) dependence of PP2C phosphatases is well-established general biochemistry. A knowledgeable biologist can classify the enzyme from sequence features and assign the cofactor without needing the specific PubMed:37754565 measurement for this particular Aspergillus flavus protein.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the annotation notes Mn(2+) is also a cofactor and Ca(2+) has some activity, neither Mn(2+) nor Ca(2+) is the primary/preferred cofactor. Mo-bis-MGD and NAD(+) are clearly wrong for a phosphatase. Among the four given choices, Mg(2+) is unambiguously the best answer as the cofactor with highest catalytic activity.
-
-
-### Important caveats
-
-- The UniProt annotation also lists Mn(2+) as a cofactor and notes Ca(2+) has some activity; however, Mn(2+) is absent from the answer choices and Ca(2+) is secondary to Mg(2+).
-- The PP2C identification from sequence relies on recognizing conserved motifs; a model unfamiliar with PP2C family signatures might struggle, but this is a knowledge gap rather than a missing item-specific fact.
-- The annotation's Mg(2+) assignment is supported by experimental evidence (ECO:0000269, PubMed:37754565) and by PROSITE-ProRule similarity (ECO:0000255).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains hallmark PP2C phosphatase motifs, notably the conserved 'DGHGGDK' aspartate-rich metal-binding motif (~residues 55-61) and additional conserved Asp clusters ('DGIWDCQ', 'GRIILLGDGTEL'). PP2C-family phosphatases are universally characterized in biochemistry as divalent-metal-dependent enzymes requiring Mg(2+) or Mn(2+) for catalysis. This allows elimination of Mo-bis-MGD (molybdenum cofactor of oxidoreductases) and NAD(+) (hydride-transfer cofactor of dehydrogenases). Between Mg(2+) and Ca(2+), general PP2C family knowledge establishes Mg(2+)/Mn(2+) as the canonical catalytic ions, with Ca(2+) being atypical for this family. Since Mn(2+) is not among the choices, Mg(2+) is the reasoned answer.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "",
-    "reason": "The conserved PP2C aspartate motifs are identifiable from the raw sequence, and the Mg(2+)/Mn(2+) dependence of PP2C phosphatases is well-established general biochemistry. A knowledgeable biologist can classify the enzyme from sequence features and assign the cofactor without needing the specific PubMed:37754565 measurement for this particular Aspergillus flavus protein."
-  },
-  "case_id": "cofactor_0047",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation (evidence C5/H4, experimental evidence ECO:0000269 from PubMed:37754565) lists Mg(2+) as a cofactor for this PP2C-2 phosphatase (EC 3.1.3.16) and states it has 'highest activity with magnesium.' Mn(2+) is also listed as a cofactor but is not among the choices. Ca(2+) has some activity but is not listed as a primary cofactor. Mo-bis-MGD and NAD(+) are irrelevant to a phosphatase. Among the four options, Mg(2+) is the correct and best-supported answer."
-  },
-  "important_caveats": [
-    "The UniProt annotation also lists Mn(2+) as a cofactor and notes Ca(2+) has some activity; however, Mn(2+) is absent from the answer choices and Ca(2+) is secondary to Mg(2+).",
-    "The PP2C identification from sequence relies on recognizing conserved motifs; a model unfamiliar with PP2C family signatures might struggle, but this is a knowledge gap rather than a missing item-specific fact.",
-    "The annotation's Mg(2+) assignment is supported by experimental evidence (ECO:0000269, PubMed:37754565) and by PROSITE-ProRule similarity (ECO:0000255)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the annotation notes Mn(2+) is also a cofactor and Ca(2+) has some activity, neither Mn(2+) nor Ca(2+) is the primary/preferred cofactor. Mo-bis-MGD and NAD(+) are clearly wrong for a phosphatase. Among the four given choices, Mg(2+) is unambiguously the best answer as the cofactor with highest catalytic activity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0047",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotation (evidence C5/H4, experimental evidence ECO:0000269 from PubMed:37754565) lists Mg(2+) as a cofactor for this PP2C-2 phosphatase (EC 3.1.3.16) and states it has 'highest activity with magnesium.' Mn(2+) is also listed as a cofactor but is not among the choices. Ca(2+) has some activity but is not listed as a primary cofactor. Mo-bis-MGD and NAD(+) are irrelevant to a phosphatase. Among the four options, Mg(2+) is the correct and best-supported answer.",
-    "evidence_ids": ["C5", "H4", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains hallmark PP2C phosphatase motifs, notably the conserved 'DGHGGDK' aspartate-rich metal-binding motif (~residues 55-61) and additional conserved Asp clusters ('DGIWDCQ', 'GRIILLGDGTEL'). PP2C-family phosphatases are universally characterized in biochemistry as divalent-metal-dependent enzymes requiring Mg(2+) or Mn(2+) for catalysis. This allows elimination of Mo-bis-MGD (molybdenum cofactor of oxidoreductases) and NAD(+) (hydride-transfer cofactor of dehydrogenases). Between Mg(2+) and Ca(2+), general PP2C family knowledge establishes Mg(2+)/Mn(2+) as the canonical catalytic ions, with Ca(2+) being atypical for this family. Since Mn(2+) is not among the choices, Mg(2+) is the reasoned answer.",
-    "missing_item_specific_fact": "",
-    "reason": "The conserved PP2C aspartate motifs are identifiable from the raw sequence, and the Mg(2+)/Mn(2+) dependence of PP2C phosphatases is well-established general biochemistry. A knowledgeable biologist can classify the enzyme from sequence features and assign the cofactor without needing the specific PubMed:37754565 measurement for this particular Aspergillus flavus protein."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the annotation notes Mn(2+) is also a cofactor and Ca(2+) has some activity, neither Mn(2+) nor Ca(2+) is the primary/preferred cofactor. Mo-bis-MGD and NAD(+) are clearly wrong for a phosphatase. Among the four given choices, Mg(2+) is unambiguously the best answer as the cofactor with highest catalytic activity."
-  },
-  "important_caveats": [
-    "The UniProt annotation also lists Mn(2+) as a cofactor and notes Ca(2+) has some activity; however, Mn(2+) is absent from the answer choices and Ca(2+) is secondary to Mg(2+).",
-    "The PP2C identification from sequence relies on recognizing conserved motifs; a model unfamiliar with PP2C family signatures might struggle, but this is a knowledge gap rather than a missing item-specific fact.",
-    "The annotation's Mg(2+) assignment is supported by experimental evidence (ECO:0000269, PubMed:37754565) and by PROSITE-ProRule similarity (ECO:0000255)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -494,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7U2MSD6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "89e30a38f9c6fdaae7a0c292885050f3375d8e674159ae976b588613332b60b9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 435,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "89e30a38f9c6fdaae7a0c292885050f3375d8e674159ae976b588613332b60b9",
   "current_entry_audit": {
     "entryVersion": 16,
     "firstPublicDate": "2025-02-05",
@@ -525,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
-  "current_source_sequence_sha256": "89e30a38f9c6fdaae7a0c292885050f3375d8e674159ae976b588613332b60b9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 435,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "89e30a38f9c6fdaae7a0c292885050f3375d8e674159ae976b588613332b60b9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 15,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7U2MSD6",
   "selected_historical_entry_version": 15,
+  "selected_historical_record_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
+  "selected_historical_source_sequence_length": 435,
+  "selected_historical_source_sequence_sha256": "89e30a38f9c6fdaae7a0c292885050f3375d8e674159ae976b588613332b60b9",
   "selected_historical_version": {
     "accession": "A0A7U2MSD6",
     "database": "Swiss-Prot",
@@ -543,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PP2C2_ASPFN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
-  "selected_historical_source_sequence_sha256": "89e30a38f9c6fdaae7a0c292885050f3375d8e674159ae976b588613332b60b9",
-  "selected_historical_source_sequence_length": 435,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 15,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -574,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json",
-  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
-  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7U2MSD6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json"
 }
 ```
 
@@ -593,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json",
-  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
-  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":16,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json"
 }
 ```
 
@@ -612,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json",
-  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
-  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000596276\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357 / JCM 12722 / SRRC 167)\",\"taxonId\":332952}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json"
 }
 ```
 
@@ -631,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json",
-  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
-  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37754565\",\"source\":\"PubMed\"}],\"value\":\"3.1.3.16\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37754565\",\"source\":\"PubMed\"}],\"value\":\"Protein phosphatase 2C homolog 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"PP2C-2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json"
 }
 ```
 
@@ -650,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json",
-  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
-  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:18420\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37754565\",\"source\":\"PubMed\"}],\"name\":\"Mg(2+)\"},{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29035\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37754565\",\"source\":\"PubMed\"}],\"name\":\"Mn(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01082\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37754565\",\"source\":\"PubMed\"}],\"value\":\"Binds 2 magnesium or manganese ions per subunit (By similarity). Has highest activity with magnesium, but also has activity with calcium (PubMed:37754565).\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json"
 }
 ```
 
@@ -669,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json",
-  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
-  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhu Z.\",\"Yang M.\",\"Yang G.\",\"Zhang B.\",\"Cao X.\",\"Yuan J.\",\"Ge F.\",\"Wang S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37754565\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.00977-23\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0097723\",\"id\":\"37754565\",\"journal\":\"MBio\",\"lastPage\":\"e0097723\",\"publicationDate\":\"2023\",\"title\":\"PP2C phosphatases Ptc1 and Ptc2 dephosphorylate PGK1 to regulate autophagy and aflatoxin synthesis in the pathogenic fungus Aspergillus flavus.\",\"volume\":\"14\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBCELLULAR LOCATION\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF ASP-71; ASP-148 AND ASP-240\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:55.167306+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9342418fd834736c043c972b8270772251d43ab2517d953f2052bd9c0a8a0cbb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2MSD6.json"
 }
 ```
 
@@ -687,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15",
-  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
-  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   PP2C2_ASPFN             Reviewed;         435 AA.\nAC   A0A7U2MSD6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 15.\nDE   RecName: Full=Protein phosphatase 2C homolog 2 {ECO:0000303|PubMed:37754565};\nDE            Short=PP2C-2 {ECO:0000305};\nDE            EC=3.1.3.16 {ECO:0000269|PubMed:37754565};\nGN   Name=ptc2 {ECO:0000303|PubMed:37754565};\nGN   ORFNames=F9C07_2102428 {ECO:0000312|EMBL:QRD88625.1};\nOS   Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357\nOS   / JCM 12722 / SRRC 167).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=332952 {ECO:0000312|Proteomes:UP000596276};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15"
 }
 ```
 
@@ -708,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15",
-  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
-  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Protein phosphatase 2C homolog 2 {ECO:0000303|PubMed:37754565};\nDE            Short=PP2C-2 {ECO:0000305};\nDE            EC=3.1.3.16 {ECO:0000269|PubMed:37754565};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15"
 }
 ```
 
@@ -729,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15",
-  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
-  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
-  "source_locator": "lines 27-34",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, SUBCELLULAR LOCATION, DISRUPTION\nRP   PHENOTYPE, AND MUTAGENESIS OF ASP-71; ASP-148 AND ASP-240.\nRX   PubMed=37754565; DOI=10.1128/mbio.00977-23;\nRA   Zhu Z., Yang M., Yang G., Zhang B., Cao X., Yuan J., Ge F., Wang S.;\nRT   \"PP2C phosphatases Ptc1 and Ptc2 dephosphorylate PGK1 to regulate autophagy\nRT   and aflatoxin synthesis in the pathogenic fungus Aspergillus flavus.\";\nRL   MBio 14:e0097723-e0097723(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15"
 }
 ```
 
@@ -750,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15",
-  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
-  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
-  "source_locator": "lines 57-65",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mg(2+); Xref=ChEBI:CHEBI:18420;\nCC         Evidence={ECO:0000269|PubMed:37754565};\nCC       Name=Mn(2+); Xref=ChEBI:CHEBI:29035;\nCC         Evidence={ECO:0000269|PubMed:37754565};\nCC       Note=Binds 2 magnesium or manganese ions per subunit (By similarity).\nCC       Has highest activity with magnesium, but also has activity with calcium\nCC       (PubMed:37754565). {ECO:0000255|PROSITE-ProRule:PRU01082,\nCC       ECO:0000269|PubMed:37754565};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:25:59.751437+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 57-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9599bc1c47b9179a3bc022cfe8fb6d87387d02041dea39b93328ccba23324c1e",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2MSD6?format=txt&versions=15"
 }
 ```
 

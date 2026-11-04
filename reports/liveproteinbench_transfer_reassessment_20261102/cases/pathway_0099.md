@@ -1,18 +1,16 @@
-# pathway_0099: before and after transfer clarification
+# pathway_0099
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0099.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0099.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Antibiotic biosynthesis. .
+**Expected answer:** **A** — Antibiotic biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the annotated 1′-carboxy-chondrochloren decarboxylase, whose pathway is listed as antibiotic biosynthesis. The annotation cites experimental evidence and publications on chondrochloren biosynthesis.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-Empty string, as saved.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional and pathway annotation linking this enzyme to chondrochloren antibiotic biosynthesis.
-
-
-**Reason**
-
-> The sequence alone does not meaningfully distinguish antibiotic biosynthesis from the other broad pathway choices without identifying the specific enzyme and its biological role. That link is an item-specific fact absent from the prompt.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched annotation assigns the protein to antibiotic biosynthesis; the supplied evidence does not support another listed choice as its primary pathway.
-
-
-### Important caveats
-
-- Reviewer-only evidence was not supplied to the evaluated model.
-- The evidence supports the key for the exact sequence, but does not make the answer derivable from the sequence and choices alone.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional and pathway annotation linking this enzyme to chondrochloren antibiotic biosynthesis.",
-    "reason": "The sequence alone does not meaningfully distinguish antibiotic biosynthesis from the other broad pathway choices without identifying the specific enzyme and its biological role. That link is an item-specific fact absent from the prompt."
-  },
-  "case_id": "pathway_0099",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated 1′-carboxy-chondrochloren decarboxylase, whose pathway is listed as antibiotic biosynthesis. The annotation cites experimental evidence and publications on chondrochloren biosynthesis."
-  },
-  "important_caveats": [
-    "Reviewer-only evidence was not supplied to the evaluated model.",
-    "The evidence supports the key for the exact sequence, but does not make the answer derivable from the sequence and choices alone."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation assigns the protein to antibiotic biosynthesis; the supplied evidence does not support another listed choice as its primary pathway."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0099",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated 1′-carboxy-chondrochloren decarboxylase, whose pathway is listed as antibiotic biosynthesis. The annotation cites experimental evidence and publications on chondrochloren biosynthesis.",
-    "evidence_ids": ["C4", "C5", "C7", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "",
-    "missing_item_specific_fact": "The protein-specific functional and pathway annotation linking this enzyme to chondrochloren antibiotic biosynthesis.",
-    "reason": "The sequence alone does not meaningfully distinguish antibiotic biosynthesis from the other broad pathway choices without identifying the specific enzyme and its biological role. That link is an item-specific fact absent from the prompt."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation assigns the protein to antibiotic biosynthesis; the supplied evidence does not support another listed choice as its primary pathway."
-  },
-  "important_caveats": [
-    "Reviewer-only evidence was not supplied to the evaluated model.",
-    "The evidence supports the key for the exact sequence, but does not make the answer derivable from the sequence and choices alone."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry B9ZUK6 (CndG, 1'-carboxy-chondrochloren decarboxylase, EC 4.1.1.129) from Chondromyces crocatus is explicitly annotated with PATHWAY: 'Antibiotic biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:20080978) and inferential evidence (ECO:0000305, PubMed:19171307). The reference paper titles confirm chondrochlorens are antibiotics. The benchmark sequence SHA256 matches the UniProt sequence exactly (541 AA, sequence version 1).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Partial elimination is possible from general biochemistry: a decarboxylase (EC 4.1.x) is a biosynthetic/catabolic enzyme, not involved in protein biosynthesis (C), protein modification (D), or cell wall degradation (B). This narrows toward a biosynthetic pathway. However, the specific qualifier 'antibiotic' cannot be derived from the sequence alone.
-
-
-**Missing item-specific fact**
-
-> The fact that this protein (CndG) participates in the chondrochloren biosynthetic gene cluster of Chondromyces crocatus, and that chondrochlorens are antibiotic compounds, is an organism- and pathway-specific annotation not inferable from the amino acid sequence or general enzymology of decarboxylases.
-
-
-**Reason**
-
-> While rough elimination of B, C, D is possible (the enzyme is clearly not a ribosomal component, kinase, or hydrolase acting on peptidoglycan), confirming the pathway is specifically 'antibiotic biosynthesis' rather than, say, amino acid metabolism or another secondary-metabolite pathway requires knowing the identity of the substrate (chondrochloren) and its biological role as an antibiotic. This is an item-specific database/experimental fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, B (cell wall degradation), C (protein biosynthesis), and D (protein modification) are clearly incompatible with a decarboxylase acting on a small-molecule carboxylated intermediate. A is the only biosynthetic option, making it the best fit by elimination even without knowing the exact substrate. No other option is defensible.
-
-
-### Important caveats
-
-- The pathway annotation carries experimental evidence (ECO:0000269) from the 2010 JBC paper, confirming CndG's role in chondrochloren biosynthesis via in vitro characterization.
-- The organism (Chondromyces crocatus) and the specific compound (chondrochloren) are not provided in the question prompt, so the model must either recognize the sequence or rely on general elimination among the four choices.
-- The question provides no organism name, gene name, or substrate information, making the 'antibiotic' qualifier dependent on protein-specific knowledge.
-- The UniProt entry was first publicly released 2025-02-05; the author's source snapshot is unknown, though the sequence has been unchanged since 2009-04-14.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Partial elimination is possible from general biochemistry: a decarboxylase (EC 4.1.x) is a biosynthetic/catabolic enzyme, not involved in protein biosynthesis (C), protein modification (D), or cell wall degradation (B). This narrows toward a biosynthetic pathway. However, the specific qualifier 'antibiotic' cannot be derived from the sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The fact that this protein (CndG) participates in the chondrochloren biosynthetic gene cluster of Chondromyces crocatus, and that chondrochlorens are antibiotic compounds, is an organism- and pathway-specific annotation not inferable from the amino acid sequence or general enzymology of decarboxylases.",
-    "reason": "While rough elimination of B, C, D is possible (the enzyme is clearly not a ribosomal component, kinase, or hydrolase acting on peptidoglycan), confirming the pathway is specifically 'antibiotic biosynthesis' rather than, say, amino acid metabolism or another secondary-metabolite pathway requires knowing the identity of the substrate (chondrochloren) and its biological role as an antibiotic. This is an item-specific database/experimental fact."
-  },
-  "case_id": "pathway_0099",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry B9ZUK6 (CndG, 1'-carboxy-chondrochloren decarboxylase, EC 4.1.1.129) from Chondromyces crocatus is explicitly annotated with PATHWAY: 'Antibiotic biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:20080978) and inferential evidence (ECO:0000305, PubMed:19171307). The reference paper titles confirm chondrochlorens are antibiotics. The benchmark sequence SHA256 matches the UniProt sequence exactly (541 AA, sequence version 1)."
-  },
-  "important_caveats": [
-    "The pathway annotation carries experimental evidence (ECO:0000269) from the 2010 JBC paper, confirming CndG's role in chondrochloren biosynthesis via in vitro characterization.",
-    "The organism (Chondromyces crocatus) and the specific compound (chondrochloren) are not provided in the question prompt, so the model must either recognize the sequence or rely on general elimination among the four choices.",
-    "The question provides no organism name, gene name, or substrate information, making the 'antibiotic' qualifier dependent on protein-specific knowledge.",
-    "The UniProt entry was first publicly released 2025-02-05; the author's source snapshot is unknown, though the sequence has been unchanged since 2009-04-14."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, B (cell wall degradation), C (protein biosynthesis), and D (protein modification) are clearly incompatible with a decarboxylase acting on a small-molecule carboxylated intermediate. A is the only biosynthetic option, making it the best fit by elimination even without knowing the exact substrate. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0099",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry B9ZUK6 (CndG, 1'-carboxy-chondrochloren decarboxylase, EC 4.1.1.129) from Chondromyces crocatus is explicitly annotated with PATHWAY: 'Antibiotic biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:20080978) and inferential evidence (ECO:0000305, PubMed:19171307). The reference paper titles confirm chondrochlorens are antibiotics. The benchmark sequence SHA256 matches the UniProt sequence exactly (541 AA, sequence version 1).",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Partial elimination is possible from general biochemistry: a decarboxylase (EC 4.1.x) is a biosynthetic/catabolic enzyme, not involved in protein biosynthesis (C), protein modification (D), or cell wall degradation (B). This narrows toward a biosynthetic pathway. However, the specific qualifier 'antibiotic' cannot be derived from the sequence alone.",
-    "missing_item_specific_fact": "The fact that this protein (CndG) participates in the chondrochloren biosynthetic gene cluster of Chondromyces crocatus, and that chondrochlorens are antibiotic compounds, is an organism- and pathway-specific annotation not inferable from the amino acid sequence or general enzymology of decarboxylases.",
-    "reason": "While rough elimination of B, C, D is possible (the enzyme is clearly not a ribosomal component, kinase, or hydrolase acting on peptidoglycan), confirming the pathway is specifically 'antibiotic biosynthesis' rather than, say, amino acid metabolism or another secondary-metabolite pathway requires knowing the identity of the substrate (chondrochloren) and its biological role as an antibiotic. This is an item-specific database/experimental fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, B (cell wall degradation), C (protein biosynthesis), and D (protein modification) are clearly incompatible with a decarboxylase acting on a small-molecule carboxylated intermediate. A is the only biosynthetic option, making it the best fit by elimination even without knowing the exact substrate. No other option is defensible."
-  },
-  "important_caveats": [
-    "The pathway annotation carries experimental evidence (ECO:0000269) from the 2010 JBC paper, confirming CndG's role in chondrochloren biosynthesis via in vitro characterization.",
-    "The organism (Chondromyces crocatus) and the specific compound (chondrochloren) are not provided in the question prompt, so the model must either recognize the sequence or rely on general elimination among the four choices.",
-    "The question provides no organism name, gene name, or substrate information, making the 'antibiotic' qualifier dependent on protein-specific knowledge.",
-    "The UniProt entry was first publicly released 2025-02-05; the author's source snapshot is unknown, though the sequence has been unchanged since 2009-04-14."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -483,30 +249,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B9ZUK6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 541,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
   "current_entry_audit": {
     "entryVersion": 63,
     "firstPublicDate": "2025-02-05",
@@ -514,14 +267,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-04-14",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "current_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 541,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 61,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B9ZUK6",
   "selected_historical_entry_version": 61,
+  "selected_historical_record_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "selected_historical_source_sequence_length": 541,
+  "selected_historical_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
   "selected_historical_version": {
     "accession": "B9ZUK6",
     "database": "Swiss-Prot",
@@ -532,24 +301,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CNDG_CHOCO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "selected_historical_source_sequence_sha256": "10620a06bbc0e32940892848fc0f774fc31cefc9e778f3b2f6ed6a95426db921",
-  "selected_historical_source_sequence_length": 541,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 61,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -563,15 +319,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B9ZUK6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -582,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":63,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-04-14\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -601,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Myxococcota\",\"Polyangia\",\"Polyangiales\",\"Polyangiaceae\",\"Chondromyces\"],\"scientificName\":\"Chondromyces crocatus\",\"taxonId\":52}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -620,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"value\":\"Oxidative decarboxylase CndG\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20080978\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.129\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"1'-carboxy-chondrochloren decarboxylase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -639,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20080978\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"19171307\",\"source\":\"PubMed\"}],\"value\":\"Antibiotic biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -658,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Rachid S.\",\"Scharfe M.\",\"Bloecker H.\",\"Weissman K.J.\",\"Mueller R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19171307\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.chembiol.2008.11.005\"}],\"citationType\":\"journal article\",\"firstPage\":\"70\",\"id\":\"19171307\",\"journal\":\"Chem. Biol.\",\"lastPage\":\"81\",\"publicationDate\":\"2009\",\"title\":\"Unusual chemistry in the biosynthesis of the antibiotic chondrochlorens.\",\"volume\":\"16\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAQ43085.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 14714 / JCM 12616 / Cm c5\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"GENE CLUSTER\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -677,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json",
-  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
-  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Rachid S.\",\"Revermann O.\",\"Dauth C.\",\"Kazmaier U.\",\"Mueller R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20080978\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m109.079707\"}],\"citationType\":\"journal article\",\"firstPage\":\"12482\",\"id\":\"20080978\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"12489\",\"publicationDate\":\"2010\",\"title\":\"Characterization of a novel type of oxidative decarboxylase involved in the biosynthesis of the styryl moiety of chondrochloren from an acylated tyrosine.\",\"volume\":\"285\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 14714 / JCM 12616 / Cm c5\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"MASS SPECTROMETRY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:01.455195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "37544f80df2e40e3cc30dce0bb90b3ac4b0740813f4bd2d7136af35a8395ee56",
+  "url": "https://rest.uniprot.org/uniprotkb/B9ZUK6.json"
 }
 ```
 
@@ -695,18 +451,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   CNDG_CHOCO              Reviewed;         541 AA.\nAC   B9ZUK6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   14-APR-2009, sequence version 1.\nDT   28-JAN-2026, entry version 61.\nDE   RecName: Full=1'-carboxy-chondrochloren decarboxylase {ECO:0000305};\nDE            EC=4.1.1.129 {ECO:0000269|PubMed:20080978};\nDE   AltName: Full=Oxidative decarboxylase CndG {ECO:0000303|PubMed:20080978};\nGN   Name=cndG {ECO:0000303|PubMed:19171307};\nGN   ORFNames=CMC5_053350 {ECO:0000312|EMBL:AKT41174.1};\nOS   Chondromyces crocatus.\nOC   Bacteria; Pseudomonadati; Myxococcota; Polyangia; Polyangiales;\nOC   Polyangiaceae; Chondromyces.\nOX   NCBI_TaxID=52;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -716,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 15-21",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAQ43085.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], GENE CLUSTER, AND PATHWAY.\nRC   STRAIN=DSM 14714 / JCM 12616 / Cm c5;\nRX   PubMed=19171307; DOI=10.1016/j.chembiol.2008.11.005;\nRA   Rachid S., Scharfe M., Bloecker H., Weissman K.J., Mueller R.;\nRT   \"Unusual chemistry in the biosynthesis of the antibiotic chondrochlorens.\";\nRL   Chem. Biol. 16:70-81(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -737,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, BIOPHYSICOCHEMICAL\nRP   PROPERTIES, PATHWAY, MASS SPECTROMETRY, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=DSM 14714 / JCM 12616 / Cm c5;\nRX   PubMed=20080978; DOI=10.1074/jbc.m109.079707;\nRA   Rachid S., Revermann O., Dauth C., Kazmaier U., Mueller R.;\nRT   \"Characterization of a novel type of oxidative decarboxylase involved in\nRT   the biosynthesis of the styryl moiety of chondrochloren from an acylated\nRT   tyrosine.\";\nRL   J. Biol. Chem. 285:12482-12489(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 
@@ -758,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 61,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61",
-  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
-  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
-  "source_locator": "lines 74-75",
   "excerpt": "CC   -!- PATHWAY: Antibiotic biosynthesis. {ECO:0000269|PubMed:20080978,\nCC       ECO:0000305|PubMed:19171307}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 61,
+  "retrieved_utc": "2026-11-01T06:27:55.921419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 74-75",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7851bd61d2f3d639ee8c9ce615c1e642a5adf7540b13dac4f8a2badafe3d4de",
+  "url": "https://rest.uniprot.org/unisave/B9ZUK6?format=txt&versions=61"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_molecular_function_0178: before and after transfer clarification
+# GO_molecular_function_0178
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0178.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0178.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — structural constituent of ribosome
+**Expected answer:** **C** — structural constituent of ribosome
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the entry annotated as large ribosomal subunit protein uL5, and the entry describes it as a ribosome component. The GO annotation for “structural constituent of ribosome” is IEA:InterPro (computational), while the cited function record provides supporting ribosome context; this supports choice C without implying a direct assay of that precise molecular-function term.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The compact, basic sequence is compatible with an RNA-associated protein, and its lack of membrane-spanning regions argues against the ABC transporter choice. Those broad clues do not reliably distinguish a ribosomal structural role from mRNA binding or identify this protein as uL5.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as ribosomal protein uL5, or equivalent homology/annotation evidence, is not supplied in the question.
-
-
-**Reason**
-
-> Choosing C over the plausible RNA-binding alternative requires recognizing or externally identifying this particular protein; generic sequence reasoning does not establish its precise GO molecular function.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not clearly distinguish the RNA-related choices, but the sequence-matched evidence supports C as the expected answer.
-
-
-### Important caveats
-
-- The cited GO:0003735 annotation is computational (IEA:InterPro), not a direct experimental demonstration of that specific molecular-function term.
-- The evidence matches the supplied sequence, but the author’s exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The compact, basic sequence is compatible with an RNA-associated protein, and its lack of membrane-spanning regions argues against the ABC transporter choice. Those broad clues do not reliably distinguish a ribosomal structural role from mRNA binding or identify this protein as uL5.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as ribosomal protein uL5, or equivalent homology/annotation evidence, is not supplied in the question.",
-    "reason": "Choosing C over the plausible RNA-binding alternative requires recognizing or externally identifying this particular protein; generic sequence reasoning does not establish its precise GO molecular function."
-  },
-  "case_id": "GO_molecular_function_0178",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the entry annotated as large ribosomal subunit protein uL5, and the entry describes it as a ribosome component. The GO annotation for “structural constituent of ribosome” is IEA:InterPro (computational), while the cited function record provides supporting ribosome context; this supports choice C without implying a direct assay of that precise molecular-function term."
-  },
-  "important_caveats": [
-    "The cited GO:0003735 annotation is computational (IEA:InterPro), not a direct experimental demonstration of that specific molecular-function term.",
-    "The evidence matches the supplied sequence, but the author’s exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not clearly distinguish the RNA-related choices, but the sequence-matched evidence supports C as the expected answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0178",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the entry annotated as large ribosomal subunit protein uL5, and the entry describes it as a ribosome component. The GO annotation for “structural constituent of ribosome” is IEA:InterPro (computational), while the cited function record provides supporting ribosome context; this supports choice C without implying a direct assay of that precise molecular-function term.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The compact, basic sequence is compatible with an RNA-associated protein, and its lack of membrane-spanning regions argues against the ABC transporter choice. Those broad clues do not reliably distinguish a ribosomal structural role from mRNA binding or identify this protein as uL5.",
-    "missing_item_specific_fact": "The protein-specific identification as ribosomal protein uL5, or equivalent homology/annotation evidence, is not supplied in the question.",
-    "reason": "Choosing C over the plausible RNA-binding alternative requires recognizing or externally identifying this particular protein; generic sequence reasoning does not establish its precise GO molecular function."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not clearly distinguish the RNA-related choices, but the sequence-matched evidence supports C as the expected answer."
-  },
-  "important_caveats": [
-    "The cited GO:0003735 annotation is computational (IEA:InterPro), not a direct experimental demonstration of that specific molecular-function term.",
-    "The evidence matches the supplied sequence, but the author’s exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence (173 aa, SHA256-matched) corresponds to UniProt G0SHQ2, annotated as 'Large ribosomal subunit protein uL5' (60S ribosomal protein L11) from Chaetomium thermophilum. The GO annotation GO:0003735 'structural constituent of ribosome' is present (IEA:InterPro), and the FUNCTION comment confirms it is a component of the ribosome. A cryo-EM structure (PDB 7OZS) confirms its role in the 5S RNP/ribosome assembly complex. Multiple independent evidence sources (protein name, function comment, GO annotation, structural evidence) all support choice C.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is only 173 aa and highly basic (abundant Lys/Arg residues throughout), with no transmembrane segments, no Walker A/B ATPase motifs in proper context, no glycosyltransferase catalytic domain, and no canonical mRNA-binding domain motifs (RRM, KH, PUA, etc.). ABC transporters (D) require ~500+ aa with transmembrane helices and nucleotide-binding domains; UDP-glucosyltransferases (A) are typically 300-500+ aa with PSPG-box-like catalytic motifs. The extreme basicity combined with very small size and absence of specific RNA-binding domain architecture is a hallmark of ribosomal proteins that pack electrostatically with rRNA, distinguishing C from B (mRNA-binding proteins typically possess recognizable RRM/KH domains and are often larger).
-
-
-**Missing item-specific fact**
-
-> None strictly required; however, the final C-vs-B distinction is somewhat subtle and relies on recognizing that extreme basicity + very small size + absence of specific RNA-binding domain motifs is more diagnostic of ribosomal proteins than of general mRNA-binding proteins.
-
-
-**Reason**
-
-> General biological knowledge about protein size constraints (eliminating A and D), the hallmark basic character of ribosomal proteins, and the absence of specific catalytic or RNA-binding domain motifs provides a defensible reasoning path to C. The B-vs-C distinction is addressable by noting that mRNA-binding proteins typically possess identifiable RRM, KH, or other specific RNA-binding folds, whereas this sequence's extreme basicity and small size are characteristic of ribosomal protein architecture.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While B (mRNA binding) might superficially seem plausible given the basic character, the absence of any canonical RNA-binding domain fold (RRM, KH, etc.) and the very small size make C the clearly better answer. A and D are ruled out by size and domain architecture. No other option is genuinely defensible.
-
-
-### Important caveats
-
-- The GO annotation for this entry is IEA:InterPro (computational transfer), not directly experimental for the GO term itself, though the protein's ribosomal identity is confirmed by cryo-EM structure (PDB 7OZS, ECO:0007744).
-- The sequence contains 'GESGD' near the N-terminus which could superficially resemble a Walker A motif, but it lacks the canonical GxxxxGK&#91;ST&#93; consensus and the protein has no transmembrane topology, making ABC transporter activity implausible.
-- The entry was first publicly released 2025-02-05; the author's exact source snapshot is unknown, though the sequence matches across all checked versions.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is only 173 aa and highly basic (abundant Lys/Arg residues throughout), with no transmembrane segments, no Walker A/B ATPase motifs in proper context, no glycosyltransferase catalytic domain, and no canonical mRNA-binding domain motifs (RRM, KH, PUA, etc.). ABC transporters (D) require ~500+ aa with transmembrane helices and nucleotide-binding domains; UDP-glucosyltransferases (A) are typically 300-500+ aa with PSPG-box-like catalytic motifs. The extreme basicity combined with very small size and absence of specific RNA-binding domain architecture is a hallmark of ribosomal proteins that pack electrostatically with rRNA, distinguishing C from B (mRNA-binding proteins typically possess recognizable RRM/KH domains and are often larger).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; however, the final C-vs-B distinction is somewhat subtle and relies on recognizing that extreme basicity + very small size + absence of specific RNA-binding domain motifs is more diagnostic of ribosomal proteins than of general mRNA-binding proteins.",
-    "reason": "General biological knowledge about protein size constraints (eliminating A and D), the hallmark basic character of ribosomal proteins, and the absence of specific catalytic or RNA-binding domain motifs provides a defensible reasoning path to C. The B-vs-C distinction is addressable by noting that mRNA-binding proteins typically possess identifiable RRM, KH, or other specific RNA-binding folds, whereas this sequence's extreme basicity and small size are characteristic of ribosomal protein architecture."
-  },
-  "case_id": "GO_molecular_function_0178",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H3",
-      "H4",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence (173 aa, SHA256-matched) corresponds to UniProt G0SHQ2, annotated as 'Large ribosomal subunit protein uL5' (60S ribosomal protein L11) from Chaetomium thermophilum. The GO annotation GO:0003735 'structural constituent of ribosome' is present (IEA:InterPro), and the FUNCTION comment confirms it is a component of the ribosome. A cryo-EM structure (PDB 7OZS) confirms its role in the 5S RNP/ribosome assembly complex. Multiple independent evidence sources (protein name, function comment, GO annotation, structural evidence) all support choice C."
-  },
-  "important_caveats": [
-    "The GO annotation for this entry is IEA:InterPro (computational transfer), not directly experimental for the GO term itself, though the protein's ribosomal identity is confirmed by cryo-EM structure (PDB 7OZS, ECO:0007744).",
-    "The sequence contains 'GESGD' near the N-terminus which could superficially resemble a Walker A motif, but it lacks the canonical GxxxxGK[ST] consensus and the protein has no transmembrane topology, making ABC transporter activity implausible.",
-    "The entry was first publicly released 2025-02-05; the author's exact source snapshot is unknown, though the sequence matches across all checked versions."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While B (mRNA binding) might superficially seem plausible given the basic character, the absence of any canonical RNA-binding domain fold (RRM, KH, etc.) and the very small size make C the clearly better answer. A and D are ruled out by size and domain architecture. No other option is genuinely defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0178",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence (173 aa, SHA256-matched) corresponds to UniProt G0SHQ2, annotated as 'Large ribosomal subunit protein uL5' (60S ribosomal protein L11) from Chaetomium thermophilum. The GO annotation GO:0003735 'structural constituent of ribosome' is present (IEA:InterPro), and the FUNCTION comment confirms it is a component of the ribosome. A cryo-EM structure (PDB 7OZS) confirms its role in the 5S RNP/ribosome assembly complex. Multiple independent evidence sources (protein name, function comment, GO annotation, structural evidence) all support choice C.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "H1", "H3", "H4", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is only 173 aa and highly basic (abundant Lys/Arg residues throughout), with no transmembrane segments, no Walker A/B ATPase motifs in proper context, no glycosyltransferase catalytic domain, and no canonical mRNA-binding domain motifs (RRM, KH, PUA, etc.). ABC transporters (D) require ~500+ aa with transmembrane helices and nucleotide-binding domains; UDP-glucosyltransferases (A) are typically 300-500+ aa with PSPG-box-like catalytic motifs. The extreme basicity combined with very small size and absence of specific RNA-binding domain architecture is a hallmark of ribosomal proteins that pack electrostatically with rRNA, distinguishing C from B (mRNA-binding proteins typically possess recognizable RRM/KH domains and are often larger).",
-    "missing_item_specific_fact": "None strictly required; however, the final C-vs-B distinction is somewhat subtle and relies on recognizing that extreme basicity + very small size + absence of specific RNA-binding domain motifs is more diagnostic of ribosomal proteins than of general mRNA-binding proteins.",
-    "reason": "General biological knowledge about protein size constraints (eliminating A and D), the hallmark basic character of ribosomal proteins, and the absence of specific catalytic or RNA-binding domain motifs provides a defensible reasoning path to C. The B-vs-C distinction is addressable by noting that mRNA-binding proteins typically possess identifiable RRM, KH, or other specific RNA-binding folds, whereas this sequence's extreme basicity and small size are characteristic of ribosomal protein architecture."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While B (mRNA binding) might superficially seem plausible given the basic character, the absence of any canonical RNA-binding domain fold (RRM, KH, etc.) and the very small size make C the clearly better answer. A and D are ruled out by size and domain architecture. No other option is genuinely defensible."
-  },
-  "important_caveats": [
-    "The GO annotation for this entry is IEA:InterPro (computational transfer), not directly experimental for the GO term itself, though the protein's ribosomal identity is confirmed by cryo-EM structure (PDB 7OZS, ECO:0007744).",
-    "The sequence contains 'GESGD' near the N-terminus which could superficially resemble a Walker A motif, but it lacks the canonical GxxxxGK[ST] consensus and the protein has no transmembrane topology, making ABC transporter activity implausible.",
-    "The entry was first publicly released 2025-02-05; the author's exact source snapshot is unknown, though the sequence matches across all checked versions."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G0SHQ2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "27679561e8f1a6c6df734b1d324cada8a8cfc7c518fd784211662031421b85ac",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 173,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "27679561e8f1a6c6df734b1d324cada8a8cfc7c518fd784211662031421b85ac",
   "current_entry_audit": {
     "entryVersion": 55,
     "firstPublicDate": "2025-02-05",
@@ -542,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-10-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "current_source_sequence_sha256": "27679561e8f1a6c6df734b1d324cada8a8cfc7c518fd784211662031421b85ac",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 173,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "27679561e8f1a6c6df734b1d324cada8a8cfc7c518fd784211662031421b85ac",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 53,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G0SHQ2",
   "selected_historical_entry_version": 53,
+  "selected_historical_record_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
+  "selected_historical_source_sequence_length": 173,
+  "selected_historical_source_sequence_sha256": "27679561e8f1a6c6df734b1d324cada8a8cfc7c518fd784211662031421b85ac",
   "selected_historical_version": {
     "accession": "G0SHQ2",
     "database": "Swiss-Prot",
@@ -560,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RL11_CHATD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
-  "selected_historical_source_sequence_sha256": "27679561e8f1a6c6df734b1d324cada8a8cfc7c518fd784211662031421b85ac",
-  "selected_historical_source_sequence_length": 173,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 53,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -595,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json",
-  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G0SHQ2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json"
 }
 ```
 
@@ -614,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json",
-  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":55,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-10-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json"
 }
 ```
 
@@ -633,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json",
-  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Chaetomium thermophilum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Thermochaetoides\"],\"scientificName\":\"Thermochaetoides thermophila (strain DSM 1495 / CBS 144.50 / DAOM 24625 / IMI 039719)\",\"taxonId\":759272}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json"
 }
 ```
 
@@ -652,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json",
-  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"37291423\",\"source\":\"PubMed\"}],\"value\":\"60S ribosomal protein L11\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"37291423\",\"source\":\"PubMed\"}],\"value\":\"ctRPL11\"}]}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"37291423\",\"source\":\"PubMed\"}],\"value\":\"Large ribosomal subunit protein uL5\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json"
 }
 ```
 
@@ -671,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json",
-  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37291423\",\"source\":\"PubMed\"}],\"value\":\"Component of the ribosome, a large ribonucleoprotein complex responsible for the synthesis of proteins in the cell (PubMed:37291423). The small ribosomal subunit (SSU) binds messenger RNAs (mRNAs) and translates the encoded message by selecting cognate aminoacyl-transfer RNA (tRNA) molecules. The large subunit (LSU) contains the ribosomal catalytic site termed the peptidyl transferase center (PTC), which catalyzes the formation of peptide bonds, thereby polymerizing the amino acids delivered by tRNAs into a polypeptide chain. The nascent polypeptides leave the ribosome through a tunnel in the LSU and interact with protein factors that function in enzymatic processing, targeting, and the membrane insertion of nascent chains at the exit of the ribosomal tunnel\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json"
 }
 ```
 
@@ -690,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json",
-  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/71",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0003735\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:structural constituent of ribosome\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/71",
+  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json"
 }
 ```
 
@@ -709,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json",
-  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
-  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Castillo Duque de Estrada N.M.\",\"Thoms M.\",\"Flemming D.\",\"Hammaren H.M.\",\"Buschauer R.\",\"Ameismeier M.\",\"Bassler J.\",\"Beck M.\",\"Beckmann R.\",\"Hurt E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37291423\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41594-023-01006-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"1119\",\"id\":\"37291423\",\"journal\":\"Nat. Struct. Mol. Biol.\",\"lastPage\":\"1131\",\"publicationDate\":\"2023\",\"title\":\"Structure of nascent 5S RNPs at the crossroad between ribosome assembly and MDM2-p53 pathways.\",\"volume\":\"30\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7OZS\",\"source\":\"PDB\"}],\"referenceNumber\":7,\"referencePositions\":[\"STRUCTURE BY ELECTRON MICROSCOPY (3.50 ANGSTROMS) IN COMPLEX WITH RPL5; RRS1; RPF2; SYO1 AND 5S RNA\",\"FUNCTION\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-02T04:28:28.267161+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "93360df0d16107081f9d9e8f13a70e6d32229c478daab4d9194a6b07f3ea13c6",
+  "url": "https://rest.uniprot.org/uniprotkb/G0SHQ2.json"
 }
 ```
 
@@ -727,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 53,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53",
-  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
-  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   RL11_CHATD              Reviewed;         173 AA.\nAC   G0SHQ2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-OCT-2011, sequence version 1.\nDT   28-JAN-2026, entry version 53.\nDE   RecName: Full=Large ribosomal subunit protein uL5 {ECO:0000305|PubMed:37291423};\nDE   AltName: Full=60S ribosomal protein L11 {ECO:0000305|PubMed:37291423};\nDE            Short=ctRPL11 {ECO:0000305|PubMed:37291423};\nGN   ORFNames=HT_0072970 {ECO:0000312|EMBL:EGS16972.1};\nOS   Chaetomium thermophilum (strain DSM 1495 / CBS 144.50 / IMI 039719)\nOS   (Thermochaetoides thermophila).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Thermochaetoides.\nOX   NCBI_TaxID=759272;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 53,
+  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
+  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53"
 }
 ```
 
@@ -748,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 53,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53",
-  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
-  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
-  "source_locator": "lines 63-71",
   "excerpt": "RN   [7] {ECO:0007744|PDB:7OZS}\nRP   STRUCTURE BY ELECTRON MICROSCOPY (3.50 ANGSTROMS) IN COMPLEX WITH RPL5;\nRP   RRS1; RPF2; SYO1 AND 5S RNA, FUNCTION, AND SUBUNIT.\nRX   PubMed=37291423; DOI=10.1038/s41594-023-01006-7;\nRA   Castillo Duque de Estrada N.M., Thoms M., Flemming D., Hammaren H.M.,\nRA   Buschauer R., Ameismeier M., Bassler J., Beck M., Beckmann R., Hurt E.;\nRT   \"Structure of nascent 5S RNPs at the crossroad between ribosome assembly\nRT   and MDM2-p53 pathways.\";\nRL   Nat. Struct. Mol. Biol. 30:1119-1131(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 53,
+  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-71",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
+  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53"
 }
 ```
 
@@ -769,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 53,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53",
-  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
-  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
-  "source_locator": "lines 79-90",
   "excerpt": "CC   -!- FUNCTION: Component of the ribosome, a large ribonucleoprotein complex\nCC       responsible for the synthesis of proteins in the cell\nCC       (PubMed:37291423). The small ribosomal subunit (SSU) binds messenger\nCC       RNAs (mRNAs) and translates the encoded message by selecting cognate\nCC       aminoacyl-transfer RNA (tRNA) molecules. The large subunit (LSU)\nCC       contains the ribosomal catalytic site termed the peptidyl transferase\nCC       center (PTC), which catalyzes the formation of peptide bonds, thereby\nCC       polymerizing the amino acids delivered by tRNAs into a polypeptide\nCC       chain. The nascent polypeptides leave the ribosome through a tunnel in\nCC       the LSU and interact with protein factors that function in enzymatic\nCC       processing, targeting, and the membrane insertion of nascent chains at\nCC       the exit of the ribosomal tunnel. {ECO:0000269|PubMed:37291423}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 53,
+  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 79-90",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
+  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53"
 }
 ```
 
@@ -790,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 53,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53",
-  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
-  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
-  "source_locator": "lines 164-164",
   "excerpt": "DR   GO; GO:0003735; F:structural constituent of ribosome; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 53,
+  "retrieved_utc": "2026-11-02T04:28:31.089069+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 164-164",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "72c3302c793ecbc5f0bfc6b777abbb1139c3555a4df5e636bd916a71b826d7f8",
+  "url": "https://rest.uniprot.org/unisave/G0SHQ2?format=txt&versions=53"
 }
 ```
 
@@ -812,15 +567,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 28321-28331",
   "excerpt": "[Term]\nid: GO:0003729\nname: mRNA binding\nnamespace: molecular_function\nalt_id: GO:0000499\ndef: \"Binding to messenger RNA (mRNA), an intermediate molecule between DNA and protein. mRNA includes UTR and coding sequences, but does not contain introns.\" [GOC:kmv, GOC:pr, SO:0000234]\nsubset: goslim_chembl\nsubset: goslim_yeast\nsynonym: \"base pairing with mRNA\" NARROW []\nis_a: GO:0003723 ! RNA binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0003729",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 28321-28331",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0003729"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -831,15 +586,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 28381-28401",
   "excerpt": "[Term]\nid: GO:0003735\nname: structural constituent of ribosome\nnamespace: molecular_function\nalt_id: GO:0003736\nalt_id: GO:0003737\nalt_id: GO:0003738\nalt_id: GO:0003739\nalt_id: GO:0003740\nalt_id: GO:0003741\nalt_id: GO:0003742\ndef: \"The action of a molecule that contributes to the structural integrity of the ribosome.\" [GOC:mah]\ncomment: Note that this term may be used to annotate ribosomal RNAs as well as ribosomal proteins.\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_metagenomics\nsubset: goslim_yeast\nsynonym: \"ribosomal protein\" BROAD []\nsynonym: \"ribosomal RNA\" RELATED []\nis_a: GO:0005198 ! structural molecule activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0003735",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 28381-28401",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0003735"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -850,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 117453-117474",
   "excerpt": "[Term]\nid: GO:0015421\nname: ABC-type oligopeptide transporter activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: ATP + H2O + oligopeptide(out) = ADP + phosphate + oligopeptide(in).\" [RHEA:14429]\nsynonym: \"ABC-type oligopeptide transporter\" EXACT [EC:7.4.2.6]\nsynonym: \"ATP-dependent oligopeptide transmembrane transporter activity\" EXACT []\nsynonym: \"ATPase-coupled oligopeptide transmembrane transporter activity\" RELATED []\nsynonym: \"oligopeptide ABC transporter\" NARROW []\nsynonym: \"oligopeptide permease activity\" RELATED [EC:7.4.2.6]\nsynonym: \"oligopeptide-transporting ATPase activity\" RELATED [EC:7.4.2.6]\nxref: EC:7.4.2.6\nxref: MetaCyc:3.6.3.23-RXN\nxref: Reactome:R-HSA-5223317 \"ABCB9 transports peptides from cytosol to lysosomal lumen\"\nxref: RHEA:14429\nxref: RHEA:29763\nis_a: GO:0035673 ! oligopeptide transmembrane transporter activity\nis_a: GO:0140359 ! ABC-type transporter activity\nproperty_value: skos:exactMatch EC:7.4.2.6\nproperty_value: skos:exactMatch RHEA:14429\nproperty_value: skos:narrowMatch RHEA:29763\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0015421",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 117453-117474",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0015421"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -869,15 +624,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 216295-216303",
   "excerpt": "[Term]\nid: GO:0035251\nname: UDP-glucosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a glucosyl group from UDP-glucose to an acceptor molecule.\" [PMID:19858195]\nxref: Reactome:R-HSA-1912353 \"Glucosylation of Pre-NOTCH by POGLUT1\"\nis_a: GO:0008194 ! UDP-glycosyltransferase activity\nis_a: GO:0046527 ! glucosyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035251",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 216295-216303",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035251"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

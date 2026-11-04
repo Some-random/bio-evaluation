@@ -1,18 +1,16 @@
-# cofactor_0182: before and after transfer clarification
+# cofactor_0182
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0182.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0182.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Fe(2+)
+**Expected answer:** **B** — Fe(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Drosophila JMJD7 UniProt record, which annotates Fe(2+) as a cofactor with experimental evidence (ECO:0000269; PubMed 35410347). The cited crystal structures include Mn(2+), but that alone does not establish Mn(2+) as the cofactor required for catalytic activity.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Histidine/aspartate-rich sequence regions may suggest a metal-binding enzyme, but they do not, by themselves, distinguish Fe(2+) from Mn(2+) or establish which metal supports this protein's catalytic activity.
-
-
-**Missing item-specific fact**
-
-> The JMJD7 identity and its experimentally supported Fe(2+) cofactor annotation are not supplied with the sequence.
-
-
-**Reason**
-
-> Selecting Fe(2+) over the other metal choices depends on identifying the protein or obtaining protein-specific functional evidence. General metal-binding sequence patterns do not resolve the choice.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reported Mn(2+) in crystal complexes is a caveat, but the question asks for the cofactor required for catalytic activity, and the matched entry supports Fe(2+).
-
-
-### Important caveats
-
-- The cofactor annotation is experimentally evidence-tagged in UniProt, but the cited primary study was not independently reviewed here.
-- Mn(2+) occurs in the cited crystallographic complexes; its presence there should not be conflated with the physiological catalytic cofactor.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Histidine/aspartate-rich sequence regions may suggest a metal-binding enzyme, but they do not, by themselves, distinguish Fe(2+) from Mn(2+) or establish which metal supports this protein's catalytic activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The JMJD7 identity and its experimentally supported Fe(2+) cofactor annotation are not supplied with the sequence.",
-    "reason": "Selecting Fe(2+) over the other metal choices depends on identifying the protein or obtaining protein-specific functional evidence. General metal-binding sequence patterns do not resolve the choice."
-  },
-  "case_id": "cofactor_0182",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila JMJD7 UniProt record, which annotates Fe(2+) as a cofactor with experimental evidence (ECO:0000269; PubMed 35410347). The cited crystal structures include Mn(2+), but that alone does not establish Mn(2+) as the cofactor required for catalytic activity."
-  },
-  "important_caveats": [
-    "The cofactor annotation is experimentally evidence-tagged in UniProt, but the cited primary study was not independently reviewed here.",
-    "Mn(2+) occurs in the cited crystallographic complexes; its presence there should not be conflated with the physiological catalytic cofactor."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reported Mn(2+) in crystal complexes is a caveat, but the question asks for the cofactor required for catalytic activity, and the matched entry supports Fe(2+)."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0182",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila JMJD7 UniProt record, which annotates Fe(2+) as a cofactor with experimental evidence (ECO:0000269; PubMed 35410347). The cited crystal structures include Mn(2+), but that alone does not establish Mn(2+) as the cofactor required for catalytic activity.",
-    "evidence_ids": ["C1", "C5", "H4", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Histidine/aspartate-rich sequence regions may suggest a metal-binding enzyme, but they do not, by themselves, distinguish Fe(2+) from Mn(2+) or establish which metal supports this protein's catalytic activity.",
-    "missing_item_specific_fact": "The JMJD7 identity and its experimentally supported Fe(2+) cofactor annotation are not supplied with the sequence.",
-    "reason": "Selecting Fe(2+) over the other metal choices depends on identifying the protein or obtaining protein-specific functional evidence. General metal-binding sequence patterns do not resolve the choice."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reported Mn(2+) in crystal complexes is a caveat, but the question asks for the cofactor required for catalytic activity, and the matched entry supports Fe(2+)."
-  },
-  "important_caveats": [
-    "The cofactor annotation is experimentally evidence-tagged in UniProt, but the cited primary study was not independently reviewed here.",
-    "Mn(2+) occurs in the cited crystallographic complexes; its presence there should not be conflated with the physiological catalytic cofactor."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9VU77 (JMJD7_DROME) explicitly annotates the cofactor as Fe(2+) (ChEBI:29033) with experimental evidence code ECO:0000269 from PubMed:35410347 (C5, H4). The protein is a JmjC-domain-containing (3S)-lysyl hydroxylase (EC 1.14.11.63), a 2-oxoglutarate-dependent dioxygenase, a class universally dependent on Fe(II). Although the crystallographic reference (C6/H3) lists Mn(2+) in the co-crystallized complexes, this is a well-known crystallographic surrogate for Fe(2+) in Fe(II)/2OG dioxygenase studies; the functional cofactor annotation remains Fe(2+).
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains HxD and H…H motifs (e.g., 'GHKDF', 'HHVSQSHK') characteristic of the JmjC-domain Fe(II) coordination site. JmjC-domain proteins constitute a well-established superfamily of Fe(II)/2-oxoglutarate-dependent dioxygenases; recognizing this fold and its canonical metal requirement is general biochemistry. The EC 1.14.11.x class (2-oxoglutarate-dependent dioxygenase) inherently requires Fe(II). Distinguishing Fe(2+) from Mn(2+) is supported by the field-standard knowledge that Mn(2+) is a common crystallographic substitute (non-oxidizable) while Fe(2+) is the catalytically required metal in 2OG-dependent oxygenases.
-
-
-**Missing item-specific fact**
-
-> None critical. The JmjC→Fe(II) association is textbook-level knowledge. A model would not need to know the specific PubMed paper or PDB entries; the domain family assignment and its cofactor requirement are general.
-
-
-**Reason**
-
-> A model with standard biochemistry training can identify JmjC-like motifs in the sequence and invoke the well-known Fe(II)/2OG dioxygenase biochemistry to select Fe(2+). The Mn(2+) option is a plausible distractor from crystallography but is not the catalytic cofactor for this enzyme class.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While the crystal structures contain Mn(2+) (C6/H3), this is a recognized crystallographic surrogate and not the functional cofactor. The COFACTOR annotation and the enzyme class (EC 1.14.11.63, 2OG-dependent dioxygenase) unambiguously designate Fe(2+) as the required cofactor. Heme and &#91;2Fe-2S&#93; are unrelated to JmjC-domain biochemistry.
-
-
-### Important caveats
-
-- The crystallographic reference explicitly lists Mn(2+) in the deposited structures (7YXG–7YXL), which could mislead a model that conflates crystallographic metal substitution with the catalytic cofactor.
-- The ECO:0000269 evidence code indicates experimental determination of Fe(2+) requirement, likely from activity assays in the 2022 Sci. Rep. paper, distinguishing it from the crystallographic Mn(2+) substitution.
-- The protein was only integrated into Swiss-Prot on 2025-04-09 (C2); before that date it was TrEMBL-only, limiting the annotation available at earlier benchmark construction times.
-- Recognition of the JmjC fold from a raw 316-aa sequence without domain annotation is non-trivial; the reasoning is supported but requires the model to connect specific sequence motifs to a known domain family.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains HxD and H…H motifs (e.g., 'GHKDF', 'HHVSQSHK') characteristic of the JmjC-domain Fe(II) coordination site. JmjC-domain proteins constitute a well-established superfamily of Fe(II)/2-oxoglutarate-dependent dioxygenases; recognizing this fold and its canonical metal requirement is general biochemistry. The EC 1.14.11.x class (2-oxoglutarate-dependent dioxygenase) inherently requires Fe(II). Distinguishing Fe(2+) from Mn(2+) is supported by the field-standard knowledge that Mn(2+) is a common crystallographic substitute (non-oxidizable) while Fe(2+) is the catalytically required metal in 2OG-dependent oxygenases.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The JmjC→Fe(II) association is textbook-level knowledge. A model would not need to know the specific PubMed paper or PDB entries; the domain family assignment and its cofactor requirement are general.",
-    "reason": "A model with standard biochemistry training can identify JmjC-like motifs in the sequence and invoke the well-known Fe(II)/2OG dioxygenase biochemistry to select Fe(2+). The Mn(2+) option is a plausible distractor from crystallography but is not the catalytic cofactor for this enzyme class."
-  },
-  "case_id": "cofactor_0182",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VU77 (JMJD7_DROME) explicitly annotates the cofactor as Fe(2+) (ChEBI:29033) with experimental evidence code ECO:0000269 from PubMed:35410347 (C5, H4). The protein is a JmjC-domain-containing (3S)-lysyl hydroxylase (EC 1.14.11.63), a 2-oxoglutarate-dependent dioxygenase, a class universally dependent on Fe(II). Although the crystallographic reference (C6/H3) lists Mn(2+) in the co-crystallized complexes, this is a well-known crystallographic surrogate for Fe(2+) in Fe(II)/2OG dioxygenase studies; the functional cofactor annotation remains Fe(2+)."
-  },
-  "important_caveats": [
-    "The crystallographic reference explicitly lists Mn(2+) in the deposited structures (7YXG–7YXL), which could mislead a model that conflates crystallographic metal substitution with the catalytic cofactor.",
-    "The ECO:0000269 evidence code indicates experimental determination of Fe(2+) requirement, likely from activity assays in the 2022 Sci. Rep. paper, distinguishing it from the crystallographic Mn(2+) substitution.",
-    "The protein was only integrated into Swiss-Prot on 2025-04-09 (C2); before that date it was TrEMBL-only, limiting the annotation available at earlier benchmark construction times.",
-    "Recognition of the JmjC fold from a raw 316-aa sequence without domain annotation is non-trivial; the reasoning is supported but requires the model to connect specific sequence motifs to a known domain family."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While the crystal structures contain Mn(2+) (C6/H3), this is a recognized crystallographic surrogate and not the functional cofactor. The COFACTOR annotation and the enzyme class (EC 1.14.11.63, 2OG-dependent dioxygenase) unambiguously designate Fe(2+) as the required cofactor. Heme and [2Fe-2S] are unrelated to JmjC-domain biochemistry."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0182",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VU77 (JMJD7_DROME) explicitly annotates the cofactor as Fe(2+) (ChEBI:29033) with experimental evidence code ECO:0000269 from PubMed:35410347 (C5, H4). The protein is a JmjC-domain-containing (3S)-lysyl hydroxylase (EC 1.14.11.63), a 2-oxoglutarate-dependent dioxygenase, a class universally dependent on Fe(II). Although the crystallographic reference (C6/H3) lists Mn(2+) in the co-crystallized complexes, this is a well-known crystallographic surrogate for Fe(2+) in Fe(II)/2OG dioxygenase studies; the functional cofactor annotation remains Fe(2+).",
-    "evidence_ids": ["C5", "H4", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains HxD and H…H motifs (e.g., 'GHKDF', 'HHVSQSHK') characteristic of the JmjC-domain Fe(II) coordination site. JmjC-domain proteins constitute a well-established superfamily of Fe(II)/2-oxoglutarate-dependent dioxygenases; recognizing this fold and its canonical metal requirement is general biochemistry. The EC 1.14.11.x class (2-oxoglutarate-dependent dioxygenase) inherently requires Fe(II). Distinguishing Fe(2+) from Mn(2+) is supported by the field-standard knowledge that Mn(2+) is a common crystallographic substitute (non-oxidizable) while Fe(2+) is the catalytically required metal in 2OG-dependent oxygenases.",
-    "missing_item_specific_fact": "None critical. The JmjC→Fe(II) association is textbook-level knowledge. A model would not need to know the specific PubMed paper or PDB entries; the domain family assignment and its cofactor requirement are general.",
-    "reason": "A model with standard biochemistry training can identify JmjC-like motifs in the sequence and invoke the well-known Fe(II)/2OG dioxygenase biochemistry to select Fe(2+). The Mn(2+) option is a plausible distractor from crystallography but is not the catalytic cofactor for this enzyme class."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While the crystal structures contain Mn(2+) (C6/H3), this is a recognized crystallographic surrogate and not the functional cofactor. The COFACTOR annotation and the enzyme class (EC 1.14.11.63, 2OG-dependent dioxygenase) unambiguously designate Fe(2+) as the required cofactor. Heme and [2Fe-2S] are unrelated to JmjC-domain biochemistry."
-  },
-  "important_caveats": [
-    "The crystallographic reference explicitly lists Mn(2+) in the deposited structures (7YXG–7YXL), which could mislead a model that conflates crystallographic metal substitution with the catalytic cofactor.",
-    "The ECO:0000269 evidence code indicates experimental determination of Fe(2+) requirement, likely from activity assays in the 2022 Sci. Rep. paper, distinguishing it from the crystallographic Mn(2+) substitution.",
-    "The protein was only integrated into Swiss-Prot on 2025-04-09 (C2); before that date it was TrEMBL-only, limiting the annotation available at earlier benchmark construction times.",
-    "Recognition of the JmjC fold from a raw 316-aa sequence without domain annotation is non-trivial; the reasoning is supported but requires the model to connect specific sequence motifs to a known domain family."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VU77",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 316,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
   "current_entry_audit": {
     "entryVersion": 178,
     "firstPublicDate": "2025-04-09",
@@ -530,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "current_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 316,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 176,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VU77",
   "selected_historical_entry_version": 176,
+  "selected_historical_record_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "selected_historical_source_sequence_length": 316,
+  "selected_historical_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
   "selected_historical_version": {
     "accession": "Q9VU77",
     "database": "Swiss-Prot",
@@ -548,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "JMJD7_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "selected_historical_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
-  "selected_historical_source_sequence_length": 316,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 176,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VU77\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -598,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":178,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -617,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -636,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0036366\",\"source\":\"FlyBase\"}],\"value\":\"Jumonji domain containing protein 7\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35410347\",\"source\":\"PubMed\"}],\"value\":\"1.14.11.63\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P0C870\",\"source\":\"UniProtKB\"}],\"value\":\"3.4.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P0C870\",\"source\":\"UniProtKB\"}],\"value\":\"Bifunctional peptidase and (3S)-lysyl hydroxylase JMJD7\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -655,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29033\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35410347\",\"source\":\"PubMed\"}],\"name\":\"Fe(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -674,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Chowdhury R.\",\"Abboud M.I.\",\"Wiley J.\",\"Tumber A.\",\"Markolovic S.\",\"Schofield C.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35410347\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41598-022-10028-y\"}],\"citationType\":\"journal article\",\"firstPage\":\"6065\",\"id\":\"35410347\",\"journal\":\"Sci. Rep.\",\"lastPage\":\"6065\",\"publicationDate\":\"2022\",\"title\":\"Conservation of the unusual dimeric JmjC fold of JMJD7 from Drosophila melanogaster to humans.\",\"volume\":\"12\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXG\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXH\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXI\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXJ\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXK\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXL\",\"source\":\"PDB\"}],\"referenceNumber\":7,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.64 ANGSTROMS) IN COMPLEX WITH 2-OXOGLUTARATE; MN(2+); SUCCINATE; N-OXALYLGLYCINE; N-OXALYL-D-ALANINE; N-OXALYL-D-PHENYLALANINE AND LUTIDINIC ACID\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBUNIT\",\"DISULFIDE BOND\",\"OXIDATION AT CYS-19\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -692,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   JMJD7_DROME             Reviewed;         316 AA.\nAC   Q9VU77;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 176.\nDE   RecName: Full=Bifunctional peptidase and (3S)-lysyl hydroxylase JMJD7 {ECO:0000250|UniProtKB:P0C870};\nDE            EC=1.14.11.63 {ECO:0000269|PubMed:35410347};\nDE            EC=3.4.-.- {ECO:0000250|UniProtKB:P0C870};\nDE   AltName: Full=Jumonji domain containing protein 7 {ECO:0000312|FlyBase:FBgn0036366};\nGN   Name=JMJD7 {ECO:0000312|FlyBase:FBgn0036366};\nGN   ORFNames=CG10133 {ECO:0000312|FlyBase:FBgn0036366};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -713,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Bifunctional peptidase and (3S)-lysyl hydroxylase JMJD7 {ECO:0000250|UniProtKB:P0C870};\nDE            EC=1.14.11.63 {ECO:0000269|PubMed:35410347};\nDE            EC=3.4.-.- {ECO:0000250|UniProtKB:P0C870};\nDE   AltName: Full=Jumonji domain containing protein 7 {ECO:0000312|FlyBase:FBgn0036366};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -734,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 104-114",
   "excerpt": "RN   [7] {ECO:0007744|PDB:7YXG, ECO:0007744|PDB:7YXH, ECO:0007744|PDB:7YXI, ECO:0007744|PDB:7YXJ, ECO:0007744|PDB:7YXK, ECO:0007744|PDB:7YXL}\nRP   X-RAY CRYSTALLOGRAPHY (1.64 ANGSTROMS) IN COMPLEX WITH 2-OXOGLUTARATE;\nRP   MN(2+); SUCCINATE; N-OXALYLGLYCINE; N-OXALYL-D-ALANINE;\nRP   N-OXALYL-D-PHENYLALANINE AND LUTIDINIC ACID, FUNCTION, CATALYTIC ACTIVITY,\nRP   COFACTOR, SUBUNIT, DISULFIDE BOND, AND OXIDATION AT CYS-19.\nRX   PubMed=35410347; DOI=10.1038/s41598-022-10028-y;\nRA   Chowdhury R., Abboud M.I., Wiley J., Tumber A., Markolovic S.,\nRA   Schofield C.J.;\nRT   \"Conservation of the unusual dimeric JmjC fold of JMJD7 from Drosophila\nRT   melanogaster to humans.\";\nRL   Sci. Rep. 12:6065-6065(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-114",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -755,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 133-135",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Fe(2+); Xref=ChEBI:CHEBI:29033;\nCC         Evidence={ECO:0000269|PubMed:35410347};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 133-135",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 

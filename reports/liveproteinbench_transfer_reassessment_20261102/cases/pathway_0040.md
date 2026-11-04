@@ -1,18 +1,16 @@
-# pathway_0040: before and after transfer clarification
+# pathway_0040
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0040.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0040.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **D** — Secondary metabolite biosynthesis. .
+**Expected answer:** **D** — Secondary metabolite biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotating the protein as ppzD and assigning it to secondary metabolite biosynthesis. The pathway annotation carries an experimental evidence code and cites a study on the PPZ cluster and 8-hydroxyperamine production; an archived entry also contains this annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features might suggest an enzyme, but the supplied sequence and choices do not establish its specific pathway. Identifying a likely enzyme class would not by itself distinguish secondary-metabolite biosynthesis from the other pathway choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity and functional context linking this sequence to the PPZ biosynthetic cluster and secondary-metabolite production.
-
-
-**Reason**
-
-> The pathway assignment is supported by reviewer-only database and literature-linked evidence, but that item-specific information is absent from the question. Recognizing or retrieving the exact protein would be necessary to select D reliably.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched pathway annotation specifically supports secondary metabolite biosynthesis; the other choices are not supported as this protein's primary pathway.
-
-
-### Important caveats
-
-- The reviewer-only evidence was not supplied to the evaluated model.
-- The UniProt annotation cites experimental evidence, but the cited primary study was not independently reviewed here; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features might suggest an enzyme, but the supplied sequence and choices do not establish its specific pathway. Identifying a likely enzyme class would not by itself distinguish secondary-metabolite biosynthesis from the other pathway choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity and functional context linking this sequence to the PPZ biosynthetic cluster and secondary-metabolite production.",
-    "reason": "The pathway assignment is supported by reviewer-only database and literature-linked evidence, but that item-specific information is absent from the question. Recognizing or retrieving the exact protein would be necessary to select D reliably."
-  },
-  "case_id": "pathway_0040",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotating the protein as ppzD and assigning it to secondary metabolite biosynthesis. The pathway annotation carries an experimental evidence code and cites a study on the PPZ cluster and 8-hydroxyperamine production; an archived entry also contains this annotation."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence was not supplied to the evaluated model.",
-    "The UniProt annotation cites experimental evidence, but the cited primary study was not independently reviewed here; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched pathway annotation specifically supports secondary metabolite biosynthesis; the other choices are not supported as this protein's primary pathway."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0040",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotating the protein as ppzD and assigning it to secondary metabolite biosynthesis. The pathway annotation carries an experimental evidence code and cites a study on the PPZ cluster and 8-hydroxyperamine production; an archived entry also contains this annotation.",
-    "evidence_ids": ["C4", "C5", "C7", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features might suggest an enzyme, but the supplied sequence and choices do not establish its specific pathway. Identifying a likely enzyme class would not by itself distinguish secondary-metabolite biosynthesis from the other pathway choices.",
-    "missing_item_specific_fact": "The protein-specific identity and functional context linking this sequence to the PPZ biosynthetic cluster and secondary-metabolite production.",
-    "reason": "The pathway assignment is supported by reviewer-only database and literature-linked evidence, but that item-specific information is absent from the question. Recognizing or retrieving the exact protein would be necessary to select D reliably."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched pathway annotation specifically supports secondary metabolite biosynthesis; the other choices are not supported as this protein's primary pathway."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence was not supplied to the evaluated model.",
-    "The UniProt annotation cites experimental evidence, but the cited primary study was not independently reviewed here; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A455ZMR3 (PPZD_METMF) explicitly annotates the PATHWAY as 'Secondary metabolite biosynthesis' with evidence code ECO:0000269 (direct assay, PubMed:38578094). The protein is the 2-oxoglutarate-Fe(II) type oxidoreductase ppzD, part of the pyrrolopyrazine biosynthetic gene cluster in Metarhizium majus. Pyrrolopyrazine is a fungal secondary metabolite, so the pathway assignment is consistent with experimental evidence. The sequence matches (349 AA, SHA256 confirmed).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence encodes a 2-oxoglutarate/Fe(II) oxidoreductase, a very large enzyme superfamily found across amino acid metabolism, nucleic acid repair, lipid metabolism, and secondary metabolite biosynthesis. From the sequence alone, one can rule out B (no RING/U-box/E2-E3 ligase architecture) and largely rule out C (no cytochrome P450, squalene synthase, or sterol-modifying enzyme motifs). However, distinguishing D (secondary metabolite biosynthesis) from A (aromatic compound metabolism) requires knowing that this specific oxidoreductase is PpzD within the PPZ biosynthetic gene cluster producing pyrrolopyrazine, a fungal secondary metabolite. The 2-OG/Fe(II) oxidoreductase fold itself does not encode pathway specificity.
-
-
-**Missing item-specific fact**
-
-> The identity of this protein as PpzD from the PPZ biosynthetic gene cluster of Metarhizium majus, and the experimental demonstration (PubMed:38578094) that it participates in pyrrolopyrazine (a secondary metabolite) biosynthesis rather than aromatic compound catabolism. This gene-cluster context and experimental pathway assignment are absent from the sequence input.
-
-
-**Reason**
-
-> While a knowledgeable model might note the 2-OG/Fe(II) oxidoreductase fold and eliminate ubiquitination and sterol biosynthesis, the critical distinction between 'aromatic compound metabolism' and 'secondary metabolite biosynthesis' depends on knowing the specific biosynthetic gene cluster context (PPZ cluster) and the experimental evidence linking PpzD to pyrrolopyrazine production. This is an item-specific annotation/experimental fact not derivable from the sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although pyrrolopyrazine contains aromatic rings, 'aromatic compound metabolism' (option A) conventionally refers to degradation/catabolism of aromatic compounds (e.g., benzoate, phenol pathways), not the biosynthesis of a specialized fungal alkaloid. 'Secondary metabolite biosynthesis' (D) is the precise and experimentally supported classification. Options B and C are clearly excluded by the enzyme architecture. D is the unambiguously correct answer per the annotation.
-
-
-### Important caveats
-
-- The pathway annotation carries evidence code ECO:0000269 (direct assay), indicating experimental support rather than purely computational inference.
-- The UniProt entry was first public on 2025-02-05; the author's source snapshot date is unknown. The sequence and pathway annotation were present by entry version 20 (released 2026-01).
-- The identity of the protein (accession A0A455ZMR3) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model.
-- The 2-oxoglutarate/Fe(II) oxidoreductase superfamily is extremely large (~10% of all enzymes in some organisms), making sequence-based pathway assignment inherently ambiguous without cluster context.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence encodes a 2-oxoglutarate/Fe(II) oxidoreductase, a very large enzyme superfamily found across amino acid metabolism, nucleic acid repair, lipid metabolism, and secondary metabolite biosynthesis. From the sequence alone, one can rule out B (no RING/U-box/E2-E3 ligase architecture) and largely rule out C (no cytochrome P450, squalene synthase, or sterol-modifying enzyme motifs). However, distinguishing D (secondary metabolite biosynthesis) from A (aromatic compound metabolism) requires knowing that this specific oxidoreductase is PpzD within the PPZ biosynthetic gene cluster producing pyrrolopyrazine, a fungal secondary metabolite. The 2-OG/Fe(II) oxidoreductase fold itself does not encode pathway specificity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of this protein as PpzD from the PPZ biosynthetic gene cluster of Metarhizium majus, and the experimental demonstration (PubMed:38578094) that it participates in pyrrolopyrazine (a secondary metabolite) biosynthesis rather than aromatic compound catabolism. This gene-cluster context and experimental pathway assignment are absent from the sequence input.",
-    "reason": "While a knowledgeable model might note the 2-OG/Fe(II) oxidoreductase fold and eliminate ubiquitination and sterol biosynthesis, the critical distinction between 'aromatic compound metabolism' and 'secondary metabolite biosynthesis' depends on knowing the specific biosynthetic gene cluster context (PPZ cluster) and the experimental evidence linking PpzD to pyrrolopyrazine production. This is an item-specific annotation/experimental fact not derivable from the sequence alone."
-  },
-  "case_id": "pathway_0040",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A455ZMR3 (PPZD_METMF) explicitly annotates the PATHWAY as 'Secondary metabolite biosynthesis' with evidence code ECO:0000269 (direct assay, PubMed:38578094). The protein is the 2-oxoglutarate-Fe(II) type oxidoreductase ppzD, part of the pyrrolopyrazine biosynthetic gene cluster in Metarhizium majus. Pyrrolopyrazine is a fungal secondary metabolite, so the pathway assignment is consistent with experimental evidence. The sequence matches (349 AA, SHA256 confirmed)."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000269 (direct assay), indicating experimental support rather than purely computational inference.",
-    "The UniProt entry was first public on 2025-02-05; the author's source snapshot date is unknown. The sequence and pathway annotation were present by entry version 20 (released 2026-01).",
-    "The identity of the protein (accession A0A455ZMR3) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model.",
-    "The 2-oxoglutarate/Fe(II) oxidoreductase superfamily is extremely large (~10% of all enzymes in some organisms), making sequence-based pathway assignment inherently ambiguous without cluster context."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although pyrrolopyrazine contains aromatic rings, 'aromatic compound metabolism' (option A) conventionally refers to degradation/catabolism of aromatic compounds (e.g., benzoate, phenol pathways), not the biosynthesis of a specialized fungal alkaloid. 'Secondary metabolite biosynthesis' (D) is the precise and experimentally supported classification. Options B and C are clearly excluded by the enzyme architecture. D is the unambiguously correct answer per the annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0040",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A455ZMR3 (PPZD_METMF) explicitly annotates the PATHWAY as 'Secondary metabolite biosynthesis' with evidence code ECO:0000269 (direct assay, PubMed:38578094). The protein is the 2-oxoglutarate-Fe(II) type oxidoreductase ppzD, part of the pyrrolopyrazine biosynthetic gene cluster in Metarhizium majus. Pyrrolopyrazine is a fungal secondary metabolite, so the pathway assignment is consistent with experimental evidence. The sequence matches (349 AA, SHA256 confirmed).",
-    "evidence_ids": ["C4", "C5", "C7", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence encodes a 2-oxoglutarate/Fe(II) oxidoreductase, a very large enzyme superfamily found across amino acid metabolism, nucleic acid repair, lipid metabolism, and secondary metabolite biosynthesis. From the sequence alone, one can rule out B (no RING/U-box/E2-E3 ligase architecture) and largely rule out C (no cytochrome P450, squalene synthase, or sterol-modifying enzyme motifs). However, distinguishing D (secondary metabolite biosynthesis) from A (aromatic compound metabolism) requires knowing that this specific oxidoreductase is PpzD within the PPZ biosynthetic gene cluster producing pyrrolopyrazine, a fungal secondary metabolite. The 2-OG/Fe(II) oxidoreductase fold itself does not encode pathway specificity.",
-    "missing_item_specific_fact": "The identity of this protein as PpzD from the PPZ biosynthetic gene cluster of Metarhizium majus, and the experimental demonstration (PubMed:38578094) that it participates in pyrrolopyrazine (a secondary metabolite) biosynthesis rather than aromatic compound catabolism. This gene-cluster context and experimental pathway assignment are absent from the sequence input.",
-    "reason": "While a knowledgeable model might note the 2-OG/Fe(II) oxidoreductase fold and eliminate ubiquitination and sterol biosynthesis, the critical distinction between 'aromatic compound metabolism' and 'secondary metabolite biosynthesis' depends on knowing the specific biosynthetic gene cluster context (PPZ cluster) and the experimental evidence linking PpzD to pyrrolopyrazine production. This is an item-specific annotation/experimental fact not derivable from the sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although pyrrolopyrazine contains aromatic rings, 'aromatic compound metabolism' (option A) conventionally refers to degradation/catabolism of aromatic compounds (e.g., benzoate, phenol pathways), not the biosynthesis of a specialized fungal alkaloid. 'Secondary metabolite biosynthesis' (D) is the precise and experimentally supported classification. Options B and C are clearly excluded by the enzyme architecture. D is the unambiguously correct answer per the annotation."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000269 (direct assay), indicating experimental support rather than purely computational inference.",
-    "The UniProt entry was first public on 2025-02-05; the author's source snapshot date is unknown. The sequence and pathway annotation were present by entry version 20 (released 2026-01).",
-    "The identity of the protein (accession A0A455ZMR3) was inferred by the reviewer from dataset metadata and was not provided to the evaluated model.",
-    "The 2-oxoglutarate/Fe(II) oxidoreductase superfamily is extremely large (~10% of all enzymes in some organisms), making sequence-based pathway assignment inherently ambiguous without cluster context."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A455ZMR3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c00401d878260e5a5c15ceaae3e9851159bc2fc996a8543018238eee1e7f810e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 349,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c00401d878260e5a5c15ceaae3e9851159bc2fc996a8543018238eee1e7f810e",
   "current_entry_audit": {
     "entryVersion": 21,
     "firstPublicDate": "2025-02-05",
@@ -531,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-06-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "current_source_sequence_sha256": "c00401d878260e5a5c15ceaae3e9851159bc2fc996a8543018238eee1e7f810e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 349,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c00401d878260e5a5c15ceaae3e9851159bc2fc996a8543018238eee1e7f810e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 20,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A455ZMR3",
   "selected_historical_entry_version": 20,
+  "selected_historical_record_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
+  "selected_historical_source_sequence_length": 349,
+  "selected_historical_source_sequence_sha256": "c00401d878260e5a5c15ceaae3e9851159bc2fc996a8543018238eee1e7f810e",
   "selected_historical_version": {
     "accession": "A0A455ZMR3",
     "database": "Swiss-Prot",
@@ -549,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PPZD_METMF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
-  "selected_historical_source_sequence_sha256": "c00401d878260e5a5c15ceaae3e9851159bc2fc996a8543018238eee1e7f810e",
-  "selected_historical_source_sequence_length": 349,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 20,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json",
-  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A455ZMR3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json"
 }
 ```
 
@@ -599,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json",
-  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":21,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-06-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json"
 }
 ```
 
@@ -618,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json",
-  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Clavicipitaceae\",\"Metarhizium\",\"Metarhizium majus\"],\"scientificName\":\"Metarhizium majus (strain ARSEF 297)\",\"taxonId\":1276143}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json"
 }
 ```
 
@@ -637,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json",
-  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"Pyrrolopyrazine biosynthesis cluster protein D\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38578094\",\"source\":\"PubMed\"}],\"value\":\"1.14.11.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38578094\",\"source\":\"PubMed\"}],\"value\":\"1.14.11.57\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30452111\",\"source\":\"PubMed\"}],\"value\":\"2-oxoglutarate-Fe(II) type oxidoreductase ppzD\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json"
 }
 ```
 
@@ -656,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json",
-  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38578094\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json"
 }
 ```
 
@@ -675,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json",
-  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Berry D.\",\"Mace W.\",\"Rehner S.A.\",\"Grage K.\",\"Dijkwel P.P.\",\"Young C.A.\",\"Scott B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30452111\"},{\"database\":\"DOI\",\"id\":\"10.1111/1462-2920.14483\"}],\"citationType\":\"journal article\",\"firstPage\":\"928\",\"id\":\"30452111\",\"journal\":\"Environ. Microbiol.\",\"lastPage\":\"939\",\"publicationDate\":\"2019\",\"title\":\"Orthologous peramine and pyrrolopyrazine-producing biosynthetic gene clusters in Metarhizium rileyi, Metarhizium majus and Cladonia grayi.\",\"volume\":\"21\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ARSEF 297\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json"
 }
 ```
 
@@ -694,15 +454,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json",
-  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
-  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Rothchild K.W.\",\"Hagar M.\",\"Berry D.\",\"Ryan K.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38578094\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.4c01419\"}],\"citationType\":\"journal article\",\"firstPage\":\"10263\",\"id\":\"38578094\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"10267\",\"publicationDate\":\"2024\",\"title\":\"Two Iron(II), alpha-Ketoglutarate-Dependent Enzymes Encoded by the PPZ Gene Cluster of Metarhizium majus Enable Production of 8-Hydroxyperamine.\",\"volume\":\"146\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:18.557115+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "598c1818172f7f30ea279f4fe101b5f4a0a099aae626d2185ce8aa32a90a0e60",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A455ZMR3.json"
 }
 ```
 
@@ -712,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 20,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20",
-  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
-  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   PPZD_METMF              Reviewed;         349 AA.\nAC   A0A455ZMR3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUN-2019, sequence version 1.\nDT   28-JAN-2026, entry version 20.\nDE   RecName: Full=2-oxoglutarate-Fe(II) type oxidoreductase ppzD {ECO:0000303|PubMed:30452111};\nDE            EC=1.14.11.- {ECO:0000269|PubMed:38578094};\nDE            EC=1.14.11.57 {ECO:0000269|PubMed:38578094};\nDE   AltName: Full=Pyrrolopyrazine biosynthesis cluster protein D {ECO:0000303|PubMed:30452111};\nGN   Name=ppzD;\nOS   Metarhizium majus (strain ARSEF 297).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Clavicipitaceae; Metarhizium;\nOC   Metarhizium majus.\nOX   NCBI_TaxID=1276143;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 20,
+  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20"
 }
 ```
 
@@ -733,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 20,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20",
-  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
-  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
-  "source_locator": "lines 16-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND PATHWAY.\nRC   STRAIN=ARSEF 297;\nRX   PubMed=30452111; DOI=10.1111/1462-2920.14483;\nRA   Berry D., Mace W., Rehner S.A., Grage K., Dijkwel P.P., Young C.A.,\nRA   Scott B.;\nRT   \"Orthologous peramine and pyrrolopyrazine-producing biosynthetic gene\nRT   clusters in Metarhizium rileyi, Metarhizium majus and Cladonia grayi.\";\nRL   Environ. Microbiol. 21:928-939(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 20,
+  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20"
 }
 ```
 
@@ -754,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 20,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20",
-  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
-  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
-  "source_locator": "lines 25-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=38578094; DOI=10.1021/jacs.4c01419;\nRA   Rothchild K.W., Hagar M., Berry D., Ryan K.S.;\nRT   \"Two Iron(II), alpha-Ketoglutarate-Dependent Enzymes Encoded by the PPZ\nRT   Gene Cluster of Metarhizium majus Enable Production of 8-Hydroxyperamine.\";\nRL   J. Am. Chem. Soc. 146:10263-10267(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 20,
+  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20"
 }
 ```
 
@@ -775,18 +535,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 20,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20",
-  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
-  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
-  "source_locator": "lines 82-83",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis.\nCC       {ECO:0000269|PubMed:38578094}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 20,
+  "retrieved_utc": "2026-11-02T04:25:22.046089+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1bbc826a341c3dbaed93f443586405373a3f1335605f903bf72936633a33119d",
+  "url": "https://rest.uniprot.org/unisave/A0A455ZMR3?format=txt&versions=20"
 }
 ```
 

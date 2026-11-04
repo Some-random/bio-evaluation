@@ -1,18 +1,16 @@
-# EC_number_0133: before and after transfer clarification
+# EC_number_0133
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0133.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0133.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 1.3.1.36
+**Expected answer:** **C** — 1.3.1.36
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the UniProt entry annotated as geissoschizine synthase, EC 1.3.1.36, with a corresponding catalytic reaction. The annotation is transferred from a homolog (ECO:0000250), so it supports the key but is not direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest an enzyme, but no supplied context or general sequence feature uniquely establishes the geissoschizine reaction or distinguishes this precise EC number from the alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation identifying this sequence as geissoschizine synthase and associating it with EC 1.3.1.36.
-
-
-**Reason**
-
-> Selecting the precise EC classification depends on protein-specific functional knowledge absent from the prompt; recognizing the sequence or consulting an annotation would supply that missing information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The listed choices specify distinct EC classifications, and the matched sequence annotation supports C.
-
-
-### Important caveats
-
-- The supporting UniProt EC and catalytic-activity annotations are similarity-transferred from a homolog, not shown here as direct experimental confirmation for the supplied protein.
-- The sequence match applies to the cited database record; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but no supplied context or general sequence feature uniquely establishes the geissoschizine reaction or distinguishes this precise EC number from the alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation identifying this sequence as geissoschizine synthase and associating it with EC 1.3.1.36.",
-    "reason": "Selecting the precise EC classification depends on protein-specific functional knowledge absent from the prompt; recognizing the sequence or consulting an annotation would supply that missing information."
-  },
-  "case_id": "EC_number_0133",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as geissoschizine synthase, EC 1.3.1.36, with a corresponding catalytic reaction. The annotation is transferred from a homolog (ECO:0000250), so it supports the key but is not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The supporting UniProt EC and catalytic-activity annotations are similarity-transferred from a homolog, not shown here as direct experimental confirmation for the supplied protein.",
-    "The sequence match applies to the cited database record; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The listed choices specify distinct EC classifications, and the matched sequence annotation supports C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0133",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as geissoschizine synthase, EC 1.3.1.36, with a corresponding catalytic reaction. The annotation is transferred from a homolog (ECO:0000250), so it supports the key but is not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest an enzyme, but no supplied context or general sequence feature uniquely establishes the geissoschizine reaction or distinguishes this precise EC number from the alternatives.",
-    "missing_item_specific_fact": "The protein-specific functional annotation identifying this sequence as geissoschizine synthase and associating it with EC 1.3.1.36.",
-    "reason": "Selecting the precise EC classification depends on protein-specific functional knowledge absent from the prompt; recognizing the sequence or consulting an annotation would supply that missing information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The listed choices specify distinct EC classifications, and the matched sequence annotation supports C."
-  },
-  "important_caveats": [
-    "The supporting UniProt EC and catalytic-activity annotations are similarity-transferred from a homolog, not shown here as direct experimental confirmation for the supplied protein.",
-    "The sequence match applies to the cited database record; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry P0DXJ1 (sequence SHA256 matched) annotates this protein as Geissoschizine synthase with EC 1.3.1.36. The catalytic reaction is (19E)-geissoschizine + NADP(+) = 4,21-dehydrogeissoschizine + NADPH. However, the EC annotation carries evidence code ECO:0000250 (similarity to UniProtKB:W8JWW7), meaning it is a computational inference by homology rather than direct experimental characterization of this specific protein's substrate specificity. The protein name and pathway context derive from PubMed 38212296 (Nat. Commun. 2024), which characterized the ajmaline biosynthesis pathway in Rauvolfia serpentina. The key is supported by current database annotation but rests on transferred similarity evidence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable Rossmann-fold NAD(P)-binding motifs (e.g., GCMVGSCGKCFNC, GGLGSIAVKFIK) consistent with an oxidoreductase, which rules out D (3.6.1.5, a hydrolase/GTPase) and B (1.14.14.126, a cytochrome P450 requiring heme-binding motifs like FxxGxxxCxG). However, both remaining options A (1.3.1.73) and C (1.3.1.36) belong to the same EC subclass 1.3.1 (oxidoreductases acting on CH-CH group with NAD+/NADP+ as acceptor). Distinguishing between these two requires knowing the specific substrate (geissoschizine vs. the substrate of 1.3.1.73), which cannot be reliably inferred from general sequence features alone.
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity of this enzyme (geissoschizine) and the distinction between the substrates of EC 1.3.1.73 and EC 1.3.1.36. Additionally, knowledge that Rauvolfia serpentina alkaloid biosynthesis involves geissoschizine synthase at this pathway step is item-specific pathway knowledge, not general biological reasoning derivable from the sequence.
-
-
-**Reason**
-
-> While the sequence supports broad classification as an NAD(P)-dependent dehydrogenase (eliminating D and B), the critical distinction between the two 1.3.1.x options requires knowing which specific small-molecule substrate the enzyme acts upon. No general sequence heuristic reliably distinguishes between two dehydrogenases in the same EC subclass by substrate identity. Selection of C over A depends on memorizing this protein's annotation or knowing Rauvolfia serpentina's alkaloid biosynthetic pathway in detail.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Both A (1.3.1.73) and C (1.3.1.36) fall within EC subclass 1.3.1 and describe NAD(P)-dependent dehydrogenases acting on CH-CH bonds. From the sequence alone, a model can identify the enzyme as an NAD(P)-binding oxidoreductase but cannot confidently distinguish which specific substrate (and thus which final EC digit) applies. Without memorized pathway knowledge of Rauvolfia serpentina alkaloid biosynthesis, both A and C are plausible choices for a sequence-based predictor.
-
-
-### Important caveats
-
-- The EC annotation for P0DXJ1 is based on ECO:0000250 (similarity to W8JWW7), not direct experimental assay of this protein's substrate specificity. The annotation is a computational transfer.
-- The protein was identified in the context of the ajmaline biosynthesis pathway (PubMed 38212296, 2024), but the specific EC assignment for this enzyme relies on homology rather than in vitro substrate characterization of P0DXJ1 itself.
-- The UniProt entry was first public on 2025-06-18; the author's source snapshot date is unknown, so the annotation may not have been available when the benchmark was constructed.
-- The sequence match is confirmed (SHA256 identical between benchmark and UniProt P0DXJ1, 365 aa).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable Rossmann-fold NAD(P)-binding motifs (e.g., GCMVGSCGKCFNC, GGLGSIAVKFIK) consistent with an oxidoreductase, which rules out D (3.6.1.5, a hydrolase/GTPase) and B (1.14.14.126, a cytochrome P450 requiring heme-binding motifs like FxxGxxxCxG). However, both remaining options A (1.3.1.73) and C (1.3.1.36) belong to the same EC subclass 1.3.1 (oxidoreductases acting on CH-CH group with NAD+/NADP+ as acceptor). Distinguishing between these two requires knowing the specific substrate (geissoschizine vs. the substrate of 1.3.1.73), which cannot be reliably inferred from general sequence features alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate identity of this enzyme (geissoschizine) and the distinction between the substrates of EC 1.3.1.73 and EC 1.3.1.36. Additionally, knowledge that Rauvolfia serpentina alkaloid biosynthesis involves geissoschizine synthase at this pathway step is item-specific pathway knowledge, not general biological reasoning derivable from the sequence.",
-    "reason": "While the sequence supports broad classification as an NAD(P)-dependent dehydrogenase (eliminating D and B), the critical distinction between the two 1.3.1.x options requires knowing which specific small-molecule substrate the enzyme acts upon. No general sequence heuristic reliably distinguishes between two dehydrogenases in the same EC subclass by substrate identity. Selection of C over A depends on memorizing this protein's annotation or knowing Rauvolfia serpentina's alkaloid biosynthetic pathway in detail."
-  },
-  "case_id": "EC_number_0133",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXJ1 (sequence SHA256 matched) annotates this protein as Geissoschizine synthase with EC 1.3.1.36. The catalytic reaction is (19E)-geissoschizine + NADP(+) = 4,21-dehydrogeissoschizine + NADPH. However, the EC annotation carries evidence code ECO:0000250 (similarity to UniProtKB:W8JWW7), meaning it is a computational inference by homology rather than direct experimental characterization of this specific protein's substrate specificity. The protein name and pathway context derive from PubMed 38212296 (Nat. Commun. 2024), which characterized the ajmaline biosynthesis pathway in Rauvolfia serpentina. The key is supported by current database annotation but rests on transferred similarity evidence."
-  },
-  "important_caveats": [
-    "The EC annotation for P0DXJ1 is based on ECO:0000250 (similarity to W8JWW7), not direct experimental assay of this protein's substrate specificity. The annotation is a computational transfer.",
-    "The protein was identified in the context of the ajmaline biosynthesis pathway (PubMed 38212296, 2024), but the specific EC assignment for this enzyme relies on homology rather than in vitro substrate characterization of P0DXJ1 itself.",
-    "The UniProt entry was first public on 2025-06-18; the author's source snapshot date is unknown, so the annotation may not have been available when the benchmark was constructed.",
-    "The sequence match is confirmed (SHA256 identical between benchmark and UniProt P0DXJ1, 365 aa)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Both A (1.3.1.73) and C (1.3.1.36) fall within EC subclass 1.3.1 and describe NAD(P)-dependent dehydrogenases acting on CH-CH bonds. From the sequence alone, a model can identify the enzyme as an NAD(P)-binding oxidoreductase but cannot confidently distinguish which specific substrate (and thus which final EC digit) applies. Without memorized pathway knowledge of Rauvolfia serpentina alkaloid biosynthesis, both A and C are plausible choices for a sequence-based predictor."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0133",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry P0DXJ1 (sequence SHA256 matched) annotates this protein as Geissoschizine synthase with EC 1.3.1.36. The catalytic reaction is (19E)-geissoschizine + NADP(+) = 4,21-dehydrogeissoschizine + NADPH. However, the EC annotation carries evidence code ECO:0000250 (similarity to UniProtKB:W8JWW7), meaning it is a computational inference by homology rather than direct experimental characterization of this specific protein's substrate specificity. The protein name and pathway context derive from PubMed 38212296 (Nat. Commun. 2024), which characterized the ajmaline biosynthesis pathway in Rauvolfia serpentina. The key is supported by current database annotation but rests on transferred similarity evidence.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains recognizable Rossmann-fold NAD(P)-binding motifs (e.g., GCMVGSCGKCFNC, GGLGSIAVKFIK) consistent with an oxidoreductase, which rules out D (3.6.1.5, a hydrolase/GTPase) and B (1.14.14.126, a cytochrome P450 requiring heme-binding motifs like FxxGxxxCxG). However, both remaining options A (1.3.1.73) and C (1.3.1.36) belong to the same EC subclass 1.3.1 (oxidoreductases acting on CH-CH group with NAD+/NADP+ as acceptor). Distinguishing between these two requires knowing the specific substrate (geissoschizine vs. the substrate of 1.3.1.73), which cannot be reliably inferred from general sequence features alone.",
-    "missing_item_specific_fact": "The specific substrate identity of this enzyme (geissoschizine) and the distinction between the substrates of EC 1.3.1.73 and EC 1.3.1.36. Additionally, knowledge that Rauvolfia serpentina alkaloid biosynthesis involves geissoschizine synthase at this pathway step is item-specific pathway knowledge, not general biological reasoning derivable from the sequence.",
-    "reason": "While the sequence supports broad classification as an NAD(P)-dependent dehydrogenase (eliminating D and B), the critical distinction between the two 1.3.1.x options requires knowing which specific small-molecule substrate the enzyme acts upon. No general sequence heuristic reliably distinguishes between two dehydrogenases in the same EC subclass by substrate identity. Selection of C over A depends on memorizing this protein's annotation or knowing Rauvolfia serpentina's alkaloid biosynthetic pathway in detail."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Both A (1.3.1.73) and C (1.3.1.36) fall within EC subclass 1.3.1 and describe NAD(P)-dependent dehydrogenases acting on CH-CH bonds. From the sequence alone, a model can identify the enzyme as an NAD(P)-binding oxidoreductase but cannot confidently distinguish which specific substrate (and thus which final EC digit) applies. Without memorized pathway knowledge of Rauvolfia serpentina alkaloid biosynthesis, both A and C are plausible choices for a sequence-based predictor."
-  },
-  "important_caveats": [
-    "The EC annotation for P0DXJ1 is based on ECO:0000250 (similarity to W8JWW7), not direct experimental assay of this protein's substrate specificity. The annotation is a computational transfer.",
-    "The protein was identified in the context of the ajmaline biosynthesis pathway (PubMed 38212296, 2024), but the specific EC assignment for this enzyme relies on homology rather than in vitro substrate characterization of P0DXJ1 itself.",
-    "The UniProt entry was first public on 2025-06-18; the author's source snapshot date is unknown, so the annotation may not have been available when the benchmark was constructed.",
-    "The sequence match is confirmed (SHA256 identical between benchmark and UniProt P0DXJ1, 365 aa)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +157,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXJ1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "be11b71809d30f0c5458041f2312ead6b14de7b52ebdd4b914b15674410bd94d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 365,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "be11b71809d30f0c5458041f2312ead6b14de7b52ebdd4b914b15674410bd94d",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -546,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
-  "current_source_sequence_sha256": "be11b71809d30f0c5458041f2312ead6b14de7b52ebdd4b914b15674410bd94d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 365,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "be11b71809d30f0c5458041f2312ead6b14de7b52ebdd4b914b15674410bd94d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXJ1",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
+  "selected_historical_source_sequence_length": 365,
+  "selected_historical_source_sequence_sha256": "be11b71809d30f0c5458041f2312ead6b14de7b52ebdd4b914b15674410bd94d",
   "selected_historical_version": {
     "accession": "P0DXJ1",
     "database": "Swiss-Prot",
@@ -564,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GS_RAUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
-  "selected_historical_source_sequence_sha256": "be11b71809d30f0c5458041f2312ead6b14de7b52ebdd4b914b15674410bd94d",
-  "selected_historical_source_sequence_length": 365,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -595,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json",
-  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
-  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXJ1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json"
 }
 ```
 
@@ -614,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json",
-  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
-  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json"
 }
 ```
 
@@ -633,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json",
-  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
-  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Serpentine wood\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Vinceae\",\"Rauvolfiinae\",\"Rauvolfia\"],\"scientificName\":\"Rauvolfia serpentina\",\"synonyms\":[\"Ophioxylon serpentinum\"],\"taxonId\":4060}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json"
 }
 ```
 
@@ -652,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json",
-  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
-  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"W8JWW7\",\"source\":\"UniProtKB\"}],\"value\":\"1.3.1.36\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"Geissoschizine synthase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"RsGS\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json"
 }
 ```
 
@@ -671,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json",
-  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
-  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"right-to-left\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"W8JWW7\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:11378\"}}],\"reaction\":{\"ecNumber\":\"1.3.1.36\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"W8JWW7\",\"source\":\"UniProtKB\"}],\"name\":\"(19E)-geissoschizine + NADP(+) = 4,21-dehydrogeissoschizine + NADPH\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:11376\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17037\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17294\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json"
 }
 ```
 
@@ -690,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json",
-  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
-  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Guo J.\",\"Gao D.\",\"Lian J.\",\"Qu Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38212296\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41467-024-44797-z\"}],\"citationType\":\"journal article\",\"firstPage\":\"457\",\"id\":\"38212296\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"457\",\"publicationDate\":\"2024\",\"title\":\"De novo biosynthesis of antiarrhythmic alkaloid ajmaline.\",\"volume\":\"15\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WKU61919.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"BIOTECHNOLOGY\",\"TISSUE SPECIFICITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:29.884516+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6eda11173d33f799125da302047e13f2dbcebc81de87a50235cb3bf62d181ed5",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ1.json"
 }
 ```
 
@@ -708,18 +460,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2",
-  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
-  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   GS_RAUSE                Reviewed;         365 AA.\nAC   P0DXJ1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=Geissoschizine synthase {ECO:0000303|PubMed:38212296};\nDE            Short=RsGS {ECO:0000303|PubMed:38212296};\nDE            EC=1.3.1.36 {ECO:0000250|UniProtKB:W8JWW7};\nGN   Name=GS {ECO:0000303|PubMed:38212296};\nOS   Rauvolfia serpentina (Serpentine wood) (Ophioxylon serpentinum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Vinceae;\nOC   Rauvolfiinae; Rauvolfia.\nOX   NCBI_TaxID=4060;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2"
 }
 ```
 
@@ -729,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2",
-  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
-  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Geissoschizine synthase {ECO:0000303|PubMed:38212296};\nDE            Short=RsGS {ECO:0000303|PubMed:38212296};\nDE            EC=1.3.1.36 {ECO:0000250|UniProtKB:W8JWW7};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2"
 }
 ```
 
@@ -750,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2",
-  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
-  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
-  "source_locator": "lines 16-22",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WKU61919.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, BIOTECHNOLOGY, TISSUE SPECIFICITY,\nRP   AND PATHWAY.\nRX   PubMed=38212296; DOI=10.1038/s41467-024-44797-z;\nRA   Guo J., Gao D., Lian J., Qu Y.;\nRT   \"De novo biosynthesis of antiarrhythmic alkaloid ajmaline.\";\nRL   Nat. Commun. 15:457-457(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2"
 }
 ```
 
@@ -771,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2",
-  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
-  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
-  "source_locator": "lines 31-37",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=(19E)-geissoschizine + NADP(+) = 4,21-dehydrogeissoschizine +\nCC         NADPH; Xref=Rhea:RHEA:11376, ChEBI:CHEBI:17037, ChEBI:CHEBI:17294,\nCC         ChEBI:CHEBI:57783, ChEBI:CHEBI:58349; EC=1.3.1.36;\nCC         Evidence={ECO:0000250|UniProtKB:W8JWW7};\nCC       PhysiologicalDirection=right-to-left; Xref=Rhea:RHEA:11378;\nCC         Evidence={ECO:0000250|UniProtKB:W8JWW7};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:32.265438+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7ba973e38966d3d8089bcd88dfc1f173357dd4d1bed310495b9a3912403794b7",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ1?format=txt&versions=2"
 }
 ```
 

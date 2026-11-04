@@ -1,18 +1,16 @@
-# cofactor_0026: before and after transfer clarification
+# cofactor_0026
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0026.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0026.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — Fe cation
+**Expected answer:** **A** — Fe cation
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence is matched to a UniProt entry annotating the protein as an iron/alpha-ketoglutarate-dependent dioxygenase and listing Fe cation as its cofactor. The cofactor annotation is transferred by similarity (ECO:0000250), not direct experimental evidence in the supplied record, so it supports the key as a database annotation rather than independently proving it experimentally.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not establish the protein's identity or cofactor with enough specificity to distinguish these options. Recognizing it as an iron/alpha-ketoglutarate-dependent dioxygenase would point toward non-heme iron, but that identity or family assignment is not provided in the question.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation that this sequence is an iron/alpha-ketoglutarate-dependent dioxygenase with an iron cofactor; the reviewer evidence attributes that annotation to similarity transfer.
-
-
-**Reason**
-
-> Choosing the annotated cofactor requires a protein-specific family or database fact absent from the input. The sequence does not supply a sufficiently decisive, self-contained argument for the exact cofactor choice.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Fe(2+) is a specific iron cation, so it falls within the broader wording of “Fe cation.” The annotation supports the broad option A, while the choices do not clearly distinguish it from the more specific C.
-
-
-### Important caveats
-
-- The reviewer-only accession and annotations were not available to the evaluated model.
-- The sequence match is exact, but the cofactor evidence is similarity-transferred rather than direct experimental evidence in the cited entry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not establish the protein's identity or cofactor with enough specificity to distinguish these options. Recognizing it as an iron/alpha-ketoglutarate-dependent dioxygenase would point toward non-heme iron, but that identity or family assignment is not provided in the question.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation that this sequence is an iron/alpha-ketoglutarate-dependent dioxygenase with an iron cofactor; the reviewer evidence attributes that annotation to similarity transfer.",
-    "reason": "Choosing the annotated cofactor requires a protein-specific family or database fact absent from the input. The sequence does not supply a sufficiently decisive, self-contained argument for the exact cofactor choice."
-  },
-  "case_id": "cofactor_0026",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence is matched to a UniProt entry annotating the protein as an iron/alpha-ketoglutarate-dependent dioxygenase and listing Fe cation as its cofactor. The cofactor annotation is transferred by similarity (ECO:0000250), not direct experimental evidence in the supplied record, so it supports the key as a database annotation rather than independently proving it experimentally."
-  },
-  "important_caveats": [
-    "The reviewer-only accession and annotations were not available to the evaluated model.",
-    "The sequence match is exact, but the cofactor evidence is similarity-transferred rather than direct experimental evidence in the cited entry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Fe(2+) is a specific iron cation, so it falls within the broader wording of “Fe cation.” The annotation supports the broad option A, while the choices do not clearly distinguish it from the more specific C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0026",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence is matched to a UniProt entry annotating the protein as an iron/alpha-ketoglutarate-dependent dioxygenase and listing Fe cation as its cofactor. The cofactor annotation is transferred by similarity (ECO:0000250), not direct experimental evidence in the supplied record, so it supports the key as a database annotation rather than independently proving it experimentally.",
-    "evidence_ids": ["C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not establish the protein's identity or cofactor with enough specificity to distinguish these options. Recognizing it as an iron/alpha-ketoglutarate-dependent dioxygenase would point toward non-heme iron, but that identity or family assignment is not provided in the question.",
-    "missing_item_specific_fact": "The protein-specific annotation that this sequence is an iron/alpha-ketoglutarate-dependent dioxygenase with an iron cofactor; the reviewer evidence attributes that annotation to similarity transfer.",
-    "reason": "Choosing the annotated cofactor requires a protein-specific family or database fact absent from the input. The sequence does not supply a sufficiently decisive, self-contained argument for the exact cofactor choice."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Fe(2+) is a specific iron cation, so it falls within the broader wording of “Fe cation.” The annotation supports the broad option A, while the choices do not clearly distinguish it from the more specific C."
-  },
-  "important_caveats": [
-    "The reviewer-only accession and annotations were not available to the evaluated model.",
-    "The sequence match is exact, but the cofactor evidence is similarity-transferred rather than direct experimental evidence in the cited entry."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A2Z5U507 (OKAE_PENOH) explicitly annotates the cofactor as 'Fe cation' (CHEBI:24875) with evidence code ECO:0000250 (inferred by similarity from Q5AR53) &#91;C5, H4&#93;. The protein is named 'Iron/alpha-ketoglutarate-dependent dioxygenase okaE' (EC 1.14.20.-) &#91;C4, H2&#93;, consistent with an iron-dependent dioxygenase that does not use heme. The expected answer 'Fe cation' matches the database annotation exactly. Note: the evidence is computational (similarity-based), not direct experimental measurement of the cofactor for this specific protein.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A knowledgeable model can recognize the 2-His-1-carboxylate facial triad (e.g., His residues in 'GSHRW' and 'HRSTK' with intervening carboxylate) characteristic of Fe/αKG-dependent dioxygenases, and can confidently eliminate heme (B) and heme b (D) because this enzyme class uses a mononuclear non-heme iron center, not a porphyrin-bound iron. However, the remaining distinction between A ('Fe cation') and C ('Fe(2+)') cannot be resolved by general biological reasoning: Fe/αKG dioxygenases do use Fe(II) at the resting state, making C arguably more precise, yet the UniProt annotation chose the general term 'Fe cation.' The choice between A and C depends on the specific database annotation wording, not on a derivable biological principle.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt cofactor annotation for A0A2Z5U507 uses the term 'Fe cation' (CHEBI:24875) rather than 'Fe(2+).' Without access to this exact annotation, a model reasoning from the sequence would have no principled way to prefer the general term 'Fe cation' over the more specific 'Fe(2+),' since the enzyme's mechanism involves Fe(II).
-
-
-**Reason**
-
-> Eliminating heme options (B, D) is reasoning-supported via recognition of the non-heme iron dioxygenase fold. However, the A-vs-C distinction requires knowing the exact database annotation term. A model that correctly identifies the protein as an Fe/αKG dioxygenase might reasonably select C (Fe(2+)) as the more mechanistically precise answer, making the question dependent on memorizing the specific annotation phrasing rather than on biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Both 'Fe cation' (A) and 'Fe(2+)' (C) are scientifically defensible cofactor descriptions for an Fe/αKG-dependent dioxygenase. The resting-state cofactor is Fe(II), making C mechanistically precise. The UniProt annotation uses the broader term 'Fe cation' (CHEBI:24875, which encompasses Fe²⁺). The question does not provide enough context to distinguish why the general term should be preferred over the oxidation-state-specific term. A knowledgeable model could select either A or C with biological justification.
-
-
-### Important caveats
-
-- The cofactor annotation carries evidence code ECO:0000250 (inferred by similarity from Q5AR53), not direct experimental determination for this specific protein.
-- The sequence-to-entry identity (A0A2Z5U507) was established by reviewer-only metadata; the evaluated model had no access to this accession.
-- The distinction between options A and C is essentially a database-annotation wording choice rather than a biologically meaningful difference for this enzyme class.
-- The protein was first released in Swiss-Prot in January 2026, making it a relatively recent annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A knowledgeable model can recognize the 2-His-1-carboxylate facial triad (e.g., His residues in 'GSHRW' and 'HRSTK' with intervening carboxylate) characteristic of Fe/αKG-dependent dioxygenases, and can confidently eliminate heme (B) and heme b (D) because this enzyme class uses a mononuclear non-heme iron center, not a porphyrin-bound iron. However, the remaining distinction between A ('Fe cation') and C ('Fe(2+)') cannot be resolved by general biological reasoning: Fe/αKG dioxygenases do use Fe(II) at the resting state, making C arguably more precise, yet the UniProt annotation chose the general term 'Fe cation.' The choice between A and C depends on the specific database annotation wording, not on a derivable biological principle.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific UniProt cofactor annotation for A0A2Z5U507 uses the term 'Fe cation' (CHEBI:24875) rather than 'Fe(2+).' Without access to this exact annotation, a model reasoning from the sequence would have no principled way to prefer the general term 'Fe cation' over the more specific 'Fe(2+),' since the enzyme's mechanism involves Fe(II).",
-    "reason": "Eliminating heme options (B, D) is reasoning-supported via recognition of the non-heme iron dioxygenase fold. However, the A-vs-C distinction requires knowing the exact database annotation term. A model that correctly identifies the protein as an Fe/αKG dioxygenase might reasonably select C (Fe(2+)) as the more mechanistically precise answer, making the question dependent on memorizing the specific annotation phrasing rather than on biological reasoning."
-  },
-  "case_id": "cofactor_0026",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U507 (OKAE_PENOH) explicitly annotates the cofactor as 'Fe cation' (CHEBI:24875) with evidence code ECO:0000250 (inferred by similarity from Q5AR53) [C5, H4]. The protein is named 'Iron/alpha-ketoglutarate-dependent dioxygenase okaE' (EC 1.14.20.-) [C4, H2], consistent with an iron-dependent dioxygenase that does not use heme. The expected answer 'Fe cation' matches the database annotation exactly. Note: the evidence is computational (similarity-based), not direct experimental measurement of the cofactor for this specific protein."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (inferred by similarity from Q5AR53), not direct experimental determination for this specific protein.",
-    "The sequence-to-entry identity (A0A2Z5U507) was established by reviewer-only metadata; the evaluated model had no access to this accession.",
-    "The distinction between options A and C is essentially a database-annotation wording choice rather than a biologically meaningful difference for this enzyme class.",
-    "The protein was first released in Swiss-Prot in January 2026, making it a relatively recent annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Both 'Fe cation' (A) and 'Fe(2+)' (C) are scientifically defensible cofactor descriptions for an Fe/αKG-dependent dioxygenase. The resting-state cofactor is Fe(II), making C mechanistically precise. The UniProt annotation uses the broader term 'Fe cation' (CHEBI:24875, which encompasses Fe²⁺). The question does not provide enough context to distinguish why the general term should be preferred over the oxidation-state-specific term. A knowledgeable model could select either A or C with biological justification."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0026",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U507 (OKAE_PENOH) explicitly annotates the cofactor as 'Fe cation' (CHEBI:24875) with evidence code ECO:0000250 (inferred by similarity from Q5AR53) [C5, H4]. The protein is named 'Iron/alpha-ketoglutarate-dependent dioxygenase okaE' (EC 1.14.20.-) [C4, H2], consistent with an iron-dependent dioxygenase that does not use heme. The expected answer 'Fe cation' matches the database annotation exactly. Note: the evidence is computational (similarity-based), not direct experimental measurement of the cofactor for this specific protein.",
-    "evidence_ids": ["C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A knowledgeable model can recognize the 2-His-1-carboxylate facial triad (e.g., His residues in 'GSHRW' and 'HRSTK' with intervening carboxylate) characteristic of Fe/αKG-dependent dioxygenases, and can confidently eliminate heme (B) and heme b (D) because this enzyme class uses a mononuclear non-heme iron center, not a porphyrin-bound iron. However, the remaining distinction between A ('Fe cation') and C ('Fe(2+)') cannot be resolved by general biological reasoning: Fe/αKG dioxygenases do use Fe(II) at the resting state, making C arguably more precise, yet the UniProt annotation chose the general term 'Fe cation.' The choice between A and C depends on the specific database annotation wording, not on a derivable biological principle.",
-    "missing_item_specific_fact": "The specific UniProt cofactor annotation for A0A2Z5U507 uses the term 'Fe cation' (CHEBI:24875) rather than 'Fe(2+).' Without access to this exact annotation, a model reasoning from the sequence would have no principled way to prefer the general term 'Fe cation' over the more specific 'Fe(2+),' since the enzyme's mechanism involves Fe(II).",
-    "reason": "Eliminating heme options (B, D) is reasoning-supported via recognition of the non-heme iron dioxygenase fold. However, the A-vs-C distinction requires knowing the exact database annotation term. A model that correctly identifies the protein as an Fe/αKG dioxygenase might reasonably select C (Fe(2+)) as the more mechanistically precise answer, making the question dependent on memorizing the specific annotation phrasing rather than on biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Both 'Fe cation' (A) and 'Fe(2+)' (C) are scientifically defensible cofactor descriptions for an Fe/αKG-dependent dioxygenase. The resting-state cofactor is Fe(II), making C mechanistically precise. The UniProt annotation uses the broader term 'Fe cation' (CHEBI:24875, which encompasses Fe²⁺). The question does not provide enough context to distinguish why the general term should be preferred over the oxidation-state-specific term. A knowledgeable model could select either A or C with biological justification."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (inferred by similarity from Q5AR53), not direct experimental determination for this specific protein.",
-    "The sequence-to-entry identity (A0A2Z5U507) was established by reviewer-only metadata; the evaluated model had no access to this accession.",
-    "The distinction between options A and C is essentially a database-annotation wording choice rather than a biologically meaningful difference for this enzyme class.",
-    "The protein was first released in Swiss-Prot in January 2026, making it a relatively recent annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -405,10 +165,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -527,30 +286,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2Z5U507",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 300,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
   "current_entry_audit": {
     "entryVersion": 22,
     "firstPublicDate": "2025-02-05",
@@ -558,14 +304,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-10-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "current_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 300,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2Z5U507",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "selected_historical_source_sequence_length": 300,
+  "selected_historical_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
   "selected_historical_version": {
     "accession": "A0A2Z5U507",
     "database": "Swiss-Prot",
@@ -576,24 +338,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "OKAE_PENOH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "selected_historical_source_sequence_sha256": "d3f6009a2039d1f44694d93a97eabb6e8a8f1adccc44678bab4dee0033d44a8e",
-  "selected_historical_source_sequence_length": 300,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -607,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2Z5U507\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -626,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":22,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-10-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -645,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium ochrochloron\",\"taxonId\":69780}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -664,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Okaramines biosynthesis cluster protein E\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"1.14.20.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Iron/alpha-ketoglutarate-dependent dioxygenase okaE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -683,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:24875\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5AR53\",\"source\":\"UniProtKB\"}],\"name\":\"Fe cation\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -702,15 +451,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json",
-  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
-  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lai C.Y.\",\"Lo I.W.\",\"Hewage R.T.\",\"Chen Y.C.\",\"Chen C.T.\",\"Lee C.F.\",\"Lin S.\",\"Tang M.C.\",\"Lin H.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28631282\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.201705501\"}],\"citationType\":\"journal article\",\"firstPage\":\"9478\",\"id\":\"28631282\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"9482\",\"publicationDate\":\"2017\",\"title\":\"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise Pathway of Okaramines.\",\"volume\":\"56\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:53.902384+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9990e6a6f579d0a5380e26f04d728094e4f4bad34f420af474667124b07036bb",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U507.json"
 }
 ```
 
@@ -720,18 +469,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   OKAE_PENOH              Reviewed;         300 AA.\nAC   A0A2Z5U507;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-OCT-2018, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=Iron/alpha-ketoglutarate-dependent dioxygenase okaE {ECO:0000303|PubMed:28631282};\nDE            EC=1.14.20.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein E {ECO:0000303|PubMed:28631282};\nGN   Name=okaE {ECO:0000303|PubMed:28631282};\nOS   Penicillium ochrochloron.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=69780;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 
@@ -741,18 +490,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Iron/alpha-ketoglutarate-dependent dioxygenase okaE {ECO:0000303|PubMed:28631282};\nDE            EC=1.14.20.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein E {ECO:0000303|PubMed:28631282};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 
@@ -762,18 +511,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=28631282; DOI=10.1002/anie.201705501;\nRA   Lai C.Y., Lo I.W., Hewage R.T., Chen Y.C., Chen C.T., Lee C.F., Lin S.,\nRA   Tang M.C., Lin H.C.;\nRT   \"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise\nRT   Pathway of Okaramines.\";\nRL   Angew. Chem. Int. Ed. 56:9478-9482(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 
@@ -783,18 +532,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21",
-  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
-  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
-  "source_locator": "lines 84-86",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Fe cation; Xref=ChEBI:CHEBI:24875;\nCC         Evidence={ECO:0000250|UniProtKB:Q5AR53};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:24:56.491248+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 84-86",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "64ddb23c63ce009b89733028cc2d13c659d4412b3c22f48c98c262654f9060ab",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U507?format=txt&versions=21"
 }
 ```
 

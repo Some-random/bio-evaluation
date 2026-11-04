@@ -1,18 +1,16 @@
-# cofactor_0177: before and after transfer clarification
+# cofactor_0177
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0177.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0177.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Mg(2+)
+**Expected answer:** **B** — Mg(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence match is annotated with Mg(2+) as a cofactor, with experimental evidence cited. The same annotation also lists Mn(2+), which is not among the choices.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A nucleotide-binding ATPase-like sequence could make Mg a plausible choice because ATPases commonly use Mg-bound ATP, but that is only a general prior and does not establish this protein’s specific cofactor.
-
-
-**Missing item-specific fact**
-
-> The protein’s identity and its experimentally supported Mg(2+) (and Mn(2+)) cofactor annotation are not supplied in the question.
-
-
-**Reason**
-
-> The sequence may suggest nucleotide-dependent activity, but it does not by itself establish which metal this particular protein uses; selecting the annotated cofactor depends on protein-specific information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only Mg(2+) among the listed choices is supported by the supplied reviewer evidence. Mn(2+) is also annotated for the protein but is not offered as an option.
-
-
-### Important caveats
-
-- The cofactor annotation applies to the exact sequence match and cites experimental evidence, but the primary study was not independently validated here.
-- The singular wording may imply one cofactor, whereas the annotation lists both Mg(2+) and Mn(2+).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A nucleotide-binding ATPase-like sequence could make Mg a plausible choice because ATPases commonly use Mg-bound ATP, but that is only a general prior and does not establish this protein’s specific cofactor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein’s identity and its experimentally supported Mg(2+) (and Mn(2+)) cofactor annotation are not supplied in the question.",
-    "reason": "The sequence may suggest nucleotide-dependent activity, but it does not by itself establish which metal this particular protein uses; selecting the annotated cofactor depends on protein-specific information."
-  },
-  "case_id": "cofactor_0177",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence match is annotated with Mg(2+) as a cofactor, with experimental evidence cited. The same annotation also lists Mn(2+), which is not among the choices."
-  },
-  "important_caveats": [
-    "The cofactor annotation applies to the exact sequence match and cites experimental evidence, but the primary study was not independently validated here.",
-    "The singular wording may imply one cofactor, whereas the annotation lists both Mg(2+) and Mn(2+)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only Mg(2+) among the listed choices is supported by the supplied reviewer evidence. Mn(2+) is also annotated for the protein but is not offered as an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0177",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence match is annotated with Mg(2+) as a cofactor, with experimental evidence cited. The same annotation also lists Mn(2+), which is not among the choices.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A nucleotide-binding ATPase-like sequence could make Mg a plausible choice because ATPases commonly use Mg-bound ATP, but that is only a general prior and does not establish this protein’s specific cofactor.",
-    "missing_item_specific_fact": "The protein’s identity and its experimentally supported Mg(2+) (and Mn(2+)) cofactor annotation are not supplied in the question.",
-    "reason": "The sequence may suggest nucleotide-dependent activity, but it does not by itself establish which metal this particular protein uses; selecting the annotated cofactor depends on protein-specific information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only Mg(2+) among the listed choices is supported by the supplied reviewer evidence. Mn(2+) is also annotated for the protein but is not offered as an option."
-  },
-  "important_caveats": [
-    "The cofactor annotation applies to the exact sequence match and cites experimental evidence, but the primary study was not independently validated here.",
-    "The singular wording may imply one cofactor, whereas the annotation lists both Mg(2+) and Mn(2+)."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9MCT1 (Terminase large subunit, gp2, of Bacteriophage HK97) lists Mg(2+) (CHEBI:18420) as a cofactor with direct assay evidence (ECO:0000269, PubMed:35947691), corroborated by X-ray crystallography (PDB 6Z6D, 2.20 Å). Mn(2+) is also annotated as a cofactor, but it is not among the four answer choices. Among the provided options (Fe2+, Mg2+, Cu2+, Co2+), only Mg(2+) matches the experimental annotation. The expected answer B is correct.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein sequence contains a Walker A motif (GKT within 'SAEGKTTHGLSPILAILDETGQ') and associated Walker B-like features (DETGQ) characteristic of AAA+ family ATPases. The UniProt annotation confirms ATPase activity (EC 3.6.4.-). A foundational principle of biochemistry is that ATPases universally require Mg(2+) to coordinate the β- and γ-phosphates of ATP for catalytic hydrolysis; Mg(2+) is the canonical cofactor for essentially all P-loop/AAA+ ATPases. The endonuclease activity (EC 3.1.21.-) also typically uses Mg(2+). Among the four choices, Fe(2+), Cu(2+), and Co(2+) are not standard cofactors for ATP hydrolysis or DNA-cleaving endonucleases, making Mg(2+) the only biochemically defensible answer. The reasoning chain—sequence motif → ATPase class → Mg(2+) requirement—is general biological knowledge, not protein-specific lookup.
-
-
-**Missing item-specific fact**
-
-> None required beyond general biochemistry. The Walker A motif is identifiable from the sequence, and the Mg(2+)–ATPase association is textbook knowledge.
-
-
-**Reason**
-
-> A knowledgeable model can identify the Walker A/B motifs in the sequence, infer AAA+ ATPase activity, and apply the well-established rule that Mg(2+) is the obligatory divalent cation cofactor for ATP hydrolysis. This distinguishes B from A, C, and D without needing to recall this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Mn(2+) is also annotated as a cofactor for this protein, but it is not offered as a choice. Among the four provided options, only Mg(2+) is consistent with both the ATPase and endonuclease activities. Fe(2+), Cu(2+), and Co(2+) have no established role as primary cofactors for AAA+ ATPases or this class of endonucleases.
-
-
-### Important caveats
-
-- The UniProt entry lists both Mg(2+) and Mn(2+) as cofactors with direct assay evidence; the question's omission of Mn(2+) from the choices removes potential ambiguity but does not reflect the full cofactor profile.
-- The Walker A motif identification from raw sequence requires domain expertise in AAA+ protein architecture; a model without this knowledge might struggle to extract the motif from a 504-residue sequence.
-- The evidence is from a 2022 crystallography study (PDB 6Z6D) and direct assay; it is experimental, not purely computational inference.
-- The accession Q9MCT1 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the sequence alone.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein sequence contains a Walker A motif (GKT within 'SAEGKTTHGLSPILAILDETGQ') and associated Walker B-like features (DETGQ) characteristic of AAA+ family ATPases. The UniProt annotation confirms ATPase activity (EC 3.6.4.-). A foundational principle of biochemistry is that ATPases universally require Mg(2+) to coordinate the β- and γ-phosphates of ATP for catalytic hydrolysis; Mg(2+) is the canonical cofactor for essentially all P-loop/AAA+ ATPases. The endonuclease activity (EC 3.1.21.-) also typically uses Mg(2+). Among the four choices, Fe(2+), Cu(2+), and Co(2+) are not standard cofactors for ATP hydrolysis or DNA-cleaving endonucleases, making Mg(2+) the only biochemically defensible answer. The reasoning chain—sequence motif → ATPase class → Mg(2+) requirement—is general biological knowledge, not protein-specific lookup.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None required beyond general biochemistry. The Walker A motif is identifiable from the sequence, and the Mg(2+)–ATPase association is textbook knowledge.",
-    "reason": "A knowledgeable model can identify the Walker A/B motifs in the sequence, infer AAA+ ATPase activity, and apply the well-established rule that Mg(2+) is the obligatory divalent cation cofactor for ATP hydrolysis. This distinguishes B from A, C, and D without needing to recall this specific protein's database entry."
-  },
-  "case_id": "cofactor_0177",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H4",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9MCT1 (Terminase large subunit, gp2, of Bacteriophage HK97) lists Mg(2+) (CHEBI:18420) as a cofactor with direct assay evidence (ECO:0000269, PubMed:35947691), corroborated by X-ray crystallography (PDB 6Z6D, 2.20 Å). Mn(2+) is also annotated as a cofactor, but it is not among the four answer choices. Among the provided options (Fe2+, Mg2+, Cu2+, Co2+), only Mg(2+) matches the experimental annotation. The expected answer B is correct."
-  },
-  "important_caveats": [
-    "The UniProt entry lists both Mg(2+) and Mn(2+) as cofactors with direct assay evidence; the question's omission of Mn(2+) from the choices removes potential ambiguity but does not reflect the full cofactor profile.",
-    "The Walker A motif identification from raw sequence requires domain expertise in AAA+ protein architecture; a model without this knowledge might struggle to extract the motif from a 504-residue sequence.",
-    "The evidence is from a 2022 crystallography study (PDB 6Z6D) and direct assay; it is experimental, not purely computational inference.",
-    "The accession Q9MCT1 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the sequence alone."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mn(2+) is also annotated as a cofactor for this protein, but it is not offered as a choice. Among the four provided options, only Mg(2+) is consistent with both the ATPase and endonuclease activities. Fe(2+), Cu(2+), and Co(2+) have no established role as primary cofactors for AAA+ ATPases or this class of endonucleases."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0177",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9MCT1 (Terminase large subunit, gp2, of Bacteriophage HK97) lists Mg(2+) (CHEBI:18420) as a cofactor with direct assay evidence (ECO:0000269, PubMed:35947691), corroborated by X-ray crystallography (PDB 6Z6D, 2.20 Å). Mn(2+) is also annotated as a cofactor, but it is not among the four answer choices. Among the provided options (Fe2+, Mg2+, Cu2+, Co2+), only Mg(2+) matches the experimental annotation. The expected answer B is correct.",
-    "evidence_ids": ["C5", "C6", "H4", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein sequence contains a Walker A motif (GKT within 'SAEGKTTHGLSPILAILDETGQ') and associated Walker B-like features (DETGQ) characteristic of AAA+ family ATPases. The UniProt annotation confirms ATPase activity (EC 3.6.4.-). A foundational principle of biochemistry is that ATPases universally require Mg(2+) to coordinate the β- and γ-phosphates of ATP for catalytic hydrolysis; Mg(2+) is the canonical cofactor for essentially all P-loop/AAA+ ATPases. The endonuclease activity (EC 3.1.21.-) also typically uses Mg(2+). Among the four choices, Fe(2+), Cu(2+), and Co(2+) are not standard cofactors for ATP hydrolysis or DNA-cleaving endonucleases, making Mg(2+) the only biochemically defensible answer. The reasoning chain—sequence motif → ATPase class → Mg(2+) requirement—is general biological knowledge, not protein-specific lookup.",
-    "missing_item_specific_fact": "None required beyond general biochemistry. The Walker A motif is identifiable from the sequence, and the Mg(2+)–ATPase association is textbook knowledge.",
-    "reason": "A knowledgeable model can identify the Walker A/B motifs in the sequence, infer AAA+ ATPase activity, and apply the well-established rule that Mg(2+) is the obligatory divalent cation cofactor for ATP hydrolysis. This distinguishes B from A, C, and D without needing to recall this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mn(2+) is also annotated as a cofactor for this protein, but it is not offered as a choice. Among the four provided options, only Mg(2+) is consistent with both the ATPase and endonuclease activities. Fe(2+), Cu(2+), and Co(2+) have no established role as primary cofactors for AAA+ ATPases or this class of endonucleases."
-  },
-  "important_caveats": [
-    "The UniProt entry lists both Mg(2+) and Mn(2+) as cofactors with direct assay evidence; the question's omission of Mn(2+) from the choices removes potential ambiguity but does not reflect the full cofactor profile.",
-    "The Walker A motif identification from raw sequence requires domain expertise in AAA+ protein architecture; a model without this knowledge might struggle to extract the motif from a 504-residue sequence.",
-    "The evidence is from a 2022 crystallography study (PDB 6Z6D) and direct assay; it is experimental, not purely computational inference.",
-    "The accession Q9MCT1 was inferred from dataset metadata and was not provided to the evaluated model; the model must work from the sequence alone."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -492,30 +263,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9MCT1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8e87f171388c4d4f15153e69a6ed38cd38a9c1176b5148b491a88ff220fad067",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 504,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8e87f171388c4d4f15153e69a6ed38cd38a9c1176b5148b491a88ff220fad067",
   "current_entry_audit": {
     "entryVersion": 68,
     "firstPublicDate": "2025-06-18",
@@ -523,14 +281,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-10-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
-  "current_source_sequence_sha256": "8e87f171388c4d4f15153e69a6ed38cd38a9c1176b5148b491a88ff220fad067",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 504,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8e87f171388c4d4f15153e69a6ed38cd38a9c1176b5148b491a88ff220fad067",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 66,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9MCT1",
   "selected_historical_entry_version": 66,
+  "selected_historical_record_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
+  "selected_historical_source_sequence_length": 504,
+  "selected_historical_source_sequence_sha256": "8e87f171388c4d4f15153e69a6ed38cd38a9c1176b5148b491a88ff220fad067",
   "selected_historical_version": {
     "accession": "Q9MCT1",
     "database": "Swiss-Prot",
@@ -541,24 +315,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TERL_BPHK7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
-  "selected_historical_source_sequence_sha256": "8e87f171388c4d4f15153e69a6ed38cd38a9c1176b5148b491a88ff220fad067",
-  "selected_historical_source_sequence_length": 504,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 66,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -572,15 +333,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json",
-  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
-  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9MCT1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json"
 }
 ```
 
@@ -591,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json",
-  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
-  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":68,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-10-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json"
 }
 ```
 
@@ -610,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json",
-  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
-  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bacteriophage HK97\",\"lineage\":[\"Viruses\",\"Duplodnaviria\",\"Heunggongvirae\",\"Uroviricota\",\"Caudoviricetes\",\"Caudoviricetes incertae sedis\",\"Hendrixvirinae\",\"Byrnievirus\",\"Byrnievirus HK97\"],\"scientificName\":\"Enterobacteria phage HK97\",\"taxonId\":2681617}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json"
 }
 ```
 
@@ -629,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json",
-  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
-  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"DNA-packaging protein gp2\"}}],\"includes\":[{\"recommendedName\":{\"ecNumbers\":[{\"value\":\"3.1.21.-\"}],\"fullName\":{\"value\":\"Endonuclease\"}}},{\"recommendedName\":{\"ecNumbers\":[{\"value\":\"3.6.4.-\"}],\"fullName\":{\"value\":\"ATPase\"}}}],\"recommendedName\":{\"fullName\":{\"value\":\"Terminase, large subunit\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json"
 }
 ```
 
@@ -648,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json",
-  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
-  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:18420\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35947691\",\"source\":\"PubMed\"}],\"name\":\"Mg(2+)\"},{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29035\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35947691\",\"source\":\"PubMed\"}],\"name\":\"Mn(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json"
 }
 ```
 
@@ -667,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json",
-  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
-  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Fung H.K.H.\",\"Grimes S.\",\"Huet A.\",\"Duda R.L.\",\"Chechik M.\",\"Gault J.\",\"Robinson C.V.\",\"Hendrix R.W.\",\"Jardine P.J.\",\"Conway J.F.\",\"Baumann C.G.\",\"Antson A.A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35947691\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkac647\"}],\"citationType\":\"journal article\",\"firstPage\":\"8719\",\"id\":\"35947691\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"8732\",\"publicationDate\":\"2022\",\"title\":\"Structural basis of DNA packaging by a ring-type ATPase from an archetypal viral system.\",\"volume\":\"50\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"6Z6D\",\"source\":\"PDB\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS)\",\"COFACTOR\",\"SUBUNIT\",\"MUTAGENESIS OF ARG-56; LYS-57; LYS-60 AND ARG-154\",\"FUNCTION\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:33:09.391226+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ee2441b906644046077d0bfe44187e39d7ed385540778e1e043fa90c3ce6f334",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9MCT1.json"
 }
 ```
 
@@ -685,18 +446,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66",
-  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
-  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   TERL_BPHK7              Reviewed;         504 AA.\nAC   Q9MCT1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2000, sequence version 1.\nDT   28-JAN-2026, entry version 66.\nDE   RecName: Full=Terminase, large subunit;\nDE   AltName: Full=DNA-packaging protein gp2;\nDE   Includes:\nDE     RecName: Full=Endonuclease;\nDE              EC=3.1.21.-;\nDE   Includes:\nDE     RecName: Full=ATPase;\nDE              EC=3.6.4.-;\nGN   Name=2;\nOS   Enterobacteria phage HK97 (Bacteriophage HK97).\nOC   Viruses; Duplodnaviria; Heunggongvirae; Uroviricota; Caudoviricetes;\nOC   Hendrixvirinae; Byrnievirus; Byrnievirus HK97.\nOX   NCBI_TaxID=2681617;\nOH   NCBI_TaxID=562; Escherichia coli.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
+  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66"
 }
 ```
 
@@ -706,18 +467,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66",
-  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
-  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
-  "source_locator": "lines 6-13",
   "excerpt": "DE   RecName: Full=Terminase, large subunit;\nDE   AltName: Full=DNA-packaging protein gp2;\nDE   Includes:\nDE     RecName: Full=Endonuclease;\nDE              EC=3.1.21.-;\nDE   Includes:\nDE     RecName: Full=ATPase;\nDE              EC=3.6.4.-;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
+  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66"
 }
 ```
 
@@ -727,18 +488,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66",
-  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
-  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
-  "source_locator": "lines 43-52",
   "excerpt": "RN   [4] {ECO:0007744|PDB:6Z6D}\nRP   X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS), COFACTOR, SUBUNIT, MUTAGENESIS OF\nRP   ARG-56; LYS-57; LYS-60 AND ARG-154, FUNCTION, AND ACTIVITY REGULATION.\nRX   PubMed=35947691; DOI=10.1093/nar/gkac647;\nRA   Fung H.K.H., Grimes S., Huet A., Duda R.L., Chechik M., Gault J.,\nRA   Robinson C.V., Hendrix R.W., Jardine P.J., Conway J.F., Baumann C.G.,\nRA   Antson A.A.;\nRT   \"Structural basis of DNA packaging by a ring-type ATPase from an archetypal\nRT   viral system.\";\nRL   Nucleic Acids Res. 50:8719-8732(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
+  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66"
 }
 ```
 
@@ -748,18 +509,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 66,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66",
-  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
-  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
-  "source_locator": "lines 72-76",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mg(2+); Xref=ChEBI:CHEBI:18420;\nCC         Evidence={ECO:0000269|PubMed:35947691};\nCC       Name=Mn(2+); Xref=ChEBI:CHEBI:29035;\nCC         Evidence={ECO:0000269|PubMed:35947691};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 66,
+  "retrieved_utc": "2026-11-02T04:33:11.849933+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 72-76",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "08dc5e490c969d0598d4ac801aabac1272030affcdcfa44887f89ef63e53343c",
+  "url": "https://rest.uniprot.org/unisave/Q9MCT1?format=txt&versions=66"
 }
 ```
 

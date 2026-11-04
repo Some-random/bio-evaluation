@@ -1,18 +1,16 @@
-# GO_biological_process_0036: before and after transfer clarification
+# GO_biological_process_0036
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0036.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0036.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — saponin biosynthetic process
+**Expected answer:** **B** — saponin biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as a UDP-glucosyl transferase involved in oleanane-type triterpene saponin biosynthesis. The entry includes an experimentally supported function annotation and an IDA annotation for saponin biosynthesis, supporting choice B.
-
-Citations as saved: [H3](#evidence-h3), [H5](#evidence-h5), [C5](#evidence-c5), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with an enzyme, and possibly a glycosyltransferase, but that broad inference does not establish its substrate or specific pathway.
-
-
-**Missing item-specific fact**
-
-> Identifying saponin biosynthesis requires the protein-specific substrate and pathway annotation or experimental characterization; these are not supplied in the sequence and choices.
-
-
-**Reason**
-
-> The choices do not provide enough context to distinguish this enzyme’s specific role from other possible glycosyltransferase functions by general biological reasoning alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched functional evidence specifically supports saponin biosynthesis; none of the other choices is comparably supported.
-
-
-### Important caveats
-
-- The reviewer evidence supports the key but was not available to the evaluated model.
-- The exact source snapshot used by the author is unknown, although the matching historical entry already contained the saponin-biosynthesis annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, and possibly a glycosyltransferase, but that broad inference does not establish its substrate or specific pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying saponin biosynthesis requires the protein-specific substrate and pathway annotation or experimental characterization; these are not supplied in the sequence and choices.",
-    "reason": "The choices do not provide enough context to distinguish this enzyme’s specific role from other possible glycosyltransferase functions by general biological reasoning alone."
-  },
-  "case_id": "GO_biological_process_0036",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "H5",
-      "C5",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as a UDP-glucosyl transferase involved in oleanane-type triterpene saponin biosynthesis. The entry includes an experimentally supported function annotation and an IDA annotation for saponin biosynthesis, supporting choice B."
-  },
-  "important_caveats": [
-    "The reviewer evidence supports the key but was not available to the evaluated model.",
-    "The exact source snapshot used by the author is unknown, although the matching historical entry already contained the saponin-biosynthesis annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched functional evidence specifically supports saponin biosynthesis; none of the other choices is comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0036",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as a UDP-glucosyl transferase involved in oleanane-type triterpene saponin biosynthesis. The entry includes an experimentally supported function annotation and an IDA annotation for saponin biosynthesis, supporting choice B.",
-    "evidence_ids": ["H3", "H5", "C5", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, and possibly a glycosyltransferase, but that broad inference does not establish its substrate or specific pathway.",
-    "missing_item_specific_fact": "Identifying saponin biosynthesis requires the protein-specific substrate and pathway annotation or experimental characterization; these are not supplied in the sequence and choices.",
-    "reason": "The choices do not provide enough context to distinguish this enzyme’s specific role from other possible glycosyltransferase functions by general biological reasoning alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched functional evidence specifically supports saponin biosynthesis; none of the other choices is comparably supported."
-  },
-  "important_caveats": [
-    "The reviewer evidence supports the key but was not available to the evaluated model.",
-    "The exact source snapshot used by the author is unknown, although the matching historical entry already contained the saponin-biosynthesis annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0AAW1M2U7 (SoUGT74CD1 from Saponaria officinalis) is explicitly annotated with GO:0016135 'saponin biosynthetic process' via IDA:UniProtKB evidence based on experimental data from PubMed:39043959. The FUNCTION comment confirms it is a 'Component of the oleanane-type triterpene saponins biosynthetic pathway.' The GO term is also annotated with GO:0016104 'triterpenoid biosynthetic process.' The sequence matches exactly (SHA-256 verified). The expected answer B is directly supported by experimental annotation.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Options C (positive regulation of calcium-mediated signaling) and D (mitochondrial outer membrane permeabilization) are animal-specific processes involving BCL-2 family proteins and calcium signaling cascades, respectively. The supplied sequence lacks mitochondrial targeting signals, BH3/BH4 domains, or any features of animal signaling proteins, and its composition is consistent with a plant protein. Option A (polysaccharide catabolic process) describes hydrolytic breakdown of polysaccharides, which requires glycosidases/hydrolases, not transferases. The C-terminal region of the sequence contains motifs consistent with the plant secondary product glycosyltransferase (PSPG) box of UDP-glycosyltransferases (UGTs), which catalyze glycosyl transfer (biosynthetic direction), not hydrolysis. By elimination of A (wrong enzyme class/direction), C and D (animal-specific processes), option B (a plant secondary metabolite biosynthetic process involving glycosylation) is the only remaining option consistent with a plant UGT.
-
-
-**Missing item-specific fact**
-
-> The specific identification of 'saponin' biosynthesis (as opposed to flavonoid, phenylpropanoid, or other glycosyltransferase-mediated pathways) is not derivable from the sequence alone. The substrate specificity (QA-tri acceptor for 4-keto-6-deoxy-glucose transfer) was determined experimentally in PubMed:39043959. However, this specificity is not needed to answer the question since the other three options are eliminable.
-
-
-**Reason**
-
-> While the positive identification of 'saponin' specifically requires experimental substrate data, the question is answerable by elimination: C and D are animal-specific processes clearly inconsistent with a plant protein sequence, and A describes catabolic hydrolysis inconsistent with a transferase. B is the only option consistent with a plant glycosyltransferase in a biosynthetic pathway. The elimination reasoning is grounded in general biological knowledge about enzyme classes, organism-specific processes, and protein domain architecture.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only one option (B) is consistent with a plant glycosyltransferase involved in secondary metabolite biosynthesis. The other three options describe processes (animal calcium signaling, animal apoptosis, polysaccharide hydrolysis) that are mechanistically incompatible with the sequence features. No ambiguity exists among the choices.
-
-
-### Important caveats
-
-- The positive identification of 'saponin' specifically (vs. other UGT pathways) is not derivable from sequence alone; it relies on experimental substrate data. The answer is reached primarily by elimination of clearly incompatible distractors.
-- Recognition of the PSPG box motif from a 468-aa sequence without prior knowledge of UGT domain architecture is non-trivial and may not be reliable for all models.
-- The UniProt annotation is IDA (Inferred from Direct Assay) based on PubMed:39043959 (2025, Nat. Chem. Biol.), indicating experimental validation of saponin biosynthesis involvement.
-- The organism (Saponaria officinalis, 'soapwort') is not provided in the question input; if it were, the name 'Saponaria' itself would strongly hint at saponin biosynthesis.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Options C (positive regulation of calcium-mediated signaling) and D (mitochondrial outer membrane permeabilization) are animal-specific processes involving BCL-2 family proteins and calcium signaling cascades, respectively. The supplied sequence lacks mitochondrial targeting signals, BH3/BH4 domains, or any features of animal signaling proteins, and its composition is consistent with a plant protein. Option A (polysaccharide catabolic process) describes hydrolytic breakdown of polysaccharides, which requires glycosidases/hydrolases, not transferases. The C-terminal region of the sequence contains motifs consistent with the plant secondary product glycosyltransferase (PSPG) box of UDP-glycosyltransferases (UGTs), which catalyze glycosyl transfer (biosynthetic direction), not hydrolysis. By elimination of A (wrong enzyme class/direction), C and D (animal-specific processes), option B (a plant secondary metabolite biosynthetic process involving glycosylation) is the only remaining option consistent with a plant UGT.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific identification of 'saponin' biosynthesis (as opposed to flavonoid, phenylpropanoid, or other glycosyltransferase-mediated pathways) is not derivable from the sequence alone. The substrate specificity (QA-tri acceptor for 4-keto-6-deoxy-glucose transfer) was determined experimentally in PubMed:39043959. However, this specificity is not needed to answer the question since the other three options are eliminable.",
-    "reason": "While the positive identification of 'saponin' specifically requires experimental substrate data, the question is answerable by elimination: C and D are animal-specific processes clearly inconsistent with a plant protein sequence, and A describes catabolic hydrolysis inconsistent with a transferase. B is the only option consistent with a plant glycosyltransferase in a biosynthetic pathway. The elimination reasoning is grounded in general biological knowledge about enzyme classes, organism-specific processes, and protein domain architecture."
-  },
-  "case_id": "GO_biological_process_0036",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H3",
-      "H5",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1M2U7 (SoUGT74CD1 from Saponaria officinalis) is explicitly annotated with GO:0016135 'saponin biosynthetic process' via IDA:UniProtKB evidence based on experimental data from PubMed:39043959. The FUNCTION comment confirms it is a 'Component of the oleanane-type triterpene saponins biosynthetic pathway.' The GO term is also annotated with GO:0016104 'triterpenoid biosynthetic process.' The sequence matches exactly (SHA-256 verified). The expected answer B is directly supported by experimental annotation."
-  },
-  "important_caveats": [
-    "The positive identification of 'saponin' specifically (vs. other UGT pathways) is not derivable from sequence alone; it relies on experimental substrate data. The answer is reached primarily by elimination of clearly incompatible distractors.",
-    "Recognition of the PSPG box motif from a 468-aa sequence without prior knowledge of UGT domain architecture is non-trivial and may not be reliable for all models.",
-    "The UniProt annotation is IDA (Inferred from Direct Assay) based on PubMed:39043959 (2025, Nat. Chem. Biol.), indicating experimental validation of saponin biosynthesis involvement.",
-    "The organism (Saponaria officinalis, 'soapwort') is not provided in the question input; if it were, the name 'Saponaria' itself would strongly hint at saponin biosynthesis."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only one option (B) is consistent with a plant glycosyltransferase involved in secondary metabolite biosynthesis. The other three options describe processes (animal calcium signaling, animal apoptosis, polysaccharide hydrolysis) that are mechanistically incompatible with the sequence features. No ambiguity exists among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0036",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1M2U7 (SoUGT74CD1 from Saponaria officinalis) is explicitly annotated with GO:0016135 'saponin biosynthetic process' via IDA:UniProtKB evidence based on experimental data from PubMed:39043959. The FUNCTION comment confirms it is a 'Component of the oleanane-type triterpene saponins biosynthetic pathway.' The GO term is also annotated with GO:0016104 'triterpenoid biosynthetic process.' The sequence matches exactly (SHA-256 verified). The expected answer B is directly supported by experimental annotation.",
-    "evidence_ids": ["C5", "C7", "H3", "H5", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Options C (positive regulation of calcium-mediated signaling) and D (mitochondrial outer membrane permeabilization) are animal-specific processes involving BCL-2 family proteins and calcium signaling cascades, respectively. The supplied sequence lacks mitochondrial targeting signals, BH3/BH4 domains, or any features of animal signaling proteins, and its composition is consistent with a plant protein. Option A (polysaccharide catabolic process) describes hydrolytic breakdown of polysaccharides, which requires glycosidases/hydrolases, not transferases. The C-terminal region of the sequence contains motifs consistent with the plant secondary product glycosyltransferase (PSPG) box of UDP-glycosyltransferases (UGTs), which catalyze glycosyl transfer (biosynthetic direction), not hydrolysis. By elimination of A (wrong enzyme class/direction), C and D (animal-specific processes), option B (a plant secondary metabolite biosynthetic process involving glycosylation) is the only remaining option consistent with a plant UGT.",
-    "missing_item_specific_fact": "The specific identification of 'saponin' biosynthesis (as opposed to flavonoid, phenylpropanoid, or other glycosyltransferase-mediated pathways) is not derivable from the sequence alone. The substrate specificity (QA-tri acceptor for 4-keto-6-deoxy-glucose transfer) was determined experimentally in PubMed:39043959. However, this specificity is not needed to answer the question since the other three options are eliminable.",
-    "reason": "While the positive identification of 'saponin' specifically requires experimental substrate data, the question is answerable by elimination: C and D are animal-specific processes clearly inconsistent with a plant protein sequence, and A describes catabolic hydrolysis inconsistent with a transferase. B is the only option consistent with a plant glycosyltransferase in a biosynthetic pathway. The elimination reasoning is grounded in general biological knowledge about enzyme classes, organism-specific processes, and protein domain architecture."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only one option (B) is consistent with a plant glycosyltransferase involved in secondary metabolite biosynthesis. The other three options describe processes (animal calcium signaling, animal apoptosis, polysaccharide hydrolysis) that are mechanistically incompatible with the sequence features. No ambiguity exists among the choices."
-  },
-  "important_caveats": [
-    "The positive identification of 'saponin' specifically (vs. other UGT pathways) is not derivable from sequence alone; it relies on experimental substrate data. The answer is reached primarily by elimination of clearly incompatible distractors.",
-    "Recognition of the PSPG box motif from a 468-aa sequence without prior knowledge of UGT domain architecture is non-trivial and may not be reliable for all models.",
-    "The UniProt annotation is IDA (Inferred from Direct Assay) based on PubMed:39043959 (2025, Nat. Chem. Biol.), indicating experimental validation of saponin biosynthesis involvement.",
-    "The organism (Saponaria officinalis, 'soapwort') is not provided in the question input; if it were, the name 'Saponaria' itself would strongly hint at saponin biosynthesis."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAW1M2U7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "32fefafe4b15bb32b2b4faf54c8930660aee3c701c107d8a722f8f698ff51401",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 468,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "32fefafe4b15bb32b2b4faf54c8930660aee3c701c107d8a722f8f698ff51401",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-06-18",
@@ -533,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-11-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "current_source_sequence_sha256": "32fefafe4b15bb32b2b4faf54c8930660aee3c701c107d8a722f8f698ff51401",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 468,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "32fefafe4b15bb32b2b4faf54c8930660aee3c701c107d8a722f8f698ff51401",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAW1M2U7",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
+  "selected_historical_source_sequence_length": 468,
+  "selected_historical_source_sequence_sha256": "32fefafe4b15bb32b2b4faf54c8930660aee3c701c107d8a722f8f698ff51401",
   "selected_historical_version": {
     "accession": "A0AAW1M2U7",
     "database": "Swiss-Prot",
@@ -551,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GT741_SAPOF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
-  "selected_historical_source_sequence_sha256": "32fefafe4b15bb32b2b4faf54c8930660aee3c701c107d8a722f8f698ff51401",
-  "selected_historical_source_sequence_length": 468,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAW1M2U7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -605,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2024-11-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -624,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Common soapwort\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Caryophyllaceae\",\"Caryophylleae\",\"Saponaria\"],\"scientificName\":\"Saponaria officinalis\",\"synonyms\":[\"Lychnis saponaria\"],\"taxonId\":3572}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -643,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"2.4.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"UDP-glucosyl transferase 74CD1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"SoUGT74CD1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -662,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Component of the oleanane-type triterpene saponins (e.g. saponarioside A and saponarioside B) biosynthetic pathway, leading to the production of natural products with detergent properties used as traditional sources of soap (PubMed:39043959). A glycosyltransferase that, together with SDR1, mediates the conversion of QA-tri to QA-triF; UGT74CD1 may transfer 4-keto-6-deoxy-glucose to QA-tri, which is in turn reduced to D-fucose by SDR1, thus leading to QA-triF formation via the initiation of the C-28 sugar chain (PubMed:39043959)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -681,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -700,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"id\":\"GO:0016135\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:saponin biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -719,15 +478,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/10",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"id\":\"GO:0016104\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:triterpenoid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/10",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -738,15 +497,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json",
-  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
-  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Jo S.\",\"El-Demerdash A.\",\"Owen C.\",\"Srivastava V.\",\"Wu D.\",\"Kikuchi S.\",\"Reed J.\",\"Hodgson H.\",\"Harkess A.\",\"Shu S.\",\"Plott C.\",\"Jenkins J.\",\"Williams M.\",\"Boston L.-B.\",\"Lacchini E.\",\"Qu T.\",\"Goossens A.\",\"Grimwood J.\",\"Schmutz J.\",\"Leebens-Mack J.\",\"Osbourn A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39043959\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-024-01681-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"215\",\"id\":\"39043959\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"226\",\"publicationDate\":\"2025\",\"title\":\"Unlocking saponin biosynthesis in soapwort.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WWM48152.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"TISSUE SPECIFICITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:41.867838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9e83ecfae642612e0a9d04119aef39a3020c2e00cb00661e9ca5632043218b90",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1M2U7.json"
 }
 ```
 
@@ -756,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5",
-  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
-  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   GT741_SAPOF             Reviewed;         468 AA.\nAC   A0AAW1M2U7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-NOV-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=UDP-glucosyl transferase 74CD1 {ECO:0000303|PubMed:39043959};\nDE            Short=SoUGT74CD1 {ECO:0000303|PubMed:39043959};\nDE            EC=2.4.1.- {ECO:0000269|PubMed:39043959};\nGN   Name=UGT74CD1 {ECO:0000303|PubMed:39043959};\nGN   Synonyms=Saoffv11011728m {ECO:0000303|PubMed:39043959};\nGN   ORFNames=RND81_03G023500 {ECO:0000312|EMBL:KAK9740266.1};\nOS   Saponaria officinalis (Common soapwort) (Lychnis saponaria).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Caryophyllaceae; Caryophylleae; Saponaria.\nOX   NCBI_TaxID=3572;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5"
 }
 ```
 
@@ -777,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5",
-  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
-  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
-  "source_locator": "lines 17-26",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WWM48152.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, TISSUE\nRP   SPECIFICITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39043959; DOI=10.1038/s41589-024-01681-7;\nRA   Jo S., El-Demerdash A., Owen C., Srivastava V., Wu D., Kikuchi S., Reed J.,\nRA   Hodgson H., Harkess A., Shu S., Plott C., Jenkins J., Williams M.,\nRA   Boston L.-B., Lacchini E., Qu T., Goossens A., Grimwood J., Schmutz J.,\nRA   Leebens-Mack J., Osbourn A.;\nRT   \"Unlocking saponin biosynthesis in soapwort.\";\nRL   Nat. Chem. Biol. 21:215-226(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5"
 }
 ```
 
@@ -798,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5",
-  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
-  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
-  "source_locator": "lines 34-42",
   "excerpt": "CC   -!- FUNCTION: Component of the oleanane-type triterpene saponins (e.g.\nCC       saponarioside A and saponarioside B) biosynthetic pathway, leading to\nCC       the production of natural products with detergent properties used as\nCC       traditional sources of soap (PubMed:39043959). A glycosyltransferase\nCC       that, together with SDR1, mediates the conversion of QA-tri to QA-triF;\nCC       UGT74CD1 may transfer 4-keto-6-deoxy-glucose to QA-tri, which is in\nCC       turn reduced to D-fucose by SDR1, thus leading to QA-triF formation via\nCC       the initiation of the C-28 sugar chain (PubMed:39043959).\nCC       {ECO:0000269|PubMed:39043959}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5"
 }
 ```
 
@@ -819,18 +578,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5",
-  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
-  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
-  "source_locator": "lines 52-53",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:39043959}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5"
 }
 ```
 
@@ -840,18 +599,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5",
-  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
-  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
-  "source_locator": "lines 77-77",
   "excerpt": "DR   GO; GO:0016135; P:saponin biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-77",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5"
 }
 ```
 
@@ -861,18 +620,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5",
-  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
-  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
-  "source_locator": "lines 78-78",
   "excerpt": "DR   GO; GO:0016104; P:triterpenoid biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:45.433800+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 78-78",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6fb7981b56d64ad94695deca153a07b58aaf5f39453d0b61b923eef58aac0a67",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1M2U7?format=txt&versions=5"
 }
 ```
 
@@ -883,15 +642,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 2951-2964",
   "excerpt": "[Term]\nid: GO:0000272\nname: polysaccharide catabolic process\nnamespace: biological_process\nalt_id: GO:0044244\ndef: \"The chemical reactions and pathways resulting in the breakdown of a polysaccharide, a polymer of many (typically more than 10) monosaccharide residues linked glycosidically.\" [PMID:33139480]\nsynonym: \"multicellular organismal polysaccharide catabolic process\" NARROW []\nsynonym: \"polysaccharide breakdown\" EXACT []\nsynonym: \"polysaccharide catabolism\" EXACT []\nsynonym: \"polysaccharide degradation\" EXACT []\nis_a: GO:0005976 ! polysaccharide metabolic process\nis_a: GO:0009057 ! macromolecule catabolic process\nis_a: GO:0016052 ! carbohydrate catabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000272",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 2951-2964",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000272"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -902,15 +661,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 123836-123847",
   "excerpt": "[Term]\nid: GO:0016135\nname: saponin biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of saponins, glycosides of plants in which the aglycan (sapogenin) group is a terpene or steroid and the sugar group is a glucose, a galactose, a pentose, a methylpentose or an oligosaccharide. Saponins are powerful surfactant agents and membrane active; they are, hence, toxic to animals on injection.\" [GOC:curators]\nsynonym: \"saponin anabolism\" EXACT []\nsynonym: \"saponin biosynthesis\" EXACT []\nsynonym: \"saponin formation\" EXACT []\nsynonym: \"saponin synthesis\" EXACT []\nis_a: GO:0016134 ! saponin metabolic process\nis_a: GO:0016138 ! glycoside biosynthetic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016135",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 123836-123847",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016135"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -921,15 +680,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 320117-320131",
   "excerpt": "[Term]\nid: GO:0050850\nname: positive regulation of calcium-mediated signaling\nnamespace: biological_process\ndef: \"Any process that activates or increases the frequency, rate or extent of calcium-mediated signaling.\" [GOC:ai]\nsynonym: \"activation of calcium-mediated signaling\" NARROW []\nsynonym: \"positive regulation of calcium-mediated signalling\" EXACT []\nsynonym: \"stimulation of calcium-mediated signaling\" NARROW []\nsynonym: \"up regulation of calcium-mediated signaling\" EXACT []\nsynonym: \"up-regulation of calcium-mediated signaling\" EXACT []\nsynonym: \"upregulation of calcium-mediated signaling\" EXACT []\nis_a: GO:0050848 ! regulation of calcium-mediated signaling\nis_a: GO:1902533 ! positive regulation of intracellular signal transduction\nrelationship: positively_regulates GO:0019722 ! calcium-mediated signaling\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0050850",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 320117-320131",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0050850"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -940,15 +699,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 404556-404567",
   "excerpt": "[Term]\nid: GO:0097345\nname: mitochondrial outer membrane permeabilization\nnamespace: biological_process\ndef: \"The process by which the mitochondrial outer membrane becomes permeable to the passing of proteins and other molecules from the intermembrane space to the cytosol as part of the apoptotic signaling pathway.\" [GOC:BHF, GOC:mtg_apoptosis, GOC:pg, PMID:21041309]\ncomment: BAX and BAK are involved in this process, as reviewed in PMID:21760595 (the human proteins have UniProt symbols Q07812 and Q16611 respectively).\nsynonym: \"mitochondrial outer membrane permeabilization during apoptotic cell death\" BROAD []\nsynonym: \"mitochondrion outer membrane permeabilization\" EXACT []\nsynonym: \"MOMP\" EXACT []\nis_a: GO:1902110 ! positive regulation of mitochondrial membrane permeability involved in apoptotic process\nrelationship: part_of GO:0097190 ! apoptotic signaling pathway\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0097345",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 404556-404567",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0097345"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

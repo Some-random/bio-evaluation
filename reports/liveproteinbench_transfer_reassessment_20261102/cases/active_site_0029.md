@@ -1,18 +1,16 @@
-# active_site_0029: before and after transfer clarification
+# active_site_0029
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0029.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0029.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **A** — Position 286 (Charge relay system)
+**Expected answer:** **A** — Position 286 (Charge relay system)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence's UniProt annotation identifies position 286 as an active-site residue in the charge relay system. This is a computational PROSITE-ProRule annotation, not direct experimental evidence for that residue.
-
-Citations as saved: [C5](#evidence-c5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not establish which exact position is annotated as part of this enzyme's catalytic charge relay system. Recognizing the protein family and using its catalytic-residue pattern could guide a prediction, but does not securely identify the listed position from the supplied information.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site annotation assigning the charge relay system to position 286.
-
-
-**Reason**
-
-> Choosing A depends on the residue-level annotation for this particular protein, which is not supplied in the question; remembering the sequence's database entry would be lookup or memorization, not reasoning from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only A among the listed options matches the supplied annotation for position 286. However, it names only one residue, not the full catalytic center.
-
-
-### Important caveats
-
-- The same matched-sequence annotation also lists charge-relay-system residues at positions 342 and 519; these are not options.
-- The cited active-site assignment is computationally annotated, and the evidence provided does not independently establish it experimentally.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not establish which exact position is annotated as part of this enzyme's catalytic charge relay system. Recognizing the protein family and using its catalytic-residue pattern could guide a prediction, but does not securely identify the listed position from the supplied information.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning the charge relay system to position 286.",
-    "reason": "Choosing A depends on the residue-level annotation for this particular protein, which is not supplied in the question; remembering the sequence's database entry would be lookup or memorization, not reasoning from the input."
-  },
-  "case_id": "active_site_0029",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence's UniProt annotation identifies position 286 as an active-site residue in the charge relay system. This is a computational PROSITE-ProRule annotation, not direct experimental evidence for that residue."
-  },
-  "important_caveats": [
-    "The same matched-sequence annotation also lists charge-relay-system residues at positions 342 and 519; these are not options.",
-    "The cited active-site assignment is computationally annotated, and the evidence provided does not independently establish it experimentally."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only A among the listed options matches the supplied annotation for position 286. However, it names only one residue, not the full catalytic center."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0029",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence's UniProt annotation identifies position 286 as an active-site residue in the charge relay system. This is a computational PROSITE-ProRule annotation, not direct experimental evidence for that residue.",
-    "evidence_ids": ["C5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not establish which exact position is annotated as part of this enzyme's catalytic charge relay system. Recognizing the protein family and using its catalytic-residue pattern could guide a prediction, but does not securely identify the listed position from the supplied information.",
-    "missing_item_specific_fact": "The protein-specific active-site annotation assigning the charge relay system to position 286.",
-    "reason": "Choosing A depends on the residue-level annotation for this particular protein, which is not supplied in the question; remembering the sequence's database entry would be lookup or memorization, not reasoning from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only A among the listed options matches the supplied annotation for position 286. However, it names only one residue, not the full catalytic center."
-  },
-  "important_caveats": [
-    "The same matched-sequence annotation also lists charge-relay-system residues at positions 342 and 519; these are not options.",
-    "The cited active-site assignment is computationally annotated, and the evidence provided does not independently establish it experimentally."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A509AM03 (PbSUB1, subtilisin-like protease 1 from Plasmodium berghei) annotates position 286 as an Active site in the 'Charge relay system' (evidence ECO:0000255|PROSITE-ProRule:PRU01240). The sequence matches (599 aa, SHA-256 identical). The annotation is computational (PROSITE-ProRule pattern match) rather than directly experimental, but it is a legitimate database annotation consistent with the known subtilisin catalytic triad (Asp-His-Ser). The other three options (180, 12, 365) have no active-site annotation and reference 'beta-ketoacyl synthase activity' or 'proton acceptor' roles incompatible with a serine protease.
-
-Citations as saved: [C5](#evidence-c5), [H6](#evidence-h6), [C4](#evidence-c4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein contains recognizable subtilisin-family motifs: a GDS motif (~pos 158, catalytic Asp), a GSH motif (~pos 286, catalytic His), and a GTSMA motif (~pos 475, catalytic Ser). Subtilisin-like serine proteases (EC 3.4.21.62) catalyze via a charge-relay triad, not via beta-ketoacyl synthase chemistry. Options B and D invoke 'beta-ketoacyl synthase activity,' a fatty-acid biosynthesis function wholly unrelated to proteolysis. Option C places a 'proton acceptor' at position 12, which falls within the N-terminal signal peptide (cleaved at ~pos 19-20 per the precursor flag and the observed 'IPAHNDL' signal-peptide region), making it impossible for that residue to participate in catalysis. By elimination on enzyme-class grounds, only A (charge relay system, consistent with subtilisin catalysis) remains.
-
-
-**Missing item-specific fact**
-
-> Precise confirmation that the His of the triad falls exactly at residue 286 (rather than, say, 284 or 288) requires either residue-by-residue counting through 599 aa or knowledge of the specific PROSITE-ProRule PRU01240 hit position. However, the distractors are eliminable by general enzymology without this precision.
-
-
-**Reason**
-
-> The question is answerable by recognizing the protein as a subtilisin-like protease (from sequence motifs and overall architecture), applying the general fact that subtilisins use a charge-relay triad, and eliminating options that invoke an unrelated enzyme class (beta-ketoacyl synthase) or a signal-peptide position. This constitutes a concrete biological argument distinguishing the choices. The precise positional verification is somewhat lookup-assisted, but the elimination logic is robust.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only option A references a mechanism (charge relay system) consistent with the protein's actual enzymatic class. B and D invoke beta-ketoacyl synthase activity (fatty-acid biosynthesis), which is categorically incompatible with a serine protease. C places a catalytic role in the signal peptide. No other option is defensible.
-
-
-### Important caveats
-
-- The active-site annotation at position 286 is based on PROSITE-ProRule pattern matching (ECO:0000255), i.e., a computational inference from the subtilisin signature, not direct experimental mutagenesis or crystallographic evidence for this specific Plasmodium berghei protein.
-- The full catalytic triad comprises positions 286, 342, and 519 (all annotated as charge relay system). The question singles out only 286; a model that identified 342 or 519 would not find a matching option, but those are not offered as choices.
-- The protein is a precursor; the mature protease begins after signal-peptide cleavage (~pos 19-20) and further processing at pos 195-196. Residue numbering in the options refers to the full precursor sequence.
-- The identity of the protein (PbSUB1) and its accession were not provided to the evaluated model; recognition must come from sequence analysis alone.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein contains recognizable subtilisin-family motifs: a GDS motif (~pos 158, catalytic Asp), a GSH motif (~pos 286, catalytic His), and a GTSMA motif (~pos 475, catalytic Ser). Subtilisin-like serine proteases (EC 3.4.21.62) catalyze via a charge-relay triad, not via beta-ketoacyl synthase chemistry. Options B and D invoke 'beta-ketoacyl synthase activity,' a fatty-acid biosynthesis function wholly unrelated to proteolysis. Option C places a 'proton acceptor' at position 12, which falls within the N-terminal signal peptide (cleaved at ~pos 19-20 per the precursor flag and the observed 'IPAHNDL' signal-peptide region), making it impossible for that residue to participate in catalysis. By elimination on enzyme-class grounds, only A (charge relay system, consistent with subtilisin catalysis) remains.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise confirmation that the His of the triad falls exactly at residue 286 (rather than, say, 284 or 288) requires either residue-by-residue counting through 599 aa or knowledge of the specific PROSITE-ProRule PRU01240 hit position. However, the distractors are eliminable by general enzymology without this precision.",
-    "reason": "The question is answerable by recognizing the protein as a subtilisin-like protease (from sequence motifs and overall architecture), applying the general fact that subtilisins use a charge-relay triad, and eliminating options that invoke an unrelated enzyme class (beta-ketoacyl synthase) or a signal-peptide position. This constitutes a concrete biological argument distinguishing the choices. The precise positional verification is somewhat lookup-assisted, but the elimination logic is robust."
-  },
-  "case_id": "active_site_0029",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H6",
-      "C4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A509AM03 (PbSUB1, subtilisin-like protease 1 from Plasmodium berghei) annotates position 286 as an Active site in the 'Charge relay system' (evidence ECO:0000255|PROSITE-ProRule:PRU01240). The sequence matches (599 aa, SHA-256 identical). The annotation is computational (PROSITE-ProRule pattern match) rather than directly experimental, but it is a legitimate database annotation consistent with the known subtilisin catalytic triad (Asp-His-Ser). The other three options (180, 12, 365) have no active-site annotation and reference 'beta-ketoacyl synthase activity' or 'proton acceptor' roles incompatible with a serine protease."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 286 is based on PROSITE-ProRule pattern matching (ECO:0000255), i.e., a computational inference from the subtilisin signature, not direct experimental mutagenesis or crystallographic evidence for this specific Plasmodium berghei protein.",
-    "The full catalytic triad comprises positions 286, 342, and 519 (all annotated as charge relay system). The question singles out only 286; a model that identified 342 or 519 would not find a matching option, but those are not offered as choices.",
-    "The protein is a precursor; the mature protease begins after signal-peptide cleavage (~pos 19-20) and further processing at pos 195-196. Residue numbering in the options refers to the full precursor sequence.",
-    "The identity of the protein (PbSUB1) and its accession were not provided to the evaluated model; recognition must come from sequence analysis alone."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option A references a mechanism (charge relay system) consistent with the protein's actual enzymatic class. B and D invoke beta-ketoacyl synthase activity (fatty-acid biosynthesis), which is categorically incompatible with a serine protease. C places a catalytic role in the signal peptide. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0029",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A509AM03 (PbSUB1, subtilisin-like protease 1 from Plasmodium berghei) annotates position 286 as an Active site in the 'Charge relay system' (evidence ECO:0000255|PROSITE-ProRule:PRU01240). The sequence matches (599 aa, SHA-256 identical). The annotation is computational (PROSITE-ProRule pattern match) rather than directly experimental, but it is a legitimate database annotation consistent with the known subtilisin catalytic triad (Asp-His-Ser). The other three options (180, 12, 365) have no active-site annotation and reference 'beta-ketoacyl synthase activity' or 'proton acceptor' roles incompatible with a serine protease.",
-    "evidence_ids": ["C5", "H6", "C4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein contains recognizable subtilisin-family motifs: a GDS motif (~pos 158, catalytic Asp), a GSH motif (~pos 286, catalytic His), and a GTSMA motif (~pos 475, catalytic Ser). Subtilisin-like serine proteases (EC 3.4.21.62) catalyze via a charge-relay triad, not via beta-ketoacyl synthase chemistry. Options B and D invoke 'beta-ketoacyl synthase activity,' a fatty-acid biosynthesis function wholly unrelated to proteolysis. Option C places a 'proton acceptor' at position 12, which falls within the N-terminal signal peptide (cleaved at ~pos 19-20 per the precursor flag and the observed 'IPAHNDL' signal-peptide region), making it impossible for that residue to participate in catalysis. By elimination on enzyme-class grounds, only A (charge relay system, consistent with subtilisin catalysis) remains.",
-    "missing_item_specific_fact": "Precise confirmation that the His of the triad falls exactly at residue 286 (rather than, say, 284 or 288) requires either residue-by-residue counting through 599 aa or knowledge of the specific PROSITE-ProRule PRU01240 hit position. However, the distractors are eliminable by general enzymology without this precision.",
-    "reason": "The question is answerable by recognizing the protein as a subtilisin-like protease (from sequence motifs and overall architecture), applying the general fact that subtilisins use a charge-relay triad, and eliminating options that invoke an unrelated enzyme class (beta-ketoacyl synthase) or a signal-peptide position. This constitutes a concrete biological argument distinguishing the choices. The precise positional verification is somewhat lookup-assisted, but the elimination logic is robust."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option A references a mechanism (charge relay system) consistent with the protein's actual enzymatic class. B and D invoke beta-ketoacyl synthase activity (fatty-acid biosynthesis), which is categorically incompatible with a serine protease. C places a catalytic role in the signal peptide. No other option is defensible."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 286 is based on PROSITE-ProRule pattern matching (ECO:0000255), i.e., a computational inference from the subtilisin signature, not direct experimental mutagenesis or crystallographic evidence for this specific Plasmodium berghei protein.",
-    "The full catalytic triad comprises positions 286, 342, and 519 (all annotated as charge relay system). The question singles out only 286; a model that identified 342 or 519 would not find a matching option, but those are not offered as choices.",
-    "The protein is a precursor; the mature protease begins after signal-peptide cleavage (~pos 19-20) and further processing at pos 195-196. Residue numbering in the options refers to the full precursor sequence.",
-    "The identity of the protein (PbSUB1) and its accession were not provided to the evaluated model; recognition must come from sequence analysis alone."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A509AM03",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c5873da74b946ad1a9fd22f718bcaa153629124ee65112b496cac3092aaf6e26",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 599,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c5873da74b946ad1a9fd22f718bcaa153629124ee65112b496cac3092aaf6e26",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-04-09",
@@ -530,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-09-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "current_source_sequence_sha256": "c5873da74b946ad1a9fd22f718bcaa153629124ee65112b496cac3092aaf6e26",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 599,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c5873da74b946ad1a9fd22f718bcaa153629124ee65112b496cac3092aaf6e26",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 30,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A509AM03",
   "selected_historical_entry_version": 30,
+  "selected_historical_record_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "selected_historical_source_sequence_length": 599,
+  "selected_historical_source_sequence_sha256": "c5873da74b946ad1a9fd22f718bcaa153629124ee65112b496cac3092aaf6e26",
   "selected_historical_version": {
     "accession": "A0A509AM03",
     "database": "Swiss-Prot",
@@ -548,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "SUB1_PLABA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "selected_historical_source_sequence_sha256": "c5873da74b946ad1a9fd22f718bcaa153629124ee65112b496cac3092aaf6e26",
-  "selected_historical_source_sequence_length": 599,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 30,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A509AM03\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -598,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-09-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -617,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000074855\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Vinckeia\"],\"scientificName\":\"Plasmodium berghei (strain Anka)\",\"taxonId\":5823}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -636,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23653352\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24089525\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24348254\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30941868\",\"source\":\"PubMed\"}],\"value\":\"PbSUB1\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23653352\",\"source\":\"PubMed\"}],\"value\":\"3.4.21.62\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24348254\",\"source\":\"PubMed\"}],\"value\":\"Subtilisin-like protease 1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -655,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Charge relay system\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01240\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":286},\"start\":{\"modifier\":\"EXACT\",\"value\":286}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -674,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Charge relay system\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01240\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":342},\"start\":{\"modifier\":\"EXACT\",\"value\":342}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -693,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"Charge relay system\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01240\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":519},\"start\":{\"modifier\":\"EXACT\",\"value\":519}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -712,15 +474,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"4\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":123},\"start\":{\"modifier\":\"EXACT\",\"value\":123}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -731,15 +493,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"4\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":126},\"start\":{\"modifier\":\"EXACT\",\"value\":126}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -750,15 +512,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"4\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":128},\"start\":{\"modifier\":\"EXACT\",\"value\":128}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -769,15 +531,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/11",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"4\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":183},\"start\":{\"modifier\":\"EXACT\",\"value\":183}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/11",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -788,15 +550,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/12",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"1\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":251},\"start\":{\"modifier\":\"EXACT\",\"value\":251}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/12",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -807,15 +569,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/13",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"1\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":295},\"start\":{\"modifier\":\"EXACT\",\"value\":295}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/13",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -826,15 +588,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/14",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"2\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":306},\"start\":{\"modifier\":\"EXACT\",\"value\":306}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/14",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -845,15 +607,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/15",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"3\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":306},\"start\":{\"modifier\":\"EXACT\",\"value\":306}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/15",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -864,15 +626,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C16",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/16",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"3\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":314},\"start\":{\"modifier\":\"EXACT\",\"value\":314}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/16",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -883,15 +645,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C17",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/17",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"2\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":315},\"start\":{\"modifier\":\"EXACT\",\"value\":315}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/17",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -902,15 +664,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C18",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/18",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"3\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":316},\"start\":{\"modifier\":\"EXACT\",\"value\":316}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/18",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -921,15 +683,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C19",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/19",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"3\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":318},\"start\":{\"modifier\":\"EXACT\",\"value\":318}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/19",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -940,15 +702,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C20",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/20",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"3\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":320},\"start\":{\"modifier\":\"EXACT\",\"value\":320}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/20",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -959,15 +721,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C21",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/21",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"2\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":322},\"start\":{\"modifier\":\"EXACT\",\"value\":322}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/21",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -978,15 +740,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C22",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/22",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"3\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":323},\"start\":{\"modifier\":\"EXACT\",\"value\":323}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/22",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -997,15 +759,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C23",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/23",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"1\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":353},\"start\":{\"modifier\":\"EXACT\",\"value\":353}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/23",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1016,15 +778,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C24",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/24",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"1\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":356},\"start\":{\"modifier\":\"EXACT\",\"value\":356}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/24",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1035,15 +797,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C25",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/25",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"1\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":358},\"start\":{\"modifier\":\"EXACT\",\"value\":358}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/25",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1054,15 +816,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C26",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/26",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8I0V0\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29108\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29108\",\"label\":\"1\",\"name\":\"Ca(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":360},\"start\":{\"modifier\":\"EXACT\",\"value\":360}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/26",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1073,15 +835,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C27",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/features/27",
   "excerpt": "{\"description\":\"Cleavage\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23653352\",\"source\":\"PubMed\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":196},\"start\":{\"modifier\":\"EXACT\",\"value\":195}},\"type\":\"Site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/27",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1092,15 +854,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C28",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Bouillon A.\",\"Giganti D.\",\"Benedet C.\",\"Gorgette O.\",\"Petres S.\",\"Crublet E.\",\"Girard-Blanc C.\",\"Witkowski B.\",\"Menard D.\",\"Nilges M.\",\"Mercereau-Puijalon O.\",\"Stoven V.\",\"Barale J.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23653352\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m113.456764\"}],\"citationType\":\"journal article\",\"firstPage\":\"18561\",\"id\":\"23653352\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"18573\",\"publicationDate\":\"2013\",\"title\":\"In Silico screening on the three-dimensional model of the Plasmodium vivax SUB1 protease leads to the validation of a novel anti-parasite compound.\",\"volume\":\"288\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"CATALYTIC ACTIVITY\",\"PROTEOLYTIC CLEAVAGE\",\"CLEAVAGE SITE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1111,15 +873,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C29",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Tawk L.\",\"Lacroix C.\",\"Gueirard P.\",\"Kent R.\",\"Gorgette O.\",\"Thiberge S.\",\"Mercereau-Puijalon O.\",\"Menard R.\",\"Barale J.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24089525\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m113.513234\"}],\"citationType\":\"journal article\",\"firstPage\":\"33336\",\"id\":\"24089525\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"33346\",\"publicationDate\":\"2013\",\"title\":\"A key role for Plasmodium subtilisin-like SUB1 protease in egress of malaria parasites from host hepatocytes.\",\"volume\":\"288\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"DEVELOPMENTAL STAGE\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1130,15 +892,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C30",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Suarez C.\",\"Volkmann K.\",\"Gomes A.R.\",\"Billker O.\",\"Blackman M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24348254\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.ppat.1003811\"}],\"citationType\":\"journal article\",\"firstPage\":\"e1003811\",\"id\":\"24348254\",\"journal\":\"PLoS Pathog.\",\"lastPage\":\"e1003811\",\"publicationDate\":\"2013\",\"title\":\"The malarial serine protease SUB1 plays an essential role in parasite liver stage development.\",\"volume\":\"9\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1149,15 +911,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C31",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json",
-  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
-  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Pace T.\",\"Grasso F.\",\"Camarda G.\",\"Suarez C.\",\"Blackman M.J.\",\"Ponzi M.\",\"Olivieri A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30941868\"},{\"database\":\"DOI\",\"id\":\"10.1111/cmi.13028\"}],\"citationType\":\"journal article\",\"firstPage\":\"e13028\",\"id\":\"30941868\",\"journal\":\"Cell. Microbiol.\",\"lastPage\":\"e13028\",\"publicationDate\":\"2019\",\"title\":\"The Plasmodium berghei serine protease PbSUB1 plays an important role in male gamete egress.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-01T06:24:47.276162+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58189b21f52a9fa91fa2e6cfc2283bebb23b54839f051ab7a55f96582d49e7b5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AM03.json"
 }
 ```
 
@@ -1167,18 +929,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   SUB1_PLABA              Reviewed;         599 AA.\nAC   A0A509AM03;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-SEP-2019, sequence version 1.\nDT   28-JAN-2026, entry version 30.\nDE   RecName: Full=Subtilisin-like protease 1 {ECO:0000303|PubMed:24348254};\nDE            EC=3.4.21.62 {ECO:0000269|PubMed:23653352};\nDE   AltName: Full=PbSUB1 {ECO:0000303|PubMed:23653352, ECO:0000303|PubMed:24089525, ECO:0000303|PubMed:24348254, ECO:0000303|PubMed:30941868};\nDE   Flags: Precursor;\nGN   Name=SUB1 {ECO:0000305};\nGN   ORFNames=PBANKA_1107100 {ECO:0000312|EMBL:VUC56494.1};\nOS   Plasmodium berghei (strain Anka).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Vinckeia).\nOX   NCBI_TaxID=5823 {ECO:0000312|Proteomes:UP000074855};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1188,18 +950,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 28-36",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   CATALYTIC ACTIVITY, PROTEOLYTIC CLEAVAGE, AND CLEAVAGE SITE.\nRX   PubMed=23653352; DOI=10.1074/jbc.m113.456764;\nRA   Bouillon A., Giganti D., Benedet C., Gorgette O., Petres S., Crublet E.,\nRA   Girard-Blanc C., Witkowski B., Menard D., Nilges M., Mercereau-Puijalon O.,\nRA   Stoven V., Barale J.C.;\nRT   \"In Silico screening on the three-dimensional model of the Plasmodium vivax\nRT   SUB1 protease leads to the validation of a novel anti-parasite compound.\";\nRL   J. Biol. Chem. 288:18561-18573(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1209,18 +971,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 37-44",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, DEVELOPMENTAL STAGE, AND DISRUPTION PHENOTYPE.\nRX   PubMed=24089525; DOI=10.1074/jbc.m113.513234;\nRA   Tawk L., Lacroix C., Gueirard P., Kent R., Gorgette O., Thiberge S.,\nRA   Mercereau-Puijalon O., Menard R., Barale J.C.;\nRT   \"A key role for Plasmodium subtilisin-like SUB1 protease in egress of\nRT   malaria parasites from host hepatocytes.\";\nRL   J. Biol. Chem. 288:33336-33346(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1230,18 +992,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 45-52",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, SUBCELLULAR LOCATION, DEVELOPMENTAL STAGE, AND DISRUPTION\nRP   PHENOTYPE.\nRX   PubMed=24348254; DOI=10.1371/journal.ppat.1003811;\nRA   Suarez C., Volkmann K., Gomes A.R., Billker O., Blackman M.J.;\nRT   \"The malarial serine protease SUB1 plays an essential role in parasite\nRT   liver stage development.\";\nRL   PLoS Pathog. 9:e1003811-e1003811(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1251,18 +1013,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 53-61",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   FUNCTION, SUBCELLULAR LOCATION, DEVELOPMENTAL STAGE, AND DISRUPTION\nRP   PHENOTYPE.\nRX   PubMed=30941868; DOI=10.1111/cmi.13028;\nRA   Pace T., Grasso F., Camarda G., Suarez C., Blackman M.J., Ponzi M.,\nRA   Olivieri A.;\nRT   \"The Plasmodium berghei serine protease PbSUB1 plays an important role in\nRT   male gamete egress.\";\nRL   Cell. Microbiol. 21:e13028-e13028(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1272,18 +1034,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 178-180",
   "excerpt": "FT   ACT_SITE        286\nFT                   /note=\"Charge relay system\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01240\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 178-180",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1293,18 +1055,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 181-183",
   "excerpt": "FT   ACT_SITE        342\nFT                   /note=\"Charge relay system\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01240\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 181-183",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1314,18 +1076,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 184-186",
   "excerpt": "FT   ACT_SITE        519\nFT                   /note=\"Charge relay system\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01240\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 184-186",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1335,18 +1097,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 187-191",
   "excerpt": "FT   BINDING         123\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"4\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 187-191",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1356,18 +1118,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 192-196",
   "excerpt": "FT   BINDING         126\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"4\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 192-196",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1377,18 +1139,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 197-201",
   "excerpt": "FT   BINDING         128\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"4\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 197-201",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1398,18 +1160,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 202-206",
   "excerpt": "FT   BINDING         183\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"4\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 202-206",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1419,18 +1181,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H13",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 207-211",
   "excerpt": "FT   BINDING         251\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"1\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 207-211",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1440,18 +1202,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H14",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 212-216",
   "excerpt": "FT   BINDING         295\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"1\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 212-216",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1461,18 +1223,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H15",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 217-221",
   "excerpt": "FT   BINDING         306\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"2\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 217-221",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1482,18 +1244,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H16",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 222-226",
   "excerpt": "FT   BINDING         306\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"3\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 222-226",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1503,18 +1265,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H17",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 227-231",
   "excerpt": "FT   BINDING         314\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"3\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 227-231",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1524,18 +1286,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H18",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 232-236",
   "excerpt": "FT   BINDING         315\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"2\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 232-236",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1545,18 +1307,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H19",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 237-241",
   "excerpt": "FT   BINDING         316\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"3\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 237-241",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1566,18 +1328,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H20",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 242-246",
   "excerpt": "FT   BINDING         318\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"3\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 242-246",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1587,18 +1349,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H21",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 247-251",
   "excerpt": "FT   BINDING         320\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"3\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 247-251",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1608,18 +1370,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H22",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 252-256",
   "excerpt": "FT   BINDING         322\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"2\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 252-256",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1629,18 +1391,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H23",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 257-261",
   "excerpt": "FT   BINDING         323\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"3\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 257-261",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1650,18 +1412,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H24",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 262-266",
   "excerpt": "FT   BINDING         353\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"1\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 262-266",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1671,18 +1433,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H25",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 267-271",
   "excerpt": "FT   BINDING         356\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"1\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 267-271",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1692,18 +1454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H26",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 272-276",
   "excerpt": "FT   BINDING         358\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"1\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 272-276",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1713,18 +1475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H27",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 277-281",
   "excerpt": "FT   BINDING         360\nFT                   /ligand=\"Ca(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29108\"\nFT                   /ligand_label=\"1\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8I0V0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 277-281",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 
@@ -1734,18 +1496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H28",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30",
-  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
-  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
-  "source_locator": "lines 282-284",
   "excerpt": "FT   SITE            195..196\nFT                   /note=\"Cleavage\"\nFT                   /evidence=\"ECO:0000269|PubMed:23653352\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:31.257005+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 282-284",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c0f9a4e5e66e23741f96fa610fa30c4dfac008f0d5ae074d8b0834a351f4fc02",
+  "url": "https://rest.uniprot.org/unisave/A0A509AM03?format=txt&versions=30"
 }
 ```
 

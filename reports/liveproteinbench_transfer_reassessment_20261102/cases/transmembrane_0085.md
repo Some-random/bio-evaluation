@@ -1,18 +1,16 @@
-# transmembrane_0085: before and after transfer clarification
+# transmembrane_0085
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0085.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/transmembrane_0085.txt)
 
 **Task:** `transmembrane`  
-**Author key, unchanged:** **C** — 5..25
+**Expected answer:** **C** — 5..25
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | no saved label | no saved label | output error (invalid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | Unusable review | Unusable review |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence has a UniProt transmembrane annotation at 5..25, agreeing with choice C. The annotation is computational (ECO:0000255), so it supports the predicted region but is not experimental confirmation.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminus contains a strongly hydrophobic stretch around residues 10–25, which supports a membrane-spanning helix in that region.
-
-
-**Missing item-specific fact**
-
-> The exact annotated boundaries 5..25 are not uniquely derivable from the sequence; choosing those endpoints over other overlapping boundaries requires a protein-specific prediction or annotation.
-
-
-**Reason**
-
-> Sequence composition gives a meaningful basis to predict a transmembrane helix, but does not robustly distinguish the keyed boundaries from the other choices that overlap its hydrophobic core.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B",
-  "C"
-]
-```
-
-> All three options overlap the same N-terminal hydrophobic stretch and could describe a segment spanning the membrane; the prompt does not specify a boundary convention that selects 5..25.
-
-
-### Important caveats
-
-- The supporting annotation is computational, not evidence of an experimentally measured membrane-spanning boundary.
-- Choice D adds a second proposed segment, which is not supported by the cited annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminus contains a strongly hydrophobic stretch around residues 10–25, which supports a membrane-spanning helix in that region.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact annotated boundaries 5..25 are not uniquely derivable from the sequence; choosing those endpoints over other overlapping boundaries requires a protein-specific prediction or annotation.",
-    "reason": "Sequence composition gives a meaningful basis to predict a transmembrane helix, but does not robustly distinguish the keyed boundaries from the other choices that overlap its hydrophobic core."
-  },
-  "case_id": "transmembrane_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence has a UniProt transmembrane annotation at 5..25, agreeing with choice C. The annotation is computational (ECO:0000255), so it supports the predicted region but is not experimental confirmation."
-  },
-  "important_caveats": [
-    "The supporting annotation is computational, not evidence of an experimentally measured membrane-spanning boundary.",
-    "Choice D adds a second proposed segment, which is not supported by the cited annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B",
-      "C"
-    ],
-    "reason": "All three options overlap the same N-terminal hydrophobic stretch and could describe a segment spanning the membrane; the prompt does not specify a boundary convention that selects 5..25."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "transmembrane_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence has a UniProt transmembrane annotation at 5..25, agreeing with choice C. The annotation is computational (ECO:0000255), so it supports the predicted region but is not experimental confirmation.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminus contains a strongly hydrophobic stretch around residues 10–25, which supports a membrane-spanning helix in that region.",
-    "missing_item_specific_fact": "The exact annotated boundaries 5..25 are not uniquely derivable from the sequence; choosing those endpoints over other overlapping boundaries requires a protein-specific prediction or annotation.",
-    "reason": "Sequence composition gives a meaningful basis to predict a transmembrane helix, but does not robustly distinguish the keyed boundaries from the other choices that overlap its hydrophobic core."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B", "C"],
-    "reason": "All three options overlap the same N-terminal hydrophobic stretch and could describe a segment spanning the membrane; the prompt does not specify a boundary convention that selects 5..25."
-  },
-  "important_caveats": [
-    "The supporting annotation is computational, not evidence of an experimentally measured membrane-spanning boundary.",
-    "Choice D adds a second proposed segment, which is not supported by the cited annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProtKB entry Q0CPG7 (Cytochrome P450 monooxygenase astB, Aspergillus terreus) annotates a single transmembrane helical region at positions 5..25 (evidence C5, H3). The annotation is present in both the current (v86) and historical (v84) entries with sequence match confirmed. The evidence code is ECO:0000255 (inferred by similarity), indicating computational/transfer annotation rather than experimental determination, but the annotation is consistent and directly supports choice C.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1), [H1](#evidence-h1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Options B (10..23, 14 residues) and D (includes 508..529, extending beyond the 512-residue protein) are eliminable by general biological knowledge: 14 residues is too short for a transmembrane α-helix (typically 18–25 residues), and a region extending past the C-terminus is physically impossible. Between A (7..27) and C (5..25), both are 21-residue stretches, but option A includes Arg(26) and Cys(27) within its range. Arginine's guanidinium group is extremely unfavorable in the hydrophobic membrane interior, making its inclusion within a TM helix boundary biologically implausible. Option C ends at Ala(25), a hydrophobic residue, and while it includes Asp(5) at the N-terminal edge, a single polar residue at the helix terminus (near the membrane-water interface) is more tolerable than a strongly charged Arg embedded within the helix. Additionally, P450 enzymes characteristically have an N-terminal TM anchor of ~20–25 residues, consistent with C.
-
-
-**Missing item-specific fact**
-
-> The exact boundary precision (5 vs. 7 start, 25 vs. 27 end) is algorithm-dependent; the UniProt annotation uses ECO:0000255 (similarity-based inference), not experimental determination. A hydropathy plot tool might place boundaries at slightly different positions.
-
-
-**Reason**
-
-> The elimination of B and D relies on clear general principles (helix length, protein length). The A-vs-C distinction rests on the well-established biological principle that strongly charged residues (especially Arg) are highly unfavorable within the TM helix core, while a single Asp at the helix edge near the membrane interface is more tolerable. This provides a defensible general-knowledge argument, though the exact boundary is somewhat algorithm-dependent.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> B is eliminable (too short), D is eliminable (extends beyond protein). Between A and C, the inclusion of Arg(26) in A provides a clear biological disqualifier. While the exact boundary (5 vs 7) is not perfectly sharp, the presence of a strongly charged residue within the TM span of A makes C the more defensible choice. No other option is equally defensible.
-
-
-### Important caveats
-
-- The UniProt TM annotation carries evidence code ECO:0000255 (similarity-based inference), not experimental validation. The 'ground truth' boundary is itself a computational prediction.
-- The distinction between starting at position 5 (D) vs. 7 (S) is subtle; both include one polar/charged residue at the helix edge. The stronger argument is the exclusion of Arg(26) in option C.
-- The protein is a fungal P450 with a well-known N-terminal membrane anchor; the general location is predictable from protein family knowledge, but exact boundaries vary by prediction tool.
-- Option D's second region (508..529) extends 17 residues beyond the 512-residue protein, making it trivially eliminable.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Options B (10..23, 14 residues) and D (includes 508..529, extending beyond the 512-residue protein) are eliminable by general biological knowledge: 14 residues is too short for a transmembrane α-helix (typically 18–25 residues), and a region extending past the C-terminus is physically impossible. Between A (7..27) and C (5..25), both are 21-residue stretches, but option A includes Arg(26) and Cys(27) within its range. Arginine's guanidinium group is extremely unfavorable in the hydrophobic membrane interior, making its inclusion within a TM helix boundary biologically implausible. Option C ends at Ala(25), a hydrophobic residue, and while it includes Asp(5) at the N-terminal edge, a single polar residue at the helix terminus (near the membrane-water interface) is more tolerable than a strongly charged Arg embedded within the helix. Additionally, P450 enzymes characteristically have an N-terminal TM anchor of ~20–25 residues, consistent with C.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The exact boundary precision (5 vs. 7 start, 25 vs. 27 end) is algorithm-dependent; the UniProt annotation uses ECO:0000255 (similarity-based inference), not experimental determination. A hydropathy plot tool might place boundaries at slightly different positions.",
-    "reason": "The elimination of B and D relies on clear general principles (helix length, protein length). The A-vs-C distinction rests on the well-established biological principle that strongly charged residues (especially Arg) are highly unfavorable within the TM helix core, while a single Asp at the helix edge near the membrane interface is more tolerable. This provides a defensible general-knowledge argument, though the exact boundary is somewhat algorithm-dependent."
-  },
-  "case_id": "transmembrane_0085",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C1",
-      "H1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProtKB entry Q0CPG7 (Cytochrome P450 monooxygenase astB, Aspergillus terreus) annotates a single transmembrane helical region at positions 5..25 (evidence C5, H3). The annotation is present in both the current (v86) and historical (v84) entries with sequence match confirmed. The evidence code is ECO:0000255 (inferred by similarity), indicating computational/transfer annotation rather than experimental determination, but the annotation is consistent and directly supports choice C."
-  },
-  "important_caveats": [
-    "The UniProt TM annotation carries evidence code ECO:0000255 (similarity-based inference), not experimental validation. The 'ground truth' boundary is itself a computational prediction.",
-    "The distinction between starting at position 5 (D) vs. 7 (S) is subtle; both include one polar/charged residue at the helix edge. The stronger argument is the exclusion of Arg(26) in option C.",
-    "The protein is a fungal P450 with a well-known N-terminal membrane anchor; the general location is predictable from protein family knowledge, but exact boundaries vary by prediction tool.",
-    "Option D's second region (508..529) extends 17 residues beyond the 512-residue protein, making it trivially eliminable."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B is eliminable (too short), D is eliminable (extends beyond protein). Between A and C, the inclusion of Arg(26) in A provides a clear biological disqualifier. While the exact boundary (5 vs 7) is not perfectly sharp, the presence of a strongly charged residue within the TM span of A makes C the more defensible choice. No other option is equally defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "transmembrane_0085",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProtKB entry Q0CPG7 (Cytochrome P450 monooxygenase astB, Aspergillus terreus) annotates a single transmembrane helical region at positions 5..25 (evidence C5, H3). The annotation is present in both the current (v86) and historical (v84) entries with sequence match confirmed. The evidence code is ECO:0000255 (inferred by similarity), indicating computational/transfer annotation rather than experimental determination, but the annotation is consistent and directly supports choice C.",
-    "evidence_ids": ["C5", "H3", "C1", "H1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Options B (10..23, 14 residues) and D (includes 508..529, extending beyond the 512-residue protein) are eliminable by general biological knowledge: 14 residues is too short for a transmembrane α-helix (typically 18–25 residues), and a region extending past the C-terminus is physically impossible. Between A (7..27) and C (5..25), both are 21-residue stretches, but option A includes Arg(26) and Cys(27) within its range. Arginine's guanidinium group is extremely unfavorable in the hydrophobic membrane interior, making its inclusion within a TM helix boundary biologically implausible. Option C ends at Ala(25), a hydrophobic residue, and while it includes Asp(5) at the N-terminal edge, a single polar residue at the helix terminus (near the membrane-water interface) is more tolerable than a strongly charged Arg embedded within the helix. Additionally, P450 enzymes characteristically have an N-terminal TM anchor of ~20–25 residues, consistent with C.",
-    "missing_item_specific_fact": "The exact boundary precision (5 vs. 7 start, 25 vs. 27 end) is algorithm-dependent; the UniProt annotation uses ECO:0000255 (similarity-based inference), not experimental determination. A hydropathy plot tool might place boundaries at slightly different positions.",
-    "reason": "The elimination of B and D relies on clear general principles (helix length, protein length). The A-vs-C distinction rests on the well-established biological principle that strongly charged residues (especially Arg) are highly unfavorable within the TM helix core, while a single Asp at the helix edge near the membrane interface is more tolerable. This provides a defensible general-knowledge argument, though the exact boundary is somewhat algorithm-dependent."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B is eliminable (too short), D is eliminable (extends beyond protein). Between A and C, the inclusion of Arg(26) in A provides a clear biological disqualifier. While the exact boundary (5 vs 7) is not perfectly sharp, the presence of a strongly charged residue within the TM span of A makes C the more defensible choice. No other option is equally defensible."
-  },
-  "important_caveats": [
-    "The UniProt TM annotation carries evidence code ECO:0000255 (similarity-based inference), not experimental validation. The 'ground truth' boundary is itself a computational prediction.",
-    "The distinction between starting at position 5 (D) vs. 7 (S) is subtle; both include one polar/charged residue at the helix edge. The stronger argument is the exclusion of Arg(26) in option C.",
-    "The protein is a fungal P450 with a well-known N-terminal membrane anchor; the general location is predictable from protein family knowledge, but exact boundaries vary by prediction tool.",
-    "Option D's second region (508..529) extends 17 residues beyond the 512-residue protein, making it trivially eliminable."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,43 +160,29 @@ Citations as saved: [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
+**Saved status:** `invalid_review`.
 
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
+**This response is not a usable structured review.** Its saved text is preserved below; any labels in that text are excluded from the summary counts.
 
 No visible final review text was saved. Internal model reasoning is not a substitute for a visible review and is not published. The final-content extraction failed because the saved final content was not text.
 
 **Saved parsed visible review:** `null`.
 
-**Exact saved visible final text:** empty string (`""`). No visible final is synthesized from private reasoning.
-
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+**Saved visible final text:** empty string (`""`).
 
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q0CPG7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "2c0bb03809de07e14ce59b3c4ee4bb0d2d933e55b39228675336ddae248b6fa1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 512,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "2c0bb03809de07e14ce59b3c4ee4bb0d2d933e55b39228675336ddae248b6fa1",
   "current_entry_audit": {
     "entryVersion": 86,
     "firstPublicDate": "2025-04-09",
@@ -439,14 +190,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-10-17",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
-  "current_source_sequence_sha256": "2c0bb03809de07e14ce59b3c4ee4bb0d2d933e55b39228675336ddae248b6fa1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 512,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "2c0bb03809de07e14ce59b3c4ee4bb0d2d933e55b39228675336ddae248b6fa1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 84,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q0CPG7",
   "selected_historical_entry_version": 84,
+  "selected_historical_record_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
+  "selected_historical_source_sequence_length": 512,
+  "selected_historical_source_sequence_sha256": "2c0bb03809de07e14ce59b3c4ee4bb0d2d933e55b39228675336ddae248b6fa1",
   "selected_historical_version": {
     "accession": "Q0CPG7",
     "database": "Swiss-Prot",
@@ -457,24 +224,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ASTB_ASPTN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
-  "selected_historical_source_sequence_sha256": "2c0bb03809de07e14ce59b3c4ee4bb0d2d933e55b39228675336ddae248b6fa1",
-  "selected_historical_source_sequence_length": 512,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 84,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -488,15 +242,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json",
-  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
-  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q0CPG7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json"
 }
 ```
 
@@ -507,15 +261,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json",
-  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
-  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":86,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-10-17\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json"
 }
 ```
 
@@ -526,15 +280,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json",
-  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
-  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus terreus (strain NIH 2624 / FGSC A1156)\",\"taxonId\":341663}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json"
 }
 ```
 
@@ -545,15 +299,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json",
-  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
-  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein B\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29995859\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase astB\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json"
 }
 ```
 
@@ -564,15 +318,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json",
-  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
-  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":25},\"start\":{\"modifier\":\"EXACT\",\"value\":5}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json"
 }
 ```
 
@@ -583,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json",
-  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
-  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yan Y.\",\"Liu Q.\",\"Zang X.\",\"Yuan S.\",\"Bat-Erdene U.\",\"Nguyen C.\",\"Gan J.\",\"Zhou J.\",\"Jacobsen S.E.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29995859\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-018-0319-4\"}],\"citationType\":\"journal article\",\"firstPage\":\"415\",\"id\":\"29995859\",\"journal\":\"Nature\",\"lastPage\":\"418\",\"publicationDate\":\"2018\",\"title\":\"Resistance-gene-directed discovery of a natural-product herbicide with a new mode of action.\",\"volume\":\"559\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:23.383605+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "86ed5fa987c40e9dd0f38132dfb083141c7c6bc7fd318b92a558b8e92e5846fc",
+  "url": "https://rest.uniprot.org/uniprotkb/Q0CPG7.json"
 }
 ```
 
@@ -601,18 +355,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG7?format=txt&versions=84",
-  "source_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
-  "retrieved_utc": "2026-11-02T04:30:28.173476+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   ASTB_ASPTN              Reviewed;         512 AA.\nAC   Q0CPG7;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   17-OCT-2006, sequence version 1.\nDT   28-JAN-2026, entry version 84.\nDE   RecName: Full=Cytochrome P450 monooxygenase astB {ECO:0000303|PubMed:29995859};\nDE            EC=1.-.-.- {ECO:0000269|PubMed:29995859};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein B {ECO:0000303|PubMed:29995859};\nGN   Name=astB {ECO:0000303|PubMed:29995859}; ORFNames=ATEG_04417;\nOS   Aspergillus terreus (strain NIH 2624 / FGSC A1156).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=341663;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:30:28.173476+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG7?format=txt&versions=84"
 }
 ```
 
@@ -622,18 +376,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG7?format=txt&versions=84",
-  "source_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
-  "retrieved_utc": "2026-11-02T04:30:28.173476+00:00",
-  "source_locator": "lines 27-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=29995859; DOI=10.1038/s41586-018-0319-4;\nRA   Yan Y., Liu Q., Zang X., Yuan S., Bat-Erdene U., Nguyen C., Gan J.,\nRA   Zhou J., Jacobsen S.E., Tang Y.;\nRT   \"Resistance-gene-directed discovery of a natural-product herbicide with a\nRT   new mode of action.\";\nRL   Nature 559:415-418(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:30:28.173476+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG7?format=txt&versions=84"
 }
 ```
 
@@ -643,18 +397,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q0CPG7?format=txt&versions=84",
-  "source_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
-  "retrieved_utc": "2026-11-02T04:30:28.173476+00:00",
-  "source_locator": "lines 115-117",
   "excerpt": "FT   TRANSMEM        5..25\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-02T04:30:28.173476+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 115-117",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "af10b808e0591f68545ada812b145c7d6e3f216b49d49121ac583c1305af66ce",
+  "url": "https://rest.uniprot.org/unisave/Q0CPG7?format=txt&versions=84"
 }
 ```
 

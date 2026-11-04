@@ -1,18 +1,16 @@
-# GO_molecular_function_0013: before and after transfer clarification
+# GO_molecular_function_0013
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0013.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0013.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **A** — cysteine-type peptidase activity
+**Expected answer:** **A** — cysteine-type peptidase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Plasmodium berghei SERA3 record, which describes the protein as a putative cysteine protease and assigns cysteine-type peptidase activity. The GO assignment is computational (IEA:InterPro), so it supports the key but is not itself experimental validation.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal signal peptide and large soluble protein are compatible with a secreted parasite antigen, but do not by themselves establish cysteine-type peptidase activity or distinguish an active protease from a related inactive protein.
-
-
-**Missing item-specific fact**
-
-> The SERA3-specific protease-family/domain assignment and evidence that this protein is a putative cysteine protease are not supplied in the question.
-
-
-**Reason**
-
-> The sequence may support computational family recognition, but the functional distinction relies on a protein-specific annotation or domain interpretation not made unambiguous by general biological reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence specifically supports option A; no other listed activity is supported for this sequence.
-
-
-### Important caveats
-
-- The function is described as putative.
-- The GO annotation uses IEA:InterPro evidence, and the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal signal peptide and large soluble protein are compatible with a secreted parasite antigen, but do not by themselves establish cysteine-type peptidase activity or distinguish an active protease from a related inactive protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The SERA3-specific protease-family/domain assignment and evidence that this protein is a putative cysteine protease are not supplied in the question.",
-    "reason": "The sequence may support computational family recognition, but the functional distinction relies on a protein-specific annotation or domain interpretation not made unambiguous by general biological reasoning from the provided input."
-  },
-  "case_id": "GO_molecular_function_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Plasmodium berghei SERA3 record, which describes the protein as a putative cysteine protease and assigns cysteine-type peptidase activity. The GO assignment is computational (IEA:InterPro), so it supports the key but is not itself experimental validation."
-  },
-  "important_caveats": [
-    "The function is described as putative.",
-    "The GO annotation uses IEA:InterPro evidence, and the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports option A; no other listed activity is supported for this sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Plasmodium berghei SERA3 record, which describes the protein as a putative cysteine protease and assigns cysteine-type peptidase activity. The GO assignment is computational (IEA:InterPro), so it supports the key but is not itself experimental validation.",
-    "evidence_ids": ["C1", "C5", "C6", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal signal peptide and large soluble protein are compatible with a secreted parasite antigen, but do not by themselves establish cysteine-type peptidase activity or distinguish an active protease from a related inactive protein.",
-    "missing_item_specific_fact": "The SERA3-specific protease-family/domain assignment and evidence that this protein is a putative cysteine protease are not supplied in the question.",
-    "reason": "The sequence may support computational family recognition, but the functional distinction relies on a protein-specific annotation or domain interpretation not made unambiguous by general biological reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports option A; no other listed activity is supported for this sequence."
-  },
-  "important_caveats": [
-    "The function is described as putative.",
-    "The GO annotation uses IEA:InterPro evidence, and the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A509AC44 (SERA3_PLABA, sequence matched at 1096 AA) explicitly annotates GO:0008234 (cysteine-type peptidase activity) with evidence code IEA:InterPro (C6/H5), and the FUNCTION comment states 'Putative cysteine protease' supported by experimental evidence ECO:0000269|PubMed:30941868 (C5/H4). The 'putative' qualifier and IEA evidence code indicate the assignment is based on domain similarity (InterPro) corroborated by experimental functional context, rather than direct enzymatic assay of this specific protein. Nevertheless, the annotation directly supports choice A.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable papain-like cysteine protease domain: the motif 'CGHNHPDHAVNIIGYGNY' exhibits the canonical Cys-Gly-His-Asn arrangement of the papain superfamily catalytic triad (Cys nucleophile, His general base, Asn stabilizer). Additionally, the SERA (Serine-Repeat Antigen) family in Plasmodium is a well-known biological case where proteins named for serine-rich repeats actually possess cysteine protease catalytic machinery (the catalytic serine is replaced by cysteine). Recognizing the papain-like C.GH…HPD motif from the sequence and knowing the SERA family paradox provides concrete grounds to select cysteine-type peptidase activity over the unrelated binding (B), oxidase (C), or transferase (D) options.
-
-
-**Missing item-specific fact**
-
-> None strictly required; the papain-like domain architecture is identifiable from the sequence, and the SERA-family cysteine-protease biology is general parasitology knowledge. The IEA:InterPro evidence code confirms the domain-based annotation logic is consistent with sequence-level reasoning.
-
-
-**Reason**
-
-> The sequence displays a papain-like cysteine protease catalytic motif (CGHNHPD pattern with downstream conserved residues), and the SERA family's well-documented 'named serine, functions as cysteine protease' biology provides a reasoning pathway. The four options span entirely different GO branches (peptidase, binding, oxidase, transferase), so identifying the protease domain suffices to exclude B, C, and D without needing to memorize the specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent fundamentally different molecular function classes (peptidase, binding, dioxygenase, transferase). The presence of a papain-like catalytic domain in the sequence clearly points to peptidase activity and excludes the other three. No ambiguity among options.
-
-
-### Important caveats
-
-- The GO annotation is IEA:InterPro (computational), and the FUNCTION comment uses 'Putative cysteine protease,' indicating the assignment is not from a direct enzyme assay of SERA3 itself but from domain inference plus experimental context (PubMed:30941868).
-- The SERA family nomenclature is historically misleading: 'serine-repeat' refers to a non-catalytic serine-rich region, while the catalytic residue is cysteine. This is a well-known feature of Plasmodium SERA biology but could confuse a model relying solely on the protein name.
-- The protein is from Plasmodium berghei (strain Anka), a parasitic protist; the functional context (merozoite release from parasitophorous vacuole) is specific to liver-stage biology.
-- Sequence match confirmed at both current (v27) and historical (v26) UniProt snapshots; benchmark sequence SHA256 matches source.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable papain-like cysteine protease domain: the motif 'CGHNHPDHAVNIIGYGNY' exhibits the canonical Cys-Gly-His-Asn arrangement of the papain superfamily catalytic triad (Cys nucleophile, His general base, Asn stabilizer). Additionally, the SERA (Serine-Repeat Antigen) family in Plasmodium is a well-known biological case where proteins named for serine-rich repeats actually possess cysteine protease catalytic machinery (the catalytic serine is replaced by cysteine). Recognizing the papain-like C.GH…HPD motif from the sequence and knowing the SERA family paradox provides concrete grounds to select cysteine-type peptidase activity over the unrelated binding (B), oxidase (C), or transferase (D) options.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; the papain-like domain architecture is identifiable from the sequence, and the SERA-family cysteine-protease biology is general parasitology knowledge. The IEA:InterPro evidence code confirms the domain-based annotation logic is consistent with sequence-level reasoning.",
-    "reason": "The sequence displays a papain-like cysteine protease catalytic motif (CGHNHPD pattern with downstream conserved residues), and the SERA family's well-documented 'named serine, functions as cysteine protease' biology provides a reasoning pathway. The four options span entirely different GO branches (peptidase, binding, oxidase, transferase), so identifying the protease domain suffices to exclude B, C, and D without needing to memorize the specific UniProt entry."
-  },
-  "case_id": "GO_molecular_function_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H4",
-      "H5",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A509AC44 (SERA3_PLABA, sequence matched at 1096 AA) explicitly annotates GO:0008234 (cysteine-type peptidase activity) with evidence code IEA:InterPro (C6/H5), and the FUNCTION comment states 'Putative cysteine protease' supported by experimental evidence ECO:0000269|PubMed:30941868 (C5/H4). The 'putative' qualifier and IEA evidence code indicate the assignment is based on domain similarity (InterPro) corroborated by experimental functional context, rather than direct enzymatic assay of this specific protein. Nevertheless, the annotation directly supports choice A."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA:InterPro (computational), and the FUNCTION comment uses 'Putative cysteine protease,' indicating the assignment is not from a direct enzyme assay of SERA3 itself but from domain inference plus experimental context (PubMed:30941868).",
-    "The SERA family nomenclature is historically misleading: 'serine-repeat' refers to a non-catalytic serine-rich region, while the catalytic residue is cysteine. This is a well-known feature of Plasmodium SERA biology but could confuse a model relying solely on the protein name.",
-    "The protein is from Plasmodium berghei (strain Anka), a parasitic protist; the functional context (merozoite release from parasitophorous vacuole) is specific to liver-stage biology.",
-    "Sequence match confirmed at both current (v27) and historical (v26) UniProt snapshots; benchmark sequence SHA256 matches source."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent fundamentally different molecular function classes (peptidase, binding, dioxygenase, transferase). The presence of a papain-like catalytic domain in the sequence clearly points to peptidase activity and excludes the other three. No ambiguity among options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A509AC44 (SERA3_PLABA, sequence matched at 1096 AA) explicitly annotates GO:0008234 (cysteine-type peptidase activity) with evidence code IEA:InterPro (C6/H5), and the FUNCTION comment states 'Putative cysteine protease' supported by experimental evidence ECO:0000269|PubMed:30941868 (C5/H4). The 'putative' qualifier and IEA evidence code indicate the assignment is based on domain similarity (InterPro) corroborated by experimental functional context, rather than direct enzymatic assay of this specific protein. Nevertheless, the annotation directly supports choice A.",
-    "evidence_ids": ["C5", "C6", "H4", "H5", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a recognizable papain-like cysteine protease domain: the motif 'CGHNHPDHAVNIIGYGNY' exhibits the canonical Cys-Gly-His-Asn arrangement of the papain superfamily catalytic triad (Cys nucleophile, His general base, Asn stabilizer). Additionally, the SERA (Serine-Repeat Antigen) family in Plasmodium is a well-known biological case where proteins named for serine-rich repeats actually possess cysteine protease catalytic machinery (the catalytic serine is replaced by cysteine). Recognizing the papain-like C.GH…HPD motif from the sequence and knowing the SERA family paradox provides concrete grounds to select cysteine-type peptidase activity over the unrelated binding (B), oxidase (C), or transferase (D) options.",
-    "missing_item_specific_fact": "None strictly required; the papain-like domain architecture is identifiable from the sequence, and the SERA-family cysteine-protease biology is general parasitology knowledge. The IEA:InterPro evidence code confirms the domain-based annotation logic is consistent with sequence-level reasoning.",
-    "reason": "The sequence displays a papain-like cysteine protease catalytic motif (CGHNHPD pattern with downstream conserved residues), and the SERA family's well-documented 'named serine, functions as cysteine protease' biology provides a reasoning pathway. The four options span entirely different GO branches (peptidase, binding, oxidase, transferase), so identifying the protease domain suffices to exclude B, C, and D without needing to memorize the specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent fundamentally different molecular function classes (peptidase, binding, dioxygenase, transferase). The presence of a papain-like catalytic domain in the sequence clearly points to peptidase activity and excludes the other three. No ambiguity among options."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA:InterPro (computational), and the FUNCTION comment uses 'Putative cysteine protease,' indicating the assignment is not from a direct enzyme assay of SERA3 itself but from domain inference plus experimental context (PubMed:30941868).",
-    "The SERA family nomenclature is historically misleading: 'serine-repeat' refers to a non-catalytic serine-rich region, while the catalytic residue is cysteine. This is a well-known feature of Plasmodium SERA biology but could confuse a model relying solely on the protein name.",
-    "The protein is from Plasmodium berghei (strain Anka), a parasitic protist; the functional context (merozoite release from parasitophorous vacuole) is specific to liver-stage biology.",
-    "Sequence match confirmed at both current (v27) and historical (v26) UniProt snapshots; benchmark sequence SHA256 matches source."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A509AC44",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1096,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
   "current_entry_audit": {
     "entryVersion": 27,
     "firstPublicDate": "2025-04-09",
@@ -537,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-09-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "current_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1096,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 26,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A509AC44",
   "selected_historical_entry_version": 26,
+  "selected_historical_record_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "selected_historical_source_sequence_length": 1096,
+  "selected_historical_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
   "selected_historical_version": {
     "accession": "A0A509AC44",
     "database": "Swiss-Prot",
@@ -555,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "SERA3_PLABA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "selected_historical_source_sequence_sha256": "b856f5c38016a9a095d324206f8bcc88f9baeee6e49705c1896ece85300d9e8d",
-  "selected_historical_source_sequence_length": 1096,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 26,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A509AC44\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -609,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":27,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-09-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -628,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000074855\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Vinckeia\"],\"scientificName\":\"Plasmodium berghei (strain Anka)\",\"taxonId\":5823}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -647,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30941868\",\"source\":\"PubMed\"}],\"value\":\"Serine repeat antigen 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18419771\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30941868\",\"source\":\"PubMed\"}],\"value\":\"PbSERA3\"}]}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Serine-repeat antigen protein 3\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -666,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30941868\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30941868\",\"source\":\"PubMed\"}],\"value\":\"Putative cysteine protease (PubMed:30941868). Probably involved in merozoite release from the parasitophorous vacuole during liver stages (PubMed:30941868)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -685,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/14",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0008234\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:cysteine-type peptidase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/14",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -704,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Schmidt-Christensen A.\",\"Sturm A.\",\"Horstmann S.\",\"Heussler V.T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18419771\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1462-5822.2008.01162.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"1723\",\"id\":\"18419771\",\"journal\":\"Cell. Microbiol.\",\"lastPage\":\"1734\",\"publicationDate\":\"2008\",\"title\":\"Expression and processing of Plasmodium berghei SERA3 during liver stages.\",\"volume\":\"10\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -723,15 +481,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json",
-  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
-  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Pace T.\",\"Grasso F.\",\"Camarda G.\",\"Suarez C.\",\"Blackman M.J.\",\"Ponzi M.\",\"Olivieri A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30941868\"},{\"database\":\"DOI\",\"id\":\"10.1111/cmi.13028\"}],\"citationType\":\"journal article\",\"firstPage\":\"e13028\",\"id\":\"30941868\",\"journal\":\"Cell. Microbiol.\",\"lastPage\":\"e13028\",\"publicationDate\":\"2019\",\"title\":\"The Plasmodium berghei serine protease PbSUB1 plays an important role in male gamete egress.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"DEVELOPMENTAL STAGE\",\"PROTEOLYTIC CLEAVAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:25:23.524185+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5e2610179c828f1eae297c66cc9692929fd91c2cd3c8a5fe426e60611e991fc3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A509AC44.json"
 }
 ```
 
@@ -741,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   SERA3_PLABA             Reviewed;        1096 AA.\nAC   A0A509AC44;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-SEP-2019, sequence version 1.\nDT   28-JAN-2026, entry version 26.\nDE   RecName: Full=Serine-repeat antigen protein 3 {ECO:0000305};\nDE   AltName: Full=Serine repeat antigen 3 {ECO:0000303|PubMed:30941868};\nDE            Short=PbSERA3 {ECO:0000303|PubMed:18419771, ECO:0000303|PubMed:30941868};\nDE   Flags: Precursor;\nGN   Name=SERA3 {ECO:0000305};\nGN   ORFNames=PBANKA_0304900 {ECO:0000312|EMBL:VUC54088.1};\nOS   Plasmodium berghei (strain Anka).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Vinckeia).\nOX   NCBI_TaxID=5823 {ECO:0000312|Proteomes:UP000074855};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -762,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 28-34",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   SUBCELLULAR LOCATION, AND DEVELOPMENTAL STAGE.\nRX   PubMed=18419771; DOI=10.1111/j.1462-5822.2008.01162.x;\nRA   Schmidt-Christensen A., Sturm A., Horstmann S., Heussler V.T.;\nRT   \"Expression and processing of Plasmodium berghei SERA3 during liver\nRT   stages.\";\nRL   Cell. Microbiol. 10:1723-1734(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -783,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 43-50",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, DEVELOPMENTAL STAGE, AND PROTEOLYTIC CLEAVAGE.\nRX   PubMed=30941868; DOI=10.1111/cmi.13028;\nRA   Pace T., Grasso F., Camarda G., Suarez C., Blackman M.J., Ponzi M.,\nRA   Olivieri A.;\nRT   \"The Plasmodium berghei serine protease PbSUB1 plays an important role in\nRT   male gamete egress.\";\nRL   Cell. Microbiol. 21:e13028-e13028(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -804,18 +562,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 51-54",
   "excerpt": "CC   -!- FUNCTION: Putative cysteine protease (PubMed:30941868). Probably\nCC       involved in merozoite release from the parasitophorous vacuole during\nCC       liver stages (PubMed:30941868). {ECO:0000269|PubMed:30941868,\nCC       ECO:0000303|PubMed:30941868}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -825,18 +583,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 26,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26",
-  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
-  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
-  "source_locator": "lines 91-91",
   "excerpt": "DR   GO; GO:0008234; F:cysteine-type peptidase activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 26,
+  "retrieved_utc": "2026-11-02T04:25:26.529482+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 91-91",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35f5b1184dbbd72476667152faab01cf50de2eb2d7c9f1faf6721d3157b18971",
+  "url": "https://rest.uniprot.org/unisave/A0A509AC44?format=txt&versions=26"
 }
 ```
 
@@ -847,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 36869-36890",
   "excerpt": "[Term]\nid: GO:0004169\nname: dolichyl-phosphate-mannose-protein mannosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: dolichyl phosphate D-mannose + protein = dolichyl phosphate + O-D-mannosylprotein.\" [EC:2.4.1.109, GOC:pr]\ncomment: Note that this activity has never been observed in green plants. However, N- and C-mannosylation may occur in these species; see figure 1 in PMID:21558543.\nsynonym: \"dolichol phosphomannose-protein mannosyltransferase activity\" RELATED [EC:2.4.1.109]\nsynonym: \"dolichyl-phosphate-D-mannose:protein O-D-mannosyltransferase activity\" RELATED [EC:2.4.1.109]\nsynonym: \"dolichyl-phosphate-mannose-protein O-mannosyltransferase activity\" EXACT []\nsynonym: \"O-glycoside mannosyltransferase\" BROAD []\nsynonym: \"protein O-D-mannosyltransferase activity\" RELATED [EC:2.4.1.109]\nsynonym: \"protein O-mannosyltransferase activity\" EXACT []\nxref: EC:2.4.1.109\nxref: MetaCyc:2.4.1.109-RXN\nxref: Reactome:R-HSA-5615556 \"Defective POMT2 does not transfer Man from Dol-P-Man to DAG1\"\nxref: Reactome:R-HSA-5615604 \"Defective POMT1 does not transfer Man from Dol-P-Man to DAG1\"\nxref: Reactome:R-HSA-5615637 \"POMT1:POMT2 transfers Man from Dol-P-Man to DAG1(30-653)\"\nxref: Reactome:R-HSA-9816277 \"CDH1 is O-manosylated\"\nis_a: GO:0000030 ! mannosyltransferase activity\nis_a: GO:0140096 ! catalytic activity, acting on a protein\nproperty_value: skos:exactMatch EC:2.4.1.109\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004169",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 36869-36890",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004169"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -866,15 +624,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 57150-57157",
   "excerpt": "[Term]\nid: GO:0005539\nname: glycosaminoglycan binding\nnamespace: molecular_function\ndef: \"Binding to a glycan (polysaccharide) containing a substantial proportion of aminomonosaccharide residues.\" [GOC:jl, ISBN:0198506732]\nsubset: goslim_chembl\nis_a: GO:0097367 ! carbohydrate derivative binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005539",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 57150-57157",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005539"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -885,15 +643,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 80941-80955",
   "excerpt": "[Term]\nid: GO:0008234\nname: cysteine-type peptidase activity\nnamespace: molecular_function\nalt_id: GO:0004220\ndef: \"Catalysis of the hydrolysis of peptide bonds in a polypeptide chain by a mechanism in which the sulfhydryl group of a cysteine residue at the active center acts as a nucleophile.\" [GOC:mah, https://www.ebi.ac.uk/merops/about/glossary.shtml#CATTYPE]\nsynonym: \"cysteine protease activity\" NARROW []\nsynonym: \"thiol protease activity\" NARROW []\nxref: Reactome:R-HSA-2022381 \"Cathepsin Z (Cathepsin X) hydrolyzes AGT(25-34) (Angiotensin-(1-10)) to AGT(25-32) (Angiotensin-(1-8))\"\nxref: Reactome:R-HSA-2467775 \"Autocleavage of ESPL1 (Separase)\"\nxref: Reactome:R-HSA-2467809 \"ESPL1 (Separase) cleaves centromeric cohesin\"\nxref: Reactome:R-HSA-5660752 \"USP9X deubiquitinates Ub-SNCA\"\nxref: Reactome:R-HSA-9757951 \"CASP8 cleaves N4BP1 at D424, D490\"\nis_a: GO:0008233 ! peptidase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008234",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 80941-80955",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008234"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -904,15 +662,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 428071-428084",
   "excerpt": "[Term]\nid: GO:0106155\nname: peptidyl-lysine 3-dioxygenase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: protein L-lysine + 2-oxoglutarate + O2 = protein 3-hydroxy-L-lysine + succinate + CO2.\" [GOC:al, PMID:29915238, RHEA:57152]\nxref: EC:1.14.11.63\nxref: Reactome:R-HSA-9629578 \"JMJD7 dimer hydroxlates a lysine residue of DRG2\"\nxref: Reactome:R-HSA-9629591 \"JMJD7 dimer hydroxlates a lysine residue of DRG1\"\nxref: RHEA:57152\nis_a: GO:0016706 ! 2-oxoglutarate-dependent dioxygenase activity\nis_a: GO:0140096 ! catalytic activity, acting on a protein\nproperty_value: skos:exactMatch EC:1.14.11.63\nproperty_value: skos:exactMatch RHEA:57152\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0106155",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 428071-428084",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0106155"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

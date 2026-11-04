@@ -1,18 +1,16 @@
-# GO_molecular_function_0121: before and after transfer clarification
+# GO_molecular_function_0121
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0121.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0121.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **B** — 3-oxoacyl-&#91;acyl-carrier-protein&#93; synthase activity
+**Expected answer:** **B** — 3-oxoacyl-&#91;acyl-carrier-protein&#93; synthase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a historical UniProt entry that assigns GO:0004315, but that GO assignment is computational (IEA:InterPro). The entry also identifies the protein as a modular polyketide synthase component and cites experimental evidence for its role in spectinabilin biosynthesis; this supports the key, though it is not direct experimental validation of the specific GO activity.
-
-Citations as saved: [H5](#evidence-h5), [H3](#evidence-h3), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The very long sequence is suggestive of a multidomain biosynthetic enzyme, which is more compatible with a polyketide-synthase function than with a small peroxidase, peptidoglycan-binding protein, or aspartic protease. That clue alone does not establish the specific 3-oxoacyl-ACP synthase activity.
-
-
-**Missing item-specific fact**
-
-> The sequence's identification as a modular polyketide synthase component and the domain/signature assignment supporting its ketosynthase activity.
-
-
-**Reason**
-
-> The supplied input does not give the protein's pathway context or identify its domains. Choosing the precise activity requires recognizing or externally assigning the relevant sequence domain; the reviewer-only database annotation cannot count as information supplied to the model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available sequence-level clues and matched annotations support B; none of the other listed activities is comparably supported.
-
-
-### Important caveats
-
-- The exact sequence match and historical GO annotation support the key, but the GO evidence is computational rather than a direct activity measurement.
-- The cited experimental evidence concerns the protein's role in a polyketide synthase system, not necessarily an isolated assay of the specific GO activity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The very long sequence is suggestive of a multidomain biosynthetic enzyme, which is more compatible with a polyketide-synthase function than with a small peroxidase, peptidoglycan-binding protein, or aspartic protease. That clue alone does not establish the specific 3-oxoacyl-ACP synthase activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's identification as a modular polyketide synthase component and the domain/signature assignment supporting its ketosynthase activity.",
-    "reason": "The supplied input does not give the protein's pathway context or identify its domains. Choosing the precise activity requires recognizing or externally assigning the relevant sequence domain; the reviewer-only database annotation cannot count as information supplied to the model."
-  },
-  "case_id": "GO_molecular_function_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H5",
-      "H3",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a historical UniProt entry that assigns GO:0004315, but that GO assignment is computational (IEA:InterPro). The entry also identifies the protein as a modular polyketide synthase component and cites experimental evidence for its role in spectinabilin biosynthesis; this supports the key, though it is not direct experimental validation of the specific GO activity."
-  },
-  "important_caveats": [
-    "The exact sequence match and historical GO annotation support the key, but the GO evidence is computational rather than a direct activity measurement.",
-    "The cited experimental evidence concerns the protein's role in a polyketide synthase system, not necessarily an isolated assay of the specific GO activity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence-level clues and matched annotations support B; none of the other listed activities is comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a historical UniProt entry that assigns GO:0004315, but that GO assignment is computational (IEA:InterPro). The entry also identifies the protein as a modular polyketide synthase component and cites experimental evidence for its role in spectinabilin biosynthesis; this supports the key, though it is not direct experimental validation of the specific GO activity.",
-    "evidence_ids": ["H5", "H3", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The very long sequence is suggestive of a multidomain biosynthetic enzyme, which is more compatible with a polyketide-synthase function than with a small peroxidase, peptidoglycan-binding protein, or aspartic protease. That clue alone does not establish the specific 3-oxoacyl-ACP synthase activity.",
-    "missing_item_specific_fact": "The sequence's identification as a modular polyketide synthase component and the domain/signature assignment supporting its ketosynthase activity.",
-    "reason": "The supplied input does not give the protein's pathway context or identify its domains. Choosing the precise activity requires recognizing or externally assigning the relevant sequence domain; the reviewer-only database annotation cannot count as information supplied to the model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence-level clues and matched annotations support B; none of the other listed activities is comparably supported."
-  },
-  "important_caveats": [
-    "The exact sequence match and historical GO annotation support the key, but the GO evidence is computational rather than a direct activity measurement.",
-    "The cited experimental evidence concerns the protein's role in a polyketide synthase system, not necessarily an isolated assay of the specific GO activity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry B4ER92 (NorA, spectinabilin PKS) is annotated with GO:0004315 (3-oxoacyl-&#91;acyl-carrier-protein&#93; synthase activity) via IEA:InterPro (C7, H5). The protein is a type I modular PKS whose KS domain catalyzes a Claisen condensation analogous to 3-oxoacyl-ACP synthase (EC 2.3.1.290, C6/H4). The annotation is computational (IEA:InterPro), not experimentally determined, but the domain homology is well-established: type I PKS KS domains are homologous to FAS beta-ketoacyl synthases and catalyze the same condensation chemistry. The GO term definition (GO2) specifies acyl-ACP + malonyl-ACP → 3-oxoacyl-ACP + CO2, which is a reasonable functional description of the KS domain activity within the PKS, even though the full PKS reaction (C6) uses CoA thioesters as extender units. Among the four options, B is the only one consistent with a large multi-domain condensation enzyme.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is 1897 amino acids long, which immediately eliminates thioredoxin peroxidase (peroxiredoxins are ~200 aa, GO3) and aspartic-type endopeptidase (aspartic proteases are typically 300-400 aa with a conserved D-T-G-S active-site motif, GO1). Peptidoglycan binding (GO4) is a non-catalytic binding activity, inconsistent with a large multi-domain enzyme. The enormous size, repetitive modular architecture, and presence of characteristic PKS motifs (GQGR, GHS, GxxGxxGxG patterns visible in the sequence) are hallmarks of a type I modular polyketide synthase or fatty acid synthase. The KS (ketosynthase) domain within such enzymes catalyzes a Claisen condensation—the exact chemistry described by GO:0004315. A model with general knowledge of protein size ranges, domain architecture, and PKS/FAS biochemistry can eliminate A, C, and D and select B.
-
-
-**Missing item-specific fact**
-
-> None critical. The reasoning relies on general knowledge of protein size ranges, domain architecture, and enzyme chemistry rather than a specific database annotation.
-
-
-**Reason**
-
-> The four options represent fundamentally different protein classes with distinct size ranges and functions. Size alone (1897 aa vs ~200-400 aa for A and D) eliminates two options. The modular, multi-domain architecture of a condensation enzyme eliminates C (a simple binding activity). Recognizing PKS/FAS architecture from sequence features (length, repetitive GxGxG motifs, GHS AT-domain motifs) and mapping KS condensation chemistry to GO:0004315 is achievable through general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options are well-separated in protein class, size, and catalytic mechanism. No other option is defensible for a 1897-aa modular PKS. The slight imprecision of applying GO:0004315 (defined for ACP-dependent type II FAS) to a type I PKS KS domain does not create genuine ambiguity among the given choices, since no 'polyketide synthase activity' option is offered and B is the only condensation-enzyme option.
-
-
-### Important caveats
-
-- The GO:0004315 annotation is IEA:InterPro (computational inference from domain homology), not an experimental determination. The actual EC number is 2.3.1.290, specific to the spectinabilin PKS reaction.
-- GO:0004315 is formally defined for type II FAS (acyl-ACP + malonyl-ACP → 3-oxoacyl-ACP). Applying it to a type I PKS KS domain is a reasonable but imperfect annotation transfer.
-- The protein also carries GO:0004312 (fatty acid synthase activity, IEA:TreeGrafter) and GO:0031177 (phosphopantetheine binding, IEA:InterPro), neither of which is offered as an option.
-- The reviewer-only evidence confirms sequence match (SHA-256 identical) between the benchmark sequence and UniProt B4ER92.
-- The aspartic protease option (D) is effectively eliminated by the absence of a canonical D-T-G-S active-site motif in the context of a 1897-aa multi-domain protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is 1897 amino acids long, which immediately eliminates thioredoxin peroxidase (peroxiredoxins are ~200 aa, GO3) and aspartic-type endopeptidase (aspartic proteases are typically 300-400 aa with a conserved D-T-G-S active-site motif, GO1). Peptidoglycan binding (GO4) is a non-catalytic binding activity, inconsistent with a large multi-domain enzyme. The enormous size, repetitive modular architecture, and presence of characteristic PKS motifs (GQGR, GHS, GxxGxxGxG patterns visible in the sequence) are hallmarks of a type I modular polyketide synthase or fatty acid synthase. The KS (ketosynthase) domain within such enzymes catalyzes a Claisen condensation—the exact chemistry described by GO:0004315. A model with general knowledge of protein size ranges, domain architecture, and PKS/FAS biochemistry can eliminate A, C, and D and select B.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The reasoning relies on general knowledge of protein size ranges, domain architecture, and enzyme chemistry rather than a specific database annotation.",
-    "reason": "The four options represent fundamentally different protein classes with distinct size ranges and functions. Size alone (1897 aa vs ~200-400 aa for A and D) eliminates two options. The modular, multi-domain architecture of a condensation enzyme eliminates C (a simple binding activity). Recognizing PKS/FAS architecture from sequence features (length, repetitive GxGxG motifs, GHS AT-domain motifs) and mapping KS condensation chemistry to GO:0004315 is achievable through general biological reasoning."
-  },
-  "case_id": "GO_molecular_function_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry B4ER92 (NorA, spectinabilin PKS) is annotated with GO:0004315 (3-oxoacyl-[acyl-carrier-protein] synthase activity) via IEA:InterPro (C7, H5). The protein is a type I modular PKS whose KS domain catalyzes a Claisen condensation analogous to 3-oxoacyl-ACP synthase (EC 2.3.1.290, C6/H4). The annotation is computational (IEA:InterPro), not experimentally determined, but the domain homology is well-established: type I PKS KS domains are homologous to FAS beta-ketoacyl synthases and catalyze the same condensation chemistry. The GO term definition (GO2) specifies acyl-ACP + malonyl-ACP → 3-oxoacyl-ACP + CO2, which is a reasonable functional description of the KS domain activity within the PKS, even though the full PKS reaction (C6) uses CoA thioesters as extender units. Among the four options, B is the only one consistent with a large multi-domain condensation enzyme."
-  },
-  "important_caveats": [
-    "The GO:0004315 annotation is IEA:InterPro (computational inference from domain homology), not an experimental determination. The actual EC number is 2.3.1.290, specific to the spectinabilin PKS reaction.",
-    "GO:0004315 is formally defined for type II FAS (acyl-ACP + malonyl-ACP → 3-oxoacyl-ACP). Applying it to a type I PKS KS domain is a reasonable but imperfect annotation transfer.",
-    "The protein also carries GO:0004312 (fatty acid synthase activity, IEA:TreeGrafter) and GO:0031177 (phosphopantetheine binding, IEA:InterPro), neither of which is offered as an option.",
-    "The reviewer-only evidence confirms sequence match (SHA-256 identical) between the benchmark sequence and UniProt B4ER92.",
-    "The aspartic protease option (D) is effectively eliminated by the absence of a canonical D-T-G-S active-site motif in the context of a 1897-aa multi-domain protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated in protein class, size, and catalytic mechanism. No other option is defensible for a 1897-aa modular PKS. The slight imprecision of applying GO:0004315 (defined for ACP-dependent type II FAS) to a type I PKS KS domain does not create genuine ambiguity among the given choices, since no 'polyketide synthase activity' option is offered and B is the only condensation-enzyme option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry B4ER92 (NorA, spectinabilin PKS) is annotated with GO:0004315 (3-oxoacyl-[acyl-carrier-protein] synthase activity) via IEA:InterPro (C7, H5). The protein is a type I modular PKS whose KS domain catalyzes a Claisen condensation analogous to 3-oxoacyl-ACP synthase (EC 2.3.1.290, C6/H4). The annotation is computational (IEA:InterPro), not experimentally determined, but the domain homology is well-established: type I PKS KS domains are homologous to FAS beta-ketoacyl synthases and catalyze the same condensation chemistry. The GO term definition (GO2) specifies acyl-ACP + malonyl-ACP → 3-oxoacyl-ACP + CO2, which is a reasonable functional description of the KS domain activity within the PKS, even though the full PKS reaction (C6) uses CoA thioesters as extender units. Among the four options, B is the only one consistent with a large multi-domain condensation enzyme.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H3", "H4", "H5", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is 1897 amino acids long, which immediately eliminates thioredoxin peroxidase (peroxiredoxins are ~200 aa, GO3) and aspartic-type endopeptidase (aspartic proteases are typically 300-400 aa with a conserved D-T-G-S active-site motif, GO1). Peptidoglycan binding (GO4) is a non-catalytic binding activity, inconsistent with a large multi-domain enzyme. The enormous size, repetitive modular architecture, and presence of characteristic PKS motifs (GQGR, GHS, GxxGxxGxG patterns visible in the sequence) are hallmarks of a type I modular polyketide synthase or fatty acid synthase. The KS (ketosynthase) domain within such enzymes catalyzes a Claisen condensation—the exact chemistry described by GO:0004315. A model with general knowledge of protein size ranges, domain architecture, and PKS/FAS biochemistry can eliminate A, C, and D and select B.",
-    "missing_item_specific_fact": "None critical. The reasoning relies on general knowledge of protein size ranges, domain architecture, and enzyme chemistry rather than a specific database annotation.",
-    "reason": "The four options represent fundamentally different protein classes with distinct size ranges and functions. Size alone (1897 aa vs ~200-400 aa for A and D) eliminates two options. The modular, multi-domain architecture of a condensation enzyme eliminates C (a simple binding activity). Recognizing PKS/FAS architecture from sequence features (length, repetitive GxGxG motifs, GHS AT-domain motifs) and mapping KS condensation chemistry to GO:0004315 is achievable through general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated in protein class, size, and catalytic mechanism. No other option is defensible for a 1897-aa modular PKS. The slight imprecision of applying GO:0004315 (defined for ACP-dependent type II FAS) to a type I PKS KS domain does not create genuine ambiguity among the given choices, since no 'polyketide synthase activity' option is offered and B is the only condensation-enzyme option."
-  },
-  "important_caveats": [
-    "The GO:0004315 annotation is IEA:InterPro (computational inference from domain homology), not an experimental determination. The actual EC number is 2.3.1.290, specific to the spectinabilin PKS reaction.",
-    "GO:0004315 is formally defined for type II FAS (acyl-ACP + malonyl-ACP → 3-oxoacyl-ACP). Applying it to a type I PKS KS domain is a reasonable but imperfect annotation transfer.",
-    "The protein also carries GO:0004312 (fatty acid synthase activity, IEA:TreeGrafter) and GO:0031177 (phosphopantetheine binding, IEA:InterPro), neither of which is offered as an option.",
-    "The reviewer-only evidence confirms sequence match (SHA-256 identical) between the benchmark sequence and UniProt B4ER92.",
-    "The aspartic protease option (D) is effectively eliminated by the absence of a canonical D-T-G-S active-site motif in the context of a 1897-aa multi-domain protein."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -516,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B4ER92",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1897,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
   "current_entry_audit": {
     "entryVersion": 85,
     "firstPublicDate": "2025-02-05",
@@ -547,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2008-09-23",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "current_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1897,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B4ER92",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "selected_historical_source_sequence_length": 1897,
+  "selected_historical_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
   "selected_historical_version": {
     "accession": "B4ER92",
     "database": "Swiss-Prot",
@@ -565,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NORA_STRON",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "selected_historical_source_sequence_sha256": "7a2b43eb4693bca9c8e214b8ce966e5161f55926389724de9065d4baf60d4ff1",
-  "selected_historical_source_sequence_length": 1897,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B4ER92\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -619,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":85,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2008-09-23\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -638,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Streptoverticillium orinoci\",\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces orinoci\",\"taxonId\":67339}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -657,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAO85893.1\",\"source\":\"EMBL\"}],\"value\":\"Modular polyketide synthase NorA\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"17763486\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.290\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Spectinabilin polyketide synthase system protein NorA\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Spectinabilin PKS system protein NorA\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -676,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17763486\",\"source\":\"PubMed\"}],\"value\":\"Component of a type I modular polyketide synthase (PKS) that generates the backbone of the antibiotic spectinabilin (also known as neoaureothin), a nitroaryl-substituted polyketide metabolite (PubMed:17763486). This PKS system accepts the unusual starter unit 4-nitrobenzoyl-CoA and extends it by 6 molecules of (S)-methylmalonyl-CoA and a single molecule of malonyl-CoA (PubMed:17763486). The first module, NorA, is used twice in an iterative fashion (PubMed:17763486)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -695,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"17763486\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:58945\"}}],\"reaction\":{\"ecNumber\":\"2.3.1.290\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"17763486\",\"source\":\"PubMed\"}],\"name\":\"4-nitrobenzoyl-CoA + 6 (S)-methylmalonyl-CoA + malonyl-CoA + 6 NADPH + 12 H(+) = demethyldeoxyspectinabilin + 7 CO2 + 6 NADP(+) + 8 CoA + 5 H2O\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:58944\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57327\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57384\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:142871\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:142872\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -714,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/6",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0004315\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:3-oxoacyl-[acyl-carrier-protein] synthase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/6",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -733,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/7",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0004312\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:fatty acid synthase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/7",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -752,15 +506,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0031177\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:phosphopantetheine binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -771,15 +525,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json",
-  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
-  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Traitcheva N.\",\"Jenke-Kodama H.\",\"He J.\",\"Dittmann E.\",\"Hertweck C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17763486\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.200700309\"}],\"citationType\":\"journal article\",\"firstPage\":\"1841\",\"id\":\"17763486\",\"journal\":\"ChemBioChem\",\"lastPage\":\"1849\",\"publicationDate\":\"2007\",\"title\":\"Non-colinear polyketide biosynthesis in the aureothin and neoaureothin pathways: an evolutionary perspective.\",\"volume\":\"8\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAO85893.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"HKI-0260\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:00.659517+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5eeaeb37c4ffac30774fcace62eb9d316998cb9ebef04f688b171413d879c5c3",
+  "url": "https://rest.uniprot.org/uniprotkb/B4ER92.json"
 }
 ```
 
@@ -789,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   NORA_STRON              Reviewed;        1897 AA.\nAC   B4ER92;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   23-SEP-2008, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=Spectinabilin polyketide synthase system protein NorA {ECO:0000305};\nDE            Short=Spectinabilin PKS system protein NorA {ECO:0000305};\nDE            EC=2.3.1.290 {ECO:0000305|PubMed:17763486};\nDE   AltName: Full=Modular polyketide synthase NorA {ECO:0000312|EMBL:CAO85893.1};\nGN   Name=norA {ECO:0000303|PubMed:17763486};\nOS   Streptomyces orinoci (Streptoverticillium orinoci).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=67339;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -810,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 15-22",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAO85893.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, AND SUBUNIT.\nRC   STRAIN=HKI-0260;\nRX   PubMed=17763486; DOI=10.1002/cbic.200700309;\nRA   Traitcheva N., Jenke-Kodama H., He J., Dittmann E., Hertweck C.;\nRT   \"Non-colinear polyketide biosynthesis in the aureothin and neoaureothin\nRT   pathways: an evolutionary perspective.\";\nRL   ChemBioChem 8:1841-1849(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -831,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 23-30",
   "excerpt": "CC   -!- FUNCTION: Component of a type I modular polyketide synthase (PKS) that\nCC       generates the backbone of the antibiotic spectinabilin (also known as\nCC       neoaureothin), a nitroaryl-substituted polyketide metabolite\nCC       (PubMed:17763486). This PKS system accepts the unusual starter unit 4-\nCC       nitrobenzoyl-CoA and extends it by 6 molecules of (S)-methylmalonyl-CoA\nCC       and a single molecule of malonyl-CoA (PubMed:17763486). The first\nCC       module, NorA, is used twice in an iterative fashion (PubMed:17763486).\nCC       {ECO:0000269|PubMed:17763486}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -852,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 31-40",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=4-nitrobenzoyl-CoA + 6 (S)-methylmalonyl-CoA + malonyl-CoA + 6\nCC         NADPH + 12 H(+) = demethyldeoxyspectinabilin + 7 CO2 + 6 NADP(+) + 8\nCC         CoA + 5 H2O; Xref=Rhea:RHEA:58944, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:16526, ChEBI:CHEBI:57287,\nCC         ChEBI:CHEBI:57327, ChEBI:CHEBI:57384, ChEBI:CHEBI:57783,\nCC         ChEBI:CHEBI:58349, ChEBI:CHEBI:142871, ChEBI:CHEBI:142872;\nCC         EC=2.3.1.290; Evidence={ECO:0000305|PubMed:17763486};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:58945;\nCC         Evidence={ECO:0000305|PubMed:17763486};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -873,18 +627,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 61-61",
   "excerpt": "DR   GO; GO:0004315; F:3-oxoacyl-[acyl-carrier-protein] synthase activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -894,18 +648,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 62-62",
   "excerpt": "DR   GO; GO:0004312; F:fatty acid synthase activity; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 62-62",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -915,18 +669,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83",
-  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
-  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
-  "source_locator": "lines 63-63",
   "excerpt": "DR   GO; GO:0031177; F:phosphopantetheine binding; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:27:51.676658+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-63",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3915fd8feae78450aa29f8354771d2a032c0708667b4608cc38f4af415714d8a",
+  "url": "https://rest.uniprot.org/unisave/B4ER92?format=txt&versions=83"
 }
 ```
 
@@ -937,15 +691,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 37379-37447",
   "excerpt": "[Term]\nid: GO:0004190\nname: aspartic-type endopeptidase activity\nnamespace: molecular_function\ndef: \"Catalysis of the hydrolysis of internal, alpha-peptide bonds in a polypeptide chain by a mechanism in which a water molecule bound by the side chains of aspartic residues at the active center acts as a nucleophile.\" [ISBN:0198506732]\nsynonym: \"aspartate protease activity\" NARROW [GOC:mah, GOC:vw]\nsynonym: \"aspartic endopeptidase activity\" EXACT []\nsynonym: \"aspartic protease activity\" NARROW []\nsynonym: \"aspartyl protease activity\" NARROW []\nsynonym: \"carboxyl protease activity\" NARROW []\nxref: EC:3.4.23.-\nxref: EC:3.4.23.1\nxref: EC:3.4.23.15\nxref: EC:3.4.23.20\nxref: EC:3.4.23.25\nxref: EC:3.4.23.32\nxref: EC:3.4.23.34\nxref: EC:3.4.23.35\nxref: EC:3.4.23.36\nxref: EC:3.4.23.4\nxref: EC:3.4.23.43\nxref: EC:3.4.23.49\nxref: EC:3.4.23.5\nxref: MetaCyc:3.4.23.1-RXN\nxref: MetaCyc:3.4.23.15-RXN\nxref: MetaCyc:3.4.23.20-RXN\nxref: MetaCyc:3.4.23.25-RXN\nxref: MetaCyc:3.4.23.32-RXN\nxref: MetaCyc:3.4.23.34-RXN\nxref: MetaCyc:3.4.23.35-RXN\nxref: MetaCyc:3.4.23.4-RXN\nxref: MetaCyc:3.4.23.43-RXN\nxref: MetaCyc:3.4.23.5-RXN\nxref: Reactome:R-HSA-157353 \"NEXT1 is cleaved to produce NICD1\"\nxref: Reactome:R-HSA-157640 \"NEXT2 is cleaved to produce NICD2\"\nxref: Reactome:R-HSA-2022403 \"Renin:Prorenin Receptor hydrolyzes Angiotensinogen to AGT(25-34) (Angiotensin-(1-10))\"\nxref: Reactome:R-HSA-2022412 \"Renin hydrolyzes Angiotensinogen to AGT(25-34) (Angiotensin-(1-10))\"\nxref: Reactome:R-HSA-2065357 \"Prorenin:Prorenin Receptor hydrolyzes Angiotensinogen to AGT(25-35) (Angiotensin-(1-10))\"\nxref: Reactome:R-HSA-2220988 \"NEXT1 PEST domain mutants are cleaved to produce NICD1 PEST domain mutants\"\nxref: Reactome:R-HSA-373705 \"Caspase cleavage of DCC\"\nxref: Reactome:R-HSA-9013361 \"NEXT3 is cleaved to produce NICD3\"\nxref: Reactome:R-HSA-9017817 \"Gamma-secretase cleaves YBX1:NOTCH3\"\nxref: Reactome:R-HSA-9604294 \"Gamma-secretase cleaves NOTCH4\"\nis_a: GO:0004175 ! endopeptidase activity\nis_a: GO:0070001 ! aspartic-type peptidase activity\nproperty_value: skos:exactMatch EC:3.4.23.-\nproperty_value: skos:narrowMatch EC:3.4.23.1\nproperty_value: skos:narrowMatch EC:3.4.23.15\nproperty_value: skos:narrowMatch EC:3.4.23.20\nproperty_value: skos:narrowMatch EC:3.4.23.25\nproperty_value: skos:narrowMatch EC:3.4.23.32\nproperty_value: skos:narrowMatch EC:3.4.23.34\nproperty_value: skos:narrowMatch EC:3.4.23.35\nproperty_value: skos:narrowMatch EC:3.4.23.36\nproperty_value: skos:narrowMatch EC:3.4.23.4\nproperty_value: skos:narrowMatch EC:3.4.23.43\nproperty_value: skos:narrowMatch EC:3.4.23.49\nproperty_value: skos:narrowMatch EC:3.4.23.5\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.1-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.15-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.20-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.25-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.32-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.34-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.35-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.4-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.43-RXN\nproperty_value: skos:narrowMatch MetaCyc:3.4.23.5-RXN\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004190",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 37379-37447",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004190"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -956,15 +710,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 39629-39711",
   "excerpt": "[Term]\nid: GO:0004315\nname: 3-oxoacyl-[acyl-carrier-protein] synthase activity\nnamespace: molecular_function\nalt_id: GO:0033817\ndef: \"Catalysis of the reaction: acyl-[acyl-carrier protein] + malonyl-[acyl-carrier protein] = 3-oxoacyl-[acyl-carrier protein] + CO2 + [acyl-carrier protein].\" [RHEA:22836]\ncomment: Note that this activity is responsible for the chain-elongation step of dissociated (type II) fatty-acid biosynthesis, i.e. the addition of two C atoms to the fatty-acid chain. Can use fatty acyl thioesters of ACP (C2 to C16) as substrates, as well as fatty acyl thioesters of Co-A (C4 to C16).\nsynonym: \"3-ketoacyl-acyl carrier protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"3-oxoacyl-[acyl-carrier protein] synthase activity\" EXACT []\nsynonym: \"3-oxoacyl-ACP synthase activity\" EXACT []\nsynonym: \"3-oxoacyl-acyl carrier protein synthase I activity\" NARROW [EC:2.3.1.179]\nsynonym: \"3-oxoacyl-acyl-carrier-protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"acyl-acyl-carrier-protein:malonyl-acyl-carrier-protein C-acyltransferase (decarboxylating)\" RELATED [EC:2.3.1.41]\nsynonym: \"acyl-malonyl acyl carrier protein-condensing enzyme activity\" RELATED [EC:2.3.1.41]\nsynonym: \"acyl-malonyl(acyl-carrier-protein)-condensing enzyme activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl acyl carrier protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl synthetase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-[acyl carrier protein] synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-ACP synthase I activity\" NARROW [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-ACP synthase II activity\" NARROW [EC:2.3.1.179]\nsynonym: \"beta-ketoacyl-ACP synthetase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl carrier protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl carrier protein synthetase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl-carrier-protein synthase I\" NARROW [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl-carrier-protein synthase II activity\" NARROW []\nsynonym: \"beta-ketoacylsynthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"condensing enzyme activity\" BROAD [EC:2.3.1.41]\nsynonym: \"fatty acid condensing enzyme activity\" BROAD [EC:2.3.1.41]\nsynonym: \"ketoacyl-ACP synthase activity\" EXACT []\nxref: EC:2.3.1.179\nxref: EC:2.3.1.41\nxref: MetaCyc:2.3.1.179-RXN\nxref: MetaCyc:3-OXOACYL-ACP-SYNTH-RXN\nxref: RHEA:14565\nxref: RHEA:22836\nxref: RHEA:41800\nxref: RHEA:41820\nxref: RHEA:41836\nxref: RHEA:41852\nxref: RHEA:41868\nxref: RHEA:41884\nxref: RHEA:41900\nxref: RHEA:41916\nxref: RHEA:42248\nxref: RHEA:42252\nxref: RHEA:42260\nxref: RHEA:42268\nxref: RHEA:42272\nxref: RHEA:42276\nxref: RHEA:47824\nxref: RHEA:54924\nxref: RHEA:54940\nxref: RHEA:55040\nxref: RHEA:65308\nxref: RHEA:65312\nis_a: GO:0016747 ! acyltransferase activity, transferring groups other than amino-acyl groups\nproperty_value: skos:exactMatch EC:2.3.1.41\nproperty_value: skos:exactMatch MetaCyc:3-OXOACYL-ACP-SYNTH-RXN\nproperty_value: skos:exactMatch RHEA:22836\nproperty_value: skos:narrowMatch EC:2.3.1.179\nproperty_value: skos:narrowMatch MetaCyc:2.3.1.179-RXN\nproperty_value: skos:narrowMatch RHEA:14565\nproperty_value: skos:narrowMatch RHEA:41800\nproperty_value: skos:narrowMatch RHEA:41820\nproperty_value: skos:narrowMatch RHEA:41836\nproperty_value: skos:narrowMatch RHEA:41852\nproperty_value: skos:narrowMatch RHEA:41868\nproperty_value: skos:narrowMatch RHEA:41884\nproperty_value: skos:narrowMatch RHEA:41900\nproperty_value: skos:narrowMatch RHEA:41916\nproperty_value: skos:narrowMatch RHEA:42248\nproperty_value: skos:narrowMatch RHEA:42252\nproperty_value: skos:narrowMatch RHEA:42260\nproperty_value: skos:narrowMatch RHEA:42268\nproperty_value: skos:narrowMatch RHEA:42272\nproperty_value: skos:narrowMatch RHEA:42276\nproperty_value: skos:narrowMatch RHEA:47824\nproperty_value: skos:narrowMatch RHEA:54924\nproperty_value: skos:narrowMatch RHEA:54940\nproperty_value: skos:narrowMatch RHEA:55040\nproperty_value: skos:narrowMatch RHEA:65308\nproperty_value: skos:narrowMatch RHEA:65312\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004315",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 39629-39711",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004315"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -975,15 +729,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 82543-82560",
   "excerpt": "[Term]\nid: GO:0008379\nname: thioredoxin peroxidase activity\nnamespace: molecular_function\nalt_id: GO:0009031\ndef: \"Catalysis of the reaction: [thioredoxin]-dithiol + H2O2 = [thioredoxin]-disulfide + H2O.\" [RHEA:63528]\nsynonym: \"thiol peroxidase activity\" EXACT []\nsynonym: \"TPx activity\" EXACT []\nsynonym: \"TrxPx activity\" EXACT []\nxref: MetaCyc:RXN0-267\nxref: Reactome:R-HSA-3322995 \"PRDX3,5 catalyze TXN2 reduced + H2O2 => TXN2 oxidized + 2H2O\"\nxref: Reactome:R-HSA-3341343 \"PRDX1,2,5 catalyze TXN reduced + H2O2 => TXN oxidized + 2H2O\"\nxref: Reactome:R-HSA-3697882 \"PRDX5 reduces peroxynitrite to nitrite using TXN\"\nxref: Reactome:R-HSA-3697894 \"PRDX5 reduces peroxynitrite to nitrite using TXN2\"\nxref: RHEA:63528\nis_a: GO:0140824 ! thioredoxin-dependent peroxiredoxin activity\nproperty_value: skos:exactMatch RHEA:63528\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008379",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 82543-82560",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008379"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -994,15 +748,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 241358-241364",
   "excerpt": "[Term]\nid: GO:0042834\nname: peptidoglycan binding\nnamespace: molecular_function\ndef: \"Interacting selectively and non-covalently, in a non-covalent manner, with peptidoglycan, any of a class of glycoconjugates found in bacterial cell walls.\" [GOC:curators, PMID:14698226]\nis_a: GO:0005539 ! glycosaminoglycan binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042834",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 241358-241364",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042834"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

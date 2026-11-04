@@ -1,18 +1,16 @@
-# transmembrane_0060: before and after transfer clarification
+# transmembrane_0060
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0060.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/transmembrane_0060.txt)
 
 **Task:** `transmembrane`  
-**Author key, unchanged:** **A** — 37..57; 333..353
+**Expected answer:** **A** — 37..57; 333..353
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,252 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches the historical UniProt sequence, whose annotation lists transmembrane regions at 37–57 and 333–353. These support choice A. The annotations carry ECO:0000255, indicating computational annotation rather than direct experimental evidence for these boundaries.
-
-Citations as saved: [H3](#evidence-h3), [H4](#evidence-h4), [C5](#evidence-c5), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains conspicuously hydrophobic stretches around both listed regions, supporting the inference that they may be membrane-spanning helices. Sequence heuristics do not establish the precise start and end coordinates or whether the question requires every such region.
-
-
-**Missing item-specific fact**
-
-> The exact annotated boundaries, and whether the requested answer must enumerate all transmembrane regions, are not supplied in the question.
-
-
-**Reason**
-
-> The hydrophobic segments provide useful biological clues, but choosing the exact coordinates in A rather than a nearby boundary choice requires item-specific annotation or prediction; the sequence alone does not resolve those endpoints.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C",
-  "D"
-]
-```
-
-> A matches both annotated regions. C identifies the exact 333–353 region, which is defensible if the wording asks for a segment rather than all regions. D gives a nearby, broader interval around the same strongly hydrophobic helix; the question does not specify boundary tolerance.
-
-
-### Important caveats
-
-- The sequence match and historical database record support applicability of the annotations, but the author’s exact source snapshot is unknown.
-- The cited transmembrane features are computationally evidenced annotations, not independently verified experimental measurements.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains conspicuously hydrophobic stretches around both listed regions, supporting the inference that they may be membrane-spanning helices. Sequence heuristics do not establish the precise start and end coordinates or whether the question requires every such region.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact annotated boundaries, and whether the requested answer must enumerate all transmembrane regions, are not supplied in the question.",
-    "reason": "The hydrophobic segments provide useful biological clues, but choosing the exact coordinates in A rather than a nearby boundary choice requires item-specific annotation or prediction; the sequence alone does not resolve those endpoints."
-  },
-  "case_id": "transmembrane_0060",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "H4",
-      "C5",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the historical UniProt sequence, whose annotation lists transmembrane regions at 37–57 and 333–353. These support choice A. The annotations carry ECO:0000255, indicating computational annotation rather than direct experimental evidence for these boundaries."
-  },
-  "important_caveats": [
-    "The sequence match and historical database record support applicability of the annotations, but the author’s exact source snapshot is unknown.",
-    "The cited transmembrane features are computationally evidenced annotations, not independently verified experimental measurements."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C",
-      "D"
-    ],
-    "reason": "A matches both annotated regions. C identifies the exact 333–353 region, which is defensible if the wording asks for a segment rather than all regions. D gives a nearby, broader interval around the same strongly hydrophobic helix; the question does not specify boundary tolerance."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "transmembrane_0060",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the historical UniProt sequence, whose annotation lists transmembrane regions at 37–57 and 333–353. These support choice A. The annotations carry ECO:0000255, indicating computational annotation rather than direct experimental evidence for these boundaries.",
-    "evidence_ids": ["H3", "H4", "C5", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains conspicuously hydrophobic stretches around both listed regions, supporting the inference that they may be membrane-spanning helices. Sequence heuristics do not establish the precise start and end coordinates or whether the question requires every such region.",
-    "missing_item_specific_fact": "The exact annotated boundaries, and whether the requested answer must enumerate all transmembrane regions, are not supplied in the question.",
-    "reason": "The hydrophobic segments provide useful biological clues, but choosing the exact coordinates in A rather than a nearby boundary choice requires item-specific annotation or prediction; the sequence alone does not resolve those endpoints."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C", "D"],
-    "reason": "A matches both annotated regions. C identifies the exact 333–353 region, which is defensible if the wording asks for a segment rather than all regions. D gives a nearby, broader interval around the same strongly hydrophobic helix; the question does not specify boundary tolerance."
-  },
-  "important_caveats": [
-    "The sequence match and historical database record support applicability of the annotations, but the author’s exact source snapshot is unknown.",
-    "The cited transmembrane features are computationally evidenced annotations, not independently verified experimental measurements."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProtKB annotation (both current entry v86 and historical entry v84) lists exactly two transmembrane regions: 37..57 and 333..353, both annotated as 'Helical' with evidence code ECO:0000255 (inferred by similarity/ProRule). This matches Choice A exactly. The sequence is confirmed as a 1003-residue histidine kinase CRE1 from Medicago truncatula. The annotation is computational inference rather than direct experimental determination; the PDB structure 7P8E covers residues 351-994 and does not independently confirm the TM boundaries.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General hydrophobicity reasoning can identify two hydrophobic stretches in the sequence (around positions 37-57 and ~333-353), eliminating Choice B (no clear 21-residue hydrophobic helix at 222-242) and Choice C (which omits the first TM). However, the critical distinction between Choice A (333..353) and Choice D (330..352) is a 3-residue shift in the second TM boundary. The sequence context around this region ('...APPNWTALSTAILFFVILLLIGYILYGAGNHIVK...') does not provide a clear biological argument to prefer 333..353 over 330..352; TM helix boundaries are inherently fuzzy and within the tolerance of hydrophobicity prediction tools.
-
-
-**Missing item-specific fact**
-
-> The exact UniProt/ProRule annotation specifying the second TM as 333..353 rather than 330..352. Distinguishing these boundaries requires either the specific database entry or a computational TM predictor calibrated to produce these exact coordinates.
-
-
-**Reason**
-
-> While identifying the presence of two TM regions is reasoning-supported, the precise boundary distinction between A and D depends on the specific annotation (ECO:0000255 ProRule assignment). No general biological principle or hydrophobicity argument uniquely selects 333..353 over 330..352 without reference to the exact annotation or a specific prediction tool's output.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Choices A (37..57; 333..353) and D (37..57; 330..352) differ only by a 3-residue shift in the second TM boundary. Both represent plausible hydrophobic helix boundaries in the same region. Without the exact annotation, a model using hydrophobicity analysis could reasonably assign either boundary. The question wording ('correctly identifies the start and end positions') implies a single correct answer, but the biological reality of TM helix boundaries is inherently imprecise at this resolution.
-
-
-### Important caveats
-
-- The TM annotations carry evidence code ECO:0000255 (inferred by similarity/ProRule), meaning they are computational predictions transferred from homologous proteins, not experimentally determined boundaries.
-- The PDB structure 7P8E covers residues 351-994, overlapping only the very end of the second TM region, and does not provide experimental confirmation of the TM boundaries.
-- The distinction between choices A and D (333..353 vs 330..352) is within the typical ±3-5 residue uncertainty of TM prediction tools.
-- The UniProt entry was first publicly released in April 2025; the author's data-construction snapshot is unknown but the sequence has been stable since 2014 (sequence version 2).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General hydrophobicity reasoning can identify two hydrophobic stretches in the sequence (around positions 37-57 and ~333-353), eliminating Choice B (no clear 21-residue hydrophobic helix at 222-242) and Choice C (which omits the first TM). However, the critical distinction between Choice A (333..353) and Choice D (330..352) is a 3-residue shift in the second TM boundary. The sequence context around this region ('...APPNWTALSTAILFFVILLLIGYILYGAGNHIVK...') does not provide a clear biological argument to prefer 333..353 over 330..352; TM helix boundaries are inherently fuzzy and within the tolerance of hydrophobicity prediction tools.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact UniProt/ProRule annotation specifying the second TM as 333..353 rather than 330..352. Distinguishing these boundaries requires either the specific database entry or a computational TM predictor calibrated to produce these exact coordinates.",
-    "reason": "While identifying the presence of two TM regions is reasoning-supported, the precise boundary distinction between A and D depends on the specific annotation (ECO:0000255 ProRule assignment). No general biological principle or hydrophobicity argument uniquely selects 333..353 over 330..352 without reference to the exact annotation or a specific prediction tool's output."
-  },
-  "case_id": "transmembrane_0060",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProtKB annotation (both current entry v86 and historical entry v84) lists exactly two transmembrane regions: 37..57 and 333..353, both annotated as 'Helical' with evidence code ECO:0000255 (inferred by similarity/ProRule). This matches Choice A exactly. The sequence is confirmed as a 1003-residue histidine kinase CRE1 from Medicago truncatula. The annotation is computational inference rather than direct experimental determination; the PDB structure 7P8E covers residues 351-994 and does not independently confirm the TM boundaries."
-  },
-  "important_caveats": [
-    "The TM annotations carry evidence code ECO:0000255 (inferred by similarity/ProRule), meaning they are computational predictions transferred from homologous proteins, not experimentally determined boundaries.",
-    "The PDB structure 7P8E covers residues 351-994, overlapping only the very end of the second TM region, and does not provide experimental confirmation of the TM boundaries.",
-    "The distinction between choices A and D (333..353 vs 330..352) is within the typical ±3-5 residue uncertainty of TM prediction tools.",
-    "The UniProt entry was first publicly released in April 2025; the author's data-construction snapshot is unknown but the sequence has been stable since 2014 (sequence version 2)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Choices A (37..57; 333..353) and D (37..57; 330..352) differ only by a 3-residue shift in the second TM boundary. Both represent plausible hydrophobic helix boundaries in the same region. Without the exact annotation, a model using hydrophobicity analysis could reasonably assign either boundary. The question wording ('correctly identifies the start and end positions') implies a single correct answer, but the biological reality of TM helix boundaries is inherently imprecise at this resolution."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "transmembrane_0060",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProtKB annotation (both current entry v86 and historical entry v84) lists exactly two transmembrane regions: 37..57 and 333..353, both annotated as 'Helical' with evidence code ECO:0000255 (inferred by similarity/ProRule). This matches Choice A exactly. The sequence is confirmed as a 1003-residue histidine kinase CRE1 from Medicago truncatula. The annotation is computational inference rather than direct experimental determination; the PDB structure 7P8E covers residues 351-994 and does not independently confirm the TM boundaries.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General hydrophobicity reasoning can identify two hydrophobic stretches in the sequence (around positions 37-57 and ~333-353), eliminating Choice B (no clear 21-residue hydrophobic helix at 222-242) and Choice C (which omits the first TM). However, the critical distinction between Choice A (333..353) and Choice D (330..352) is a 3-residue shift in the second TM boundary. The sequence context around this region ('...APPNWTALSTAILFFVILLLIGYILYGAGNHIVK...') does not provide a clear biological argument to prefer 333..353 over 330..352; TM helix boundaries are inherently fuzzy and within the tolerance of hydrophobicity prediction tools.",
-    "missing_item_specific_fact": "The exact UniProt/ProRule annotation specifying the second TM as 333..353 rather than 330..352. Distinguishing these boundaries requires either the specific database entry or a computational TM predictor calibrated to produce these exact coordinates.",
-    "reason": "While identifying the presence of two TM regions is reasoning-supported, the precise boundary distinction between A and D depends on the specific annotation (ECO:0000255 ProRule assignment). No general biological principle or hydrophobicity argument uniquely selects 333..353 over 330..352 without reference to the exact annotation or a specific prediction tool's output."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Choices A (37..57; 333..353) and D (37..57; 330..352) differ only by a 3-residue shift in the second TM boundary. Both represent plausible hydrophobic helix boundaries in the same region. Without the exact annotation, a model using hydrophobicity analysis could reasonably assign either boundary. The question wording ('correctly identifies the start and end positions') implies a single correct answer, but the biological reality of TM helix boundaries is inherently imprecise at this resolution."
-  },
-  "important_caveats": [
-    "The TM annotations carry evidence code ECO:0000255 (inferred by similarity/ProRule), meaning they are computational predictions transferred from homologous proteins, not experimentally determined boundaries.",
-    "The PDB structure 7P8E covers residues 351-994, overlapping only the very end of the second TM region, and does not provide experimental confirmation of the TM boundaries.",
-    "The distinction between choices A and D (333..353 vs 330..352) is within the typical ±3-5 residue uncertainty of TM prediction tools.",
-    "The UniProt entry was first publicly released in April 2025; the author's data-construction snapshot is unknown but the sequence has been stable since 2014 (sequence version 2)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -401,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G7LCC3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "7101a9a6b74fa50d6e114ab0532171d5d35bde533b69ae26373f47846b5f18a6",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1003,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "7101a9a6b74fa50d6e114ab0532171d5d35bde533b69ae26373f47846b5f18a6",
   "current_entry_audit": {
     "entryVersion": 86,
     "firstPublicDate": "2025-04-09",
@@ -549,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-10-01",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "current_source_sequence_sha256": "7101a9a6b74fa50d6e114ab0532171d5d35bde533b69ae26373f47846b5f18a6",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1003,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "7101a9a6b74fa50d6e114ab0532171d5d35bde533b69ae26373f47846b5f18a6",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 84,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G7LCC3",
   "selected_historical_entry_version": 84,
+  "selected_historical_record_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
+  "selected_historical_source_sequence_length": 1003,
+  "selected_historical_source_sequence_sha256": "7101a9a6b74fa50d6e114ab0532171d5d35bde533b69ae26373f47846b5f18a6",
   "selected_historical_version": {
     "accession": "G7LCC3",
     "database": "Swiss-Prot",
@@ -567,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CRE1_MEDTR",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
-  "selected_historical_source_sequence_sha256": "7101a9a6b74fa50d6e114ab0532171d5d35bde533b69ae26373f47846b5f18a6",
-  "selected_historical_source_sequence_length": 1003,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 84,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json",
-  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G7LCC3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
+  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json"
 }
 ```
 
@@ -617,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json",
-  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":86,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-10-01\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
+  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json"
 }
 ```
 
@@ -636,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json",
-  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Barrel medic\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"rosids\",\"fabids\",\"Fabales\",\"Fabaceae\",\"Papilionoideae\",\"50 kb inversion clade\",\"NPAAA clade\",\"Hologalegina\",\"IRL clade\",\"Trifolieae\",\"Medicago\"],\"scientificName\":\"Medicago truncatula\",\"synonyms\":[\"Medicago tribuloides\"],\"taxonId\":3880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
+  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json"
 }
 ```
 
@@ -655,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json",
-  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34630499\",\"source\":\"PubMed\"}],\"value\":\"Cytokinin receptor CYTOKININ RESPONSE 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34630499\",\"source\":\"PubMed\"}],\"value\":\"Cytokinin receptor CRE1\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34630499\",\"source\":\"PubMed\"}],\"value\":\"MtCRE1\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9C5U0\",\"source\":\"UniProtKB\"}],\"value\":\"2.7.13.3\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34630499\",\"source\":\"PubMed\"}],\"value\":\"Histidine kinase CRE1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
+  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json"
 }
 ```
 
@@ -674,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json",
-  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":57},\"start\":{\"modifier\":\"EXACT\",\"value\":37}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
+  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json"
 }
 ```
 
@@ -693,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json",
-  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":353},\"start\":{\"modifier\":\"EXACT\",\"value\":333}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
+  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json"
 }
 ```
 
@@ -712,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json",
-  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
-  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Tran L.H.\",\"Urbanowicz A.\",\"Jasinski M.\",\"Jaskolski M.\",\"Ruszkowski M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34630499\"},{\"database\":\"DOI\",\"id\":\"10.3389/fpls.2021.756341\"}],\"citationType\":\"journal article\",\"firstPage\":\"756341\",\"id\":\"34630499\",\"journal\":\"Front. Plant Sci.\",\"lastPage\":\"756341\",\"publicationDate\":\"2021\",\"title\":\"3D domain swapping dimerization of the receiver domain of cytokinin receptor CRE1 from Arabidopsis thaliana and Medicago truncatula.\",\"volume\":\"12\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7P8E\",\"source\":\"PDB\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.50 ANGSTROMS) OF 351-994 IN COMPLEX WITH CA(2+)\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:25:09.681318+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d540f6305c9d128af7aa4ffb15254c3d79657e1e42f99e3b7f07f6438cabd19b",
+  "url": "https://rest.uniprot.org/uniprotkb/G7LCC3.json"
 }
 ```
 
@@ -730,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84",
-  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
-  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   CRE1_MEDTR              Reviewed;        1003 AA.\nAC   G7LCC3; A0A0C3Y896;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2014, sequence version 2.\nDT   28-JAN-2026, entry version 84.\nDE   RecName: Full=Histidine kinase CRE1 {ECO:0000303|PubMed:34630499};\nDE            EC=2.7.13.3 {ECO:0000250|UniProtKB:Q9C5U0};\nDE   AltName: Full=Cytokinin receptor CYTOKININ RESPONSE 1 {ECO:0000303|PubMed:34630499};\nDE            Short=Cytokinin receptor CRE1 {ECO:0000303|PubMed:34630499};\nDE            Short=MtCRE1 {ECO:0000303|PubMed:34630499};\nGN   Name=CRE1 {ECO:0000303|PubMed:34630499};\nGN   OrderedLocusNames=MTR_8g106150 {ECO:0000312|EMBL:AET05490.2};\nGN   ORFNames=MtrunA17_Chr8g0392301 {ECO:0000312|EMBL:RHN43850.1};\nOS   Medicago truncatula (Barrel medic) (Medicago tribuloides).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   rosids; fabids; Fabales; Fabaceae; Papilionoideae; 50 kb inversion clade;\nOC   NPAAA clade; Hologalegina; IRL clade; Trifolieae; Medicago.\nOX   NCBI_TaxID=3880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
+  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84"
 }
 ```
 
@@ -751,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84",
-  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
-  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
-  "source_locator": "lines 70-76",
   "excerpt": "RN   [4] {ECO:0007744|PDB:7P8E}\nRP   X-RAY CRYSTALLOGRAPHY (2.50 ANGSTROMS) OF 351-994 IN COMPLEX WITH CA(2+).\nRX   PubMed=34630499; DOI=10.3389/fpls.2021.756341;\nRA   Tran L.H., Urbanowicz A., Jasinski M., Jaskolski M., Ruszkowski M.;\nRT   \"3D domain swapping dimerization of the receiver domain of cytokinin\nRT   receptor CRE1 from Arabidopsis thaliana and Medicago truncatula.\";\nRL   Front. Plant Sci. 12:756341-756341(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 70-76",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
+  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84"
 }
 ```
 
@@ -772,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84",
-  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
-  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
-  "source_locator": "lines 187-189",
   "excerpt": "FT   TRANSMEM        37..57\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 187-189",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
+  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84"
 }
 ```
 
@@ -793,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 84,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84",
-  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
-  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
-  "source_locator": "lines 190-192",
   "excerpt": "FT   TRANSMEM        333..353\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 84,
+  "retrieved_utc": "2026-11-01T06:28:06.918748+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 190-192",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "026a53a56a232a58bac5538cce4d8ffd143200e6dd576544a82b544bfe64f8af",
+  "url": "https://rest.uniprot.org/unisave/G7LCC3?format=txt&versions=84"
 }
 ```
 

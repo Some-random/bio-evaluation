@@ -1,18 +1,16 @@
-# GO_cellular_component_0051: before and after transfer clarification
+# GO_cellular_component_0051
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0051.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0051.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — lipid droplet
+**Expected answer:** **A** — lipid droplet
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt beta-amyrin synthase 1 entry, which annotates it to lipid droplet. This supports A as a database annotation, but the annotation is computationally inferred (IEA:InterPro), not direct experimental localization evidence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence does not provide a clear targeting signal that specifically establishes lipid-droplet localization; ruling out some distractors would not establish A.
-
-
-**Missing item-specific fact**
-
-> The protein-specific lipid-droplet annotation or experimental localization evidence is absent from the question input.
-
-
-**Reason**
-
-> Choosing A depends on a protein-specific localization fact rather than a defensible sequence-based distinction among the choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed options, the matched sequence-specific annotation supports A; the evidence provided does not support another listed choice.
-
-
-### Important caveats
-
-- The annotation is computational inference, not evidence of experimentally measured primary localization.
-- The exact author database snapshot is unknown, although the sequence-matched historical entry also contains the lipid-droplet annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence does not provide a clear targeting signal that specifically establishes lipid-droplet localization; ruling out some distractors would not establish A.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific lipid-droplet annotation or experimental localization evidence is absent from the question input.",
-    "reason": "Choosing A depends on a protein-specific localization fact rather than a defensible sequence-based distinction among the choices."
-  },
-  "case_id": "GO_cellular_component_0051",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt beta-amyrin synthase 1 entry, which annotates it to lipid droplet. This supports A as a database annotation, but the annotation is computationally inferred (IEA:InterPro), not direct experimental localization evidence."
-  },
-  "important_caveats": [
-    "The annotation is computational inference, not evidence of experimentally measured primary localization.",
-    "The exact author database snapshot is unknown, although the sequence-matched historical entry also contains the lipid-droplet annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, the matched sequence-specific annotation supports A; the evidence provided does not support another listed choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0051",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt beta-amyrin synthase 1 entry, which annotates it to lipid droplet. This supports A as a database annotation, but the annotation is computationally inferred (IEA:InterPro), not direct experimental localization evidence.",
-    "evidence_ids": ["C1", "C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence does not provide a clear targeting signal that specifically establishes lipid-droplet localization; ruling out some distractors would not establish A.",
-    "missing_item_specific_fact": "The protein-specific lipid-droplet annotation or experimental localization evidence is absent from the question input.",
-    "reason": "Choosing A depends on a protein-specific localization fact rather than a defensible sequence-based distinction among the choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed options, the matched sequence-specific annotation supports A; the evidence provided does not support another listed choice."
-  },
-  "important_caveats": [
-    "The annotation is computational inference, not evidence of experimentally measured primary localization.",
-    "The exact author database snapshot is unknown, although the sequence-matched historical entry also contains the lipid-droplet annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0AAW1L0L7 (Beta-amyrin synthase 1, SobAS1 from Saponaria officinalis) carries GO:0005811 (lipid droplet) as a cellular component annotation. However, the evidence code is IEA:InterPro (C5, H3), meaning this is an automated computational annotation propagated from InterPro domain matches, not an experimentally determined localization. The primary literature (PubMed:39043959) characterizes function, catalytic activity, tissue specificity, and pathway but does not report experimental subcellular localization. The annotation is present in the database and matches the expected answer, but it is inference-level rather than experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the conserved DCTAEQ cyclase motif (visible as 'DCTAEGLKC') and QW motif characteristic of oxidosqualene cyclases (triterpene synthases), along with multiple hydrophobic stretches indicating membrane association but lacking a mitochondrial transit peptide (no N-terminal amphipathic cationic helix). This eliminates B (mitochondrial inner membrane). The absence of Walker A/B motifs and the characteristic ABC transmembrane architecture eliminates C (ABC transporter complex). The protein is from a plant and lacks features of animal egg-coat glycoproteins, eliminating D (vitelline envelope). A membrane-associated enzyme synthesizing highly lipophilic triterpene products has biological plausibility for lipid droplet association, as lipid droplets are sites of lipophilic compound accumulation.
-
-
-**Missing item-specific fact**
-
-> The specific InterPro annotation linking this particular oxidosqualene cyclase to lipid droplets (rather than the more canonical ER localization) is an automated inference not derivable from general biological knowledge alone. The 'primary' localization of OSCs is typically the ER, and the lipid droplet association is a specialized, secondary annotation.
-
-
-**Reason**
-
-> Three of four options can be eliminated through general biological reasoning (no mitochondrial targeting, no ABC domains, not an animal egg coat). The remaining option (lipid droplet) is biologically plausible for a membrane-associated lipophilic-compound synthase, though the canonical primary localization of OSCs is the ER. The question is answerable by elimination plus general membrane/lipid biology, but the positive identification of 'lipid droplet' over 'ER' relies on the specific option set provided.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> While the true primary localization of beta-amyrin synthase is the ER (not offered), among the four provided options only lipid droplet is defensible. B, C, and D are clearly incompatible with the protein's identity and organism. No two options are equally defensible given the sequence and biological context.
-
-
-### Important caveats
-
-- The GO:0005811 annotation carries evidence code IEA:InterPro, meaning it is a computational/automated annotation, not experimental. The primary literature (Jo et al. 2025, Nat Chem Biol) does not report experimental subcellular localization for this enzyme.
-- The canonical primary localization of oxidosqualene cyclases in plants is the ER membrane. The lipid droplet annotation reflects a secondary association or automated propagation from InterPro, not a validated primary localization.
-- The question asks for 'primary Cellular Component,' yet the true primary component (ER) is not among the options, making the question somewhat artificial in its option set.
-- The sequence-match is confirmed (SHA256 match to A0AAW1L0L7), but the accession was inferred from dataset metadata absent from the model input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the conserved DCTAEQ cyclase motif (visible as 'DCTAEGLKC') and QW motif characteristic of oxidosqualene cyclases (triterpene synthases), along with multiple hydrophobic stretches indicating membrane association but lacking a mitochondrial transit peptide (no N-terminal amphipathic cationic helix). This eliminates B (mitochondrial inner membrane). The absence of Walker A/B motifs and the characteristic ABC transmembrane architecture eliminates C (ABC transporter complex). The protein is from a plant and lacks features of animal egg-coat glycoproteins, eliminating D (vitelline envelope). A membrane-associated enzyme synthesizing highly lipophilic triterpene products has biological plausibility for lipid droplet association, as lipid droplets are sites of lipophilic compound accumulation.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific InterPro annotation linking this particular oxidosqualene cyclase to lipid droplets (rather than the more canonical ER localization) is an automated inference not derivable from general biological knowledge alone. The 'primary' localization of OSCs is typically the ER, and the lipid droplet association is a specialized, secondary annotation.",
-    "reason": "Three of four options can be eliminated through general biological reasoning (no mitochondrial targeting, no ABC domains, not an animal egg coat). The remaining option (lipid droplet) is biologically plausible for a membrane-associated lipophilic-compound synthase, though the canonical primary localization of OSCs is the ER. The question is answerable by elimination plus general membrane/lipid biology, but the positive identification of 'lipid droplet' over 'ER' relies on the specific option set provided."
-  },
-  "case_id": "GO_cellular_component_0051",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1L0L7 (Beta-amyrin synthase 1, SobAS1 from Saponaria officinalis) carries GO:0005811 (lipid droplet) as a cellular component annotation. However, the evidence code is IEA:InterPro (C5, H3), meaning this is an automated computational annotation propagated from InterPro domain matches, not an experimentally determined localization. The primary literature (PubMed:39043959) characterizes function, catalytic activity, tissue specificity, and pathway but does not report experimental subcellular localization. The annotation is present in the database and matches the expected answer, but it is inference-level rather than experimental evidence."
-  },
-  "important_caveats": [
-    "The GO:0005811 annotation carries evidence code IEA:InterPro, meaning it is a computational/automated annotation, not experimental. The primary literature (Jo et al. 2025, Nat Chem Biol) does not report experimental subcellular localization for this enzyme.",
-    "The canonical primary localization of oxidosqualene cyclases in plants is the ER membrane. The lipid droplet annotation reflects a secondary association or automated propagation from InterPro, not a validated primary localization.",
-    "The question asks for 'primary Cellular Component,' yet the true primary component (ER) is not among the options, making the question somewhat artificial in its option set.",
-    "The sequence-match is confirmed (SHA256 match to A0AAW1L0L7), but the accession was inferred from dataset metadata absent from the model input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While the true primary localization of beta-amyrin synthase is the ER (not offered), among the four provided options only lipid droplet is defensible. B, C, and D are clearly incompatible with the protein's identity and organism. No two options are equally defensible given the sequence and biological context."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0051",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1L0L7 (Beta-amyrin synthase 1, SobAS1 from Saponaria officinalis) carries GO:0005811 (lipid droplet) as a cellular component annotation. However, the evidence code is IEA:InterPro (C5, H3), meaning this is an automated computational annotation propagated from InterPro domain matches, not an experimentally determined localization. The primary literature (PubMed:39043959) characterizes function, catalytic activity, tissue specificity, and pathway but does not report experimental subcellular localization. The annotation is present in the database and matches the expected answer, but it is inference-level rather than experimental evidence.",
-    "evidence_ids": ["C5", "H3", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the conserved DCTAEQ cyclase motif (visible as 'DCTAEGLKC') and QW motif characteristic of oxidosqualene cyclases (triterpene synthases), along with multiple hydrophobic stretches indicating membrane association but lacking a mitochondrial transit peptide (no N-terminal amphipathic cationic helix). This eliminates B (mitochondrial inner membrane). The absence of Walker A/B motifs and the characteristic ABC transmembrane architecture eliminates C (ABC transporter complex). The protein is from a plant and lacks features of animal egg-coat glycoproteins, eliminating D (vitelline envelope). A membrane-associated enzyme synthesizing highly lipophilic triterpene products has biological plausibility for lipid droplet association, as lipid droplets are sites of lipophilic compound accumulation.",
-    "missing_item_specific_fact": "The specific InterPro annotation linking this particular oxidosqualene cyclase to lipid droplets (rather than the more canonical ER localization) is an automated inference not derivable from general biological knowledge alone. The 'primary' localization of OSCs is typically the ER, and the lipid droplet association is a specialized, secondary annotation.",
-    "reason": "Three of four options can be eliminated through general biological reasoning (no mitochondrial targeting, no ABC domains, not an animal egg coat). The remaining option (lipid droplet) is biologically plausible for a membrane-associated lipophilic-compound synthase, though the canonical primary localization of OSCs is the ER. The question is answerable by elimination plus general membrane/lipid biology, but the positive identification of 'lipid droplet' over 'ER' relies on the specific option set provided."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "While the true primary localization of beta-amyrin synthase is the ER (not offered), among the four provided options only lipid droplet is defensible. B, C, and D are clearly incompatible with the protein's identity and organism. No two options are equally defensible given the sequence and biological context."
-  },
-  "important_caveats": [
-    "The GO:0005811 annotation carries evidence code IEA:InterPro, meaning it is a computational/automated annotation, not experimental. The primary literature (Jo et al. 2025, Nat Chem Biol) does not report experimental subcellular localization for this enzyme.",
-    "The canonical primary localization of oxidosqualene cyclases in plants is the ER membrane. The lipid droplet annotation reflects a secondary association or automated propagation from InterPro, not a validated primary localization.",
-    "The question asks for 'primary Cellular Component,' yet the true primary component (ER) is not among the options, making the question somewhat artificial in its option set.",
-    "The sequence-match is confirmed (SHA256 match to A0AAW1L0L7), but the accession was inferred from dataset metadata absent from the model input."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAW1L0L7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 760,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-11-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "current_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 760,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAW1L0L7",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "selected_historical_source_sequence_length": 760,
+  "selected_historical_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
   "selected_historical_version": {
     "accession": "A0AAW1L0L7",
     "database": "Swiss-Prot",
@@ -550,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BAMS1_SAPOF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "selected_historical_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
-  "selected_historical_source_sequence_length": 760,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAW1L0L7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -604,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2024-11-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -623,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Common soapwort\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Caryophyllaceae\",\"Caryophylleae\",\"Saponaria\"],\"scientificName\":\"Saponaria officinalis\",\"synonyms\":[\"Lychnis saponaria\"],\"taxonId\":3572}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -642,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"5.4.99.39\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Beta-amyrin synthase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"SobAS1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -661,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/6",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005811\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:lipid droplet\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/6",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -680,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Jo S.\",\"El-Demerdash A.\",\"Owen C.\",\"Srivastava V.\",\"Wu D.\",\"Kikuchi S.\",\"Reed J.\",\"Hodgson H.\",\"Harkess A.\",\"Shu S.\",\"Plott C.\",\"Jenkins J.\",\"Williams M.\",\"Boston L.-B.\",\"Lacchini E.\",\"Qu T.\",\"Goossens A.\",\"Grimwood J.\",\"Schmutz J.\",\"Leebens-Mack J.\",\"Osbourn A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39043959\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-024-01681-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"215\",\"id\":\"39043959\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"226\",\"publicationDate\":\"2025\",\"title\":\"Unlocking saponin biosynthesis in soapwort.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WWM48160.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"TISSUE SPECIFICITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -698,18 +458,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5",
-  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   BAMS1_SAPOF             Reviewed;         760 AA.\nAC   A0AAW1L0L7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-NOV-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=Beta-amyrin synthase 1 {ECO:0000303|PubMed:39043959};\nDE            Short=SobAS1 {ECO:0000303|PubMed:39043959};\nDE            EC=5.4.99.39 {ECO:0000269|PubMed:39043959};\nGN   Name=bAS1 {ECO:0000303|PubMed:39043959};\nGN   Synonyms=Saoffv11027757m {ECO:0000303|PubMed:39043959};\nGN   ORFNames=RND81_05G236200 {ECO:0000312|EMBL:KAK9726778.1};\nOS   Saponaria officinalis (Common soapwort) (Lychnis saponaria).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Caryophyllaceae; Caryophylleae; Saponaria.\nOX   NCBI_TaxID=3572;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5"
 }
 ```
 
@@ -719,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5",
-  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
-  "source_locator": "lines 17-26",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WWM48160.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, TISSUE\nRP   SPECIFICITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39043959; DOI=10.1038/s41589-024-01681-7;\nRA   Jo S., El-Demerdash A., Owen C., Srivastava V., Wu D., Kikuchi S., Reed J.,\nRA   Hodgson H., Harkess A., Shu S., Plott C., Jenkins J., Williams M.,\nRA   Boston L.-B., Lacchini E., Qu T., Goossens A., Grimwood J., Schmutz J.,\nRA   Leebens-Mack J., Osbourn A.;\nRT   \"Unlocking saponin biosynthesis in soapwort.\";\nRL   Nat. Chem. Biol. 21:215-226(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5"
 }
 ```
 
@@ -740,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5",
-  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
-  "source_locator": "lines 69-69",
   "excerpt": "DR   GO; GO:0005811; C:lipid droplet; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 69-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5"
 }
 ```
 
@@ -762,15 +522,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59031-59043",
   "excerpt": "[Term]\nid: GO:0005743\nname: mitochondrial inner membrane\nnamespace: cellular_component\ndef: \"The inner, i.e. lumen-facing, lipid bilayer of the mitochondrial envelope. It is highly folded to form cristae.\" [GOC:ai]\nsynonym: \"inner mitochondrial membrane\" EXACT []\nsynonym: \"inner mitochondrion membrane\" EXACT []\nsynonym: \"mitochondrion inner membrane\" EXACT []\nxref: NIF_Subcellular:sao1371347282\nxref: Wikipedia:Inner_mitochondrial_membrane\nis_a: GO:0019866 ! organelle inner membrane\nis_a: GO:0031966 ! mitochondrial membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005743",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59031-59043",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005743"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -781,15 +541,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59777-59789",
   "excerpt": "[Term]\nid: GO:0005811\nname: lipid droplet\nnamespace: cellular_component\ndef: \"An intracellular non-membrane-bounded organelle comprising a matrix of coalesced lipids surrounded by a phospholipid monolayer. May include associated proteins.\" [GOC:mah, GOC:tb]\ncomment: Note that this term does not refer to vesicles, but instead to structures in which lipids do not necessarily form bilayers.\nsubset: goslim_chembl\nsubset: goslim_generic\nsynonym: \"adiposome\" EXACT []\nsynonym: \"lipid body\" EXACT []\nsynonym: \"lipid particle\" EXACT []\nis_a: GO:0043232 ! intracellular membraneless organelle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005811",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59777-59789",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005811"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -800,15 +560,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 244782-244797",
   "excerpt": "[Term]\nid: GO:0043190\nname: ATP-binding cassette (ABC) transporter complex\nnamespace: cellular_component\nalt_id: GO:0043191\nalt_id: GO:0043192\ndef: \"A complex for the transport of metabolites into and out of the cell, typically comprised of four domains; two membrane-associated domains and two ATP-binding domains at the intracellular face of the membrane, that form a central pore through the plasma membrane. Each of the four core domains may be encoded as a separate polypeptide or the domains can be fused in any one of a number of ways into multidomain polypeptides. In Bacteria and Archaebacteria, ABC transporters also include substrate binding proteins to bind substrate external to the cytoplasm and deliver it to the transporter.\" [GOC:jl, GOC:mtg_sensu, PMID:11421269, PMID:15111107]\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsynonym: \"ABC-type efflux permease complex\" NARROW []\nsynonym: \"ABC-type efflux porter complex\" NARROW []\nsynonym: \"ABC-type uptake permease complex\" NARROW []\nsynonym: \"mating pheromone exporter\" NARROW []\nis_a: GO:0098533 ! ATPase dependent transmembrane transport complex\nis_a: GO:0098797 ! plasma membrane protein complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043190",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 244782-244797",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043190"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -819,15 +579,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 347268-347275",
   "excerpt": "[Term]\nid: GO:0060388\nname: vitelline envelope\nnamespace: cellular_component\ndef: \"A glycoprotein-based structure that lies outside the plasma membrane and surrounds the egg before fertilization.\" [GOC:dph, ISBN:0878932437]\nsynonym: \"fertilization membrane\" RELATED []\nis_a: GO:0035805 ! egg coat\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0060388",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 347268-347275",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0060388"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

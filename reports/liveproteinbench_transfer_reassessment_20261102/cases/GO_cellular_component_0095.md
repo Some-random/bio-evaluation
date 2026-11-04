@@ -1,18 +1,16 @@
-# GO_cellular_component_0095: before and after transfer clarification
+# GO_cellular_component_0095
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0095.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0095.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **C** — nuclear envelope
+**Expected answer:** **C** — nuclear envelope
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | uncertain | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,259 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: uncertain
-
-> The sequence matches rat HTATIP2, but the supplied database excerpts annotate cytoplasm and cytosol, and the current entry also lists mitochondrion; none establishes nuclear-envelope localization. These annotations do not rule it out, and the excerpts may be incomplete. The key is therefore unresolved by the supplied evidence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a soluble-looking protein without an obvious signal peptide or transmembrane segment, which offers some broad context but does not distinguish nuclear-envelope association from the other intracellular complex choices.
-
-
-**Missing item-specific fact**
-
-> Protein-specific localization or complex-membership evidence is needed to select among the listed intracellular possibilities and establish which, if any, is the primary component.
-
-
-**Reason**
-
-> The sequence and choices provide no reliable biological feature that specifically supports nuclear-envelope localization over replisome or transcription-regulator-complex membership. Selecting a particular option depends on item-specific annotation or experimental evidence not supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available evidence does not establish any listed option as the primary component. It also does not exclude nuclear-envelope localization; the annotations shown are not exhaustive.
-
-
-### Important caveats
-
-- Reviewer-only accession and database evidence were not present in the evaluated model input.
-- The sequence match identifies rat HTATIP2, but database localization annotations do not by themselves prove exclusive or primary localization.
-- The current mitochondrial annotation uses IBA evidence; the cytoplasm and cytosol annotations use ISO:RGD evidence. The historical excerpts show cytoplasm and cytosol annotations.
-- The exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a soluble-looking protein without an obvious signal peptide or transmembrane segment, which offers some broad context but does not distinguish nuclear-envelope association from the other intracellular complex choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Protein-specific localization or complex-membership evidence is needed to select among the listed intracellular possibilities and establish which, if any, is the primary component.",
-    "reason": "The sequence and choices provide no reliable biological feature that specifically supports nuclear-envelope localization over replisome or transcription-regulator-complex membership. Selecting a particular option depends on item-specific annotation or experimental evidence not supplied to the evaluated model."
-  },
-  "case_id": "GO_cellular_component_0095",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "cannot_determine",
-    "reason": "The sequence matches rat HTATIP2, but the supplied database excerpts annotate cytoplasm and cytosol, and the current entry also lists mitochondrion; none establishes nuclear-envelope localization. These annotations do not rule it out, and the excerpts may be incomplete. The key is therefore unresolved by the supplied evidence."
-  },
-  "important_caveats": [
-    "Reviewer-only accession and database evidence were not present in the evaluated model input.",
-    "The sequence match identifies rat HTATIP2, but database localization annotations do not by themselves prove exclusive or primary localization.",
-    "The current mitochondrial annotation uses IBA evidence; the cytoplasm and cytosol annotations use ISO:RGD evidence. The historical excerpts show cytoplasm and cytosol annotations.",
-    "The exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available evidence does not establish any listed option as the primary component. It also does not exclude nuclear-envelope localization; the annotations shown are not exhaustive."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0095",
-  "expected_answer_check": {
-    "judgment": "cannot_determine",
-    "reason": "The sequence matches rat HTATIP2, but the supplied database excerpts annotate cytoplasm and cytosol, and the current entry also lists mitochondrion; none establishes nuclear-envelope localization. These annotations do not rule it out, and the excerpts may be incomplete. The key is therefore unresolved by the supplied evidence.",
-    "evidence_ids": ["C1", "C5", "C6", "C7", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a soluble-looking protein without an obvious signal peptide or transmembrane segment, which offers some broad context but does not distinguish nuclear-envelope association from the other intracellular complex choices.",
-    "missing_item_specific_fact": "Protein-specific localization or complex-membership evidence is needed to select among the listed intracellular possibilities and establish which, if any, is the primary component.",
-    "reason": "The sequence and choices provide no reliable biological feature that specifically supports nuclear-envelope localization over replisome or transcription-regulator-complex membership. Selecting a particular option depends on item-specific annotation or experimental evidence not supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available evidence does not establish any listed option as the primary component. It also does not exclude nuclear-envelope localization; the annotations shown are not exhaustive."
-  },
-  "important_caveats": [
-    "Reviewer-only accession and database evidence were not present in the evaluated model input.",
-    "The sequence match identifies rat HTATIP2, but database localization annotations do not by themselves prove exclusive or primary localization.",
-    "The current mitochondrial annotation uses IBA evidence; the cytoplasm and cytosol annotations use ISO:RGD evidence. The historical excerpts show cytoplasm and cytosol annotations.",
-    "The exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The UniProt annotations for B0BNF8 (HTATIP2/TIP30, rat) show cellular component GO terms for cytoplasm (GO:0005737, ISO:RGD), cytosol (GO:0005829, ISO:RGD), and mitochondrion (GO:0005739, IBA:GO_Central). No nuclear envelope (GO:0005635) annotation appears in either the current entry or the historical entry (version 117). The positive ISO:RGD annotations for cytoplasm/cytosol are incompatible with the primary localization being the nuclear envelope. HTATIP2/TIP30 is a well-characterized cytoplasmic/cytosolic protein with reported mitochondrial association, not a nuclear envelope resident.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Option B (periplasmic space) can be eliminated by general knowledge since this is a eukaryotic (rat) protein and periplasmic space is a bacterial/fungal compartment. However, among the remaining options (replisome, nuclear envelope, RNA Pol II transcription regulator complex), the sequence provides no clear targeting signals (no obvious NLS, no transmembrane domains, no DNA-binding or polymerase motifs) that would distinguish one from the others. The sequence lacks features that would specifically predict nuclear envelope localization over the other nuclear-associated complexes.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt/GO annotation of HTATIP2 (B0BNF8) is needed, and even that annotation does not support 'nuclear envelope'—it supports cytoplasm/cytosol/mitochondrion. No sequence-derived feature in the provided input distinguishes nuclear envelope from the other options.
-
-
-**Reason**
-
-> The question cannot be resolved by reasoning from the sequence alone. The expected answer is not supported by the protein's actual annotations, and no sequence feature (NLS, transmembrane helix, replication factor motif, transcription factor domain) points specifically to the nuclear envelope. Selection among A, C, D requires item-specific annotation knowledge that is absent from the input and, when consulted, contradicts the expected answer.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C",
-  "D"
-]
-```
-
-> All three remaining options (replisome, nuclear envelope, RNA Pol II transcription regulator complex) are nuclear or nuclear-associated complexes. Without a clear targeting signal or functional domain in the sequence, none can be confidently selected over the others by reasoning alone. Option B is eliminable (periplasmic space is prokaryotic/fungal). The expected answer C is not supported by the protein's actual GO annotations (cytoplasm/cytosol/mitochondrion), making the question defective in its key.
-
-
-### Important caveats
-
-- The expected answer 'nuclear envelope' is contradicted by the available UniProt annotations (cytoplasm, cytosol, mitochondrion with ISO:RGD and IBA evidence codes).
-- The correct primary localization based on annotations (cytoplasm/cytosol) is not among the answer choices, suggesting a possible error in question construction.
-- The accession B0BNF8 was inferred from dataset metadata (reviewer-only); the evaluated model had only the raw sequence.
-- Evidence excerpts may be incomplete, but the ISO:RGD annotations for cytoplasm/cytosol are strong positive annotations that argue against nuclear envelope as the primary location.
-- The GO ontology definition for nuclear envelope (GO:0005635) describes a double lipid bilayer structure—this is a structural compartment, not a protein complex, further distinguishing it from options A and D.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Option B (periplasmic space) can be eliminated by general knowledge since this is a eukaryotic (rat) protein and periplasmic space is a bacterial/fungal compartment. However, among the remaining options (replisome, nuclear envelope, RNA Pol II transcription regulator complex), the sequence provides no clear targeting signals (no obvious NLS, no transmembrane domains, no DNA-binding or polymerase motifs) that would distinguish one from the others. The sequence lacks features that would specifically predict nuclear envelope localization over the other nuclear-associated complexes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific UniProt/GO annotation of HTATIP2 (B0BNF8) is needed, and even that annotation does not support 'nuclear envelope'—it supports cytoplasm/cytosol/mitochondrion. No sequence-derived feature in the provided input distinguishes nuclear envelope from the other options.",
-    "reason": "The question cannot be resolved by reasoning from the sequence alone. The expected answer is not supported by the protein's actual annotations, and no sequence feature (NLS, transmembrane helix, replication factor motif, transcription factor domain) points specifically to the nuclear envelope. Selection among A, C, D requires item-specific annotation knowledge that is absent from the input and, when consulted, contradicts the expected answer."
-  },
-  "case_id": "GO_cellular_component_0095",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H2",
-      "H3"
-    ],
-    "judgment": "contradicted",
-    "reason": "The UniProt annotations for B0BNF8 (HTATIP2/TIP30, rat) show cellular component GO terms for cytoplasm (GO:0005737, ISO:RGD), cytosol (GO:0005829, ISO:RGD), and mitochondrion (GO:0005739, IBA:GO_Central). No nuclear envelope (GO:0005635) annotation appears in either the current entry or the historical entry (version 117). The positive ISO:RGD annotations for cytoplasm/cytosol are incompatible with the primary localization being the nuclear envelope. HTATIP2/TIP30 is a well-characterized cytoplasmic/cytosolic protein with reported mitochondrial association, not a nuclear envelope resident."
-  },
-  "important_caveats": [
-    "The expected answer 'nuclear envelope' is contradicted by the available UniProt annotations (cytoplasm, cytosol, mitochondrion with ISO:RGD and IBA evidence codes).",
-    "The correct primary localization based on annotations (cytoplasm/cytosol) is not among the answer choices, suggesting a possible error in question construction.",
-    "The accession B0BNF8 was inferred from dataset metadata (reviewer-only); the evaluated model had only the raw sequence.",
-    "Evidence excerpts may be incomplete, but the ISO:RGD annotations for cytoplasm/cytosol are strong positive annotations that argue against nuclear envelope as the primary location.",
-    "The GO ontology definition for nuclear envelope (GO:0005635) describes a double lipid bilayer structure—this is a structural compartment, not a protein complex, further distinguishing it from options A and D."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C",
-      "D"
-    ],
-    "reason": "All three remaining options (replisome, nuclear envelope, RNA Pol II transcription regulator complex) are nuclear or nuclear-associated complexes. Without a clear targeting signal or functional domain in the sequence, none can be confidently selected over the others by reasoning alone. Option B is eliminable (periplasmic space is prokaryotic/fungal). The expected answer C is not supported by the protein's actual GO annotations (cytoplasm/cytosol/mitochondrion), making the question defective in its key."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0095",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The UniProt annotations for B0BNF8 (HTATIP2/TIP30, rat) show cellular component GO terms for cytoplasm (GO:0005737, ISO:RGD), cytosol (GO:0005829, ISO:RGD), and mitochondrion (GO:0005739, IBA:GO_Central). No nuclear envelope (GO:0005635) annotation appears in either the current entry or the historical entry (version 117). The positive ISO:RGD annotations for cytoplasm/cytosol are incompatible with the primary localization being the nuclear envelope. HTATIP2/TIP30 is a well-characterized cytoplasmic/cytosolic protein with reported mitochondrial association, not a nuclear envelope resident.",
-    "evidence_ids": ["C5", "C6", "C7", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Option B (periplasmic space) can be eliminated by general knowledge since this is a eukaryotic (rat) protein and periplasmic space is a bacterial/fungal compartment. However, among the remaining options (replisome, nuclear envelope, RNA Pol II transcription regulator complex), the sequence provides no clear targeting signals (no obvious NLS, no transmembrane domains, no DNA-binding or polymerase motifs) that would distinguish one from the others. The sequence lacks features that would specifically predict nuclear envelope localization over the other nuclear-associated complexes.",
-    "missing_item_specific_fact": "The specific UniProt/GO annotation of HTATIP2 (B0BNF8) is needed, and even that annotation does not support 'nuclear envelope'—it supports cytoplasm/cytosol/mitochondrion. No sequence-derived feature in the provided input distinguishes nuclear envelope from the other options.",
-    "reason": "The question cannot be resolved by reasoning from the sequence alone. The expected answer is not supported by the protein's actual annotations, and no sequence feature (NLS, transmembrane helix, replication factor motif, transcription factor domain) points specifically to the nuclear envelope. Selection among A, C, D requires item-specific annotation knowledge that is absent from the input and, when consulted, contradicts the expected answer."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C", "D"],
-    "reason": "All three remaining options (replisome, nuclear envelope, RNA Pol II transcription regulator complex) are nuclear or nuclear-associated complexes. Without a clear targeting signal or functional domain in the sequence, none can be confidently selected over the others by reasoning alone. Option B is eliminable (periplasmic space is prokaryotic/fungal). The expected answer C is not supported by the protein's actual GO annotations (cytoplasm/cytosol/mitochondrion), making the question defective in its key."
-  },
-  "important_caveats": [
-    "The expected answer 'nuclear envelope' is contradicted by the available UniProt annotations (cytoplasm, cytosol, mitochondrion with ISO:RGD and IBA evidence codes).",
-    "The correct primary localization based on annotations (cytoplasm/cytosol) is not among the answer choices, suggesting a possible error in question construction.",
-    "The accession B0BNF8 was inferred from dataset metadata (reviewer-only); the evaluated model had only the raw sequence.",
-    "Evidence excerpts may be incomplete, but the ISO:RGD annotations for cytoplasm/cytosol are strong positive annotations that argue against nuclear envelope as the primary location.",
-    "The GO ontology definition for nuclear envelope (GO:0005635) describes a double lipid bilayer structure—this is a structural compartment, not a protein complex, further distinguishing it from options A and D."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: uncertain
 
@@ -408,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -532,30 +281,17 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), 
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B0BNF8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "84a71691c15d738414b9418bb4ec9b787bd7004f741e211117cb2d48da890b5f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 242,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "84a71691c15d738414b9418bb4ec9b787bd7004f741e211117cb2d48da890b5f",
   "current_entry_audit": {
     "entryVersion": 119,
     "firstPublicDate": "2025-06-18",
@@ -563,14 +299,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2008-02-26",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "current_source_sequence_sha256": "84a71691c15d738414b9418bb4ec9b787bd7004f741e211117cb2d48da890b5f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 242,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "84a71691c15d738414b9418bb4ec9b787bd7004f741e211117cb2d48da890b5f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 117,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B0BNF8",
   "selected_historical_entry_version": 117,
+  "selected_historical_record_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
+  "selected_historical_source_sequence_length": 242,
+  "selected_historical_source_sequence_sha256": "84a71691c15d738414b9418bb4ec9b787bd7004f741e211117cb2d48da890b5f",
   "selected_historical_version": {
     "accession": "B0BNF8",
     "database": "Swiss-Prot",
@@ -581,24 +333,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HTAI2_RAT",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
-  "selected_historical_source_sequence_sha256": "84a71691c15d738414b9418bb4ec9b787bd7004f741e211117cb2d48da890b5f",
-  "selected_historical_source_sequence_length": 242,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 117,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -616,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json",
-  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B0BNF8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
+  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json"
 }
 ```
 
@@ -635,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json",
-  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":119,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2008-02-26\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
+  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json"
 }
 ```
 
@@ -654,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json",
-  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rat\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000002494\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Rattus\"],\"scientificName\":\"Rattus norvegicus\",\"taxonId\":10116}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
+  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json"
 }
 ```
 
@@ -673,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json",
-  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Protein HTATIP2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
+  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json"
 }
 ```
 
@@ -692,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json",
-  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/20",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005737\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytoplasm\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISO:RGD\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/20",
+  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
+  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json"
 }
 ```
 
@@ -711,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json",
-  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/21",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISO:RGD\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/21",
+  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
+  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json"
 }
 ```
 
@@ -730,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json",
-  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
-  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/22",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005739\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrion\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/22",
+  "retrieved_utc": "2026-11-02T04:27:12.867856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5bc2319a85294d9bd0de3c58ce0c0ccfe250318e8fba8d882b03e077196791bb",
+  "url": "https://rest.uniprot.org/uniprotkb/B0BNF8.json"
 }
 ```
 
@@ -748,18 +487,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 117,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B0BNF8?format=txt&versions=117",
-  "source_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
-  "retrieved_utc": "2026-11-02T04:27:16.468432+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   HTAI2_RAT               Reviewed;         242 AA.\nAC   B0BNF8; A0A8I6AEZ6; G3V8Y4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   26-FEB-2008, sequence version 1.\nDT   28-JAN-2026, entry version 117.\nDE   RecName: Full=Protein HTATIP2 {ECO:0000305};\nGN   Name=Htatip2 {ECO:0000312|RGD:1309941};\nOS   Rattus norvegicus (Rat).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Rattus.\nOX   NCBI_TaxID=10116 {ECO:0000312|Proteomes:UP000002494};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 117,
+  "retrieved_utc": "2026-11-02T04:27:16.468432+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
+  "url": "https://rest.uniprot.org/unisave/B0BNF8?format=txt&versions=117"
 }
 ```
 
@@ -769,18 +508,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 117,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B0BNF8?format=txt&versions=117",
-  "source_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
-  "retrieved_utc": "2026-11-02T04:27:16.468432+00:00",
-  "source_locator": "lines 129-129",
   "excerpt": "DR   GO; GO:0005737; C:cytoplasm; ISO:RGD.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 117,
+  "retrieved_utc": "2026-11-02T04:27:16.468432+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 129-129",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
+  "url": "https://rest.uniprot.org/unisave/B0BNF8?format=txt&versions=117"
 }
 ```
 
@@ -790,18 +529,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 117,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B0BNF8?format=txt&versions=117",
-  "source_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
-  "retrieved_utc": "2026-11-02T04:27:16.468432+00:00",
-  "source_locator": "lines 130-130",
   "excerpt": "DR   GO; GO:0005829; C:cytosol; ISO:RGD.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 117,
+  "retrieved_utc": "2026-11-02T04:27:16.468432+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 130-130",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c91b6ccd39bbf56d358216a7ae481826bd770d8f3f708b47271a14d3c7924ec0",
+  "url": "https://rest.uniprot.org/unisave/B0BNF8?format=txt&versions=117"
 }
 ```
 
@@ -812,15 +551,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58026-58039",
   "excerpt": "[Term]\nid: GO:0005635\nname: nuclear envelope\nnamespace: cellular_component\nalt_id: GO:0005636\ndef: \"The double lipid bilayer that encloses the nucleus, separating its contents from the cytoplasm. It consists of an inner and outer nuclear membrane, with an intermembrane space (20-40 nm wide, also called the perinuclear space) between them. The envelope is supported by the nuclear lamina and contains nuclear pore complexes, which regulate molecular transport.\" [ISBN:0198547684, PMID:16164970]\nsubset: goslim_chembl\nsubset: goslim_generic\nsubset: goslim_plant\nxref: Wikipedia:Nuclear_envelope\nis_a: GO:0031967 ! organelle envelope\nrelationship: part_of GO:0005634 ! nucleus\nrelationship: part_of GO:0012505 ! endomembrane system\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005635",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58026-58039",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005635"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -831,15 +570,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 171246-171258",
   "excerpt": "[Term]\nid: GO:0030894\nname: replisome\nnamespace: cellular_component\ndef: \"A multi-component enzymatic machine at the replication fork which mediates DNA replication. Includes DNA primase, one or more DNA polymerases, DNA helicases, and other proteins.\" [GOC:mah, GOC:vw]\nsubset: goslim_pir\nsynonym: \"DNA synthesome complex\" RELATED [CORUM:1001]\nsynonym: \"RC complex\" RELATED [CORUM:309, PMID:12006500]\nsynonym: \"replication-competent complex\" RELATED [CORUM:309, PMID:12006500]\nxref: Wikipedia:Replisome\nis_a: GO:0032993 ! protein-DNA complex\nrelationship: part_of GO:0005657 ! replication fork\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030894",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 171246-171258",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030894"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -850,15 +589,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 238998-239011",
   "excerpt": "[Term]\nid: GO:0042597\nname: periplasmic space\nnamespace: cellular_component\nalt_id: GO:0005620\ndef: \"The region between the inner (cytoplasmic) and outer membrane (Gram-negative Bacteria) or cytoplasmic membrane and cell wall (Fungi and Gram-positive Bacteria).\" [GOC:curators, GOC:md]\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsynonym: \"periplasm\" EXACT []\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005576 ! extracellular region\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042597",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 238998-239011",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042597"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -869,15 +608,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 400139-400147",
   "excerpt": "[Term]\nid: GO:0090575\nname: RNA polymerase II transcription regulator complex\nnamespace: cellular_component\ndef: \"A transcription factor complex that acts at a regulatory region of a gene transcribed by RNA polymerase II.\" [GOC:tb]\nsynonym: \"RNA polymerase II transcription factor complex\" NARROW []\nis_a: GO:0005667 ! transcription regulator complex\nis_a: GO:0140513 ! nuclear protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0090575",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 400139-400147",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0090575"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

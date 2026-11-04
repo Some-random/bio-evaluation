@@ -1,18 +1,16 @@
-# GO_cellular_component_0053: before and after transfer clarification
+# GO_cellular_component_0053
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0053.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0053.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — cytosol
+**Expected answer:** **D** — cytosol
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry B6ZKM4, whose cellular-location annotation is cytoplasm, cytosol; its GO annotation is GO:0005829, cytosol. These support D, though the location is transferred by similarity rather than directly established here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence appears consistent with a soluble protein, which makes cytosol plausible, but that alone does not establish its primary cellular location or reliably distinguish cytosol from other non-membrane locations.
-
-
-**Missing item-specific fact**
-
-> A protein-specific localization annotation or experimental localization result is needed; the supporting annotation available to the reviewer is transferred by similarity.
-
-
-**Reason**
-
-> The input provides no localization context or sufficiently specific targeting signal to determine the compartment. The sequence-matched database annotation supports the key, but that item-specific fact was absent from the evaluated input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence specifically supports cytosol; it does not provide comparable support for the other listed options.
-
-
-### Important caveats
-
-- The UniProt subcellular-location annotation cites ECO:0000250 transfer from UniProtKB:B6ZKM3; the GO cytosol annotation is ISS, not direct experimental evidence in the supplied excerpts.
-- The exact author source snapshot is unknown, although the sequence matches both current and archived UniProt records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence appears consistent with a soluble protein, which makes cytosol plausible, but that alone does not establish its primary cellular location or reliably distinguish cytosol from other non-membrane locations.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "A protein-specific localization annotation or experimental localization result is needed; the supporting annotation available to the reviewer is transferred by similarity.",
-    "reason": "The input provides no localization context or sufficiently specific targeting signal to determine the compartment. The sequence-matched database annotation supports the key, but that item-specific fact was absent from the evaluated input."
-  },
-  "case_id": "GO_cellular_component_0053",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry B6ZKM4, whose cellular-location annotation is cytoplasm, cytosol; its GO annotation is GO:0005829, cytosol. These support D, though the location is transferred by similarity rather than directly established here."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation cites ECO:0000250 transfer from UniProtKB:B6ZKM3; the GO cytosol annotation is ISS, not direct experimental evidence in the supplied excerpts.",
-    "The exact author source snapshot is unknown, although the sequence matches both current and archived UniProt records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports cytosol; it does not provide comparable support for the other listed options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0053",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry B6ZKM4, whose cellular-location annotation is cytoplasm, cytosol; its GO annotation is GO:0005829, cytosol. These support D, though the location is transferred by similarity rather than directly established here.",
-    "evidence_ids": ["C1", "C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence appears consistent with a soluble protein, which makes cytosol plausible, but that alone does not establish its primary cellular location or reliably distinguish cytosol from other non-membrane locations.",
-    "missing_item_specific_fact": "A protein-specific localization annotation or experimental localization result is needed; the supporting annotation available to the reviewer is transferred by similarity.",
-    "reason": "The input provides no localization context or sufficiently specific targeting signal to determine the compartment. The sequence-matched database annotation supports the key, but that item-specific fact was absent from the evaluated input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence specifically supports cytosol; it does not provide comparable support for the other listed options."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation cites ECO:0000250 transfer from UniProtKB:B6ZKM3; the GO cytosol annotation is ISS, not direct experimental evidence in the supplied excerpts.",
-    "The exact author source snapshot is unknown, although the sequence matches both current and archived UniProt records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProtKB entry B6ZKM4 (Ipecac alkaloid beta-glucosidase 2, IpeGLU2) annotates the subcellular location as 'Cytoplasm, cytosol' (SL-0091), and the GO cross-reference assigns GO:0005829 (cytosol). The sequence matches the supplied 543-aa benchmark sequence exactly. However, the evidence code is ECO:0000250 (inferred by sequence similarity to B6ZKM3) and the GO evidence is ISS (Inferred from Sequence Similarity), meaning this is a computational annotation transferred by homology rather than a direct experimental localization measurement. The annotation nonetheless supports the expected answer.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is a soluble enzyme (glycoside hydrolase family 1, identifiable from conserved motifs such as the NEP motif region and the (x)NxNxDxN consensus). It lacks: (1) transmembrane helices or membrane-anchoring motifs, ruling out nuclear membrane (B); (2) microtubule-binding domains (e.g., basic/acidic tubulin-binding regions) and is not a structural/cytoskeletal protein, ruling out microtubule cytoskeleton (A); (3) nuclear localization signals and is a functional catalytic enzyme rather than an aggregated protein, ruling out nuclear inclusion body (C). The absence of an N-terminal signal peptide, mitochondrial/chloroplast transit peptide, or NLS means no organelle targeting is indicated. For a soluble enzyme without targeting signals, the default cellular compartment is the cytosol.
-
-
-**Missing item-specific fact**
-
-> None strictly required. While the exact identification as a beta-glucosidase aids confidence, the general reasoning (soluble enzyme, no targeting signals, not structural, not membrane-bound) is sufficient to favor cytosol over the three distractors.
-
-
-**Reason**
-
-> A model with general cell-biology knowledge can eliminate the three distractors (structural cytoskeletal protein, integral membrane protein, aggregated nuclear protein) and arrive at cytosol as the default location for a soluble, untargeted enzyme. The argument does not require knowing the specific UniProt entry or its annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options are well-separated biologically. Microtubule cytoskeleton requires tubulin-binding structural proteins; nuclear membrane requires transmembrane domains; nuclear inclusion body requires protein aggregation context. None of these apply to a soluble GH1 enzyme lacking targeting signals. Cytosol is the only defensible choice among the four.
-
-
-### Important caveats
-
-- The UniProt subcellular-location annotation is based on similarity (ECO:0000250 / ISS), not direct experimental fractionation or microscopy. It is a reasonable but not independently validated assignment.
-- Plant beta-glucosidases can also localize to the vacuole or apoplast; neither option is offered, which simplifies the question but means the model is not asked to discriminate among all plausible plant glycosidase localizations.
-- The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the reasoning-supported judgment relies solely on sequence features and general biology.
-- The GO term GO:0005829 (cytosol) is a part_of GO:0005737 (cytoplasm); the option text 'cytosol' matches the annotation exactly.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is a soluble enzyme (glycoside hydrolase family 1, identifiable from conserved motifs such as the NEP motif region and the (x)NxNxDxN consensus). It lacks: (1) transmembrane helices or membrane-anchoring motifs, ruling out nuclear membrane (B); (2) microtubule-binding domains (e.g., basic/acidic tubulin-binding regions) and is not a structural/cytoskeletal protein, ruling out microtubule cytoskeleton (A); (3) nuclear localization signals and is a functional catalytic enzyme rather than an aggregated protein, ruling out nuclear inclusion body (C). The absence of an N-terminal signal peptide, mitochondrial/chloroplast transit peptide, or NLS means no organelle targeting is indicated. For a soluble enzyme without targeting signals, the default cellular compartment is the cytosol.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. While the exact identification as a beta-glucosidase aids confidence, the general reasoning (soluble enzyme, no targeting signals, not structural, not membrane-bound) is sufficient to favor cytosol over the three distractors.",
-    "reason": "A model with general cell-biology knowledge can eliminate the three distractors (structural cytoskeletal protein, integral membrane protein, aggregated nuclear protein) and arrive at cytosol as the default location for a soluble, untargeted enzyme. The argument does not require knowing the specific UniProt entry or its annotation."
-  },
-  "case_id": "GO_cellular_component_0053",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProtKB entry B6ZKM4 (Ipecac alkaloid beta-glucosidase 2, IpeGLU2) annotates the subcellular location as 'Cytoplasm, cytosol' (SL-0091), and the GO cross-reference assigns GO:0005829 (cytosol). The sequence matches the supplied 543-aa benchmark sequence exactly. However, the evidence code is ECO:0000250 (inferred by sequence similarity to B6ZKM3) and the GO evidence is ISS (Inferred from Sequence Similarity), meaning this is a computational annotation transferred by homology rather than a direct experimental localization measurement. The annotation nonetheless supports the expected answer."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation is based on similarity (ECO:0000250 / ISS), not direct experimental fractionation or microscopy. It is a reasonable but not independently validated assignment.",
-    "Plant beta-glucosidases can also localize to the vacuole or apoplast; neither option is offered, which simplifies the question but means the model is not asked to discriminate among all plausible plant glycosidase localizations.",
-    "The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the reasoning-supported judgment relies solely on sequence features and general biology.",
-    "The GO term GO:0005829 (cytosol) is a part_of GO:0005737 (cytoplasm); the option text 'cytosol' matches the annotation exactly."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated biologically. Microtubule cytoskeleton requires tubulin-binding structural proteins; nuclear membrane requires transmembrane domains; nuclear inclusion body requires protein aggregation context. None of these apply to a soluble GH1 enzyme lacking targeting signals. Cytosol is the only defensible choice among the four."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0053",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProtKB entry B6ZKM4 (Ipecac alkaloid beta-glucosidase 2, IpeGLU2) annotates the subcellular location as 'Cytoplasm, cytosol' (SL-0091), and the GO cross-reference assigns GO:0005829 (cytosol). The sequence matches the supplied 543-aa benchmark sequence exactly. However, the evidence code is ECO:0000250 (inferred by sequence similarity to B6ZKM3) and the GO evidence is ISS (Inferred from Sequence Similarity), meaning this is a computational annotation transferred by homology rather than a direct experimental localization measurement. The annotation nonetheless supports the expected answer.",
-    "evidence_ids": ["C5", "C6", "H3", "H4", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is a soluble enzyme (glycoside hydrolase family 1, identifiable from conserved motifs such as the NEP motif region and the (x)NxNxDxN consensus). It lacks: (1) transmembrane helices or membrane-anchoring motifs, ruling out nuclear membrane (B); (2) microtubule-binding domains (e.g., basic/acidic tubulin-binding regions) and is not a structural/cytoskeletal protein, ruling out microtubule cytoskeleton (A); (3) nuclear localization signals and is a functional catalytic enzyme rather than an aggregated protein, ruling out nuclear inclusion body (C). The absence of an N-terminal signal peptide, mitochondrial/chloroplast transit peptide, or NLS means no organelle targeting is indicated. For a soluble enzyme without targeting signals, the default cellular compartment is the cytosol.",
-    "missing_item_specific_fact": "None strictly required. While the exact identification as a beta-glucosidase aids confidence, the general reasoning (soluble enzyme, no targeting signals, not structural, not membrane-bound) is sufficient to favor cytosol over the three distractors.",
-    "reason": "A model with general cell-biology knowledge can eliminate the three distractors (structural cytoskeletal protein, integral membrane protein, aggregated nuclear protein) and arrive at cytosol as the default location for a soluble, untargeted enzyme. The argument does not require knowing the specific UniProt entry or its annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options are well-separated biologically. Microtubule cytoskeleton requires tubulin-binding structural proteins; nuclear membrane requires transmembrane domains; nuclear inclusion body requires protein aggregation context. None of these apply to a soluble GH1 enzyme lacking targeting signals. Cytosol is the only defensible choice among the four."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation is based on similarity (ECO:0000250 / ISS), not direct experimental fractionation or microscopy. It is a reasonable but not independently validated assignment.",
-    "Plant beta-glucosidases can also localize to the vacuole or apoplast; neither option is offered, which simplifies the question but means the model is not asked to discriminate among all plausible plant glycosidase localizations.",
-    "The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the reasoning-supported judgment relies solely on sequence features and general biology.",
-    "The GO term GO:0005829 (cytosol) is a part_of GO:0005737 (cytoplasm); the option text 'cytosol' matches the annotation exactly."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B6ZKM4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "a20dbd3decfa410fc38311f3c3bcb6b26c3d96d9e163353b0574db565e428c8f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 543,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "a20dbd3decfa410fc38311f3c3bcb6b26c3d96d9e163353b0574db565e428c8f",
   "current_entry_audit": {
     "entryVersion": 46,
     "firstPublicDate": "2025-06-18",
@@ -537,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-02-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "current_source_sequence_sha256": "a20dbd3decfa410fc38311f3c3bcb6b26c3d96d9e163353b0574db565e428c8f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 543,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "a20dbd3decfa410fc38311f3c3bcb6b26c3d96d9e163353b0574db565e428c8f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 44,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B6ZKM4",
   "selected_historical_entry_version": 44,
+  "selected_historical_record_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
+  "selected_historical_source_sequence_length": 543,
+  "selected_historical_source_sequence_sha256": "a20dbd3decfa410fc38311f3c3bcb6b26c3d96d9e163353b0574db565e428c8f",
   "selected_historical_version": {
     "accession": "B6ZKM4",
     "database": "Swiss-Prot",
@@ -555,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GLU2_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
-  "selected_historical_source_sequence_sha256": "a20dbd3decfa410fc38311f3c3bcb6b26c3d96d9e163353b0574db565e428c8f",
-  "selected_historical_source_sequence_length": 543,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 44,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json",
-  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B6ZKM4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json"
 }
 ```
 
@@ -609,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json",
-  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":46,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-02-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json"
 }
 ```
 
@@ -628,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json",
-  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json"
 }
 ```
 
@@ -647,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json",
-  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Ipecac alkaloid beta-glucosidase 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"IpeGLU2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json"
 }
 ```
 
@@ -666,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json",
-  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"B6ZKM3\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0091\",\"value\":\"Cytoplasm, cytosol\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json"
 }
 ```
 
@@ -685,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json",
-  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/3",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/3",
+  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json"
 }
 ```
 
@@ -704,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json",
-  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
-  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Nomura T.\",\"Quesada A.L.\",\"Kutchan T.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18927081\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m806953200\"}],\"citationType\":\"journal article\",\"firstPage\":\"34650\",\"id\":\"18927081\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"34659\",\"publicationDate\":\"2008\",\"title\":\"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis in Psychotria ipecacuanha.\",\"volume\":\"283\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAH02545.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"},{\"type\":\"TISSUE\",\"value\":\"Shoot\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:01.131375+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "354892c453442df6b8a8703ec4aa29037694a198fcc3f4c682270abff718a772",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKM4.json"
 }
 ```
 
@@ -722,18 +480,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44",
-  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
-  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   GLU2_CARIP              Reviewed;         543 AA.\nAC   B6ZKM4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-FEB-2009, sequence version 1.\nDT   28-JAN-2026, entry version 44.\nDE   RecName: Full=Ipecac alkaloid beta-glucosidase 2 {ECO:0000303|PubMed:18927081};\nDE            Short=IpeGLU2 {ECO:0000303|PubMed:18927081};\nDE            EC=3.2.1.- {ECO:0000269|PubMed:18927081};\nGN   Name=GLU2 {ECO:0000303|PubMed:18927081};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44"
 }
 ```
 
@@ -743,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44",
-  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
-  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
-  "source_locator": "lines 16-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAH02545.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRC   TISSUE=Root, and Shoot;\nRX   PubMed=18927081; DOI=10.1074/jbc.m806953200;\nRA   Nomura T., Quesada A.L., Kutchan T.M.;\nRT   \"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis\nRT   in Psychotria ipecacuanha.\";\nRL   J. Biol. Chem. 283:34650-34659(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44"
 }
 ```
 
@@ -764,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44",
-  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
-  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
-  "source_locator": "lines 42-43",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cytoplasm, cytosol\nCC       {ECO:0000250|UniProtKB:B6ZKM3}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44"
 }
 ```
 
@@ -785,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44",
-  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
-  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
-  "source_locator": "lines 52-52",
   "excerpt": "DR   GO; GO:0005829; C:cytosol; ISS:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-01T06:27:55.242337+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dba9b28a9f04f15e6605a1a0435dd29c1c58104dd69f5c4d39df880ddc9b47b1",
+  "url": "https://rest.uniprot.org/unisave/B6ZKM4?format=txt&versions=44"
 }
 ```
 
@@ -807,15 +565,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59936-59953",
   "excerpt": "[Term]\nid: GO:0005829\nname: cytosol\nnamespace: cellular_component\ndef: \"The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.\" [GOC:hjd, GOC:jl]\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_plant\nxref: NIF_Subcellular:sao101633890\nxref: Wikipedia:Cytosol\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005829",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59936-59953",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005829"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -826,15 +584,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 119409-119415",
   "excerpt": "[Term]\nid: GO:0015630\nname: microtubule cytoskeleton\nnamespace: cellular_component\ndef: \"The part of the cytoskeleton (the internal framework of a cell) composed of microtubules and associated proteins.\" [GOC:jl, ISBN:0395825172]\nis_a: GO:0005856 ! cytoskeleton\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0015630",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 119409-119415",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0015630"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -845,15 +603,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 181475-181483",
   "excerpt": "[Term]\nid: GO:0031965\nname: nuclear membrane\nnamespace: cellular_component\ndef: \"Either of the lipid bilayers that surround the nucleus and form the nuclear envelope; excludes the intermembrane space.\" [GOC:mah, GOC:pz]\nxref: NIF_Subcellular:sao1687101204\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0005635 ! nuclear envelope\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031965",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 181475-181483",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031965"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -864,15 +622,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 237260-237267",
   "excerpt": "[Term]\nid: GO:0042405\nname: nuclear inclusion body\nnamespace: cellular_component\ndef: \"An intranuclear focus at which aggregated proteins have been sequestered.\" [GOC:jl]\nis_a: GO:0016234 ! inclusion body\nrelationship: part_of GO:0005634 ! nucleus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042405",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 237260-237267",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042405"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# pathway_0084: before and after transfer clarification
+# pathway_0084
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0084.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0084.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Lipid metabolism. .
+**Expected answer:** **C** — Lipid metabolism. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the archived UniProt entry for NADPH-dependent 3-dehydrocapnine reductase. That entry assigns it to lipid metabolism and cites research on capnine biosynthesis. The pathway assignment is a database annotation (ECO:0000305), while the entry separately marks the enzyme activity as experimentally supported (ECO:0000269); this supports choice C without implying that the pathway label itself is a direct experimental measurement.
-
-Citations as saved: [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a sufficiently specific, recognizable signal to distinguish this enzyme's role in capnine lipid biosynthesis from the listed alternatives. Its protein-specific enzyme identity is needed.
-
-
-**Missing item-specific fact**
-
-> That this exact sequence is NADPH-dependent 3-dehydrocapnine reductase, an enzyme in capnine biosynthesis.
-
-
-**Reason**
-
-> The decisive identity and pathway annotation are absent from the question. Inferring a broad enzyme class from sequence features would not establish this particular pathway.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation supports lipid metabolism; the other choices are not supported by the available protein-specific evidence.
-
-
-### Important caveats
-
-- The archived sequence-matched pathway annotation is a database assertion citing the capnine biosynthesis study, not itself a direct experimental pathway measurement.
-- The exact source snapshot used by the question author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific, recognizable signal to distinguish this enzyme's role in capnine lipid biosynthesis from the listed alternatives. Its protein-specific enzyme identity is needed.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this exact sequence is NADPH-dependent 3-dehydrocapnine reductase, an enzyme in capnine biosynthesis.",
-    "reason": "The decisive identity and pathway annotation are absent from the question. Inferring a broad enzyme class from sequence features would not establish this particular pathway."
-  },
-  "case_id": "pathway_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H1",
-      "H2",
-      "H3",
-      "C1",
-      "C4",
-      "C5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the archived UniProt entry for NADPH-dependent 3-dehydrocapnine reductase. That entry assigns it to lipid metabolism and cites research on capnine biosynthesis. The pathway assignment is a database annotation (ECO:0000305), while the entry separately marks the enzyme activity as experimentally supported (ECO:0000269); this supports choice C without implying that the pathway label itself is a direct experimental measurement."
-  },
-  "important_caveats": [
-    "The archived sequence-matched pathway annotation is a database assertion citing the capnine biosynthesis study, not itself a direct experimental pathway measurement.",
-    "The exact source snapshot used by the question author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports lipid metabolism; the other choices are not supported by the available protein-specific evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the archived UniProt entry for NADPH-dependent 3-dehydrocapnine reductase. That entry assigns it to lipid metabolism and cites research on capnine biosynthesis. The pathway assignment is a database annotation (ECO:0000305), while the entry separately marks the enzyme activity as experimentally supported (ECO:0000269); this supports choice C without implying that the pathway label itself is a direct experimental measurement.",
-    "evidence_ids": ["H1", "H2", "H3", "C1", "C4", "C5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific, recognizable signal to distinguish this enzyme's role in capnine lipid biosynthesis from the listed alternatives. Its protein-specific enzyme identity is needed.",
-    "missing_item_specific_fact": "That this exact sequence is NADPH-dependent 3-dehydrocapnine reductase, an enzyme in capnine biosynthesis.",
-    "reason": "The decisive identity and pathway annotation are absent from the question. Inferring a broad enzyme class from sequence features would not establish this particular pathway."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports lipid metabolism; the other choices are not supported by the available protein-specific evidence."
-  },
-  "important_caveats": [
-    "The archived sequence-matched pathway annotation is a database assertion citing the capnine biosynthesis study, not itself a direct experimental pathway measurement.",
-    "The exact source snapshot used by the question author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation (C5, H3) explicitly states PATHWAY: Lipid metabolism with evidence code ECO:0000305 linked to PubMed:35414181 (Liu et al., Biochemistry 2022, 'Identification and Characterization of the Biosynthetic Pathway of the Sulfonolipid Capnine'). The protein is NADPH-dependent 3-dehydrocapnine reductase (CapC), functioning in the biosynthetic pathway of capnine, a sulfonolipid. Sulfonolipids are lipids, making the 'Lipid metabolism' pathway assignment scientifically accurate. The evidence is from a 2022 experimental characterization paper (ECO:0000269 for EC assignment, ECO:0000305 for pathway curator inference from the same publication).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains N-terminal motifs (VSSGIG) consistent with a short-chain dehydrogenase/reductase (SDR) family Rossmann-fold nucleotide-binding site, indicating an NAD(P)H-dependent oxidoreductase. However, reductases participate in lipid metabolism, amino acid biosynthesis/degradation, and other pathways alike. No sequence feature uniquely identifies this as a sulfonolipid (capnine) biosynthetic enzyme rather than, e.g., homoserine dehydrogenase (threonine pathway, option A) or an amino acid degradation reductase (option B). The critical distinguishing fact—that capnine is a sulfonolipid and this protein is CapC in its biosynthetic pathway—is an item-specific annotation not derivable from the sequence alone.
-
-
-**Missing item-specific fact**
-
-> Knowledge that this specific 283-aa protein from Ornithobacterium rhinotracheale is CapC, the NADPH-dependent 3-dehydrocapnine reductase in the biosynthetic pathway of the sulfonolipid capnine, and that capnine is classified as a lipid (sulfonolipid). This requires the 2022 Biochemistry paper or the UniProt annotation.
-
-
-**Reason**
-
-> While one can infer the protein is a reductase from sequence motifs, distinguishing lipid metabolism (C) from amino-acid-related pathways (A, B) requires knowing the specific substrate (capnine, a sulfonolipid) and the specific pathway context. Option D (capsule polysaccharide biosynthesis) is somewhat less plausible since polysaccharide biosynthesis typically involves glycosyltransferases rather than NADPH-dependent reductases, but this alone does not uniquely select C over A or B.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option D (capsule polysaccharide biosynthesis) is the weakest distractor because polysaccharide biosynthesis rarely involves NADPH-dependent reductases as key steps. Options A and B are plausible at the family level (reductases exist in both), but neither is specifically supported by sequence features. With the correct annotation, C is the uniquely correct answer. No two options are equally defensible from the sequence alone.
-
-
-### Important caveats
-
-- The pathway annotation carries evidence code ECO:0000305 (inferred by curator from the cited publication), meaning it is a curator-assigned classification based on the 2022 paper rather than a direct experimental pathway measurement.
-- The EC number is incomplete (1.1.1.-), indicating the specific substrate specificity was characterized but a full four-digit EC was not assigned.
-- The protein was first integrated into Swiss-Prot on 2025-04-09; if the benchmark was constructed before this date, the annotation may have been derived from the primary literature directly.
-- The identity of the sequence as CapC_ORNRH was inferred by the reviewer from dataset metadata; the evaluated model had only the raw sequence and four pathway choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains N-terminal motifs (VSSGIG) consistent with a short-chain dehydrogenase/reductase (SDR) family Rossmann-fold nucleotide-binding site, indicating an NAD(P)H-dependent oxidoreductase. However, reductases participate in lipid metabolism, amino acid biosynthesis/degradation, and other pathways alike. No sequence feature uniquely identifies this as a sulfonolipid (capnine) biosynthetic enzyme rather than, e.g., homoserine dehydrogenase (threonine pathway, option A) or an amino acid degradation reductase (option B). The critical distinguishing fact—that capnine is a sulfonolipid and this protein is CapC in its biosynthetic pathway—is an item-specific annotation not derivable from the sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Knowledge that this specific 283-aa protein from Ornithobacterium rhinotracheale is CapC, the NADPH-dependent 3-dehydrocapnine reductase in the biosynthetic pathway of the sulfonolipid capnine, and that capnine is classified as a lipid (sulfonolipid). This requires the 2022 Biochemistry paper or the UniProt annotation.",
-    "reason": "While one can infer the protein is a reductase from sequence motifs, distinguishing lipid metabolism (C) from amino-acid-related pathways (A, B) requires knowing the specific substrate (capnine, a sulfonolipid) and the specific pathway context. Option D (capsule polysaccharide biosynthesis) is somewhat less plausible since polysaccharide biosynthesis typically involves glycosyltransferases rather than NADPH-dependent reductases, but this alone does not uniquely select C over A or B."
-  },
-  "case_id": "pathway_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H3) explicitly states PATHWAY: Lipid metabolism with evidence code ECO:0000305 linked to PubMed:35414181 (Liu et al., Biochemistry 2022, 'Identification and Characterization of the Biosynthetic Pathway of the Sulfonolipid Capnine'). The protein is NADPH-dependent 3-dehydrocapnine reductase (CapC), functioning in the biosynthetic pathway of capnine, a sulfonolipid. Sulfonolipids are lipids, making the 'Lipid metabolism' pathway assignment scientifically accurate. The evidence is from a 2022 experimental characterization paper (ECO:0000269 for EC assignment, ECO:0000305 for pathway curator inference from the same publication)."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000305 (inferred by curator from the cited publication), meaning it is a curator-assigned classification based on the 2022 paper rather than a direct experimental pathway measurement.",
-    "The EC number is incomplete (1.1.1.-), indicating the specific substrate specificity was characterized but a full four-digit EC was not assigned.",
-    "The protein was first integrated into Swiss-Prot on 2025-04-09; if the benchmark was constructed before this date, the annotation may have been derived from the primary literature directly.",
-    "The identity of the sequence as CapC_ORNRH was inferred by the reviewer from dataset metadata; the evaluated model had only the raw sequence and four pathway choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option D (capsule polysaccharide biosynthesis) is the weakest distractor because polysaccharide biosynthesis rarely involves NADPH-dependent reductases as key steps. Options A and B are plausible at the family level (reductases exist in both), but neither is specifically supported by sequence features. With the correct annotation, C is the uniquely correct answer. No two options are equally defensible from the sequence alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H3) explicitly states PATHWAY: Lipid metabolism with evidence code ECO:0000305 linked to PubMed:35414181 (Liu et al., Biochemistry 2022, 'Identification and Characterization of the Biosynthetic Pathway of the Sulfonolipid Capnine'). The protein is NADPH-dependent 3-dehydrocapnine reductase (CapC), functioning in the biosynthetic pathway of capnine, a sulfonolipid. Sulfonolipids are lipids, making the 'Lipid metabolism' pathway assignment scientifically accurate. The evidence is from a 2022 experimental characterization paper (ECO:0000269 for EC assignment, ECO:0000305 for pathway curator inference from the same publication).",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains N-terminal motifs (VSSGIG) consistent with a short-chain dehydrogenase/reductase (SDR) family Rossmann-fold nucleotide-binding site, indicating an NAD(P)H-dependent oxidoreductase. However, reductases participate in lipid metabolism, amino acid biosynthesis/degradation, and other pathways alike. No sequence feature uniquely identifies this as a sulfonolipid (capnine) biosynthetic enzyme rather than, e.g., homoserine dehydrogenase (threonine pathway, option A) or an amino acid degradation reductase (option B). The critical distinguishing fact—that capnine is a sulfonolipid and this protein is CapC in its biosynthetic pathway—is an item-specific annotation not derivable from the sequence alone.",
-    "missing_item_specific_fact": "Knowledge that this specific 283-aa protein from Ornithobacterium rhinotracheale is CapC, the NADPH-dependent 3-dehydrocapnine reductase in the biosynthetic pathway of the sulfonolipid capnine, and that capnine is classified as a lipid (sulfonolipid). This requires the 2022 Biochemistry paper or the UniProt annotation.",
-    "reason": "While one can infer the protein is a reductase from sequence motifs, distinguishing lipid metabolism (C) from amino-acid-related pathways (A, B) requires knowing the specific substrate (capnine, a sulfonolipid) and the specific pathway context. Option D (capsule polysaccharide biosynthesis) is somewhat less plausible since polysaccharide biosynthesis typically involves glycosyltransferases rather than NADPH-dependent reductases, but this alone does not uniquely select C over A or B."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option D (capsule polysaccharide biosynthesis) is the weakest distractor because polysaccharide biosynthesis rarely involves NADPH-dependent reductases as key steps. Options A and B are plausible at the family level (reductases exist in both), but neither is specifically supported by sequence features. With the correct annotation, C is the uniquely correct answer. No two options are equally defensible from the sequence alone."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000305 (inferred by curator from the cited publication), meaning it is a curator-assigned classification based on the 2022 paper rather than a direct experimental pathway measurement.",
-    "The EC number is incomplete (1.1.1.-), indicating the specific substrate specificity was characterized but a full four-digit EC was not assigned.",
-    "The protein was first integrated into Swiss-Prot on 2025-04-09; if the benchmark was constructed before this date, the annotation may have been derived from the primary literature directly.",
-    "The identity of the sequence as CapC_ORNRH was inferred by the reviewer from dataset metadata; the evaluated model had only the raw sequence and four pathway choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +277,17 @@ Citations as saved: [C5](#evidence-c5), [C4](#evidence-c4), [C6](#evidence-c6), 
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A3R5XUE6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 283,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
   "current_entry_audit": {
     "entryVersion": 18,
     "firstPublicDate": "2025-04-09",
@@ -542,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2019-04-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "current_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 283,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 16,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A3R5XUE6",
   "selected_historical_entry_version": 16,
+  "selected_historical_record_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "selected_historical_source_sequence_length": 283,
+  "selected_historical_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
   "selected_historical_version": {
     "accession": "A0A3R5XUE6",
     "database": "Swiss-Prot",
@@ -560,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CAPC_ORNRH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "selected_historical_source_sequence_sha256": "c34636190c93b708ede11afe25d8f3e950d83ee164fe4651dffd58c7eb032d36",
-  "selected_historical_source_sequence_length": 283,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 16,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A3R5XUE6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -610,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":18,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2019-04-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -629,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Bacteroidota\",\"Flavobacteriia\",\"Flavobacteriales\",\"Weeksellaceae\",\"Ornithobacterium\"],\"scientificName\":\"Ornithobacterium rhinotracheale\",\"taxonId\":28251}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -648,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"NADPH-dependent 3-dehydrocapnine reductase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -667,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"35414181\",\"source\":\"PubMed\"}],\"value\":\"Lipid metabolism\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -686,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json",
-  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
-  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu Y.\",\"Wei Y.\",\"Teh T.M.\",\"Liu D.\",\"Zhou Y.\",\"Zhao S.\",\"Ang E.L.\",\"Zhao H.\",\"Zhang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35414181\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.2c00102\"}],\"citationType\":\"journal article\",\"firstPage\":\"2861\",\"id\":\"35414181\",\"journal\":\"Biochemistry\",\"lastPage\":\"2869\",\"publicationDate\":\"2022\",\"title\":\"Identification and Characterization of the Biosynthetic Pathway of the Sulfonolipid Capnine.\",\"volume\":\"61\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:46.269818+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "eeb98d69cf0b99fa39b7fc118681807f2518aa1d8a1eb2df8e1e31569d47b1c6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A3R5XUE6.json"
 }
 ```
 
@@ -704,18 +460,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16",
-  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   CAPC_ORNRH              Reviewed;         283 AA.\nAC   A0A3R5XUE6;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-APR-2019, sequence version 1.\nDT   28-JAN-2026, entry version 16.\nDE   RecName: Full=NADPH-dependent 3-dehydrocapnine reductase {ECO:0000303|PubMed:35414181};\nDE            EC=1.1.1.- {ECO:0000269|PubMed:35414181};\nGN   Name=capC {ECO:0000303|PubMed:35414181};\nGN   ORFNames=EQP59_04780 {ECO:0000312|EMBL:QAR30703.1};\nOS   Ornithobacterium rhinotracheale.\nOC   Bacteria; Pseudomonadati; Bacteroidota; Flavobacteriia; Flavobacteriales;\nOC   Weeksellaceae; Ornithobacterium.\nOX   NCBI_TaxID=28251;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16"
 }
 ```
 
@@ -725,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16",
-  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
-  "source_locator": "lines 21-28",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND CATALYTIC ACTIVITY.\nRX   PubMed=35414181; DOI=10.1021/acs.biochem.2c00102;\nRA   Liu Y., Wei Y., Teh T.M., Liu D., Zhou Y., Zhao S., Ang E.L., Zhao H.,\nRA   Zhang Y.;\nRT   \"Identification and Characterization of the Biosynthetic Pathway of the\nRT   Sulfonolipid Capnine.\";\nRL   Biochemistry 61:2861-2869(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-28",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16"
 }
 ```
 
@@ -746,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16",
-  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
-  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
-  "source_locator": "lines 41-41",
   "excerpt": "CC   -!- PATHWAY: Lipid metabolism. {ECO:0000305|PubMed:35414181}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:30.826829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6775a10db7332809ed4375188f70ceb1072cc82dbd87c32150e6341b3a85c434",
+  "url": "https://rest.uniprot.org/unisave/A0A3R5XUE6?format=txt&versions=16"
 }
 ```
 

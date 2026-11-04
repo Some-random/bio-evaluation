@@ -1,18 +1,16 @@
-# GO_biological_process_0012: before and after transfer clarification
+# GO_biological_process_0012
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0012.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0012.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **C** — indole alkaloid biosynthetic process
+**Expected answer:** **C** — indole alkaloid biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Alstonia scholaris alstonine synthase entry. Its function is reported as converting tetrahydroalstonine to alstonine, and the entry assigns indole alkaloid biosynthesis with IDA evidence linked to a publication. This supports choice C, while preserving that the evidence is reported in the cited source rather than independently assessed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment and P450-like sequence features may suggest a membrane-associated cytochrome P450, but they do not identify its particular substrate or biological pathway. Those broad features do not meaningfully distinguish indole alkaloid biosynthesis from the other listed processes.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as alstonine synthase and its reported catalytic conversion of tetrahydroalstonine to alstonine are needed to select indole alkaloid biosynthesis.
-
-
-**Reason**
-
-> The decisive functional and pathway information is absent from the sequence and choices. Recognizing the exact sequence or retrieving its annotation would resolve the answer, but would constitute lookup or memorization rather than reasoning from supplied context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not establish which process applies, but the reviewer-only matched-sequence evidence supports C; no other listed option is supported by the supplied evidence.
-
-
-### Important caveats
-
-- Reviewer-only sequence identity and annotations were not supplied to the evaluated model.
-- The historical entry and current entry both match the sequence, but the author's exact source snapshot is unknown.
-- The functional annotation is linked to a publication and carries IDA evidence; the primary study was not independently retrieved and validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment and P450-like sequence features may suggest a membrane-associated cytochrome P450, but they do not identify its particular substrate or biological pathway. Those broad features do not meaningfully distinguish indole alkaloid biosynthesis from the other listed processes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as alstonine synthase and its reported catalytic conversion of tetrahydroalstonine to alstonine are needed to select indole alkaloid biosynthesis.",
-    "reason": "The decisive functional and pathway information is absent from the sequence and choices. Recognizing the exact sequence or retrieving its annotation would resolve the answer, but would constitute lookup or memorization rather than reasoning from supplied context."
-  },
-  "case_id": "GO_biological_process_0012",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Alstonia scholaris alstonine synthase entry. Its function is reported as converting tetrahydroalstonine to alstonine, and the entry assigns indole alkaloid biosynthesis with IDA evidence linked to a publication. This supports choice C, while preserving that the evidence is reported in the cited source rather than independently assessed here."
-  },
-  "important_caveats": [
-    "Reviewer-only sequence identity and annotations were not supplied to the evaluated model.",
-    "The historical entry and current entry both match the sequence, but the author's exact source snapshot is unknown.",
-    "The functional annotation is linked to a publication and carries IDA evidence; the primary study was not independently retrieved and validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not establish which process applies, but the reviewer-only matched-sequence evidence supports C; no other listed option is supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0012",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Alstonia scholaris alstonine synthase entry. Its function is reported as converting tetrahydroalstonine to alstonine, and the entry assigns indole alkaloid biosynthesis with IDA evidence linked to a publication. This supports choice C, while preserving that the evidence is reported in the cited source rather than independently assessed here.",
-    "evidence_ids": ["C1", "C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment and P450-like sequence features may suggest a membrane-associated cytochrome P450, but they do not identify its particular substrate or biological pathway. Those broad features do not meaningfully distinguish indole alkaloid biosynthesis from the other listed processes.",
-    "missing_item_specific_fact": "The protein-specific identification as alstonine synthase and its reported catalytic conversion of tetrahydroalstonine to alstonine are needed to select indole alkaloid biosynthesis.",
-    "reason": "The decisive functional and pathway information is absent from the sequence and choices. Recognizing the exact sequence or retrieving its annotation would resolve the answer, but would constitute lookup or memorization rather than reasoning from supplied context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not establish which process applies, but the reviewer-only matched-sequence evidence supports C; no other listed option is supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "Reviewer-only sequence identity and annotations were not supplied to the evaluated model.",
-    "The historical entry and current entry both match the sequence, but the author's exact source snapshot is unknown.",
-    "The functional annotation is linked to a publication and carries IDA evidence; the primary study was not independently retrieved and validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProtKB entry A0A9E7LUJ4 (Alstonine synthase, EC 1.14.19.-) from Alstonia scholaris is directly annotated with GO:0035835 (indole alkaloid biosynthetic process) with evidence code IDA:UniProtKB, supported by experimental data from PubMed:36349266. The FUNCTION comment confirms it catalyzes the conversion of tetrahydroalstonine to alstonine (a pentacyclic indole alkaloid), and the PATHWAY comment states 'Alkaloid biosynthesis.' The sequence matches the benchmark input exactly (SHA256 confirmed).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the canonical cytochrome P450 heme-binding motif (FxxGxRxCxG: visible as 'FIGNHFEYIPFGAGRRICPGISFG' with the conserved heme-coordinating Cys in 'RRICPG'), identifying the protein as a P450 monooxygenase — a metabolic/biosynthetic enzyme. Among the four options, only C (indole alkaloid biosynthetic process) describes a metabolic/biosynthetic pathway. Options A (nuclear pore complex assembly), B (regulation of establishment of protein localization), and D (negative regulation of RNA export from nucleus) all describe nucleocytoplasmic transport/localization processes, which are mechanistically incompatible with the catalytic function of a P450 enzyme. A model recognizing the P450 motif can eliminate A, B, and D on the basis that P450s are metabolic oxidases, not structural or regulatory components of nuclear transport machinery.
-
-
-**Missing item-specific fact**
-
-> None strictly required. While the specific 'indole alkaloid' label (as opposed to, e.g., terpenoid or fatty-acid metabolism) cannot be positively identified from the sequence alone without organism/substrate context, the three distractors are all non-metabolic processes that are categorically incompatible with a P450, making C the only viable option by elimination.
-
-
-**Reason**
-
-> The P450 heme-binding motif is a well-known, identifiable sequence feature. Recognizing it as a metabolic enzyme and contrasting that with the three nuclear-transport-related distractors constitutes a concrete biological argument grounded in general enzymology and cell biology, not item-specific memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and D describe nucleocytoplasmic transport or localization processes that are mechanistically incompatible with a cytochrome P450 monooxygenase. Only C describes a biosynthetic/metabolic process consistent with P450 enzymatic activity. No other option is defensible for this protein class.
-
-
-### Important caveats
-
-- The specific 'indole alkaloid' qualifier in option C is not derivable from the sequence alone; it is selected by elimination of clearly incompatible non-metabolic distractors rather than by positive identification of the alkaloid class.
-- The UniProt annotation uses evidence code IDA (Inferred from Direct Assay), indicating experimental support from PubMed:36349266, not purely computational inference.
-- The entry was first publicly released 2025-06-18 (entry version 14); the historical archived version 13 (released 28-Jan-2026) also carries the same GO annotation. The benchmark author's source snapshot date is unknown, but the sequence has been stable since 2023-05-03.
-- The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark input and the UniProt entry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the canonical cytochrome P450 heme-binding motif (FxxGxRxCxG: visible as 'FIGNHFEYIPFGAGRRICPGISFG' with the conserved heme-coordinating Cys in 'RRICPG'), identifying the protein as a P450 monooxygenase — a metabolic/biosynthetic enzyme. Among the four options, only C (indole alkaloid biosynthetic process) describes a metabolic/biosynthetic pathway. Options A (nuclear pore complex assembly), B (regulation of establishment of protein localization), and D (negative regulation of RNA export from nucleus) all describe nucleocytoplasmic transport/localization processes, which are mechanistically incompatible with the catalytic function of a P450 enzyme. A model recognizing the P450 motif can eliminate A, B, and D on the basis that P450s are metabolic oxidases, not structural or regulatory components of nuclear transport machinery.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. While the specific 'indole alkaloid' label (as opposed to, e.g., terpenoid or fatty-acid metabolism) cannot be positively identified from the sequence alone without organism/substrate context, the three distractors are all non-metabolic processes that are categorically incompatible with a P450, making C the only viable option by elimination.",
-    "reason": "The P450 heme-binding motif is a well-known, identifiable sequence feature. Recognizing it as a metabolic enzyme and contrasting that with the three nuclear-transport-related distractors constitutes a concrete biological argument grounded in general enzymology and cell biology, not item-specific memorization."
-  },
-  "case_id": "GO_biological_process_0012",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProtKB entry A0A9E7LUJ4 (Alstonine synthase, EC 1.14.19.-) from Alstonia scholaris is directly annotated with GO:0035835 (indole alkaloid biosynthetic process) with evidence code IDA:UniProtKB, supported by experimental data from PubMed:36349266. The FUNCTION comment confirms it catalyzes the conversion of tetrahydroalstonine to alstonine (a pentacyclic indole alkaloid), and the PATHWAY comment states 'Alkaloid biosynthesis.' The sequence matches the benchmark input exactly (SHA256 confirmed)."
-  },
-  "important_caveats": [
-    "The specific 'indole alkaloid' qualifier in option C is not derivable from the sequence alone; it is selected by elimination of clearly incompatible non-metabolic distractors rather than by positive identification of the alkaloid class.",
-    "The UniProt annotation uses evidence code IDA (Inferred from Direct Assay), indicating experimental support from PubMed:36349266, not purely computational inference.",
-    "The entry was first publicly released 2025-06-18 (entry version 14); the historical archived version 13 (released 28-Jan-2026) also carries the same GO annotation. The benchmark author's source snapshot date is unknown, but the sequence has been stable since 2023-05-03.",
-    "The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark input and the UniProt entry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D describe nucleocytoplasmic transport or localization processes that are mechanistically incompatible with a cytochrome P450 monooxygenase. Only C describes a biosynthetic/metabolic process consistent with P450 enzymatic activity. No other option is defensible for this protein class."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0012",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProtKB entry A0A9E7LUJ4 (Alstonine synthase, EC 1.14.19.-) from Alstonia scholaris is directly annotated with GO:0035835 (indole alkaloid biosynthetic process) with evidence code IDA:UniProtKB, supported by experimental data from PubMed:36349266. The FUNCTION comment confirms it catalyzes the conversion of tetrahydroalstonine to alstonine (a pentacyclic indole alkaloid), and the PATHWAY comment states 'Alkaloid biosynthesis.' The sequence matches the benchmark input exactly (SHA256 confirmed).",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H3", "H4", "H5", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the canonical cytochrome P450 heme-binding motif (FxxGxRxCxG: visible as 'FIGNHFEYIPFGAGRRICPGISFG' with the conserved heme-coordinating Cys in 'RRICPG'), identifying the protein as a P450 monooxygenase — a metabolic/biosynthetic enzyme. Among the four options, only C (indole alkaloid biosynthetic process) describes a metabolic/biosynthetic pathway. Options A (nuclear pore complex assembly), B (regulation of establishment of protein localization), and D (negative regulation of RNA export from nucleus) all describe nucleocytoplasmic transport/localization processes, which are mechanistically incompatible with the catalytic function of a P450 enzyme. A model recognizing the P450 motif can eliminate A, B, and D on the basis that P450s are metabolic oxidases, not structural or regulatory components of nuclear transport machinery.",
-    "missing_item_specific_fact": "None strictly required. While the specific 'indole alkaloid' label (as opposed to, e.g., terpenoid or fatty-acid metabolism) cannot be positively identified from the sequence alone without organism/substrate context, the three distractors are all non-metabolic processes that are categorically incompatible with a P450, making C the only viable option by elimination.",
-    "reason": "The P450 heme-binding motif is a well-known, identifiable sequence feature. Recognizing it as a metabolic enzyme and contrasting that with the three nuclear-transport-related distractors constitutes a concrete biological argument grounded in general enzymology and cell biology, not item-specific memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D describe nucleocytoplasmic transport or localization processes that are mechanistically incompatible with a cytochrome P450 monooxygenase. Only C describes a biosynthetic/metabolic process consistent with P450 enzymatic activity. No other option is defensible for this protein class."
-  },
-  "important_caveats": [
-    "The specific 'indole alkaloid' qualifier in option C is not derivable from the sequence alone; it is selected by elimination of clearly incompatible non-metabolic distractors rather than by positive identification of the alkaloid class.",
-    "The UniProt annotation uses evidence code IDA (Inferred from Direct Assay), indicating experimental support from PubMed:36349266, not purely computational inference.",
-    "The entry was first publicly released 2025-06-18 (entry version 14); the historical archived version 13 (released 28-Jan-2026) also carries the same GO annotation. The benchmark author's source snapshot date is unknown, but the sequence has been stable since 2023-05-03.",
-    "The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark input and the UniProt entry."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7LUJ4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f8a5be35733d188ee2bee1b5df23d995bfe0c9c4a31237aa6a8988f9038cf055",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 514,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f8a5be35733d188ee2bee1b5df23d995bfe0c9c4a31237aa6a8988f9038cf055",
   "current_entry_audit": {
     "entryVersion": 14,
     "firstPublicDate": "2025-06-18",
@@ -541,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "current_source_sequence_sha256": "f8a5be35733d188ee2bee1b5df23d995bfe0c9c4a31237aa6a8988f9038cf055",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 514,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f8a5be35733d188ee2bee1b5df23d995bfe0c9c4a31237aa6a8988f9038cf055",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 13,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7LUJ4",
   "selected_historical_entry_version": 13,
+  "selected_historical_record_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
+  "selected_historical_source_sequence_length": 514,
+  "selected_historical_source_sequence_sha256": "f8a5be35733d188ee2bee1b5df23d995bfe0c9c4a31237aa6a8988f9038cf055",
   "selected_historical_version": {
     "accession": "A0A9E7LUJ4",
     "database": "Swiss-Prot",
@@ -559,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AS_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
-  "selected_historical_source_sequence_sha256": "f8a5be35733d188ee2bee1b5df23d995bfe0c9c4a31237aa6a8988f9038cf055",
-  "selected_historical_source_sequence_length": 514,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 13,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7LUJ4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -613,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":14,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -632,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -651,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 AS\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"1.14.19.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Alstonine synthase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsAS\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -670,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"A cytochrome P450 monooxygenase involved in the biosynthesis of pentacyclic alkaloids natural products such as alstonine, putative antipsychotic compounds (PubMed:36349266). Catalyzes the conversion of tetrahydroalstonine to alstonine (PubMed:36349266). No oxidative activity towards ajmalicine (PubMed:36349266)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -689,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -708,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"id\":\"GO:0035835\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:indole alkaloid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -727,15 +479,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json",
-  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
-  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65382.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:52.163393+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "59fe739ed168944070cd38e29550519331b1495ba5653a150fa3d35624899435",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUJ4.json"
 }
 ```
 
@@ -745,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13",
-  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
-  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   AS_ALSSC                Reviewed;         514 AA.\nAC   A0A9E7LUJ4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 13.\nDE   RecName: Full=Alstonine synthase {ECO:0000303|PubMed:36349266};\nDE            Short=AsAS {ECO:0000303|PubMed:36349266};\nDE            EC=1.14.19.- {ECO:0000269|PubMed:36349266};\nDE   AltName: Full=Cytochrome P450 AS {ECO:0000303|PubMed:36349266};\nGN   Name=AS {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13"
 }
 ```
 
@@ -766,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13",
-  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
-  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
-  "source_locator": "lines 17-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65382.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13"
 }
 ```
 
@@ -787,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13",
-  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
-  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
-  "source_locator": "lines 24-29",
   "excerpt": "CC   -!- FUNCTION: A cytochrome P450 monooxygenase involved in the biosynthesis\nCC       of pentacyclic alkaloids natural products such as alstonine, putative\nCC       antipsychotic compounds (PubMed:36349266). Catalyzes the conversion of\nCC       tetrahydroalstonine to alstonine (PubMed:36349266). No oxidative\nCC       activity towards ajmalicine (PubMed:36349266).\nCC       {ECO:0000269|PubMed:36349266}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13"
 }
 ```
 
@@ -808,18 +560,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13",
-  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
-  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
-  "source_locator": "lines 44-44",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:36349266}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13"
 }
 ```
 
@@ -829,18 +581,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13",
-  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
-  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
-  "source_locator": "lines 58-58",
   "excerpt": "DR   GO; GO:0035835; P:indole alkaloid biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:37.040905+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-58",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc693d1dbb0e42a4104ad818ad2836ecd8bdd9e71e50b40a970a3f13d0b5e109",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUJ4?format=txt&versions=13"
 }
 ```
 
@@ -851,15 +603,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 221717-221728",
   "excerpt": "[Term]\nid: GO:0035835\nname: indole alkaloid biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of an indole alkaloid, an alkaloid containing an indole skeleton.\" [GOC:yaf]\nsynonym: \"indole alkaloid anabolism\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid biosynthesis\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid formation\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid synthesis\" EXACT [GOC:bf]\nis_a: GO:0009821 ! alkaloid biosynthetic process\nis_a: GO:0035834 ! indole alkaloid metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035835",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 221717-221728",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035835"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -870,15 +622,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 280910-280927",
   "excerpt": "[Term]\nid: GO:0046832\nname: negative regulation of RNA export from nucleus\nnamespace: biological_process\ndef: \"Any process that stops, prevents, or reduces the frequency, rate or extent of the directed movement of RNA from the nucleus into the cytoplasm.\" [GOC:bf]\nsynonym: \"down regulation of RNA export from nucleus\" EXACT []\nsynonym: \"down-regulation of RNA export from nucleus\" EXACT []\nsynonym: \"downregulation of RNA export from nucleus\" EXACT []\nsynonym: \"inhibition of RNA export from nucleus\" NARROW []\nsynonym: \"negative regulation of RNA export from cell nucleus\" EXACT []\nsynonym: \"negative regulation of RNA export out of nucleus\" EXACT []\nsynonym: \"negative regulation of RNA transport from nucleus to cytoplasm\" EXACT []\nsynonym: \"negative regulation of RNA-nucleus export\" EXACT []\nis_a: GO:0032240 ! negative regulation of nucleobase-containing compound transport\nis_a: GO:0046823 ! negative regulation of nucleocytoplasmic transport\nis_a: GO:0046831 ! regulation of RNA export from nucleus\nrelationship: negatively_regulates GO:0006405 ! RNA export from nucleus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046832",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 280910-280927",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046832"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -889,15 +641,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 325170-325185",
   "excerpt": "[Term]\nid: GO:0051292\nname: nuclear pore complex assembly\nnamespace: biological_process\ndef: \"The aggregation, arrangement and bonding together of a set of components to form a nuclear pore complex.\" [GOC:ai, GOC:mah]\nsynonym: \"NPC assembly\" EXACT []\nsynonym: \"nuclear pore assembly\" EXACT []\nsynonym: \"nuclear pore biogenesis\" EXACT []\nsynonym: \"nuclear pore biosynthesis\" EXACT []\nsynonym: \"nuclear pore complex biogenesis\" EXACT []\nsynonym: \"nuclear pore complex biosynthesis\" EXACT []\nsynonym: \"nuclear pore complex formation\" EXACT []\nsynonym: \"nuclear pore formation\" EXACT []\nis_a: GO:0006999 ! nuclear pore organization\nis_a: GO:0046931 ! pore complex assembly\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0051292",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 325170-325185",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0051292"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -908,15 +660,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 365139-365147",
   "excerpt": "[Term]\nid: GO:0070201\nname: regulation of establishment of protein localization\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of the directed movement of a protein to a specific location.\" [GOC:BHF, GOC:mah]\nsynonym: \"regulation of establishment of protein localisation\" EXACT [GOC:mah]\nis_a: GO:0032880 ! regulation of protein localization\nrelationship: regulates GO:0045184 ! establishment of protein localization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0070201",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 365139-365147",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0070201"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

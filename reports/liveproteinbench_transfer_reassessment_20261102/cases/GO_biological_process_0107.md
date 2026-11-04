@@ -1,18 +1,16 @@
-# GO_biological_process_0107: before and after transfer clarification
+# GO_biological_process_0107
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0107.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0107.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — peroxisome organization
+**Expected answer:** **A** — peroxisome organization
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the record for PEX24. Its function annotation, marked with experimental evidence, says it contributes to peroxisome tethering to the ER for organelle biogenesis, positioning, and segregation; this supports peroxisome organization. The separate GO annotation is computationally inferred (IEA), not itself experimental.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has multiple hydrophobic segments, consistent with a membrane protein, but that does not identify a peroxisomal role or distinguish peroxisome organization from calcium homeostasis.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this sequence is PEX24 and contributes to peroxisome tethering and biogenesis is absent from the input.
-
-
-**Reason**
-
-> The key is supported by reviewer-only, sequence-matched functional evidence, but the sequence and choices alone do not provide a meaningful basis for selecting the specific peroxisome process.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied sequence alone does not distinguish the choices reliably, but the available sequence-matched functional evidence supports A; it does not provide comparable support for another listed option.
-
-
-### Important caveats
-
-- The functional annotation cites experimental evidence, but the primary paper was not independently retrieved or validated here.
-- The GO:0007031 annotation is recorded as IEA:UniProtKB-ARBA, a computational annotation.
-- The exact source snapshot used by the author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has multiple hydrophobic segments, consistent with a membrane protein, but that does not identify a peroxisomal role or distinguish peroxisome organization from calcium homeostasis.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence is PEX24 and contributes to peroxisome tethering and biogenesis is absent from the input.",
-    "reason": "The key is supported by reviewer-only, sequence-matched functional evidence, but the sequence and choices alone do not provide a meaningful basis for selecting the specific peroxisome process."
-  },
-  "case_id": "GO_biological_process_0107",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the record for PEX24. Its function annotation, marked with experimental evidence, says it contributes to peroxisome tethering to the ER for organelle biogenesis, positioning, and segregation; this supports peroxisome organization. The separate GO annotation is computationally inferred (IEA), not itself experimental."
-  },
-  "important_caveats": [
-    "The functional annotation cites experimental evidence, but the primary paper was not independently retrieved or validated here.",
-    "The GO:0007031 annotation is recorded as IEA:UniProtKB-ARBA, a computational annotation.",
-    "The exact source snapshot used by the author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied sequence alone does not distinguish the choices reliably, but the available sequence-matched functional evidence supports A; it does not provide comparable support for another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0107",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the record for PEX24. Its function annotation, marked with experimental evidence, says it contributes to peroxisome tethering to the ER for organelle biogenesis, positioning, and segregation; this supports peroxisome organization. The separate GO annotation is computationally inferred (IEA), not itself experimental.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has multiple hydrophobic segments, consistent with a membrane protein, but that does not identify a peroxisomal role or distinguish peroxisome organization from calcium homeostasis.",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence is PEX24 and contributes to peroxisome tethering and biogenesis is absent from the input.",
-    "reason": "The key is supported by reviewer-only, sequence-matched functional evidence, but the sequence and choices alone do not provide a meaningful basis for selecting the specific peroxisome process."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied sequence alone does not distinguish the choices reliably, but the available sequence-matched functional evidence supports A; it does not provide comparable support for another listed option."
-  },
-  "important_caveats": [
-    "The functional annotation cites experimental evidence, but the primary paper was not independently retrieved or validated here.",
-    "The GO:0007031 annotation is recorded as IEA:UniProtKB-ARBA, a computational annotation.",
-    "The exact source snapshot used by the author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is PEX24 (UniProt W1QDU5), a peroxisomal membrane protein. The experimental function annotation (ECO:0000269, PubMed:32665322) states it 'contributes to tethering of peroxisomes to the endoplasmic reticulum for organelle biogenesis, positioning and segregation.' The GO annotation GO:0007031 (peroxisome organization) is present in the entry (though tagged IEA:UniProtKB-ARBA), and the underlying experimental evidence from Wu et al. 2020 directly supports a role in peroxisome organization. The GO term definition ('assembly, arrangement of constituent parts, or disassembly of a peroxisome') matches the protein's demonstrated function in peroxisome biogenesis, positioning, and segregation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One can partially eliminate distractors: the sequence lacks canonical DNA-binding domains (zinc fingers, bZIP, helix-turn-helix) making transcription regulation (C, D) unlikely, and lacks EF-hand or other calcium-binding motifs making calcium homeostasis (B) unlikely. However, positively identifying 'peroxisome organization' requires recognizing the protein as a peroxisomal membrane protein (PEX24). The sequence contains transmembrane-like hydrophobic stretches and coiled-coil regions, but these features are shared across many membrane proteins (mitochondrial, ER, vesicular) and do not uniquely indicate peroxisomal membrane targeting. No well-defined peroxisomal membrane targeting signal (mPTS) is recognizable as a simple sequence motif.
-
-
-**Missing item-specific fact**
-
-> The specific identity of the protein as PEX24 (or recognition of its domain architecture as belonging to the peroxisome biogenesis machinery) is needed to positively assign 'peroxisome organization' rather than other membrane-protein-associated processes. This requires either database lookup of the sequence or memorization of PEX24's function.
-
-
-**Reason**
-
-> While elimination of B, C, D is partially feasible through absence of characteristic motifs, confirming A specifically requires knowing this is a peroxisomal membrane protein involved in peroxisome biogenesis. The sequence features (hydrophobic TM regions, coiled coils) are generic to many membrane proteins and do not uniquely point to peroxisomes without prior knowledge of PEX24 or training on similar peroxisomal membrane proteins.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only option A (peroxisome organization) is consistent with the protein's experimentally validated function. Options B, C, and D have no supporting evidence and are inconsistent with the protein's domain architecture. No ambiguity in the correct answer.
-
-
-### Important caveats
-
-- The GO:0007031 annotation carries evidence code IEA:UniProtKB-ARBA (automatic rule-based), but the underlying FUNCTION comment is supported by experimental evidence (ECO:0000269, PubMed:32665322, Wu et al. 2020).
-- The protein is from Ogataea parapolymorpha (methylotrophic yeast), a non-model organism; PEX24 was characterized relatively recently (2020 publication, 2025 UniProt integration).
-- The sequence-match is confirmed (SHA256 identical between benchmark and UniProt entries), so the annotation applies to the exact sequence provided.
-- The protein lacks canonical peroxisomal matrix targeting signals (PTS1/PTS2), consistent with its role as a membrane protein rather than a matrix enzyme.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One can partially eliminate distractors: the sequence lacks canonical DNA-binding domains (zinc fingers, bZIP, helix-turn-helix) making transcription regulation (C, D) unlikely, and lacks EF-hand or other calcium-binding motifs making calcium homeostasis (B) unlikely. However, positively identifying 'peroxisome organization' requires recognizing the protein as a peroxisomal membrane protein (PEX24). The sequence contains transmembrane-like hydrophobic stretches and coiled-coil regions, but these features are shared across many membrane proteins (mitochondrial, ER, vesicular) and do not uniquely indicate peroxisomal membrane targeting. No well-defined peroxisomal membrane targeting signal (mPTS) is recognizable as a simple sequence motif.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of the protein as PEX24 (or recognition of its domain architecture as belonging to the peroxisome biogenesis machinery) is needed to positively assign 'peroxisome organization' rather than other membrane-protein-associated processes. This requires either database lookup of the sequence or memorization of PEX24's function.",
-    "reason": "While elimination of B, C, D is partially feasible through absence of characteristic motifs, confirming A specifically requires knowing this is a peroxisomal membrane protein involved in peroxisome biogenesis. The sequence features (hydrophobic TM regions, coiled coils) are generic to many membrane proteins and do not uniquely point to peroxisomes without prior knowledge of PEX24 or training on similar peroxisomal membrane proteins."
-  },
-  "case_id": "GO_biological_process_0107",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is PEX24 (UniProt W1QDU5), a peroxisomal membrane protein. The experimental function annotation (ECO:0000269, PubMed:32665322) states it 'contributes to tethering of peroxisomes to the endoplasmic reticulum for organelle biogenesis, positioning and segregation.' The GO annotation GO:0007031 (peroxisome organization) is present in the entry (though tagged IEA:UniProtKB-ARBA), and the underlying experimental evidence from Wu et al. 2020 directly supports a role in peroxisome organization. The GO term definition ('assembly, arrangement of constituent parts, or disassembly of a peroxisome') matches the protein's demonstrated function in peroxisome biogenesis, positioning, and segregation."
-  },
-  "important_caveats": [
-    "The GO:0007031 annotation carries evidence code IEA:UniProtKB-ARBA (automatic rule-based), but the underlying FUNCTION comment is supported by experimental evidence (ECO:0000269, PubMed:32665322, Wu et al. 2020).",
-    "The protein is from Ogataea parapolymorpha (methylotrophic yeast), a non-model organism; PEX24 was characterized relatively recently (2020 publication, 2025 UniProt integration).",
-    "The sequence-match is confirmed (SHA256 identical between benchmark and UniProt entries), so the annotation applies to the exact sequence provided.",
-    "The protein lacks canonical peroxisomal matrix targeting signals (PTS1/PTS2), consistent with its role as a membrane protein rather than a matrix enzyme."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option A (peroxisome organization) is consistent with the protein's experimentally validated function. Options B, C, and D have no supporting evidence and are inconsistent with the protein's domain architecture. No ambiguity in the correct answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0107",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is PEX24 (UniProt W1QDU5), a peroxisomal membrane protein. The experimental function annotation (ECO:0000269, PubMed:32665322) states it 'contributes to tethering of peroxisomes to the endoplasmic reticulum for organelle biogenesis, positioning and segregation.' The GO annotation GO:0007031 (peroxisome organization) is present in the entry (though tagged IEA:UniProtKB-ARBA), and the underlying experimental evidence from Wu et al. 2020 directly supports a role in peroxisome organization. The GO term definition ('assembly, arrangement of constituent parts, or disassembly of a peroxisome') matches the protein's demonstrated function in peroxisome biogenesis, positioning, and segregation.",
-    "evidence_ids": ["C4", "C5", "C6", "H3", "H4", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One can partially eliminate distractors: the sequence lacks canonical DNA-binding domains (zinc fingers, bZIP, helix-turn-helix) making transcription regulation (C, D) unlikely, and lacks EF-hand or other calcium-binding motifs making calcium homeostasis (B) unlikely. However, positively identifying 'peroxisome organization' requires recognizing the protein as a peroxisomal membrane protein (PEX24). The sequence contains transmembrane-like hydrophobic stretches and coiled-coil regions, but these features are shared across many membrane proteins (mitochondrial, ER, vesicular) and do not uniquely indicate peroxisomal membrane targeting. No well-defined peroxisomal membrane targeting signal (mPTS) is recognizable as a simple sequence motif.",
-    "missing_item_specific_fact": "The specific identity of the protein as PEX24 (or recognition of its domain architecture as belonging to the peroxisome biogenesis machinery) is needed to positively assign 'peroxisome organization' rather than other membrane-protein-associated processes. This requires either database lookup of the sequence or memorization of PEX24's function.",
-    "reason": "While elimination of B, C, D is partially feasible through absence of characteristic motifs, confirming A specifically requires knowing this is a peroxisomal membrane protein involved in peroxisome biogenesis. The sequence features (hydrophobic TM regions, coiled coils) are generic to many membrane proteins and do not uniquely point to peroxisomes without prior knowledge of PEX24 or training on similar peroxisomal membrane proteins."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only option A (peroxisome organization) is consistent with the protein's experimentally validated function. Options B, C, and D have no supporting evidence and are inconsistent with the protein's domain architecture. No ambiguity in the correct answer."
-  },
-  "important_caveats": [
-    "The GO:0007031 annotation carries evidence code IEA:UniProtKB-ARBA (automatic rule-based), but the underlying FUNCTION comment is supported by experimental evidence (ECO:0000269, PubMed:32665322, Wu et al. 2020).",
-    "The protein is from Ogataea parapolymorpha (methylotrophic yeast), a non-model organism; PEX24 was characterized relatively recently (2020 publication, 2025 UniProt integration).",
-    "The sequence-match is confirmed (SHA256 identical between benchmark and UniProt entries), so the annotation applies to the exact sequence provided.",
-    "The protein lacks canonical peroxisomal matrix targeting signals (PTS1/PTS2), consistent with its role as a membrane protein rather than a matrix enzyme."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "W1QDU5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f07d5286e3331343754a8f9c72f442123b8ba918a4b647577c5e44137c6d2082",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 569,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f07d5286e3331343754a8f9c72f442123b8ba918a4b647577c5e44137c6d2082",
   "current_entry_audit": {
     "entryVersion": 38,
     "firstPublicDate": "2025-02-05",
@@ -541,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-03-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "current_source_sequence_sha256": "f07d5286e3331343754a8f9c72f442123b8ba918a4b647577c5e44137c6d2082",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 569,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f07d5286e3331343754a8f9c72f442123b8ba918a4b647577c5e44137c6d2082",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 36,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "W1QDU5",
   "selected_historical_entry_version": 36,
+  "selected_historical_record_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
+  "selected_historical_source_sequence_length": 569,
+  "selected_historical_source_sequence_sha256": "f07d5286e3331343754a8f9c72f442123b8ba918a4b647577c5e44137c6d2082",
   "selected_historical_version": {
     "accession": "W1QDU5",
     "database": "Swiss-Prot",
@@ -559,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PEX24_OGAPD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
-  "selected_historical_source_sequence_sha256": "f07d5286e3331343754a8f9c72f442123b8ba918a4b647577c5e44137c6d2082",
-  "selected_historical_source_sequence_length": 569,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 36,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json",
-  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"W1QDU5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json"
 }
 ```
 
@@ -613,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json",
-  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":38,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-03-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json"
 }
 ```
 
@@ -632,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json",
-  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Yeast\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Pichiomycetes\",\"Pichiales\",\"Pichiaceae\",\"Ogataea\"],\"scientificName\":\"Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL Y-7560 / DL-1)\",\"synonyms\":[\"Hansenula polymorpha\"],\"taxonId\":871575}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json"
 }
 ```
 
@@ -651,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json",
-  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Peroxin-24\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"value\":\"Peroxisomal membrane protein PEX24\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json"
 }
 ```
 
@@ -670,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json",
-  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"value\":\"With PEX32, contributes to tethering of peroxisomes to the endoplasmic reticulum for organelle biogenesis, positioning and segregation\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json"
 }
 ```
 
@@ -689,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json",
-  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0007031\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:peroxisome organization\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-ARBA\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json"
 }
 ```
 
@@ -708,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json",
-  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
-  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Wu F.\",\"de Boer R.\",\"Krikken A.M.\",\"Aksit A.\",\"Bordin N.\",\"Devos D.P.\",\"van der Klei I.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32665322\"},{\"database\":\"DOI\",\"id\":\"10.1242/jcs.246983\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"32665322\",\"journal\":\"J. Cell Sci.\",\"lastPage\":\"0\",\"publicationDate\":\"2020\",\"title\":\"Pex24 and Pex32 are required to tether peroxisomes to the ER for organelle biogenesis, positioning and segregation in yeast.\",\"volume\":\"133\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:34:05.762905+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a935708ddec2d3b0ff86676a9c780f1b15c450d19ecc218103ca9285e46d273a",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QDU5.json"
 }
 ```
 
@@ -726,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36",
-  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
-  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   PEX24_OGAPD             Reviewed;         569 AA.\nAC   W1QDU5;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-MAR-2014, sequence version 1.\nDT   09-APR-2025, entry version 36.\nDE   RecName: Full=Peroxisomal membrane protein PEX24 {ECO:0000303|PubMed:32665322};\nDE   AltName: Full=Peroxin-24 {ECO:0000305};\nGN   Name=PEX24 {ECO:0000303|PubMed:32665322}; ORFNames=HPODL_03516;\nOS   Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL\nOS   Y-7560 / DL-1) (Yeast) (Hansenula polymorpha).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Pichiomycetes;\nOC   Pichiales; Pichiaceae; Ogataea.\nOX   NCBI_TaxID=871575;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
+  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36"
 }
 ```
 
@@ -747,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36",
-  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
-  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND SUBCELLULAR LOCATION.\nRX   PubMed=32665322; DOI=10.1242/jcs.246983;\nRA   Wu F., de Boer R., Krikken A.M., Aksit A., Bordin N., Devos D.P.,\nRA   van der Klei I.J.;\nRT   \"Pex24 and Pex32 are required to tether peroxisomes to the ER for organelle\nRT   biogenesis, positioning and segregation in yeast.\";\nRL   J. Cell Sci. 133:0-0(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
+  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36"
 }
 ```
 
@@ -768,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36",
-  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
-  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
-  "source_locator": "lines 32-34",
   "excerpt": "CC   -!- FUNCTION: With PEX32, contributes to tethering of peroxisomes to the\nCC       endoplasmic reticulum for organelle biogenesis, positioning and\nCC       segregation. {ECO:0000269|PubMed:32665322}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
+  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36"
 }
 ```
 
@@ -789,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 36,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36",
-  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
-  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
-  "source_locator": "lines 66-66",
   "excerpt": "DR   GO; GO:0007031; P:peroxisome organization; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 36,
+  "retrieved_utc": "2026-11-02T04:34:09.234705+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 66-66",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "35693919ce4aaade7dbc7068810713aa80e421568f8ede865776b2f733bc2302",
+  "url": "https://rest.uniprot.org/unisave/W1QDU5?format=txt&versions=36"
 }
 ```
 
@@ -811,15 +566,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 65427-65443",
   "excerpt": "[Term]\nid: GO:0006357\nname: regulation of transcription by RNA polymerase II\nnamespace: biological_process\nalt_id: GO:0006358\nalt_id: GO:0010551\ndef: \"Any process that modulates the frequency, rate or extent of transcription mediated by RNA polymerase II.\" [GOC:curators, GOC:txnOH]\nsynonym: \"global transcription regulation from Pol II promoter\" RELATED []\nsynonym: \"regulation of gene-specific transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"regulation of global transcription from Pol II promoter\" RELATED []\nsynonym: \"regulation of transcription from Pol II promoter\" EXACT []\nsynonym: \"regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"regulation of transcription from RNA polymerase II promoter, global\" RELATED []\nxref: Reactome:R-HSA-8864260 \"Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors\"\nis_a: GO:0006355 ! regulation of DNA-templated transcription\nrelationship: regulates GO:0006366 ! transcription by RNA polymerase II\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006357",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 65427-65443",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006357"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -830,15 +585,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 71110-71119",
   "excerpt": "[Term]\nid: GO:0006874\nname: intracellular calcium ion homeostasis\nnamespace: biological_process\ndef: \"A homeostatic process involved in the maintenance of a steady state level of calcium ions within a cell.\" [GOC:ceb, GOC:mah]\nsynonym: \"cellular calcium ion homeostasis\" EXACT []\nsynonym: \"regulation of calcium ion concentration\" BROAD []\nis_a: GO:0030003 ! intracellular monoatomic cation homeostasis\nis_a: GO:0055074 ! calcium ion homeostasis\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006874",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 71110-71119",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006874"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -849,15 +604,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 72605-72618",
   "excerpt": "[Term]\nid: GO:0007031\nname: peroxisome organization\nnamespace: biological_process\ndef: \"A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a peroxisome. A peroxisome is a small, membrane-bounded organelle that uses dioxygen (O2) to oxidize organic molecules.\" [GOC:mah]\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_pir\nsubset: goslim_pombe\nsubset: goslim_yeast\nsynonym: \"peroxisome organisation\" EXACT []\nsynonym: \"peroxisome organization and biogenesis\" RELATED [GOC:mah]\nis_a: GO:0006996 ! organelle organization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0007031",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 72605-72618",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0007031"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -868,15 +623,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 270753-270781",
   "excerpt": "[Term]\nid: GO:0045944\nname: positive regulation of transcription by RNA polymerase II\nnamespace: biological_process\nalt_id: GO:0010552\nalt_id: GO:0045817\ndef: \"Any process that activates or increases the frequency, rate or extent of transcription from an RNA polymerase II promoter.\" [GOC:curators, GOC:txnOH]\nsynonym: \"activation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"activation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"positive regulation of gene-specific transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"positive regulation of global transcription from Pol II promoter\" RELATED []\nsynonym: \"positive regulation of transcription from Pol II promoter\" EXACT []\nsynonym: \"positive regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"positive regulation of transcription from RNA polymerase II promoter, global\" RELATED []\nsynonym: \"stimulation of global transcription from RNA polymerase II promoter\" NARROW []\nsynonym: \"stimulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"up regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"up regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"up-regulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"up-regulation of transcription from RNA polymerase II promoter\" EXACT []\nsynonym: \"upregulation of global transcription from RNA polymerase II promoter\" RELATED []\nsynonym: \"upregulation of transcription from RNA polymerase II promoter\" EXACT []\nxref: Reactome:R-HSA-2173796 \"SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription\"\nxref: Reactome:R-HSA-8866906 \"TFAP2 (AP-2) family regulates transcription of other transcription factors\"\nxref: Reactome:R-HSA-8866907 \"Activation of the TFAP2 (AP-2) family of transcription factors\"\nis_a: GO:0006357 ! regulation of transcription by RNA polymerase II\nis_a: GO:0045893 ! positive regulation of DNA-templated transcription\nrelationship: positively_regulates GO:0006366 ! transcription by RNA polymerase II\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0045944",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 270753-270781",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0045944"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

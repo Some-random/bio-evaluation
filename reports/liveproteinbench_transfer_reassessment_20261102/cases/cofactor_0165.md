@@ -1,18 +1,16 @@
-# cofactor_0165: before and after transfer clarification
+# cofactor_0165
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0165.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0165.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — Mg(2+)
+**Expected answer:** **A** — Mg(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt entry for a tsetse fly 5′-nucleotidase-related protein. That entry annotates Mg(2+) as a cofactor with experimental-evidence code ECO:0000269, citing PubMed 20351782. It also annotates Mn(2+), which is not among the choices.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A nucleotide-hydrolyzing enzyme may plausibly use a divalent metal such as Mg(2+), making Mg more plausible than PLP, Na(+), or pantetheine 4′-phosphate. But the input does not identify the enzyme’s function or establish which cofactor this particular protein uses.
-
-
-**Missing item-specific fact**
-
-> The protein-specific cofactor annotation or experimental evidence that this protein uses Mg(2+); the database also records Mn(2+).
-
-
-**Reason**
-
-> The key is supported by reviewer-only, sequence-matched database evidence, but that evidence was not supplied to the evaluated model. Sequence-based generic plausibility does not establish the specific cofactor requirement.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Mg(2+) is the only listed option supported by the matched annotation. Although Mn(2+) is also annotated, it is not offered as a choice.
-
-
-### Important caveats
-
-- The cofactor annotations cite PubMed 20351782 with ECO:0000269; the primary paper was not independently retrieved and validated here.
-- The exact author source snapshot is unknown, though the supplied sequence matches both the current and historical UniProt records examined.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A nucleotide-hydrolyzing enzyme may plausibly use a divalent metal such as Mg(2+), making Mg more plausible than PLP, Na(+), or pantetheine 4′-phosphate. But the input does not identify the enzyme’s function or establish which cofactor this particular protein uses.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation or experimental evidence that this protein uses Mg(2+); the database also records Mn(2+).",
-    "reason": "The key is supported by reviewer-only, sequence-matched database evidence, but that evidence was not supplied to the evaluated model. Sequence-based generic plausibility does not establish the specific cofactor requirement."
-  },
-  "case_id": "cofactor_0165",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry for a tsetse fly 5′-nucleotidase-related protein. That entry annotates Mg(2+) as a cofactor with experimental-evidence code ECO:0000269, citing PubMed 20351782. It also annotates Mn(2+), which is not among the choices."
-  },
-  "important_caveats": [
-    "The cofactor annotations cite PubMed 20351782 with ECO:0000269; the primary paper was not independently retrieved and validated here.",
-    "The exact author source snapshot is unknown, though the supplied sequence matches both the current and historical UniProt records examined."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mg(2+) is the only listed option supported by the matched annotation. Although Mn(2+) is also annotated, it is not offered as a choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0165",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry for a tsetse fly 5′-nucleotidase-related protein. That entry annotates Mg(2+) as a cofactor with experimental-evidence code ECO:0000269, citing PubMed 20351782. It also annotates Mn(2+), which is not among the choices.",
-    "evidence_ids": ["C1", "C4", "C5", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A nucleotide-hydrolyzing enzyme may plausibly use a divalent metal such as Mg(2+), making Mg more plausible than PLP, Na(+), or pantetheine 4′-phosphate. But the input does not identify the enzyme’s function or establish which cofactor this particular protein uses.",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation or experimental evidence that this protein uses Mg(2+); the database also records Mn(2+).",
-    "reason": "The key is supported by reviewer-only, sequence-matched database evidence, but that evidence was not supplied to the evaluated model. Sequence-based generic plausibility does not establish the specific cofactor requirement."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Mg(2+) is the only listed option supported by the matched annotation. Although Mn(2+) is also annotated, it is not offered as a choice."
-  },
-  "important_caveats": [
-    "The cofactor annotations cite PubMed 20351782 with ECO:0000269; the primary paper was not independently retrieved and validated here.",
-    "The exact author source snapshot is unknown, though the supplied sequence matches both the current and historical UniProt records examined."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q95P65 (5'-nucleotidase-related protein, EC 3.6.1.5, apyrase) lists Mg(2+) and Mn(2+) as experimentally confirmed cofactors (ECO:0000269|PubMed:20351782). Since Mn(2+) is not among the choices, Mg(2+) is the correct and only valid answer from the given options. The sequence matches the benchmark sequence exactly (sha256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains GD motifs (e.g., 'GDNFQGTIWYNIGRWNVTSELMNIQPPD') and GG motifs (e.g., 'GGHSHTVLYTGTPPGPEK', 'GGDGFKMLRDYAKNIQNQKIDLDALVDYLKKFSPLAPKAEGRITIIH') consistent with nucleotide-binding phosphatase architecture. Among the four choices, Mg(2+) is the only cofactor associated with nucleotide phosphatases/hydrolases (EC 3.6.x.x class). PLP is specific to aminotransferases/decarboxylases acting on amino acids; pantetheine 4'-phosphate is a prosthetic group of acyltransferases and ACP; Na(+) is associated with ion pumps. The sequence lacks the catalytic lysine in a PLP-binding domain architecture, lacks pantetheine-binding motifs of acyl carrier proteins, and lacks sodium-binding sites. By positive identification of nucleotide-binding features and elimination of incompatible cofactor classes, Mg(2+) is the defensible choice.
-
-
-**Missing item-specific fact**
-
-> Precise identification of this protein as an apyrase (EC 3.6.1.5) from sequence alone without database lookup would require recognizing less-obvious family signatures beyond the common GD/GG motifs. However, the elimination logic and nucleotide-binding motif recognition provide sufficient grounds to distinguish the answer.
-
-
-**Reason**
-
-> The GD and GG motifs suggest nucleotide binding/phosphatase function, and among the four choices only Mg(2+) is associated with nucleotide phosphatases. The other three cofactors belong to mechanistically unrelated enzyme classes that do not match the sequence's structural features. This constitutes a concrete biological argument from the sequence and choices, though the positive identification relies on moderately general motif recognition rather than a unique diagnostic signature.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although UniProt lists both Mg(2+) and Mn(2+) as cofactors, Mn(2+) is not among the choices, eliminating ambiguity. The remaining three options (PLP, Na+, pantetheine 4'-phosphate) are clearly incompatible with a nucleotide phosphatase/apyrase, so only Mg(2+) is defensible.
-
-
-### Important caveats
-
-- The UniProt entry lists both Mg(2+) and Mn(2+) as experimentally confirmed cofactors; the question is answerable only because Mn(2+) is excluded from the choices.
-- The GD and GG motifs in the sequence are common across many protein families and are suggestive but not uniquely diagnostic of nucleotide phosphatases.
-- The cofactor annotation is based on a single experimental study (PubMed:20351782, Caljon et al. 2010, PLoS ONE).
-- The sequence is a precursor (555 aa) from Glossina morsitans morsitans; post-translational processing could affect cofactor binding in the mature form.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains GD motifs (e.g., 'GDNFQGTIWYNIGRWNVTSELMNIQPPD') and GG motifs (e.g., 'GGHSHTVLYTGTPPGPEK', 'GGDGFKMLRDYAKNIQNQKIDLDALVDYLKKFSPLAPKAEGRITIIH') consistent with nucleotide-binding phosphatase architecture. Among the four choices, Mg(2+) is the only cofactor associated with nucleotide phosphatases/hydrolases (EC 3.6.x.x class). PLP is specific to aminotransferases/decarboxylases acting on amino acids; pantetheine 4'-phosphate is a prosthetic group of acyltransferases and ACP; Na(+) is associated with ion pumps. The sequence lacks the catalytic lysine in a PLP-binding domain architecture, lacks pantetheine-binding motifs of acyl carrier proteins, and lacks sodium-binding sites. By positive identification of nucleotide-binding features and elimination of incompatible cofactor classes, Mg(2+) is the defensible choice.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise identification of this protein as an apyrase (EC 3.6.1.5) from sequence alone without database lookup would require recognizing less-obvious family signatures beyond the common GD/GG motifs. However, the elimination logic and nucleotide-binding motif recognition provide sufficient grounds to distinguish the answer.",
-    "reason": "The GD and GG motifs suggest nucleotide binding/phosphatase function, and among the four choices only Mg(2+) is associated with nucleotide phosphatases. The other three cofactors belong to mechanistically unrelated enzyme classes that do not match the sequence's structural features. This constitutes a concrete biological argument from the sequence and choices, though the positive identification relies on moderately general motif recognition rather than a unique diagnostic signature."
-  },
-  "case_id": "cofactor_0165",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q95P65 (5'-nucleotidase-related protein, EC 3.6.1.5, apyrase) lists Mg(2+) and Mn(2+) as experimentally confirmed cofactors (ECO:0000269|PubMed:20351782). Since Mn(2+) is not among the choices, Mg(2+) is the correct and only valid answer from the given options. The sequence matches the benchmark sequence exactly (sha256 confirmed)."
-  },
-  "important_caveats": [
-    "The UniProt entry lists both Mg(2+) and Mn(2+) as experimentally confirmed cofactors; the question is answerable only because Mn(2+) is excluded from the choices.",
-    "The GD and GG motifs in the sequence are common across many protein families and are suggestive but not uniquely diagnostic of nucleotide phosphatases.",
-    "The cofactor annotation is based on a single experimental study (PubMed:20351782, Caljon et al. 2010, PLoS ONE).",
-    "The sequence is a precursor (555 aa) from Glossina morsitans morsitans; post-translational processing could affect cofactor binding in the mature form."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although UniProt lists both Mg(2+) and Mn(2+) as cofactors, Mn(2+) is not among the choices, eliminating ambiguity. The remaining three options (PLP, Na+, pantetheine 4'-phosphate) are clearly incompatible with a nucleotide phosphatase/apyrase, so only Mg(2+) is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0165",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q95P65 (5'-nucleotidase-related protein, EC 3.6.1.5, apyrase) lists Mg(2+) and Mn(2+) as experimentally confirmed cofactors (ECO:0000269|PubMed:20351782). Since Mn(2+) is not among the choices, Mg(2+) is the correct and only valid answer from the given options. The sequence matches the benchmark sequence exactly (sha256 confirmed).",
-    "evidence_ids": ["C5", "H4", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains GD motifs (e.g., 'GDNFQGTIWYNIGRWNVTSELMNIQPPD') and GG motifs (e.g., 'GGHSHTVLYTGTPPGPEK', 'GGDGFKMLRDYAKNIQNQKIDLDALVDYLKKFSPLAPKAEGRITIIH') consistent with nucleotide-binding phosphatase architecture. Among the four choices, Mg(2+) is the only cofactor associated with nucleotide phosphatases/hydrolases (EC 3.6.x.x class). PLP is specific to aminotransferases/decarboxylases acting on amino acids; pantetheine 4'-phosphate is a prosthetic group of acyltransferases and ACP; Na(+) is associated with ion pumps. The sequence lacks the catalytic lysine in a PLP-binding domain architecture, lacks pantetheine-binding motifs of acyl carrier proteins, and lacks sodium-binding sites. By positive identification of nucleotide-binding features and elimination of incompatible cofactor classes, Mg(2+) is the defensible choice.",
-    "missing_item_specific_fact": "Precise identification of this protein as an apyrase (EC 3.6.1.5) from sequence alone without database lookup would require recognizing less-obvious family signatures beyond the common GD/GG motifs. However, the elimination logic and nucleotide-binding motif recognition provide sufficient grounds to distinguish the answer.",
-    "reason": "The GD and GG motifs suggest nucleotide binding/phosphatase function, and among the four choices only Mg(2+) is associated with nucleotide phosphatases. The other three cofactors belong to mechanistically unrelated enzyme classes that do not match the sequence's structural features. This constitutes a concrete biological argument from the sequence and choices, though the positive identification relies on moderately general motif recognition rather than a unique diagnostic signature."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although UniProt lists both Mg(2+) and Mn(2+) as cofactors, Mn(2+) is not among the choices, eliminating ambiguity. The remaining three options (PLP, Na+, pantetheine 4'-phosphate) are clearly incompatible with a nucleotide phosphatase/apyrase, so only Mg(2+) is defensible."
-  },
-  "important_caveats": [
-    "The UniProt entry lists both Mg(2+) and Mn(2+) as experimentally confirmed cofactors; the question is answerable only because Mn(2+) is excluded from the choices.",
-    "The GD and GG motifs in the sequence are common across many protein families and are suggestive but not uniquely diagnostic of nucleotide phosphatases.",
-    "The cofactor annotation is based on a single experimental study (PubMed:20351782, Caljon et al. 2010, PLoS ONE).",
-    "The sequence is a precursor (555 aa) from Glossina morsitans morsitans; post-translational processing could affect cofactor binding in the mature form."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -498,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q95P65",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 555,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "current_entry_audit": {
     "entryVersion": 84,
     "firstPublicDate": "2025-02-05",
@@ -529,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-12-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 555,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q95P65",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "selected_historical_source_sequence_length": 555,
+  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
   "selected_historical_version": {
     "accession": "Q95P65",
     "database": "Swiss-Prot",
@@ -547,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "APY_GLOMM",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "selected_historical_source_sequence_sha256": "881429cdee022e789feb0de1032bd5397cddc0acbccdc7813dfdf72b98b7d5e1",
-  "selected_historical_source_sequence_length": 555,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -578,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q95P65\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -597,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":84,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-12-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -616,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Savannah tsetse fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAK63848.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Hippoboscoidea\",\"Glossinidae\",\"Glossina\"],\"scientificName\":\"Glossina morsitans morsitans\",\"taxonId\":37546}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -635,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"3.6.1.5\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'-nucleotidase-related protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"value\":\"5'Nuc\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -654,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:18420\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"name\":\"Mg(2+)\"},{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29035\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20351782\",\"source\":\"PubMed\"}],\"name\":\"Mn(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -673,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json",
-  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
-  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Caljon G.\",\"De Ridder K.\",\"De Baetselier P.\",\"Coosemans M.\",\"Van Den Abbeele J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20351782\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0009671\"}],\"citationType\":\"journal article\",\"firstPage\":\"e9671\",\"id\":\"20351782\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e9671\",\"publicationDate\":\"2010\",\"title\":\"Identification of a tsetse fly salivary protein with dual inhibitory action on human platelet aggregation.\",\"volume\":\"5\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:25.918010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b872d4ca06488362fc74985c252629d952ce7dbc06301bfe01faba9bd8e3702c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q95P65.json"
 }
 ```
 
@@ -691,18 +451,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   APY_GLOMM               Reviewed;         555 AA.\nAC   Q95P65; D3TRV7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-DEC-2001, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=5'-nucleotidase-related protein {ECO:0000303|PubMed:20351782};\nDE            Short=5'Nuc {ECO:0000303|PubMed:20351782};\nDE            EC=3.6.1.5 {ECO:0000269|PubMed:20351782};\nDE   Flags: Precursor;\nOS   Glossina morsitans morsitans (Savannah tsetse fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Hippoboscoidea;\nOC   Glossinidae; Glossina.\nOX   NCBI_TaxID=37546 {ECO:0000312|EMBL:AAK63848.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -712,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=5'-nucleotidase-related protein {ECO:0000303|PubMed:20351782};\nDE            Short=5'Nuc {ECO:0000303|PubMed:20351782};\nDE            EC=3.6.1.5 {ECO:0000269|PubMed:20351782};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -733,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, ACTIVITY REGULATION,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBCELLULAR LOCATION, TISSUE SPECIFICITY,\nRP   AND DISRUPTION PHENOTYPE.\nRX   PubMed=20351782; DOI=10.1371/journal.pone.0009671;\nRA   Caljon G., De Ridder K., De Baetselier P., Coosemans M.,\nRA   Van Den Abbeele J.;\nRT   \"Identification of a tsetse fly salivary protein with dual inhibitory\nRT   action on human platelet aggregation.\";\nRL   PLoS ONE 5:e9671-e9671(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 
@@ -754,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83",
-  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
-  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
-  "source_locator": "lines 53-57",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mg(2+); Xref=ChEBI:CHEBI:18420;\nCC         Evidence={ECO:0000269|PubMed:20351782};\nCC       Name=Mn(2+); Xref=ChEBI:CHEBI:29035;\nCC         Evidence={ECO:0000269|PubMed:20351782};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-01T06:28:44.138990+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f94d1be0e1177c1751f4d603face9ec9ba5dce46bd55845e3dbe4b520719448",
+  "url": "https://rest.uniprot.org/unisave/Q95P65?format=txt&versions=83"
 }
 ```
 

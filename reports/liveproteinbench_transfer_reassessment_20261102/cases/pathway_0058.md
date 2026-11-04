@@ -1,18 +1,16 @@
-# pathway_0058: before and after transfer clarification
+# pathway_0058
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0058.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0058.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Alkaloid biosynthesis. .
+**Expected answer:** **C** — Alkaloid biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as cytochrome P450 monooxygenase lenC, a lentopeptin biogenesis cluster protein, with the pathway listed as alkaloid biosynthesis. The pathway annotation carries an experimental-evidence code and cites a 2022 research article; a historical entry matching the sequence also contains this annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a fungal cytochrome P450, but that enzyme family participates in many different pathways. This general clue does not distinguish alkaloid biosynthesis from the other choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as LenC and its role in lentopeptin/alkaloid biosynthesis, or equivalent experimental or database annotation.
-
-
-**Reason**
-
-> The sequence alone supplies no meaningful pathway-specific discriminator among plausible metabolic roles. Selecting C requires a protein-specific fact absent from the input; recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied sequence does not establish a unique pathway, but the reviewer evidence supports C. No other listed choice is independently supported as the protein's pathway by the available evidence.
-
-
-### Important caveats
-
-- The evidence is a sequence-matched database annotation that cites a publication and carries an experimental-evidence code; the primary study was not independently reviewed here.
-- The author's exact source snapshot is unknown, though the historical sequence-matched entry already contained the pathway annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a fungal cytochrome P450, but that enzyme family participates in many different pathways. This general clue does not distinguish alkaloid biosynthesis from the other choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as LenC and its role in lentopeptin/alkaloid biosynthesis, or equivalent experimental or database annotation.",
-    "reason": "The sequence alone supplies no meaningful pathway-specific discriminator among plausible metabolic roles. Selecting C requires a protein-specific fact absent from the input; recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "case_id": "pathway_0058",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as cytochrome P450 monooxygenase lenC, a lentopeptin biogenesis cluster protein, with the pathway listed as alkaloid biosynthesis. The pathway annotation carries an experimental-evidence code and cites a 2022 research article; a historical entry matching the sequence also contains this annotation."
-  },
-  "important_caveats": [
-    "The evidence is a sequence-matched database annotation that cites a publication and carries an experimental-evidence code; the primary study was not independently reviewed here.",
-    "The author's exact source snapshot is unknown, though the historical sequence-matched entry already contained the pathway annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied sequence does not establish a unique pathway, but the reviewer evidence supports C. No other listed choice is independently supported as the protein's pathway by the available evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0058",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as cytochrome P450 monooxygenase lenC, a lentopeptin biogenesis cluster protein, with the pathway listed as alkaloid biosynthesis. The pathway annotation carries an experimental-evidence code and cites a 2022 research article; a historical entry matching the sequence also contains this annotation.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a fungal cytochrome P450, but that enzyme family participates in many different pathways. This general clue does not distinguish alkaloid biosynthesis from the other choices.",
-    "missing_item_specific_fact": "The protein-specific identification as LenC and its role in lentopeptin/alkaloid biosynthesis, or equivalent experimental or database annotation.",
-    "reason": "The sequence alone supplies no meaningful pathway-specific discriminator among plausible metabolic roles. Selecting C requires a protein-specific fact absent from the input; recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied sequence does not establish a unique pathway, but the reviewer evidence supports C. No other listed choice is independently supported as the protein's pathway by the available evidence."
-  },
-  "important_caveats": [
-    "The evidence is a sequence-matched database annotation that cites a publication and carries an experimental-evidence code; the primary study was not independently reviewed here.",
-    "The author's exact source snapshot is unknown, though the historical sequence-matched entry already contained the pathway annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0AAN4PBA1 (LENC_ASPLE) explicitly annotates the pathway as 'Alkaloid biosynthesis' with experimental evidence code ECO:0000269 (inferred from direct assay) from PubMed:35302734 (Kishimoto et al., JACS 2022, 'Alkaloid Biosynthetic Enzyme Generates Diastereomeric Pair via Two Distinct Mechanisms'). The protein is Cytochrome P450 monooxygenase lenC, part of the lentopeptin biogenesis cluster in Aspergillus lentulus. Both current (v7) and historical (v5) entries confirm this annotation with matched sequence.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H2](#evidence-h2), [C4](#evidence-c4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable P450 heme-binding motif (FGRHACPGR region), which allows elimination of option D (ubiquitination involves E1/E2/E3 ligases, not P450s) and option B (homoserine O-acetyltransferase is not a P450). However, P450s participate in numerous pathways including both amino-acid degradation and alkaloid biosynthesis. No general sequence feature reliably distinguishes a fungal secondary-metabolite P450 (alkaloid pathway) from a P450 involved in amino-acid catabolism.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as lenC from the lentopeptin biosynthetic gene cluster, and the experimental demonstration (PubMed:35302734) that it catalyzes a step in alkaloid (lentopeptin) biosynthesis rather than amino-acid degradation. This protein-specific substrate and pathway assignment cannot be inferred from sequence alone.
-
-
-**Reason**
-
-> While P450 recognition eliminates two distractors, the critical A-vs-C distinction requires knowing the specific protein identity and its experimentally characterized role in the lentopeptin alkaloid pathway. This is an item-specific annotation/experimental fact absent from the model input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and D are clearly incompatible with a P450 enzyme. Between A and C, while both are theoretically P450-compatible pathways, the experimental evidence definitively assigns this protein to alkaloid biosynthesis. The question wording ('primary metabolic or signaling pathway') aligns with the UniProt pathway annotation. No genuine ambiguity exists once the correct protein is identified.
-
-
-### Important caveats
-
-- The UniProt entry was first publicly released in April 2025; the benchmark author's source snapshot date is unknown. If the author used a pre-2025 source, the annotation may not have existed at construction time.
-- The evidence code ECO:0000269 indicates experimental (direct assay) support, strengthening the annotation beyond computational inference.
-- The P450 heme-binding motif identification is a reasonable sequence-level observation but does not uniquely resolve the pathway assignment.
-- Option B ('O-acetyl-L-homoserine from L-homoserine: step 1/1') is an unusually specific single-step description that is trivially eliminable for any P450, making it a weak distractor.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable P450 heme-binding motif (FGRHACPGR region), which allows elimination of option D (ubiquitination involves E1/E2/E3 ligases, not P450s) and option B (homoserine O-acetyltransferase is not a P450). However, P450s participate in numerous pathways including both amino-acid degradation and alkaloid biosynthesis. No general sequence feature reliably distinguishes a fungal secondary-metabolite P450 (alkaloid pathway) from a P450 involved in amino-acid catabolism.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as lenC from the lentopeptin biosynthetic gene cluster, and the experimental demonstration (PubMed:35302734) that it catalyzes a step in alkaloid (lentopeptin) biosynthesis rather than amino-acid degradation. This protein-specific substrate and pathway assignment cannot be inferred from sequence alone.",
-    "reason": "While P450 recognition eliminates two distractors, the critical A-vs-C distinction requires knowing the specific protein identity and its experimentally characterized role in the lentopeptin alkaloid pathway. This is an item-specific annotation/experimental fact absent from the model input."
-  },
-  "case_id": "pathway_0058",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H2",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0AAN4PBA1 (LENC_ASPLE) explicitly annotates the pathway as 'Alkaloid biosynthesis' with experimental evidence code ECO:0000269 (inferred from direct assay) from PubMed:35302734 (Kishimoto et al., JACS 2022, 'Alkaloid Biosynthetic Enzyme Generates Diastereomeric Pair via Two Distinct Mechanisms'). The protein is Cytochrome P450 monooxygenase lenC, part of the lentopeptin biogenesis cluster in Aspergillus lentulus. Both current (v7) and historical (v5) entries confirm this annotation with matched sequence."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released in April 2025; the benchmark author's source snapshot date is unknown. If the author used a pre-2025 source, the annotation may not have existed at construction time.",
-    "The evidence code ECO:0000269 indicates experimental (direct assay) support, strengthening the annotation beyond computational inference.",
-    "The P450 heme-binding motif identification is a reasonable sequence-level observation but does not uniquely resolve the pathway assignment.",
-    "Option B ('O-acetyl-L-homoserine from L-homoserine: step 1/1') is an unusually specific single-step description that is trivially eliminable for any P450, making it a weak distractor."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D are clearly incompatible with a P450 enzyme. Between A and C, while both are theoretically P450-compatible pathways, the experimental evidence definitively assigns this protein to alkaloid biosynthesis. The question wording ('primary metabolic or signaling pathway') aligns with the UniProt pathway annotation. No genuine ambiguity exists once the correct protein is identified."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0058",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0AAN4PBA1 (LENC_ASPLE) explicitly annotates the pathway as 'Alkaloid biosynthesis' with experimental evidence code ECO:0000269 (inferred from direct assay) from PubMed:35302734 (Kishimoto et al., JACS 2022, 'Alkaloid Biosynthetic Enzyme Generates Diastereomeric Pair via Two Distinct Mechanisms'). The protein is Cytochrome P450 monooxygenase lenC, part of the lentopeptin biogenesis cluster in Aspergillus lentulus. Both current (v7) and historical (v5) entries confirm this annotation with matched sequence.",
-    "evidence_ids": ["C5", "C6", "H3", "H2", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a recognizable P450 heme-binding motif (FGRHACPGR region), which allows elimination of option D (ubiquitination involves E1/E2/E3 ligases, not P450s) and option B (homoserine O-acetyltransferase is not a P450). However, P450s participate in numerous pathways including both amino-acid degradation and alkaloid biosynthesis. No general sequence feature reliably distinguishes a fungal secondary-metabolite P450 (alkaloid pathway) from a P450 involved in amino-acid catabolism.",
-    "missing_item_specific_fact": "The specific identity of this protein as lenC from the lentopeptin biosynthetic gene cluster, and the experimental demonstration (PubMed:35302734) that it catalyzes a step in alkaloid (lentopeptin) biosynthesis rather than amino-acid degradation. This protein-specific substrate and pathway assignment cannot be inferred from sequence alone.",
-    "reason": "While P450 recognition eliminates two distractors, the critical A-vs-C distinction requires knowing the specific protein identity and its experimentally characterized role in the lentopeptin alkaloid pathway. This is an item-specific annotation/experimental fact absent from the model input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D are clearly incompatible with a P450 enzyme. Between A and C, while both are theoretically P450-compatible pathways, the experimental evidence definitively assigns this protein to alkaloid biosynthesis. The question wording ('primary metabolic or signaling pathway') aligns with the UniProt pathway annotation. No genuine ambiguity exists once the correct protein is identified."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released in April 2025; the benchmark author's source snapshot date is unknown. If the author used a pre-2025 source, the annotation may not have existed at construction time.",
-    "The evidence code ECO:0000269 indicates experimental (direct assay) support, strengthening the annotation beyond computational inference.",
-    "The P450 heme-binding motif identification is a reasonable sequence-level observation but does not uniquely resolve the pathway assignment.",
-    "Option B ('O-acetyl-L-homoserine from L-homoserine: step 1/1') is an unusually specific single-step description that is trivially eliminable for any P450, making it a weak distractor."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAN4PBA1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "50b3fc0b687768d3ed1f77eff01499e07ddbde61cb7292eb53f5b692eca042f0",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 528,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "50b3fc0b687768d3ed1f77eff01499e07ddbde61cb7292eb53f5b692eca042f0",
   "current_entry_audit": {
     "entryVersion": 7,
     "firstPublicDate": "2025-04-09",
@@ -536,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-10-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
-  "current_source_sequence_sha256": "50b3fc0b687768d3ed1f77eff01499e07ddbde61cb7292eb53f5b692eca042f0",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 528,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "50b3fc0b687768d3ed1f77eff01499e07ddbde61cb7292eb53f5b692eca042f0",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAN4PBA1",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
+  "selected_historical_source_sequence_length": 528,
+  "selected_historical_source_sequence_sha256": "50b3fc0b687768d3ed1f77eff01499e07ddbde61cb7292eb53f5b692eca042f0",
   "selected_historical_version": {
     "accession": "A0AAN4PBA1",
     "database": "Swiss-Prot",
@@ -554,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "LENC_ASPLE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
-  "selected_historical_source_sequence_sha256": "50b3fc0b687768d3ed1f77eff01499e07ddbde61cb7292eb53f5b692eca042f0",
-  "selected_historical_source_sequence_length": 528,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json",
-  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
-  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAN4PBA1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json"
 }
 ```
 
@@ -604,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json",
-  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
-  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":7,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2024-10-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json"
 }
 ```
 
@@ -623,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json",
-  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
-  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Fumigati\"],\"scientificName\":\"Aspergillus lentulus\",\"taxonId\":293939}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json"
 }
 ```
 
@@ -642,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json",
-  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
-  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"Lentopeptin biogenesis cluster protein C\"}}],\"recommendedName\":{\"ecNumbers\":[{\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase lenC\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json"
 }
 ```
 
@@ -661,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json",
-  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
-  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json"
 }
 ```
 
@@ -680,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json",
-  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
-  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Kishimoto S.\",\"Matsubara Y.\",\"Watanabe K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35302734\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.1c13621\"}],\"citationType\":\"journal article\",\"firstPage\":\"5485\",\"id\":\"35302734\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"5493\",\"publicationDate\":\"2022\",\"title\":\"Alkaloid Biosynthetic Enzyme Generates Diastereomeric Pair via Two Distinct Mechanisms.\",\"volume\":\"144\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:55.163159+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "69357d232883b10ad6a60cd06ffd1ab2949a58eebe0e8a697084f00c9624c636",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PBA1.json"
 }
 ```
 
@@ -698,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAN4PBA1?format=txt&versions=5",
-  "source_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
-  "retrieved_utc": "2026-11-01T06:27:40.393105+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   LENC_ASPLE              Reviewed;         528 AA.\nAC   A0AAN4PBA1;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-OCT-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=Cytochrome P450 monooxygenase lenC {ECO:0000303|PubMed:35302734};\nDE            EC=1.-.-.-;\nDE   AltName: Full=Lentopeptin biogenesis cluster protein C {ECO:0000303|PubMed:35302734};\nGN   Name=lenC {ECO:0000303|PubMed:35302734}; ORFNames=ALT_0152;\nOS   Aspergillus lentulus.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Fumigati.\nOX   NCBI_TaxID=293939;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-01T06:27:40.393105+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
+  "url": "https://rest.uniprot.org/unisave/A0AAN4PBA1?format=txt&versions=5"
 }
 ```
 
@@ -719,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAN4PBA1?format=txt&versions=5",
-  "source_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
-  "retrieved_utc": "2026-11-01T06:27:40.393105+00:00",
-  "source_locator": "lines 23-29",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=35302734; DOI=10.1021/jacs.1c13621;\nRA   Kishimoto S., Matsubara Y., Watanabe K.;\nRT   \"Alkaloid Biosynthetic Enzyme Generates Diastereomeric Pair via Two\nRT   Distinct Mechanisms.\";\nRL   J. Am. Chem. Soc. 144:5485-5493(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-01T06:27:40.393105+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
+  "url": "https://rest.uniprot.org/unisave/A0AAN4PBA1?format=txt&versions=5"
 }
 ```
 
@@ -740,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAN4PBA1?format=txt&versions=5",
-  "source_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
-  "retrieved_utc": "2026-11-01T06:27:40.393105+00:00",
-  "source_locator": "lines 46-46",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:35302734}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-01T06:27:40.393105+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "55c3788c07025e76a773bedcb5a64df5b11159e7de041c863ae7555a88e0ac13",
+  "url": "https://rest.uniprot.org/unisave/A0AAN4PBA1?format=txt&versions=5"
 }
 ```
 

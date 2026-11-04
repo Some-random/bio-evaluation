@@ -1,18 +1,16 @@
-# motif_position_0044: before and after transfer clarification
+# motif_position_0044
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/motif_position_0044.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/motif_position_0044.txt)
 
 **Task:** `motif_position`  
-**Author key, unchanged:** **C** — 216..220
+**Expected answer:** **C** — 216..220
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,219 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches the referenced 233-residue protein, whose UniProt annotation places a “Basic cluster” at 216..220. The annotation is supported by similarity evidence, not direct experimental evidence for this sequence.
-
-Citations as saved: [C18](#evidence-c18), [H16](#evidence-h16).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A short basic region near the sequence end could be a plausible motif, but that does not establish that it is the motif intended by the question.
-
-
-**Missing item-specific fact**
-
-> The intended motif identity and its annotated position—specifically, the protein-specific annotation of a basic cluster at 216..220—are not supplied.
-
-
-**Reason**
-
-> The question does not name or define the motif. Selecting the precise interval therefore depends on an external, protein-specific annotation rather than a distinguishing argument from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> The motif is not identified, so the input alone does not establish which in-bounds interval is the intended motif position; the reviewer-only annotation resolves this in favor of C.
-
-
-### Important caveats
-
-- The annotation’s evidence code indicates transfer by similarity from UniProtKB:P35837, not direct experimental confirmation for this sequence.
-- Options B and D extend beyond the supplied 233-residue sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A short basic region near the sequence end could be a plausible motif, but that does not establish that it is the motif intended by the question.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The intended motif identity and its annotated position—specifically, the protein-specific annotation of a basic cluster at 216..220—are not supplied.",
-    "reason": "The question does not name or define the motif. Selecting the precise interval therefore depends on an external, protein-specific annotation rather than a distinguishing argument from the supplied input."
-  },
-  "case_id": "motif_position_0044",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C18",
-      "H16"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the referenced 233-residue protein, whose UniProt annotation places a “Basic cluster” at 216..220. The annotation is supported by similarity evidence, not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The annotation’s evidence code indicates transfer by similarity from UniProtKB:P35837, not direct experimental confirmation for this sequence.",
-    "Options B and D extend beyond the supplied 233-residue sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "The motif is not identified, so the input alone does not establish which in-bounds interval is the intended motif position; the reviewer-only annotation resolves this in favor of C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "motif_position_0044",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the referenced 233-residue protein, whose UniProt annotation places a “Basic cluster” at 216..220. The annotation is supported by similarity evidence, not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C18", "H16"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A short basic region near the sequence end could be a plausible motif, but that does not establish that it is the motif intended by the question.",
-    "missing_item_specific_fact": "The intended motif identity and its annotated position—specifically, the protein-specific annotation of a basic cluster at 216..220—are not supplied.",
-    "reason": "The question does not name or define the motif. Selecting the precise interval therefore depends on an external, protein-specific annotation rather than a distinguishing argument from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "The motif is not identified, so the input alone does not establish which in-bounds interval is the intended motif position; the reviewer-only annotation resolves this in favor of C."
-  },
-  "important_caveats": [
-    "The annotation’s evidence code indicates transfer by similarity from UniProtKB:P35837, not direct experimental confirmation for this sequence.",
-    "Options B and D extend beyond the supplied 233-residue sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9AYZ3 (Tail needle protein gp26, Bacteriophage HK620) annotates a 'Basic cluster' feature of type 'Motif' at positions 216..220 (evidence codes C18, H16). The sequence is 233 residues, confirming the annotation applies to the supplied sequence. The evidence code is ECO:0000250 (similarity to P35837, P22 gp26), so this is a transferred/computational annotation rather than experimentally determined for this specific protein, but it is the sole UniProt 'Motif'-type feature and matches the expected answer exactly.
-
-Citations as saved: [C18](#evidence-c18), [H16](#evidence-h16), [C1](#evidence-c1), [C4](#evidence-c4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Options B (380..383) and D (184..247) can be eliminated by simple arithmetic since the protein is only 233 residues. Between A (128..147) and C (216..220), one could argue that 20-residue spans within the trimerization heptad repeat region (repeats 10-11, positions 126-139) are 'repeats' rather than 'motifs,' and that a 5-residue pattern is more consistent with the general definition of a motif. However, identifying the EXACT positions 216..220 as the relevant 'Basic cluster' motif requires knowledge of the specific UniProt annotation; no obvious sequence feature at 216-220 (RQRLI) would be uniquely identifiable as a 'motif' by general reasoning alone.
-
-
-**Missing item-specific fact**
-
-> The UniProt annotation designating positions 216..220 as a 'Basic cluster' motif (type: Motif) for this specific protein, transferred from P35837. Without this database entry, a model cannot determine which of the remaining in-range options (A vs. C) corresponds to the intended 'motif.'
-
-
-**Reason**
-
-> While out-of-range options B and D are eliminable by counting residues, the distinction between A (within the heptad repeat/coiled-coil region) and C (the annotated Basic cluster) depends on knowing which specific short pattern UniProt designates as a 'Motif' for this protein. The sequence at 216-220 (RQRLI) is not an obviously identifiable functional motif by general biological reasoning; it requires the item-specific database annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and D are definitively out of range for a 233-residue protein. Option A falls within the annotated heptad repeat region (type: Repeat), while C is the sole UniProt feature of type 'Motif.' Although the question does not specify which motif is intended, the use of the word 'motif' (rather than 'repeat' or 'region') in the UniProt feature-type sense, combined with the elimination of B and D, makes C the uniquely defensible answer. The question is somewhat imprecise in not naming the motif, but the options are sufficiently constrained.
-
-
-### Important caveats
-
-- The 'Basic cluster' annotation at 216..220 carries evidence code ECO:0000250 (similarity to P35837), meaning it is inferred by homology rather than experimentally validated for HK620 gp26 specifically.
-- The question asks about 'a conserved motif' without specifying which one; the answer relies on interpreting 'motif' as the UniProt feature type 'Motif' (as opposed to 'Repeat' or 'Region').
-- The sequence at positions 216-220 (RQRLI) contains two arginines but also hydrophobic residues; calling this a 'Basic cluster' is a relatively loose designation inherited from the P22 gp26 annotation.
-- Options B (380..383) and D (184..247) are trivially eliminable by protein length, reducing the effective choice to A vs. C.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Options B (380..383) and D (184..247) can be eliminated by simple arithmetic since the protein is only 233 residues. Between A (128..147) and C (216..220), one could argue that 20-residue spans within the trimerization heptad repeat region (repeats 10-11, positions 126-139) are 'repeats' rather than 'motifs,' and that a 5-residue pattern is more consistent with the general definition of a motif. However, identifying the EXACT positions 216..220 as the relevant 'Basic cluster' motif requires knowledge of the specific UniProt annotation; no obvious sequence feature at 216-220 (RQRLI) would be uniquely identifiable as a 'motif' by general reasoning alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The UniProt annotation designating positions 216..220 as a 'Basic cluster' motif (type: Motif) for this specific protein, transferred from P35837. Without this database entry, a model cannot determine which of the remaining in-range options (A vs. C) corresponds to the intended 'motif.'",
-    "reason": "While out-of-range options B and D are eliminable by counting residues, the distinction between A (within the heptad repeat/coiled-coil region) and C (the annotated Basic cluster) depends on knowing which specific short pattern UniProt designates as a 'Motif' for this protein. The sequence at 216-220 (RQRLI) is not an obviously identifiable functional motif by general biological reasoning; it requires the item-specific database annotation."
-  },
-  "case_id": "motif_position_0044",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C18",
-      "H16",
-      "C1",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9AYZ3 (Tail needle protein gp26, Bacteriophage HK620) annotates a 'Basic cluster' feature of type 'Motif' at positions 216..220 (evidence codes C18, H16). The sequence is 233 residues, confirming the annotation applies to the supplied sequence. The evidence code is ECO:0000250 (similarity to P35837, P22 gp26), so this is a transferred/computational annotation rather than experimentally determined for this specific protein, but it is the sole UniProt 'Motif'-type feature and matches the expected answer exactly."
-  },
-  "important_caveats": [
-    "The 'Basic cluster' annotation at 216..220 carries evidence code ECO:0000250 (similarity to P35837), meaning it is inferred by homology rather than experimentally validated for HK620 gp26 specifically.",
-    "The question asks about 'a conserved motif' without specifying which one; the answer relies on interpreting 'motif' as the UniProt feature type 'Motif' (as opposed to 'Repeat' or 'Region').",
-    "The sequence at positions 216-220 (RQRLI) contains two arginines but also hydrophobic residues; calling this a 'Basic cluster' is a relatively loose designation inherited from the P22 gp26 annotation.",
-    "Options B (380..383) and D (184..247) are trivially eliminable by protein length, reducing the effective choice to A vs. C."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D are definitively out of range for a 233-residue protein. Option A falls within the annotated heptad repeat region (type: Repeat), while C is the sole UniProt feature of type 'Motif.' Although the question does not specify which motif is intended, the use of the word 'motif' (rather than 'repeat' or 'region') in the UniProt feature-type sense, combined with the elimination of B and D, makes C the uniquely defensible answer. The question is somewhat imprecise in not naming the motif, but the options are sufficiently constrained."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{"case_id":"motif_position_0044","expected_answer_check":{"judgment":"supported","reason":"UniProt entry Q9AYZ3 (Tail needle protein gp26, Bacteriophage HK620) annotates a 'Basic cluster' feature of type 'Motif' at positions 216..220 (evidence codes C18, H16). The sequence is 233 residues, confirming the annotation applies to the supplied sequence. The evidence code is ECO:0000250 (similarity to P35837, P22 gp26), so this is a transferred/computational annotation rather than experimentally determined for this specific protein, but it is the sole UniProt 'Motif'-type feature and matches the expected answer exactly.","evidence_ids":["C18","H16","C1","C4"]},"answerability_check":{"judgment":"lookup_or_memorization_dependent","discriminating_biological_argument":"Options B (380..383) and D (184..247) can be eliminated by simple arithmetic since the protein is only 233 residues. Between A (128..147) and C (216..220), one could argue that 20-residue spans within the trimerization heptad repeat region (repeats 10-11, positions 126-139) are 'repeats' rather than 'motifs,' and that a 5-residue pattern is more consistent with the general definition of a motif. However, identifying the EXACT positions 216..220 as the relevant 'Basic cluster' motif requires knowledge of the specific UniProt annotation; no obvious sequence feature at 216-220 (RQRLI) would be uniquely identifiable as a 'motif' by general reasoning alone.","missing_item_specific_fact":"The UniProt annotation designating positions 216..220 as a 'Basic cluster' motif (type: Motif) for this specific protein, transferred from P35837. Without this database entry, a model cannot determine which of the remaining in-range options (A vs. C) corresponds to the intended 'motif.'","reason":"While out-of-range options B and D are eliminable by counting residues, the distinction between A (within the heptad repeat/coiled-coil region) and C (the annotated Basic cluster) depends on knowing which specific short pattern UniProt designates as a 'Motif' for this protein. The sequence at 216-220 (RQRLI) is not an obviously identifiable functional motif by general biological reasoning; it requires the item-specific database annotation."},"question_ambiguity":{"multiple_defensible_options":[],"reason":"Options B and D are definitively out of range for a 233-residue protein. Option A falls within the annotated heptad repeat region (type: Repeat), while C is the sole UniProt feature of type 'Motif.' Although the question does not specify which motif is intended, the use of the word 'motif' (rather than 'repeat' or 'region') in the UniProt feature-type sense, combined with the elimination of B and D, makes C the uniquely defensible answer. The question is somewhat imprecise in not naming the motif, but the options are sufficiently constrained."},"important_caveats":["The 'Basic cluster' annotation at 216..220 carries evidence code ECO:0000250 (similarity to P35837), meaning it is inferred by homology rather than experimentally validated for HK620 gp26 specifically.","The question asks about 'a conserved motif' without specifying which one; the answer relies on interpreting 'motif' as the UniProt feature type 'Motif' (as opposed to 'Repeat' or 'Region').","The sequence at positions 216-220 (RQRLI) contains two arginines but also hydrophobic residues; calling this a 'Basic cluster' is a relatively loose designation inherited from the P22 gp26 annotation.","Options B (380..383) and D (184..247) are trivially eliminable by protein length, reducing the effective choice to A vs. C."]}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -364,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -476,30 +265,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9AYZ3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "78db8ada1420f81704a86e1f73974048e944125986dc900a91e5f22c32a6fa6c",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 233,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "78db8ada1420f81704a86e1f73974048e944125986dc900a91e5f22c32a6fa6c",
   "current_entry_audit": {
     "entryVersion": 84,
     "firstPublicDate": "2025-06-18",
@@ -507,14 +283,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-06-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "current_source_sequence_sha256": "78db8ada1420f81704a86e1f73974048e944125986dc900a91e5f22c32a6fa6c",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 233,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "78db8ada1420f81704a86e1f73974048e944125986dc900a91e5f22c32a6fa6c",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 83,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9AYZ3",
   "selected_historical_entry_version": 83,
+  "selected_historical_record_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "selected_historical_source_sequence_length": 233,
+  "selected_historical_source_sequence_sha256": "78db8ada1420f81704a86e1f73974048e944125986dc900a91e5f22c32a6fa6c",
   "selected_historical_version": {
     "accession": "Q9AYZ3",
     "database": "Swiss-Prot",
@@ -525,24 +317,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NEEDL_BPHK6",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "selected_historical_source_sequence_sha256": "78db8ada1420f81704a86e1f73974048e944125986dc900a91e5f22c32a6fa6c",
-  "selected_historical_source_sequence_length": 233,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 83,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -556,15 +335,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9AYZ3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -575,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":84,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2001-06-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -594,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bacteriophage HK620\",\"lineage\":[\"Viruses\",\"Duplodnaviria\",\"Heunggongvirae\",\"Uroviricota\",\"Caudoviricetes\",\"Caudoviricetes incertae sedis\",\"Lederbergvirus\",\"Lederbergvirus HK620\"],\"scientificName\":\"Enterobacteria phage HK620\",\"taxonId\":155148}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -613,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Head completion protein\"}},{\"fullName\":{\"value\":\"Packaged DNA stabilization protein\"}},{\"fullName\":{\"value\":\"Tail accessory factor gp26\"}}],\"recommendedName\":{\"fullName\":{\"value\":\"Tail needle protein gp26\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -632,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":67},\"start\":{\"modifier\":\"EXACT\",\"value\":61}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -651,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":76},\"start\":{\"modifier\":\"EXACT\",\"value\":70}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -670,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 3\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":83},\"start\":{\"modifier\":\"EXACT\",\"value\":77}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -689,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 4\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":90},\"start\":{\"modifier\":\"EXACT\",\"value\":84}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -708,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 5\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":97},\"start\":{\"modifier\":\"EXACT\",\"value\":91}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -727,15 +506,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 6\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":104},\"start\":{\"modifier\":\"EXACT\",\"value\":98}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -746,15 +525,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 7\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":111},\"start\":{\"modifier\":\"EXACT\",\"value\":105}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -765,15 +544,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 8\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":118},\"start\":{\"modifier\":\"EXACT\",\"value\":112}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -784,15 +563,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 9\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":125},\"start\":{\"modifier\":\"EXACT\",\"value\":119}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -803,15 +582,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 10\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":132},\"start\":{\"modifier\":\"EXACT\",\"value\":126}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -822,15 +601,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/11",
   "excerpt": "{\"description\":\"Trimerization heptad repeat 11\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":139},\"start\":{\"modifier\":\"EXACT\",\"value\":133}},\"type\":\"Repeat\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/11",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -841,15 +620,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C16",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/12",
   "excerpt": "{\"description\":\"Interaction with tail hub protein\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":50},\"start\":{\"modifier\":\"EXACT\",\"value\":2}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/12",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -860,15 +639,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C17",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/13",
   "excerpt": "{\"description\":\"Inverted coiled coil\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19482036\",\"source\":\"PubMed\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":233},\"start\":{\"modifier\":\"EXACT\",\"value\":175}},\"type\":\"Region\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/13",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -879,15 +658,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C18",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/features/15",
   "excerpt": "{\"description\":\"Basic cluster\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P35837\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":220},\"start\":{\"modifier\":\"EXACT\",\"value\":216}},\"type\":\"Motif\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/15",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -898,15 +677,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C19",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json",
-  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
-  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Bhardwaj A.\",\"Walker-Kopp N.\",\"Casjens S.R.\",\"Cingolani G.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19482036\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.jmb.2009.05.069\"}],\"citationType\":\"journal article\",\"firstPage\":\"227\",\"id\":\"19482036\",\"journal\":\"J. Mol. Biol.\",\"lastPage\":\"245\",\"publicationDate\":\"2009\",\"title\":\"An evolutionarily conserved family of virion tail needles related to bacteriophage P22 gp26: correlation between structural stability and length of the alpha-helical trimeric coiled coil.\",\"volume\":\"391\"},\"referenceNumber\":2,\"referencePositions\":[\"DOMAIN\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:32:41.135549+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "fb98ac90c263a168880dbbd0ac49fe332e0529f262c4f40ba939c785038eda08",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9AYZ3.json"
 }
 ```
 
@@ -916,18 +695,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   NEEDL_BPHK6             Reviewed;         233 AA.\nAC   Q9AYZ3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JUN-2001, sequence version 1.\nDT   28-JAN-2026, entry version 83.\nDE   RecName: Full=Tail needle protein gp26;\nDE   AltName: Full=Head completion protein;\nDE   AltName: Full=Packaged DNA stabilization protein;\nDE   AltName: Full=Tail accessory factor gp26;\nGN   Name=26;\nOS   Enterobacteria phage HK620 (Bacteriophage HK620).\nOC   Viruses; Duplodnaviria; Heunggongvirae; Uroviricota; Caudoviricetes;\nOC   Lederbergvirus; Lederbergvirus HK620.\nOX   NCBI_TaxID=155148;\nOH   NCBI_TaxID=562; Escherichia coli.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -937,18 +716,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 23-30",
   "excerpt": "RN   [2]\nRP   DOMAIN, AND SUBUNIT.\nRX   PubMed=19482036; DOI=10.1016/j.jmb.2009.05.069;\nRA   Bhardwaj A., Walker-Kopp N., Casjens S.R., Cingolani G.;\nRT   \"An evolutionarily conserved family of virion tail needles related to\nRT   bacteriophage P22 gp26: correlation between structural stability and length\nRT   of the alpha-helical trimeric coiled coil.\";\nRL   J. Mol. Biol. 391:227-245(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -958,18 +737,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 96-98",
   "excerpt": "FT   REPEAT          61..67\nFT                   /note=\"Trimerization heptad repeat 1\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 96-98",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -979,18 +758,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 99-101",
   "excerpt": "FT   REPEAT          70..76\nFT                   /note=\"Trimerization heptad repeat 2\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 99-101",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1000,18 +779,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 102-104",
   "excerpt": "FT   REPEAT          77..83\nFT                   /note=\"Trimerization heptad repeat 3\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 102-104",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1021,18 +800,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 105-107",
   "excerpt": "FT   REPEAT          84..90\nFT                   /note=\"Trimerization heptad repeat 4\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 105-107",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1042,18 +821,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 108-110",
   "excerpt": "FT   REPEAT          91..97\nFT                   /note=\"Trimerization heptad repeat 5\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 108-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1063,18 +842,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 111-113",
   "excerpt": "FT   REPEAT          98..104\nFT                   /note=\"Trimerization heptad repeat 6\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 111-113",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1084,18 +863,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 114-116",
   "excerpt": "FT   REPEAT          105..111\nFT                   /note=\"Trimerization heptad repeat 7\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 114-116",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1105,18 +884,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 117-119",
   "excerpt": "FT   REPEAT          112..118\nFT                   /note=\"Trimerization heptad repeat 8\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 117-119",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1126,18 +905,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 120-122",
   "excerpt": "FT   REPEAT          119..125\nFT                   /note=\"Trimerization heptad repeat 9\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 120-122",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1147,18 +926,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 123-125",
   "excerpt": "FT   REPEAT          126..132\nFT                   /note=\"Trimerization heptad repeat 10\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 123-125",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1168,18 +947,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H13",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 126-128",
   "excerpt": "FT   REPEAT          133..139\nFT                   /note=\"Trimerization heptad repeat 11\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 126-128",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1189,18 +968,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H14",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 129-131",
   "excerpt": "FT   REGION          2..50\nFT                   /note=\"Interaction with tail hub protein\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 129-131",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1210,18 +989,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H15",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 132-134",
   "excerpt": "FT   REGION          175..233\nFT                   /note=\"Inverted coiled coil\"\nFT                   /evidence=\"ECO:0000269|PubMed:19482036\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 132-134",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 
@@ -1231,18 +1010,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 83,
   "evidence_id": "H16",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83",
-  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
-  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
-  "source_locator": "lines 137-139",
   "excerpt": "FT   MOTIF           216..220\nFT                   /note=\"Basic cluster\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P35837\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 83,
+  "retrieved_utc": "2026-11-02T04:32:46.941025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 137-139",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0f5b04df4f6c180ff20dad87e3929d5b22b173869433f4330e3aceb11b69188b",
+  "url": "https://rest.uniprot.org/unisave/Q9AYZ3?format=txt&versions=83"
 }
 ```
 

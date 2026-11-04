@@ -1,18 +1,16 @@
-# GO_cellular_component_0046: before and after transfer clarification
+# GO_cellular_component_0046
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0046.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0046.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — endoplasmic reticulum membrane
+**Expected answer:** **D** — endoplasmic reticulum membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-matching sequence is annotated to the ER membrane, with experimental evidence (ECO:0000269). The annotation also reports peroxisome membrane localization and accumulation at peroxisome–ER contact sites, so ER membrane is supported but not exclusive.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence’s multiple hydrophobic regions support that this is a multipass membrane protein, but do not meaningfully distinguish ER from recycling endosome, trans-Golgi network, or vesicle membranes.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization evidence identifying PEX32 at peroxisome–ER contact sites, including its ER-membrane localization.
-
-
-**Reason**
-
-> Choosing ER membrane over the other membrane compartments requires localization knowledge absent from the sequence and choices; recognizing the sequence or invoking a predictor would not supply a reasoning-based distinction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> ER membrane is directly supported among the listed choices. The protein is also annotated to the peroxisome membrane, but that compartment is not offered; the evidence does not make another listed option equally defensible.
-
-
-### Important caveats
-
-- The source reports both peroxisome and ER membrane localization and says the protein predominantly accumulates at their contact sites; it does not establish that ER is its exclusive or unambiguously primary location.
-- Reviewer-only evidence identifies an exact sequence match and historical annotation, but neither that evidence nor the protein identity was supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence’s multiple hydrophobic regions support that this is a multipass membrane protein, but do not meaningfully distinguish ER from recycling endosome, trans-Golgi network, or vesicle membranes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization evidence identifying PEX32 at peroxisome–ER contact sites, including its ER-membrane localization.",
-    "reason": "Choosing ER membrane over the other membrane compartments requires localization knowledge absent from the sequence and choices; recognizing the sequence or invoking a predictor would not supply a reasoning-based distinction."
-  },
-  "case_id": "GO_cellular_component_0046",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matching sequence is annotated to the ER membrane, with experimental evidence (ECO:0000269). The annotation also reports peroxisome membrane localization and accumulation at peroxisome–ER contact sites, so ER membrane is supported but not exclusive."
-  },
-  "important_caveats": [
-    "The source reports both peroxisome and ER membrane localization and says the protein predominantly accumulates at their contact sites; it does not establish that ER is its exclusive or unambiguously primary location.",
-    "Reviewer-only evidence identifies an exact sequence match and historical annotation, but neither that evidence nor the protein identity was supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "ER membrane is directly supported among the listed choices. The protein is also annotated to the peroxisome membrane, but that compartment is not offered; the evidence does not make another listed option equally defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0046",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matching sequence is annotated to the ER membrane, with experimental evidence (ECO:0000269). The annotation also reports peroxisome membrane localization and accumulation at peroxisome–ER contact sites, so ER membrane is supported but not exclusive.",
-    "evidence_ids": ["C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence’s multiple hydrophobic regions support that this is a multipass membrane protein, but do not meaningfully distinguish ER from recycling endosome, trans-Golgi network, or vesicle membranes.",
-    "missing_item_specific_fact": "The protein-specific localization evidence identifying PEX32 at peroxisome–ER contact sites, including its ER-membrane localization.",
-    "reason": "Choosing ER membrane over the other membrane compartments requires localization knowledge absent from the sequence and choices; recognizing the sequence or invoking a predictor would not supply a reasoning-based distinction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "ER membrane is directly supported among the listed choices. The protein is also annotated to the peroxisome membrane, but that compartment is not offered; the evidence does not make another listed option equally defensible."
-  },
-  "important_caveats": [
-    "The source reports both peroxisome and ER membrane localization and says the protein predominantly accumulates at their contact sites; it does not establish that ER is its exclusive or unambiguously primary location.",
-    "Reviewer-only evidence identifies an exact sequence match and historical annotation, but neither that evidence nor the protein identity was supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is PEX32 (UniProt W1QHP2), a peroxisomal membrane protein from Ogataea parapolymorpha. UniProt annotation (C5) with experimental evidence (ECO:0000269, PubMed:32665322) lists both 'Peroxisome membrane' and 'Endoplasmic reticulum membrane' as subcellular locations, noting it 'predominantly accumulates at peroxisome-ER contact sites.' GO annotation C6 confirms GO:0005789 (endoplasmic reticulum membrane) with EXP evidence. Since peroxisome membrane is not among the four options, D (ER membrane) is the only choice matching the experimental annotation. The key is supported.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence shows multiple hydrophobic stretches consistent with a multi-pass membrane protein, but this topology is generic across all membrane compartments (ER, Golgi, endosomes, peroxisomes). There is no distinctive N-terminal signal peptide, KDEL/HDEL retention motif, Golgi-targeting signal, or endosomal targeting motif that would uniquely point to ER over the other membrane options. The critical fact—that PEX32 is a peroxisome-ER tether protein whose ER-membrane localization was established experimentally (PubMed:32665322)—is an item-specific biological finding not derivable from sequence alone.
-
-
-**Missing item-specific fact**
-
-> The specific experimental finding that PEX32, a peroxisome biogenesis protein, localizes to the ER membrane as part of peroxisome-ER contact sites (Wu et al., J. Cell Sci. 2020). Without knowing the protein's identity and function, the multi-pass membrane topology is equally consistent with Golgi, endosomal, or peroxisomal membranes.
-
-
-**Reason**
-
-> Distinguishing ER membrane from recycling endosome membrane or trans-Golgi network membrane for this multi-pass membrane protein requires knowing the specific protein identity (PEX32) and its experimentally determined role as a peroxisome-ER tether. General sequence features (hydrophobic TM segments, lack of obvious targeting peptides) do not meaningfully separate ER from other membrane compartments. The answer depends on protein-specific annotation knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four options, only D (ER membrane) matches the protein's actual annotation. Peroxisome membrane—the other annotated location—is not offered as a choice. Options A, B, and C have no annotation support. The 'vesicle' option (C) is a broad GO term (GO:0031982) referring to small membrane-bounded organelles and is not a reasonable match for a multi-pass membrane protein. No ambiguity exists among the provided choices.
-
-
-### Important caveats
-
-- The protein is annotated to BOTH peroxisome membrane and ER membrane with equal experimental evidence; the question's framing of a single 'primary' location is somewhat reductive, though peroxisome membrane is not among the options.
-- The UniProt note states the protein 'predominantly accumulates at peroxisome-ER contact sites,' meaning its functional location is the junction between two membranes rather than the bulk ER.
-- The sequence was first publicly released in UniProt on 2025-02-05; the author's source snapshot date is unknown, though the historical entry (version 38, released 2026-01-28) already contains the relevant annotations.
-- The identity of the protein (PEX32) was inferred by the reviewer from dataset metadata, not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence shows multiple hydrophobic stretches consistent with a multi-pass membrane protein, but this topology is generic across all membrane compartments (ER, Golgi, endosomes, peroxisomes). There is no distinctive N-terminal signal peptide, KDEL/HDEL retention motif, Golgi-targeting signal, or endosomal targeting motif that would uniquely point to ER over the other membrane options. The critical fact—that PEX32 is a peroxisome-ER tether protein whose ER-membrane localization was established experimentally (PubMed:32665322)—is an item-specific biological finding not derivable from sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimental finding that PEX32, a peroxisome biogenesis protein, localizes to the ER membrane as part of peroxisome-ER contact sites (Wu et al., J. Cell Sci. 2020). Without knowing the protein's identity and function, the multi-pass membrane topology is equally consistent with Golgi, endosomal, or peroxisomal membranes.",
-    "reason": "Distinguishing ER membrane from recycling endosome membrane or trans-Golgi network membrane for this multi-pass membrane protein requires knowing the specific protein identity (PEX32) and its experimentally determined role as a peroxisome-ER tether. General sequence features (hydrophobic TM segments, lack of obvious targeting peptides) do not meaningfully separate ER from other membrane compartments. The answer depends on protein-specific annotation knowledge."
-  },
-  "case_id": "GO_cellular_component_0046",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is PEX32 (UniProt W1QHP2), a peroxisomal membrane protein from Ogataea parapolymorpha. UniProt annotation (C5) with experimental evidence (ECO:0000269, PubMed:32665322) lists both 'Peroxisome membrane' and 'Endoplasmic reticulum membrane' as subcellular locations, noting it 'predominantly accumulates at peroxisome-ER contact sites.' GO annotation C6 confirms GO:0005789 (endoplasmic reticulum membrane) with EXP evidence. Since peroxisome membrane is not among the four options, D (ER membrane) is the only choice matching the experimental annotation. The key is supported."
-  },
-  "important_caveats": [
-    "The protein is annotated to BOTH peroxisome membrane and ER membrane with equal experimental evidence; the question's framing of a single 'primary' location is somewhat reductive, though peroxisome membrane is not among the options.",
-    "The UniProt note states the protein 'predominantly accumulates at peroxisome-ER contact sites,' meaning its functional location is the junction between two membranes rather than the bulk ER.",
-    "The sequence was first publicly released in UniProt on 2025-02-05; the author's source snapshot date is unknown, though the historical entry (version 38, released 2026-01-28) already contains the relevant annotations.",
-    "The identity of the protein (PEX32) was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four options, only D (ER membrane) matches the protein's actual annotation. Peroxisome membrane—the other annotated location—is not offered as a choice. Options A, B, and C have no annotation support. The 'vesicle' option (C) is a broad GO term (GO:0031982) referring to small membrane-bounded organelles and is not a reasonable match for a multi-pass membrane protein. No ambiguity exists among the provided choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0046",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is PEX32 (UniProt W1QHP2), a peroxisomal membrane protein from Ogataea parapolymorpha. UniProt annotation (C5) with experimental evidence (ECO:0000269, PubMed:32665322) lists both 'Peroxisome membrane' and 'Endoplasmic reticulum membrane' as subcellular locations, noting it 'predominantly accumulates at peroxisome-ER contact sites.' GO annotation C6 confirms GO:0005789 (endoplasmic reticulum membrane) with EXP evidence. Since peroxisome membrane is not among the four options, D (ER membrane) is the only choice matching the experimental annotation. The key is supported.",
-    "evidence_ids": ["C5", "C6", "C7", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence shows multiple hydrophobic stretches consistent with a multi-pass membrane protein, but this topology is generic across all membrane compartments (ER, Golgi, endosomes, peroxisomes). There is no distinctive N-terminal signal peptide, KDEL/HDEL retention motif, Golgi-targeting signal, or endosomal targeting motif that would uniquely point to ER over the other membrane options. The critical fact—that PEX32 is a peroxisome-ER tether protein whose ER-membrane localization was established experimentally (PubMed:32665322)—is an item-specific biological finding not derivable from sequence alone.",
-    "missing_item_specific_fact": "The specific experimental finding that PEX32, a peroxisome biogenesis protein, localizes to the ER membrane as part of peroxisome-ER contact sites (Wu et al., J. Cell Sci. 2020). Without knowing the protein's identity and function, the multi-pass membrane topology is equally consistent with Golgi, endosomal, or peroxisomal membranes.",
-    "reason": "Distinguishing ER membrane from recycling endosome membrane or trans-Golgi network membrane for this multi-pass membrane protein requires knowing the specific protein identity (PEX32) and its experimentally determined role as a peroxisome-ER tether. General sequence features (hydrophobic TM segments, lack of obvious targeting peptides) do not meaningfully separate ER from other membrane compartments. The answer depends on protein-specific annotation knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four options, only D (ER membrane) matches the protein's actual annotation. Peroxisome membrane—the other annotated location—is not offered as a choice. Options A, B, and C have no annotation support. The 'vesicle' option (C) is a broad GO term (GO:0031982) referring to small membrane-bounded organelles and is not a reasonable match for a multi-pass membrane protein. No ambiguity exists among the provided choices."
-  },
-  "important_caveats": [
-    "The protein is annotated to BOTH peroxisome membrane and ER membrane with equal experimental evidence; the question's framing of a single 'primary' location is somewhat reductive, though peroxisome membrane is not among the options.",
-    "The UniProt note states the protein 'predominantly accumulates at peroxisome-ER contact sites,' meaning its functional location is the junction between two membranes rather than the bulk ER.",
-    "The sequence was first publicly released in UniProt on 2025-02-05; the author's source snapshot date is unknown, though the historical entry (version 38, released 2026-01-28) already contains the relevant annotations.",
-    "The identity of the protein (PEX32) was inferred by the reviewer from dataset metadata, not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +159,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "W1QHP2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "abe0e7534f8e5a7590c0c44dd5ef1187e54178fee63a913ef3b3fc143ae42ee1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 354,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "abe0e7534f8e5a7590c0c44dd5ef1187e54178fee63a913ef3b3fc143ae42ee1",
   "current_entry_audit": {
     "entryVersion": 40,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-03-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "current_source_sequence_sha256": "abe0e7534f8e5a7590c0c44dd5ef1187e54178fee63a913ef3b3fc143ae42ee1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 354,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "abe0e7534f8e5a7590c0c44dd5ef1187e54178fee63a913ef3b3fc143ae42ee1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 38,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "W1QHP2",
   "selected_historical_entry_version": 38,
+  "selected_historical_record_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
+  "selected_historical_source_sequence_length": 354,
+  "selected_historical_source_sequence_sha256": "abe0e7534f8e5a7590c0c44dd5ef1187e54178fee63a913ef3b3fc143ae42ee1",
   "selected_historical_version": {
     "accession": "W1QHP2",
     "database": "Swiss-Prot",
@@ -552,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PEX32_OGAPD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
-  "selected_historical_source_sequence_sha256": "abe0e7534f8e5a7590c0c44dd5ef1187e54178fee63a913ef3b3fc143ae42ee1",
-  "selected_historical_source_sequence_length": 354,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 38,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"W1QHP2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -606,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":40,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-03-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -625,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Yeast\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Pichiomycetes\",\"Pichiales\",\"Pichiaceae\",\"Ogataea\"],\"scientificName\":\"Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL Y-7560 / DL-1)\",\"synonyms\":[\"Hansenula polymorpha\"],\"taxonId\":871575}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -644,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Peroxin-32\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"value\":\"Peroxisomal membrane protein PEX32\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -663,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"value\":\"Predominantly accumulates at peroxisome-ER contact sites\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"id\":\"SL-0203\",\"value\":\"Peroxisome membrane\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"id\":\"SL-9909\",\"value\":\"Multi-pass membrane protein\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"id\":\"SL-0097\",\"value\":\"Endoplasmic reticulum membrane\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"id\":\"SL-9909\",\"value\":\"Multi-pass membrane protein\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -682,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/11",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"id\":\"GO:0005789\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:endoplasmic reticulum membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/11",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -701,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/12",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32665322\",\"source\":\"PubMed\"}],\"id\":\"GO:0005778\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:peroxisomal membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/12",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -720,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json",
-  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
-  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Wu F.\",\"de Boer R.\",\"Krikken A.M.\",\"Aksit A.\",\"Bordin N.\",\"Devos D.P.\",\"van der Klei I.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32665322\"},{\"database\":\"DOI\",\"id\":\"10.1242/jcs.246983\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"32665322\",\"journal\":\"J. Cell Sci.\",\"lastPage\":\"0\",\"publicationDate\":\"2020\",\"title\":\"Pex24 and Pex32 are required to tether peroxisomes to the ER for organelle biogenesis, positioning and segregation in yeast.\",\"volume\":\"133\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:30.706856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "496aea11aa2b41aaa21a1680c1288b30d7312fd99c41cdd11ef292e508959dcd",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QHP2.json"
 }
 ```
 
@@ -738,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38",
-  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
-  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   PEX32_OGAPD             Reviewed;         354 AA.\nAC   W1QHP2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-MAR-2014, sequence version 1.\nDT   28-JAN-2026, entry version 38.\nDE   RecName: Full=Peroxisomal membrane protein PEX32 {ECO:0000303|PubMed:32665322};\nDE   AltName: Full=Peroxin-32 {ECO:0000305};\nGN   Name=PEX32 {ECO:0000303|PubMed:32665322}; ORFNames=HPODL_04641;\nOS   Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL\nOS   Y-7560 / DL-1) (Yeast) (Hansenula polymorpha).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Pichiomycetes;\nOC   Pichiales; Pichiaceae; Ogataea.\nOX   NCBI_TaxID=871575;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
+  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38"
 }
 ```
 
@@ -759,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38",
-  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
-  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND SUBCELLULAR LOCATION.\nRX   PubMed=32665322; DOI=10.1242/jcs.246983;\nRA   Wu F., de Boer R., Krikken A.M., Aksit A., Bordin N., Devos D.P.,\nRA   van der Klei I.J.;\nRT   \"Pex24 and Pex32 are required to tether peroxisomes to the ER for organelle\nRT   biogenesis, positioning and segregation in yeast.\";\nRL   J. Cell Sci. 133:0-0(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
+  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38"
 }
 ```
 
@@ -780,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38",
-  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
-  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
-  "source_locator": "lines 35-40",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Peroxisome membrane\nCC       {ECO:0000269|PubMed:32665322}; Multi-pass membrane protein\nCC       {ECO:0000255}. Endoplasmic reticulum membrane\nCC       {ECO:0000269|PubMed:32665322}; Multi-pass membrane protein\nCC       {ECO:0000255}. Note=Predominantly accumulates at peroxisome-ER contact\nCC       sites. {ECO:0000269|PubMed:32665322}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
+  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38"
 }
 ```
 
@@ -801,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38",
-  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
-  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
-  "source_locator": "lines 64-64",
   "excerpt": "DR   GO; GO:0005789; C:endoplasmic reticulum membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 64-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
+  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38"
 }
 ```
 
@@ -822,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38",
-  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
-  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
-  "source_locator": "lines 65-65",
   "excerpt": "DR   GO; GO:0005778; C:peroxisomal membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-01T06:28:55.253871+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 65-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "95f12c3e5266dcfc076c0bab33c3d654a00f2c142918715c03c5fb98c2acd8be",
+  "url": "https://rest.uniprot.org/unisave/W1QHP2?format=txt&versions=38"
 }
 ```
 
@@ -844,15 +604,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59526-59535",
   "excerpt": "[Term]\nid: GO:0005789\nname: endoplasmic reticulum membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding the endoplasmic reticulum.\" [GOC:mah]\nsynonym: \"ER membrane\" EXACT []\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0042175 ! nuclear outer membrane-endoplasmic reticulum membrane network\nrelationship: part_of GO:0098827 ! endoplasmic reticulum subcompartment\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005789",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59526-59535",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005789"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -863,15 +623,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 181606-181618",
   "excerpt": "[Term]\nid: GO:0031982\nname: vesicle\nnamespace: cellular_component\nalt_id: GO:0031988\ndef: \"Any small, fluid-filled, spherical organelle enclosed by membrane.\" [GOC:mah, GOC:pz, GOC:vesicles]\nsubset: goslim_pir\nsynonym: \"membrane-bounded vesicle\" RELATED []\nsynonym: \"membrane-enclosed vesicle\" RELATED []\nxref: NIF_Subcellular:sao221389602\nxref: Wikipedia:Vesicle_(biology)\nis_a: GO:0043227 ! membrane-bounded organelle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031982",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 181606-181618",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031982"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -882,15 +642,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 187565-187574",
   "excerpt": "[Term]\nid: GO:0032588\nname: trans-Golgi network membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding any of the compartments that make up the trans-Golgi network.\" [GOC:mah]\nsynonym: \"Golgi trans face membrane\" RELATED []\nsynonym: \"trans Golgi network membrane\" EXACT []\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0005802 ! trans-Golgi network\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032588",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 187565-187574",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032588"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -901,15 +661,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 342824-342831",
   "excerpt": "[Term]\nid: GO:0055038\nname: recycling endosome membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding a recycling endosome.\" [GOC:jid, GOC:rph, PMID:10930469, PMID:15601896, PMID:16246101]\nis_a: GO:0010008 ! endosome membrane\nrelationship: part_of GO:0055037 ! recycling endosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0055038",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 342824-342831",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0055038"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

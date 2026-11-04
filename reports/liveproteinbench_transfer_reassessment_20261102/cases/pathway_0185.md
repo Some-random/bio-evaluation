@@ -1,18 +1,16 @@
-# pathway_0185: before and after transfer clarification
+# pathway_0185
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0185.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0185.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **D** — Secondary metabolite biosynthesis
+**Expected answer:** **D** — Secondary metabolite biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry P9WEG0, whose pathway annotation lists both secondary metabolite biosynthesis and terpenoid biosynthesis, with evidence attributed to a publication. This supports D, though it also supports A.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features may suggest a membrane-associated cytochrome P450 enzyme, but they do not establish which specific pathway it participates in or distinguish the two annotated pathway labels.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional or pathway annotation linking this enzyme to secondary-metabolite and terpenoid biosynthesis.
-
-
-**Reason**
-
-> The pathway assignment depends on protein-specific functional information not supplied in the question. Recognizing the exact sequence or consulting its database record would be lookup, not reasoning from the given input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> The matched-entry pathway annotation explicitly includes both terpenoid biosynthesis and secondary metabolite biosynthesis, so the choices overlap and the wording does not specify a level of pathway specificity that would distinguish them.
-
-
-### Important caveats
-
-- The supporting database annotation cites a publication, but the supplied reviewer evidence does not independently establish the underlying experimental results.
-- The exact author source snapshot is unknown; the historical matched entry and current matched entry both support the same pathway annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features may suggest a membrane-associated cytochrome P450 enzyme, but they do not establish which specific pathway it participates in or distinguish the two annotated pathway labels.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional or pathway annotation linking this enzyme to secondary-metabolite and terpenoid biosynthesis.",
-    "reason": "The pathway assignment depends on protein-specific functional information not supplied in the question. Recognizing the exact sequence or consulting its database record would be lookup, not reasoning from the given input."
-  },
-  "case_id": "pathway_0185",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry P9WEG0, whose pathway annotation lists both secondary metabolite biosynthesis and terpenoid biosynthesis, with evidence attributed to a publication. This supports D, though it also supports A."
-  },
-  "important_caveats": [
-    "The supporting database annotation cites a publication, but the supplied reviewer evidence does not independently establish the underlying experimental results.",
-    "The exact author source snapshot is unknown; the historical matched entry and current matched entry both support the same pathway annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "The matched-entry pathway annotation explicitly includes both terpenoid biosynthesis and secondary metabolite biosynthesis, so the choices overlap and the wording does not specify a level of pathway specificity that would distinguish them."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0185",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry P9WEG0, whose pathway annotation lists both secondary metabolite biosynthesis and terpenoid biosynthesis, with evidence attributed to a publication. This supports D, though it also supports A.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features may suggest a membrane-associated cytochrome P450 enzyme, but they do not establish which specific pathway it participates in or distinguish the two annotated pathway labels.",
-    "missing_item_specific_fact": "The protein-specific functional or pathway annotation linking this enzyme to secondary-metabolite and terpenoid biosynthesis.",
-    "reason": "The pathway assignment depends on protein-specific functional information not supplied in the question. Recognizing the exact sequence or consulting its database record would be lookup, not reasoning from the given input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "The matched-entry pathway annotation explicitly includes both terpenoid biosynthesis and secondary metabolite biosynthesis, so the choices overlap and the wording does not specify a level of pathway specificity that would distinguish them."
-  },
-  "important_caveats": [
-    "The supporting database annotation cites a publication, but the supplied reviewer evidence does not independently establish the underlying experimental results.",
-    "The exact author source snapshot is unknown; the historical matched entry and current matched entry both support the same pathway annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt annotation for P9WEG0 (Cytochrome P450 monooxygenase mfmA) explicitly states: 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (evidence ECO:0000269|PubMed:38404388, experimental). In UniProt pathway nomenclature, the format is 'Primary pathway; Sub-pathway,' making 'Secondary metabolite biosynthesis' the primary (top-level) pathway. Choice D matches this primary pathway designation. However, Choice A ('terpenoid biosynthesis') is also explicitly present in the same annotation as the sub-pathway, creating partial overlap.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One can identify the sequence as a cytochrome P450 monooxygenase (heme-binding cysteine motif in the C-terminal region, ER signal peptide, fungal origin), and fungal P450s are commonly associated with secondary metabolism. This broadly disfavors B (NAD+ biosynthesis) and C (GPI-anchor biosynthesis), which are primary metabolic pathways not typically P450-dependent. However, distinguishing D ('Secondary metabolite biosynthesis') from A ('terpenoid biosynthesis') requires knowing the specific UniProt pathway hierarchy for this protein.
-
-
-**Missing item-specific fact**
-
-> The specific sub-pathway assignment ('terpenoid biosynthesis') and the UniProt hierarchical convention that 'Secondary metabolite biosynthesis' is the primary pathway while 'terpenoid biosynthesis' is its sub-pathway. This is a protein-specific annotation from PubMed:38404388 (Yan & Matsuda, 2024) that cannot be derived from sequence features alone.
-
-
-**Reason**
-
-> While general knowledge that fungal P450s participate in secondary metabolism narrows the field from four to two options (A and D), the final selection between the broader category (D) and the specific sub-pathway (A) depends on knowing the exact UniProt annotation hierarchy for this particular protein. The sequence provides no structural or catalytic feature that distinguishes terpenoid-specific P450 activity from other secondary metabolite P450 activities.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> The UniProt annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' explicitly names both terms. The question asks for 'the primary metabolic or signaling pathway.' If 'primary' is interpreted as the top-level UniProt pathway category, D is correct. If 'primary' is interpreted as 'the pathway this protein is primarily involved in,' A (terpenoid biosynthesis) is equally defensible since it is the specific sub-pathway where the enzymatic activity occurs. The author's choice of D is defensible under the hierarchical reading but A cannot be excluded on the basis of the annotation alone.
-
-
-### Important caveats
-
-- The protein is a P450 monooxygenase (mfmA) involved in 11'-O-desmethylfendlerol biosynthesis, a polyketide-terpenoid hybrid, per PubMed:38404388. The pathway annotation is experimentally supported (ECO:0000269).
-- The UniProt entry was first public 2025-04-09; the author's source snapshot is unknown, and the pathway annotation may not have existed in databases at benchmark construction time.
-- The question's phrasing 'primary metabolic or signaling pathway' is ambiguous between top-level category and specific sub-pathway, given that both A and D appear verbatim in the same annotation string.
-- Sequence-only identification of this protein as a P450 is feasible (heme-binding motif, signal peptide), but pathway assignment to terpenoid biosynthesis specifically is not derivable from sequence features.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One can identify the sequence as a cytochrome P450 monooxygenase (heme-binding cysteine motif in the C-terminal region, ER signal peptide, fungal origin), and fungal P450s are commonly associated with secondary metabolism. This broadly disfavors B (NAD+ biosynthesis) and C (GPI-anchor biosynthesis), which are primary metabolic pathways not typically P450-dependent. However, distinguishing D ('Secondary metabolite biosynthesis') from A ('terpenoid biosynthesis') requires knowing the specific UniProt pathway hierarchy for this protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific sub-pathway assignment ('terpenoid biosynthesis') and the UniProt hierarchical convention that 'Secondary metabolite biosynthesis' is the primary pathway while 'terpenoid biosynthesis' is its sub-pathway. This is a protein-specific annotation from PubMed:38404388 (Yan & Matsuda, 2024) that cannot be derived from sequence features alone.",
-    "reason": "While general knowledge that fungal P450s participate in secondary metabolism narrows the field from four to two options (A and D), the final selection between the broader category (D) and the specific sub-pathway (A) depends on knowing the exact UniProt annotation hierarchy for this particular protein. The sequence provides no structural or catalytic feature that distinguishes terpenoid-specific P450 activity from other secondary metabolite P450 activities."
-  },
-  "case_id": "pathway_0185",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt annotation for P9WEG0 (Cytochrome P450 monooxygenase mfmA) explicitly states: 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (evidence ECO:0000269|PubMed:38404388, experimental). In UniProt pathway nomenclature, the format is 'Primary pathway; Sub-pathway,' making 'Secondary metabolite biosynthesis' the primary (top-level) pathway. Choice D matches this primary pathway designation. However, Choice A ('terpenoid biosynthesis') is also explicitly present in the same annotation as the sub-pathway, creating partial overlap."
-  },
-  "important_caveats": [
-    "The protein is a P450 monooxygenase (mfmA) involved in 11'-O-desmethylfendlerol biosynthesis, a polyketide-terpenoid hybrid, per PubMed:38404388. The pathway annotation is experimentally supported (ECO:0000269).",
-    "The UniProt entry was first public 2025-04-09; the author's source snapshot is unknown, and the pathway annotation may not have existed in databases at benchmark construction time.",
-    "The question's phrasing 'primary metabolic or signaling pathway' is ambiguous between top-level category and specific sub-pathway, given that both A and D appear verbatim in the same annotation string.",
-    "Sequence-only identification of this protein as a P450 is feasible (heme-binding motif, signal peptide), but pathway assignment to terpenoid biosynthesis specifically is not derivable from sequence features."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "The UniProt annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' explicitly names both terms. The question asks for 'the primary metabolic or signaling pathway.' If 'primary' is interpreted as the top-level UniProt pathway category, D is correct. If 'primary' is interpreted as 'the pathway this protein is primarily involved in,' A (terpenoid biosynthesis) is equally defensible since it is the specific sub-pathway where the enzymatic activity occurs. The author's choice of D is defensible under the hierarchical reading but A cannot be excluded on the basis of the annotation alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0185",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt annotation for P9WEG0 (Cytochrome P450 monooxygenase mfmA) explicitly states: 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (evidence ECO:0000269|PubMed:38404388, experimental). In UniProt pathway nomenclature, the format is 'Primary pathway; Sub-pathway,' making 'Secondary metabolite biosynthesis' the primary (top-level) pathway. Choice D matches this primary pathway designation. However, Choice A ('terpenoid biosynthesis') is also explicitly present in the same annotation as the sub-pathway, creating partial overlap.",
-    "evidence_ids": ["C5", "H3", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One can identify the sequence as a cytochrome P450 monooxygenase (heme-binding cysteine motif in the C-terminal region, ER signal peptide, fungal origin), and fungal P450s are commonly associated with secondary metabolism. This broadly disfavors B (NAD+ biosynthesis) and C (GPI-anchor biosynthesis), which are primary metabolic pathways not typically P450-dependent. However, distinguishing D ('Secondary metabolite biosynthesis') from A ('terpenoid biosynthesis') requires knowing the specific UniProt pathway hierarchy for this protein.",
-    "missing_item_specific_fact": "The specific sub-pathway assignment ('terpenoid biosynthesis') and the UniProt hierarchical convention that 'Secondary metabolite biosynthesis' is the primary pathway while 'terpenoid biosynthesis' is its sub-pathway. This is a protein-specific annotation from PubMed:38404388 (Yan & Matsuda, 2024) that cannot be derived from sequence features alone.",
-    "reason": "While general knowledge that fungal P450s participate in secondary metabolism narrows the field from four to two options (A and D), the final selection between the broader category (D) and the specific sub-pathway (A) depends on knowing the exact UniProt annotation hierarchy for this particular protein. The sequence provides no structural or catalytic feature that distinguishes terpenoid-specific P450 activity from other secondary metabolite P450 activities."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "The UniProt annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' explicitly names both terms. The question asks for 'the primary metabolic or signaling pathway.' If 'primary' is interpreted as the top-level UniProt pathway category, D is correct. If 'primary' is interpreted as 'the pathway this protein is primarily involved in,' A (terpenoid biosynthesis) is equally defensible since it is the specific sub-pathway where the enzymatic activity occurs. The author's choice of D is defensible under the hierarchical reading but A cannot be excluded on the basis of the annotation alone."
-  },
-  "important_caveats": [
-    "The protein is a P450 monooxygenase (mfmA) involved in 11'-O-desmethylfendlerol biosynthesis, a polyketide-terpenoid hybrid, per PubMed:38404388. The pathway annotation is experimentally supported (ECO:0000269).",
-    "The UniProt entry was first public 2025-04-09; the author's source snapshot is unknown, and the pathway annotation may not have existed in databases at benchmark construction time.",
-    "The question's phrasing 'primary metabolic or signaling pathway' is ambiguous between top-level category and specific sub-pathway, given that both A and D appear verbatim in the same annotation string.",
-    "Sequence-only identification of this protein as a P450 is feasible (heme-binding motif, signal peptide), but pathway assignment to terpenoid biosynthesis specifically is not derivable from sequence features."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -404,10 +164,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -525,30 +284,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P9WEG0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b148dd6535a2478e2a065541559f956e45ac653fa2dceff0ebdbeae21e9d5591",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 515,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b148dd6535a2478e2a065541559f956e45ac653fa2dceff0ebdbeae21e9d5591",
   "current_entry_audit": {
     "entryVersion": 5,
     "firstPublicDate": "2025-04-09",
@@ -556,14 +302,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-04-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
-  "current_source_sequence_sha256": "b148dd6535a2478e2a065541559f956e45ac653fa2dceff0ebdbeae21e9d5591",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 515,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b148dd6535a2478e2a065541559f956e45ac653fa2dceff0ebdbeae21e9d5591",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 3,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P9WEG0",
   "selected_historical_entry_version": 3,
+  "selected_historical_record_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
+  "selected_historical_source_sequence_length": 515,
+  "selected_historical_source_sequence_sha256": "b148dd6535a2478e2a065541559f956e45ac653fa2dceff0ebdbeae21e9d5591",
   "selected_historical_version": {
     "accession": "P9WEG0",
     "database": "Swiss-Prot",
@@ -574,24 +336,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MFMA_ANNMO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
-  "selected_historical_source_sequence_sha256": "b148dd6535a2478e2a065541559f956e45ac653fa2dceff0ebdbeae21e9d5591",
-  "selected_historical_source_sequence_length": 515,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 3,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -605,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json",
-  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
-  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P9WEG0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json"
 }
 ```
 
@@ -624,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json",
-  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
-  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":5,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-04-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json"
 }
 ```
 
@@ -643,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json",
-  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
-  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Filamentous fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Xylariomycetidae\",\"Xylariales\",\"Hypoxylaceae\",\"Annulohypoxylon\"],\"scientificName\":\"Annulohypoxylon moriforme\",\"synonyms\":[\"Hypoxylon moriforme\"],\"taxonId\":326622}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json"
 }
 ```
 
@@ -662,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json",
-  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
-  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"11'-O-desmethylfendlerol biosynthesis cluster protein A\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase mfmA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json"
 }
 ```
 
@@ -681,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json",
-  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
-  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38404388\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json"
 }
 ```
 
@@ -700,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json",
-  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
-  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yan D.\",\"Matsuda Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38404388\"},{\"database\":\"DOI\",\"id\":\"10.1039/d3sc06001b\"}],\"citationType\":\"journal article\",\"firstPage\":\"3011\",\"id\":\"38404388\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"3017\",\"publicationDate\":\"2024\",\"title\":\"Global genome mining-driven discovery of an unusual biosynthetic logic for fungal polyketide-terpenoid hybrids.\",\"volume\":\"15\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"CBS 123579\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:13.096452+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a6e6527f5d1306f7f6b07d9ae1a2faeb4bf00fa63555cc612e053eae8f17e600",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEG0.json"
 }
 ```
 
@@ -718,18 +467,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEG0?format=txt&versions=3",
-  "source_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
-  "retrieved_utc": "2026-11-02T04:30:18.350529+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   MFMA_ANNMO              Reviewed;         515 AA.\nAC   P9WEG0;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-APR-2025, sequence version 1.\nDT   28-JAN-2026, entry version 3.\nDE   RecName: Full=Cytochrome P450 monooxygenase mfmA {ECO:0000303|PubMed:38404388};\nDE            EC=1.-.-.- {ECO:0000269|PubMed:38404388};\nDE   AltName: Full=11'-O-desmethylfendlerol biosynthesis cluster protein A {ECO:0000303|PubMed:38404388};\nGN   Name=mfmA {ECO:0000303|PubMed:38404388}; ORFNames=F4805DRAFT_29954;\nOS   Annulohypoxylon moriforme (Filamentous fungus) (Hypoxylon moriforme).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Xylariomycetidae; Xylariales; Hypoxylaceae; Annulohypoxylon.\nOX   NCBI_TaxID=326622;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:18.350529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
+  "url": "https://rest.uniprot.org/unisave/P9WEG0?format=txt&versions=3"
 }
 ```
 
@@ -739,18 +488,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEG0?format=txt&versions=3",
-  "source_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
-  "retrieved_utc": "2026-11-02T04:30:18.350529+00:00",
-  "source_locator": "lines 28-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRC   STRAIN=CBS 123579;\nRX   PubMed=38404388; DOI=10.1039/d3sc06001b;\nRA   Yan D., Matsuda Y.;\nRT   \"Global genome mining-driven discovery of an unusual biosynthetic logic for\nRT   fungal polyketide-terpenoid hybrids.\";\nRL   Chem. Sci. 15:3011-3017(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:18.350529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
+  "url": "https://rest.uniprot.org/unisave/P9WEG0?format=txt&versions=3"
 }
 ```
 
@@ -760,18 +509,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEG0?format=txt&versions=3",
-  "source_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
-  "retrieved_utc": "2026-11-02T04:30:18.350529+00:00",
-  "source_locator": "lines 59-60",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:38404388}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:18.350529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 59-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3b311182ec72cd21034e97a0da2e7b1c6f9097ddf71e067e2d78b84e2753fac2",
+  "url": "https://rest.uniprot.org/unisave/P9WEG0?format=txt&versions=3"
 }
 ```
 

@@ -1,18 +1,16 @@
-# EC_number_0152: before and after transfer clarification
+# EC_number_0152
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0152.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0152.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 2.7.11.1
+**Expected answer:** **D** — 2.7.11.1
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the 700-aa Drosophila melanogaster Cdc7 entry. That entry assigns EC 2.7.11.1 and records serine- and threonine-phosphorylation reactions with experimental literature evidence, alongside a computational ProRule evidence code.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a protein kinase domain, which supports a protein-phosphorylation kinase classification and weighs against the sugar-related transferase and isomerase choices. Those general features do not establish the specific kinase EC subtype.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity or functional annotation as Cdc7, or equivalent evidence establishing its specific EC classification, is needed to distinguish the kinase choices.
-
-
-**Reason**
-
-> Choosing the complete EC number depends on protein-specific functional knowledge not supplied in the prompt; recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Reviewer-only evidence supports D for this sequence. The available sequence-level clues alone may not distinguish the kinase alternatives, but that limitation does not make the evidence-supported key ambiguous.
-
-
-### Important caveats
-
-- The cited UniProt records match the supplied sequence, but the author's exact source snapshot is unknown.
-- UniProt records both computational ProRule and experimental-literature evidence; the annotation should not be treated as solely experimental.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a protein kinase domain, which supports a protein-phosphorylation kinase classification and weighs against the sugar-related transferase and isomerase choices. Those general features do not establish the specific kinase EC subtype.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity or functional annotation as Cdc7, or equivalent evidence establishing its specific EC classification, is needed to distinguish the kinase choices.",
-    "reason": "Choosing the complete EC number depends on protein-specific functional knowledge not supplied in the prompt; recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "EC_number_0152",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 700-aa Drosophila melanogaster Cdc7 entry. That entry assigns EC 2.7.11.1 and records serine- and threonine-phosphorylation reactions with experimental literature evidence, alongside a computational ProRule evidence code."
-  },
-  "important_caveats": [
-    "The cited UniProt records match the supplied sequence, but the author's exact source snapshot is unknown.",
-    "UniProt records both computational ProRule and experimental-literature evidence; the annotation should not be treated as solely experimental."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Reviewer-only evidence supports D for this sequence. The available sequence-level clues alone may not distinguish the kinase alternatives, but that limitation does not make the evidence-supported key ambiguous."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0152",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 700-aa Drosophila melanogaster Cdc7 entry. That entry assigns EC 2.7.11.1 and records serine- and threonine-phosphorylation reactions with experimental literature evidence, alongside a computational ProRule evidence code.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a protein kinase domain, which supports a protein-phosphorylation kinase classification and weighs against the sugar-related transferase and isomerase choices. Those general features do not establish the specific kinase EC subtype.",
-    "missing_item_specific_fact": "The protein-specific identity or functional annotation as Cdc7, or equivalent evidence establishing its specific EC classification, is needed to distinguish the kinase choices.",
-    "reason": "Choosing the complete EC number depends on protein-specific functional knowledge not supplied in the prompt; recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Reviewer-only evidence supports D for this sequence. The available sequence-level clues alone may not distinguish the kinase alternatives, but that limitation does not make the evidence-supported key ambiguous."
-  },
-  "important_caveats": [
-    "The cited UniProt records match the supplied sequence, but the author's exact source snapshot is unknown.",
-    "UniProt records both computational ProRule and experimental-literature evidence; the annotation should not be treated as solely experimental."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt Q9W3Y1 (CDC7_DROME) is annotated as EC 2.7.11.1 (non-specific serine/threonine protein kinase) with experimental evidence (ECO:0000269, PubMed:25451925) and PROSITE-ProRule computational evidence. The catalytic activities confirmed are phosphorylation of L-seryl-&#91;protein&#93; and L-threonyl-&#91;protein&#93; using ATP, consistent with EC 2.7.11.1. The sequence matches perfectly (700 AA, identical SHA256). EC 2.7.11.24 (CDK) is incorrect as Cdc7 is a Dbf4-dependent kinase, not a cyclin-dependent kinase. EC 3.2.1.37 (glycosidase) and EC 5.1.3.45 (epimerase) are clearly wrong for a kinase.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains canonical protein kinase motifs (VAIK in 'FAIKHHIPTSHPDRIMKELQ', HRD catalytic loop in 'IHRDVKPSN', DFG activation loop in 'DFGLA'), confirming it is a protein kinase and eliminating options C (glycosidase) and D... wait, eliminating C (EC 3.2.1.37, glycosidase) and the epimerase option. It is a Ser/Thr kinase based on the kinase domain architecture. Critically, the sequence lacks the PSTAIRE/PITAIRE helix motif that is diagnostic of cyclin-dependent kinases (EC 2.7.11.24); the C-helix region shows 'GTLRRESHLPDSLRRKFAIK' instead. Additionally, the presence of long poly-glutamine stretches (QQQQQQQQQQQQSQQQQQPQQQSQQQ) and zinc-finger-like motifs (CVCFC...CLNCLM, CEVCRNCDQYFFNCLCE) in the C-terminal region are hallmarks of Cdc7/DDK family kinases, not CDKs. Without CDK-specific features, the kinase defaults to the general Ser/Thr protein kinase category EC 2.7.11.1.
-
-
-**Missing item-specific fact**
-
-> None strictly required; the absence of CDK-diagnostic PSTAIRE motif and presence of non-CDK structural features provide sufficient grounds to distinguish 2.7.11.1 from 2.7.11.24 using general kinase biology knowledge.
-
-
-**Reason**
-
-> A model with general knowledge of kinase classification can: (1) identify the protein kinase fold from conserved motifs, eliminating the glycosidase and epimerase options; (2) recognize the absence of the PSTAIRE helix to argue against CDK (2.7.11.24); (3) note unusual structural features (poly-Q, zinc-finger domains) inconsistent with CDKs; and (4) assign the default non-specific Ser/Thr kinase EC 2.7.11.1. This constitutes a defensible biological reasoning chain without requiring exact protein identification.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options C (3.2.1.37, glycosidase) and D (5.1.3.45, epimerase) are trivially eliminated by the presence of kinase motifs. The only meaningful discrimination is between A (CDK) and D (non-specific Ser/Thr kinase), and the sequence features reasonably favor D. No genuine ambiguity exists among the options.
-
-
-### Important caveats
-
-- EC 2.7.11.1 is a very broad 'catch-all' category for Ser/Thr kinases; many kinases with specific functions (including Cdc7) are classified here rather than receiving a unique EC number.
-- The PSTAIRE motif argument is strong but not absolutely binary—some CDK family members have degenerate variants. However, the overall sequence context (poly-Q stretches, zinc-finger domains, Cdc7-specific insert) makes CDK assignment implausible.
-- The UniProt annotation carries both experimental (PubMed:25451925) and computational (PROSITE-ProRule) evidence codes, providing strong support for the EC assignment.
-- The reviewer evidence is reviewer-only and was not available to the evaluated model; the reasoning assessment is based solely on what a knowledgeable model could extract from the sequence and options.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains canonical protein kinase motifs (VAIK in 'FAIKHHIPTSHPDRIMKELQ', HRD catalytic loop in 'IHRDVKPSN', DFG activation loop in 'DFGLA'), confirming it is a protein kinase and eliminating options C (glycosidase) and D... wait, eliminating C (EC 3.2.1.37, glycosidase) and the epimerase option. It is a Ser/Thr kinase based on the kinase domain architecture. Critically, the sequence lacks the PSTAIRE/PITAIRE helix motif that is diagnostic of cyclin-dependent kinases (EC 2.7.11.24); the C-helix region shows 'GTLRRESHLPDSLRRKFAIK' instead. Additionally, the presence of long poly-glutamine stretches (QQQQQQQQQQQQSQQQQQPQQQSQQQ) and zinc-finger-like motifs (CVCFC...CLNCLM, CEVCRNCDQYFFNCLCE) in the C-terminal region are hallmarks of Cdc7/DDK family kinases, not CDKs. Without CDK-specific features, the kinase defaults to the general Ser/Thr protein kinase category EC 2.7.11.1.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; the absence of CDK-diagnostic PSTAIRE motif and presence of non-CDK structural features provide sufficient grounds to distinguish 2.7.11.1 from 2.7.11.24 using general kinase biology knowledge.",
-    "reason": "A model with general knowledge of kinase classification can: (1) identify the protein kinase fold from conserved motifs, eliminating the glycosidase and epimerase options; (2) recognize the absence of the PSTAIRE helix to argue against CDK (2.7.11.24); (3) note unusual structural features (poly-Q, zinc-finger domains) inconsistent with CDKs; and (4) assign the default non-specific Ser/Thr kinase EC 2.7.11.1. This constitutes a defensible biological reasoning chain without requiring exact protein identification."
-  },
-  "case_id": "EC_number_0152",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt Q9W3Y1 (CDC7_DROME) is annotated as EC 2.7.11.1 (non-specific serine/threonine protein kinase) with experimental evidence (ECO:0000269, PubMed:25451925) and PROSITE-ProRule computational evidence. The catalytic activities confirmed are phosphorylation of L-seryl-[protein] and L-threonyl-[protein] using ATP, consistent with EC 2.7.11.1. The sequence matches perfectly (700 AA, identical SHA256). EC 2.7.11.24 (CDK) is incorrect as Cdc7 is a Dbf4-dependent kinase, not a cyclin-dependent kinase. EC 3.2.1.37 (glycosidase) and EC 5.1.3.45 (epimerase) are clearly wrong for a kinase."
-  },
-  "important_caveats": [
-    "EC 2.7.11.1 is a very broad 'catch-all' category for Ser/Thr kinases; many kinases with specific functions (including Cdc7) are classified here rather than receiving a unique EC number.",
-    "The PSTAIRE motif argument is strong but not absolutely binary—some CDK family members have degenerate variants. However, the overall sequence context (poly-Q stretches, zinc-finger domains, Cdc7-specific insert) makes CDK assignment implausible.",
-    "The UniProt annotation carries both experimental (PubMed:25451925) and computational (PROSITE-ProRule) evidence codes, providing strong support for the EC assignment.",
-    "The reviewer evidence is reviewer-only and was not available to the evaluated model; the reasoning assessment is based solely on what a knowledgeable model could extract from the sequence and options."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (3.2.1.37, glycosidase) and D (5.1.3.45, epimerase) are trivially eliminated by the presence of kinase motifs. The only meaningful discrimination is between A (CDK) and D (non-specific Ser/Thr kinase), and the sequence features reasonably favor D. No genuine ambiguity exists among the options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0152",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt Q9W3Y1 (CDC7_DROME) is annotated as EC 2.7.11.1 (non-specific serine/threonine protein kinase) with experimental evidence (ECO:0000269, PubMed:25451925) and PROSITE-ProRule computational evidence. The catalytic activities confirmed are phosphorylation of L-seryl-[protein] and L-threonyl-[protein] using ATP, consistent with EC 2.7.11.1. The sequence matches perfectly (700 AA, identical SHA256). EC 2.7.11.24 (CDK) is incorrect as Cdc7 is a Dbf4-dependent kinase, not a cyclin-dependent kinase. EC 3.2.1.37 (glycosidase) and EC 5.1.3.45 (epimerase) are clearly wrong for a kinase.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H1", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains canonical protein kinase motifs (VAIK in 'FAIKHHIPTSHPDRIMKELQ', HRD catalytic loop in 'IHRDVKPSN', DFG activation loop in 'DFGLA'), confirming it is a protein kinase and eliminating options C (glycosidase) and D... wait, eliminating C (EC 3.2.1.37, glycosidase) and the epimerase option. It is a Ser/Thr kinase based on the kinase domain architecture. Critically, the sequence lacks the PSTAIRE/PITAIRE helix motif that is diagnostic of cyclin-dependent kinases (EC 2.7.11.24); the C-helix region shows 'GTLRRESHLPDSLRRKFAIK' instead. Additionally, the presence of long poly-glutamine stretches (QQQQQQQQQQQQSQQQQQPQQQSQQQ) and zinc-finger-like motifs (CVCFC...CLNCLM, CEVCRNCDQYFFNCLCE) in the C-terminal region are hallmarks of Cdc7/DDK family kinases, not CDKs. Without CDK-specific features, the kinase defaults to the general Ser/Thr protein kinase category EC 2.7.11.1.",
-    "missing_item_specific_fact": "None strictly required; the absence of CDK-diagnostic PSTAIRE motif and presence of non-CDK structural features provide sufficient grounds to distinguish 2.7.11.1 from 2.7.11.24 using general kinase biology knowledge.",
-    "reason": "A model with general knowledge of kinase classification can: (1) identify the protein kinase fold from conserved motifs, eliminating the glycosidase and epimerase options; (2) recognize the absence of the PSTAIRE helix to argue against CDK (2.7.11.24); (3) note unusual structural features (poly-Q, zinc-finger domains) inconsistent with CDKs; and (4) assign the default non-specific Ser/Thr kinase EC 2.7.11.1. This constitutes a defensible biological reasoning chain without requiring exact protein identification."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (3.2.1.37, glycosidase) and D (5.1.3.45, epimerase) are trivially eliminated by the presence of kinase motifs. The only meaningful discrimination is between A (CDK) and D (non-specific Ser/Thr kinase), and the sequence features reasonably favor D. No genuine ambiguity exists among the options."
-  },
-  "important_caveats": [
-    "EC 2.7.11.1 is a very broad 'catch-all' category for Ser/Thr kinases; many kinases with specific functions (including Cdc7) are classified here rather than receiving a unique EC number.",
-    "The PSTAIRE motif argument is strong but not absolutely binary—some CDK family members have degenerate variants. However, the overall sequence context (poly-Q stretches, zinc-finger domains, Cdc7-specific insert) makes CDK assignment implausible.",
-    "The UniProt annotation carries both experimental (PubMed:25451925) and computational (PROSITE-ProRule) evidence codes, providing strong support for the EC assignment.",
-    "The reviewer evidence is reviewer-only and was not available to the evaluated model; the reasoning assessment is based solely on what a knowledgeable model could extract from the sequence and options."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +161,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -513,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9W3Y1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "29870161021b3b1afc4779b045929ed444cfbf9fa09e03f03d344c0776fd9bbc",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 700,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "29870161021b3b1afc4779b045929ed444cfbf9fa09e03f03d344c0776fd9bbc",
   "current_entry_audit": {
     "entryVersion": 202,
     "firstPublicDate": "2025-06-18",
@@ -544,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2002-10-01",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "current_source_sequence_sha256": "29870161021b3b1afc4779b045929ed444cfbf9fa09e03f03d344c0776fd9bbc",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 700,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "29870161021b3b1afc4779b045929ed444cfbf9fa09e03f03d344c0776fd9bbc",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 200,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9W3Y1",
   "selected_historical_entry_version": 200,
+  "selected_historical_record_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
+  "selected_historical_source_sequence_length": 700,
+  "selected_historical_source_sequence_sha256": "29870161021b3b1afc4779b045929ed444cfbf9fa09e03f03d344c0776fd9bbc",
   "selected_historical_version": {
     "accession": "Q9W3Y1",
     "database": "Swiss-Prot",
@@ -562,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CDC7_DROME",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
-  "selected_historical_source_sequence_sha256": "29870161021b3b1afc4779b045929ed444cfbf9fa09e03f03d344c0776fd9bbc",
-  "selected_historical_source_sequence_length": 700,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 200,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json",
-  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9W3Y1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json"
 }
 ```
 
@@ -612,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json",
-  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":202,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2002-10-01\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json"
 }
 ```
 
@@ -631,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json",
-  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json"
 }
 ```
 
@@ -650,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json",
-  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cell division cycle 7\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25451925\",\"source\":\"PubMed\"}],\"value\":\"2.7.11.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0028360\",\"source\":\"FlyBase\"}],\"value\":\"non-specific serine/threonine protein kinase Cdc7\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json"
 }
 ```
 
@@ -669,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json",
-  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.11.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10027\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25451925\",\"source\":\"PubMed\"}],\"name\":\"L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:17989\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:9863\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11604\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29999\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:83421\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json"
 }
 ```
 
@@ -688,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json",
-  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.11.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10027\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25451925\",\"source\":\"PubMed\"}],\"name\":\"L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:46608\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11060\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11605\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30013\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61977\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json"
 }
 ```
 
@@ -707,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json",
-  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
-  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Stephenson R.\",\"Hosler M.R.\",\"Gavande N.S.\",\"Ghosh A.K.\",\"Weake V.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25451925\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m114.597948\"}],\"citationType\":\"journal article\",\"firstPage\":\"1332\",\"id\":\"25451925\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"1347\",\"publicationDate\":\"2015\",\"title\":\"Characterization of a Drosophila ortholog of the Cdc7 kinase: a role for Cdc7 in endoreplication independent of Chiffon.\",\"volume\":\"290\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"IDENTIFICATION IN DDK COMPLEX\",\"INTERACTION WITH CHIF\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF ASP-269\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:33:51.041859+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9797bfc846105931ee1dd7a285106ef06778360b3a9fa2f086bb0a6444ed1c98",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W3Y1.json"
 }
 ```
 
@@ -725,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 200,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200",
-  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
-  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
-  "source_locator": "lines 1-18",
   "excerpt": "ID   CDC7_DROME              Reviewed;         700 AA.\nAC   Q9W3Y1; Q3KN27; X2JCT3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2002, sequence version 2.\nDT   28-JAN-2026, entry version 200.\nDE   RecName: Full=non-specific serine/threonine protein kinase Cdc7 {ECO:0000312|FlyBase:FBgn0028360};\nDE            EC=2.7.11.1 {ECO:0000269|PubMed:25451925};\nDE   AltName: Full=Cell division cycle 7 {ECO:0000305};\nGN   Name=Cdc7 {ECO:0000303|PubMed:25451925, ECO:0000312|FlyBase:FBgn0028360};\nGN   Synonyms=l(1)G0148 {ECO:0000312|FlyBase:FBgn0028360},\nGN   l(1)G0149 {ECO:0000312|FlyBase:FBgn0028360},\nGN   l(1)G0461 {ECO:0000312|FlyBase:FBgn0028360};\nGN   ORFNames=CG32742 {ECO:0000312|FlyBase:FBgn0028360};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 200,
+  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-18",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
+  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200"
 }
 ```
 
@@ -746,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 200,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200",
-  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
-  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=non-specific serine/threonine protein kinase Cdc7 {ECO:0000312|FlyBase:FBgn0028360};\nDE            EC=2.7.11.1 {ECO:0000269|PubMed:25451925};\nDE   AltName: Full=Cell division cycle 7 {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 200,
+  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
+  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200"
 }
 ```
 
@@ -767,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 200,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200",
-  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
-  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
-  "source_locator": "lines 77-85",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, IDENTIFICATION IN DDK\nRP   COMPLEX, INTERACTION WITH CHIF, DISRUPTION PHENOTYPE, AND MUTAGENESIS OF\nRP   ASP-269.\nRX   PubMed=25451925; DOI=10.1074/jbc.m114.597948;\nRA   Stephenson R., Hosler M.R., Gavande N.S., Ghosh A.K., Weake V.M.;\nRT   \"Characterization of a Drosophila ortholog of the Cdc7 kinase: a role for\nRT   Cdc7 in endoreplication independent of Chiffon.\";\nRL   J. Biol. Chem. 290:1332-1347(2015).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 200,
+  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
+  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200"
 }
 ```
 
@@ -788,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 200,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200",
-  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
-  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
-  "source_locator": "lines 109-115",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP +\nCC         H(+); Xref=Rhea:RHEA:17989, Rhea:RHEA-COMP:9863, Rhea:RHEA-\nCC         COMP:11604, ChEBI:CHEBI:15378, ChEBI:CHEBI:29999, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:83421, ChEBI:CHEBI:456216; EC=2.7.11.1;\nCC         Evidence={ECO:0000255|PROSITE-ProRule:PRU10027,\nCC         ECO:0000269|PubMed:25451925};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 200,
+  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 109-115",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
+  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200"
 }
 ```
 
@@ -809,18 +562,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 200,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200",
-  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
-  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
-  "source_locator": "lines 116-122",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] +\nCC         ADP + H(+); Xref=Rhea:RHEA:46608, Rhea:RHEA-COMP:11060, Rhea:RHEA-\nCC         COMP:11605, ChEBI:CHEBI:15378, ChEBI:CHEBI:30013, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:61977, ChEBI:CHEBI:456216; EC=2.7.11.1;\nCC         Evidence={ECO:0000255|PROSITE-ProRule:PRU10027,\nCC         ECO:0000269|PubMed:25451925};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 200,
+  "retrieved_utc": "2026-11-02T04:33:53.792772+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 116-122",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "97004b763f3ffe1c7894222610f250f7760de0f848dcd41e62799d755551771d",
+  "url": "https://rest.uniprot.org/unisave/Q9W3Y1?format=txt&versions=200"
 }
 ```
 

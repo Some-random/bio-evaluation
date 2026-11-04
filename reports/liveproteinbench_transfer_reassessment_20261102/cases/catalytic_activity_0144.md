@@ -1,18 +1,16 @@
-# catalytic_activity_0144: before and after transfer clarification
+# catalytic_activity_0144
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0144.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0144.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — inosine(in) = inosine(out)
+**Expected answer:** **B** — inosine(in) = inosine(out)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 502-aa sequence matches the UniProt entry for Crithidia fasciculata nucleoside transporter 2. That entry annotates inosine transport and cites experimental evidence from two publications, supporting choice B for this sequence. The cited papers were not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is strongly hydrophobic and consistent with a multipass membrane transporter, which weighs against the soluble-enzyme reactions in A and D. That does not distinguish inosine transport in B from magnesium transport in C.
-
-
-**Missing item-specific fact**
-
-> The protein's specific transported substrate—inosine—requires protein-specific functional annotation or experimental evidence absent from the input.
-
-
-**Reason**
-
-> General sequence features suggest membrane transport, but do not establish this transporter's substrate specificity; identifying the exact sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only evidence supports B; it does not support another listed choice. The sequence alone, however, does not resolve the distinction between B and another transport reaction such as C.
-
-
-### Important caveats
-
-- Choice B describes translocation, not a conventional chemical transformation, so the task's label “Enzymatic Reaction Prediction” is imprecise.
-- The database annotation cites experimental evidence, but the underlying papers were not independently validated here; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic and consistent with a multipass membrane transporter, which weighs against the soluble-enzyme reactions in A and D. That does not distinguish inosine transport in B from magnesium transport in C.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's specific transported substrate—inosine—requires protein-specific functional annotation or experimental evidence absent from the input.",
-    "reason": "General sequence features suggest membrane transport, but do not establish this transporter's substrate specificity; identifying the exact sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied evidence."
-  },
-  "case_id": "catalytic_activity_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 502-aa sequence matches the UniProt entry for Crithidia fasciculata nucleoside transporter 2. That entry annotates inosine transport and cites experimental evidence from two publications, supporting choice B for this sequence. The cited papers were not independently reviewed here."
-  },
-  "important_caveats": [
-    "Choice B describes translocation, not a conventional chemical transformation, so the task's label “Enzymatic Reaction Prediction” is imprecise.",
-    "The database annotation cites experimental evidence, but the underlying papers were not independently validated here; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports B; it does not support another listed choice. The sequence alone, however, does not resolve the distinction between B and another transport reaction such as C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 502-aa sequence matches the UniProt entry for Crithidia fasciculata nucleoside transporter 2. That entry annotates inosine transport and cites experimental evidence from two publications, supporting choice B for this sequence. The cited papers were not independently reviewed here.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic and consistent with a multipass membrane transporter, which weighs against the soluble-enzyme reactions in A and D. That does not distinguish inosine transport in B from magnesium transport in C.",
-    "missing_item_specific_fact": "The protein's specific transported substrate—inosine—requires protein-specific functional annotation or experimental evidence absent from the input.",
-    "reason": "General sequence features suggest membrane transport, but do not establish this transporter's substrate specificity; identifying the exact sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports B; it does not support another listed choice. The sequence alone, however, does not resolve the distinction between B and another transport reaction such as C."
-  },
-  "important_caveats": [
-    "Choice B describes translocation, not a conventional chemical transformation, so the task's label “Enzymatic Reaction Prediction” is imprecise.",
-    "The database annotation cites experimental evidence, but the underlying papers were not independently validated here; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9GTP4 (NT2_CRIFA, Nucleoside transporter 2 / CfNT2 from Crithidia fasciculata) explicitly lists 'inosine(in) = inosine(out)' as a CATALYTIC ACTIVITY with experimental evidence codes ECO:0000269 (inferred from direct assay) from PubMed:15694482 and PubMed:20037157. The sequence matches exactly (502 AA, SHA256 match). The annotation is experimentally supported, not merely computational.
-
-Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5), [C1](#evidence-c1), [C4](#evidence-c4), [C7](#evidence-c7), [C8](#evidence-c8).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence encodes a polytopic membrane protein with approximately 11 transmembrane helices (readily identifiable from the long hydrophobic stretches). Among the four choices: (D) alcohol dehydrogenase is a soluble cytoplasmic enzyme with no TM domains — ruled out; (A) lipid A phosphoethanolamine transferase (EptA-type) is a single-pass membrane protein with a large cytoplasmic catalytic domain — inconsistent with 11 TM domains; (C) Mg2+ transporters of the well-characterized CorA (2 TM) and MgtE (5 TM) families have far fewer TM domains — inconsistent. The 11-TM topology with characteristic motifs (e.g., the 'GTLG' motif near the C-terminal region, N-terminal 'NANTFY' segment) is the hallmark of the Equilibrative Nucleoside Transporter (ENT) family, whose defining function is equilibrative nucleoside translocation (e.g., inosine transport). Thus the topology and motif pattern provide a concrete biological argument favoring B over A, C, and D.
-
-
-**Missing item-specific fact**
-
-> None essential. While precise substrate specificity (inosine vs. guanosine vs. adenosine) within the ENT family would require experimental data, the question only requires distinguishing a nucleoside transporter from an ion transporter, a lipid-modifying enzyme, and a dehydrogenase — a distinction achievable from topology and family-level motifs.
-
-
-**Reason**
-
-> A biologist familiar with membrane protein topology can count ~11 TM helices from the hydrophobicity pattern and match this to the ENT family architecture, thereby eliminating the single-pass (A), low-TM (C), and soluble (D) alternatives. This constitutes a concrete, general biological argument rather than a protein-specific database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the UniProt entry also lists guanosine transport as a catalytic activity, this is not among the four choices. Among A–D, only B is consistent with the protein's topology and family assignment. No ambiguity among the provided options.
-
-
-### Important caveats
-
-- The UniProt annotation for inosine transport is experimentally supported (ECO:0000269, direct assay), not merely inferred by similarity.
-- The 11-TM topology argument requires familiarity with ENT family architecture; a model without this knowledge would struggle, but this is general membrane-protein biology, not a protein-specific lookup.
-- The reviewer-only evidence confirms the annotation but was not available to the evaluated model; the reasoning argument stands independently from the sequence data.
-- The historical UniProt record (entry version 55, first released 2026-01-28) post-dates the original sequence submission (2001-03-01); the author's source snapshot is unknown, but the sequence itself has been unchanged since 2001.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence encodes a polytopic membrane protein with approximately 11 transmembrane helices (readily identifiable from the long hydrophobic stretches). Among the four choices: (D) alcohol dehydrogenase is a soluble cytoplasmic enzyme with no TM domains — ruled out; (A) lipid A phosphoethanolamine transferase (EptA-type) is a single-pass membrane protein with a large cytoplasmic catalytic domain — inconsistent with 11 TM domains; (C) Mg2+ transporters of the well-characterized CorA (2 TM) and MgtE (5 TM) families have far fewer TM domains — inconsistent. The 11-TM topology with characteristic motifs (e.g., the 'GTLG' motif near the C-terminal region, N-terminal 'NANTFY' segment) is the hallmark of the Equilibrative Nucleoside Transporter (ENT) family, whose defining function is equilibrative nucleoside translocation (e.g., inosine transport). Thus the topology and motif pattern provide a concrete biological argument favoring B over A, C, and D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None essential. While precise substrate specificity (inosine vs. guanosine vs. adenosine) within the ENT family would require experimental data, the question only requires distinguishing a nucleoside transporter from an ion transporter, a lipid-modifying enzyme, and a dehydrogenase — a distinction achievable from topology and family-level motifs.",
-    "reason": "A biologist familiar with membrane protein topology can count ~11 TM helices from the hydrophobicity pattern and match this to the ENT family architecture, thereby eliminating the single-pass (A), low-TM (C), and soluble (D) alternatives. This constitutes a concrete, general biological argument rather than a protein-specific database lookup."
-  },
-  "case_id": "catalytic_activity_0144",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H5",
-      "C1",
-      "C4",
-      "C7",
-      "C8"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9GTP4 (NT2_CRIFA, Nucleoside transporter 2 / CfNT2 from Crithidia fasciculata) explicitly lists 'inosine(in) = inosine(out)' as a CATALYTIC ACTIVITY with experimental evidence codes ECO:0000269 (inferred from direct assay) from PubMed:15694482 and PubMed:20037157. The sequence matches exactly (502 AA, SHA256 match). The annotation is experimentally supported, not merely computational."
-  },
-  "important_caveats": [
-    "The UniProt annotation for inosine transport is experimentally supported (ECO:0000269, direct assay), not merely inferred by similarity.",
-    "The 11-TM topology argument requires familiarity with ENT family architecture; a model without this knowledge would struggle, but this is general membrane-protein biology, not a protein-specific lookup.",
-    "The reviewer-only evidence confirms the annotation but was not available to the evaluated model; the reasoning argument stands independently from the sequence data.",
-    "The historical UniProt record (entry version 55, first released 2026-01-28) post-dates the original sequence submission (2001-03-01); the author's source snapshot is unknown, but the sequence itself has been unchanged since 2001."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the UniProt entry also lists guanosine transport as a catalytic activity, this is not among the four choices. Among A–D, only B is consistent with the protein's topology and family assignment. No ambiguity among the provided options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0144",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9GTP4 (NT2_CRIFA, Nucleoside transporter 2 / CfNT2 from Crithidia fasciculata) explicitly lists 'inosine(in) = inosine(out)' as a CATALYTIC ACTIVITY with experimental evidence codes ECO:0000269 (inferred from direct assay) from PubMed:15694482 and PubMed:20037157. The sequence matches exactly (502 AA, SHA256 match). The annotation is experimentally supported, not merely computational.",
-    "evidence_ids": ["C5", "H5", "C1", "C4", "C7", "C8"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence encodes a polytopic membrane protein with approximately 11 transmembrane helices (readily identifiable from the long hydrophobic stretches). Among the four choices: (D) alcohol dehydrogenase is a soluble cytoplasmic enzyme with no TM domains — ruled out; (A) lipid A phosphoethanolamine transferase (EptA-type) is a single-pass membrane protein with a large cytoplasmic catalytic domain — inconsistent with 11 TM domains; (C) Mg2+ transporters of the well-characterized CorA (2 TM) and MgtE (5 TM) families have far fewer TM domains — inconsistent. The 11-TM topology with characteristic motifs (e.g., the 'GTLG' motif near the C-terminal region, N-terminal 'NANTFY' segment) is the hallmark of the Equilibrative Nucleoside Transporter (ENT) family, whose defining function is equilibrative nucleoside translocation (e.g., inosine transport). Thus the topology and motif pattern provide a concrete biological argument favoring B over A, C, and D.",
-    "missing_item_specific_fact": "None essential. While precise substrate specificity (inosine vs. guanosine vs. adenosine) within the ENT family would require experimental data, the question only requires distinguishing a nucleoside transporter from an ion transporter, a lipid-modifying enzyme, and a dehydrogenase — a distinction achievable from topology and family-level motifs.",
-    "reason": "A biologist familiar with membrane protein topology can count ~11 TM helices from the hydrophobicity pattern and match this to the ENT family architecture, thereby eliminating the single-pass (A), low-TM (C), and soluble (D) alternatives. This constitutes a concrete, general biological argument rather than a protein-specific database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the UniProt entry also lists guanosine transport as a catalytic activity, this is not among the four choices. Among A–D, only B is consistent with the protein's topology and family assignment. No ambiguity among the provided options."
-  },
-  "important_caveats": [
-    "The UniProt annotation for inosine transport is experimentally supported (ECO:0000269, direct assay), not merely inferred by similarity.",
-    "The 11-TM topology argument requires familiarity with ENT family architecture; a model without this knowledge would struggle, but this is general membrane-protein biology, not a protein-specific lookup.",
-    "The reviewer-only evidence confirms the annotation but was not available to the evaluated model; the reasoning argument stands independently from the sequence data.",
-    "The historical UniProt record (entry version 55, first released 2026-01-28) post-dates the original sequence submission (2001-03-01); the author's source snapshot is unknown, but the sequence itself has been unchanged since 2001."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9GTP4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6e53d808d65dc861f251d0ee2f1b1ba4738fbf7c8abbca765447ebb335e58560",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 502,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6e53d808d65dc861f251d0ee2f1b1ba4738fbf7c8abbca765447ebb335e58560",
   "current_entry_audit": {
     "entryVersion": 55,
     "firstPublicDate": "2025-02-05",
@@ -530,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "current_source_sequence_sha256": "6e53d808d65dc861f251d0ee2f1b1ba4738fbf7c8abbca765447ebb335e58560",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 502,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6e53d808d65dc861f251d0ee2f1b1ba4738fbf7c8abbca765447ebb335e58560",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 55,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9GTP4",
   "selected_historical_entry_version": 55,
+  "selected_historical_record_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
+  "selected_historical_source_sequence_length": 502,
+  "selected_historical_source_sequence_sha256": "6e53d808d65dc861f251d0ee2f1b1ba4738fbf7c8abbca765447ebb335e58560",
   "selected_historical_version": {
     "accession": "Q9GTP4",
     "database": "Swiss-Prot",
@@ -548,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NT2_CRIFA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
-  "selected_historical_source_sequence_sha256": "6e53d808d65dc861f251d0ee2f1b1ba4738fbf7c8abbca765447ebb335e58560",
-  "selected_historical_source_sequence_length": 502,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 55,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9GTP4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -598,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":55,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-01-28\",\"lastSequenceUpdateDate\":\"2001-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -617,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAG22611.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Discoba\",\"Euglenozoa\",\"Kinetoplastea\",\"Metakinetoplastina\",\"Trypanosomatida\",\"Trypanosomatidae\",\"Leishmaniinae\",\"Crithidia\"],\"scientificName\":\"Crithidia fasciculata\",\"taxonId\":5656}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -636,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20037157\",\"source\":\"PubMed\"}],\"value\":\"Equilibrative nucleoside transporter 2\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"15694482\",\"source\":\"PubMed\"}],\"value\":\"Nucleoside transporter 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"15694482\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20037157\",\"source\":\"PubMed\"}],\"value\":\"CfNT2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -655,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"15694482\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20037157\",\"source\":\"PubMed\"}],\"name\":\"inosine(in) = inosine(out)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75375\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17596\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -674,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"15694482\",\"source\":\"PubMed\"}],\"name\":\"guanosine(in) = guanosine(out)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75371\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16750\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -693,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Liu W.\",\"Arendt C.S.\",\"Gessford S.K.\",\"Ntaba D.\",\"Carter N.S.\",\"Ullman B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"15694482\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.molbiopara.2004.11.018\"}],\"citationType\":\"journal article\",\"firstPage\":\"1\",\"id\":\"15694482\",\"journal\":\"Mol. Biochem. Parasitol.\",\"lastPage\":\"12\",\"publicationDate\":\"2005\",\"title\":\"Identification and characterization of purine nucleoside transporters from Crithidia fasciculata.\",\"volume\":\"140\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"TRANSPORTER ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"INDUCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -712,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json",
-  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
-  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Arendt C.S.\",\"Ullman B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20037157\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m109.074351\"}],\"citationType\":\"journal article\",\"firstPage\":\"6024\",\"id\":\"20037157\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"6035\",\"publicationDate\":\"2010\",\"title\":\"Role of transmembrane domain 4 in ligand permeation by Crithidia fasciculata equilibrative nucleoside transporter 2 (CfNT2).\",\"volume\":\"285\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"TRANSPORTER ACTIVITY\",\"SUBCELLULAR LOCATION\",\"MUTAGENESIS OF VAL-89; HIS-138; GLY-139; ALA-140; ILE-141; ALA-142; VAL-143; ILE-144; MET-145; VAL-146; VAL-147; ALA-148; VAL-150; GLY-151; GLY-152; PHE-153; SER-154; LYS-155; ALA-156; LEU-157; ASP-159; SER-160; THR-162; ASN-163; ALA-164; LEU-165; VAL-166; GLY-167; PRO-168; PHE-169; PRO-170; THR-171 AND LYS-172\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:32:48.296419+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3c9982e101acb399e2361c4884d826caa6e853175a76e749eee018234bb47b73",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9GTP4.json"
 }
 ```
 
@@ -730,18 +487,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55",
-  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
-  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   NT2_CRIFA               Reviewed;         502 AA.\nAC   Q9GTP4;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2001, sequence version 1.\nDT   28-JAN-2026, entry version 55.\nDE   RecName: Full=Nucleoside transporter 2 {ECO:0000303|PubMed:15694482};\nDE            Short=CfNT2 {ECO:0000303|PubMed:15694482, ECO:0000303|PubMed:20037157};\nDE   AltName: Full=Equilibrative nucleoside transporter 2 {ECO:0000303|PubMed:20037157};\nOS   Crithidia fasciculata.\nOC   Eukaryota; Discoba; Euglenozoa; Kinetoplastea; Metakinetoplastina;\nOC   Trypanosomatida; Trypanosomatidae; Leishmaniinae; Crithidia.\nOX   NCBI_TaxID=5656 {ECO:0000312|EMBL:AAG22611.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
+  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55"
 }
 ```
 
@@ -751,18 +508,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55",
-  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
-  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Nucleoside transporter 2 {ECO:0000303|PubMed:15694482};\nDE            Short=CfNT2 {ECO:0000303|PubMed:15694482, ECO:0000303|PubMed:20037157};\nDE   AltName: Full=Equilibrative nucleoside transporter 2 {ECO:0000303|PubMed:20037157};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
+  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55"
 }
 ```
 
@@ -772,18 +529,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55",
-  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
-  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
-  "source_locator": "lines 19-26",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, TRANSPORTER ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND\nRP   INDUCTION.\nRX   PubMed=15694482; DOI=10.1016/j.molbiopara.2004.11.018;\nRA   Liu W., Arendt C.S., Gessford S.K., Ntaba D., Carter N.S., Ullman B.;\nRT   \"Identification and characterization of purine nucleoside transporters from\nRT   Crithidia fasciculata.\";\nRL   Mol. Biochem. Parasitol. 140:1-12(2005).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
+  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55"
 }
 ```
 
@@ -793,18 +550,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55",
-  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
-  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
-  "source_locator": "lines 27-38",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, TRANSPORTER ACTIVITY, SUBCELLULAR LOCATION, AND MUTAGENESIS OF\nRP   VAL-89; HIS-138; GLY-139; ALA-140; ILE-141; ALA-142; VAL-143; ILE-144;\nRP   MET-145; VAL-146; VAL-147; ALA-148; VAL-150; GLY-151; GLY-152; PHE-153;\nRP   SER-154; LYS-155; ALA-156; LEU-157; ASP-159; SER-160; THR-162; ASN-163;\nRP   ALA-164; LEU-165; VAL-166; GLY-167; PRO-168; PHE-169; PRO-170; THR-171 AND\nRP   LYS-172.\nRX   PubMed=20037157; DOI=10.1074/jbc.m109.074351;\nRA   Arendt C.S., Ullman B.;\nRT   \"Role of transmembrane domain 4 in ligand permeation by Crithidia\nRT   fasciculata equilibrative nucleoside transporter 2 (CfNT2).\";\nRL   J. Biol. Chem. 285:6024-6035(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
+  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55"
 }
 ```
 
@@ -814,18 +571,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55",
-  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
-  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
-  "source_locator": "lines 41-44",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=inosine(in) = inosine(out); Xref=Rhea:RHEA:75375,\nCC         ChEBI:CHEBI:17596; Evidence={ECO:0000269|PubMed:15694482,\nCC         ECO:0000269|PubMed:20037157};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
+  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55"
 }
 ```
 
@@ -835,18 +592,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55",
-  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
-  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
-  "source_locator": "lines 45-47",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=guanosine(in) = guanosine(out); Xref=Rhea:RHEA:75371,\nCC         ChEBI:CHEBI:16750; Evidence={ECO:0000269|PubMed:15694482};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:32:52.675125+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "130ca0749d2c91bc4f41009fc3423401ec6f66d72dd1c0a97de44d68f33480c8",
+  "url": "https://rest.uniprot.org/unisave/Q9GTP4?format=txt&versions=55"
 }
 ```
 

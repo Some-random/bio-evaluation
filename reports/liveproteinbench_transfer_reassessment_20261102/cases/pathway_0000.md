@@ -1,18 +1,16 @@
-# pathway_0000: before and after transfer clarification
+# pathway_0000
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0000.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0000.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Capsule biogenesis
+**Expected answer:** **A** — Capsule biogenesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for UDP-N-acetylglucosamine 2-epimerase from Campylobacter jejuni. UniProt annotates this enzyme in capsule biogenesis, citing a publication whose reference covers the function and pathway and whose title concerns biosynthesis for capsular polysaccharides. The pathway annotation carries experimental-evidence code ECO:0000269, although the primary paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a clear, specific basis for distinguishing capsule biogenesis from the other listed pathways. Identifying the relevant enzyme and connecting it to capsule biosynthesis requires protein-specific functional knowledge.
-
-
-**Missing item-specific fact**
-
-> The protein is UDP-N-acetylglucosamine 2-epimerase and functions in capsule polysaccharide biosynthesis; that annotation or equivalent experimental knowledge is absent from the question input.
-
-
-**Reason**
-
-> The reviewer-only sequence match and annotation support the key, but they were not supplied to the evaluated model. Recognizing the sequence or retrieving its database annotation would be lookup, not reasoning from a discriminating biological feature provided in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports capsule biogenesis as the pathway; it does not identify another listed option as comparably defensible.
-
-
-### Important caveats
-
-- The pathway annotation is from UniProt and cites experimental evidence, but the cited primary paper was not independently retrieved or validated here.
-- The sequence matches both the current UniProt entry and a historical entry available by the stated cutoff; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a clear, specific basis for distinguishing capsule biogenesis from the other listed pathways. Identifying the relevant enzyme and connecting it to capsule biosynthesis requires protein-specific functional knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein is UDP-N-acetylglucosamine 2-epimerase and functions in capsule polysaccharide biosynthesis; that annotation or equivalent experimental knowledge is absent from the question input.",
-    "reason": "The reviewer-only sequence match and annotation support the key, but they were not supplied to the evaluated model. Recognizing the sequence or retrieving its database annotation would be lookup, not reasoning from a discriminating biological feature provided in the question."
-  },
-  "case_id": "pathway_0000",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for UDP-N-acetylglucosamine 2-epimerase from Campylobacter jejuni. UniProt annotates this enzyme in capsule biogenesis, citing a publication whose reference covers the function and pathway and whose title concerns biosynthesis for capsular polysaccharides. The pathway annotation carries experimental-evidence code ECO:0000269, although the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The pathway annotation is from UniProt and cites experimental evidence, but the cited primary paper was not independently retrieved or validated here.",
-    "The sequence matches both the current UniProt entry and a historical entry available by the stated cutoff; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports capsule biogenesis as the pathway; it does not identify another listed option as comparably defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0000",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for UDP-N-acetylglucosamine 2-epimerase from Campylobacter jejuni. UniProt annotates this enzyme in capsule biogenesis, citing a publication whose reference covers the function and pathway and whose title concerns biosynthesis for capsular polysaccharides. The pathway annotation carries experimental-evidence code ECO:0000269, although the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a clear, specific basis for distinguishing capsule biogenesis from the other listed pathways. Identifying the relevant enzyme and connecting it to capsule biosynthesis requires protein-specific functional knowledge.",
-    "missing_item_specific_fact": "The protein is UDP-N-acetylglucosamine 2-epimerase and functions in capsule polysaccharide biosynthesis; that annotation or equivalent experimental knowledge is absent from the question input.",
-    "reason": "The reviewer-only sequence match and annotation support the key, but they were not supplied to the evaluated model. Recognizing the sequence or retrieving its database annotation would be lookup, not reasoning from a discriminating biological feature provided in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports capsule biogenesis as the pathway; it does not identify another listed option as comparably defensible."
-  },
-  "important_caveats": [
-    "The pathway annotation is from UniProt and cites experimental evidence, but the cited primary paper was not independently retrieved or validated here.",
-    "The sequence matches both the current UniProt entry and a historical entry available by the stated cutoff; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt P0DY05 (UDP-N-acetylglucosamine 2-epimerase, EC 3.2.1.183, from Campylobacter jejuni 81116). The UniProt PATHWAY annotation explicitly states 'Capsule biogenesis; capsule polysaccharide biosynthesis' with experimental evidence code ECO:0000269 backed by PubMed:38382015 (Ghosh & Raushel, Biochemistry 2024). The sequence match is confirmed in both the current entry (entryVersion 4) and the historical entry (entryVersion 2, first released 2026-01-28).
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model can eliminate C (amino-acid degradation) and D (peptidoglycan degradation) by recognizing the sequence as a nucleotide-sugar-modifying enzyme (epimerase/hydrolase acting on UDP-GlcNAc) rather than a deaminase, transaminase, or peptidoglycan hydrolase. However, the critical distinction between A (capsule biogenesis) and B (bacterial outer membrane biogenesis) cannot be resolved from sequence alone. In Campylobacter, sialic acid and related UDP-sugar derivatives are incorporated into BOTH capsular polysaccharides AND lipooligosaccharide (LOS) at the outer membrane. The specific assignment of this hydrolyzing UDP-GlcNAc 2-epimerase to capsule biogenesis rather than LOS/outer-membrane biogenesis is an organism-specific metabolic fact established by the 2024 Ghosh & Raushel experimental study, not a property inferable from the amino acid sequence.
-
-
-**Missing item-specific fact**
-
-> Knowledge that in Campylobacter jejuni 81116, this particular UDP-GlcNAc 2-epimerase (HS6.10 / C8J_1338) was experimentally shown to feed specifically into capsule polysaccharide biosynthesis (producing UDP-ManNAcA and CMP-Neu5Ac for capsule) rather than into LOS modification at the outer membrane. This is documented in PubMed:38382015.
-
-
-**Reason**
-
-> Eliminating C and D relies on general enzyme-class reasoning, but the A-vs-B choice requires knowing the specific downstream metabolic fate of the epimerase product in this organism, which is an item-specific experimental/annotation fact absent from the sequence input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> Without the specific annotation or knowledge of the 2024 study, a knowledgeable model could argue that sialic acid biosynthesis in Campylobacter feeds into LOS (outer membrane) as well as capsule. The sequence provides no feature that distinguishes a capsule-specific glycan pathway enzyme from an outer-membrane glycan pathway enzyme. Both A and B are plausible glycan-biosynthesis contexts for a UDP-GlcNAc 2-epimerase in a Gram-negative bacterium.
-
-
-### Important caveats
-
-- The UniProt entry P0DY05 was first integrated on 2025-06-18; the pathway annotation citing PubMed:38382015 (published 2024) may or may not have been available at the author's data-construction date, which is unknown.
-- The pathway assignment is based on a single 2024 experimental study; the enzyme's product (UDP-ManNAcA / CMP-Neu5Ac) could in principle also contribute to LOS biosynthesis in Campylobacter, making the exclusive 'capsule biogenesis' label a simplification of a shared biosynthetic step.
-- The identity of the protein (P0DY05) was inferred from dataset image-path metadata absent from the model input; the model sees only the raw sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model can eliminate C (amino-acid degradation) and D (peptidoglycan degradation) by recognizing the sequence as a nucleotide-sugar-modifying enzyme (epimerase/hydrolase acting on UDP-GlcNAc) rather than a deaminase, transaminase, or peptidoglycan hydrolase. However, the critical distinction between A (capsule biogenesis) and B (bacterial outer membrane biogenesis) cannot be resolved from sequence alone. In Campylobacter, sialic acid and related UDP-sugar derivatives are incorporated into BOTH capsular polysaccharides AND lipooligosaccharide (LOS) at the outer membrane. The specific assignment of this hydrolyzing UDP-GlcNAc 2-epimerase to capsule biogenesis rather than LOS/outer-membrane biogenesis is an organism-specific metabolic fact established by the 2024 Ghosh & Raushel experimental study, not a property inferable from the amino acid sequence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Knowledge that in Campylobacter jejuni 81116, this particular UDP-GlcNAc 2-epimerase (HS6.10 / C8J_1338) was experimentally shown to feed specifically into capsule polysaccharide biosynthesis (producing UDP-ManNAcA and CMP-Neu5Ac for capsule) rather than into LOS modification at the outer membrane. This is documented in PubMed:38382015.",
-    "reason": "Eliminating C and D relies on general enzyme-class reasoning, but the A-vs-B choice requires knowing the specific downstream metabolic fate of the epimerase product in this organism, which is an item-specific experimental/annotation fact absent from the sequence input."
-  },
-  "case_id": "pathway_0000",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C6",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt P0DY05 (UDP-N-acetylglucosamine 2-epimerase, EC 3.2.1.183, from Campylobacter jejuni 81116). The UniProt PATHWAY annotation explicitly states 'Capsule biogenesis; capsule polysaccharide biosynthesis' with experimental evidence code ECO:0000269 backed by PubMed:38382015 (Ghosh & Raushel, Biochemistry 2024). The sequence match is confirmed in both the current entry (entryVersion 4) and the historical entry (entryVersion 2, first released 2026-01-28)."
-  },
-  "important_caveats": [
-    "The UniProt entry P0DY05 was first integrated on 2025-06-18; the pathway annotation citing PubMed:38382015 (published 2024) may or may not have been available at the author's data-construction date, which is unknown.",
-    "The pathway assignment is based on a single 2024 experimental study; the enzyme's product (UDP-ManNAcA / CMP-Neu5Ac) could in principle also contribute to LOS biosynthesis in Campylobacter, making the exclusive 'capsule biogenesis' label a simplification of a shared biosynthetic step.",
-    "The identity of the protein (P0DY05) was inferred from dataset image-path metadata absent from the model input; the model sees only the raw sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "Without the specific annotation or knowledge of the 2024 study, a knowledgeable model could argue that sialic acid biosynthesis in Campylobacter feeds into LOS (outer membrane) as well as capsule. The sequence provides no feature that distinguishes a capsule-specific glycan pathway enzyme from an outer-membrane glycan pathway enzyme. Both A and B are plausible glycan-biosynthesis contexts for a UDP-GlcNAc 2-epimerase in a Gram-negative bacterium."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0000",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt P0DY05 (UDP-N-acetylglucosamine 2-epimerase, EC 3.2.1.183, from Campylobacter jejuni 81116). The UniProt PATHWAY annotation explicitly states 'Capsule biogenesis; capsule polysaccharide biosynthesis' with experimental evidence code ECO:0000269 backed by PubMed:38382015 (Ghosh & Raushel, Biochemistry 2024). The sequence match is confirmed in both the current entry (entryVersion 4) and the historical entry (entryVersion 2, first released 2026-01-28).",
-    "evidence_ids": ["C5", "H3", "C4", "C6", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model can eliminate C (amino-acid degradation) and D (peptidoglycan degradation) by recognizing the sequence as a nucleotide-sugar-modifying enzyme (epimerase/hydrolase acting on UDP-GlcNAc) rather than a deaminase, transaminase, or peptidoglycan hydrolase. However, the critical distinction between A (capsule biogenesis) and B (bacterial outer membrane biogenesis) cannot be resolved from sequence alone. In Campylobacter, sialic acid and related UDP-sugar derivatives are incorporated into BOTH capsular polysaccharides AND lipooligosaccharide (LOS) at the outer membrane. The specific assignment of this hydrolyzing UDP-GlcNAc 2-epimerase to capsule biogenesis rather than LOS/outer-membrane biogenesis is an organism-specific metabolic fact established by the 2024 Ghosh & Raushel experimental study, not a property inferable from the amino acid sequence.",
-    "missing_item_specific_fact": "Knowledge that in Campylobacter jejuni 81116, this particular UDP-GlcNAc 2-epimerase (HS6.10 / C8J_1338) was experimentally shown to feed specifically into capsule polysaccharide biosynthesis (producing UDP-ManNAcA and CMP-Neu5Ac for capsule) rather than into LOS modification at the outer membrane. This is documented in PubMed:38382015.",
-    "reason": "Eliminating C and D relies on general enzyme-class reasoning, but the A-vs-B choice requires knowing the specific downstream metabolic fate of the epimerase product in this organism, which is an item-specific experimental/annotation fact absent from the sequence input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "Without the specific annotation or knowledge of the 2024 study, a knowledgeable model could argue that sialic acid biosynthesis in Campylobacter feeds into LOS (outer membrane) as well as capsule. The sequence provides no feature that distinguishes a capsule-specific glycan pathway enzyme from an outer-membrane glycan pathway enzyme. Both A and B are plausible glycan-biosynthesis contexts for a UDP-GlcNAc 2-epimerase in a Gram-negative bacterium."
-  },
-  "important_caveats": [
-    "The UniProt entry P0DY05 was first integrated on 2025-06-18; the pathway annotation citing PubMed:38382015 (published 2024) may or may not have been available at the author's data-construction date, which is unknown.",
-    "The pathway assignment is based on a single 2024 experimental study; the enzyme's product (UDP-ManNAcA / CMP-Neu5Ac) could in principle also contribute to LOS biosynthesis in Campylobacter, making the exclusive 'capsule biogenesis' label a simplification of a shared biosynthetic step.",
-    "The identity of the protein (P0DY05) was inferred from dataset image-path metadata absent from the model input; the model sees only the raw sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DY05",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 373,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -543,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "current_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 373,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DY05",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "selected_historical_source_sequence_length": 373,
+  "selected_historical_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
   "selected_historical_version": {
     "accession": "P0DY05",
     "database": "Swiss-Prot",
@@ -561,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UAEPH_CAMJ8",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "selected_historical_source_sequence_sha256": "e7bbdfb124fa6a1f8e0776ef9cfe10605110b022d22f31aa7d87fd2dc63013ef",
-  "selected_historical_source_sequence_length": 373,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DY05\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -611,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -630,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Campylobacterota\",\"Epsilonproteobacteria\",\"Campylobacterales\",\"Campylobacteraceae\",\"Campylobacter\"],\"scientificName\":\"Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC 11828)\",\"taxonId\":407148}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -649,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"Hydrolyzing UDP-GlcNAc 2-epimerase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.183\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"UDP-N-acetylglucosamine 2-epimerase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -668,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"Capsule biogenesis; capsule polysaccharide biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -687,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json",
-  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
-  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Ghosh M.K.\",\"Raushel F.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38382015\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.3c00664\"}],\"citationType\":\"journal article\",\"firstPage\":\"688\",\"id\":\"38382015\",\"journal\":\"Biochemistry\",\"lastPage\":\"698\",\"publicationDate\":\"2024\",\"title\":\"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter jejuni.\",\"volume\":\"63\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"81116 / NCTC 11828\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:02.588931+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "937863d80c17ba7d03766f73daed6baf04c3868cee0583cc1c8025708304b5ec",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY05.json"
 }
 ```
 
@@ -705,18 +459,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2",
-  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   UAEPH_CAMJ8             Reviewed;         373 AA.\nAC   P0DY05;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=UDP-N-acetylglucosamine 2-epimerase {ECO:0000305};\nDE            EC=3.2.1.183 {ECO:0000269|PubMed:38382015};\nDE   AltName: Full=Hydrolyzing UDP-GlcNAc 2-epimerase {ECO:0000303|PubMed:38382015};\nGN   Name=HS6.10 {ECO:0000303|PubMed:38382015};\nGN   OrderedLocusNames=C8J_1338 {ECO:0000312|EMBL:ABV52936.1};\nOS   Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC\nOS   11828).\nOC   Bacteria; Pseudomonadati; Campylobacterota; Epsilonproteobacteria;\nOC   Campylobacterales; Campylobacteraceae; Campylobacter.\nOX   NCBI_TaxID=407148;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2"
 }
 ```
 
@@ -726,18 +480,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2",
-  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
-  "source_locator": "lines 25-33",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND PATHWAY.\nRC   STRAIN=81116 / NCTC 11828;\nRX   PubMed=38382015; DOI=10.1021/acs.biochem.3c00664;\nRA   Ghosh M.K., Raushel F.M.;\nRT   \"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-\nRT   Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter\nRT   jejuni.\";\nRL   Biochemistry 63:688-698(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2"
 }
 ```
 
@@ -747,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2",
-  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
-  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
-  "source_locator": "lines 52-53",
   "excerpt": "CC   -!- PATHWAY: Capsule biogenesis; capsule polysaccharide biosynthesis.\nCC       {ECO:0000269|PubMed:38382015}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:04.730217+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5278ef9f060bf7f207cf54b4687f7078769e5e37b32a8bf7f2e5dacb2ff686b5",
+  "url": "https://rest.uniprot.org/unisave/P0DY05?format=txt&versions=2"
 }
 ```
 

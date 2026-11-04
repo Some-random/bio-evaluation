@@ -1,18 +1,16 @@
-# EC_number_0012: before and after transfer clarification
+# EC_number_0012
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0012.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0012.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 1.14.14.154
+**Expected answer:** **D** — 1.14.14.154
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact input sequence matches UniProt entry P0DXU9, which annotates it as sterol 14-alpha demethylase resB with EC 1.14.14.154. The annotation and catalytic-activity assignment are supported by transfer from homologous UniProt entries (ECO:0000250), so this supports the key as a database annotation but is not, in the supplied excerpts, proof of a direct experimental assay of this protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with a membrane-associated enzyme, and the sequence is compatible with a cytochrome P450 monooxygenase. That broad inference does not establish the specific steroid substrate or the precise EC assignment needed to choose between the P450-related options.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional assignment as sterol 14-alpha demethylase resB, or equivalent homolog/annotation knowledge linking this sequence to EC 1.14.14.154.
-
-
-**Reason**
-
-> The sequence and choices give some broad enzyme-family clues, but distinguishing the exact EC number requires an item-specific functional annotation or a reliable sequence-homology inference not provided in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not make the exact EC assignment transparent, but the supplied reviewer evidence assigns this matched sequence to EC 1.14.14.154; no alternative listed option is supported by that evidence.
-
-
-### Important caveats
-
-- The UniProt EC and catalytic-activity evidence cited here is transferred from homologous entries rather than independently demonstrated in the supplied excerpts.
-- The evidence is reviewer-only and was not available as input to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a membrane-associated enzyme, and the sequence is compatible with a cytochrome P450 monooxygenase. That broad inference does not establish the specific steroid substrate or the precise EC assignment needed to choose between the P450-related options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional assignment as sterol 14-alpha demethylase resB, or equivalent homolog/annotation knowledge linking this sequence to EC 1.14.14.154.",
-    "reason": "The sequence and choices give some broad enzyme-family clues, but distinguishing the exact EC number requires an item-specific functional annotation or a reliable sequence-homology inference not provided in the question."
-  },
-  "case_id": "EC_number_0012",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact input sequence matches UniProt entry P0DXU9, which annotates it as sterol 14-alpha demethylase resB with EC 1.14.14.154. The annotation and catalytic-activity assignment are supported by transfer from homologous UniProt entries (ECO:0000250), so this supports the key as a database annotation but is not, in the supplied excerpts, proof of a direct experimental assay of this protein."
-  },
-  "important_caveats": [
-    "The UniProt EC and catalytic-activity evidence cited here is transferred from homologous entries rather than independently demonstrated in the supplied excerpts.",
-    "The evidence is reviewer-only and was not available as input to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not make the exact EC assignment transparent, but the supplied reviewer evidence assigns this matched sequence to EC 1.14.14.154; no alternative listed option is supported by that evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0012",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact input sequence matches UniProt entry P0DXU9, which annotates it as sterol 14-alpha demethylase resB with EC 1.14.14.154. The annotation and catalytic-activity assignment are supported by transfer from homologous UniProt entries (ECO:0000250), so this supports the key as a database annotation but is not, in the supplied excerpts, proof of a direct experimental assay of this protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a membrane-associated enzyme, and the sequence is compatible with a cytochrome P450 monooxygenase. That broad inference does not establish the specific steroid substrate or the precise EC assignment needed to choose between the P450-related options.",
-    "missing_item_specific_fact": "The protein-specific functional assignment as sterol 14-alpha demethylase resB, or equivalent homolog/annotation knowledge linking this sequence to EC 1.14.14.154.",
-    "reason": "The sequence and choices give some broad enzyme-family clues, but distinguishing the exact EC number requires an item-specific functional annotation or a reliable sequence-homology inference not provided in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not make the exact EC assignment transparent, but the supplied reviewer evidence assigns this matched sequence to EC 1.14.14.154; no alternative listed option is supported by that evidence."
-  },
-  "important_caveats": [
-    "The UniProt EC and catalytic-activity evidence cited here is transferred from homologous entries rather than independently demonstrated in the supplied excerpts.",
-    "The evidence is reviewer-only and was not available as input to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXU9 (RESB_ASPSL, 511 aa, Aspergillus sclerotiorum) explicitly assigns EC 1.14.14.154 (Sterol 14-alpha demethylase resB). The sequence matches the benchmark input exactly. However, the EC annotation carries evidence code ECO:0000250 (similarity), meaning it was transferred by computational inference from related entries (A0A0L1JEW4, Q4WNT5, P10614) rather than from direct experimental characterization of this specific protein. The catalytic activity reactions (14α-methyl steroid → Δ14 steroid + formate, using NADPH-hemoprotein reductase and O2) are consistent with EC 1.14.14.154. The database annotation supports the key, but it is a similarity-based assignment, not independent experimental proof.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C9](#evidence-c9), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4), [H8](#evidence-h8).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains the canonical cytochrome P450 heme-binding motif (e.g., 'GAGRHRCIGEKFAYLNLTVIVATLVRHLRFHNLDGKKGVPGTDYTSLFSGPLKPTRVGWERRAAKSA' with the FxxGxRxCxG signature), which reliably identifies the protein as a P450 monooxygenase (EC 1.14.14.x). This eliminates B (3.2.1.20, α-glucosidase, a hydrolase) and C (1.1.1.336, a dehydrogenase/reductase) through general enzyme-class reasoning. However, the critical distinction between A (1.14.14.126) and D (1.14.14.154) hinges on the 4th EC digit, which encodes the specific substrate/reaction. Both are P450 monooxygenases; no general sequence feature visible in the input distinguishes which specific 4-digit EC assignment applies.
-
-
-**Missing item-specific fact**
-
-> The model must know the precise EC 4th-digit assignment for this particular P450: that EC 1.14.14.154 corresponds to fungal sterol 14α-demethylase while EC 1.14.14.126 corresponds to a different specific P450 reaction. This is a database annotation fact, not derivable from sequence motifs alone.
-
-
-**Reason**
-
-> General biological knowledge (P450 heme-binding motif recognition) narrows four choices to two (A and D), but the final A-vs-D discrimination requires memorizing or looking up which specific EC 4th-digit number corresponds to the sterol 14α-demethylase reaction versus the alternative P450 reaction. No sequence-derived argument from the supplied input can meaningfully separate 1.14.14.126 from 1.14.14.154.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Both A (1.14.14.126) and D (1.14.14.154) are cytochrome P450 monooxygenases (EC class 1.14.14.x). Without external knowledge of what specific reaction each 4th digit encodes, the sequence alone cannot distinguish them. B and C are clearly eliminable as wrong enzyme classes, but A vs D is an annotation-level distinction.
-
-
-### Important caveats
-
-- The UniProt EC assignment (1.14.14.154) carries evidence code ECO:0000250 (similarity), indicating it was inferred by transfer from homologous entries rather than experimentally determined for P0DXU9 itself.
-- The UniProt entry was first released 2025-02-05 (entry version 1); the author's source snapshot date is unknown. The sequence has not changed since release.
-- The reviewer-only UniProt accession and metadata were absent from the evaluated model input; the model sees only the raw sequence and four EC-number choices.
-- The protein is annotated as part of the restricticin biosynthesis cluster (resB) and also described as an ergosterol biosynthesis protein, consistent with a CYP51/sterol 14α-demethylase role.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the canonical cytochrome P450 heme-binding motif (e.g., 'GAGRHRCIGEKFAYLNLTVIVATLVRHLRFHNLDGKKGVPGTDYTSLFSGPLKPTRVGWERRAAKSA' with the FxxGxRxCxG signature), which reliably identifies the protein as a P450 monooxygenase (EC 1.14.14.x). This eliminates B (3.2.1.20, α-glucosidase, a hydrolase) and C (1.1.1.336, a dehydrogenase/reductase) through general enzyme-class reasoning. However, the critical distinction between A (1.14.14.126) and D (1.14.14.154) hinges on the 4th EC digit, which encodes the specific substrate/reaction. Both are P450 monooxygenases; no general sequence feature visible in the input distinguishes which specific 4-digit EC assignment applies.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The model must know the precise EC 4th-digit assignment for this particular P450: that EC 1.14.14.154 corresponds to fungal sterol 14α-demethylase while EC 1.14.14.126 corresponds to a different specific P450 reaction. This is a database annotation fact, not derivable from sequence motifs alone.",
-    "reason": "General biological knowledge (P450 heme-binding motif recognition) narrows four choices to two (A and D), but the final A-vs-D discrimination requires memorizing or looking up which specific EC 4th-digit number corresponds to the sterol 14α-demethylase reaction versus the alternative P450 reaction. No sequence-derived argument from the supplied input can meaningfully separate 1.14.14.126 from 1.14.14.154."
-  },
-  "case_id": "EC_number_0012",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C9",
-      "H1",
-      "H2",
-      "H4",
-      "H8"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXU9 (RESB_ASPSL, 511 aa, Aspergillus sclerotiorum) explicitly assigns EC 1.14.14.154 (Sterol 14-alpha demethylase resB). The sequence matches the benchmark input exactly. However, the EC annotation carries evidence code ECO:0000250 (similarity), meaning it was transferred by computational inference from related entries (A0A0L1JEW4, Q4WNT5, P10614) rather than from direct experimental characterization of this specific protein. The catalytic activity reactions (14α-methyl steroid → Δ14 steroid + formate, using NADPH-hemoprotein reductase and O2) are consistent with EC 1.14.14.154. The database annotation supports the key, but it is a similarity-based assignment, not independent experimental proof."
-  },
-  "important_caveats": [
-    "The UniProt EC assignment (1.14.14.154) carries evidence code ECO:0000250 (similarity), indicating it was inferred by transfer from homologous entries rather than experimentally determined for P0DXU9 itself.",
-    "The UniProt entry was first released 2025-02-05 (entry version 1); the author's source snapshot date is unknown. The sequence has not changed since release.",
-    "The reviewer-only UniProt accession and metadata were absent from the evaluated model input; the model sees only the raw sequence and four EC-number choices.",
-    "The protein is annotated as part of the restricticin biosynthesis cluster (resB) and also described as an ergosterol biosynthesis protein, consistent with a CYP51/sterol 14α-demethylase role."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Both A (1.14.14.126) and D (1.14.14.154) are cytochrome P450 monooxygenases (EC class 1.14.14.x). Without external knowledge of what specific reaction each 4th digit encodes, the sequence alone cannot distinguish them. B and C are clearly eliminable as wrong enzyme classes, but A vs D is an annotation-level distinction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0012",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXU9 (RESB_ASPSL, 511 aa, Aspergillus sclerotiorum) explicitly assigns EC 1.14.14.154 (Sterol 14-alpha demethylase resB). The sequence matches the benchmark input exactly. However, the EC annotation carries evidence code ECO:0000250 (similarity), meaning it was transferred by computational inference from related entries (A0A0L1JEW4, Q4WNT5, P10614) rather than from direct experimental characterization of this specific protein. The catalytic activity reactions (14α-methyl steroid → Δ14 steroid + formate, using NADPH-hemoprotein reductase and O2) are consistent with EC 1.14.14.154. The database annotation supports the key, but it is a similarity-based assignment, not independent experimental proof.",
-    "evidence_ids": ["C4", "C5", "C9", "H1", "H2", "H4", "H8"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains the canonical cytochrome P450 heme-binding motif (e.g., 'GAGRHRCIGEKFAYLNLTVIVATLVRHLRFHNLDGKKGVPGTDYTSLFSGPLKPTRVGWERRAAKSA' with the FxxGxRxCxG signature), which reliably identifies the protein as a P450 monooxygenase (EC 1.14.14.x). This eliminates B (3.2.1.20, α-glucosidase, a hydrolase) and C (1.1.1.336, a dehydrogenase/reductase) through general enzyme-class reasoning. However, the critical distinction between A (1.14.14.126) and D (1.14.14.154) hinges on the 4th EC digit, which encodes the specific substrate/reaction. Both are P450 monooxygenases; no general sequence feature visible in the input distinguishes which specific 4-digit EC assignment applies.",
-    "missing_item_specific_fact": "The model must know the precise EC 4th-digit assignment for this particular P450: that EC 1.14.14.154 corresponds to fungal sterol 14α-demethylase while EC 1.14.14.126 corresponds to a different specific P450 reaction. This is a database annotation fact, not derivable from sequence motifs alone.",
-    "reason": "General biological knowledge (P450 heme-binding motif recognition) narrows four choices to two (A and D), but the final A-vs-D discrimination requires memorizing or looking up which specific EC 4th-digit number corresponds to the sterol 14α-demethylase reaction versus the alternative P450 reaction. No sequence-derived argument from the supplied input can meaningfully separate 1.14.14.126 from 1.14.14.154."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Both A (1.14.14.126) and D (1.14.14.154) are cytochrome P450 monooxygenases (EC class 1.14.14.x). Without external knowledge of what specific reaction each 4th digit encodes, the sequence alone cannot distinguish them. B and C are clearly eliminable as wrong enzyme classes, but A vs D is an annotation-level distinction."
-  },
-  "important_caveats": [
-    "The UniProt EC assignment (1.14.14.154) carries evidence code ECO:0000250 (similarity), indicating it was inferred by transfer from homologous entries rather than experimentally determined for P0DXU9 itself.",
-    "The UniProt entry was first released 2025-02-05 (entry version 1); the author's source snapshot date is unknown. The sequence has not changed since release.",
-    "The reviewer-only UniProt accession and metadata were absent from the evaluated model input; the model sees only the raw sequence and four EC-number choices.",
-    "The protein is annotated as part of the restricticin biosynthesis cluster (resB) and also described as an ergosterol biosynthesis protein, consistent with a CYP51/sterol 14α-demethylase role."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -517,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXU9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "a64d471b7671e38c6cea7bce97558a2ede1a3a938dacb056f2034f73583fb71d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 511,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "a64d471b7671e38c6cea7bce97558a2ede1a3a938dacb056f2034f73583fb71d",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-02-05",
@@ -548,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "current_source_sequence_sha256": "a64d471b7671e38c6cea7bce97558a2ede1a3a938dacb056f2034f73583fb71d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 511,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "a64d471b7671e38c6cea7bce97558a2ede1a3a938dacb056f2034f73583fb71d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXU9",
   "selected_historical_entry_version": 4,
+  "selected_historical_record_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "selected_historical_source_sequence_length": 511,
+  "selected_historical_source_sequence_sha256": "a64d471b7671e38c6cea7bce97558a2ede1a3a938dacb056f2034f73583fb71d",
   "selected_historical_version": {
     "accession": "P0DXU9",
     "database": "Swiss-Prot",
@@ -566,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RESB_ASPSL",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "selected_historical_source_sequence_sha256": "a64d471b7671e38c6cea7bce97558a2ede1a3a938dacb056f2034f73583fb71d",
-  "selected_historical_source_sequence_length": 511,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 4,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -597,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXU9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -616,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -635,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus sclerotiorum\",\"taxonId\":138282}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -654,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase resB\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Ergosterol biosynthesis protein resB\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Restricticin biosynthesis cluster protein B\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A0L1JEW4\",\"source\":\"UniProtKB\"}],\"value\":\"1.14.14.154\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39105744\",\"source\":\"PubMed\"}],\"value\":\"Sterol 14-alpha demethylase resB\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -673,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q4WNT5\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:54029\"}}],\"reaction\":{\"ecNumber\":\"1.14.14.154\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q4WNT5\",\"source\":\"UniProtKB\"}],\"name\":\"a 14alpha-methyl steroid + 3 reduced [NADPH--hemoprotein reductase] + 3 O2 = a Delta(14) steroid + formate + 3 oxidized [NADPH--hemoprotein reductase] + 4 H2O + 4 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:54028\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15740\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:138029\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:138031\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -692,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:68061\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"a 14alpha-methyl steroid + reduced [NADPH--hemoprotein reductase] + O2 = a 14alpha-hydroxymethyl steroid + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:68060\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:138029\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:176901\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -711,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:68065\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"a 14alpha-hydroxymethyl steroid + reduced [NADPH--hemoprotein reductase] + O2 = a 14alpha-formyl steroid + oxidized [NADPH--hemoprotein reductase] + 2 H2O + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:68064\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:176901\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:176902\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -730,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:68069\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"a 14alpha-formyl steroid + reduced [NADPH--hemoprotein reductase] + O2 = a Delta(14) steroid + formate + oxidized [NADPH--hemoprotein reductase] + H2O + 2 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:68068\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15740\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:138031\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:176902\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -749,15 +499,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q4WNT5\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:25287\"}}],\"reaction\":{\"ecNumber\":\"1.14.14.154\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q4WNT5\",\"source\":\"UniProtKB\"}],\"name\":\"lanosterol + 3 reduced [NADPH--hemoprotein reductase] + 3 O2 = 4,4-dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol + formate + 3 oxidized [NADPH--hemoprotein reductase] + 4 H2O + 4 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:25286\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15740\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16521\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17813\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -768,15 +518,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:75104\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"lanosterol + reduced [NADPH--hemoprotein reductase] + O2 = 32-hydroxylanosterol + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75103\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16521\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:166806\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -787,15 +537,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/7",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:75108\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"32-hydroxylanosterol + reduced [NADPH--hemoprotein reductase] + O2 = 32-oxolanosterol + oxidized [NADPH--hemoprotein reductase] + 2 H2O + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75107\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:166681\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:166806\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/7",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -806,15 +556,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/8",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:75112\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"32-oxolanosterol + reduced [NADPH--hemoprotein reductase] + O2 = 4,4-dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol + formate + oxidized [NADPH--hemoprotein reductase] + H2O + 2 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75111\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15740\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:17813\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:166681\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/8",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -825,15 +575,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/9",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q4WNT5\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:75440\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q4WNT5\",\"source\":\"UniProtKB\"}],\"name\":\"eburicol + 3 reduced [NADPH--hemoprotein reductase] + 3 O2 = 14-demethyleburicol + formate + 3 oxidized [NADPH--hemoprotein reductase] + 4 H2O + 4 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75439\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15740\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:70315\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194330\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/9",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -844,15 +594,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/10",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:75428\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"eburicol + reduced [NADPH--hemoprotein reductase] + O2 = 32-hydroxyeburicol + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75427\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:70315\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194328\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/10",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -863,15 +613,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/11",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:75432\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"32-hydroxyeburicol + reduced [NADPH--hemoprotein reductase] + O2 = 32-oxoeburicol + oxidized [NADPH--hemoprotein reductase] + 2 H2O + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75431\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194328\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194329\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/11",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -882,15 +632,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C16",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/comments/12",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:75436\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10614\",\"source\":\"UniProtKB\"}],\"name\":\"32-oxoeburicol + reduced [NADPH--hemoprotein reductase] + O2 = 14-demethyleburicol + formate + oxidized [NADPH--hemoprotein reductase] + H2O + 2 H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:75435\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15740\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194329\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:194330\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/12",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -901,15 +651,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C17",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json",
-  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
-  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Lu Y.\",\"Li Y.\",\"Dou M.\",\"Liu D.\",\"Lin W.\",\"Fan A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39105744\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c04244\"}],\"citationType\":\"journal article\",\"firstPage\":\"18520\",\"id\":\"39105744\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"18527\",\"publicationDate\":\"2024\",\"title\":\"Discovery of a hybrid molecule with phytotoxic activity by genome mining, heterologous expression, and OSMAC strategy.\",\"volume\":\"72\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:42.593366+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "40d813fd632571e8a780769b1d88199517ade98bc5effc2ac4fd6b84277b29e0",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU9.json"
 }
 ```
 
@@ -919,18 +669,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   RESB_ASPSL              Reviewed;         511 AA.\nAC   P0DXU9;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=Sterol 14-alpha demethylase resB {ECO:0000303|PubMed:39105744};\nDE            EC=1.14.14.154 {ECO:0000250|UniProtKB:A0A0L1JEW4};\nDE   AltName: Full=Cytochrome P450 monooxygenase resB {ECO:0000303|PubMed:39105744};\nDE   AltName: Full=Ergosterol biosynthesis protein resB {ECO:0000303|PubMed:39105744};\nDE   AltName: Full=Restricticin biosynthesis cluster protein B {ECO:0000303|PubMed:39105744};\nGN   Name=resB {ECO:0000303|PubMed:39105744};\nOS   Aspergillus sclerotiorum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=138282;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -940,18 +690,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Sterol 14-alpha demethylase resB {ECO:0000303|PubMed:39105744};\nDE            EC=1.14.14.154 {ECO:0000250|UniProtKB:A0A0L1JEW4};\nDE   AltName: Full=Cytochrome P450 monooxygenase resB {ECO:0000303|PubMed:39105744};\nDE   AltName: Full=Ergosterol biosynthesis protein resB {ECO:0000303|PubMed:39105744};\nDE   AltName: Full=Restricticin biosynthesis cluster protein B {ECO:0000303|PubMed:39105744};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -961,18 +711,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 17-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, AND\nRP   PATHWAY.\nRX   PubMed=39105744; DOI=10.1021/acs.jafc.4c04244;\nRA   Lu Y., Li Y., Dou M., Liu D., Lin W., Fan A.;\nRT   \"Discovery of a hybrid molecule with phytotoxic activity by genome mining,\nRT   heterologous expression, and OSMAC strategy.\";\nRL   J. Agric. Food Chem. 72:18520-18527(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -982,18 +732,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 36-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a 14alpha-methyl steroid + 3 reduced [NADPH--hemoprotein\nCC         reductase] + 3 O2 = a Delta(14) steroid + formate + 3 oxidized\nCC         [NADPH--hemoprotein reductase] + 4 H2O + 4 H(+);\nCC         Xref=Rhea:RHEA:54028, Rhea:RHEA-COMP:11964, Rhea:RHEA-COMP:11965,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:15740, ChEBI:CHEBI:57618, ChEBI:CHEBI:58210,\nCC         ChEBI:CHEBI:138029, ChEBI:CHEBI:138031; EC=1.14.14.154;\nCC         Evidence={ECO:0000250|UniProtKB:Q4WNT5};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:54029;\nCC         Evidence={ECO:0000250|UniProtKB:Q4WNT5};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1003,18 +753,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 47-56",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a 14alpha-methyl steroid + reduced [NADPH--hemoprotein\nCC         reductase] + O2 = a 14alpha-hydroxymethyl steroid + oxidized [NADPH--\nCC         hemoprotein reductase] + H2O + H(+); Xref=Rhea:RHEA:68060, Rhea:RHEA-\nCC         COMP:11964, Rhea:RHEA-COMP:11965, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:15379, ChEBI:CHEBI:57618,\nCC         ChEBI:CHEBI:58210, ChEBI:CHEBI:138029, ChEBI:CHEBI:176901;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:68061;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-56",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1024,18 +774,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 57-66",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a 14alpha-hydroxymethyl steroid + reduced [NADPH--hemoprotein\nCC         reductase] + O2 = a 14alpha-formyl steroid + oxidized [NADPH--\nCC         hemoprotein reductase] + 2 H2O + H(+); Xref=Rhea:RHEA:68064,\nCC         Rhea:RHEA-COMP:11964, Rhea:RHEA-COMP:11965, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:15379, ChEBI:CHEBI:57618,\nCC         ChEBI:CHEBI:58210, ChEBI:CHEBI:176901, ChEBI:CHEBI:176902;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:68065;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 57-66",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1045,18 +795,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 67-76",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a 14alpha-formyl steroid + reduced [NADPH--hemoprotein\nCC         reductase] + O2 = a Delta(14) steroid + formate + oxidized [NADPH--\nCC         hemoprotein reductase] + H2O + 2 H(+); Xref=Rhea:RHEA:68068,\nCC         Rhea:RHEA-COMP:11964, Rhea:RHEA-COMP:11965, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:15379, ChEBI:CHEBI:15740,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:138031,\nCC         ChEBI:CHEBI:176902; Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:68069;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 67-76",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1066,18 +816,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 77-87",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=lanosterol + 3 reduced [NADPH--hemoprotein reductase] + 3 O2 =\nCC         4,4-dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol + formate + 3\nCC         oxidized [NADPH--hemoprotein reductase] + 4 H2O + 4 H(+);\nCC         Xref=Rhea:RHEA:25286, Rhea:RHEA-COMP:11964, Rhea:RHEA-COMP:11965,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:15740, ChEBI:CHEBI:16521, ChEBI:CHEBI:17813,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210; EC=1.14.14.154;\nCC         Evidence={ECO:0000250|UniProtKB:Q4WNT5};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:25287;\nCC         Evidence={ECO:0000250|UniProtKB:Q4WNT5};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1087,18 +837,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 88-96",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=lanosterol + reduced [NADPH--hemoprotein reductase] + O2 = 32-\nCC         hydroxylanosterol + oxidized [NADPH--hemoprotein reductase] + H2O +\nCC         H(+); Xref=Rhea:RHEA:75103, Rhea:RHEA-COMP:11964, Rhea:RHEA-\nCC         COMP:11965, ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:16521, ChEBI:CHEBI:57618, ChEBI:CHEBI:58210,\nCC         ChEBI:CHEBI:166806; Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:75104;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 88-96",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1108,18 +858,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 97-105",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=32-hydroxylanosterol + reduced [NADPH--hemoprotein reductase]\nCC         + O2 = 32-oxolanosterol + oxidized [NADPH--hemoprotein reductase] + 2\nCC         H2O + H(+); Xref=Rhea:RHEA:75107, Rhea:RHEA-COMP:11964, Rhea:RHEA-\nCC         COMP:11965, ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:166681,\nCC         ChEBI:CHEBI:166806; Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:75108;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 97-105",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1129,18 +879,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 106-116",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=32-oxolanosterol + reduced [NADPH--hemoprotein reductase] + O2\nCC         = 4,4-dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol + formate +\nCC         oxidized [NADPH--hemoprotein reductase] + H2O + 2 H(+);\nCC         Xref=Rhea:RHEA:75111, Rhea:RHEA-COMP:11964, Rhea:RHEA-COMP:11965,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:15740, ChEBI:CHEBI:17813, ChEBI:CHEBI:57618,\nCC         ChEBI:CHEBI:58210, ChEBI:CHEBI:166681;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:75112;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 106-116",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1150,18 +900,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 117-126",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=eburicol + 3 reduced [NADPH--hemoprotein reductase] + 3 O2 =\nCC         14-demethyleburicol + formate + 3 oxidized [NADPH--hemoprotein\nCC         reductase] + 4 H2O + 4 H(+); Xref=Rhea:RHEA:75439, Rhea:RHEA-\nCC         COMP:11964, Rhea:RHEA-COMP:11965, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:15379, ChEBI:CHEBI:15740,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:70315,\nCC         ChEBI:CHEBI:194330; Evidence={ECO:0000250|UniProtKB:Q4WNT5};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:75440;\nCC         Evidence={ECO:0000250|UniProtKB:Q4WNT5};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 117-126",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1171,18 +921,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H13",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 127-135",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=eburicol + reduced [NADPH--hemoprotein reductase] + O2 = 32-\nCC         hydroxyeburicol + oxidized [NADPH--hemoprotein reductase] + H2O +\nCC         H(+); Xref=Rhea:RHEA:75427, Rhea:RHEA-COMP:11964, Rhea:RHEA-\nCC         COMP:11965, ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:70315,\nCC         ChEBI:CHEBI:194328; Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:75428;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 127-135",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1192,18 +942,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H14",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 136-144",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=32-hydroxyeburicol + reduced [NADPH--hemoprotein reductase] +\nCC         O2 = 32-oxoeburicol + oxidized [NADPH--hemoprotein reductase] + 2 H2O\nCC         + H(+); Xref=Rhea:RHEA:75431, Rhea:RHEA-COMP:11964, Rhea:RHEA-\nCC         COMP:11965, ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:194328,\nCC         ChEBI:CHEBI:194329; Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:75432;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 136-144",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 
@@ -1213,18 +963,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H15",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4",
-  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
-  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
-  "source_locator": "lines 145-154",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=32-oxoeburicol + reduced [NADPH--hemoprotein reductase] + O2 =\nCC         14-demethyleburicol + formate + oxidized [NADPH--hemoprotein\nCC         reductase] + H2O + 2 H(+); Xref=Rhea:RHEA:75435, Rhea:RHEA-\nCC         COMP:11964, Rhea:RHEA-COMP:11965, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:15379, ChEBI:CHEBI:15740,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:194329,\nCC         ChEBI:CHEBI:194330; Evidence={ECO:0000250|UniProtKB:P10614};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:75436;\nCC         Evidence={ECO:0000250|UniProtKB:P10614};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:47.314530+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 145-154",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2a6568f1e723fcdca7476452cdc9b1cfa3524cc0d46266999459913d20ccaeb0",
+  "url": "https://rest.uniprot.org/unisave/P0DXU9?format=txt&versions=4"
 }
 ```
 

@@ -1,18 +1,16 @@
-# catalytic_activity_0011: before and after transfer clarification
+# catalytic_activity_0011
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0011.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0011.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside residues in alpha-L-arabinosides.
+**Expected answer:** **B** — Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside residues in alpha-L-arabinosides.
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt entry for this protein, which identifies it as alpha-L-arabinofuranosidase 43 and assigns the exact reaction in choice B. The catalytic-activity annotation cites experimental evidence (ECO:0000269) and a biochemical characterization paper.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is compatible with a secreted fungal enzyme, but that broad context does not establish which specific glycosidic bond or substrate it acts on. It does not meaningfully distinguish choice B from the other enzyme reactions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic annotation or experimental substrate-activity characterization identifying this sequence as an alpha-L-arabinofuranosidase.
-
-
-**Reason**
-
-> Selecting B requires knowing the function of this particular protein; the supplied sequence and choices alone provide no sufficiently discriminating biological argument.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The cited catalytic-activity annotation matches choice B specifically; the other choices describe different reactions.
-
-
-### Important caveats
-
-- The supporting UniProt evidence is reviewer-only and was not supplied to the evaluated model.
-- The sequence match establishes applicability of the annotation to the supplied sequence, but the underlying primary paper was not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is compatible with a secreted fungal enzyme, but that broad context does not establish which specific glycosidic bond or substrate it acts on. It does not meaningfully distinguish choice B from the other enzyme reactions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic annotation or experimental substrate-activity characterization identifying this sequence as an alpha-L-arabinofuranosidase.",
-    "reason": "Selecting B requires knowing the function of this particular protein; the supplied sequence and choices alone provide no sufficiently discriminating biological argument."
-  },
-  "case_id": "catalytic_activity_0011",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for this protein, which identifies it as alpha-L-arabinofuranosidase 43 and assigns the exact reaction in choice B. The catalytic-activity annotation cites experimental evidence (ECO:0000269) and a biochemical characterization paper."
-  },
-  "important_caveats": [
-    "The supporting UniProt evidence is reviewer-only and was not supplied to the evaluated model.",
-    "The sequence match establishes applicability of the annotation to the supplied sequence, but the underlying primary paper was not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited catalytic-activity annotation matches choice B specifically; the other choices describe different reactions."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0011",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for this protein, which identifies it as alpha-L-arabinofuranosidase 43 and assigns the exact reaction in choice B. The catalytic-activity annotation cites experimental evidence (ECO:0000269) and a biochemical characterization paper.",
-    "evidence_ids": ["C4", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is compatible with a secreted fungal enzyme, but that broad context does not establish which specific glycosidic bond or substrate it acts on. It does not meaningfully distinguish choice B from the other enzyme reactions.",
-    "missing_item_specific_fact": "The protein-specific catalytic annotation or experimental substrate-activity characterization identifying this sequence as an alpha-L-arabinofuranosidase.",
-    "reason": "Selecting B requires knowing the function of this particular protein; the supplied sequence and choices alone provide no sufficiently discriminating biological argument."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited catalytic-activity annotation matches choice B specifically; the other choices describe different reactions."
-  },
-  "important_caveats": [
-    "The supporting UniProt evidence is reviewer-only and was not supplied to the evaluated model.",
-    "The sequence match establishes applicability of the annotation to the supplied sequence, but the underlying primary paper was not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A0F6NRE2 (sequence SHA256 matches exactly) is annotated as Alpha-L-arabinofuranosidase 43, EC 3.2.1.55, with catalytic activity 'Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside residues in alpha-L-arabinosides.' The annotation is backed by experimental evidence (ECO:0000269, PubMed:25432346 — a 2015 biochemical characterization paper reporting FUNCTION, CATALYTIC ACTIVITY, and SUBSTRATE SPECIFICITY). The expected answer B matches the UniProt catalytic activity comment verbatim.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Option C (epimerase reaction) can be eliminated by general reasoning since it is an isomerization, not a hydrolysis, and the protein has a signal peptide suggesting a secreted hydrolase. However, distinguishing option B (alpha-L-arabinofuranosidase, GH43 family, beta-propeller fold) from options A/D (beta-glucosidase, GH1/GH3 families, TIM-barrel fold) from primary sequence alone requires identifying the specific glycoside hydrolase family and its substrate specificity. The linear sequence does not contain an obvious, universally-recognized motif that unambiguously separates a GH43 arabinofuranosidase from a GH1/GH3 glucosidase without specialized family-motif knowledge or database search.
-
-
-**Missing item-specific fact**
-
-> The specific GH family assignment (GH43 vs GH1/GH3) and the experimentally determined substrate preference (alpha-L-arabinofuranoside vs beta-glucoside) for this particular protein. This is recorded in UniProt as EC 3.2.1.55 with experimental evidence from PubMed:25432346, but is not derivable from the linear sequence by general biological reasoning alone.
-
-
-**Reason**
-
-> While a knowledgeable model might note the protein is a secreted fungal glycoside hydrolase (eliminating C), the critical choice between arabinofuranosidase (B) and glucosidase (A/D) depends on recognizing GH43-specific sequence signatures or recalling the database annotation. The sequence lacks a single, general-knowledge-derivable feature that cleanly separates these two enzyme classes without specialized family-level motif knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option C is clearly eliminable (isomerization vs. hydrolysis). Options A and D are both beta-glucosidase activities differing only in substrate (deacetylipecoside vs. ipecoside); if the enzyme were a glucosidase, further specificity would be needed, but since the correct answer is an arabinofuranosidase, A and D are both wrong for the same fundamental reason (wrong sugar specificity). No two options are equally defensible given the experimental annotation.
-
-
-### Important caveats
-
-- The UniProt annotation is backed by direct experimental evidence (ECO:0000269), not merely computational inference, strengthening the key's validity.
-- The sequence match is exact (SHA256 confirmed), so the annotation applies directly to the supplied sequence.
-- Options A and D are near-duplicates differing only in substrate name; this redundancy slightly reduces the effective number of distinct choices but does not affect the correctness of B.
-- The reviewer-only evidence was not available to the evaluated model; the model must rely solely on the 481-aa sequence and general biological knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Option C (epimerase reaction) can be eliminated by general reasoning since it is an isomerization, not a hydrolysis, and the protein has a signal peptide suggesting a secreted hydrolase. However, distinguishing option B (alpha-L-arabinofuranosidase, GH43 family, beta-propeller fold) from options A/D (beta-glucosidase, GH1/GH3 families, TIM-barrel fold) from primary sequence alone requires identifying the specific glycoside hydrolase family and its substrate specificity. The linear sequence does not contain an obvious, universally-recognized motif that unambiguously separates a GH43 arabinofuranosidase from a GH1/GH3 glucosidase without specialized family-motif knowledge or database search.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific GH family assignment (GH43 vs GH1/GH3) and the experimentally determined substrate preference (alpha-L-arabinofuranoside vs beta-glucoside) for this particular protein. This is recorded in UniProt as EC 3.2.1.55 with experimental evidence from PubMed:25432346, but is not derivable from the linear sequence by general biological reasoning alone.",
-    "reason": "While a knowledgeable model might note the protein is a secreted fungal glycoside hydrolase (eliminating C), the critical choice between arabinofuranosidase (B) and glucosidase (A/D) depends on recognizing GH43-specific sequence signatures or recalling the database annotation. The sequence lacks a single, general-knowledge-derivable feature that cleanly separates these two enzyme classes without specialized family-level motif knowledge."
-  },
-  "case_id": "catalytic_activity_0011",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A0F6NRE2 (sequence SHA256 matches exactly) is annotated as Alpha-L-arabinofuranosidase 43, EC 3.2.1.55, with catalytic activity 'Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside residues in alpha-L-arabinosides.' The annotation is backed by experimental evidence (ECO:0000269, PubMed:25432346 — a 2015 biochemical characterization paper reporting FUNCTION, CATALYTIC ACTIVITY, and SUBSTRATE SPECIFICITY). The expected answer B matches the UniProt catalytic activity comment verbatim."
-  },
-  "important_caveats": [
-    "The UniProt annotation is backed by direct experimental evidence (ECO:0000269), not merely computational inference, strengthening the key's validity.",
-    "The sequence match is exact (SHA256 confirmed), so the annotation applies directly to the supplied sequence.",
-    "Options A and D are near-duplicates differing only in substrate name; this redundancy slightly reduces the effective number of distinct choices but does not affect the correctness of B.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must rely solely on the 481-aa sequence and general biological knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option C is clearly eliminable (isomerization vs. hydrolysis). Options A and D are both beta-glucosidase activities differing only in substrate (deacetylipecoside vs. ipecoside); if the enzyme were a glucosidase, further specificity would be needed, but since the correct answer is an arabinofuranosidase, A and D are both wrong for the same fundamental reason (wrong sugar specificity). No two options are equally defensible given the experimental annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0011",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A0F6NRE2 (sequence SHA256 matches exactly) is annotated as Alpha-L-arabinofuranosidase 43, EC 3.2.1.55, with catalytic activity 'Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside residues in alpha-L-arabinosides.' The annotation is backed by experimental evidence (ECO:0000269, PubMed:25432346 — a 2015 biochemical characterization paper reporting FUNCTION, CATALYTIC ACTIVITY, and SUBSTRATE SPECIFICITY). The expected answer B matches the UniProt catalytic activity comment verbatim.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Option C (epimerase reaction) can be eliminated by general reasoning since it is an isomerization, not a hydrolysis, and the protein has a signal peptide suggesting a secreted hydrolase. However, distinguishing option B (alpha-L-arabinofuranosidase, GH43 family, beta-propeller fold) from options A/D (beta-glucosidase, GH1/GH3 families, TIM-barrel fold) from primary sequence alone requires identifying the specific glycoside hydrolase family and its substrate specificity. The linear sequence does not contain an obvious, universally-recognized motif that unambiguously separates a GH43 arabinofuranosidase from a GH1/GH3 glucosidase without specialized family-motif knowledge or database search.",
-    "missing_item_specific_fact": "The specific GH family assignment (GH43 vs GH1/GH3) and the experimentally determined substrate preference (alpha-L-arabinofuranoside vs beta-glucoside) for this particular protein. This is recorded in UniProt as EC 3.2.1.55 with experimental evidence from PubMed:25432346, but is not derivable from the linear sequence by general biological reasoning alone.",
-    "reason": "While a knowledgeable model might note the protein is a secreted fungal glycoside hydrolase (eliminating C), the critical choice between arabinofuranosidase (B) and glucosidase (A/D) depends on recognizing GH43-specific sequence signatures or recalling the database annotation. The sequence lacks a single, general-knowledge-derivable feature that cleanly separates these two enzyme classes without specialized family-level motif knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option C is clearly eliminable (isomerization vs. hydrolysis). Options A and D are both beta-glucosidase activities differing only in substrate (deacetylipecoside vs. ipecoside); if the enzyme were a glucosidase, further specificity would be needed, but since the correct answer is an arabinofuranosidase, A and D are both wrong for the same fundamental reason (wrong sugar specificity). No two options are equally defensible given the experimental annotation."
-  },
-  "important_caveats": [
-    "The UniProt annotation is backed by direct experimental evidence (ECO:0000269), not merely computational inference, strengthening the key's validity.",
-    "The sequence match is exact (SHA256 confirmed), so the annotation applies directly to the supplied sequence.",
-    "Options A and D are near-duplicates differing only in substrate name; this redundancy slightly reduces the effective number of distinct choices but does not affect the correctness of B.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must rely solely on the 481-aa sequence and general biological knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0F6NRE2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "efd85220c51ae8e2d4df41ea461e48e55871a7e19bea12dd82ed3d57fade9b46",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 481,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "efd85220c51ae8e2d4df41ea461e48e55871a7e19bea12dd82ed3d57fade9b46",
   "current_entry_audit": {
     "entryVersion": 18,
     "firstPublicDate": "2025-02-05",
@@ -536,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2015-07-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
-  "current_source_sequence_sha256": "efd85220c51ae8e2d4df41ea461e48e55871a7e19bea12dd82ed3d57fade9b46",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 481,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "efd85220c51ae8e2d4df41ea461e48e55871a7e19bea12dd82ed3d57fade9b46",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 16,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0F6NRE2",
   "selected_historical_entry_version": 16,
+  "selected_historical_record_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
+  "selected_historical_source_sequence_length": 481,
+  "selected_historical_source_sequence_sha256": "efd85220c51ae8e2d4df41ea461e48e55871a7e19bea12dd82ed3d57fade9b46",
   "selected_historical_version": {
     "accession": "A0A0F6NRE2",
     "database": "Swiss-Prot",
@@ -554,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ABF43_HUMIN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
-  "selected_historical_source_sequence_sha256": "efd85220c51ae8e2d4df41ea461e48e55871a7e19bea12dd82ed3d57fade9b46",
-  "selected_historical_source_sequence_length": 481,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 16,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json",
-  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
-  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0F6NRE2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json"
 }
 ```
 
@@ -604,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json",
-  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
-  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":18,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2015-07-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json"
 }
 ```
 
@@ -623,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json",
-  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
-  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soft-rot fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Mycothermus\"],\"scientificName\":\"Humicola insolens\",\"taxonId\":85995}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json"
 }
 ```
 
@@ -642,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json",
-  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
-  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25432346\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.55\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"25432346\",\"source\":\"PubMed\"}],\"value\":\"Alpha-L-arabinofuranosidase 43\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json"
 }
 ```
 
@@ -661,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json",
-  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
-  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.55\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25432346\",\"source\":\"PubMed\"}],\"name\":\"Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside residues in alpha-L-arabinosides.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json"
 }
 ```
 
@@ -680,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json",
-  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
-  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Yang X.\",\"Shi P.\",\"Ma R.\",\"Luo H.\",\"Huang H.\",\"Yang P.\",\"Yao B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25432346\"},{\"database\":\"DOI\",\"id\":\"10.1007/s12010-014-1416-y\"}],\"citationType\":\"journal article\",\"firstPage\":\"1960\",\"id\":\"25432346\",\"journal\":\"Appl. Biochem. Biotechnol.\",\"lastPage\":\"1970\",\"publicationDate\":\"2015\",\"title\":\"A new GH43 alpha-arabinofuranosidase from Humicola insolens Y1: biochemical characterization and synergistic action with a xylanase on xylan degradation.\",\"volume\":\"175\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Y1\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBSTRATE SPECIFICITY\",\"ACTIVITY REGULATION\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:39.416033+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e5d7a5da3b1ff99ca8b412999f2a1323097b0d9e9e57580eff71e52a00dd55d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F6NRE2.json"
 }
 ```
 
@@ -698,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16",
-  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
-  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   ABF43_HUMIN             Reviewed;         481 AA.\nAC   A0A0F6NRE2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-JUL-2015, sequence version 1.\nDT   28-JAN-2026, entry version 16.\nDE   RecName: Full=Alpha-L-arabinofuranosidase 43 {ECO:0000303|PubMed:25432346};\nDE            EC=3.2.1.55 {ECO:0000269|PubMed:25432346};\nDE   Flags: Precursor;\nGN   Name=Abf43 {ECO:0000303|PubMed:25432346};\nOS   Humicola insolens (Soft-rot fungus).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Mycothermus.\nOX   NCBI_TaxID=85995;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16"
 }
 ```
 
@@ -719,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16",
-  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
-  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Alpha-L-arabinofuranosidase 43 {ECO:0000303|PubMed:25432346};\nDE            EC=3.2.1.55 {ECO:0000269|PubMed:25432346};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16"
 }
 ```
 
@@ -740,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16",
-  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
-  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
-  "source_locator": "lines 14-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBSTRATE SPECIFICITY, ACTIVITY REGULATION,\nRP   AND BIOTECHNOLOGY.\nRC   STRAIN=Y1;\nRX   PubMed=25432346; DOI=10.1007/s12010-014-1416-y;\nRA   Yang X., Shi P., Ma R., Luo H., Huang H., Yang P., Yao B.;\nRT   \"A new GH43 alpha-arabinofuranosidase from Humicola insolens Y1:\nRT   biochemical characterization and synergistic action with a xylanase on\nRT   xylan degradation.\";\nRL   Appl. Biochem. Biotechnol. 175:1960-1970(2015).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16"
 }
 ```
 
@@ -761,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16",
-  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
-  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
-  "source_locator": "lines 29-32",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Hydrolysis of terminal non-reducing alpha-L-arabinofuranoside\nCC         residues in alpha-L-arabinosides.; EC=3.2.1.55;\nCC         Evidence={ECO:0000269|PubMed:25432346};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-01T06:27:19.078830+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-32",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2af4853fef65af58c3afa6566598fc0146a0bf2f1579d5b2b0a183cc992d117c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F6NRE2?format=txt&versions=16"
 }
 ```
 

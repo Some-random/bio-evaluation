@@ -1,18 +1,16 @@
-# GO_cellular_component_0178: before and after transfer clarification
+# GO_cellular_component_0178
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0178.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0178.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — primosome complex
+**Expected answer:** **D** — primosome complex
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry for bacterial replication restart protein PriA, and that entry annotates it to the primosome complex. The GO annotation is computational (IEA:UniProtKB-UniRule), not direct experimental evidence of localization, but it supports the keyed choice.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a soluble ATP-dependent helicase, which makes the membrane and synapse choices implausible. But that general inference does not establish membership in the specific primosome complex.
-
-
-**Missing item-specific fact**
-
-> The protein's identity and function as PriA, a replication-restart helicase associated with the primosome, or an equivalent protein-specific annotation.
-
-
-**Reason**
-
-> Choosing D over the broad intracellular alternatives depends on identifying the particular protein or knowing its complex association; those facts are not explicitly supplied in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, the primosome complex is supported for this sequence; the other options describe eukaryotic membrane or synaptic components inconsistent with the bacterial protein.
-
-
-### Important caveats
-
-- The primosome annotation is computationally assigned by UniRule, not shown here as a direct experimental localization measurement.
-- The reviewer-only sequence match and annotation support the answer key but were not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a soluble ATP-dependent helicase, which makes the membrane and synapse choices implausible. But that general inference does not establish membership in the specific primosome complex.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity and function as PriA, a replication-restart helicase associated with the primosome, or an equivalent protein-specific annotation.",
-    "reason": "Choosing D over the broad intracellular alternatives depends on identifying the particular protein or knowing its complex association; those facts are not explicitly supplied in the question."
-  },
-  "case_id": "GO_cellular_component_0178",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry for bacterial replication restart protein PriA, and that entry annotates it to the primosome complex. The GO annotation is computational (IEA:UniProtKB-UniRule), not direct experimental evidence of localization, but it supports the keyed choice."
-  },
-  "important_caveats": [
-    "The primosome annotation is computationally assigned by UniRule, not shown here as a direct experimental localization measurement.",
-    "The reviewer-only sequence match and annotation support the answer key but were not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the primosome complex is supported for this sequence; the other options describe eukaryotic membrane or synaptic components inconsistent with the bacterial protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0178",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry for bacterial replication restart protein PriA, and that entry annotates it to the primosome complex. The GO annotation is computational (IEA:UniProtKB-UniRule), not direct experimental evidence of localization, but it supports the keyed choice.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a soluble ATP-dependent helicase, which makes the membrane and synapse choices implausible. But that general inference does not establish membership in the specific primosome complex.",
-    "missing_item_specific_fact": "The protein's identity and function as PriA, a replication-restart helicase associated with the primosome, or an equivalent protein-specific annotation.",
-    "reason": "Choosing D over the broad intracellular alternatives depends on identifying the particular protein or knowing its complex association; those facts are not explicitly supplied in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the primosome complex is supported for this sequence; the other options describe eukaryotic membrane or synaptic components inconsistent with the bacterial protein."
-  },
-  "important_caveats": [
-    "The primosome annotation is computationally assigned by UniRule, not shown here as a direct experimental localization measurement.",
-    "The reviewer-only sequence match and annotation support the answer key but were not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A6TGC5 annotates this protein (Replication restart protein PriA, EC 5.6.2.4) with GO:1990077 'primosome complex' (evidence IEA:UniProtKB-UniRule). The GO term definition describes protein complexes forming at stalled replication forks for replication restart, which matches PriA's well-established function. Structural evidence (PDB 4NL4, 4NL8) shows PriA in complex with SSB, consistent with primosome membership. The annotation is computational (IEA) rather than direct experimental, but PriA's role in the primosome is strongly supported by literature and structural biology.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [GO4](#evidence-go4), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The three distractors (early endosome membrane, host cell plasma membrane, glutamatergic synapse) are all eukaryotic-specific cellular structures. Klebsiella pneumoniae is a bacterium with no endosomes, no synapses, and no 'host cell plasma membrane' (a term describing viral context in eukaryotic hosts). This eliminates A, B, and C by basic organism biology. Additionally, the sequence contains a Walker A motif (ITGSGKTEVYLS), a Walker B-like motif (DEHDSSYK), and multiple zinc-binding motifs (CHDCGWIAECPRCDSYYTLHQAQHHLRCHHCDSQRPIPRQCPSCG), which are hallmarks of a RecA-like helicase/ATPase involved in DNA metabolism—consistent with a primosome-associated replication restart helicase. Among the four options, only 'primosome complex' (D) is a structure that exists in bacteria and matches a DNA helicase.
-
-
-**Missing item-specific fact**
-
-> None critical. Identifying the protein as specifically PriA (rather than any helicase) would require database lookup, but the elimination logic from organism type plus helicase motifs sufficiently distinguishes D from the three eukaryotic-only distractors.
-
-
-**Reason**
-
-> A model with general biological knowledge can (1) recognize the sequence is bacterial (no eukaryotic targeting signals, prokaryotic codon usage patterns), (2) eliminate A, B, C as eukaryotic-only structures, and (3) note helicase/ATPase motifs supporting a replication-complex assignment. The answer is reachable through reasoning without memorizing the specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only one option (D, primosome complex) is compatible with a bacterial protein. The other three are strictly eukaryotic structures, leaving no ambiguity among the choices.
-
-
-### Important caveats
-
-- The GO annotation for primosome complex is IEA (Inferred from Electronic Annotation via UniRule), not direct experimental evidence, though PriA's primosome role is well-supported by structural and biochemical literature.
-- The reviewer identified the accession (A6TGC5) from dataset image-path metadata; this was not available to the evaluated model.
-- The reasoning relies on recognizing the protein as bacterial and identifying helicase motifs; a model that fails to notice the Walker A motif or the organism context might struggle, though the elimination of three eukaryotic-only options remains a valid path.
-- The 'host cell plasma membrane' term (GO:0020002) is defined in a viral/host context and is not applicable to a standalone bacterial protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The three distractors (early endosome membrane, host cell plasma membrane, glutamatergic synapse) are all eukaryotic-specific cellular structures. Klebsiella pneumoniae is a bacterium with no endosomes, no synapses, and no 'host cell plasma membrane' (a term describing viral context in eukaryotic hosts). This eliminates A, B, and C by basic organism biology. Additionally, the sequence contains a Walker A motif (ITGSGKTEVYLS), a Walker B-like motif (DEHDSSYK), and multiple zinc-binding motifs (CHDCGWIAECPRCDSYYTLHQAQHHLRCHHCDSQRPIPRQCPSCG), which are hallmarks of a RecA-like helicase/ATPase involved in DNA metabolism—consistent with a primosome-associated replication restart helicase. Among the four options, only 'primosome complex' (D) is a structure that exists in bacteria and matches a DNA helicase.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. Identifying the protein as specifically PriA (rather than any helicase) would require database lookup, but the elimination logic from organism type plus helicase motifs sufficiently distinguishes D from the three eukaryotic-only distractors.",
-    "reason": "A model with general biological knowledge can (1) recognize the sequence is bacterial (no eukaryotic targeting signals, prokaryotic codon usage patterns), (2) eliminate A, B, C as eukaryotic-only structures, and (3) note helicase/ATPase motifs supporting a replication-complex assignment. The answer is reachable through reasoning without memorizing the specific UniProt entry."
-  },
-  "case_id": "GO_cellular_component_0178",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "GO4",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A6TGC5 annotates this protein (Replication restart protein PriA, EC 5.6.2.4) with GO:1990077 'primosome complex' (evidence IEA:UniProtKB-UniRule). The GO term definition describes protein complexes forming at stalled replication forks for replication restart, which matches PriA's well-established function. Structural evidence (PDB 4NL4, 4NL8) shows PriA in complex with SSB, consistent with primosome membership. The annotation is computational (IEA) rather than direct experimental, but PriA's role in the primosome is strongly supported by literature and structural biology."
-  },
-  "important_caveats": [
-    "The GO annotation for primosome complex is IEA (Inferred from Electronic Annotation via UniRule), not direct experimental evidence, though PriA's primosome role is well-supported by structural and biochemical literature.",
-    "The reviewer identified the accession (A6TGC5) from dataset image-path metadata; this was not available to the evaluated model.",
-    "The reasoning relies on recognizing the protein as bacterial and identifying helicase motifs; a model that fails to notice the Walker A motif or the organism context might struggle, though the elimination of three eukaryotic-only options remains a valid path.",
-    "The 'host cell plasma membrane' term (GO:0020002) is defined in a viral/host context and is not applicable to a standalone bacterial protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only one option (D, primosome complex) is compatible with a bacterial protein. The other three are strictly eukaryotic structures, leaving no ambiguity among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0178",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A6TGC5 annotates this protein (Replication restart protein PriA, EC 5.6.2.4) with GO:1990077 'primosome complex' (evidence IEA:UniProtKB-UniRule). The GO term definition describes protein complexes forming at stalled replication forks for replication restart, which matches PriA's well-established function. Structural evidence (PDB 4NL4, 4NL8) shows PriA in complex with SSB, consistent with primosome membership. The annotation is computational (IEA) rather than direct experimental, but PriA's role in the primosome is strongly supported by literature and structural biology.",
-    "evidence_ids": ["C4", "C5", "C6", "GO4", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The three distractors (early endosome membrane, host cell plasma membrane, glutamatergic synapse) are all eukaryotic-specific cellular structures. Klebsiella pneumoniae is a bacterium with no endosomes, no synapses, and no 'host cell plasma membrane' (a term describing viral context in eukaryotic hosts). This eliminates A, B, and C by basic organism biology. Additionally, the sequence contains a Walker A motif (ITGSGKTEVYLS), a Walker B-like motif (DEHDSSYK), and multiple zinc-binding motifs (CHDCGWIAECPRCDSYYTLHQAQHHLRCHHCDSQRPIPRQCPSCG), which are hallmarks of a RecA-like helicase/ATPase involved in DNA metabolism—consistent with a primosome-associated replication restart helicase. Among the four options, only 'primosome complex' (D) is a structure that exists in bacteria and matches a DNA helicase.",
-    "missing_item_specific_fact": "None critical. Identifying the protein as specifically PriA (rather than any helicase) would require database lookup, but the elimination logic from organism type plus helicase motifs sufficiently distinguishes D from the three eukaryotic-only distractors.",
-    "reason": "A model with general biological knowledge can (1) recognize the sequence is bacterial (no eukaryotic targeting signals, prokaryotic codon usage patterns), (2) eliminate A, B, C as eukaryotic-only structures, and (3) note helicase/ATPase motifs supporting a replication-complex assignment. The answer is reachable through reasoning without memorizing the specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only one option (D, primosome complex) is compatible with a bacterial protein. The other three are strictly eukaryotic structures, leaving no ambiguity among the choices."
-  },
-  "important_caveats": [
-    "The GO annotation for primosome complex is IEA (Inferred from Electronic Annotation via UniRule), not direct experimental evidence, though PriA's primosome role is well-supported by structural and biochemical literature.",
-    "The reviewer identified the accession (A6TGC5) from dataset image-path metadata; this was not available to the evaluated model.",
-    "The reasoning relies on recognizing the protein as bacterial and identifying helicase motifs; a model that fails to notice the Walker A motif or the organism context might struggle, though the elimination of three eukaryotic-only options remains a valid path.",
-    "The 'host cell plasma membrane' term (GO:0020002) is defined in a viral/host context and is not applicable to a standalone bacterial protein."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A6TGC5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b2380b00e1db13b71a8d25d047aeeaedeb18f37644b3d05f6dae89a8ab7f1dfe",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 731,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b2380b00e1db13b71a8d25d047aeeaedeb18f37644b3d05f6dae89a8ab7f1dfe",
   "current_entry_audit": {
     "entryVersion": 117,
     "firstPublicDate": "2025-04-09",
@@ -538,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-08-21",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
-  "current_source_sequence_sha256": "b2380b00e1db13b71a8d25d047aeeaedeb18f37644b3d05f6dae89a8ab7f1dfe",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 731,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b2380b00e1db13b71a8d25d047aeeaedeb18f37644b3d05f6dae89a8ab7f1dfe",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 115,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A6TGC5",
   "selected_historical_entry_version": 115,
+  "selected_historical_record_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
+  "selected_historical_source_sequence_length": 731,
+  "selected_historical_source_sequence_sha256": "b2380b00e1db13b71a8d25d047aeeaedeb18f37644b3d05f6dae89a8ab7f1dfe",
   "selected_historical_version": {
     "accession": "A6TGC5",
     "database": "Swiss-Prot",
@@ -556,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PRIA_KLEP7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
-  "selected_historical_source_sequence_sha256": "b2380b00e1db13b71a8d25d047aeeaedeb18f37644b3d05f6dae89a8ab7f1dfe",
-  "selected_historical_source_sequence_length": 731,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 115,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json",
-  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
-  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A6TGC5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
+  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json"
 }
 ```
 
@@ -610,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json",
-  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
-  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":117,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-08-21\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
+  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json"
 }
 ```
 
@@ -629,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json",
-  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
-  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Enterobacterales\",\"Enterobacteriaceae\",\"Klebsiella\",\"Klebsiella pneumoniae complex\"],\"scientificName\":\"Klebsiella pneumoniae subsp. pneumoniae (strain ATCC 700721 / MGH 78578)\",\"taxonId\":272620}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
+  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json"
 }
 ```
 
@@ -648,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json",
-  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
-  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_00983\",\"source\":\"HAMAP-Rule\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"24379377\",\"source\":\"PubMed\"}],\"value\":\"5.6.2.4\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_00983\",\"source\":\"HAMAP-Rule\"}],\"value\":\"ATP-dependent DNA helicase PriA\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_00983\",\"source\":\"HAMAP-Rule\"},{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DNA 3'-5' helicase PriA\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24379377\",\"source\":\"PubMed\"}],\"value\":\"PriA DNA helicase\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_00983\",\"source\":\"HAMAP-Rule\"}],\"value\":\"Replication restart protein PriA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
+  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json"
 }
 ```
 
@@ -667,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json",
-  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
-  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:1990077\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:primosome complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-UniRule\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
+  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json"
 }
 ```
 
@@ -686,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json",
-  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
-  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bhattacharyya B.\",\"George N.P.\",\"Thurmes T.M.\",\"Zhou R.\",\"Jani N.\",\"Wessel S.R.\",\"Sandler S.J.\",\"Ha T.\",\"Keck J.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24379377\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.1318001111\"}],\"citationType\":\"journal article\",\"firstPage\":\"1373\",\"id\":\"24379377\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"1378\",\"publicationDate\":\"2014\",\"title\":\"Structural mechanisms of PriA-mediated DNA replication restart.\",\"volume\":\"111\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"4NL4\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"4NL8\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700721 / MGH 78578\"}],\"referenceNumber\":3,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.65 ANGSTROMS) IN COMPLEX WITH ADP AND ZN(2+)\",\"X-RAY CRYSTALLOGRAPHY (4.08 ANGSTROMS) IN COMPLEX WITH SSB\",\"FUNCTION AS AN ATPASE\",\"CATALYTIC ACTIVITY\",\"DOMAIN\",\"DNA-BINDING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:27:05.788123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6b4633bf75f6bfd60571af6aec15eee826dbfa4328f9de5dd2c25ee8c8147e5d",
+  "url": "https://rest.uniprot.org/uniprotkb/A6TGC5.json"
 }
 ```
 
@@ -704,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 115,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A6TGC5?format=txt&versions=115",
-  "source_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
-  "retrieved_utc": "2026-11-02T04:27:08.474025+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   PRIA_KLEP7              Reviewed;         731 AA.\nAC   A6TGC5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   21-AUG-2007, sequence version 1.\nDT   28-JAN-2026, entry version 115.\nDE   RecName: Full=Replication restart protein PriA {ECO:0000255|HAMAP-Rule:MF_00983};\nDE   AltName: Full=ATP-dependent DNA helicase PriA {ECO:0000255|HAMAP-Rule:MF_00983};\nDE            EC=5.6.2.4 {ECO:0000255|HAMAP-Rule:MF_00983, ECO:0000305|PubMed:24379377};\nDE   AltName: Full=DNA 3'-5' helicase PriA {ECO:0000255|HAMAP-Rule:MF_00983, ECO:0000305};\nDE   AltName: Full=PriA DNA helicase {ECO:0000303|PubMed:24379377};\nGN   Name=priA {ECO:0000255|HAMAP-Rule:MF_00983, ECO:0000312|EMBL:ABR79609.1};\nGN   ORFNames=KPN_04230 {ECO:0000312|EMBL:ABR79609.1};\nOS   Klebsiella pneumoniae subsp. pneumoniae (strain ATCC 700721 / MGH 78578).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Enterobacterales; Enterobacteriaceae; Klebsiella/Raoultella group;\nOC   Klebsiella; Klebsiella pneumoniae complex.\nOX   NCBI_TaxID=272620;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 115,
+  "retrieved_utc": "2026-11-02T04:27:08.474025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
+  "url": "https://rest.uniprot.org/unisave/A6TGC5?format=txt&versions=115"
 }
 ```
 
@@ -725,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 115,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A6TGC5?format=txt&versions=115",
-  "source_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
-  "retrieved_utc": "2026-11-02T04:27:08.474025+00:00",
-  "source_locator": "lines 31-40",
   "excerpt": "RN   [3] {ECO:0007744|PDB:4NL4, ECO:0007744|PDB:4NL8}\nRP   X-RAY CRYSTALLOGRAPHY (2.65 ANGSTROMS) IN COMPLEX WITH ADP AND ZN(2+),\nRP   X-RAY CRYSTALLOGRAPHY (4.08 ANGSTROMS) IN COMPLEX WITH SSB, FUNCTION AS AN\nRP   ATPASE, CATALYTIC ACTIVITY, DOMAIN, AND DNA-BINDING.\nRC   STRAIN=ATCC 700721 / MGH 78578;\nRX   PubMed=24379377; DOI=10.1073/pnas.1318001111;\nRA   Bhattacharyya B., George N.P., Thurmes T.M., Zhou R., Jani N., Wessel S.R.,\nRA   Sandler S.J., Ha T., Keck J.L.;\nRT   \"Structural mechanisms of PriA-mediated DNA replication restart.\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 111:1373-1378(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 115,
+  "retrieved_utc": "2026-11-02T04:27:08.474025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
+  "url": "https://rest.uniprot.org/unisave/A6TGC5?format=txt&versions=115"
 }
 ```
 
@@ -746,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 115,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A6TGC5?format=txt&versions=115",
-  "source_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
-  "retrieved_utc": "2026-11-02T04:27:08.474025+00:00",
-  "source_locator": "lines 116-116",
   "excerpt": "DR   GO; GO:1990077; C:primosome complex; IEA:UniProtKB-UniRule.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 115,
+  "retrieved_utc": "2026-11-02T04:27:08.474025+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 116-116",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "c7fae64a6685e20b9641d98d65b5f6b293a504b0495a699330088a3a6792ce20",
+  "url": "https://rest.uniprot.org/unisave/A6TGC5?format=txt&versions=115"
 }
 ```
 
@@ -768,15 +525,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 155120-155127",
   "excerpt": "[Term]\nid: GO:0020002\nname: host cell plasma membrane\nnamespace: cellular_component\ndef: \"The plasma membrane surrounding a host cell.\" [GOC:mb]\nsubset: goslim_virus\nis_a: GO:0033644 ! host cell membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0020002",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 155120-155127",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0020002"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -787,15 +544,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 180777-180784",
   "excerpt": "[Term]\nid: GO:0031901\nname: early endosome membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding an early endosome.\" [GOC:pz]\nis_a: GO:0010008 ! endosome membrane\nrelationship: part_of GO:0005769 ! early endosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031901",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 180777-180784",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031901"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -806,15 +563,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 412689-412696",
   "excerpt": "[Term]\nid: GO:0098978\nname: glutamatergic synapse\nnamespace: cellular_component\ndef: \"A synapse that uses glutamate as a neurotransmitter.\" [GOC:dos]\nsubset: goslim_synapse\nis_a: GO:0045202 ! synapse\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0098978",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 412689-412696",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0098978"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -825,15 +582,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 549032-549040",
   "excerpt": "[Term]\nid: GO:1990077\nname: primosome complex\nnamespace: cellular_component\ndef: \"Any of a family of protein complexes that form at the origin of replication or stalled replication forks and function in replication primer synthesis in all organisms. Early complexes initiate double-stranded DNA unwinding. The core unit consists of a replicative helicase and a primase. The helicase further unwinds the DNA and recruits the polymerase machinery. The primase synthesizes RNA primers that act as templates for complementary stand replication by the polymerase machinery. The primosome contains a number of associated proteins and protein complexes and contributes to the processes of replication initiation, lagging strand elongation, and replication restart.\" [GOC:bhm, GOC:mah, PMID:21856207]\nsynonym: \"primosome\" EXACT []\nis_a: GO:0032993 ! protein-DNA complex\nrelationship: part_of GO:0030894 ! replisome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990077",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 549032-549040",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990077"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# pathway_0016: before and after transfer clarification
+# pathway_0016
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0016.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0016.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Secondary metabolite biosynthesis
+**Expected answer:** **C** — Secondary metabolite biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as cytochrome P450 monooxygenase pbrB, an aspterric acid biosynthesis cluster protein, with the pathway listed as secondary metabolite biosynthesis; terpenoid biosynthesis. The pathway annotation is linked to a publication and carries an experimental evidence code, although the primary study is not independently assessed here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a membrane-associated cytochrome P450, but that family includes enzymes with many substrates and roles; the sequence alone does not identify this enzyme's specific pathway among the choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific link to aspterric acid/terpenoid biosynthesis, supplied by the annotation and cited study, is absent from the question input.
-
-
-**Reason**
-
-> Recognizing a P450 from sequence features does not distinguish secondary-metabolite biosynthesis from other possible pathways. Choosing C requires the protein-specific functional assignment, not merely general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the protein-specific pathway annotation, secondary metabolite biosynthesis is the supported choice; the annotation additionally specifies terpenoid biosynthesis, which is not separately offered.
-
-
-### Important caveats
-
-- The sequence match and pathway annotation are reviewer-only evidence, not information supplied to the evaluated model.
-- The cited annotation is literature-linked and experimentally coded, but the primary paper was not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a membrane-associated cytochrome P450, but that family includes enzymes with many substrates and roles; the sequence alone does not identify this enzyme's specific pathway among the choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific link to aspterric acid/terpenoid biosynthesis, supplied by the annotation and cited study, is absent from the question input.",
-    "reason": "Recognizing a P450 from sequence features does not distinguish secondary-metabolite biosynthesis from other possible pathways. Choosing C requires the protein-specific functional assignment, not merely general biological reasoning."
-  },
-  "case_id": "pathway_0016",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as cytochrome P450 monooxygenase pbrB, an aspterric acid biosynthesis cluster protein, with the pathway listed as secondary metabolite biosynthesis; terpenoid biosynthesis. The pathway annotation is linked to a publication and carries an experimental evidence code, although the primary study is not independently assessed here."
-  },
-  "important_caveats": [
-    "The sequence match and pathway annotation are reviewer-only evidence, not information supplied to the evaluated model.",
-    "The cited annotation is literature-linked and experimentally coded, but the primary paper was not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the protein-specific pathway annotation, secondary metabolite biosynthesis is the supported choice; the annotation additionally specifies terpenoid biosynthesis, which is not separately offered."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0016",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as cytochrome P450 monooxygenase pbrB, an aspterric acid biosynthesis cluster protein, with the pathway listed as secondary metabolite biosynthesis; terpenoid biosynthesis. The pathway annotation is linked to a publication and carries an experimental evidence code, although the primary study is not independently assessed here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a membrane-associated cytochrome P450, but that family includes enzymes with many substrates and roles; the sequence alone does not identify this enzyme's specific pathway among the choices.",
-    "missing_item_specific_fact": "The protein-specific link to aspterric acid/terpenoid biosynthesis, supplied by the annotation and cited study, is absent from the question input.",
-    "reason": "Recognizing a P450 from sequence features does not distinguish secondary-metabolite biosynthesis from other possible pathways. Choosing C requires the protein-specific functional assignment, not merely general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the protein-specific pathway annotation, secondary metabolite biosynthesis is the supported choice; the annotation additionally specifies terpenoid biosynthesis, which is not separately offered."
-  },
-  "important_caveats": [
-    "The sequence match and pathway annotation are reviewer-only evidence, not information supplied to the evaluated model.",
-    "The cited annotation is literature-linked and experimentally coded, but the primary paper was not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A0F7U0K0 (Cytochrome P450 monooxygenase pbrB, Penicillium brasilianum) carries the PATHWAY annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence code ECO:0000269 from PubMed:39511739 (2024). The benchmark sequence (512 AA) matches the UniProt sequence exactly (SHA256 confirmed). The expected answer 'Secondary metabolite biosynthesis' is directly stated in the annotation.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable cytochrome P450 features (e.g., the FxxGxxxCxG-like heme-binding region 'IIFAGIDTTARTLAV'), allowing identification as a fungal P450 monooxygenase. However, fungal P450s participate in all four listed pathways: polyketide modification, general metabolism, secondary metabolite biosynthesis, and pigment biosynthesis. No sequence motif uniquely identifies this P450 as acting in terpenoid (aspterric acid) biosynthesis rather than, say, polyketide tailoring or pigment formation.
-
-
-**Missing item-specific fact**
-
-> The specific gene-cluster context: this P450 is pbrB, the terminal oxidase in the aspterric acid (a sesquiterpenoid) biosynthesis cluster in Penicillium brasilianum. Knowing that this particular P450 acts on a terpenoid intermediate (not a polyketide or pigment precursor) requires the item-specific annotation from PubMed:39511739 or the UniProt entry, not general sequence-to-pathway reasoning.
-
-
-**Reason**
-
-> Identifying the protein as a P450 narrows the functional class but does not distinguish among the four pathway options, all of which commonly involve fungal P450s. The correct assignment to 'Secondary metabolite biosynthesis' (specifically terpenoid) over 'Polyketide biosynthesis' or 'Pigment biosynthesis' depends on knowing the specific biosynthetic cluster this enzyme belongs to, which is an item-specific database/experimental fact absent from the sequence input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Polyketide biosynthesis (A) is itself a subclass of secondary metabolite biosynthesis, so the taxonomy of the options is not mutually exclusive. Additionally, many fungal P450s in secondary metabolite clusters modify polyketide intermediates, making A a plausible answer from sequence alone. Without cluster context, a model could reasonably argue for A over C. The question's phrasing 'primary pathway' does not clearly resolve this hierarchical overlap.
-
-
-### Important caveats
-
-- The UniProt annotation is based on a single 2024 experimental study (PubMed:39511739); the ECO code ECO:0000269 indicates experimental evidence, lending reasonable confidence.
-- The options treat polyketide biosynthesis and secondary metabolite biosynthesis as mutually exclusive, which is taxonomically imprecise since polyketide synthesis is a subtype of secondary metabolism.
-- The sequence alone confirms P450 identity but provides no terpenoid-specific or polyketide-specific catalytic signature to distinguish among the pathway options.
-- All reviewer evidence is from the current and archived UniProt snapshots with confirmed sequence match; no independent primary-literature validation was performed by the reviewer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable cytochrome P450 features (e.g., the FxxGxxxCxG-like heme-binding region 'IIFAGIDTTARTLAV'), allowing identification as a fungal P450 monooxygenase. However, fungal P450s participate in all four listed pathways: polyketide modification, general metabolism, secondary metabolite biosynthesis, and pigment biosynthesis. No sequence motif uniquely identifies this P450 as acting in terpenoid (aspterric acid) biosynthesis rather than, say, polyketide tailoring or pigment formation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific gene-cluster context: this P450 is pbrB, the terminal oxidase in the aspterric acid (a sesquiterpenoid) biosynthesis cluster in Penicillium brasilianum. Knowing that this particular P450 acts on a terpenoid intermediate (not a polyketide or pigment precursor) requires the item-specific annotation from PubMed:39511739 or the UniProt entry, not general sequence-to-pathway reasoning.",
-    "reason": "Identifying the protein as a P450 narrows the functional class but does not distinguish among the four pathway options, all of which commonly involve fungal P450s. The correct assignment to 'Secondary metabolite biosynthesis' (specifically terpenoid) over 'Polyketide biosynthesis' or 'Pigment biosynthesis' depends on knowing the specific biosynthetic cluster this enzyme belongs to, which is an item-specific database/experimental fact absent from the sequence input."
-  },
-  "case_id": "pathway_0016",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A0F7U0K0 (Cytochrome P450 monooxygenase pbrB, Penicillium brasilianum) carries the PATHWAY annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence code ECO:0000269 from PubMed:39511739 (2024). The benchmark sequence (512 AA) matches the UniProt sequence exactly (SHA256 confirmed). The expected answer 'Secondary metabolite biosynthesis' is directly stated in the annotation."
-  },
-  "important_caveats": [
-    "The UniProt annotation is based on a single 2024 experimental study (PubMed:39511739); the ECO code ECO:0000269 indicates experimental evidence, lending reasonable confidence.",
-    "The options treat polyketide biosynthesis and secondary metabolite biosynthesis as mutually exclusive, which is taxonomically imprecise since polyketide synthesis is a subtype of secondary metabolism.",
-    "The sequence alone confirms P450 identity but provides no terpenoid-specific or polyketide-specific catalytic signature to distinguish among the pathway options.",
-    "All reviewer evidence is from the current and archived UniProt snapshots with confirmed sequence match; no independent primary-literature validation was performed by the reviewer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Polyketide biosynthesis (A) is itself a subclass of secondary metabolite biosynthesis, so the taxonomy of the options is not mutually exclusive. Additionally, many fungal P450s in secondary metabolite clusters modify polyketide intermediates, making A a plausible answer from sequence alone. Without cluster context, a model could reasonably argue for A over C. The question's phrasing 'primary pathway' does not clearly resolve this hierarchical overlap."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0016",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A0F7U0K0 (Cytochrome P450 monooxygenase pbrB, Penicillium brasilianum) carries the PATHWAY annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence code ECO:0000269 from PubMed:39511739 (2024). The benchmark sequence (512 AA) matches the UniProt sequence exactly (SHA256 confirmed). The expected answer 'Secondary metabolite biosynthesis' is directly stated in the annotation.",
-    "evidence_ids": ["C5", "H3", "C4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains recognizable cytochrome P450 features (e.g., the FxxGxxxCxG-like heme-binding region 'IIFAGIDTTARTLAV'), allowing identification as a fungal P450 monooxygenase. However, fungal P450s participate in all four listed pathways: polyketide modification, general metabolism, secondary metabolite biosynthesis, and pigment biosynthesis. No sequence motif uniquely identifies this P450 as acting in terpenoid (aspterric acid) biosynthesis rather than, say, polyketide tailoring or pigment formation.",
-    "missing_item_specific_fact": "The specific gene-cluster context: this P450 is pbrB, the terminal oxidase in the aspterric acid (a sesquiterpenoid) biosynthesis cluster in Penicillium brasilianum. Knowing that this particular P450 acts on a terpenoid intermediate (not a polyketide or pigment precursor) requires the item-specific annotation from PubMed:39511739 or the UniProt entry, not general sequence-to-pathway reasoning.",
-    "reason": "Identifying the protein as a P450 narrows the functional class but does not distinguish among the four pathway options, all of which commonly involve fungal P450s. The correct assignment to 'Secondary metabolite biosynthesis' (specifically terpenoid) over 'Polyketide biosynthesis' or 'Pigment biosynthesis' depends on knowing the specific biosynthetic cluster this enzyme belongs to, which is an item-specific database/experimental fact absent from the sequence input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Polyketide biosynthesis (A) is itself a subclass of secondary metabolite biosynthesis, so the taxonomy of the options is not mutually exclusive. Additionally, many fungal P450s in secondary metabolite clusters modify polyketide intermediates, making A a plausible answer from sequence alone. Without cluster context, a model could reasonably argue for A over C. The question's phrasing 'primary pathway' does not clearly resolve this hierarchical overlap."
-  },
-  "important_caveats": [
-    "The UniProt annotation is based on a single 2024 experimental study (PubMed:39511739); the ECO code ECO:0000269 indicates experimental evidence, lending reasonable confidence.",
-    "The options treat polyketide biosynthesis and secondary metabolite biosynthesis as mutually exclusive, which is taxonomically imprecise since polyketide synthesis is a subtype of secondary metabolism.",
-    "The sequence alone confirms P450 identity but provides no terpenoid-specific or polyketide-specific catalytic signature to distinguish among the pathway options.",
-    "All reviewer evidence is from the current and archived UniProt snapshots with confirmed sequence match; no independent primary-literature validation was performed by the reviewer."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -509,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0F7U0K0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 512,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-04-09",
@@ -540,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2015-07-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "current_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 512,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 33,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0F7U0K0",
   "selected_historical_entry_version": 33,
+  "selected_historical_record_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "selected_historical_source_sequence_length": 512,
+  "selected_historical_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
   "selected_historical_version": {
     "accession": "A0A0F7U0K0",
     "database": "Swiss-Prot",
@@ -558,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PBRB_PENBI",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "selected_historical_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
-  "selected_historical_source_sequence_length": 512,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 33,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -589,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0F7U0K0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -608,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2015-07-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -627,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium brasilianum\",\"taxonId\":104259}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -646,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein B\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase pbrB\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -665,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -684,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhou Z.\",\"Zhang Y.\",\"Wu Q.\",\"Hou X.\",\"Zhang B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39511739\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c08468\"}],\"citationType\":\"journal article\",\"firstPage\":\"25755\",\"id\":\"39511739\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"25766\",\"publicationDate\":\"2024\",\"title\":\"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\",\"volume\":\"72\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -702,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   PBRB_PENBI              Reviewed;         512 AA.\nAC   A0A0F7U0K0;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-JUL-2015, sequence version 1.\nDT   28-JAN-2026, entry version 33.\nDE   RecName: Full=Cytochrome P450 monooxygenase pbrB {ECO:0000303|PubMed:39511739};\nDE            EC=1.-.-.- {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein B {ECO:0000303|PubMed:39511739};\nGN   Name=pbrB {ECO:0000303|PubMed:39511739}; ORFNames=PMG11_09715;\nOS   Penicillium brasilianum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=104259;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 
@@ -723,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 22-27",
   "excerpt": "RN   [2]\nRP   FUNCTION, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39511739; DOI=10.1021/acs.jafc.4c08468;\nRA   Zhou Z., Zhang Y., Wu Q., Hou X., Zhang B.;\nRT   \"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\";\nRL   J. Agric. Food Chem. 72:25755-25766(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 
@@ -744,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 40-41",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:39511739}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 

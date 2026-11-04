@@ -1,18 +1,16 @@
-# active_site_0145: before and after transfer clarification
+# active_site_0145
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0145.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0145.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **B** — Position 188 (Glycyl thioester intermediate; for adenylyltransferase activity)
+**Expected answer:** **B** — Position 188 (Glycyl thioester intermediate; for adenylyltransferase activity)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence’s UniProt annotation identifies position 188 as the glycyl thioester intermediate for adenylyltransferase activity. This supports choice B, but the annotation is rule-based computational evidence, not direct experimental validation.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a clear general biochemical argument that identifies position 188 as the glycyl thioester site rather than the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation that this UBA4 sequence uses residue 188 in a glycyl thioester intermediate during adenylyltransferase activity.
-
-
-**Reason**
-
-> The exact catalytic role and residue position require protein-family or database knowledge not supplied in the question; recognizing the sequence or relying on a predictor does not make the answer reasoning-supported.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied matched-sequence annotation supports B among the listed options. The protein also has a separately annotated catalytic cysteine at position 347, but that residue is not offered as a choice.
-
-
-### Important caveats
-
-- The active-site annotation is supported by a HAMAP rule and was not independently established here by experimental evidence.
-- The sequence matches both the current and historical UniProt entry; the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a clear general biochemical argument that identifies position 188 as the glycyl thioester site rather than the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation that this UBA4 sequence uses residue 188 in a glycyl thioester intermediate during adenylyltransferase activity.",
-    "reason": "The exact catalytic role and residue position require protein-family or database knowledge not supplied in the question; recognizing the sequence or relying on a predictor does not make the answer reasoning-supported."
-  },
-  "case_id": "active_site_0145",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence’s UniProt annotation identifies position 188 as the glycyl thioester intermediate for adenylyltransferase activity. This supports choice B, but the annotation is rule-based computational evidence, not direct experimental validation."
-  },
-  "important_caveats": [
-    "The active-site annotation is supported by a HAMAP rule and was not independently established here by experimental evidence.",
-    "The sequence matches both the current and historical UniProt entry; the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied matched-sequence annotation supports B among the listed options. The protein also has a separately annotated catalytic cysteine at position 347, but that residue is not offered as a choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0145",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence’s UniProt annotation identifies position 188 as the glycyl thioester intermediate for adenylyltransferase activity. This supports choice B, but the annotation is rule-based computational evidence, not direct experimental validation.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a clear general biochemical argument that identifies position 188 as the glycyl thioester site rather than the listed alternatives.",
-    "missing_item_specific_fact": "The protein-specific annotation that this UBA4 sequence uses residue 188 in a glycyl thioester intermediate during adenylyltransferase activity.",
-    "reason": "The exact catalytic role and residue position require protein-family or database knowledge not supplied in the question; recognizing the sequence or relying on a predictor does not make the answer reasoning-supported."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied matched-sequence annotation supports B among the listed options. The protein also has a separately annotated catalytic cysteine at position 347, but that residue is not offered as a choice."
-  },
-  "important_caveats": [
-    "The active-site annotation is supported by a HAMAP rule and was not independently established here by experimental evidence.",
-    "The sequence matches both the current and historical UniProt entry; the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation for W1QET1 (UBA4_OGAPD, 389 AA, sequence SHA256 match confirmed) explicitly annotates position 188 as 'Active site: Glycyl thioester intermediate; for adenylyltransferase activity' (evidence C5/H3). The residue at position 188 in the supplied sequence is Cys (C), consistent with the glycyl thioester mechanism. The annotation is computational (ECO:0000255, HAMAP-Rule MF_03049), not experimental, but it is a valid database annotation consistent with the well-established catalytic mechanism of UBA4-type adenylyltransferases.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable UBA4-family motifs (e.g., GAGGLGCPAL near the N-terminus, ACSD catalytic motif). UBA4-type adenylyltransferases catalyze glycyl thioester intermediate formation via a catalytic cysteine. Checking the amino acid at each listed position: position 188 = Cys (C), position 240 = Leu (L), position 118 = Phe (F), position 203 = Val (V). Only a cysteine can form a glycyl thioester; leucine, phenylalanine, and valine cannot serve as proton acceptors, nucleophiles, or proton donors in this enzymatic context. The ACSD motif (Ala187-Cys188-Ser189-Asp190) is a recognizable catalytic signature in this enzyme family.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The protein family can be identified from sequence motifs, the catalytic mechanism is general knowledge for UBA4-type enzymes, and amino acid identity at each position can be verified by counting through the supplied sequence.
-
-
-**Reason**
-
-> A model with knowledge of UBA4-family adenylyltransferase mechanisms can reason that the catalytic residue must be a cysteine forming a glycyl thioester, then verify by counting to each listed position that only position 188 is a Cys. The distractors (Leu, Phe, Val) are chemically incapable of the functions described. This constitutes a concrete biological argument from the supplied sequence and choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The protein has two annotated active sites (Cys188 and Cys347), but only Cys188 appears among the options. The other three options assign catalytic roles to non-catalytic amino acids (Leu, Phe, Val), which are chemically implausible. No ambiguity exists among the choices.
-
-
-### Important caveats
-
-- The active site annotation is computational (ECO:0000255, HAMAP-Rule MF_03049), inferred by protein family similarity, not from direct experimental characterization of this specific Ogataea parapolymorpha UBA4.
-- The protein also has a second active site at position 347 (Cys, persulfide intermediate for sulfurtransferase activity, annotated by PROSITE-ProRule PRU00173), but this is not offered as an option.
-- Identifying the protein family from sequence and knowing the UBA4 catalytic mechanism requires specialized enzymology knowledge, though this is general biological knowledge for the relevant subfield.
-- The reviewer-only evidence was not available to the evaluated model; the reasoning argument relies on the model's trained knowledge of UBA4-family enzymes.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable UBA4-family motifs (e.g., GAGGLGCPAL near the N-terminus, ACSD catalytic motif). UBA4-type adenylyltransferases catalyze glycyl thioester intermediate formation via a catalytic cysteine. Checking the amino acid at each listed position: position 188 = Cys (C), position 240 = Leu (L), position 118 = Phe (F), position 203 = Val (V). Only a cysteine can form a glycyl thioester; leucine, phenylalanine, and valine cannot serve as proton acceptors, nucleophiles, or proton donors in this enzymatic context. The ACSD motif (Ala187-Cys188-Ser189-Asp190) is a recognizable catalytic signature in this enzyme family.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The protein family can be identified from sequence motifs, the catalytic mechanism is general knowledge for UBA4-type enzymes, and amino acid identity at each position can be verified by counting through the supplied sequence.",
-    "reason": "A model with knowledge of UBA4-family adenylyltransferase mechanisms can reason that the catalytic residue must be a cysteine forming a glycyl thioester, then verify by counting to each listed position that only position 188 is a Cys. The distractors (Leu, Phe, Val) are chemically incapable of the functions described. This constitutes a concrete biological argument from the supplied sequence and choices."
-  },
-  "case_id": "active_site_0145",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation for W1QET1 (UBA4_OGAPD, 389 AA, sequence SHA256 match confirmed) explicitly annotates position 188 as 'Active site: Glycyl thioester intermediate; for adenylyltransferase activity' (evidence C5/H3). The residue at position 188 in the supplied sequence is Cys (C), consistent with the glycyl thioester mechanism. The annotation is computational (ECO:0000255, HAMAP-Rule MF_03049), not experimental, but it is a valid database annotation consistent with the well-established catalytic mechanism of UBA4-type adenylyltransferases."
-  },
-  "important_caveats": [
-    "The active site annotation is computational (ECO:0000255, HAMAP-Rule MF_03049), inferred by protein family similarity, not from direct experimental characterization of this specific Ogataea parapolymorpha UBA4.",
-    "The protein also has a second active site at position 347 (Cys, persulfide intermediate for sulfurtransferase activity, annotated by PROSITE-ProRule PRU00173), but this is not offered as an option.",
-    "Identifying the protein family from sequence and knowing the UBA4 catalytic mechanism requires specialized enzymology knowledge, though this is general biological knowledge for the relevant subfield.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning argument relies on the model's trained knowledge of UBA4-family enzymes."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein has two annotated active sites (Cys188 and Cys347), but only Cys188 appears among the options. The other three options assign catalytic roles to non-catalytic amino acids (Leu, Phe, Val), which are chemically implausible. No ambiguity exists among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0145",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotation for W1QET1 (UBA4_OGAPD, 389 AA, sequence SHA256 match confirmed) explicitly annotates position 188 as 'Active site: Glycyl thioester intermediate; for adenylyltransferase activity' (evidence C5/H3). The residue at position 188 in the supplied sequence is Cys (C), consistent with the glycyl thioester mechanism. The annotation is computational (ECO:0000255, HAMAP-Rule MF_03049), not experimental, but it is a valid database annotation consistent with the well-established catalytic mechanism of UBA4-type adenylyltransferases.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains recognizable UBA4-family motifs (e.g., GAGGLGCPAL near the N-terminus, ACSD catalytic motif). UBA4-type adenylyltransferases catalyze glycyl thioester intermediate formation via a catalytic cysteine. Checking the amino acid at each listed position: position 188 = Cys (C), position 240 = Leu (L), position 118 = Phe (F), position 203 = Val (V). Only a cysteine can form a glycyl thioester; leucine, phenylalanine, and valine cannot serve as proton acceptors, nucleophiles, or proton donors in this enzymatic context. The ACSD motif (Ala187-Cys188-Ser189-Asp190) is a recognizable catalytic signature in this enzyme family.",
-    "missing_item_specific_fact": "None strictly required. The protein family can be identified from sequence motifs, the catalytic mechanism is general knowledge for UBA4-type enzymes, and amino acid identity at each position can be verified by counting through the supplied sequence.",
-    "reason": "A model with knowledge of UBA4-family adenylyltransferase mechanisms can reason that the catalytic residue must be a cysteine forming a glycyl thioester, then verify by counting to each listed position that only position 188 is a Cys. The distractors (Leu, Phe, Val) are chemically incapable of the functions described. This constitutes a concrete biological argument from the supplied sequence and choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein has two annotated active sites (Cys188 and Cys347), but only Cys188 appears among the options. The other three options assign catalytic roles to non-catalytic amino acids (Leu, Phe, Val), which are chemically implausible. No ambiguity exists among the choices."
-  },
-  "important_caveats": [
-    "The active site annotation is computational (ECO:0000255, HAMAP-Rule MF_03049), inferred by protein family similarity, not from direct experimental characterization of this specific Ogataea parapolymorpha UBA4.",
-    "The protein also has a second active site at position 347 (Cys, persulfide intermediate for sulfurtransferase activity, annotated by PROSITE-ProRule PRU00173), but this is not offered as an option.",
-    "Identifying the protein family from sequence and knowing the UBA4 catalytic mechanism requires specialized enzymology knowledge, though this is general biological knowledge for the relevant subfield.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning argument relies on the model's trained knowledge of UBA4-family enzymes."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "W1QET1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 389,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
   "current_entry_audit": {
     "entryVersion": 69,
     "firstPublicDate": "2025-06-18",
@@ -531,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-03-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "current_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 389,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 67,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "W1QET1",
   "selected_historical_entry_version": 67,
+  "selected_historical_record_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "selected_historical_source_sequence_length": 389,
+  "selected_historical_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
   "selected_historical_version": {
     "accession": "W1QET1",
     "database": "Swiss-Prot",
@@ -549,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UBA4_OGAPD",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "selected_historical_source_sequence_sha256": "a901665ea3dc44218892e98264561a93d82231546cdf75b9015b7ec0eb86f63a",
-  "selected_historical_source_sequence_length": 389,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 67,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"W1QET1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -599,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":69,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-03-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -618,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Yeast\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000008673\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Pichiomycetes\",\"Pichiales\",\"Pichiaceae\",\"Ogataea\"],\"scientificName\":\"Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL Y-7560 / DL-1)\",\"synonyms\":[\"Hansenula polymorpha\"],\"taxonId\":871575}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -637,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Ubiquitin-like protein activator 4\"}}],\"includes\":[{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Adenylyltransferase UBA4\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Sulfur carrier protein MOCS2A adenylyltransferase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O95396\",\"source\":\"UniProtKB\"}],\"value\":\"2.7.7.80\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Molybdopterin-synthase adenylyltransferase\"}}},{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Sulfur carrier protein MOCS2A sulfurtransferase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Sulfurtransferase UBA4\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O95396\",\"source\":\"UniProtKB\"}],\"value\":\"2.8.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Molybdopterin-synthase sulfurtransferase\"}}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Adenylyltransferase and sulfurtransferase uba4\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -656,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Glycyl thioester intermediate; for adenylyltransferase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":188},\"start\":{\"modifier\":\"EXACT\",\"value\":188}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -675,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Cysteine persulfide intermediate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00173\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":347},\"start\":{\"modifier\":\"EXACT\",\"value\":347}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -694,15 +454,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":40},\"start\":{\"modifier\":\"EXACT\",\"value\":40}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -713,15 +473,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":61},\"start\":{\"modifier\":\"EXACT\",\"value\":61}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -732,15 +492,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":72},\"start\":{\"modifier\":\"EXACT\",\"value\":68}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -751,15 +511,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":85},\"start\":{\"modifier\":\"EXACT\",\"value\":85}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -770,15 +530,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":130},\"start\":{\"modifier\":\"EXACT\",\"value\":129}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -789,15 +549,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":171},\"start\":{\"modifier\":\"EXACT\",\"value\":171}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -808,15 +568,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":174},\"start\":{\"modifier\":\"EXACT\",\"value\":174}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -827,15 +587,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/11",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":252},\"start\":{\"modifier\":\"EXACT\",\"value\":252}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/11",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -846,15 +606,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json",
-  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
-  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
-  "json_pointer": "/features/12",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"MF_03049\",\"source\":\"HAMAP-Rule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":255},\"start\":{\"modifier\":\"EXACT\",\"value\":255}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/12",
+  "retrieved_utc": "2026-11-02T04:34:06.106793+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "958c25c940d458086b51fa46493ccb8538925f70cafe7242c4eeff6965bc6e08",
+  "url": "https://rest.uniprot.org/uniprotkb/W1QET1.json"
 }
 ```
 
@@ -864,18 +624,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 1-24",
   "excerpt": "ID   UBA4_OGAPD              Reviewed;         389 AA.\nAC   W1QET1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-MAR-2014, sequence version 1.\nDT   28-JAN-2026, entry version 67.\nDE   RecName: Full=Adenylyltransferase and sulfurtransferase uba4 {ECO:0000305};\nDE   AltName: Full=Ubiquitin-like protein activator 4 {ECO:0000305};\nDE   Includes:\nDE     RecName: Full=Molybdopterin-synthase adenylyltransferase {ECO:0000305};\nDE              EC=2.7.7.80 {ECO:0000250|UniProtKB:O95396};\nDE     AltName: Full=Adenylyltransferase UBA4 {ECO:0000305};\nDE     AltName: Full=Sulfur carrier protein MOCS2A adenylyltransferase {ECO:0000305};\nDE   Includes:\nDE     RecName: Full=Molybdopterin-synthase sulfurtransferase {ECO:0000305};\nDE              EC=2.8.1.11 {ECO:0000250|UniProtKB:O95396};\nDE     AltName: Full=Sulfur carrier protein MOCS2A sulfurtransferase {ECO:0000305};\nDE     AltName: Full=Sulfurtransferase UBA4 {ECO:0000305};\nGN   Name=UBA4 {ECO:0000305}; Synonyms=CNX4 {ECO:0000303|PubMed:33617956};\nGN   ORFNames=HPODL_00948 {ECO:0000312|EMBL:ESX00063.1};\nOS   Ogataea parapolymorpha (strain ATCC 26012 / BCRC 20466 / JCM 22074 / NRRL\nOS   Y-7560 / DL-1) (Yeast) (Hansenula polymorpha).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Pichiomycetes;\nOC   Pichiales; Pichiaceae; Ogataea.\nOX   NCBI_TaxID=871575 {ECO:0000312|Proteomes:UP000008673};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -885,18 +645,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 36-44",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, AND PATHWAY.\nRX   PubMed=33617956; DOI=10.1016/j.ymben.2021.02.004;\nRA   Perli T., van der Vorm D.N.A., Wassink M., van den Broek M., Pronk J.T.,\nRA   Daran J.M.;\nRT   \"Engineering heterologous molybdenum-cofactor-biosynthesis and nitrate-\nRT   assimilation pathways enables nitrate utilization by Saccharomyces\nRT   cerevisiae.\";\nRL   Metab. Eng. 65:11-29(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -906,18 +666,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 153-156",
   "excerpt": "FT   ACT_SITE        188\nFT                   /note=\"Glycyl thioester intermediate; for\nFT                   adenylyltransferase activity\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 153-156",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -927,18 +687,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 157-159",
   "excerpt": "FT   ACT_SITE        347\nFT                   /note=\"Cysteine persulfide intermediate\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00173\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 157-159",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -948,18 +708,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 160-163",
   "excerpt": "FT   BINDING         40\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 160-163",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -969,18 +729,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 164-167",
   "excerpt": "FT   BINDING         61\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 164-167",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -990,18 +750,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 168-171",
   "excerpt": "FT   BINDING         68..72\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 168-171",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -1011,18 +771,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 172-175",
   "excerpt": "FT   BINDING         85\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 172-175",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -1032,18 +792,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 176-179",
   "excerpt": "FT   BINDING         129..130\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 176-179",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -1053,18 +813,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 180-183",
   "excerpt": "FT   BINDING         171\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 180-183",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -1074,18 +834,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 184-187",
   "excerpt": "FT   BINDING         174\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 184-187",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -1095,18 +855,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 188-191",
   "excerpt": "FT   BINDING         252\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 188-191",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 
@@ -1116,18 +876,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 67,
   "evidence_id": "H13",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67",
-  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
-  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
-  "source_locator": "lines 192-195",
   "excerpt": "FT   BINDING         255\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000255|HAMAP-Rule:MF_03049\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 67,
+  "retrieved_utc": "2026-11-02T04:34:08.361822+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 192-195",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1439891a4b0a62345927d6f7a896540071a99c07ab5153e3c7dc6126a8edc193",
+  "url": "https://rest.uniprot.org/unisave/W1QET1?format=txt&versions=67"
 }
 ```
 

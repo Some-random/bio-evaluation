@@ -1,18 +1,16 @@
-# GO_molecular_function_0118: before and after transfer clarification
+# GO_molecular_function_0118
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0118.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0118.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — cysteine-type endopeptidase inhibitor activity
+**Expected answer:** **C** — cysteine-type endopeptidase inhibitor activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry whose experimentally supported function annotation reports inhibition of cysteine proteinases, including host cathepsins L and S. The GO annotation also assigns the matching molecular-function term, though that annotation is computationally inferred.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with secretion, and the small soluble sequence is inconsistent with a multi-pass cation channel or a typical GTP-binding protein. Those clues do not specifically distinguish cysteine-protease inhibition from integrin binding.
-
-
-**Missing item-specific fact**
-
-> The sequence's identity as the tick salivary cystatin sialostatin L1 and its cysteine-protease-inhibitory activity are needed to select C confidently over D.
-
-
-**Reason**
-
-> The key is supported by protein-specific annotation and cited experimental evidence, but the question supplies only sequence and choices. General sequence features can disfavor some options, not establish the specific activity that separates the remaining plausible choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports C; it provides no comparable support for the other options.
-
-
-### Important caveats
-
-- The cited experimental function annotation is curated from a publication but was not independently validated here.
-- The reviewer-only accession and annotations were not available to the evaluated model; sequence identity alone is not reasoning evidence.
-- The sequence matches both the current entry and the checked historical sequence version, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with secretion, and the small soluble sequence is inconsistent with a multi-pass cation channel or a typical GTP-binding protein. Those clues do not specifically distinguish cysteine-protease inhibition from integrin binding.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence's identity as the tick salivary cystatin sialostatin L1 and its cysteine-protease-inhibitory activity are needed to select C confidently over D.",
-    "reason": "The key is supported by protein-specific annotation and cited experimental evidence, but the question supplies only sequence and choices. General sequence features can disfavor some options, not establish the specific activity that separates the remaining plausible choices."
-  },
-  "case_id": "GO_molecular_function_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry whose experimentally supported function annotation reports inhibition of cysteine proteinases, including host cathepsins L and S. The GO annotation also assigns the matching molecular-function term, though that annotation is computationally inferred."
-  },
-  "important_caveats": [
-    "The cited experimental function annotation is curated from a publication but was not independently validated here.",
-    "The reviewer-only accession and annotations were not available to the evaluated model; sequence identity alone is not reasoning evidence.",
-    "The sequence matches both the current entry and the checked historical sequence version, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports C; it provides no comparable support for the other options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry whose experimentally supported function annotation reports inhibition of cysteine proteinases, including host cathepsins L and S. The GO annotation also assigns the matching molecular-function term, though that annotation is computationally inferred.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with secretion, and the small soluble sequence is inconsistent with a multi-pass cation channel or a typical GTP-binding protein. Those clues do not specifically distinguish cysteine-protease inhibition from integrin binding.",
-    "missing_item_specific_fact": "The sequence's identity as the tick salivary cystatin sialostatin L1 and its cysteine-protease-inhibitory activity are needed to select C confidently over D.",
-    "reason": "The key is supported by protein-specific annotation and cited experimental evidence, but the question supplies only sequence and choices. General sequence features can disfavor some options, not establish the specific activity that separates the remaining plausible choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports C; it provides no comparable support for the other options."
-  },
-  "important_caveats": [
-    "The cited experimental function annotation is curated from a publication but was not independently validated here.",
-    "The reviewer-only accession and annotations were not available to the evaluated model; sequence identity alone is not reasoning evidence.",
-    "The sequence matches both the current entry and the checked historical sequence version, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A224AHH8 (Sialostatin L1 / Salivary cystatin-L from Ixodes persulcatus) explicitly annotates GO:0004869 'cysteine-type endopeptidase inhibitor activity'. The FUNCTION comment (C5) states 'Inhibitor of cysteine proteinases' with experimental evidence (ECO:0000269, PubMed:31734217), and the GO cross-reference (C6) confirms the term via IEA:InterPro. The protein name 'Salivary cystatin-L' and the described inhibition of host cathepsin L and S directly support choice C.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 133-aa sequence contains an N-terminal signal peptide (hydrophobic stretch MTASFALVLLLGGVAVCIATGVFGGY) indicating a secreted protein, followed by a small mature domain rich in cysteines (at least 7 Cys residues) with a conserved glutamine-containing motif 'QRTCTT' resembling the QxVxG signature of the cystatin superfamily. (1) No transmembrane helices exist, eliminating A (ion channel). (2) No GTP-binding motifs (GxxxxGK&#91;ST&#93;, NKxD, SAx) are present, eliminating B. (3) No RGD or other integrin-recognition motifs are present, making D unlikely. (4) The combination of small secreted size, conserved Q motif, and multiple strategically placed cysteines is consistent with the cystatin fold and cysteine-protease-inhibitor function, supporting C.
-
-
-**Missing item-specific fact**
-
-> None strictly required; however, positive identification of the degenerate QRTCTT as a cystatin QxVxG variant and recognition of the specific cystatin superfamily cysteine spacing pattern requires familiarity with the cystatin family structural motifs rather than generic sequence analysis alone.
-
-
-**Reason**
-
-> Elimination of A, B, and D relies on straightforward absence of channel, nucleotide-binding, and integrin-binding motifs. The positive assignment to C is supported by recognizable cystatin-family features (secreted small protein, conserved Q, multiple cysteines), though full confidence in the cystatin assignment benefits from family-specific motif knowledge. This constitutes defensible biological reasoning rather than pure lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and D are clearly inconsistent with the sequence (no transmembrane domains, no nucleotide-binding motifs, no integrin-binding motifs). Only C is consistent with the cysteine-rich, secreted, small-protein architecture bearing a cystatin-like motif.
-
-
-### Important caveats
-
-- The GO annotation (C6) carries evidence code IEA:InterPro (computational inference by similarity), but the underlying FUNCTION comment (C5) is supported by experimental evidence (ECO:0000269, PubMed:31734217).
-- The protein is a tick salivary cystatin (type 1 cystatin superfamily); the QxVxG motif appears in a degenerate form (QRTCTT rather than canonical QVVAG), which may reduce recognizability for models not trained on cystatin family motifs.
-- The reviewer-only UniProt accession and metadata were absent from the evaluated model input; the model must rely solely on the 133-aa sequence and general biological knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 133-aa sequence contains an N-terminal signal peptide (hydrophobic stretch MTASFALVLLLGGVAVCIATGVFGGY) indicating a secreted protein, followed by a small mature domain rich in cysteines (at least 7 Cys residues) with a conserved glutamine-containing motif 'QRTCTT' resembling the QxVxG signature of the cystatin superfamily. (1) No transmembrane helices exist, eliminating A (ion channel). (2) No GTP-binding motifs (GxxxxGK[ST], NKxD, SAx) are present, eliminating B. (3) No RGD or other integrin-recognition motifs are present, making D unlikely. (4) The combination of small secreted size, conserved Q motif, and multiple strategically placed cysteines is consistent with the cystatin fold and cysteine-protease-inhibitor function, supporting C.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; however, positive identification of the degenerate QRTCTT as a cystatin QxVxG variant and recognition of the specific cystatin superfamily cysteine spacing pattern requires familiarity with the cystatin family structural motifs rather than generic sequence analysis alone.",
-    "reason": "Elimination of A, B, and D relies on straightforward absence of channel, nucleotide-binding, and integrin-binding motifs. The positive assignment to C is supported by recognizable cystatin-family features (secreted small protein, conserved Q, multiple cysteines), though full confidence in the cystatin assignment benefits from family-specific motif knowledge. This constitutes defensible biological reasoning rather than pure lookup."
-  },
-  "case_id": "GO_molecular_function_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A224AHH8 (Sialostatin L1 / Salivary cystatin-L from Ixodes persulcatus) explicitly annotates GO:0004869 'cysteine-type endopeptidase inhibitor activity'. The FUNCTION comment (C5) states 'Inhibitor of cysteine proteinases' with experimental evidence (ECO:0000269, PubMed:31734217), and the GO cross-reference (C6) confirms the term via IEA:InterPro. The protein name 'Salivary cystatin-L' and the described inhibition of host cathepsin L and S directly support choice C."
-  },
-  "important_caveats": [
-    "The GO annotation (C6) carries evidence code IEA:InterPro (computational inference by similarity), but the underlying FUNCTION comment (C5) is supported by experimental evidence (ECO:0000269, PubMed:31734217).",
-    "The protein is a tick salivary cystatin (type 1 cystatin superfamily); the QxVxG motif appears in a degenerate form (QRTCTT rather than canonical QVVAG), which may reduce recognizability for models not trained on cystatin family motifs.",
-    "The reviewer-only UniProt accession and metadata were absent from the evaluated model input; the model must rely solely on the 133-aa sequence and general biological knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are clearly inconsistent with the sequence (no transmembrane domains, no nucleotide-binding motifs, no integrin-binding motifs). Only C is consistent with the cysteine-rich, secreted, small-protein architecture bearing a cystatin-like motif."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A224AHH8 (Sialostatin L1 / Salivary cystatin-L from Ixodes persulcatus) explicitly annotates GO:0004869 'cysteine-type endopeptidase inhibitor activity'. The FUNCTION comment (C5) states 'Inhibitor of cysteine proteinases' with experimental evidence (ECO:0000269, PubMed:31734217), and the GO cross-reference (C6) confirms the term via IEA:InterPro. The protein name 'Salivary cystatin-L' and the described inhibition of host cathepsin L and S directly support choice C.",
-    "evidence_ids": ["C4", "C5", "C6", "H3", "H4", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 133-aa sequence contains an N-terminal signal peptide (hydrophobic stretch MTASFALVLLLGGVAVCIATGVFGGY) indicating a secreted protein, followed by a small mature domain rich in cysteines (at least 7 Cys residues) with a conserved glutamine-containing motif 'QRTCTT' resembling the QxVxG signature of the cystatin superfamily. (1) No transmembrane helices exist, eliminating A (ion channel). (2) No GTP-binding motifs (GxxxxGK[ST], NKxD, SAx) are present, eliminating B. (3) No RGD or other integrin-recognition motifs are present, making D unlikely. (4) The combination of small secreted size, conserved Q motif, and multiple strategically placed cysteines is consistent with the cystatin fold and cysteine-protease-inhibitor function, supporting C.",
-    "missing_item_specific_fact": "None strictly required; however, positive identification of the degenerate QRTCTT as a cystatin QxVxG variant and recognition of the specific cystatin superfamily cysteine spacing pattern requires familiarity with the cystatin family structural motifs rather than generic sequence analysis alone.",
-    "reason": "Elimination of A, B, and D relies on straightforward absence of channel, nucleotide-binding, and integrin-binding motifs. The positive assignment to C is supported by recognizable cystatin-family features (secreted small protein, conserved Q, multiple cysteines), though full confidence in the cystatin assignment benefits from family-specific motif knowledge. This constitutes defensible biological reasoning rather than pure lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are clearly inconsistent with the sequence (no transmembrane domains, no nucleotide-binding motifs, no integrin-binding motifs). Only C is consistent with the cysteine-rich, secreted, small-protein architecture bearing a cystatin-like motif."
-  },
-  "important_caveats": [
-    "The GO annotation (C6) carries evidence code IEA:InterPro (computational inference by similarity), but the underlying FUNCTION comment (C5) is supported by experimental evidence (ECO:0000269, PubMed:31734217).",
-    "The protein is a tick salivary cystatin (type 1 cystatin superfamily); the QxVxG motif appears in a degenerate form (QRTCTT rather than canonical QVVAG), which may reduce recognizability for models not trained on cystatin family motifs.",
-    "The reviewer-only UniProt accession and metadata were absent from the evaluated model input; the model must rely solely on the 133-aa sequence and general biological knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A224AHH8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3c5aa0d99b764ddb00b3bfc44ecfd919df514f305110884b8d91334d379f31a5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 133,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3c5aa0d99b764ddb00b3bfc44ecfd919df514f305110884b8d91334d379f31a5",
   "current_entry_audit": {
     "entryVersion": 24,
     "firstPublicDate": "2025-06-18",
@@ -536,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-10-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "current_source_sequence_sha256": "3c5aa0d99b764ddb00b3bfc44ecfd919df514f305110884b8d91334d379f31a5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 133,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3c5aa0d99b764ddb00b3bfc44ecfd919df514f305110884b8d91334d379f31a5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 23,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A224AHH8",
   "selected_historical_entry_version": 23,
+  "selected_historical_record_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
+  "selected_historical_source_sequence_length": 133,
+  "selected_historical_source_sequence_sha256": "3c5aa0d99b764ddb00b3bfc44ecfd919df514f305110884b8d91334d379f31a5",
   "selected_historical_version": {
     "accession": "A0A224AHH8",
     "database": "Swiss-Prot",
@@ -554,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "CYTL_IXOPE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
-  "selected_historical_source_sequence_sha256": "3c5aa0d99b764ddb00b3bfc44ecfd919df514f305110884b8d91334d379f31a5",
-  "selected_historical_source_sequence_length": 133,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 23,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -589,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json",
-  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A224AHH8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json"
 }
 ```
 
@@ -608,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json",
-  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":24,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-10-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json"
 }
 ```
 
@@ -627,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json",
-  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Taiga tick\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BBA12691.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Chelicerata\",\"Arachnida\",\"Acari\",\"Parasitiformes\",\"Ixodida\",\"Ixodoidea\",\"Ixodidae\",\"Ixodinae\",\"Ixodes\"],\"scientificName\":\"Ixodes persulcatus\",\"taxonId\":34615}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json"
 }
 ```
 
@@ -646,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json",
-  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Secreted salivary protein sL1\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"31734217\",\"source\":\"PubMed\"}],\"value\":\"Sialostatin L1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"31734217\",\"source\":\"PubMed\"}],\"value\":\"Ip-sL1\"}]}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Salivary cystatin-L\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json"
 }
 ```
 
@@ -665,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json",
-  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"31734217\",\"source\":\"PubMed\"}],\"value\":\"Inhibitor of cysteine proteinases (PubMed:31734217). Inhibits host cathepsin L (CTSL) and S (CTSS) (PubMed:31734217). Modulates production of various cytokines and chemokines in lipopolysaccharide (LPS)-stimulated mouse dendritic cell (PubMed:31734217). Suppresses maturation of mouse bone-marrow-derived dendritic cells (BMDCs) (PubMed:31734217)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json"
 }
 ```
 
@@ -684,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json",
-  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/8",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0004869\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:cysteine-type endopeptidase inhibitor activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/8",
+  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json"
 }
 ```
 
@@ -703,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json",
-  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
-  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Sajiki Y.\",\"Konnai S.\",\"Ochi A.\",\"Okagawa T.\",\"Githaka N.\",\"Isezaki M.\",\"Yamada S.\",\"Ito T.\",\"Ando S.\",\"Kawabata H.\",\"Logullo C.\",\"da Silva Vaz I. Jr.\",\"Maekawa N.\",\"Murata S.\",\"Ohashi K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"31734217\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.ttbdis.2019.101332\"}],\"citationType\":\"journal article\",\"firstPage\":\"101332\",\"id\":\"31734217\",\"journal\":\"Ticks Tick Borne Dis.\",\"lastPage\":\"101332\",\"publicationDate\":\"2020\",\"title\":\"Immunosuppressive effects of sialostatin L1 and L2 isolated from the taiga tick Ixodes persulcatus Schulze.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"TISSUE SPECIFICITY\",\"DEVELOPMENTAL STAGE\",\"INDUCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:45.425951+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "537c4d6da7e463085452ccf2cdc8409fa576f140e8e486b6769b5bf1c25ccf00",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A224AHH8.json"
 }
 ```
 
@@ -721,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23",
-  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
-  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   CYTL_IXOPE              Reviewed;         133 AA.\nAC   A0A224AHH8;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-OCT-2017, sequence version 1.\nDT   28-JAN-2026, entry version 23.\nDE   RecName: Full=Salivary cystatin-L {ECO:0000305};\nDE   AltName: Full=Secreted salivary protein sL1 {ECO:0000305};\nDE   AltName: Full=Sialostatin L1 {ECO:0000303|PubMed:31734217};\nDE            Short=Ip-sL1 {ECO:0000303|PubMed:31734217};\nDE   Flags: Precursor;\nOS   Ixodes persulcatus (Taiga tick).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Chelicerata; Arachnida; Acari;\nOC   Parasitiformes; Ixodida; Ixodoidea; Ixodidae; Ixodinae; Ixodes.\nOX   NCBI_TaxID=34615 {ECO:0000312|EMBL:BBA12691.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
+  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23"
 }
 ```
 
@@ -742,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23",
-  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
-  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
-  "source_locator": "lines 25-33",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, TISSUE SPECIFICITY, DEVELOPMENTAL STAGE, AND INDUCTION.\nRX   PubMed=31734217; DOI=10.1016/j.ttbdis.2019.101332;\nRA   Sajiki Y., Konnai S., Ochi A., Okagawa T., Githaka N., Isezaki M.,\nRA   Yamada S., Ito T., Ando S., Kawabata H., Logullo C., da Silva Vaz I. Jr.,\nRA   Maekawa N., Murata S., Ohashi K.;\nRT   \"Immunosuppressive effects of sialostatin L1 and L2 isolated from the taiga\nRT   tick Ixodes persulcatus Schulze.\";\nRL   Ticks Tick Borne Dis. 11:101332-101332(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
+  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23"
 }
 ```
 
@@ -763,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23",
-  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
-  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
-  "source_locator": "lines 34-39",
   "excerpt": "CC   -!- FUNCTION: Inhibitor of cysteine proteinases (PubMed:31734217). Inhibits\nCC       host cathepsin L (CTSL) and S (CTSS) (PubMed:31734217). Modulates\nCC       production of various cytokines and chemokines in lipopolysaccharide\nCC       (LPS)-stimulated mouse dendritic cell (PubMed:31734217). Suppresses\nCC       maturation of mouse bone-marrow-derived dendritic cells (BMDCs)\nCC       (PubMed:31734217). {ECO:0000269|PubMed:31734217}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
+  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23"
 }
 ```
 
@@ -784,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 23,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23",
-  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
-  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
-  "source_locator": "lines 59-59",
   "excerpt": "DR   GO; GO:0004869; F:cysteine-type endopeptidase inhibitor activity; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 23,
+  "retrieved_utc": "2026-11-02T04:24:48.827324+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 59-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f7393e328dacd5769ef0a5f8eef27a01071c92cbbd3326c54dfd12a2169eeb03",
+  "url": "https://rest.uniprot.org/unisave/A0A224AHH8?format=txt&versions=23"
 }
 ```
 
@@ -806,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 51601-51611",
   "excerpt": "[Term]\nid: GO:0004869\nname: cysteine-type endopeptidase inhibitor activity\nnamespace: molecular_function\nalt_id: GO:0004870\ndef: \"Binds to and stops, prevents or reduces the activity of a cysteine-type endopeptidase.\" [GOC:dph, GOC:tb]\nsynonym: \"cystatin\" NARROW [GOC:jl]\nsynonym: \"cysteine protease inhibitor activity\" NARROW [GOC:dph, GOC:tb]\nsynonym: \"thiol protease inhibitor\" NARROW []\nis_a: GO:0004866 ! endopeptidase inhibitor activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004869",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 51601-51611",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004869"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -825,15 +583,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 54501-54511",
   "excerpt": "[Term]\nid: GO:0005178\nname: integrin binding\nnamespace: molecular_function\ndef: \"Binding to an integrin.\" [GOC:ceb]\nsubset: goslim_chembl\nsynonym: \"integrin ligand\" NARROW []\nis_a: GO:0005102 ! signaling receptor binding\nis_a: GO:0044877 ! protein-containing complex binding\nis_a: GO:0050839 ! cell adhesion molecule binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005178",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 54501-54511",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005178"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -844,15 +602,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 57053-57062",
   "excerpt": "[Term]\nid: GO:0005525\nname: GTP binding\nnamespace: molecular_function\ndef: \"Binding to GTP, guanosine triphosphate.\" [GOC:ai]\nxref: Reactome:R-HSA-167429 \"The receptor:G-protein complex  binds GTP\"\nis_a: GO:0032561 ! guanyl ribonucleotide binding\nis_a: GO:0035639 ! purine ribonucleoside triphosphate binding\nis_a: GO:0043168 ! anion binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005525",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 57053-57062",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005525"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -863,15 +621,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 554859-554868",
   "excerpt": "[Term]\nid: GO:1990760\nname: osmolarity-sensing monoatomic cation channel activity\nnamespace: molecular_function\ndef: \"Enables the transmembrane transfer of a monoatomic cation by a channel that opens when a change in the osmolarity occurs in the extracellular space of the cell in which the cation channel resides.\" [PMID:18279313]\nsynonym: \"osmolarity-sensing cation channel activity\" BROAD []\nis_a: GO:0005034 ! osmosensor activity\nis_a: GO:0005261 ! monoatomic cation channel activity\nis_a: GO:0022836 ! gated channel activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990760",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 554859-554868",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990760"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

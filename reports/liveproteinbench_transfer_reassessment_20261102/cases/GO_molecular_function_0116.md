@@ -1,18 +1,16 @@
-# GO_molecular_function_0116: before and after transfer clarification
+# GO_molecular_function_0116
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0116.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0116.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — transcription cis-regulatory region binding
+**Expected answer:** **C** — transcription cis-regulatory region binding
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence is annotated as a transcriptional activator that binds promoter operator sequences; its GO annotation includes transcription cis-regulatory region binding. The GO annotation is computational (IEA:TreeGrafter), while the cited functional description includes experimental evidence for transcriptional regulation. The specific operator-binding statement is qualified as by similarity.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is compatible with a soluble, helical DNA-binding regulator, which makes the transcription-related choices more plausible than a membrane transporter or a specialized glucosyltransferase. But that broad inference does not establish binding to a transcription cis-regulatory region or resolve the precise GO term.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this sequence is FasR, a mycobacterial transcriptional activator that binds promoter operator sequences; neither the organism nor that binding activity is provided in the question.
-
-
-**Reason**
-
-> Sequence features can suggest a regulator, but the decisive promoter-binding function and its scope require protein-specific annotation or experimental knowledge. Recognizing this exact sequence would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-specific evidence supports the broader transcription cis-regulatory region binding option. The RNA polymerase II option is more specific and does not fit the annotated bacterial regulator.
-
-
-### Important caveats
-
-- The sequence match is exact, but the author's source snapshot is unknown.
-- The GO annotation is computational; the cited functional description includes experimental support, while the specific operator-binding detail is reported by similarity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is compatible with a soluble, helical DNA-binding regulator, which makes the transcription-related choices more plausible than a membrane transporter or a specialized glucosyltransferase. But that broad inference does not establish binding to a transcription cis-regulatory region or resolve the precise GO term.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence is FasR, a mycobacterial transcriptional activator that binds promoter operator sequences; neither the organism nor that binding activity is provided in the question.",
-    "reason": "Sequence features can suggest a regulator, but the decisive promoter-binding function and its scope require protein-specific annotation or experimental knowledge. Recognizing this exact sequence would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "GO_molecular_function_0116",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as a transcriptional activator that binds promoter operator sequences; its GO annotation includes transcription cis-regulatory region binding. The GO annotation is computational (IEA:TreeGrafter), while the cited functional description includes experimental evidence for transcriptional regulation. The specific operator-binding statement is qualified as by similarity."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the author's source snapshot is unknown.",
-    "The GO annotation is computational; the cited functional description includes experimental support, while the specific operator-binding detail is reported by similarity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-specific evidence supports the broader transcription cis-regulatory region binding option. The RNA polymerase II option is more specific and does not fit the annotated bacterial regulator."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0116",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence is annotated as a transcriptional activator that binds promoter operator sequences; its GO annotation includes transcription cis-regulatory region binding. The GO annotation is computational (IEA:TreeGrafter), while the cited functional description includes experimental evidence for transcriptional regulation. The specific operator-binding statement is qualified as by similarity.",
-    "evidence_ids": ["C1", "C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is compatible with a soluble, helical DNA-binding regulator, which makes the transcription-related choices more plausible than a membrane transporter or a specialized glucosyltransferase. But that broad inference does not establish binding to a transcription cis-regulatory region or resolve the precise GO term.",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence is FasR, a mycobacterial transcriptional activator that binds promoter operator sequences; neither the organism nor that binding activity is provided in the question.",
-    "reason": "Sequence features can suggest a regulator, but the decisive promoter-binding function and its scope require protein-specific annotation or experimental knowledge. Recognizing this exact sequence would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-specific evidence supports the broader transcription cis-regulatory region binding option. The RNA polymerase II option is more specific and does not fit the annotated bacterial regulator."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the author's source snapshot is unknown.",
-    "The GO annotation is computational; the cited functional description includes experimental support, while the specific operator-binding detail is reported by similarity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0QTR3 (FASR_MYCS2) is annotated with GO:0000976 'transcription cis-regulatory region binding' (C7/H5, IEA:TreeGrafter). The protein is experimentally characterized (PubMed:23721164, ECO:0000269) as a transcriptional activator that 'specifically binds to three conserved operator sequences present in the fas-acpS promoter region' (C5/H3), which is a cis-regulatory region. The GO term definition (GO1) covers 'binding to a specific sequence of DNA that is part of a regulatory region that controls transcription,' consistent with operator binding. The evidence code for the GO annotation is computational (TreeGrafter), but the underlying function is experimentally supported.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable helix-turn-helix (HTH) DNA-binding domain motif (the region 'GYHAAGMDEIADRAGVSKPVLYQHFSSKLELYLAVLQRHVDNLVSGVRQALRTTTDNRQRLRAAVEAFFDFIEHDSQGYRLIFENDYVTEPQVAAQVKVATEACTDAVFDLISRDSGLEAHRARMIAVGLVAISVDSARYWLNNDRPIDKDSAVEGTVQFAWGGLSHVPLTRS' shows the characteristic HTH fold). This eliminates options A (no transmembrane helices or Walker A/B ATP-binding motifs) and D (no glucosyltransferase catalytic residues or PSPG box). The small size (~219 aa), single HTH domain, and absence of eukaryotic-specific features (nuclear localization signals, activation domains, zinc fingers) indicate a bacterial-type transcriptional regulator, eliminating option B which is restricted to RNA polymerase II cis-regulatory regions (a eukaryotic-specific concept). The HTH domain in bacterial regulators classically binds operator/promoter sequences, i.e., cis-regulatory regions, supporting option C.
-
-
-**Missing item-specific fact**
-
-> None critical. The HTH domain identification and elimination of eukaryotic/transporter/glycosyltransferase options rely on general domain-architecture knowledge.
-
-
-**Reason**
-
-> A knowledgeable model can identify the HTH motif as a DNA-binding domain, recognize the overall architecture as bacterial (excluding RNA Pol II–specific option B), and eliminate transporter and glycosyltransferase options by absence of relevant structural features. The remaining option C (transcription cis-regulatory region binding) follows naturally from HTH-type bacterial transcriptional regulators binding operator/promoter sequences.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option B is excluded because RNA polymerase II is eukaryotic and the protein architecture is bacterial. Options A and D are excluded by absence of transmembrane/ATPase and glucosyltransferase structural features respectively. The GO term GO:0000976 even lists 'bacterial-type RNA polymerase regulatory region DNA binding' as a narrow synonym (GO1), further confirming applicability to a bacterial HTH regulator.
-
-
-### Important caveats
-
-- The GO annotation for the expected answer (GO:0000976) carries evidence code IEA:TreeGrafter (computational inference), not direct experimental evidence for this specific term, though the underlying operator-binding activity is experimentally supported (ECO:0000269).
-- The reviewer-only evidence was absent from the evaluated model input; the model must rely solely on the 219-aa sequence and general biological knowledge.
-- Recognizing the HTH domain from a 219-aa sequence requires moderate expertise but falls within general molecular biology knowledge.
-- The UniProt entry was first publicly released 2025-02-05; the historical annotation at entry version 121 already includes GO:0000976.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable helix-turn-helix (HTH) DNA-binding domain motif (the region 'GYHAAGMDEIADRAGVSKPVLYQHFSSKLELYLAVLQRHVDNLVSGVRQALRTTTDNRQRLRAAVEAFFDFIEHDSQGYRLIFENDYVTEPQVAAQVKVATEACTDAVFDLISRDSGLEAHRARMIAVGLVAISVDSARYWLNNDRPIDKDSAVEGTVQFAWGGLSHVPLTRS' shows the characteristic HTH fold). This eliminates options A (no transmembrane helices or Walker A/B ATP-binding motifs) and D (no glucosyltransferase catalytic residues or PSPG box). The small size (~219 aa), single HTH domain, and absence of eukaryotic-specific features (nuclear localization signals, activation domains, zinc fingers) indicate a bacterial-type transcriptional regulator, eliminating option B which is restricted to RNA polymerase II cis-regulatory regions (a eukaryotic-specific concept). The HTH domain in bacterial regulators classically binds operator/promoter sequences, i.e., cis-regulatory regions, supporting option C.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The HTH domain identification and elimination of eukaryotic/transporter/glycosyltransferase options rely on general domain-architecture knowledge.",
-    "reason": "A knowledgeable model can identify the HTH motif as a DNA-binding domain, recognize the overall architecture as bacterial (excluding RNA Pol II–specific option B), and eliminate transporter and glycosyltransferase options by absence of relevant structural features. The remaining option C (transcription cis-regulatory region binding) follows naturally from HTH-type bacterial transcriptional regulators binding operator/promoter sequences."
-  },
-  "case_id": "GO_molecular_function_0116",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H3",
-      "H5",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0QTR3 (FASR_MYCS2) is annotated with GO:0000976 'transcription cis-regulatory region binding' (C7/H5, IEA:TreeGrafter). The protein is experimentally characterized (PubMed:23721164, ECO:0000269) as a transcriptional activator that 'specifically binds to three conserved operator sequences present in the fas-acpS promoter region' (C5/H3), which is a cis-regulatory region. The GO term definition (GO1) covers 'binding to a specific sequence of DNA that is part of a regulatory region that controls transcription,' consistent with operator binding. The evidence code for the GO annotation is computational (TreeGrafter), but the underlying function is experimentally supported."
-  },
-  "important_caveats": [
-    "The GO annotation for the expected answer (GO:0000976) carries evidence code IEA:TreeGrafter (computational inference), not direct experimental evidence for this specific term, though the underlying operator-binding activity is experimentally supported (ECO:0000269).",
-    "The reviewer-only evidence was absent from the evaluated model input; the model must rely solely on the 219-aa sequence and general biological knowledge.",
-    "Recognizing the HTH domain from a 219-aa sequence requires moderate expertise but falls within general molecular biology knowledge.",
-    "The UniProt entry was first publicly released 2025-02-05; the historical annotation at entry version 121 already includes GO:0000976."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option B is excluded because RNA polymerase II is eukaryotic and the protein architecture is bacterial. Options A and D are excluded by absence of transmembrane/ATPase and glucosyltransferase structural features respectively. The GO term GO:0000976 even lists 'bacterial-type RNA polymerase regulatory region DNA binding' as a narrow synonym (GO1), further confirming applicability to a bacterial HTH regulator."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0116",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0QTR3 (FASR_MYCS2) is annotated with GO:0000976 'transcription cis-regulatory region binding' (C7/H5, IEA:TreeGrafter). The protein is experimentally characterized (PubMed:23721164, ECO:0000269) as a transcriptional activator that 'specifically binds to three conserved operator sequences present in the fas-acpS promoter region' (C5/H3), which is a cis-regulatory region. The GO term definition (GO1) covers 'binding to a specific sequence of DNA that is part of a regulatory region that controls transcription,' consistent with operator binding. The evidence code for the GO annotation is computational (TreeGrafter), but the underlying function is experimentally supported.",
-    "evidence_ids": ["C5", "C7", "H3", "H5", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a recognizable helix-turn-helix (HTH) DNA-binding domain motif (the region 'GYHAAGMDEIADRAGVSKPVLYQHFSSKLELYLAVLQRHVDNLVSGVRQALRTTTDNRQRLRAAVEAFFDFIEHDSQGYRLIFENDYVTEPQVAAQVKVATEACTDAVFDLISRDSGLEAHRARMIAVGLVAISVDSARYWLNNDRPIDKDSAVEGTVQFAWGGLSHVPLTRS' shows the characteristic HTH fold). This eliminates options A (no transmembrane helices or Walker A/B ATP-binding motifs) and D (no glucosyltransferase catalytic residues or PSPG box). The small size (~219 aa), single HTH domain, and absence of eukaryotic-specific features (nuclear localization signals, activation domains, zinc fingers) indicate a bacterial-type transcriptional regulator, eliminating option B which is restricted to RNA polymerase II cis-regulatory regions (a eukaryotic-specific concept). The HTH domain in bacterial regulators classically binds operator/promoter sequences, i.e., cis-regulatory regions, supporting option C.",
-    "missing_item_specific_fact": "None critical. The HTH domain identification and elimination of eukaryotic/transporter/glycosyltransferase options rely on general domain-architecture knowledge.",
-    "reason": "A knowledgeable model can identify the HTH motif as a DNA-binding domain, recognize the overall architecture as bacterial (excluding RNA Pol II–specific option B), and eliminate transporter and glycosyltransferase options by absence of relevant structural features. The remaining option C (transcription cis-regulatory region binding) follows naturally from HTH-type bacterial transcriptional regulators binding operator/promoter sequences."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option B is excluded because RNA polymerase II is eukaryotic and the protein architecture is bacterial. Options A and D are excluded by absence of transmembrane/ATPase and glucosyltransferase structural features respectively. The GO term GO:0000976 even lists 'bacterial-type RNA polymerase regulatory region DNA binding' as a narrow synonym (GO1), further confirming applicability to a bacterial HTH regulator."
-  },
-  "important_caveats": [
-    "The GO annotation for the expected answer (GO:0000976) carries evidence code IEA:TreeGrafter (computational inference), not direct experimental evidence for this specific term, though the underlying operator-binding activity is experimentally supported (ECO:0000269).",
-    "The reviewer-only evidence was absent from the evaluated model input; the model must rely solely on the 219-aa sequence and general biological knowledge.",
-    "Recognizing the HTH domain from a 219-aa sequence requires moderate expertise but falls within general molecular biology knowledge.",
-    "The UniProt entry was first publicly released 2025-02-05; the historical annotation at entry version 121 already includes GO:0000976."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -509,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0QTR3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "7655cf7e660aa0356101859ec630e218188ac533362de09980c127dec1f2e84a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 219,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "7655cf7e660aa0356101859ec630e218188ac533362de09980c127dec1f2e84a",
   "current_entry_audit": {
     "entryVersion": 123,
     "firstPublicDate": "2025-02-05",
@@ -540,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-01-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "current_source_sequence_sha256": "7655cf7e660aa0356101859ec630e218188ac533362de09980c127dec1f2e84a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 219,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "7655cf7e660aa0356101859ec630e218188ac533362de09980c127dec1f2e84a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 121,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0QTR3",
   "selected_historical_entry_version": 121,
+  "selected_historical_record_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
+  "selected_historical_source_sequence_length": 219,
+  "selected_historical_source_sequence_sha256": "7655cf7e660aa0356101859ec630e218188ac533362de09980c127dec1f2e84a",
   "selected_historical_version": {
     "accession": "A0QTR3",
     "database": "Swiss-Prot",
@@ -558,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FASR_MYCS2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
-  "selected_historical_source_sequence_sha256": "7655cf7e660aa0356101859ec630e218188ac533362de09980c127dec1f2e84a",
-  "selected_historical_source_sequence_length": 219,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 121,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0QTR3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -612,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":123,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-01-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -631,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mycobacterium smegmatis\",\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Mycobacteriales\",\"Mycobacteriaceae\",\"Mycolicibacterium\"],\"scientificName\":\"Mycolicibacterium smegmatis (strain ATCC 700084 / mc(2)155)\",\"taxonId\":246196}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -650,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23721164\",\"source\":\"PubMed\"}],\"value\":\"Fatty acid synthesis regulator\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HTH-type transcriptional activator FasR\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -669,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O05858\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"23721164\",\"source\":\"PubMed\"}],\"value\":\"Transcriptional activator that plays a central role in sensing mycobacterial long-chain fatty acids and regulating lipid biosynthesis (PubMed:23721164). Activates the expression of the genes encoding the fatty acid synthase (fas) and the 4-phosphopantetheinyl transferase (acpS), whose products are involved in the fatty acid and mycolic acid biosynthesis (PubMed:23721164). Specifically binds to three conserved operator sequences present in the fas-acpS promoter region (By similarity). Essential for M.smegmatis viability (PubMed:23721164)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -688,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/15",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0003700\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:DNA-binding transcription factor activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/15",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -707,15 +465,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0000976\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:transcription cis-regulatory region binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -726,15 +484,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json",
-  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
-  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Mondino S.\",\"Gago G.\",\"Gramajo H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23721164\"},{\"database\":\"DOI\",\"id\":\"10.1111/mmi.12282\"}],\"citationType\":\"journal article\",\"firstPage\":\"372\",\"id\":\"23721164\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"387\",\"publicationDate\":\"2013\",\"title\":\"Transcriptional regulation of fatty acid biosynthesis in mycobacteria.\",\"volume\":\"89\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"H37Rv\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"DNA-BINDING\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:24:56.364123+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8cf2c8b486d8c72d205fd0d9007bd62d07c0a8e903a99695cdc94552a5fc09a5",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QTR3.json"
 }
 ```
 
@@ -744,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121",
-  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
-  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   FASR_MYCS2              Reviewed;         219 AA.\nAC   A0QTR3; I7FA01;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-JAN-2007, sequence version 1.\nDT   28-JAN-2026, entry version 121.\nDE   RecName: Full=HTH-type transcriptional activator FasR {ECO:0000305};\nDE   AltName: Full=Fatty acid synthesis regulator {ECO:0000303|PubMed:23721164};\nGN   Name=fasR {ECO:0000303|PubMed:23721164};\nGN   OrderedLocusNames=MSMEG_1935 {ECO:0000312|EMBL:ABK72683.1},\nGN   MSMEI_1893 {ECO:0000312|EMBL:AFP38365.1};\nOS   Mycolicibacterium smegmatis (strain ATCC 700084 / mc(2)155) (Mycobacterium\nOS   smegmatis).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Mycobacteriales;\nOC   Mycobacteriaceae; Mycolicibacterium.\nOX   NCBI_TaxID=246196;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
+  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121"
 }
 ```
 
@@ -765,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121",
-  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
-  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
-  "source_locator": "lines 40-46",
   "excerpt": "RN   [4]\nRP   FUNCTION, DNA-BINDING, AND DISRUPTION PHENOTYPE.\nRC   STRAIN=H37Rv;\nRX   PubMed=23721164; DOI=10.1111/mmi.12282;\nRA   Mondino S., Gago G., Gramajo H.;\nRT   \"Transcriptional regulation of fatty acid biosynthesis in mycobacteria.\";\nRL   Mol. Microbiol. 89:372-387(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
+  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121"
 }
 ```
 
@@ -786,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121",
-  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
-  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
-  "source_locator": "lines 47-56",
   "excerpt": "CC   -!- FUNCTION: Transcriptional activator that plays a central role in\nCC       sensing mycobacterial long-chain fatty acids and regulating lipid\nCC       biosynthesis (PubMed:23721164). Activates the expression of the genes\nCC       encoding the fatty acid synthase (fas) and the 4-phosphopantetheinyl\nCC       transferase (acpS), whose products are involved in the fatty acid and\nCC       mycolic acid biosynthesis (PubMed:23721164). Specifically binds to\nCC       three conserved operator sequences present in the fas-acpS promoter\nCC       region (By similarity). Essential for M.smegmatis viability\nCC       (PubMed:23721164). {ECO:0000250|UniProtKB:O05858,\nCC       ECO:0000269|PubMed:23721164}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-56",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
+  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121"
 }
 ```
 
@@ -807,18 +565,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121",
-  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
-  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
-  "source_locator": "lines 85-85",
   "excerpt": "DR   GO; GO:0003700; F:DNA-binding transcription factor activity; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
+  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121"
 }
 ```
 
@@ -828,18 +586,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121",
-  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
-  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
-  "source_locator": "lines 86-86",
   "excerpt": "DR   GO; GO:0000976; F:transcription cis-regulatory region binding; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-01T06:27:44.625980+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-86",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bcd24040722af499e5b64bc73a390a5b6fc97de2775d647dcbfa09a8e9dc372e",
+  "url": "https://rest.uniprot.org/unisave/A0QTR3?format=txt&versions=121"
 }
 ```
 
@@ -850,15 +608,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 7096-7115",
   "excerpt": "[Term]\nid: GO:0000976\nname: transcription cis-regulatory region binding\nnamespace: molecular_function\nalt_id: GO:0000975\nalt_id: GO:0000984\nalt_id: GO:0001017\nalt_id: GO:0044212\ndef: \"Binding to a specific sequence of DNA that is part of a regulatory region that controls transcription of that section of the DNA. The transcribed region might be described as a gene, cistron, or operon.\" [GOC:txnOH]\ncomment: Note that this term is meant to also capture non-specific binding to regulatory regions. Also, to minimize ambiguity in the use of the word \"promoter\" in GO, we have chosen the phrase \"transcription regulatory region\" to refer to all of the regulatory regions. Regulatory regions in the DNA which control initiation may include the \"core promoter\" where the basal transcription machinery binds, the \"core promoter proximal region\" where regulatory factors other than the basal machinery bind. There are also additional regulatory regions, in both the DNA and the RNA transcript, which regulate elongation or termination of transcription.\nsynonym: \"bacterial-type RNA polymerase regulatory region DNA binding\" NARROW []\nsynonym: \"bacterial-type RNA polymerase transcription regulatory region sequence-specific DNA binding\" NARROW []\nsynonym: \"eubacterial-type RNA polymerase regulatory region DNA binding\" NARROW []\nsynonym: \"eubacterial-type RNA polymerase regulatory region sequence-specific DNA binding\" NARROW []\nsynonym: \"regulatory region DNA binding\" BROAD []\nsynonym: \"transcription regulatory region DNA binding\" RELATED []\nsynonym: \"transcription regulatory region sequence-specific DNA binding\" EXACT []\nis_a: GO:0001067 ! transcription regulatory region nucleic acid binding\nis_a: GO:1990837 ! sequence-specific double-stranded DNA binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000976",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 7096-7115",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000976"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -869,15 +627,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 7126-7141",
   "excerpt": "[Term]\nid: GO:0000978\nname: RNA polymerase II cis-regulatory region sequence-specific DNA binding\nnamespace: molecular_function\nalt_id: GO:0000980\ndef: \"Binding to a specific upstream regulatory DNA sequence (transcription factor recognition sequence or binding site) located in cis relative to the transcription start site (i.e., on the same strand of DNA) of a gene transcribed by RNA polymerase II.\" [GOC:txnOH-2018]\ncomment: Note that the phrase \"upstream activating sequence\", or UAS is often used in S. cerevisiae literature to refer to cis-regulatory sequences. In bacteria such as E. coli, the phrase \"upstream activating sequence\", or UAS is usually a synonym for \"enhancer\".\nsynonym: \"RNA polymerase II core promoter proximal region sequence-specific DNA binding\" RELATED []\nsynonym: \"RNA polymerase II distal enhancer sequence-specific DNA binding\" RELATED []\nsynonym: \"RNA polymerase II promoter proximal region sequence-specific DNA binding\" RELATED []\nsynonym: \"RNA polymerase II proximal promoter sequence-specific DNA binding\" RELATED []\nsynonym: \"RNA polymerase II upstream activating sequence (UAS) sequence-specific DNA binding\" RELATED []\nxref: Reactome:R-HSA-400204 \"PPARA binds RXRA\"\nis_a: GO:0000977 ! RNA polymerase II transcription regulatory region sequence-specific DNA binding\nis_a: GO:0000987 ! cis-regulatory region sequence-specific DNA binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000978",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 7126-7141",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000978"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -888,15 +646,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 239260-239297",
   "excerpt": "[Term]\nid: GO:0042626\nname: ATPase-coupled transmembrane transporter activity\nnamespace: molecular_function\nalt_id: GO:0015405\nalt_id: GO:0016820\nalt_id: GO:0043492\ndef: \"Primary active transporter of a solute across a membrane, via the reaction: ATP + H2O = ADP + phosphate, to directly drive the transport of a substance across a membrane. The transport protein may be transiently phosphorylated (P-type transporters), or not (ABC-type transporters and other families of transporters). Primary active transport occurs up the solute's concentration gradient and is driven by a primary energy source.\" [GOC:mtg_transport, ISBN:0815340729]\nsynonym: \"ATP-coupled transmembrane transporter activity\" EXACT []\nsynonym: \"ATP-dependent transmembrane transporter activity\" EXACT []\nsynonym: \"ATPase activity, coupled to movement of substances\" BROAD []\nsynonym: \"ATPase activity, coupled to transmembrane movement of substances\" EXACT []\nsynonym: \"hydrolase activity, acting on acid anhydrides, catalyzing transmembrane movement of substances\" NARROW []\nsynonym: \"P-P-bond-hydrolysis-driven transmembrane transporter activity\" BROAD []\nsynonym: \"P-P-bond-hydrolysis-driven transporter\" BROAD []\nxref: EC:7.2.2.-\nxref: Reactome:R-HSA-1454916 \"The ABCC family mediates organic anion transport\"\nxref: Reactome:R-HSA-1467457 \"ABCA8,B1,B5 transport xenobiotics from cytosol to extracellular region\"\nxref: Reactome:R-HSA-2161506 \"abacavir [cytosol] + ATP + H2O => abacavir[extracellular] + ADP + phosphate\"\nxref: Reactome:R-HSA-2161538 \"abacavir [cytosol] + ATP + H2O => abacavir[extracellular] + ADP + phosphate\"\nxref: Reactome:R-HSA-390393 \"Peroxisomal uptake of very long-chain fatty acyl CoA\"\nxref: Reactome:R-HSA-5690340 \"Defective ABCC6 does not transport organic anion from cytosol to extracellular region\"\nxref: Reactome:R-HSA-9033499 \"PEX1:PEX6:PEX26:ZFAND6 dissociates Ub:PEX5L and PEX7 from PEX14:PEX13:PEX2:PEX10:PEX12 and translocates PEX5L and PEX7 from the peroxisomal membrane to the cytosol\"\nxref: Reactome:R-HSA-9033505 \"PEX1:PEX6:PEX26:ZFAND6:Ub:PEX5S,L:PEX14:PEX13:PEX2:PEX10:PEX12 dissociates yielding cytosolic Ub:PEX5S,L and membrane PEX14:PEX13:PEX2:PEX10:PEX12\"\nxref: Reactome:R-HSA-9659680 \"ABCB1 transports xenobiotics out of the cell\"\nxref: Reactome:R-HSA-9750546 \"ABCC4 transports TPMP substrates from cytosol to extracellular region\"\nxref: Reactome:R-HSA-9750617 \"ABCC5 transports TPMP substrates from cytosol to extracellular region\"\nxref: Reactome:R-HSA-9753278 \"ABCC2,ABCG2 transport APAP-GlcA, APAP-SO3\"\nxref: Reactome:R-HSA-9753283 \"ABCC3,ABCC4 transport APAP-GlcA, APAP-SO3\"\nxref: Reactome:R-HSA-9753284 \"ABCC1,4,5 transport APAP-Cys,APAP-Mer from cytosol to extracellular region\"\nxref: Reactome:R-HSA-9759454 \"ABCB1 transports PREDN,PREDL out of kidney cells\"\nxref: Reactome:R-HSA-9759461 \"ABCB1 transports PREDN,PREDL out of hepatic cells\"\nxref: Reactome:R-HSA-9794120 \"ABCG2 transports Cipro from intestinal cell to extracellular space\"\nxref: Reactome:R-HSA-9794572 \"ABCG2 transports Cipro from hepatic cell to extracellular space\"\nis_a: GO:0015399 ! primary active transmembrane transporter activity\nis_a: GO:0140657 ! ATP-dependent activity\nproperty_value: skos:exactMatch EC:7.2.2.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042626",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 239260-239297",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042626"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -907,15 +665,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 392459-392465",
   "excerpt": "[Term]\nid: GO:0080044\nname: quercetin 7-O-glucosyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a glucosyl group from UDP-glucose to the 7-hydroxy group of a quercetin molecule.\" [PMID:15352060]\nis_a: GO:0035251 ! UDP-glucosyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0080044",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 392459-392465",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0080044"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

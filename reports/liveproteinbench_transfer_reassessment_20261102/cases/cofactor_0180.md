@@ -1,18 +1,16 @@
-# cofactor_0180: before and after transfer clarification
+# cofactor_0180
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0180.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0180.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — FAD
+**Expected answer:** **C** — FAD
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | output error (invalid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the 515-residue Drosophila protein annotated as a FAD-dependent oxidoreductase, and its UniProt cofactor annotation specifies FAD. This supports choice C as a database annotation; the cited cofactor evidence code does not by itself establish that the claim was experimentally measured.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may be consistent with an oxidoreductase, but that broad inference does not distinguish FAD from NAD(+) or establish the particular cofactor requirement.
-
-
-**Missing item-specific fact**
-
-> The identity and cofactor annotation of this specific protein as FAD-dependent are not supplied in the question.
-
-
-**Reason**
-
-> Selecting FAD is supported by the matched protein-specific database annotation, not by a sequence feature or biological argument in the input that meaningfully rules out the other choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched protein's cofactor annotation specifies FAD; the sequence-only prompt, however, does not provide enough information to derive that specificity.
-
-
-### Important caveats
-
-- The reviewer-only annotation matches the supplied sequence, but it was not available to the evaluated model.
-- The cofactor annotation is database evidence, not independently verified experimental evidence in the supplied material.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may be consistent with an oxidoreductase, but that broad inference does not distinguish FAD from NAD(+) or establish the particular cofactor requirement.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity and cofactor annotation of this specific protein as FAD-dependent are not supplied in the question.",
-    "reason": "Selecting FAD is supported by the matched protein-specific database annotation, not by a sequence feature or biological argument in the input that meaningfully rules out the other choices."
-  },
-  "case_id": "cofactor_0180",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 515-residue Drosophila protein annotated as a FAD-dependent oxidoreductase, and its UniProt cofactor annotation specifies FAD. This supports choice C as a database annotation; the cited cofactor evidence code does not by itself establish that the claim was experimentally measured."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but it was not available to the evaluated model.",
-    "The cofactor annotation is database evidence, not independently verified experimental evidence in the supplied material."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein's cofactor annotation specifies FAD; the sequence-only prompt, however, does not provide enough information to derive that specificity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0180",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 515-residue Drosophila protein annotated as a FAD-dependent oxidoreductase, and its UniProt cofactor annotation specifies FAD. This supports choice C as a database annotation; the cited cofactor evidence code does not by itself establish that the claim was experimentally measured.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may be consistent with an oxidoreductase, but that broad inference does not distinguish FAD from NAD(+) or establish the particular cofactor requirement.",
-    "missing_item_specific_fact": "The identity and cofactor annotation of this specific protein as FAD-dependent are not supplied in the question.",
-    "reason": "Selecting FAD is supported by the matched protein-specific database annotation, not by a sequence feature or biological argument in the input that meaningfully rules out the other choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched protein's cofactor annotation specifies FAD; the sequence-only prompt, however, does not provide enough information to derive that specificity."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but it was not available to the evaluated model.",
-    "The cofactor annotation is database evidence, not independently verified experimental evidence in the supplied material."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
-
-**Validation errors:** `question_ambiguity:invalid_option_ids`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9VJ10 (FXRD1_DROME) explicitly annotates FAD as the cofactor (C5, H4: 'COFACTOR: Name=FAD; Xref=ChEBI:CHEBI:57692'). The recommended protein name is 'FAD-dependent oxidoreductase domain-containing protein 1 homolog' (C4, H2). The evidence code is ECO:0000305 (inferred by curator), which is a database annotation rather than direct experimental measurement, but it is consistent with the well-characterized FOXRED1 domain family that is defined by its FAD dependence. The sequence matches the benchmark exactly (515 aa, SHA-256 match).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains Rossmann-fold-like glycine-rich motifs (e.g., 'GGGGVG' near position ~100, 'GCLGLEKEGWF') that indicate dinucleotide binding, which helps rule out heme (no Cys-His/His-His ligation motifs present) and tungstopterin (no molybdopterin/tungstopterin-specific features, and this is a eukaryotic mitochondrial protein). However, the critical distinction between FAD (C) and NAD(+) (D) cannot be reliably made from sequence motifs alone: both cofactors bind through overlapping GxGxxG Rossmann-fold motifs, and the sequence does not contain a unique, unambiguous FAD-specific signature that a general-knowledge model could extract. The correct answer depends on recognizing the specific FOXRED1 (FAD-dependent oxidoreductase domain) fold and knowing that this domain family is defined by FAD (not NAD+) dependence.
-
-
-**Missing item-specific fact**
-
-> Knowledge that this particular domain architecture corresponds to the FOXRED1 domain family, which is specifically FAD-dependent rather than NAD+-dependent. This is a domain-family-level annotation, not derivable from generic Rossmann-fold pattern recognition.
-
-
-**Reason**
-
-> While the sequence allows elimination of heme and tungstopterin through absence of their characteristic binding motifs, the FAD-vs-NAD(+) distinction requires recognizing the specific FOXRED1 domain fold. General Rossmann-fold motifs are shared between FAD- and NAD-binding proteins, so the answer hinges on item-specific domain-family knowledge (or a trained predictor), not on general biological reasoning from the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C (FAD)",
-  "D (NAD(+))"
-]
-```
-
-> Both FAD and NAD(+) bind through Rossmann-fold GxGxxG motifs present in the sequence. Without domain-family-level knowledge, a model could reasonably argue for either dinucleotide cofactor. The other two options (tungstopterin, heme) are clearly eliminable by absence of their characteristic motifs.
-
-
-### Important caveats
-
-- The cofactor annotation carries evidence code ECO:0000305 (inferred by curator), meaning it is a database annotation based on domain-family assignment and literature, not a direct experimental cofactor assay reported in a primary paper.
-- The protein name itself contains 'FAD-dependent,' which is the strongest single indicator of the answer; however, the model receives only the raw sequence, not the name.
-- The UniProt entry was first publicly released 2025-02-05; the author's source snapshot is unknown, though the historical entry (version 178, released 2026-01-28) already contains the FAD cofactor annotation.
-- Tungstopterin (A) is an extremely unusual cofactor found primarily in archaeal/algal oxidoreductases and is a clear distractor for a Drosophila mitochondrial protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains Rossmann-fold-like glycine-rich motifs (e.g., 'GGGGVG' near position ~100, 'GCLGLEKEGWF') that indicate dinucleotide binding, which helps rule out heme (no Cys-His/His-His ligation motifs present) and tungstopterin (no molybdopterin/tungstopterin-specific features, and this is a eukaryotic mitochondrial protein). However, the critical distinction between FAD (C) and NAD(+) (D) cannot be reliably made from sequence motifs alone: both cofactors bind through overlapping GxGxxG Rossmann-fold motifs, and the sequence does not contain a unique, unambiguous FAD-specific signature that a general-knowledge model could extract. The correct answer depends on recognizing the specific FOXRED1 (FAD-dependent oxidoreductase domain) fold and knowing that this domain family is defined by FAD (not NAD+) dependence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Knowledge that this particular domain architecture corresponds to the FOXRED1 domain family, which is specifically FAD-dependent rather than NAD+-dependent. This is a domain-family-level annotation, not derivable from generic Rossmann-fold pattern recognition.",
-    "reason": "While the sequence allows elimination of heme and tungstopterin through absence of their characteristic binding motifs, the FAD-vs-NAD(+) distinction requires recognizing the specific FOXRED1 domain fold. General Rossmann-fold motifs are shared between FAD- and NAD-binding proteins, so the answer hinges on item-specific domain-family knowledge (or a trained predictor), not on general biological reasoning from the sequence."
-  },
-  "case_id": "cofactor_0180",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VJ10 (FXRD1_DROME) explicitly annotates FAD as the cofactor (C5, H4: 'COFACTOR: Name=FAD; Xref=ChEBI:CHEBI:57692'). The recommended protein name is 'FAD-dependent oxidoreductase domain-containing protein 1 homolog' (C4, H2). The evidence code is ECO:0000305 (inferred by curator), which is a database annotation rather than direct experimental measurement, but it is consistent with the well-characterized FOXRED1 domain family that is defined by its FAD dependence. The sequence matches the benchmark exactly (515 aa, SHA-256 match)."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000305 (inferred by curator), meaning it is a database annotation based on domain-family assignment and literature, not a direct experimental cofactor assay reported in a primary paper.",
-    "The protein name itself contains 'FAD-dependent,' which is the strongest single indicator of the answer; however, the model receives only the raw sequence, not the name.",
-    "The UniProt entry was first publicly released 2025-02-05; the author's source snapshot is unknown, though the historical entry (version 178, released 2026-01-28) already contains the FAD cofactor annotation.",
-    "Tungstopterin (A) is an extremely unusual cofactor found primarily in archaeal/algal oxidoreductases and is a clear distractor for a Drosophila mitochondrial protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C (FAD)",
-      "D (NAD(+))"
-    ],
-    "reason": "Both FAD and NAD(+) bind through Rossmann-fold GxGxxG motifs present in the sequence. Without domain-family-level knowledge, a model could reasonably argue for either dinucleotide cofactor. The other two options (tungstopterin, heme) are clearly eliminable by absence of their characteristic motifs."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0180",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9VJ10 (FXRD1_DROME) explicitly annotates FAD as the cofactor (C5, H4: 'COFACTOR: Name=FAD; Xref=ChEBI:CHEBI:57692'). The recommended protein name is 'FAD-dependent oxidoreductase domain-containing protein 1 homolog' (C4, H2). The evidence code is ECO:0000305 (inferred by curator), which is a database annotation rather than direct experimental measurement, but it is consistent with the well-characterized FOXRED1 domain family that is defined by its FAD dependence. The sequence matches the benchmark exactly (515 aa, SHA-256 match).",
-    "evidence_ids": ["C4", "C5", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains Rossmann-fold-like glycine-rich motifs (e.g., 'GGGGVG' near position ~100, 'GCLGLEKEGWF') that indicate dinucleotide binding, which helps rule out heme (no Cys-His/His-His ligation motifs present) and tungstopterin (no molybdopterin/tungstopterin-specific features, and this is a eukaryotic mitochondrial protein). However, the critical distinction between FAD (C) and NAD(+) (D) cannot be reliably made from sequence motifs alone: both cofactors bind through overlapping GxGxxG Rossmann-fold motifs, and the sequence does not contain a unique, unambiguous FAD-specific signature that a general-knowledge model could extract. The correct answer depends on recognizing the specific FOXRED1 (FAD-dependent oxidoreductase domain) fold and knowing that this domain family is defined by FAD (not NAD+) dependence.",
-    "missing_item_specific_fact": "Knowledge that this particular domain architecture corresponds to the FOXRED1 domain family, which is specifically FAD-dependent rather than NAD+-dependent. This is a domain-family-level annotation, not derivable from generic Rossmann-fold pattern recognition.",
-    "reason": "While the sequence allows elimination of heme and tungstopterin through absence of their characteristic binding motifs, the FAD-vs-NAD(+) distinction requires recognizing the specific FOXRED1 domain fold. General Rossmann-fold motifs are shared between FAD- and NAD-binding proteins, so the answer hinges on item-specific domain-family knowledge (or a trained predictor), not on general biological reasoning from the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C (FAD)", "D (NAD(+))"],
-    "reason": "Both FAD and NAD(+) bind through Rossmann-fold GxGxxG motifs present in the sequence. Without domain-family-level knowledge, a model could reasonably argue for either dinucleotide cofactor. The other two options (tungstopterin, heme) are clearly eliminable by absence of their characteristic motifs."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000305 (inferred by curator), meaning it is a database annotation based on domain-family assignment and literature, not a direct experimental cofactor assay reported in a primary paper.",
-    "The protein name itself contains 'FAD-dependent,' which is the strongest single indicator of the answer; however, the model receives only the raw sequence, not the name.",
-    "The UniProt entry was first publicly released 2025-02-05; the author's source snapshot is unknown, though the historical entry (version 178, released 2026-01-28) already contains the FAD cofactor annotation.",
-    "Tungstopterin (A) is an extremely unusual cofactor found primarily in archaeal/algal oxidoreductases and is a clear distractor for a Drosophila mitochondrial protein."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -398,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VJ10",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f295ddc7682b2e3ff4f82ab0bccabeb67219f9e6c0ec6a5255a9bb834282ad29",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 515,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f295ddc7682b2e3ff4f82ab0bccabeb67219f9e6c0ec6a5255a9bb834282ad29",
   "current_entry_audit": {
     "entryVersion": 179,
     "firstPublicDate": "2025-02-05",
@@ -542,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
-  "current_source_sequence_sha256": "f295ddc7682b2e3ff4f82ab0bccabeb67219f9e6c0ec6a5255a9bb834282ad29",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 515,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f295ddc7682b2e3ff4f82ab0bccabeb67219f9e6c0ec6a5255a9bb834282ad29",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 178,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VJ10",
   "selected_historical_entry_version": 178,
+  "selected_historical_record_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
+  "selected_historical_source_sequence_length": 515,
+  "selected_historical_source_sequence_sha256": "f295ddc7682b2e3ff4f82ab0bccabeb67219f9e6c0ec6a5255a9bb834282ad29",
   "selected_historical_version": {
     "accession": "Q9VJ10",
     "database": "Swiss-Prot",
@@ -560,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "FXRD1_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
-  "selected_historical_source_sequence_sha256": "f295ddc7682b2e3ff4f82ab0bccabeb67219f9e6c0ec6a5255a9bb834282ad29",
-  "selected_historical_source_sequence_length": 515,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 178,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json",
-  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
-  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VJ10\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json"
 }
 ```
 
@@ -610,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json",
-  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
-  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":179,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json"
 }
 ```
 
@@ -629,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json",
-  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
-  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json"
 }
 ```
 
@@ -648,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json",
-  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
-  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0002021\",\"source\":\"FlyBase\"}],\"value\":\"Protein lethal (2) 37Bb\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34386730\",\"source\":\"PubMed\"}],\"value\":\"FAD-dependent oxidoreductase domain-containing protein 1 homolog\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34386730\",\"source\":\"PubMed\"}],\"value\":\"dFOXRED1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json"
 }
 ```
 
@@ -667,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json",
-  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
-  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:57692\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"name\":\"FAD\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json"
 }
 ```
 
@@ -686,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json",
-  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
-  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Murari A.\",\"Rhooms S.K.\",\"Garcia C.\",\"Liu T.\",\"Li H.\",\"Mishra B.\",\"Deshong C.\",\"Owusu-Ansah E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34386730\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.isci.2021.102869\"}],\"citationType\":\"journal article\",\"firstPage\":\"102869\",\"id\":\"34386730\",\"journal\":\"IScience\",\"lastPage\":\"102869\",\"publicationDate\":\"2021\",\"title\":\"Dissecting the concordant and disparate roles of NDUFAF3 and NDUFAF4 in mitochondrial complex I biogenesis.\",\"volume\":\"24\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"INTERACTION WITH COMPLEX 1\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:33:20.331974+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "5928264ea67fff4feffb21b27781b1256523a5cc83b17b4b26cd4301a622bbde",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VJ10.json"
 }
 ```
 
@@ -704,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178",
-  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
-  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   FXRD1_DROME             Reviewed;         515 AA.\nAC   Q9VJ10;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 178.\nDE   RecName: Full=FAD-dependent oxidoreductase domain-containing protein 1 homolog {ECO:0000303|PubMed:34386730};\nDE            Short=dFOXRED1 {ECO:0000303|PubMed:34386730};\nDE   AltName: Full=Protein lethal (2) 37Bb {ECO:0000312|FlyBase:FBgn0002021};\nGN   Name=l(2)37Bb {ECO:0000312|FlyBase:FBgn0002021};\nGN   Synonyms=Bb {ECO:0000312|FlyBase:FBgn0002021},\nGN   l(2)35B2 {ECO:0000312|FlyBase:FBgn0002021};\nGN   ORFNames=CG10655 {ECO:0000312|FlyBase:FBgn0002021};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
+  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178"
 }
 ```
 
@@ -725,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178",
-  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
-  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=FAD-dependent oxidoreductase domain-containing protein 1 homolog {ECO:0000303|PubMed:34386730};\nDE            Short=dFOXRED1 {ECO:0000303|PubMed:34386730};\nDE   AltName: Full=Protein lethal (2) 37Bb {ECO:0000312|FlyBase:FBgn0002021};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
+  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178"
 }
 ```
 
@@ -746,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178",
-  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
-  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
-  "source_locator": "lines 81-88",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, AND INTERACTION WITH COMPLEX 1.\nRX   PubMed=34386730; DOI=10.1016/j.isci.2021.102869;\nRA   Murari A., Rhooms S.K., Garcia C., Liu T., Li H., Mishra B., Deshong C.,\nRA   Owusu-Ansah E.;\nRT   \"Dissecting the concordant and disparate roles of NDUFAF3 and NDUFAF4 in\nRT   mitochondrial complex I biogenesis.\";\nRL   IScience 24:102869-102869(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
+  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178"
 }
 ```
 
@@ -767,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 178,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178",
-  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
-  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
-  "source_locator": "lines 92-93",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=FAD; Xref=ChEBI:CHEBI:57692; Evidence={ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 178,
+  "retrieved_utc": "2026-11-02T04:33:26.250109+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 92-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4c84d9e5f4082dd84cbeb45e53111c4d92eafe5818533b97e0eb0502064c3096",
+  "url": "https://rest.uniprot.org/unisave/Q9VJ10?format=txt&versions=178"
 }
 ```
 

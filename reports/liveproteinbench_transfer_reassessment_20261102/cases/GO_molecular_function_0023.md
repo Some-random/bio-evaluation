@@ -1,18 +1,16 @@
-# GO_molecular_function_0023: before and after transfer clarification
+# GO_molecular_function_0023
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0023.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0023.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — beta-glucuronidase activity
+**Expected answer:** **D** — beta-glucuronidase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Paenibacillus borealis protein annotated as a beta-glucuronidase. A cited experimental study supports activity on p-nitrophenyl-beta-D-glucuronide, and the catalytic reaction corresponds to beta-glucuronidase activity. The proposed natural-substrate role is described as probable, but that qualification does not undermine the activity asked about.
-
-Citations as saved: [H3](#evidence-h3), [H4](#evidence-h4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a large soluble enzyme, which makes the histone demethylase option less plausible, but general sequence features alone do not meaningfully establish beta-glucuronidase activity over the other enzyme choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity and experimental substrate-hydrolysis result linking this sequence to beta-glucuronidase activity are not supplied in the question.
-
-
-**Reason**
-
-> Distinguishing the keyed function requires recognizing the protein through sequence homology or consulting its specific annotation or experimental characterization; that protein-specific fact is absent from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched-sequence experimental evidence supports choice D, and the supplied evidence does not support another listed option for this protein.
-
-
-### Important caveats
-
-- The UniProt experimental evidence supports activity with an artificial substrate; the proposed role in natural oligosaccharide metabolism is qualified as probable.
-- The evidence supports the key but was reviewer-only and was not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a large soluble enzyme, which makes the histone demethylase option less plausible, but general sequence features alone do not meaningfully establish beta-glucuronidase activity over the other enzyme choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity and experimental substrate-hydrolysis result linking this sequence to beta-glucuronidase activity are not supplied in the question.",
-    "reason": "Distinguishing the keyed function requires recognizing the protein through sequence homology or consulting its specific annotation or experimental characterization; that protein-specific fact is absent from the input."
-  },
-  "case_id": "GO_molecular_function_0023",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "H4",
-      "C5",
-      "C6",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Paenibacillus borealis protein annotated as a beta-glucuronidase. A cited experimental study supports activity on p-nitrophenyl-beta-D-glucuronide, and the catalytic reaction corresponds to beta-glucuronidase activity. The proposed natural-substrate role is described as probable, but that qualification does not undermine the activity asked about."
-  },
-  "important_caveats": [
-    "The UniProt experimental evidence supports activity with an artificial substrate; the proposed role in natural oligosaccharide metabolism is qualified as probable.",
-    "The evidence supports the key but was reviewer-only and was not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence experimental evidence supports choice D, and the supplied evidence does not support another listed option for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0023",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Paenibacillus borealis protein annotated as a beta-glucuronidase. A cited experimental study supports activity on p-nitrophenyl-beta-D-glucuronide, and the catalytic reaction corresponds to beta-glucuronidase activity. The proposed natural-substrate role is described as probable, but that qualification does not undermine the activity asked about.",
-    "evidence_ids": ["H3", "H4", "C5", "C6", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a large soluble enzyme, which makes the histone demethylase option less plausible, but general sequence features alone do not meaningfully establish beta-glucuronidase activity over the other enzyme choices.",
-    "missing_item_specific_fact": "The protein-specific identity and experimental substrate-hydrolysis result linking this sequence to beta-glucuronidase activity are not supplied in the question.",
-    "reason": "Distinguishing the keyed function requires recognizing the protein through sequence homology or consulting its specific annotation or experimental characterization; that protein-specific fact is absent from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-sequence experimental evidence supports choice D, and the supplied evidence does not support another listed option for this protein."
-  },
-  "important_caveats": [
-    "The UniProt experimental evidence supports activity with an artificial substrate; the proposed role in natural oligosaccharide metabolism is qualified as probable.",
-    "The evidence supports the key but was reviewer-only and was not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A089LCJ8 (BGLR_PAEBO, Paenibacillus borealis) matches the supplied 596-aa sequence exactly. The entry assigns EC 3.2.1.31 (Beta-glucuronidase) and GO:0004566 (beta-glucuronidase activity) with experimental evidence (ECO:0000269, PubMed:35947916), demonstrating activity on p-nitrophenyl-beta-D-glucuronide. The catalytic reaction (beta-D-glucuronoside + H2O = D-glucuronate + alcohol) is experimentally confirmed. The expected answer D is directly supported by experimental annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C9](#evidence-c9), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Option C (histone H3K9me/H3K9me2 demethylase) can be confidently eliminated because the protein is from Paenibacillus borealis (a bacterium), and histone H3 is a eukaryotic substrate; this is a valid reasoning-based elimination. Option A (tetraketide alpha-pyrone synthase) is unlikely because the sequence lacks the characteristic multi-domain PKS architecture (KS-AT-ACP). However, the critical distinction between B (3-oxoacyl-ACP synthase) and D (beta-glucuronidase) requires recognizing the absence of the FabH/FabB catalytic Cys-His-His triad and the presence of glycoside hydrolase family motifs (e.g., GH2/GH94 catalytic Glu pairs), which is a highly specific domain-motif identification rather than general biological reasoning.
-
-
-**Missing item-specific fact**
-
-> The specific glycoside hydrolase family motif (GH94/GH2 catalytic residues and fold signatures) that would positively identify this protein as a beta-glucuronidase rather than a 3-oxoacyl-ACP synthase, without relying on database lookup or memorized annotation of this particular protein.
-
-
-**Reason**
-
-> While C and A can be eliminated by general biological reasoning (bacterial origin, absence of PKS architecture), the B-vs-D distinction requires either recognizing specific GH-family catalytic motifs in a 596-aa sequence or knowing the UniProt annotation. The sequence does not present an immediately obvious 'this is a beta-glucuronidase' signature to general biological reasoning without specialized glycoside hydrolase motif knowledge or database access.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the experimental evidence, D is clearly the correct answer. C is impossible for a bacterial protein. A lacks PKS domain architecture. B is distinguishable by absence of the FabH/FabB catalytic triad. No other option is defensible.
-
-
-### Important caveats
-
-- The original paper (PubMed:35947916) describes the protein as a 'GH94 glycoside phosphorylase' in its title, yet UniProt assigns EC 3.2.1.31 (a hydrolase, not phosphorylase). This taxonomic/family assignment nuance does not change the GO molecular function annotation, which is experimentally supported.
-- The GO annotation GO:0004566 carries evidence code EXP:UniProtKB (experimental), not IEA, making it a strong functional assignment.
-- The reviewer-only evidence confirms sequence match (SHA256 identical) between the benchmark sequence and UniProt A0A089LCJ8 across both current and historical (v41) snapshots.
-- The elimination of option C relies on knowing the organism is bacterial; the question does not explicitly state the organism, but the sequence itself (no histone-like N-terminal tails, bacterial codon bias patterns) supports this inference.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Option C (histone H3K9me/H3K9me2 demethylase) can be confidently eliminated because the protein is from Paenibacillus borealis (a bacterium), and histone H3 is a eukaryotic substrate; this is a valid reasoning-based elimination. Option A (tetraketide alpha-pyrone synthase) is unlikely because the sequence lacks the characteristic multi-domain PKS architecture (KS-AT-ACP). However, the critical distinction between B (3-oxoacyl-ACP synthase) and D (beta-glucuronidase) requires recognizing the absence of the FabH/FabB catalytic Cys-His-His triad and the presence of glycoside hydrolase family motifs (e.g., GH2/GH94 catalytic Glu pairs), which is a highly specific domain-motif identification rather than general biological reasoning.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific glycoside hydrolase family motif (GH94/GH2 catalytic residues and fold signatures) that would positively identify this protein as a beta-glucuronidase rather than a 3-oxoacyl-ACP synthase, without relying on database lookup or memorized annotation of this particular protein.",
-    "reason": "While C and A can be eliminated by general biological reasoning (bacterial origin, absence of PKS architecture), the B-vs-D distinction requires either recognizing specific GH-family catalytic motifs in a 596-aa sequence or knowing the UniProt annotation. The sequence does not present an immediately obvious 'this is a beta-glucuronidase' signature to general biological reasoning without specialized glycoside hydrolase motif knowledge or database access."
-  },
-  "case_id": "GO_molecular_function_0023",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C9",
-      "H1",
-      "H3",
-      "H4",
-      "H5",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A089LCJ8 (BGLR_PAEBO, Paenibacillus borealis) matches the supplied 596-aa sequence exactly. The entry assigns EC 3.2.1.31 (Beta-glucuronidase) and GO:0004566 (beta-glucuronidase activity) with experimental evidence (ECO:0000269, PubMed:35947916), demonstrating activity on p-nitrophenyl-beta-D-glucuronide. The catalytic reaction (beta-D-glucuronoside + H2O = D-glucuronate + alcohol) is experimentally confirmed. The expected answer D is directly supported by experimental annotation."
-  },
-  "important_caveats": [
-    "The original paper (PubMed:35947916) describes the protein as a 'GH94 glycoside phosphorylase' in its title, yet UniProt assigns EC 3.2.1.31 (a hydrolase, not phosphorylase). This taxonomic/family assignment nuance does not change the GO molecular function annotation, which is experimentally supported.",
-    "The GO annotation GO:0004566 carries evidence code EXP:UniProtKB (experimental), not IEA, making it a strong functional assignment.",
-    "The reviewer-only evidence confirms sequence match (SHA256 identical) between the benchmark sequence and UniProt A0A089LCJ8 across both current and historical (v41) snapshots.",
-    "The elimination of option C relies on knowing the organism is bacterial; the question does not explicitly state the organism, but the sequence itself (no histone-like N-terminal tails, bacterial codon bias patterns) supports this inference."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the experimental evidence, D is clearly the correct answer. C is impossible for a bacterial protein. A lacks PKS domain architecture. B is distinguishable by absence of the FabH/FabB catalytic triad. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0023",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A089LCJ8 (BGLR_PAEBO, Paenibacillus borealis) matches the supplied 596-aa sequence exactly. The entry assigns EC 3.2.1.31 (Beta-glucuronidase) and GO:0004566 (beta-glucuronidase activity) with experimental evidence (ECO:0000269, PubMed:35947916), demonstrating activity on p-nitrophenyl-beta-D-glucuronide. The catalytic reaction (beta-D-glucuronoside + H2O = D-glucuronate + alcohol) is experimentally confirmed. The expected answer D is directly supported by experimental annotation.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "C9", "H1", "H3", "H4", "H5", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Option C (histone H3K9me/H3K9me2 demethylase) can be confidently eliminated because the protein is from Paenibacillus borealis (a bacterium), and histone H3 is a eukaryotic substrate; this is a valid reasoning-based elimination. Option A (tetraketide alpha-pyrone synthase) is unlikely because the sequence lacks the characteristic multi-domain PKS architecture (KS-AT-ACP). However, the critical distinction between B (3-oxoacyl-ACP synthase) and D (beta-glucuronidase) requires recognizing the absence of the FabH/FabB catalytic Cys-His-His triad and the presence of glycoside hydrolase family motifs (e.g., GH2/GH94 catalytic Glu pairs), which is a highly specific domain-motif identification rather than general biological reasoning.",
-    "missing_item_specific_fact": "The specific glycoside hydrolase family motif (GH94/GH2 catalytic residues and fold signatures) that would positively identify this protein as a beta-glucuronidase rather than a 3-oxoacyl-ACP synthase, without relying on database lookup or memorized annotation of this particular protein.",
-    "reason": "While C and A can be eliminated by general biological reasoning (bacterial origin, absence of PKS architecture), the B-vs-D distinction requires either recognizing specific GH-family catalytic motifs in a 596-aa sequence or knowing the UniProt annotation. The sequence does not present an immediately obvious 'this is a beta-glucuronidase' signature to general biological reasoning without specialized glycoside hydrolase motif knowledge or database access."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the experimental evidence, D is clearly the correct answer. C is impossible for a bacterial protein. A lacks PKS domain architecture. B is distinguishable by absence of the FabH/FabB catalytic triad. No other option is defensible."
-  },
-  "important_caveats": [
-    "The original paper (PubMed:35947916) describes the protein as a 'GH94 glycoside phosphorylase' in its title, yet UniProt assigns EC 3.2.1.31 (a hydrolase, not phosphorylase). This taxonomic/family assignment nuance does not change the GO molecular function annotation, which is experimentally supported.",
-    "The GO annotation GO:0004566 carries evidence code EXP:UniProtKB (experimental), not IEA, making it a strong functional assignment.",
-    "The reviewer-only evidence confirms sequence match (SHA256 identical) between the benchmark sequence and UniProt A0A089LCJ8 across both current and historical (v41) snapshots.",
-    "The elimination of option C relies on knowing the organism is bacterial; the question does not explicitly state the organism, but the sequence itself (no histone-like N-terminal tails, bacterial codon bias patterns) supports this inference."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A089LCJ8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "92ddb41573a2c8ca97687a2ec29d37e183cbd01214b1e420a77dcd55150f4b9c",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 596,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "92ddb41573a2c8ca97687a2ec29d37e183cbd01214b1e420a77dcd55150f4b9c",
   "current_entry_audit": {
     "entryVersion": 43,
     "firstPublicDate": "2025-04-09",
@@ -546,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-11-26",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "current_source_sequence_sha256": "92ddb41573a2c8ca97687a2ec29d37e183cbd01214b1e420a77dcd55150f4b9c",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 596,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "92ddb41573a2c8ca97687a2ec29d37e183cbd01214b1e420a77dcd55150f4b9c",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 41,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A089LCJ8",
   "selected_historical_entry_version": 41,
+  "selected_historical_record_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
+  "selected_historical_source_sequence_length": 596,
+  "selected_historical_source_sequence_sha256": "92ddb41573a2c8ca97687a2ec29d37e183cbd01214b1e420a77dcd55150f4b9c",
   "selected_historical_version": {
     "accession": "A0A089LCJ8",
     "database": "Swiss-Prot",
@@ -564,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BGLR_PAEBO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
-  "selected_historical_source_sequence_sha256": "92ddb41573a2c8ca97687a2ec29d37e183cbd01214b1e420a77dcd55150f4b9c",
-  "selected_historical_source_sequence_length": 596,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 41,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -599,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A089LCJ8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -618,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":43,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-11-26\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -637,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Bacillota\",\"Bacilli\",\"Caryophanales\",\"Paenibacillaceae\",\"Paenibacillus\"],\"scientificName\":\"Paenibacillus borealis\",\"taxonId\":160799}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -656,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35947916\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.31\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35947916\",\"source\":\"PubMed\"}],\"value\":\"Beta-glucuronidase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -675,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35947916\",\"source\":\"PubMed\"}],\"value\":\"Displays beta-glucuronidase activity with the artificial substrate p-nitrophenyl-beta-D-glucuronide (PNPG) (PubMed:35947916). Is probably involved in the metabolism of oligosaccharides containing the 3-O-beta-D-glucopyranosyl-beta-D-glucuronide structure released from bacterial and plant acidic carbohydrates (PubMed:35947916)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -694,15 +447,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.31\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35947916\",\"source\":\"PubMed\"}],\"name\":\"a beta-D-glucuronoside + H2O = D-glucuronate + an alcohol\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:17633\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30879\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58720\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:83411\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -713,15 +466,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/10",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35947916\",\"source\":\"PubMed\"}],\"id\":\"GO:0004566\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:beta-glucuronidase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/10",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -732,15 +485,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/11",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0030246\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:carbohydrate binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/11",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -751,15 +504,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json",
-  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
-  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Isono N.\",\"Mizutani E.\",\"Hayashida H.\",\"Katsuzaki H.\",\"Saburi W.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35947916\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.bbrc.2022.07.098\"}],\"citationType\":\"journal article\",\"firstPage\":\"60\",\"id\":\"35947916\",\"journal\":\"Biochem. Biophys. Res. Commun.\",\"lastPage\":\"65\",\"publicationDate\":\"2022\",\"title\":\"Functional characterization of a novel GH94 glycoside phosphorylase, 3-O-beta-d-glucopyranosyl beta-d-glucuronide phosphorylase, and implication of the metabolic pathway of acidic carbohydrates in Paenibacillus borealis.\",\"volume\":\"625\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 13188 / CCUG 43137 / CIP 107056 / KCTC 3805 / KK19\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:37.179702+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f005e61f4ce923f9d73b889125827288a188dc26d465df67272785f544bcb3a7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A089LCJ8.json"
 }
 ```
 
@@ -769,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41",
-  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
-  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   BGLR_PAEBO              Reviewed;         596 AA.\nAC   A0A089LCJ8;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   26-NOV-2014, sequence version 1.\nDT   28-JAN-2026, entry version 41.\nDE   RecName: Full=Beta-glucuronidase {ECO:0000303|PubMed:35947916};\nDE            EC=3.2.1.31 {ECO:0000269|PubMed:35947916};\nGN   ORFNames=PBOR_13360 {ECO:0000312|EMBL:AIQ57810.1};\nOS   Paenibacillus borealis.\nOC   Bacteria; Bacillati; Bacillota; Bacilli; Bacillales; Paenibacillaceae;\nOC   Paenibacillus.\nOX   NCBI_TaxID=160799;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
+  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41"
 }
 ```
 
@@ -790,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41",
-  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
-  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
-  "source_locator": "lines 19-27",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRC   STRAIN=DSM 13188 / CCUG 43137 / CIP 107056 / KCTC 3805 / KK19;\nRX   PubMed=35947916; DOI=10.1016/j.bbrc.2022.07.098;\nRA   Isono N., Mizutani E., Hayashida H., Katsuzaki H., Saburi W.;\nRT   \"Functional characterization of a novel GH94 glycoside phosphorylase, 3-O-\nRT   beta-d-glucopyranosyl beta-d-glucuronide phosphorylase, and implication of\nRT   the metabolic pathway of acidic carbohydrates in Paenibacillus borealis.\";\nRL   Biochem. Biophys. Res. Commun. 625:60-65(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
+  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41"
 }
 ```
 
@@ -811,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41",
-  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
-  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
-  "source_locator": "lines 28-33",
   "excerpt": "CC   -!- FUNCTION: Displays beta-glucuronidase activity with the artificial\nCC       substrate p-nitrophenyl-beta-D-glucuronide (PNPG) (PubMed:35947916). Is\nCC       probably involved in the metabolism of oligosaccharides containing the\nCC       3-O-beta-D-glucopyranosyl-beta-D-glucuronide structure released from\nCC       bacterial and plant acidic carbohydrates (PubMed:35947916).\nCC       {ECO:0000269|PubMed:35947916}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
+  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41"
 }
 ```
 
@@ -832,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41",
-  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
-  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
-  "source_locator": "lines 34-38",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=a beta-D-glucuronoside + H2O = D-glucuronate + an alcohol;\nCC         Xref=Rhea:RHEA:17633, ChEBI:CHEBI:15377, ChEBI:CHEBI:30879,\nCC         ChEBI:CHEBI:58720, ChEBI:CHEBI:83411; EC=3.2.1.31;\nCC         Evidence={ECO:0000269|PubMed:35947916};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 34-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
+  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41"
 }
 ```
 
@@ -853,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41",
-  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
-  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
-  "source_locator": "lines 68-68",
   "excerpt": "DR   GO; GO:0004566; F:beta-glucuronidase activity; IEA:UniProtKB-EC.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 68-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
+  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41"
 }
 ```
 
@@ -874,18 +627,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 41,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41",
-  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
-  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
-  "source_locator": "lines 69-69",
   "excerpt": "DR   GO; GO:0030246; F:carbohydrate binding; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 41,
+  "retrieved_utc": "2026-11-01T06:27:15.466546+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 69-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7fe98c6765fe88e6243f21f7805fad6fb6c1c7ac16afc1caaa13afb6d2025562",
+  "url": "https://rest.uniprot.org/unisave/A0A089LCJ8?format=txt&versions=41"
 }
 ```
 
@@ -896,15 +649,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 39629-39711",
   "excerpt": "[Term]\nid: GO:0004315\nname: 3-oxoacyl-[acyl-carrier-protein] synthase activity\nnamespace: molecular_function\nalt_id: GO:0033817\ndef: \"Catalysis of the reaction: acyl-[acyl-carrier protein] + malonyl-[acyl-carrier protein] = 3-oxoacyl-[acyl-carrier protein] + CO2 + [acyl-carrier protein].\" [RHEA:22836]\ncomment: Note that this activity is responsible for the chain-elongation step of dissociated (type II) fatty-acid biosynthesis, i.e. the addition of two C atoms to the fatty-acid chain. Can use fatty acyl thioesters of ACP (C2 to C16) as substrates, as well as fatty acyl thioesters of Co-A (C4 to C16).\nsynonym: \"3-ketoacyl-acyl carrier protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"3-oxoacyl-[acyl-carrier protein] synthase activity\" EXACT []\nsynonym: \"3-oxoacyl-ACP synthase activity\" EXACT []\nsynonym: \"3-oxoacyl-acyl carrier protein synthase I activity\" NARROW [EC:2.3.1.179]\nsynonym: \"3-oxoacyl-acyl-carrier-protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"acyl-acyl-carrier-protein:malonyl-acyl-carrier-protein C-acyltransferase (decarboxylating)\" RELATED [EC:2.3.1.41]\nsynonym: \"acyl-malonyl acyl carrier protein-condensing enzyme activity\" RELATED [EC:2.3.1.41]\nsynonym: \"acyl-malonyl(acyl-carrier-protein)-condensing enzyme activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl acyl carrier protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl synthetase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-[acyl carrier protein] synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-ACP synthase I activity\" NARROW [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-ACP synthase II activity\" NARROW [EC:2.3.1.179]\nsynonym: \"beta-ketoacyl-ACP synthetase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl carrier protein synthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl carrier protein synthetase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl-carrier-protein synthase I\" NARROW [EC:2.3.1.41]\nsynonym: \"beta-ketoacyl-acyl-carrier-protein synthase II activity\" NARROW []\nsynonym: \"beta-ketoacylsynthase activity\" RELATED [EC:2.3.1.41]\nsynonym: \"condensing enzyme activity\" BROAD [EC:2.3.1.41]\nsynonym: \"fatty acid condensing enzyme activity\" BROAD [EC:2.3.1.41]\nsynonym: \"ketoacyl-ACP synthase activity\" EXACT []\nxref: EC:2.3.1.179\nxref: EC:2.3.1.41\nxref: MetaCyc:2.3.1.179-RXN\nxref: MetaCyc:3-OXOACYL-ACP-SYNTH-RXN\nxref: RHEA:14565\nxref: RHEA:22836\nxref: RHEA:41800\nxref: RHEA:41820\nxref: RHEA:41836\nxref: RHEA:41852\nxref: RHEA:41868\nxref: RHEA:41884\nxref: RHEA:41900\nxref: RHEA:41916\nxref: RHEA:42248\nxref: RHEA:42252\nxref: RHEA:42260\nxref: RHEA:42268\nxref: RHEA:42272\nxref: RHEA:42276\nxref: RHEA:47824\nxref: RHEA:54924\nxref: RHEA:54940\nxref: RHEA:55040\nxref: RHEA:65308\nxref: RHEA:65312\nis_a: GO:0016747 ! acyltransferase activity, transferring groups other than amino-acyl groups\nproperty_value: skos:exactMatch EC:2.3.1.41\nproperty_value: skos:exactMatch MetaCyc:3-OXOACYL-ACP-SYNTH-RXN\nproperty_value: skos:exactMatch RHEA:22836\nproperty_value: skos:narrowMatch EC:2.3.1.179\nproperty_value: skos:narrowMatch MetaCyc:2.3.1.179-RXN\nproperty_value: skos:narrowMatch RHEA:14565\nproperty_value: skos:narrowMatch RHEA:41800\nproperty_value: skos:narrowMatch RHEA:41820\nproperty_value: skos:narrowMatch RHEA:41836\nproperty_value: skos:narrowMatch RHEA:41852\nproperty_value: skos:narrowMatch RHEA:41868\nproperty_value: skos:narrowMatch RHEA:41884\nproperty_value: skos:narrowMatch RHEA:41900\nproperty_value: skos:narrowMatch RHEA:41916\nproperty_value: skos:narrowMatch RHEA:42248\nproperty_value: skos:narrowMatch RHEA:42252\nproperty_value: skos:narrowMatch RHEA:42260\nproperty_value: skos:narrowMatch RHEA:42268\nproperty_value: skos:narrowMatch RHEA:42272\nproperty_value: skos:narrowMatch RHEA:42276\nproperty_value: skos:narrowMatch RHEA:47824\nproperty_value: skos:narrowMatch RHEA:54924\nproperty_value: skos:narrowMatch RHEA:54940\nproperty_value: skos:narrowMatch RHEA:55040\nproperty_value: skos:narrowMatch RHEA:65308\nproperty_value: skos:narrowMatch RHEA:65312\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004315",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 39629-39711",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004315"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -915,15 +668,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 44488-44516",
   "excerpt": "[Term]\nid: GO:0004566\nname: beta-glucuronidase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: a beta-D-glucuronoside + H2O = an alcohol + D-glucuronate.\" [EC:3.2.1.31]\nsynonym: \"beta-D-glucuronoside glucuronosohydrolase activity\" RELATED [EC:3.2.1.31]\nsynonym: \"beta-glucuronide glucuronohydrolase activity\" RELATED [EC:3.2.1.31]\nsynonym: \"exo-beta-D-glucuronidase activity\" RELATED [EC:3.2.1.31]\nsynonym: \"glucuronidase activity\" RELATED [EC:3.2.1.31]\nsynonym: \"ketodase activity\" RELATED [EC:3.2.1.31]\nxref: EC:3.2.1.31\nxref: MetaCyc:BETA-GLUCURONID-RXN\nxref: Reactome:R-HSA-1678854 \"GUSB tetramer hydrolyses CS/HS precursor\"\nxref: Reactome:R-HSA-2162226 \"GUSB tetramer hydrolyzes GlcA-1,3-GlcNAc\"\nxref: Reactome:R-HSA-2162227 \"GUSB tetramer hydrolyses (HA)2\"\nxref: Reactome:R-HSA-2318373 \"Defective GUSB does not hydrolyse (HA)2\"\nxref: Reactome:R-HSA-9036068 \"Defective GUSB does not hydrolyse GlcA-1,3-GlcNAc\"\nxref: Reactome:R-HSA-9036070 \"Defective GUSB does not hydrolyse CS/HS precursor\"\nxref: RHEA:17633\nxref: RHEA:28326\nxref: RHEA:30475\nxref: RHEA:76111\nis_a: GO:0046574 ! glucuronidase activity\nproperty_value: skos:exactMatch EC:3.2.1.31\nproperty_value: skos:exactMatch RHEA:17633\nproperty_value: skos:narrowMatch RHEA:28326\nproperty_value: skos:narrowMatch RHEA:30475\nproperty_value: skos:narrowMatch RHEA:76111\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0004566",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 44488-44516",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0004566"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -934,15 +687,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 399100-399108",
   "excerpt": "[Term]\nid: GO:0090439\nname: tetraketide alpha-pyrone synthase activity\nnamespace: molecular_function\ndef: \"Catalyzes the reaction: 7-hydroxylauroyl-CoA + 3 malonyl-CoA + 2 H+ = 2-(8-hydroxy-2-oxotridecyl)-6-oxopyran-4-olate + 3 CO2 + 4 coenzyme A.\" [MetaCyc:RXN-16407, PMID:21193570]\nxref: MetaCyc:RXN-16407\nis_a: GO:0016747 ! acyltransferase activity, transferring groups other than amino-acyl groups\nproperty_value: skos:exactMatch MetaCyc:RXN-16407\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0090439",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 399100-399108",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0090439"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -953,15 +706,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 442495-442510",
   "excerpt": "[Term]\nid: GO:0140683\nname: histone H3K9me/H3K9me2 demethylase activity\nnamespace: molecular_function\ndef: \"Catalysis of the removal of a methyl group from a di or a monomethyl-lysine residue at position 9 of the histone H3 protein. This is a dioxygenase reaction that is dependent on Fe(II) and 2-oxoglutarate.\" [PMID:16603238]\ncomment: Comment: Note that the residue position corresponds to the canonical human H3 histone (UniProtKB:P84243); this residue is conserved across all eukaryotes. Residue 1 is the first residue following removal of the initiating Methionine (Met). Note that each histone is encoded by multiple genes, and sequences may vary across different genes within an organism.\nsynonym: \"histone H3-di/monomethyl-lysine-9 demethylase activity\" EXACT []\nsynonym: \"histone H3K9me demethylase activity\" BROAD []\nsynonym: \"histone H3K9me2 demethylase activity\" BROAD []\nxref: EC:1.14.11.65\nxref: RHEA:60188\nis_a: GO:0016706 ! 2-oxoglutarate-dependent dioxygenase activity\nis_a: GO:0032454 ! histone H3K9 demethylase activity\nproperty_value: skos:exactMatch EC:1.14.11.65\nproperty_value: skos:exactMatch RHEA:60188\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0140683",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 442495-442510",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0140683"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

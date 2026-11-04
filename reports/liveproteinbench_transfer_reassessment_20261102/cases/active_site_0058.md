@@ -1,18 +1,16 @@
-# active_site_0058: before and after transfer clarification
+# active_site_0058
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0058.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0058.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **D** — Position 2 (Schiff-base intermediate with DNA)
+**Expected answer:** **D** — Position 2 (Schiff-base intermediate with DNA)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches the annotated 252-residue protein, and its position 2 is Pro. UniProt annotates that position as forming a Schiff-base intermediate with DNA. The annotation draws on a computational rule and cited literature; the cited record also notes structural and mutagenesis work, so this supports D without treating the annotation alone as direct experimental proof.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Position 2 is Pro, which is compatible with a nucleophilic role, but the sequence alone does not establish that this is a DNA glycosylase/AP lyase or that this proline forms a DNA Schiff-base intermediate.
-
-
-**Missing item-specific fact**
-
-> The protein-family identification and its established mechanism assigning the N-terminal Pro2 as the DNA-linked Schiff-base residue.
-
-
-**Reason**
-
-> Choosing D requires a protein-specific functional assignment not stated in the input. Remembering or retrieving that assignment is not, by itself, sequence-based reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation supports the unique listed choice D; the other choices do not match the annotated Schiff-base active-site position.
-
-
-### Important caveats
-
-- The cited records support the annotation but do not provide the primary experimental results in the supplied evidence.
-- Reviewer-only accession and annotation information was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Position 2 is Pro, which is compatible with a nucleophilic role, but the sequence alone does not establish that this is a DNA glycosylase/AP lyase or that this proline forms a DNA Schiff-base intermediate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-family identification and its established mechanism assigning the N-terminal Pro2 as the DNA-linked Schiff-base residue.",
-    "reason": "Choosing D requires a protein-specific functional assignment not stated in the input. Remembering or retrieving that assignment is not, by itself, sequence-based reasoning."
-  },
-  "case_id": "active_site_0058",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the annotated 252-residue protein, and its position 2 is Pro. UniProt annotates that position as forming a Schiff-base intermediate with DNA. The annotation draws on a computational rule and cited literature; the cited record also notes structural and mutagenesis work, so this supports D without treating the annotation alone as direct experimental proof."
-  },
-  "important_caveats": [
-    "The cited records support the annotation but do not provide the primary experimental results in the supplied evidence.",
-    "Reviewer-only accession and annotation information was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports the unique listed choice D; the other choices do not match the annotated Schiff-base active-site position."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0058",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the annotated 252-residue protein, and its position 2 is Pro. UniProt annotates that position as forming a Schiff-base intermediate with DNA. The annotation draws on a computational rule and cited literature; the cited record also notes structural and mutagenesis work, so this supports D without treating the annotation alone as direct experimental proof.",
-    "evidence_ids": ["C5", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Position 2 is Pro, which is compatible with a nucleophilic role, but the sequence alone does not establish that this is a DNA glycosylase/AP lyase or that this proline forms a DNA Schiff-base intermediate.",
-    "missing_item_specific_fact": "The protein-family identification and its established mechanism assigning the N-terminal Pro2 as the DNA-linked Schiff-base residue.",
-    "reason": "Choosing D requires a protein-specific functional assignment not stated in the input. Remembering or retrieving that assignment is not, by itself, sequence-based reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports the unique listed choice D; the other choices do not match the annotated Schiff-base active-site position."
-  },
-  "important_caveats": [
-    "The cited records support the annotation but do not provide the primary experimental results in the supplied evidence.",
-    "Reviewer-only accession and annotation information was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0QT90 (Nei2, AP lyase from Mycolicibacterium smegmatis) annotates position 2 (Pro) as 'Schiff-base intermediate with DNA' (C5, H4). This is supported by PROSITE-ProRule (PRU00392) and two experimental PubMed references (36610794, 39012146) with ECO:0000305 evidence codes. The 2024 crystallography paper (PDB 8TJG) includes MUTAGENESIS OF PRO-2, confirming experimental validation. The sequence (252 AA) starts M-P-E-G-D..., confirming position 2 is Proline. The Schiff-base mechanism via the N-terminal secondary amine of Pro is a documented catalytic feature of this enzyme.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C13](#evidence-c13), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General AP lyase knowledge establishes that these enzymes form a Schiff-base intermediate with the abasic sugar at the N-terminus (after Met processing). This narrows the search to the N-terminal region and eliminates options B and C (positions 266 and 283 exceed the 252-residue protein length). However, canonical Endonuclease III/Nei enzymes use an N-terminal Lysine ε-amino group for Schiff-base formation. Recognizing that Pro-2 (a secondary amine) rather than a Lys forms the Schiff base in this specific Nei2 enzyme requires protein-specific knowledge beyond general AP lyase mechanism.
-
-
-**Missing item-specific fact**
-
-> The specific catalytic mechanism of Nei2 from M. smegmatis, where Pro-2 (not a canonical Lys) forms the Schiff base via its secondary amine, is a protein-specific experimental finding (confirmed by mutagenesis and crystallography in PDB 8TJG). A model reasoning from general AP lyase knowledge would expect a Lys at the N-terminus, not a Pro.
-
-
-**Reason**
-
-> While general AP lyase biochemistry (Schiff-base mechanism at N-terminus) helps eliminate options B/C and supports the N-terminal location, the identification of Pro-2 specifically (rather than a Lys) as the Schiff-base-forming residue is a distinctive feature of this particular enzyme established by experimental mutagenesis. The distractors A (position 250, in the Zn-binding domain) and B/C (impossible positions) are eliminable by sequence length and domain knowledge, but the positive identification of D requires knowing this enzyme's atypical catalytic residue.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B (position 266) and C (position 283) are beyond the 252-residue protein length, making them trivially impossible. Option A (position 250, Thr) falls within the Zn(2+)-binding region (residues 225, 228, 245, 248) and is not annotated as an active site. Only D (position 2) corresponds to an experimentally validated catalytic residue. No ambiguity among viable options.
-
-
-### Important caveats
-
-- The UniProt annotation for position 2 carries ECO:0000255 (PROSITE-ProRule, computational) plus ECO:0000305 (inferred by curator from experimental data). The mutagenesis of Pro-2 in the 2024 crystallography study provides direct experimental support.
-- The protein was first annotated as an AP lyase (Nei family) via PROSITE-ProRule similarity to Endonuclease III, then confirmed experimentally in 2023-2024 publications.
-- The Schiff-base mechanism via a proline secondary amine is unusual among AP lyases (most use Lys), making this a protein-specific mechanistic detail rather than a generalizable sequence heuristic.
-- Options B and C at positions 266 and 283 are structurally impossible for a 252-residue protein, which significantly reduces the effective number of choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General AP lyase knowledge establishes that these enzymes form a Schiff-base intermediate with the abasic sugar at the N-terminus (after Met processing). This narrows the search to the N-terminal region and eliminates options B and C (positions 266 and 283 exceed the 252-residue protein length). However, canonical Endonuclease III/Nei enzymes use an N-terminal Lysine ε-amino group for Schiff-base formation. Recognizing that Pro-2 (a secondary amine) rather than a Lys forms the Schiff base in this specific Nei2 enzyme requires protein-specific knowledge beyond general AP lyase mechanism.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific catalytic mechanism of Nei2 from M. smegmatis, where Pro-2 (not a canonical Lys) forms the Schiff base via its secondary amine, is a protein-specific experimental finding (confirmed by mutagenesis and crystallography in PDB 8TJG). A model reasoning from general AP lyase knowledge would expect a Lys at the N-terminus, not a Pro.",
-    "reason": "While general AP lyase biochemistry (Schiff-base mechanism at N-terminus) helps eliminate options B/C and supports the N-terminal location, the identification of Pro-2 specifically (rather than a Lys) as the Schiff-base-forming residue is a distinctive feature of this particular enzyme established by experimental mutagenesis. The distractors A (position 250, in the Zn-binding domain) and B/C (impossible positions) are eliminable by sequence length and domain knowledge, but the positive identification of D requires knowing this enzyme's atypical catalytic residue."
-  },
-  "case_id": "active_site_0058",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C13",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0QT90 (Nei2, AP lyase from Mycolicibacterium smegmatis) annotates position 2 (Pro) as 'Schiff-base intermediate with DNA' (C5, H4). This is supported by PROSITE-ProRule (PRU00392) and two experimental PubMed references (36610794, 39012146) with ECO:0000305 evidence codes. The 2024 crystallography paper (PDB 8TJG) includes MUTAGENESIS OF PRO-2, confirming experimental validation. The sequence (252 AA) starts M-P-E-G-D..., confirming position 2 is Proline. The Schiff-base mechanism via the N-terminal secondary amine of Pro is a documented catalytic feature of this enzyme."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 2 carries ECO:0000255 (PROSITE-ProRule, computational) plus ECO:0000305 (inferred by curator from experimental data). The mutagenesis of Pro-2 in the 2024 crystallography study provides direct experimental support.",
-    "The protein was first annotated as an AP lyase (Nei family) via PROSITE-ProRule similarity to Endonuclease III, then confirmed experimentally in 2023-2024 publications.",
-    "The Schiff-base mechanism via a proline secondary amine is unusual among AP lyases (most use Lys), making this a protein-specific mechanistic detail rather than a generalizable sequence heuristic.",
-    "Options B and C at positions 266 and 283 are structurally impossible for a 252-residue protein, which significantly reduces the effective number of choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B (position 266) and C (position 283) are beyond the 252-residue protein length, making them trivially impossible. Option A (position 250, Thr) falls within the Zn(2+)-binding region (residues 225, 228, 245, 248) and is not annotated as an active site. Only D (position 2) corresponds to an experimentally validated catalytic residue. No ambiguity among viable options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0058",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0QT90 (Nei2, AP lyase from Mycolicibacterium smegmatis) annotates position 2 (Pro) as 'Schiff-base intermediate with DNA' (C5, H4). This is supported by PROSITE-ProRule (PRU00392) and two experimental PubMed references (36610794, 39012146) with ECO:0000305 evidence codes. The 2024 crystallography paper (PDB 8TJG) includes MUTAGENESIS OF PRO-2, confirming experimental validation. The sequence (252 AA) starts M-P-E-G-D..., confirming position 2 is Proline. The Schiff-base mechanism via the N-terminal secondary amine of Pro is a documented catalytic feature of this enzyme.",
-    "evidence_ids": ["C5", "H4", "C13", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General AP lyase knowledge establishes that these enzymes form a Schiff-base intermediate with the abasic sugar at the N-terminus (after Met processing). This narrows the search to the N-terminal region and eliminates options B and C (positions 266 and 283 exceed the 252-residue protein length). However, canonical Endonuclease III/Nei enzymes use an N-terminal Lysine ε-amino group for Schiff-base formation. Recognizing that Pro-2 (a secondary amine) rather than a Lys forms the Schiff base in this specific Nei2 enzyme requires protein-specific knowledge beyond general AP lyase mechanism.",
-    "missing_item_specific_fact": "The specific catalytic mechanism of Nei2 from M. smegmatis, where Pro-2 (not a canonical Lys) forms the Schiff base via its secondary amine, is a protein-specific experimental finding (confirmed by mutagenesis and crystallography in PDB 8TJG). A model reasoning from general AP lyase knowledge would expect a Lys at the N-terminus, not a Pro.",
-    "reason": "While general AP lyase biochemistry (Schiff-base mechanism at N-terminus) helps eliminate options B/C and supports the N-terminal location, the identification of Pro-2 specifically (rather than a Lys) as the Schiff-base-forming residue is a distinctive feature of this particular enzyme established by experimental mutagenesis. The distractors A (position 250, in the Zn-binding domain) and B/C (impossible positions) are eliminable by sequence length and domain knowledge, but the positive identification of D requires knowing this enzyme's atypical catalytic residue."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B (position 266) and C (position 283) are beyond the 252-residue protein length, making them trivially impossible. Option A (position 250, Thr) falls within the Zn(2+)-binding region (residues 225, 228, 245, 248) and is not annotated as an active site. Only D (position 2) corresponds to an experimentally validated catalytic residue. No ambiguity among viable options."
-  },
-  "important_caveats": [
-    "The UniProt annotation for position 2 carries ECO:0000255 (PROSITE-ProRule, computational) plus ECO:0000305 (inferred by curator from experimental data). The mutagenesis of Pro-2 in the 2024 crystallography study provides direct experimental support.",
-    "The protein was first annotated as an AP lyase (Nei family) via PROSITE-ProRule similarity to Endonuclease III, then confirmed experimentally in 2023-2024 publications.",
-    "The Schiff-base mechanism via a proline secondary amine is unusual among AP lyases (most use Lys), making this a protein-specific mechanistic detail rather than a generalizable sequence heuristic.",
-    "Options B and C at positions 266 and 283 are structurally impossible for a 252-residue protein, which significantly reduces the effective number of choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0QT90",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 252,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
   "current_entry_audit": {
     "entryVersion": 142,
     "firstPublicDate": "2025-06-18",
@@ -531,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-01-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "current_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 252,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 140,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0QT90",
   "selected_historical_entry_version": 140,
+  "selected_historical_record_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "selected_historical_source_sequence_length": 252,
+  "selected_historical_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
   "selected_historical_version": {
     "accession": "A0QT90",
     "database": "Swiss-Prot",
@@ -549,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "END8B_MYCS2",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "selected_historical_source_sequence_sha256": "3219f396f539d267333a763309b8cbd0a0d2cd246ccaaaf6d27d6db63a93ffaa",
-  "selected_historical_source_sequence_length": 252,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 140,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0QT90\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -599,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":142,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-01-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -618,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mycobacterium smegmatis\",\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Mycobacteriales\",\"Mycobacteriaceae\",\"Mycolicibacterium\"],\"scientificName\":\"Mycolicibacterium smegmatis (strain ATCC 700084 / mc(2)155)\",\"taxonId\":246196}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -637,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P9WNC1\",\"source\":\"UniProtKB\"}],\"value\":\"Endonuclease 8 2\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00392\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"}],\"value\":\"3.2.2.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00392\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36610794\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"}],\"value\":\"4.2.99.18\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36610794\",\"source\":\"PubMed\"}],\"value\":\"DNA-(apurinic or apyrimidinic site) lyase Nei2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36610794\",\"source\":\"PubMed\"}],\"value\":\"AP lyase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -656,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Schiff-base intermediate with DNA\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00392\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"36610794\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39012146\",\"source\":\"PubMed\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":2},\"start\":{\"modifier\":\"EXACT\",\"value\":2}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -675,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00392\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":3},\"start\":{\"modifier\":\"EXACT\",\"value\":3}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -694,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Proton donor (in beta-elimination)\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00392\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":51},\"start\":{\"modifier\":\"EXACT\",\"value\":51}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -713,15 +474,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8TJG\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":225},\"start\":{\"modifier\":\"EXACT\",\"value\":225}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -732,15 +493,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8TJG\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":228},\"start\":{\"modifier\":\"EXACT\",\"value\":228}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -751,15 +512,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8TJG\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":245},\"start\":{\"modifier\":\"EXACT\",\"value\":245}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -770,15 +531,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39012146\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8TJG\",\"source\":\"PDB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:29105\",\"name\":\"Zn(2+)\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":248},\"start\":{\"modifier\":\"EXACT\",\"value\":248}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -789,15 +550,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Warren G.M.\",\"Ejaz A.\",\"Fay A.\",\"Glickman M.S.\",\"Shuman S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36610794\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkac1222\"}],\"citationType\":\"journal article\",\"firstPage\":\"218\",\"id\":\"36610794\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"235\",\"publicationDate\":\"2023\",\"title\":\"Mycobacterial helicase Lhr abets resistance to DNA crosslinking agents mitomycin C and cisplatin.\",\"volume\":\"51\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700084 / mc(2)155\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PROBABLE ACTIVE SITE\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -808,15 +569,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json",
-  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
-  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Warren G.M.\",\"Shuman S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39012146\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.01248-24\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0124824\",\"id\":\"39012146\",\"journal\":\"MBio\",\"lastPage\":\"e0124824\",\"publicationDate\":\"2024\",\"title\":\"Structure and in vivo psoralen DNA crosslink repair activity of mycobacterial Nei2.\",\"volume\":\"15\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8TJG\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 700084 / mc(2)155\"}],\"referenceNumber\":5,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.45 ANGSTROMS) IN COMPLEX WITH ZN(2+)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PROBABLE ACTIVE SITE\",\"COFACTOR\",\"SUBUNIT\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF PRO-2; GLU-3 AND LYS-51\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-01T06:24:56.186229+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b72936fb186d87f999459cf22fcc46f87445018b9365aaa10ca9300a71265c48",
+  "url": "https://rest.uniprot.org/uniprotkb/A0QT90.json"
 }
 ```
 
@@ -826,18 +587,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   END8B_MYCS2             Reviewed;         252 AA.\nAC   A0QT90; I7G4T3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-JAN-2007, sequence version 1.\nDT   28-JAN-2026, entry version 140.\nDE   RecName: Full=DNA-(apurinic or apyrimidinic site) lyase Nei2 {ECO:0000303|PubMed:36610794};\nDE            Short=AP lyase {ECO:0000303|PubMed:36610794};\nDE            EC=3.2.2.- {ECO:0000255|PROSITE-ProRule:PRU00392, ECO:0000269|PubMed:39012146};\nDE            EC=4.2.99.18 {ECO:0000255|PROSITE-ProRule:PRU00392, ECO:0000269|PubMed:36610794, ECO:0000269|PubMed:39012146};\nDE   AltName: Full=Endonuclease 8 2 {ECO:0000250|UniProtKB:P9WNC1};\nGN   Name=nei2 {ECO:0000303|PubMed:36610794};\nGN   OrderedLocusNames=MSMEG_1756 {ECO:0000312|EMBL:ABK74586.1};\nOS   Mycolicibacterium smegmatis (strain ATCC 700084 / mc(2)155) (Mycobacterium\nOS   smegmatis).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Mycobacteriales;\nOC   Mycobacteriaceae; Mycolicibacterium.\nOX   NCBI_TaxID=246196;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -847,18 +608,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 42-49",
   "excerpt": "RN   [4]\nRP   FUNCTION, CATALYTIC ACTIVITY, PROBABLE ACTIVE SITE, AND SUBUNIT.\nRC   STRAIN=ATCC 700084 / mc(2)155;\nRX   PubMed=36610794; DOI=10.1093/nar/gkac1222;\nRA   Warren G.M., Ejaz A., Fay A., Glickman M.S., Shuman S.;\nRT   \"Mycobacterial helicase Lhr abets resistance to DNA crosslinking agents\nRT   mitomycin C and cisplatin.\";\nRL   Nucleic Acids Res. 51:218-235(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -868,18 +629,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 50-59",
   "excerpt": "RN   [5] {ECO:0007744|PDB:8TJG}\nRP   X-RAY CRYSTALLOGRAPHY (1.45 ANGSTROMS) IN COMPLEX WITH ZN(2+), FUNCTION,\nRP   CATALYTIC ACTIVITY, PROBABLE ACTIVE SITE, COFACTOR, SUBUNIT, DISRUPTION\nRP   PHENOTYPE, AND MUTAGENESIS OF PRO-2; GLU-3 AND LYS-51.\nRC   STRAIN=ATCC 700084 / mc(2)155;\nRX   PubMed=39012146; DOI=10.1128/mbio.01248-24;\nRA   Warren G.M., Shuman S.;\nRT   \"Structure and in vivo psoralen DNA crosslink repair activity of\nRT   mycobacterial Nei2.\";\nRL   MBio 15:e0124824-e0124824(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -889,18 +650,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 163-166",
   "excerpt": "FT   ACT_SITE        2\nFT                   /note=\"Schiff-base intermediate with DNA\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00392,\nFT                   ECO:0000305|PubMed:36610794, ECO:0000305|PubMed:39012146\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 163-166",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -910,18 +671,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 167-169",
   "excerpt": "FT   ACT_SITE        3\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00392\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 167-169",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -931,18 +692,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 170-172",
   "excerpt": "FT   ACT_SITE        51\nFT                   /note=\"Proton donor (in beta-elimination)\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00392\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 170-172",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -952,18 +713,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 173-177",
   "excerpt": "FT   BINDING         225\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000269|PubMed:39012146,\nFT                   ECO:0007744|PDB:8TJG\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 173-177",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -973,18 +734,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 178-182",
   "excerpt": "FT   BINDING         228\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000269|PubMed:39012146,\nFT                   ECO:0007744|PDB:8TJG\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 178-182",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -994,18 +755,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 183-187",
   "excerpt": "FT   BINDING         245\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000269|PubMed:39012146,\nFT                   ECO:0007744|PDB:8TJG\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 183-187",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 
@@ -1015,18 +776,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 140,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140",
-  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
-  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
-  "source_locator": "lines 188-192",
   "excerpt": "FT   BINDING         248\nFT                   /ligand=\"Zn(2+)\"\nFT                   /ligand_id=\"ChEBI:CHEBI:29105\"\nFT                   /evidence=\"ECO:0000269|PubMed:39012146,\nFT                   ECO:0007744|PDB:8TJG\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 140,
+  "retrieved_utc": "2026-11-01T06:27:42.166883+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 188-192",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cad634b3155da705ea406278043495c2debf7a3d6601408d3f08e21191494cfe",
+  "url": "https://rest.uniprot.org/unisave/A0QT90?format=txt&versions=140"
 }
 ```
 

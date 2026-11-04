@@ -1,18 +1,16 @@
-# active_site_0100: before and after transfer clarification
+# active_site_0100
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0100.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0100.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **A** — Position 221 (Proton acceptor)
+**Expected answer:** **A** — Position 221 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the UniProt sequence, whose active-site annotation identifies position 221 as a proton acceptor. This supports choice A as a database annotation, but the annotation is computationally assigned by PROSITE-ProRule rather than direct experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The 463-residue sequence rules out positions 981 and 2059, but general sequence reasoning does not establish that position 221, rather than another in-range candidate, is the annotated proton acceptor.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site assignment of position 221 as a proton acceptor.
-
-
-**Reason**
-
-> The key is supported by a sequence-matched database annotation, but that annotation is not supplied in the question. Recognizing a kinase-like sequence or eliminating out-of-range positions does not independently determine the precise residue assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports A; it does not establish another listed option as a valid active-site assignment. The sequence alone leaves the precise annotation dependent on external protein-specific information.
-
-
-### Important caveats
-
-- The cited annotation is computational, not reported here as experimentally validated.
-- A historical sequence-matched record contains the same position-221 annotation, though the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 463-residue sequence rules out positions 981 and 2059, but general sequence reasoning does not establish that position 221, rather than another in-range candidate, is the annotated proton acceptor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site assignment of position 221 as a proton acceptor.",
-    "reason": "The key is supported by a sequence-matched database annotation, but that annotation is not supplied in the question. Recognizing a kinase-like sequence or eliminating out-of-range positions does not independently determine the precise residue assignment."
-  },
-  "case_id": "active_site_0100",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt sequence, whose active-site annotation identifies position 221 as a proton acceptor. This supports choice A as a database annotation, but the annotation is computationally assigned by PROSITE-ProRule rather than direct experimental evidence."
-  },
-  "important_caveats": [
-    "The cited annotation is computational, not reported here as experimentally validated.",
-    "A historical sequence-matched record contains the same position-221 annotation, though the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A; it does not establish another listed option as a valid active-site assignment. The sequence alone leaves the precise annotation dependent on external protein-specific information."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0100",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt sequence, whose active-site annotation identifies position 221 as a proton acceptor. This supports choice A as a database annotation, but the annotation is computationally assigned by PROSITE-ProRule rather than direct experimental evidence.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The 463-residue sequence rules out positions 981 and 2059, but general sequence reasoning does not establish that position 221, rather than another in-range candidate, is the annotated proton acceptor.",
-    "missing_item_specific_fact": "The protein-specific active-site assignment of position 221 as a proton acceptor.",
-    "reason": "The key is supported by a sequence-matched database annotation, but that annotation is not supplied in the question. Recognizing a kinase-like sequence or eliminating out-of-range positions does not independently determine the precise residue assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A; it does not establish another listed option as a valid active-site assignment. The sequence alone leaves the precise annotation dependent on external protein-specific information."
-  },
-  "important_caveats": [
-    "The cited annotation is computational, not reported here as experimentally validated.",
-    "A historical sequence-matched record contains the same position-221 annotation, though the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXJ0 annotates position 221 as 'Active site – Proton acceptor' (evidence ECO:0000255, PROSITE-ProRule PRU00159 and PRU10027). The benchmark sequence matches the canonical 463-aa entry exactly. Position 221 is D (Aspartate) in a 'YRD' variant of the kinase catalytic-loop HRD motif, consistent with the proton-acceptor role in Ser/Thr kinases (EC 2.7.11.1). Note: the annotation is computational (PROSITE-ProRule pattern matching), not experimentally verified.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable protein-kinase architecture: a VAIK-like lysine region (K at ~126, ATP-binding site annotated 97–105 and 126), a DFG motif at positions 239–241 (D-F-G-L-A-K), and a catalytic loop 'YRD' (Y219-R220-D221) representing a plant-kinase variant of the canonical HRD motif. In Ser/Thr kinases the catalytic-loop aspartate is the proton acceptor that deprotonates the substrate hydroxyl. Position 221 is D, fitting this role. Distractors B (pos 981) and D (pos 2059) exceed the 463-residue length and are trivially eliminable. Position 176 is Arginine (R), which in a kinase catalytic loop corresponds to the structural arginine (R of HRD) that positions the substrate but is not itself the proton acceptor.
-
-
-**Missing item-specific fact**
-
-> None critical. A knowledgeable model can identify kinase motifs (DFG, VAIK), locate the catalytic-loop Asp, and count to position 221. The 'YRD' variant of HRD is somewhat unusual but the D in that context is still the catalytic aspartate.
-
-
-**Reason**
-
-> The question provides the full sequence, allowing motif identification (DFG, catalytic-loop D), elimination of out-of-range distractors (B, D), and biochemical reasoning about which residue class serves as proton acceptor in kinases. The reasoning chain—kinase identification → catalytic-loop location → Asp as proton acceptor → position counting—is generalizable biological knowledge, not a single database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and D cite positions (981, 2059) far exceeding the 463-residue protein, making them physically impossible. Option C cites position 176 (Arginine), which does not match the proton-acceptor chemistry of a kinase catalytic-loop aspartate. Only option A (position 221, D, proton acceptor) is biochemically and geometrically consistent.
-
-
-### Important caveats
-
-- The active-site annotation rests on PROSITE-ProRule computational inference (ECO:0000255), not on site-directed mutagenesis or crystallographic catalysis data for this specific protein.
-- The catalytic loop in this kinase uses a 'YRD' variant rather than the canonical 'HRD'; a model unfamiliar with plant-RLCK catalytic-loop variants might hesitate, though the D's role is conserved.
-- Distractors B and D are trivially eliminable by sequence length, substantially reducing the effective choice set to A vs C.
-- The UniProt entry was first public 2025-06-18; the author's source snapshot date is unknown but the sequence matches both historical (v2) and current (v4) records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable protein-kinase architecture: a VAIK-like lysine region (K at ~126, ATP-binding site annotated 97–105 and 126), a DFG motif at positions 239–241 (D-F-G-L-A-K), and a catalytic loop 'YRD' (Y219-R220-D221) representing a plant-kinase variant of the canonical HRD motif. In Ser/Thr kinases the catalytic-loop aspartate is the proton acceptor that deprotonates the substrate hydroxyl. Position 221 is D, fitting this role. Distractors B (pos 981) and D (pos 2059) exceed the 463-residue length and are trivially eliminable. Position 176 is Arginine (R), which in a kinase catalytic loop corresponds to the structural arginine (R of HRD) that positions the substrate but is not itself the proton acceptor.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. A knowledgeable model can identify kinase motifs (DFG, VAIK), locate the catalytic-loop Asp, and count to position 221. The 'YRD' variant of HRD is somewhat unusual but the D in that context is still the catalytic aspartate.",
-    "reason": "The question provides the full sequence, allowing motif identification (DFG, catalytic-loop D), elimination of out-of-range distractors (B, D), and biochemical reasoning about which residue class serves as proton acceptor in kinases. The reasoning chain—kinase identification → catalytic-loop location → Asp as proton acceptor → position counting—is generalizable biological knowledge, not a single database lookup."
-  },
-  "case_id": "active_site_0100",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXJ0 annotates position 221 as 'Active site – Proton acceptor' (evidence ECO:0000255, PROSITE-ProRule PRU00159 and PRU10027). The benchmark sequence matches the canonical 463-aa entry exactly. Position 221 is D (Aspartate) in a 'YRD' variant of the kinase catalytic-loop HRD motif, consistent with the proton-acceptor role in Ser/Thr kinases (EC 2.7.11.1). Note: the annotation is computational (PROSITE-ProRule pattern matching), not experimentally verified."
-  },
-  "important_caveats": [
-    "The active-site annotation rests on PROSITE-ProRule computational inference (ECO:0000255), not on site-directed mutagenesis or crystallographic catalysis data for this specific protein.",
-    "The catalytic loop in this kinase uses a 'YRD' variant rather than the canonical 'HRD'; a model unfamiliar with plant-RLCK catalytic-loop variants might hesitate, though the D's role is conserved.",
-    "Distractors B and D are trivially eliminable by sequence length, substantially reducing the effective choice set to A vs C.",
-    "The UniProt entry was first public 2025-06-18; the author's source snapshot date is unknown but the sequence matches both historical (v2) and current (v4) records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D cite positions (981, 2059) far exceeding the 463-residue protein, making them physically impossible. Option C cites position 176 (Arginine), which does not match the proton-acceptor chemistry of a kinase catalytic-loop aspartate. Only option A (position 221, D, proton acceptor) is biochemically and geometrically consistent."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0100",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXJ0 annotates position 221 as 'Active site – Proton acceptor' (evidence ECO:0000255, PROSITE-ProRule PRU00159 and PRU10027). The benchmark sequence matches the canonical 463-aa entry exactly. Position 221 is D (Aspartate) in a 'YRD' variant of the kinase catalytic-loop HRD motif, consistent with the proton-acceptor role in Ser/Thr kinases (EC 2.7.11.1). Note: the annotation is computational (PROSITE-ProRule pattern matching), not experimentally verified.",
-    "evidence_ids": ["C5", "H3", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains recognizable protein-kinase architecture: a VAIK-like lysine region (K at ~126, ATP-binding site annotated 97–105 and 126), a DFG motif at positions 239–241 (D-F-G-L-A-K), and a catalytic loop 'YRD' (Y219-R220-D221) representing a plant-kinase variant of the canonical HRD motif. In Ser/Thr kinases the catalytic-loop aspartate is the proton acceptor that deprotonates the substrate hydroxyl. Position 221 is D, fitting this role. Distractors B (pos 981) and D (pos 2059) exceed the 463-residue length and are trivially eliminable. Position 176 is Arginine (R), which in a kinase catalytic loop corresponds to the structural arginine (R of HRD) that positions the substrate but is not itself the proton acceptor.",
-    "missing_item_specific_fact": "None critical. A knowledgeable model can identify kinase motifs (DFG, VAIK), locate the catalytic-loop Asp, and count to position 221. The 'YRD' variant of HRD is somewhat unusual but the D in that context is still the catalytic aspartate.",
-    "reason": "The question provides the full sequence, allowing motif identification (DFG, catalytic-loop D), elimination of out-of-range distractors (B, D), and biochemical reasoning about which residue class serves as proton acceptor in kinases. The reasoning chain—kinase identification → catalytic-loop location → Asp as proton acceptor → position counting—is generalizable biological knowledge, not a single database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D cite positions (981, 2059) far exceeding the 463-residue protein, making them physically impossible. Option C cites position 176 (Arginine), which does not match the proton-acceptor chemistry of a kinase catalytic-loop aspartate. Only option A (position 221, D, proton acceptor) is biochemically and geometrically consistent."
-  },
-  "important_caveats": [
-    "The active-site annotation rests on PROSITE-ProRule computational inference (ECO:0000255), not on site-directed mutagenesis or crystallographic catalysis data for this specific protein.",
-    "The catalytic loop in this kinase uses a 'YRD' variant rather than the canonical 'HRD'; a model unfamiliar with plant-RLCK catalytic-loop variants might hesitate, though the D's role is conserved.",
-    "Distractors B and D are trivially eliminable by sequence length, substantially reducing the effective choice set to A vs C.",
-    "The UniProt entry was first public 2025-06-18; the author's source snapshot date is unknown but the sequence matches both historical (v2) and current (v4) records."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -381,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -493,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXJ0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "cbfd347d07189b0822d33d2796743f860cc8f31b600bad993a5e1f6bcfca7a17",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 463,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "cbfd347d07189b0822d33d2796743f860cc8f31b600bad993a5e1f6bcfca7a17",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -524,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "current_source_sequence_sha256": "cbfd347d07189b0822d33d2796743f860cc8f31b600bad993a5e1f6bcfca7a17",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 463,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "cbfd347d07189b0822d33d2796743f860cc8f31b600bad993a5e1f6bcfca7a17",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXJ0",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
+  "selected_historical_source_sequence_length": 463,
+  "selected_historical_source_sequence_sha256": "cbfd347d07189b0822d33d2796743f860cc8f31b600bad993a5e1f6bcfca7a17",
   "selected_historical_version": {
     "accession": "P0DXJ0",
     "database": "Swiss-Prot",
@@ -542,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "EIR_NICBE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
-  "selected_historical_source_sequence_sha256": "cbfd347d07189b0822d33d2796743f860cc8f31b600bad993a5e1f6bcfca7a17",
-  "selected_historical_source_sequence_length": 463,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -573,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXJ0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -592,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -611,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Solanales\",\"Solanaceae\",\"Nicotianoideae\",\"Nicotianeae\",\"Nicotiana\"],\"scientificName\":\"Nicotiana benthamiana\",\"taxonId\":4100}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -630,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10027\",\"source\":\"PROSITE-ProRule\"}],\"value\":\"2.7.11.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39488762\",\"source\":\"PubMed\"}],\"value\":\"EPD1-interacting receptor-like cytoplasmic serine/threonine-protein kinase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39488762\",\"source\":\"PubMed\"}],\"value\":\"NbEIR\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -649,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00159\",\"source\":\"PROSITE-ProRule\"},{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU10027\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":221},\"start\":{\"modifier\":\"EXACT\",\"value\":221}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -668,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00159\",\"source\":\"PROSITE-ProRule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":105},\"start\":{\"modifier\":\"EXACT\",\"value\":97}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -687,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU00159\",\"source\":\"PROSITE-ProRule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:30616\",\"name\":\"ATP\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":126},\"start\":{\"modifier\":\"EXACT\",\"value\":126}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -706,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json",
-  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
-  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Sun L.\",\"Li X.\",\"Zhong J.\",\"Wang Y.\",\"Li B.\",\"Ye Z.\",\"Zhang J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39488762\"},{\"database\":\"DOI\",\"id\":\"10.1002/advs.202407787\"}],\"citationType\":\"journal article\",\"firstPage\":\"e2407787\",\"id\":\"39488762\",\"journal\":\"Adv. Sci.\",\"lastPage\":\"e2407787\",\"publicationDate\":\"2025\",\"title\":\"Recognition of a fungal effector potentiates pathogen-associated molecular pattern-triggered immunity in cotton.\",\"volume\":\"12\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"INTERACTION WITH V.DAHLIAE EPD1\",\"INDUCTION BY V.DAHLIAE EPD1\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:15.004320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1fb49b61ea018363feefe6e568f67a9f960b07057251e4e624f603a1b238380a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ0.json"
 }
 ```
 
@@ -724,18 +487,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2",
-  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
-  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   EIR_NICBE               Reviewed;         463 AA.\nAC   P0DXJ0;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=EPD1-interacting receptor-like cytoplasmic serine/threonine-protein kinase {ECO:0000303|PubMed:39488762};\nDE            Short=NbEIR {ECO:0000303|PubMed:39488762};\nDE            EC=2.7.11.1 {ECO:0000255|PROSITE-ProRule:PRU10027};\nGN   Name=EIR {ECO:0000303|PubMed:39488762};\nGN   ORFNames=NbS00058880g0009 {ECO:0000303|PubMed:39488762};\nOS   Nicotiana benthamiana.\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Solanales; Solanaceae; Nicotianoideae; Nicotianeae;\nOC   Nicotiana.\nOX   NCBI_TaxID=4100;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2"
 }
 ```
 
@@ -745,18 +508,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2",
-  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
-  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
-  "source_locator": "lines 17-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, INTERACTION WITH V.DAHLIAE EPD1, AND\nRP   INDUCTION BY V.DAHLIAE EPD1.\nRX   PubMed=39488762; DOI=10.1002/advs.202407787;\nRA   Sun L., Li X., Zhong J., Wang Y., Li B., Ye Z., Zhang J.;\nRT   \"Recognition of a fungal effector potentiates pathogen-associated molecular\nRT   pattern-triggered immunity in cotton.\";\nRL   Adv. Sci. 12:e2407787-e2407787(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2"
 }
 ```
 
@@ -766,18 +529,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2",
-  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
-  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
-  "source_locator": "lines 105-108",
   "excerpt": "FT   ACT_SITE        221\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00159,\nFT                   ECO:0000255|PROSITE-ProRule:PRU10027\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 105-108",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2"
 }
 ```
 
@@ -787,18 +550,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2",
-  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
-  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
-  "source_locator": "lines 109-112",
   "excerpt": "FT   BINDING         97..105\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00159\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 109-112",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2"
 }
 ```
 
@@ -808,18 +571,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2",
-  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
-  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
-  "source_locator": "lines 113-116",
   "excerpt": "FT   BINDING         126\nFT                   /ligand=\"ATP\"\nFT                   /ligand_id=\"ChEBI:CHEBI:30616\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU00159\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:19.546423+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 113-116",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dfc72a9fe284e8d09ff624e621a36800a15b634cee3411254b16ccf4f17ccdc8",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ0?format=txt&versions=2"
 }
 ```
 

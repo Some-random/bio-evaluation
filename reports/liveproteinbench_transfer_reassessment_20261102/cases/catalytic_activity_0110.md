@@ -1,18 +1,16 @@
-# catalytic_activity_0110: before and after transfer clarification
+# catalytic_activity_0110
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0110.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0110.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **C** — daunorubicin(in) + ATP + H2O = daunorubicin(out) + ADP + phosphate + H(+)
+**Expected answer:** **C** — daunorubicin(in) + ATP + H2O = daunorubicin(out) + ADP + phosphate + H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry P0DXU7, annotated as daunorubicin resistance ATP-binding protein DrrA3 (EC 7.6.2.2), with the catalytic reaction stated as daunorubicin efflux coupled to ATP hydrolysis. This supports choice C. The annotation cites a publication but carries curator-inference evidence, so it should not be taken as independently verified direct assay evidence here.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence's P-loop-like ATP-binding motif can support an ATPase inference and may favor an ATP-driven transport reaction over the other listed reaction classes. It does not establish daunorubicin as this protein's specific transported substrate.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and evidence connecting DrrA3 to daunorubicin efflux.
-
-
-**Reason**
-
-> Choosing the exact reaction requires knowing the transporter’s substrate or its protein-specific annotation; that fact is absent from the sequence and prompt. Inferring a broad ATP-dependent transport role does not establish the daunorubicin-specific reaction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The listed reactions represent distinct reaction classes, and the supporting annotation matches choice C. No other option is comparably supported by the evidence.
-
-
-### Important caveats
-
-- The sequence match and reaction annotation are reviewer-only information, not facts supplied to the evaluated model.
-- The UniProt reaction annotation cites a 2024 paper and is marked with ECO:0000305; the cited study was not independently assessed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence's P-loop-like ATP-binding motif can support an ATPase inference and may favor an ATP-driven transport reaction over the other listed reaction classes. It does not establish daunorubicin as this protein's specific transported substrate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and evidence connecting DrrA3 to daunorubicin efflux.",
-    "reason": "Choosing the exact reaction requires knowing the transporter’s substrate or its protein-specific annotation; that fact is absent from the sequence and prompt. Inferring a broad ATP-dependent transport role does not establish the daunorubicin-specific reaction."
-  },
-  "case_id": "catalytic_activity_0110",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry P0DXU7, annotated as daunorubicin resistance ATP-binding protein DrrA3 (EC 7.6.2.2), with the catalytic reaction stated as daunorubicin efflux coupled to ATP hydrolysis. This supports choice C. The annotation cites a publication but carries curator-inference evidence, so it should not be taken as independently verified direct assay evidence here."
-  },
-  "important_caveats": [
-    "The sequence match and reaction annotation are reviewer-only information, not facts supplied to the evaluated model.",
-    "The UniProt reaction annotation cites a 2024 paper and is marked with ECO:0000305; the cited study was not independently assessed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The listed reactions represent distinct reaction classes, and the supporting annotation matches choice C. No other option is comparably supported by the evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0110",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry P0DXU7, annotated as daunorubicin resistance ATP-binding protein DrrA3 (EC 7.6.2.2), with the catalytic reaction stated as daunorubicin efflux coupled to ATP hydrolysis. This supports choice C. The annotation cites a publication but carries curator-inference evidence, so it should not be taken as independently verified direct assay evidence here.",
-    "evidence_ids": ["C1", "C4", "C5", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence's P-loop-like ATP-binding motif can support an ATPase inference and may favor an ATP-driven transport reaction over the other listed reaction classes. It does not establish daunorubicin as this protein's specific transported substrate.",
-    "missing_item_specific_fact": "The protein-specific identification and evidence connecting DrrA3 to daunorubicin efflux.",
-    "reason": "Choosing the exact reaction requires knowing the transporter’s substrate or its protein-specific annotation; that fact is absent from the sequence and prompt. Inferring a broad ATP-dependent transport role does not establish the daunorubicin-specific reaction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The listed reactions represent distinct reaction classes, and the supporting annotation matches choice C. No other option is comparably supported by the evidence."
-  },
-  "important_caveats": [
-    "The sequence match and reaction annotation are reviewer-only information, not facts supplied to the evaluated model.",
-    "The UniProt reaction annotation cites a 2024 paper and is marked with ECO:0000305; the cited study was not independently assessed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein sequence (316 AA) matches UniProt P0DXU7 (DrrA3, Daunorubicin resistance ATP-binding protein) exactly. The UniProt entry annotates EC 7.6.2.2 with catalytic activity 'daunorubicin(in) + ATP + H2O = daunorubicin(out) + ADP + phosphate + H(+)', matching Choice C verbatim. Evidence code ECO:0000305 (inferred by similarity) references PubMed:39375957, a 2024 experimental study on daunorubicin efflux by ABC transporters in Streptomyces coeruleorubidus. The annotation is computational inference by similarity rather than direct experimental characterization of this specific protein, but is grounded in experimental context.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a canonical Walker A motif (GPGAGKTTL at ~positions 40-48) and a Walker B motif (LLDEPTTGL at ~positions 170-178), which are hallmark signatures of ABC-type nucleotide-binding domains. Among the four choices, only Choice C describes an ABC transporter-mediated efflux reaction (substrate translocation coupled to ATP hydrolysis). Choices A (hydrolase), B (oxidase/monooxygenase), and D (acetyltransferase) involve entirely different enzyme classes lacking ABC motifs. A model with knowledge of ABC transporter domain architecture can eliminate A, B, and D based on the recognizable P-loop and Walker B signatures, leaving C as the only mechanistically consistent option.
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity (daunorubicin vs. other ABC transporter substrates) cannot be determined from sequence alone. However, this is not needed because C is the sole ABC transporter reaction among the four choices.
-
-
-**Reason**
-
-> The ABC transporter signature (Walker A + Walker B motifs) is identifiable from the primary sequence using general biochemical knowledge. Since only one of the four options represents an ABC transporter reaction, the model can select the correct answer without needing to memorize the specific protein identity or its exact substrate. The reasoning path from motif recognition to enzyme class to matching reaction is concrete and defensible.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices represent four distinct enzyme classes (hydrolase, oxidase, ABC transporter, acetyltransferase). The ABC transporter motifs in the sequence unambiguously point to Choice C. No other option is mechanistically consistent with the observed domain architecture.
-
-
-### Important caveats
-
-- The UniProt annotation uses ECO:0000305 (inferred by similarity), meaning the daunorubicin-specific substrate assignment is based on homology to characterized DrrA-like transporters rather than direct in vitro characterization of this exact protein.
-- The entry was first published in February 2025 (entry P0DXU7), making it a relatively recent annotation.
-- The specific substrate 'daunorubicin' cannot be deduced from sequence motifs alone; the answer relies on C being the only ABC transporter option, not on substrate specificity prediction.
-- All reviewer evidence is sequence-matched (SHA256 identical) to the benchmark input, confirming applicability.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a canonical Walker A motif (GPGAGKTTL at ~positions 40-48) and a Walker B motif (LLDEPTTGL at ~positions 170-178), which are hallmark signatures of ABC-type nucleotide-binding domains. Among the four choices, only Choice C describes an ABC transporter-mediated efflux reaction (substrate translocation coupled to ATP hydrolysis). Choices A (hydrolase), B (oxidase/monooxygenase), and D (acetyltransferase) involve entirely different enzyme classes lacking ABC motifs. A model with knowledge of ABC transporter domain architecture can eliminate A, B, and D based on the recognizable P-loop and Walker B signatures, leaving C as the only mechanistically consistent option.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific substrate identity (daunorubicin vs. other ABC transporter substrates) cannot be determined from sequence alone. However, this is not needed because C is the sole ABC transporter reaction among the four choices.",
-    "reason": "The ABC transporter signature (Walker A + Walker B motifs) is identifiable from the primary sequence using general biochemical knowledge. Since only one of the four options represents an ABC transporter reaction, the model can select the correct answer without needing to memorize the specific protein identity or its exact substrate. The reasoning path from motif recognition to enzyme class to matching reaction is concrete and defensible."
-  },
-  "case_id": "catalytic_activity_0110",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The protein sequence (316 AA) matches UniProt P0DXU7 (DrrA3, Daunorubicin resistance ATP-binding protein) exactly. The UniProt entry annotates EC 7.6.2.2 with catalytic activity 'daunorubicin(in) + ATP + H2O = daunorubicin(out) + ADP + phosphate + H(+)', matching Choice C verbatim. Evidence code ECO:0000305 (inferred by similarity) references PubMed:39375957, a 2024 experimental study on daunorubicin efflux by ABC transporters in Streptomyces coeruleorubidus. The annotation is computational inference by similarity rather than direct experimental characterization of this specific protein, but is grounded in experimental context."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses ECO:0000305 (inferred by similarity), meaning the daunorubicin-specific substrate assignment is based on homology to characterized DrrA-like transporters rather than direct in vitro characterization of this exact protein.",
-    "The entry was first published in February 2025 (entry P0DXU7), making it a relatively recent annotation.",
-    "The specific substrate 'daunorubicin' cannot be deduced from sequence motifs alone; the answer relies on C being the only ABC transporter option, not on substrate specificity prediction.",
-    "All reviewer evidence is sequence-matched (SHA256 identical) to the benchmark input, confirming applicability."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent four distinct enzyme classes (hydrolase, oxidase, ABC transporter, acetyltransferase). The ABC transporter motifs in the sequence unambiguously point to Choice C. No other option is mechanistically consistent with the observed domain architecture."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0110",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein sequence (316 AA) matches UniProt P0DXU7 (DrrA3, Daunorubicin resistance ATP-binding protein) exactly. The UniProt entry annotates EC 7.6.2.2 with catalytic activity 'daunorubicin(in) + ATP + H2O = daunorubicin(out) + ADP + phosphate + H(+)', matching Choice C verbatim. Evidence code ECO:0000305 (inferred by similarity) references PubMed:39375957, a 2024 experimental study on daunorubicin efflux by ABC transporters in Streptomyces coeruleorubidus. The annotation is computational inference by similarity rather than direct experimental characterization of this specific protein, but is grounded in experimental context.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a canonical Walker A motif (GPGAGKTTL at ~positions 40-48) and a Walker B motif (LLDEPTTGL at ~positions 170-178), which are hallmark signatures of ABC-type nucleotide-binding domains. Among the four choices, only Choice C describes an ABC transporter-mediated efflux reaction (substrate translocation coupled to ATP hydrolysis). Choices A (hydrolase), B (oxidase/monooxygenase), and D (acetyltransferase) involve entirely different enzyme classes lacking ABC motifs. A model with knowledge of ABC transporter domain architecture can eliminate A, B, and D based on the recognizable P-loop and Walker B signatures, leaving C as the only mechanistically consistent option.",
-    "missing_item_specific_fact": "The specific substrate identity (daunorubicin vs. other ABC transporter substrates) cannot be determined from sequence alone. However, this is not needed because C is the sole ABC transporter reaction among the four choices.",
-    "reason": "The ABC transporter signature (Walker A + Walker B motifs) is identifiable from the primary sequence using general biochemical knowledge. Since only one of the four options represents an ABC transporter reaction, the model can select the correct answer without needing to memorize the specific protein identity or its exact substrate. The reasoning path from motif recognition to enzyme class to matching reaction is concrete and defensible."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent four distinct enzyme classes (hydrolase, oxidase, ABC transporter, acetyltransferase). The ABC transporter motifs in the sequence unambiguously point to Choice C. No other option is mechanistically consistent with the observed domain architecture."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses ECO:0000305 (inferred by similarity), meaning the daunorubicin-specific substrate assignment is based on homology to characterized DrrA-like transporters rather than direct in vitro characterization of this exact protein.",
-    "The entry was first published in February 2025 (entry P0DXU7), making it a relatively recent annotation.",
-    "The specific substrate 'daunorubicin' cannot be deduced from sequence motifs alone; the answer relies on C being the only ABC transporter option, not on substrate specificity prediction.",
-    "All reviewer evidence is sequence-matched (SHA256 identical) to the benchmark input, confirming applicability."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +158,9 @@ Citations as saved: [H4](#evidence-h4), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXU7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "bfff69d1d7d031108e1c50bbb606696118d87057cab6e04b802323f2c0487534",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 316,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "bfff69d1d7d031108e1c50bbb606696118d87057cab6e04b802323f2c0487534",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-02-05",
@@ -536,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
-  "current_source_sequence_sha256": "bfff69d1d7d031108e1c50bbb606696118d87057cab6e04b802323f2c0487534",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 316,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "bfff69d1d7d031108e1c50bbb606696118d87057cab6e04b802323f2c0487534",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXU7",
   "selected_historical_entry_version": 4,
+  "selected_historical_record_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
+  "selected_historical_source_sequence_length": 316,
+  "selected_historical_source_sequence_sha256": "bfff69d1d7d031108e1c50bbb606696118d87057cab6e04b802323f2c0487534",
   "selected_historical_version": {
     "accession": "P0DXU7",
     "database": "Swiss-Prot",
@@ -554,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DRRA3_STRC4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
-  "selected_historical_source_sequence_sha256": "bfff69d1d7d031108e1c50bbb606696118d87057cab6e04b802323f2c0487534",
-  "selected_historical_source_sequence_length": 316,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 4,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json",
-  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
-  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXU7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json"
 }
 ```
 
@@ -604,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json",
-  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
-  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json"
 }
 ```
 
@@ -623,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json",
-  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
-  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces coeruleorubidus\",\"taxonId\":116188}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json"
 }
 ```
 
@@ -642,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json",
-  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
-  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39375957\",\"source\":\"PubMed\"}],\"value\":\"7.6.2.2\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Daunorubicin resistance ATP-binding protein DrrA3\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json"
 }
 ```
 
@@ -661,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json",
-  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
-  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39375957\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:33148\"}}],\"reaction\":{\"ecNumber\":\"7.6.2.2\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39375957\",\"source\":\"PubMed\"}],\"name\":\"daunorubicin(in) + ATP + H2O = daunorubicin(out) + ADP + phosphate + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:33147\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:64677\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json"
 }
 ```
 
@@ -680,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json",
-  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
-  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Dong J.\",\"Ning J.\",\"Tian Y.\",\"Li H.\",\"Chen H.\",\"Guan W.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39375957\"},{\"database\":\"DOI\",\"id\":\"10.1111/1751-7915.70023\"}],\"citationType\":\"journal article\",\"firstPage\":\"e70023\",\"id\":\"39375957\",\"journal\":\"Microb. Biotechnol.\",\"lastPage\":\"e70023\",\"publicationDate\":\"2024\",\"title\":\"The involvement of multiple ABC transporters in daunorubicin efflux in Streptomyces coeruleorubidus.\",\"volume\":\"17\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION IN DAUNORUBICIN EFFLUX\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:29:39.757107+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e4ecbe95569eb6174ea1ce5042f5eb78567e393cf608a2fde3f152bb86370540",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXU7.json"
 }
 ```
 
@@ -698,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4",
-  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
-  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   DRRA3_STRC4             Reviewed;         316 AA.\nAC   P0DXU7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=Daunorubicin resistance ATP-binding protein DrrA3 {ECO:0000305};\nDE            EC=7.6.2.2 {ECO:0000305|PubMed:39375957};\nGN   Name=drrA3 {ECO:0000303|PubMed:39375957};\nGN   ORFNames=R5U08_20725 {ECO:0000312|EMBL:WOT36399.1};\nOS   Streptomyces coeruleorubidus.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=116188;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
+  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4"
 }
 ```
 
@@ -719,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4",
-  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
-  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Daunorubicin resistance ATP-binding protein DrrA3 {ECO:0000305};\nDE            EC=7.6.2.2 {ECO:0000305|PubMed:39375957};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
+  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4"
 }
 ```
 
@@ -740,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4",
-  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
-  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
-  "source_locator": "lines 19-25",
   "excerpt": "RN   [2]\nRP   FUNCTION IN DAUNORUBICIN EFFLUX, INDUCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=39375957; DOI=10.1111/1751-7915.70023;\nRA   Dong J., Ning J., Tian Y., Li H., Chen H., Guan W.;\nRT   \"The involvement of multiple ABC transporters in daunorubicin efflux in\nRT   Streptomyces coeruleorubidus.\";\nRL   Microb. Biotechnol. 17:e70023-e70023(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-25",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
+  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4"
 }
 ```
 
@@ -761,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4",
-  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
-  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
-  "source_locator": "lines 33-40",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=daunorubicin(in) + ATP + H2O = daunorubicin(out) + ADP +\nCC         phosphate + H(+); Xref=Rhea:RHEA:33147, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474,\nCC         ChEBI:CHEBI:64677, ChEBI:CHEBI:456216; EC=7.6.2.2;\nCC         Evidence={ECO:0000305|PubMed:39375957};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:33148;\nCC         Evidence={ECO:0000305|PubMed:39375957};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:29:44.049376+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "42d20297633a41a19682385e9a7ca80ef7478fe940d29e171258f49592f4cbc9",
+  "url": "https://rest.uniprot.org/unisave/P0DXU7?format=txt&versions=4"
 }
 ```
 

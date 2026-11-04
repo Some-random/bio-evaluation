@@ -1,18 +1,16 @@
-# GO_biological_process_0106: before and after transfer clarification
+# GO_biological_process_0106
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0106.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0106.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **C** — symbiont-mediated perturbation of host defenses
+**Expected answer:** **C** — symbiont-mediated perturbation of host defenses
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches the annotated Triatoma infestans protein triafestin-2. Its experimentally supported inhibition of the host kallikrein-kinin system and intrinsic coagulation pathway supports perturbation of host defenses. The exact GO annotation for option C is computationally assigned by InterPro, rather than itself being experimental evidence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with a secreted protein, which makes a host-interacting role plausible, but does not establish that it perturbs host defenses or distinguish that specific role from other host effects.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as triafestin-2 from Triatoma infestans saliva, and evidence that it suppresses host kallikrein-kinin activation and coagulation.
-
-
-**Reason**
-
-> Those identifying and functional facts are absent from the sequence-and-choices input. Recognizing a secreted protein is not enough to select the particular GO process.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The protein-specific evidence supports option C; the other options are not supported by the supplied functional evidence.
-
-
-### Important caveats
-
-- The sequence match and accession identification come from reviewer-only evidence, not the evaluated input.
-- The current UniProt record's exact GO annotation for C is IEA:InterPro; the supporting experimental evidence concerns the protein's host kallikrein-kinin and coagulation effects.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a secreted protein, which makes a host-interacting role plausible, but does not establish that it perturbs host defenses or distinguish that specific role from other host effects.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as triafestin-2 from Triatoma infestans saliva, and evidence that it suppresses host kallikrein-kinin activation and coagulation.",
-    "reason": "Those identifying and functional facts are absent from the sequence-and-choices input. Recognizing a secreted protein is not enough to select the particular GO process."
-  },
-  "case_id": "GO_biological_process_0106",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "H3",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the annotated Triatoma infestans protein triafestin-2. Its experimentally supported inhibition of the host kallikrein-kinin system and intrinsic coagulation pathway supports perturbation of host defenses. The exact GO annotation for option C is computationally assigned by InterPro, rather than itself being experimental evidence."
-  },
-  "important_caveats": [
-    "The sequence match and accession identification come from reviewer-only evidence, not the evaluated input.",
-    "The current UniProt record's exact GO annotation for C is IEA:InterPro; the supporting experimental evidence concerns the protein's host kallikrein-kinin and coagulation effects."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein-specific evidence supports option C; the other options are not supported by the supplied functional evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0106",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the annotated Triatoma infestans protein triafestin-2. Its experimentally supported inhibition of the host kallikrein-kinin system and intrinsic coagulation pathway supports perturbation of host defenses. The exact GO annotation for option C is computationally assigned by InterPro, rather than itself being experimental evidence.",
-    "evidence_ids": ["C1", "C4", "C5", "C7", "C8", "H3", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with a secreted protein, which makes a host-interacting role plausible, but does not establish that it perturbs host defenses or distinguish that specific role from other host effects.",
-    "missing_item_specific_fact": "The protein-specific identification as triafestin-2 from Triatoma infestans saliva, and evidence that it suppresses host kallikrein-kinin activation and coagulation.",
-    "reason": "Those identifying and functional facts are absent from the sequence-and-choices input. Recognizing a secreted protein is not enough to select the particular GO process."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The protein-specific evidence supports option C; the other options are not supported by the supplied functional evidence."
-  },
-  "important_caveats": [
-    "The sequence match and accession identification come from reviewer-only evidence, not the evaluated input.",
-    "The current UniProt record's exact GO annotation for C is IEA:InterPro; the supporting experimental evidence concerns the protein's host kallikrein-kinin and coagulation effects."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A7BJ46 (Triafestin-2 from Triatoma infestans) carries GO:0030682 'symbiont-mediated perturbation of host defenses' as an annotation (evidence_id C7, H5). However, this annotation is IEA:InterPro (computational inference from domain), not experimentally verified. The experimental (IDA) annotations are GO:0140184 'venom-mediated suppression of blood coagulation, intrinsic pathway' and GO:0140106 'hematophagy'. The protein's experimentally characterized function (suppressing host kallikrein-kinin system and intrinsic coagulation) is consistent with the broader concept of perturbing host defenses, and the annotation exists in the database. Among the four provided choices, C is the most appropriate, though the 'symbiont' framing is somewhat unusual for a macro-organism parasite and derives from InterPro domain-based inference rather than direct experimental assignment.
-
-Citations as saved: [C7](#evidence-c7), [H5](#evidence-h5), [C5](#evidence-c5), [H3](#evidence-h3), [C8](#evidence-c8), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a signal peptide (suggesting secretion) and a Kunitz-type serine protease inhibitor domain. One could reason that a secreted protease inhibitor is unlikely to be involved in carbohydrate metabolism (A) or chondrocyte differentiation (B), and its anti-proteolytic nature argues against positive regulation of IL-8 (D). However, the critical 'symbiont-mediated' qualifier in option C requires knowing the organism is a blood-sucking parasite (Triatoma infestans) and that the protein targets host defense pathways (kallikrein-kinin, coagulation). This ecological/organism-specific context is not derivable from the amino acid sequence alone.
-
-
-**Missing item-specific fact**
-
-> The identity of the source organism (Triatoma infestans, a hematophagous insect) and the specific experimental finding that this salivary protein inhibits host factor XII, prekallikrein, and kallikrein-kinin system activation. Without knowing the protein is from a blood-sucking parasite targeting host coagulation/inflammation pathways, the 'symbiont-mediated perturbation of host defenses' GO term cannot be assigned from sequence features alone.
-
-
-**Reason**
-
-> While general reasoning about Kunitz domains and secreted protease inhibitors can weakly eliminate A, B, and D, the specific GO term 'symbiont-mediated perturbation of host defenses' requires organism-level ecological knowledge (parasite/host relationship) and knowledge of the specific host defense pathway targeted. The sequence provides no information about the organism being a blood-sucking insect or the protein being a salivary secretion. The correct answer depends on knowing the protein's identity and experimental characterization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, C is clearly the best fit. A (carbohydrate metabolism) and B (chondrocyte differentiation) are entirely unrelated to a secreted protease inhibitor. D (positive regulation of IL-8) is mechanistically opposite to the protein's anti-inflammatory/anti-coagulation function. C is the only option consistent with a parasite-derived secreted inhibitor of host defense pathways. No genuine ambiguity exists among the provided choices.
-
-
-### Important caveats
-
-- The GO:0030682 annotation is IEA:InterPro (computational, domain-based), not experimentally verified. The experimental (IDA) annotations are 'venom-mediated suppression of blood coagulation, intrinsic pathway' and 'hematophagy', neither of which appears among the choices.
-- The term 'symbiont' in GO ontology typically refers to microorganisms in a host relationship; applying it to a macro-organism parasite (insect) is somewhat unconventional and likely stems from InterPro domain-level annotation transfer.
-- The protein sequence alone (206 aa, signal peptide + Kunitz domain) provides limited information for precise GO term assignment without organism context.
-- The reviewer-only evidence confirms sequence match (SHA256 identical) between benchmark and UniProt entry A7BJ46.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a signal peptide (suggesting secretion) and a Kunitz-type serine protease inhibitor domain. One could reason that a secreted protease inhibitor is unlikely to be involved in carbohydrate metabolism (A) or chondrocyte differentiation (B), and its anti-proteolytic nature argues against positive regulation of IL-8 (D). However, the critical 'symbiont-mediated' qualifier in option C requires knowing the organism is a blood-sucking parasite (Triatoma infestans) and that the protein targets host defense pathways (kallikrein-kinin, coagulation). This ecological/organism-specific context is not derivable from the amino acid sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of the source organism (Triatoma infestans, a hematophagous insect) and the specific experimental finding that this salivary protein inhibits host factor XII, prekallikrein, and kallikrein-kinin system activation. Without knowing the protein is from a blood-sucking parasite targeting host coagulation/inflammation pathways, the 'symbiont-mediated perturbation of host defenses' GO term cannot be assigned from sequence features alone.",
-    "reason": "While general reasoning about Kunitz domains and secreted protease inhibitors can weakly eliminate A, B, and D, the specific GO term 'symbiont-mediated perturbation of host defenses' requires organism-level ecological knowledge (parasite/host relationship) and knowledge of the specific host defense pathway targeted. The sequence provides no information about the organism being a blood-sucking insect or the protein being a salivary secretion. The correct answer depends on knowing the protein's identity and experimental characterization."
-  },
-  "case_id": "GO_biological_process_0106",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "H5",
-      "C5",
-      "H3",
-      "C8",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A7BJ46 (Triafestin-2 from Triatoma infestans) carries GO:0030682 'symbiont-mediated perturbation of host defenses' as an annotation (evidence_id C7, H5). However, this annotation is IEA:InterPro (computational inference from domain), not experimentally verified. The experimental (IDA) annotations are GO:0140184 'venom-mediated suppression of blood coagulation, intrinsic pathway' and GO:0140106 'hematophagy'. The protein's experimentally characterized function (suppressing host kallikrein-kinin system and intrinsic coagulation) is consistent with the broader concept of perturbing host defenses, and the annotation exists in the database. Among the four provided choices, C is the most appropriate, though the 'symbiont' framing is somewhat unusual for a macro-organism parasite and derives from InterPro domain-based inference rather than direct experimental assignment."
-  },
-  "important_caveats": [
-    "The GO:0030682 annotation is IEA:InterPro (computational, domain-based), not experimentally verified. The experimental (IDA) annotations are 'venom-mediated suppression of blood coagulation, intrinsic pathway' and 'hematophagy', neither of which appears among the choices.",
-    "The term 'symbiont' in GO ontology typically refers to microorganisms in a host relationship; applying it to a macro-organism parasite (insect) is somewhat unconventional and likely stems from InterPro domain-level annotation transfer.",
-    "The protein sequence alone (206 aa, signal peptide + Kunitz domain) provides limited information for precise GO term assignment without organism context.",
-    "The reviewer-only evidence confirms sequence match (SHA256 identical) between benchmark and UniProt entry A7BJ46."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, C is clearly the best fit. A (carbohydrate metabolism) and B (chondrocyte differentiation) are entirely unrelated to a secreted protease inhibitor. D (positive regulation of IL-8) is mechanistically opposite to the protein's anti-inflammatory/anti-coagulation function. C is the only option consistent with a parasite-derived secreted inhibitor of host defense pathways. No genuine ambiguity exists among the provided choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0106",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A7BJ46 (Triafestin-2 from Triatoma infestans) carries GO:0030682 'symbiont-mediated perturbation of host defenses' as an annotation (evidence_id C7, H5). However, this annotation is IEA:InterPro (computational inference from domain), not experimentally verified. The experimental (IDA) annotations are GO:0140184 'venom-mediated suppression of blood coagulation, intrinsic pathway' and GO:0140106 'hematophagy'. The protein's experimentally characterized function (suppressing host kallikrein-kinin system and intrinsic coagulation) is consistent with the broader concept of perturbing host defenses, and the annotation exists in the database. Among the four provided choices, C is the most appropriate, though the 'symbiont' framing is somewhat unusual for a macro-organism parasite and derives from InterPro domain-based inference rather than direct experimental assignment.",
-    "evidence_ids": ["C7", "H5", "C5", "H3", "C8", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a signal peptide (suggesting secretion) and a Kunitz-type serine protease inhibitor domain. One could reason that a secreted protease inhibitor is unlikely to be involved in carbohydrate metabolism (A) or chondrocyte differentiation (B), and its anti-proteolytic nature argues against positive regulation of IL-8 (D). However, the critical 'symbiont-mediated' qualifier in option C requires knowing the organism is a blood-sucking parasite (Triatoma infestans) and that the protein targets host defense pathways (kallikrein-kinin, coagulation). This ecological/organism-specific context is not derivable from the amino acid sequence alone.",
-    "missing_item_specific_fact": "The identity of the source organism (Triatoma infestans, a hematophagous insect) and the specific experimental finding that this salivary protein inhibits host factor XII, prekallikrein, and kallikrein-kinin system activation. Without knowing the protein is from a blood-sucking parasite targeting host coagulation/inflammation pathways, the 'symbiont-mediated perturbation of host defenses' GO term cannot be assigned from sequence features alone.",
-    "reason": "While general reasoning about Kunitz domains and secreted protease inhibitors can weakly eliminate A, B, and D, the specific GO term 'symbiont-mediated perturbation of host defenses' requires organism-level ecological knowledge (parasite/host relationship) and knowledge of the specific host defense pathway targeted. The sequence provides no information about the organism being a blood-sucking insect or the protein being a salivary secretion. The correct answer depends on knowing the protein's identity and experimental characterization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, C is clearly the best fit. A (carbohydrate metabolism) and B (chondrocyte differentiation) are entirely unrelated to a secreted protease inhibitor. D (positive regulation of IL-8) is mechanistically opposite to the protein's anti-inflammatory/anti-coagulation function. C is the only option consistent with a parasite-derived secreted inhibitor of host defense pathways. No genuine ambiguity exists among the provided choices."
-  },
-  "important_caveats": [
-    "The GO:0030682 annotation is IEA:InterPro (computational, domain-based), not experimentally verified. The experimental (IDA) annotations are 'venom-mediated suppression of blood coagulation, intrinsic pathway' and 'hematophagy', neither of which appears among the choices.",
-    "The term 'symbiont' in GO ontology typically refers to microorganisms in a host relationship; applying it to a macro-organism parasite (insect) is somewhat unconventional and likely stems from InterPro domain-level annotation transfer.",
-    "The protein sequence alone (206 aa, signal peptide + Kunitz domain) provides limited information for precise GO term assignment without organism context.",
-    "The reviewer-only evidence confirms sequence match (SHA256 identical) between benchmark and UniProt entry A7BJ46."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +159,9 @@ Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -509,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A7BJ46",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "201194063bbd87eee2e0a624461e81187d6b69f5c23e2848bc15a2d67e3af2da",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 206,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "201194063bbd87eee2e0a624461e81187d6b69f5c23e2848bc15a2d67e3af2da",
   "current_entry_audit": {
     "entryVersion": 32,
     "firstPublicDate": "2025-02-05",
@@ -540,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-09-11",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "current_source_sequence_sha256": "201194063bbd87eee2e0a624461e81187d6b69f5c23e2848bc15a2d67e3af2da",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 206,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "201194063bbd87eee2e0a624461e81187d6b69f5c23e2848bc15a2d67e3af2da",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 31,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A7BJ46",
   "selected_historical_entry_version": 31,
+  "selected_historical_record_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
+  "selected_historical_source_sequence_length": 206,
+  "selected_historical_source_sequence_sha256": "201194063bbd87eee2e0a624461e81187d6b69f5c23e2848bc15a2d67e3af2da",
   "selected_historical_version": {
     "accession": "A7BJ46",
     "database": "Swiss-Prot",
@@ -558,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "TRIA2_TRIIF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
-  "selected_historical_source_sequence_sha256": "201194063bbd87eee2e0a624461e81187d6b69f5c23e2848bc15a2d67e3af2da",
-  "selected_historical_source_sequence_length": 206,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 31,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A7BJ46\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -612,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":32,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-09-11\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -631,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Assassin bug\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAF75465.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Paraneoptera\",\"Hemiptera\",\"Heteroptera\",\"Panheteroptera\",\"Cimicomorpha\",\"Reduviidae\",\"Triatominae\",\"Triatoma\"],\"scientificName\":\"Triatoma infestans\",\"taxonId\":30076}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -650,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17645545\",\"source\":\"PubMed\"}],\"value\":\"Triafestin-2\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -669,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17645545\",\"source\":\"PubMed\"}],\"value\":\"Suppresses activation of the host plasma kallikrein-kinin system, leading to inhibition of the intrinsic coagulation pathway (PubMed:17645545). Blocks host coagulation factor XII (F12) and prekallikrein (KLKB1) reciprocal activation without affecting their amidolytic activities (PubMed:17645545). Blocks binding of host F12 and high molecular weight kininogen (KNG1) to negatively charged surfaces (PubMed:17645545). Attenuates generation of bradykinin by interfering with activation of host kallikrein-kinin system (PubMed:17645545)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -688,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/4",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"17645545\",\"source\":\"PubMed\"}],\"id\":\"GO:0140106\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:hematophagy\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/4",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -707,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/5",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0030682\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:symbiont-mediated perturbation of host defenses\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/5",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -726,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/6",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"17645545\",\"source\":\"PubMed\"}],\"id\":\"GO:0140184\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:venom-mediated suppression of blood coagulation, intrinsic pathway\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/6",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -745,15 +499,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json",
-  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
-  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Isawa H.\",\"Orito Y.\",\"Jingushi N.\",\"Iwanaga S.\",\"Morita A.\",\"Chinzei Y.\",\"Yuda M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17645545\"},{\"database\":\"DOI\",\"id\":\"10.1111/j.1742-4658.2007.05958.x\"}],\"citationType\":\"journal article\",\"firstPage\":\"4271\",\"id\":\"17645545\",\"journal\":\"FEBS J.\",\"lastPage\":\"4286\",\"publicationDate\":\"2007\",\"title\":\"Identification and characterization of plasma kallikrein-kinin system inhibitors from salivary glands of the blood-sucking insect Triatoma infestans.\",\"volume\":\"274\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAF75465.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"ACTIVITY REGULATION\",\"INTERACTION WITH HOST F12 AND KNG1\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:27:09.036893+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f9ac347806d10a9f1acc8ee345e7afb2371a11451b4b570457c931cf4fb49a0d",
+  "url": "https://rest.uniprot.org/uniprotkb/A7BJ46.json"
 }
 ```
 
@@ -763,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31",
-  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
-  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   TRIA2_TRIIF             Reviewed;         206 AA.\nAC   A7BJ46;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   11-SEP-2007, sequence version 1.\nDT   28-JAN-2026, entry version 31.\nDE   RecName: Full=Triafestin-2 {ECO:0000303|PubMed:17645545};\nDE   Flags: Precursor;\nOS   Triatoma infestans (Assassin bug).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Paraneoptera; Hemiptera; Heteroptera; Panheteroptera;\nOC   Cimicomorpha; Reduviidae; Triatominae; Triatoma.\nOX   NCBI_TaxID=30076 {ECO:0000312|EMBL:BAF75465.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
+  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31"
 }
 ```
 
@@ -784,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31",
-  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
-  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
-  "source_locator": "lines 13-22",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAF75465.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, ACTIVITY REGULATION, INTERACTION WITH\nRP   HOST F12 AND KNG1, AND TISSUE SPECIFICITY.\nRX   PubMed=17645545; DOI=10.1111/j.1742-4658.2007.05958.x;\nRA   Isawa H., Orito Y., Jingushi N., Iwanaga S., Morita A., Chinzei Y.,\nRA   Yuda M.;\nRT   \"Identification and characterization of plasma kallikrein-kinin system\nRT   inhibitors from salivary glands of the blood-sucking insect Triatoma\nRT   infestans.\";\nRL   FEBS J. 274:4271-4286(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 13-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
+  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31"
 }
 ```
 
@@ -805,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31",
-  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
-  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
-  "source_locator": "lines 23-31",
   "excerpt": "CC   -!- FUNCTION: Suppresses activation of the host plasma kallikrein-kinin\nCC       system, leading to inhibition of the intrinsic coagulation pathway\nCC       (PubMed:17645545). Blocks host coagulation factor XII (F12) and\nCC       prekallikrein (KLKB1) reciprocal activation without affecting their\nCC       amidolytic activities (PubMed:17645545). Blocks binding of host F12 and\nCC       high molecular weight kininogen (KNG1) to negatively charged surfaces\nCC       (PubMed:17645545). Attenuates generation of bradykinin by interfering\nCC       with activation of host kallikrein-kinin system (PubMed:17645545).\nCC       {ECO:0000269|PubMed:17645545}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
+  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31"
 }
 ```
 
@@ -826,18 +580,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31",
-  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
-  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
-  "source_locator": "lines 53-53",
   "excerpt": "DR   GO; GO:0140106; P:hematophagy; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 53-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
+  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31"
 }
 ```
 
@@ -847,18 +601,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31",
-  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
-  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
-  "source_locator": "lines 54-54",
   "excerpt": "DR   GO; GO:0030682; P:symbiont-mediated perturbation of host defenses; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 54-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
+  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31"
 }
 ```
 
@@ -868,18 +622,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31",
-  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
-  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
-  "source_locator": "lines 55-55",
   "excerpt": "DR   GO; GO:0140184; P:venom-mediated suppression of blood coagulation, intrinsic pathway; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-02T04:27:10.922082+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 55-55",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8f96422bf3858862da59351ba95456e5b72cff9854924439343c78a6f88b7c07",
+  "url": "https://rest.uniprot.org/unisave/A7BJ46?format=txt&versions=31"
 }
 ```
 
@@ -890,15 +644,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 61261-61283",
   "excerpt": "[Term]\nid: GO:0005975\nname: carbohydrate metabolic process\nnamespace: biological_process\nalt_id: GO:0044261\nalt_id: GO:0044723\ndef: \"The chemical reactions and pathways involving carbohydrates, any of a group of organic compounds based of the general formula Cx(H2O)y.\" [GOC:mah, ISBN:0198506732]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_pombe\nsubset: goslim_prokaryote\nsubset: goslim_yeast\nsynonym: \"carbohydrate metabolism\" EXACT []\nxref: Wikipedia:Carbohydrate_metabolism\nis_a: GO:0044238 ! primary metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005975",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 61261-61283",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005975"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -909,15 +663,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 168439-168465",
   "excerpt": "[Term]\nid: GO:0030682\nname: symbiont-mediated perturbation of host defenses\nnamespace: biological_process\nalt_id: GO:0044413\nalt_id: GO:0044415\nalt_id: GO:0051807\nalt_id: GO:0051832\nalt_id: GO:0051834\ndef: \"A process in which a symbiont alters or subverts the normal execution of a host organism's defense response. The host defense response is mounted by the host in response to the presence of the symbiont. The host is defined as the larger of the organisms involved in a symbiotic interaction.\" [GOC:mtg_pamgo_17jul06]\nsynonym: \"avoidance of defenses of other organism during symbiotic interaction\" RELATED [GOC:dph]\nsynonym: \"avoidance of defenses of other organism involved in symbiotic interaction\" NARROW []\nsynonym: \"avoidance of host defences\" NARROW []\nsynonym: \"avoidance of host defenses\" NARROW []\nsynonym: \"evasion of host defence response\" NARROW []\nsynonym: \"evasion of other organism defence response\" NARROW []\nsynonym: \"evasion or tolerance of defense response of other organism during symbiotic interaction\" RELATED [GOC:dph]\nsynonym: \"evasion or tolerance of defense response of other organism involved in symbiotic interaction\" BROAD []\nsynonym: \"evasion or tolerance of defenses of other organism\" RELATED []\nsynonym: \"evasion or tolerance of defenses of other organism during symbiotic interaction\" RELATED [GOC:dph]\nsynonym: \"evasion or tolerance of defenses of other organism involved in symbiotic interaction\" RELATED []\nsynonym: \"evasion or tolerance of host defense response\" NARROW []\nsynonym: \"evasion or tolerance of host defenses\" RELATED []\nsynonym: \"mitigation of host defenses by symbiont\" EXACT []\nsynonym: \"perturbation of host defenses by symbiont\" EXACT []\nis_a: GO:0052200 ! symbiont-mediated response to host defenses\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030682",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 168439-168465",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030682"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -928,15 +682,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 185046-185059",
   "excerpt": "[Term]\nid: GO:0032331\nname: negative regulation of chondrocyte differentiation\nnamespace: biological_process\ndef: \"Any process that stops, prevents, or reduces the frequency, rate or extent of chondrocyte differentiation.\" [GOC:mah]\nsynonym: \"down regulation of chondrocyte differentiation\" EXACT []\nsynonym: \"down-regulation of chondrocyte differentiation\" EXACT []\nsynonym: \"downregulation of chondrocyte differentiation\" EXACT []\nsynonym: \"inhibition of chondrocyte differentiation\" NARROW []\nis_a: GO:0032330 ! regulation of chondrocyte differentiation\nis_a: GO:0045596 ! negative regulation of cell differentiation\nis_a: GO:0061037 ! negative regulation of cartilage development\nrelationship: negatively_regulates GO:0002062 ! chondrocyte differentiation\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032331",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 185046-185059",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032331"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -947,15 +701,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 190141-190159",
   "excerpt": "[Term]\nid: GO:0032757\nname: positive regulation of interleukin-8 production\nnamespace: biological_process\nalt_id: GO:0045416\nalt_id: GO:2000484\ndef: \"Any process that activates or increases the frequency, rate, or extent of interleukin-8 production.\" [GOC:mah]\nsynonym: \"activation of interleukin-8 production\" NARROW []\nsynonym: \"positive regulation of IL-8 production\" EXACT []\nsynonym: \"positive regulation of interleukin-8 biosynthetic process\" NARROW []\nsynonym: \"positive regulation of interleukin-8 secretion\" NARROW []\nsynonym: \"stimulation of interleukin-8 production\" NARROW []\nsynonym: \"up regulation of interleukin-8 production\" EXACT []\nsynonym: \"up-regulation of interleukin-8 production\" EXACT []\nsynonym: \"upregulation of interleukin-8 production\" EXACT []\nis_a: GO:0001819 ! positive regulation of cytokine production\nis_a: GO:0032677 ! regulation of interleukin-8 production\nrelationship: positively_regulates GO:0032637 ! interleukin-8 production\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032757",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 190141-190159",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032757"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

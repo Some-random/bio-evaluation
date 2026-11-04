@@ -1,18 +1,16 @@
-# cofactor_0044: before and after transfer clarification
+# cofactor_0044
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0044.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0044.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **A** — FMN
+**Expected answer:** **A** — FMN
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated with FMN as its cofactor. That annotation is explicitly transferred from a homolog (ECO:0000250), so it supports FMN but is not direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> No supplied context or unambiguous sequence feature establishes the cofactor. Identifying the protein as a flavin-dependent old-yellow enzyme would favor FMN, but that protein-family identification is not provided and cannot be treated as a general inference from the sequence alone.
-
-
-**Missing item-specific fact**
-
-> The protein's identity or family annotation, or a validated cofactor-binding/experimental characterization establishing FMN.
-
-
-**Reason**
-
-> The key is supported by a sequence-matched database annotation, but the annotation is reviewer-only; selecting FMN from the input requires protein-specific identification or external cofactor knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available sequence alone does not establish an alternative cofactor, while the matched annotation supports FMN.
-
-
-### Important caveats
-
-- The cited UniProt cofactor annotation is transferred from a homolog rather than direct evidence for this protein.
-- The historical sequence match supports applicability, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "No supplied context or unambiguous sequence feature establishes the cofactor. Identifying the protein as a flavin-dependent old-yellow enzyme would favor FMN, but that protein-family identification is not provided and cannot be treated as a general inference from the sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity or family annotation, or a validated cofactor-binding/experimental characterization establishing FMN.",
-    "reason": "The key is supported by a sequence-matched database annotation, but the annotation is reviewer-only; selecting FMN from the input requires protein-specific identification or external cofactor knowledge."
-  },
-  "case_id": "cofactor_0044",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with FMN as its cofactor. That annotation is explicitly transferred from a homolog (ECO:0000250), so it supports FMN but is not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The cited UniProt cofactor annotation is transferred from a homolog rather than direct evidence for this protein.",
-    "The historical sequence match supports applicability, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence alone does not establish an alternative cofactor, while the matched annotation supports FMN."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0044",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with FMN as its cofactor. That annotation is explicitly transferred from a homolog (ECO:0000250), so it supports FMN but is not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "No supplied context or unambiguous sequence feature establishes the cofactor. Identifying the protein as a flavin-dependent old-yellow enzyme would favor FMN, but that protein-family identification is not provided and cannot be treated as a general inference from the sequence alone.",
-    "missing_item_specific_fact": "The protein's identity or family annotation, or a validated cofactor-binding/experimental characterization establishing FMN.",
-    "reason": "The key is supported by a sequence-matched database annotation, but the annotation is reviewer-only; selecting FMN from the input requires protein-specific identification or external cofactor knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence alone does not establish an alternative cofactor, while the matched annotation supports FMN."
-  },
-  "important_caveats": [
-    "The cited UniProt cofactor annotation is transferred from a homolog rather than direct evidence for this protein.",
-    "The historical sequence match supports applicability, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A7T8F1M9 explicitly annotates FMN (ChEBI:CHEBI:58210) as the cofactor (evidence C5, H4). The protein is named 'Flavin-dependent old-yellow enzyme FrzD' (OYE family), EC 1.3.1.-, and the associated experimental paper (PubMed 33372776) characterizes its catalytic activity. The cofactor evidence code is ECO:0000250 (similarity to Q4WZ70), so the FMN assignment is inferred by family homology rather than a direct binding assay on FrzD itself. However, the OYE family is universally FMN-dependent, and the protein name and family classification are experimentally grounded (ECO:0000269 for EC number, ECO:0000303 for name). The answer FMN is well-supported.
-
-Citations as saved: [C5](#evidence-c5), [C4](#evidence-c4), [H4](#evidence-h4), [H2](#evidence-h2), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence (~375 aa) exhibits hallmarks of the Old Yellow Enzyme (OYE) family: a TIM-barrel oxidoreductase fold with a conserved 'GAD' motif followed by a GxGxxG-type flavin-binding loop (GADRVGVKLSPWGKIQGMGTMQDLVPQFQYLVSELRDMGLAYLRLSNSRWIDG), the classic WGASRPVLLEGGYDP active-site region, and overall architecture consistent with FMN-dependent enoate reductases. The OYE family is a textbook example of FMN-dependent oxidoreductases. The distractors can be eliminated: no CxxCPxxC or CxxC motifs indicative of &#91;4Fe-4S&#93; clusters; no iron-binding His/Asp/Glu triads for a mononuclear Fe center; no sodium-binding DxDxDG or analogous motifs. Recognizing the OYE fold and knowing that OYEs specifically bind FMN (not FAD) is standard biochemistry knowledge.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The OYE family is among the most extensively characterized flavoprotein families, and its FMN dependence is general textbook knowledge. The sequence-level OYE motifs (TIM barrel, GAD, flavin-binding loop) provide concrete grounds for family assignment.
-
-
-**Reason**
-
-> A knowledgeable biochemist can identify the OYE fold from conserved sequence motifs and length, then apply general knowledge that OYEs are FMN-dependent. The distractors lack structural motifs for their respective cofactors. This is family-level recognition using general enzymology, not memorization of a single protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices are mechanistically distinct cofactor classes. The sequence lacks motifs for Fe, Na+, or &#91;4Fe-4S&#93; clusters, and positively displays OYE flavin-binding architecture. FMN is the only defensible answer.
-
-
-### Important caveats
-
-- The UniProt FMN cofactor annotation uses evidence code ECO:0000250 (similarity), meaning it is inferred from homology to Q4WZ70 rather than a direct FMN-binding assay on FrzD. This is standard for well-characterized enzyme families and does not undermine the answer.
-- The protein was first publicly released in UniProt in June 2025; the original dataset construction date is unknown. If the benchmark was constructed before this release, the author may have relied on the primary paper (PubMed 33372776, 2021) or family assignment.
-- Distinguishing FMN from FAD at the sequence level relies on recognizing the specific OYE flavin-binding motif; without OYE family knowledge, a generic flavoprotein could use either FMN or FAD. However, the OYE family is sufficiently well-characterized that this is general biochemistry, not item-specific lookup.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence (~375 aa) exhibits hallmarks of the Old Yellow Enzyme (OYE) family: a TIM-barrel oxidoreductase fold with a conserved 'GAD' motif followed by a GxGxxG-type flavin-binding loop (GADRVGVKLSPWGKIQGMGTMQDLVPQFQYLVSELRDMGLAYLRLSNSRWIDG), the classic WGASRPVLLEGGYDP active-site region, and overall architecture consistent with FMN-dependent enoate reductases. The OYE family is a textbook example of FMN-dependent oxidoreductases. The distractors can be eliminated: no CxxCPxxC or CxxC motifs indicative of [4Fe-4S] clusters; no iron-binding His/Asp/Glu triads for a mononuclear Fe center; no sodium-binding DxDxDG or analogous motifs. Recognizing the OYE fold and knowing that OYEs specifically bind FMN (not FAD) is standard biochemistry knowledge.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The OYE family is among the most extensively characterized flavoprotein families, and its FMN dependence is general textbook knowledge. The sequence-level OYE motifs (TIM barrel, GAD, flavin-binding loop) provide concrete grounds for family assignment.",
-    "reason": "A knowledgeable biochemist can identify the OYE fold from conserved sequence motifs and length, then apply general knowledge that OYEs are FMN-dependent. The distractors lack structural motifs for their respective cofactors. This is family-level recognition using general enzymology, not memorization of a single protein's database entry."
-  },
-  "case_id": "cofactor_0044",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C4",
-      "H4",
-      "H2",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7T8F1M9 explicitly annotates FMN (ChEBI:CHEBI:58210) as the cofactor (evidence C5, H4). The protein is named 'Flavin-dependent old-yellow enzyme FrzD' (OYE family), EC 1.3.1.-, and the associated experimental paper (PubMed 33372776) characterizes its catalytic activity. The cofactor evidence code is ECO:0000250 (similarity to Q4WZ70), so the FMN assignment is inferred by family homology rather than a direct binding assay on FrzD itself. However, the OYE family is universally FMN-dependent, and the protein name and family classification are experimentally grounded (ECO:0000269 for EC number, ECO:0000303 for name). The answer FMN is well-supported."
-  },
-  "important_caveats": [
-    "The UniProt FMN cofactor annotation uses evidence code ECO:0000250 (similarity), meaning it is inferred from homology to Q4WZ70 rather than a direct FMN-binding assay on FrzD. This is standard for well-characterized enzyme families and does not undermine the answer.",
-    "The protein was first publicly released in UniProt in June 2025; the original dataset construction date is unknown. If the benchmark was constructed before this release, the author may have relied on the primary paper (PubMed 33372776, 2021) or family assignment.",
-    "Distinguishing FMN from FAD at the sequence level relies on recognizing the specific OYE flavin-binding motif; without OYE family knowledge, a generic flavoprotein could use either FMN or FAD. However, the OYE family is sufficiently well-characterized that this is general biochemistry, not item-specific lookup."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices are mechanistically distinct cofactor classes. The sequence lacks motifs for Fe, Na+, or [4Fe-4S] clusters, and positively displays OYE flavin-binding architecture. FMN is the only defensible answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0044",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7T8F1M9 explicitly annotates FMN (ChEBI:CHEBI:58210) as the cofactor (evidence C5, H4). The protein is named 'Flavin-dependent old-yellow enzyme FrzD' (OYE family), EC 1.3.1.-, and the associated experimental paper (PubMed 33372776) characterizes its catalytic activity. The cofactor evidence code is ECO:0000250 (similarity to Q4WZ70), so the FMN assignment is inferred by family homology rather than a direct binding assay on FrzD itself. However, the OYE family is universally FMN-dependent, and the protein name and family classification are experimentally grounded (ECO:0000269 for EC number, ECO:0000303 for name). The answer FMN is well-supported.",
-    "evidence_ids": ["C5", "C4", "H4", "H2", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence (~375 aa) exhibits hallmarks of the Old Yellow Enzyme (OYE) family: a TIM-barrel oxidoreductase fold with a conserved 'GAD' motif followed by a GxGxxG-type flavin-binding loop (GADRVGVKLSPWGKIQGMGTMQDLVPQFQYLVSELRDMGLAYLRLSNSRWIDG), the classic WGASRPVLLEGGYDP active-site region, and overall architecture consistent with FMN-dependent enoate reductases. The OYE family is a textbook example of FMN-dependent oxidoreductases. The distractors can be eliminated: no CxxCPxxC or CxxC motifs indicative of [4Fe-4S] clusters; no iron-binding His/Asp/Glu triads for a mononuclear Fe center; no sodium-binding DxDxDG or analogous motifs. Recognizing the OYE fold and knowing that OYEs specifically bind FMN (not FAD) is standard biochemistry knowledge.",
-    "missing_item_specific_fact": "None strictly required. The OYE family is among the most extensively characterized flavoprotein families, and its FMN dependence is general textbook knowledge. The sequence-level OYE motifs (TIM barrel, GAD, flavin-binding loop) provide concrete grounds for family assignment.",
-    "reason": "A knowledgeable biochemist can identify the OYE fold from conserved sequence motifs and length, then apply general knowledge that OYEs are FMN-dependent. The distractors lack structural motifs for their respective cofactors. This is family-level recognition using general enzymology, not memorization of a single protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices are mechanistically distinct cofactor classes. The sequence lacks motifs for Fe, Na+, or [4Fe-4S] clusters, and positively displays OYE flavin-binding architecture. FMN is the only defensible answer."
-  },
-  "important_caveats": [
-    "The UniProt FMN cofactor annotation uses evidence code ECO:0000250 (similarity), meaning it is inferred from homology to Q4WZ70 rather than a direct FMN-binding assay on FrzD. This is standard for well-characterized enzyme families and does not undermine the answer.",
-    "The protein was first publicly released in UniProt in June 2025; the original dataset construction date is unknown. If the benchmark was constructed before this release, the author may have relied on the primary paper (PubMed 33372776, 2021) or family assignment.",
-    "Distinguishing FMN from FAD at the sequence level relies on recognizing the specific OYE flavin-binding motif; without OYE family knowledge, a generic flavoprotein could use either FMN or FAD. However, the OYE family is sufficiently well-characterized that this is general biochemistry, not item-specific lookup."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -381,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -492,30 +265,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7T8F1M9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "48d35685f95428a133d889977d9437954326f248d7bbb25058ab859a2c365157",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 375,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "48d35685f95428a133d889977d9437954326f248d7bbb25058ab859a2c365157",
   "current_entry_audit": {
     "entryVersion": 13,
     "firstPublicDate": "2025-06-18",
@@ -523,14 +283,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
-  "current_source_sequence_sha256": "48d35685f95428a133d889977d9437954326f248d7bbb25058ab859a2c365157",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 375,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "48d35685f95428a133d889977d9437954326f248d7bbb25058ab859a2c365157",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 11,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7T8F1M9",
   "selected_historical_entry_version": 11,
+  "selected_historical_record_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
+  "selected_historical_source_sequence_length": 375,
+  "selected_historical_source_sequence_sha256": "48d35685f95428a133d889977d9437954326f248d7bbb25058ab859a2c365157",
   "selected_historical_version": {
     "accession": "A0A7T8F1M9",
     "database": "Swiss-Prot",
@@ -541,24 +317,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FRZD_CLASX",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
-  "selected_historical_source_sequence_sha256": "48d35685f95428a133d889977d9437954326f248d7bbb25058ab859a2c365157",
-  "selected_historical_source_sequence_length": 375,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 11,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -572,15 +335,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json",
-  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
-  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7T8F1M9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json"
 }
 ```
 
@@ -591,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json",
-  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
-  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":13,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json"
 }
 ```
 
@@ -610,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json",
-  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
-  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Hypocreaceae\",\"Cladobotryum\"],\"scientificName\":\"Cladobotryum sp\",\"taxonId\":2040732}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json"
 }
 ```
 
@@ -629,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json",
-  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
-  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"FR901483 biosynthesis cluster protein D\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Flavin-dependent old-yellow enzyme FrzD\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Flavin-dependent OYE\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"1.3.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Aldehyde reductase FrzD\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json"
 }
 ```
 
@@ -648,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json",
-  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
-  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q4WZ70\",\"source\":\"UniProtKB\"}],\"name\":\"FMN\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json"
 }
 ```
 
@@ -667,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json",
-  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
-  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang Z.\",\"Tamura Y.\",\"Tang M.\",\"Qiao T.\",\"Sato M.\",\"Otsu Y.\",\"Sasamura S.\",\"Taniguchi M.\",\"Watanabe K.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33372776\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.0c12352\"}],\"citationType\":\"journal article\",\"firstPage\":\"132\",\"id\":\"33372776\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"136\",\"publicationDate\":\"2021\",\"title\":\"Biosynthesis of the Immunosuppressant (-)-FR901483.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"11231\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:51.159757+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c38628844912ac2c4aa489f4067b5327e7aad3e6384ffb308551b50b6f0b30ee",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1M9.json"
 }
 ```
 
@@ -685,18 +448,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11",
-  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
-  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   FRZD_CLASX              Reviewed;         375 AA.\nAC   A0A7T8F1M9;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   18-JUN-2025, entry version 11.\nDE   RecName: Full=Aldehyde reductase FrzD {ECO:0000303|PubMed:33372776};\nDE            EC=1.3.1.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein D {ECO:0000303|PubMed:33372776};\nDE   AltName: Full=Flavin-dependent old-yellow enzyme FrzD {ECO:0000303|PubMed:33372776};\nDE            Short=Flavin-dependent OYE {ECO:0000303|PubMed:33372776};\nGN   Name=FrzD {ECO:0000303|PubMed:33372776};\nOS   Cladobotryum sp.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Hypocreaceae; Cladobotryum.\nOX   NCBI_TaxID=2040732;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11"
 }
 ```
 
@@ -706,18 +469,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11",
-  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
-  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Aldehyde reductase FrzD {ECO:0000303|PubMed:33372776};\nDE            EC=1.3.1.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein D {ECO:0000303|PubMed:33372776};\nDE   AltName: Full=Flavin-dependent old-yellow enzyme FrzD {ECO:0000303|PubMed:33372776};\nDE            Short=Flavin-dependent OYE {ECO:0000303|PubMed:33372776};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11"
 }
 ```
 
@@ -727,18 +490,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11",
-  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
-  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
-  "source_locator": "lines 16-24",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, AND\nRP   PATHWAY.\nRC   STRAIN=11231;\nRX   PubMed=33372776; DOI=10.1021/jacs.0c12352;\nRA   Zhang Z., Tamura Y., Tang M., Qiao T., Sato M., Otsu Y., Sasamura S.,\nRA   Taniguchi M., Watanabe K., Tang Y.;\nRT   \"Biosynthesis of the Immunosuppressant (-)-FR901483.\";\nRL   J. Am. Chem. Soc. 143:132-136(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-24",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11"
 }
 ```
 
@@ -748,18 +511,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11",
-  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
-  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
-  "source_locator": "lines 66-68",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=FMN; Xref=ChEBI:CHEBI:58210;\nCC         Evidence={ECO:0000250|UniProtKB:Q4WZ70};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-01T06:27:35.126419+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 66-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fd48d108f45a92963462c2f0a750dcecfac5cc36c43941b4ca5d31b971333839",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1M9?format=txt&versions=11"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_molecular_function_0060: before and after transfer clarification
+# GO_molecular_function_0060
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0060.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0060.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **B** — ubiquitin-like protein transferase activity
+**Expected answer:** **B** — ubiquitin-like protein transferase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt record for BilB. That record describes BilB as an E2-like enzyme that transfers a ubiquitin-like moiety to target proteins, and annotates ubiquitin-like protein transferase activity with IDA evidence. This supports choice B for the supplied sequence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The short sequence might permit family-level clues, but the input gives no organism, pathway, substrate, or functional context that establishes BilB's role in the Bil system. The particular transferase function is not meaningfully distinguished from the choices by a concrete argument available from the supplied input alone.
-
-
-**Missing item-specific fact**
-
-> That this particular protein is BilB, an E2-like component of a bacterial ubiquitin-like protein conjugation system, and transfers the ubiquitin-like moiety to target proteins.
-
-
-**Reason**
-
-> The key is supported by protein-specific annotation and experimental evidence, but those facts are absent from the evaluated input. Recognizing or retrieving the exact protein's identity and function would be lookup or memorization, not reasoning from the supplied sequence and choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports B; no other listed choice is supported as a molecular function of this protein.
-
-
-### Important caveats
-
-- The UniProt record and GO annotation match the supplied sequence, but the exact source snapshot used by the author is unknown.
-- The protein-specific functional evidence is reviewer-only and was not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The short sequence might permit family-level clues, but the input gives no organism, pathway, substrate, or functional context that establishes BilB's role in the Bil system. The particular transferase function is not meaningfully distinguished from the choices by a concrete argument available from the supplied input alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this particular protein is BilB, an E2-like component of a bacterial ubiquitin-like protein conjugation system, and transfers the ubiquitin-like moiety to target proteins.",
-    "reason": "The key is supported by protein-specific annotation and experimental evidence, but those facts are absent from the evaluated input. Recognizing or retrieving the exact protein's identity and function would be lookup or memorization, not reasoning from the supplied sequence and choices."
-  },
-  "case_id": "GO_molecular_function_0060",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt record for BilB. That record describes BilB as an E2-like enzyme that transfers a ubiquitin-like moiety to target proteins, and annotates ubiquitin-like protein transferase activity with IDA evidence. This supports choice B for the supplied sequence."
-  },
-  "important_caveats": [
-    "The UniProt record and GO annotation match the supplied sequence, but the exact source snapshot used by the author is unknown.",
-    "The protein-specific functional evidence is reviewer-only and was not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports B; no other listed choice is supported as a molecular function of this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0060",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt record for BilB. That record describes BilB as an E2-like enzyme that transfers a ubiquitin-like moiety to target proteins, and annotates ubiquitin-like protein transferase activity with IDA evidence. This supports choice B for the supplied sequence.",
-    "evidence_ids": ["C1", "C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The short sequence might permit family-level clues, but the input gives no organism, pathway, substrate, or functional context that establishes BilB's role in the Bil system. The particular transferase function is not meaningfully distinguished from the choices by a concrete argument available from the supplied input alone.",
-    "missing_item_specific_fact": "That this particular protein is BilB, an E2-like component of a bacterial ubiquitin-like protein conjugation system, and transfers the ubiquitin-like moiety to target proteins.",
-    "reason": "The key is supported by protein-specific annotation and experimental evidence, but those facts are absent from the evaluated input. Recognizing or retrieving the exact protein's identity and function would be lookup or memorization, not reasoning from the supplied sequence and choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports B; no other listed choice is supported as a molecular function of this protein."
-  },
-  "important_caveats": [
-    "The UniProt record and GO annotation match the supplied sequence, but the exact source snapshot used by the author is unknown.",
-    "The protein-specific functional evidence is reviewer-only and was not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A1I1NU27 (sequence SHA256 match confirmed) is annotated with GO:0019787 'ubiquitin-like protein transferase activity' with evidence code IDA:UniProtKB, supported by experimental data from Hoer et al. (Nature 2024, PMID:39020165). The protein is named 'Bacterial E2-like ubiquitin protein BilB' (EC 2.3.2.-) and functions as the E2 component of the Bil conjugation system, catalyzing covalent attachment of a ubiquitin-like moiety (BilA) to phage target proteins. The GO term matches option B exactly.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Partial elimination reasoning is possible: the sequence lacks 2-oxoglutarate-dependent dioxygenase motifs (rules out A), lacks transmembrane or ion-channel-binding features (rules out C), and the GO definition of enzyme activator activity (GO:0008047) explicitly excludes covalent modification, which is inconsistent with a transferase mechanism (weakly argues against D). However, positively identifying the protein as specifically a 'ubiquitin-like protein transferase' requires recognizing the UBC/E2 fold from a 161-residue bacterial sequence with a catalytic Cys-113, or knowing the Bil system (described only in 2024). The UBC fold is not trivially identifiable from primary sequence text without structural context or database comparison.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as BilB (E2 of the bacterial ISG15-like Bil antiviral system, described in Hoer et al. Nature 2024) and recognition of the E2/UBC catalytic fold from this particular bacterial sequence. Without prior knowledge of this novel 2024 system or the ability to computationally match the UBC fold, a model cannot positively assign 'ubiquitin-like protein transferase activity' over other small Cys-containing protein functions.
-
-
-**Reason**
-
-> While elimination of A and C is feasible through general motif knowledge, the positive identification of B requires either recognizing the exact sequence (lookup), knowing the 2024 Bil system publication, or identifying the UBC fold from primary sequence alone—which is a specialized structural biology skill not achievable from the text sequence without tools. The bacterial context further makes E2 identification non-obvious. The question effectively tests knowledge of a very recently characterized, protein-specific annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent mechanistically distinct GO terms: dioxygenase (A), transferase (B), channel regulator (C), and enzyme activator (D). The GO definitions are mutually exclusive in practice. Option D is explicitly excluded by the GO definition (no covalent modification allowed), and A/C lack any sequence support. No two options are simultaneously defensible.
-
-
-### Important caveats
-
-- The Bil system was described in a single 2024 Nature paper (Hoer et al.); this is an extremely novel annotation with limited literature.
-- The GO annotation uses IDA (Inferred from Direct Assay) evidence, indicating experimental support, not purely computational inference.
-- The protein is bacterial, making E2-like activity unusual and harder to predict from general biological priors that associate E2 enzymes primarily with eukaryotes.
-- The reviewer-only evidence confirms sequence match and annotation but was absent from the evaluated model input; the model had only the raw sequence and four options.
-- The catalytic Cys-113 (confirmed by mutagenesis in the reference) is present in the sequence, but recognizing it as an E2 catalytic residue without fold-level knowledge is very difficult.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Partial elimination reasoning is possible: the sequence lacks 2-oxoglutarate-dependent dioxygenase motifs (rules out A), lacks transmembrane or ion-channel-binding features (rules out C), and the GO definition of enzyme activator activity (GO:0008047) explicitly excludes covalent modification, which is inconsistent with a transferase mechanism (weakly argues against D). However, positively identifying the protein as specifically a 'ubiquitin-like protein transferase' requires recognizing the UBC/E2 fold from a 161-residue bacterial sequence with a catalytic Cys-113, or knowing the Bil system (described only in 2024). The UBC fold is not trivially identifiable from primary sequence text without structural context or database comparison.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as BilB (E2 of the bacterial ISG15-like Bil antiviral system, described in Hoer et al. Nature 2024) and recognition of the E2/UBC catalytic fold from this particular bacterial sequence. Without prior knowledge of this novel 2024 system or the ability to computationally match the UBC fold, a model cannot positively assign 'ubiquitin-like protein transferase activity' over other small Cys-containing protein functions.",
-    "reason": "While elimination of A and C is feasible through general motif knowledge, the positive identification of B requires either recognizing the exact sequence (lookup), knowing the 2024 Bil system publication, or identifying the UBC fold from primary sequence alone—which is a specialized structural biology skill not achievable from the text sequence without tools. The bacterial context further makes E2 identification non-obvious. The question effectively tests knowledge of a very recently characterized, protein-specific annotation."
-  },
-  "case_id": "GO_molecular_function_0060",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A1I1NU27 (sequence SHA256 match confirmed) is annotated with GO:0019787 'ubiquitin-like protein transferase activity' with evidence code IDA:UniProtKB, supported by experimental data from Hoer et al. (Nature 2024, PMID:39020165). The protein is named 'Bacterial E2-like ubiquitin protein BilB' (EC 2.3.2.-) and functions as the E2 component of the Bil conjugation system, catalyzing covalent attachment of a ubiquitin-like moiety (BilA) to phage target proteins. The GO term matches option B exactly."
-  },
-  "important_caveats": [
-    "The Bil system was described in a single 2024 Nature paper (Hoer et al.); this is an extremely novel annotation with limited literature.",
-    "The GO annotation uses IDA (Inferred from Direct Assay) evidence, indicating experimental support, not purely computational inference.",
-    "The protein is bacterial, making E2-like activity unusual and harder to predict from general biological priors that associate E2 enzymes primarily with eukaryotes.",
-    "The reviewer-only evidence confirms sequence match and annotation but was absent from the evaluated model input; the model had only the raw sequence and four options.",
-    "The catalytic Cys-113 (confirmed by mutagenesis in the reference) is present in the sequence, but recognizing it as an E2 catalytic residue without fold-level knowledge is very difficult."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent mechanistically distinct GO terms: dioxygenase (A), transferase (B), channel regulator (C), and enzyme activator (D). The GO definitions are mutually exclusive in practice. Option D is explicitly excluded by the GO definition (no covalent modification allowed), and A/C lack any sequence support. No two options are simultaneously defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0060",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A1I1NU27 (sequence SHA256 match confirmed) is annotated with GO:0019787 'ubiquitin-like protein transferase activity' with evidence code IDA:UniProtKB, supported by experimental data from Hoer et al. (Nature 2024, PMID:39020165). The protein is named 'Bacterial E2-like ubiquitin protein BilB' (EC 2.3.2.-) and functions as the E2 component of the Bil conjugation system, catalyzing covalent attachment of a ubiquitin-like moiety (BilA) to phage target proteins. The GO term matches option B exactly.",
-    "evidence_ids": ["C4", "C5", "C7", "C8", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Partial elimination reasoning is possible: the sequence lacks 2-oxoglutarate-dependent dioxygenase motifs (rules out A), lacks transmembrane or ion-channel-binding features (rules out C), and the GO definition of enzyme activator activity (GO:0008047) explicitly excludes covalent modification, which is inconsistent with a transferase mechanism (weakly argues against D). However, positively identifying the protein as specifically a 'ubiquitin-like protein transferase' requires recognizing the UBC/E2 fold from a 161-residue bacterial sequence with a catalytic Cys-113, or knowing the Bil system (described only in 2024). The UBC fold is not trivially identifiable from primary sequence text without structural context or database comparison.",
-    "missing_item_specific_fact": "The specific identity of this protein as BilB (E2 of the bacterial ISG15-like Bil antiviral system, described in Hoer et al. Nature 2024) and recognition of the E2/UBC catalytic fold from this particular bacterial sequence. Without prior knowledge of this novel 2024 system or the ability to computationally match the UBC fold, a model cannot positively assign 'ubiquitin-like protein transferase activity' over other small Cys-containing protein functions.",
-    "reason": "While elimination of A and C is feasible through general motif knowledge, the positive identification of B requires either recognizing the exact sequence (lookup), knowing the 2024 Bil system publication, or identifying the UBC fold from primary sequence alone—which is a specialized structural biology skill not achievable from the text sequence without tools. The bacterial context further makes E2 identification non-obvious. The question effectively tests knowledge of a very recently characterized, protein-specific annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent mechanistically distinct GO terms: dioxygenase (A), transferase (B), channel regulator (C), and enzyme activator (D). The GO definitions are mutually exclusive in practice. Option D is explicitly excluded by the GO definition (no covalent modification allowed), and A/C lack any sequence support. No two options are simultaneously defensible."
-  },
-  "important_caveats": [
-    "The Bil system was described in a single 2024 Nature paper (Hoer et al.); this is an extremely novel annotation with limited literature.",
-    "The GO annotation uses IDA (Inferred from Direct Assay) evidence, indicating experimental support, not purely computational inference.",
-    "The protein is bacterial, making E2-like activity unusual and harder to predict from general biological priors that associate E2 enzymes primarily with eukaryotes.",
-    "The reviewer-only evidence confirms sequence match and annotation but was absent from the evaluated model input; the model had only the raw sequence and four options.",
-    "The catalytic Cys-113 (confirmed by mutagenesis in the reference) is present in the sequence, but recognizing it as an E2 catalytic residue without fold-level knowledge is very difficult."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A1I1NU27",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3646da7e5f755e00a2cd4a2c090e3de055c0fb0383323a7b1c9eea3986ed9213",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 161,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3646da7e5f755e00a2cd4a2c090e3de055c0fb0383323a7b1c9eea3986ed9213",
   "current_entry_audit": {
     "entryVersion": 12,
     "firstPublicDate": "2025-04-09",
@@ -543,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-11-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "current_source_sequence_sha256": "3646da7e5f755e00a2cd4a2c090e3de055c0fb0383323a7b1c9eea3986ed9213",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 161,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3646da7e5f755e00a2cd4a2c090e3de055c0fb0383323a7b1c9eea3986ed9213",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 11,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A1I1NU27",
   "selected_historical_entry_version": 11,
+  "selected_historical_record_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
+  "selected_historical_source_sequence_length": 161,
+  "selected_historical_source_sequence_sha256": "3646da7e5f755e00a2cd4a2c090e3de055c0fb0383323a7b1c9eea3986ed9213",
   "selected_historical_version": {
     "accession": "A0A1I1NU27",
     "database": "Swiss-Prot",
@@ -561,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "BILB_COLS4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
-  "selected_historical_source_sequence_sha256": "3646da7e5f755e00a2cd4a2c090e3de055c0fb0383323a7b1c9eea3986ed9213",
-  "selected_historical_source_sequence_length": 161,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 11,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -596,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A1I1NU27\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -615,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":12,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-11-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -634,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Burkholderiales\",\"Oxalobacteraceae\",\"Collimonas\"],\"scientificName\":\"Collimonas sp. (strain OK412)\",\"taxonId\":1801619}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -653,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"E2 ubiquitin-conjugating enzyme BilB\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"2.3.2.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"Bacterial E2-like ubiquitin protein BilB\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -672,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39020165\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"Component of the Bil (bacterial ISG15-like) antiviral defense system, composed of BilA, BilB, BilC and BilD. The Bil system specifically conjugates a ubiquitin-like moiety (bilA) to the bacteriophage central tail fiber (CTF, or tip attachment protein J) via reactions involving E1 (bilD) and E2 (bilB). Modifies CTF of phage SECphi27 and SECphi4, which probably interferes with assembly of the phage tail. Also modifies T5 baseplate hub protein pb3 (gene D16), but not gp27 of phage T6 (Bil defends against T6). BilB probably accepts ubiquitin from the BilA-BilD (E1) complex and catalyzes its covalent attachment to target protein (CTF) (Probable) (PubMed:39020165). Bil-encoding bacteria produce mostly defective phage SECphi27, many of which have phage assembly defects, including no tails. SECphi27 phage progeny produced in E.coli with the Bil system inject less DNA into naive host cells, maybe because the phage are less able to adsorb and inject their DNA into host cells\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -691,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"Expression of the Bil system in E.coli (strain MG1655) confers about 100-fold resistance to phage SECphi27, SECphi18, SECphi6, SECphi4 and T5, but not to SECphi17. When cells expressing the Bil system are infected by phage SECphi27 at low multiplicity of infection (0.03 MOI) the culture survives, at 3.0 MOI the culture collapses at the same time as cells without the Bil system\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -710,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/5",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"id\":\"GO:0019787\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:ubiquitin-like protein transferase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/5",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -729,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json",
-  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
-  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Hoer J.\",\"Wolf S.G.\",\"Sorek R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39020165\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-024-07616-5\"}],\"citationType\":\"journal article\",\"firstPage\":\"850\",\"id\":\"39020165\",\"journal\":\"Nature\",\"lastPage\":\"856\",\"publicationDate\":\"2024\",\"title\":\"Bacteria conjugate ubiquitin-like proteins to interfere with phage assembly.\",\"volume\":\"631\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PROBABLE ACTIVE SITE\",\"MUTAGENESIS OF CYS-113\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:36.666780+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dc1345a3f9e24cec733ddc2f361b20169223c3b2af22cdd9fd503d27975ae399",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU27.json"
 }
 ```
 
@@ -747,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11",
-  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
-  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   BILB_COLS4              Reviewed;         161 AA.\nAC   A0A1I1NU27;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-NOV-2017, sequence version 1.\nDT   28-JAN-2026, entry version 11.\nDE   RecName: Full=Bacterial E2-like ubiquitin protein BilB {ECO:0000303|PubMed:39020165};\nDE            EC=2.3.2.- {ECO:0000305|PubMed:39020165};\nDE   AltName: Full=E2 ubiquitin-conjugating enzyme BilB;\nGN   Name=bilB {ECO:0000303|PubMed:39020165};\nGN   ORFNames=SAMN04515619_11957 {ECO:0000312|EMBL:SFD01174.1};\nOS   Collimonas sp. (strain OK412).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria;\nOC   Burkholderiales; Oxalobacteraceae; Collimonas.\nOX   NCBI_TaxID=1801619;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11"
 }
 ```
 
@@ -768,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11",
-  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
-  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
-  "source_locator": "lines 20-26",
   "excerpt": "RN   [2]\nRP   FUNCTION, PROBABLE ACTIVE SITE, AND MUTAGENESIS OF CYS-113.\nRX   PubMed=39020165; DOI=10.1038/s41586-024-07616-5;\nRA   Hoer J., Wolf S.G., Sorek R.;\nRT   \"Bacteria conjugate ubiquitin-like proteins to interfere with phage\nRT   assembly.\";\nRL   Nature 631:850-856(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11"
 }
 ```
 
@@ -789,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11",
-  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
-  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
-  "source_locator": "lines 27-42",
   "excerpt": "CC   -!- FUNCTION: Component of the Bil (bacterial ISG15-like) antiviral defense\nCC       system, composed of BilA, BilB, BilC and BilD. The Bil system\nCC       specifically conjugates a ubiquitin-like moiety (bilA) to the\nCC       bacteriophage central tail fiber (CTF, or tip attachment protein J) via\nCC       reactions involving E1 (bilD) and E2 (bilB). Modifies CTF of phage\nCC       SECphi27 and SECphi4, which probably interferes with assembly of the\nCC       phage tail. Also modifies T5 baseplate hub protein pb3 (gene D16), but\nCC       not gp27 of phage T6 (Bil defends against T6). BilB probably accepts\nCC       ubiquitin from the BilA-BilD (E1) complex and catalyzes its covalent\nCC       attachment to target protein (CTF) (Probable) (PubMed:39020165). Bil-\nCC       encoding bacteria produce mostly defective phage SECphi27, many of\nCC       which have phage assembly defects, including no tails. SECphi27 phage\nCC       progeny produced in E.coli with the Bil system inject less DNA into\nCC       naive host cells, maybe because the phage are less able to adsorb and\nCC       inject their DNA into host cells. {ECO:0000269|PubMed:39020165,\nCC       ECO:0000305|PubMed:39020165}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11"
 }
 ```
 
@@ -810,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11",
-  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
-  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
-  "source_locator": "lines 43-53",
   "excerpt": "CC   -!- FUNCTION: Expression of the Bil system in E.coli (strain MG1655)\nCC       confers about 100-fold resistance to phage SECphi27, SECphi18, SECphi6,\nCC       SECphi4 and T5, but not to SECphi17. When cells expressing the Bil\nCC       system are infected by phage SECphi27 at low multiplicity of infection\nCC       (0.03 MOI) the culture survives, at 3.0 MOI the culture collapses at\nCC       the same time as cells without the Bil system.\nCC       {ECO:0000269|PubMed:39020165}.\nCC   ---------------------------------------------------------------------------\nCC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms\nCC   Distributed under the Creative Commons Attribution (CC BY 4.0) License\nCC   ---------------------------------------------------------------------------\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11"
 }
 ```
 
@@ -831,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 11,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11",
-  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
-  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
-  "source_locator": "lines 59-59",
   "excerpt": "DR   GO; GO:0019787; F:ubiquitin-like protein transferase activity; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 11,
+  "retrieved_utc": "2026-11-02T04:24:42.543529+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 59-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "02140c806e50b7c8fba6442df748ac8050a6b50ee7a254e8a2d0deb6a7a2c0c9",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU27?format=txt&versions=11"
 }
 ```
 
@@ -853,15 +607,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 78691-78702",
   "excerpt": "[Term]\nid: GO:0008047\nname: enzyme activator activity\nnamespace: molecular_function\nalt_id: GO:0010577\ndef: \"A molecular function regulator that increases a catalytic activity.\" [GOC:pdt]\ncomment: This term should only be used in cases when the regulator directly interacts with the enzyme, but does not result in a covalent modification.\nsynonym: \"metalloenzyme activator activity\" NARROW []\nxref: Reactome:R-HSA-9948070 \"POMGNT1 catalyzes FKRP:FKTN:RXYLT1 formation\"\nis_a: GO:0030234 ! enzyme regulator activity\nis_a: GO:0140677 ! molecular function activator activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008047",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 78691-78702",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008047"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -872,15 +626,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 117999-118006",
   "excerpt": "[Term]\nid: GO:0015459\nname: potassium channel regulator activity\nnamespace: molecular_function\ndef: \"Binds to and modulates the activity of a potassium channel.\" [GOC:dos, GOC:mah]\nsynonym: \"potassium channel gating activity\" EXACT []\nis_a: GO:0099106 ! ion channel regulator activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0015459",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 117999-118006",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0015459"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -891,15 +645,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 153098-153118",
   "excerpt": "[Term]\nid: GO:0019787\nname: ubiquitin-like protein transferase activity\nnamespace: molecular_function\nalt_id: GO:0008639\nalt_id: GO:0008640\ndef: \"Catalysis of the transfer of a ubiquitin-like from one protein to another via the reaction X-ULP + Y = Y-ULP + X, where both X-ULP and Y-ULP are covalent linkages. ULP represents a ubiquitin-like protein.\" [GOC:mah, GOC:rn, PMID:10806345, PMID:10884686]\nsubset: goslim_drosophila\nsubset: goslim_pir\nsynonym: \"E2\" BROAD []\nsynonym: \"E3\" RELATED [GOC:dph]\nsynonym: \"small conjugating protein ligase activity\" NARROW [GOC:dph]\nsynonym: \"small conjugating protein transferase activity\" EXACT [GOC:dph]\nsynonym: \"small protein conjugating enzyme activity\" NARROW []\nsynonym: \"ubiquitin-like conjugating enzyme activity\" NARROW []\nsynonym: \"ubiquitin-like-protein ligase activity\" NARROW []\nxref: Reactome:R-HSA-5678490 \"ATG16L1 complex transfers LC3 from ATG3 to PE\"\nxref: Reactome:R-HSA-688137 \"RIP2 is K63 polyubiquitinated\"\nis_a: GO:0016755 ! aminoacyltransferase activity\nis_a: GO:0140096 ! catalytic activity, acting on a protein\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019787",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 153098-153118",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019787"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -910,15 +664,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 428071-428084",
   "excerpt": "[Term]\nid: GO:0106155\nname: peptidyl-lysine 3-dioxygenase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: protein L-lysine + 2-oxoglutarate + O2 = protein 3-hydroxy-L-lysine + succinate + CO2.\" [GOC:al, PMID:29915238, RHEA:57152]\nxref: EC:1.14.11.63\nxref: Reactome:R-HSA-9629578 \"JMJD7 dimer hydroxlates a lysine residue of DRG2\"\nxref: Reactome:R-HSA-9629591 \"JMJD7 dimer hydroxlates a lysine residue of DRG1\"\nxref: RHEA:57152\nis_a: GO:0016706 ! 2-oxoglutarate-dependent dioxygenase activity\nis_a: GO:0140096 ! catalytic activity, acting on a protein\nproperty_value: skos:exactMatch EC:1.14.11.63\nproperty_value: skos:exactMatch RHEA:57152\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0106155",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 428071-428084",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0106155"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

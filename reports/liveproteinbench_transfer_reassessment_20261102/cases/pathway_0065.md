@@ -1,18 +1,16 @@
-# pathway_0065: before and after transfer clarification
+# pathway_0065
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0065.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0065.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Alkaloid biosynthesis. .
+**Expected answer:** **B** — Alkaloid biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as phenylalanine ammonia-lyase lenB, with the pathway listed as alkaloid biosynthesis and linked to a cited publication. This supports choice B as an annotation, though it is not an independent assessment of the primary study.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may allow recognition of an enzyme family, but the supplied input does not establish its specialized pathway role; the pathway-specific annotation is what distinguishes B.
-
-
-**Missing item-specific fact**
-
-> That this particular LenB protein is annotated as participating in alkaloid biosynthesis.
-
-
-**Reason**
-
-> Choosing the pathway requires a protein-specific functional or pathway annotation not provided in the question. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The cited pathway annotation supports B; the other options describe distinct pathways and are not similarly supported by the evidence.
-
-
-### Important caveats
-
-- The sequence match is exact in both the current and retrieved historical UniProt records, but the author's precise source snapshot is unknown.
-- The pathway evidence is a database annotation linked to a publication; it should not be presented as independently verified experimental evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may allow recognition of an enzyme family, but the supplied input does not establish its specialized pathway role; the pathway-specific annotation is what distinguishes B.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this particular LenB protein is annotated as participating in alkaloid biosynthesis.",
-    "reason": "Choosing the pathway requires a protein-specific functional or pathway annotation not provided in the question. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "pathway_0065",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as phenylalanine ammonia-lyase lenB, with the pathway listed as alkaloid biosynthesis and linked to a cited publication. This supports choice B as an annotation, though it is not an independent assessment of the primary study."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both the current and retrieved historical UniProt records, but the author's precise source snapshot is unknown.",
-    "The pathway evidence is a database annotation linked to a publication; it should not be presented as independently verified experimental evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited pathway annotation supports B; the other options describe distinct pathways and are not similarly supported by the evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0065",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as phenylalanine ammonia-lyase lenB, with the pathway listed as alkaloid biosynthesis and linked to a cited publication. This supports choice B as an annotation, though it is not an independent assessment of the primary study.",
-    "evidence_ids": ["C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may allow recognition of an enzyme family, but the supplied input does not establish its specialized pathway role; the pathway-specific annotation is what distinguishes B.",
-    "missing_item_specific_fact": "That this particular LenB protein is annotated as participating in alkaloid biosynthesis.",
-    "reason": "Choosing the pathway requires a protein-specific functional or pathway annotation not provided in the question. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The cited pathway annotation supports B; the other options describe distinct pathways and are not similarly supported by the evidence."
-  },
-  "important_caveats": [
-    "The sequence match is exact in both the current and retrieved historical UniProt records, but the author's precise source snapshot is unknown.",
-    "The pathway evidence is a database annotation linked to a publication; it should not be presented as independently verified experimental evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence is an exact match (722 AA, SHA-256 confirmed) to UniProt entry A0AAN4PAE6, identified as Phenylalanine ammonia-lyase lenB (EC 4.3.1.24) from Aspergillus lentulus. The UniProt PATHWAY annotation explicitly states 'Alkaloid biosynthesis' with experimental evidence (ECO:0000305, PubMed:35302734, Kishimoto et al. 2022 JACS). The historical Swiss-Prot entry (v6) also carries this annotation. The expected answer B is directly supported by the database annotation backed by a peer-reviewed experimental study.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> If one could identify the protein as a phenylalanine ammonia-lyase (PAL), general reasoning would eliminate options A (threonine biosynthesis involves aspartokinase/homoserine dehydrogenase/threonine synthase), C (glycolipid biosynthesis involves glycosyltransferases and lipid-modifying enzymes), and D (fatty acid beta-oxidation involves acyl-CoA dehydrogenases and thiolases), leaving B as the only pathway involving aromatic amino acid ammonia-lyase activity. However, identifying this specific 722-residue sequence as a PAL from sequence alone—recognizing the MIO-forming Ala-Ser-Gly triad and other conserved PAL motifs—is extremely difficult without database matching.
-
-
-**Missing item-specific fact**
-
-> The specific identification of this 722 AA sequence as a fungal PAL (lenB) involved in alkaloid biosynthesis. The UniProt annotation 'Alkaloid biosynthesis' (ECO:0000305|PubMed:35302734) is the definitive link. Without recognizing the exact protein or its database entry, a model cannot reliably determine that this particular ammonia-lyase functions in alkaloid biosynthesis rather than, say, phenylpropanoid biosynthesis or other aromatic metabolite pathways.
-
-
-**Reason**
-
-> The critical step is identifying the enzyme class (PAL) from a 722-residue sequence, which is essentially a database lookup or memorization task. The downstream reasoning (PAL → alkaloid biosynthesis in fungi, eliminating A/C/D) is straightforward but entirely contingent on the initial identification. Per the instructions, recognizing an exact sequence and recalling its database entry does not constitute reasoning-supported discrimination.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span very different metabolic contexts (amino acid biosynthesis, alkaloid/secondary metabolism, lipid biosynthesis, fatty acid catabolism). If the protein is correctly identified as a PAL, only B is plausible. No other option involves aromatic amino acid ammonia-lyase activity. The distractors are well-separated.
-
-
-### Important caveats
-
-- The UniProt annotation 'Alkaloid biosynthesis' is based on experimental evidence (ECO:0000305) from Kishimoto et al. 2022 (JACS), but the entry was only integrated into Swiss-Prot on 2025-04-09. The author's source snapshot is unknown; if the benchmark was constructed before this date, the annotation may not have been available in the form cited.
-- The protein is from Aspergillus lentulus, a fungus. In plants, PAL is the first committed step of phenylpropanoid biosynthesis (lignin, flavonoids), not alkaloid biosynthesis. The fungal context is essential for linking PAL to alkaloid biosynthesis, but the organism is not provided to the model.
-- The entry was first publicly released on 2025-04-09. If the benchmark predates this, the 'Alkaloid biosynthesis' pathway annotation may not have existed in any form at construction time, raising questions about the provenance of the key.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "If one could identify the protein as a phenylalanine ammonia-lyase (PAL), general reasoning would eliminate options A (threonine biosynthesis involves aspartokinase/homoserine dehydrogenase/threonine synthase), C (glycolipid biosynthesis involves glycosyltransferases and lipid-modifying enzymes), and D (fatty acid beta-oxidation involves acyl-CoA dehydrogenases and thiolases), leaving B as the only pathway involving aromatic amino acid ammonia-lyase activity. However, identifying this specific 722-residue sequence as a PAL from sequence alone—recognizing the MIO-forming Ala-Ser-Gly triad and other conserved PAL motifs—is extremely difficult without database matching.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of this 722 AA sequence as a fungal PAL (lenB) involved in alkaloid biosynthesis. The UniProt annotation 'Alkaloid biosynthesis' (ECO:0000305|PubMed:35302734) is the definitive link. Without recognizing the exact protein or its database entry, a model cannot reliably determine that this particular ammonia-lyase functions in alkaloid biosynthesis rather than, say, phenylpropanoid biosynthesis or other aromatic metabolite pathways.",
-    "reason": "The critical step is identifying the enzyme class (PAL) from a 722-residue sequence, which is essentially a database lookup or memorization task. The downstream reasoning (PAL → alkaloid biosynthesis in fungi, eliminating A/C/D) is straightforward but entirely contingent on the initial identification. Per the instructions, recognizing an exact sequence and recalling its database entry does not constitute reasoning-supported discrimination."
-  },
-  "case_id": "pathway_0065",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence is an exact match (722 AA, SHA-256 confirmed) to UniProt entry A0AAN4PAE6, identified as Phenylalanine ammonia-lyase lenB (EC 4.3.1.24) from Aspergillus lentulus. The UniProt PATHWAY annotation explicitly states 'Alkaloid biosynthesis' with experimental evidence (ECO:0000305, PubMed:35302734, Kishimoto et al. 2022 JACS). The historical Swiss-Prot entry (v6) also carries this annotation. The expected answer B is directly supported by the database annotation backed by a peer-reviewed experimental study."
-  },
-  "important_caveats": [
-    "The UniProt annotation 'Alkaloid biosynthesis' is based on experimental evidence (ECO:0000305) from Kishimoto et al. 2022 (JACS), but the entry was only integrated into Swiss-Prot on 2025-04-09. The author's source snapshot is unknown; if the benchmark was constructed before this date, the annotation may not have been available in the form cited.",
-    "The protein is from Aspergillus lentulus, a fungus. In plants, PAL is the first committed step of phenylpropanoid biosynthesis (lignin, flavonoids), not alkaloid biosynthesis. The fungal context is essential for linking PAL to alkaloid biosynthesis, but the organism is not provided to the model.",
-    "The entry was first publicly released on 2025-04-09. If the benchmark predates this, the 'Alkaloid biosynthesis' pathway annotation may not have existed in any form at construction time, raising questions about the provenance of the key."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span very different metabolic contexts (amino acid biosynthesis, alkaloid/secondary metabolism, lipid biosynthesis, fatty acid catabolism). If the protein is correctly identified as a PAL, only B is plausible. No other option involves aromatic amino acid ammonia-lyase activity. The distractors are well-separated."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0065",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence is an exact match (722 AA, SHA-256 confirmed) to UniProt entry A0AAN4PAE6, identified as Phenylalanine ammonia-lyase lenB (EC 4.3.1.24) from Aspergillus lentulus. The UniProt PATHWAY annotation explicitly states 'Alkaloid biosynthesis' with experimental evidence (ECO:0000305, PubMed:35302734, Kishimoto et al. 2022 JACS). The historical Swiss-Prot entry (v6) also carries this annotation. The expected answer B is directly supported by the database annotation backed by a peer-reviewed experimental study.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "If one could identify the protein as a phenylalanine ammonia-lyase (PAL), general reasoning would eliminate options A (threonine biosynthesis involves aspartokinase/homoserine dehydrogenase/threonine synthase), C (glycolipid biosynthesis involves glycosyltransferases and lipid-modifying enzymes), and D (fatty acid beta-oxidation involves acyl-CoA dehydrogenases and thiolases), leaving B as the only pathway involving aromatic amino acid ammonia-lyase activity. However, identifying this specific 722-residue sequence as a PAL from sequence alone—recognizing the MIO-forming Ala-Ser-Gly triad and other conserved PAL motifs—is extremely difficult without database matching.",
-    "missing_item_specific_fact": "The specific identification of this 722 AA sequence as a fungal PAL (lenB) involved in alkaloid biosynthesis. The UniProt annotation 'Alkaloid biosynthesis' (ECO:0000305|PubMed:35302734) is the definitive link. Without recognizing the exact protein or its database entry, a model cannot reliably determine that this particular ammonia-lyase functions in alkaloid biosynthesis rather than, say, phenylpropanoid biosynthesis or other aromatic metabolite pathways.",
-    "reason": "The critical step is identifying the enzyme class (PAL) from a 722-residue sequence, which is essentially a database lookup or memorization task. The downstream reasoning (PAL → alkaloid biosynthesis in fungi, eliminating A/C/D) is straightforward but entirely contingent on the initial identification. Per the instructions, recognizing an exact sequence and recalling its database entry does not constitute reasoning-supported discrimination."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span very different metabolic contexts (amino acid biosynthesis, alkaloid/secondary metabolism, lipid biosynthesis, fatty acid catabolism). If the protein is correctly identified as a PAL, only B is plausible. No other option involves aromatic amino acid ammonia-lyase activity. The distractors are well-separated."
-  },
-  "important_caveats": [
-    "The UniProt annotation 'Alkaloid biosynthesis' is based on experimental evidence (ECO:0000305) from Kishimoto et al. 2022 (JACS), but the entry was only integrated into Swiss-Prot on 2025-04-09. The author's source snapshot is unknown; if the benchmark was constructed before this date, the annotation may not have been available in the form cited.",
-    "The protein is from Aspergillus lentulus, a fungus. In plants, PAL is the first committed step of phenylpropanoid biosynthesis (lignin, flavonoids), not alkaloid biosynthesis. The fungal context is essential for linking PAL to alkaloid biosynthesis, but the organism is not provided to the model.",
-    "The entry was first publicly released on 2025-04-09. If the benchmark predates this, the 'Alkaloid biosynthesis' pathway annotation may not have existed in any form at construction time, raising questions about the provenance of the key."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAN4PAE6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "24436a64fcd737d74480f1ca15a0ea03da7342d10bdb48304ac86195e1effda1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 722,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "24436a64fcd737d74480f1ca15a0ea03da7342d10bdb48304ac86195e1effda1",
   "current_entry_audit": {
     "entryVersion": 8,
     "firstPublicDate": "2025-04-09",
@@ -534,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-10-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
-  "current_source_sequence_sha256": "24436a64fcd737d74480f1ca15a0ea03da7342d10bdb48304ac86195e1effda1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 722,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "24436a64fcd737d74480f1ca15a0ea03da7342d10bdb48304ac86195e1effda1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 6,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAN4PAE6",
   "selected_historical_entry_version": 6,
+  "selected_historical_record_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
+  "selected_historical_source_sequence_length": 722,
+  "selected_historical_source_sequence_sha256": "24436a64fcd737d74480f1ca15a0ea03da7342d10bdb48304ac86195e1effda1",
   "selected_historical_version": {
     "accession": "A0AAN4PAE6",
     "database": "Swiss-Prot",
@@ -552,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "LENB_ASPLE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
-  "selected_historical_source_sequence_sha256": "24436a64fcd737d74480f1ca15a0ea03da7342d10bdb48304ac86195e1effda1",
-  "selected_historical_source_sequence_length": 722,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 6,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json",
-  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
-  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAN4PAE6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json"
 }
 ```
 
@@ -602,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json",
-  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
-  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":8,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2024-10-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json"
 }
 ```
 
@@ -621,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json",
-  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
-  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Fumigati\"],\"scientificName\":\"Aspergillus lentulus\",\"taxonId\":293939}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json"
 }
 ```
 
@@ -640,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json",
-  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
-  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"Lentopeptin biosynthesis cluster protein BA\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"4.3.1.24\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"Phenylalanine ammonia-lyase lenB\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"PAL\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json"
 }
 ```
 
@@ -659,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json",
-  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
-  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"35302734\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json"
 }
 ```
 
@@ -678,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json",
-  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
-  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Kishimoto S.\",\"Matsubara Y.\",\"Watanabe K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35302734\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.1c13621\"}],\"citationType\":\"journal article\",\"firstPage\":\"5485\",\"id\":\"35302734\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"5493\",\"publicationDate\":\"2022\",\"title\":\"Alkaloid Biosynthetic Enzyme Generates Diastereomeric Pair via Two Distinct Mechanisms.\",\"volume\":\"144\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:26:26.884598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd4d48b61126a5c97eb5ebd10c3d239e4b7f2a540bd20ce6e4d7ceebb772a735",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAN4PAE6.json"
 }
 ```
 
@@ -696,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAN4PAE6?format=txt&versions=6",
-  "source_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
-  "retrieved_utc": "2026-11-02T04:26:28.705360+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   LENB_ASPLE              Reviewed;         722 AA.\nAC   A0AAN4PAE6;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-OCT-2024, sequence version 1.\nDT   28-JAN-2026, entry version 6.\nDE   RecName: Full=Phenylalanine ammonia-lyase lenB {ECO:0000303|PubMed:35302734};\nDE            Short=PAL {ECO:0000303|PubMed:35302734};\nDE            EC=4.3.1.24 {ECO:0000305|PubMed:35302734};\nDE   AltName: Full=Lentopeptin biosynthesis cluster protein BA {ECO:0000303|PubMed:35302734};\nGN   Name=lenB {ECO:0000303|PubMed:35302734}; ORFNames=ALT_0153;\nOS   Aspergillus lentulus.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Fumigati.\nOX   NCBI_TaxID=293939;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:26:28.705360+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
+  "url": "https://rest.uniprot.org/unisave/A0AAN4PAE6?format=txt&versions=6"
 }
 ```
 
@@ -717,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAN4PAE6?format=txt&versions=6",
-  "source_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
-  "retrieved_utc": "2026-11-02T04:26:28.705360+00:00",
-  "source_locator": "lines 24-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND PATHWAY.\nRX   PubMed=35302734; DOI=10.1021/jacs.1c13621;\nRA   Kishimoto S., Matsubara Y., Watanabe K.;\nRT   \"Alkaloid Biosynthetic Enzyme Generates Diastereomeric Pair via Two\nRT   Distinct Mechanisms.\";\nRL   J. Am. Chem. Soc. 144:5485-5493(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:26:28.705360+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
+  "url": "https://rest.uniprot.org/unisave/A0AAN4PAE6?format=txt&versions=6"
 }
 ```
 
@@ -738,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 6,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAN4PAE6?format=txt&versions=6",
-  "source_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
-  "retrieved_utc": "2026-11-02T04:26:28.705360+00:00",
-  "source_locator": "lines 47-47",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000305|PubMed:35302734}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 6,
+  "retrieved_utc": "2026-11-02T04:26:28.705360+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f88b002bbd6348d7e1d3d2912bf7474b44fd9928ff2d845e4a218469ae7996eb",
+  "url": "https://rest.uniprot.org/unisave/A0AAN4PAE6?format=txt&versions=6"
 }
 ```
 

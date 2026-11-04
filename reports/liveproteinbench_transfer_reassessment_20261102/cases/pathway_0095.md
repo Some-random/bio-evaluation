@@ -1,18 +1,16 @@
-# pathway_0095: before and after transfer clarification
+# pathway_0095
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0095.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0095.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Cofactor biosynthesis
+**Expected answer:** **B** — Cofactor biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the 553-aa Plasmodium falciparum IscS sequence. UniProt identifies it as cysteine desulfurase IscS and annotates its pathway as cofactor biosynthesis, specifically iron-sulfur cluster biosynthesis. The enzyme identity has cited experimental evidence; the pathway annotation is curator-supported.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices are not meaningfully distinguished by an evident sequence feature or biological context in the prompt. Identifying the enzyme as a cysteine desulfurase and connecting it to iron-sulfur cluster/cofactor biosynthesis requires protein-specific identification or equivalent annotation.
-
-
-**Missing item-specific fact**
-
-> The protein is IscS, a cysteine desulfurase that supplies sulfur for iron-sulfur cluster biogenesis.
-
-
-**Reason**
-
-> The reviewer evidence supports the key but was not supplied to the evaluated model. Recognizing this exact sequence or consulting a protein-specific annotation is not reasoning from the prompt.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the supported IscS pathway annotation, cofactor biosynthesis is the best fit among the listed choices; the other options describe distinct pathways.
-
-
-### Important caveats
-
-- The historical and current UniProt records both match the supplied sequence, but the author's exact source snapshot is unknown.
-- The pathway annotation is curator-supported; it should not be conflated with the cited experimental evidence for enzyme activity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices are not meaningfully distinguished by an evident sequence feature or biological context in the prompt. Identifying the enzyme as a cysteine desulfurase and connecting it to iron-sulfur cluster/cofactor biosynthesis requires protein-specific identification or equivalent annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein is IscS, a cysteine desulfurase that supplies sulfur for iron-sulfur cluster biogenesis.",
-    "reason": "The reviewer evidence supports the key but was not supplied to the evaluated model. Recognizing this exact sequence or consulting a protein-specific annotation is not reasoning from the prompt."
-  },
-  "case_id": "pathway_0095",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 553-aa Plasmodium falciparum IscS sequence. UniProt identifies it as cysteine desulfurase IscS and annotates its pathway as cofactor biosynthesis, specifically iron-sulfur cluster biosynthesis. The enzyme identity has cited experimental evidence; the pathway annotation is curator-supported."
-  },
-  "important_caveats": [
-    "The historical and current UniProt records both match the supplied sequence, but the author's exact source snapshot is unknown.",
-    "The pathway annotation is curator-supported; it should not be conflated with the cited experimental evidence for enzyme activity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the supported IscS pathway annotation, cofactor biosynthesis is the best fit among the listed choices; the other options describe distinct pathways."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0095",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the 553-aa Plasmodium falciparum IscS sequence. UniProt identifies it as cysteine desulfurase IscS and annotates its pathway as cofactor biosynthesis, specifically iron-sulfur cluster biosynthesis. The enzyme identity has cited experimental evidence; the pathway annotation is curator-supported.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices are not meaningfully distinguished by an evident sequence feature or biological context in the prompt. Identifying the enzyme as a cysteine desulfurase and connecting it to iron-sulfur cluster/cofactor biosynthesis requires protein-specific identification or equivalent annotation.",
-    "missing_item_specific_fact": "The protein is IscS, a cysteine desulfurase that supplies sulfur for iron-sulfur cluster biogenesis.",
-    "reason": "The reviewer evidence supports the key but was not supplied to the evaluated model. Recognizing this exact sequence or consulting a protein-specific annotation is not reasoning from the prompt."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the supported IscS pathway annotation, cofactor biosynthesis is the best fit among the listed choices; the other options describe distinct pathways."
-  },
-  "important_caveats": [
-    "The historical and current UniProt records both match the supplied sequence, but the author's exact source snapshot is unknown.",
-    "The pathway annotation is curator-supported; it should not be conflated with the cited experimental evidence for enzyme activity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q8IBI5 (Cysteine desulfurase IscS, PfIscS, EC 2.8.1.7) from Plasmodium falciparum explicitly annotates the pathway as 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' (ECO:0000305). The EC number is supported by experimental evidence (ECO:0000269, PubMed:34032321). The sequence matches the benchmark sequence exactly (553 AA, same SHA-256). The expected answer 'Cofactor biosynthesis' directly matches the UniProt pathway annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the characteristic PLP-binding motif 'TSGATES' and the transaminase-fold architecture typical of cysteine desulfurases, along with a catalytic cysteine residue. A knowledgeable model can reason: (1) PLP-dependent enzyme with catalytic Cys → sulfur transfer chemistry; (2) sulfur transfer from cysteine → iron-sulfur cluster assembly (IscS is the canonical sulfur donor); (3) Fe-S clusters are prosthetic group cofactors for numerous enzymes → 'Cofactor biosynthesis.' The distractors are distinguishable: L-leucine degradation involves branched-chain dehydrogenases (different fold), L-threonine from L-aspartate step 1 is aspartate kinase (different mechanism), and bacterial outer membrane biogenesis is inapplicable to a eukaryotic Plasmodium protein.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt pathway taxonomy label 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' is a database categorization, but the underlying biological reasoning (Fe-S clusters are cofactors) is general biochemistry knowledge.
-
-
-**Reason**
-
-> The sequence exhibits recognizable PLP-dependent transaminase-fold features and a catalytic cysteine, enabling reasoning toward sulfur-transfer chemistry and Fe-S cluster assembly. The classification of Fe-S clusters as cofactors is standard biochemistry. The distractors are clearly incompatible with the observed fold and organism context.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent distinct pathway categories. Only 'Cofactor biosynthesis' accommodates an enzyme whose function is sulfur donation for Fe-S cluster assembly. The other three options (leucine degradation, bacterial outer membrane biogenesis, aspartate-to-threonine pathway) involve fundamentally different enzyme classes and cellular contexts.
-
-
-### Important caveats
-
-- The pathway annotation 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' is a UniProt curator-assigned label (ECO:0000305), not a direct experimental measurement of pathway membership. The underlying enzymatic activity (EC 2.8.1.7) is experimentally supported.
-- The specific taxonomy 'Cofactor biosynthesis' as a top-level pathway category is a database convention; the biological content (Fe-S cluster assembly) is well-established.
-- The entry was first publicly released in April 2025; the author's source snapshot is unknown, though the sequence has been stable since 2003.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the characteristic PLP-binding motif 'TSGATES' and the transaminase-fold architecture typical of cysteine desulfurases, along with a catalytic cysteine residue. A knowledgeable model can reason: (1) PLP-dependent enzyme with catalytic Cys → sulfur transfer chemistry; (2) sulfur transfer from cysteine → iron-sulfur cluster assembly (IscS is the canonical sulfur donor); (3) Fe-S clusters are prosthetic group cofactors for numerous enzymes → 'Cofactor biosynthesis.' The distractors are distinguishable: L-leucine degradation involves branched-chain dehydrogenases (different fold), L-threonine from L-aspartate step 1 is aspartate kinase (different mechanism), and bacterial outer membrane biogenesis is inapplicable to a eukaryotic Plasmodium protein.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific UniProt pathway taxonomy label 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' is a database categorization, but the underlying biological reasoning (Fe-S clusters are cofactors) is general biochemistry knowledge.",
-    "reason": "The sequence exhibits recognizable PLP-dependent transaminase-fold features and a catalytic cysteine, enabling reasoning toward sulfur-transfer chemistry and Fe-S cluster assembly. The classification of Fe-S clusters as cofactors is standard biochemistry. The distractors are clearly incompatible with the observed fold and organism context."
-  },
-  "case_id": "pathway_0095",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q8IBI5 (Cysteine desulfurase IscS, PfIscS, EC 2.8.1.7) from Plasmodium falciparum explicitly annotates the pathway as 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' (ECO:0000305). The EC number is supported by experimental evidence (ECO:0000269, PubMed:34032321). The sequence matches the benchmark sequence exactly (553 AA, same SHA-256). The expected answer 'Cofactor biosynthesis' directly matches the UniProt pathway annotation."
-  },
-  "important_caveats": [
-    "The pathway annotation 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' is a UniProt curator-assigned label (ECO:0000305), not a direct experimental measurement of pathway membership. The underlying enzymatic activity (EC 2.8.1.7) is experimentally supported.",
-    "The specific taxonomy 'Cofactor biosynthesis' as a top-level pathway category is a database convention; the biological content (Fe-S cluster assembly) is well-established.",
-    "The entry was first publicly released in April 2025; the author's source snapshot is unknown, though the sequence has been stable since 2003."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent distinct pathway categories. Only 'Cofactor biosynthesis' accommodates an enzyme whose function is sulfur donation for Fe-S cluster assembly. The other three options (leucine degradation, bacterial outer membrane biogenesis, aspartate-to-threonine pathway) involve fundamentally different enzyme classes and cellular contexts."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0095",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q8IBI5 (Cysteine desulfurase IscS, PfIscS, EC 2.8.1.7) from Plasmodium falciparum explicitly annotates the pathway as 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' (ECO:0000305). The EC number is supported by experimental evidence (ECO:0000269, PubMed:34032321). The sequence matches the benchmark sequence exactly (553 AA, same SHA-256). The expected answer 'Cofactor biosynthesis' directly matches the UniProt pathway annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the characteristic PLP-binding motif 'TSGATES' and the transaminase-fold architecture typical of cysteine desulfurases, along with a catalytic cysteine residue. A knowledgeable model can reason: (1) PLP-dependent enzyme with catalytic Cys → sulfur transfer chemistry; (2) sulfur transfer from cysteine → iron-sulfur cluster assembly (IscS is the canonical sulfur donor); (3) Fe-S clusters are prosthetic group cofactors for numerous enzymes → 'Cofactor biosynthesis.' The distractors are distinguishable: L-leucine degradation involves branched-chain dehydrogenases (different fold), L-threonine from L-aspartate step 1 is aspartate kinase (different mechanism), and bacterial outer membrane biogenesis is inapplicable to a eukaryotic Plasmodium protein.",
-    "missing_item_specific_fact": "The specific UniProt pathway taxonomy label 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' is a database categorization, but the underlying biological reasoning (Fe-S clusters are cofactors) is general biochemistry knowledge.",
-    "reason": "The sequence exhibits recognizable PLP-dependent transaminase-fold features and a catalytic cysteine, enabling reasoning toward sulfur-transfer chemistry and Fe-S cluster assembly. The classification of Fe-S clusters as cofactors is standard biochemistry. The distractors are clearly incompatible with the observed fold and organism context."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent distinct pathway categories. Only 'Cofactor biosynthesis' accommodates an enzyme whose function is sulfur donation for Fe-S cluster assembly. The other three options (leucine degradation, bacterial outer membrane biogenesis, aspartate-to-threonine pathway) involve fundamentally different enzyme classes and cellular contexts."
-  },
-  "important_caveats": [
-    "The pathway annotation 'Cofactor biosynthesis; iron-sulfur cluster biosynthesis' is a UniProt curator-assigned label (ECO:0000305), not a direct experimental measurement of pathway membership. The underlying enzymatic activity (EC 2.8.1.7) is experimentally supported.",
-    "The specific taxonomy 'Cofactor biosynthesis' as a top-level pathway category is a database convention; the biological content (Fe-S cluster assembly) is well-established.",
-    "The entry was first publicly released in April 2025; the author's source snapshot is unknown, though the sequence has been stable since 2003."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IBI5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d59f0501df32d187044d3d8f803b0f8f28d948df60bbe0a9f56e20ddbe5b3b43",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 553,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d59f0501df32d187044d3d8f803b0f8f28d948df60bbe0a9f56e20ddbe5b3b43",
   "current_entry_audit": {
     "entryVersion": 129,
     "firstPublicDate": "2025-04-09",
@@ -536,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
-  "current_source_sequence_sha256": "d59f0501df32d187044d3d8f803b0f8f28d948df60bbe0a9f56e20ddbe5b3b43",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 553,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d59f0501df32d187044d3d8f803b0f8f28d948df60bbe0a9f56e20ddbe5b3b43",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 127,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IBI5",
   "selected_historical_entry_version": 127,
+  "selected_historical_record_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
+  "selected_historical_source_sequence_length": 553,
+  "selected_historical_source_sequence_sha256": "d59f0501df32d187044d3d8f803b0f8f28d948df60bbe0a9f56e20ddbe5b3b43",
   "selected_historical_version": {
     "accession": "Q8IBI5",
     "database": "Swiss-Prot",
@@ -554,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "ISCS_PLAF7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
-  "selected_historical_source_sequence_sha256": "d59f0501df32d187044d3d8f803b0f8f28d948df60bbe0a9f56e20ddbe5b3b43",
-  "selected_historical_source_sequence_length": 553,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 127,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json",
-  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
-  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IBI5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json"
 }
 ```
 
@@ -604,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json",
-  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
-  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":129,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json"
 }
 ```
 
@@ -623,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json",
-  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
-  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001450\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Laverania\"],\"scientificName\":\"Plasmodium falciparum (isolate 3D7)\",\"taxonId\":36329}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json"
 }
 ```
 
@@ -642,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json",
-  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
-  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34032321\",\"source\":\"PubMed\"}],\"value\":\"2.8.1.7\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cysteine desulfurase IscS\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34032321\",\"source\":\"PubMed\"}],\"value\":\"PfIscS\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json"
 }
 ```
 
@@ -661,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json",
-  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
-  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cofactor biosynthesis; iron-sulfur cluster biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json"
 }
 ```
 
@@ -680,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json",
-  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
-  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Sadik M.\",\"Afsar M.\",\"Ramachandran R.\",\"Habib S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34032321\"},{\"database\":\"DOI\",\"id\":\"10.1111/mmi.14735\"}],\"citationType\":\"journal article\",\"firstPage\":\"606\",\"id\":\"34032321\",\"journal\":\"Mol. Microbiol.\",\"lastPage\":\"623\",\"publicationDate\":\"2021\",\"title\":\"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the Plasmodium falciparum mitochondrion.\",\"volume\":\"116\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBUNIT\",\"INTERACTION WITH ISD11 AND ISCU\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:32:06.723158+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "dee0fef0d1ba02eb0ea344f9e6225c156791bfc0aa144562d73d96e9bfcb50dd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IBI5.json"
 }
 ```
 
@@ -698,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 127,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127",
-  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
-  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   ISCS_PLAF7              Reviewed;         553 AA.\nAC   Q8IBI5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 127.\nDE   RecName: Full=Cysteine desulfurase IscS {ECO:0000305};\nDE            Short=PfIscS {ECO:0000303|PubMed:34032321};\nDE            EC=2.8.1.7 {ECO:0000269|PubMed:34032321};\nGN   Name=IscS {ECO:0000303|PubMed:24086138, ECO:0000303|PubMed:34032321};\nGN   Synonyms=NFS1 {ECO:0000305};\nGN   ORFNames=PF3D7_0727200 {ECO:0000312|EMBL:CAD51015.1};\nOS   Plasmodium falciparum (isolate 3D7).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Laverania).\nOX   NCBI_TaxID=36329 {ECO:0000312|Proteomes:UP000001450};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 127,
+  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
+  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127"
 }
 ```
 
@@ -719,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 127,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127",
-  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
-  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
-  "source_locator": "lines 50-57",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   SUBCELLULAR LOCATION.\nRX   PubMed=24086138; DOI=10.1371/journal.ppat.1003655;\nRA   Gisselberg J.E., Dellibovi-Ragheb T.A., Matthews K.A., Bosch G.,\nRA   Prigge S.T.;\nRT   \"The suf iron-sulfur cluster synthesis pathway is required for apicoplast\nRT   maintenance in malaria parasites.\";\nRL   PLoS Pathog. 9:e1003655-e1003655(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 127,
+  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
+  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127"
 }
 ```
 
@@ -740,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 127,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127",
-  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
-  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
-  "source_locator": "lines 58-65",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, SUBUNIT, AND INTERACTION WITH ISD11\nRP   AND ISCU.\nRX   PubMed=34032321; DOI=10.1111/mmi.14735;\nRA   Sadik M., Afsar M., Ramachandran R., Habib S.;\nRT   \"[Fe-S] biogenesis and unusual assembly of the ISC scaffold complex in the\nRT   Plasmodium falciparum mitochondrion.\";\nRL   Mol. Microbiol. 116:606-623(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 127,
+  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
+  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127"
 }
 ```
 
@@ -761,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 127,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127",
-  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
-  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
-  "source_locator": "lines 81-82",
   "excerpt": "CC   -!- PATHWAY: Cofactor biosynthesis; iron-sulfur cluster biosynthesis.\nCC       {ECO:0000305}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 127,
+  "retrieved_utc": "2026-11-02T04:32:12.658506+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-82",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ca62d2b3db1f49395cf1cf37dcbb4a4bf53cc8c99d3d8a38c959bf07ee05d63",
+  "url": "https://rest.uniprot.org/unisave/Q8IBI5?format=txt&versions=127"
 }
 ```
 

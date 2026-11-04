@@ -1,18 +1,16 @@
-# GO_biological_process_0080: before and after transfer clarification
+# GO_biological_process_0080
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0080.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0080.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **C** — proteolysis
+**Expected answer:** **C** — proteolysis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | uncertain | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | uncertain | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | uncertain | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | uncertain | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | uncertain | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: uncertain
-
-> The supplied evidence matches the sequence to a Neisseria protein described as a precursor, but provides no functional annotation or experimental result establishing proteolysis. The cited possible-subcellular-location reference does not establish that process. This leaves the key unresolved; lack of support here does not show it is false.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic region is consistent with export, making a secreted proteolytic role plausible; bacterial context also makes mitochondrial iron import and VEGF signaling unlikely. But these clues do not distinguish proteolysis from DNA topological change.
-
-
-**Missing item-specific fact**
-
-> A protein-specific functional annotation or experimental evidence identifying this protein’s biological process.
-
-
-**Reason**
-
-> The sequence and choices do not provide a reliable basis to choose between the plausible bacterial processes. Identifying the exact protein and recalling its function would depend on an external, item-specific fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> The supplied sequence/context does not establish either DNA topological change or proteolysis. Both remain possible, while the export-like N-terminus alone is not diagnostic of proteolysis.
-
-
-### Important caveats
-
-- The reviewer-only evidence identifies a sequence-matched Neisseria protein, but that identity and its database record were not provided to the evaluated model.
-- The cited database and publication excerpts do not independently validate the author key.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic region is consistent with export, making a secreted proteolytic role plausible; bacterial context also makes mitochondrial iron import and VEGF signaling unlikely. But these clues do not distinguish proteolysis from DNA topological change.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "A protein-specific functional annotation or experimental evidence identifying this protein’s biological process.",
-    "reason": "The sequence and choices do not provide a reliable basis to choose between the plausible bacterial processes. Identifying the exact protein and recalling its function would depend on an external, item-specific fact."
-  },
-  "case_id": "GO_biological_process_0080",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "H2"
-    ],
-    "judgment": "cannot_determine",
-    "reason": "The supplied evidence matches the sequence to a Neisseria protein described as a precursor, but provides no functional annotation or experimental result establishing proteolysis. The cited possible-subcellular-location reference does not establish that process. This leaves the key unresolved; lack of support here does not show it is false."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence identifies a sequence-matched Neisseria protein, but that identity and its database record were not provided to the evaluated model.",
-    "The cited database and publication excerpts do not independently validate the author key."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "The supplied sequence/context does not establish either DNA topological change or proteolysis. Both remain possible, while the export-like N-terminus alone is not diagnostic of proteolysis."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0080",
-  "expected_answer_check": {
-    "judgment": "cannot_determine",
-    "reason": "The supplied evidence matches the sequence to a Neisseria protein described as a precursor, but provides no functional annotation or experimental result establishing proteolysis. The cited possible-subcellular-location reference does not establish that process. This leaves the key unresolved; lack of support here does not show it is false.",
-    "evidence_ids": ["C1", "C4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic region is consistent with export, making a secreted proteolytic role plausible; bacterial context also makes mitochondrial iron import and VEGF signaling unlikely. But these clues do not distinguish proteolysis from DNA topological change.",
-    "missing_item_specific_fact": "A protein-specific functional annotation or experimental evidence identifying this protein’s biological process.",
-    "reason": "The sequence and choices do not provide a reliable basis to choose between the plausible bacterial processes. Identifying the exact protein and recalling its function would depend on an external, item-specific fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "The supplied sequence/context does not establish either DNA topological change or proteolysis. Both remain possible, while the export-like N-terminus alone is not diagnostic of proteolysis."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence identifies a sequence-matched Neisseria protein, but that identity and its database record were not provided to the evaluated model.",
-    "The cited database and publication excerpts do not independently validate the author key."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: uncertain
-
-> The protein Q5F9Y4 is explicitly named 'Cryptic neisserial protein 1' (Cnp1), indicating its function is not well characterized. The provided evidence shows only annotations for gene name and possible subcellular location (ECO:0000305, ECO:0000303). No protease catalytic motifs (Ser-His-Asp triad, HExxH metalloprotease motif, aspartic protease motifs) are evident in the 203-aa sequence. The 'Precursor' flag indicates the protein may be a substrate of processing, not an agent of proteolysis. The supplied evidence excerpts do not include GO annotations for this entry, so neither support nor contradiction of 'proteolysis' can be definitively established from the available data. However, the 'cryptic' designation and absence of any protease-like features in the sequence make the expected answer poorly supported by the evidence at hand.
-
-Citations as saved: [C1](#evidence-c1), [C3](#evidence-c3), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Three options can be eliminated by general biological reasoning: (A) iron import into mitochondrion is impossible for Neisseria, a bacterium lacking mitochondria; (B) DNA topological change requires topoisomerase/gyrase motifs absent from this sequence; (D) VEGF signaling is a eukaryotic receptor-tyrosine-kinase pathway irrelevant to a bacterial protein. However, positively identifying 'proteolysis' for a protein explicitly designated 'cryptic' (function unknown) cannot be achieved from the sequence alone—no protease catalytic motifs are present.
-
-
-**Missing item-specific fact**
-
-> The specific UniProt/GO annotation assigning this particular protein to proteolysis (GO:0006508), or experimental evidence demonstrating its proteolytic activity, which is absent from both the sequence and the provided evidence excerpts. The protein's function is described as 'cryptic' in its very name.
-
-
-**Reason**
-
-> While elimination of A, B, and D is achievable through general biology (bacterium → no mitochondria, no eukaryotic signaling, no topoisomerase motifs), the positive selection of 'proteolysis' requires knowing the item-specific database annotation for this cryptic protein. The sequence itself provides no protease motifs or catalytic features to justify this assignment independently.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and D are clearly inapplicable to a Neisseria gonorrhoeae protein by basic biological reasoning (bacterium, no mitochondria, no eukaryotic VEGF pathway, no topoisomerase motifs). Only C remains after elimination, so the question is not truly ambiguous in terms of distractor plausibility. However, the correctness of C itself is questionable given the protein's 'cryptic' designation.
-
-
-### Important caveats
-
-- The protein is explicitly named 'Cryptic neisserial protein 1,' strongly suggesting its function was unknown at the time of characterization.
-- The UniProt entry was only integrated into Swiss-Prot on 2025-06-18, very recently; the benchmark author's source snapshot is unknown.
-- The 'Precursor' flag indicates the protein may be cleaved during maturation, but being a substrate of proteolysis is distinct from performing proteolysis.
-- The provided evidence excerpts do not include the full GO annotation set for Q5F9Y4; a GO:0006508 annotation may or may not exist in the complete entry.
-- The sequence-match confirms the protein identity but does not validate the functional annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Three options can be eliminated by general biological reasoning: (A) iron import into mitochondrion is impossible for Neisseria, a bacterium lacking mitochondria; (B) DNA topological change requires topoisomerase/gyrase motifs absent from this sequence; (D) VEGF signaling is a eukaryotic receptor-tyrosine-kinase pathway irrelevant to a bacterial protein. However, positively identifying 'proteolysis' for a protein explicitly designated 'cryptic' (function unknown) cannot be achieved from the sequence alone—no protease catalytic motifs are present.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific UniProt/GO annotation assigning this particular protein to proteolysis (GO:0006508), or experimental evidence demonstrating its proteolytic activity, which is absent from both the sequence and the provided evidence excerpts. The protein's function is described as 'cryptic' in its very name.",
-    "reason": "While elimination of A, B, and D is achievable through general biology (bacterium → no mitochondria, no eukaryotic signaling, no topoisomerase motifs), the positive selection of 'proteolysis' requires knowing the item-specific database annotation for this cryptic protein. The sequence itself provides no protease motifs or catalytic features to justify this assignment independently."
-  },
-  "case_id": "GO_biological_process_0080",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C3",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "cannot_determine",
-    "reason": "The protein Q5F9Y4 is explicitly named 'Cryptic neisserial protein 1' (Cnp1), indicating its function is not well characterized. The provided evidence shows only annotations for gene name and possible subcellular location (ECO:0000305, ECO:0000303). No protease catalytic motifs (Ser-His-Asp triad, HExxH metalloprotease motif, aspartic protease motifs) are evident in the 203-aa sequence. The 'Precursor' flag indicates the protein may be a substrate of processing, not an agent of proteolysis. The supplied evidence excerpts do not include GO annotations for this entry, so neither support nor contradiction of 'proteolysis' can be definitively established from the available data. However, the 'cryptic' designation and absence of any protease-like features in the sequence make the expected answer poorly supported by the evidence at hand."
-  },
-  "important_caveats": [
-    "The protein is explicitly named 'Cryptic neisserial protein 1,' strongly suggesting its function was unknown at the time of characterization.",
-    "The UniProt entry was only integrated into Swiss-Prot on 2025-06-18, very recently; the benchmark author's source snapshot is unknown.",
-    "The 'Precursor' flag indicates the protein may be cleaved during maturation, but being a substrate of proteolysis is distinct from performing proteolysis.",
-    "The provided evidence excerpts do not include the full GO annotation set for Q5F9Y4; a GO:0006508 annotation may or may not exist in the complete entry.",
-    "The sequence-match confirms the protein identity but does not validate the functional annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are clearly inapplicable to a Neisseria gonorrhoeae protein by basic biological reasoning (bacterium, no mitochondria, no eukaryotic VEGF pathway, no topoisomerase motifs). Only C remains after elimination, so the question is not truly ambiguous in terms of distractor plausibility. However, the correctness of C itself is questionable given the protein's 'cryptic' designation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0080",
-  "expected_answer_check": {
-    "judgment": "cannot_determine",
-    "reason": "The protein Q5F9Y4 is explicitly named 'Cryptic neisserial protein 1' (Cnp1), indicating its function is not well characterized. The provided evidence shows only annotations for gene name and possible subcellular location (ECO:0000305, ECO:0000303). No protease catalytic motifs (Ser-His-Asp triad, HExxH metalloprotease motif, aspartic protease motifs) are evident in the 203-aa sequence. The 'Precursor' flag indicates the protein may be a substrate of processing, not an agent of proteolysis. The supplied evidence excerpts do not include GO annotations for this entry, so neither support nor contradiction of 'proteolysis' can be definitively established from the available data. However, the 'cryptic' designation and absence of any protease-like features in the sequence make the expected answer poorly supported by the evidence at hand.",
-    "evidence_ids": ["C1", "C3", "C4", "C5", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Three options can be eliminated by general biological reasoning: (A) iron import into mitochondrion is impossible for Neisseria, a bacterium lacking mitochondria; (B) DNA topological change requires topoisomerase/gyrase motifs absent from this sequence; (D) VEGF signaling is a eukaryotic receptor-tyrosine-kinase pathway irrelevant to a bacterial protein. However, positively identifying 'proteolysis' for a protein explicitly designated 'cryptic' (function unknown) cannot be achieved from the sequence alone—no protease catalytic motifs are present.",
-    "missing_item_specific_fact": "The specific UniProt/GO annotation assigning this particular protein to proteolysis (GO:0006508), or experimental evidence demonstrating its proteolytic activity, which is absent from both the sequence and the provided evidence excerpts. The protein's function is described as 'cryptic' in its very name.",
-    "reason": "While elimination of A, B, and D is achievable through general biology (bacterium → no mitochondria, no eukaryotic signaling, no topoisomerase motifs), the positive selection of 'proteolysis' requires knowing the item-specific database annotation for this cryptic protein. The sequence itself provides no protease motifs or catalytic features to justify this assignment independently."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are clearly inapplicable to a Neisseria gonorrhoeae protein by basic biological reasoning (bacterium, no mitochondria, no eukaryotic VEGF pathway, no topoisomerase motifs). Only C remains after elimination, so the question is not truly ambiguous in terms of distractor plausibility. However, the correctness of C itself is questionable given the protein's 'cryptic' designation."
-  },
-  "important_caveats": [
-    "The protein is explicitly named 'Cryptic neisserial protein 1,' strongly suggesting its function was unknown at the time of characterization.",
-    "The UniProt entry was only integrated into Swiss-Prot on 2025-06-18, very recently; the benchmark author's source snapshot is unknown.",
-    "The 'Precursor' flag indicates the protein may be cleaved during maturation, but being a substrate of proteolysis is distinct from performing proteolysis.",
-    "The provided evidence excerpts do not include the full GO annotation set for Q5F9Y4; a GO:0006508 annotation may or may not exist in the complete entry.",
-    "The sequence-match confirms the protein identity but does not validate the functional annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: uncertain
 
@@ -398,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: uncertain
 
@@ -518,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5F9Y4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "cb9e6abdebc1d655c303cd171ed38b89cc43776d50adfc2d240099a0e72ff762",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 203,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "cb9e6abdebc1d655c303cd171ed38b89cc43776d50adfc2d240099a0e72ff762",
   "current_entry_audit": {
     "entryVersion": 69,
     "firstPublicDate": "2025-06-18",
@@ -549,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-03-15",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
-  "current_source_sequence_sha256": "cb9e6abdebc1d655c303cd171ed38b89cc43776d50adfc2d240099a0e72ff762",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 203,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "cb9e6abdebc1d655c303cd171ed38b89cc43776d50adfc2d240099a0e72ff762",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 69,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5F9Y4",
   "selected_historical_entry_version": 69,
+  "selected_historical_record_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
+  "selected_historical_source_sequence_length": 203,
+  "selected_historical_source_sequence_sha256": "cb9e6abdebc1d655c303cd171ed38b89cc43776d50adfc2d240099a0e72ff762",
   "selected_historical_version": {
     "accession": "Q5F9Y4",
     "database": "Swiss-Prot",
@@ -567,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "02-Sep-2026",
     "name": "CNP1_NEIG1",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
-  "selected_historical_source_sequence_sha256": "cb9e6abdebc1d655c303cd171ed38b89cc43776d50adfc2d240099a0e72ff762",
-  "selected_historical_source_sequence_length": 203,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 69,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -602,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json",
-  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
-  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5F9Y4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json"
 }
 ```
 
@@ -621,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json",
-  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
-  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":69,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-01-28\",\"lastSequenceUpdateDate\":\"2005-03-15\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json"
 }
 ```
 
@@ -640,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json",
-  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
-  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Neisseriales\",\"Neisseriaceae\",\"Neisseria\"],\"scientificName\":\"Neisseria gonorrhoeae (strain ATCC 700825 / FA 1090)\",\"taxonId\":242231}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json"
 }
 ```
 
@@ -659,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json",
-  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
-  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"1541538\",\"source\":\"PubMed\"}],\"value\":\"Cryptic neisserial protein 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"1541538\",\"source\":\"PubMed\"}],\"value\":\"Cnp1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json"
 }
 ```
 
@@ -678,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json",
-  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
-  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Seifert H.S.\",\"Wilson D.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"1541538\"},{\"database\":\"DOI\",\"id\":\"10.1128/iai.60.3.1232-1236.1992\"}],\"citationType\":\"journal article\",\"firstPage\":\"1232\",\"id\":\"1541538\",\"journal\":\"Infect. Immun.\",\"lastPage\":\"1236\",\"publicationDate\":\"1992\",\"title\":\"Characterization of a cryptic gene pair from Neisseria gonorrhoeae that is common to pathogenic Neisseria species.\",\"volume\":\"60\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"MS11\"}],\"referenceNumber\":2,\"referencePositions\":[\"POSSIBLE SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:31:13.224939+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c89af3196822eefd98375ed9491fb32d38d06e18363f92b8d8f182bcf9d03afd",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5F9Y4.json"
 }
 ```
 
@@ -696,18 +445,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 69,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F9Y4?format=txt&versions=69",
-  "source_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
-  "retrieved_utc": "2026-11-02T04:31:17.396618+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   CNP1_NEIG1              Reviewed;         203 AA.\nAC   Q5F9Y4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   15-MAR-2005, sequence version 1.\nDT   28-JAN-2026, entry version 69.\nDE   RecName: Full=Cryptic neisserial protein 1 {ECO:0000305|PubMed:1541538};\nDE            Short=Cnp1 {ECO:0000305|PubMed:1541538};\nDE   Flags: Precursor;\nGN   Name=cnp1 {ECO:0000303|PubMed:1541538, ECO:0000303|PubMed:8144473};\nGN   ORFNames=NGO_0250 {ECO:0000312|EMBL:AAW89003.1};\nOS   Neisseria gonorrhoeae (strain ATCC 700825 / FA 1090).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria; Neisseriales;\nOC   Neisseriaceae; Neisseria.\nOX   NCBI_TaxID=242231;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 69,
+  "retrieved_utc": "2026-11-02T04:31:17.396618+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
+  "url": "https://rest.uniprot.org/unisave/Q5F9Y4?format=txt&versions=69"
 }
 ```
 
@@ -717,18 +466,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 69,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F9Y4?format=txt&versions=69",
-  "source_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
-  "retrieved_utc": "2026-11-02T04:31:17.396618+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2]\nRP   POSSIBLE SUBCELLULAR LOCATION.\nRC   STRAIN=MS11;\nRX   PubMed=1541538; DOI=10.1128/iai.60.3.1232-1236.1992;\nRA   Seifert H.S., Wilson D.;\nRT   \"Characterization of a cryptic gene pair from Neisseria gonorrhoeae that is\nRT   common to pathogenic Neisseria species.\";\nRL   Infect. Immun. 60:1232-1236(1992).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 69,
+  "retrieved_utc": "2026-11-02T04:31:17.396618+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
+  "url": "https://rest.uniprot.org/unisave/Q5F9Y4?format=txt&versions=69"
 }
 ```
 
@@ -738,18 +487,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 69,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5F9Y4?format=txt&versions=69",
-  "source_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
-  "retrieved_utc": "2026-11-02T04:31:17.396618+00:00",
-  "source_locator": "lines 32-39",
   "excerpt": "RN   [3]\nRP   GENE NAME.\nRC   STRAIN=ATCC 700825 / FA 1090;\nRX   PubMed=8144473; DOI=10.1128/jb.176.7.2055-2060.1994;\nRA   Dempsey J.A., Cannon J.G.;\nRT   \"Locations of genetic markers on the physical map of the chromosome of\nRT   Neisseria gonorrhoeae FA1090.\";\nRL   J. Bacteriol. 176:2055-2060(1994).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 69,
+  "retrieved_utc": "2026-11-02T04:31:17.396618+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5f22a6bcb154d8b6bffc1a0f41ba4606fdcc6c154e56196ad6e6aca6b2da9f1b",
+  "url": "https://rest.uniprot.org/unisave/Q5F9Y4?format=txt&versions=69"
 }
 ```
 
@@ -760,15 +509,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 64593-64602",
   "excerpt": "[Term]\nid: GO:0006265\nname: DNA topological change\nnamespace: biological_process\ndef: \"The process in which a transformation is induced in the topological structure of a double-stranded DNA helix, resulting in a change in linking number.\" [ISBN:071673706X, ISBN:0935702490]\ncomment: Note that the synonym 'DNA underwinding' should not be confused with 'DNA unwinding ; GO:0006268', which refers to DNA strand separation, and is a type of geometric change. GO:0006265 refers to alteration of the superhelical density of double-stranded DNA. Note that DNA topological change and DNA geometric change (GO:0032392) are distinct, but are usually coupled in vivo.\nsynonym: \"DNA underwinding\" NARROW []\nis_a: GO:0006259 ! DNA metabolic process\nis_a: GO:0071103 ! DNA conformation change\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006265",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 64593-64602",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006265"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -779,15 +528,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 66871-66884",
   "excerpt": "[Term]\nid: GO:0006508\nname: proteolysis\nnamespace: biological_process\ndef: \"The hydrolysis of proteins into smaller polypeptides and/or amino acids by cleavage of their peptide bonds.\" [GOC:bf, GOC:mah]\ncomment: This term was intentionally placed under 'protein metabolic process ; GO:0019538' rather than 'protein catabolic process ; GO:0030163' to cover all processes centered on breaking peptide bonds, including those involved in protein processing.\nsubset: goslim_chembl\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsynonym: \"ATP-dependent proteolysis\" NARROW [GOC:mah]\nsynonym: \"peptidolysis\" EXACT []\nxref: Wikipedia:Proteolysis\nis_a: GO:0019538 ! protein metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006508",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 66871-66884",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006508"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -798,15 +547,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 229528-229539",
   "excerpt": "[Term]\nid: GO:0038084\nname: vascular endothelial growth factor signaling pathway\nnamespace: biological_process\ndef: \"The series of molecular signals initiated by vascular endothelial growth factor (VEGF) binding its receptor on the surface of the target cell, and ending with the regulation of a downstream cellular process, e.g. transcription.\" [GOC:signaling, PMID:17470632]\ncomment: In GO, a gene product with 'vascular endothelial growth factor-activated receptor activity ; GO:0005021' necessarily binds VEGF to transduce a signal. To represent cross-talk between ligands and receptors, signaling pathways in GO are starting to be named after the receptor and/or the signal. GO:0038084 is for annotation of any pathway in which the ligand VEGF binds and activates any cell surface receptor (VEGFR, PDGFR etc.). For annotation of signaling pathways where a VEGFR binds one of its physiological ligands (VEGF or an alternative growth factor), consider 'vascular endothelial growth factor receptor signaling pathway ; GO:0048010'.\nsynonym: \"vascular endothelial growth factor signalling pathway\" EXACT [GOC:bf]\nsynonym: \"VEGF signaling\" EXACT [GOC:bf]\nsynonym: \"VEGF-activated signaling pathway\" EXACT [GOC:bf]\nis_a: GO:0007169 ! cell surface receptor protein tyrosine kinase signaling pathway\nrelationship: part_of GO:0035924 ! cellular response to vascular endothelial growth factor stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0038084",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 229528-229539",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0038084"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -817,15 +566,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 301651-301662",
   "excerpt": "[Term]\nid: GO:0048250\nname: iron import into the mitochondrion\nnamespace: biological_process\nalt_id: GO:1990925\ndef: \"The process in which iron is transported from the cytosol into the mitochondrial matrix.\" [GOC:jid, PMID:12006577]\nsynonym: \"mitochondrial iron cation transmembrane transport\" EXACT []\nsynonym: \"mitochondrial iron ion transmembrane transport\" RELATED []\nsynonym: \"mitochondrial iron ion transport\" RELATED []\nsynonym: \"mitochondrial iron transport\" EXACT []\nis_a: GO:0034755 ! iron ion transmembrane transport\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048250",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 301651-301662",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048250"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

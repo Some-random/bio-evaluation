@@ -1,18 +1,16 @@
-# EC_number_0013: before and after transfer clarification
+# EC_number_0013
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0013.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0013.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 2.7.11.24
+**Expected answer:** **D** — 2.7.11.24
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry A0A194W8T8, annotated as MAP kinase kinase kinase mkh1 with EC 2.7.11.24. The entry also assigns that EC to the serine- and threonine-phosphorylation reactions and cites PubMed 39631571. This supports D as a literature-backed database annotation, though the excerpts do not independently establish the experimental methods behind it.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a eukaryotic protein-kinase domain, including characteristic catalytic-region motifs, which favors a protein kinase over the transferases in B and C and the histidine-kinase class in A. That supports a broad kinase classification, but does not establish the specific MAP kinase kinase kinase function denoted by EC 2.7.11.24.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification or functional annotation as MAPKKK Mkh1; the sequence alone does not establish that specific kinase role.
-
-
-**Reason**
-
-> The sequence offers useful grounds for recognizing a protein kinase, but the requested complete EC number is more specific than that inference. Distinguishing this MAPKKK EC from other serine/threonine protein kinases depends on protein-specific functional information absent from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> No other listed option is comparably supported by the sequence’s eukaryotic protein-kinase features. The limitation is the need for protein-specific evidence for the exact EC, not a clear tie among the choices.
-
-
-### Important caveats
-
-- The reviewer-only database evidence applies to an exact sequence match, but the author's source snapshot is unknown.
-- The cited UniProt evidence codes and paper support the annotation; the supplied excerpts are not an independent review of the primary experimental data.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a eukaryotic protein-kinase domain, including characteristic catalytic-region motifs, which favors a protein kinase over the transferases in B and C and the histidine-kinase class in A. That supports a broad kinase classification, but does not establish the specific MAP kinase kinase kinase function denoted by EC 2.7.11.24.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification or functional annotation as MAPKKK Mkh1; the sequence alone does not establish that specific kinase role.",
-    "reason": "The sequence offers useful grounds for recognizing a protein kinase, but the requested complete EC number is more specific than that inference. Distinguishing this MAPKKK EC from other serine/threonine protein kinases depends on protein-specific functional information absent from the input."
-  },
-  "case_id": "EC_number_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry A0A194W8T8, annotated as MAP kinase kinase kinase mkh1 with EC 2.7.11.24. The entry also assigns that EC to the serine- and threonine-phosphorylation reactions and cites PubMed 39631571. This supports D as a literature-backed database annotation, though the excerpts do not independently establish the experimental methods behind it."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence applies to an exact sequence match, but the author's source snapshot is unknown.",
-    "The cited UniProt evidence codes and paper support the annotation; the supplied excerpts are not an independent review of the primary experimental data."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No other listed option is comparably supported by the sequence’s eukaryotic protein-kinase features. The limitation is the need for protein-specific evidence for the exact EC, not a clear tie among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry A0A194W8T8, annotated as MAP kinase kinase kinase mkh1 with EC 2.7.11.24. The entry also assigns that EC to the serine- and threonine-phosphorylation reactions and cites PubMed 39631571. This supports D as a literature-backed database annotation, though the excerpts do not independently establish the experimental methods behind it.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a eukaryotic protein-kinase domain, including characteristic catalytic-region motifs, which favors a protein kinase over the transferases in B and C and the histidine-kinase class in A. That supports a broad kinase classification, but does not establish the specific MAP kinase kinase kinase function denoted by EC 2.7.11.24.",
-    "missing_item_specific_fact": "The protein-specific identification or functional annotation as MAPKKK Mkh1; the sequence alone does not establish that specific kinase role.",
-    "reason": "The sequence offers useful grounds for recognizing a protein kinase, but the requested complete EC number is more specific than that inference. Distinguishing this MAPKKK EC from other serine/threonine protein kinases depends on protein-specific functional information absent from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No other listed option is comparably supported by the sequence’s eukaryotic protein-kinase features. The limitation is the need for protein-specific evidence for the exact EC, not a clear tie among the choices."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence applies to an exact sequence match, but the author's source snapshot is unknown.",
-    "The cited UniProt evidence codes and paper support the annotation; the supplied excerpts are not an independent review of the primary experimental data."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A194W8T8 (MKH1_CYTMA) annotates EC=2.7.11.24 with evidence code ECO:0000305 (curator inference from PubMed:39631571). The catalytic activities listed (L-seryl-&#91;protein&#93; + ATP → O-phospho-L-seryl-&#91;protein&#93; + ADP + H+; L-threonyl-&#91;protein&#93; + ATP → O-phospho-L-threonyl-&#91;protein&#93; + ADP + H+) are consistent with EC 2.7.11.24 (MAP kinase kinase kinase). The sequence contains a canonical eukaryotic protein kinase domain with HRD motif (HRDLKADNILL), activation segment (MAPEVIRSQGEGYSAKVDIWSLGCVVLEMFAGRRPWSKDEAVGAIYKIANGETPPIPEEVSAAVTPVALSFMWDCFSVNPEERPTATKLLAEHPFCVFRDDYDFDQTELYAKIKGTWNTK), and Ser/Thr specificity features. The annotation is curator-inferred from a functional study (Diao et al. 2025) rather than direct in vitro kinetics, but the sequence evidence is fully consistent.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The C-terminal region of the sequence contains a canonical eukaryotic protein kinase domain identifiable by conserved motifs: the HRD catalytic loop (HRDLKADNILL), the DFG-equivalent activation segment, and the substrate-binding pocket (WSLGCVVLEMFAGRRPWSKDEAVGAIYKIANGETPPIPEEVSAAVTPVALSFMWDCFSVNPEERPTATKLLAEHPFCVFRDDYDFDQTELYAKIKGTWNTK). This fold is diagnostic of EC 2.7.11.x (protein kinase), immediately eliminating B (acyltransferase, EC 2.3.x) and C (methyltransferase, EC 2.1.x). Furthermore, the kinase uses a Ser/Thr phosphoryl-transfer mechanism (evidenced by the activation segment and absence of His-Asp phosphorelay domains such as HisKA or HATPase_c), eliminating A (histidine kinase, EC 2.7.13.x). Among the four choices, only D (2.7.11.24) belongs to the protein kinase class, making it the uniquely defensible answer.
-
-
-**Missing item-specific fact**
-
-> The specific 4th-digit assignment '24' (MAPKKK rather than another 2.7.11.x subtype) would require knowledge of the protein's position in the MAPK cascade or its specific substrate. However, since no other 2.7.11.x option is offered, this precision is not needed to select the correct answer from the given choices.
-
-
-**Reason**
-
-> The sequence provides clear, identifiable protein kinase domain architecture that distinguishes D from all three distractors through general enzymology knowledge (kinase fold vs. acyltransferase/methyltransferase/histidine kinase). No memorization of the specific UniProt entry is required to arrive at D.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and C represent entirely different enzyme classes (histidine kinase, acyltransferase, methyltransferase) whose catalytic mechanisms and structural folds are incompatible with the observed protein kinase domain. Only D is a protein kinase (EC 2.7.11.x), leaving no ambiguity among the choices.
-
-
-### Important caveats
-
-- The EC annotation carries evidence code ECO:0000305 (inferred by curator from PubMed:39631571), not direct in vitro kinetic characterization. The functional paper describes genetic/biochemical pathway evidence rather than purified-enzyme kinetics.
-- The annotation was first added in June 2025 (entry version 32, first public date 2025-06-18); the historical snapshot at entry version 30 (January 2026) already contains the EC assignment, so the benchmark likely used a post-2025 annotation.
-- The 4th digit '24' specifically denotes MAPKKK; distinguishing this from other 2.7.11.x kinases (e.g., 2.7.11.1, 2.7.11.22) would require cascade-position knowledge, but this is not needed here as no competing 2.7.11.x option is presented.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The C-terminal region of the sequence contains a canonical eukaryotic protein kinase domain identifiable by conserved motifs: the HRD catalytic loop (HRDLKADNILL), the DFG-equivalent activation segment, and the substrate-binding pocket (WSLGCVVLEMFAGRRPWSKDEAVGAIYKIANGETPPIPEEVSAAVTPVALSFMWDCFSVNPEERPTATKLLAEHPFCVFRDDYDFDQTELYAKIKGTWNTK). This fold is diagnostic of EC 2.7.11.x (protein kinase), immediately eliminating B (acyltransferase, EC 2.3.x) and C (methyltransferase, EC 2.1.x). Furthermore, the kinase uses a Ser/Thr phosphoryl-transfer mechanism (evidenced by the activation segment and absence of His-Asp phosphorelay domains such as HisKA or HATPase_c), eliminating A (histidine kinase, EC 2.7.13.x). Among the four choices, only D (2.7.11.24) belongs to the protein kinase class, making it the uniquely defensible answer.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific 4th-digit assignment '24' (MAPKKK rather than another 2.7.11.x subtype) would require knowledge of the protein's position in the MAPK cascade or its specific substrate. However, since no other 2.7.11.x option is offered, this precision is not needed to select the correct answer from the given choices.",
-    "reason": "The sequence provides clear, identifiable protein kinase domain architecture that distinguishes D from all three distractors through general enzymology knowledge (kinase fold vs. acyltransferase/methyltransferase/histidine kinase). No memorization of the specific UniProt entry is required to arrive at D."
-  },
-  "case_id": "EC_number_0013",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A194W8T8 (MKH1_CYTMA) annotates EC=2.7.11.24 with evidence code ECO:0000305 (curator inference from PubMed:39631571). The catalytic activities listed (L-seryl-[protein] + ATP → O-phospho-L-seryl-[protein] + ADP + H+; L-threonyl-[protein] + ATP → O-phospho-L-threonyl-[protein] + ADP + H+) are consistent with EC 2.7.11.24 (MAP kinase kinase kinase). The sequence contains a canonical eukaryotic protein kinase domain with HRD motif (HRDLKADNILL), activation segment (MAPEVIRSQGEGYSAKVDIWSLGCVVLEMFAGRRPWSKDEAVGAIYKIANGETPPIPEEVSAAVTPVALSFMWDCFSVNPEERPTATKLLAEHPFCVFRDDYDFDQTELYAKIKGTWNTK), and Ser/Thr specificity features. The annotation is curator-inferred from a functional study (Diao et al. 2025) rather than direct in vitro kinetics, but the sequence evidence is fully consistent."
-  },
-  "important_caveats": [
-    "The EC annotation carries evidence code ECO:0000305 (inferred by curator from PubMed:39631571), not direct in vitro kinetic characterization. The functional paper describes genetic/biochemical pathway evidence rather than purified-enzyme kinetics.",
-    "The annotation was first added in June 2025 (entry version 32, first public date 2025-06-18); the historical snapshot at entry version 30 (January 2026) already contains the EC assignment, so the benchmark likely used a post-2025 annotation.",
-    "The 4th digit '24' specifically denotes MAPKKK; distinguishing this from other 2.7.11.x kinases (e.g., 2.7.11.1, 2.7.11.22) would require cascade-position knowledge, but this is not needed here as no competing 2.7.11.x option is presented."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C represent entirely different enzyme classes (histidine kinase, acyltransferase, methyltransferase) whose catalytic mechanisms and structural folds are incompatible with the observed protein kinase domain. Only D is a protein kinase (EC 2.7.11.x), leaving no ambiguity among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0013",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A194W8T8 (MKH1_CYTMA) annotates EC=2.7.11.24 with evidence code ECO:0000305 (curator inference from PubMed:39631571). The catalytic activities listed (L-seryl-[protein] + ATP → O-phospho-L-seryl-[protein] + ADP + H+; L-threonyl-[protein] + ATP → O-phospho-L-threonyl-[protein] + ADP + H+) are consistent with EC 2.7.11.24 (MAP kinase kinase kinase). The sequence contains a canonical eukaryotic protein kinase domain with HRD motif (HRDLKADNILL), activation segment (MAPEVIRSQGEGYSAKVDIWSLGCVVLEMFAGRRPWSKDEAVGAIYKIANGETPPIPEEVSAAVTPVALSFMWDCFSVNPEERPTATKLLAEHPFCVFRDDYDFDQTELYAKIKGTWNTK), and Ser/Thr specificity features. The annotation is curator-inferred from a functional study (Diao et al. 2025) rather than direct in vitro kinetics, but the sequence evidence is fully consistent.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The C-terminal region of the sequence contains a canonical eukaryotic protein kinase domain identifiable by conserved motifs: the HRD catalytic loop (HRDLKADNILL), the DFG-equivalent activation segment, and the substrate-binding pocket (WSLGCVVLEMFAGRRPWSKDEAVGAIYKIANGETPPIPEEVSAAVTPVALSFMWDCFSVNPEERPTATKLLAEHPFCVFRDDYDFDQTELYAKIKGTWNTK). This fold is diagnostic of EC 2.7.11.x (protein kinase), immediately eliminating B (acyltransferase, EC 2.3.x) and C (methyltransferase, EC 2.1.x). Furthermore, the kinase uses a Ser/Thr phosphoryl-transfer mechanism (evidenced by the activation segment and absence of His-Asp phosphorelay domains such as HisKA or HATPase_c), eliminating A (histidine kinase, EC 2.7.13.x). Among the four choices, only D (2.7.11.24) belongs to the protein kinase class, making it the uniquely defensible answer.",
-    "missing_item_specific_fact": "The specific 4th-digit assignment '24' (MAPKKK rather than another 2.7.11.x subtype) would require knowledge of the protein's position in the MAPK cascade or its specific substrate. However, since no other 2.7.11.x option is offered, this precision is not needed to select the correct answer from the given choices.",
-    "reason": "The sequence provides clear, identifiable protein kinase domain architecture that distinguishes D from all three distractors through general enzymology knowledge (kinase fold vs. acyltransferase/methyltransferase/histidine kinase). No memorization of the specific UniProt entry is required to arrive at D."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C represent entirely different enzyme classes (histidine kinase, acyltransferase, methyltransferase) whose catalytic mechanisms and structural folds are incompatible with the observed protein kinase domain. Only D is a protein kinase (EC 2.7.11.x), leaving no ambiguity among the choices."
-  },
-  "important_caveats": [
-    "The EC annotation carries evidence code ECO:0000305 (inferred by curator from PubMed:39631571), not direct in vitro kinetic characterization. The functional paper describes genetic/biochemical pathway evidence rather than purified-enzyme kinetics.",
-    "The annotation was first added in June 2025 (entry version 32, first public date 2025-06-18); the historical snapshot at entry version 30 (January 2026) already contains the EC assignment, so the benchmark likely used a post-2025 annotation.",
-    "The 4th digit '24' specifically denotes MAPKKK; distinguishing this from other 2.7.11.x kinases (e.g., 2.7.11.1, 2.7.11.22) would require cascade-position knowledge, but this is not needed here as no competing 2.7.11.x option is presented."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A194W8T8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "21169fd5c9ada96ecaccfcc8b1582efbb6293bd310fe994f922fdeb56b88895a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1849,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "21169fd5c9ada96ecaccfcc8b1582efbb6293bd310fe994f922fdeb56b88895a",
   "current_entry_audit": {
     "entryVersion": 32,
     "firstPublicDate": "2025-06-18",
@@ -535,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2016-10-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "current_source_sequence_sha256": "21169fd5c9ada96ecaccfcc8b1582efbb6293bd310fe994f922fdeb56b88895a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1849,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "21169fd5c9ada96ecaccfcc8b1582efbb6293bd310fe994f922fdeb56b88895a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 30,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A194W8T8",
   "selected_historical_entry_version": 30,
+  "selected_historical_record_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
+  "selected_historical_source_sequence_length": 1849,
+  "selected_historical_source_sequence_sha256": "21169fd5c9ada96ecaccfcc8b1582efbb6293bd310fe994f922fdeb56b88895a",
   "selected_historical_version": {
     "accession": "A0A194W8T8",
     "database": "Swiss-Prot",
@@ -553,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MKH1_CYTMA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
-  "selected_historical_source_sequence_sha256": "21169fd5c9ada96ecaccfcc8b1582efbb6293bd310fe994f922fdeb56b88895a",
-  "selected_historical_source_sequence_length": 1849,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 30,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json",
-  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A194W8T8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json"
 }
 ```
 
@@ -603,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json",
-  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":32,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2016-10-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json"
 }
 ```
 
@@ -622,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json",
-  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Apple Valsa canker fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Diaporthales\",\"Cytosporaceae\",\"Cytospora\"],\"scientificName\":\"Cytospora mali\",\"synonyms\":[\"Valsa mali\"],\"taxonId\":578113}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json"
 }
 ```
 
@@ -641,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json",
-  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"2.7.11.24\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"Mitogen-activated protein kinase kinase kinase mkh1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"MAP kinase kinase kinase mkh1\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"MAPKKK mkh1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json"
 }
 ```
 
@@ -660,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json",
-  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:17990\"}}],\"reaction\":{\"ecNumber\":\"2.7.11.24\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"name\":\"L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:17989\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:9863\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11604\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29999\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:83421\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json"
 }
 ```
 
@@ -679,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json",
-  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:46609\"}}],\"reaction\":{\"ecNumber\":\"2.7.11.24\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"name\":\"L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:46608\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11060\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11605\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30013\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61977\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json"
 }
 ```
 
@@ -698,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json",
-  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
-  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Diao Y.\",\"Xiong X.\",\"Jin J.\",\"Yu C.\",\"Tian Y.\",\"Zhao C.\",\"Wu Y.\",\"Liu H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39631571\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.micpath.2024.107194\"}],\"citationType\":\"journal article\",\"firstPage\":\"107194\",\"id\":\"39631571\",\"journal\":\"Microb. Pathog.\",\"lastPage\":\"107194\",\"publicationDate\":\"2025\",\"title\":\"Mitogen-activated protein (MAP) kinase signalling pathway VmMkh1-VmMkk1-VmSpm1 regulates cell wall integrity in Valsamali.\",\"volume\":\"198\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:41.396358+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1d8fb7dfca0c30806738123fd65cb610f550595d8c15b16c52823f1772eb9f36",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194W8T8.json"
 }
 ```
 
@@ -716,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30",
-  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
-  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   MKH1_CYTMA              Reviewed;        1849 AA.\nAC   A0A194W8T8;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-OCT-2016, sequence version 1.\nDT   28-JAN-2026, entry version 30.\nDE   RecName: Full=Mitogen-activated protein kinase kinase kinase mkh1 {ECO:0000303|PubMed:39631571};\nDE            Short=MAP kinase kinase kinase mkh1 {ECO:0000303|PubMed:39631571};\nDE            Short=MAPKKK mkh1 {ECO:0000303|PubMed:39631571};\nDE            EC=2.7.11.24 {ECO:0000305|PubMed:39631571};\nGN   Name=mkh1 {ECO:0000303|PubMed:39631571}; ORFNames=VM1G_08015;\nOS   Cytospora mali (Apple Valsa canker fungus) (Valsa mali).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Diaporthales; Cytosporaceae; Cytospora.\nOX   NCBI_TaxID=578113;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
+  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30"
 }
 ```
 
@@ -737,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30",
-  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
-  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Mitogen-activated protein kinase kinase kinase mkh1 {ECO:0000303|PubMed:39631571};\nDE            Short=MAP kinase kinase kinase mkh1 {ECO:0000303|PubMed:39631571};\nDE            Short=MAPKKK mkh1 {ECO:0000303|PubMed:39631571};\nDE            EC=2.7.11.24 {ECO:0000305|PubMed:39631571};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
+  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30"
 }
 ```
 
@@ -758,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30",
-  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
-  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
-  "source_locator": "lines 24-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=39631571; DOI=10.1016/j.micpath.2024.107194;\nRA   Diao Y., Xiong X., Jin J., Yu C., Tian Y., Zhao C., Wu Y., Liu H.;\nRT   \"Mitogen-activated protein (MAP) kinase signalling pathway VmMkh1-VmMkk1-\nRT   VmSpm1 regulates cell wall integrity in Valsamali.\";\nRL   Microb. Pathog. 198:107194-107194(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
+  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30"
 }
 ```
 
@@ -779,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30",
-  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
-  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
-  "source_locator": "lines 37-44",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP +\nCC         H(+); Xref=Rhea:RHEA:17989, Rhea:RHEA-COMP:9863, Rhea:RHEA-\nCC         COMP:11604, ChEBI:CHEBI:15378, ChEBI:CHEBI:29999, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:83421, ChEBI:CHEBI:456216; EC=2.7.11.24;\nCC         Evidence={ECO:0000305|PubMed:39631571};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:17990;\nCC         Evidence={ECO:0000305|PubMed:39631571};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
+  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30"
 }
 ```
 
@@ -800,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30",
-  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
-  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
-  "source_locator": "lines 45-52",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] +\nCC         ADP + H(+); Xref=Rhea:RHEA:46608, Rhea:RHEA-COMP:11060, Rhea:RHEA-\nCC         COMP:11605, ChEBI:CHEBI:15378, ChEBI:CHEBI:30013, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:61977, ChEBI:CHEBI:456216; EC=2.7.11.24;\nCC         Evidence={ECO:0000305|PubMed:39631571};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:46609;\nCC         Evidence={ECO:0000305|PubMed:39631571};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:22.695404+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d8496e59b0240fb2d9db3c0360daa33c12604e1a19d07fbf3a81c8ec7bbcdb1a",
+  "url": "https://rest.uniprot.org/unisave/A0A194W8T8?format=txt&versions=30"
 }
 ```
 

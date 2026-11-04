@@ -1,18 +1,16 @@
-# GO_molecular_function_0030: before and after transfer clarification
+# GO_molecular_function_0030
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0030.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0030.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor
+**Expected answer:** **D** — oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | contradicted | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | contradicted | uncertain | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | contradicted | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | contradicted | uncertain |
+| Qwen3.8-Flash-Next-NVFP4 | contradicted | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The exact sequence match is annotated as an NADP-dependent mannitol dehydrogenase, catalyzing D-mannitol + NADP(+) = D-fructose + NADPH + H(+). That reaction uses NADP(+) as the electron acceptor, not oxygen as required by option D. The D-term annotation is computational (IEA:TreeGrafter), whereas the cited catalytic activity has ECO:0000305 evidence.
-
-Citations as saved: [C4](#evidence-c4), [C6](#evidence-c6), [C8](#evidence-c8), [H4](#evidence-h4), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal glycine-rich sequence is compatible with a nucleotide-binding oxidoreductase, making an enzyme more plausible than a transcription coregulator. But that general clue does not establish oxygen as the acceptor or distinguish the protein's actual substrate-specific activity.
-
-
-**Missing item-specific fact**
-
-> The protein-specific catalytic reaction: mannitol/fructose interconversion with NADP(+)/NADPH, rather than an oxygen-accepting NAD(P)H oxidoreductase reaction.
-
-
-**Reason**
-
-> The sequence alone does not supply enough evidence for the precise acceptor specified in D. Identifying the enzyme's reaction requires protein-specific functional information; moreover, the characterized reaction does not match D's wording.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> None of the options accurately states the supported mannitol dehydrogenase activity. D is broadly oxidoreductase-related, but its oxygen-acceptor specification conflicts with the reported NADP-dependent reaction; A, B, and C do not describe that reaction.
-
-
-### Important caveats
-
-- The reviewer-only UniProt records match the supplied 266-aa sequence, but the author's exact source snapshot is unknown.
-- The catalytic reaction evidence is cited to a publication but was not independently checked here; the GO annotation supporting D is explicitly computational.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal glycine-rich sequence is compatible with a nucleotide-binding oxidoreductase, making an enzyme more plausible than a transcription coregulator. But that general clue does not establish oxygen as the acceptor or distinguish the protein's actual substrate-specific activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific catalytic reaction: mannitol/fructose interconversion with NADP(+)/NADPH, rather than an oxygen-accepting NAD(P)H oxidoreductase reaction.",
-    "reason": "The sequence alone does not supply enough evidence for the precise acceptor specified in D. Identifying the enzyme's reaction requires protein-specific functional information; moreover, the characterized reaction does not match D's wording."
-  },
-  "case_id": "GO_molecular_function_0030",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C6",
-      "C8",
-      "H4",
-      "H6"
-    ],
-    "judgment": "contradicted",
-    "reason": "The exact sequence match is annotated as an NADP-dependent mannitol dehydrogenase, catalyzing D-mannitol + NADP(+) = D-fructose + NADPH + H(+). That reaction uses NADP(+) as the electron acceptor, not oxygen as required by option D. The D-term annotation is computational (IEA:TreeGrafter), whereas the cited catalytic activity has ECO:0000305 evidence."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt records match the supplied 266-aa sequence, but the author's exact source snapshot is unknown.",
-    "The catalytic reaction evidence is cited to a publication but was not independently checked here; the GO annotation supporting D is explicitly computational."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "None of the options accurately states the supported mannitol dehydrogenase activity. D is broadly oxidoreductase-related, but its oxygen-acceptor specification conflicts with the reported NADP-dependent reaction; A, B, and C do not describe that reaction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0030",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The exact sequence match is annotated as an NADP-dependent mannitol dehydrogenase, catalyzing D-mannitol + NADP(+) = D-fructose + NADPH + H(+). That reaction uses NADP(+) as the electron acceptor, not oxygen as required by option D. The D-term annotation is computational (IEA:TreeGrafter), whereas the cited catalytic activity has ECO:0000305 evidence.",
-    "evidence_ids": ["C4", "C6", "C8", "H4", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal glycine-rich sequence is compatible with a nucleotide-binding oxidoreductase, making an enzyme more plausible than a transcription coregulator. But that general clue does not establish oxygen as the acceptor or distinguish the protein's actual substrate-specific activity.",
-    "missing_item_specific_fact": "The protein-specific catalytic reaction: mannitol/fructose interconversion with NADP(+)/NADPH, rather than an oxygen-accepting NAD(P)H oxidoreductase reaction.",
-    "reason": "The sequence alone does not supply enough evidence for the precise acceptor specified in D. Identifying the enzyme's reaction requires protein-specific functional information; moreover, the characterized reaction does not match D's wording."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "None of the options accurately states the supported mannitol dehydrogenase activity. D is broadly oxidoreductase-related, but its oxygen-acceptor specification conflicts with the reported NADP-dependent reaction; A, B, and C do not describe that reaction."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt records match the supplied 266-aa sequence, but the author's exact source snapshot is unknown.",
-    "The catalytic reaction evidence is cited to a publication but was not independently checked here; the GO annotation supporting D is explicitly computational."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The protein is experimentally characterized (ECO:0000269, PubMed:32003433) as NADP-dependent mannitol dehydrogenase, EC 1.1.1.138, catalyzing D-mannitol + NADP(+) = D-fructose + NADPH + H(+). GO:0050664 is defined as 'Catalysis of an oxidation-reduction (redox) reaction in which NADH or NADPH acts as a hydrogen or electron donor and reduces an oxygen molecule' (EC 1.6.3.-). This protein's reaction involves no oxygen as acceptor; NADP+ is the electron acceptor, placing it in EC 1.1.1.- (acting on CH-OH group, NAD/NADP as acceptor), not EC 1.6.3.-. The correct specific annotation is GO:0050085 (mannitol 2-dehydrogenase (NADP+) activity, IEA:UniProtKB-EC). The GO:0050664 annotation is an IEA:TreeGrafter computational inference that contradicts the experimental EC assignment and the GO term's own definition.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [GO3](#evidence-go3), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A Rossmann-fold-like motif (GxGxxG in 'GASGPRGMGIE') and overall 266-aa dehydrogenase architecture allow elimination of A (glycosyltransferase), B (transcription coregulator), and C (PLP-dependent cysteine desulfurase), leaving D as the only oxidoreductase option. However, arriving at the specific GO:0050664 subclass ('acting on NAD(P)H, oxygen as acceptor', EC 1.6.3.-) rather than the correct subclass ('acting on CH-OH group, NAD or NADP as acceptor', EC 1.1.1.-) cannot be derived from sequence reasoning alone.
-
-
-**Missing item-specific fact**
-
-> The TreeGrafter IEA annotation of GO:0050664 to this protein (C8/H6), which is a computational phylogenetic propagation that is inconsistent with the experimentally determined EC 1.1.1.138. Without this specific (erroneous) database annotation, no sequence-based reasoning would select GO:0050664 over the correct EC 1.1.1.- branch terms.
-
-
-**Reason**
-
-> Elimination reasoning narrows to 'some oxidoreductase activity' but cannot distinguish GO:0050664 (EC 1.6.3.- oxidase) from GO:0050085 or its EC 1.1.1.- parents. Selection of the exact GO term in D depends on the specific TreeGrafter annotation present in the database, not on general biological reasoning from the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, only D falls within the oxidoreductase superfamily, so elimination reasoning uniquely selects D. However, D's specific GO term is scientifically incorrect for this protein; the question has no fully correct option. The ambiguity is not between two defensible choices but between a technically wrong answer (D) and clearly wrong answers (A, B, C).
-
-
-### Important caveats
-
-- The GO:0050664 annotation is IEA:TreeGrafter (computational), while the protein's actual function is supported by experimental evidence (ECO:0000269, PubMed:32003433). The expected answer rests on a computational inference contradicted by experimental data.
-- The protein's correct molecular function is 'mannitol 2-dehydrogenase (NADP+) activity' (GO:0050085, IEA:UniProtKB-EC), not 'oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor' (GO:0050664, IEA:TreeGrafter).
-- GO:0050664 and GO:0050085 are in different branches of the oxidoreductase hierarchy (EC 1.6.3.- vs EC 1.1.1.-); neither is an ancestor of the other.
-- The benchmark question effectively tests whether a model reproduces a specific database annotation (including a TreeGrafter error) rather than whether it can correctly classify molecular function from sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A Rossmann-fold-like motif (GxGxxG in 'GASGPRGMGIE') and overall 266-aa dehydrogenase architecture allow elimination of A (glycosyltransferase), B (transcription coregulator), and C (PLP-dependent cysteine desulfurase), leaving D as the only oxidoreductase option. However, arriving at the specific GO:0050664 subclass ('acting on NAD(P)H, oxygen as acceptor', EC 1.6.3.-) rather than the correct subclass ('acting on CH-OH group, NAD or NADP as acceptor', EC 1.1.1.-) cannot be derived from sequence reasoning alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The TreeGrafter IEA annotation of GO:0050664 to this protein (C8/H6), which is a computational phylogenetic propagation that is inconsistent with the experimentally determined EC 1.1.1.138. Without this specific (erroneous) database annotation, no sequence-based reasoning would select GO:0050664 over the correct EC 1.1.1.- branch terms.",
-    "reason": "Elimination reasoning narrows to 'some oxidoreductase activity' but cannot distinguish GO:0050664 (EC 1.6.3.- oxidase) from GO:0050085 or its EC 1.1.1.- parents. Selection of the exact GO term in D depends on the specific TreeGrafter annotation present in the database, not on general biological reasoning from the sequence."
-  },
-  "case_id": "GO_molecular_function_0030",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "GO3",
-      "H3",
-      "H4",
-      "H5",
-      "H6"
-    ],
-    "judgment": "contradicted",
-    "reason": "The protein is experimentally characterized (ECO:0000269, PubMed:32003433) as NADP-dependent mannitol dehydrogenase, EC 1.1.1.138, catalyzing D-mannitol + NADP(+) = D-fructose + NADPH + H(+). GO:0050664 is defined as 'Catalysis of an oxidation-reduction (redox) reaction in which NADH or NADPH acts as a hydrogen or electron donor and reduces an oxygen molecule' (EC 1.6.3.-). This protein's reaction involves no oxygen as acceptor; NADP+ is the electron acceptor, placing it in EC 1.1.1.- (acting on CH-OH group, NAD/NADP as acceptor), not EC 1.6.3.-. The correct specific annotation is GO:0050085 (mannitol 2-dehydrogenase (NADP+) activity, IEA:UniProtKB-EC). The GO:0050664 annotation is an IEA:TreeGrafter computational inference that contradicts the experimental EC assignment and the GO term's own definition."
-  },
-  "important_caveats": [
-    "The GO:0050664 annotation is IEA:TreeGrafter (computational), while the protein's actual function is supported by experimental evidence (ECO:0000269, PubMed:32003433). The expected answer rests on a computational inference contradicted by experimental data.",
-    "The protein's correct molecular function is 'mannitol 2-dehydrogenase (NADP+) activity' (GO:0050085, IEA:UniProtKB-EC), not 'oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor' (GO:0050664, IEA:TreeGrafter).",
-    "GO:0050664 and GO:0050085 are in different branches of the oxidoreductase hierarchy (EC 1.6.3.- vs EC 1.1.1.-); neither is an ancestor of the other.",
-    "The benchmark question effectively tests whether a model reproduces a specific database annotation (including a TreeGrafter error) rather than whether it can correctly classify molecular function from sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only D falls within the oxidoreductase superfamily, so elimination reasoning uniquely selects D. However, D's specific GO term is scientifically incorrect for this protein; the question has no fully correct option. The ambiguity is not between two defensible choices but between a technically wrong answer (D) and clearly wrong answers (A, B, C)."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0030",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The protein is experimentally characterized (ECO:0000269, PubMed:32003433) as NADP-dependent mannitol dehydrogenase, EC 1.1.1.138, catalyzing D-mannitol + NADP(+) = D-fructose + NADPH + H(+). GO:0050664 is defined as 'Catalysis of an oxidation-reduction (redox) reaction in which NADH or NADPH acts as a hydrogen or electron donor and reduces an oxygen molecule' (EC 1.6.3.-). This protein's reaction involves no oxygen as acceptor; NADP+ is the electron acceptor, placing it in EC 1.1.1.- (acting on CH-OH group, NAD/NADP as acceptor), not EC 1.6.3.-. The correct specific annotation is GO:0050085 (mannitol 2-dehydrogenase (NADP+) activity, IEA:UniProtKB-EC). The GO:0050664 annotation is an IEA:TreeGrafter computational inference that contradicts the experimental EC assignment and the GO term's own definition.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "C8", "GO3", "H3", "H4", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A Rossmann-fold-like motif (GxGxxG in 'GASGPRGMGIE') and overall 266-aa dehydrogenase architecture allow elimination of A (glycosyltransferase), B (transcription coregulator), and C (PLP-dependent cysteine desulfurase), leaving D as the only oxidoreductase option. However, arriving at the specific GO:0050664 subclass ('acting on NAD(P)H, oxygen as acceptor', EC 1.6.3.-) rather than the correct subclass ('acting on CH-OH group, NAD or NADP as acceptor', EC 1.1.1.-) cannot be derived from sequence reasoning alone.",
-    "missing_item_specific_fact": "The TreeGrafter IEA annotation of GO:0050664 to this protein (C8/H6), which is a computational phylogenetic propagation that is inconsistent with the experimentally determined EC 1.1.1.138. Without this specific (erroneous) database annotation, no sequence-based reasoning would select GO:0050664 over the correct EC 1.1.1.- branch terms.",
-    "reason": "Elimination reasoning narrows to 'some oxidoreductase activity' but cannot distinguish GO:0050664 (EC 1.6.3.- oxidase) from GO:0050085 or its EC 1.1.1.- parents. Selection of the exact GO term in D depends on the specific TreeGrafter annotation present in the database, not on general biological reasoning from the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only D falls within the oxidoreductase superfamily, so elimination reasoning uniquely selects D. However, D's specific GO term is scientifically incorrect for this protein; the question has no fully correct option. The ambiguity is not between two defensible choices but between a technically wrong answer (D) and clearly wrong answers (A, B, C)."
-  },
-  "important_caveats": [
-    "The GO:0050664 annotation is IEA:TreeGrafter (computational), while the protein's actual function is supported by experimental evidence (ECO:0000269, PubMed:32003433). The expected answer rests on a computational inference contradicted by experimental data.",
-    "The protein's correct molecular function is 'mannitol 2-dehydrogenase (NADP+) activity' (GO:0050085, IEA:UniProtKB-EC), not 'oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor' (GO:0050664, IEA:TreeGrafter).",
-    "GO:0050664 and GO:0050085 are in different branches of the oxidoreductase hierarchy (EC 1.6.3.- vs EC 1.1.1.-); neither is an ancestor of the other.",
-    "The benchmark question effectively tests whether a model reproduces a specific database annotation (including a TreeGrafter error) rather than whether it can correctly classify molecular function from sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -395,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -515,38 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-### Source check 1
-
-**Check:** `reaction_definition_difference_traced`.
-
-> C6/H4 describe mannitol plus NADP+ yielding fructose plus NADPH, while C8/H6 carry the oxygen-acceptor term via IEA:TreeGrafter.
-
-**Remaining uncertainty:** The cited reaction is ECO:0000305 and reversible; neither direction uses oxygen as acceptor. Additional oxidase activity is not exhaustively tested by these excerpts.
-
-Evidence checked: [C4](#evidence-c4), [C6](#evidence-c6), [C8](#evidence-c8), [H4](#evidence-h4), [H6](#evidence-h6).
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A223HDI5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "9ba750d830f9b17efbb379114b2586beae27b485e183fc99fdd2ab0bad2a96aa",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 266,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "9ba750d830f9b17efbb379114b2586beae27b485e183fc99fdd2ab0bad2a96aa",
   "current_entry_audit": {
     "entryVersion": 15,
     "firstPublicDate": "2025-02-05",
@@ -554,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-10-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "current_source_sequence_sha256": "9ba750d830f9b17efbb379114b2586beae27b485e183fc99fdd2ab0bad2a96aa",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 266,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "9ba750d830f9b17efbb379114b2586beae27b485e183fc99fdd2ab0bad2a96aa",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 15,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A223HDI5",
   "selected_historical_entry_version": 15,
+  "selected_historical_record_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
+  "selected_historical_source_sequence_length": 266,
+  "selected_historical_source_sequence_sha256": "9ba750d830f9b17efbb379114b2586beae27b485e183fc99fdd2ab0bad2a96aa",
   "selected_historical_version": {
     "accession": "A0A223HDI5",
     "database": "Swiss-Prot",
@@ -572,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NMTDH_AURME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
-  "selected_historical_source_sequence_sha256": "9ba750d830f9b17efbb379114b2586beae27b485e183fc99fdd2ab0bad2a96aa",
-  "selected_historical_source_sequence_length": 266,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 15,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -607,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A223HDI5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -626,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":15,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-01-28\",\"lastSequenceUpdateDate\":\"2017-10-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -645,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Aureobasidium pullulans var. melanogenum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Dothideomycetes\",\"Dothideomycetidae\",\"Dothideales\",\"Saccotheciaceae\",\"Aureobasidium\"],\"scientificName\":\"Aureobasidium melanogenum\",\"taxonId\":46634}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -664,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.138\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"NADP-dependent mannitol dehydrogenase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"MtDH\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -683,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32003433\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"Catalyzes the interconversion between D-mannitol and D-fructose (Probable). Plays a key role in liamocins biosynthesis by providing the mannitol moity that is linked to 3,5-dihydroxydecanoic acid (provided by the HR-PKS PKS1) via ester bond formation catalyzed by the esterase EST1 (PubMed:32003433)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -702,15 +447,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:16766\"}},{\"directionType\":\"right-to-left\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:16767\"}}],\"reaction\":{\"ecNumber\":\"1.1.1.138\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"name\":\"D-mannitol + NADP(+) = D-fructose + NADPH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:16765\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16899\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:37721\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -721,15 +466,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/3",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0050085\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:mannitol 2-dehydrogenase (NADP+) activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-EC\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/3",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -740,15 +485,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/4",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0050664\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/4",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -759,15 +504,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json",
-  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
-  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Xue S.J.\",\"Liu G.L.\",\"Chi Z.\",\"Gao Z.C.\",\"Hu Z.\",\"Chi Z.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32003433\"},{\"database\":\"DOI\",\"id\":\"10.1042/bcj20190922\"}],\"citationType\":\"journal article\",\"firstPage\":\"887\",\"id\":\"32003433\",\"journal\":\"Biochem. J.\",\"lastPage\":\"903\",\"publicationDate\":\"2020\",\"title\":\"Genetic evidences for the core biosynthesis pathway, regulation, transport and secretion of liamocins in yeast-like fungal cells.\",\"volume\":\"477\"},\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:24:44.241345+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c6aa71c90f5754236176b13ca1a049caba09e755d0ca2e57921409a1d945c654",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A223HDI5.json"
 }
 ```
 
@@ -777,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15",
-  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
-  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   NMTDH_AURME             Reviewed;         266 AA.\nAC   A0A223HDI5;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-OCT-2017, sequence version 1.\nDT   28-JAN-2026, entry version 15.\nDE   RecName: Full=NADP-dependent mannitol dehydrogenase {ECO:0000303|PubMed:32003433};\nDE            Short=MtDH {ECO:0000303|PubMed:32003433};\nDE            EC=1.1.1.138 {ECO:0000269|PubMed:32003433};\nOS   Aureobasidium melanogenum (Aureobasidium pullulans var. melanogenum).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Dothideomycetes;\nOC   Dothideomycetidae; Dothideales; Saccotheciaceae; Aureobasidium.\nOX   NCBI_TaxID=46634;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
+  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15"
 }
 ```
 
@@ -798,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15",
-  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
-  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
-  "source_locator": "lines 31-37",
   "excerpt": "RN   [4]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=32003433; DOI=10.1042/bcj20190922;\nRA   Xue S.J., Liu G.L., Chi Z., Gao Z.C., Hu Z., Chi Z.M.;\nRT   \"Genetic evidences for the core biosynthesis pathway, regulation, transport\nRT   and secretion of liamocins in yeast-like fungal cells.\";\nRL   Biochem. J. 477:887-903(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
+  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15"
 }
 ```
 
@@ -819,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15",
-  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
-  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
-  "source_locator": "lines 46-51",
   "excerpt": "CC   -!- FUNCTION: Catalyzes the interconversion between D-mannitol and D-\nCC       fructose (Probable). Plays a key role in liamocins biosynthesis by\nCC       providing the mannitol moity that is linked to 3,5-dihydroxydecanoic\nCC       acid (provided by the HR-PKS PKS1) via ester bond formation catalyzed\nCC       by the esterase EST1 (PubMed:32003433). {ECO:0000269|PubMed:32003433,\nCC       ECO:0000305|PubMed:32003433}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-51",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
+  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15"
 }
 ```
 
@@ -840,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15",
-  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
-  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
-  "source_locator": "lines 52-60",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=D-mannitol + NADP(+) = D-fructose + NADPH + H(+);\nCC         Xref=Rhea:RHEA:16765, ChEBI:CHEBI:15378, ChEBI:CHEBI:16899,\nCC         ChEBI:CHEBI:37721, ChEBI:CHEBI:57783, ChEBI:CHEBI:58349;\nCC         EC=1.1.1.138; Evidence={ECO:0000305|PubMed:32003433};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:16766;\nCC         Evidence={ECO:0000305|PubMed:32003433};\nCC       PhysiologicalDirection=right-to-left; Xref=Rhea:RHEA:16767;\nCC         Evidence={ECO:0000305|PubMed:32003433};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-60",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
+  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15"
 }
 ```
 
@@ -861,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15",
-  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
-  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
-  "source_locator": "lines 83-83",
   "excerpt": "DR   GO; GO:0050085; F:mannitol 2-dehydrogenase (NADP+) activity; IEA:UniProtKB-EC.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 83-83",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
+  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15"
 }
 ```
 
@@ -882,18 +627,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15",
-  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
-  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
-  "source_locator": "lines 84-84",
   "excerpt": "DR   GO; GO:0050664; F:oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-02T04:24:46.627063+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 84-84",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd858973dafcf9f7eafcc69467bc9fac51732b2bdf6281c7e18de2db9ff34dd6",
+  "url": "https://rest.uniprot.org/unisave/A0A223HDI5?format=txt&versions=15"
 }
 ```
 
@@ -904,15 +649,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 28124-28140",
   "excerpt": "[Term]\nid: GO:0003712\nname: transcription coregulator activity\nnamespace: molecular_function\nalt_id: GO:0001104\nalt_id: GO:0016455\ndef: \"A transcription regulator activity that modulates the transcription of specific gene sets via binding to a DNA-binding transcription factor at a specific genomic locus, either on its own or as part of a complex. Coregulators often act by altering chromatin structure and modifications. For example, one class of transcription coregulators modifies chromatin structure through covalent modification of histones. A second class remodels the conformation of chromatin in an ATP-dependent fashion. A third class modulates interactions of DNA-bound DNA-binding transcription factors with other transcription coregulators.\" [GOC:txnOH-2018, PMID:10213677, PMID:16858867, PMID:24203923, PMID:25957681, Wikipedia:Transcription_coregulator]\ncomment: Usage guidance: Most transcription coregulators do not bind DNA. Those that do usually bind DNA either in a non-specific or non-direct manner. If a protein binds DNA specifically, consider annotating to GO:0003700 DNA binding transcription factor activity.\nsubset: goslim_drosophila\nsynonym: \"nuclear receptor coreceptor activity\" NARROW []\nsynonym: \"RNA polymerase II transcriptional cofactor activity\" RELATED []\nsynonym: \"transcription cofactor activity\" EXACT []\nsynonym: \"transcription coreceptor activity\" EXACT []\nsynonym: \"transcriptional co-regulator\" EXACT []\nxref: Reactome:R-HSA-5340251 \"NR1H4:DCA,CDCA,LCHA binds RXRA and NCOA1,2\"\nis_a: GO:0140110 ! transcription regulator activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0003712",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 28124-28140",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0003712"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -923,15 +668,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 172914-172931",
   "excerpt": "[Term]\nid: GO:0031071\nname: cysteine desulfurase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: L-cysteine + [enzyme]-cysteine = L-alanine + [enzyme]-S-sulfanylcysteine.\" [EC:2.8.1.7]\nsynonym: \"cysteine desulfurylase activity\" RELATED [EC:2.8.1.7]\nsynonym: \"IscS\" RELATED [EC:2.8.1.7]\nsynonym: \"L-cysteine:enzyme cysteine sulfurtransferase activity\" RELATED [EC:2.8.1.7]\nsynonym: \"NIFS\" RELATED [EC:2.8.1.7]\nsynonym: \"SufS\" RELATED [EC:2.8.1.7]\nxref: EC:2.8.1.7\nxref: Reactome:R-HSA-1362408 \"FXN:NFS1:ISD11:ISCU assembles 2Fe-2S iron-sulfur cluster\"\nxref: Reactome:R-HSA-947514 \"PXLP-K198-NFS1 transfers sulfur from cysteine onto MOCS3\"\nxref: RHEA:43892\nis_a: GO:0016783 ! sulfurtransferase activity\nproperty_value: skos:exactMatch EC:2.8.1.7\nproperty_value: skos:exactMatch RHEA:43892\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031071",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 172914-172931",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031071"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -942,15 +687,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 318421-318430",
   "excerpt": "[Term]\nid: GO:0050664\nname: oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor\nnamespace: molecular_function\ndef: \"Catalysis of an oxidation-reduction (redox) reaction in which NADH or NADPH acts as a hydrogen or electron donor and reduces an oxygen molecule.\" [EC:1.6.3.-]\nsynonym: \"oxidoreductase activity, acting on NADH or NADPH, oxygen as acceptor\" RELATED []\nxref: EC:1.6.3.-\nis_a: GO:0016651 ! oxidoreductase activity, acting on NAD(P)H\nproperty_value: skos:exactMatch EC:1.6.3.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0050664",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 318421-318430",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0050664"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

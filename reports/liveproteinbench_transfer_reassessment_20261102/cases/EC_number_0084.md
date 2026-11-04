@@ -1,18 +1,16 @@
-# EC_number_0084: before and after transfer clarification
+# EC_number_0084
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0084.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0084.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 2.5.1.56
+**Expected answer:** **C** — 2.5.1.56
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt sequence annotated as N-acetylneuraminate synthase, EC 2.5.1.56. The annotation links this EC and its catalytic reaction to PubMed evidence coded ECO:0000269, supporting choice C for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence identifies a protein to be functionally characterized, but the input gives no substrate, reaction, or other context that establishes which specific catalytic activity applies. General sequence reasoning alone does not reliably distinguish these exact EC assignments.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment of this sequence to N-acetylneuraminate synthase and its experimentally supported reaction, corresponding to EC 2.5.1.56.
-
-
-**Reason**
-
-> Choosing the supported EC requires an item-specific functional annotation or experimental fact absent from the question. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation supports EC 2.5.1.56; the supplied evidence does not support another listed option.
-
-
-### Important caveats
-
-- The supporting UniProt annotation cites experimental evidence, but the primary paper was not independently reviewed here.
-- The reviewer-only accession and annotation were not included in the evaluated model input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence identifies a protein to be functionally characterized, but the input gives no substrate, reaction, or other context that establishes which specific catalytic activity applies. General sequence reasoning alone does not reliably distinguish these exact EC assignments.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment of this sequence to N-acetylneuraminate synthase and its experimentally supported reaction, corresponding to EC 2.5.1.56.",
-    "reason": "Choosing the supported EC requires an item-specific functional annotation or experimental fact absent from the question. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied evidence."
-  },
-  "case_id": "EC_number_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated as N-acetylneuraminate synthase, EC 2.5.1.56. The annotation links this EC and its catalytic reaction to PubMed evidence coded ECO:0000269, supporting choice C for this protein."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation cites experimental evidence, but the primary paper was not independently reviewed here.",
-    "The reviewer-only accession and annotation were not included in the evaluated model input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports EC 2.5.1.56; the supplied evidence does not support another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence annotated as N-acetylneuraminate synthase, EC 2.5.1.56. The annotation links this EC and its catalytic reaction to PubMed evidence coded ECO:0000269, supporting choice C for this protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence identifies a protein to be functionally characterized, but the input gives no substrate, reaction, or other context that establishes which specific catalytic activity applies. General sequence reasoning alone does not reliably distinguish these exact EC assignments.",
-    "missing_item_specific_fact": "The protein-specific assignment of this sequence to N-acetylneuraminate synthase and its experimentally supported reaction, corresponding to EC 2.5.1.56.",
-    "reason": "Choosing the supported EC requires an item-specific functional annotation or experimental fact absent from the question. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports EC 2.5.1.56; the supplied evidence does not support another listed option."
-  },
-  "important_caveats": [
-    "The supporting UniProt annotation cites experimental evidence, but the primary paper was not independently reviewed here.",
-    "The reviewer-only accession and annotation were not included in the evaluated model input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence (346 aa) matches UniProt entry P0DY06 (NEUAS_CAMJ8) exactly (SHA-256 confirmed). The entry is annotated with EC 2.5.1.56 (N-acetylneuraminate synthase) supported by experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel, Biochemistry 2024). The catalytic reaction (N-acetyl-D-mannosamine + PEP + H2O → N-acetylneuraminate + phosphate) is experimentally confirmed. The historical UniSave record (entry version 2, first released 2026-01) also carries this annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Eliminating B (2.7.11.24, a MAPKKKK kinase) is partially feasible by noting the absence of canonical kinase motifs (P-loop, HRD, DFG). Eliminating D (2.3.1.312, an acyltransferase) is weakly supported by the absence of HAT/acyltransferase signatures. However, distinguishing C (2.5.1.56, N-acetylneuraminate synthase) from A (2.5.1.76) — both within the same EC subclass 2.5.1 (glycosyltransferases) — requires knowing the precise substrate and product of the reaction. The sequence does not encode a self-evident catalytic signature that differentiates these two specific EC numbers without either exact sequence-to-database matching or detailed knowledge of the distinct active-site architectures of these two enzymes.
-
-
-**Missing item-specific fact**
-
-> The specific catalytic residues and substrate-binding pocket geometry that distinguish EC 2.5.1.56 from EC 2.5.1.76 are not inferable from the raw sequence without alignment to characterized family members. Moreover, this protein was only experimentally characterized in 2024 (PubMed 38382015) and first annotated in UniProt in June 2025, so the EC assignment is a very recent item-specific fact not derivable from general biological reasoning about the sequence.
-
-
-**Reason**
-
-> The question requires selecting among four EC numbers, two of which (2.5.1.56 and 2.5.1.76) fall in the same EC sub-subclass. No general biological argument from the raw 346-aa sequence alone distinguishes the exact glycosyltransferase reaction catalyzed (sialic acid biosynthesis vs. whatever 2.5.1.76 catalyzes). The correct answer depends on recognizing this specific protein or knowing its experimentally determined activity, which is a database/experimental fact rather than a reasoning conclusion.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The experimental evidence (ECO:0000269) unambiguously assigns EC 2.5.1.56 to this sequence. While a model might struggle to distinguish A from C by reasoning, the ground truth is clearly C. No alternative option is supported by the evidence.
-
-
-### Important caveats
-
-- The UniProt annotation for this protein was first published on 2025-06-18, based on a 2024 paper (PubMed 38382015). This is a very recent experimental characterization, making the EC assignment highly dependent on post-2024 database knowledge.
-- The identity origin (accession P0DY06) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model sees only the raw sequence.
-- EC 2.5.1.76 is in the same EC sub-subclass (2.5.1) as the correct answer, making it a non-trivial distractor that cannot be eliminated by broad subclass reasoning.
-- The evidence code ECO:0000269 (direct assay) confirms this is an experimentally determined EC number, not a computational or similarity-based annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Eliminating B (2.7.11.24, a MAPKKKK kinase) is partially feasible by noting the absence of canonical kinase motifs (P-loop, HRD, DFG). Eliminating D (2.3.1.312, an acyltransferase) is weakly supported by the absence of HAT/acyltransferase signatures. However, distinguishing C (2.5.1.56, N-acetylneuraminate synthase) from A (2.5.1.76) — both within the same EC subclass 2.5.1 (glycosyltransferases) — requires knowing the precise substrate and product of the reaction. The sequence does not encode a self-evident catalytic signature that differentiates these two specific EC numbers without either exact sequence-to-database matching or detailed knowledge of the distinct active-site architectures of these two enzymes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific catalytic residues and substrate-binding pocket geometry that distinguish EC 2.5.1.56 from EC 2.5.1.76 are not inferable from the raw sequence without alignment to characterized family members. Moreover, this protein was only experimentally characterized in 2024 (PubMed 38382015) and first annotated in UniProt in June 2025, so the EC assignment is a very recent item-specific fact not derivable from general biological reasoning about the sequence.",
-    "reason": "The question requires selecting among four EC numbers, two of which (2.5.1.56 and 2.5.1.76) fall in the same EC sub-subclass. No general biological argument from the raw 346-aa sequence alone distinguishes the exact glycosyltransferase reaction catalyzed (sialic acid biosynthesis vs. whatever 2.5.1.76 catalyzes). The correct answer depends on recognizing this specific protein or knowing its experimentally determined activity, which is a database/experimental fact rather than a reasoning conclusion."
-  },
-  "case_id": "EC_number_0084",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence (346 aa) matches UniProt entry P0DY06 (NEUAS_CAMJ8) exactly (SHA-256 confirmed). The entry is annotated with EC 2.5.1.56 (N-acetylneuraminate synthase) supported by experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel, Biochemistry 2024). The catalytic reaction (N-acetyl-D-mannosamine + PEP + H2O → N-acetylneuraminate + phosphate) is experimentally confirmed. The historical UniSave record (entry version 2, first released 2026-01) also carries this annotation."
-  },
-  "important_caveats": [
-    "The UniProt annotation for this protein was first published on 2025-06-18, based on a 2024 paper (PubMed 38382015). This is a very recent experimental characterization, making the EC assignment highly dependent on post-2024 database knowledge.",
-    "The identity origin (accession P0DY06) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model sees only the raw sequence.",
-    "EC 2.5.1.76 is in the same EC sub-subclass (2.5.1) as the correct answer, making it a non-trivial distractor that cannot be eliminated by broad subclass reasoning.",
-    "The evidence code ECO:0000269 (direct assay) confirms this is an experimentally determined EC number, not a computational or similarity-based annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The experimental evidence (ECO:0000269) unambiguously assigns EC 2.5.1.56 to this sequence. While a model might struggle to distinguish A from C by reasoning, the ground truth is clearly C. No alternative option is supported by the evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0084",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence (346 aa) matches UniProt entry P0DY06 (NEUAS_CAMJ8) exactly (SHA-256 confirmed). The entry is annotated with EC 2.5.1.56 (N-acetylneuraminate synthase) supported by experimental evidence (ECO:0000269, PubMed:38382015, Ghosh & Raushel, Biochemistry 2024). The catalytic reaction (N-acetyl-D-mannosamine + PEP + H2O → N-acetylneuraminate + phosphate) is experimentally confirmed. The historical UniSave record (entry version 2, first released 2026-01) also carries this annotation.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Eliminating B (2.7.11.24, a MAPKKKK kinase) is partially feasible by noting the absence of canonical kinase motifs (P-loop, HRD, DFG). Eliminating D (2.3.1.312, an acyltransferase) is weakly supported by the absence of HAT/acyltransferase signatures. However, distinguishing C (2.5.1.56, N-acetylneuraminate synthase) from A (2.5.1.76) — both within the same EC subclass 2.5.1 (glycosyltransferases) — requires knowing the precise substrate and product of the reaction. The sequence does not encode a self-evident catalytic signature that differentiates these two specific EC numbers without either exact sequence-to-database matching or detailed knowledge of the distinct active-site architectures of these two enzymes.",
-    "missing_item_specific_fact": "The specific catalytic residues and substrate-binding pocket geometry that distinguish EC 2.5.1.56 from EC 2.5.1.76 are not inferable from the raw sequence without alignment to characterized family members. Moreover, this protein was only experimentally characterized in 2024 (PubMed 38382015) and first annotated in UniProt in June 2025, so the EC assignment is a very recent item-specific fact not derivable from general biological reasoning about the sequence.",
-    "reason": "The question requires selecting among four EC numbers, two of which (2.5.1.56 and 2.5.1.76) fall in the same EC sub-subclass. No general biological argument from the raw 346-aa sequence alone distinguishes the exact glycosyltransferase reaction catalyzed (sialic acid biosynthesis vs. whatever 2.5.1.76 catalyzes). The correct answer depends on recognizing this specific protein or knowing its experimentally determined activity, which is a database/experimental fact rather than a reasoning conclusion."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The experimental evidence (ECO:0000269) unambiguously assigns EC 2.5.1.56 to this sequence. While a model might struggle to distinguish A from C by reasoning, the ground truth is clearly C. No alternative option is supported by the evidence."
-  },
-  "important_caveats": [
-    "The UniProt annotation for this protein was first published on 2025-06-18, based on a 2024 paper (PubMed 38382015). This is a very recent experimental characterization, making the EC assignment highly dependent on post-2024 database knowledge.",
-    "The identity origin (accession P0DY06) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model sees only the raw sequence.",
-    "EC 2.5.1.76 is in the same EC sub-subclass (2.5.1) as the correct answer, making it a non-trivial distractor that cannot be eliminated by broad subclass reasoning.",
-    "The evidence code ECO:0000269 (direct assay) confirms this is an experimentally determined EC number, not a computational or similarity-based annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DY06",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8542949467c46c0d10eb516705d760b1c4148a32078df1045ffb85da51143601",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 346,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8542949467c46c0d10eb516705d760b1c4148a32078df1045ffb85da51143601",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -535,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
-  "current_source_sequence_sha256": "8542949467c46c0d10eb516705d760b1c4148a32078df1045ffb85da51143601",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 346,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8542949467c46c0d10eb516705d760b1c4148a32078df1045ffb85da51143601",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DY06",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
+  "selected_historical_source_sequence_length": 346,
+  "selected_historical_source_sequence_sha256": "8542949467c46c0d10eb516705d760b1c4148a32078df1045ffb85da51143601",
   "selected_historical_version": {
     "accession": "P0DY06",
     "database": "Swiss-Prot",
@@ -553,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NEUAS_CAMJ8",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
-  "selected_historical_source_sequence_sha256": "8542949467c46c0d10eb516705d760b1c4148a32078df1045ffb85da51143601",
-  "selected_historical_source_sequence_length": 346,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json",
-  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
-  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DY06\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json"
 }
 ```
 
@@ -603,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json",
-  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
-  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json"
 }
 ```
 
@@ -622,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json",
-  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
-  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Campylobacterota\",\"Epsilonproteobacteria\",\"Campylobacterales\",\"Campylobacteraceae\",\"Campylobacter\"],\"scientificName\":\"Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC 11828)\",\"taxonId\":407148}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json"
 }
 ```
 
@@ -641,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json",
-  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
-  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"2.5.1.56\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"N-acetylneuraminate synthase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"Neu5Ac synthase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json"
 }
 ```
 
@@ -660,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json",
-  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
-  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:19274\"}}],\"reaction\":{\"ecNumber\":\"2.5.1.56\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"name\":\"N-acetyl-D-mannosamine + phosphoenolpyruvate + H2O = N-acetylneuraminate + phosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:19273\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:35418\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58702\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:63153\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json"
 }
 ```
 
@@ -679,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json",
-  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
-  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Ghosh M.K.\",\"Raushel F.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38382015\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.3c00664\"}],\"citationType\":\"journal article\",\"firstPage\":\"688\",\"id\":\"38382015\",\"journal\":\"Biochemistry\",\"lastPage\":\"698\",\"publicationDate\":\"2024\",\"title\":\"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter jejuni.\",\"volume\":\"63\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"81116 / NCTC 11828\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:03.200320+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "360a6e23ffa22a96d2f530ce41b08596efad1a8a83e5e9a083cacacc7581d59a",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY06.json"
 }
 ```
 
@@ -697,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2",
-  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
-  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   NEUAS_CAMJ8             Reviewed;         346 AA.\nAC   P0DY06;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=N-acetylneuraminate synthase {ECO:0000303|PubMed:38382015};\nDE            Short=Neu5Ac synthase {ECO:0000303|PubMed:38382015};\nDE            EC=2.5.1.56 {ECO:0000269|PubMed:38382015};\nGN   Name=HS6.11 {ECO:0000303|PubMed:38382015};\nGN   OrderedLocusNames=C8J_1339 {ECO:0000312|EMBL:ABV52937.1};\nOS   Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC\nOS   11828).\nOC   Bacteria; Pseudomonadati; Campylobacterota; Epsilonproteobacteria;\nOC   Campylobacterales; Campylobacteraceae; Campylobacter.\nOX   NCBI_TaxID=407148;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
+  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2"
 }
 ```
 
@@ -718,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2",
-  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
-  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=N-acetylneuraminate synthase {ECO:0000303|PubMed:38382015};\nDE            Short=Neu5Ac synthase {ECO:0000303|PubMed:38382015};\nDE            EC=2.5.1.56 {ECO:0000269|PubMed:38382015};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
+  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2"
 }
 ```
 
@@ -739,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2",
-  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
-  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
-  "source_locator": "lines 25-33",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND PATHWAY.\nRC   STRAIN=81116 / NCTC 11828;\nRX   PubMed=38382015; DOI=10.1021/acs.biochem.3c00664;\nRA   Ghosh M.K., Raushel F.M.;\nRT   \"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-\nRT   Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter\nRT   jejuni.\";\nRL   Biochemistry 63:688-698(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-33",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
+  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2"
 }
 ```
 
@@ -760,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2",
-  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
-  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
-  "source_locator": "lines 39-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-acetyl-D-mannosamine + phosphoenolpyruvate + H2O = N-\nCC         acetylneuraminate + phosphate; Xref=Rhea:RHEA:19273,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:35418, ChEBI:CHEBI:43474,\nCC         ChEBI:CHEBI:58702, ChEBI:CHEBI:63153; EC=2.5.1.56;\nCC         Evidence={ECO:0000269|PubMed:38382015};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:19274;\nCC         Evidence={ECO:0000269|PubMed:38382015};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:30:07.414593+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7e4ab42f0bda2ecc304cdd042f2bc5a8d831d80e65982976501788f9a05ab6b0",
+  "url": "https://rest.uniprot.org/unisave/P0DY06?format=txt&versions=2"
 }
 ```
 

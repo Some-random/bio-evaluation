@@ -1,18 +1,16 @@
-# EC_number_0032: before and after transfer clarification
+# EC_number_0032
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0032.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0032.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 4.2.1.18
+**Expected answer:** **D** — 4.2.1.18
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,250 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry annotated as methylglutaconyl-CoA hydratase with EC 4.2.1.18; the entry also specifies the corresponding catalytic reaction. This supports choice D. The cited evidence code is a curator inference from a publication, not by itself proof of a direct experimental assay.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence could support identifying an enzyme family, but the input gives no reaction, organism, or other functional context that distinguishes the specific EC assignment from the other candidate hydratases.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific functional annotation identifying this protein as methylglutaconyl-CoA hydratase and assigning EC 4.2.1.18.
-
-
-**Reason**
-
-> Selecting the exact four-digit EC requires protein-specific functional information not supplied in the question. Recognizing or retrieving the matching database entry would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports D for the exact sequence; no other listed EC is supported by the supplied evidence.
-
-
-### Important caveats
-
-- The sequence match and functional annotation are reviewer-only evidence and were not available to the evaluated model.
-- The annotation cites a publication but uses ECO:0000305; the excerpts do not independently establish that the EC assignment came from a direct experimental assay.
-- The historical record matches the sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence could support identifying an enzyme family, but the input gives no reaction, organism, or other functional context that distinguishes the specific EC assignment from the other candidate hydratases.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific functional annotation identifying this protein as methylglutaconyl-CoA hydratase and assigning EC 4.2.1.18.",
-    "reason": "Selecting the exact four-digit EC requires protein-specific functional information not supplied in the question. Recognizing or retrieving the matching database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "EC_number_0032",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as methylglutaconyl-CoA hydratase with EC 4.2.1.18; the entry also specifies the corresponding catalytic reaction. This supports choice D. The cited evidence code is a curator inference from a publication, not by itself proof of a direct experimental assay."
-  },
-  "important_caveats": [
-    "The sequence match and functional annotation are reviewer-only evidence and were not available to the evaluated model.",
-    "The annotation cites a publication but uses ECO:0000305; the excerpts do not independently establish that the EC assignment came from a direct experimental assay.",
-    "The historical record matches the sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports D for the exact sequence; no other listed EC is supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0032",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as methylglutaconyl-CoA hydratase with EC 4.2.1.18; the entry also specifies the corresponding catalytic reaction. This supports choice D. The cited evidence code is a curator inference from a publication, not by itself proof of a direct experimental assay.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence could support identifying an enzyme family, but the input gives no reaction, organism, or other functional context that distinguishes the specific EC assignment from the other candidate hydratases.",
-    "missing_item_specific_fact": "The sequence-specific functional annotation identifying this protein as methylglutaconyl-CoA hydratase and assigning EC 4.2.1.18.",
-    "reason": "Selecting the exact four-digit EC requires protein-specific functional information not supplied in the question. Recognizing or retrieving the matching database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports D for the exact sequence; no other listed EC is supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The sequence match and functional annotation are reviewer-only evidence and were not available to the evaluated model.",
-    "The annotation cites a publication but uses ECO:0000305; the excerpts do not independently establish that the EC assignment came from a direct experimental assay.",
-    "The historical record matches the sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt entry G4N954 (AUH1_PYRO7) exactly (SHA256 confirmed). The entry is annotated as 'Methylglutaconyl-CoA hydratase 1, mitochondrial' with EC=4.2.1.18, supported by evidence code ECO:0000305 (inferred by similarity) referencing PubMed:32431008. The catalytic activity (HMG-CoA → 3-methylglutaconyl-CoA + H₂O) is explicitly listed. Both the current entry (v56) and the historical archived entry (v54, released 2026-01-28) confirm EC=4.2.1.18. Note: the annotation is similarity-inferred, not direct experimental enzymatic assay, and the source paper uses the word 'putative' in its title.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal region (MPPVSRILSYAPRVAIRPSSQLARPARAFAVGTVRYYSAEQPEEPLIRVTDLPAPNSGHIRVLELNRPKARNAISRALLASLREEVHSIARQYDAQTGEEIPTPSWNKRFGGIAGDSEKGPTRALVLASAVESSFCAGADLKERRGFTQEETNEFLANLRSTFAALDALPIPTISAISSRALGGGLELALCTHFRVLTSNAIVSLPETRLGIIPGAGGTHRLPRLIGLGRARDMIVTGRAVSGAEAYFLGLADRLVEVLPPDEQEAADTTDKDAALLSAAREAALTEAVRLASQICEGGPIGIRAALQAVQAPSQETENKMYERVIGTEDRNEALKAFAEKRKPVFKGR) contains a mitochondrial targeting peptide (Arg-rich, hydroxylated residues), and the core domain exhibits a crotonase-superfamily hydratase fold. This reasoning can eliminate B (isomerase, EC 5) and C (oxidoreductase, EC 1), narrowing to A (4.2.1.70) or D (4.2.1.18). However, distinguishing these two specific hydro-lyase EC numbers requires knowledge of the exact substrate (methylglutaconyl-CoA vs. whatever 4.2.1.70 acts on), which is not derivable from general biological reasoning about the fold alone.
-
-
-**Missing item-specific fact**
-
-> The specific substrate-binding pocket residues and active-site architecture that distinguish methylglutaconyl-CoA hydratase (EC 4.2.1.18) from the enzyme designated EC 4.2.1.70 within the crotonase superfamily, or direct recognition of this protein as AUH1_PYRO7 from its database entry.
-
-
-**Reason**
-
-> While the mitochondrial targeting sequence and crotonase-like fold provide meaningful reasoning to eliminate isomerase and oxidoreductase options, the final choice between two EC 4.2.1.x hydro-lyases depends on recognizing the specific protein family or knowing the substrate specificity—item-specific facts not inferable from general enzymology. The annotation itself is similarity-inferred (ECO:0000305), and the source paper labels the gene 'putative,' underscoring that even the database assignment rests on homology rather than a de novo structural/functional argument.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Both 4.2.1.70 and 4.2.1.18 are hydro-lyases (hydratases) within the EC 4.2.1.x class. A model reasoning from the crotonase fold and mitochondrial targeting could plausibly select either without additional substrate-specific knowledge. The evidence unambiguously supports D, but the question text alone does not provide a decisive argument to exclude A over D for a model lacking memorized family-level identification.
-
-
-### Important caveats
-
-- The UniProt annotation uses evidence code ECO:0000305 (inferred by similarity), not direct experimental enzyme assay. The source paper (PubMed:32431008) describes MoAUH1 as a 'putative' methylglutaconyl-CoA hydratase.
-- The accession G4N954 and its Swiss-Prot status were established from reviewer-only metadata absent from the model input; the model only saw the raw 349-aa sequence.
-- EC 4.2.1.70's exact identity was not independently verified from the evidence provided; its presence as a distractor is assumed based on the multiple-choice set.
-- The historical entry (v54) and current entry (v56) both confirm EC=4.2.1.18, so the annotation is stable across the relevant time window.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal region (MPPVSRILSYAPRVAIRPSSQLARPARAFAVGTVRYYSAEQPEEPLIRVTDLPAPNSGHIRVLELNRPKARNAISRALLASLREEVHSIARQYDAQTGEEIPTPSWNKRFGGIAGDSEKGPTRALVLASAVESSFCAGADLKERRGFTQEETNEFLANLRSTFAALDALPIPTISAISSRALGGGLELALCTHFRVLTSNAIVSLPETRLGIIPGAGGTHRLPRLIGLGRARDMIVTGRAVSGAEAYFLGLADRLVEVLPPDEQEAADTTDKDAALLSAAREAALTEAVRLASQICEGGPIGIRAALQAVQAPSQETENKMYERVIGTEDRNEALKAFAEKRKPVFKGR) contains a mitochondrial targeting peptide (Arg-rich, hydroxylated residues), and the core domain exhibits a crotonase-superfamily hydratase fold. This reasoning can eliminate B (isomerase, EC 5) and C (oxidoreductase, EC 1), narrowing to A (4.2.1.70) or D (4.2.1.18). However, distinguishing these two specific hydro-lyase EC numbers requires knowledge of the exact substrate (methylglutaconyl-CoA vs. whatever 4.2.1.70 acts on), which is not derivable from general biological reasoning about the fold alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate-binding pocket residues and active-site architecture that distinguish methylglutaconyl-CoA hydratase (EC 4.2.1.18) from the enzyme designated EC 4.2.1.70 within the crotonase superfamily, or direct recognition of this protein as AUH1_PYRO7 from its database entry.",
-    "reason": "While the mitochondrial targeting sequence and crotonase-like fold provide meaningful reasoning to eliminate isomerase and oxidoreductase options, the final choice between two EC 4.2.1.x hydro-lyases depends on recognizing the specific protein family or knowing the substrate specificity—item-specific facts not inferable from general enzymology. The annotation itself is similarity-inferred (ECO:0000305), and the source paper labels the gene 'putative,' underscoring that even the database assignment rests on homology rather than a de novo structural/functional argument."
-  },
-  "case_id": "EC_number_0032",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry G4N954 (AUH1_PYRO7) exactly (SHA256 confirmed). The entry is annotated as 'Methylglutaconyl-CoA hydratase 1, mitochondrial' with EC=4.2.1.18, supported by evidence code ECO:0000305 (inferred by similarity) referencing PubMed:32431008. The catalytic activity (HMG-CoA → 3-methylglutaconyl-CoA + H₂O) is explicitly listed. Both the current entry (v56) and the historical archived entry (v54, released 2026-01-28) confirm EC=4.2.1.18. Note: the annotation is similarity-inferred, not direct experimental enzymatic assay, and the source paper uses the word 'putative' in its title."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses evidence code ECO:0000305 (inferred by similarity), not direct experimental enzyme assay. The source paper (PubMed:32431008) describes MoAUH1 as a 'putative' methylglutaconyl-CoA hydratase.",
-    "The accession G4N954 and its Swiss-Prot status were established from reviewer-only metadata absent from the model input; the model only saw the raw 349-aa sequence.",
-    "EC 4.2.1.70's exact identity was not independently verified from the evidence provided; its presence as a distractor is assumed based on the multiple-choice set.",
-    "The historical entry (v54) and current entry (v56) both confirm EC=4.2.1.18, so the annotation is stable across the relevant time window."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Both 4.2.1.70 and 4.2.1.18 are hydro-lyases (hydratases) within the EC 4.2.1.x class. A model reasoning from the crotonase fold and mitochondrial targeting could plausibly select either without additional substrate-specific knowledge. The evidence unambiguously supports D, but the question text alone does not provide a decisive argument to exclude A over D for a model lacking memorized family-level identification."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0032",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry G4N954 (AUH1_PYRO7) exactly (SHA256 confirmed). The entry is annotated as 'Methylglutaconyl-CoA hydratase 1, mitochondrial' with EC=4.2.1.18, supported by evidence code ECO:0000305 (inferred by similarity) referencing PubMed:32431008. The catalytic activity (HMG-CoA → 3-methylglutaconyl-CoA + H₂O) is explicitly listed. Both the current entry (v56) and the historical archived entry (v54, released 2026-01-28) confirm EC=4.2.1.18. Note: the annotation is similarity-inferred, not direct experimental enzymatic assay, and the source paper uses the word 'putative' in its title.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal region (MPPVSRILSYAPRVAIRPSSQLARPARAFAVGTVRYYSAEQPEEPLIRVTDLPAPNSGHIRVLELNRPKARNAISRALLASLREEVHSIARQYDAQTGEEIPTPSWNKRFGGIAGDSEKGPTRALVLASAVESSFCAGADLKERRGFTQEETNEFLANLRSTFAALDALPIPTISAISSRALGGGLELALCTHFRVLTSNAIVSLPETRLGIIPGAGGTHRLPRLIGLGRARDMIVTGRAVSGAEAYFLGLADRLVEVLPPDEQEAADTTDKDAALLSAAREAALTEAVRLASQICEGGPIGIRAALQAVQAPSQETENKMYERVIGTEDRNEALKAFAEKRKPVFKGR) contains a mitochondrial targeting peptide (Arg-rich, hydroxylated residues), and the core domain exhibits a crotonase-superfamily hydratase fold. This reasoning can eliminate B (isomerase, EC 5) and C (oxidoreductase, EC 1), narrowing to A (4.2.1.70) or D (4.2.1.18). However, distinguishing these two specific hydro-lyase EC numbers requires knowledge of the exact substrate (methylglutaconyl-CoA vs. whatever 4.2.1.70 acts on), which is not derivable from general biological reasoning about the fold alone.",
-    "missing_item_specific_fact": "The specific substrate-binding pocket residues and active-site architecture that distinguish methylglutaconyl-CoA hydratase (EC 4.2.1.18) from the enzyme designated EC 4.2.1.70 within the crotonase superfamily, or direct recognition of this protein as AUH1_PYRO7 from its database entry.",
-    "reason": "While the mitochondrial targeting sequence and crotonase-like fold provide meaningful reasoning to eliminate isomerase and oxidoreductase options, the final choice between two EC 4.2.1.x hydro-lyases depends on recognizing the specific protein family or knowing the substrate specificity—item-specific facts not inferable from general enzymology. The annotation itself is similarity-inferred (ECO:0000305), and the source paper labels the gene 'putative,' underscoring that even the database assignment rests on homology rather than a de novo structural/functional argument."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Both 4.2.1.70 and 4.2.1.18 are hydro-lyases (hydratases) within the EC 4.2.1.x class. A model reasoning from the crotonase fold and mitochondrial targeting could plausibly select either without additional substrate-specific knowledge. The evidence unambiguously supports D, but the question text alone does not provide a decisive argument to exclude A over D for a model lacking memorized family-level identification."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses evidence code ECO:0000305 (inferred by similarity), not direct experimental enzyme assay. The source paper (PubMed:32431008) describes MoAUH1 as a 'putative' methylglutaconyl-CoA hydratase.",
-    "The accession G4N954 and its Swiss-Prot status were established from reviewer-only metadata absent from the model input; the model only saw the raw 349-aa sequence.",
-    "EC 4.2.1.70's exact identity was not independently verified from the evidence provided; its presence as a distractor is assumed based on the multiple-choice set.",
-    "The historical entry (v54) and current entry (v56) both confirm EC=4.2.1.18, so the annotation is stable across the relevant time window."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -400,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G4N954",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 349,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
   "current_entry_audit": {
     "entryVersion": 56,
     "firstPublicDate": "2025-06-18",
@@ -549,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-12-14",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "current_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 349,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 54,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G4N954",
   "selected_historical_entry_version": 54,
+  "selected_historical_record_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "selected_historical_source_sequence_length": 349,
+  "selected_historical_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
   "selected_historical_version": {
     "accession": "G4N954",
     "database": "Swiss-Prot",
@@ -567,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AUH1_PYRO7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "selected_historical_source_sequence_sha256": "5e891c748ec2835aa75f719bfdb800087960d21c8e74e2457645a7ad7fbe7243",
-  "selected_historical_source_sequence_length": 349,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 54,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G4N954\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -617,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":56,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-12-14\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -636,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rice blast fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Magnaporthales\",\"Pyriculariaceae\",\"Pyricularia\"],\"scientificName\":\"Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958)\",\"synonyms\":[\"Magnaporthe oryzae\"],\"taxonId\":242507}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -655,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32431008\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.18\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32431008\",\"source\":\"PubMed\"}],\"value\":\"Methylglutaconyl-CoA hydratase 1, mitochondrial\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -674,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"4.2.1.18\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"32431008\",\"source\":\"PubMed\"}],\"name\":\"(3S)-3-hydroxy-3-methylglutaryl-CoA = 3-methyl-(2E)-glutaconyl-CoA + H2O\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:21536\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43074\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57346\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -693,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json",
-  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
-  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Xiao Y.\",\"Liu L.\",\"Zhang T.\",\"Zhou R.\",\"Ren Y.\",\"Li X.\",\"Shu H.\",\"Ye W.\",\"Zheng X.\",\"Zhang Z.\",\"Zhang H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32431008\"},{\"database\":\"DOI\",\"id\":\"10.1111/1462-2920.15088\"}],\"citationType\":\"journal article\",\"firstPage\":\"774\",\"id\":\"32431008\",\"journal\":\"Environ. Microbiol.\",\"lastPage\":\"790\",\"publicationDate\":\"2021\",\"title\":\"Transcription factor MoMsn2 targets the putative 3-methylglutaconyl-CoA hydratase-encoding gene MoAUH1 to govern infectious growth via mitochondrial fusion/fission balance in Magnaporthe oryzae.\",\"volume\":\"23\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:45.109101+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "f1feb70a0aa6ce77a3f46c3887f39c0438ffbec8f1dda03d658acd878f87049c",
+  "url": "https://rest.uniprot.org/uniprotkb/G4N954.json"
 }
 ```
 
@@ -711,18 +459,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54",
-  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   AUH1_PYRO7              Reviewed;         349 AA.\nAC   G4N954;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   14-DEC-2011, sequence version 1.\nDT   28-JAN-2026, entry version 54.\nDE   RecName: Full=Methylglutaconyl-CoA hydratase 1, mitochondrial {ECO:0000303|PubMed:32431008};\nDE            EC=4.2.1.18 {ECO:0000305|PubMed:32431008};\nDE   Flags: Precursor;\nGN   Name=AUH1 {ECO:0000303|PubMed:32431008}; ORFNames=MGG_03335;\nOS   Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice blast\nOS   fungus) (Magnaporthe oryzae).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Magnaporthales; Pyriculariaceae; Pyricularia.\nOX   NCBI_TaxID=242507;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54"
 }
 ```
 
@@ -732,18 +480,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54",
-  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Methylglutaconyl-CoA hydratase 1, mitochondrial {ECO:0000303|PubMed:32431008};\nDE            EC=4.2.1.18 {ECO:0000305|PubMed:32431008};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54"
 }
 ```
 
@@ -753,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54",
-  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND SUBCELLULAR LOCATION.\nRX   PubMed=32431008; DOI=10.1111/1462-2920.15088;\nRA   Xiao Y., Liu L., Zhang T., Zhou R., Ren Y., Li X., Shu H., Ye W., Zheng X.,\nRA   Zhang Z., Zhang H.;\nRT   \"Transcription factor MoMsn2 targets the putative 3-methylglutaconyl-CoA\nRT   hydratase-encoding gene MoAUH1 to govern infectious growth via\nRT   mitochondrial fusion/fission balance in Magnaporthe oryzae.\";\nRL   Environ. Microbiol. 23:774-790(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54"
 }
 ```
 
@@ -774,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54",
-  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
-  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
-  "source_locator": "lines 44-48",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=(3S)-3-hydroxy-3-methylglutaryl-CoA = 3-methyl-(2E)-\nCC         glutaconyl-CoA + H2O; Xref=Rhea:RHEA:21536, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:43074, ChEBI:CHEBI:57346; EC=4.2.1.18;\nCC         Evidence={ECO:0000305|PubMed:32431008};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:47.046190+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0442f2ae47a56feb93ddf2851830770bbc3cdc78cf17135612d99cf022c5c856",
+  "url": "https://rest.uniprot.org/unisave/G4N954?format=txt&versions=54"
 }
 ```
 

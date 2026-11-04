@@ -1,18 +1,16 @@
-# GO_molecular_function_0006: before and after transfer clarification
+# GO_molecular_function_0006
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0006.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0006.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — mitochondrion autophagosome adaptor activity
+**Expected answer:** **C** — mitochondrion autophagosome adaptor activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt record annotated with mitochondrion autophagosome adaptor activity. The annotation is computational (IEA:InterPro), so it supports the key as a database-based inference, not as experimental validation.
-
-Citations as saved: [H2](#evidence-h2), [C5](#evidence-c5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The supplied short sequence and choices provide no clear motif or other biological evidence that specifically distinguishes a mitophagy adaptor from the alternatives.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific InterPro-based GO annotation, or equivalent protein-specific functional evidence, is needed to identify choice C.
-
-
-**Reason**
-
-> The key is supported by an annotation attached to the matching sequence, but that specific annotation is absent from the question. Inferring it would require item-specific lookup or prior knowledge, not general reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The input does not establish any of the specific functions; the reviewer-only annotation supports C, but does not make the other options defensible.
-
-
-### Important caveats
-
-- The GO annotation is IEA:InterPro and should not be presented as direct experimental evidence.
-- The historical matching record supports that the annotation existed by the stated cutoff, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied short sequence and choices provide no clear motif or other biological evidence that specifically distinguishes a mitophagy adaptor from the alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific InterPro-based GO annotation, or equivalent protein-specific functional evidence, is needed to identify choice C.",
-    "reason": "The key is supported by an annotation attached to the matching sequence, but that specific annotation is absent from the question. Inferring it would require item-specific lookup or prior knowledge, not general reasoning from the supplied input."
-  },
-  "case_id": "GO_molecular_function_0006",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H2",
-      "C5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt record annotated with mitochondrion autophagosome adaptor activity. The annotation is computational (IEA:InterPro), so it supports the key as a database-based inference, not as experimental validation."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA:InterPro and should not be presented as direct experimental evidence.",
-    "The historical matching record supports that the annotation existed by the stated cutoff, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The input does not establish any of the specific functions; the reviewer-only annotation supports C, but does not make the other options defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0006",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt record annotated with mitochondrion autophagosome adaptor activity. The annotation is computational (IEA:InterPro), so it supports the key as a database-based inference, not as experimental validation.",
-    "evidence_ids": ["H2", "C5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The supplied short sequence and choices provide no clear motif or other biological evidence that specifically distinguishes a mitophagy adaptor from the alternatives.",
-    "missing_item_specific_fact": "The sequence-specific InterPro-based GO annotation, or equivalent protein-specific functional evidence, is needed to identify choice C.",
-    "reason": "The key is supported by an annotation attached to the matching sequence, but that specific annotation is absent from the question. Inferring it would require item-specific lookup or prior knowledge, not general reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The input does not establish any of the specific functions; the reviewer-only annotation supports C, but does not make the other options defensible."
-  },
-  "important_caveats": [
-    "The GO annotation is IEA:InterPro and should not be presented as direct experimental evidence.",
-    "The historical matching record supports that the annotation existed by the stated cutoff, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry P9WEJ4 (sequence matched, 96 aa, S. cerevisiae) carries GO:0140580 'mitochondrion autophagosome adaptor activity' as its sole molecular-function GO annotation. However, the evidence code is IEA:InterPro (computational domain-pattern match), and the protein is explicitly named 'Uncharacterized protein YFR035W-A' (ECO:0000305). The database annotation supports the key, but it is a purely computational inference with no experimental validation.
-
-Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2), [C4](#evidence-c4), [C1](#evidence-c1), [C3](#evidence-c3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Option A (host cell surface receptor binding) is a function characteristic of pathogens (viruses, bacteria, parasites) that must engage host-cell receptors; a small endogenous S. cerevisiae protein is implausibly assigned this function. Options B (ubiquitin-like protein transferase) and D (3-keto-5-aminohexanoate cleavage) require specific catalytic machinery (e.g., RING/HECT/U-box cysteine motifs for B; a CoA-transferase active-site architecture for D) that is not identifiable in this 96-aa sequence. By elimination, C is the least implausible option. Additionally, the C-terminal hydrophobic stretch (VLLMPLLQSFVLSLALMGVKEWLSYIRLKGRTLGDRIRQRLFPI) is consistent with a single-pass transmembrane anchor, and the WLS motif near the C-terminus loosely resembles the WLM mitophagy-receptor motif, providing a weak positive signal for a small mitochondrial outer-membrane adaptor.
-
-
-**Missing item-specific fact**
-
-> The positive assignment to C rests on recognizing the WLS/WLM-like motif and TM topology as diagnostic of a mitophagy adaptor, which is domain-specific pattern knowledge (the canonical WLM motif is W-L-M; here it is W-L-S). The protein is explicitly 'uncharacterized' with only IEA:InterPro evidence, so no experimental data confirm the function. A reader unfamiliar with the WLM mitophagy-receptor motif family would struggle to positively identify C beyond elimination.
-
-
-**Reason**
-
-> Meaningful elimination of A, B, and D is achievable through general biological reasoning (yeast ≠ pathogen; absence of catalytic motifs). The positive identification of C is weaker and relies on domain-specific pattern recognition (WLM-like motif + TM anchor), but the elimination argument alone provides defensible grounds to select C over the alternatives.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Option A is strongly implausible for a yeast protein (host-cell receptor binding is a pathogen function). Options B and D require catalytic domains clearly absent from the sequence. Option C is the only remaining plausible assignment, even though its positive identification is supported only by a weak motif resemblance and a computational annotation.
-
-
-### Important caveats
-
-- The protein is explicitly 'Uncharacterized protein YFR035W-A' (ECO:0000305); no experimental evidence supports any molecular function assignment.
-- The sole GO molecular-function annotation carries evidence code IEA:InterPro, i.e., it is a computational domain-pattern match, not experimental data.
-- The WLS motif observed in the sequence is a variant of the canonical WLM mitophagy-receptor motif (W-L-M); the match is imperfect and the biological significance is uncertain for a 96-aa protein.
-- The canonical yeast mitophagy receptor Atg32 is ~400 aa; this 96-aa protein is far shorter, making the mitophagy-adaptor assignment atypical.
-- The accession P9WEJ4 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model, which saw only the raw sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Option A (host cell surface receptor binding) is a function characteristic of pathogens (viruses, bacteria, parasites) that must engage host-cell receptors; a small endogenous S. cerevisiae protein is implausibly assigned this function. Options B (ubiquitin-like protein transferase) and D (3-keto-5-aminohexanoate cleavage) require specific catalytic machinery (e.g., RING/HECT/U-box cysteine motifs for B; a CoA-transferase active-site architecture for D) that is not identifiable in this 96-aa sequence. By elimination, C is the least implausible option. Additionally, the C-terminal hydrophobic stretch (VLLMPLLQSFVLSLALMGVKEWLSYIRLKGRTLGDRIRQRLFPI) is consistent with a single-pass transmembrane anchor, and the WLS motif near the C-terminus loosely resembles the WLM mitophagy-receptor motif, providing a weak positive signal for a small mitochondrial outer-membrane adaptor.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The positive assignment to C rests on recognizing the WLS/WLM-like motif and TM topology as diagnostic of a mitophagy adaptor, which is domain-specific pattern knowledge (the canonical WLM motif is W-L-M; here it is W-L-S). The protein is explicitly 'uncharacterized' with only IEA:InterPro evidence, so no experimental data confirm the function. A reader unfamiliar with the WLM mitophagy-receptor motif family would struggle to positively identify C beyond elimination.",
-    "reason": "Meaningful elimination of A, B, and D is achievable through general biological reasoning (yeast ≠ pathogen; absence of catalytic motifs). The positive identification of C is weaker and relies on domain-specific pattern recognition (WLM-like motif + TM anchor), but the elimination argument alone provides defensible grounds to select C over the alternatives."
-  },
-  "case_id": "GO_molecular_function_0006",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H2",
-      "C4",
-      "C1",
-      "C3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry P9WEJ4 (sequence matched, 96 aa, S. cerevisiae) carries GO:0140580 'mitochondrion autophagosome adaptor activity' as its sole molecular-function GO annotation. However, the evidence code is IEA:InterPro (computational domain-pattern match), and the protein is explicitly named 'Uncharacterized protein YFR035W-A' (ECO:0000305). The database annotation supports the key, but it is a purely computational inference with no experimental validation."
-  },
-  "important_caveats": [
-    "The protein is explicitly 'Uncharacterized protein YFR035W-A' (ECO:0000305); no experimental evidence supports any molecular function assignment.",
-    "The sole GO molecular-function annotation carries evidence code IEA:InterPro, i.e., it is a computational domain-pattern match, not experimental data.",
-    "The WLS motif observed in the sequence is a variant of the canonical WLM mitophagy-receptor motif (W-L-M); the match is imperfect and the biological significance is uncertain for a 96-aa protein.",
-    "The canonical yeast mitophagy receptor Atg32 is ~400 aa; this 96-aa protein is far shorter, making the mitophagy-adaptor assignment atypical.",
-    "The accession P9WEJ4 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model, which saw only the raw sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option A is strongly implausible for a yeast protein (host-cell receptor binding is a pathogen function). Options B and D require catalytic domains clearly absent from the sequence. Option C is the only remaining plausible assignment, even though its positive identification is supported only by a weak motif resemblance and a computational annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0006",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry P9WEJ4 (sequence matched, 96 aa, S. cerevisiae) carries GO:0140580 'mitochondrion autophagosome adaptor activity' as its sole molecular-function GO annotation. However, the evidence code is IEA:InterPro (computational domain-pattern match), and the protein is explicitly named 'Uncharacterized protein YFR035W-A' (ECO:0000305). The database annotation supports the key, but it is a purely computational inference with no experimental validation.",
-    "evidence_ids": ["C5", "H2", "C4", "C1", "C3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Option A (host cell surface receptor binding) is a function characteristic of pathogens (viruses, bacteria, parasites) that must engage host-cell receptors; a small endogenous S. cerevisiae protein is implausibly assigned this function. Options B (ubiquitin-like protein transferase) and D (3-keto-5-aminohexanoate cleavage) require specific catalytic machinery (e.g., RING/HECT/U-box cysteine motifs for B; a CoA-transferase active-site architecture for D) that is not identifiable in this 96-aa sequence. By elimination, C is the least implausible option. Additionally, the C-terminal hydrophobic stretch (VLLMPLLQSFVLSLALMGVKEWLSYIRLKGRTLGDRIRQRLFPI) is consistent with a single-pass transmembrane anchor, and the WLS motif near the C-terminus loosely resembles the WLM mitophagy-receptor motif, providing a weak positive signal for a small mitochondrial outer-membrane adaptor.",
-    "missing_item_specific_fact": "The positive assignment to C rests on recognizing the WLS/WLM-like motif and TM topology as diagnostic of a mitophagy adaptor, which is domain-specific pattern knowledge (the canonical WLM motif is W-L-M; here it is W-L-S). The protein is explicitly 'uncharacterized' with only IEA:InterPro evidence, so no experimental data confirm the function. A reader unfamiliar with the WLM mitophagy-receptor motif family would struggle to positively identify C beyond elimination.",
-    "reason": "Meaningful elimination of A, B, and D is achievable through general biological reasoning (yeast ≠ pathogen; absence of catalytic motifs). The positive identification of C is weaker and relies on domain-specific pattern recognition (WLM-like motif + TM anchor), but the elimination argument alone provides defensible grounds to select C over the alternatives."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Option A is strongly implausible for a yeast protein (host-cell receptor binding is a pathogen function). Options B and D require catalytic domains clearly absent from the sequence. Option C is the only remaining plausible assignment, even though its positive identification is supported only by a weak motif resemblance and a computational annotation."
-  },
-  "important_caveats": [
-    "The protein is explicitly 'Uncharacterized protein YFR035W-A' (ECO:0000305); no experimental evidence supports any molecular function assignment.",
-    "The sole GO molecular-function annotation carries evidence code IEA:InterPro, i.e., it is a computational domain-pattern match, not experimental data.",
-    "The WLS motif observed in the sequence is a variant of the canonical WLM mitophagy-receptor motif (W-L-M); the match is imperfect and the biological significance is uncertain for a 96-aa protein.",
-    "The canonical yeast mitophagy receptor Atg32 is ~400 aa; this 96-aa protein is far shorter, making the mitophagy-adaptor assignment atypical.",
-    "The accession P9WEJ4 was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model, which saw only the raw sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P9WEJ4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 96,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
   "current_entry_audit": {
     "entryVersion": 5,
     "firstPublicDate": "2025-02-05",
@@ -537,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
-  "current_source_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 96,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P9WEJ4",
   "selected_historical_entry_version": 4,
+  "selected_historical_record_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
+  "selected_historical_source_sequence_length": 96,
+  "selected_historical_source_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
   "selected_historical_version": {
     "accession": "P9WEJ4",
     "database": "Swiss-Prot",
@@ -555,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "YF035_YEAST",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
-  "selected_historical_source_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
-  "selected_historical_source_sequence_length": 96,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 4,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
-  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
-  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P9WEJ4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json"
 }
 ```
 
@@ -609,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
-  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
-  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":5,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json"
 }
 ```
 
@@ -628,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
-  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
-  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Baker's yeast\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Saccharomycetes\",\"Saccharomycetales\",\"Saccharomycetaceae\",\"Saccharomyces\"],\"scientificName\":\"Saccharomyces cerevisiae (strain ATCC 204508 / S288c)\",\"taxonId\":559292}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json"
 }
 ```
 
@@ -647,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
-  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
-  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Uncharacterized protein YFR035W-A\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json"
 }
 ```
 
@@ -666,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
-  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
-  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0140580\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:mitochondrion autophagosome adaptor activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json"
 }
 ```
 
@@ -684,18 +442,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4",
-  "source_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
-  "retrieved_utc": "2026-11-02T04:30:21.235682+00:00",
-  "source_locator": "lines 1-11",
   "excerpt": "ID   YF035_YEAST             Reviewed;          96 AA.\nAC   P9WEJ4; A0AAT9JB48;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=Uncharacterized protein YFR035W-A {ECO:0000305};\nGN   OrderedLocusNames=YFR035W-A {ECO:0000312|SGD:S000350095};\nOS   Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Saccharomycetes;\nOC   Saccharomycetales; Saccharomycetaceae; Saccharomyces.\nOX   NCBI_TaxID=559292;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:30:21.235682+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-11",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
+  "url": "https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4"
 }
 ```
 
@@ -705,18 +463,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 4,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4",
-  "source_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
-  "retrieved_utc": "2026-11-02T04:30:21.235682+00:00",
-  "source_locator": "lines 61-61",
   "excerpt": "DR   GO; GO:0140580; F:mitochondrion autophagosome adaptor activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 4,
+  "retrieved_utc": "2026-11-02T04:30:21.235682+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-61",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
+  "url": "https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4"
 }
 ```
 
@@ -727,15 +485,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 153098-153118",
   "excerpt": "[Term]\nid: GO:0019787\nname: ubiquitin-like protein transferase activity\nnamespace: molecular_function\nalt_id: GO:0008639\nalt_id: GO:0008640\ndef: \"Catalysis of the transfer of a ubiquitin-like from one protein to another via the reaction X-ULP + Y = Y-ULP + X, where both X-ULP and Y-ULP are covalent linkages. ULP represents a ubiquitin-like protein.\" [GOC:mah, GOC:rn, PMID:10806345, PMID:10884686]\nsubset: goslim_drosophila\nsubset: goslim_pir\nsynonym: \"E2\" BROAD []\nsynonym: \"E3\" RELATED [GOC:dph]\nsynonym: \"small conjugating protein ligase activity\" NARROW [GOC:dph]\nsynonym: \"small conjugating protein transferase activity\" EXACT [GOC:dph]\nsynonym: \"small protein conjugating enzyme activity\" NARROW []\nsynonym: \"ubiquitin-like conjugating enzyme activity\" NARROW []\nsynonym: \"ubiquitin-like-protein ligase activity\" NARROW []\nxref: Reactome:R-HSA-5678490 \"ATG16L1 complex transfers LC3 from ATG3 to PE\"\nxref: Reactome:R-HSA-688137 \"RIP2 is K63 polyubiquitinated\"\nis_a: GO:0016755 ! aminoacyltransferase activity\nis_a: GO:0140096 ! catalytic activity, acting on a protein\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019787",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 153098-153118",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019787"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -746,15 +504,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 250073-250083",
   "excerpt": "[Term]\nid: GO:0043720\nname: 3-keto-5-aminohexanoate cleavage activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: 3-keto-5-aminohexanoate + acetyl-CoA = L-3-aminobutyryl-CoA + acetoacetate.\" [MetaCyc:R125-RXN, PMID:13064]\nsynonym: \"3-keto-5-aminohexanoate cleavage enzyme\" EXACT []\nxref: MetaCyc:R125-RXN\nxref: RHEA:31555\nis_a: GO:0016747 ! acyltransferase activity, transferring groups other than amino-acyl groups\nproperty_value: skos:exactMatch RHEA:31555\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043720",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 250073-250083",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043720"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -765,15 +523,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 280483-280492",
   "excerpt": "[Term]\nid: GO:0046789\nname: host cell surface receptor binding\nnamespace: molecular_function\ndef: \"Binding to a receptor on the host cell surface.\" [GOC:ai, PMID:11511370]\nsubset: goslim_chembl\nsynonym: \"cell surface antigen activity, host-interacting\" RELATED []\nsynonym: \"cell surface receptor ligand\" RELATED []\nis_a: GO:0046812 ! host cell surface binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046789",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 280483-280492",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046789"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -784,15 +542,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 441562-441569",
   "excerpt": "[Term]\nid: GO:0140580\nname: mitochondrion autophagosome adaptor activity\nnamespace: molecular_function\ndef: \"The binding activity of a molecule that brings together a mitochondrial membrane and an autophagosome membrane during mitophagy.\" [PMID:33138913]\nsynonym: \"mitophagy receptor\" EXACT []\nis_a: GO:0160183 ! autophagosome-membrane adaptor activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0140580",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 441562-441569",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0140580"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

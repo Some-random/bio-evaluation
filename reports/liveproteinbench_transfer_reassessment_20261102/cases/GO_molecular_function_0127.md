@@ -1,18 +1,16 @@
-# GO_molecular_function_0127: before and after transfer clarification
+# GO_molecular_function_0127
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0127.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0127.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **C** — sodium channel inhibitor activity
+**Expected answer:** **C** — sodium channel inhibitor activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry assigns sodium channel inhibitor activity by IEA:InterPro, including in the historical record. This supports the key as a computational GO annotation, not as an experimentally demonstrated activity in the supplied evidence; the cited experimental function is antimicrobial activity.
-
-Citations as saved: [C6](#evidence-c6), [H4](#evidence-h4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The cysteine-rich peptide sequence is compatible with a scorpion venom peptide and makes chaperone, calcium-channel pore, and histone-reader functions poor fits. That general clue does not establish sodium-channel inhibition specifically.
-
-
-**Missing item-specific fact**
-
-> A protein-specific sodium-channel inhibitor annotation or functional measurement is needed to distinguish C from other possible activities of a venom peptide.
-
-
-**Reason**
-
-> The key is supported by an external computational annotation, but the input sequence and choices do not provide a decisive biological argument for this precise function.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only C is a plausible choice among those listed for a venom peptide, though the sequence alone does not establish that specific activity.
-
-
-### Important caveats
-
-- The GO sodium-channel annotation is IEA:InterPro, not experimental evidence.
-- The matched entry cites experimental antimicrobial activity; the excerpts do not establish sodium-channel inhibition experimentally.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The cysteine-rich peptide sequence is compatible with a scorpion venom peptide and makes chaperone, calcium-channel pore, and histone-reader functions poor fits. That general clue does not establish sodium-channel inhibition specifically.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "A protein-specific sodium-channel inhibitor annotation or functional measurement is needed to distinguish C from other possible activities of a venom peptide.",
-    "reason": "The key is supported by an external computational annotation, but the input sequence and choices do not provide a decisive biological argument for this precise function."
-  },
-  "case_id": "GO_molecular_function_0127",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry assigns sodium channel inhibitor activity by IEA:InterPro, including in the historical record. This supports the key as a computational GO annotation, not as an experimentally demonstrated activity in the supplied evidence; the cited experimental function is antimicrobial activity."
-  },
-  "important_caveats": [
-    "The GO sodium-channel annotation is IEA:InterPro, not experimental evidence.",
-    "The matched entry cites experimental antimicrobial activity; the excerpts do not establish sodium-channel inhibition experimentally."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only C is a plausible choice among those listed for a venom peptide, though the sequence alone does not establish that specific activity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0127",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry assigns sodium channel inhibitor activity by IEA:InterPro, including in the historical record. This supports the key as a computational GO annotation, not as an experimentally demonstrated activity in the supplied evidence; the cited experimental function is antimicrobial activity.",
-    "evidence_ids": ["C6", "H4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The cysteine-rich peptide sequence is compatible with a scorpion venom peptide and makes chaperone, calcium-channel pore, and histone-reader functions poor fits. That general clue does not establish sodium-channel inhibition specifically.",
-    "missing_item_specific_fact": "A protein-specific sodium-channel inhibitor annotation or functional measurement is needed to distinguish C from other possible activities of a venom peptide.",
-    "reason": "The key is supported by an external computational annotation, but the input sequence and choices do not provide a decisive biological argument for this precise function."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only C is a plausible choice among those listed for a venom peptide, though the sequence alone does not establish that specific activity."
-  },
-  "important_caveats": [
-    "The GO sodium-channel annotation is IEA:InterPro, not experimental evidence.",
-    "The matched entry cites experimental antimicrobial activity; the excerpts do not establish sodium-channel inhibition experimentally."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt F6K6F3 (sequence matched) carries GO:0019871 'sodium channel inhibitor activity' (evidence C6/H4), annotated via IEA:InterPro. The peptide is named MeuNaTxbeta-2 (NaTx = sodium channel toxin family), from scorpion venom. However, the primary experimental evidence (PubMed:29770866, ECO:0000269) describes antimicrobial activity, not direct sodium channel inhibition. The sodium channel inhibitor annotation is a computational family-membership inference (IEA:InterPro), not experimentally demonstrated channel inhibition. The key is supported by database annotation but at a low evidence level.
-
-Citations as saved: [C6](#evidence-c6), [H4](#evidence-h4), [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 84-residue sequence contains an N-terminal hydrophobic signal peptide (MMKTVIVLIVFSLVMIVVKS) and a mature secreted region with 12 cysteines forming a small disulfide-rich peptide. This architecture is fundamentally incompatible with: (A) protein folding chaperone (requires large multi-domain proteins like HSPs, 20–100+ kDa), (B) calcium channel activity (requires a transmembrane pore-forming protein with multiple helical segments), and (D) histone reader activity (requires nuclear chromatin-binding domains such as bromodomain/PHD finger). Among the four choices, only C (sodium channel inhibitor activity) is consistent with a small, secreted, disulfide-stabilized peptide that acts as a toxin modulating ion channels—a well-known class of venom peptides.
-
-
-**Missing item-specific fact**
-
-> None strictly required to select C among the given four options; elimination of A, B, D by basic structural biology leaves C as the only plausible choice for a small secreted cysteine-rich peptide.
-
-
-**Reason**
-
-> The sequence features (small size, signal peptide, high cysteine content, no transmembrane segments, no catalytic or binding domains for chaperone/channel/histone-reader functions) allow a model with general biological knowledge to eliminate three options and select C without needing to identify the exact UniProt entry or recall a specific database annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four provided choices, A, B, and D are structurally and functionally incompatible with a small secreted disulfide-rich peptide. C is the only option consistent with the observed sequence architecture. Although the UniProt entry also annotates GO:0090729 'toxin activity' and experimental evidence describes antimicrobial activity, neither is offered as a choice, so no ambiguity exists within the given options.
-
-
-### Important caveats
-
-- The GO:0019871 annotation is IEA:InterPro (computational inference from InterPro domain match), not experimental demonstration of sodium channel inhibition.
-- The primary experimental evidence (PubMed:29770866) characterizes this peptide as an antimicrobial peptide, not as a sodium channel inhibitor per se.
-- The peptide name 'MeuNaTxbeta-2' reflects family membership in the NaTx toxin superfamily, which is the basis for the InterPro-based GO assignment.
-- All reviewer evidence is post-hoc; the evaluated model only sees the raw sequence and four options.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 84-residue sequence contains an N-terminal hydrophobic signal peptide (MMKTVIVLIVFSLVMIVVKS) and a mature secreted region with 12 cysteines forming a small disulfide-rich peptide. This architecture is fundamentally incompatible with: (A) protein folding chaperone (requires large multi-domain proteins like HSPs, 20–100+ kDa), (B) calcium channel activity (requires a transmembrane pore-forming protein with multiple helical segments), and (D) histone reader activity (requires nuclear chromatin-binding domains such as bromodomain/PHD finger). Among the four choices, only C (sodium channel inhibitor activity) is consistent with a small, secreted, disulfide-stabilized peptide that acts as a toxin modulating ion channels—a well-known class of venom peptides.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required to select C among the given four options; elimination of A, B, D by basic structural biology leaves C as the only plausible choice for a small secreted cysteine-rich peptide.",
-    "reason": "The sequence features (small size, signal peptide, high cysteine content, no transmembrane segments, no catalytic or binding domains for chaperone/channel/histone-reader functions) allow a model with general biological knowledge to eliminate three options and select C without needing to identify the exact UniProt entry or recall a specific database annotation."
-  },
-  "case_id": "GO_molecular_function_0127",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H4",
-      "C5",
-      "H3",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt F6K6F3 (sequence matched) carries GO:0019871 'sodium channel inhibitor activity' (evidence C6/H4), annotated via IEA:InterPro. The peptide is named MeuNaTxbeta-2 (NaTx = sodium channel toxin family), from scorpion venom. However, the primary experimental evidence (PubMed:29770866, ECO:0000269) describes antimicrobial activity, not direct sodium channel inhibition. The sodium channel inhibitor annotation is a computational family-membership inference (IEA:InterPro), not experimentally demonstrated channel inhibition. The key is supported by database annotation but at a low evidence level."
-  },
-  "important_caveats": [
-    "The GO:0019871 annotation is IEA:InterPro (computational inference from InterPro domain match), not experimental demonstration of sodium channel inhibition.",
-    "The primary experimental evidence (PubMed:29770866) characterizes this peptide as an antimicrobial peptide, not as a sodium channel inhibitor per se.",
-    "The peptide name 'MeuNaTxbeta-2' reflects family membership in the NaTx toxin superfamily, which is the basis for the InterPro-based GO assignment.",
-    "All reviewer evidence is post-hoc; the evaluated model only sees the raw sequence and four options."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four provided choices, A, B, and D are structurally and functionally incompatible with a small secreted disulfide-rich peptide. C is the only option consistent with the observed sequence architecture. Although the UniProt entry also annotates GO:0090729 'toxin activity' and experimental evidence describes antimicrobial activity, neither is offered as a choice, so no ambiguity exists within the given options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0127",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt F6K6F3 (sequence matched) carries GO:0019871 'sodium channel inhibitor activity' (evidence C6/H4), annotated via IEA:InterPro. The peptide is named MeuNaTxbeta-2 (NaTx = sodium channel toxin family), from scorpion venom. However, the primary experimental evidence (PubMed:29770866, ECO:0000269) describes antimicrobial activity, not direct sodium channel inhibition. The sodium channel inhibitor annotation is a computational family-membership inference (IEA:InterPro), not experimentally demonstrated channel inhibition. The key is supported by database annotation but at a low evidence level.",
-    "evidence_ids": ["C6", "H4", "C5", "H3", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 84-residue sequence contains an N-terminal hydrophobic signal peptide (MMKTVIVLIVFSLVMIVVKS) and a mature secreted region with 12 cysteines forming a small disulfide-rich peptide. This architecture is fundamentally incompatible with: (A) protein folding chaperone (requires large multi-domain proteins like HSPs, 20–100+ kDa), (B) calcium channel activity (requires a transmembrane pore-forming protein with multiple helical segments), and (D) histone reader activity (requires nuclear chromatin-binding domains such as bromodomain/PHD finger). Among the four choices, only C (sodium channel inhibitor activity) is consistent with a small, secreted, disulfide-stabilized peptide that acts as a toxin modulating ion channels—a well-known class of venom peptides.",
-    "missing_item_specific_fact": "None strictly required to select C among the given four options; elimination of A, B, D by basic structural biology leaves C as the only plausible choice for a small secreted cysteine-rich peptide.",
-    "reason": "The sequence features (small size, signal peptide, high cysteine content, no transmembrane segments, no catalytic or binding domains for chaperone/channel/histone-reader functions) allow a model with general biological knowledge to eliminate three options and select C without needing to identify the exact UniProt entry or recall a specific database annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four provided choices, A, B, and D are structurally and functionally incompatible with a small secreted disulfide-rich peptide. C is the only option consistent with the observed sequence architecture. Although the UniProt entry also annotates GO:0090729 'toxin activity' and experimental evidence describes antimicrobial activity, neither is offered as a choice, so no ambiguity exists within the given options."
-  },
-  "important_caveats": [
-    "The GO:0019871 annotation is IEA:InterPro (computational inference from InterPro domain match), not experimental demonstration of sodium channel inhibition.",
-    "The primary experimental evidence (PubMed:29770866) characterizes this peptide as an antimicrobial peptide, not as a sodium channel inhibitor per se.",
-    "The peptide name 'MeuNaTxbeta-2' reflects family membership in the NaTx toxin superfamily, which is the basis for the InterPro-based GO assignment.",
-    "All reviewer evidence is post-hoc; the evaluated model only sees the raw sequence and four options."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "F6K6F3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8ddf03e7da5886480794207cdf93801cb23edc44e73f775d93b94c5133a566fe",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 84,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8ddf03e7da5886480794207cdf93801cb23edc44e73f775d93b94c5133a566fe",
   "current_entry_audit": {
     "entryVersion": 46,
     "firstPublicDate": "2025-02-05",
@@ -537,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-07-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "current_source_sequence_sha256": "8ddf03e7da5886480794207cdf93801cb23edc44e73f775d93b94c5133a566fe",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 84,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8ddf03e7da5886480794207cdf93801cb23edc44e73f775d93b94c5133a566fe",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 45,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "F6K6F3",
   "selected_historical_entry_version": 45,
+  "selected_historical_record_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
+  "selected_historical_source_sequence_length": 84,
+  "selected_historical_source_sequence_sha256": "8ddf03e7da5886480794207cdf93801cb23edc44e73f775d93b94c5133a566fe",
   "selected_historical_version": {
     "accession": "F6K6F3",
     "database": "Swiss-Prot",
@@ -555,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "SCX2_MESEU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
-  "selected_historical_source_sequence_sha256": "8ddf03e7da5886480794207cdf93801cb23edc44e73f775d93b94c5133a566fe",
-  "selected_historical_source_sequence_length": 84,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 45,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"F6K6F3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -609,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":46,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-07-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -628,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Lesser Asian scorpion\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Chelicerata\",\"Arachnida\",\"Scorpiones\",\"Buthida\",\"Buthoidea\",\"Buthidae\",\"Mesobuthus\"],\"scientificName\":\"Mesobuthus eupeus\",\"synonyms\":[\"Buthus eupeus\"],\"taxonId\":34648}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -647,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ADT89767.1\",\"source\":\"EMBL\"}],\"value\":\"Antibacterial peptide MeuNaTx-15\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29770866\",\"source\":\"PubMed\"}],\"value\":\"Antimicrobial peptide MeuNaTxbeta-2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"29770866\",\"source\":\"PubMed\"}],\"value\":\"MTbeta-2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -666,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29770866\",\"source\":\"PubMed\"}],\"value\":\"Antimicrobial peptide with activity against both Gram-positive and -negative bacteria\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -685,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/4",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0019871\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:sodium channel inhibitor activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/4",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -704,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/5",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0090729\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:toxin activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/5",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -723,15 +482,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json",
-  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
-  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Gao B.\",\"Dalziel J.\",\"Tanzi S.\",\"Zhu S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29770866\"},{\"database\":\"DOI\",\"id\":\"10.1007/s00726-018-2580-0\"}],\"citationType\":\"journal article\",\"firstPage\":\"1025\",\"id\":\"29770866\",\"journal\":\"Amino Acids\",\"lastPage\":\"1043\",\"publicationDate\":\"2018\",\"title\":\"Meucin-49, a multifunctional scorpion venom peptide with bactericidal synergy with neurotoxins.\",\"volume\":\"50\"},\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Venom\"},{\"type\":\"TISSUE\",\"value\":\"Venom gland\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA] OF 21-84\",\"PROTEIN SEQUENCE OF 21-40\",\"FUNCTION\",\"MASS SPECTROMETRY\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:17.591838+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f8ddf5a02bb62a6e8fdafffdf12262a0a9c5e67c732840115366acaca672a71",
+  "url": "https://rest.uniprot.org/uniprotkb/F6K6F3.json"
 }
 ```
 
@@ -741,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45",
-  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
-  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   SCX2_MESEU              Reviewed;          84 AA.\nAC   F6K6F3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-JUL-2011, sequence version 1.\nDT   28-JAN-2026, entry version 45.\nDE   RecName: Full=Antimicrobial peptide MeuNaTxbeta-2 {ECO:0000303|PubMed:29770866};\nDE            Short=MTbeta-2 {ECO:0000303|PubMed:29770866};\nDE   AltName: Full=Antibacterial peptide MeuNaTx-15 {ECO:0000312|EMBL:ADT89767.1};\nDE   Flags: Precursor;\nOS   Mesobuthus eupeus (Lesser Asian scorpion) (Buthus eupeus).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Chelicerata; Arachnida;\nOC   Scorpiones; Buthida; Buthoidea; Buthidae; Mesobuthus.\nOX   NCBI_TaxID=34648;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
+  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45"
 }
 ```
 
@@ -762,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45",
-  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
-  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
-  "source_locator": "lines 21-29",
   "excerpt": "RN   [2]\nRP   NUCLEOTIDE SEQUENCE [MRNA] OF 21-84, PROTEIN SEQUENCE OF 21-40, FUNCTION,\nRP   MASS SPECTROMETRY, AND SUBCELLULAR LOCATION.\nRC   TISSUE=Venom, and Venom gland;\nRX   PubMed=29770866; DOI=10.1007/s00726-018-2580-0;\nRA   Gao B., Dalziel J., Tanzi S., Zhu S.;\nRT   \"Meucin-49, a multifunctional scorpion venom peptide with bactericidal\nRT   synergy with neurotoxins.\";\nRL   Amino Acids 50:1025-1043(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
+  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45"
 }
 ```
 
@@ -783,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45",
-  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
-  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
-  "source_locator": "lines 30-31",
   "excerpt": "CC   -!- FUNCTION: Antimicrobial peptide with activity against both Gram-\nCC       positive and -negative bacteria. {ECO:0000269|PubMed:29770866}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
+  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45"
 }
 ```
 
@@ -804,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45",
-  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
-  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
-  "source_locator": "lines 47-47",
   "excerpt": "DR   GO; GO:0019871; F:sodium channel inhibitor activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-47",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
+  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45"
 }
 ```
 
@@ -825,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 45,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45",
-  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
-  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
-  "source_locator": "lines 48-48",
   "excerpt": "DR   GO; GO:0090729; F:toxin activity; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 45,
+  "retrieved_utc": "2026-11-02T04:28:19.832132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 48-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4f110a7548ccfcd43132cf259deffb971397d09e10bfe54c7983dbaabaeaa24c",
+  "url": "https://rest.uniprot.org/unisave/F6K6F3?format=txt&versions=45"
 }
 ```
 
@@ -847,15 +606,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 55239-55255",
   "excerpt": "[Term]\nid: GO:0005262\nname: calcium channel activity\nnamespace: molecular_function\ndef: \"Enables the energy-independent facilitated diffusion of a calcium ion through a transmembrane aqueous pore or channel.\" [GOC:mtg_transport, GOC:pr, ISBN:0815340729]\nxref: Reactome:R-HSA-139854 \"IP3R tetramer:I(1,4,5)P3:4xCa2+ transports Ca2+ from platelet dense tubular system to cytosol\"\nxref: Reactome:R-HSA-139855 \"P2X1-mediated entry of Ca++ from plasma\"\nxref: Reactome:R-HSA-210420 \"Ca2+ influx through voltage gated Ca2+ channels\"\nxref: Reactome:R-HSA-3295579 \"TRPs transport extracellular Ca2+ to cytosol\"\nxref: Reactome:R-HSA-8949145 \"VDAC1,2,3 translocate calcium from the cytosol to the mitochondrial intermembrane space\"\nxref: Reactome:R-HSA-8949178 \"MCU translocates calcium from the mitochondrial intermembrane space to the mitochondrial matrix\"\nxref: Reactome:R-HSA-9663785 \"CHRNA9:CHRNA10:AcCho transports Ca2+ from the extracellular region to the cytosol\"\nxref: Reactome:R-HSA-9858800 \"TRPV4 tetramer:CALM1:Ca2+ transports calcium ions (Ca2+) from the extracellular region to the cytosol\"\nis_a: GO:0005261 ! monoatomic cation channel activity\nis_a: GO:0015085 ! calcium ion transmembrane transporter activity\nproperty_value: skos:broadMatch RHEA:29671\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005262",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 55239-55255",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005262"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -866,15 +625,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 154099-154107",
   "excerpt": "[Term]\nid: GO:0019871\nname: sodium channel inhibitor activity\nnamespace: molecular_function\nalt_id: GO:0019868\ndef: \"Binds to and stops, prevents, or reduces the activity of a sodium channel.\" [GOC:mah]\nis_a: GO:0008200 ! ion channel inhibitor activity\nis_a: GO:0017080 ! sodium channel regulator activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019871",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 154099-154107",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019871"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -885,15 +644,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 255011-255028",
   "excerpt": "[Term]\nid: GO:0044183\nname: protein folding chaperone\nnamespace: molecular_function\ndef: \"Binding to a protein or a protein-containing complex to assist the protein folding process.\" [GOC:mtg_cambridge_2009]\ncomment: Note that a protein folding chaperone binds an unfolded protein to fold it. Do not confuse with unfolded protein holdase activity, which binds an unfolded protein and keeps it unfolded to deliver it to its final destination.\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_prokaryote\nsynonym: \"chaperone activity\" BROAD []\nsynonym: \"protein binding involved in protein folding\" EXACT []\nxref: Reactome:R-HSA-9018785 \"RHOBTB2 binds GTP\"\nxref: Reactome:R-HSA-9855212 \"SDHA binds to SDHB\"\nxref: Reactome:R-HSA-9865893 \"MT-CYB is translated\"\nxref: Reactome:R-HSA-9866253 \"apo-UQCRFS1 binds LYRM7\"\nis_a: GO:0003674 ! molecular_function\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044183",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 255011-255028",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044183"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -904,15 +663,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 441462-441470",
   "excerpt": "[Term]\nid: GO:0140566\nname: histone reader activity\nnamespace: molecular_function\ndef: \"A chromatin adaptor activity that brings together a protein and a specific form of histone, either modified by a post-translational modification, or the unmodified form. Histone readers have roles in many processes, including in centromere function or in modulating the accessibility of cis-regulatory regions to the transcription machinery.\" [PMID:11498575, PMID:25688442, PMID:31082667, PMID:34726351]\nsynonym: \"epigenetic reader\" BROAD []\nsynonym: \"histone reader\" EXACT []\nis_a: GO:0140463 ! chromatin-protein adaptor activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0140566",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 441462-441470",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0140566"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

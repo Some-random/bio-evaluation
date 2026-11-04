@@ -1,18 +1,16 @@
-# GO_molecular_function_0050: before and after transfer clarification
+# GO_molecular_function_0050
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0050.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0050.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — N6-methyladenosine-containing RNA reader activity
+**Expected answer:** **D** — N6-methyladenosine-containing RNA reader activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry G4MRQ6, which names the protein as a YTH-domain-containing family protein and annotates m6A-containing RNA reader activity. The functional description says it recognizes and binds m6A-containing mRNAs, but this specific activity is supported by similarity; the GO assignment is computational (IEA:TreeGrafter), not direct experimental evidence for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has a low-complexity region and a more structured region, but the input does not provide a clear, general-purpose motif that establishes m6A recognition. Selecting D depends on identifying the structured region as a YTH domain and knowing its specific association with m6A-reader activity.
-
-
-**Missing item-specific fact**
-
-> That this sequence belongs to the YTH-domain reader family, whose members recognize m6A-containing RNA.
-
-
-**Reason**
-
-> The family assignment and its specific ligand recognition are not stated in the question. Without that protein-family fact or a domain annotation, the sequence and choices alone do not meaningfully distinguish D from the other specific activities.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence’s annotation supports D, and the alternatives describe distinct activities with no comparable support in the supplied sequence.
-
-
-### Important caveats
-
-- The reviewer-only database evidence supports the key but was not supplied to the evaluated model.
-- The cited GO term is computationally assigned; the UniProt description attributes m6A recognition to similarity, while its cited experimental evidence concerns pathogenicity rather than direct demonstration of this protein’s RNA-binding activity.
-- The exact source snapshot used by the author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has a low-complexity region and a more structured region, but the input does not provide a clear, general-purpose motif that establishes m6A recognition. Selecting D depends on identifying the structured region as a YTH domain and knowing its specific association with m6A-reader activity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this sequence belongs to the YTH-domain reader family, whose members recognize m6A-containing RNA.",
-    "reason": "The family assignment and its specific ligand recognition are not stated in the question. Without that protein-family fact or a domain annotation, the sequence and choices alone do not meaningfully distinguish D from the other specific activities."
-  },
-  "case_id": "GO_molecular_function_0050",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry G4MRQ6, which names the protein as a YTH-domain-containing family protein and annotates m6A-containing RNA reader activity. The functional description says it recognizes and binds m6A-containing mRNAs, but this specific activity is supported by similarity; the GO assignment is computational (IEA:TreeGrafter), not direct experimental evidence for this protein."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence supports the key but was not supplied to the evaluated model.",
-    "The cited GO term is computationally assigned; the UniProt description attributes m6A recognition to similarity, while its cited experimental evidence concerns pathogenicity rather than direct demonstration of this protein’s RNA-binding activity.",
-    "The exact source snapshot used by the author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence’s annotation supports D, and the alternatives describe distinct activities with no comparable support in the supplied sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0050",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry G4MRQ6, which names the protein as a YTH-domain-containing family protein and annotates m6A-containing RNA reader activity. The functional description says it recognizes and binds m6A-containing mRNAs, but this specific activity is supported by similarity; the GO assignment is computational (IEA:TreeGrafter), not direct experimental evidence for this protein.",
-    "evidence_ids": ["C1", "C4", "C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has a low-complexity region and a more structured region, but the input does not provide a clear, general-purpose motif that establishes m6A recognition. Selecting D depends on identifying the structured region as a YTH domain and knowing its specific association with m6A-reader activity.",
-    "missing_item_specific_fact": "That this sequence belongs to the YTH-domain reader family, whose members recognize m6A-containing RNA.",
-    "reason": "The family assignment and its specific ligand recognition are not stated in the question. Without that protein-family fact or a domain annotation, the sequence and choices alone do not meaningfully distinguish D from the other specific activities."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence’s annotation supports D, and the alternatives describe distinct activities with no comparable support in the supplied sequence."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence supports the key but was not supplied to the evaluated model.",
-    "The cited GO term is computationally assigned; the UniProt description attributes m6A recognition to similarity, while its cited experimental evidence concerns pathogenicity rather than direct demonstration of this protein’s RNA-binding activity.",
-    "The exact source snapshot used by the author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry G4MRQ6 (YTH1_PYRO7) is annotated with GO:1990247 'N6-methyladenosine-containing RNA reader activity' (evidence IEA:TreeGrafter, C7/H5). The protein is named 'YTH domain-containing family protein 1' / 'M6A reader YTH1' (C4). The FUNCTION comment states it 'specifically recognizes and binds N6-methyladenosine (m6A)-containing mRNAs' (C5/H3), with the m6A recognition part annotated by similarity (ECO:0000250) and the pathogenicity role supported by PubMed:30535195 (ECO:0000269). The sequence matches the entry exactly (630 AA, SHA256 confirmed). The GO term definition (GO4) aligns with the option text. Note: the specific m6A-reader molecular function annotation is computational (TreeGrafter/By similarity) rather than direct experimental evidence for this particular protein, but the annotation is consistent and the PubMed reference supports the m6A pathway involvement.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could weakly argue by elimination: the sequence lacks recognizable Rossmann-fold/SAM-binding motifs expected for methyltransferases (eliminating A and B) and lacks polyketide synthase domain architecture (eliminating C), leaving D by default. However, this negative reasoning from a 630-aa sequence dominated by low-complexity regions (QQQ, PPP, N-rich stretches) is unreliable for motif absence arguments, and the positive identification of the YTH domain as an m6A reader requires knowing the YTH domain consensus sequence and its specific association with m6A recognition.
-
-
-**Missing item-specific fact**
-
-> The specific identification of the YTH domain within this sequence and its established role as an m6A-binding adaptor. The YTH domain consensus motifs and their correspondence to m6A recognition are item-specific knowledge not derivable from general biological reasoning about the raw sequence, which is heavily interspersed with low-complexity regions that obscure domain boundaries.
-
-
-**Reason**
-
-> The sequence provides no obvious catalytic motifs for methyltransferase or polyketide synthase activity, but positively identifying the m6A reader function requires recognizing the YTH domain from sequence, which is essentially memorizing a protein-family consensus. The instructions state that recognizing a sequence and recalling its database entry does not constitute reasoning. The elimination-based argument (no methyltransferase motifs → not A/B; no PKS domains → not C) is too weak given the low-complexity nature of the sequence to constitute 'meaningful grounds' for distinguishing the answer.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent fundamentally different molecular functions (two methyltransferases, one polyketide synthase, one adaptor/binding protein). The YTH domain is structurally and functionally distinct from all three catalytic options. There is no realistic ambiguity among the choices given the protein's identity.
-
-
-### Important caveats
-
-- The GO:1990247 annotation carries evidence code IEA:TreeGrafter (computational transfer), not direct experimental evidence for this specific protein. The m6A recognition function is annotated 'By similarity' (ECO:0000250).
-- The PubMed:30535195 reference (Shi et al., 2019) provides experimental evidence for m6A pathway involvement in pathogenicity but the molecular function annotation itself is transferred.
-- The sequence is 630 AA with extensive low-complexity regions (poly-Q, poly-P, N-rich), making de novo domain identification from raw sequence particularly difficult.
-- The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot date is unknown but the sequence version has been stable since 2011.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could weakly argue by elimination: the sequence lacks recognizable Rossmann-fold/SAM-binding motifs expected for methyltransferases (eliminating A and B) and lacks polyketide synthase domain architecture (eliminating C), leaving D by default. However, this negative reasoning from a 630-aa sequence dominated by low-complexity regions (QQQ, PPP, N-rich stretches) is unreliable for motif absence arguments, and the positive identification of the YTH domain as an m6A reader requires knowing the YTH domain consensus sequence and its specific association with m6A recognition.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of the YTH domain within this sequence and its established role as an m6A-binding adaptor. The YTH domain consensus motifs and their correspondence to m6A recognition are item-specific knowledge not derivable from general biological reasoning about the raw sequence, which is heavily interspersed with low-complexity regions that obscure domain boundaries.",
-    "reason": "The sequence provides no obvious catalytic motifs for methyltransferase or polyketide synthase activity, but positively identifying the m6A reader function requires recognizing the YTH domain from sequence, which is essentially memorizing a protein-family consensus. The instructions state that recognizing a sequence and recalling its database entry does not constitute reasoning. The elimination-based argument (no methyltransferase motifs → not A/B; no PKS domains → not C) is too weak given the low-complexity nature of the sequence to constitute 'meaningful grounds' for distinguishing the answer."
-  },
-  "case_id": "GO_molecular_function_0050",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H3",
-      "H5",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry G4MRQ6 (YTH1_PYRO7) is annotated with GO:1990247 'N6-methyladenosine-containing RNA reader activity' (evidence IEA:TreeGrafter, C7/H5). The protein is named 'YTH domain-containing family protein 1' / 'M6A reader YTH1' (C4). The FUNCTION comment states it 'specifically recognizes and binds N6-methyladenosine (m6A)-containing mRNAs' (C5/H3), with the m6A recognition part annotated by similarity (ECO:0000250) and the pathogenicity role supported by PubMed:30535195 (ECO:0000269). The sequence matches the entry exactly (630 AA, SHA256 confirmed). The GO term definition (GO4) aligns with the option text. Note: the specific m6A-reader molecular function annotation is computational (TreeGrafter/By similarity) rather than direct experimental evidence for this particular protein, but the annotation is consistent and the PubMed reference supports the m6A pathway involvement."
-  },
-  "important_caveats": [
-    "The GO:1990247 annotation carries evidence code IEA:TreeGrafter (computational transfer), not direct experimental evidence for this specific protein. The m6A recognition function is annotated 'By similarity' (ECO:0000250).",
-    "The PubMed:30535195 reference (Shi et al., 2019) provides experimental evidence for m6A pathway involvement in pathogenicity but the molecular function annotation itself is transferred.",
-    "The sequence is 630 AA with extensive low-complexity regions (poly-Q, poly-P, N-rich), making de novo domain identification from raw sequence particularly difficult.",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot date is unknown but the sequence version has been stable since 2011."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent fundamentally different molecular functions (two methyltransferases, one polyketide synthase, one adaptor/binding protein). The YTH domain is structurally and functionally distinct from all three catalytic options. There is no realistic ambiguity among the choices given the protein's identity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0050",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry G4MRQ6 (YTH1_PYRO7) is annotated with GO:1990247 'N6-methyladenosine-containing RNA reader activity' (evidence IEA:TreeGrafter, C7/H5). The protein is named 'YTH domain-containing family protein 1' / 'M6A reader YTH1' (C4). The FUNCTION comment states it 'specifically recognizes and binds N6-methyladenosine (m6A)-containing mRNAs' (C5/H3), with the m6A recognition part annotated by similarity (ECO:0000250) and the pathogenicity role supported by PubMed:30535195 (ECO:0000269). The sequence matches the entry exactly (630 AA, SHA256 confirmed). The GO term definition (GO4) aligns with the option text. Note: the specific m6A-reader molecular function annotation is computational (TreeGrafter/By similarity) rather than direct experimental evidence for this particular protein, but the annotation is consistent and the PubMed reference supports the m6A pathway involvement.",
-    "evidence_ids": ["C4", "C5", "C7", "H3", "H5", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could weakly argue by elimination: the sequence lacks recognizable Rossmann-fold/SAM-binding motifs expected for methyltransferases (eliminating A and B) and lacks polyketide synthase domain architecture (eliminating C), leaving D by default. However, this negative reasoning from a 630-aa sequence dominated by low-complexity regions (QQQ, PPP, N-rich stretches) is unreliable for motif absence arguments, and the positive identification of the YTH domain as an m6A reader requires knowing the YTH domain consensus sequence and its specific association with m6A recognition.",
-    "missing_item_specific_fact": "The specific identification of the YTH domain within this sequence and its established role as an m6A-binding adaptor. The YTH domain consensus motifs and their correspondence to m6A recognition are item-specific knowledge not derivable from general biological reasoning about the raw sequence, which is heavily interspersed with low-complexity regions that obscure domain boundaries.",
-    "reason": "The sequence provides no obvious catalytic motifs for methyltransferase or polyketide synthase activity, but positively identifying the m6A reader function requires recognizing the YTH domain from sequence, which is essentially memorizing a protein-family consensus. The instructions state that recognizing a sequence and recalling its database entry does not constitute reasoning. The elimination-based argument (no methyltransferase motifs → not A/B; no PKS domains → not C) is too weak given the low-complexity nature of the sequence to constitute 'meaningful grounds' for distinguishing the answer."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent fundamentally different molecular functions (two methyltransferases, one polyketide synthase, one adaptor/binding protein). The YTH domain is structurally and functionally distinct from all three catalytic options. There is no realistic ambiguity among the choices given the protein's identity."
-  },
-  "important_caveats": [
-    "The GO:1990247 annotation carries evidence code IEA:TreeGrafter (computational transfer), not direct experimental evidence for this specific protein. The m6A recognition function is annotated 'By similarity' (ECO:0000250).",
-    "The PubMed:30535195 reference (Shi et al., 2019) provides experimental evidence for m6A pathway involvement in pathogenicity but the molecular function annotation itself is transferred.",
-    "The sequence is 630 AA with extensive low-complexity regions (poly-Q, poly-P, N-rich), making de novo domain identification from raw sequence particularly difficult.",
-    "The UniProt entry was first publicly released 2025-04-09; the benchmark author's source snapshot date is unknown but the sequence version has been stable since 2011."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -513,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G4MRQ6",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e8a11d01832120f9a13087099eed687cfa578ca456019f1c189df807f5e113e5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 630,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e8a11d01832120f9a13087099eed687cfa578ca456019f1c189df807f5e113e5",
   "current_entry_audit": {
     "entryVersion": 50,
     "firstPublicDate": "2025-04-09",
@@ -544,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-12-14",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "current_source_sequence_sha256": "e8a11d01832120f9a13087099eed687cfa578ca456019f1c189df807f5e113e5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 630,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e8a11d01832120f9a13087099eed687cfa578ca456019f1c189df807f5e113e5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 50,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G4MRQ6",
   "selected_historical_entry_version": 50,
+  "selected_historical_record_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
+  "selected_historical_source_sequence_length": 630,
+  "selected_historical_source_sequence_sha256": "e8a11d01832120f9a13087099eed687cfa578ca456019f1c189df807f5e113e5",
   "selected_historical_version": {
     "accession": "G4MRQ6",
     "database": "Swiss-Prot",
@@ -562,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "02-Sep-2026",
     "name": "YTH1_PYRO7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
-  "selected_historical_source_sequence_sha256": "e8a11d01832120f9a13087099eed687cfa578ca456019f1c189df807f5e113e5",
-  "selected_historical_source_sequence_length": 630,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 50,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -597,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G4MRQ6\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -616,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":50,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-01-28\",\"lastSequenceUpdateDate\":\"2011-12-14\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -635,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rice blast fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Magnaporthales\",\"Pyriculariaceae\",\"Pyricularia\"],\"scientificName\":\"Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958)\",\"synonyms\":[\"Magnaporthe oryzae\"],\"taxonId\":242507}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -654,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"M6A reader YTH1\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30535195\",\"source\":\"PubMed\"}],\"value\":\"YTH domain-containing family protein 1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -673,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A9P4XWM4\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30535195\",\"source\":\"PubMed\"}],\"value\":\"Specifically recognizes and binds N6-methyladenosine (m6A)-containing mRNAs, and regulates their stability (By similarity). M6A is a modification present at internal sites of mRNAs and some non-coding RNAs and plays a role in mRNA stability and processing (By similarity). Plays a role in pathogenicity towards plant host (PubMed:30535195)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -692,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/19",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0003729\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:mRNA binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/19",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -711,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/20",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:1990247\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:N6-methyladenosine-containing RNA reader activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/20",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -730,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json",
-  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
-  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Shi Y.\",\"Wang H.\",\"Wang J.\",\"Liu X.\",\"Lin F.\",\"Lu J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30535195\"},{\"database\":\"DOI\",\"id\":\"10.1093/femsle/fny286\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"30535195\",\"journal\":\"FEMS Microbiol. Lett.\",\"lastPage\":\"0\",\"publicationDate\":\"2019\",\"title\":\"N6-methyladenosine RNA methylation is involved in virulence of the rice blast fungus Pyricularia oryzae (syn. Magnaporthe oryzae).\",\"volume\":\"366\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:40.980195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1253cf7758fed16034da0ace21eaedef9d586c60bf29ed9cf5d2a587b7427c4a",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MRQ6.json"
 }
 ```
 
@@ -748,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 50,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50",
-  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
-  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   YTH1_PYRO7              Reviewed;         630 AA.\nAC   G4MRQ6;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   14-DEC-2011, sequence version 1.\nDT   28-JAN-2026, entry version 50.\nDE   RecName: Full=YTH domain-containing family protein 1 {ECO:0000303|PubMed:30535195};\nDE   AltName: Full=M6A reader YTH1 {ECO:0000305};\nGN   Name=YTH1 {ECO:0000303|PubMed:30535195}; ORFNames=MGG_04621;\nOS   Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice blast\nOS   fungus) (Magnaporthe oryzae).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Magnaporthales; Pyriculariaceae; Pyricularia.\nOX   NCBI_TaxID=242507;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 50,
+  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
+  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50"
 }
 ```
 
@@ -769,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 50,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50",
-  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
-  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
-  "source_locator": "lines 26-32",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND SUBCELLULAR LOCATION.\nRX   PubMed=30535195; DOI=10.1093/femsle/fny286;\nRA   Shi Y., Wang H., Wang J., Liu X., Lin F., Lu J.;\nRT   \"N6-methyladenosine RNA methylation is involved in virulence of the rice\nRT   blast fungus Pyricularia oryzae (syn. Magnaporthe oryzae).\";\nRL   FEMS Microbiol. Lett. 366:0-0(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 50,
+  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-32",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
+  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50"
 }
 ```
 
@@ -790,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 50,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50",
-  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
-  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
-  "source_locator": "lines 33-38",
   "excerpt": "CC   -!- FUNCTION: Specifically recognizes and binds N6-methyladenosine (m6A)-\nCC       containing mRNAs, and regulates their stability (By similarity). M6A is\nCC       a modification present at internal sites of mRNAs and some non-coding\nCC       RNAs and plays a role in mRNA stability and processing (By similarity).\nCC       Plays a role in pathogenicity towards plant host (PubMed:30535195).\nCC       {ECO:0000250|UniProtKB:A0A9P4XWM4, ECO:0000269|PubMed:30535195}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 50,
+  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
+  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50"
 }
 ```
 
@@ -811,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 50,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50",
-  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
-  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
-  "source_locator": "lines 68-68",
   "excerpt": "DR   GO; GO:0003729; F:mRNA binding; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 50,
+  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 68-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
+  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50"
 }
 ```
 
@@ -832,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 50,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50",
-  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
-  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
-  "source_locator": "lines 69-69",
   "excerpt": "DR   GO; GO:1990247; F:N6-methyladenosine-containing RNA reader activity; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 50,
+  "retrieved_utc": "2026-11-02T04:28:43.231635+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 69-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0e3fd045231c72df6a89528c9ea84aac218d1c347b0c4633352bdbffaaf288d9",
+  "url": "https://rest.uniprot.org/unisave/G4MRQ6?format=txt&versions=50"
 }
 ```
 
@@ -854,15 +607,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 363692-363699",
   "excerpt": "[Term]\nid: GO:0070042\nname: rRNA (uridine-N3-)-methyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: S-adenosyl-L-methionine + rRNA = S-adenosyl-L-homocysteine + rRNA containing N3-methyluridine.\" [GOC:imk, GOC:mah]\nis_a: GO:0008170 ! N-methyltransferase activity\nis_a: GO:0016436 ! rRNA (uridine) methyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0070042",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 363692-363699",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0070042"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -873,15 +626,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 399100-399108",
   "excerpt": "[Term]\nid: GO:0090439\nname: tetraketide alpha-pyrone synthase activity\nnamespace: molecular_function\ndef: \"Catalyzes the reaction: 7-hydroxylauroyl-CoA + 3 malonyl-CoA + 2 H+ = 2-(8-hydroxy-2-oxotridecyl)-6-oxopyran-4-olate + 3 CO2 + 4 coenzyme A.\" [MetaCyc:RXN-16407, PMID:21193570]\nxref: MetaCyc:RXN-16407\nis_a: GO:0016747 ! acyltransferase activity, transferring groups other than amino-acyl groups\nproperty_value: skos:exactMatch MetaCyc:RXN-16407\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0090439",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 399100-399108",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0090439"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -892,15 +645,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 429765-429771",
   "excerpt": "[Term]\nid: GO:0106346\nname: snRNA methyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a methyl group from a donor to a nucleoside residue in an snRNA molecule.\" [PMID:27573892]\nis_a: GO:0008173 ! RNA methyltransferase activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0106346",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 429765-429771",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0106346"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -911,15 +664,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 550531-550538",
   "excerpt": "[Term]\nid: GO:1990247\nname: N6-methyladenosine-containing RNA reader activity\nnamespace: molecular_function\ndef: \"A protein adaptor that recognizes and binds an RNA molecule modified by N6-methyladenosine (m6A), a modification present at internal sites of mRNAs and some non-coding RNAs.\" [PMID:22575960, PMID:24284625]\nsynonym: \"N6-methyladenosine-containing RNA binding\" RELATED []\nis_a: GO:0140517 ! protein-RNA adaptor activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1990247",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 550531-550538",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1990247"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# cofactor_0004: before and after transfer clarification
+# cofactor_0004
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0004.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0004.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Mg(2+)
+**Expected answer:** **B** — Mg(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated with Mg(2+) as a cofactor. The annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation but is not direct experimental evidence for this protein.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The supplied sequence alone does not provide a sufficiently specific, clear basis for distinguishing Mg(2+) from the other options.
-
-
-**Missing item-specific fact**
-
-> The protein is annotated as terpene cyclase pbrA and has an Mg(2+) cofactor annotation transferred by similarity; neither fact is provided in the question.
-
-
-**Reason**
-
-> The supporting cofactor annotation is protein-specific external information. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched database annotation supports Mg(2+); the evidence provided does not support another listed option.
-
-
-### Important caveats
-
-- The historical and current database records match the supplied sequence.
-- The cited cofactor annotation is similarity-based, not a direct experimental demonstration for this protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied sequence alone does not provide a sufficiently specific, clear basis for distinguishing Mg(2+) from the other options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein is annotated as terpene cyclase pbrA and has an Mg(2+) cofactor annotation transferred by similarity; neither fact is provided in the question.",
-    "reason": "The supporting cofactor annotation is protein-specific external information. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "cofactor_0004",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with Mg(2+) as a cofactor. The annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation but is not direct experimental evidence for this protein."
-  },
-  "important_caveats": [
-    "The historical and current database records match the supplied sequence.",
-    "The cited cofactor annotation is similarity-based, not a direct experimental demonstration for this protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched database annotation supports Mg(2+); the evidence provided does not support another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0004",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with Mg(2+) as a cofactor. The annotation is transferred by similarity (ECO:0000250), so it supports the key as a database annotation but is not direct experimental evidence for this protein.",
-    "evidence_ids": ["C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The supplied sequence alone does not provide a sufficiently specific, clear basis for distinguishing Mg(2+) from the other options.",
-    "missing_item_specific_fact": "The protein is annotated as terpene cyclase pbrA and has an Mg(2+) cofactor annotation transferred by similarity; neither fact is provided in the question.",
-    "reason": "The supporting cofactor annotation is protein-specific external information. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched database annotation supports Mg(2+); the evidence provided does not support another listed option."
-  },
-  "important_caveats": [
-    "The historical and current database records match the supplied sequence.",
-    "The cited cofactor annotation is similarity-based, not a direct experimental demonstration for this protein."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotates this protein (A0A0F7TWX5, terpene cyclase pbrA, EC 4.2.3.-) with Mg(2+) as its cofactor (ChEBI:18420). The annotation evidence is ECO:0000250 (similarity to P13513), i.e., computational transfer rather than direct experimental measurement on this specific protein. However, the biochemistry of terpene cyclases (EC 4.2.3.-) universally involves a divalent metal ion (Mg2+ or Mn2+) coordinating the diphosphate substrate and facilitating ionization of the leaving group. The EC assignment 4.2.3.- is supported by the 2024 Zhou et al. paper (PubMed:39511739). Thus Mg(2+) is well-supported as the cofactor for a terpene cyclase, even though the specific annotation here is by similarity.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [H2](#evidence-h2), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> If the model could positively identify the sequence as a terpene cyclase, then Mg(2+) is the well-established cofactor for the diphosphate-ionization mechanism. Partial elimination reasoning is possible: no pantetheine-binding ACP domain (rules out A), no obvious heme-ligand His/Cys geometry (weakly rules out C), and no canonical 2-His-1-carboxylate facial triad (weakly rules out D). However, the positive identification step—recognizing a 405-aa sequence as a terpene cyclase—is the critical bottleneck, and the canonical DDxxD aspartate-rich metal-binding motif is NOT present in recognizable form (the closest matches are DDEIS and DDTIH, neither of which is DDxxD). Without this motif or a database match, the sequence provides no strong positive signal for terpene cyclase identity.
-
-
-**Missing item-specific fact**
-
-> The specific identification of this 405-aa sequence as terpene cyclase pbrA (or any terpene cyclase) cannot be reliably made from the raw sequence alone. The canonical DDxxD motif is absent or highly degenerate. Identification requires BLAST/database lookup or memorization of this particular entry. The 2024 characterization paper (PubMed:39511739) established the terpene cyclase function, but this is not inferable from sequence features visible in the input.
-
-
-**Reason**
-
-> The reasoning chain requires: (1) identify protein as terpene cyclase → (2) know terpene cyclases use Mg2+. Step 2 is general biological knowledge, but step 1 is essentially a lookup problem. The absence of the canonical DDxxD motif and the lack of other unmistakable terpene-cyclase-specific sequence features mean a model cannot reliably reach step 2 from the sequence alone. The elimination of distractors A and C is somewhat plausible by absence of their signature motifs, but elimination of D (Fe2+) is weak since Fe2+ and Mg2+ are both common divalent cation cofactors. The question effectively requires recognizing this specific protein's identity.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given correct identification as a terpene cyclase, Mg(2+) is the clear and unambiguous answer. The distractors (pantetheine 4'-phosphate, heme, Fe2+) correspond to mechanistically distinct enzyme classes and are not plausible alternatives for a terpene cyclase. No ambiguity in the correct answer once the protein identity is established.
-
-
-### Important caveats
-
-- The UniProt cofactor annotation is by similarity (ECO:0000250, transferred from P13513), not direct experimental evidence on pbrA itself. However, the general biochemistry of terpene cyclases strongly supports Mg2+.
-- The canonical DDxxD aspartate-rich motif is not clearly present in this sequence, making sequence-based identification of the terpene cyclase fold difficult without database access.
-- The protein was first functionally characterized in 2024 (PubMed:39511739), so this is a relatively recent annotation.
-- The reviewer-only evidence was not available to the evaluated model; the model must work from the raw sequence and choices alone.
-- The EC number is 4.2.3.- (incomplete), meaning the specific terpene cyclase subclass is not fully resolved in the annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "If the model could positively identify the sequence as a terpene cyclase, then Mg(2+) is the well-established cofactor for the diphosphate-ionization mechanism. Partial elimination reasoning is possible: no pantetheine-binding ACP domain (rules out A), no obvious heme-ligand His/Cys geometry (weakly rules out C), and no canonical 2-His-1-carboxylate facial triad (weakly rules out D). However, the positive identification step—recognizing a 405-aa sequence as a terpene cyclase—is the critical bottleneck, and the canonical DDxxD aspartate-rich metal-binding motif is NOT present in recognizable form (the closest matches are DDEIS and DDTIH, neither of which is DDxxD). Without this motif or a database match, the sequence provides no strong positive signal for terpene cyclase identity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of this 405-aa sequence as terpene cyclase pbrA (or any terpene cyclase) cannot be reliably made from the raw sequence alone. The canonical DDxxD motif is absent or highly degenerate. Identification requires BLAST/database lookup or memorization of this particular entry. The 2024 characterization paper (PubMed:39511739) established the terpene cyclase function, but this is not inferable from sequence features visible in the input.",
-    "reason": "The reasoning chain requires: (1) identify protein as terpene cyclase → (2) know terpene cyclases use Mg2+. Step 2 is general biological knowledge, but step 1 is essentially a lookup problem. The absence of the canonical DDxxD motif and the lack of other unmistakable terpene-cyclase-specific sequence features mean a model cannot reliably reach step 2 from the sequence alone. The elimination of distractors A and C is somewhat plausible by absence of their signature motifs, but elimination of D (Fe2+) is weak since Fe2+ and Mg2+ are both common divalent cation cofactors. The question effectively requires recognizing this specific protein's identity."
-  },
-  "case_id": "cofactor_0004",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4",
-      "H2",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotates this protein (A0A0F7TWX5, terpene cyclase pbrA, EC 4.2.3.-) with Mg(2+) as its cofactor (ChEBI:18420). The annotation evidence is ECO:0000250 (similarity to P13513), i.e., computational transfer rather than direct experimental measurement on this specific protein. However, the biochemistry of terpene cyclases (EC 4.2.3.-) universally involves a divalent metal ion (Mg2+ or Mn2+) coordinating the diphosphate substrate and facilitating ionization of the leaving group. The EC assignment 4.2.3.- is supported by the 2024 Zhou et al. paper (PubMed:39511739). Thus Mg(2+) is well-supported as the cofactor for a terpene cyclase, even though the specific annotation here is by similarity."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation is by similarity (ECO:0000250, transferred from P13513), not direct experimental evidence on pbrA itself. However, the general biochemistry of terpene cyclases strongly supports Mg2+.",
-    "The canonical DDxxD aspartate-rich motif is not clearly present in this sequence, making sequence-based identification of the terpene cyclase fold difficult without database access.",
-    "The protein was first functionally characterized in 2024 (PubMed:39511739), so this is a relatively recent annotation.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must work from the raw sequence and choices alone.",
-    "The EC number is 4.2.3.- (incomplete), meaning the specific terpene cyclase subclass is not fully resolved in the annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given correct identification as a terpene cyclase, Mg(2+) is the clear and unambiguous answer. The distractors (pantetheine 4'-phosphate, heme, Fe2+) correspond to mechanistically distinct enzyme classes and are not plausible alternatives for a terpene cyclase. No ambiguity in the correct answer once the protein identity is established."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0004",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotates this protein (A0A0F7TWX5, terpene cyclase pbrA, EC 4.2.3.-) with Mg(2+) as its cofactor (ChEBI:18420). The annotation evidence is ECO:0000250 (similarity to P13513), i.e., computational transfer rather than direct experimental measurement on this specific protein. However, the biochemistry of terpene cyclases (EC 4.2.3.-) universally involves a divalent metal ion (Mg2+ or Mn2+) coordinating the diphosphate substrate and facilitating ionization of the leaving group. The EC assignment 4.2.3.- is supported by the 2024 Zhou et al. paper (PubMed:39511739). Thus Mg(2+) is well-supported as the cofactor for a terpene cyclase, even though the specific annotation here is by similarity.",
-    "evidence_ids": ["C5", "H4", "C4", "H2", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "If the model could positively identify the sequence as a terpene cyclase, then Mg(2+) is the well-established cofactor for the diphosphate-ionization mechanism. Partial elimination reasoning is possible: no pantetheine-binding ACP domain (rules out A), no obvious heme-ligand His/Cys geometry (weakly rules out C), and no canonical 2-His-1-carboxylate facial triad (weakly rules out D). However, the positive identification step—recognizing a 405-aa sequence as a terpene cyclase—is the critical bottleneck, and the canonical DDxxD aspartate-rich metal-binding motif is NOT present in recognizable form (the closest matches are DDEIS and DDTIH, neither of which is DDxxD). Without this motif or a database match, the sequence provides no strong positive signal for terpene cyclase identity.",
-    "missing_item_specific_fact": "The specific identification of this 405-aa sequence as terpene cyclase pbrA (or any terpene cyclase) cannot be reliably made from the raw sequence alone. The canonical DDxxD motif is absent or highly degenerate. Identification requires BLAST/database lookup or memorization of this particular entry. The 2024 characterization paper (PubMed:39511739) established the terpene cyclase function, but this is not inferable from sequence features visible in the input.",
-    "reason": "The reasoning chain requires: (1) identify protein as terpene cyclase → (2) know terpene cyclases use Mg2+. Step 2 is general biological knowledge, but step 1 is essentially a lookup problem. The absence of the canonical DDxxD motif and the lack of other unmistakable terpene-cyclase-specific sequence features mean a model cannot reliably reach step 2 from the sequence alone. The elimination of distractors A and C is somewhat plausible by absence of their signature motifs, but elimination of D (Fe2+) is weak since Fe2+ and Mg2+ are both common divalent cation cofactors. The question effectively requires recognizing this specific protein's identity."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given correct identification as a terpene cyclase, Mg(2+) is the clear and unambiguous answer. The distractors (pantetheine 4'-phosphate, heme, Fe2+) correspond to mechanistically distinct enzyme classes and are not plausible alternatives for a terpene cyclase. No ambiguity in the correct answer once the protein identity is established."
-  },
-  "important_caveats": [
-    "The UniProt cofactor annotation is by similarity (ECO:0000250, transferred from P13513), not direct experimental evidence on pbrA itself. However, the general biochemistry of terpene cyclases strongly supports Mg2+.",
-    "The canonical DDxxD aspartate-rich motif is not clearly present in this sequence, making sequence-based identification of the terpene cyclase fold difficult without database access.",
-    "The protein was first functionally characterized in 2024 (PubMed:39511739), so this is a relatively recent annotation.",
-    "The reviewer-only evidence was not available to the evaluated model; the model must work from the raw sequence and choices alone.",
-    "The EC number is 4.2.3.- (incomplete), meaning the specific terpene cyclase subclass is not fully resolved in the annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0F7TWX5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 405,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-04-09",
@@ -532,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2015-07-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "current_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 405,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 30,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0F7TWX5",
   "selected_historical_entry_version": 30,
+  "selected_historical_record_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "selected_historical_source_sequence_length": 405,
+  "selected_historical_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
   "selected_historical_version": {
     "accession": "A0A0F7TWX5",
     "database": "Swiss-Prot",
@@ -550,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PBRA_PENBI",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "selected_historical_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
-  "selected_historical_source_sequence_length": 405,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 30,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0F7TWX5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -600,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2015-07-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -619,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium brasilianum\",\"taxonId\":104259}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -638,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein A\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"4.2.3.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Terpene cyclase pbrA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -657,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:18420\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P13513\",\"source\":\"UniProtKB\"}],\"name\":\"Mg(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -676,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhou Z.\",\"Zhang Y.\",\"Wu Q.\",\"Hou X.\",\"Zhang B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39511739\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c08468\"}],\"citationType\":\"journal article\",\"firstPage\":\"25755\",\"id\":\"39511739\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"25766\",\"publicationDate\":\"2024\",\"title\":\"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\",\"volume\":\"72\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -694,18 +451,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30",
-  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   PBRA_PENBI              Reviewed;         405 AA.\nAC   A0A0F7TWX5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-JUL-2015, sequence version 1.\nDT   28-JAN-2026, entry version 30.\nDE   RecName: Full=Terpene cyclase pbrA {ECO:0000303|PubMed:39511739};\nDE            EC=4.2.3.- {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein A {ECO:0000303|PubMed:39511739};\nGN   Name=pbrA {ECO:0000303|PubMed:39511739}; ORFNames=PMG11_09714;\nOS   Penicillium brasilianum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=104259;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30"
 }
 ```
 
@@ -715,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30",
-  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Terpene cyclase pbrA {ECO:0000303|PubMed:39511739};\nDE            EC=4.2.3.- {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein A {ECO:0000303|PubMed:39511739};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30"
 }
 ```
 
@@ -736,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30",
-  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
-  "source_locator": "lines 22-27",
   "excerpt": "RN   [2]\nRP   FUNCTION, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39511739; DOI=10.1021/acs.jafc.4c08468;\nRA   Zhou Z., Zhang Y., Wu Q., Hou X., Zhang B.;\nRT   \"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\";\nRL   J. Agric. Food Chem. 72:25755-25766(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30"
 }
 ```
 
@@ -757,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30",
-  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
-  "source_locator": "lines 37-39",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Mg(2+); Xref=ChEBI:CHEBI:18420;\nCC         Evidence={ECO:0000250|UniProtKB:P13513};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30"
 }
 ```
 

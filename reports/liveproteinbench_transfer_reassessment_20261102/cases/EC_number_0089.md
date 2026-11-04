@@ -1,18 +1,16 @@
-# EC_number_0089: before and after transfer clarification
+# EC_number_0089
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0089.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0089.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **A** — 2.7.7.1
+**Expected answer:** **A** — 2.7.7.1
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the Drosophila NMNAT entry, whose annotation assigns EC 2.7.7.1 to NAD synthesis and cites experimental evidence. This supports choice A for the listed options.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support recognizing an enzyme-like protein, but the input gives no organism, protein name, substrate, or reaction context that establishes which specific nucleotide-transfer reaction it catalyzes.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as Drosophila NMNAT and evidence that it catalyzes NAD synthesis from nicotinamide ribonucleotide and ATP.
-
-
-**Reason**
-
-> Distinguishing EC 2.7.7.1 from the alternatives requires identifying the protein's specific catalytic activity, a fact not directly supplied by the sequence prompt; recognizing the sequence from an external record would be lookup or memorization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, the matched protein's experimentally supported NAD-synthesis activity corresponds to A. The database also lists EC 2.7.7.18, but that is not one of the choices and its cited evidence is computational.
-
-
-### Important caveats
-
-- The sequence match and annotation support are reviewer-only evidence and were not present in the evaluated input.
-- The current and historical UniProt records match the supplied sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support recognizing an enzyme-like protein, but the input gives no organism, protein name, substrate, or reaction context that establishes which specific nucleotide-transfer reaction it catalyzes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as Drosophila NMNAT and evidence that it catalyzes NAD synthesis from nicotinamide ribonucleotide and ATP.",
-    "reason": "Distinguishing EC 2.7.7.1 from the alternatives requires identifying the protein's specific catalytic activity, a fact not directly supplied by the sequence prompt; recognizing the sequence from an external record would be lookup or memorization."
-  },
-  "case_id": "EC_number_0089",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the Drosophila NMNAT entry, whose annotation assigns EC 2.7.7.1 to NAD synthesis and cites experimental evidence. This supports choice A for the listed options."
-  },
-  "important_caveats": [
-    "The sequence match and annotation support are reviewer-only evidence and were not present in the evaluated input.",
-    "The current and historical UniProt records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the matched protein's experimentally supported NAD-synthesis activity corresponds to A. The database also lists EC 2.7.7.18, but that is not one of the choices and its cited evidence is computational."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0089",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the Drosophila NMNAT entry, whose annotation assigns EC 2.7.7.1 to NAD synthesis and cites experimental evidence. This supports choice A for the listed options.",
-    "evidence_ids": ["C1", "C4", "C5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support recognizing an enzyme-like protein, but the input gives no organism, protein name, substrate, or reaction context that establishes which specific nucleotide-transfer reaction it catalyzes.",
-    "missing_item_specific_fact": "The protein-specific identification as Drosophila NMNAT and evidence that it catalyzes NAD synthesis from nicotinamide ribonucleotide and ATP.",
-    "reason": "Distinguishing EC 2.7.7.1 from the alternatives requires identifying the protein's specific catalytic activity, a fact not directly supplied by the sequence prompt; recognizing the sequence from an external record would be lookup or memorization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the matched protein's experimentally supported NAD-synthesis activity corresponds to A. The database also lists EC 2.7.7.18, but that is not one of the choices and its cited evidence is computational."
-  },
-  "important_caveats": [
-    "The sequence match and annotation support are reviewer-only evidence and were not present in the evaluated input.",
-    "The current and historical UniProt records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q9VC03 (NMNA_DROME, Drosophila melanogaster NMNAT) with exact SHA-256 match. The EC 2.7.7.1 annotation is supported by multiple experimental evidence codes (ECO:0000269 from PubMed 17132048, 19403820, 26616331) confirming the catalytic reaction: beta-nicotinamide D-ribonucleotide + ATP + H(+) = diphosphate + NAD(+). The RuleBase computational annotation (ECO:0000255) also supports this. The EC 2.7.7.18 secondary annotation is computational-only (RuleBase) and is not among the choices.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9), [H1](#evidence-h1), [H2](#evidence-h2), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Some partial reasoning is possible: the 'RAGSNPG' motif, Rossmann-like fold elements (e.g., 'GKKGLA', 'GADLLESFAVPGLWAEAD'), and the distinctive poly-glycine tract ('GGGGG') are characteristic of the NMNAT enzyme family. Eliminating 5.1.3.14 (isomerase) and 2.7.1.52 (kinase) is feasible from general sequence architecture. However, distinguishing 2.7.7.1 from 2.7.7.43—both nucleotidyltransferases within the same EC subclass—requires knowing the specific substrate (NMN vs. another nucleotide acceptor), which is not derivable from general enzymology principles.
-
-
-**Missing item-specific fact**
-
-> The precise substrate specificity that distinguishes EC 2.7.7.1 (NMN + ATP → NAD⁺ + PPi) from EC 2.7.7.43 (a different nucleotidyltransferase reaction) cannot be determined from the sequence alone without recognizing the NMNAT family or consulting a database/predictor. The 'RAGSNPG' motif is a family-specific pattern, not a general chemical principle.
-
-
-**Reason**
-
-> While coarse class elimination (isomerase, kinase) is reasoning-tractable, the critical distinction between the two nucleotidyltransferase options (A vs B) depends on recognizing the NMNAT fold and its specific substrate chemistry—a pattern-recognition task closer to database lookup than deductive reasoning from general biology.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options C (2.7.1.52, kinase) and D (5.1.3.14, isomerase) are clearly wrong enzyme classes. Option B (2.7.7.43) is a different nucleotidyltransferase reaction not matching the NMNAT fold. Only A (2.7.7.1) corresponds to the annotated and experimentally validated activity. No genuine ambiguity among choices.
-
-
-### Important caveats
-
-- The EC 2.7.7.18 secondary annotation (RuleBase-only, computational) is not among the choices, so it does not affect answer validity.
-- The sequence is the Drosophila nuclear NMNAT isoform with a poly-glycine tract; alternative splicing variants exist but the supplied sequence matches the canonical Swiss-Prot entry.
-- The identity of EC 2.7.7.43 was not independently verified from the evidence; it is treated as a distractor in a different nucleotidyltransferase subclass.
-- All UniProt evidence is reviewer-only and was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Some partial reasoning is possible: the 'RAGSNPG' motif, Rossmann-like fold elements (e.g., 'GKKGLA', 'GADLLESFAVPGLWAEAD'), and the distinctive poly-glycine tract ('GGGGG') are characteristic of the NMNAT enzyme family. Eliminating 5.1.3.14 (isomerase) and 2.7.1.52 (kinase) is feasible from general sequence architecture. However, distinguishing 2.7.7.1 from 2.7.7.43—both nucleotidyltransferases within the same EC subclass—requires knowing the specific substrate (NMN vs. another nucleotide acceptor), which is not derivable from general enzymology principles.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The precise substrate specificity that distinguishes EC 2.7.7.1 (NMN + ATP → NAD⁺ + PPi) from EC 2.7.7.43 (a different nucleotidyltransferase reaction) cannot be determined from the sequence alone without recognizing the NMNAT family or consulting a database/predictor. The 'RAGSNPG' motif is a family-specific pattern, not a general chemical principle.",
-    "reason": "While coarse class elimination (isomerase, kinase) is reasoning-tractable, the critical distinction between the two nucleotidyltransferase options (A vs B) depends on recognizing the NMNAT fold and its specific substrate chemistry—a pattern-recognition task closer to database lookup than deductive reasoning from general biology."
-  },
-  "case_id": "EC_number_0089",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "C8",
-      "C9",
-      "H1",
-      "H2",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q9VC03 (NMNA_DROME, Drosophila melanogaster NMNAT) with exact SHA-256 match. The EC 2.7.7.1 annotation is supported by multiple experimental evidence codes (ECO:0000269 from PubMed 17132048, 19403820, 26616331) confirming the catalytic reaction: beta-nicotinamide D-ribonucleotide + ATP + H(+) = diphosphate + NAD(+). The RuleBase computational annotation (ECO:0000255) also supports this. The EC 2.7.7.18 secondary annotation is computational-only (RuleBase) and is not among the choices."
-  },
-  "important_caveats": [
-    "The EC 2.7.7.18 secondary annotation (RuleBase-only, computational) is not among the choices, so it does not affect answer validity.",
-    "The sequence is the Drosophila nuclear NMNAT isoform with a poly-glycine tract; alternative splicing variants exist but the supplied sequence matches the canonical Swiss-Prot entry.",
-    "The identity of EC 2.7.7.43 was not independently verified from the evidence; it is treated as a distractor in a different nucleotidyltransferase subclass.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (2.7.1.52, kinase) and D (5.1.3.14, isomerase) are clearly wrong enzyme classes. Option B (2.7.7.43) is a different nucleotidyltransferase reaction not matching the NMNAT fold. Only A (2.7.7.1) corresponds to the annotated and experimentally validated activity. No genuine ambiguity among choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0089",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q9VC03 (NMNA_DROME, Drosophila melanogaster NMNAT) with exact SHA-256 match. The EC 2.7.7.1 annotation is supported by multiple experimental evidence codes (ECO:0000269 from PubMed 17132048, 19403820, 26616331) confirming the catalytic reaction: beta-nicotinamide D-ribonucleotide + ATP + H(+) = diphosphate + NAD(+). The RuleBase computational annotation (ECO:0000255) also supports this. The EC 2.7.7.18 secondary annotation is computational-only (RuleBase) and is not among the choices.",
-    "evidence_ids": ["C4", "C5", "C7", "C8", "C9", "H1", "H2", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Some partial reasoning is possible: the 'RAGSNPG' motif, Rossmann-like fold elements (e.g., 'GKKGLA', 'GADLLESFAVPGLWAEAD'), and the distinctive poly-glycine tract ('GGGGG') are characteristic of the NMNAT enzyme family. Eliminating 5.1.3.14 (isomerase) and 2.7.1.52 (kinase) is feasible from general sequence architecture. However, distinguishing 2.7.7.1 from 2.7.7.43—both nucleotidyltransferases within the same EC subclass—requires knowing the specific substrate (NMN vs. another nucleotide acceptor), which is not derivable from general enzymology principles.",
-    "missing_item_specific_fact": "The precise substrate specificity that distinguishes EC 2.7.7.1 (NMN + ATP → NAD⁺ + PPi) from EC 2.7.7.43 (a different nucleotidyltransferase reaction) cannot be determined from the sequence alone without recognizing the NMNAT family or consulting a database/predictor. The 'RAGSNPG' motif is a family-specific pattern, not a general chemical principle.",
-    "reason": "While coarse class elimination (isomerase, kinase) is reasoning-tractable, the critical distinction between the two nucleotidyltransferase options (A vs B) depends on recognizing the NMNAT fold and its specific substrate chemistry—a pattern-recognition task closer to database lookup than deductive reasoning from general biology."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (2.7.1.52, kinase) and D (5.1.3.14, isomerase) are clearly wrong enzyme classes. Option B (2.7.7.43) is a different nucleotidyltransferase reaction not matching the NMNAT fold. Only A (2.7.7.1) corresponds to the annotated and experimentally validated activity. No genuine ambiguity among choices."
-  },
-  "important_caveats": [
-    "The EC 2.7.7.18 secondary annotation (RuleBase-only, computational) is not among the choices, so it does not affect answer validity.",
-    "The sequence is the Drosophila nuclear NMNAT isoform with a poly-glycine tract; alternative splicing variants exist but the supplied sequence matches the canonical Swiss-Prot entry.",
-    "The identity of EC 2.7.7.43 was not independently verified from the evidence; it is treated as a distractor in a different nucleotidyltransferase subclass.",
-    "All UniProt evidence is reviewer-only and was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -509,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VC03",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "2efa1c2bc1a66f4b43ee288abe72b63c899666ed652a586405e1f75a160908c9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 389,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "2efa1c2bc1a66f4b43ee288abe72b63c899666ed652a586405e1f75a160908c9",
   "current_entry_audit": {
     "entryVersion": 189,
     "firstPublicDate": "2025-06-18",
@@ -540,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-07-05",
     "sequenceVersion": 4
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "current_source_sequence_sha256": "2efa1c2bc1a66f4b43ee288abe72b63c899666ed652a586405e1f75a160908c9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 389,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "2efa1c2bc1a66f4b43ee288abe72b63c899666ed652a586405e1f75a160908c9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 187,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 4
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VC03",
   "selected_historical_entry_version": 187,
+  "selected_historical_record_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "selected_historical_source_sequence_length": 389,
+  "selected_historical_source_sequence_sha256": "2efa1c2bc1a66f4b43ee288abe72b63c899666ed652a586405e1f75a160908c9",
   "selected_historical_version": {
     "accession": "Q9VC03",
     "database": "Swiss-Prot",
@@ -558,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NMNA_DROME",
     "sequenceVersion": 4
-  },
-  "selected_historical_record_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "selected_historical_source_sequence_sha256": "2efa1c2bc1a66f4b43ee288abe72b63c899666ed652a586405e1f75a160908c9",
-  "selected_historical_source_sequence_length": 389,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 187,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 4
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -589,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VC03\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -608,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":189,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2004-07-05\",\"sequenceVersion\":4}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -627,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -646,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0039254\",\"source\":\"FlyBase\"}],\"value\":\"Nicotinamide mononucleotide adenylyltransferase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0039254\",\"source\":\"FlyBase\"}],\"value\":\"dNmnat\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"RU362021\",\"source\":\"RuleBase\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17132048\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19403820\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26616331\",\"source\":\"PubMed\"}],\"value\":\"2.7.7.1\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"RU362021\",\"source\":\"RuleBase\"}],\"value\":\"2.7.7.18\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"RU362021\",\"source\":\"RuleBase\"}],\"value\":\"Nicotinamide-nucleotide adenylyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -665,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19403820\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26616331\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:21361\"}}],\"reaction\":{\"ecNumber\":\"2.7.7.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"RU362021\",\"source\":\"RuleBase\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17132048\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19403820\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26616331\",\"source\":\"PubMed\"}],\"name\":\"beta-nicotinamide D-ribonucleotide + ATP + H(+) = diphosphate + NAD(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:21360\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:14649\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:33019\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -684,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.7.18\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"RU362021\",\"source\":\"RuleBase\"}],\"name\":\"nicotinate beta-D-ribonucleotide + ATP + H(+) = deamido-NAD(+) + diphosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:22860\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:33019\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57502\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58437\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -703,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhai R.G.\",\"Cao Y.\",\"Hiesinger P.R.\",\"Zhou Y.\",\"Mehta S.Q.\",\"Schulze K.L.\",\"Verstreken P.\",\"Bellen H.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17132048\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pbio.0040416\"}],\"citationType\":\"journal article\",\"firstPage\":\"e416\",\"id\":\"17132048\",\"journal\":\"PLoS Biol.\",\"lastPage\":\"e416\",\"publicationDate\":\"2006\",\"title\":\"Drosophila NMNAT maintains neural integrity independent of its NAD synthesis activity.\",\"volume\":\"4\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF HIS-61; TRP-129 AND ARG-255\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -722,15 +478,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Sasaki Y.\",\"Vohra B.P.\",\"Lund F.E.\",\"Milbrandt J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19403820\"},{\"database\":\"DOI\",\"id\":\"10.1523/jneurosci.5469-08.2009\"}],\"citationType\":\"journal article\",\"firstPage\":\"5525\",\"id\":\"19403820\",\"journal\":\"J. Neurosci.\",\"lastPage\":\"5535\",\"publicationDate\":\"2009\",\"title\":\"Nicotinamide mononucleotide adenylyl transferase-mediated axonal protection requires enzymatic activity but not increased levels of neuronal nicotinamide adenine dinucleotide.\",\"volume\":\"29\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":7,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -741,15 +497,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json",
-  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
-  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
-  "json_pointer": "/references/9",
   "excerpt": "{\"citation\":{\"authors\":[\"Ruan K.\",\"Zhu Y.\",\"Li C.\",\"Brazill J.M.\",\"Zhai R.G.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26616331\"},{\"database\":\"DOI\",\"id\":\"10.1038/ncomms10057\"}],\"citationType\":\"journal article\",\"firstPage\":\"10057\",\"id\":\"26616331\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"10057\",\"publicationDate\":\"2015\",\"title\":\"Alternative splicing of Drosophila Nmnat functions as a switch to enhance neuroprotection under stress.\",\"volume\":\"6\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":10,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBCELLULAR LOCATION\",\"ALTERNATIVE SPLICING\",\"INDUCTION BY HEAT SHOCK AND PROTEOTOXIC STRESS\",\"NUCLEAR LOCALIZATION SIGNAL\",\"MUTAGENESIS OF LYS-380\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/9",
+  "retrieved_utc": "2026-11-02T04:33:14.289195+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d978581da8c66968e83a443420aa4c96e4f84a192e306c71ec35e48fbca8bc0d",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VC03.json"
 }
 ```
 
@@ -759,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 187,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187",
-  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   NMNA_DROME              Reviewed;         389 AA.\nAC   Q9VC03; A0A0B4KHH7; Q7KS06; Q8T405;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2004, sequence version 4.\nDT   28-JAN-2026, entry version 187.\nDE   RecName: Full=Nicotinamide-nucleotide adenylyltransferase {ECO:0000255|RuleBase:RU362021};\nDE            EC=2.7.7.1 {ECO:0000255|RuleBase:RU362021, ECO:0000269|PubMed:17132048, ECO:0000269|PubMed:19403820, ECO:0000269|PubMed:26616331};\nDE            EC=2.7.7.18 {ECO:0000255|RuleBase:RU362021};\nDE   AltName: Full=Nicotinamide mononucleotide adenylyltransferase {ECO:0000312|FlyBase:FBgn0039254};\nDE            Short=dNmnat {ECO:0000312|FlyBase:FBgn0039254};\nGN   Name=Nmnat {ECO:0000303|PubMed:17132048, ECO:0000312|FlyBase:FBgn0039254};\nGN   ORFNames=CG13645 {ECO:0000312|FlyBase:FBgn0039254};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 187,
+  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 4,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187"
 }
 ```
 
@@ -780,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 187,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187",
-  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Nicotinamide-nucleotide adenylyltransferase {ECO:0000255|RuleBase:RU362021};\nDE            EC=2.7.7.1 {ECO:0000255|RuleBase:RU362021, ECO:0000269|PubMed:17132048, ECO:0000269|PubMed:19403820, ECO:0000269|PubMed:26616331};\nDE            EC=2.7.7.18 {ECO:0000255|RuleBase:RU362021};\nDE   AltName: Full=Nicotinamide mononucleotide adenylyltransferase {ECO:0000312|FlyBase:FBgn0039254};\nDE            Short=dNmnat {ECO:0000312|FlyBase:FBgn0039254};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 187,
+  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 4,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187"
 }
 ```
 
@@ -801,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 187,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187",
-  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
-  "source_locator": "lines 87-95",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, SUBCELLULAR LOCATION, TISSUE SPECIFICITY,\nRP   DISRUPTION PHENOTYPE, AND MUTAGENESIS OF HIS-61; TRP-129 AND ARG-255.\nRX   PubMed=17132048; DOI=10.1371/journal.pbio.0040416;\nRA   Zhai R.G., Cao Y., Hiesinger P.R., Zhou Y., Mehta S.Q., Schulze K.L.,\nRA   Verstreken P., Bellen H.J.;\nRT   \"Drosophila NMNAT maintains neural integrity independent of its NAD\nRT   synthesis activity.\";\nRL   PLoS Biol. 4:e416-e416(2006).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 187,
+  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 4,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-95",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187"
 }
 ```
 
@@ -822,18 +578,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 187,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187",
-  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
-  "source_locator": "lines 104-111",
   "excerpt": "RN   [7] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, AND SUBCELLULAR LOCATION.\nRX   PubMed=19403820; DOI=10.1523/jneurosci.5469-08.2009;\nRA   Sasaki Y., Vohra B.P., Lund F.E., Milbrandt J.;\nRT   \"Nicotinamide mononucleotide adenylyl transferase-mediated axonal\nRT   protection requires enzymatic activity but not increased levels of neuronal\nRT   nicotinamide adenine dinucleotide.\";\nRL   J. Neurosci. 29:5525-5535(2009).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 187,
+  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 4,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-111",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187"
 }
 ```
 
@@ -843,18 +599,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 187,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187",
-  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
-  "source_locator": "lines 125-133",
   "excerpt": "RN   [10] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, SUBCELLULAR LOCATION, ALTERNATIVE SPLICING,\nRP   INDUCTION BY HEAT SHOCK AND PROTEOTOXIC STRESS, NUCLEAR LOCALISAION SIGNAL,\nRP   AND MUTAGENESIS OF LYS-380.\nRX   PubMed=26616331; DOI=10.1038/ncomms10057;\nRA   Ruan K., Zhu Y., Li C., Brazill J.M., Zhai R.G.;\nRT   \"Alternative splicing of Drosophila Nmnat functions as a switch to enhance\nRT   neuroprotection under stress.\";\nRL   Nat. Commun. 6:10057-10057(2015).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 187,
+  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 4,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 125-133",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187"
 }
 ```
 
@@ -864,18 +620,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 187,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187",
-  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
-  "source_locator": "lines 164-171",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=beta-nicotinamide D-ribonucleotide + ATP + H(+) = diphosphate\nCC         + NAD(+); Xref=Rhea:RHEA:21360, ChEBI:CHEBI:14649, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:57540; EC=2.7.7.1;\nCC         Evidence={ECO:0000255|RuleBase:RU362021, ECO:0000269|PubMed:17132048,\nCC         ECO:0000269|PubMed:19403820, ECO:0000269|PubMed:26616331};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:21361;\nCC         Evidence={ECO:0000269|PubMed:19403820, ECO:0000269|PubMed:26616331};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 187,
+  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 4,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 164-171",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187"
 }
 ```
 
@@ -885,18 +641,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 187,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187",
-  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
-  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
-  "source_locator": "lines 172-177",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=nicotinate beta-D-ribonucleotide + ATP + H(+) = deamido-NAD(+)\nCC         + diphosphate; Xref=Rhea:RHEA:22860, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:57502,\nCC         ChEBI:CHEBI:58437; EC=2.7.7.18;\nCC         Evidence={ECO:0000255|RuleBase:RU362021};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 187,
+  "retrieved_utc": "2026-11-02T04:33:19.400018+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 4,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 172-177",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6ad887d1c4ec6196ee0ca40854a590e26d7f3512e90bc2ef9725f7251181e6eb",
+  "url": "https://rest.uniprot.org/unisave/Q9VC03?format=txt&versions=187"
 }
 ```
 

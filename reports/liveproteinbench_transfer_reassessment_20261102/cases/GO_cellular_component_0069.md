@@ -1,18 +1,16 @@
-# GO_cellular_component_0069: before and after transfer clarification
+# GO_cellular_component_0069
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0069.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0069.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — other organism cell membrane
+**Expected answer:** **D** — other organism cell membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry, which annotates the protein as secreted and at the target cell membrane. The specific GO term in option D is also present, though its GO assignment is IEA and the target-membrane localization is a curator inference rather than direct proof of the protein’s primary location.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with secretion, making the intracellular options less plausible. But a secretion signal alone does not establish that the protein associates with another organism’s cell membrane.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this secreted toxin is associated with a target cell membrane is needed to distinguish option D from other possible extracellular destinations.
-
-
-**Reason**
-
-> The sequence may support secretion, but the membrane-targeting behavior depends on identifying the protein’s toxin function or knowing its annotation; that information is not established by the supplied sequence and choices alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched annotation supports D among the listed choices. The annotation also says the protein is secreted, a location not offered as an option.
-
-
-### Important caveats
-
-- The UniProt subcellular-location annotation says both “Secreted” and “Target cell membrane”; the latter is supported by a curator inference (ECO:0000305).
-- The GO annotation for “other organism cell membrane” is IEA:UniProtKB-KW, not direct experimental evidence for that GO term.
-- The cited publication is recorded as involving subcellular location, but its primary evidence was not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with secretion, making the intracellular options less plausible. But a secretion signal alone does not establish that the protein associates with another organism’s cell membrane.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this secreted toxin is associated with a target cell membrane is needed to distinguish option D from other possible extracellular destinations.",
-    "reason": "The sequence may support secretion, but the membrane-targeting behavior depends on identifying the protein’s toxin function or knowing its annotation; that information is not established by the supplied sequence and choices alone."
-  },
-  "case_id": "GO_cellular_component_0069",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which annotates the protein as secreted and at the target cell membrane. The specific GO term in option D is also present, though its GO assignment is IEA and the target-membrane localization is a curator inference rather than direct proof of the protein’s primary location."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation says both “Secreted” and “Target cell membrane”; the latter is supported by a curator inference (ECO:0000305).",
-    "The GO annotation for “other organism cell membrane” is IEA:UniProtKB-KW, not direct experimental evidence for that GO term.",
-    "The cited publication is recorded as involving subcellular location, but its primary evidence was not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation supports D among the listed choices. The annotation also says the protein is secreted, a location not offered as an option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0069",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which annotates the protein as secreted and at the target cell membrane. The specific GO term in option D is also present, though its GO assignment is IEA and the target-membrane localization is a curator inference rather than direct proof of the protein’s primary location.",
-    "evidence_ids": ["C1", "C5", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with secretion, making the intracellular options less plausible. But a secretion signal alone does not establish that the protein associates with another organism’s cell membrane.",
-    "missing_item_specific_fact": "The protein-specific fact that this secreted toxin is associated with a target cell membrane is needed to distinguish option D from other possible extracellular destinations.",
-    "reason": "The sequence may support secretion, but the membrane-targeting behavior depends on identifying the protein’s toxin function or knowing its annotation; that information is not established by the supplied sequence and choices alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched annotation supports D among the listed choices. The annotation also says the protein is secreted, a location not offered as an option."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation says both “Secreted” and “Target cell membrane”; the latter is supported by a curator inference (ECO:0000305).",
-    "The GO annotation for “other organism cell membrane” is IEA:UniProtKB-KW, not direct experimental evidence for that GO term.",
-    "The cited publication is recorded as involving subcellular location, but its primary evidence was not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXX1 (U-megalopygitoxin(8)-Mo15, an Aerolysin-like pore-forming toxin from Megalopyge opercularis) carries GO:0044218 'other organism cell membrane' as an IEA:UniProtKB-KW annotation (H5). The subcellular location comment states 'Secreted' (EXP, ECO:0000269) and 'Target cell membrane' (ECO:0000305) (C5/H3). Biologically, a pore-forming toxin from a caterpillar that stings other organisms inserts into the target (victim) cell membrane, consistent with 'other organism cell membrane.' The strongest direct experimental evidence is for secretion/extracellular localization, while the specific GO:0044218 assignment is IEA-level, but it is not contradicted and is biologically coherent.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The N-terminal sequence (MARFSSKNLTKLFQYLVLSLLSPVAFG) is a classic hydrophobic signal peptide indicating a secreted protein. A secreted protein cannot reside in the nuclear periphery (B), cannot be a viral capsid protein (A), and cannot be a nuclear transcription-factor complex (C). By elimination, D ('other organism cell membrane') is the only viable option. Additionally, the beta-sheet-rich architecture and Aerolysin-like fold visible in the sequence are hallmarks of pore-forming toxins that insert into target membranes, further supporting a membrane-insertion location rather than a purely soluble extracellular one.
-
-
-**Missing item-specific fact**
-
-> None critical. The specific GO term 'other organism cell membrane' is somewhat specialized, but among the four provided options it is the only one compatible with a secreted pore-forming toxin acting on a victim's cells.
-
-
-**Reason**
-
-> The signal peptide immediately rules out intracellular compartments (B, C) and viral structures (A). The remaining option D is the only one consistent with a secreted toxin that acts on membranes. This elimination is achievable through general biological knowledge without needing to recall the specific UniProt annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and C are clearly incompatible with a secreted protein bearing a signal peptide. Only D is consistent. While 'extracellular region' (the EXP-level annotation) might arguably be a more primary location, it is not offered as a choice, removing any ambiguity among the provided options.
-
-
-### Important caveats
-
-- The GO:0044218 annotation is IEA (Inferred from Electronic Annotation via UniProtKB keyword), not directly experimental. The experimental evidence (ECO:0000269) supports 'Secreted/extracellular'; 'Target cell membrane' is ECO:0000305 (inferred from sequence/structure).
-- The identity of the protein (Aerolysin-like pore-forming toxin from a caterpillar) is not stated in the model input; the model must infer toxin-like features from the sequence or rely on pattern recognition.
-- The benchmark sequence matches the UniProt entry exactly (SHA-256 confirmed), but the accession P0DXX1 was not provided to the evaluated model.
-- The 'primary' cellular component framing is slightly in tension with the EXP evidence for secretion vs. the IEA evidence for membrane insertion, but this does not affect the answer among the given choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal sequence (MARFSSKNLTKLFQYLVLSLLSPVAFG) is a classic hydrophobic signal peptide indicating a secreted protein. A secreted protein cannot reside in the nuclear periphery (B), cannot be a viral capsid protein (A), and cannot be a nuclear transcription-factor complex (C). By elimination, D ('other organism cell membrane') is the only viable option. Additionally, the beta-sheet-rich architecture and Aerolysin-like fold visible in the sequence are hallmarks of pore-forming toxins that insert into target membranes, further supporting a membrane-insertion location rather than a purely soluble extracellular one.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The specific GO term 'other organism cell membrane' is somewhat specialized, but among the four provided options it is the only one compatible with a secreted pore-forming toxin acting on a victim's cells.",
-    "reason": "The signal peptide immediately rules out intracellular compartments (B, C) and viral structures (A). The remaining option D is the only one consistent with a secreted toxin that acts on membranes. This elimination is achievable through general biological knowledge without needing to recall the specific UniProt annotation."
-  },
-  "case_id": "GO_cellular_component_0069",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXX1 (U-megalopygitoxin(8)-Mo15, an Aerolysin-like pore-forming toxin from Megalopyge opercularis) carries GO:0044218 'other organism cell membrane' as an IEA:UniProtKB-KW annotation (H5). The subcellular location comment states 'Secreted' (EXP, ECO:0000269) and 'Target cell membrane' (ECO:0000305) (C5/H3). Biologically, a pore-forming toxin from a caterpillar that stings other organisms inserts into the target (victim) cell membrane, consistent with 'other organism cell membrane.' The strongest direct experimental evidence is for secretion/extracellular localization, while the specific GO:0044218 assignment is IEA-level, but it is not contradicted and is biologically coherent."
-  },
-  "important_caveats": [
-    "The GO:0044218 annotation is IEA (Inferred from Electronic Annotation via UniProtKB keyword), not directly experimental. The experimental evidence (ECO:0000269) supports 'Secreted/extracellular'; 'Target cell membrane' is ECO:0000305 (inferred from sequence/structure).",
-    "The identity of the protein (Aerolysin-like pore-forming toxin from a caterpillar) is not stated in the model input; the model must infer toxin-like features from the sequence or rely on pattern recognition.",
-    "The benchmark sequence matches the UniProt entry exactly (SHA-256 confirmed), but the accession P0DXX1 was not provided to the evaluated model.",
-    "The 'primary' cellular component framing is slightly in tension with the EXP evidence for secretion vs. the IEA evidence for membrane insertion, but this does not affect the answer among the given choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C are clearly incompatible with a secreted protein bearing a signal peptide. Only D is consistent. While 'extracellular region' (the EXP-level annotation) might arguably be a more primary location, it is not offered as a choice, removing any ambiguity among the provided options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0069",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXX1 (U-megalopygitoxin(8)-Mo15, an Aerolysin-like pore-forming toxin from Megalopyge opercularis) carries GO:0044218 'other organism cell membrane' as an IEA:UniProtKB-KW annotation (H5). The subcellular location comment states 'Secreted' (EXP, ECO:0000269) and 'Target cell membrane' (ECO:0000305) (C5/H3). Biologically, a pore-forming toxin from a caterpillar that stings other organisms inserts into the target (victim) cell membrane, consistent with 'other organism cell membrane.' The strongest direct experimental evidence is for secretion/extracellular localization, while the specific GO:0044218 assignment is IEA-level, but it is not contradicted and is biologically coherent.",
-    "evidence_ids": ["C5", "C6", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The N-terminal sequence (MARFSSKNLTKLFQYLVLSLLSPVAFG) is a classic hydrophobic signal peptide indicating a secreted protein. A secreted protein cannot reside in the nuclear periphery (B), cannot be a viral capsid protein (A), and cannot be a nuclear transcription-factor complex (C). By elimination, D ('other organism cell membrane') is the only viable option. Additionally, the beta-sheet-rich architecture and Aerolysin-like fold visible in the sequence are hallmarks of pore-forming toxins that insert into target membranes, further supporting a membrane-insertion location rather than a purely soluble extracellular one.",
-    "missing_item_specific_fact": "None critical. The specific GO term 'other organism cell membrane' is somewhat specialized, but among the four provided options it is the only one compatible with a secreted pore-forming toxin acting on a victim's cells.",
-    "reason": "The signal peptide immediately rules out intracellular compartments (B, C) and viral structures (A). The remaining option D is the only one consistent with a secreted toxin that acts on membranes. This elimination is achievable through general biological knowledge without needing to recall the specific UniProt annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and C are clearly incompatible with a secreted protein bearing a signal peptide. Only D is consistent. While 'extracellular region' (the EXP-level annotation) might arguably be a more primary location, it is not offered as a choice, removing any ambiguity among the provided options."
-  },
-  "important_caveats": [
-    "The GO:0044218 annotation is IEA (Inferred from Electronic Annotation via UniProtKB keyword), not directly experimental. The experimental evidence (ECO:0000269) supports 'Secreted/extracellular'; 'Target cell membrane' is ECO:0000305 (inferred from sequence/structure).",
-    "The identity of the protein (Aerolysin-like pore-forming toxin from a caterpillar) is not stated in the model input; the model must infer toxin-like features from the sequence or rely on pattern recognition.",
-    "The benchmark sequence matches the UniProt entry exactly (SHA-256 confirmed), but the accession P0DXX1 was not provided to the evaluated model.",
-    "The 'primary' cellular component framing is slightly in tension with the EXP evidence for secretion vs. the IEA evidence for membrane insertion, but this does not affect the answer among the given choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXX1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "762364a55619850533adb77d6887a242b804a3ccb06c6831da30f7c577b3c14d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 310,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "762364a55619850533adb77d6887a242b804a3ccb06c6831da30f7c577b3c14d",
   "current_entry_audit": {
     "entryVersion": 5,
     "firstPublicDate": "2025-02-05",
@@ -537,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-02-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "current_source_sequence_sha256": "762364a55619850533adb77d6887a242b804a3ccb06c6831da30f7c577b3c14d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 310,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "762364a55619850533adb77d6887a242b804a3ccb06c6831da30f7c577b3c14d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 3,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXX1",
   "selected_historical_entry_version": 3,
+  "selected_historical_record_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
+  "selected_historical_source_sequence_length": 310,
+  "selected_historical_source_sequence_sha256": "762364a55619850533adb77d6887a242b804a3ccb06c6831da30f7c577b3c14d",
   "selected_historical_version": {
     "accession": "P0DXX1",
     "database": "Swiss-Prot",
@@ -555,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "TXU8F_MEGOP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
-  "selected_historical_source_sequence_sha256": "762364a55619850533adb77d6887a242b804a3ccb06c6831da30f7c577b3c14d",
-  "selected_historical_source_sequence_length": 310,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 3,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +346,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json",
-  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXX1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json"
 }
 ```
 
@@ -609,15 +365,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json",
-  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":5,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json"
 }
 ```
 
@@ -628,15 +384,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json",
-  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Southern flannel moth\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Lepidoptera\",\"Glossata\",\"Ditrysia\",\"Zygaenoidea\",\"Megalopygidae\",\"Megalopyge\"],\"scientificName\":\"Megalopyge opercularis\",\"synonyms\":[\"Phalaena opercularis\"],\"taxonId\":1113279}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json"
 }
 ```
 
@@ -647,15 +403,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json",
-  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37428925\",\"source\":\"PubMed\"}],\"value\":\"Aerolysin-like pore-forming toxin\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37428925\",\"source\":\"PubMed\"}],\"value\":\"Megalysin\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37428925\",\"source\":\"PubMed\"}],\"value\":\"U-megalopygitoxin(8)-Mo15\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"37428925\",\"source\":\"PubMed\"}],\"value\":\"U-MPTX(8)-Mo15\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WJJ70383.1\",\"source\":\"EMBL\"}],\"value\":\"U-MPTX.8-15\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json"
 }
 ```
 
@@ -666,15 +422,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json",
-  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37428925\",\"source\":\"PubMed\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"37428925\",\"source\":\"PubMed\"}],\"id\":\"SL-0451\",\"value\":\"Target cell membrane\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json"
 }
 ```
 
@@ -685,15 +441,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json",
-  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/2",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"37428925\",\"source\":\"PubMed\"}],\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/2",
+  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json"
 }
 ```
 
@@ -704,15 +460,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json",
-  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
-  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Walker A.A.\",\"Robinson S.D.\",\"Merritt D.J.\",\"Cardoso F.C.\",\"Goudarzi M.H.\",\"Mercedes R.S.\",\"Eagles D.A.\",\"Cooper P.\",\"Zdenek C.N.\",\"Fry B.G.\",\"Hall D.W.\",\"Vetter I.\",\"King G.F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"37428925\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.2305871120\"}],\"citationType\":\"journal article\",\"firstPage\":\"e2305871120\",\"id\":\"37428925\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"e2305871120\",\"publicationDate\":\"2023\",\"title\":\"Horizontal gene transfer underlies the painful stings of asp caterpillars (Lepidoptera: Megalopygidae).\",\"volume\":\"120\"},\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Venom\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"MASS SPECTROMETRY\",\"3D-STRUCTURE MODELING\",\"RECOMBINANT EXPRESSION\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:53.420710+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ac064a4a53a978b82f076fcd40ca80db8fb662a5986e6b12e4d09c50ebf92455",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXX1.json"
 }
 ```
 
@@ -722,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3",
-  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
-  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   TXU8F_MEGOP             Reviewed;         310 AA.\nAC   P0DXX1;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 3.\nDE   RecName: Full=U-megalopygitoxin(8)-Mo15 {ECO:0000303|PubMed:37428925};\nDE            Short=U-MPTX(8)-Mo15 {ECO:0000303|PubMed:37428925};\nDE            Short=U-MPTX.8-15 {ECO:0000312|EMBL:WJJ70383.1};\nDE   AltName: Full=Aerolysin-like pore-forming toxin {ECO:0000303|PubMed:37428925};\nDE   AltName: Full=Megalysin {ECO:0000303|PubMed:37428925};\nDE   Flags: Precursor;\nOS   Megalopyge opercularis (Southern flannel moth) (Phalaena opercularis).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Lepidoptera; Glossata; Ditrysia; Zygaenoidea;\nOC   Megalopygidae; Megalopyge.\nOX   NCBI_TaxID=1113279;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
+  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3"
 }
 ```
 
@@ -743,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3",
-  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
-  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
-  "source_locator": "lines 17-28",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], MASS SPECTROMETRY, 3D-STRUCTURE MODELING,\nRP   RECOMBINANT EXPRESSION, SUBCELLULAR LOCATION, TISSUE SPECIFICITY, AND\nRP   DEVELOPMENTAL STAGE.\nRC   TISSUE=Venom;\nRX   PubMed=37428925; DOI=10.1073/pnas.2305871120;\nRA   Walker A.A., Robinson S.D., Merritt D.J., Cardoso F.C., Goudarzi M.H.,\nRA   Mercedes R.S., Eagles D.A., Cooper P., Zdenek C.N., Fry B.G., Hall D.W.,\nRA   Vetter I., King G.F.;\nRT   \"Horizontal gene transfer underlies the painful stings of asp caterpillars\nRT   (Lepidoptera: Megalopygidae).\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 120:e2305871120-e2305871120(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-28",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
+  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3"
 }
 ```
 
@@ -764,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3",
-  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
-  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
-  "source_locator": "lines 31-32",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000269|PubMed:37428925}. Target\nCC       cell membrane {ECO:0000305|PubMed:37428925}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-32",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
+  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3"
 }
 ```
 
@@ -785,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3",
-  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
-  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
-  "source_locator": "lines 45-45",
   "excerpt": "DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
+  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3"
 }
 ```
 
@@ -806,18 +562,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 3,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3",
-  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
-  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
-  "source_locator": "lines 46-46",
   "excerpt": "DR   GO; GO:0044218; C:other organism cell membrane; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 3,
+  "retrieved_utc": "2026-11-02T04:30:00.155077+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cc4914e79a75fdf864b4725d73cbbaa0b2f16de40bc89fbd59dcb5ab54fbf6b3",
+  "url": "https://rest.uniprot.org/unisave/P0DXX1?format=txt&versions=3"
 }
 ```
 
@@ -828,15 +584,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 208650-208657",
   "excerpt": "[Term]\nid: GO:0034399\nname: nuclear periphery\nnamespace: cellular_component\ndef: \"The portion of the nuclear lumen proximal to the inner nuclear membrane.\" [GOC:krc, GOC:mah]\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0031981 ! nuclear lumen\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0034399",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 208650-208657",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0034399"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -847,15 +603,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 232112-232119",
   "excerpt": "[Term]\nid: GO:0039619\nname: T=4 icosahedral viral capsid\nnamespace: cellular_component\ndef: \"The protein coat that surrounds the infective nucleic acid in some virus particles where the subunits (capsomeres) are arranged to form an icosahedron with T=4 symmetry. The T=4 capsid is composed of 12 pentameric and 30 hexameric capsomeres.\" [VZ:808]\nxref: VZ:808 \"T=4 icosahedral capsid protein\"\nis_a: GO:0019030 ! icosahedral viral capsid\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0039619",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 232112-232119",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0039619"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -866,15 +622,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 255298-255307",
   "excerpt": "[Term]\nid: GO:0044218\nname: other organism cell membrane\nnamespace: cellular_component\nalt_id: GO:0044279\ndef: \"The cell membrane of a secondary organism with which the first organism is interacting.\" [GOC:jl]\nsynonym: \"foreign membrane\" RELATED []\nsynonym: \"other organism membrane\" BROAD []\nis_a: GO:0044217 ! other organism part\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044218",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 255298-255307",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044218"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -885,15 +641,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 374446-374452",
   "excerpt": "[Term]\nid: GO:0071159\nname: NF-kappaB complex\nnamespace: cellular_component\ndef: \"A protein complex that consists of a homo- or heterodimer of members of a family of structurally related proteins that contain a conserved N-terminal region called the Rel homology domain (RHD). In the nucleus, NF-kappaB complexes act as transcription factors. In unstimulated cells, NF-kappaB dimers are sequestered in the cytoplasm by IkappaB monomers; signals that induce NF-kappaB activity cause degradation of IkappaB, allowing NF-kappaB dimers to translocate to the nucleus and induce gene expression.\" [ISBN:0849327946]\nis_a: GO:0140513 ! nuclear protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0071159",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 374446-374452",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0071159"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

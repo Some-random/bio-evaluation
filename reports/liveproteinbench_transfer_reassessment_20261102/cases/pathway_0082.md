@@ -1,18 +1,16 @@
-# pathway_0082: before and after transfer clarification
+# pathway_0082
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0082.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0082.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Antibiotic biosynthesis. .
+**Expected answer:** **A** — Antibiotic biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for methyltransferase GfsG, whose pathway annotation is “Antibiotic biosynthesis.” The annotation cites literature evidence, including a paper on FD-891 biosynthesis, so the key is supported for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may be recognized as an enzyme, but that alone does not identify which specialized biosynthetic pathway it serves or distinguish antibiotic biosynthesis from the other listed pathways.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as GfsG and its experimentally supported association with antibiotic biosynthesis are absent from the input.
-
-
-**Reason**
-
-> Selecting A depends on the specific functional and pathway assignment for this protein, not on a biological argument that meaningfully distinguishes the choices from the sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched-entry pathway annotation supports A; the supplied evidence does not support another listed option.
-
-
-### Important caveats
-
-- The UniProt sequence match is exact, but the author's original source snapshot is unknown.
-- The pathway annotation is curated and cites literature; this review did not independently retrieve or validate the primary papers.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may be recognized as an enzyme, but that alone does not identify which specialized biosynthetic pathway it serves or distinguish antibiotic biosynthesis from the other listed pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as GfsG and its experimentally supported association with antibiotic biosynthesis are absent from the input.",
-    "reason": "Selecting A depends on the specific functional and pathway assignment for this protein, not on a biological argument that meaningfully distinguishes the choices from the sequence alone."
-  },
-  "case_id": "pathway_0082",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for methyltransferase GfsG, whose pathway annotation is “Antibiotic biosynthesis.” The annotation cites literature evidence, including a paper on FD-891 biosynthesis, so the key is supported for this sequence."
-  },
-  "important_caveats": [
-    "The UniProt sequence match is exact, but the author's original source snapshot is unknown.",
-    "The pathway annotation is curated and cites literature; this review did not independently retrieve or validate the primary papers."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-entry pathway annotation supports A; the supplied evidence does not support another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0082",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for methyltransferase GfsG, whose pathway annotation is “Antibiotic biosynthesis.” The annotation cites literature evidence, including a paper on FD-891 biosynthesis, so the key is supported for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may be recognized as an enzyme, but that alone does not identify which specialized biosynthetic pathway it serves or distinguish antibiotic biosynthesis from the other listed pathways.",
-    "missing_item_specific_fact": "The protein-specific identification as GfsG and its experimentally supported association with antibiotic biosynthesis are absent from the input.",
-    "reason": "Selecting A depends on the specific functional and pathway assignment for this protein, not on a biological argument that meaningfully distinguishes the choices from the sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched-entry pathway annotation supports A; the supplied evidence does not support another listed option."
-  },
-  "important_caveats": [
-    "The UniProt sequence match is exact, but the author's original source snapshot is unknown.",
-    "The pathway annotation is curated and cites literature; this review did not independently retrieve or validate the primary papers."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry E0D208 (Methyltransferase GfsG from Streptomyces halstedii) explicitly annotates the pathway as 'Antibiotic biosynthesis' with experimental evidence (ECO:0000269|PubMed:26630077) and inferred evidence (ECO:0000305|PubMed:20589823). The protein is a methyltransferase involved in FD-891, a 16-membered macrolide antibiotic biosynthesis gene cluster. Sequence match is confirmed (278 AA, SHA256 identical).
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a SAM-dependent methyltransferase motif (VLDVGCGVGKPAAW, a Rossmann-like fold), but methyltransferases are ubiquitous across all four candidate pathways: antibiotic biosynthesis (e.g., macrolide sugar methylation), steroid biosynthesis (e.g., C-24 sterol methyltransferase), coenzyme A biosynthesis (pantothenate-related methyltransferases), and carotenoid biosynthesis (some carotenoid methyltransferases). The sequence alone provides no structural or compositional feature that uniquely identifies the FD-891 macrolide pathway over the others.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as GfsG, a C-3 methyltransferase acting on the mycaminose sugar within the FD-891 16-membered macrolide antibiotic biosynthetic gene cluster of Streptomyces, is a database annotation that cannot be derived from the 278-residue sequence alone. The organism (Streptomyces) is not provided in the question input.
-
-
-**Reason**
-
-> While one might weakly argue that recognizing Streptomyces secondary metabolism would favor antibiotic biosynthesis, the organism is not stated, and the methyltransferase fold is shared across all four pathway options. Correct answer selection requires knowing the specific UniProt annotation or the FD-891 gene cluster literature.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although the sequence features are not uniquely diagnostic, the UniProt annotation unambiguously assigns 'Antibiotic biosynthesis.' The other options (spirilloxanthin, steroid, CoA biosynthesis) are not annotated for this protein. No alternative option is defensible given the experimental evidence for FD-891 macrolide biosynthesis.
-
-
-### Important caveats
-
-- The organism (Streptomyces halstedii) is not provided in the question input, removing a contextual cue that would favor antibiotic biosynthesis reasoning.
-- The methyltransferase domain is a shared fold across all four pathway categories, limiting sequence-only discrimination.
-- The UniProt annotation combines experimental evidence (PubMed:26630077) and inferred evidence (PubMed:20589823); the pathway assignment is well-supported but partly by homology/inference within the gene cluster context.
-- The entry was first publicly released in Feb 2025, so the author's source snapshot date is unknown; however, the sequence and pathway annotation have been stable since sequence version 1 (2010).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a SAM-dependent methyltransferase motif (VLDVGCGVGKPAAW, a Rossmann-like fold), but methyltransferases are ubiquitous across all four candidate pathways: antibiotic biosynthesis (e.g., macrolide sugar methylation), steroid biosynthesis (e.g., C-24 sterol methyltransferase), coenzyme A biosynthesis (pantothenate-related methyltransferases), and carotenoid biosynthesis (some carotenoid methyltransferases). The sequence alone provides no structural or compositional feature that uniquely identifies the FD-891 macrolide pathway over the others.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as GfsG, a C-3 methyltransferase acting on the mycaminose sugar within the FD-891 16-membered macrolide antibiotic biosynthetic gene cluster of Streptomyces, is a database annotation that cannot be derived from the 278-residue sequence alone. The organism (Streptomyces) is not provided in the question input.",
-    "reason": "While one might weakly argue that recognizing Streptomyces secondary metabolism would favor antibiotic biosynthesis, the organism is not stated, and the methyltransferase fold is shared across all four pathway options. Correct answer selection requires knowing the specific UniProt annotation or the FD-891 gene cluster literature."
-  },
-  "case_id": "pathway_0082",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H4",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry E0D208 (Methyltransferase GfsG from Streptomyces halstedii) explicitly annotates the pathway as 'Antibiotic biosynthesis' with experimental evidence (ECO:0000269|PubMed:26630077) and inferred evidence (ECO:0000305|PubMed:20589823). The protein is a methyltransferase involved in FD-891, a 16-membered macrolide antibiotic biosynthesis gene cluster. Sequence match is confirmed (278 AA, SHA256 identical)."
-  },
-  "important_caveats": [
-    "The organism (Streptomyces halstedii) is not provided in the question input, removing a contextual cue that would favor antibiotic biosynthesis reasoning.",
-    "The methyltransferase domain is a shared fold across all four pathway categories, limiting sequence-only discrimination.",
-    "The UniProt annotation combines experimental evidence (PubMed:26630077) and inferred evidence (PubMed:20589823); the pathway assignment is well-supported but partly by homology/inference within the gene cluster context.",
-    "The entry was first publicly released in Feb 2025, so the author's source snapshot date is unknown; however, the sequence and pathway annotation have been stable since sequence version 1 (2010)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the sequence features are not uniquely diagnostic, the UniProt annotation unambiguously assigns 'Antibiotic biosynthesis.' The other options (spirilloxanthin, steroid, CoA biosynthesis) are not annotated for this protein. No alternative option is defensible given the experimental evidence for FD-891 macrolide biosynthesis."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0082",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry E0D208 (Methyltransferase GfsG from Streptomyces halstedii) explicitly annotates the pathway as 'Antibiotic biosynthesis' with experimental evidence (ECO:0000269|PubMed:26630077) and inferred evidence (ECO:0000305|PubMed:20589823). The protein is a methyltransferase involved in FD-891, a 16-membered macrolide antibiotic biosynthesis gene cluster. Sequence match is confirmed (278 AA, SHA256 identical).",
-    "evidence_ids": ["C5", "C7", "H4", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a SAM-dependent methyltransferase motif (VLDVGCGVGKPAAW, a Rossmann-like fold), but methyltransferases are ubiquitous across all four candidate pathways: antibiotic biosynthesis (e.g., macrolide sugar methylation), steroid biosynthesis (e.g., C-24 sterol methyltransferase), coenzyme A biosynthesis (pantothenate-related methyltransferases), and carotenoid biosynthesis (some carotenoid methyltransferases). The sequence alone provides no structural or compositional feature that uniquely identifies the FD-891 macrolide pathway over the others.",
-    "missing_item_specific_fact": "The specific identity of this protein as GfsG, a C-3 methyltransferase acting on the mycaminose sugar within the FD-891 16-membered macrolide antibiotic biosynthetic gene cluster of Streptomyces, is a database annotation that cannot be derived from the 278-residue sequence alone. The organism (Streptomyces) is not provided in the question input.",
-    "reason": "While one might weakly argue that recognizing Streptomyces secondary metabolism would favor antibiotic biosynthesis, the organism is not stated, and the methyltransferase fold is shared across all four pathway options. Correct answer selection requires knowing the specific UniProt annotation or the FD-891 gene cluster literature."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although the sequence features are not uniquely diagnostic, the UniProt annotation unambiguously assigns 'Antibiotic biosynthesis.' The other options (spirilloxanthin, steroid, CoA biosynthesis) are not annotated for this protein. No alternative option is defensible given the experimental evidence for FD-891 macrolide biosynthesis."
-  },
-  "important_caveats": [
-    "The organism (Streptomyces halstedii) is not provided in the question input, removing a contextual cue that would favor antibiotic biosynthesis reasoning.",
-    "The methyltransferase domain is a shared fold across all four pathway categories, limiting sequence-only discrimination.",
-    "The UniProt annotation combines experimental evidence (PubMed:26630077) and inferred evidence (PubMed:20589823); the pathway assignment is well-supported but partly by homology/inference within the gene cluster context.",
-    "The entry was first publicly released in Feb 2025, so the author's source snapshot date is unknown; however, the sequence and pathway annotation have been stable since sequence version 1 (2010)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +161,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E0D208",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "446c919f832e44a2cb7c48c753dd503d70b078244fdd1258da6a8d172c0385a4",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 278,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "446c919f832e44a2cb7c48c753dd503d70b078244fdd1258da6a8d172c0385a4",
   "current_entry_audit": {
     "entryVersion": 29,
     "firstPublicDate": "2025-02-05",
@@ -539,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-11-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "current_source_sequence_sha256": "446c919f832e44a2cb7c48c753dd503d70b078244fdd1258da6a8d172c0385a4",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 278,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "446c919f832e44a2cb7c48c753dd503d70b078244fdd1258da6a8d172c0385a4",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 28,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E0D208",
   "selected_historical_entry_version": 28,
+  "selected_historical_record_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
+  "selected_historical_source_sequence_length": 278,
+  "selected_historical_source_sequence_sha256": "446c919f832e44a2cb7c48c753dd503d70b078244fdd1258da6a8d172c0385a4",
   "selected_historical_version": {
     "accession": "E0D208",
     "database": "Swiss-Prot",
@@ -557,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "GFSG_STRHA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
-  "selected_historical_source_sequence_sha256": "446c919f832e44a2cb7c48c753dd503d70b078244fdd1258da6a8d172c0385a4",
-  "selected_historical_source_sequence_length": 278,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 28,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json",
-  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E0D208\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json"
 }
 ```
 
@@ -607,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json",
-  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":29,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-11-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json"
 }
 ```
 
@@ -626,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json",
-  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces halstedii\",\"taxonId\":1944}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json"
 }
 ```
 
@@ -645,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json",
-  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26630077\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Methyltransferase GfsG\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json"
 }
 ```
 
@@ -664,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json",
-  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26630077\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"20589823\",\"source\":\"PubMed\"}],\"value\":\"Antibiotic biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json"
 }
 ```
 
@@ -683,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json",
-  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Kudo F.\",\"Motegi A.\",\"Mizoue K.\",\"Eguchi T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20589823\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201000214\"}],\"citationType\":\"journal article\",\"firstPage\":\"1574\",\"id\":\"20589823\",\"journal\":\"ChemBioChem\",\"lastPage\":\"1582\",\"publicationDate\":\"2010\",\"title\":\"Cloning and characterization of the biosynthetic gene cluster of 16-membered macrolide antibiotic FD-891: involvement of a dual functional cytochrome P450 monooxygenase catalyzing epoxidation and hydroxylation.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ16473.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"A-8890\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json"
 }
 ```
 
@@ -702,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json",
-  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
-  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Kudo F.\",\"Kawamura K.\",\"Furuya T.\",\"Yamanishi H.\",\"Motegi A.\",\"Komatsubara A.\",\"Numakura M.\",\"Miyanaga A.\",\"Eguchi T.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26630077\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201500533\"}],\"citationType\":\"journal article\",\"firstPage\":\"233\",\"id\":\"26630077\",\"journal\":\"ChemBioChem\",\"lastPage\":\"238\",\"publicationDate\":\"2016\",\"title\":\"Parallel Post-Polyketide Synthase Modification Mechanism Involved in FD-891 Biosynthesis in Streptomyces graminofaciens A-8890.\",\"volume\":\"17\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"A-8890\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"POSSIBLE ACTIVE SITE\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"DISRUPTION PHENOTYPE\",\"MUTAGENESIS OF GLU-146; HIS-150 AND ASP-175\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:27:56.118083+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "85a828a87c51921c250c7dfea7e360da93d816eafd568bf000dc2c70ce5c24c0",
+  "url": "https://rest.uniprot.org/uniprotkb/E0D208.json"
 }
 ```
 
@@ -720,18 +480,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28",
-  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
-  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   GFSG_STRHA              Reviewed;         278 AA.\nAC   E0D208;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-NOV-2010, sequence version 1.\nDT   28-JAN-2026, entry version 28.\nDE   RecName: Full=Methyltransferase GfsG {ECO:0000305};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:26630077};\nGN   Name=gfsG {ECO:0000303|PubMed:20589823};\nOS   Streptomyces halstedii.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=1944;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
+  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28"
 }
 ```
 
@@ -741,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28",
-  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
-  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
-  "source_locator": "lines 13-21",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAJ16473.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].\nRC   STRAIN=A-8890;\nRX   PubMed=20589823; DOI=10.1002/cbic.201000214;\nRA   Kudo F., Motegi A., Mizoue K., Eguchi T.;\nRT   \"Cloning and characterization of the biosynthetic gene cluster of 16-\nRT   membered macrolide antibiotic FD-891: involvement of a dual functional\nRT   cytochrome P450 monooxygenase catalyzing epoxidation and hydroxylation.\";\nRL   ChemBioChem 11:1574-1582(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 13-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
+  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28"
 }
 ```
 
@@ -762,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28",
-  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
-  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
-  "source_locator": "lines 43-53",
   "excerpt": "RN   [5]\nRP   FUNCTION, CATALYTIC ACTIVITY, POSSIBLE ACTIVE SITE, BIOPHYSICOCHEMICAL\nRP   PROPERTIES, PATHWAY, DISRUPTION PHENOTYPE, AND MUTAGENESIS OF GLU-146;\nRP   HIS-150 AND ASP-175.\nRC   STRAIN=A-8890;\nRX   PubMed=26630077; DOI=10.1002/cbic.201500533;\nRA   Kudo F., Kawamura K., Furuya T., Yamanishi H., Motegi A., Komatsubara A.,\nRA   Numakura M., Miyanaga A., Eguchi T.;\nRT   \"Parallel Post-Polyketide Synthase Modification Mechanism Involved in FD-\nRT   891 Biosynthesis in Streptomyces graminofaciens A-8890.\";\nRL   ChemBioChem 17:233-238(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
+  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28"
 }
 ```
 
@@ -783,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28",
-  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
-  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
-  "source_locator": "lines 66-67",
   "excerpt": "CC   -!- PATHWAY: Antibiotic biosynthesis. {ECO:0000269|PubMed:26630077,\nCC       ECO:0000305|PubMed:20589823}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:28:00.650050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 66-67",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b7192a0f66b33ae1c0454812f81ce6522ffac94ec64111595e98e4c543e8a6ef",
+  "url": "https://rest.uniprot.org/unisave/E0D208?format=txt&versions=28"
 }
 ```
 

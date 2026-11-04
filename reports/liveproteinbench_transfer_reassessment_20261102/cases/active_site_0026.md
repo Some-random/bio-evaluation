@@ -1,18 +1,16 @@
-# active_site_0026: before and after transfer clarification
+# active_site_0026
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0026.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0026.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 131 (Charge relay system)
+**Expected answer:** **C** — Position 131 (Charge relay system)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt entry annotating position 131 as an active site with the description “Charge relay system.” The annotation is supported by similarity transfer, not by direct experimental evidence in the supplied material.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence length rules out positions 1045 and 1334, but the sequence and choices provide no defensible way to identify position 131 as the annotated charge-relay active site.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site annotation that position 131 participates in a charge-relay system.
-
-
-**Reason**
-
-> Identifying that annotation requires a protein-specific fact absent from the prompt; recognizing or retrieving the sequence’s database annotation would be lookup, not reasoning from the supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> B and C both specify position 131 and the same charge-relay role; “Charge relay” and “Charge relay system” do not meaningfully distinguish them.
-
-
-### Important caveats
-
-- The supporting annotation is transferred by similarity (ECO:0000250), so it should not be described as direct experimental confirmation for this sequence.
-- The reviewer-only evidence confirms an exact sequence match; that identity and annotation were not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence length rules out positions 1045 and 1334, but the sequence and choices provide no defensible way to identify position 131 as the annotated charge-relay active site.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site annotation that position 131 participates in a charge-relay system.",
-    "reason": "Identifying that annotation requires a protein-specific fact absent from the prompt; recognizing or retrieving the sequence’s database annotation would be lookup, not reasoning from the supplied information."
-  },
-  "case_id": "active_site_0026",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry annotating position 131 as an active site with the description “Charge relay system.” The annotation is supported by similarity transfer, not by direct experimental evidence in the supplied material."
-  },
-  "important_caveats": [
-    "The supporting annotation is transferred by similarity (ECO:0000250), so it should not be described as direct experimental confirmation for this sequence.",
-    "The reviewer-only evidence confirms an exact sequence match; that identity and annotation were not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "B and C both specify position 131 and the same charge-relay role; “Charge relay” and “Charge relay system” do not meaningfully distinguish them."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0026",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry annotating position 131 as an active site with the description “Charge relay system.” The annotation is supported by similarity transfer, not by direct experimental evidence in the supplied material.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence length rules out positions 1045 and 1334, but the sequence and choices provide no defensible way to identify position 131 as the annotated charge-relay active site.",
-    "missing_item_specific_fact": "The protein-specific active-site annotation that position 131 participates in a charge-relay system.",
-    "reason": "Identifying that annotation requires a protein-specific fact absent from the prompt; recognizing or retrieving the sequence’s database annotation would be lookup, not reasoning from the supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "B and C both specify position 131 and the same charge-relay role; “Charge relay” and “Charge relay system” do not meaningfully distinguish them."
-  },
-  "important_caveats": [
-    "The supporting annotation is transferred by similarity (ECO:0000250), so it should not be described as direct experimental confirmation for this sequence.",
-    "The reviewer-only evidence confirms an exact sequence match; that identity and annotation were not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt annotation for A0A385XI13 (Esterase 1, EST1, from Aureobasidium melanogenum) explicitly annotates an active site at position 131 with the description 'Charge relay system' (evidence C5, H3). The sequence is 282 residues long, making positions 1334 and 1045 impossible. Position 131 corresponds to a serine residue, consistent with the nucleophilic serine of a serine esterase. However, the annotation carries evidence code ECO:0000250 (inferred by similarity to P38777), meaning it is a computational/homology-based annotation, not direct experimental determination.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [H1](#evidence-h1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is 282 amino acids long, so positions 1334 (A) and 1045 (D) are immediately impossible. The protein is annotated as an esterase (EC 3.1.2.-). Serine hydrolases/esterases use a Ser-His-Asp/Glu catalytic triad, commonly termed a 'charge relay system.' Counting the sequence reveals position 131 is a serine (S), consistent with the nucleophilic residue of a serine esterase. The standard enzymological term for the full triad mechanism is 'charge relay system' (the complete Ser-His-Asp network), whereas 'charge relay' alone is an incomplete shorthand.
-
-
-**Missing item-specific fact**
-
-> The distinction between B ('Charge relay') and C ('Charge relay system') is essentially a verbatim annotation-wording issue. Both describe the same catalytic mechanism. No biological property of the protein distinguishes these two phrasings; selecting C over B relies on matching the exact UniProt annotation string rather than on any functional or structural reasoning.
-
-
-**Reason**
-
-> The core task—identifying position 131 as the catalytic serine of an esterase and eliminating out-of-range positions—is achievable through general biological reasoning (sequence length check, esterase catalytic mechanism recognition, serine identification). However, the final B-vs-C discrimination is a trivial wording match to the UniProt annotation convention and does not require independent biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Choices B and C describe the same active site (position 131) with semantically equivalent descriptions ('Charge relay' vs 'Charge relay system'). No biological property of the protein distinguishes these two phrasings. A model selecting B would be functionally correct in substance. The 'correct' answer depends on exact UniProt annotation wording rather than on a biologically meaningful distinction.
-
-
-### Important caveats
-
-- The active site annotation is computational (ECO:0000250, inferred by similarity to P38777), not experimentally validated for this specific protein.
-- The B-vs-C distinction is a trivial wording issue; the benchmark treats 'Charge relay system' as uniquely correct over 'Charge relay,' which is an annotation-convention match rather than a biological fact.
-- The sequence is 282 residues; positions 1334 and 1045 are clearly out of range, making A and D trivially eliminable.
-- The UniProt entry was first released in 2025-02-05; the annotation history is short and the similarity-based evidence code means the active site assignment is transferred, not independently measured.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is 282 amino acids long, so positions 1334 (A) and 1045 (D) are immediately impossible. The protein is annotated as an esterase (EC 3.1.2.-). Serine hydrolases/esterases use a Ser-His-Asp/Glu catalytic triad, commonly termed a 'charge relay system.' Counting the sequence reveals position 131 is a serine (S), consistent with the nucleophilic residue of a serine esterase. The standard enzymological term for the full triad mechanism is 'charge relay system' (the complete Ser-His-Asp network), whereas 'charge relay' alone is an incomplete shorthand.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The distinction between B ('Charge relay') and C ('Charge relay system') is essentially a verbatim annotation-wording issue. Both describe the same catalytic mechanism. No biological property of the protein distinguishes these two phrasings; selecting C over B relies on matching the exact UniProt annotation string rather than on any functional or structural reasoning.",
-    "reason": "The core task—identifying position 131 as the catalytic serine of an esterase and eliminating out-of-range positions—is achievable through general biological reasoning (sequence length check, esterase catalytic mechanism recognition, serine identification). However, the final B-vs-C discrimination is a trivial wording match to the UniProt annotation convention and does not require independent biological reasoning."
-  },
-  "case_id": "active_site_0026",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "H1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt annotation for A0A385XI13 (Esterase 1, EST1, from Aureobasidium melanogenum) explicitly annotates an active site at position 131 with the description 'Charge relay system' (evidence C5, H3). The sequence is 282 residues long, making positions 1334 and 1045 impossible. Position 131 corresponds to a serine residue, consistent with the nucleophilic serine of a serine esterase. However, the annotation carries evidence code ECO:0000250 (inferred by similarity to P38777), meaning it is a computational/homology-based annotation, not direct experimental determination."
-  },
-  "important_caveats": [
-    "The active site annotation is computational (ECO:0000250, inferred by similarity to P38777), not experimentally validated for this specific protein.",
-    "The B-vs-C distinction is a trivial wording issue; the benchmark treats 'Charge relay system' as uniquely correct over 'Charge relay,' which is an annotation-convention match rather than a biological fact.",
-    "The sequence is 282 residues; positions 1334 and 1045 are clearly out of range, making A and D trivially eliminable.",
-    "The UniProt entry was first released in 2025-02-05; the annotation history is short and the similarity-based evidence code means the active site assignment is transferred, not independently measured."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Choices B and C describe the same active site (position 131) with semantically equivalent descriptions ('Charge relay' vs 'Charge relay system'). No biological property of the protein distinguishes these two phrasings. A model selecting B would be functionally correct in substance. The 'correct' answer depends on exact UniProt annotation wording rather than on a biologically meaningful distinction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0026",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt annotation for A0A385XI13 (Esterase 1, EST1, from Aureobasidium melanogenum) explicitly annotates an active site at position 131 with the description 'Charge relay system' (evidence C5, H3). The sequence is 282 residues long, making positions 1334 and 1045 impossible. Position 131 corresponds to a serine residue, consistent with the nucleophilic serine of a serine esterase. However, the annotation carries evidence code ECO:0000250 (inferred by similarity to P38777), meaning it is a computational/homology-based annotation, not direct experimental determination.",
-    "evidence_ids": ["C5", "H3", "C4", "H1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is 282 amino acids long, so positions 1334 (A) and 1045 (D) are immediately impossible. The protein is annotated as an esterase (EC 3.1.2.-). Serine hydrolases/esterases use a Ser-His-Asp/Glu catalytic triad, commonly termed a 'charge relay system.' Counting the sequence reveals position 131 is a serine (S), consistent with the nucleophilic residue of a serine esterase. The standard enzymological term for the full triad mechanism is 'charge relay system' (the complete Ser-His-Asp network), whereas 'charge relay' alone is an incomplete shorthand.",
-    "missing_item_specific_fact": "The distinction between B ('Charge relay') and C ('Charge relay system') is essentially a verbatim annotation-wording issue. Both describe the same catalytic mechanism. No biological property of the protein distinguishes these two phrasings; selecting C over B relies on matching the exact UniProt annotation string rather than on any functional or structural reasoning.",
-    "reason": "The core task—identifying position 131 as the catalytic serine of an esterase and eliminating out-of-range positions—is achievable through general biological reasoning (sequence length check, esterase catalytic mechanism recognition, serine identification). However, the final B-vs-C discrimination is a trivial wording match to the UniProt annotation convention and does not require independent biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Choices B and C describe the same active site (position 131) with semantically equivalent descriptions ('Charge relay' vs 'Charge relay system'). No biological property of the protein distinguishes these two phrasings. A model selecting B would be functionally correct in substance. The 'correct' answer depends on exact UniProt annotation wording rather than on a biologically meaningful distinction."
-  },
-  "important_caveats": [
-    "The active site annotation is computational (ECO:0000250, inferred by similarity to P38777), not experimentally validated for this specific protein.",
-    "The B-vs-C distinction is a trivial wording issue; the benchmark treats 'Charge relay system' as uniquely correct over 'Charge relay,' which is an annotation-convention match rather than a biological fact.",
-    "The sequence is 282 residues; positions 1334 and 1045 are clearly out of range, making A and D trivially eliminable.",
-    "The UniProt entry was first released in 2025-02-05; the annotation history is short and the similarity-based evidence code means the active site assignment is transferred, not independently measured."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +163,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -524,30 +284,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A385XI13",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6f138603563b5b34481d3d083d9e6174741b3d962eda8324cf8e0e4d8c656576",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 282,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6f138603563b5b34481d3d083d9e6174741b3d962eda8324cf8e0e4d8c656576",
   "current_entry_audit": {
     "entryVersion": 14,
     "firstPublicDate": "2025-02-05",
@@ -555,14 +302,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-12-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
-  "current_source_sequence_sha256": "6f138603563b5b34481d3d083d9e6174741b3d962eda8324cf8e0e4d8c656576",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 282,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6f138603563b5b34481d3d083d9e6174741b3d962eda8324cf8e0e4d8c656576",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 13,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A385XI13",
   "selected_historical_entry_version": 13,
+  "selected_historical_record_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
+  "selected_historical_source_sequence_length": 282,
+  "selected_historical_source_sequence_sha256": "6f138603563b5b34481d3d083d9e6174741b3d962eda8324cf8e0e4d8c656576",
   "selected_historical_version": {
     "accession": "A0A385XI13",
     "database": "Swiss-Prot",
@@ -573,24 +336,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "EST1_AURME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
-  "selected_historical_source_sequence_sha256": "6f138603563b5b34481d3d083d9e6174741b3d962eda8324cf8e0e4d8c656576",
-  "selected_historical_source_sequence_length": 282,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 13,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -604,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json",
-  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
-  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A385XI13\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json"
 }
 ```
 
@@ -623,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json",
-  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
-  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":14,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-12-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json"
 }
 ```
 
@@ -642,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json",
-  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
-  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Aureobasidium pullulans var. melanogenum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Dothideomycetes\",\"Dothideomycetidae\",\"Dothideales\",\"Saccotheciaceae\",\"Aureobasidium\"],\"scientificName\":\"Aureobasidium melanogenum\",\"taxonId\":46634}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json"
 }
 ```
 
@@ -661,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json",
-  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
-  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"Liamocins biosynthesis cluster protein EST1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"3.1.2.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"Esterase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"EST1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json"
 }
 ```
 
@@ -680,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json",
-  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
-  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Charge relay system\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P38777\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":131},\"start\":{\"modifier\":\"EXACT\",\"value\":131}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json"
 }
 ```
 
@@ -699,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json",
-  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
-  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Xue S.J.\",\"Liu G.L.\",\"Chi Z.\",\"Gao Z.C.\",\"Hu Z.\",\"Chi Z.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32003433\"},{\"database\":\"DOI\",\"id\":\"10.1042/bcj20190922\"}],\"citationType\":\"journal article\",\"firstPage\":\"887\",\"id\":\"32003433\",\"journal\":\"Biochem. J.\",\"lastPage\":\"903\",\"publicationDate\":\"2020\",\"title\":\"Genetic evidences for the core biosynthesis pathway, regulation, transport and secretion of liamocins in yeast-like fungal cells.\",\"volume\":\"477\"},\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"INDUCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:24:45.462174+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "0604cd5410cd5850ed1061ec3c5b369f42c7da183cd38472972d9c4ba536b805",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI13.json"
 }
 ```
 
@@ -717,18 +467,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A385XI13?format=txt&versions=13",
-  "source_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
-  "retrieved_utc": "2026-11-01T06:27:29.350597+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   EST1_AURME              Reviewed;         282 AA.\nAC   A0A385XI13;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-DEC-2018, sequence version 1.\nDT   28-JAN-2026, entry version 13.\nDE   RecName: Full=Esterase 1 {ECO:0000303|PubMed:32003433};\nDE            Short=EST1 {ECO:0000303|PubMed:32003433};\nDE            EC=3.1.2.- {ECO:0000269|PubMed:32003433};\nDE   AltName: Full=Liamocins biosynthesis cluster protein EST1 {ECO:0000303|PubMed:32003433};\nGN   Name=EST1 {ECO:0000303|PubMed:32003433};\nOS   Aureobasidium melanogenum (Aureobasidium pullulans var. melanogenum).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Dothideomycetes;\nOC   Dothideomycetidae; Dothideales; Saccotheciaceae; Aureobasidium.\nOX   NCBI_TaxID=46634;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:29.350597+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
+  "url": "https://rest.uniprot.org/unisave/A0A385XI13?format=txt&versions=13"
 }
 ```
 
@@ -738,18 +488,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A385XI13?format=txt&versions=13",
-  "source_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
-  "retrieved_utc": "2026-11-01T06:27:29.350597+00:00",
-  "source_locator": "lines 33-39",
   "excerpt": "RN   [4]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND INDUCTION.\nRX   PubMed=32003433; DOI=10.1042/bcj20190922;\nRA   Xue S.J., Liu G.L., Chi Z., Gao Z.C., Hu Z., Chi Z.M.;\nRT   \"Genetic evidences for the core biosynthesis pathway, regulation, transport\nRT   and secretion of liamocins in yeast-like fungal cells.\";\nRL   Biochem. J. 477:887-903(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:29.350597+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
+  "url": "https://rest.uniprot.org/unisave/A0A385XI13?format=txt&versions=13"
 }
 ```
 
@@ -759,18 +509,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A385XI13?format=txt&versions=13",
-  "source_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
-  "retrieved_utc": "2026-11-01T06:27:29.350597+00:00",
-  "source_locator": "lines 106-108",
   "excerpt": "FT   ACT_SITE        131\nFT                   /note=\"Charge relay system\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:P38777\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-01T06:27:29.350597+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 106-108",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2adf58d8fd74514947bfa0569f28f495b9be466e1ab51987b05e8007a9a288ca",
+  "url": "https://rest.uniprot.org/unisave/A0A385XI13?format=txt&versions=13"
 }
 ```
 

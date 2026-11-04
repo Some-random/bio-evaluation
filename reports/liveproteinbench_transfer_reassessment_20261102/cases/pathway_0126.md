@@ -1,18 +1,16 @@
-# pathway_0126: before and after transfer clarification
+# pathway_0126
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0126.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0126.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Carbohydrate degradation
+**Expected answer:** **A** — Carbohydrate degradation
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the mouse UniProt entry annotated as L-fucose dehydrogenase, with the pathway listed as carbohydrate degradation (including L-fucose degradation). This supports choice A as a database annotation, though the pathway annotation is transferred by similarity rather than direct experimental evidence in the supplied record.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence motifs may suggest an NAD-dependent dehydrogenase, but that does not identify its substrate or distinguish general carbohydrate degradation from the more specific glycolytic option.
-
-
-**Missing item-specific fact**
-
-> The protein's substrate specificity as L-fucose dehydrogenase and its associated pathway annotation are not given in the question.
-
-
-**Reason**
-
-> Choosing A over the other options requires protein-specific functional knowledge or annotation; the sequence alone does not establish that this dehydrogenase acts on L-fucose.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched database annotation supports A. Although D is also carbohydrate-related, it specifies a distinct glycolytic step, and the available evidence does not support assigning this protein to that step.
-
-
-### Important caveats
-
-- The reviewer-only database record matches the supplied sequence, but the author’s exact source snapshot is unknown.
-- The pathway annotation is supported by transferred evidence (ECO:0000250), not by direct experimental evidence shown here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence motifs may suggest an NAD-dependent dehydrogenase, but that does not identify its substrate or distinguish general carbohydrate degradation from the more specific glycolytic option.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's substrate specificity as L-fucose dehydrogenase and its associated pathway annotation are not given in the question.",
-    "reason": "Choosing A over the other options requires protein-specific functional knowledge or annotation; the sequence alone does not establish that this dehydrogenase acts on L-fucose."
-  },
-  "case_id": "pathway_0126",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the mouse UniProt entry annotated as L-fucose dehydrogenase, with the pathway listed as carbohydrate degradation (including L-fucose degradation). This supports choice A as a database annotation, though the pathway annotation is transferred by similarity rather than direct experimental evidence in the supplied record."
-  },
-  "important_caveats": [
-    "The reviewer-only database record matches the supplied sequence, but the author’s exact source snapshot is unknown.",
-    "The pathway annotation is supported by transferred evidence (ECO:0000250), not by direct experimental evidence shown here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched database annotation supports A. Although D is also carbohydrate-related, it specifies a distinct glycolytic step, and the available evidence does not support assigning this protein to that step."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0126",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the mouse UniProt entry annotated as L-fucose dehydrogenase, with the pathway listed as carbohydrate degradation (including L-fucose degradation). This supports choice A as a database annotation, though the pathway annotation is transferred by similarity rather than direct experimental evidence in the supplied record.",
-    "evidence_ids": ["C1", "C4", "C5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence motifs may suggest an NAD-dependent dehydrogenase, but that does not identify its substrate or distinguish general carbohydrate degradation from the more specific glycolytic option.",
-    "missing_item_specific_fact": "The protein's substrate specificity as L-fucose dehydrogenase and its associated pathway annotation are not given in the question.",
-    "reason": "Choosing A over the other options requires protein-specific functional knowledge or annotation; the sequence alone does not establish that this dehydrogenase acts on L-fucose."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched database annotation supports A. Although D is also carbohydrate-related, it specifies a distinct glycolytic step, and the available evidence does not support assigning this protein to that step."
-  },
-  "important_caveats": [
-    "The reviewer-only database record matches the supplied sequence, but the author’s exact source snapshot is unknown.",
-    "The pathway annotation is supported by transferred evidence (ECO:0000250), not by direct experimental evidence shown here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry E9Q3D4 (sequence matched, 273 aa) annotates the protein as L-fucose dehydrogenase (EC 1.1.1.122) with the pathway comment 'Carbohydrate degradation; L-fucose degradation' (evidence ECO:0000250, inferred by similarity from Q9MYP6). The expected answer 'Carbohydrate degradation' matches the top-level UniProt pathway category. The annotation is computational (similarity-based) rather than experimentally validated for this specific protein, but it is the current curated assignment and is consistent with the protein's function as a sugar-oxidizing dehydrogenase.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a canonical Rossmann-fold motif (VVTGGSRGIGAAIV, residues ~7–20) and an SDR-family catalytic tetrad signature (TGxxxYG), identifying it as a short-chain dehydrogenase/reductase. Among the four options: (C) peptidoglycan degradation is implausible for a mammalian (mouse) protein since peptidoglycan is a bacterial cell-wall polymer; (B) alkaloid biosynthesis is atypical for a mammalian SDR; (D) 'pyruvate from D-glyceraldehyde 3-phosphate: step 2/5' describes a specific glycolytic step catalyzed by enzymes (e.g., enolase, pyruvate kinase) with folds and active-site architectures distinct from the SDR family. Eliminating B, C, and D leaves A (Carbohydrate degradation) as the only viable pathway for a mammalian sugar-oxidizing dehydrogenase.
-
-
-**Missing item-specific fact**
-
-> The precise substrate identity (L-fucose vs. steroid or other alcohol) is not deducible from sequence alone; the alternative UniProt name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead toward steroid metabolism. Positive confirmation that this SDR acts on a sugar (rather than a steroid) relies on the similarity-based annotation or prior knowledge of this specific protein.
-
-
-**Reason**
-
-> Although the exact substrate (L-fucose) requires item-specific knowledge, the four provided options are sufficiently disparate that general biological reasoning—recognizing the SDR fold, eliminating bacterial peptidoglycan from a mouse protein, ruling out alkaloid biosynthesis, and distinguishing SDR architecture from glycolytic enzymes—meaningfully narrows the answer to A without memorizing the UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices span clearly distinct biochemical categories (general carbohydrate catabolism, alkaloid biosynthesis, bacterial cell-wall degradation, a specific glycolytic step). No two options are near-synonymous or equally defensible given the sequence and organism context.
-
-
-### Important caveats
-
-- The pathway annotation carries evidence code ECO:0000250 (inferred by similarity from Q9MYP6), not direct experimental validation for E9Q3D4.
-- The alternative protein name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead a model toward steroid/lipid pathways, which are not offered as options but highlight that positive substrate assignment is non-trivial from sequence alone.
-- The UniProt entry was first public in April 2025; the author's source snapshot date is unknown, though the historical archived record (entry version 95) confirms the same pathway annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a canonical Rossmann-fold motif (VVTGGSRGIGAAIV, residues ~7–20) and an SDR-family catalytic tetrad signature (TGxxxYG), identifying it as a short-chain dehydrogenase/reductase. Among the four options: (C) peptidoglycan degradation is implausible for a mammalian (mouse) protein since peptidoglycan is a bacterial cell-wall polymer; (B) alkaloid biosynthesis is atypical for a mammalian SDR; (D) 'pyruvate from D-glyceraldehyde 3-phosphate: step 2/5' describes a specific glycolytic step catalyzed by enzymes (e.g., enolase, pyruvate kinase) with folds and active-site architectures distinct from the SDR family. Eliminating B, C, and D leaves A (Carbohydrate degradation) as the only viable pathway for a mammalian sugar-oxidizing dehydrogenase.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The precise substrate identity (L-fucose vs. steroid or other alcohol) is not deducible from sequence alone; the alternative UniProt name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead toward steroid metabolism. Positive confirmation that this SDR acts on a sugar (rather than a steroid) relies on the similarity-based annotation or prior knowledge of this specific protein.",
-    "reason": "Although the exact substrate (L-fucose) requires item-specific knowledge, the four provided options are sufficiently disparate that general biological reasoning—recognizing the SDR fold, eliminating bacterial peptidoglycan from a mouse protein, ruling out alkaloid biosynthesis, and distinguishing SDR architecture from glycolytic enzymes—meaningfully narrows the answer to A without memorizing the UniProt entry."
-  },
-  "case_id": "pathway_0126",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry E9Q3D4 (sequence matched, 273 aa) annotates the protein as L-fucose dehydrogenase (EC 1.1.1.122) with the pathway comment 'Carbohydrate degradation; L-fucose degradation' (evidence ECO:0000250, inferred by similarity from Q9MYP6). The expected answer 'Carbohydrate degradation' matches the top-level UniProt pathway category. The annotation is computational (similarity-based) rather than experimentally validated for this specific protein, but it is the current curated assignment and is consistent with the protein's function as a sugar-oxidizing dehydrogenase."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000250 (inferred by similarity from Q9MYP6), not direct experimental validation for E9Q3D4.",
-    "The alternative protein name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead a model toward steroid/lipid pathways, which are not offered as options but highlight that positive substrate assignment is non-trivial from sequence alone.",
-    "The UniProt entry was first public in April 2025; the author's source snapshot date is unknown, though the historical archived record (entry version 95) confirms the same pathway annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span clearly distinct biochemical categories (general carbohydrate catabolism, alkaloid biosynthesis, bacterial cell-wall degradation, a specific glycolytic step). No two options are near-synonymous or equally defensible given the sequence and organism context."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0126",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry E9Q3D4 (sequence matched, 273 aa) annotates the protein as L-fucose dehydrogenase (EC 1.1.1.122) with the pathway comment 'Carbohydrate degradation; L-fucose degradation' (evidence ECO:0000250, inferred by similarity from Q9MYP6). The expected answer 'Carbohydrate degradation' matches the top-level UniProt pathway category. The annotation is computational (similarity-based) rather than experimentally validated for this specific protein, but it is the current curated assignment and is consistent with the protein's function as a sugar-oxidizing dehydrogenase.",
-    "evidence_ids": ["C4", "C5", "H1", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a canonical Rossmann-fold motif (VVTGGSRGIGAAIV, residues ~7–20) and an SDR-family catalytic tetrad signature (TGxxxYG), identifying it as a short-chain dehydrogenase/reductase. Among the four options: (C) peptidoglycan degradation is implausible for a mammalian (mouse) protein since peptidoglycan is a bacterial cell-wall polymer; (B) alkaloid biosynthesis is atypical for a mammalian SDR; (D) 'pyruvate from D-glyceraldehyde 3-phosphate: step 2/5' describes a specific glycolytic step catalyzed by enzymes (e.g., enolase, pyruvate kinase) with folds and active-site architectures distinct from the SDR family. Eliminating B, C, and D leaves A (Carbohydrate degradation) as the only viable pathway for a mammalian sugar-oxidizing dehydrogenase.",
-    "missing_item_specific_fact": "The precise substrate identity (L-fucose vs. steroid or other alcohol) is not deducible from sequence alone; the alternative UniProt name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead toward steroid metabolism. Positive confirmation that this SDR acts on a sugar (rather than a steroid) relies on the similarity-based annotation or prior knowledge of this specific protein.",
-    "reason": "Although the exact substrate (L-fucose) requires item-specific knowledge, the four provided options are sufficiently disparate that general biological reasoning—recognizing the SDR fold, eliminating bacterial peptidoglycan from a mouse protein, ruling out alkaloid biosynthesis, and distinguishing SDR architecture from glycolytic enzymes—meaningfully narrows the answer to A without memorizing the UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span clearly distinct biochemical categories (general carbohydrate catabolism, alkaloid biosynthesis, bacterial cell-wall degradation, a specific glycolytic step). No two options are near-synonymous or equally defensible given the sequence and organism context."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000250 (inferred by similarity from Q9MYP6), not direct experimental validation for E9Q3D4.",
-    "The alternative protein name 'Hydroxysteroid 17-beta dehydrogenase 14' could mislead a model toward steroid/lipid pathways, which are not offered as options but highlight that positive substrate assignment is non-trivial from sequence alone.",
-    "The UniProt entry was first public in April 2025; the author's source snapshot date is unknown, though the historical archived record (entry version 95) confirms the same pathway annotation."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E9Q3D4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 273,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
   "current_entry_audit": {
     "entryVersion": 97,
     "firstPublicDate": "2025-04-09",
@@ -528,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-04-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "current_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 273,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 95,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E9Q3D4",
   "selected_historical_entry_version": 95,
+  "selected_historical_record_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "selected_historical_source_sequence_length": 273,
+  "selected_historical_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
   "selected_historical_version": {
     "accession": "E9Q3D4",
     "database": "Swiss-Prot",
@@ -546,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DHB14_MOUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "selected_historical_source_sequence_sha256": "656e530c86ac38dd860b870f49c25d1c6de9ec15bf60eef81798043517661097",
-  "selected_historical_source_sequence_length": 273,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 95,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E9Q3D4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -596,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":97,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-04-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -615,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Mouse\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Euarchontoglires\",\"Glires\",\"Rodentia\",\"Myomorpha\",\"Muroidea\",\"Muridae\",\"Murinae\",\"Mus\",\"Mus\"],\"scientificName\":\"Mus musculus\",\"taxonId\":10090}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -634,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"value\":\"Hydroxysteroid 17-beta dehydrogenase 14\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9BPX1\",\"source\":\"UniProtKB\"}],\"value\":\"1.1.1.122\"}],\"fullName\":{\"value\":\"L-fucose dehydrogenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -653,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json",
-  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
-  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9MYP6\",\"source\":\"UniProtKB\"}],\"value\":\"Carbohydrate degradation; L-fucose degradation\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:28:08.225634+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bd47482a576a5aceb231929788ca2f5078c56926357a52cc62412f8c497bcd3f",
+  "url": "https://rest.uniprot.org/uniprotkb/E9Q3D4.json"
 }
 ```
 
@@ -671,18 +434,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   DHB14_MOUSE             Reviewed;         273 AA.\nAC   E9Q3D4;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-APR-2011, sequence version 1.\nDT   28-JAN-2026, entry version 95.\nDE   RecName: Full=L-fucose dehydrogenase;\nDE            EC=1.1.1.122 {ECO:0000250|UniProtKB:Q9BPX1};\nDE   AltName: Full=Hydroxysteroid 17-beta dehydrogenase 14;\nGN   Name=Hsd17b14 {ECO:0000312|MGI:MGI:1913315}; Synonyms=Dhrs10, retSDR3;\nOS   Mus musculus (Mouse).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Euarchontoglires; Glires; Rodentia; Myomorpha; Muroidea; Muridae;\nOC   Murinae; Mus; Mus.\nOX   NCBI_TaxID=10090;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 
@@ -692,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 95,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95",
-  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
-  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
-  "source_locator": "lines 51-52",
   "excerpt": "CC   -!- PATHWAY: Carbohydrate degradation; L-fucose degradation.\nCC       {ECO:0000250|UniProtKB:Q9MYP6}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 95,
+  "retrieved_utc": "2026-11-02T04:28:17.926007+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-52",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e2e2499fa9a4008684b0b5a4af04f9fe0ed35d0a8b57fcdbdd5131ae007b3673",
+  "url": "https://rest.uniprot.org/unisave/E9Q3D4?format=txt&versions=95"
 }
 ```
 

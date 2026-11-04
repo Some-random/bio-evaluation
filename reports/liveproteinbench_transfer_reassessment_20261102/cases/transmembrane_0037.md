@@ -1,18 +1,16 @@
-# transmembrane_0037: before and after transfer clarification
+# transmembrane_0037
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0037.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/transmembrane_0037.txt)
 
 **Task:** `transmembrane`  
-**Author key, unchanged:** **A** — 1..21
+**Expected answer:** **A** — 1..21
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched UniProt entry annotates residues 1–21 as a helical transmembrane region, supporting choice A. The annotation is computationally evidenced (ECO:0000255), not shown here to be an experimental measurement.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The strongly hydrophobic N-terminal stretch makes a membrane-spanning helix there biologically plausible and distinguishes it from many internal regions. Sequence composition alone does not establish the precise annotated endpoints.
-
-
-**Missing item-specific fact**
-
-> The protein-specific transmembrane annotation specifying residues 1–21, or equivalent validated evidence resolving the endpoints.
-
-
-**Reason**
-
-> The sequence supports an N-terminal hydrophobic helix, but does not meaningfully distinguish 1–21 from the near-identical 1–20 option with confidence. The exact keyed coordinates depend on an item-specific annotation or prediction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Choices A and C differ by only one residue at the end of the same hydrophobic N-terminal segment; the supplied sequence alone does not establish that residue 21 must be included. Choice D also contains 1–21, but its additional region makes it a different answer if choices are interpreted as complete region sets.
-
-
-### Important caveats
-
-- The reviewer-only annotation matches the supplied sequence, but it does not establish that the author used that database snapshot.
-- The supporting transmembrane feature is computationally evidenced rather than identified here as experimentally verified.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The strongly hydrophobic N-terminal stretch makes a membrane-spanning helix there biologically plausible and distinguishes it from many internal regions. Sequence composition alone does not establish the precise annotated endpoints.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific transmembrane annotation specifying residues 1–21, or equivalent validated evidence resolving the endpoints.",
-    "reason": "The sequence supports an N-terminal hydrophobic helix, but does not meaningfully distinguish 1–21 from the near-identical 1–20 option with confidence. The exact keyed coordinates depend on an item-specific annotation or prediction."
-  },
-  "case_id": "transmembrane_0037",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The matched UniProt entry annotates residues 1–21 as a helical transmembrane region, supporting choice A. The annotation is computationally evidenced (ECO:0000255), not shown here to be an experimental measurement."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but it does not establish that the author used that database snapshot.",
-    "The supporting transmembrane feature is computationally evidenced rather than identified here as experimentally verified."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Choices A and C differ by only one residue at the end of the same hydrophobic N-terminal segment; the supplied sequence alone does not establish that residue 21 must be included. Choice D also contains 1–21, but its additional region makes it a different answer if choices are interpreted as complete region sets."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "transmembrane_0037",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched UniProt entry annotates residues 1–21 as a helical transmembrane region, supporting choice A. The annotation is computationally evidenced (ECO:0000255), not shown here to be an experimental measurement.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The strongly hydrophobic N-terminal stretch makes a membrane-spanning helix there biologically plausible and distinguishes it from many internal regions. Sequence composition alone does not establish the precise annotated endpoints.",
-    "missing_item_specific_fact": "The protein-specific transmembrane annotation specifying residues 1–21, or equivalent validated evidence resolving the endpoints.",
-    "reason": "The sequence supports an N-terminal hydrophobic helix, but does not meaningfully distinguish 1–21 from the near-identical 1–20 option with confidence. The exact keyed coordinates depend on an item-specific annotation or prediction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Choices A and C differ by only one residue at the end of the same hydrophobic N-terminal segment; the supplied sequence alone does not establish that residue 21 must be included. Choice D also contains 1–21, but its additional region makes it a different answer if choices are interpreted as complete region sets."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but it does not establish that the author used that database snapshot.",
-    "The supporting transmembrane feature is computationally evidenced rather than identified here as experimentally verified."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A9E7S4M4 (Geissoschizine oxidase / Cytochrome P450 GO, Alstonia scholaris) annotates exactly one transmembrane helical region at positions 1..21 (evidence code ECO:0000255, by similarity/proRule). This matches the expected answer A exactly. The biology of cytochrome P450 enzymes—soluble catalytic domains anchored to the ER membrane by a single N-terminal TM helix—is consistent with this single annotation. The sequence at positions 1-21 (MEFSFSSPLLYILYFLLFFIV) is a hydrophobic stretch consistent with a TM helix. The annotation is computational (ECO:0000255) rather than experimentally determined, but it is the only annotation available and is consistent with well-established P450 membrane-anchoring biology.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Two layers of reasoning distinguish the choices. (1) Cytochrome P450 enzymes are well-known soluble enzymes anchored to the ER membrane by a single N-terminal transmembrane helix; they are not multi-pass membrane proteins. This general biological knowledge eliminates B (six TM regions) and D (two TM regions). Additionally, the sequence at 221..245 in option D is rich in charged/polar residues (S, R, K, Q, E, D) and is a poor TM candidate. (2) Between A (1..21) and C (1..20): position 21 is Valine (hydrophobic, part of the helix), while position 22 is Arginine (positively charged). The 'positive-inside' / charged-residue-at-membrane-interface principle places the helix boundary at 21, with R22 sitting at the cytoplasmic membrane-water interface. This gives a clean biological rationale for 21 rather than 20.
-
-
-**Missing item-specific fact**
-
-> None critical. The A-vs-C distinction (21 vs 20) is fine-grained and within the uncertainty of any computational TM predictor, but the charged-residue-at-interface argument (R at position 22) provides a defensible general biological rationale. No protein-specific experimental measurement is required beyond general P450 membrane-anchoring biology.
-
-
-**Reason**
-
-> Eliminating B and D relies on well-established general knowledge of cytochrome P450 membrane topology (single N-terminal anchor). Distinguishing A from C uses the positive-inside rule / charged-residue-at-membrane-interface principle applied to the visible sequence (V21 hydrophobic, R22 charged). Both arguments draw on general biology rather than memorizing this specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> The difference between 1..21 and 1..20 is a single residue at the helix boundary. While the positive-inside argument (R22 as interface residue) favors 1..21, the exact helix boundary is inherently uncertain and within the tolerance of any TM prediction method. A model choosing C could argue the helix is marginally shorter. However, the charged R at position 22 provides a reasonable tiebreaker, making A the more defensible choice. Options B and D are clearly eliminable by P450 biology.
-
-
-### Important caveats
-
-- The UniProt TM annotation uses evidence code ECO:0000255 (by similarity / proRule), meaning it is a computational prediction, not an experimentally determined TM region.
-- The A-vs-C distinction (one-residue boundary) is at the edge of what general biological reasoning can resolve; the positive-inside argument is defensible but not airtight.
-- The reviewer-only evidence confirms sequence match (SHA-256 identical) and that the annotation was present in the historical entry version 13 (released 2026-01-28), so the key was available in the database at the approximate benchmark construction date.
-- The protein is 501 AA; the full sequence is provided in the question, so no external lookup is needed to inspect the N-terminal hydrophobic stretch.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Two layers of reasoning distinguish the choices. (1) Cytochrome P450 enzymes are well-known soluble enzymes anchored to the ER membrane by a single N-terminal transmembrane helix; they are not multi-pass membrane proteins. This general biological knowledge eliminates B (six TM regions) and D (two TM regions). Additionally, the sequence at 221..245 in option D is rich in charged/polar residues (S, R, K, Q, E, D) and is a poor TM candidate. (2) Between A (1..21) and C (1..20): position 21 is Valine (hydrophobic, part of the helix), while position 22 is Arginine (positively charged). The 'positive-inside' / charged-residue-at-membrane-interface principle places the helix boundary at 21, with R22 sitting at the cytoplasmic membrane-water interface. This gives a clean biological rationale for 21 rather than 20.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The A-vs-C distinction (21 vs 20) is fine-grained and within the uncertainty of any computational TM predictor, but the charged-residue-at-interface argument (R at position 22) provides a defensible general biological rationale. No protein-specific experimental measurement is required beyond general P450 membrane-anchoring biology.",
-    "reason": "Eliminating B and D relies on well-established general knowledge of cytochrome P450 membrane topology (single N-terminal anchor). Distinguishing A from C uses the positive-inside rule / charged-residue-at-membrane-interface principle applied to the visible sequence (V21 hydrophobic, R22 charged). Both arguments draw on general biology rather than memorizing this specific protein's database entry."
-  },
-  "case_id": "transmembrane_0037",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A9E7S4M4 (Geissoschizine oxidase / Cytochrome P450 GO, Alstonia scholaris) annotates exactly one transmembrane helical region at positions 1..21 (evidence code ECO:0000255, by similarity/proRule). This matches the expected answer A exactly. The biology of cytochrome P450 enzymes—soluble catalytic domains anchored to the ER membrane by a single N-terminal TM helix—is consistent with this single annotation. The sequence at positions 1-21 (MEFSFSSPLLYILYFLLFFIV) is a hydrophobic stretch consistent with a TM helix. The annotation is computational (ECO:0000255) rather than experimentally determined, but it is the only annotation available and is consistent with well-established P450 membrane-anchoring biology."
-  },
-  "important_caveats": [
-    "The UniProt TM annotation uses evidence code ECO:0000255 (by similarity / proRule), meaning it is a computational prediction, not an experimentally determined TM region.",
-    "The A-vs-C distinction (one-residue boundary) is at the edge of what general biological reasoning can resolve; the positive-inside argument is defensible but not airtight.",
-    "The reviewer-only evidence confirms sequence match (SHA-256 identical) and that the annotation was present in the historical entry version 13 (released 2026-01-28), so the key was available in the database at the approximate benchmark construction date.",
-    "The protein is 501 AA; the full sequence is provided in the question, so no external lookup is needed to inspect the N-terminal hydrophobic stretch."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "The difference between 1..21 and 1..20 is a single residue at the helix boundary. While the positive-inside argument (R22 as interface residue) favors 1..21, the exact helix boundary is inherently uncertain and within the tolerance of any TM prediction method. A model choosing C could argue the helix is marginally shorter. However, the charged R at position 22 provides a reasonable tiebreaker, making A the more defensible choice. Options B and D are clearly eliminable by P450 biology."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "transmembrane_0037",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A9E7S4M4 (Geissoschizine oxidase / Cytochrome P450 GO, Alstonia scholaris) annotates exactly one transmembrane helical region at positions 1..21 (evidence code ECO:0000255, by similarity/proRule). This matches the expected answer A exactly. The biology of cytochrome P450 enzymes—soluble catalytic domains anchored to the ER membrane by a single N-terminal TM helix—is consistent with this single annotation. The sequence at positions 1-21 (MEFSFSSPLLYILYFLLFFIV) is a hydrophobic stretch consistent with a TM helix. The annotation is computational (ECO:0000255) rather than experimentally determined, but it is the only annotation available and is consistent with well-established P450 membrane-anchoring biology.",
-    "evidence_ids": ["C5", "H3", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Two layers of reasoning distinguish the choices. (1) Cytochrome P450 enzymes are well-known soluble enzymes anchored to the ER membrane by a single N-terminal transmembrane helix; they are not multi-pass membrane proteins. This general biological knowledge eliminates B (six TM regions) and D (two TM regions). Additionally, the sequence at 221..245 in option D is rich in charged/polar residues (S, R, K, Q, E, D) and is a poor TM candidate. (2) Between A (1..21) and C (1..20): position 21 is Valine (hydrophobic, part of the helix), while position 22 is Arginine (positively charged). The 'positive-inside' / charged-residue-at-membrane-interface principle places the helix boundary at 21, with R22 sitting at the cytoplasmic membrane-water interface. This gives a clean biological rationale for 21 rather than 20.",
-    "missing_item_specific_fact": "None critical. The A-vs-C distinction (21 vs 20) is fine-grained and within the uncertainty of any computational TM predictor, but the charged-residue-at-interface argument (R at position 22) provides a defensible general biological rationale. No protein-specific experimental measurement is required beyond general P450 membrane-anchoring biology.",
-    "reason": "Eliminating B and D relies on well-established general knowledge of cytochrome P450 membrane topology (single N-terminal anchor). Distinguishing A from C uses the positive-inside rule / charged-residue-at-membrane-interface principle applied to the visible sequence (V21 hydrophobic, R22 charged). Both arguments draw on general biology rather than memorizing this specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "The difference between 1..21 and 1..20 is a single residue at the helix boundary. While the positive-inside argument (R22 as interface residue) favors 1..21, the exact helix boundary is inherently uncertain and within the tolerance of any TM prediction method. A model choosing C could argue the helix is marginally shorter. However, the charged R at position 22 provides a reasonable tiebreaker, making A the more defensible choice. Options B and D are clearly eliminable by P450 biology."
-  },
-  "important_caveats": [
-    "The UniProt TM annotation uses evidence code ECO:0000255 (by similarity / proRule), meaning it is a computational prediction, not an experimentally determined TM region.",
-    "The A-vs-C distinction (one-residue boundary) is at the edge of what general biological reasoning can resolve; the positive-inside argument is defensible but not airtight.",
-    "The reviewer-only evidence confirms sequence match (SHA-256 identical) and that the annotation was present in the historical entry version 13 (released 2026-01-28), so the key was available in the database at the approximate benchmark construction date.",
-    "The protein is 501 AA; the full sequence is provided in the question, so no external lookup is needed to inspect the N-terminal hydrophobic stretch."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -402,10 +164,9 @@ Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -517,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7S4M4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d3eae0cbb53ce9ef6fc350479b75f6672c3885569ccd784ba7d6639abdda8626",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 501,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d3eae0cbb53ce9ef6fc350479b75f6672c3885569ccd784ba7d6639abdda8626",
   "current_entry_audit": {
     "entryVersion": 14,
     "firstPublicDate": "2025-06-18",
@@ -548,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
-  "current_source_sequence_sha256": "d3eae0cbb53ce9ef6fc350479b75f6672c3885569ccd784ba7d6639abdda8626",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 501,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d3eae0cbb53ce9ef6fc350479b75f6672c3885569ccd784ba7d6639abdda8626",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 13,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7S4M4",
   "selected_historical_entry_version": 13,
+  "selected_historical_record_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
+  "selected_historical_source_sequence_length": 501,
+  "selected_historical_source_sequence_sha256": "d3eae0cbb53ce9ef6fc350479b75f6672c3885569ccd784ba7d6639abdda8626",
   "selected_historical_version": {
     "accession": "A0A9E7S4M4",
     "database": "Swiss-Prot",
@@ -566,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GO_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
-  "selected_historical_source_sequence_sha256": "d3eae0cbb53ce9ef6fc350479b75f6672c3885569ccd784ba7d6639abdda8626",
-  "selected_historical_source_sequence_length": 501,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 13,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -597,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json",
-  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
-  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7S4M4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json"
 }
 ```
 
@@ -616,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json",
-  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
-  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":14,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json"
 }
 ```
 
@@ -635,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json",
-  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
-  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json"
 }
 ```
 
@@ -654,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json",
-  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
-  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 GO\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"1.14.19.80\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Geissoschizine oxidase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsGO\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json"
 }
 ```
 
@@ -673,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json",
-  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
-  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":21},\"start\":{\"modifier\":\"EXACT\",\"value\":1}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json"
 }
 ```
 
@@ -692,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json",
-  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
-  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65383.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"MUTAGENESIS OF ILE-109; VAL-202; THR-205; SER-209 AND VAL-372\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:10.590145+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "46ad776fdc05519a00fc1e3ad670aab0d6ffb16716259d92b4fdf67dfd72535d",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S4M4.json"
 }
 ```
 
@@ -710,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S4M4?format=txt&versions=13",
-  "source_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
-  "retrieved_utc": "2026-11-02T04:26:14.830408+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   GO_ALSSC                Reviewed;         501 AA.\nAC   A0A9E7S4M4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 13.\nDE   RecName: Full=Geissoschizine oxidase {ECO:0000303|PubMed:36349266};\nDE            Short=AsGO {ECO:0000303|PubMed:36349266};\nDE            EC=1.14.19.80 {ECO:0000269|PubMed:36349266};\nDE   AltName: Full=Cytochrome P450 GO {ECO:0000303|PubMed:36349266};\nGN   Name=GO {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-02T04:26:14.830408+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S4M4?format=txt&versions=13"
 }
 ```
 
@@ -731,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S4M4?format=txt&versions=13",
-  "source_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
-  "retrieved_utc": "2026-11-02T04:26:14.830408+00:00",
-  "source_locator": "lines 17-25",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65383.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, MUTAGENESIS OF ILE-109; VAL-202;\nRP   THR-205; SER-209 AND VAL-372, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-02T04:26:14.830408+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-25",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S4M4?format=txt&versions=13"
 }
 ```
 
@@ -752,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 13,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S4M4?format=txt&versions=13",
-  "source_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
-  "retrieved_utc": "2026-11-02T04:26:14.830408+00:00",
-  "source_locator": "lines 86-88",
   "excerpt": "FT   TRANSMEM        1..21\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 13,
+  "retrieved_utc": "2026-11-02T04:26:14.830408+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "991588eea7e058afe44fddcc48282d5e07529aa26a2d5757e5dbab96577b2d25",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S4M4?format=txt&versions=13"
 }
 ```
 

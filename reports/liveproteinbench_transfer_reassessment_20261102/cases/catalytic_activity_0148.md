@@ -1,18 +1,16 @@
-# catalytic_activity_0148: before and after transfer clarification
+# catalytic_activity_0148
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0148.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0148.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — 4&#x27;-phosphooxetanocin A + H2O = oxetanocin A + phosphate
+**Expected answer:** **D** — 4&#x27;-phosphooxetanocin A + H2O = oxetanocin A + phosphate
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | no saved label | no saved label | output error (invalid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | Unusable review | Unusable review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,255 +50,13 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `invalid_review`.
 
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry annotated with this phosphatase activity. Its catalytic-activity annotation cites experimental evidence (ECO:0000269) from two publications, supporting choice D; the cited primary studies were not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains histidine/aspartate-rich regions consistent with a metal-dependent HD-domain phosphohydrolase, which could favor a phosphatase reaction over the other broad reaction types. That does not identify the specific oxetanocin substrate.
-
-
-**Missing item-specific fact**
-
-> The protein's experimentally characterized substrate specificity: that it hydrolyzes 4'-phosphooxetanocin A to oxetanocin A and phosphate.
-
-
-**Reason**
-
-> Sequence features may suggest a broad phosphohydrolase class, but the exact reaction in choice D depends on protein-specific substrate and activity information absent from the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices describe distinct reaction types, and the sequence's likely broad phosphohydrolase character is consistent with D; no other option is comparably supported by the supplied sequence.
-
-
-### Important caveats
-
-- The annotation evidence is reviewer-only and was not supplied to the evaluated model.
-- The sequence match is exact, but the author’s source snapshot is unknown; the historical and current annotations both support D.
-- Experimental evidence codes are reported in the database record, but the primary papers were not independently validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains histidine/aspartate-rich regions consistent with a metal-dependent HD-domain phosphohydrolase, which could favor a phosphatase reaction over the other broad reaction types. That does not identify the specific oxetanocin substrate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's experimentally characterized substrate specificity: that it hydrolyzes 4'-phosphooxetanocin A to oxetanocin A and phosphate.",
-    "reason": "Sequence features may suggest a broad phosphohydrolase class, but the exact reaction in choice D depends on protein-specific substrate and activity information absent from the question."
-  },
-  "case_id": "catalytic_activity_0148",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated with this phosphatase activity. Its catalytic-activity annotation cites experimental evidence (ECO:0000269) from two publications, supporting choice D; the cited primary studies were not independently reviewed here."
-  },
-  "important_caveats": [
-    "The annotation evidence is reviewer-only and was not supplied to the evaluated model.",
-    "The sequence match is exact, but the author’s source snapshot is unknown; the historical and current annotations both support D.",
-    "Experimental evidence codes are reported in the database record, but the primary papers were not independently validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reaction types, and the sequence's likely broad phosphohydrolase character is consistent with D; no other option is comparably supported by the supplied sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0148",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry annotated with this phosphatase activity. Its catalytic-activity annotation cites experimental evidence (ECO:0000269) from two publications, supporting choice D; the cited primary studies were not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains histidine/aspartate-rich regions consistent with a metal-dependent HD-domain phosphohydrolase, which could favor a phosphatase reaction over the other broad reaction types. That does not identify the specific oxetanocin substrate.",
-    "missing_item_specific_fact": "The protein's experimentally characterized substrate specificity: that it hydrolyzes 4'-phosphooxetanocin A to oxetanocin A and phosphate.",
-    "reason": "Sequence features may suggest a broad phosphohydrolase class, but the exact reaction in choice D depends on protein-specific substrate and activity information absent from the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reaction types, and the sequence's likely broad phosphohydrolase character is consistent with D; no other option is comparably supported by the supplied sequence."
-  },
-  "important_caveats": [
-    "The annotation evidence is reviewer-only and was not supplied to the evaluated model.",
-    "The sequence match is exact, but the author’s source snapshot is unknown; the historical and current annotations both support D.",
-    "Experimental evidence codes are reported in the database record, but the primary papers were not independently validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein sequence exactly matches UniProt O24769 (OXSA_PRIMG, 194 AA, SHA256 matched). The entry is experimentally annotated as '4'-phosphooxetanocin A phosphatase' (EC 3.1.3.112) with the catalytic reaction '4'-phosphooxetanocin A + H2O = oxetanocin A + phosphate' (RHEA:81367). This annotation carries ECO:0000269 (direct experimental evidence) from PubMed:27849620 and PubMed:28346939, and is corroborated by X-ray crystallography structures (PDB 5TK6–5TKA) in complexes with oxetanocin A and its phosphorylated forms. The expected answer D matches the annotated reaction verbatim.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The protein is only 194 amino acids, which could eliminate Choice B (a multi-subunit polyketide synthase reaction requiring a very large enzyme). However, distinguishing among A (phosphatase on O-phospho-L-serine), C (cystathionine gamma-synthase), and D (phosphatase on 4'-phosphooxetanocin A) from the raw sequence alone is not feasible through general reasoning. The HD-domain phosphohydrolase motif is extremely difficult to identify from a 194-residue sequence without structural or database context, and even recognizing a generic phosphatase activity would not predict the highly obscure substrate 4'-phosphooxetanocin A (a nucleoside-analog antibiotic natural product) over more common phosphoamino-acid substrates.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as OxsA (HD-domain phosphohydrolase from plasmid pOXT1 of Priestia megaterium) and its experimentally determined substrate 4'-phosphooxetanocin A, which is an extremely rare natural product with no obvious sequence-level predictor accessible from the 194-aa input.
-
-
-**Reason**
-
-> Correct identification requires knowing that this particular 194-residue sequence encodes OxsA, an enzyme acting on the obscure natural product 4'-phosphooxetanocin A. No general biological reasoning from the amino acid sequence allows prediction of this specific substrate. The HD-domain motif, while present, is not reliably identifiable from sequence alone, and even if identified as a phosphohydrolase, the choice between a common phosphatase substrate (phosphoserine, Choice A) and the highly specific oxetanocin substrate (Choice D) depends entirely on item-specific experimental annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Both A and D describe phosphatase-type reactions (hydrolysis of a phosphate ester). Without knowing the specific enzyme identity, a model that identifies the protein as a generic phosphatase could reasonably consider A (O-phospho-L-serine dephosphorylation) as an alternative. The substrate 4'-phosphooxetanocin A in D is so obscure that no sequence-based reasoning would prefer it over the more biochemically common phosphoserine substrate in A.
-
-
-### Important caveats
-
-- The UniProt annotation is based on direct experimental evidence (X-ray crystallography and biochemical assays, ECO:0000269), not computational prediction.
-- The sequence match is exact (194 AA, identical SHA256) between the benchmark input and UniProt O24769.
-- The identity of the protein was inferred by the reviewer from dataset metadata (image-path), not from the model's input.
-- The entry was first publicly released in UniProt on 2025-02-05; if the benchmark was constructed before that date, the annotation may not have been publicly available at construction time, though the underlying papers (2016, 2017) were published earlier.
-- The HD-domain motif (His-Asp) is a real structural feature of this enzyme, but its identification from a raw 194-aa sequence without structural context is not a reliable reasoning pathway.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is only 194 amino acids, which could eliminate Choice B (a multi-subunit polyketide synthase reaction requiring a very large enzyme). However, distinguishing among A (phosphatase on O-phospho-L-serine), C (cystathionine gamma-synthase), and D (phosphatase on 4'-phosphooxetanocin A) from the raw sequence alone is not feasible through general reasoning. The HD-domain phosphohydrolase motif is extremely difficult to identify from a 194-residue sequence without structural or database context, and even recognizing a generic phosphatase activity would not predict the highly obscure substrate 4'-phosphooxetanocin A (a nucleoside-analog antibiotic natural product) over more common phosphoamino-acid substrates.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as OxsA (HD-domain phosphohydrolase from plasmid pOXT1 of Priestia megaterium) and its experimentally determined substrate 4'-phosphooxetanocin A, which is an extremely rare natural product with no obvious sequence-level predictor accessible from the 194-aa input.",
-    "reason": "Correct identification requires knowing that this particular 194-residue sequence encodes OxsA, an enzyme acting on the obscure natural product 4'-phosphooxetanocin A. No general biological reasoning from the amino acid sequence allows prediction of this specific substrate. The HD-domain motif, while present, is not reliably identifiable from sequence alone, and even if identified as a phosphohydrolase, the choice between a common phosphatase substrate (phosphoserine, Choice A) and the highly specific oxetanocin substrate (Choice D) depends entirely on item-specific experimental annotation."
-  },
-  "case_id": "catalytic_activity_0148",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C7",
-      "H1",
-      "H2",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The protein sequence exactly matches UniProt O24769 (OXSA_PRIMG, 194 AA, SHA256 matched). The entry is experimentally annotated as '4'-phosphooxetanocin A phosphatase' (EC 3.1.3.112) with the catalytic reaction '4'-phosphooxetanocin A + H2O = oxetanocin A + phosphate' (RHEA:81367). This annotation carries ECO:0000269 (direct experimental evidence) from PubMed:27849620 and PubMed:28346939, and is corroborated by X-ray crystallography structures (PDB 5TK6–5TKA) in complexes with oxetanocin A and its phosphorylated forms. The expected answer D matches the annotated reaction verbatim."
-  },
-  "important_caveats": [
-    "The UniProt annotation is based on direct experimental evidence (X-ray crystallography and biochemical assays, ECO:0000269), not computational prediction.",
-    "The sequence match is exact (194 AA, identical SHA256) between the benchmark input and UniProt O24769.",
-    "The identity of the protein was inferred by the reviewer from dataset metadata (image-path), not from the model's input.",
-    "The entry was first publicly released in UniProt on 2025-02-05; if the benchmark was constructed before that date, the annotation may not have been publicly available at construction time, though the underlying papers (2016, 2017) were published earlier.",
-    "The HD-domain motif (His-Asp) is a real structural feature of this enzyme, but its identification from a raw 194-aa sequence without structural context is not a reliable reasoning pathway."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Both A and D describe phosphatase-type reactions (hydrolysis of a phosphate ester). Without knowing the specific enzyme identity, a model that identifies the protein as a generic phosphatase could reasonably consider A (O-phospho-L-serine dephosphorylation) as an alternative. The substrate 4'-phosphooxetanocin A in D is so obscure that no sequence-based reasoning would prefer it over the more biochemically common phosphoserine substrate in A."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0148",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein sequence exactly matches UniProt O24769 (OXSA_PRIMG, 194 AA, SHA256 matched). The entry is experimentally annotated as '4'-phosphooxetanocin A phosphatase' (EC 3.1.3.112) with the catalytic reaction '4'-phosphooxetanocin A + H2O = oxetanocin A + phosphate' (RHEA:81367). This annotation carries ECO:0000269 (direct experimental evidence) from PubMed:27849620 and PubMed:28346939, and is corroborated by X-ray crystallography structures (PDB 5TK6–5TKA) in complexes with oxetanocin A and its phosphorylated forms. The expected answer D matches the annotated reaction verbatim.",
-    "evidence_ids": ["C1", "C4", "C5", "C7", "H1", "H2", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The protein is only 194 amino acids, which could eliminate Choice B (a multi-subunit polyketide synthase reaction requiring a very large enzyme). However, distinguishing among A (phosphatase on O-phospho-L-serine), C (cystathionine gamma-synthase), and D (phosphatase on 4'-phosphooxetanocin A) from the raw sequence alone is not feasible through general reasoning. The HD-domain phosphohydrolase motif is extremely difficult to identify from a 194-residue sequence without structural or database context, and even recognizing a generic phosphatase activity would not predict the highly obscure substrate 4'-phosphooxetanocin A (a nucleoside-analog antibiotic natural product) over more common phosphoamino-acid substrates.",
-    "missing_item_specific_fact": "The specific identity of this protein as OxsA (HD-domain phosphohydrolase from plasmid pOXT1 of Priestia megaterium) and its experimentally determined substrate 4'-phosphooxetanocin A, which is an extremely rare natural product with no obvious sequence-level predictor accessible from the 194-aa input.",
-    "reason": "Correct identification requires knowing that this particular 194-residue sequence encodes OxsA, an enzyme acting on the obscure natural product 4'-phosphooxetanocin A. No general biological reasoning from the amino acid sequence allows prediction of this specific substrate. The HD-domain motif, while present, is not reliably identifiable from sequence alone, and even if identified as a phosphohydrolase, the choice between a common phosphatase substrate (phosphoserine, Choice A) and the highly specific oxetanocin substrate (Choice D) depends entirely on item-specific experimental annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Both A and D describe phosphatase-type reactions (hydrolysis of a phosphate ester). Without knowing the specific enzyme identity, a model that identifies the protein as a generic phosphatase could reasonably consider A (O-phospho-L-serine dephosphorylation) as an alternative. The substrate 4'-phosphooxetanocin A in D is so obscure that no sequence-based reasoning would prefer it over the more biochemically common phosphoserine substrate in A."
-  },
-  "important_caveats": [
-    "The UniProt annotation is based on direct experimental evidence (X-ray crystallography and biochemical assays, ECO:0000269), not computational prediction.",
-    "The sequence match is exact (194 AA, identical SHA256) between the benchmark input and UniProt O24769.",
-    "The identity of the protein was inferred by the reviewer from dataset metadata (image-path), not from the model's input.",
-    "The entry was first publicly released in UniProt on 2025-02-05; if the benchmark was constructed before that date, the annotation may not have been publicly available at construction time, though the underlying papers (2016, 2017) were published earlier.",
-    "The HD-domain motif (His-Asp) is a real structural feature of this enzyme, but its identification from a raw 194-aa sequence without structural context is not a reliable reasoning pathway."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
+**This response is not a usable structured review.** Its saved text is preserved below; any labels in that text are excluded from the summary counts.
 
 **Validation errors:** `invalid_json:Expecting property name enclosed in double quotes: line 13 column 3 (char 1374)`.
 
@@ -336,10 +92,9 @@ Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), 
 
 **Saved parsed visible review:** `null`.
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -451,30 +206,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "O24769",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "cc417e15ac0354c49fef7a10ef2eaa3595a3619ba1429df8c3467cd7ce1b7a72",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 194,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "cc417e15ac0354c49fef7a10ef2eaa3595a3619ba1429df8c3467cd7ce1b7a72",
   "current_entry_audit": {
     "entryVersion": 77,
     "firstPublicDate": "2025-02-05",
@@ -482,14 +224,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "1998-01-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "current_source_sequence_sha256": "cc417e15ac0354c49fef7a10ef2eaa3595a3619ba1429df8c3467cd7ce1b7a72",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 194,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "cc417e15ac0354c49fef7a10ef2eaa3595a3619ba1429df8c3467cd7ce1b7a72",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 75,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "O24769",
   "selected_historical_entry_version": 75,
+  "selected_historical_record_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
+  "selected_historical_source_sequence_length": 194,
+  "selected_historical_source_sequence_sha256": "cc417e15ac0354c49fef7a10ef2eaa3595a3619ba1429df8c3467cd7ce1b7a72",
   "selected_historical_version": {
     "accession": "O24769",
     "database": "Swiss-Prot",
@@ -500,24 +258,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "OXSA_PRIMG",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
-  "selected_historical_source_sequence_sha256": "cc417e15ac0354c49fef7a10ef2eaa3595a3619ba1429df8c3467cd7ce1b7a72",
-  "selected_historical_source_sequence_length": 194,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 75,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -531,15 +276,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O24769.json",
-  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"O24769\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
+  "url": "https://rest.uniprot.org/uniprotkb/O24769.json"
 }
 ```
 
@@ -550,15 +295,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O24769.json",
-  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":77,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"1998-01-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
+  "url": "https://rest.uniprot.org/uniprotkb/O24769.json"
 }
 ```
 
@@ -569,15 +314,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O24769.json",
-  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bacillus megaterium\",\"lineage\":[\"Bacteria\",\"Bacillati\",\"Bacillota\",\"Bacilli\",\"Caryophanales\",\"Bacillaceae\",\"Priestia\"],\"scientificName\":\"Priestia megaterium\",\"taxonId\":1404}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
+  "url": "https://rest.uniprot.org/uniprotkb/O24769.json"
 }
 ```
 
@@ -588,15 +333,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O24769.json",
-  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28346939\",\"source\":\"PubMed\"}],\"value\":\"HD-domain phosphohydrolase OxsA\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27849620\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28346939\",\"source\":\"PubMed\"}],\"value\":\"3.1.3.112\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"4'-phosphooxetanocin A phosphatase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
+  "url": "https://rest.uniprot.org/uniprotkb/O24769.json"
 }
 ```
 
@@ -607,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O24769.json",
-  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27849620\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28346939\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81368\"}}],\"reaction\":{\"ecNumber\":\"3.1.3.112\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"27849620\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28346939\",\"source\":\"PubMed\"}],\"name\":\"4'-phosphooxetanocin A + H2O = oxetanocin A + phosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81367\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:85720\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:86012\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
+  "url": "https://rest.uniprot.org/uniprotkb/O24769.json"
 }
 ```
 
@@ -626,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O24769.json",
-  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Bridwell-Rabb J.\",\"Zhong A.\",\"Sun H.G.\",\"Drennan C.L.\",\"Liu H.W.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28346939\"},{\"database\":\"DOI\",\"id\":\"10.1038/nature21689\"}],\"citationType\":\"journal article\",\"firstPage\":\"322\",\"id\":\"28346939\",\"journal\":\"Nature\",\"lastPage\":\"326\",\"publicationDate\":\"2017\",\"title\":\"A B12-dependent radical SAM enzyme involved in oxetanocin A biosynthesis.\",\"volume\":\"544\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
+  "url": "https://rest.uniprot.org/uniprotkb/O24769.json"
 }
 ```
 
@@ -645,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/O24769.json",
-  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
-  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bridwell-Rabb J.\",\"Kang G.\",\"Zhong A.\",\"Liu H.W.\",\"Drennan C.L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"27849620\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.1613610113\"}],\"citationType\":\"journal article\",\"firstPage\":\"13750\",\"id\":\"27849620\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"13755\",\"publicationDate\":\"2016\",\"title\":\"An HD domain phosphohydrolase active site tailored for oxetanocin-A biosynthesis.\",\"volume\":\"113\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5TK6\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5TK7\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5TK8\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5TK9\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5TKA\",\"source\":\"PDB\"}],\"referenceNumber\":3,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.64 ANGSTROMS) IN COMPLEXES WITH MAGNESIUM; OXETANOCIN A; OXETANOCIN A MONOPHOSPHATE; OXETANOCIN A DIPHOSPHATE AND OXETANOCIN A TRIPHOSPHATE\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\",\"DOMAIN\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:29:10.548137+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1c63e689d95c3766e652d2d5563f236adaca6c85d877b17df78572f9e47ef24b",
+  "url": "https://rest.uniprot.org/uniprotkb/O24769.json"
 }
 ```
 
@@ -663,18 +408,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75",
-  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
-  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   OXSA_PRIMG              Reviewed;         194 AA.\nAC   O24769;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JAN-1998, sequence version 1.\nDT   18-JUN-2025, entry version 75.\nDE   RecName: Full=4'-phosphooxetanocin A phosphatase {ECO:0000305};\nDE            EC=3.1.3.112 {ECO:0000269|PubMed:27849620, ECO:0000269|PubMed:28346939};\nDE   AltName: Full=HD-domain phosphohydrolase OxsA {ECO:0000303|PubMed:28346939};\nGN   Name=oxsA {ECO:0000312|EMBL:BAA21630.1};\nOS   Priestia megaterium (Bacillus megaterium).\nOG   Plasmid pOXT1 {ECO:0000303|PubMed:10227144}.\nOC   Bacteria; Bacillati; Bacillota; Bacilli; Bacillales; Bacillaceae; Priestia.\nOX   NCBI_TaxID=1404;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
+  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75"
 }
 ```
 
@@ -684,18 +429,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75",
-  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
-  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=4'-phosphooxetanocin A phosphatase {ECO:0000305};\nDE            EC=3.1.3.112 {ECO:0000269|PubMed:27849620, ECO:0000269|PubMed:28346939};\nDE   AltName: Full=HD-domain phosphohydrolase OxsA {ECO:0000303|PubMed:28346939};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
+  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75"
 }
 ```
 
@@ -705,18 +450,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75",
-  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
-  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
-  "source_locator": "lines 14-22",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].\nRC   STRAIN=NK84-0128; PLASMID=pOXT1;\nRX   PubMed=10227144; DOI=10.1271/bbb.63.563;\nRA   Morita M., Tomita K., Ishizawa M., Takagi K., Kawamura F., Takahashi H.,\nRA   Morino T.;\nRT   \"Cloning of oxetanocin A biosynthetic and resistance genes that reside on a\nRT   plasmid of Bacillus megaterium strain NK84-0128.\";\nRL   Biosci. Biotechnol. Biochem. 63:563-566(1999).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
+  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75"
 }
 ```
 
@@ -726,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75",
-  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
-  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
-  "source_locator": "lines 23-29",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND CATALYTIC ACTIVITY.\nRX   PubMed=28346939; DOI=10.1038/nature21689;\nRA   Bridwell-Rabb J., Zhong A., Sun H.G., Drennan C.L., Liu H.W.;\nRT   \"A B12-dependent radical SAM enzyme involved in oxetanocin A\nRT   biosynthesis.\";\nRL   Nature 544:322-326(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
+  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75"
 }
 ```
 
@@ -747,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75",
-  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
-  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
-  "source_locator": "lines 30-39",
   "excerpt": "RN   [3] {ECO:0007744|PDB:5TK6, ECO:0007744|PDB:5TK7, ECO:0007744|PDB:5TK8, ECO:0007744|PDB:5TK9, ECO:0007744|PDB:5TKA}\nRP   X-RAY CRYSTALLOGRAPHY (1.64 ANGSTROMS) IN COMPLEXES WITH MAGNESIUM;\nRP   OXETANOCIN A; OXETANOCIN A MONOPHOSPHATE; OXETANOCIN A DIPHOSPHATE AND\nRP   OXETANOCIN A TRIPHOSPHATE, FUNCTION, CATALYTIC ACTIVITY, COFACTOR,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBUNIT, AND DOMAIN.\nRX   PubMed=27849620; DOI=10.1073/pnas.1613610113;\nRA   Bridwell-Rabb J., Kang G., Zhong A., Liu H.W., Drennan C.L.;\nRT   \"An HD domain phosphohydrolase active site tailored for oxetanocin-A\nRT   biosynthesis.\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 113:13750-13755(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-39",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
+  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75"
 }
 ```
 
@@ -768,18 +513,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 75,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75",
-  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
-  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
-  "source_locator": "lines 52-58",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=4'-phosphooxetanocin A + H2O = oxetanocin A + phosphate;\nCC         Xref=Rhea:RHEA:81367, ChEBI:CHEBI:15377, ChEBI:CHEBI:43474,\nCC         ChEBI:CHEBI:85720, ChEBI:CHEBI:86012; EC=3.1.3.112;\nCC         Evidence={ECO:0000269|PubMed:27849620, ECO:0000269|PubMed:28346939};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81368;\nCC         Evidence={ECO:0000269|PubMed:27849620, ECO:0000269|PubMed:28346939};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 75,
+  "retrieved_utc": "2026-11-02T04:29:21.063065+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-58",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bab6b179917835711477092cc4cbfcd87e9b1a12b22b046feb1fb9be2c17050d",
+  "url": "https://rest.uniprot.org/unisave/O24769?format=txt&versions=75"
 }
 ```
 

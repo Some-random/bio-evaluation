@@ -1,18 +1,16 @@
-# cofactor_0101: before and after transfer clarification
+# cofactor_0101
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0101.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0101.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — Na(+)
+**Expected answer:** **C** — Na(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | output error (invalid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence match is annotated with Na(+) as a cofactor, with the note that it binds two sodium ions to optimize substrate binding. The cited study includes crystallography of the protein in a sodium-ion complex and lists cofactor among the studied topics.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence gives no clear, general motif or context that distinguishes sodium dependence from the other listed choices. Identifying the specific enzyme from this sequence would itself require protein-specific knowledge.
-
-
-**Missing item-specific fact**
-
-> That this particular HISN3 protein is annotated and reported to bind two sodium ions to optimize substrate binding.
-
-
-**Reason**
-
-> The sodium assignment depends on a protein-specific annotation or study absent from the input; sequence-only heuristics do not meaningfully distinguish it.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence specifically supports sodium. However, the source describes sodium as optimizing substrate binding, which does not by itself establish that it is strictly essential for catalytic activity as the task definition suggests.
-
-
-### Important caveats
-
-- The annotation applies to an exact sequence match, but the primary study was not independently reviewed here.
-- The evidence supports sodium binding and the database cofactor assignment; strict indispensability for catalysis is less directly established by the excerpts.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence gives no clear, general motif or context that distinguishes sodium dependence from the other listed choices. Identifying the specific enzyme from this sequence would itself require protein-specific knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this particular HISN3 protein is annotated and reported to bind two sodium ions to optimize substrate binding.",
-    "reason": "The sodium assignment depends on a protein-specific annotation or study absent from the input; sequence-only heuristics do not meaningfully distinguish it."
-  },
-  "case_id": "cofactor_0101",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence match is annotated with Na(+) as a cofactor, with the note that it binds two sodium ions to optimize substrate binding. The cited study includes crystallography of the protein in a sodium-ion complex and lists cofactor among the studied topics."
-  },
-  "important_caveats": [
-    "The annotation applies to an exact sequence match, but the primary study was not independently reviewed here.",
-    "The evidence supports sodium binding and the database cofactor assignment; strict indispensability for catalysis is less directly established by the excerpts."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence specifically supports sodium. However, the source describes sodium as optimizing substrate binding, which does not by itself establish that it is strictly essential for catalytic activity as the task definition suggests."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0101",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence match is annotated with Na(+) as a cofactor, with the note that it binds two sodium ions to optimize substrate binding. The cited study includes crystallography of the protein in a sodium-ion complex and lists cofactor among the studied topics.",
-    "evidence_ids": ["C5", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence gives no clear, general motif or context that distinguishes sodium dependence from the other listed choices. Identifying the specific enzyme from this sequence would itself require protein-specific knowledge.",
-    "missing_item_specific_fact": "That this particular HISN3 protein is annotated and reported to bind two sodium ions to optimize substrate binding.",
-    "reason": "The sodium assignment depends on a protein-specific annotation or study absent from the input; sequence-only heuristics do not meaningfully distinguish it."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence specifically supports sodium. However, the source describes sodium as optimizing substrate binding, which does not by itself establish that it is strictly essential for catalytic activity as the task definition suggests."
-  },
-  "important_caveats": [
-    "The annotation applies to an exact sequence match, but the primary study was not independently reviewed here.",
-    "The evidence supports sodium binding and the database cofactor assignment; strict indispensability for catalysis is less directly established by the excerpts."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
-
-**Validation errors:** `question_ambiguity:invalid_option_ids`.
-
-### Expected-answer support: supported
-
-> The UniProt entry G7IFI7 (sequence exactly matched, 312 aa) annotates Na(+) (ChEBI:CHEBI:29101) as the cofactor with experimental evidence (ECO:0000269, PubMed:39186852). The supporting paper reports X-ray crystallography at 1.54 Å showing the protein in complex with sodium ion, 5'-ProFAR, and PRFAR. The note states 'Binds 2 sodium ions to optimize substrate binding.' This is direct experimental confirmation, not computational inference.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The protein is a 5'-proFAR isomerase (EC 5.3.1.16). The well-characterized bacterial homolog HisA (e.g., from Salmonella typhimurium) uses Fe(2+) as its metal cofactor, coordinated by conserved His/Asp/Glu residues in a TIM-barrel fold. A model applying general knowledge of this enzyme family would reasonably predict Fe(2+). The finding that the plant HISN3 uses Na(+) instead of Fe(2+) is a specific experimental discovery from a 2024 paper (Witek et al., Plant Physiol. Biochem. 215:109065). Na(+) is typically coordinated by backbone carbonyls and ordered water rather than distinctive side-chain motifs, making it essentially unpredictable from sequence alone.
-
-
-**Missing item-specific fact**
-
-> The specific experimental result (2024 X-ray crystallography and mutagenesis study) demonstrating that plant HISN3 binds Na(+) rather than Fe(2+), representing a functional divergence from the bacterial HisA homolog. No sequence-based heuristic reliably distinguishes a Na(+)-dependent isomerase from an Fe(2+)-dependent one.
-
-
-**Reason**
-
-> The sequence provides no distinctive signature that would allow a model to predict Na(+) over Fe(2+). The TIM-barrel fold and general enzyme class point toward Fe(2+) by homology to bacterial HisA. Selecting Na(+) requires memorization of the specific 2024 experimental finding for this plant ortholog.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B (Fe(2+))"
-]
-```
-
-> Fe(2+) is the established cofactor for the bacterial 5'-proFAR isomerase HisA (EC 5.3.1.16), the best-characterized homolog. Without knowledge of the 2024 plant-specific study, Fe(2+) is a well-grounded prediction from homology. The question thus penalizes correct general-knowledge reasoning in favor of a specific recent experimental finding. Na(+) as a cofactor is highly unusual and not inferable from sequence features.
-
-
-### Important caveats
-
-- The Na(+) cofactor annotation carries ECO:0000269 (direct assay) evidence, making it experimentally confirmed rather than inferred.
-- The UniProt entry was first public on 2025-06-18; the supporting paper is from 2024. The question may have been constructed after this publication, making the 'correct' answer dependent on very recent literature.
-- The identity of the protein (HISN3, Medicago truncatula) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no organism or gene-name context.
-- Pantetheine 4'-phosphate and cob(II)alamin are clearly implausible distractors for an isomerase, reducing the effective choice to Na(+) vs. Fe(2+).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is a 5'-proFAR isomerase (EC 5.3.1.16). The well-characterized bacterial homolog HisA (e.g., from Salmonella typhimurium) uses Fe(2+) as its metal cofactor, coordinated by conserved His/Asp/Glu residues in a TIM-barrel fold. A model applying general knowledge of this enzyme family would reasonably predict Fe(2+). The finding that the plant HISN3 uses Na(+) instead of Fe(2+) is a specific experimental discovery from a 2024 paper (Witek et al., Plant Physiol. Biochem. 215:109065). Na(+) is typically coordinated by backbone carbonyls and ordered water rather than distinctive side-chain motifs, making it essentially unpredictable from sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimental result (2024 X-ray crystallography and mutagenesis study) demonstrating that plant HISN3 binds Na(+) rather than Fe(2+), representing a functional divergence from the bacterial HisA homolog. No sequence-based heuristic reliably distinguishes a Na(+)-dependent isomerase from an Fe(2+)-dependent one.",
-    "reason": "The sequence provides no distinctive signature that would allow a model to predict Na(+) over Fe(2+). The TIM-barrel fold and general enzyme class point toward Fe(2+) by homology to bacterial HisA. Selecting Na(+) requires memorization of the specific 2024 experimental finding for this plant ortholog."
-  },
-  "case_id": "cofactor_0101",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry G7IFI7 (sequence exactly matched, 312 aa) annotates Na(+) (ChEBI:CHEBI:29101) as the cofactor with experimental evidence (ECO:0000269, PubMed:39186852). The supporting paper reports X-ray crystallography at 1.54 Å showing the protein in complex with sodium ion, 5'-ProFAR, and PRFAR. The note states 'Binds 2 sodium ions to optimize substrate binding.' This is direct experimental confirmation, not computational inference."
-  },
-  "important_caveats": [
-    "The Na(+) cofactor annotation carries ECO:0000269 (direct assay) evidence, making it experimentally confirmed rather than inferred.",
-    "The UniProt entry was first public on 2025-06-18; the supporting paper is from 2024. The question may have been constructed after this publication, making the 'correct' answer dependent on very recent literature.",
-    "The identity of the protein (HISN3, Medicago truncatula) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no organism or gene-name context.",
-    "Pantetheine 4'-phosphate and cob(II)alamin are clearly implausible distractors for an isomerase, reducing the effective choice to Na(+) vs. Fe(2+)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B (Fe(2+))"
-    ],
-    "reason": "Fe(2+) is the established cofactor for the bacterial 5'-proFAR isomerase HisA (EC 5.3.1.16), the best-characterized homolog. Without knowledge of the 2024 plant-specific study, Fe(2+) is a well-grounded prediction from homology. The question thus penalizes correct general-knowledge reasoning in favor of a specific recent experimental finding. Na(+) as a cofactor is highly unusual and not inferable from sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0101",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry G7IFI7 (sequence exactly matched, 312 aa) annotates Na(+) (ChEBI:CHEBI:29101) as the cofactor with experimental evidence (ECO:0000269, PubMed:39186852). The supporting paper reports X-ray crystallography at 1.54 Å showing the protein in complex with sodium ion, 5'-ProFAR, and PRFAR. The note states 'Binds 2 sodium ions to optimize substrate binding.' This is direct experimental confirmation, not computational inference.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The protein is a 5'-proFAR isomerase (EC 5.3.1.16). The well-characterized bacterial homolog HisA (e.g., from Salmonella typhimurium) uses Fe(2+) as its metal cofactor, coordinated by conserved His/Asp/Glu residues in a TIM-barrel fold. A model applying general knowledge of this enzyme family would reasonably predict Fe(2+). The finding that the plant HISN3 uses Na(+) instead of Fe(2+) is a specific experimental discovery from a 2024 paper (Witek et al., Plant Physiol. Biochem. 215:109065). Na(+) is typically coordinated by backbone carbonyls and ordered water rather than distinctive side-chain motifs, making it essentially unpredictable from sequence alone.",
-    "missing_item_specific_fact": "The specific experimental result (2024 X-ray crystallography and mutagenesis study) demonstrating that plant HISN3 binds Na(+) rather than Fe(2+), representing a functional divergence from the bacterial HisA homolog. No sequence-based heuristic reliably distinguishes a Na(+)-dependent isomerase from an Fe(2+)-dependent one.",
-    "reason": "The sequence provides no distinctive signature that would allow a model to predict Na(+) over Fe(2+). The TIM-barrel fold and general enzyme class point toward Fe(2+) by homology to bacterial HisA. Selecting Na(+) requires memorization of the specific 2024 experimental finding for this plant ortholog."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B (Fe(2+))"],
-    "reason": "Fe(2+) is the established cofactor for the bacterial 5'-proFAR isomerase HisA (EC 5.3.1.16), the best-characterized homolog. Without knowledge of the 2024 plant-specific study, Fe(2+) is a well-grounded prediction from homology. The question thus penalizes correct general-knowledge reasoning in favor of a specific recent experimental finding. Na(+) as a cofactor is highly unusual and not inferable from sequence features."
-  },
-  "important_caveats": [
-    "The Na(+) cofactor annotation carries ECO:0000269 (direct assay) evidence, making it experimentally confirmed rather than inferred.",
-    "The UniProt entry was first public on 2025-06-18; the supporting paper is from 2024. The question may have been constructed after this publication, making the 'correct' answer dependent on very recent literature.",
-    "The identity of the protein (HISN3, Medicago truncatula) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence with no organism or gene-name context.",
-    "Pantetheine 4'-phosphate and cob(II)alamin are clearly implausible distractors for an isomerase, reducing the effective choice to Na(+) vs. Fe(2+)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G7IFI7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5cc38259edb8e6a0c05d63b5b309a07322d6beb3042fe4fc48cb46b256ebf155",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 312,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5cc38259edb8e6a0c05d63b5b309a07322d6beb3042fe4fc48cb46b256ebf155",
   "current_entry_audit": {
     "entryVersion": 84,
     "firstPublicDate": "2025-06-18",
@@ -543,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-01-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
-  "current_source_sequence_sha256": "5cc38259edb8e6a0c05d63b5b309a07322d6beb3042fe4fc48cb46b256ebf155",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 312,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5cc38259edb8e6a0c05d63b5b309a07322d6beb3042fe4fc48cb46b256ebf155",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 82,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G7IFI7",
   "selected_historical_entry_version": 82,
+  "selected_historical_record_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
+  "selected_historical_source_sequence_length": 312,
+  "selected_historical_source_sequence_sha256": "5cc38259edb8e6a0c05d63b5b309a07322d6beb3042fe4fc48cb46b256ebf155",
   "selected_historical_version": {
     "accession": "G7IFI7",
     "database": "Swiss-Prot",
@@ -561,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HISN3_MEDTR",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
-  "selected_historical_source_sequence_sha256": "5cc38259edb8e6a0c05d63b5b309a07322d6beb3042fe4fc48cb46b256ebf155",
-  "selected_historical_source_sequence_length": 312,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 82,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json",
-  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
-  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G7IFI7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
+  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json"
 }
 ```
 
@@ -611,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json",
-  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
-  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":84,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-01-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
+  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json"
 }
 ```
 
@@ -630,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json",
-  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
-  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Barrel medic\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"rosids\",\"fabids\",\"Fabales\",\"Fabaceae\",\"Papilionoideae\",\"50 kb inversion clade\",\"NPAAA clade\",\"Hologalegina\",\"IRL clade\",\"Trifolieae\",\"Medicago\"],\"scientificName\":\"Medicago truncatula\",\"synonyms\":[\"Medicago tribuloides\"],\"taxonId\":3880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
+  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json"
 }
 ```
 
@@ -649,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json",
-  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
-  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"value\":\"5'-proFAR isomerase 3\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"value\":\"Phosphoribosylformimino-5-aminoimidazole carboxamide ribotide isomerase HISN3\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"value\":\"Protein HISTIDINE BIOSYNTHESIS 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"value\":\"MtHISN3\"}]}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"value\":\"5.3.1.16\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"value\":\"1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase HISN3, chloroplastic\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
+  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json"
 }
 ```
 
@@ -668,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json",
-  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
-  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29101\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"name\":\"Na(+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39186852\",\"source\":\"PubMed\"}],\"value\":\"Binds 2 sodium ions to optimize substrate binding.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
+  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json"
 }
 ```
 
@@ -687,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json",
-  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
-  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Witek W.\",\"Imiolczyk B.\",\"Ruszkowski M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39186852\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.plaphy.2024.109065\"}],\"citationType\":\"journal article\",\"firstPage\":\"109065\",\"id\":\"39186852\",\"journal\":\"Plant Physiol. Biochem.\",\"lastPage\":\"109065\",\"publicationDate\":\"2024\",\"title\":\"Structural, kinetic, and evolutionary peculiarities of HISN3, a plant 5'-ProFAR isomerase.\",\"volume\":\"215\"},\"referenceNumber\":5,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.54 ANGSTROMS) OF 42-312 IN COMPLEX WITH SODIUM ION; 5'-PROFAR AND PRFAR\",\"FUNCTION\",\"MUTAGENESIS OF ASP-57 AND 74-LEU--SER-80\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"COFACTOR\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:28:47.235961+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "12df9c09d392299f1b4f480c73681f58d6ac3674fbbe0ae26a955d032db1acad",
+  "url": "https://rest.uniprot.org/uniprotkb/G7IFI7.json"
 }
 ```
 
@@ -705,18 +458,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 82,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82",
-  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
-  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
-  "source_locator": "lines 1-21",
   "excerpt": "ID   HISN3_MEDTR             Reviewed;         312 AA.\nAC   G7IFI7; A0A396J617; B7FHU9;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-JAN-2012, sequence version 1.\nDT   28-JAN-2026, entry version 82.\nDE   RecName: Full=1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase HISN3, chloroplastic {ECO:0000303|PubMed:39186852};\nDE            EC=5.3.1.16 {ECO:0000269|PubMed:39186852};\nDE   AltName: Full=5'-proFAR isomerase 3 {ECO:0000303|PubMed:39186852};\nDE   AltName: Full=Phosphoribosylformimino-5-aminoimidazole carboxamide ribotide isomerase HISN3 {ECO:0000303|PubMed:39186852};\nDE   AltName: Full=Protein HISTIDINE BIOSYNTHESIS 3 {ECO:0000303|PubMed:39186852};\nDE            Short=MtHISN3 {ECO:0000303|PubMed:39186852};\nDE   Flags: Precursor;\nGN   Name=HISN3 {ECO:0000303|PubMed:39186852};\nGN   OrderedLocusNames=MTR_2g015010 {ECO:0000312|EMBL:AES63938.1},\nGN   MtrunA17_Chr2g0283151 {ECO:0000312|EMBL:RHN72021.1};\nOS   Medicago truncatula (Barrel medic) (Medicago tribuloides).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   rosids; fabids; Fabales; Fabaceae; Papilionoideae; 50 kb inversion clade;\nOC   NPAAA clade; Hologalegina; IRL clade; Trifolieae; Medicago.\nOX   NCBI_TaxID=3880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 82,
+  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
+  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82"
 }
 ```
 
@@ -726,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 82,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82",
-  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
-  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
-  "source_locator": "lines 6-12",
   "excerpt": "DE   RecName: Full=1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase HISN3, chloroplastic {ECO:0000303|PubMed:39186852};\nDE            EC=5.3.1.16 {ECO:0000269|PubMed:39186852};\nDE   AltName: Full=5'-proFAR isomerase 3 {ECO:0000303|PubMed:39186852};\nDE   AltName: Full=Phosphoribosylformimino-5-aminoimidazole carboxamide ribotide isomerase HISN3 {ECO:0000303|PubMed:39186852};\nDE   AltName: Full=Protein HISTIDINE BIOSYNTHESIS 3 {ECO:0000303|PubMed:39186852};\nDE            Short=MtHISN3 {ECO:0000303|PubMed:39186852};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 82,
+  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
+  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82"
 }
 ```
 
@@ -747,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 82,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82",
-  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
-  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
-  "source_locator": "lines 77-86",
   "excerpt": "RN   [5]\nRP   X-RAY CRYSTALLOGRAPHY (1.54 ANGSTROMS) OF 42-312 IN COMPLEX WITH SODIUM\nRP   ION; 5'-PROFAR AND PRFAR, FUNCTION, MUTAGENESIS OF ASP-57 AND\nRP   74-LEU--SER-80, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES,\nRP   COFACTOR, AND PATHWAY.\nRX   PubMed=39186852; DOI=10.1016/j.plaphy.2024.109065;\nRA   Witek W., Imiolczyk B., Ruszkowski M.;\nRT   \"Structural, kinetic, and evolutionary peculiarities of HISN3, a plant 5'-\nRT   ProFAR isomerase.\";\nRL   Plant Physiol. Biochem. 215:109065-109065(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 82,
+  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 77-86",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
+  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82"
 }
 ```
 
@@ -768,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 82,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82",
-  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
-  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
-  "source_locator": "lines 105-109",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Na(+); Xref=ChEBI:CHEBI:29101;\nCC         Evidence={ECO:0000269|PubMed:39186852};\nCC       Note=Binds 2 sodium ions to optimize substrate binding.\nCC       {ECO:0000269|PubMed:39186852};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 82,
+  "retrieved_utc": "2026-11-02T04:28:50.784174+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 105-109",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "57f4fb448243930685a2bcd3763f9d87af8412276cc9bec134a2b71d3eff2db8",
+  "url": "https://rest.uniprot.org/unisave/G7IFI7?format=txt&versions=82"
 }
 ```
 

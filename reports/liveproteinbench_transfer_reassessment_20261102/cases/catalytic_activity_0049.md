@@ -1,18 +1,16 @@
-# catalytic_activity_0049: before and after transfer clarification
+# catalytic_activity_0049
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0049.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0049.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — Endonucleolytic cleavage to 5&#x27;-phosphomonoester.
+**Expected answer:** **D** — Endonucleolytic cleavage to 5&#x27;-phosphomonoester.
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches a Xenopus laevis Dicer-S entry annotated with EC 3.1.26.3 and the reaction in choice D. The annotation is supported by similarity evidence, not by direct experimental evidence in the supplied excerpts.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Recognizing Dicer-like domain architecture could suggest an RNase III endonuclease, but the raw sequence does not directly state the protein identity or its annotated reaction.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as Dicer-S and its assigned catalytic activity (EC 3.1.26.3) are needed to select the reaction confidently.
-
-
-**Reason**
-
-> The sequence may support computational identification of Dicer, but selecting D depends on that protein-specific identification and activity rather than a clearly discriminating argument available from the prompt alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the Dicer-S identification, choice D is the matching reaction; the other options describe different enzyme activities.
-
-
-### Important caveats
-
-- The matched UniProt catalytic-activity annotation cites similarity evidence (ECO:0000250), rather than direct experimental evidence in the excerpts.
-- The historical record also matches the sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Recognizing Dicer-like domain architecture could suggest an RNase III endonuclease, but the raw sequence does not directly state the protein identity or its annotated reaction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as Dicer-S and its assigned catalytic activity (EC 3.1.26.3) are needed to select the reaction confidently.",
-    "reason": "The sequence may support computational identification of Dicer, but selecting D depends on that protein-specific identification and activity rather than a clearly discriminating argument available from the prompt alone."
-  },
-  "case_id": "catalytic_activity_0049",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a Xenopus laevis Dicer-S entry annotated with EC 3.1.26.3 and the reaction in choice D. The annotation is supported by similarity evidence, not by direct experimental evidence in the supplied excerpts."
-  },
-  "important_caveats": [
-    "The matched UniProt catalytic-activity annotation cites similarity evidence (ECO:0000250), rather than direct experimental evidence in the excerpts.",
-    "The historical record also matches the sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the Dicer-S identification, choice D is the matching reaction; the other options describe different enzyme activities."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0049",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a Xenopus laevis Dicer-S entry annotated with EC 3.1.26.3 and the reaction in choice D. The annotation is supported by similarity evidence, not by direct experimental evidence in the supplied excerpts.",
-    "evidence_ids": ["C1", "C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Recognizing Dicer-like domain architecture could suggest an RNase III endonuclease, but the raw sequence does not directly state the protein identity or its annotated reaction.",
-    "missing_item_specific_fact": "The protein-specific identification as Dicer-S and its assigned catalytic activity (EC 3.1.26.3) are needed to select the reaction confidently.",
-    "reason": "The sequence may support computational identification of Dicer, but selecting D depends on that protein-specific identification and activity rather than a clearly discriminating argument available from the prompt alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the Dicer-S identification, choice D is the matching reaction; the other options describe different enzyme activities."
-  },
-  "important_caveats": [
-    "The matched UniProt catalytic-activity annotation cites similarity evidence (ECO:0000250), rather than direct experimental evidence in the excerpts.",
-    "The historical record also matches the sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt A0A8J1LLF7 (DICRS_XENLA, Endoribonuclease Dicer-S, EC 3.1.26.3) from Xenopus laevis. The catalytic activity annotation explicitly states 'Endonucleolytic cleavage to 5'-phosphomonoester.' The evidence code is ECO:0000250 (similarity to B3DLA6), meaning the annotation is transferred by homology rather than directly experimentally validated for this specific protein, but the annotation is present and the sequence is an exact match.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is 1881 amino acids long. Beta-lactamases (option B) are typically 300–400 aa; lipoxygenases (option C) are ~700–800 aa; lipid A phosphoethanolamine transferases (option A) are small membrane-associated proteins (<500 aa). All three are decisively ruled out by the large size. The sequence contains multiple 'DEDD' acidic stretches (e.g., 'DEDDDDDEDEEIEEK' and 'DEDEDLMWRNPKEETDFDDDFLEYDQE') characteristic of the RNase III catalytic tetrad. RNase III superfamily enzymes (including Dicer) are large multi-domain endoribonucleases (~1500–2000 aa) that cleave dsRNA to yield 5'-phosphomonoester and 3'-hydroxyl products. This combination of size elimination and DEDD-motif recognition provides a concrete biological argument for option D.
-
-
-**Missing item-specific fact**
-
-> None critical. The exact UniProt annotation wording is not required; the size-based elimination and RNase III DEDD-motif recognition are sufficient to identify the enzyme class and its characteristic 5'-phosphomonoester product.
-
-
-**Reason**
-
-> A knowledgeable model can eliminate A, B, and C by protein size (all are much smaller than 1881 aa) and identify the DEDD catalytic motifs diagnostic of the RNase III superfamily, whose well-known mechanism produces 5'-phosphomonoester ends. This constitutes a concrete, multi-step biological argument from the sequence itself.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent radically different enzyme classes (transferase, hydrolase of beta-lactam, oxygenase, endonuclease) with well-separated size ranges and substrate types. The 1881-aa length and DEDD motifs unambiguously point to the RNase III family, leaving no competing defensible option.
-
-
-### Important caveats
-
-- The UniProt catalytic activity annotation carries evidence code ECO:0000250 (similarity to B3DLA6), indicating the annotation is transferred by homology rather than directly experimentally confirmed for this Xenopus Dicer-S entry.
-- The reviewer-only UniProt accession and annotation were not available to the evaluated model; the reasoning argument relies solely on sequence features and general biochemical knowledge.
-- The DEDD motifs in the sequence are embedded in longer acidic stretches and are not trivially obvious without prior knowledge of RNase III catalytic-site architecture, but they are identifiable by a well-trained biochemist.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is 1881 amino acids long. Beta-lactamases (option B) are typically 300–400 aa; lipoxygenases (option C) are ~700–800 aa; lipid A phosphoethanolamine transferases (option A) are small membrane-associated proteins (<500 aa). All three are decisively ruled out by the large size. The sequence contains multiple 'DEDD' acidic stretches (e.g., 'DEDDDDDEDEEIEEK' and 'DEDEDLMWRNPKEETDFDDDFLEYDQE') characteristic of the RNase III catalytic tetrad. RNase III superfamily enzymes (including Dicer) are large multi-domain endoribonucleases (~1500–2000 aa) that cleave dsRNA to yield 5'-phosphomonoester and 3'-hydroxyl products. This combination of size elimination and DEDD-motif recognition provides a concrete biological argument for option D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The exact UniProt annotation wording is not required; the size-based elimination and RNase III DEDD-motif recognition are sufficient to identify the enzyme class and its characteristic 5'-phosphomonoester product.",
-    "reason": "A knowledgeable model can eliminate A, B, and C by protein size (all are much smaller than 1881 aa) and identify the DEDD catalytic motifs diagnostic of the RNase III superfamily, whose well-known mechanism produces 5'-phosphomonoester ends. This constitutes a concrete, multi-step biological argument from the sequence itself."
-  },
-  "case_id": "catalytic_activity_0049",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A0A8J1LLF7 (DICRS_XENLA, Endoribonuclease Dicer-S, EC 3.1.26.3) from Xenopus laevis. The catalytic activity annotation explicitly states 'Endonucleolytic cleavage to 5'-phosphomonoester.' The evidence code is ECO:0000250 (similarity to B3DLA6), meaning the annotation is transferred by homology rather than directly experimentally validated for this specific protein, but the annotation is present and the sequence is an exact match."
-  },
-  "important_caveats": [
-    "The UniProt catalytic activity annotation carries evidence code ECO:0000250 (similarity to B3DLA6), indicating the annotation is transferred by homology rather than directly experimentally confirmed for this Xenopus Dicer-S entry.",
-    "The reviewer-only UniProt accession and annotation were not available to the evaluated model; the reasoning argument relies solely on sequence features and general biochemical knowledge.",
-    "The DEDD motifs in the sequence are embedded in longer acidic stretches and are not trivially obvious without prior knowledge of RNase III catalytic-site architecture, but they are identifiable by a well-trained biochemist."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent radically different enzyme classes (transferase, hydrolase of beta-lactam, oxygenase, endonuclease) with well-separated size ranges and substrate types. The 1881-aa length and DEDD motifs unambiguously point to the RNase III family, leaving no competing defensible option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0049",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A0A8J1LLF7 (DICRS_XENLA, Endoribonuclease Dicer-S, EC 3.1.26.3) from Xenopus laevis. The catalytic activity annotation explicitly states 'Endonucleolytic cleavage to 5'-phosphomonoester.' The evidence code is ECO:0000250 (similarity to B3DLA6), meaning the annotation is transferred by homology rather than directly experimentally validated for this specific protein, but the annotation is present and the sequence is an exact match.",
-    "evidence_ids": ["C4", "C5", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is 1881 amino acids long. Beta-lactamases (option B) are typically 300–400 aa; lipoxygenases (option C) are ~700–800 aa; lipid A phosphoethanolamine transferases (option A) are small membrane-associated proteins (<500 aa). All three are decisively ruled out by the large size. The sequence contains multiple 'DEDD' acidic stretches (e.g., 'DEDDDDDEDEEIEEK' and 'DEDEDLMWRNPKEETDFDDDFLEYDQE') characteristic of the RNase III catalytic tetrad. RNase III superfamily enzymes (including Dicer) are large multi-domain endoribonucleases (~1500–2000 aa) that cleave dsRNA to yield 5'-phosphomonoester and 3'-hydroxyl products. This combination of size elimination and DEDD-motif recognition provides a concrete biological argument for option D.",
-    "missing_item_specific_fact": "None critical. The exact UniProt annotation wording is not required; the size-based elimination and RNase III DEDD-motif recognition are sufficient to identify the enzyme class and its characteristic 5'-phosphomonoester product.",
-    "reason": "A knowledgeable model can eliminate A, B, and C by protein size (all are much smaller than 1881 aa) and identify the DEDD catalytic motifs diagnostic of the RNase III superfamily, whose well-known mechanism produces 5'-phosphomonoester ends. This constitutes a concrete, multi-step biological argument from the sequence itself."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent radically different enzyme classes (transferase, hydrolase of beta-lactam, oxygenase, endonuclease) with well-separated size ranges and substrate types. The 1881-aa length and DEDD motifs unambiguously point to the RNase III family, leaving no competing defensible option."
-  },
-  "important_caveats": [
-    "The UniProt catalytic activity annotation carries evidence code ECO:0000250 (similarity to B3DLA6), indicating the annotation is transferred by homology rather than directly experimentally confirmed for this Xenopus Dicer-S entry.",
-    "The reviewer-only UniProt accession and annotation were not available to the evaluated model; the reasoning argument relies solely on sequence features and general biochemical knowledge.",
-    "The DEDD motifs in the sequence are embedded in longer acidic stretches and are not trivially obvious without prior knowledge of RNase III catalytic-site architecture, but they are identifiable by a well-trained biochemist."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -496,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A8J1LLF7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b006e4f694f35c38f7fe25947063dceec892fe651148ea0e1e0d5877a1e4e2c2",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1881,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b006e4f694f35c38f7fe25947063dceec892fe651148ea0e1e0d5877a1e4e2c2",
   "current_entry_audit": {
     "entryVersion": 21,
     "firstPublicDate": "2025-06-18",
@@ -527,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2022-05-25",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
-  "current_source_sequence_sha256": "b006e4f694f35c38f7fe25947063dceec892fe651148ea0e1e0d5877a1e4e2c2",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1881,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b006e4f694f35c38f7fe25947063dceec892fe651148ea0e1e0d5877a1e4e2c2",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 19,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A8J1LLF7",
   "selected_historical_entry_version": 19,
+  "selected_historical_record_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
+  "selected_historical_source_sequence_length": 1881,
+  "selected_historical_source_sequence_sha256": "b006e4f694f35c38f7fe25947063dceec892fe651148ea0e1e0d5877a1e4e2c2",
   "selected_historical_version": {
     "accession": "A0A8J1LLF7",
     "database": "Swiss-Prot",
@@ -545,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DICRS_XENLA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
-  "selected_historical_source_sequence_sha256": "b006e4f694f35c38f7fe25947063dceec892fe651148ea0e1e0d5877a1e4e2c2",
-  "selected_historical_source_sequence_length": 1881,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 19,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -576,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json",
-  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
-  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A8J1LLF7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json"
 }
 ```
 
@@ -595,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json",
-  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
-  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":21,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2022-05-25\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json"
 }
 ```
 
@@ -614,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json",
-  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
-  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"African clawed frog\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Amphibia\",\"Batrachia\",\"Anura\",\"Pipoidea\",\"Pipidae\",\"Xenopodinae\",\"Xenopus\",\"Xenopus\"],\"scientificName\":\"Xenopus laevis\",\"taxonId\":8355}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json"
 }
 ```
 
@@ -633,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json",
-  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
-  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"value\":\"3.1.26.3\"}],\"fullName\":{\"value\":\"Endoribonuclease Dicer-S\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json"
 }
 ```
 
@@ -652,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json",
-  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
-  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.1.26.3\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"B3DLA6\",\"source\":\"UniProtKB\"}],\"name\":\"Endonucleolytic cleavage to 5'-phosphomonoester.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:26:02.871482+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1743c4c7e1fb45c35a3ab6a13e0377d823fc271578ce1e8cc74605edb08e6a17",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A8J1LLF7.json"
 }
 ```
 
@@ -670,18 +433,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8J1LLF7?format=txt&versions=19",
-  "source_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
-  "retrieved_utc": "2026-11-02T04:26:05.098009+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   DICRS_XENLA             Reviewed;        1881 AA.\nAC   A0A8J1LLF7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   25-MAY-2022, sequence version 1.\nDT   28-JAN-2026, entry version 19.\nDE   RecName: Full=Endoribonuclease Dicer-S;\nDE            EC=3.1.26.3;\nGN   Name=dicer1.S; Synonyms=dicer1;\nOS   Xenopus laevis (African clawed frog).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Amphibia;\nOC   Batrachia; Anura; Pipoidea; Pipidae; Xenopodinae; Xenopus; Xenopus.\nOX   NCBI_TaxID=8355;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:05.098009+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
+  "url": "https://rest.uniprot.org/unisave/A0A8J1LLF7?format=txt&versions=19"
 }
 ```
 
@@ -691,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8J1LLF7?format=txt&versions=19",
-  "source_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
-  "retrieved_utc": "2026-11-02T04:26:05.098009+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Endoribonuclease Dicer-S;\nDE            EC=3.1.26.3;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:05.098009+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
+  "url": "https://rest.uniprot.org/unisave/A0A8J1LLF7?format=txt&versions=19"
 }
 ```
 
@@ -712,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 19,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A8J1LLF7?format=txt&versions=19",
-  "source_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
-  "retrieved_utc": "2026-11-02T04:26:05.098009+00:00",
-  "source_locator": "lines 52-54",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Endonucleolytic cleavage to 5'-phosphomonoester.; EC=3.1.26.3;\nCC         Evidence={ECO:0000250|UniProtKB:B3DLA6};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 19,
+  "retrieved_utc": "2026-11-02T04:26:05.098009+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "1ee78b98ec19d73b1d687d332eb3f9b6453d7a8816c912104ab16c4b4c2b5ead",
+  "url": "https://rest.uniprot.org/unisave/A0A8J1LLF7?format=txt&versions=19"
 }
 ```
 

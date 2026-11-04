@@ -1,18 +1,16 @@
-# pathway_0002: before and after transfer clarification
+# pathway_0002
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0002.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0002.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Secondary metabolite biosynthesis
+**Expected answer:** **B** — Secondary metabolite biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as terpene cyclase pbrA, with a pathway annotation of secondary metabolite biosynthesis; the annotation cites experimental evidence (ECO:0000269) and a publication. This supports choice B, though the cited primary study was not independently reviewed here.
-
-Citations as saved: [H3](#evidence-h3), [C5](#evidence-c5), [C4](#evidence-c4), [H2](#evidence-h2), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices provide no clear, general biological feature that identifies this particular enzyme's pathway. Its pathway assignment depends on knowing its specific function as a terpene cyclase in aspterric acid biosynthesis.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional assignment linking this sequence to terpene and secondary-metabolite biosynthesis.
-
-
-**Reason**
-
-> The pathway annotation supports the key, but that annotation is reviewer-only. Without it, recognizing or inferring this particular protein's function requires an external protein-specific fact; broad sequence reasoning does not meaningfully distinguish the listed pathways.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choice B is distinct from the other pathway options. A and C are duplicate versions of the same methionine-pathway answer, but neither is supported as an alternative to B by the supplied evidence.
-
-
-### Important caveats
-
-- The sequence match is exact, but the author's source snapshot is unknown.
-- The UniProt pathway annotation cites experimental evidence, but the cited paper was not independently validated in the supplied reviewer evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices provide no clear, general biological feature that identifies this particular enzyme's pathway. Its pathway assignment depends on knowing its specific function as a terpene cyclase in aspterric acid biosynthesis.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional assignment linking this sequence to terpene and secondary-metabolite biosynthesis.",
-    "reason": "The pathway annotation supports the key, but that annotation is reviewer-only. Without it, recognizing or inferring this particular protein's function requires an external protein-specific fact; broad sequence reasoning does not meaningfully distinguish the listed pathways."
-  },
-  "case_id": "pathway_0002",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "C5",
-      "C4",
-      "H2",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as terpene cyclase pbrA, with a pathway annotation of secondary metabolite biosynthesis; the annotation cites experimental evidence (ECO:0000269) and a publication. This supports choice B, though the cited primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the author's source snapshot is unknown.",
-    "The UniProt pathway annotation cites experimental evidence, but the cited paper was not independently validated in the supplied reviewer evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choice B is distinct from the other pathway options. A and C are duplicate versions of the same methionine-pathway answer, but neither is supported as an alternative to B by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0002",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as terpene cyclase pbrA, with a pathway annotation of secondary metabolite biosynthesis; the annotation cites experimental evidence (ECO:0000269) and a publication. This supports choice B, though the cited primary study was not independently reviewed here.",
-    "evidence_ids": ["H3", "C5", "C4", "H2", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices provide no clear, general biological feature that identifies this particular enzyme's pathway. Its pathway assignment depends on knowing its specific function as a terpene cyclase in aspterric acid biosynthesis.",
-    "missing_item_specific_fact": "The protein-specific functional assignment linking this sequence to terpene and secondary-metabolite biosynthesis.",
-    "reason": "The pathway annotation supports the key, but that annotation is reviewer-only. Without it, recognizing or inferring this particular protein's function requires an external protein-specific fact; broad sequence reasoning does not meaningfully distinguish the listed pathways."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choice B is distinct from the other pathway options. A and C are duplicate versions of the same methionine-pathway answer, but neither is supported as an alternative to B by the supplied evidence."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the author's source snapshot is unknown.",
-    "The UniProt pathway annotation cites experimental evidence, but the cited paper was not independently validated in the supplied reviewer evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A0F7TWX5 (sequence matched) explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39511739). The protein is a terpene cyclase (EC 4.2.3.-) involved in aspterric acid biosynthesis, a secondary metabolite. Choice B directly matches the database annotation.
-
-Citations as saved: [C5](#evidence-c5), [C4](#evidence-c4), [H3](#evidence-h3), [H1](#evidence-h1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains the DDxxD aspartate-rich motif (e.g., 'DGITMDQALTRLTDDTIHACVRILEILKDKDPDMLATIRGF' and 'DVEEWTCQVQGFEVDGPVPKGSEIQAYRTNAFGFSVDTRRPHNMDYVGSSIISMFEWVTGYLKGKSR'), which is the hallmark structural signature of terpene cyclases/synthases. Recognizing this motif leads to the conclusion that the protein catalyzes cyclization of isoprenoid substrates, a reaction central to terpenoid biosynthesis, which is a subclass of secondary metabolite biosynthesis. The distractors (methionine biosynthesis enzymes such as homoserine dehydrogenase or methionine synthase; NAD+ biosynthesis enzymes such as NAD synthetase) belong to entirely different enzyme classes lacking DDxxD motifs and operating on amino acid or nucleotide substrates.
-
-
-**Missing item-specific fact**
-
-> None strictly required; the DDxxD motif is general biochemical knowledge about terpene cyclase structural biology. However, confidently identifying this specific sequence as a fungal terpene cyclase (as opposed to, say, a prenyltransferase that also uses DDxxD) adds some specificity beyond the motif alone.
-
-
-**Reason**
-
-> A knowledgeable biochemist can identify the DDxxD motif in the sequence, recognize it as diagnostic of terpene cyclases, and connect terpene cyclases to secondary metabolite (terpenoid) biosynthesis. The distractors involve primary metabolic enzymes (methionine synthase, NAD synthetase) with no structural or functional overlap with terpene cyclases, making them distinguishable through general enzymology knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and C are near-duplicates (both 'L-methionine biosynthesis via de novo pathway', C with an extra period), but both are clearly incorrect and do not compete with B. Option D (NAD+ biosynthesis) is unrelated. Only B is defensible given the terpene cyclase identity.
-
-
-### Important caveats
-
-- Options A and C are functionally identical, suggesting a formatting error in the benchmark construction; this does not affect the correct answer but indicates poor distractor design.
-- The pathway annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' is broad. A more specific answer (e.g., 'aspterric acid biosynthesis' or 'sesquiterpene biosynthesis') would be more informative, but B is the correct level of granularity among the choices provided.
-- The evidence code ECO:0000269 indicates direct experimental evidence from the cited 2024 paper (Zhou et al., J. Agric. Food Chem.), not merely computational inference.
-- The DDxxD motif argument is valid but requires the evaluator to recognize a specific structural signature; a model without terpene-cyclase motif knowledge would struggle to distinguish B from the distractors purely from sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the DDxxD aspartate-rich motif (e.g., 'DGITMDQALTRLTDDTIHACVRILEILKDKDPDMLATIRGF' and 'DVEEWTCQVQGFEVDGPVPKGSEIQAYRTNAFGFSVDTRRPHNMDYVGSSIISMFEWVTGYLKGKSR'), which is the hallmark structural signature of terpene cyclases/synthases. Recognizing this motif leads to the conclusion that the protein catalyzes cyclization of isoprenoid substrates, a reaction central to terpenoid biosynthesis, which is a subclass of secondary metabolite biosynthesis. The distractors (methionine biosynthesis enzymes such as homoserine dehydrogenase or methionine synthase; NAD+ biosynthesis enzymes such as NAD synthetase) belong to entirely different enzyme classes lacking DDxxD motifs and operating on amino acid or nucleotide substrates.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; the DDxxD motif is general biochemical knowledge about terpene cyclase structural biology. However, confidently identifying this specific sequence as a fungal terpene cyclase (as opposed to, say, a prenyltransferase that also uses DDxxD) adds some specificity beyond the motif alone.",
-    "reason": "A knowledgeable biochemist can identify the DDxxD motif in the sequence, recognize it as diagnostic of terpene cyclases, and connect terpene cyclases to secondary metabolite (terpenoid) biosynthesis. The distractors involve primary metabolic enzymes (methionine synthase, NAD synthetase) with no structural or functional overlap with terpene cyclases, making them distinguishable through general enzymology knowledge."
-  },
-  "case_id": "pathway_0002",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C4",
-      "H3",
-      "H1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A0F7TWX5 (sequence matched) explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39511739). The protein is a terpene cyclase (EC 4.2.3.-) involved in aspterric acid biosynthesis, a secondary metabolite. Choice B directly matches the database annotation."
-  },
-  "important_caveats": [
-    "Options A and C are functionally identical, suggesting a formatting error in the benchmark construction; this does not affect the correct answer but indicates poor distractor design.",
-    "The pathway annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' is broad. A more specific answer (e.g., 'aspterric acid biosynthesis' or 'sesquiterpene biosynthesis') would be more informative, but B is the correct level of granularity among the choices provided.",
-    "The evidence code ECO:0000269 indicates direct experimental evidence from the cited 2024 paper (Zhou et al., J. Agric. Food Chem.), not merely computational inference.",
-    "The DDxxD motif argument is valid but requires the evaluator to recognize a specific structural signature; a model without terpene-cyclase motif knowledge would struggle to distinguish B from the distractors purely from sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C are near-duplicates (both 'L-methionine biosynthesis via de novo pathway', C with an extra period), but both are clearly incorrect and do not compete with B. Option D (NAD+ biosynthesis) is unrelated. Only B is defensible given the terpene cyclase identity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0002",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A0F7TWX5 (sequence matched) explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39511739). The protein is a terpene cyclase (EC 4.2.3.-) involved in aspterric acid biosynthesis, a secondary metabolite. Choice B directly matches the database annotation.",
-    "evidence_ids": ["C5", "C4", "H3", "H1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains the DDxxD aspartate-rich motif (e.g., 'DGITMDQALTRLTDDTIHACVRILEILKDKDPDMLATIRGF' and 'DVEEWTCQVQGFEVDGPVPKGSEIQAYRTNAFGFSVDTRRPHNMDYVGSSIISMFEWVTGYLKGKSR'), which is the hallmark structural signature of terpene cyclases/synthases. Recognizing this motif leads to the conclusion that the protein catalyzes cyclization of isoprenoid substrates, a reaction central to terpenoid biosynthesis, which is a subclass of secondary metabolite biosynthesis. The distractors (methionine biosynthesis enzymes such as homoserine dehydrogenase or methionine synthase; NAD+ biosynthesis enzymes such as NAD synthetase) belong to entirely different enzyme classes lacking DDxxD motifs and operating on amino acid or nucleotide substrates.",
-    "missing_item_specific_fact": "None strictly required; the DDxxD motif is general biochemical knowledge about terpene cyclase structural biology. However, confidently identifying this specific sequence as a fungal terpene cyclase (as opposed to, say, a prenyltransferase that also uses DDxxD) adds some specificity beyond the motif alone.",
-    "reason": "A knowledgeable biochemist can identify the DDxxD motif in the sequence, recognize it as diagnostic of terpene cyclases, and connect terpene cyclases to secondary metabolite (terpenoid) biosynthesis. The distractors involve primary metabolic enzymes (methionine synthase, NAD synthetase) with no structural or functional overlap with terpene cyclases, making them distinguishable through general enzymology knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C are near-duplicates (both 'L-methionine biosynthesis via de novo pathway', C with an extra period), but both are clearly incorrect and do not compete with B. Option D (NAD+ biosynthesis) is unrelated. Only B is defensible given the terpene cyclase identity."
-  },
-  "important_caveats": [
-    "Options A and C are functionally identical, suggesting a formatting error in the benchmark construction; this does not affect the correct answer but indicates poor distractor design.",
-    "The pathway annotation 'Secondary metabolite biosynthesis; terpenoid biosynthesis' is broad. A more specific answer (e.g., 'aspterric acid biosynthesis' or 'sesquiterpene biosynthesis') would be more informative, but B is the correct level of granularity among the choices provided.",
-    "The evidence code ECO:0000269 indicates direct experimental evidence from the cited 2024 paper (Zhou et al., J. Agric. Food Chem.), not merely computational inference.",
-    "The DDxxD motif argument is valid but requires the evaluator to recognize a specific structural signature; a model without terpene-cyclase motif knowledge would struggle to distinguish B from the distractors purely from sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +279,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0F7TWX5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 405,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-04-09",
@@ -541,14 +297,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2015-07-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "current_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 405,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 30,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0F7TWX5",
   "selected_historical_entry_version": 30,
+  "selected_historical_record_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "selected_historical_source_sequence_length": 405,
+  "selected_historical_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
   "selected_historical_version": {
     "accession": "A0A0F7TWX5",
     "database": "Swiss-Prot",
@@ -559,24 +331,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PBRA_PENBI",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "selected_historical_source_sequence_sha256": "915b4b44b5f8f8d84e8bb81197b341bea432a6f4a4aeecf9bdc3ac645624da01",
-  "selected_historical_source_sequence_length": 405,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 30,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0F7TWX5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -609,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2015-07-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -628,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium brasilianum\",\"taxonId\":104259}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -647,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein A\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"4.2.3.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Terpene cyclase pbrA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -666,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -685,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json",
-  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
-  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhou Z.\",\"Zhang Y.\",\"Wu Q.\",\"Hou X.\",\"Zhang B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39511739\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c08468\"}],\"citationType\":\"journal article\",\"firstPage\":\"25755\",\"id\":\"39511739\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"25766\",\"publicationDate\":\"2024\",\"title\":\"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\",\"volume\":\"72\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:39.624982+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e5c7bc5d6c9449056bcb179284140dfad029fb97ea3206db0ebed6688d6396d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWX5.json"
 }
 ```
 
@@ -703,18 +462,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30",
-  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   PBRA_PENBI              Reviewed;         405 AA.\nAC   A0A0F7TWX5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-JUL-2015, sequence version 1.\nDT   28-JAN-2026, entry version 30.\nDE   RecName: Full=Terpene cyclase pbrA {ECO:0000303|PubMed:39511739};\nDE            EC=4.2.3.- {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein A {ECO:0000303|PubMed:39511739};\nGN   Name=pbrA {ECO:0000303|PubMed:39511739}; ORFNames=PMG11_09714;\nOS   Penicillium brasilianum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=104259;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30"
 }
 ```
 
@@ -724,18 +483,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30",
-  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
-  "source_locator": "lines 22-27",
   "excerpt": "RN   [2]\nRP   FUNCTION, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39511739; DOI=10.1021/acs.jafc.4c08468;\nRA   Zhou Z., Zhang Y., Wu Q., Hou X., Zhang B.;\nRT   \"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\";\nRL   J. Agric. Food Chem. 72:25755-25766(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30"
 }
 ```
 
@@ -745,18 +504,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30",
-  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
-  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
-  "source_locator": "lines 40-41",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:39511739}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-01T06:27:17.746470+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "384a95ec3352046b0f3464b2a89ebb41f2b203da008eaf15f997962c8728120c",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWX5?format=txt&versions=30"
 }
 ```
 

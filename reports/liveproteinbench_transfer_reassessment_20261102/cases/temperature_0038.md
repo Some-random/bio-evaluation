@@ -1,18 +1,16 @@
-# temperature_0038: before and after transfer clarification
+# temperature_0038
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0038.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0038.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **C** — 50
+**Expected answer:** **C** — 50
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the Humicola insolens xylosidase/arabinosidase 43A entry, which reports an optimum temperature of 50 °C with experimental evidence linked to PubMed 24262572. This supports choice C for the measured optimum.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a defensible way to distinguish the precise listed temperatures; general sequence-based thermal tendencies cannot establish that this particular enzyme's optimum is 50 °C rather than 47 or 54 °C.
-
-
-**Missing item-specific fact**
-
-> The measured temperature optimum for this specific enzyme, reported as 50 °C.
-
-
-**Reason**
-
-> The required discriminator is an item-specific experimental annotation, not a conclusion meaningfully supported by the supplied sequence and choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices are distinct temperature values or a lower range, so they do not overlap if interpreted as the enzyme's optimum temperature. The instruction's broader phrase “thermal adaptation category” is imprecise, but the choices and key indicate a specific temperature optimum.
-
-
-### Important caveats
-
-- The annotation reports an optimum temperature for the specific enzyme assay; it is not a general measurement of the organism's thermal adaptation.
-- The experimental annotation is linked to the cited study, but the primary paper was not independently reviewed here.
-- Reviewer-only database evidence establishes support for the key; it was not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish the precise listed temperatures; general sequence-based thermal tendencies cannot establish that this particular enzyme's optimum is 50 °C rather than 47 or 54 °C.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The measured temperature optimum for this specific enzyme, reported as 50 °C.",
-    "reason": "The required discriminator is an item-specific experimental annotation, not a conclusion meaningfully supported by the supplied sequence and choices."
-  },
-  "case_id": "temperature_0038",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the Humicola insolens xylosidase/arabinosidase 43A entry, which reports an optimum temperature of 50 °C with experimental evidence linked to PubMed 24262572. This supports choice C for the measured optimum."
-  },
-  "important_caveats": [
-    "The annotation reports an optimum temperature for the specific enzyme assay; it is not a general measurement of the organism's thermal adaptation.",
-    "The experimental annotation is linked to the cited study, but the primary paper was not independently reviewed here.",
-    "Reviewer-only database evidence establishes support for the key; it was not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices are distinct temperature values or a lower range, so they do not overlap if interpreted as the enzyme's optimum temperature. The instruction's broader phrase “thermal adaptation category” is imprecise, but the choices and key indicate a specific temperature optimum."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0038",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the Humicola insolens xylosidase/arabinosidase 43A entry, which reports an optimum temperature of 50 °C with experimental evidence linked to PubMed 24262572. This supports choice C for the measured optimum.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a defensible way to distinguish the precise listed temperatures; general sequence-based thermal tendencies cannot establish that this particular enzyme's optimum is 50 °C rather than 47 or 54 °C.",
-    "missing_item_specific_fact": "The measured temperature optimum for this specific enzyme, reported as 50 °C.",
-    "reason": "The required discriminator is an item-specific experimental annotation, not a conclusion meaningfully supported by the supplied sequence and choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices are distinct temperature values or a lower range, so they do not overlap if interpreted as the enzyme's optimum temperature. The instruction's broader phrase “thermal adaptation category” is imprecise, but the choices and key indicate a specific temperature optimum."
-  },
-  "important_caveats": [
-    "The annotation reports an optimum temperature for the specific enzyme assay; it is not a general measurement of the organism's thermal adaptation.",
-    "The experimental annotation is linked to the cited study, but the primary paper was not independently reviewed here.",
-    "Reviewer-only database evidence establishes support for the key; it was not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProtKB entry V9TNS0 (Xylosidase/arabinosidase 43A from Humicola insolens) contains an experimentally determined annotation (ECO:0000269, PubMed:24262572) stating 'Optimum temperature is 50 degrees Celsius.' The benchmark sequence matches the canonical entry sequence (SHA256 match, 327 AA). The expected answer of 50°C is directly supported by experimental measurement.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1), [C6](#evidence-c6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> None meaningfully available from the sequence alone. While the protein belongs to glycoside hydrolase family 43 (GH43) and is from a thermophilic fungus (Mycothermus/Humicola insolens), this general context could justify a thermophilic range but cannot distinguish 47 from 50 from 54 degrees Celsius. Amino acid compositional features (charge, proline content, thermolabile residue frequency) vary too gradually across that narrow window to discriminate specific experimental optima.
-
-
-**Missing item-specific fact**
-
-> The experimentally measured optimum temperature for this specific GH43 xylosidase/arabinosidase (50°C per Yang et al. 2014, Food Chem. 148:381-387). The model receives only the raw sequence with no organism label, no family annotation, and no contextual metadata.
-
-
-**Reason**
-
-> The three thermophilic choices (47, 50, 54) are separated by only 3-7°C, a range within which no general sequence-composition heuristic can reliably discriminate. Identifying the exact protein and recalling its published optimum temperature is required. The organism name is not provided in the input, so even recognizing 'thermophilic fungus' from sequence alone would not resolve the specific value.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C",
-  "D"
-]
-```
-
-> Without the specific experimental datum, 47°C, 50°C, and 54°C are all plausible optima for a thermophilic fungal GH43 enzyme. A knowledgeable model might argue for any of these based on general thermophilic enzyme literature. Choice A (35-46) is a range format inconsistent with the point-value choices and represents a distinctly lower (moderate) regime, making it the only clearly differentiable distractor.
-
-
-### Important caveats
-
-- The organism name (Humicola insolens / Mycothermus) is absent from the model input; the model sees only the 327-aa sequence.
-- The UniProt annotation is experimental (ECO:0000269) from a single 2014 paper, not a computational prediction.
-- The entry was first released in Swiss-Prot on 2025-02-05, so the annotation may not have been available at the time the benchmark was constructed, though the underlying paper dates to 2014.
-- Choice A is formatted as a range while B/C/D are single values, introducing minor formatting inconsistency but not substantive ambiguity about the correct answer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "None meaningfully available from the sequence alone. While the protein belongs to glycoside hydrolase family 43 (GH43) and is from a thermophilic fungus (Mycothermus/Humicola insolens), this general context could justify a thermophilic range but cannot distinguish 47 from 50 from 54 degrees Celsius. Amino acid compositional features (charge, proline content, thermolabile residue frequency) vary too gradually across that narrow window to discriminate specific experimental optima.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimentally measured optimum temperature for this specific GH43 xylosidase/arabinosidase (50°C per Yang et al. 2014, Food Chem. 148:381-387). The model receives only the raw sequence with no organism label, no family annotation, and no contextual metadata.",
-    "reason": "The three thermophilic choices (47, 50, 54) are separated by only 3-7°C, a range within which no general sequence-composition heuristic can reliably discriminate. Identifying the exact protein and recalling its published optimum temperature is required. The organism name is not provided in the input, so even recognizing 'thermophilic fungus' from sequence alone would not resolve the specific value."
-  },
-  "case_id": "temperature_0038",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C1",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProtKB entry V9TNS0 (Xylosidase/arabinosidase 43A from Humicola insolens) contains an experimentally determined annotation (ECO:0000269, PubMed:24262572) stating 'Optimum temperature is 50 degrees Celsius.' The benchmark sequence matches the canonical entry sequence (SHA256 match, 327 AA). The expected answer of 50°C is directly supported by experimental measurement."
-  },
-  "important_caveats": [
-    "The organism name (Humicola insolens / Mycothermus) is absent from the model input; the model sees only the 327-aa sequence.",
-    "The UniProt annotation is experimental (ECO:0000269) from a single 2014 paper, not a computational prediction.",
-    "The entry was first released in Swiss-Prot on 2025-02-05, so the annotation may not have been available at the time the benchmark was constructed, though the underlying paper dates to 2014.",
-    "Choice A is formatted as a range while B/C/D are single values, introducing minor formatting inconsistency but not substantive ambiguity about the correct answer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C",
-      "D"
-    ],
-    "reason": "Without the specific experimental datum, 47°C, 50°C, and 54°C are all plausible optima for a thermophilic fungal GH43 enzyme. A knowledgeable model might argue for any of these based on general thermophilic enzyme literature. Choice A (35-46) is a range format inconsistent with the point-value choices and represents a distinctly lower (moderate) regime, making it the only clearly differentiable distractor."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0038",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProtKB entry V9TNS0 (Xylosidase/arabinosidase 43A from Humicola insolens) contains an experimentally determined annotation (ECO:0000269, PubMed:24262572) stating 'Optimum temperature is 50 degrees Celsius.' The benchmark sequence matches the canonical entry sequence (SHA256 match, 327 AA). The expected answer of 50°C is directly supported by experimental measurement.",
-    "evidence_ids": ["C5", "H3", "C1", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "None meaningfully available from the sequence alone. While the protein belongs to glycoside hydrolase family 43 (GH43) and is from a thermophilic fungus (Mycothermus/Humicola insolens), this general context could justify a thermophilic range but cannot distinguish 47 from 50 from 54 degrees Celsius. Amino acid compositional features (charge, proline content, thermolabile residue frequency) vary too gradually across that narrow window to discriminate specific experimental optima.",
-    "missing_item_specific_fact": "The experimentally measured optimum temperature for this specific GH43 xylosidase/arabinosidase (50°C per Yang et al. 2014, Food Chem. 148:381-387). The model receives only the raw sequence with no organism label, no family annotation, and no contextual metadata.",
-    "reason": "The three thermophilic choices (47, 50, 54) are separated by only 3-7°C, a range within which no general sequence-composition heuristic can reliably discriminate. Identifying the exact protein and recalling its published optimum temperature is required. The organism name is not provided in the input, so even recognizing 'thermophilic fungus' from sequence alone would not resolve the specific value."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C", "D"],
-    "reason": "Without the specific experimental datum, 47°C, 50°C, and 54°C are all plausible optima for a thermophilic fungal GH43 enzyme. A knowledgeable model might argue for any of these based on general thermophilic enzyme literature. Choice A (35-46) is a range format inconsistent with the point-value choices and represents a distinctly lower (moderate) regime, making it the only clearly differentiable distractor."
-  },
-  "important_caveats": [
-    "The organism name (Humicola insolens / Mycothermus) is absent from the model input; the model sees only the 327-aa sequence.",
-    "The UniProt annotation is experimental (ECO:0000269) from a single 2014 paper, not a computational prediction.",
-    "The entry was first released in Swiss-Prot on 2025-02-05, so the annotation may not have been available at the time the benchmark was constructed, though the underlying paper dates to 2014.",
-    "Choice A is formatted as a range while B/C/D are single values, introducing minor formatting inconsistency but not substantive ambiguity about the correct answer."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "V9TNS0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 327,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
   "current_entry_audit": {
     "entryVersion": 23,
     "firstPublicDate": "2025-02-05",
@@ -549,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-03-19",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "current_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 327,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "V9TNS0",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "selected_historical_source_sequence_length": 327,
+  "selected_historical_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
   "selected_historical_version": {
     "accession": "V9TNS0",
     "database": "Swiss-Prot",
@@ -567,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "XY43A_HUMIN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "selected_historical_source_sequence_sha256": "50d3469575943c69659937ec94d1f84b72a59b8d874475defb7b29759a02ee84",
-  "selected_historical_source_sequence_length": 327,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"V9TNS0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -617,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":23,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-03-19\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -636,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Soft-rot fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Sordariales\",\"Chaetomiaceae\",\"Mycothermus\"],\"scientificName\":\"Humicola insolens\",\"taxonId\":85995}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -655,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"includes\":[{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"1,4-beta-D-xylan xylohydrolase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Xylan 1,4-beta-xylosidase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.37\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Beta-xylosidase\"}}},{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.55\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Alpha-L-arabinofuranosidase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Arabinosidase\"}]}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Xylosidase/arabinosidase 43A\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -674,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"kineticParameters\":{\"maximumVelocities\":[{\"enzyme\":\"enzyme towards pNPX\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"unit\":\"umol/min/mg\",\"velocity\":203.8}],\"michaelisConstants\":[{\"constant\":12.2,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"substrate\":\"pNPX\",\"unit\":\"mM\"}]},\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is 6.5.\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24262572\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 50 degrees Celsius.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -693,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json",
-  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
-  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Yang X.\",\"Shi P.\",\"Huang H.\",\"Luo H.\",\"Wang Y.\",\"Zhang W.\",\"Yao B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24262572\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.foodchem.2013.10.062\"}],\"citationType\":\"journal article\",\"firstPage\":\"381\",\"id\":\"24262572\",\"journal\":\"Food Chem.\",\"lastPage\":\"387\",\"publicationDate\":\"2014\",\"title\":\"Two xylose-tolerant GH43 bifunctional ?-xylosidase/?-arabinosidases and one GH11 xylanase from Humicola insolens and their synergy in the degradation of xylan.\",\"volume\":\"148\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Y1\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBSTRATE SPECIFICITY\",\"ACTIVITY REGULATION\",\"SUBCELLULAR LOCATION\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:29.909204+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4161e2957710d391f76f21ebe451652d828870a93127025ad04961d04b1d3c73",
+  "url": "https://rest.uniprot.org/uniprotkb/V9TNS0.json"
 }
 ```
 
@@ -711,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 1-20",
   "excerpt": "ID   XY43A_HUMIN             Reviewed;         327 AA.\nAC   V9TNS0;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   19-MAR-2014, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=Xylosidase/arabinosidase 43A {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.37 {ECO:0000269|PubMed:24262572};\nDE     AltName: Full=1,4-beta-D-xylan xylohydrolase {ECO:0000303|PubMed:24262572};\nDE     AltName: Full=Xylan 1,4-beta-xylosidase {ECO:0000303|PubMed:24262572};\nDE   Includes:\nDE     RecName: Full=Alpha-L-arabinofuranosidase {ECO:0000303|PubMed:24262572};\nDE              Short=Arabinosidase {ECO:0000303|PubMed:24262572};\nDE              EC=3.2.1.55 {ECO:0000269|PubMed:24262572};\nGN   Name=XylL43A {ECO:0000303|PubMed:24262572};\nOS   Humicola insolens (Soft-rot fungus).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Sordariales; Chaetomiaceae; Mycothermus.\nOX   NCBI_TaxID=85995;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 
@@ -732,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 21-31",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBSTRATE SPECIFICITY, ACTIVITY REGULATION,\nRP   SUBCELLULAR LOCATION, AND BIOTECHNOLOGY.\nRC   STRAIN=Y1;\nRX   PubMed=24262572; DOI=10.1016/j.foodchem.2013.10.062;\nRA   Yang X., Shi P., Huang H., Luo H., Wang Y., Zhang W., Yao B.;\nRT   \"Two xylose-tolerant GH43 bifunctional ?-xylosidase/?-arabinosidases and\nRT   one GH11 xylanase from Humicola insolens and their synergy in the\nRT   degradation of xylan.\";\nRL   Food Chem. 148:381-387(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 
@@ -753,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21",
-  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
-  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
-  "source_locator": "lines 58-67",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Kinetic parameters:\nCC         KM=12.2 mM for pNPX {ECO:0000269|PubMed:24262572};\nCC         Vmax=203.8 umol/min/mg enzyme towards pNPX\nCC         {ECO:0000269|PubMed:24262572};\nCC       pH dependence:\nCC         Optimum pH is 6.5. {ECO:0000269|PubMed:24262572};\nCC       Temperature dependence:\nCC         Optimum temperature is 50 degrees Celsius.\nCC         {ECO:0000269|PubMed:24262572};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:28:51.766326+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-67",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e4bf9e42b116a4202b7fa35da7f1678719e0062361cb3f723d101ecbaf0326f",
+  "url": "https://rest.uniprot.org/unisave/V9TNS0?format=txt&versions=21"
 }
 ```
 

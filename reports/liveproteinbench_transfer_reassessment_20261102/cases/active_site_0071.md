@@ -1,18 +1,16 @@
-# active_site_0071: before and after transfer clarification
+# active_site_0071
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0071.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0071.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 186 (Proton donor)
+**Expected answer:** **C** — Position 186 (Proton donor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry that annotates position 186 as the proton donor, consistent with choice C. This annotation is transferred by similarity from another UniProt record (ECO:0000250), so it supports the key but is not direct experimental confirmation for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The 540-residue sequence rules out position 962, and beta-glucosidase family knowledge may suggest catalytic acidic residues. But those clues do not establish that residue 186 is the proton donor rather than another candidate.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment of residue 186 as the proton donor, or sufficient homolog/structural information to derive that assignment.
-
-
-**Reason**
-
-> The exact catalytic role and residue number depend on a protein-specific annotation or equivalent analysis absent from the prompt; recognizing the sequence or recalling its database entry would be lookup, not reasoning from supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched UniProt annotation supports C; the other listed positions and roles do not provide an equally supported choice in the supplied evidence.
-
-
-### Important caveats
-
-- The active-site annotation is supported by homology transfer, not independently verified experimental evidence in the excerpts.
-- The reviewer-only accession and database evidence were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 540-residue sequence rules out position 962, and beta-glucosidase family knowledge may suggest catalytic acidic residues. But those clues do not establish that residue 186 is the proton donor rather than another candidate.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment of residue 186 as the proton donor, or sufficient homolog/structural information to derive that assignment.",
-    "reason": "The exact catalytic role and residue number depend on a protein-specific annotation or equivalent analysis absent from the prompt; recognizing the sequence or recalling its database entry would be lookup, not reasoning from supplied information."
-  },
-  "case_id": "active_site_0071",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry that annotates position 186 as the proton donor, consistent with choice C. This annotation is transferred by similarity from another UniProt record (ECO:0000250), so it supports the key but is not direct experimental confirmation for this protein."
-  },
-  "important_caveats": [
-    "The active-site annotation is supported by homology transfer, not independently verified experimental evidence in the excerpts.",
-    "The reviewer-only accession and database evidence were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched UniProt annotation supports C; the other listed positions and roles do not provide an equally supported choice in the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0071",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry that annotates position 186 as the proton donor, consistent with choice C. This annotation is transferred by similarity from another UniProt record (ECO:0000250), so it supports the key but is not direct experimental confirmation for this protein.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The 540-residue sequence rules out position 962, and beta-glucosidase family knowledge may suggest catalytic acidic residues. But those clues do not establish that residue 186 is the proton donor rather than another candidate.",
-    "missing_item_specific_fact": "The protein-specific assignment of residue 186 as the proton donor, or sufficient homolog/structural information to derive that assignment.",
-    "reason": "The exact catalytic role and residue number depend on a protein-specific annotation or equivalent analysis absent from the prompt; recognizing the sequence or recalling its database entry would be lookup, not reasoning from supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched UniProt annotation supports C; the other listed positions and roles do not provide an equally supported choice in the supplied evidence."
-  },
-  "important_caveats": [
-    "The active-site annotation is supported by homology transfer, not independently verified experimental evidence in the excerpts.",
-    "The reviewer-only accession and database evidence were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry B6ZKN1 (GLU9_CARIP, Ipecac alkaloid beta-glucosidase 9, 540 AA) annotates position 186 as 'Proton donor' (Active site). The evidence code is ECO:0000250 (inferred by similarity to Q7XSK0), so this is a transferred/computational annotation rather than direct experimental proof for this specific protein, but it is consistent with the known GH1 beta-glucosidase mechanism in which a Glu serves as the proton donor. The residue at position 186 in the supplied sequence is indeed Glu (E), within a 'WITINE' context (181–186), which is a recognized proton-donor environment in retaining glycosidases. The actual nucleophile is annotated at position 421 (also Glu), not 277. Thus choice C matches the annotation.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6), [H4](#evidence-h4), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The model is given the full 540-residue sequence and can inspect the identity of residues at the stated positions. Option D (position 962) is trivially eliminated because the protein is only 540 residues long. Option B (position 206, 'beta-ketoacyl synthase activity') is eliminated because the protein is a beta-glucosidase (EC 3.2.1.-), not a fatty-acid synthase. Between A and C: counting to position 277 yields Thr (T), which is not a canonical nucleophile in glycosidase catalysis (nucleophiles are Glu or Asp); counting to position 186 yields Glu (E), the archetypal catalytic residue in retaining glycosidases. General knowledge of glycosidase mechanism (two Glu/Asp residues: one nucleophile, one proton donor) therefore allows the model to reject A and select C as the only mechanistically plausible option.
-
-
-**Missing item-specific fact**
-
-> None critical. Assigning the specific role 'proton donor' versus 'nucleophile' to position 186 within the GH1 family requires familiarity with the NEP/ITINE motif distinction, but because no competing option labels 186 as the nucleophile, the answer is reachable by elimination plus general glycosidase enzymology.
-
-
-**Reason**
-
-> Elimination of B (wrong enzyme class) and D (position exceeds protein length) is straightforward. The A-vs-C distinction is resolvable by checking the amino acid identity at each position (Thr vs Glu) against general knowledge of glycosidase catalytic chemistry, without needing to recall the exact UniProt annotation for this particular protein.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and D are unambiguously wrong (irrelevant function; nonexistent position). Option A is wrong because position 277 is a Thr, not a glycosidase nucleophile. Only C remains as a mechanistically consistent answer.
-
-
-### Important caveats
-
-- The UniProt active-site annotation for B6ZKN1 is by similarity (ECO:0000250, transferred from Q7XSK0), not from direct mutagenesis or structural work on this specific protein.
-- The protein was integrated into Swiss-Prot only on 2025-06-18; the author's source snapshot is unknown, though the sequence matches across all checked versions.
-- The question asks for 'the' active site but the enzyme has two catalytic residues (Glu-186 proton donor and Glu-421 nucleophile); the choices happen to present only one correct option, so no ambiguity arises in practice.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The model is given the full 540-residue sequence and can inspect the identity of residues at the stated positions. Option D (position 962) is trivially eliminated because the protein is only 540 residues long. Option B (position 206, 'beta-ketoacyl synthase activity') is eliminated because the protein is a beta-glucosidase (EC 3.2.1.-), not a fatty-acid synthase. Between A and C: counting to position 277 yields Thr (T), which is not a canonical nucleophile in glycosidase catalysis (nucleophiles are Glu or Asp); counting to position 186 yields Glu (E), the archetypal catalytic residue in retaining glycosidases. General knowledge of glycosidase mechanism (two Glu/Asp residues: one nucleophile, one proton donor) therefore allows the model to reject A and select C as the only mechanistically plausible option.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. Assigning the specific role 'proton donor' versus 'nucleophile' to position 186 within the GH1 family requires familiarity with the NEP/ITINE motif distinction, but because no competing option labels 186 as the nucleophile, the answer is reachable by elimination plus general glycosidase enzymology.",
-    "reason": "Elimination of B (wrong enzyme class) and D (position exceeds protein length) is straightforward. The A-vs-C distinction is resolvable by checking the amino acid identity at each position (Thr vs Glu) against general knowledge of glycosidase catalytic chemistry, without needing to recall the exact UniProt annotation for this particular protein."
-  },
-  "case_id": "active_site_0071",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C6",
-      "H4",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry B6ZKN1 (GLU9_CARIP, Ipecac alkaloid beta-glucosidase 9, 540 AA) annotates position 186 as 'Proton donor' (Active site). The evidence code is ECO:0000250 (inferred by similarity to Q7XSK0), so this is a transferred/computational annotation rather than direct experimental proof for this specific protein, but it is consistent with the known GH1 beta-glucosidase mechanism in which a Glu serves as the proton donor. The residue at position 186 in the supplied sequence is indeed Glu (E), within a 'WITINE' context (181–186), which is a recognized proton-donor environment in retaining glycosidases. The actual nucleophile is annotated at position 421 (also Glu), not 277. Thus choice C matches the annotation."
-  },
-  "important_caveats": [
-    "The UniProt active-site annotation for B6ZKN1 is by similarity (ECO:0000250, transferred from Q7XSK0), not from direct mutagenesis or structural work on this specific protein.",
-    "The protein was integrated into Swiss-Prot only on 2025-06-18; the author's source snapshot is unknown, though the sequence matches across all checked versions.",
-    "The question asks for 'the' active site but the enzyme has two catalytic residues (Glu-186 proton donor and Glu-421 nucleophile); the choices happen to present only one correct option, so no ambiguity arises in practice."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D are unambiguously wrong (irrelevant function; nonexistent position). Option A is wrong because position 277 is a Thr, not a glycosidase nucleophile. Only C remains as a mechanistically consistent answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0071",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry B6ZKN1 (GLU9_CARIP, Ipecac alkaloid beta-glucosidase 9, 540 AA) annotates position 186 as 'Proton donor' (Active site). The evidence code is ECO:0000250 (inferred by similarity to Q7XSK0), so this is a transferred/computational annotation rather than direct experimental proof for this specific protein, but it is consistent with the known GH1 beta-glucosidase mechanism in which a Glu serves as the proton donor. The residue at position 186 in the supplied sequence is indeed Glu (E), within a 'WITINE' context (181–186), which is a recognized proton-donor environment in retaining glycosidases. The actual nucleophile is annotated at position 421 (also Glu), not 277. Thus choice C matches the annotation.",
-    "evidence_ids": ["C5", "H3", "C6", "H4", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The model is given the full 540-residue sequence and can inspect the identity of residues at the stated positions. Option D (position 962) is trivially eliminated because the protein is only 540 residues long. Option B (position 206, 'beta-ketoacyl synthase activity') is eliminated because the protein is a beta-glucosidase (EC 3.2.1.-), not a fatty-acid synthase. Between A and C: counting to position 277 yields Thr (T), which is not a canonical nucleophile in glycosidase catalysis (nucleophiles are Glu or Asp); counting to position 186 yields Glu (E), the archetypal catalytic residue in retaining glycosidases. General knowledge of glycosidase mechanism (two Glu/Asp residues: one nucleophile, one proton donor) therefore allows the model to reject A and select C as the only mechanistically plausible option.",
-    "missing_item_specific_fact": "None critical. Assigning the specific role 'proton donor' versus 'nucleophile' to position 186 within the GH1 family requires familiarity with the NEP/ITINE motif distinction, but because no competing option labels 186 as the nucleophile, the answer is reachable by elimination plus general glycosidase enzymology.",
-    "reason": "Elimination of B (wrong enzyme class) and D (position exceeds protein length) is straightforward. The A-vs-C distinction is resolvable by checking the amino acid identity at each position (Thr vs Glu) against general knowledge of glycosidase catalytic chemistry, without needing to recall the exact UniProt annotation for this particular protein."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D are unambiguously wrong (irrelevant function; nonexistent position). Option A is wrong because position 277 is a Thr, not a glycosidase nucleophile. Only C remains as a mechanistically consistent answer."
-  },
-  "important_caveats": [
-    "The UniProt active-site annotation for B6ZKN1 is by similarity (ECO:0000250, transferred from Q7XSK0), not from direct mutagenesis or structural work on this specific protein.",
-    "The protein was integrated into Swiss-Prot only on 2025-06-18; the author's source snapshot is unknown, though the sequence matches across all checked versions.",
-    "The question asks for 'the' active site but the enzyme has two catalytic residues (Glu-186 proton donor and Glu-421 nucleophile); the choices happen to present only one correct option, so no ambiguity arises in practice."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -380,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -494,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B6ZKN1",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "dde22a5d2821467a0cea322bb9996061c5a8b224e2f2f4700e01315256b12a92",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 540,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "dde22a5d2821467a0cea322bb9996061c5a8b224e2f2f4700e01315256b12a92",
   "current_entry_audit": {
     "entryVersion": 46,
     "firstPublicDate": "2025-06-18",
@@ -525,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2009-02-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "current_source_sequence_sha256": "dde22a5d2821467a0cea322bb9996061c5a8b224e2f2f4700e01315256b12a92",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 540,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "dde22a5d2821467a0cea322bb9996061c5a8b224e2f2f4700e01315256b12a92",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 44,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B6ZKN1",
   "selected_historical_entry_version": 44,
+  "selected_historical_record_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "selected_historical_source_sequence_length": 540,
+  "selected_historical_source_sequence_sha256": "dde22a5d2821467a0cea322bb9996061c5a8b224e2f2f4700e01315256b12a92",
   "selected_historical_version": {
     "accession": "B6ZKN1",
     "database": "Swiss-Prot",
@@ -543,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GLU9_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "selected_historical_source_sequence_sha256": "dde22a5d2821467a0cea322bb9996061c5a8b224e2f2f4700e01315256b12a92",
-  "selected_historical_source_sequence_length": 540,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 44,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -574,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B6ZKN1\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -593,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":46,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2009-02-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -612,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -631,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"3.2.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"Ipecac alkaloid beta-glucosidase 9\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"18927081\",\"source\":\"PubMed\"}],\"value\":\"IpeGLU9\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -650,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton donor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q7XSK0\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":186},\"start\":{\"modifier\":\"EXACT\",\"value\":186}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -669,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Nucleophile\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q7XSK0\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":421},\"start\":{\"modifier\":\"EXACT\",\"value\":421}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -688,15 +451,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SPP9\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:22798\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:22798\",\"name\":\"a beta-D-glucoside\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":36},\"start\":{\"modifier\":\"EXACT\",\"value\":36}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -707,15 +470,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SPP9\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:22798\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:22798\",\"name\":\"a beta-D-glucoside\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":140},\"start\":{\"modifier\":\"EXACT\",\"value\":140}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -726,15 +489,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SPP9\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:22798\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:22798\",\"name\":\"a beta-D-glucoside\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":186},\"start\":{\"modifier\":\"EXACT\",\"value\":185}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -745,15 +508,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8L7J2\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:22798\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:22798\",\"name\":\"a beta-D-glucoside\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":350},\"start\":{\"modifier\":\"EXACT\",\"value\":350}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -764,15 +527,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/7",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SPP9\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:22798\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:22798\",\"name\":\"a beta-D-glucoside\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":421},\"start\":{\"modifier\":\"EXACT\",\"value\":421}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/7",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -783,15 +546,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C12",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/8",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SPP9\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:22798\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:22798\",\"name\":\"a beta-D-glucoside\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":470},\"start\":{\"modifier\":\"EXACT\",\"value\":470}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/8",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -802,15 +565,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C13",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/9",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q1XH05\",\"source\":\"UniProtKB\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:22798\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:22798\",\"name\":\"a beta-D-glucoside\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":486},\"start\":{\"modifier\":\"EXACT\",\"value\":486}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/9",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -821,15 +584,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C14",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/features/10",
   "excerpt": "{\"description\":\"Controls the gate shape and acceptance of substrates\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9SPP9\",\"source\":\"UniProtKB\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":393},\"start\":{\"modifier\":\"EXACT\",\"value\":393}},\"type\":\"Site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/10",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -840,15 +603,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C15",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json",
-  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
-  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Nomura T.\",\"Quesada A.L.\",\"Kutchan T.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"18927081\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m806953200\"}],\"citationType\":\"journal article\",\"firstPage\":\"34650\",\"id\":\"18927081\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"34659\",\"publicationDate\":\"2008\",\"title\":\"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis in Psychotria ipecacuanha.\",\"volume\":\"283\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAH02552.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"},{\"type\":\"TISSUE\",\"value\":\"Shoot\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:27:22.416766+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "533a8f1f084446cafdad81e51f750d9c73bd15fd90f73f21d0baa135fa93014f",
+  "url": "https://rest.uniprot.org/uniprotkb/B6ZKN1.json"
 }
 ```
 
@@ -858,18 +621,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   GLU9_CARIP              Reviewed;         540 AA.\nAC   B6ZKN1;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-FEB-2009, sequence version 1.\nDT   28-JAN-2026, entry version 44.\nDE   RecName: Full=Ipecac alkaloid beta-glucosidase 9 {ECO:0000303|PubMed:18927081};\nDE            Short=IpeGLU9 {ECO:0000303|PubMed:18927081};\nDE            EC=3.2.1.- {ECO:0000269|PubMed:18927081};\nGN   Name=GLU9 {ECO:0000303|PubMed:18927081};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -879,18 +642,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 16-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAH02552.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRC   TISSUE=Root, and Shoot;\nRX   PubMed=18927081; DOI=10.1074/jbc.m806953200;\nRA   Nomura T., Quesada A.L., Kutchan T.M.;\nRT   \"The new beta-D-glucosidase in terpenoid-isoquinoline alkaloid biosynthesis\nRT   in Psychotria ipecacuanha.\";\nRL   J. Biol. Chem. 283:34650-34659(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -900,18 +663,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 72-74",
   "excerpt": "FT   ACT_SITE        186\nFT                   /note=\"Proton donor\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q7XSK0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 72-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -921,18 +684,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 75-77",
   "excerpt": "FT   ACT_SITE        421\nFT                   /note=\"Nucleophile\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q7XSK0\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 75-77",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -942,18 +705,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 78-81",
   "excerpt": "FT   BINDING         36\nFT                   /ligand=\"a beta-D-glucoside\"\nFT                   /ligand_id=\"ChEBI:CHEBI:22798\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SPP9\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 78-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -963,18 +726,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 82-85",
   "excerpt": "FT   BINDING         140\nFT                   /ligand=\"a beta-D-glucoside\"\nFT                   /ligand_id=\"ChEBI:CHEBI:22798\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SPP9\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -984,18 +747,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 86-89",
   "excerpt": "FT   BINDING         185..186\nFT                   /ligand=\"a beta-D-glucoside\"\nFT                   /ligand_id=\"ChEBI:CHEBI:22798\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SPP9\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-89",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -1005,18 +768,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 90-93",
   "excerpt": "FT   BINDING         350\nFT                   /ligand=\"a beta-D-glucoside\"\nFT                   /ligand_id=\"ChEBI:CHEBI:22798\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q8L7J2\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 90-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -1026,18 +789,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H9",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 94-97",
   "excerpt": "FT   BINDING         421\nFT                   /ligand=\"a beta-D-glucoside\"\nFT                   /ligand_id=\"ChEBI:CHEBI:22798\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SPP9\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 94-97",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -1047,18 +810,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H10",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 98-101",
   "excerpt": "FT   BINDING         470\nFT                   /ligand=\"a beta-D-glucoside\"\nFT                   /ligand_id=\"ChEBI:CHEBI:22798\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SPP9\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 98-101",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -1068,18 +831,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H11",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 102-105",
   "excerpt": "FT   BINDING         486\nFT                   /ligand=\"a beta-D-glucoside\"\nFT                   /ligand_id=\"ChEBI:CHEBI:22798\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q1XH05\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 102-105",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 
@@ -1089,18 +852,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 44,
   "evidence_id": "H12",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44",
-  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
-  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
-  "source_locator": "lines 106-109",
   "excerpt": "FT   SITE            393\nFT                   /note=\"Controls the gate shape and acceptance of\nFT                   substrates\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:Q9SPP9\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 44,
+  "retrieved_utc": "2026-11-02T04:27:24.525722+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 106-109",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e900cc5e5ccff52df88efc2616972e26828fb58ed3af99a3d212b589186fe0ff",
+  "url": "https://rest.uniprot.org/unisave/B6ZKN1?format=txt&versions=44"
 }
 ```
 

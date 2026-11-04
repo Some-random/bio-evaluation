@@ -1,18 +1,16 @@
-# catalytic_activity_0141: before and after transfer clarification
+# catalytic_activity_0141
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0141.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0141.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — an N(6)-methyladenosine in mRNA + 2-oxoglutarate + O2 = an adenosine in mRNA + formaldehyde + succinate + CO2
+**Expected answer:** **B** — an N(6)-methyladenosine in mRNA + 2-oxoglutarate + O2 = an adenosine in mRNA + formaldehyde + succinate + CO2
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,234 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry G4MZ21, whose catalytic-activity annotation gives the reaction in choice B. The reaction annotation is transferred by similarity (ECO:0000250), so this supports the key as a database annotation but is not direct evidence that this exact protein was experimentally assayed for the reaction.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Choice B describes an Fe(II)/2-oxoglutarate-dependent dioxygenase reaction, which is compatible with a protein of this broad class; however, that does not establish this protein's substrate or distinguish m6A demethylation from other possible functions.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental evidence identifying this sequence as an m6A RNA demethylase is absent from the input.
-
-
-**Reason**
-
-> The sequence and choices do not provide a reliable basis for identifying the specific substrate transformation. Selecting B requires the item-specific functional assignment, not merely recognizing a broad enzyme class.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied information does not establish another choice as the reaction, but it also does not independently distinguish B from the alternatives at the required substrate-specific level.
-
-
-### Important caveats
-
-- The sequence match is exact, but the evidence supporting the catalytic reaction is transferred by similarity; the cited experimental evidence for EC assignment does not by itself show that this exact protein was assayed.
-- The reviewer-only database evidence supports the expected answer but was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Choice B describes an Fe(II)/2-oxoglutarate-dependent dioxygenase reaction, which is compatible with a protein of this broad class; however, that does not establish this protein's substrate or distinguish m6A demethylation from other possible functions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence identifying this sequence as an m6A RNA demethylase is absent from the input.",
-    "reason": "The sequence and choices do not provide a reliable basis for identifying the specific substrate transformation. Selecting B requires the item-specific functional assignment, not merely recognizing a broad enzyme class."
-  },
-  "case_id": "catalytic_activity_0141",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry G4MZ21, whose catalytic-activity annotation gives the reaction in choice B. The reaction annotation is transferred by similarity (ECO:0000250), so this supports the key as a database annotation but is not direct evidence that this exact protein was experimentally assayed for the reaction."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the evidence supporting the catalytic reaction is transferred by similarity; the cited experimental evidence for EC assignment does not by itself show that this exact protein was assayed.",
-    "The reviewer-only database evidence supports the expected answer but was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied information does not establish another choice as the reaction, but it also does not independently distinguish B from the alternatives at the required substrate-specific level."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0141",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry G4MZ21, whose catalytic-activity annotation gives the reaction in choice B. The reaction annotation is transferred by similarity (ECO:0000250), so this supports the key as a database annotation but is not direct evidence that this exact protein was experimentally assayed for the reaction.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Choice B describes an Fe(II)/2-oxoglutarate-dependent dioxygenase reaction, which is compatible with a protein of this broad class; however, that does not establish this protein's substrate or distinguish m6A demethylation from other possible functions.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence identifying this sequence as an m6A RNA demethylase is absent from the input.",
-    "reason": "The sequence and choices do not provide a reliable basis for identifying the specific substrate transformation. Selecting B requires the item-specific functional assignment, not merely recognizing a broad enzyme class."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied information does not establish another choice as the reaction, but it also does not independently distinguish B from the alternatives at the required substrate-specific level."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the evidence supporting the catalytic reaction is transferred by similarity; the cited experimental evidence for EC assignment does not by itself show that this exact protein was assayed.",
-    "The reviewer-only database evidence supports the expected answer but was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches UniProt G4MZ21 (ALKB1_PYRO7), annotated as N6-methyladenosine RNA demethylase ALKB1 (EC 1.14.11.53). The catalytic activity reaction in the UniProt entry is verbatim identical to choice B. The EC assignment carries ECO:0000269 (experimental evidence, PubMed:30535195); the specific Rhea reaction is annotated via ECO:0000250 (similarity to A0A9P4XUZ4). The protein name is supported by literature (ECO:0000303). The annotation is consistent across both current and historical (v55) records.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 353-residue sequence contains recognizable ALKB-family structural motifs: a putative HxD…H…H Fe(II)-coordinating triad (e.g., H…H…H in the 'HQTNMHLHYEL' region, conserved Asp in 'GGQYDWTNRV'), a 2-oxoglutarate-binding region ('GCDGLFMIAPSDIG'), and an overall jelly-roll domain architecture. The protein size (353 aa) is consistent with the small ALKB/ALKBH subfamily but too small for TET (~1000 aa) or FTO (~505 aa). Among the four choices, only B describes a Fe(II)/2-oxoglutarate-dependent dioxygenase reaction; A is a TIM-barrel isomerase, C is a transmembrane ion transporter, and D is a flavin-dependent oxidase. Recognizing the sequence as an ALKB-family dioxygenase eliminates A, C, and D, leaving B.
-
-
-**Missing item-specific fact**
-
-> None that is strictly required. Distinguishing ALKB1 (m6A RNA demethylase) from other ALKB members (DNA-repair ALKBs, ALKBH5, FTO) by sequence alone is non-trivial, but the question only requires identifying the enzyme class (dioxygenase) to select B over the three structurally unrelated distractors.
-
-
-**Reason**
-
-> A knowledgeable reader can identify ALKB-family sequence features (size, HxD…H…H triad, 2OG-binding region, jelly-roll fold) and use the fact that only option B is a dioxygenase reaction to select the answer. This constitutes a concrete biological reasoning pathway from the supplied sequence to the correct choice, without needing to memorize the specific UniProt annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent four fundamentally different enzyme classes (isomerase, dioxygenase, transporter, flavin oxidase). The sequence features unambiguously point to a dioxygenase, making B the only defensible choice. No other option is compatible with the observed domain architecture.
-
-
-### Important caveats
-
-- The UniProt catalytic-activity annotation for this entry is transferred by similarity (ECO:0000250) from A0A9P4XUZ4, not independently demonstrated for this exact protein; however, the EC number assignment itself is backed by experimental evidence (ECO:0000269, PubMed:30535195).
-- The reviewer-only evidence confirms sequence match (SHA-256 identical) between the benchmark input and the UniProt entry, so the annotation applies to the exact sequence presented.
-- While recognizing the ALKB family from a 353-aa fungal sequence is feasible for an expert, it is not trivial for all readers; the question is moderately difficult but reasoning-grounded rather than pure lookup.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 353-residue sequence contains recognizable ALKB-family structural motifs: a putative HxD…H…H Fe(II)-coordinating triad (e.g., H…H…H in the 'HQTNMHLHYEL' region, conserved Asp in 'GGQYDWTNRV'), a 2-oxoglutarate-binding region ('GCDGLFMIAPSDIG'), and an overall jelly-roll domain architecture. The protein size (353 aa) is consistent with the small ALKB/ALKBH subfamily but too small for TET (~1000 aa) or FTO (~505 aa). Among the four choices, only B describes a Fe(II)/2-oxoglutarate-dependent dioxygenase reaction; A is a TIM-barrel isomerase, C is a transmembrane ion transporter, and D is a flavin-dependent oxidase. Recognizing the sequence as an ALKB-family dioxygenase eliminates A, C, and D, leaving B.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None that is strictly required. Distinguishing ALKB1 (m6A RNA demethylase) from other ALKB members (DNA-repair ALKBs, ALKBH5, FTO) by sequence alone is non-trivial, but the question only requires identifying the enzyme class (dioxygenase) to select B over the three structurally unrelated distractors.",
-    "reason": "A knowledgeable reader can identify ALKB-family sequence features (size, HxD…H…H triad, 2OG-binding region, jelly-roll fold) and use the fact that only option B is a dioxygenase reaction to select the answer. This constitutes a concrete biological reasoning pathway from the supplied sequence to the correct choice, without needing to memorize the specific UniProt annotation."
-  },
-  "case_id": "catalytic_activity_0141",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches UniProt G4MZ21 (ALKB1_PYRO7), annotated as N6-methyladenosine RNA demethylase ALKB1 (EC 1.14.11.53). The catalytic activity reaction in the UniProt entry is verbatim identical to choice B. The EC assignment carries ECO:0000269 (experimental evidence, PubMed:30535195); the specific Rhea reaction is annotated via ECO:0000250 (similarity to A0A9P4XUZ4). The protein name is supported by literature (ECO:0000303). The annotation is consistent across both current and historical (v55) records."
-  },
-  "important_caveats": [
-    "The UniProt catalytic-activity annotation for this entry is transferred by similarity (ECO:0000250) from A0A9P4XUZ4, not independently demonstrated for this exact protein; however, the EC number assignment itself is backed by experimental evidence (ECO:0000269, PubMed:30535195).",
-    "The reviewer-only evidence confirms sequence match (SHA-256 identical) between the benchmark input and the UniProt entry, so the annotation applies to the exact sequence presented.",
-    "While recognizing the ALKB family from a 353-aa fungal sequence is feasible for an expert, it is not trivial for all readers; the question is moderately difficult but reasoning-grounded rather than pure lookup."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent four fundamentally different enzyme classes (isomerase, dioxygenase, transporter, flavin oxidase). The sequence features unambiguously point to a dioxygenase, making B the only defensible choice. No other option is compatible with the observed domain architecture."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0141",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches UniProt G4MZ21 (ALKB1_PYRO7), annotated as N6-methyladenosine RNA demethylase ALKB1 (EC 1.14.11.53). The catalytic activity reaction in the UniProt entry is verbatim identical to choice B. The EC assignment carries ECO:0000269 (experimental evidence, PubMed:30535195); the specific Rhea reaction is annotated via ECO:0000250 (similarity to A0A9P4XUZ4). The protein name is supported by literature (ECO:0000303). The annotation is consistent across both current and historical (v55) records.",
-    "evidence_ids": ["C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 353-residue sequence contains recognizable ALKB-family structural motifs: a putative HxD…H…H Fe(II)-coordinating triad (e.g., H…H…H in the 'HQTNMHLHYEL' region, conserved Asp in 'GGQYDWTNRV'), a 2-oxoglutarate-binding region ('GCDGLFMIAPSDIG'), and an overall jelly-roll domain architecture. The protein size (353 aa) is consistent with the small ALKB/ALKBH subfamily but too small for TET (~1000 aa) or FTO (~505 aa). Among the four choices, only B describes a Fe(II)/2-oxoglutarate-dependent dioxygenase reaction; A is a TIM-barrel isomerase, C is a transmembrane ion transporter, and D is a flavin-dependent oxidase. Recognizing the sequence as an ALKB-family dioxygenase eliminates A, C, and D, leaving B.",
-    "missing_item_specific_fact": "None that is strictly required. Distinguishing ALKB1 (m6A RNA demethylase) from other ALKB members (DNA-repair ALKBs, ALKBH5, FTO) by sequence alone is non-trivial, but the question only requires identifying the enzyme class (dioxygenase) to select B over the three structurally unrelated distractors.",
-    "reason": "A knowledgeable reader can identify ALKB-family sequence features (size, HxD…H…H triad, 2OG-binding region, jelly-roll fold) and use the fact that only option B is a dioxygenase reaction to select the answer. This constitutes a concrete biological reasoning pathway from the supplied sequence to the correct choice, without needing to memorize the specific UniProt annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent four fundamentally different enzyme classes (isomerase, dioxygenase, transporter, flavin oxidase). The sequence features unambiguously point to a dioxygenase, making B the only defensible choice. No other option is compatible with the observed domain architecture."
-  },
-  "important_caveats": [
-    "The UniProt catalytic-activity annotation for this entry is transferred by similarity (ECO:0000250) from A0A9P4XUZ4, not independently demonstrated for this exact protein; however, the EC number assignment itself is backed by experimental evidence (ECO:0000269, PubMed:30535195).",
-    "The reviewer-only evidence confirms sequence match (SHA-256 identical) between the benchmark input and the UniProt entry, so the annotation applies to the exact sequence presented.",
-    "While recognizing the ALKB family from a 353-aa fungal sequence is feasible for an expert, it is not trivial for all readers; the question is moderately difficult but reasoning-grounded rather than pure lookup."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -381,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -495,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "G4MZ21",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 353,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
   "current_entry_audit": {
     "entryVersion": 56,
     "firstPublicDate": "2025-04-09",
@@ -526,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-12-14",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "current_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 353,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 55,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "G4MZ21",
   "selected_historical_entry_version": 55,
+  "selected_historical_record_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "selected_historical_source_sequence_length": 353,
+  "selected_historical_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
   "selected_historical_version": {
     "accession": "G4MZ21",
     "database": "Swiss-Prot",
@@ -544,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "ALKB1_PYRO7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "selected_historical_source_sequence_sha256": "131f4f4ecf109fcbc516605664c8c9c0f3f43e75ec3ffb01b5581fa969bb5ab9",
-  "selected_historical_source_sequence_length": 353,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 55,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -575,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"G4MZ21\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -594,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":56,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-12-14\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -613,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rice blast fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Magnaporthales\",\"Pyriculariaceae\",\"Pyricularia\"],\"scientificName\":\"Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958)\",\"synonyms\":[\"Magnaporthe oryzae\"],\"taxonId\":242507}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -632,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"M6A eraser ALKB1\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Nucleic acid dioxygenase ALKB1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30535195\",\"source\":\"PubMed\"}],\"value\":\"1.14.11.53\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30535195\",\"source\":\"PubMed\"}],\"value\":\"N6-methyladenosine RNA demethylase ALKB1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -651,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A9P4XUZ4\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:49521\"}}],\"reaction\":{\"ecNumber\":\"1.14.11.53\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"A0A9P4XUZ4\",\"source\":\"UniProtKB\"}],\"name\":\"an N(6)-methyladenosine in mRNA + 2-oxoglutarate + O2 = an adenosine in mRNA + formaldehyde + succinate + CO2\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:49520\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:12414\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:12417\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16810\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16842\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30031\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:74411\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:74449\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -670,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json",
-  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
-  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Shi Y.\",\"Wang H.\",\"Wang J.\",\"Liu X.\",\"Lin F.\",\"Lu J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30535195\"},{\"database\":\"DOI\",\"id\":\"10.1093/femsle/fny286\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"30535195\",\"journal\":\"FEMS Microbiol. Lett.\",\"lastPage\":\"0\",\"publicationDate\":\"2019\",\"title\":\"N6-methyladenosine RNA methylation is involved in virulence of the rice blast fungus Pyricularia oryzae (syn. Magnaporthe oryzae).\",\"volume\":\"366\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:43.333607+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "912b707615953e09c752dc6d954d39172df78da8b465c36f8304f450ed73836b",
+  "url": "https://rest.uniprot.org/uniprotkb/G4MZ21.json"
 }
 ```
 
@@ -688,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   ALKB1_PYRO7             Reviewed;         353 AA.\nAC   G4MZ21;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   14-DEC-2011, sequence version 1.\nDT   28-JAN-2026, entry version 55.\nDE   RecName: Full=N6-methyladenosine RNA demethylase ALKB1 {ECO:0000303|PubMed:30535195};\nDE            EC=1.14.11.53 {ECO:0000269|PubMed:30535195};\nDE   AltName: Full=M6A eraser ALKB1 {ECO:0000305};\nDE   AltName: Full=Nucleic acid dioxygenase ALKB1 {ECO:0000305};\nGN   Name=ALKB1 {ECO:0000303|PubMed:30535195}; ORFNames=MGG_01363;\nOS   Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice blast\nOS   fungus) (Magnaporthe oryzae).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Magnaporthales; Pyriculariaceae; Pyricularia.\nOX   NCBI_TaxID=242507;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -709,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=N6-methyladenosine RNA demethylase ALKB1 {ECO:0000303|PubMed:30535195};\nDE            EC=1.14.11.53 {ECO:0000269|PubMed:30535195};\nDE   AltName: Full=M6A eraser ALKB1 {ECO:0000305};\nDE   AltName: Full=Nucleic acid dioxygenase ALKB1 {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -730,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 28-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, AND SUBCELLULAR LOCATION.\nRX   PubMed=30535195; DOI=10.1093/femsle/fny286;\nRA   Shi Y., Wang H., Wang J., Liu X., Lin F., Lu J.;\nRT   \"N6-methyladenosine RNA methylation is involved in virulence of the rice\nRT   blast fungus Pyricularia oryzae (syn. Magnaporthe oryzae).\";\nRL   FEMS Microbiol. Lett. 366:0-0(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 
@@ -751,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55",
-  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
-  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
-  "source_locator": "lines 41-50",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=an N(6)-methyladenosine in mRNA + 2-oxoglutarate + O2 = an\nCC         adenosine in mRNA + formaldehyde + succinate + CO2;\nCC         Xref=Rhea:RHEA:49520, Rhea:RHEA-COMP:12414, Rhea:RHEA-COMP:12417,\nCC         ChEBI:CHEBI:15379, ChEBI:CHEBI:16526, ChEBI:CHEBI:16810,\nCC         ChEBI:CHEBI:16842, ChEBI:CHEBI:30031, ChEBI:CHEBI:74411,\nCC         ChEBI:CHEBI:74449; EC=1.14.11.53;\nCC         Evidence={ECO:0000250|UniProtKB:A0A9P4XUZ4};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:49521;\nCC         Evidence={ECO:0000250|UniProtKB:A0A9P4XUZ4};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-02T04:28:46.833043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "e832e85da73e8a1dac05b9fac1aca7862c0ad15ede95319cb354b3e45fe3fb4e",
+  "url": "https://rest.uniprot.org/unisave/G4MZ21?format=txt&versions=55"
 }
 ```
 

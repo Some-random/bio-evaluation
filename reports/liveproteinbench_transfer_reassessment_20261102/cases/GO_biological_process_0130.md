@@ -1,18 +1,16 @@
-# GO_biological_process_0130: before and after transfer clarification
+# GO_biological_process_0130
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0130.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0130.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **B** — intracellular protein transport
+**Expected answer:** **B** — intracellular protein transport
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The matched sequence has a UniProt GO annotation for intracellular protein transport (GO:0006886), with TAS:GeneDB evidence, in both the current record and a historical record available by the stated cutoff. This supports B as an annotation-based answer, though the supplied excerpts do not show direct experimental validation of that specific process.
-
-Citations as saved: [C6](#evidence-c6), [H7](#evidence-h7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with entry into the secretory pathway, and the sequence has features consistent with a calcium-binding protein. These suggest intracellular/ER localization but do not establish participation in protein transport.
-
-
-**Missing item-specific fact**
-
-> The protein-specific GO annotation assigning intracellular protein transport, or equivalent evidence demonstrating that process for this protein.
-
-
-**Reason**
-
-> The sequence offers clues about localization, not a sufficient basis to distinguish transport as the protein's biological process. Choosing B depends on protein-specific annotation or functional knowledge absent from the input; recognizing the sequence would be lookup or memorization, not reasoning from the supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports B as an annotation, and does not support another listed option. The sequence alone, however, does not establish that annotation.
-
-
-### Important caveats
-
-- The GO evidence is TAS:GeneDB, not direct experimental evidence for intracellular protein transport in the excerpts.
-- The record's cited experimental function concerns calcium binding and roles in parasite development and egress; those excerpts do not independently validate the GO transport term.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with entry into the secretory pathway, and the sequence has features consistent with a calcium-binding protein. These suggest intracellular/ER localization but do not establish participation in protein transport.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific GO annotation assigning intracellular protein transport, or equivalent evidence demonstrating that process for this protein.",
-    "reason": "The sequence offers clues about localization, not a sufficient basis to distinguish transport as the protein's biological process. Choosing B depends on protein-specific annotation or functional knowledge absent from the input; recognizing the sequence would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "case_id": "GO_biological_process_0130",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "The matched sequence has a UniProt GO annotation for intracellular protein transport (GO:0006886), with TAS:GeneDB evidence, in both the current record and a historical record available by the stated cutoff. This supports B as an annotation-based answer, though the supplied excerpts do not show direct experimental validation of that specific process."
-  },
-  "important_caveats": [
-    "The GO evidence is TAS:GeneDB, not direct experimental evidence for intracellular protein transport in the excerpts.",
-    "The record's cited experimental function concerns calcium binding and roles in parasite development and egress; those excerpts do not independently validate the GO transport term."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports B as an annotation, and does not support another listed option. The sequence alone, however, does not establish that annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0130",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The matched sequence has a UniProt GO annotation for intracellular protein transport (GO:0006886), with TAS:GeneDB evidence, in both the current record and a historical record available by the stated cutoff. This supports B as an annotation-based answer, though the supplied excerpts do not show direct experimental validation of that specific process.",
-    "evidence_ids": ["C6", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with entry into the secretory pathway, and the sequence has features consistent with a calcium-binding protein. These suggest intracellular/ER localization but do not establish participation in protein transport.",
-    "missing_item_specific_fact": "The protein-specific GO annotation assigning intracellular protein transport, or equivalent evidence demonstrating that process for this protein.",
-    "reason": "The sequence offers clues about localization, not a sufficient basis to distinguish transport as the protein's biological process. Choosing B depends on protein-specific annotation or functional knowledge absent from the input; recognizing the sequence would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports B as an annotation, and does not support another listed option. The sequence alone, however, does not establish that annotation."
-  },
-  "important_caveats": [
-    "The GO evidence is TAS:GeneDB, not direct experimental evidence for intracellular protein transport in the excerpts.",
-    "The record's cited experimental function concerns calcium binding and roles in parasite development and egress; those excerpts do not independently validate the GO transport term."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q8IIR7 (PfERC, Endoplasmic Reticulum-resident Calcium binding protein from Plasmodium falciparum) carries exactly one GO Biological Process annotation: GO:0006886 'intracellular protein transport' with evidence code TAS:GeneDB (evidence C6, H7). The protein is an ER-resident calcium-binding protein involved in the egress proteolytic cascade (maturation of AMA-1, SUB1, PMX), which is a form of intracellular protein processing/transport. The annotation is a curator-assigned TAS, not an experimental measurement, but it is the sole BP annotation in the database and matches the expected answer exactly.
-
-Citations as saved: [C6](#evidence-c6), [H7](#evidence-h7), [C5](#evidence-c5), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence begins with a hydrophobic N-terminal signal peptide (MMKINLYKLLCFICVIFLLHKNVVRSGDN…), indicating entry into the secretory pathway and ER residency. Multiple DxDxDGxDx-like EF-hand calcium-binding motifs are present, consistent with a calcium-dependent ER chaperone/processing role. ER-resident proteins with signal peptides participate in intracellular protein transport/processing. The three distractors are clearly inapplicable: (A) neuron projection development is irrelevant to a single-celled protozoan parasite with no neurons; (C) conjugation with cellular fusion is a fungal mating process absent from Plasmodium; (D) GPCR signaling requires a 7-transmembrane helix architecture entirely absent from this sequence. By positive argument (signal peptide → secretory/transport pathway) and elimination of biologically impossible options, B is the only defensible choice.
-
-
-**Missing item-specific fact**
-
-> The precise assignment of 'intracellular protein transport' as the PRIMARY (rather than secondary) biological process for this specific protein is a GeneDB curator annotation choice. The protein's more specific roles (proteolytic maturation of egress proteases, parasitophorous vacuole breakdown) could arguably map to other BP terms (e.g., proteolysis, parasite egress). The database assigns only GO:0006886, but this specificity of annotation is not derivable from sequence features alone.
-
-
-**Reason**
-
-> A model can reason from the signal peptide and ER-resident architecture to 'intracellular protein transport' as a plausible process, and can eliminate A, C, D on organismal and structural grounds. However, the positive identification of 'intracellular protein transport' over alternatives like 'calcium-mediated signaling' or 'proteolysis' relies on the broadness of GO:0006886 and the elimination of clearly wrong options rather than a strong positive sequence-based argument. The question is answerable by reasoning, but the positive case for B is modest.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, C, and D are clearly inapplicable to a Plasmodium falciparum ER calcium-binding protein (no neurons, no fungal mating, no GPCR topology). Only B is biologically plausible. No other option is defensible.
-
-
-### Important caveats
-
-- The GO:0006886 annotation carries evidence code TAS:GeneDB (curator assignment), not direct experimental evidence for 'intracellular protein transport' per se. The experimental papers describe calcium binding, egress proteolytic cascade, and PV membrane breakdown.
-- The protein's most specific documented functions (proteolytic maturation of SUB1, PMX, AMA-1; PV membrane breakdown) are arguably better captured by more specific BP terms, but GO:0006886 is the only BP annotation in the entry.
-- The positive reasoning for B rests partly on the broadness of GO:0006886 (which encompasses ER-to-Golgi trafficking, protein processing, etc.) and partly on elimination of clearly wrong distractors.
-- The sequence-match is confirmed (SHA-256 identical to UniProt Q8IIR7, 343 aa), and the organism is Plasmodium falciparum isolate 3D7.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence begins with a hydrophobic N-terminal signal peptide (MMKINLYKLLCFICVIFLLHKNVVRSGDN…), indicating entry into the secretory pathway and ER residency. Multiple DxDxDGxDx-like EF-hand calcium-binding motifs are present, consistent with a calcium-dependent ER chaperone/processing role. ER-resident proteins with signal peptides participate in intracellular protein transport/processing. The three distractors are clearly inapplicable: (A) neuron projection development is irrelevant to a single-celled protozoan parasite with no neurons; (C) conjugation with cellular fusion is a fungal mating process absent from Plasmodium; (D) GPCR signaling requires a 7-transmembrane helix architecture entirely absent from this sequence. By positive argument (signal peptide → secretory/transport pathway) and elimination of biologically impossible options, B is the only defensible choice.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The precise assignment of 'intracellular protein transport' as the PRIMARY (rather than secondary) biological process for this specific protein is a GeneDB curator annotation choice. The protein's more specific roles (proteolytic maturation of egress proteases, parasitophorous vacuole breakdown) could arguably map to other BP terms (e.g., proteolysis, parasite egress). The database assigns only GO:0006886, but this specificity of annotation is not derivable from sequence features alone.",
-    "reason": "A model can reason from the signal peptide and ER-resident architecture to 'intracellular protein transport' as a plausible process, and can eliminate A, C, D on organismal and structural grounds. However, the positive identification of 'intracellular protein transport' over alternatives like 'calcium-mediated signaling' or 'proteolysis' relies on the broadness of GO:0006886 and the elimination of clearly wrong options rather than a strong positive sequence-based argument. The question is answerable by reasoning, but the positive case for B is modest."
-  },
-  "case_id": "GO_biological_process_0130",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H7",
-      "C5",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q8IIR7 (PfERC, Endoplasmic Reticulum-resident Calcium binding protein from Plasmodium falciparum) carries exactly one GO Biological Process annotation: GO:0006886 'intracellular protein transport' with evidence code TAS:GeneDB (evidence C6, H7). The protein is an ER-resident calcium-binding protein involved in the egress proteolytic cascade (maturation of AMA-1, SUB1, PMX), which is a form of intracellular protein processing/transport. The annotation is a curator-assigned TAS, not an experimental measurement, but it is the sole BP annotation in the database and matches the expected answer exactly."
-  },
-  "important_caveats": [
-    "The GO:0006886 annotation carries evidence code TAS:GeneDB (curator assignment), not direct experimental evidence for 'intracellular protein transport' per se. The experimental papers describe calcium binding, egress proteolytic cascade, and PV membrane breakdown.",
-    "The protein's most specific documented functions (proteolytic maturation of SUB1, PMX, AMA-1; PV membrane breakdown) are arguably better captured by more specific BP terms, but GO:0006886 is the only BP annotation in the entry.",
-    "The positive reasoning for B rests partly on the broadness of GO:0006886 (which encompasses ER-to-Golgi trafficking, protein processing, etc.) and partly on elimination of clearly wrong distractors.",
-    "The sequence-match is confirmed (SHA-256 identical to UniProt Q8IIR7, 343 aa), and the organism is Plasmodium falciparum isolate 3D7."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are clearly inapplicable to a Plasmodium falciparum ER calcium-binding protein (no neurons, no fungal mating, no GPCR topology). Only B is biologically plausible. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0130",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q8IIR7 (PfERC, Endoplasmic Reticulum-resident Calcium binding protein from Plasmodium falciparum) carries exactly one GO Biological Process annotation: GO:0006886 'intracellular protein transport' with evidence code TAS:GeneDB (evidence C6, H7). The protein is an ER-resident calcium-binding protein involved in the egress proteolytic cascade (maturation of AMA-1, SUB1, PMX), which is a form of intracellular protein processing/transport. The annotation is a curator-assigned TAS, not an experimental measurement, but it is the sole BP annotation in the database and matches the expected answer exactly.",
-    "evidence_ids": ["C6", "H7", "C5", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence begins with a hydrophobic N-terminal signal peptide (MMKINLYKLLCFICVIFLLHKNVVRSGDN…), indicating entry into the secretory pathway and ER residency. Multiple DxDxDGxDx-like EF-hand calcium-binding motifs are present, consistent with a calcium-dependent ER chaperone/processing role. ER-resident proteins with signal peptides participate in intracellular protein transport/processing. The three distractors are clearly inapplicable: (A) neuron projection development is irrelevant to a single-celled protozoan parasite with no neurons; (C) conjugation with cellular fusion is a fungal mating process absent from Plasmodium; (D) GPCR signaling requires a 7-transmembrane helix architecture entirely absent from this sequence. By positive argument (signal peptide → secretory/transport pathway) and elimination of biologically impossible options, B is the only defensible choice.",
-    "missing_item_specific_fact": "The precise assignment of 'intracellular protein transport' as the PRIMARY (rather than secondary) biological process for this specific protein is a GeneDB curator annotation choice. The protein's more specific roles (proteolytic maturation of egress proteases, parasitophorous vacuole breakdown) could arguably map to other BP terms (e.g., proteolysis, parasite egress). The database assigns only GO:0006886, but this specificity of annotation is not derivable from sequence features alone.",
-    "reason": "A model can reason from the signal peptide and ER-resident architecture to 'intracellular protein transport' as a plausible process, and can eliminate A, C, D on organismal and structural grounds. However, the positive identification of 'intracellular protein transport' over alternatives like 'calcium-mediated signaling' or 'proteolysis' relies on the broadness of GO:0006886 and the elimination of clearly wrong options rather than a strong positive sequence-based argument. The question is answerable by reasoning, but the positive case for B is modest."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are clearly inapplicable to a Plasmodium falciparum ER calcium-binding protein (no neurons, no fungal mating, no GPCR topology). Only B is biologically plausible. No other option is defensible."
-  },
-  "important_caveats": [
-    "The GO:0006886 annotation carries evidence code TAS:GeneDB (curator assignment), not direct experimental evidence for 'intracellular protein transport' per se. The experimental papers describe calcium binding, egress proteolytic cascade, and PV membrane breakdown.",
-    "The protein's most specific documented functions (proteolytic maturation of SUB1, PMX, AMA-1; PV membrane breakdown) are arguably better captured by more specific BP terms, but GO:0006886 is the only BP annotation in the entry.",
-    "The positive reasoning for B rests partly on the broadness of GO:0006886 (which encompasses ER-to-Golgi trafficking, protein processing, etc.) and partly on elimination of clearly wrong distractors.",
-    "The sequence-match is confirmed (SHA-256 identical to UniProt Q8IIR7, 343 aa), and the organism is Plasmodium falciparum isolate 3D7."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8IIR7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5aaa315c0f202540b1464349f5584d0b2d8ead010738a7162723881d6234a475",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 343,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5aaa315c0f202540b1464349f5584d0b2d8ead010738a7162723881d6234a475",
   "current_entry_audit": {
     "entryVersion": 148,
     "firstPublicDate": "2025-04-09",
@@ -530,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2003-03-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "current_source_sequence_sha256": "5aaa315c0f202540b1464349f5584d0b2d8ead010738a7162723881d6234a475",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 343,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5aaa315c0f202540b1464349f5584d0b2d8ead010738a7162723881d6234a475",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 146,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8IIR7",
   "selected_historical_entry_version": 146,
+  "selected_historical_record_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "selected_historical_source_sequence_length": 343,
+  "selected_historical_source_sequence_sha256": "5aaa315c0f202540b1464349f5584d0b2d8ead010738a7162723881d6234a475",
   "selected_historical_version": {
     "accession": "Q8IIR7",
     "database": "Swiss-Prot",
@@ -548,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "PFERC_PLAF7",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "selected_historical_source_sequence_sha256": "5aaa315c0f202540b1464349f5584d0b2d8ead010738a7162723881d6234a475",
-  "selected_historical_source_sequence_length": 343,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 146,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8IIR7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -602,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":148,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2003-03-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -621,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001450\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Aconoidasida\",\"Haemosporida\",\"Plasmodiidae\",\"Plasmodium\",\"Laverania\"],\"scientificName\":\"Plasmodium falciparum (isolate 3D7)\",\"taxonId\":36329}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -640,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9497061\",\"source\":\"PubMed\"}],\"value\":\"Pf39\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9364972\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9497061\",\"source\":\"PubMed\"}],\"value\":\"Pfs40\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23061985\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32098818\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9364972\",\"source\":\"PubMed\"}],\"value\":\"Endoplasmic reticulum-resident calcium binding protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23061985\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32098818\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9364972\",\"source\":\"PubMed\"}],\"value\":\"PfERC\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -659,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"32098818\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9364972\",\"source\":\"PubMed\"}],\"value\":\"Calcium-binding protein (PubMed:9364972). Required for schizont to ring transition (PubMed:32098818). Required for the breakdown of the parasitophorous vacuole membrane during egress (PubMed:32098818). Required for the proteolytic maturation of apical membrane antigen 1 (AMA-1) during egress (PubMed:32098818). Required for the proteolytic maturation of subtilisin-like protease 1 (SUB1) during egress (PubMed:32098818). Required for the proteolytic maturation of plasmepsin X (PMX) during egress (PubMed:32098818)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -678,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/19",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000304\",\"id\":\"9364972\",\"source\":\"PubMed\"}],\"id\":\"GO:0006886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:intracellular protein transport\"},{\"key\":\"GoEvidenceType\",\"value\":\"TAS:GeneDB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/19",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -697,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"La Greca N.\",\"Hibbs A.R.\",\"Riffkin C.\",\"Foley M.\",\"Tilley L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"9364972\"},{\"database\":\"DOI\",\"id\":\"10.1016/s0166-6851(97)00134-5\"}],\"citationType\":\"journal article\",\"firstPage\":\"283\",\"id\":\"9364972\",\"journal\":\"Mol. Biochem. Parasitol.\",\"lastPage\":\"293\",\"publicationDate\":\"1997\",\"title\":\"Identification of an endoplasmic reticulum-resident calcium-binding protein with multiple EF-hand motifs in asexual stages of Plasmodium falciparum.\",\"volume\":\"89\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9364972\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"D10\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9364972\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"FCR3\"}],\"referenceNumber\":2,\"referencePositions\":[\"PROTEIN SEQUENCE OF 238-249\",\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -716,15 +478,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Templeton T.J.\",\"Fujioka H.\",\"Aikawa M.\",\"Parker K.C.\",\"Kaslow D.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"9497061\"},{\"database\":\"DOI\",\"id\":\"10.1016/s0166-6851(97)00164-3\"}],\"citationType\":\"journal article\",\"firstPage\":\"359\",\"id\":\"9497061\",\"journal\":\"Mol. Biochem. Parasitol.\",\"lastPage\":\"365\",\"publicationDate\":\"1997\",\"title\":\"Plasmodium falciparum Pfs40, renamed Pf39, is localized to an intracellular membrane-bound compartment and is not sexual stage-specific.\",\"volume\":\"90\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -735,15 +497,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Morita M.\",\"Sanai H.\",\"Hiramoto A.\",\"Sato A.\",\"Hiraoka O.\",\"Sakura T.\",\"Kaneko O.\",\"Masuyama A.\",\"Nojima M.\",\"Wataya Y.\",\"Kim H.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23061985\"},{\"database\":\"DOI\",\"id\":\"10.1021/pr3005315\"}],\"citationType\":\"journal article\",\"firstPage\":\"5704\",\"id\":\"23061985\",\"journal\":\"J. Proteome Res.\",\"lastPage\":\"5711\",\"publicationDate\":\"2012\",\"title\":\"Plasmodium falciparum endoplasmic reticulum-resident calcium binding protein is a possible target of synthetic antimalarial endoperoxides, N-89 and N-251.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"23061985\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"FCR3\"}],\"referenceNumber\":4,\"referencePositions\":[\"IDENTIFICATION BY MASS SPECTROMETRY\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -754,15 +516,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json",
-  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
-  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Fierro M.A.\",\"Asady B.\",\"Brooks C.F.\",\"Cobb D.W.\",\"Villegas A.\",\"Moreno S.N.J.\",\"Muralidharan V.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32098818\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.03078-19\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"32098818\",\"journal\":\"MBio\",\"lastPage\":\"0\",\"publicationDate\":\"2020\",\"title\":\"An Endoplasmic Reticulum CREC Family Protein Regulates the Egress Proteolytic Cascade in Malaria Parasites.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:32:13.166389+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bcddaef36fecdf3fdd66cbdd4d19140f076342af6ffb8d5385940d2e894415a8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8IIR7.json"
 }
 ```
 
@@ -772,18 +534,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 146,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146",
-  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   PFERC_PLAF7             Reviewed;         343 AA.\nAC   Q8IIR7;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAR-2003, sequence version 1.\nDT   28-JAN-2026, entry version 146.\nDE   RecName: Full=Endoplasmic reticulum-resident calcium binding protein {ECO:0000303|PubMed:23061985, ECO:0000303|PubMed:32098818, ECO:0000303|PubMed:9364972};\nDE            Short=PfERC {ECO:0000303|PubMed:23061985, ECO:0000303|PubMed:32098818, ECO:0000303|PubMed:9364972};\nDE   AltName: Full=Pf39 {ECO:0000303|PubMed:9497061};\nDE   AltName: Full=Pfs40 {ECO:0000303|PubMed:9364972, ECO:0000303|PubMed:9497061};\nDE   Flags: Precursor;\nGN   Name=ERC {ECO:0000305};\nGN   ORFNames=PF3D7_1108600 {ECO:0000312|EMBL:CZT98752.1};\nOS   Plasmodium falciparum (isolate 3D7).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;\nOC   Plasmodiidae; Plasmodium; Plasmodium (Laverania).\nOX   NCBI_TaxID=36329 {ECO:0000312|Proteomes:UP000001450};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 146,
+  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146"
 }
 ```
 
@@ -793,18 +555,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 146,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146",
-  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
-  "source_locator": "lines 31-41",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   PROTEIN SEQUENCE OF 238-249, FUNCTION, SUBCELLULAR LOCATION, AND\nRP   DEVELOPMENTAL STAGE.\nRC   STRAIN=D10 {ECO:0000303|PubMed:9364972}, and\nRC   FCR3 {ECO:0000303|PubMed:9364972};\nRX   PubMed=9364972; DOI=10.1016/s0166-6851(97)00134-5;\nRA   La Greca N., Hibbs A.R., Riffkin C., Foley M., Tilley L.;\nRT   \"Identification of an endoplasmic reticulum-resident calcium-binding\nRT   protein with multiple EF-hand motifs in asexual stages of Plasmodium\nRT   falciparum.\";\nRL   Mol. Biochem. Parasitol. 89:283-293(1997).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 146,
+  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146"
 }
 ```
 
@@ -814,18 +576,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 146,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146",
-  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
-  "source_locator": "lines 42-49",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   SUBCELLULAR LOCATION, AND DEVELOPMENTAL STAGE.\nRX   PubMed=9497061; DOI=10.1016/s0166-6851(97)00164-3;\nRA   Templeton T.J., Fujioka H., Aikawa M., Parker K.C., Kaslow D.C.;\nRT   \"Plasmodium falciparum Pfs40, renamed Pf39, is localized to an\nRT   intracellular membrane-bound compartment and is not sexual stage-\nRT   specific.\";\nRL   Mol. Biochem. Parasitol. 90:359-365(1997).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 146,
+  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146"
 }
 ```
 
@@ -835,18 +597,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 146,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146",
-  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
-  "source_locator": "lines 50-59",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   IDENTIFICATION BY MASS SPECTROMETRY, AND SUBCELLULAR LOCATION.\nRC   STRAIN=FCR3 {ECO:0000303|PubMed:23061985};\nRX   PubMed=23061985; DOI=10.1021/pr3005315;\nRA   Morita M., Sanai H., Hiramoto A., Sato A., Hiraoka O., Sakura T.,\nRA   Kaneko O., Masuyama A., Nojima M., Wataya Y., Kim H.S.;\nRT   \"Plasmodium falciparum endoplasmic reticulum-resident calcium binding\nRT   protein is a possible target of synthetic antimalarial endoperoxides, N-89\nRT   and N-251.\";\nRL   J. Proteome Res. 11:5704-5711(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 146,
+  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146"
 }
 ```
 
@@ -856,18 +618,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 146,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146",
-  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
-  "source_locator": "lines 60-67",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   FUNCTION, SUBCELLULAR LOCATION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=32098818; DOI=10.1128/mbio.03078-19;\nRA   Fierro M.A., Asady B., Brooks C.F., Cobb D.W., Villegas A., Moreno S.N.J.,\nRA   Muralidharan V.;\nRT   \"An Endoplasmic Reticulum CREC Family Protein Regulates the Egress\nRT   Proteolytic Cascade in Malaria Parasites.\";\nRL   MBio 11:0-0(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 146,
+  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 60-67",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146"
 }
 ```
 
@@ -877,18 +639,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 146,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146",
-  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
-  "source_locator": "lines 68-76",
   "excerpt": "CC   -!- FUNCTION: Calcium-binding protein (PubMed:9364972). Required for\nCC       schizont to ring transition (PubMed:32098818). Required for the\nCC       breakdown of the parasitophorous vacuole membrane during egress\nCC       (PubMed:32098818). Required for the proteolytic maturation of apical\nCC       membrane antigen 1 (AMA-1) during egress (PubMed:32098818). Required\nCC       for the proteolytic maturation of subtilisin-like protease 1 (SUB1)\nCC       during egress (PubMed:32098818). Required for the proteolytic\nCC       maturation of plasmepsin X (PMX) during egress (PubMed:32098818).\nCC       {ECO:0000269|PubMed:32098818, ECO:0000269|PubMed:9364972}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 146,
+  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 68-76",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146"
 }
 ```
 
@@ -898,18 +660,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 146,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146",
-  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
-  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
-  "source_locator": "lines 128-128",
   "excerpt": "DR   GO; GO:0006886; P:intracellular protein transport; TAS:GeneDB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 146,
+  "retrieved_utc": "2026-11-02T04:32:17.560132+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 128-128",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6364a781ef22504ba42ffaa5320cce8c074a7dae5af9dc14106152f1668016e1",
+  "url": "https://rest.uniprot.org/unisave/Q8IIR7?format=txt&versions=146"
 }
 ```
 
@@ -920,15 +682,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 71242-71254",
   "excerpt": "[Term]\nid: GO:0006886\nname: intracellular protein transport\nnamespace: biological_process\nalt_id: GO:0032779\ndef: \"The directed movement of proteins in a cell, including the movement of proteins between specific compartments or structures within a cell, such as organelles of a eukaryotic cell.\" [GOC:mah]\nsubset: goslim_generic\nsubset: goslim_prokaryote\nsynonym: \"copper-induced intracellular protein transport\" RELATED [GOC:al]\nis_a: GO:0015031 ! protein transport\nis_a: GO:0046907 ! intracellular transport\nrelationship: part_of GO:0008104 ! intracellular protein localization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 71242-71254",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -939,15 +701,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 74132-74153",
   "excerpt": "[Term]\nid: GO:0007186\nname: G protein-coupled receptor signaling pathway\nnamespace: biological_process\nalt_id: GO:0038042\ndef: \"The series of molecular signals initiated by a ligand binding to its receptor, in which the activated receptor promotes the exchange of GDP for GTP on the alpha-subunit of an associated heterotrimeric G-protein complex. The GTP-bound activated alpha-G-protein then dissociates from the beta- and gamma-subunits to further transmit the signal within the cell. The pathway begins with receptor-ligand interaction, and ends with regulation of a downstream cellular process. The pathway can start from the plasma membrane, Golgi or nuclear membrane.\" [GOC:bf, GOC:mah, PMID:16902576, PMID:24568158, Wikipedia:G_protein-coupled_receptor]\nsubset: goslim_drosophila\nsynonym: \"dimeric G-protein coupled receptor signaling pathway\" NARROW []\nsynonym: \"dimeric G-protein coupled receptor signalling pathway\" NARROW [GOC:mah]\nsynonym: \"G protein coupled receptor protein signaling pathway\" EXACT []\nsynonym: \"G protein coupled receptor protein signalling pathway\" EXACT []\nsynonym: \"G-protein coupled receptor protein signal transduction\" EXACT []\nsynonym: \"G-protein coupled receptor protein signaling pathway\" EXACT [GOC:bf]\nsynonym: \"G-protein coupled receptor signaling pathway via GPCR dimer\" NARROW [GOC:bf]\nsynonym: \"G-protein coupled receptor signalling pathway\" EXACT []\nsynonym: \"G-protein-coupled receptor protein signalling pathway\" EXACT []\nsynonym: \"GPCR signaling pathway\" EXACT []\nsynonym: \"GPCR signalling pathway\" EXACT []\nxref: Reactome:R-HSA-373076 \"Class A/1 (Rhodopsin-like receptors)\"\nxref: Reactome:R-HSA-388396 \"GPCR downstream signalling\"\nis_a: GO:0007165 ! signal transduction\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0007186",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 74132-74153",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0007186"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -958,15 +720,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 110813-110826",
   "excerpt": "[Term]\nid: GO:0010977\nname: negative regulation of neuron projection development\nnamespace: biological_process\ndef: \"Any process that decreases the rate, frequency or extent of neuron projection development. Neuron projection development is the process whose specific outcome is the progression of a neuron projection over time, from its formation to the mature structure. A neuron projection is any process extending from a neural cell, such as axons or dendrites (collectively called neurites).\" [GOC:dph, GOC:tb]\nsynonym: \"growth cone collapse\" RELATED [GOC:pr]\nsynonym: \"negative regulation of neurite biosynthesis\" NARROW [GOC:mah]\nsynonym: \"negative regulation of neurite development\" NARROW [GOC:mah]\nsynonym: \"negative regulation of neurite formation\" NARROW [GOC:mah]\nsynonym: \"negative regulation of neurite growth\" NARROW [GOC:mah]\nis_a: GO:0010975 ! regulation of neuron projection development\nis_a: GO:0031345 ! negative regulation of cell projection organization\nrelationship: negatively_regulates GO:0031175 ! neuron projection development\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0010977",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 110813-110826",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0010977"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

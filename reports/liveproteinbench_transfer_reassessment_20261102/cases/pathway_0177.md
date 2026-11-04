@@ -1,18 +1,16 @@
-# pathway_0177: before and after transfer clarification
+# pathway_0177
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0177.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0177.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Secondary metabolite biosynthesis
+**Expected answer:** **B** — Secondary metabolite biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,251 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-matching UniProt record annotates this protein to secondary metabolite biosynthesis, specifically terpenoid biosynthesis, and identifies it as prenyltransferase vviA. The pathway annotation is attributed to a publication with experimental evidence code ECO:0000269; the primary paper was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is strongly hydrophobic and appears to contain multiple membrane-spanning regions, but that does not identify its specific substrate, enzymatic function, or pathway among the choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as prenyltransferase vviA and its role in terpenoid/secondary-metabolite biosynthesis.
-
-
-**Reason**
-
-> The supplied sequence and choices do not provide a defensible way to distinguish the specific secondary-metabolite pathway from broader metabolic biosynthesis. The answer depends on protein-specific functional annotation or equivalent external evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> The choices provide no sequence-based discriminator between broad metabolic intermediate biosynthesis and the more specific secondary-metabolite biosynthesis. These descriptions can also overlap; the protein-specific annotation resolves the intended choice as B.
-
-
-### Important caveats
-
-- The reviewer-only record matches the supplied sequence, including the historical record available by the stated cutoff.
-- The cited database annotation attributes experimental evidence to a publication, but that primary publication was not independently assessed.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic and appears to contain multiple membrane-spanning regions, but that does not identify its specific substrate, enzymatic function, or pathway among the choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as prenyltransferase vviA and its role in terpenoid/secondary-metabolite biosynthesis.",
-    "reason": "The supplied sequence and choices do not provide a defensible way to distinguish the specific secondary-metabolite pathway from broader metabolic biosynthesis. The answer depends on protein-specific functional annotation or equivalent external evidence."
-  },
-  "case_id": "pathway_0177",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matching UniProt record annotates this protein to secondary metabolite biosynthesis, specifically terpenoid biosynthesis, and identifies it as prenyltransferase vviA. The pathway annotation is attributed to a publication with experimental evidence code ECO:0000269; the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reviewer-only record matches the supplied sequence, including the historical record available by the stated cutoff.",
-    "The cited database annotation attributes experimental evidence to a publication, but that primary publication was not independently assessed."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "The choices provide no sequence-based discriminator between broad metabolic intermediate biosynthesis and the more specific secondary-metabolite biosynthesis. These descriptions can also overlap; the protein-specific annotation resolves the intended choice as B."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0177",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matching UniProt record annotates this protein to secondary metabolite biosynthesis, specifically terpenoid biosynthesis, and identifies it as prenyltransferase vviA. The pathway annotation is attributed to a publication with experimental evidence code ECO:0000269; the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is strongly hydrophobic and appears to contain multiple membrane-spanning regions, but that does not identify its specific substrate, enzymatic function, or pathway among the choices.",
-    "missing_item_specific_fact": "The protein-specific identification as prenyltransferase vviA and its role in terpenoid/secondary-metabolite biosynthesis.",
-    "reason": "The supplied sequence and choices do not provide a defensible way to distinguish the specific secondary-metabolite pathway from broader metabolic biosynthesis. The answer depends on protein-specific functional annotation or equivalent external evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "The choices provide no sequence-based discriminator between broad metabolic intermediate biosynthesis and the more specific secondary-metabolite biosynthesis. These descriptions can also overlap; the protein-specific annotation resolves the intended choice as B."
-  },
-  "important_caveats": [
-    "The reviewer-only record matches the supplied sequence, including the historical record available by the stated cutoff.",
-    "The cited database annotation attributes experimental evidence to a publication, but that primary publication was not independently assessed."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A6A6H402 (Prenyltransferase vviA / Sporulositol A biosynthesis cluster protein A) explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39310987, a 2024 Org. Lett. paper on cyclo-farnesyl diphosphate-dependent prenylation in fungi). The sequence matches exactly (293 AA, SHA-256 confirmed). The protein catalyzes prenylation in sporulositol A biosynthesis, a fungal secondary metabolite. The expected answer B is directly supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could argue that fungal membrane-bound prenyltransferases with multiple TM domains are predominantly involved in secondary metabolite (terpenoid) biosynthesis rather than primary metabolic intermediate production. Options C (peptidoglycan degradation) and D (histidine biosynthesis) are readily excluded for a eukaryotic membrane protein. However, the critical A-vs-B distinction ('metabolic intermediate biosynthesis' vs. 'secondary metabolite biosynthesis') hinges on whether the prenylated product is a primary or secondary metabolite, which is not determinable from sequence features alone.
-
-
-**Missing item-specific fact**
-
-> The specific substrate and product identity of this enzyme (cyclo-farnesyl diphosphate-dependent prenylation producing sporulositol A, a secondary metabolite) is required to definitively assign the pathway as 'secondary metabolite biosynthesis' rather than the more generic 'metabolic intermediate biosynthesis.' Prenyltransferases can function in both primary (e.g., ubiquinone biosynthesis) and secondary metabolism, and the sequence alone does not encode which class of product is formed.
-
-
-**Reason**
-
-> While a knowledgeable model might narrow choices by recognizing prenyltransferase motifs and fungal membrane-protein architecture, the decisive distinction between option A (metabolic intermediate biosynthesis) and option B (secondary metabolite biosynthesis) depends on knowing this particular enzyme's role in sporulositol A biosynthesis—a specific experimental finding from PubMed:39310987. No general sequence heuristic reliably separates primary from secondary metabolite prenylation in fungi.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> Prenyltransferases produce intermediates in isoprenoid pathways, which could be described as 'metabolic intermediate biosynthesis' (option A) in a broad sense. The classification as 'secondary metabolite biosynthesis' (option B) reflects the specific downstream product (sporulositol A) rather than a property uniquely readable from the enzyme's sequence. Without the specific substrate/product annotation, both A and B have some plausibility, though B is the more precise UniProt-assigned pathway.
-
-
-### Important caveats
-
-- The organism (Viridothelium virens, a lichen-forming fungus) is not stated in the question; the model must infer eukaryotic/fungal origin from sequence features alone.
-- The pathway annotation is based on a single 2024 experimental study (PubMed:39310987); the EC number remains 2.5.1.- (unassigned subclass), indicating incomplete mechanistic characterization.
-- The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must work from sequence and general knowledge only.
-- Option C (peptidoglycan degradation) is trivially wrong for a fungal protein, and option D (histidine biosynthesis) is inconsistent with the membrane-protein architecture, but these easy eliminations do not resolve the A-vs-B ambiguity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could argue that fungal membrane-bound prenyltransferases with multiple TM domains are predominantly involved in secondary metabolite (terpenoid) biosynthesis rather than primary metabolic intermediate production. Options C (peptidoglycan degradation) and D (histidine biosynthesis) are readily excluded for a eukaryotic membrane protein. However, the critical A-vs-B distinction ('metabolic intermediate biosynthesis' vs. 'secondary metabolite biosynthesis') hinges on whether the prenylated product is a primary or secondary metabolite, which is not determinable from sequence features alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate and product identity of this enzyme (cyclo-farnesyl diphosphate-dependent prenylation producing sporulositol A, a secondary metabolite) is required to definitively assign the pathway as 'secondary metabolite biosynthesis' rather than the more generic 'metabolic intermediate biosynthesis.' Prenyltransferases can function in both primary (e.g., ubiquinone biosynthesis) and secondary metabolism, and the sequence alone does not encode which class of product is formed.",
-    "reason": "While a knowledgeable model might narrow choices by recognizing prenyltransferase motifs and fungal membrane-protein architecture, the decisive distinction between option A (metabolic intermediate biosynthesis) and option B (secondary metabolite biosynthesis) depends on knowing this particular enzyme's role in sporulositol A biosynthesis—a specific experimental finding from PubMed:39310987. No general sequence heuristic reliably separates primary from secondary metabolite prenylation in fungi."
-  },
-  "case_id": "pathway_0177",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A6A6H402 (Prenyltransferase vviA / Sporulositol A biosynthesis cluster protein A) explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39310987, a 2024 Org. Lett. paper on cyclo-farnesyl diphosphate-dependent prenylation in fungi). The sequence matches exactly (293 AA, SHA-256 confirmed). The protein catalyzes prenylation in sporulositol A biosynthesis, a fungal secondary metabolite. The expected answer B is directly supported."
-  },
-  "important_caveats": [
-    "The organism (Viridothelium virens, a lichen-forming fungus) is not stated in the question; the model must infer eukaryotic/fungal origin from sequence features alone.",
-    "The pathway annotation is based on a single 2024 experimental study (PubMed:39310987); the EC number remains 2.5.1.- (unassigned subclass), indicating incomplete mechanistic characterization.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must work from sequence and general knowledge only.",
-    "Option C (peptidoglycan degradation) is trivially wrong for a fungal protein, and option D (histidine biosynthesis) is inconsistent with the membrane-protein architecture, but these easy eliminations do not resolve the A-vs-B ambiguity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "Prenyltransferases produce intermediates in isoprenoid pathways, which could be described as 'metabolic intermediate biosynthesis' (option A) in a broad sense. The classification as 'secondary metabolite biosynthesis' (option B) reflects the specific downstream product (sporulositol A) rather than a property uniquely readable from the enzyme's sequence. Without the specific substrate/product annotation, both A and B have some plausibility, though B is the more precise UniProt-assigned pathway."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0177",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A6A6H402 (Prenyltransferase vviA / Sporulositol A biosynthesis cluster protein A) explicitly annotates the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' with experimental evidence (ECO:0000269, PubMed:39310987, a 2024 Org. Lett. paper on cyclo-farnesyl diphosphate-dependent prenylation in fungi). The sequence matches exactly (293 AA, SHA-256 confirmed). The protein catalyzes prenylation in sporulositol A biosynthesis, a fungal secondary metabolite. The expected answer B is directly supported.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could argue that fungal membrane-bound prenyltransferases with multiple TM domains are predominantly involved in secondary metabolite (terpenoid) biosynthesis rather than primary metabolic intermediate production. Options C (peptidoglycan degradation) and D (histidine biosynthesis) are readily excluded for a eukaryotic membrane protein. However, the critical A-vs-B distinction ('metabolic intermediate biosynthesis' vs. 'secondary metabolite biosynthesis') hinges on whether the prenylated product is a primary or secondary metabolite, which is not determinable from sequence features alone.",
-    "missing_item_specific_fact": "The specific substrate and product identity of this enzyme (cyclo-farnesyl diphosphate-dependent prenylation producing sporulositol A, a secondary metabolite) is required to definitively assign the pathway as 'secondary metabolite biosynthesis' rather than the more generic 'metabolic intermediate biosynthesis.' Prenyltransferases can function in both primary (e.g., ubiquinone biosynthesis) and secondary metabolism, and the sequence alone does not encode which class of product is formed.",
-    "reason": "While a knowledgeable model might narrow choices by recognizing prenyltransferase motifs and fungal membrane-protein architecture, the decisive distinction between option A (metabolic intermediate biosynthesis) and option B (secondary metabolite biosynthesis) depends on knowing this particular enzyme's role in sporulositol A biosynthesis—a specific experimental finding from PubMed:39310987. No general sequence heuristic reliably separates primary from secondary metabolite prenylation in fungi."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "Prenyltransferases produce intermediates in isoprenoid pathways, which could be described as 'metabolic intermediate biosynthesis' (option A) in a broad sense. The classification as 'secondary metabolite biosynthesis' (option B) reflects the specific downstream product (sporulositol A) rather than a property uniquely readable from the enzyme's sequence. Without the specific substrate/product annotation, both A and B have some plausibility, though B is the more precise UniProt-assigned pathway."
-  },
-  "important_caveats": [
-    "The organism (Viridothelium virens, a lichen-forming fungus) is not stated in the question; the model must infer eukaryotic/fungal origin from sequence features alone.",
-    "The pathway annotation is based on a single 2024 experimental study (PubMed:39310987); the EC number remains 2.5.1.- (unassigned subclass), indicating incomplete mechanistic characterization.",
-    "The reviewer-only evidence confirms the key but was not available to the evaluated model; the model must work from sequence and general knowledge only.",
-    "Option C (peptidoglycan degradation) is trivially wrong for a fungal protein, and option D (histidine biosynthesis) is inconsistent with the membrane-protein architecture, but these easy eliminations do not resolve the A-vs-B ambiguity."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -406,10 +164,9 @@ Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -520,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A6A6H402",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "897fc4df843bf85f1cdd0a1f4daa86fcaba8dd7ff09001216f7df7ed7a613ef7",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 293,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "897fc4df843bf85f1cdd0a1f4daa86fcaba8dd7ff09001216f7df7ed7a613ef7",
   "current_entry_audit": {
     "entryVersion": 13,
     "firstPublicDate": "2025-04-09",
@@ -551,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2020-06-17",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
-  "current_source_sequence_sha256": "897fc4df843bf85f1cdd0a1f4daa86fcaba8dd7ff09001216f7df7ed7a613ef7",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 293,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "897fc4df843bf85f1cdd0a1f4daa86fcaba8dd7ff09001216f7df7ed7a613ef7",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 12,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A6A6H402",
   "selected_historical_entry_version": 12,
+  "selected_historical_record_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
+  "selected_historical_source_sequence_length": 293,
+  "selected_historical_source_sequence_sha256": "897fc4df843bf85f1cdd0a1f4daa86fcaba8dd7ff09001216f7df7ed7a613ef7",
   "selected_historical_version": {
     "accession": "A0A6A6H402",
     "database": "Swiss-Prot",
@@ -569,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "VVIA_VIRVR",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
-  "selected_historical_source_sequence_sha256": "897fc4df843bf85f1cdd0a1f4daa86fcaba8dd7ff09001216f7df7ed7a613ef7",
-  "selected_historical_source_sequence_length": 293,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 12,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json",
-  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
-  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A6A6H402\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json"
 }
 ```
 
@@ -619,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json",
-  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
-  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":13,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2020-06-17\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json"
 }
 ```
 
@@ -638,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json",
-  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
-  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Speckled blister lichen\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Dothideomycetes\",\"Dothideomycetes incertae sedis\",\"Trypetheliales\",\"Trypetheliaceae\",\"Viridothelium\"],\"scientificName\":\"Viridothelium virens\",\"synonyms\":[\"Trypethelium virens\"],\"taxonId\":1048519}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json"
 }
 ```
 
@@ -657,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json",
-  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
-  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39310987\",\"source\":\"PubMed\"}],\"value\":\"Sporulositol A biosynthesis cluster protein A\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39310987\",\"source\":\"PubMed\"}],\"value\":\"2.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39310987\",\"source\":\"PubMed\"}],\"value\":\"Prenyltransferase vviA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json"
 }
 ```
 
@@ -676,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json",
-  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
-  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39310987\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json"
 }
 ```
 
@@ -695,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json",
-  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
-  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Tang Y.J.\",\"Zou Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39310987\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.orglett.4c03154\"}],\"citationType\":\"journal article\",\"firstPage\":\"8366\",\"id\":\"39310987\",\"journal\":\"Org. Lett.\",\"lastPage\":\"8370\",\"publicationDate\":\"2024\",\"title\":\"Cyclo-farnesyl Diphosphate-Dependent Prenylation in Fungi.\",\"volume\":\"26\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"PATHWAY\",\"MUTAGENESIS OF LEU-17; ASN-21; MET-24; LYS-63; HIS-115; TYR-137; ILE-151; ASP-189; TRP-192 AND THR-277\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:32.724960+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b8205d729e2e5bd4217fba29840a41164bb96c507173b89acd7a02b8a587f862",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A6A6H402.json"
 }
 ```
 
@@ -713,18 +460,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6A6H402?format=txt&versions=12",
-  "source_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
-  "retrieved_utc": "2026-11-02T04:25:34.642719+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   VVIA_VIRVR              Reviewed;         293 AA.\nAC   A0A6A6H402;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   17-JUN-2020, sequence version 1.\nDT   28-JAN-2026, entry version 12.\nDE   RecName: Full=Prenyltransferase vviA {ECO:0000303|PubMed:39310987};\nDE            EC=2.5.1.- {ECO:0000269|PubMed:39310987};\nDE   AltName: Full=Sporulositol A biosynthesis cluster protein A {ECO:0000303|PubMed:39310987};\nGN   Name=vviA {ECO:0000303|PubMed:39310987}; ORFNames=EV356DRAFT_253807;\nOS   Viridothelium virens (Speckled blister lichen) (Trypethelium virens).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Dothideomycetes;\nOC   Dothideomycetes incertae sedis; Trypetheliales; Trypetheliaceae;\nOC   Viridothelium.\nOX   NCBI_TaxID=1048519;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:25:34.642719+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
+  "url": "https://rest.uniprot.org/unisave/A0A6A6H402?format=txt&versions=12"
 }
 ```
 
@@ -734,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6A6H402?format=txt&versions=12",
-  "source_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
-  "retrieved_utc": "2026-11-02T04:25:34.642719+00:00",
-  "source_locator": "lines 29-36",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, PATHWAY, AND MUTAGENESIS OF LEU-17;\nRP   ASN-21; MET-24; LYS-63; HIS-115; TYR-137; ILE-151; ASP-189; TRP-192 AND\nRP   THR-277.\nRX   PubMed=39310987; DOI=10.1021/acs.orglett.4c03154;\nRA   Tang Y.J., Zou Y.;\nRT   \"Cyclo-farnesyl Diphosphate-Dependent Prenylation in Fungi.\";\nRL   Org. Lett. 26:8366-8370(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:25:34.642719+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
+  "url": "https://rest.uniprot.org/unisave/A0A6A6H402?format=txt&versions=12"
 }
 ```
 
@@ -755,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A6A6H402?format=txt&versions=12",
-  "source_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
-  "retrieved_utc": "2026-11-02T04:25:34.642719+00:00",
-  "source_locator": "lines 58-59",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:39310987}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:25:34.642719+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 58-59",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f3fb0188f37dd39fa5b2add2435b66089c72d61d50cfdb8351cca69e37efe727",
+  "url": "https://rest.uniprot.org/unisave/A0A6A6H402?format=txt&versions=12"
 }
 ```
 

@@ -1,18 +1,16 @@
-# GO_cellular_component_0089: before and after transfer clarification
+# GO_cellular_component_0089
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0089.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0089.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — monoatomic ion channel complex
+**Expected answer:** **D** — monoatomic ion channel complex
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record annotates GO:0034702, “monoatomic ion channel complex,” although the archived annotation is IEA (keyword-based), not direct experimental evidence. The entry also identifies the protein as an inward-rectifier potassium channel; that name is supported by similarity evidence.
-
-Citations as saved: [H1](#evidence-h1), [H3](#evidence-h3), [C4](#evidence-c4), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a clear multipass membrane-protein pattern, including hydrophobic transmembrane segments consistent with the architecture of an ion channel. Among the choices, an ion-channel complex is a substantially better fit than a neuron projection, a histone acetyltransferase complex, or a host-cell mitochondrion.
-
-
-**Missing item-specific fact**
-
-> The exact protein identity and its database GO annotation are not supplied, but are not necessary to distinguish D from these choices using the sequence and general biological knowledge.
-
-
-**Reason**
-
-> The sequence provides meaningful evidence for a membrane ion channel, while the alternatives describe unrelated cellular structures or complexes. This supports a defensible choice without relying on recall of the exact database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence’s membrane-channel features distinguish D from the offered alternatives; no other option is comparably supported.
-
-
-### Important caveats
-
-- The cited GO annotation is computationally inferred, not experimental confirmation of complex membership.
-- The subcellular-location annotation in the matched record is also supported by similarity evidence; the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a clear multipass membrane-protein pattern, including hydrophobic transmembrane segments consistent with the architecture of an ion channel. Among the choices, an ion-channel complex is a substantially better fit than a neuron projection, a histone acetyltransferase complex, or a host-cell mitochondrion.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The exact protein identity and its database GO annotation are not supplied, but are not necessary to distinguish D from these choices using the sequence and general biological knowledge.",
-    "reason": "The sequence provides meaningful evidence for a membrane ion channel, while the alternatives describe unrelated cellular structures or complexes. This supports a defensible choice without relying on recall of the exact database entry."
-  },
-  "case_id": "GO_cellular_component_0089",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H1",
-      "H3",
-      "C4",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates GO:0034702, “monoatomic ion channel complex,” although the archived annotation is IEA (keyword-based), not direct experimental evidence. The entry also identifies the protein as an inward-rectifier potassium channel; that name is supported by similarity evidence."
-  },
-  "important_caveats": [
-    "The cited GO annotation is computationally inferred, not experimental confirmation of complex membership.",
-    "The subcellular-location annotation in the matched record is also supported by similarity evidence; the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence’s membrane-channel features distinguish D from the offered alternatives; no other option is comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0089",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates GO:0034702, “monoatomic ion channel complex,” although the archived annotation is IEA (keyword-based), not direct experimental evidence. The entry also identifies the protein as an inward-rectifier potassium channel; that name is supported by similarity evidence.",
-    "evidence_ids": ["H1", "H3", "C4", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a clear multipass membrane-protein pattern, including hydrophobic transmembrane segments consistent with the architecture of an ion channel. Among the choices, an ion-channel complex is a substantially better fit than a neuron projection, a histone acetyltransferase complex, or a host-cell mitochondrion.",
-    "missing_item_specific_fact": "The exact protein identity and its database GO annotation are not supplied, but are not necessary to distinguish D from these choices using the sequence and general biological knowledge.",
-    "reason": "The sequence provides meaningful evidence for a membrane ion channel, while the alternatives describe unrelated cellular structures or complexes. This supports a defensible choice without relying on recall of the exact database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence’s membrane-channel features distinguish D from the offered alternatives; no other option is comparably supported."
-  },
-  "important_caveats": [
-    "The cited GO annotation is computationally inferred, not experimental confirmation of complex membership.",
-    "The subcellular-location annotation in the matched record is also supported by similarity evidence; the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is UniProt E1BN00, annotated as 'Inward rectifier potassium channel 13' (Kir7.1) from Bos taurus. A potassium channel is by definition a monoatomic ion channel complex (GO:0034702), and this GO term is present in the UniProt record (evidence C6/H3, IEA:UniProtKB-KW). The protein's identity as a potassium channel is well-established (it is in the recommended name, supported by similarity to O60928). While the GO annotation evidence code is IEA (electronic/keyword-based inference rather than direct experiment on this bovine ortholog), the protein's classification as a Kir-family channel is robust and the GO term accurately describes its molecular identity.
-
-Citations as saved: [C4](#evidence-c4), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains multiple hydrophobic stretches (~20+ residues) consistent with multi-pass transmembrane topology, which could help rule out B (nuclear histone acetyltransferase complex) and partially C (host cell mitochondrion, which typically requires an N-terminal amphipathic mitochondrial targeting sequence absent here). However, distinguishing 'monoatomic ion channel complex' (D) from 'neuron projection' (A) cannot be resolved by general sequence reasoning: both could host membrane proteins, and the hydrophobic pattern does not uniquely identify an ion channel versus a transporter, receptor, or other membrane protein. Recognizing the Kir-specific two-TM + pore-loop architecture from raw sequence without database context is not reliably achievable.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this 360-aa sequence as Kir7.1 (KCNJ13), a member of the inward rectifier potassium channel family, which is required to confidently assign 'monoatomic ion channel complex' over 'neuron projection' or other membrane-associated options.
-
-
-**Reason**
-
-> General sequence analysis reveals a small multi-pass membrane protein, which is suggestive but not diagnostic of an ion channel complex specifically. The critical step—identifying the Kir channel fold and thus the GO term 'monoatomic ion channel complex'—depends on recognizing this exact protein or its family from training data or database lookup, not on a deductive argument from the sequence features alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> From sequence alone, a multi-pass membrane protein could plausibly reside in a neuron projection (A), as many ion channels and membrane proteins are localized to axons/dendrites. Without knowing the protein is Kir7.1 in retinal pigmented epithelium, the sequence does not exclude neuronal localization. Additionally, GO:0034702 describes a molecular complex rather than a spatial compartment, making 'primary cellular component' slightly ambiguous when compared to location-type terms like A and C.
-
-
-### Important caveats
-
-- The GO annotation for 'monoatomic ion channel complex' carries IEA (Inferred from Electronic Annotation) evidence, not direct experimental proof for this bovine ortholog; the protein's channel identity is inferred by similarity to human Kir7.1 (O60928).
-- The subcellular location annotation (C5/H2) specifies 'Cell membrane, Multi-pass membrane protein' localized at RPE apical microvilli, which is a spatial location distinct from the complex-level term in choice D.
-- The UniProt entry was first publicly released 2025-06-18; the benchmark construction date and whether this entry existed in the author's source snapshot are unknown.
-- Choice C ('host cell mitochondrion') is a GO term relevant to pathogen-host interactions and is not applicable to a bovine endogenous protein, making it a clearly wrong distractor.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains multiple hydrophobic stretches (~20+ residues) consistent with multi-pass transmembrane topology, which could help rule out B (nuclear histone acetyltransferase complex) and partially C (host cell mitochondrion, which typically requires an N-terminal amphipathic mitochondrial targeting sequence absent here). However, distinguishing 'monoatomic ion channel complex' (D) from 'neuron projection' (A) cannot be resolved by general sequence reasoning: both could host membrane proteins, and the hydrophobic pattern does not uniquely identify an ion channel versus a transporter, receptor, or other membrane protein. Recognizing the Kir-specific two-TM + pore-loop architecture from raw sequence without database context is not reliably achievable.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this 360-aa sequence as Kir7.1 (KCNJ13), a member of the inward rectifier potassium channel family, which is required to confidently assign 'monoatomic ion channel complex' over 'neuron projection' or other membrane-associated options.",
-    "reason": "General sequence analysis reveals a small multi-pass membrane protein, which is suggestive but not diagnostic of an ion channel complex specifically. The critical step—identifying the Kir channel fold and thus the GO term 'monoatomic ion channel complex'—depends on recognizing this exact protein or its family from training data or database lookup, not on a deductive argument from the sequence features alone."
-  },
-  "case_id": "GO_cellular_component_0089",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C6",
-      "H1",
-      "H3",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is UniProt E1BN00, annotated as 'Inward rectifier potassium channel 13' (Kir7.1) from Bos taurus. A potassium channel is by definition a monoatomic ion channel complex (GO:0034702), and this GO term is present in the UniProt record (evidence C6/H3, IEA:UniProtKB-KW). The protein's identity as a potassium channel is well-established (it is in the recommended name, supported by similarity to O60928). While the GO annotation evidence code is IEA (electronic/keyword-based inference rather than direct experiment on this bovine ortholog), the protein's classification as a Kir-family channel is robust and the GO term accurately describes its molecular identity."
-  },
-  "important_caveats": [
-    "The GO annotation for 'monoatomic ion channel complex' carries IEA (Inferred from Electronic Annotation) evidence, not direct experimental proof for this bovine ortholog; the protein's channel identity is inferred by similarity to human Kir7.1 (O60928).",
-    "The subcellular location annotation (C5/H2) specifies 'Cell membrane, Multi-pass membrane protein' localized at RPE apical microvilli, which is a spatial location distinct from the complex-level term in choice D.",
-    "The UniProt entry was first publicly released 2025-06-18; the benchmark construction date and whether this entry existed in the author's source snapshot are unknown.",
-    "Choice C ('host cell mitochondrion') is a GO term relevant to pathogen-host interactions and is not applicable to a bovine endogenous protein, making it a clearly wrong distractor."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "From sequence alone, a multi-pass membrane protein could plausibly reside in a neuron projection (A), as many ion channels and membrane proteins are localized to axons/dendrites. Without knowing the protein is Kir7.1 in retinal pigmented epithelium, the sequence does not exclude neuronal localization. Additionally, GO:0034702 describes a molecular complex rather than a spatial compartment, making 'primary cellular component' slightly ambiguous when compared to location-type terms like A and C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0089",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is UniProt E1BN00, annotated as 'Inward rectifier potassium channel 13' (Kir7.1) from Bos taurus. A potassium channel is by definition a monoatomic ion channel complex (GO:0034702), and this GO term is present in the UniProt record (evidence C6/H3, IEA:UniProtKB-KW). The protein's identity as a potassium channel is well-established (it is in the recommended name, supported by similarity to O60928). While the GO annotation evidence code is IEA (electronic/keyword-based inference rather than direct experiment on this bovine ortholog), the protein's classification as a Kir-family channel is robust and the GO term accurately describes its molecular identity.",
-    "evidence_ids": ["C4", "C6", "H1", "H3", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains multiple hydrophobic stretches (~20+ residues) consistent with multi-pass transmembrane topology, which could help rule out B (nuclear histone acetyltransferase complex) and partially C (host cell mitochondrion, which typically requires an N-terminal amphipathic mitochondrial targeting sequence absent here). However, distinguishing 'monoatomic ion channel complex' (D) from 'neuron projection' (A) cannot be resolved by general sequence reasoning: both could host membrane proteins, and the hydrophobic pattern does not uniquely identify an ion channel versus a transporter, receptor, or other membrane protein. Recognizing the Kir-specific two-TM + pore-loop architecture from raw sequence without database context is not reliably achievable.",
-    "missing_item_specific_fact": "The specific identity of this 360-aa sequence as Kir7.1 (KCNJ13), a member of the inward rectifier potassium channel family, which is required to confidently assign 'monoatomic ion channel complex' over 'neuron projection' or other membrane-associated options.",
-    "reason": "General sequence analysis reveals a small multi-pass membrane protein, which is suggestive but not diagnostic of an ion channel complex specifically. The critical step—identifying the Kir channel fold and thus the GO term 'monoatomic ion channel complex'—depends on recognizing this exact protein or its family from training data or database lookup, not on a deductive argument from the sequence features alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "From sequence alone, a multi-pass membrane protein could plausibly reside in a neuron projection (A), as many ion channels and membrane proteins are localized to axons/dendrites. Without knowing the protein is Kir7.1 in retinal pigmented epithelium, the sequence does not exclude neuronal localization. Additionally, GO:0034702 describes a molecular complex rather than a spatial compartment, making 'primary cellular component' slightly ambiguous when compared to location-type terms like A and C."
-  },
-  "important_caveats": [
-    "The GO annotation for 'monoatomic ion channel complex' carries IEA (Inferred from Electronic Annotation) evidence, not direct experimental proof for this bovine ortholog; the protein's channel identity is inferred by similarity to human Kir7.1 (O60928).",
-    "The subcellular location annotation (C5/H2) specifies 'Cell membrane, Multi-pass membrane protein' localized at RPE apical microvilli, which is a spatial location distinct from the complex-level term in choice D.",
-    "The UniProt entry was first publicly released 2025-06-18; the benchmark construction date and whether this entry existed in the author's source snapshot are unknown.",
-    "Choice C ('host cell mitochondrion') is a GO term relevant to pathogen-host interactions and is not applicable to a bovine endogenous protein, making it a clearly wrong distractor."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E1BN00",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "feb9d6140c91f297df4e1b3bf9a9bd39d203ad60b8fd9106c95f00ca1a7abda5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 360,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "feb9d6140c91f297df4e1b3bf9a9bd39d203ad60b8fd9106c95f00ca1a7abda5",
   "current_entry_audit": {
     "entryVersion": 87,
     "firstPublicDate": "2025-06-18",
@@ -541,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-11-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "current_source_sequence_sha256": "feb9d6140c91f297df4e1b3bf9a9bd39d203ad60b8fd9106c95f00ca1a7abda5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 360,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "feb9d6140c91f297df4e1b3bf9a9bd39d203ad60b8fd9106c95f00ca1a7abda5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 85,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E1BN00",
   "selected_historical_entry_version": 85,
+  "selected_historical_record_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
+  "selected_historical_source_sequence_length": 360,
+  "selected_historical_source_sequence_sha256": "feb9d6140c91f297df4e1b3bf9a9bd39d203ad60b8fd9106c95f00ca1a7abda5",
   "selected_historical_version": {
     "accession": "E1BN00",
     "database": "Swiss-Prot",
@@ -559,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "KCJ13_BOVIN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
-  "selected_historical_source_sequence_sha256": "feb9d6140c91f297df4e1b3bf9a9bd39d203ad60b8fd9106c95f00ca1a7abda5",
-  "selected_historical_source_sequence_length": 360,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 85,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -594,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json",
-  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E1BN00\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
+  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json"
 }
 ```
 
@@ -613,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json",
-  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":87,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-11-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
+  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json"
 }
 ```
 
@@ -632,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json",
-  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bovine\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Chordata\",\"Craniata\",\"Vertebrata\",\"Euteleostomi\",\"Mammalia\",\"Eutheria\",\"Laurasiatheria\",\"Artiodactyla\",\"Ruminantia\",\"Pecora\",\"Bovidae\",\"Bovinae\",\"Bos\"],\"scientificName\":\"Bos taurus\",\"taxonId\":9913}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
+  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json"
 }
 ```
 
@@ -651,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json",
-  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O60928\",\"source\":\"UniProtKB\"}],\"value\":\"Inward rectifier K(+) channel Kir7.1\"}},{\"fullName\":{\"value\":\"Potassium channel, inwardly rectifying subfamily J member 13\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O60928\",\"source\":\"UniProtKB\"}],\"value\":\"Inward rectifier potassium channel 13\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
+  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json"
 }
 ```
 
@@ -670,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json",
-  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P86046\",\"source\":\"UniProtKB\"}],\"value\":\"Localized at the retinal pigmented epithelium (RPE) apical microvilli\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"id\":\"SL-0162\",\"value\":\"Membrane\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"id\":\"SL-9909\",\"value\":\"Multi-pass membrane protein\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P86046\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0039\",\"value\":\"Cell membrane\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
+  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json"
 }
 ```
 
@@ -689,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json",
-  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/23",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0034702\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:monoatomic ion channel complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:Ensembl\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/23",
+  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
+  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json"
 }
 ```
 
@@ -708,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json",
-  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
-  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/24",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/24",
+  "retrieved_utc": "2026-11-02T04:28:00.720540+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7246b2eb4549dfb47f31cd992990356778022560a9d7b5e49262f934a1c773a8",
+  "url": "https://rest.uniprot.org/uniprotkb/E1BN00.json"
 }
 ```
 
@@ -726,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85",
-  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
-  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   KCJ13_BOVIN             Reviewed;         360 AA.\nAC   E1BN00;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-NOV-2010, sequence version 1.\nDT   28-JAN-2026, entry version 85.\nDE   RecName: Full=Inward rectifier potassium channel 13 {ECO:0000250|UniProtKB:O60928};\nDE   AltName: Full=Inward rectifier K(+) channel Kir7.1 {ECO:0000250|UniProtKB:O60928};\nDE   AltName: Full=Potassium channel, inwardly rectifying subfamily J member 13;\nGN   Name=KCNJ13;\nOS   Bos taurus (Bovine).\nOC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia;\nOC   Eutheria; Laurasiatheria; Artiodactyla; Ruminantia; Pecora; Bovidae;\nOC   Bovinae; Bos.\nOX   NCBI_TaxID=9913;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
+  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85"
 }
 ```
 
@@ -747,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85",
-  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
-  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
-  "source_locator": "lines 52-55",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Membrane {ECO:0000255}; Multi-pass membrane\nCC       protein {ECO:0000255}. Cell membrane {ECO:0000250|UniProtKB:P86046}.\nCC       Note=Localized at the retinal pigmented epithelium (RPE) apical\nCC       microvilli. {ECO:0000250|UniProtKB:P86046}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-55",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
+  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85"
 }
 ```
 
@@ -768,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85",
-  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
-  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
-  "source_locator": "lines 87-87",
   "excerpt": "DR   GO; GO:0034702; C:monoatomic ion channel complex; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
+  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85"
 }
 ```
 
@@ -789,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 85,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85",
-  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
-  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
-  "source_locator": "lines 88-88",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; ISS:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 85,
+  "retrieved_utc": "2026-11-02T04:28:05.462686+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 88-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4b9086c0d9c9ac0bc55162776e962e7edd043bea19b585c2259e8c880bcc5a3a",
+  "url": "https://rest.uniprot.org/unisave/E1BN00?format=txt&versions=85"
 }
 ```
 
@@ -811,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 199319-199327",
   "excerpt": "[Term]\nid: GO:0033650\nname: host cell mitochondrion\nnamespace: cellular_component\ndef: \"A semiautonomous, self replicating organelle as found in host cells that occurs in varying numbers, shapes, and sizes in the cell cytoplasm. The host is defined as the larger of the organisms involved in a symbiotic interaction.\" [GOC:pamgo_curators]\nsynonym: \"host mitochondria\" EXACT []\nis_a: GO:0033648 ! host intracellular membrane-bounded organelle\nis_a: GO:0033655 ! host cell cytoplasm part\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0033650",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 199319-199327",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0033650"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -830,15 +583,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 211424-211430",
   "excerpt": "[Term]\nid: GO:0034702\nname: monoatomic ion channel complex\nnamespace: cellular_component\ndef: \"A protein complex that spans a membrane and forms a water-filled channel across the phospholipid bilayer allowing selective monoatomic ion transport down its electrochemical gradient.\" [GOC:mah, ISBN:071673706X]\nis_a: GO:1902495 ! transmembrane transporter complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0034702",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 211424-211430",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0034702"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -849,15 +602,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 243106-243119",
   "excerpt": "[Term]\nid: GO:0043005\nname: neuron projection\nnamespace: cellular_component\ndef: \"A prolongation or process extending from a nerve cell, e.g. an axon or dendrite.\" [GOC:jl, PMID:3077060]\nsubset: goslim_pir\nsynonym: \"nerve fiber\" RELATED [GOC:dph]\nsynonym: \"neurite\" NARROW []\nsynonym: \"neuron process\" EXACT []\nsynonym: \"neuron protrusion\" EXACT [NIF_Subcellular:sao250931889]\nsynonym: \"neuronal cell projection\" EXACT []\nxref: NIF_Subcellular:sao867568886\nis_a: GO:0120025 ! plasma membrane bounded cell projection\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043005",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 243106-243119",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043005"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -868,15 +621,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 370959-370966",
   "excerpt": "[Term]\nid: GO:0070775\nname: H3 histone acetyltransferase complex\nnamespace: cellular_component\ndef: \"A multisubunit complex that catalyzes the acetylation of histone H3.\" [GOC:mah]\nsynonym: \"H3 HAT complex\" EXACT [GOC:mah]\nis_a: GO:0000123 ! histone acetyltransferase complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0070775",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 370959-370966",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0070775"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

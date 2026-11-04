@@ -1,18 +1,16 @@
-# catalytic_activity_0164: before and after transfer clarification
+# catalytic_activity_0164
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0164.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0164.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — pyrrolizixenacetamide + H2O = 3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one + acetate + H(+)
+**Expected answer:** **B** — pyrrolizixenacetamide + H2O = 3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one + acetate + H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact supplied sequence matches the UniProt entry annotated as pyrrolizixenacetamide deacetylase. Its catalytic-activity annotation gives choice B and cites PubMed evidence (ECO:0000269); the evidence also links the entry to a relevant publication. This supports the key, though the supplied evidence is an annotation and citation rather than an independent assessment of the experiment.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The reaction in B is a hydrolysis, so broad enzyme-class reasoning may make it plausible among these choices. But the sequence and choices do not establish that this protein recognizes the unusual substrate pyrrolizixenacetamide rather than catalyzing another reaction.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental evidence identifying this sequence as a pyrrolizixenacetamide deacetylase and establishing its substrate and products.
-
-
-**Reason**
-
-> Identifying the precise reaction requires a specific enzyme-function assignment absent from the input; recognizing the sequence or its database entry would be lookup or memorization, not reasoning from the supplied information.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone does not distinguish the exact activity, but the reviewer evidence supports B as the annotated reaction. No alternative choice is supported by the supplied reviewer evidence.
-
-
-### Important caveats
-
-- The exact sequence match supports applicability of the cited UniProt annotation to this protein.
-- The author’s exact source snapshot is unknown; the archived annotation establishes that the reaction was recorded by the historical cutoff, not which source the author used.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The reaction in B is a hydrolysis, so broad enzyme-class reasoning may make it plausible among these choices. But the sequence and choices do not establish that this protein recognizes the unusual substrate pyrrolizixenacetamide rather than catalyzing another reaction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence identifying this sequence as a pyrrolizixenacetamide deacetylase and establishing its substrate and products.",
-    "reason": "Identifying the precise reaction requires a specific enzyme-function assignment absent from the input; recognizing the sequence or its database entry would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "case_id": "catalytic_activity_0164",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as pyrrolizixenacetamide deacetylase. Its catalytic-activity annotation gives choice B and cites PubMed evidence (ECO:0000269); the evidence also links the entry to a relevant publication. This supports the key, though the supplied evidence is an annotation and citation rather than an independent assessment of the experiment."
-  },
-  "important_caveats": [
-    "The exact sequence match supports applicability of the cited UniProt annotation to this protein.",
-    "The author’s exact source snapshot is unknown; the archived annotation establishes that the reaction was recorded by the historical cutoff, not which source the author used."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not distinguish the exact activity, but the reviewer evidence supports B as the annotated reaction. No alternative choice is supported by the supplied reviewer evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0164",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact supplied sequence matches the UniProt entry annotated as pyrrolizixenacetamide deacetylase. Its catalytic-activity annotation gives choice B and cites PubMed evidence (ECO:0000269); the evidence also links the entry to a relevant publication. This supports the key, though the supplied evidence is an annotation and citation rather than an independent assessment of the experiment.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The reaction in B is a hydrolysis, so broad enzyme-class reasoning may make it plausible among these choices. But the sequence and choices do not establish that this protein recognizes the unusual substrate pyrrolizixenacetamide rather than catalyzing another reaction.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental evidence identifying this sequence as a pyrrolizixenacetamide deacetylase and establishing its substrate and products.",
-    "reason": "Identifying the precise reaction requires a specific enzyme-function assignment absent from the input; recognizing the sequence or its database entry would be lookup or memorization, not reasoning from the supplied information."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone does not distinguish the exact activity, but the reviewer evidence supports B as the annotated reaction. No alternative choice is supported by the supplied reviewer evidence."
-  },
-  "important_caveats": [
-    "The exact sequence match supports applicability of the cited UniProt annotation to this protein.",
-    "The author’s exact source snapshot is unknown; the archived annotation establishes that the reaction was recorded by the historical cutoff, not which source the author used."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches UniProt entry A0A2G0QDP0 (XHPG_XENHO, Pyrrolizixenacetamide deacetylase, EC 3.5.1.-) from Xenorhabdus hominickii. The catalytic activity annotation 'pyrrolizixenacetamide + H2O = 3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one + acetate + H(+)' is recorded with evidence code ECO:0000269 (inferred from direct assay) from PubMed:39428351, corroborated by X-ray crystallography (PDB 8QZU, 1.18 Å, mutant Ala-94 in complex with acetate product). The sequence SHA256 matches between the benchmark input and the source entry.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One might note superficial hydrolase-like features in the sequence (e.g., a potential GxSxG nucleophile region near 'GCSHDH') and argue against a kinase (no canonical GxGxxG), PLP-dependent lyase, or viral protease. However, the substrate 'pyrrolizixenacetamide' is an extremely obscure, organism-specific bacterial alkaloid intermediate (first characterized in 2024, Angew. Chem. Int. Ed.). No general biological reasoning from a 266-residue amino acid sequence can predict this exact substrate name, its pyrrolizidine ring system, or the specific deacetylation reaction. The reaction is not a common metabolic transformation that would be inferable from enzyme family classification.
-
-
-**Missing item-specific fact**
-
-> The identity of the specific substrate 'pyrrolizixenacetamide' and its deacetylation to '3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one' is an experimentally determined, organism-specific biosynthetic step (Xenorhabdus hominickii pyrrolizwilline pathway) that cannot be deduced from the amino acid sequence through general enzymology. Access to the UniProt annotation or the 2024 Bode lab publication is required to distinguish B from the other options.
-
-
-**Reason**
-
-> While rough enzyme-class elimination (kinase vs. lyase vs. protease vs. hydrolase) is marginally possible from sequence motifs, the question demands identification of the exact chemical reaction including a highly specific, recently discovered natural-product substrate. This is an item-specific experimental fact absent from the input, making selection of B dependent on memorization or database lookup rather than general reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices represent distinct enzyme classes (kinase, specific deacetylase, amino acid lyase, viral protease) with very different mechanistic signatures. If a solver could determine the protein is a hydrolase, B is the only hydrolase option. However, arriving at B's specific substrate requires the same item-specific knowledge, so no ambiguity among choices is introduced by the wording itself.
-
-
-### Important caveats
-
-- The substrate 'pyrrolizixenacetamide' and the product '3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one' were first characterized in 2024 (PubMed:39428351), making this an extremely recent and obscure annotation unlikely to be in most training corpora.
-- The UniProt entry was first public in April 2025; the benchmark author's source snapshot date is unknown, creating uncertainty about whether the annotation was available at question-construction time.
-- The 'GTGGD' motif near the N-terminus could superficially mislead a solver toward Choice A (kinase), but it does not constitute a canonical kinase nucleotide-binding motif.
-- Evidence code ECO:0000269 (direct assay) and supporting crystallographic structure (PDB 8QZU) provide strong experimental support for the annotated reaction.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One might note superficial hydrolase-like features in the sequence (e.g., a potential GxSxG nucleophile region near 'GCSHDH') and argue against a kinase (no canonical GxGxxG), PLP-dependent lyase, or viral protease. However, the substrate 'pyrrolizixenacetamide' is an extremely obscure, organism-specific bacterial alkaloid intermediate (first characterized in 2024, Angew. Chem. Int. Ed.). No general biological reasoning from a 266-residue amino acid sequence can predict this exact substrate name, its pyrrolizidine ring system, or the specific deacetylation reaction. The reaction is not a common metabolic transformation that would be inferable from enzyme family classification.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of the specific substrate 'pyrrolizixenacetamide' and its deacetylation to '3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one' is an experimentally determined, organism-specific biosynthetic step (Xenorhabdus hominickii pyrrolizwilline pathway) that cannot be deduced from the amino acid sequence through general enzymology. Access to the UniProt annotation or the 2024 Bode lab publication is required to distinguish B from the other options.",
-    "reason": "While rough enzyme-class elimination (kinase vs. lyase vs. protease vs. hydrolase) is marginally possible from sequence motifs, the question demands identification of the exact chemical reaction including a highly specific, recently discovered natural-product substrate. This is an item-specific experimental fact absent from the input, making selection of B dependent on memorization or database lookup rather than general reasoning."
-  },
-  "case_id": "catalytic_activity_0164",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches UniProt entry A0A2G0QDP0 (XHPG_XENHO, Pyrrolizixenacetamide deacetylase, EC 3.5.1.-) from Xenorhabdus hominickii. The catalytic activity annotation 'pyrrolizixenacetamide + H2O = 3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one + acetate + H(+)' is recorded with evidence code ECO:0000269 (inferred from direct assay) from PubMed:39428351, corroborated by X-ray crystallography (PDB 8QZU, 1.18 Å, mutant Ala-94 in complex with acetate product). The sequence SHA256 matches between the benchmark input and the source entry."
-  },
-  "important_caveats": [
-    "The substrate 'pyrrolizixenacetamide' and the product '3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one' were first characterized in 2024 (PubMed:39428351), making this an extremely recent and obscure annotation unlikely to be in most training corpora.",
-    "The UniProt entry was first public in April 2025; the benchmark author's source snapshot date is unknown, creating uncertainty about whether the annotation was available at question-construction time.",
-    "The 'GTGGD' motif near the N-terminus could superficially mislead a solver toward Choice A (kinase), but it does not constitute a canonical kinase nucleotide-binding motif.",
-    "Evidence code ECO:0000269 (direct assay) and supporting crystallographic structure (PDB 8QZU) provide strong experimental support for the annotated reaction."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent distinct enzyme classes (kinase, specific deacetylase, amino acid lyase, viral protease) with very different mechanistic signatures. If a solver could determine the protein is a hydrolase, B is the only hydrolase option. However, arriving at B's specific substrate requires the same item-specific knowledge, so no ambiguity among choices is introduced by the wording itself."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0164",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches UniProt entry A0A2G0QDP0 (XHPG_XENHO, Pyrrolizixenacetamide deacetylase, EC 3.5.1.-) from Xenorhabdus hominickii. The catalytic activity annotation 'pyrrolizixenacetamide + H2O = 3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one + acetate + H(+)' is recorded with evidence code ECO:0000269 (inferred from direct assay) from PubMed:39428351, corroborated by X-ray crystallography (PDB 8QZU, 1.18 Å, mutant Ala-94 in complex with acetate product). The sequence SHA256 matches between the benchmark input and the source entry.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One might note superficial hydrolase-like features in the sequence (e.g., a potential GxSxG nucleophile region near 'GCSHDH') and argue against a kinase (no canonical GxGxxG), PLP-dependent lyase, or viral protease. However, the substrate 'pyrrolizixenacetamide' is an extremely obscure, organism-specific bacterial alkaloid intermediate (first characterized in 2024, Angew. Chem. Int. Ed.). No general biological reasoning from a 266-residue amino acid sequence can predict this exact substrate name, its pyrrolizidine ring system, or the specific deacetylation reaction. The reaction is not a common metabolic transformation that would be inferable from enzyme family classification.",
-    "missing_item_specific_fact": "The identity of the specific substrate 'pyrrolizixenacetamide' and its deacetylation to '3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one' is an experimentally determined, organism-specific biosynthetic step (Xenorhabdus hominickii pyrrolizwilline pathway) that cannot be deduced from the amino acid sequence through general enzymology. Access to the UniProt annotation or the 2024 Bode lab publication is required to distinguish B from the other options.",
-    "reason": "While rough enzyme-class elimination (kinase vs. lyase vs. protease vs. hydrolase) is marginally possible from sequence motifs, the question demands identification of the exact chemical reaction including a highly specific, recently discovered natural-product substrate. This is an item-specific experimental fact absent from the input, making selection of B dependent on memorization or database lookup rather than general reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices represent distinct enzyme classes (kinase, specific deacetylase, amino acid lyase, viral protease) with very different mechanistic signatures. If a solver could determine the protein is a hydrolase, B is the only hydrolase option. However, arriving at B's specific substrate requires the same item-specific knowledge, so no ambiguity among choices is introduced by the wording itself."
-  },
-  "important_caveats": [
-    "The substrate 'pyrrolizixenacetamide' and the product '3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one' were first characterized in 2024 (PubMed:39428351), making this an extremely recent and obscure annotation unlikely to be in most training corpora.",
-    "The UniProt entry was first public in April 2025; the benchmark author's source snapshot date is unknown, creating uncertainty about whether the annotation was available at question-construction time.",
-    "The 'GTGGD' motif near the N-terminus could superficially mislead a solver toward Choice A (kinase), but it does not constitute a canonical kinase nucleotide-binding motif.",
-    "Evidence code ECO:0000269 (direct assay) and supporting crystallographic structure (PDB 8QZU) provide strong experimental support for the annotated reaction."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2G0QDP0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "db237f760869551b09464ba4867169aafc47d9b85d114228f62281edb6b9c76d",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 266,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "db237f760869551b09464ba4867169aafc47d9b85d114228f62281edb6b9c76d",
   "current_entry_audit": {
     "entryVersion": 30,
     "firstPublicDate": "2025-04-09",
@@ -538,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-01-31",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
-  "current_source_sequence_sha256": "db237f760869551b09464ba4867169aafc47d9b85d114228f62281edb6b9c76d",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 266,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "db237f760869551b09464ba4867169aafc47d9b85d114228f62281edb6b9c76d",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 28,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2G0QDP0",
   "selected_historical_entry_version": 28,
+  "selected_historical_record_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
+  "selected_historical_source_sequence_length": 266,
+  "selected_historical_source_sequence_sha256": "db237f760869551b09464ba4867169aafc47d9b85d114228f62281edb6b9c76d",
   "selected_historical_version": {
     "accession": "A0A2G0QDP0",
     "database": "Swiss-Prot",
@@ -556,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "XHPG_XENHO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
-  "selected_historical_source_sequence_sha256": "db237f760869551b09464ba4867169aafc47d9b85d114228f62281edb6b9c76d",
-  "selected_historical_source_sequence_length": 266,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 28,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json",
-  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
-  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2G0QDP0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json"
 }
 ```
 
@@ -606,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json",
-  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
-  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":30,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-01-31\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json"
 }
 ```
 
@@ -625,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json",
-  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
-  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Enterobacterales\",\"Morganellaceae\",\"Xenorhabdus\"],\"scientificName\":\"Xenorhabdus hominickii\",\"taxonId\":351679}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json"
 }
 ```
 
@@ -644,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json",
-  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
-  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39428351\",\"source\":\"PubMed\"}],\"value\":\"Pyrrolizixenamide hydrolase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39428351\",\"source\":\"PubMed\"}],\"value\":\"3.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39428351\",\"source\":\"PubMed\"}],\"value\":\"Pyrrolizixenacetamide deacetylase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json"
 }
 ```
 
@@ -663,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json",
-  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
-  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39428351\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:83308\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39428351\",\"source\":\"PubMed\"}],\"name\":\"pyrrolizixenacetamide + H2O = 3-amino-5,6,7,7a-tetrahydro-1H-pyrrolizin-1-one + acetate + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:83307\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30089\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:232461\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:232462\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json"
 }
 ```
 
@@ -682,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json",
-  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
-  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Effert J.\",\"Westphalen M.\",\"Calderari A.\",\"Shi Y.M.\",\"Elamri I.\",\"Najah S.\",\"Gruen P.\",\"Li Y.\",\"Gruez A.\",\"Weissman K.J.\",\"Bode H.B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39428351\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.202411258\"}],\"citationType\":\"journal article\",\"firstPage\":\"e202411258\",\"id\":\"39428351\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"e202411258\",\"publicationDate\":\"2024\",\"title\":\"Pyrrolizwilline, a unique bacterial alkaloid assembled by a nonribosomal peptide synthetase and non-enzymatic dimerization.\",\"volume\":\"63\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"8QZU\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 17903 / CIP 109072 / KE01\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.18 ANGSTROMS) OF MUTANT ALA-94 IN COMPLEX WITH ACETATE\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"DISRUPTION PHENOTYPE\",\"SUBUNIT\",\"ACTIVE SITE\",\"MUTAGENESIS OF ASN-35 AND SER-94\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:47.833416+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "ae3334cfc3b11f2536437c9d5e79945575a56544d5415a430b401730b6c628d9",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2G0QDP0.json"
 }
 ```
 
@@ -700,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28",
-  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
-  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   XHPG_XENHO              Reviewed;         266 AA.\nAC   A0A2G0QDP0;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   31-JAN-2018, sequence version 1.\nDT   28-JAN-2026, entry version 28.\nDE   RecName: Full=Pyrrolizixenacetamide deacetylase {ECO:0000305|PubMed:39428351};\nDE            EC=3.5.1.- {ECO:0000269|PubMed:39428351};\nDE   AltName: Full=Pyrrolizixenamide hydrolase {ECO:0000303|PubMed:39428351};\nGN   Name=xhpG {ECO:0000303|PubMed:39428351};\nGN   ORFNames=Xhom_00310 {ECO:0000312|EMBL:PHM57344.1};\nOS   Xenorhabdus hominickii.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Enterobacterales; Morganellaceae; Xenorhabdus.\nOX   NCBI_TaxID=351679;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
+  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28"
 }
 ```
 
@@ -721,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28",
-  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
-  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Pyrrolizixenacetamide deacetylase {ECO:0000305|PubMed:39428351};\nDE            EC=3.5.1.- {ECO:0000269|PubMed:39428351};\nDE   AltName: Full=Pyrrolizixenamide hydrolase {ECO:0000303|PubMed:39428351};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
+  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28"
 }
 ```
 
@@ -742,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28",
-  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
-  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
-  "source_locator": "lines 25-35",
   "excerpt": "RN   [2] {ECO:0007744|PDB:8QZU}\nRP   X-RAY CRYSTALLOGRAPHY (1.18 ANGSTROMS) OF MUTANT ALA-94 IN COMPLEX WITH\nRP   ACETATE, FUNCTION, CATALYTIC ACTIVITY, DISRUPTION PHENOTYPE, SUBUNIT,\nRP   ACTIVE SITE, AND MUTAGENESIS OF ASN-35 AND SER-94.\nRC   STRAIN=DSM 17903 / CIP 109072 / KE01;\nRX   PubMed=39428351; DOI=10.1002/anie.202411258;\nRA   Effert J., Westphalen M., Calderari A., Shi Y.M., Elamri I., Najah S.,\nRA   Gruen P., Li Y., Gruez A., Weissman K.J., Bode H.B.;\nRT   \"Pyrrolizwilline, a unique bacterial alkaloid assembled by a nonribosomal\nRT   peptide synthetase and non-enzymatic dimerization.\";\nRL   Angew. Chem. Int. Ed. 63:e202411258-e202411258(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 25-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
+  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28"
 }
 ```
 
@@ -763,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 28,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28",
-  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
-  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
-  "source_locator": "lines 39-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=pyrrolizixenacetamide + H2O = 3-amino-5,6,7,7a-tetrahydro-1H-\nCC         pyrrolizin-1-one + acetate + H(+); Xref=Rhea:RHEA:83307,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:30089,\nCC         ChEBI:CHEBI:232461, ChEBI:CHEBI:232462;\nCC         Evidence={ECO:0000269|PubMed:39428351};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:83308;\nCC         Evidence={ECO:0000269|PubMed:39428351};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 28,
+  "retrieved_utc": "2026-11-02T04:24:49.959052+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d0bca0810bb663b04edc4dd649d45e97b5536f59d4132847e0dc79e272689d14",
+  "url": "https://rest.uniprot.org/unisave/A0A2G0QDP0?format=txt&versions=28"
 }
 ```
 

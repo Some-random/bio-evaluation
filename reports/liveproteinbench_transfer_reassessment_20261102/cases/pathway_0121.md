@@ -1,18 +1,16 @@
-# pathway_0121: before and after transfer clarification
+# pathway_0121
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0121.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0121.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Alkaloid biosynthesis
+**Expected answer:** **C** — Alkaloid biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt sequence for acetylajmalan esterase 2 from Rauvolfia serpentina. Its pathway annotation identifies alkaloid biosynthesis, specifically ajmaline biosynthesis, and cites a publication with experimental evidence. This supports choice C, though the evidence here is the cited annotation rather than an independently reviewed account of the experiments.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest a protein with enzymatic activity, but it does not provide a defensible way to infer its specific role in ajmaline or other alkaloid biosynthesis rather than the listed alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation that this sequence encodes acetylajmalan esterase 2, a protein involved in ajmaline biosynthesis.
-
-
-**Reason**
-
-> The pathway distinction depends on protein-specific functional knowledge or external annotation not supplied with the sequence. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched sequence annotation specifically supports alkaloid biosynthesis; the evidence does not identify the other listed options as this protein's pathway.
-
-
-### Important caveats
-
-- Reviewer-only database evidence was not available to the evaluated model.
-- The annotation cites experimental evidence, but the underlying publication was not independently retrieved and validated here.
-- The exact author source snapshot is unknown, although the sequence matches the cited historical and current records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest a protein with enzymatic activity, but it does not provide a defensible way to infer its specific role in ajmaline or other alkaloid biosynthesis rather than the listed alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation that this sequence encodes acetylajmalan esterase 2, a protein involved in ajmaline biosynthesis.",
-    "reason": "The pathway distinction depends on protein-specific functional knowledge or external annotation not supplied with the sequence. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the provided input."
-  },
-  "case_id": "pathway_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence for acetylajmalan esterase 2 from Rauvolfia serpentina. Its pathway annotation identifies alkaloid biosynthesis, specifically ajmaline biosynthesis, and cites a publication with experimental evidence. This supports choice C, though the evidence here is the cited annotation rather than an independently reviewed account of the experiments."
-  },
-  "important_caveats": [
-    "Reviewer-only database evidence was not available to the evaluated model.",
-    "The annotation cites experimental evidence, but the underlying publication was not independently retrieved and validated here.",
-    "The exact author source snapshot is unknown, although the sequence matches the cited historical and current records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence annotation specifically supports alkaloid biosynthesis; the evidence does not identify the other listed options as this protein's pathway."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence for acetylajmalan esterase 2 from Rauvolfia serpentina. Its pathway annotation identifies alkaloid biosynthesis, specifically ajmaline biosynthesis, and cites a publication with experimental evidence. This supports choice C, though the evidence here is the cited annotation rather than an independently reviewed account of the experiments.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest a protein with enzymatic activity, but it does not provide a defensible way to infer its specific role in ajmaline or other alkaloid biosynthesis rather than the listed alternatives.",
-    "missing_item_specific_fact": "The protein-specific functional annotation that this sequence encodes acetylajmalan esterase 2, a protein involved in ajmaline biosynthesis.",
-    "reason": "The pathway distinction depends on protein-specific functional knowledge or external annotation not supplied with the sequence. Recognizing the sequence or recalling its database entry would be lookup or memorization, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched sequence annotation specifically supports alkaloid biosynthesis; the evidence does not identify the other listed options as this protein's pathway."
-  },
-  "important_caveats": [
-    "Reviewer-only database evidence was not available to the evaluated model.",
-    "The annotation cites experimental evidence, but the underlying publication was not independently retrieved and validated here.",
-    "The exact author source snapshot is unknown, although the sequence matches the cited historical and current records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DXJ5 (Acetylajmalan esterase 2, EC 3.1.1.80, from Rauvolfia serpentina) is explicitly annotated with PATHWAY: 'Alkaloid biosynthesis; ajmaline biosynthesis' (evidence code ECO:0000269, experimental, from PubMed:38212296, Guo et al. 2024 Nat. Commun.). The sequence matches the benchmark input exactly (362 AA, SHA-256 confirmed). The expected answer 'Alkaloid biosynthesis' is directly and experimentally supported.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Elimination of option D (polypeptide chain elongation) is feasible: elongation factors are >400 AA GTPases lacking signal peptides, whereas this 362 AA protein has an N-terminal signal peptide (MGFAARPFHIVFSLFVLAGATQALIIC...) and disulfide-bond-forming cysteines typical of secreted proteins. Option A (histidine biosynthesis step 4/9) is a bacterial cytoplasmic pathway; the eukaryotic signal peptide argues against it. However, positive identification of 'Alkaloid biosynthesis' over 'Purine metabolism' or other plant secondary-metabolism routes cannot be achieved from sequence alone.
-
-
-**Missing item-specific fact**
-
-> The specific annotation that this protein is Acetylajmalan esterase 2 (EC 3.1.1.80) catalyzing deacetylation of acetylajmalan in the ajmaline (monoterpene indole alkaloid) biosynthetic pathway of Rauvolfia serpentina. No recognizable 'alkaloid biosynthesis' motif exists in the sequence; the carboxylesterase fold is not obvious, and esterases participate in many unrelated pathways.
-
-
-**Reason**
-
-> While negative reasoning can eliminate D and partially A, positively selecting 'Alkaloid biosynthesis' requires knowing the organism (Rauvolfia serpentina, a plant renowned for monoterpene indole alkaloids) and the specific enzyme's role in ajmaline biosynthesis—facts absent from the supplied sequence and choices. The sequence provides no unique motif diagnostic of alkaloid biosynthesis.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "C"
-]
-```
-
-> Without organism context, a model could argue that a secreted plant esterase might participate in purine metabolism (e.g., nucleotide salvage in ER) or in alkaloid biosynthesis. Only the specific annotation resolves C over B. In practice, most models would likely eliminate B because purine metabolism is predominantly cytoplasmic/mitochondrial, but this is a weak negative argument.
-
-
-### Important caveats
-
-- The UniProt entry was first public on 2025-06-18; if the benchmark was constructed before that date, the annotation may not have existed in the author's source snapshot. However, the underlying 2024 Nature Communications paper (PubMed:38212296) predates the entry.
-- The pathway annotation is based on experimental evidence (ECO:0000269) from the Guo et al. 2024 paper, not computational inference.
-- The identity of the accession was inferred by the reviewer from dataset image-path metadata; this was not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Elimination of option D (polypeptide chain elongation) is feasible: elongation factors are >400 AA GTPases lacking signal peptides, whereas this 362 AA protein has an N-terminal signal peptide (MGFAARPFHIVFSLFVLAGATQALIIC...) and disulfide-bond-forming cysteines typical of secreted proteins. Option A (histidine biosynthesis step 4/9) is a bacterial cytoplasmic pathway; the eukaryotic signal peptide argues against it. However, positive identification of 'Alkaloid biosynthesis' over 'Purine metabolism' or other plant secondary-metabolism routes cannot be achieved from sequence alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific annotation that this protein is Acetylajmalan esterase 2 (EC 3.1.1.80) catalyzing deacetylation of acetylajmalan in the ajmaline (monoterpene indole alkaloid) biosynthetic pathway of Rauvolfia serpentina. No recognizable 'alkaloid biosynthesis' motif exists in the sequence; the carboxylesterase fold is not obvious, and esterases participate in many unrelated pathways.",
-    "reason": "While negative reasoning can eliminate D and partially A, positively selecting 'Alkaloid biosynthesis' requires knowing the organism (Rauvolfia serpentina, a plant renowned for monoterpene indole alkaloids) and the specific enzyme's role in ajmaline biosynthesis—facts absent from the supplied sequence and choices. The sequence provides no unique motif diagnostic of alkaloid biosynthesis."
-  },
-  "case_id": "pathway_0121",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXJ5 (Acetylajmalan esterase 2, EC 3.1.1.80, from Rauvolfia serpentina) is explicitly annotated with PATHWAY: 'Alkaloid biosynthesis; ajmaline biosynthesis' (evidence code ECO:0000269, experimental, from PubMed:38212296, Guo et al. 2024 Nat. Commun.). The sequence matches the benchmark input exactly (362 AA, SHA-256 confirmed). The expected answer 'Alkaloid biosynthesis' is directly and experimentally supported."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public on 2025-06-18; if the benchmark was constructed before that date, the annotation may not have existed in the author's source snapshot. However, the underlying 2024 Nature Communications paper (PubMed:38212296) predates the entry.",
-    "The pathway annotation is based on experimental evidence (ECO:0000269) from the Guo et al. 2024 paper, not computational inference.",
-    "The identity of the accession was inferred by the reviewer from dataset image-path metadata; this was not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "C"
-    ],
-    "reason": "Without organism context, a model could argue that a secreted plant esterase might participate in purine metabolism (e.g., nucleotide salvage in ER) or in alkaloid biosynthesis. Only the specific annotation resolves C over B. In practice, most models would likely eliminate B because purine metabolism is predominantly cytoplasmic/mitochondrial, but this is a weak negative argument."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0121",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DXJ5 (Acetylajmalan esterase 2, EC 3.1.1.80, from Rauvolfia serpentina) is explicitly annotated with PATHWAY: 'Alkaloid biosynthesis; ajmaline biosynthesis' (evidence code ECO:0000269, experimental, from PubMed:38212296, Guo et al. 2024 Nat. Commun.). The sequence matches the benchmark input exactly (362 AA, SHA-256 confirmed). The expected answer 'Alkaloid biosynthesis' is directly and experimentally supported.",
-    "evidence_ids": ["C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Elimination of option D (polypeptide chain elongation) is feasible: elongation factors are >400 AA GTPases lacking signal peptides, whereas this 362 AA protein has an N-terminal signal peptide (MGFAARPFHIVFSLFVLAGATQALIIC...) and disulfide-bond-forming cysteines typical of secreted proteins. Option A (histidine biosynthesis step 4/9) is a bacterial cytoplasmic pathway; the eukaryotic signal peptide argues against it. However, positive identification of 'Alkaloid biosynthesis' over 'Purine metabolism' or other plant secondary-metabolism routes cannot be achieved from sequence alone.",
-    "missing_item_specific_fact": "The specific annotation that this protein is Acetylajmalan esterase 2 (EC 3.1.1.80) catalyzing deacetylation of acetylajmalan in the ajmaline (monoterpene indole alkaloid) biosynthetic pathway of Rauvolfia serpentina. No recognizable 'alkaloid biosynthesis' motif exists in the sequence; the carboxylesterase fold is not obvious, and esterases participate in many unrelated pathways.",
-    "reason": "While negative reasoning can eliminate D and partially A, positively selecting 'Alkaloid biosynthesis' requires knowing the organism (Rauvolfia serpentina, a plant renowned for monoterpene indole alkaloids) and the specific enzyme's role in ajmaline biosynthesis—facts absent from the supplied sequence and choices. The sequence provides no unique motif diagnostic of alkaloid biosynthesis."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "C"],
-    "reason": "Without organism context, a model could argue that a secreted plant esterase might participate in purine metabolism (e.g., nucleotide salvage in ER) or in alkaloid biosynthesis. Only the specific annotation resolves C over B. In practice, most models would likely eliminate B because purine metabolism is predominantly cytoplasmic/mitochondrial, but this is a weak negative argument."
-  },
-  "important_caveats": [
-    "The UniProt entry was first public on 2025-06-18; if the benchmark was constructed before that date, the annotation may not have existed in the author's source snapshot. However, the underlying 2024 Nature Communications paper (PubMed:38212296) predates the entry.",
-    "The pathway annotation is based on experimental evidence (ECO:0000269) from the Guo et al. 2024 paper, not computational inference.",
-    "The identity of the accession was inferred by the reviewer from dataset image-path metadata; this was not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +158,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DXJ5",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d8e428e5582a9f9deeaba106d2f89f040034c96a765f282c6106bf8a9dc8a981",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 362,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d8e428e5582a9f9deeaba106d2f89f040034c96a765f282c6106bf8a9dc8a981",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -539,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
-  "current_source_sequence_sha256": "d8e428e5582a9f9deeaba106d2f89f040034c96a765f282c6106bf8a9dc8a981",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 362,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d8e428e5582a9f9deeaba106d2f89f040034c96a765f282c6106bf8a9dc8a981",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DXJ5",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
+  "selected_historical_source_sequence_length": 362,
+  "selected_historical_source_sequence_sha256": "d8e428e5582a9f9deeaba106d2f89f040034c96a765f282c6106bf8a9dc8a981",
   "selected_historical_version": {
     "accession": "P0DXJ5",
     "database": "Swiss-Prot",
@@ -557,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AAE2_RAUSE",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
-  "selected_historical_source_sequence_sha256": "d8e428e5582a9f9deeaba106d2f89f040034c96a765f282c6106bf8a9dc8a981",
-  "selected_historical_source_sequence_length": 362,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json",
-  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
-  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DXJ5\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json"
 }
 ```
 
@@ -607,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json",
-  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
-  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json"
 }
 ```
 
@@ -626,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json",
-  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
-  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Serpentine wood\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Vinceae\",\"Rauvolfiinae\",\"Rauvolfia\"],\"scientificName\":\"Rauvolfia serpentina\",\"synonyms\":[\"Ophioxylon serpentinum\"],\"taxonId\":4060}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json"
 }
 ```
 
@@ -645,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json",
-  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
-  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"3.1.1.80\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"Acetylajmalan esterase 2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"RsAAE2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json"
 }
 ```
 
@@ -664,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json",
-  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
-  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis; ajmaline biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json"
 }
 ```
 
@@ -683,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json",
-  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
-  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Guo J.\",\"Gao D.\",\"Lian J.\",\"Qu Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38212296\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41467-024-44797-z\"}],\"citationType\":\"journal article\",\"firstPage\":\"457\",\"id\":\"38212296\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"457\",\"publicationDate\":\"2024\",\"title\":\"De novo biosynthesis of antiarrhythmic alkaloid ajmaline.\",\"volume\":\"15\"},\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"TISSUE SPECIFICITY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:29:33.413705+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e74045ec75b84a761a8c28c824548a403267850c5218348997bbacf67e779d70",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DXJ5.json"
 }
 ```
 
@@ -701,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ5?format=txt&versions=2",
-  "source_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
-  "retrieved_utc": "2026-11-02T04:29:35.241829+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   AAE2_RAUSE              Reviewed;         362 AA.\nAC   P0DXJ5;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=Acetylajmalan esterase 2 {ECO:0000303|PubMed:38212296};\nDE            Short=RsAAE2 {ECO:0000303|PubMed:38212296};\nDE            EC=3.1.1.80 {ECO:0000269|PubMed:38212296};\nDE   Flags: Precursor;\nGN   Name=AAE2 {ECO:0000303|PubMed:38212296};\nOS   Rauvolfia serpentina (Serpentine wood) (Ophioxylon serpentinum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Vinceae;\nOC   Rauvolfiinae; Rauvolfia.\nOX   NCBI_TaxID=4060;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:35.241829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ5?format=txt&versions=2"
 }
 ```
 
@@ -722,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ5?format=txt&versions=2",
-  "source_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
-  "retrieved_utc": "2026-11-02T04:29:35.241829+00:00",
-  "source_locator": "lines 17-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, TISSUE\nRP   SPECIFICITY, AND BIOTECHNOLOGY.\nRX   PubMed=38212296; DOI=10.1038/s41467-024-44797-z;\nRA   Guo J., Gao D., Lian J., Qu Y.;\nRT   \"De novo biosynthesis of antiarrhythmic alkaloid ajmaline.\";\nRL   Nat. Commun. 15:457-457(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:35.241829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ5?format=txt&versions=2"
 }
 ```
 
@@ -743,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DXJ5?format=txt&versions=2",
-  "source_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
-  "retrieved_utc": "2026-11-02T04:29:35.241829+00:00",
-  "source_locator": "lines 45-46",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis; ajmaline biosynthesis.\nCC       {ECO:0000269|PubMed:38212296}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-02T04:29:35.241829+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "fd05ebf51e29b1b8ffb9eabf52681e84944476cb3e9a9d3ef689fd184b6b5e95",
+  "url": "https://rest.uniprot.org/unisave/P0DXJ5?format=txt&versions=2"
 }
 ```
 

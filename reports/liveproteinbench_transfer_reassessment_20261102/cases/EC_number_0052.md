@@ -1,18 +1,16 @@
-# EC_number_0052: before and after transfer clarification
+# EC_number_0052
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0052.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0052.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 4.2.1.9
+**Expected answer:** **D** — 4.2.1.9
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry annotates this protein as dihydroxy-acid dehydratase pbrD with EC 4.2.1.9. Its listed catalytic reactions are also assigned EC 4.2.1.9, though those reaction details are transferred from homologs rather than shown here as direct assays of this protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support identifying a mitochondrial enzyme in the dihydroxy-acid dehydratase family, but the input supplies no organism, functional annotation, substrate, or reaction evidence that establishes this protein's complete EC assignment.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and EC annotation as dihydroxy-acid dehydratase pbrD (EC 4.2.1.9), or equivalent reaction evidence, is absent from the question.
-
-
-**Reason**
-
-> Choosing the precise EC number depends on recognizing or looking up this particular protein's function; broad sequence-family inference alone does not establish the exact reaction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation supports D; the other listed choices are not supported by the supplied or reviewer-only evidence.
-
-
-### Important caveats
-
-- The database annotation links the EC assignment to a publication, but the excerpts do not independently establish that the protein's activity was directly measured.
-- The detailed catalytic reactions are supported by similarity transfer from other UniProt entries, not direct evidence for this specific protein.
-- The reviewer-only current and historical entries match the supplied sequence; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support identifying a mitochondrial enzyme in the dihydroxy-acid dehydratase family, but the input supplies no organism, functional annotation, substrate, or reaction evidence that establishes this protein's complete EC assignment.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and EC annotation as dihydroxy-acid dehydratase pbrD (EC 4.2.1.9), or equivalent reaction evidence, is absent from the question.",
-    "reason": "Choosing the precise EC number depends on recognizing or looking up this particular protein's function; broad sequence-family inference alone does not establish the exact reaction."
-  },
-  "case_id": "EC_number_0052",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates this protein as dihydroxy-acid dehydratase pbrD with EC 4.2.1.9. Its listed catalytic reactions are also assigned EC 4.2.1.9, though those reaction details are transferred from homologs rather than shown here as direct assays of this protein."
-  },
-  "important_caveats": [
-    "The database annotation links the EC assignment to a publication, but the excerpts do not independently establish that the protein's activity was directly measured.",
-    "The detailed catalytic reactions are supported by similarity transfer from other UniProt entries, not direct evidence for this specific protein.",
-    "The reviewer-only current and historical entries match the supplied sequence; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports D; the other listed choices are not supported by the supplied or reviewer-only evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0052",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates this protein as dihydroxy-acid dehydratase pbrD with EC 4.2.1.9. Its listed catalytic reactions are also assigned EC 4.2.1.9, though those reaction details are transferred from homologs rather than shown here as direct assays of this protein.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support identifying a mitochondrial enzyme in the dihydroxy-acid dehydratase family, but the input supplies no organism, functional annotation, substrate, or reaction evidence that establishes this protein's complete EC assignment.",
-    "missing_item_specific_fact": "The protein-specific identification and EC annotation as dihydroxy-acid dehydratase pbrD (EC 4.2.1.9), or equivalent reaction evidence, is absent from the question.",
-    "reason": "Choosing the precise EC number depends on recognizing or looking up this particular protein's function; broad sequence-family inference alone does not establish the exact reaction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports D; the other listed choices are not supported by the supplied or reviewer-only evidence."
-  },
-  "important_caveats": [
-    "The database annotation links the EC assignment to a publication, but the excerpts do not independently establish that the protein's activity was directly measured.",
-    "The detailed catalytic reactions are supported by similarity transfer from other UniProt entries, not direct evidence for this specific protein.",
-    "The reviewer-only current and historical entries match the supplied sequence; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A0F7TWW9 (PBRD_PENBI, 596 AA, sequence matched) is annotated as 'Dihydroxy-acid dehydratase pbrD, mitochondrial' with EC=4.2.1.9. The EC assignment carries evidence code ECO:0000305 (curator inference) supported by PubMed:39511739 (2024, aspterric acid biosynthesis). The two listed catalytic reactions (dehydration of 2,3-dihydroxy-3-methylbutanoate and 2,3-dihydroxy-3-methylpentanoate) are both tagged EC 4.2.1.9 but carry evidence code ECO:0000250 (transferred by similarity from Q0CPG9 and P05791). Thus the key is supported by curated database annotation, though the underlying evidence is curatorial inference plus similarity transfer rather than direct experimental assay of this specific protein.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Distractors B (EC 2.1.1.392, methyltransferase) and C (EC 3.2.1.20, alpha-glucosidase) belong to entirely different EC top-level classes (transferase, hydrolase) and can be eliminated by recognizing the sequence lacks methyltransferase or glycosidase motifs. The real discrimination is between A (4.2.1.18, aconitase) and D (4.2.1.9, dihydroxy-acid dehydratase), both EC 4.2.1.x dehydratases using Fe-S clusters. Two general biological arguments favor D: (1) The protein is 596 AA, consistent with class II DHAD (~400–600 AA) but notably shorter than aconitase, which is typically ~700–750 AA even in fungi. (2) Class II DHAD uses a &#91;2Fe-2S&#93; cluster with a characteristic Cys spacing pattern, whereas aconitase uses a &#91;4Fe-4S&#93; cluster with a distinct Cys arrangement; the Cys residues in this sequence (e.g., in motifs like 'GCSAKG', 'GACGG') are more consistent with the &#91;2Fe-2S&#93; coordination geometry of DHAD. These length and cluster-type arguments provide a defensible biological basis for choosing D over A.
-
-
-**Missing item-specific fact**
-
-> None strictly missing; the length and Fe-S cluster-type arguments are general biochemical knowledge. However, precise motif-level confirmation of DHAD vs aconitase fold would require specialized structural knowledge or database lookup.
-
-
-**Reason**
-
-> The question provides a 596-residue sequence with recognizable dehydratase features. General knowledge of enzyme class sizes (DHAD ~500 AA vs aconitase ~700+ AA) and Fe-S cluster coordination patterns provides a concrete, non-memorization-based argument to distinguish the two plausible dehydratase options. The other two choices are eliminated by EC top-level class reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> B and C are clearly wrong enzyme classes. The A-vs-D distinction is narrowed by the 596 AA length (too short for aconitase) and Fe-S cluster type inference, making D the most defensible single answer. No other option is equally supported by the sequence.
-
-
-### Important caveats
-
-- The UniProt EC annotation for this protein is based on curator inference (ECO:0000305) and similarity transfer (ECO:0000250), not direct experimental enzymatic assay of this specific 596-AA protein. The PubMed reference (39511739) concerns aspterric acid biosynthesis in yeast, not isolated DHAD kinetics of pbrD.
-- The protein is a mitochondrial precursor (N-terminal targeting sequence present), which is consistent with a branched-chain amino acid biosynthesis enzyme but does not by itself confirm DHAD over aconitase.
-- The reviewer-only evidence confirms exact sequence match (596 AA, SHA-256 match) between the benchmark sequence and UniProt A0A0F7TWW9.
-- Distinguishing DHAD from aconitase purely by sequence requires specialized knowledge of Fe-S cluster enzyme families; while general biological arguments exist, the margin between A and D is narrower than between A/D and B/C.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Distractors B (EC 2.1.1.392, methyltransferase) and C (EC 3.2.1.20, alpha-glucosidase) belong to entirely different EC top-level classes (transferase, hydrolase) and can be eliminated by recognizing the sequence lacks methyltransferase or glycosidase motifs. The real discrimination is between A (4.2.1.18, aconitase) and D (4.2.1.9, dihydroxy-acid dehydratase), both EC 4.2.1.x dehydratases using Fe-S clusters. Two general biological arguments favor D: (1) The protein is 596 AA, consistent with class II DHAD (~400–600 AA) but notably shorter than aconitase, which is typically ~700–750 AA even in fungi. (2) Class II DHAD uses a [2Fe-2S] cluster with a characteristic Cys spacing pattern, whereas aconitase uses a [4Fe-4S] cluster with a distinct Cys arrangement; the Cys residues in this sequence (e.g., in motifs like 'GCSAKG', 'GACGG') are more consistent with the [2Fe-2S] coordination geometry of DHAD. These length and cluster-type arguments provide a defensible biological basis for choosing D over A.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly missing; the length and Fe-S cluster-type arguments are general biochemical knowledge. However, precise motif-level confirmation of DHAD vs aconitase fold would require specialized structural knowledge or database lookup.",
-    "reason": "The question provides a 596-residue sequence with recognizable dehydratase features. General knowledge of enzyme class sizes (DHAD ~500 AA vs aconitase ~700+ AA) and Fe-S cluster coordination patterns provides a concrete, non-memorization-based argument to distinguish the two plausible dehydratase options. The other two choices are eliminated by EC top-level class reasoning."
-  },
-  "case_id": "EC_number_0052",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0F7TWW9 (PBRD_PENBI, 596 AA, sequence matched) is annotated as 'Dihydroxy-acid dehydratase pbrD, mitochondrial' with EC=4.2.1.9. The EC assignment carries evidence code ECO:0000305 (curator inference) supported by PubMed:39511739 (2024, aspterric acid biosynthesis). The two listed catalytic reactions (dehydration of 2,3-dihydroxy-3-methylbutanoate and 2,3-dihydroxy-3-methylpentanoate) are both tagged EC 4.2.1.9 but carry evidence code ECO:0000250 (transferred by similarity from Q0CPG9 and P05791). Thus the key is supported by curated database annotation, though the underlying evidence is curatorial inference plus similarity transfer rather than direct experimental assay of this specific protein."
-  },
-  "important_caveats": [
-    "The UniProt EC annotation for this protein is based on curator inference (ECO:0000305) and similarity transfer (ECO:0000250), not direct experimental enzymatic assay of this specific 596-AA protein. The PubMed reference (39511739) concerns aspterric acid biosynthesis in yeast, not isolated DHAD kinetics of pbrD.",
-    "The protein is a mitochondrial precursor (N-terminal targeting sequence present), which is consistent with a branched-chain amino acid biosynthesis enzyme but does not by itself confirm DHAD over aconitase.",
-    "The reviewer-only evidence confirms exact sequence match (596 AA, SHA-256 match) between the benchmark sequence and UniProt A0A0F7TWW9.",
-    "Distinguishing DHAD from aconitase purely by sequence requires specialized knowledge of Fe-S cluster enzyme families; while general biological arguments exist, the margin between A and D is narrower than between A/D and B/C."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and C are clearly wrong enzyme classes. The A-vs-D distinction is narrowed by the 596 AA length (too short for aconitase) and Fe-S cluster type inference, making D the most defensible single answer. No other option is equally supported by the sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0052",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0F7TWW9 (PBRD_PENBI, 596 AA, sequence matched) is annotated as 'Dihydroxy-acid dehydratase pbrD, mitochondrial' with EC=4.2.1.9. The EC assignment carries evidence code ECO:0000305 (curator inference) supported by PubMed:39511739 (2024, aspterric acid biosynthesis). The two listed catalytic reactions (dehydration of 2,3-dihydroxy-3-methylbutanoate and 2,3-dihydroxy-3-methylpentanoate) are both tagged EC 4.2.1.9 but carry evidence code ECO:0000250 (transferred by similarity from Q0CPG9 and P05791). Thus the key is supported by curated database annotation, though the underlying evidence is curatorial inference plus similarity transfer rather than direct experimental assay of this specific protein.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Distractors B (EC 2.1.1.392, methyltransferase) and C (EC 3.2.1.20, alpha-glucosidase) belong to entirely different EC top-level classes (transferase, hydrolase) and can be eliminated by recognizing the sequence lacks methyltransferase or glycosidase motifs. The real discrimination is between A (4.2.1.18, aconitase) and D (4.2.1.9, dihydroxy-acid dehydratase), both EC 4.2.1.x dehydratases using Fe-S clusters. Two general biological arguments favor D: (1) The protein is 596 AA, consistent with class II DHAD (~400–600 AA) but notably shorter than aconitase, which is typically ~700–750 AA even in fungi. (2) Class II DHAD uses a [2Fe-2S] cluster with a characteristic Cys spacing pattern, whereas aconitase uses a [4Fe-4S] cluster with a distinct Cys arrangement; the Cys residues in this sequence (e.g., in motifs like 'GCSAKG', 'GACGG') are more consistent with the [2Fe-2S] coordination geometry of DHAD. These length and cluster-type arguments provide a defensible biological basis for choosing D over A.",
-    "missing_item_specific_fact": "None strictly missing; the length and Fe-S cluster-type arguments are general biochemical knowledge. However, precise motif-level confirmation of DHAD vs aconitase fold would require specialized structural knowledge or database lookup.",
-    "reason": "The question provides a 596-residue sequence with recognizable dehydratase features. General knowledge of enzyme class sizes (DHAD ~500 AA vs aconitase ~700+ AA) and Fe-S cluster coordination patterns provides a concrete, non-memorization-based argument to distinguish the two plausible dehydratase options. The other two choices are eliminated by EC top-level class reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and C are clearly wrong enzyme classes. The A-vs-D distinction is narrowed by the 596 AA length (too short for aconitase) and Fe-S cluster type inference, making D the most defensible single answer. No other option is equally supported by the sequence."
-  },
-  "important_caveats": [
-    "The UniProt EC annotation for this protein is based on curator inference (ECO:0000305) and similarity transfer (ECO:0000250), not direct experimental enzymatic assay of this specific 596-AA protein. The PubMed reference (39511739) concerns aspterric acid biosynthesis in yeast, not isolated DHAD kinetics of pbrD.",
-    "The protein is a mitochondrial precursor (N-terminal targeting sequence present), which is consistent with a branched-chain amino acid biosynthesis enzyme but does not by itself confirm DHAD over aconitase.",
-    "The reviewer-only evidence confirms exact sequence match (596 AA, SHA-256 match) between the benchmark sequence and UniProt A0A0F7TWW9.",
-    "Distinguishing DHAD from aconitase purely by sequence requires specialized knowledge of Fe-S cluster enzyme families; while general biological arguments exist, the margin between A and D is narrower than between A/D and B/C."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -510,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0F7TWW9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 596,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-04-09",
@@ -541,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-04-09",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "current_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 596,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 30,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0F7TWW9",
   "selected_historical_entry_version": 30,
+  "selected_historical_record_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "selected_historical_source_sequence_length": 596,
+  "selected_historical_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
   "selected_historical_version": {
     "accession": "A0A0F7TWW9",
     "database": "Swiss-Prot",
@@ -559,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PBRD_PENBI",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "selected_historical_source_sequence_sha256": "c113b75f8644468658289da5480b81ecf252c20df4f27a6efbd96538aea1668e",
-  "selected_historical_source_sequence_length": 596,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 30,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -590,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0F7TWW9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -609,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-04-09\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -628,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium brasilianum\",\"taxonId\":104259}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -647,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein D\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"4.2.1.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Dihydroxy-acid dehydratase pbrD, mitochondrial\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"DHAD astD\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -666,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q0CPG9\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:24810\"}}],\"reaction\":{\"ecNumber\":\"4.2.1.9\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q0CPG9\",\"source\":\"UniProtKB\"}],\"name\":\"(2R)-2,3-dihydroxy-3-methylbutanoate = 3-methyl-2-oxobutanoate + H2O\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:24809\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:11851\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:49072\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -685,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P05791\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:27695\"}}],\"reaction\":{\"ecNumber\":\"4.2.1.9\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P05791\",\"source\":\"UniProtKB\"}],\"name\":\"(2R,3R)-2,3-dihydroxy-3-methylpentanoate = (S)-3-methyl-2-oxopentanoate + H2O\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:27694\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:35146\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:49258\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -704,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json",
-  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
-  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhou Z.\",\"Zhang Y.\",\"Wu Q.\",\"Hou X.\",\"Zhang B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39511739\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c08468\"}],\"citationType\":\"journal article\",\"firstPage\":\"25755\",\"id\":\"39511739\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"25766\",\"publicationDate\":\"2024\",\"title\":\"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\",\"volume\":\"72\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:01.826200+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "9c9db7d008b685b5073a404f2df8618925830622276ec1c773349e5fd3829400",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7TWW9.json"
 }
 ```
 
@@ -722,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   PBRD_PENBI              Reviewed;         596 AA.\nAC   A0A0F7TWW9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-APR-2025, sequence version 2.\nDT   28-JAN-2026, entry version 30.\nDE   RecName: Full=Dihydroxy-acid dehydratase pbrD, mitochondrial {ECO:0000303|PubMed:39511739};\nDE            Short=DHAD astD {ECO:0000303|PubMed:39511739};\nDE            EC=4.2.1.9 {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein D {ECO:0000303|PubMed:39511739};\nDE   Flags: Precursor;\nGN   Name=pbrD {ECO:0000303|PubMed:39511739}; ORFNames=PMG11_09713;\nOS   Penicillium brasilianum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=104259;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 
@@ -743,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 6-10",
   "excerpt": "DE   RecName: Full=Dihydroxy-acid dehydratase pbrD, mitochondrial {ECO:0000303|PubMed:39511739};\nDE            Short=DHAD astD {ECO:0000303|PubMed:39511739};\nDE            EC=4.2.1.9 {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein D {ECO:0000303|PubMed:39511739};\nDE   Flags: Precursor;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-10",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 
@@ -764,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 24-29",
   "excerpt": "RN   [2]\nRP   FUNCTION.\nRX   PubMed=39511739; DOI=10.1021/acs.jafc.4c08468;\nRA   Zhou Z., Zhang Y., Wu Q., Hou X., Zhang B.;\nRT   \"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\";\nRL   J. Agric. Food Chem. 72:25755-25766(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 
@@ -785,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 44-50",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=(2R)-2,3-dihydroxy-3-methylbutanoate = 3-methyl-2-oxobutanoate\nCC         + H2O; Xref=Rhea:RHEA:24809, ChEBI:CHEBI:11851, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:49072; EC=4.2.1.9;\nCC         Evidence={ECO:0000250|UniProtKB:Q0CPG9};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:24810;\nCC         Evidence={ECO:0000250|UniProtKB:Q0CPG9};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 
@@ -806,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 30,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30",
-  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
-  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
-  "source_locator": "lines 51-57",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=(2R,3R)-2,3-dihydroxy-3-methylpentanoate = (S)-3-methyl-2-\nCC         oxopentanoate + H2O; Xref=Rhea:RHEA:27694, ChEBI:CHEBI:15377,\nCC         ChEBI:CHEBI:35146, ChEBI:CHEBI:49258; EC=4.2.1.9;\nCC         Evidence={ECO:0000250|UniProtKB:P05791};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:27695;\nCC         Evidence={ECO:0000250|UniProtKB:P05791};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 30,
+  "retrieved_utc": "2026-11-02T04:24:04.510512+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c8dba2f186ec2f5c49e223d9e4d0a5408127c4f67b41ce2f7a9d3d700501ce5",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7TWW9?format=txt&versions=30"
 }
 ```
 

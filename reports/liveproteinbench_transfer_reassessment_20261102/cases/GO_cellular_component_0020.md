@@ -1,18 +1,16 @@
-# GO_cellular_component_0020: before and after transfer clarification
+# GO_cellular_component_0020
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0020.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0020.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **C** — plasma membrane
+**Expected answer:** **C** — plasma membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | uncertain | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | uncertain | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact-matching sequence has a plasma-membrane GO annotation with IBA evidence, which supports C as a computational inference, not as direct experimental localization. The record also reports experimentally supported secretion and extracellular-region localization, so plasma membrane is not established as its primary residence.
-
-Citations as saved: [C7](#evidence-c7), [H6](#evidence-h6), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic segment is consistent with entry into the secretory pathway, but does not distinguish plasma membrane from microvillus membrane or caveola; the sequence offers no clear basis for assigning one of those specific membrane locations.
-
-
-**Missing item-specific fact**
-
-> The protein-specific GO plasma-membrane annotation or experimental localization information is absent from the question.
-
-
-**Reason**
-
-> Choosing C depends on the item-specific annotation rather than a sequence feature that meaningfully separates the membrane-related options. The secretory signal does not establish plasma-membrane residence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options include specialized membrane regions that are biologically portions of the plasma membrane, but the supplied sequence does not indicate localization to either microvilli or caveolae.
-
-
-### Important caveats
-
-- The plasma-membrane annotation is IBA-based; it is not direct experimental evidence for plasma-membrane residence.
-- The cited experimental subcellular-location annotation reports secretion, and a GO annotation reports extracellular region.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with entry into the secretory pathway, but does not distinguish plasma membrane from microvillus membrane or caveola; the sequence offers no clear basis for assigning one of those specific membrane locations.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific GO plasma-membrane annotation or experimental localization information is absent from the question.",
-    "reason": "Choosing C depends on the item-specific annotation rather than a sequence feature that meaningfully separates the membrane-related options. The secretory signal does not establish plasma-membrane residence."
-  },
-  "case_id": "GO_cellular_component_0020",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C7",
-      "H6",
-      "C5",
-      "C6",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact-matching sequence has a plasma-membrane GO annotation with IBA evidence, which supports C as a computational inference, not as direct experimental localization. The record also reports experimentally supported secretion and extracellular-region localization, so plasma membrane is not established as its primary residence."
-  },
-  "important_caveats": [
-    "The plasma-membrane annotation is IBA-based; it is not direct experimental evidence for plasma-membrane residence.",
-    "The cited experimental subcellular-location annotation reports secretion, and a GO annotation reports extracellular region."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options include specialized membrane regions that are biologically portions of the plasma membrane, but the supplied sequence does not indicate localization to either microvilli or caveolae."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0020",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact-matching sequence has a plasma-membrane GO annotation with IBA evidence, which supports C as a computational inference, not as direct experimental localization. The record also reports experimentally supported secretion and extracellular-region localization, so plasma membrane is not established as its primary residence.",
-    "evidence_ids": ["C7", "H6", "C5", "C6", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic segment is consistent with entry into the secretory pathway, but does not distinguish plasma membrane from microvillus membrane or caveola; the sequence offers no clear basis for assigning one of those specific membrane locations.",
-    "missing_item_specific_fact": "The protein-specific GO plasma-membrane annotation or experimental localization information is absent from the question.",
-    "reason": "Choosing C depends on the item-specific annotation rather than a sequence feature that meaningfully separates the membrane-related options. The secretory signal does not establish plasma-membrane residence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options include specialized membrane regions that are biologically portions of the plasma membrane, but the supplied sequence does not indicate localization to either microvilli or caveolae."
-  },
-  "important_caveats": [
-    "The plasma-membrane annotation is IBA-based; it is not direct experimental evidence for plasma-membrane residence.",
-    "The cited experimental subcellular-location annotation reports secretion, and a GO annotation reports extracellular region."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The GO:0005886 (plasma membrane) annotation exists for this protein (evidence C7, H6), albeit with IBA:GO_Central (computational inference) evidence. However, the primary experimental evidence (ECO:0000269, PubMed:39294191; evidence C5, H4, C6, H5) states the subcellular location is 'Secreted' with GO:0005576 (extracellular region, IDA). The protein is an ecto-5'-nucleotidase/apyrase from Anopheles gambiae salivary glands. Among the four forced choices (microvillus membrane, centrosome, plasma membrane, caveola), plasma membrane is the most defensible because: (1) the IBA annotation exists, (2) ecto-enzymes are conceptually associated with the cell surface, and (3) the other three options are clearly incompatible. The key is weakly supported by the computational annotation and is the best available choice, though the true experimental location is 'secreted/extracellular' rather than membrane-bound.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The N-terminal sequence (MALVRFATIITVLCHLAIQD...) is a classic signal peptide directing the protein into the secretory pathway. The protein contains conserved nucleotidase/apyrase motifs (e.g., the 'GDLIADAYAD' and 'GANGAKTALKK' regions characteristic of the ecto-nucleotidase family), indicating it is an ecto-enzyme acting on extracellular nucleotides. No transmembrane helix or GPI-anchor signal is apparent in the mature sequence. Among the choices: centrosome (B) is incompatible with a secreted enzyme; caveola (D) requires caveolin-binding motifs and palmitoylation sites absent here; microvillus membrane (A) requires specific apical-targeting signals not present. Plasma membrane (C) is the most general cell-surface compartment consistent with an ecto-enzyme acting on the extracellular face, making it the best answer among the forced choices.
-
-
-**Missing item-specific fact**
-
-> The experimental determination that the protein is fully secreted (not membrane-anchored) rather than a membrane-bound ecto-enzyme. Without this, a model cannot be certain the protein is not actually membrane-anchored vs. freely secreted, though this distinction does not change the best answer among the four choices.
-
-
-**Reason**
-
-> A model can reason from the signal peptide, absence of transmembrane domains, ecto-enzyme family identification, and the specificity requirements of caveola/microvillus targeting to eliminate three options and select plasma membrane. The reasoning does not require memorizing this specific protein's annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, plasma membrane is clearly the most defensible. Centrosome is incompatible with a secreted enzyme. Caveola and microvillus membrane are highly specific plasma membrane subdomains requiring targeting signals absent from this sequence. No other option is competitive.
-
-
-### Important caveats
-
-- The true experimentally-determined primary location is 'Secreted' (extracellular region, GO:0005576, IDA), not 'plasma membrane' (GO:0005886, IBA computational inference). The forced-choice format makes plasma membrane the best available answer, but it is not the protein's actual primary location.
-- The plasma membrane GO annotation (C7/H6) carries only IBA:GO_Central evidence (computational inference from related proteins), not experimental data. The experimental evidence (C5/H4, C6/H5) points to secretion.
-- The 2024 Nature Communications paper (PubMed:39294191) that established the 'Secreted' location was published in 2024; the original benchmark may have been constructed before this annotation was updated, potentially explaining why 'plasma membrane' was chosen as the key based on the IBA annotation available at construction time.
-- The protein is from Anopheles gambiae (insect), not a mammalian system. Caveola and microvillus membrane are primarily mammalian/vertebrate concepts; their applicability to insect salivary gland biology is questionable, further weakening options A and D.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal sequence (MALVRFATIITVLCHLAIQD...) is a classic signal peptide directing the protein into the secretory pathway. The protein contains conserved nucleotidase/apyrase motifs (e.g., the 'GDLIADAYAD' and 'GANGAKTALKK' regions characteristic of the ecto-nucleotidase family), indicating it is an ecto-enzyme acting on extracellular nucleotides. No transmembrane helix or GPI-anchor signal is apparent in the mature sequence. Among the choices: centrosome (B) is incompatible with a secreted enzyme; caveola (D) requires caveolin-binding motifs and palmitoylation sites absent here; microvillus membrane (A) requires specific apical-targeting signals not present. Plasma membrane (C) is the most general cell-surface compartment consistent with an ecto-enzyme acting on the extracellular face, making it the best answer among the forced choices.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The experimental determination that the protein is fully secreted (not membrane-anchored) rather than a membrane-bound ecto-enzyme. Without this, a model cannot be certain the protein is not actually membrane-anchored vs. freely secreted, though this distinction does not change the best answer among the four choices.",
-    "reason": "A model can reason from the signal peptide, absence of transmembrane domains, ecto-enzyme family identification, and the specificity requirements of caveola/microvillus targeting to eliminate three options and select plasma membrane. The reasoning does not require memorizing this specific protein's annotation."
-  },
-  "case_id": "GO_cellular_component_0020",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H4",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The GO:0005886 (plasma membrane) annotation exists for this protein (evidence C7, H6), albeit with IBA:GO_Central (computational inference) evidence. However, the primary experimental evidence (ECO:0000269, PubMed:39294191; evidence C5, H4, C6, H5) states the subcellular location is 'Secreted' with GO:0005576 (extracellular region, IDA). The protein is an ecto-5'-nucleotidase/apyrase from Anopheles gambiae salivary glands. Among the four forced choices (microvillus membrane, centrosome, plasma membrane, caveola), plasma membrane is the most defensible because: (1) the IBA annotation exists, (2) ecto-enzymes are conceptually associated with the cell surface, and (3) the other three options are clearly incompatible. The key is weakly supported by the computational annotation and is the best available choice, though the true experimental location is 'secreted/extracellular' rather than membrane-bound."
-  },
-  "important_caveats": [
-    "The true experimentally-determined primary location is 'Secreted' (extracellular region, GO:0005576, IDA), not 'plasma membrane' (GO:0005886, IBA computational inference). The forced-choice format makes plasma membrane the best available answer, but it is not the protein's actual primary location.",
-    "The plasma membrane GO annotation (C7/H6) carries only IBA:GO_Central evidence (computational inference from related proteins), not experimental data. The experimental evidence (C5/H4, C6/H5) points to secretion.",
-    "The 2024 Nature Communications paper (PubMed:39294191) that established the 'Secreted' location was published in 2024; the original benchmark may have been constructed before this annotation was updated, potentially explaining why 'plasma membrane' was chosen as the key based on the IBA annotation available at construction time.",
-    "The protein is from Anopheles gambiae (insect), not a mammalian system. Caveola and microvillus membrane are primarily mammalian/vertebrate concepts; their applicability to insect salivary gland biology is questionable, further weakening options A and D."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, plasma membrane is clearly the most defensible. Centrosome is incompatible with a secreted enzyme. Caveola and microvillus membrane are highly specific plasma membrane subdomains requiring targeting signals absent from this sequence. No other option is competitive."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0020",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The GO:0005886 (plasma membrane) annotation exists for this protein (evidence C7, H6), albeit with IBA:GO_Central (computational inference) evidence. However, the primary experimental evidence (ECO:0000269, PubMed:39294191; evidence C5, H4, C6, H5) states the subcellular location is 'Secreted' with GO:0005576 (extracellular region, IDA). The protein is an ecto-5'-nucleotidase/apyrase from Anopheles gambiae salivary glands. Among the four forced choices (microvillus membrane, centrosome, plasma membrane, caveola), plasma membrane is the most defensible because: (1) the IBA annotation exists, (2) ecto-enzymes are conceptually associated with the cell surface, and (3) the other three options are clearly incompatible. The key is weakly supported by the computational annotation and is the best available choice, though the true experimental location is 'secreted/extracellular' rather than membrane-bound.",
-    "evidence_ids": ["C5", "C6", "C7", "H4", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The N-terminal sequence (MALVRFATIITVLCHLAIQD...) is a classic signal peptide directing the protein into the secretory pathway. The protein contains conserved nucleotidase/apyrase motifs (e.g., the 'GDLIADAYAD' and 'GANGAKTALKK' regions characteristic of the ecto-nucleotidase family), indicating it is an ecto-enzyme acting on extracellular nucleotides. No transmembrane helix or GPI-anchor signal is apparent in the mature sequence. Among the choices: centrosome (B) is incompatible with a secreted enzyme; caveola (D) requires caveolin-binding motifs and palmitoylation sites absent here; microvillus membrane (A) requires specific apical-targeting signals not present. Plasma membrane (C) is the most general cell-surface compartment consistent with an ecto-enzyme acting on the extracellular face, making it the best answer among the forced choices.",
-    "missing_item_specific_fact": "The experimental determination that the protein is fully secreted (not membrane-anchored) rather than a membrane-bound ecto-enzyme. Without this, a model cannot be certain the protein is not actually membrane-anchored vs. freely secreted, though this distinction does not change the best answer among the four choices.",
-    "reason": "A model can reason from the signal peptide, absence of transmembrane domains, ecto-enzyme family identification, and the specificity requirements of caveola/microvillus targeting to eliminate three options and select plasma membrane. The reasoning does not require memorizing this specific protein's annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, plasma membrane is clearly the most defensible. Centrosome is incompatible with a secreted enzyme. Caveola and microvillus membrane are highly specific plasma membrane subdomains requiring targeting signals absent from this sequence. No other option is competitive."
-  },
-  "important_caveats": [
-    "The true experimentally-determined primary location is 'Secreted' (extracellular region, GO:0005576, IDA), not 'plasma membrane' (GO:0005886, IBA computational inference). The forced-choice format makes plasma membrane the best available answer, but it is not the protein's actual primary location.",
-    "The plasma membrane GO annotation (C7/H6) carries only IBA:GO_Central evidence (computational inference from related proteins), not experimental data. The experimental evidence (C5/H4, C6/H5) points to secretion.",
-    "The 2024 Nature Communications paper (PubMed:39294191) that established the 'Secreted' location was published in 2024; the original benchmark may have been constructed before this annotation was updated, potentially explaining why 'plasma membrane' was chosen as the key based on the IBA annotation available at construction time.",
-    "The protein is from Anopheles gambiae (insect), not a mammalian system. Caveola and microvillus membrane are primarily mammalian/vertebrate concepts; their applicability to insect salivary gland biology is questionable, further weakening options A and D."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -393,10 +160,9 @@ Citations as saved: [C7](#evidence-c7), [H6](#evidence-h6), [C5](#evidence-c5), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: uncertain
 
@@ -512,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5TVM9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3683149afc9d326cb4fb66628aaf088737022753f738d7c8dc443028715694e1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 570,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3683149afc9d326cb4fb66628aaf088737022753f738d7c8dc443028715694e1",
   "current_entry_audit": {
     "entryVersion": 122,
     "firstPublicDate": "2025-02-05",
@@ -543,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-01-09",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "current_source_sequence_sha256": "3683149afc9d326cb4fb66628aaf088737022753f738d7c8dc443028715694e1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 570,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3683149afc9d326cb4fb66628aaf088737022753f738d7c8dc443028715694e1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 120,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5TVM9",
   "selected_historical_entry_version": 120,
+  "selected_historical_record_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
+  "selected_historical_source_sequence_length": 570,
+  "selected_historical_source_sequence_sha256": "3683149afc9d326cb4fb66628aaf088737022753f738d7c8dc443028715694e1",
   "selected_historical_version": {
     "accession": "Q5TVM9",
     "database": "Swiss-Prot",
@@ -561,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "APY_ANOGA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
-  "selected_historical_source_sequence_sha256": "3683149afc9d326cb4fb66628aaf088737022753f738d7c8dc443028715694e1",
-  "selected_historical_source_sequence_length": 570,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 120,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -596,15 +352,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5TVM9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -615,15 +371,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":122,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-01-09\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -634,15 +390,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"African malaria mosquito\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000007062\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Nematocera\",\"Culicoidea\",\"Culicidae\",\"Anophelinae\",\"Anopheles\"],\"scientificName\":\"Anopheles gambiae\",\"taxonId\":7165}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -653,15 +409,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39294191\",\"source\":\"PubMed\"}],\"value\":\"5' nucleotidase ecto\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39294191\",\"source\":\"PubMed\"}],\"value\":\"Ag5'NTE\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"10801886\",\"source\":\"PubMed\"}],\"value\":\"Apyrase-like 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"10801886\",\"source\":\"PubMed\"}],\"value\":\"AgApyL1\"}]}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39294191\",\"source\":\"PubMed\"}],\"value\":\"3.6.1.5\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39294191\",\"source\":\"PubMed\"}],\"value\":\"Apyrase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39294191\",\"source\":\"PubMed\"}],\"value\":\"AgApy\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -672,15 +428,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39294191\",\"source\":\"PubMed\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -691,15 +447,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/15",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"17913537\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000314\",\"id\":\"39294191\",\"source\":\"PubMed\"}],\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/15",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -710,15 +466,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005886\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:plasma membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -729,15 +485,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Lombardo F.\",\"Di Cristina M.\",\"Spanos L.\",\"Louis C.\",\"Coluzzi M.\",\"Arca B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"10801886\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m909547199\"}],\"citationType\":\"journal article\",\"firstPage\":\"23861\",\"id\":\"10801886\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"23868\",\"publicationDate\":\"2000\",\"title\":\"Promoter sequences of the putative Anopheles gambiae apyrase confer salivary gland expression in Drosophila melanogaster.\",\"volume\":\"275\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAB40347.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAB40347.1\",\"source\":\"EMBL\"}],\"type\":\"STRAIN\",\"value\":\"Gasua\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"CAB40347.1\",\"source\":\"EMBL\"}],\"type\":\"TISSUE\",\"value\":\"Thorax\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"DEVELOPMENTAL STAGE\",\"INDUCTION BY BLOOD FEEDING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -748,15 +504,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json",
-  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
-  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Pala Z.R.\",\"Alves E Silva T.L.\",\"Minai M.\",\"Crews B.\",\"Patino-Martinez E.\",\"Carmona-Rivera C.\",\"Valenzuela Leon P.C.\",\"Martin-Martin I.\",\"Flores-Garcia Y.\",\"Cachau R.E.\",\"Muslinkina L.\",\"Gittis A.G.\",\"Srivastava N.\",\"Garboczi D.N.\",\"Alves D.A.\",\"Kaplan M.J.\",\"Fischer E.\",\"Calvo E.\",\"Vega-Rodriguez J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39294191\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41467-024-52502-3\"}],\"citationType\":\"journal article\",\"firstPage\":\"8194\",\"id\":\"39294191\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"8194\",\"publicationDate\":\"2024\",\"title\":\"Mosquito salivary apyrase regulates blood meal hemostasis and facilitates malaria parasite transmission.\",\"volume\":\"15\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"IDENTIFICATION BY MASS SPECTROMETRY\",\"FUNCTION\",\"FUNCTION (MICROBIAL INFECTION)\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"INTERACTION WITH HUMAN PLAT\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-01T06:25:23.238423+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "d9052fa8ef05e8e69b89dab60cf36fb3e5b7be30c46effc6cc02e314338d28a0",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5TVM9.json"
 }
 ```
 
@@ -766,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 120,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120",
-  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
-  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   APY_ANOGA               Reviewed;         570 AA.\nAC   Q5TVM9; Q9UB34;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   09-JAN-2007, sequence version 1.\nDT   28-JAN-2026, entry version 120.\nDE   RecName: Full=Apyrase {ECO:0000303|PubMed:39294191};\nDE            Short=AgApy {ECO:0000303|PubMed:39294191};\nDE            EC=3.6.1.5 {ECO:0000269|PubMed:39294191};\nDE   AltName: Full=5' nucleotidase ecto {ECO:0000303|PubMed:39294191};\nDE            Short=Ag5'NTE {ECO:0000303|PubMed:39294191};\nDE   AltName: Full=Apyrase-like 1 {ECO:0000303|PubMed:10801886};\nDE            Short=AgApyL1 {ECO:0000303|PubMed:10801886};\nDE   Flags: Precursor;\nGN   ORFNames=AgaP_AGAP011026 {ECO:0000312|EMBL:EAA05427.2};\nOS   Anopheles gambiae (African malaria mosquito).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Nematocera; Culicoidea; Culicidae;\nOC   Anophelinae; Anopheles.\nOX   NCBI_TaxID=7165 {ECO:0000312|Proteomes:UP000007062};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 120,
+  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
+  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120"
 }
 ```
 
@@ -787,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 120,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120",
-  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
-  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
-  "source_locator": "lines 20-29",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAB40347.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], DEVELOPMENTAL STAGE, AND INDUCTION BY BLOOD\nRP   FEEDING.\nRC   STRAIN=Gasua {ECO:0000312|EMBL:CAB40347.1};\nRC   TISSUE=Thorax {ECO:0000312|EMBL:CAB40347.1};\nRX   PubMed=10801886; DOI=10.1074/jbc.m909547199;\nRA   Lombardo F., Di Cristina M., Spanos L., Louis C., Coluzzi M., Arca B.;\nRT   \"Promoter sequences of the putative Anopheles gambiae apyrase confer\nRT   salivary gland expression in Drosophila melanogaster.\";\nRL   J. Biol. Chem. 275:23861-23868(2000).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 120,
+  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
+  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120"
 }
 ```
 
@@ -808,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 120,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120",
-  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
-  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
-  "source_locator": "lines 73-85",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   IDENTIFICATION BY MASS SPECTROMETRY, FUNCTION, FUNCTION (MICROBIAL\nRP   INFECTION), CATALYTIC ACTIVITY, COFACTOR, INTERACTION WITH HUMAN PLAT,\nRP   SUBCELLULAR LOCATION, AND TISSUE SPECIFICITY.\nRX   PubMed=39294191; DOI=10.1038/s41467-024-52502-3;\nRA   Pala Z.R., Alves E Silva T.L., Minai M., Crews B., Patino-Martinez E.,\nRA   Carmona-Rivera C., Valenzuela Leon P.C., Martin-Martin I.,\nRA   Flores-Garcia Y., Cachau R.E., Muslinkina L., Gittis A.G., Srivastava N.,\nRA   Garboczi D.N., Alves D.A., Kaplan M.J., Fischer E., Calvo E.,\nRA   Vega-Rodriguez J.;\nRT   \"Mosquito salivary apyrase regulates blood meal hemostasis and facilitates\nRT   malaria parasite transmission.\";\nRL   Nat. Commun. 15:8194-8194(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 120,
+  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-85",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
+  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120"
 }
 ```
 
@@ -829,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 120,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120",
-  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
-  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
-  "source_locator": "lines 114-114",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000269|PubMed:39294191}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 120,
+  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 114-114",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
+  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120"
 }
 ```
 
@@ -850,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 120,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120",
-  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
-  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
-  "source_locator": "lines 154-154",
   "excerpt": "DR   GO; GO:0005615; C:extracellular space; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 120,
+  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 154-154",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
+  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120"
 }
 ```
 
@@ -871,18 +627,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 120,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120",
-  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
-  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
-  "source_locator": "lines 155-155",
   "excerpt": "DR   GO; GO:0005886; C:plasma membrane; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 120,
+  "retrieved_utc": "2026-11-01T06:28:38.028811+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 155-155",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "dc7c135ba0e00346e9feec3ec57f78300f98f0e06c9e00b0cc63acc479548945",
+  "url": "https://rest.uniprot.org/unisave/Q5TVM9?format=txt&versions=120"
 }
 ```
 
@@ -893,15 +649,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59790-59798",
   "excerpt": "[Term]\nid: GO:0005813\nname: centrosome\nnamespace: cellular_component\ndef: \"A structure comprised of a core structure (in most organisms, a pair of centrioles) and peripheral material from which a microtubule-based structure, such as a spindle apparatus, is organized. Centrosomes occur close to the nucleus during interphase in many eukaryotic cells, though in animal cells it changes continually during the cell-division cycle.\" [GOC:mah, ISBN:0198547684]\nsubset: goslim_pir\nxref: Wikipedia:Centrosome\nis_a: GO:0005815 ! microtubule organizing center\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005813",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59790-59798",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005813"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -912,15 +668,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60420-60454",
   "excerpt": "[Term]\nid: GO:0005886\nname: plasma membrane\nnamespace: cellular_component\nalt_id: GO:0005887\nalt_id: GO:0005904\ndef: \"The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.\" [ISBN:0716731363]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nsynonym: \"bacterial inner membrane\" NARROW []\nsynonym: \"cell membrane\" EXACT []\nsynonym: \"cellular membrane\" EXACT [NIF_Subcellular:sao6433132645]\nsynonym: \"cytoplasmic membrane\" EXACT []\nsynonym: \"inner endospore membrane\" NARROW []\nsynonym: \"integral component of plasma membrane\" NARROW []\nsynonym: \"integral to plasma membrane\" NARROW []\nsynonym: \"juxtamembrane\" BROAD []\nsynonym: \"plasma membrane lipid bilayer\" NARROW [GOC:mah]\nsynonym: \"plasmalemma\" EXACT []\nxref: NIF_Subcellular:sao1663586795\nxref: Wikipedia:Cell_membrane\nis_a: GO:0016020 ! membrane\nrelationship: part_of GO:0071944 ! cell periphery\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005886",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60420-60454",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005886"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -931,15 +687,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 60572-60582",
   "excerpt": "[Term]\nid: GO:0005901\nname: caveola\nnamespace: cellular_component\nalt_id: GO:0016599\ndef: \"A membrane raft that forms small pit, depression, or invagination that communicates with the outside of a cell and extends inward, indenting the cytoplasm and the cell membrane. Examples include flask-shaped invaginations of the plasma membrane in adipocytes associated with caveolin proteins, and minute pits or incuppings of the cell membrane formed during pinocytosis. Caveolae may be pinched off to form free vesicles within the cytoplasm.\" [GOC:mah, ISBN:0721662544, PMID:16645198]\nsynonym: \"caveolae\" EXACT []\nsynonym: \"caveolar membrane\" RELATED []\nxref: Wikipedia:Caveolae\nis_a: GO:0044853 ! plasma membrane raft\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005901",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 60572-60582",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005901"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -950,15 +706,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 177423-177430",
   "excerpt": "[Term]\nid: GO:0031528\nname: microvillus membrane\nnamespace: cellular_component\ndef: \"The portion of the plasma membrane surrounding a microvillus.\" [GOC:mah]\nis_a: GO:0031253 ! cell projection membrane\nrelationship: part_of GO:0005902 ! microvillus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031528",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 177423-177430",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031528"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

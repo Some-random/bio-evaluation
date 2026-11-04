@@ -1,18 +1,16 @@
-# GO_cellular_component_0035: before and after transfer clarification
+# GO_cellular_component_0035
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0035.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0035.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — microneme
+**Expected answer:** **A** — microneme
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a Toxoplasma gondii UniProt record annotated to the microneme. The subcellular-location annotation cites experimental evidence (ECO:0000269), supporting choice A for this protein.
-
-Citations as saved: [H3](#evidence-h3), [C5](#evidence-c5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence does not provide a clear, sufficiently specific localization signal that distinguishes a microneme from the other listed compartments. General targeting-signal reasoning is not enough to establish microneme residence.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity or experimental localization as a Toxoplasma microneme protein, neither of which is supplied in the question.
-
-
-**Reason**
-
-> The key is supported by reviewer-only protein-specific annotation, but that annotation and sequence-to-protein identity were not provided to the evaluated model. Recognizing or retrieving that identity would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only evidence supports microneme localization for the sequence-matched protein; no competing listed option has comparable support.
-
-
-### Important caveats
-
-- The experimental evidence is represented by a UniProt annotation citing PubMed 33803212; the underlying paper was not independently reviewed here.
-- The organism and protein identity were inferred from reviewer-only sequence-matched records and were absent from the evaluated model input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence does not provide a clear, sufficiently specific localization signal that distinguishes a microneme from the other listed compartments. General targeting-signal reasoning is not enough to establish microneme residence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity or experimental localization as a Toxoplasma microneme protein, neither of which is supplied in the question.",
-    "reason": "The key is supported by reviewer-only protein-specific annotation, but that annotation and sequence-to-protein identity were not provided to the evaluated model. Recognizing or retrieving that identity would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "GO_cellular_component_0035",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "C5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a Toxoplasma gondii UniProt record annotated to the microneme. The subcellular-location annotation cites experimental evidence (ECO:0000269), supporting choice A for this protein."
-  },
-  "important_caveats": [
-    "The experimental evidence is represented by a UniProt annotation citing PubMed 33803212; the underlying paper was not independently reviewed here.",
-    "The organism and protein identity were inferred from reviewer-only sequence-matched records and were absent from the evaluated model input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports microneme localization for the sequence-matched protein; no competing listed option has comparable support."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0035",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a Toxoplasma gondii UniProt record annotated to the microneme. The subcellular-location annotation cites experimental evidence (ECO:0000269), supporting choice A for this protein.",
-    "evidence_ids": ["H3", "C5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence does not provide a clear, sufficiently specific localization signal that distinguishes a microneme from the other listed compartments. General targeting-signal reasoning is not enough to establish microneme residence.",
-    "missing_item_specific_fact": "The protein-specific identity or experimental localization as a Toxoplasma microneme protein, neither of which is supplied in the question.",
-    "reason": "The key is supported by reviewer-only protein-specific annotation, but that annotation and sequence-to-protein identity were not provided to the evaluated model. Recognizing or retrieving that identity would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only evidence supports microneme localization for the sequence-matched protein; no competing listed option has comparable support."
-  },
-  "important_caveats": [
-    "The experimental evidence is represented by a UniProt annotation citing PubMed 33803212; the underlying paper was not independently reviewed here.",
-    "The organism and protein identity were inferred from reviewer-only sequence-matched records and were absent from the evaluated model input."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry (A0A7J6K0L7) is named 'Microneme protein 21' (MIC21) from Toxoplasma gondii. Its subcellular location is annotated as 'Cytoplasmic vesicle, secretory vesicle, microneme' with experimental evidence code ECO:0000269 (inferred by direct assay) from PubMed:33803212. The GO cross-reference GO:0020009 (C:microneme) is present. The sequence matches the benchmark exactly (347 AA, SHA256 confirmed). The expected answer 'microneme' is directly supported by experimentally-derived annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H1](#evidence-h1), [H3](#evidence-h3), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A weak argument exists: the N-terminal region (MLFPPGIFSEATAFSHKRS...) has some hydrophobic character suggestive of a signal peptide, implying entry into the secretory pathway, which would disfavor nucleolus (B), inclusion body (C), and mitochondrial membrane (D, which requires transmembrane domains not clearly present). Among the four choices, only 'microneme' represents a secretory organelle. However, this signal peptide is not textbook-clear, and the critical step—knowing that this particular protein is a microneme-specific protein rather than a rhoptry or dense granule protein—cannot be derived from the sequence.
-
-
-**Missing item-specific fact**
-
-> The organism identity (Toxoplasma gondii, an apicomplexan parasite) is not provided in the question input. Without this, 'microneme' is not even a biologically relevant compartment for a generic eukaryotic protein. Furthermore, even with organism context, distinguishing a microneme protein from other apicomplexan secretory proteins (rhoptry, dense granule) requires protein-specific experimental data (here, ECO:0000269 from PubMed:33803212), not sequence-intrinsic targeting logic.
-
-
-**Reason**
-
-> The correct identification of this protein as a microneme resident depends on recognizing it as MIC21 from an apicomplexan parasite and knowing its experimentally determined localization. The sequence lacks a definitive, unambiguous targeting signal that would specifically predict 'microneme' over other options. The weak signal-peptide argument eliminates some distractors but does not positively identify microneme without organism and protein-specific knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options (microneme, nucleolus, inclusion body, mitochondrial membrane) are structurally and functionally distinct. If a model reasons toward 'secretory pathway' via a possible signal peptide, microneme is the only option consistent with that pathway. The other options require features (NLS, transmembrane domains, aggregation-prone stretches) that are largely absent. No two options are genuinely defensible simultaneously.
-
-
-### Important caveats
-
-- The organism (Toxoplasma gondii) is not stated in the model input; 'microneme' is an apicomplexan-specific organelle, making this term meaningless without organism context.
-- The subcellular location annotation carries experimental evidence (ECO:0000269, direct assay), confirming the answer is experimentally established, not merely computational.
-- The GO annotation for microneme (GO:0020009) uses IEA:UniProtKB-SubCell evidence code, meaning it is computationally propagated from the UniProt subcellular location comment, which itself is experimentally derived.
-- The N-terminal region's identity as a true signal peptide is uncertain; it could also be consistent with other targeting mechanisms, weakening the reasoning-based path to the answer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A weak argument exists: the N-terminal region (MLFPPGIFSEATAFSHKRS...) has some hydrophobic character suggestive of a signal peptide, implying entry into the secretory pathway, which would disfavor nucleolus (B), inclusion body (C), and mitochondrial membrane (D, which requires transmembrane domains not clearly present). Among the four choices, only 'microneme' represents a secretory organelle. However, this signal peptide is not textbook-clear, and the critical step—knowing that this particular protein is a microneme-specific protein rather than a rhoptry or dense granule protein—cannot be derived from the sequence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The organism identity (Toxoplasma gondii, an apicomplexan parasite) is not provided in the question input. Without this, 'microneme' is not even a biologically relevant compartment for a generic eukaryotic protein. Furthermore, even with organism context, distinguishing a microneme protein from other apicomplexan secretory proteins (rhoptry, dense granule) requires protein-specific experimental data (here, ECO:0000269 from PubMed:33803212), not sequence-intrinsic targeting logic.",
-    "reason": "The correct identification of this protein as a microneme resident depends on recognizing it as MIC21 from an apicomplexan parasite and knowing its experimentally determined localization. The sequence lacks a definitive, unambiguous targeting signal that would specifically predict 'microneme' over other options. The weak signal-peptide argument eliminates some distractors but does not positively identify microneme without organism and protein-specific knowledge."
-  },
-  "case_id": "GO_cellular_component_0035",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H1",
-      "H3",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A7J6K0L7) is named 'Microneme protein 21' (MIC21) from Toxoplasma gondii. Its subcellular location is annotated as 'Cytoplasmic vesicle, secretory vesicle, microneme' with experimental evidence code ECO:0000269 (inferred by direct assay) from PubMed:33803212. The GO cross-reference GO:0020009 (C:microneme) is present. The sequence matches the benchmark exactly (347 AA, SHA256 confirmed). The expected answer 'microneme' is directly supported by experimentally-derived annotation."
-  },
-  "important_caveats": [
-    "The organism (Toxoplasma gondii) is not stated in the model input; 'microneme' is an apicomplexan-specific organelle, making this term meaningless without organism context.",
-    "The subcellular location annotation carries experimental evidence (ECO:0000269, direct assay), confirming the answer is experimentally established, not merely computational.",
-    "The GO annotation for microneme (GO:0020009) uses IEA:UniProtKB-SubCell evidence code, meaning it is computationally propagated from the UniProt subcellular location comment, which itself is experimentally derived.",
-    "The N-terminal region's identity as a true signal peptide is uncertain; it could also be consistent with other targeting mechanisms, weakening the reasoning-based path to the answer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options (microneme, nucleolus, inclusion body, mitochondrial membrane) are structurally and functionally distinct. If a model reasons toward 'secretory pathway' via a possible signal peptide, microneme is the only option consistent with that pathway. The other options require features (NLS, transmembrane domains, aggregation-prone stretches) that are largely absent. No two options are genuinely defensible simultaneously."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0035",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A7J6K0L7) is named 'Microneme protein 21' (MIC21) from Toxoplasma gondii. Its subcellular location is annotated as 'Cytoplasmic vesicle, secretory vesicle, microneme' with experimental evidence code ECO:0000269 (inferred by direct assay) from PubMed:33803212. The GO cross-reference GO:0020009 (C:microneme) is present. The sequence matches the benchmark exactly (347 AA, SHA256 confirmed). The expected answer 'microneme' is directly supported by experimentally-derived annotation.",
-    "evidence_ids": ["C4", "C5", "C7", "H1", "H3", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A weak argument exists: the N-terminal region (MLFPPGIFSEATAFSHKRS...) has some hydrophobic character suggestive of a signal peptide, implying entry into the secretory pathway, which would disfavor nucleolus (B), inclusion body (C), and mitochondrial membrane (D, which requires transmembrane domains not clearly present). Among the four choices, only 'microneme' represents a secretory organelle. However, this signal peptide is not textbook-clear, and the critical step—knowing that this particular protein is a microneme-specific protein rather than a rhoptry or dense granule protein—cannot be derived from the sequence.",
-    "missing_item_specific_fact": "The organism identity (Toxoplasma gondii, an apicomplexan parasite) is not provided in the question input. Without this, 'microneme' is not even a biologically relevant compartment for a generic eukaryotic protein. Furthermore, even with organism context, distinguishing a microneme protein from other apicomplexan secretory proteins (rhoptry, dense granule) requires protein-specific experimental data (here, ECO:0000269 from PubMed:33803212), not sequence-intrinsic targeting logic.",
-    "reason": "The correct identification of this protein as a microneme resident depends on recognizing it as MIC21 from an apicomplexan parasite and knowing its experimentally determined localization. The sequence lacks a definitive, unambiguous targeting signal that would specifically predict 'microneme' over other options. The weak signal-peptide argument eliminates some distractors but does not positively identify microneme without organism and protein-specific knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options (microneme, nucleolus, inclusion body, mitochondrial membrane) are structurally and functionally distinct. If a model reasons toward 'secretory pathway' via a possible signal peptide, microneme is the only option consistent with that pathway. The other options require features (NLS, transmembrane domains, aggregation-prone stretches) that are largely absent. No two options are genuinely defensible simultaneously."
-  },
-  "important_caveats": [
-    "The organism (Toxoplasma gondii) is not stated in the model input; 'microneme' is an apicomplexan-specific organelle, making this term meaningless without organism context.",
-    "The subcellular location annotation carries experimental evidence (ECO:0000269, direct assay), confirming the answer is experimentally established, not merely computational.",
-    "The GO annotation for microneme (GO:0020009) uses IEA:UniProtKB-SubCell evidence code, meaning it is computationally propagated from the UniProt subcellular location comment, which itself is experimentally derived.",
-    "The N-terminal region's identity as a true signal peptide is uncertain; it could also be consistent with other targeting mechanisms, weakening the reasoning-based path to the answer."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7J6K0L7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e6a60e549047ff4fdcf21f5559d9f6f91968d32d1ff037b71df24b56bb75c0f5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 347,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e6a60e549047ff4fdcf21f5559d9f6f91968d32d1ff037b71df24b56bb75c0f5",
   "current_entry_audit": {
     "entryVersion": 10,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-04-07",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "current_source_sequence_sha256": "e6a60e549047ff4fdcf21f5559d9f6f91968d32d1ff037b71df24b56bb75c0f5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 347,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e6a60e549047ff4fdcf21f5559d9f6f91968d32d1ff037b71df24b56bb75c0f5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 9,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7J6K0L7",
   "selected_historical_entry_version": 9,
+  "selected_historical_record_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
+  "selected_historical_source_sequence_length": 347,
+  "selected_historical_source_sequence_sha256": "e6a60e549047ff4fdcf21f5559d9f6f91968d32d1ff037b71df24b56bb75c0f5",
   "selected_historical_version": {
     "accession": "A0A7J6K0L7",
     "database": "Swiss-Prot",
@@ -553,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "MIC21_TOXGO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
-  "selected_historical_source_sequence_sha256": "e6a60e549047ff4fdcf21f5559d9f6f91968d32d1ff037b71df24b56bb75c0f5",
-  "selected_historical_source_sequence_length": 347,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 9,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7J6K0L7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -607,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":10,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-04-07\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -626,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000557509\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Conoidasida\",\"Coccidia\",\"Eucoccidiorida\",\"Eimeriorina\",\"Sarcocystidae\",\"Toxoplasma\"],\"scientificName\":\"Toxoplasma gondii\",\"taxonId\":5811}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -645,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"value\":\"Microneme protein 21\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"value\":\"MIC21\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -664,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"id\":\"SL-0163\",\"value\":\"Cytoplasmic vesicle, secretory vesicle, microneme\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -683,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/5",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/5",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -702,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/6",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0020009\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:microneme\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/6",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -721,15 +481,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json",
-  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
-  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Tagoe D.N.A.\",\"Drozda A.A.\",\"Falco J.A.\",\"Bechtel T.J.\",\"Weerapana E.\",\"Gubbels M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33803212\"},{\"database\":\"DOI\",\"id\":\"10.3390/life11030217\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"33803212\",\"journal\":\"Life\",\"lastPage\":\"0\",\"publicationDate\":\"2021\",\"title\":\"Ferlins and TgDOC2 in Toxoplasma Microneme, Rhoptry and Dense Granule Secretion.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"RH\"}],\"referenceNumber\":2,\"referencePositions\":[\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:38.305811+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7a35bda77a263b51accbf70ad6ae5d8b3ff82de50d0e5bb6c80d7372f06eaaed",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K0L7.json"
 }
 ```
 
@@ -739,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9",
-  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
-  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   MIC21_TOXGO             Reviewed;         347 AA.\nAC   A0A7J6K0L7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   07-APR-2021, sequence version 1.\nDT   28-JAN-2026, entry version 9.\nDE   RecName: Full=Microneme protein 21 {ECO:0000303|PubMed:33803212};\nDE            Short=MIC21 {ECO:0000303|PubMed:33803212};\nGN   ORFNames=TGRH88_042550 {ECO:0000312|EMBL:KAF4640330.1};\nOS   Toxoplasma gondii.\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Conoidasida; Coccidia;\nOC   Eucoccidiorida; Eimeriorina; Sarcocystidae; Toxoplasma.\nOX   NCBI_TaxID=5811 {ECO:0000312|Proteomes:UP000557509};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9"
 }
 ```
 
@@ -760,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9",
-  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
-  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
-  "source_locator": "lines 19-27",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   SUBCELLULAR LOCATION, AND DEVELOPMENTAL STAGE.\nRC   STRAIN=RH {ECO:0000303|PubMed:33803212};\nRX   PubMed=33803212; DOI=10.3390/life11030217;\nRA   Tagoe D.N.A., Drozda A.A., Falco J.A., Bechtel T.J., Weerapana E.,\nRA   Gubbels M.J.;\nRT   \"Ferlins and TgDOC2 in Toxoplasma Microneme, Rhoptry and Dense Granule\nRT   Secretion.\";\nRL   Life 11:0-0(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 19-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9"
 }
 ```
 
@@ -781,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9",
-  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
-  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
-  "source_locator": "lines 28-29",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cytoplasmic vesicle, secretory vesicle, microneme\nCC       {ECO:0000269|PubMed:33803212}. Secreted {ECO:0000269|PubMed:33803212}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9"
 }
 ```
 
@@ -802,18 +562,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9",
-  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
-  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
-  "source_locator": "lines 43-43",
   "excerpt": "DR   GO; GO:0031410; C:cytoplasmic vesicle; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9"
 }
 ```
 
@@ -823,18 +583,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9",
-  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
-  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
-  "source_locator": "lines 44-44",
   "excerpt": "DR   GO; GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 44-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9"
 }
 ```
 
@@ -844,18 +604,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 9,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9",
-  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
-  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
-  "source_locator": "lines 45-45",
   "excerpt": "DR   GO; GO:0020009; C:microneme; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 9,
+  "retrieved_utc": "2026-11-02T04:25:42.382834+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "767fc8b5c9e3ec533c3643e4ae5fbbe22ae25c3ac2f3c3fd6e1dc2d043a4b1e1",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K0L7?format=txt&versions=9"
 }
 ```
 
@@ -866,15 +626,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58875-58891",
   "excerpt": "[Term]\nid: GO:0005730\nname: nucleolus\nnamespace: cellular_component\ndef: \"A small, dense body one or more of which are present in the nucleus of eukaryotic cells. It is rich in RNA and protein, is not bounded by a limiting membrane, and is not seen during mitosis. Its prime function is the transcription of the nucleolar DNA into 45S ribosomal-precursor RNA, the processing of this RNA into 5.8S, 18S, and 28S components of ribosomal RNA, and the association of these components with 5S RNA and proteins synthesized outside the nucleolus. This association results in the formation of ribonucleoprotein precursors; these pass into the cytoplasm and mature into the 40S and 60S subunits of the ribosome.\" [ISBN:0198506732]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_yeast\nxref: NIF_Subcellular:sao1820400233\nxref: Wikipedia:Nucleolus\nis_a: GO:0043232 ! intracellular membraneless organelle\nrelationship: part_of GO:0031981 ! nuclear lumen\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005730",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58875-58891",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005730"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -885,15 +645,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 124897-124907",
   "excerpt": "[Term]\nid: GO:0016234\nname: inclusion body\nnamespace: cellular_component\ndef: \"A discrete intracellular part formed of aggregated molecules such as proteins or other biopolymers.\" [GOC:mah, PMID:11121744]\nsynonym: \"cellular inclusion\" RELATED [NIF_Subcellular:sao120573470]\nsynonym: \"neuronal cytoplasmic inclusion\" NARROW []\nxref: NIF_Subcellular:sao120573470\nxref: Wikipedia:Inclusion_bodies\nis_a: GO:0005622 ! intracellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016234",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 124897-124907",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016234"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -904,15 +664,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 155191-155200",
   "excerpt": "[Term]\nid: GO:0020009\nname: microneme\nnamespace: cellular_component\ndef: \"A small, elongated secretory organelle that forms part of the apical complex, located along the main axis of an apicomplexan parasite cell within the extreme apical region and at the periphery under the inner membrane complex. Of the specialized secretory compartments identified in apicomplexans, micronemes discharge their contents first, during initial contact of the parasite's apical pole with the host cell surface. Micronemal proteins function during parasite attachment and penetration into the target cell.\" [ISBN:0521664470, PMID:11801218]\nsynonym: \"sarconeme\" RELATED []\nxref: Wikipedia:Microneme\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\nrelationship: part_of GO:0020007 ! apical complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0020009",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 155191-155200",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0020009"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -923,15 +683,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 181484-181492",
   "excerpt": "[Term]\nid: GO:0031966\nname: mitochondrial membrane\nnamespace: cellular_component\ndef: \"Either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope.\" [GOC:mah, NIF_Subcellular:sao1045389829]\nxref: NIF_Subcellular:sao1045389829\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0005740 ! mitochondrial envelope\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031966",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 181484-181492",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031966"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

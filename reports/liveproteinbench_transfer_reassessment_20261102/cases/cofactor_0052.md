@@ -1,18 +1,16 @@
-# cofactor_0052: before and after transfer clarification
+# cofactor_0052
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0052.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0052.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Zn(2+)
+**Expected answer:** **B** — Zn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt entry for geissoschizine synthase, whose zinc cofactor annotation specifies two Zn(2+) ions per subunit. The annotation is transferred by similarity from UniProtKB:P06525, so it supports the key by inference rather than demonstrating zinc binding experimentally for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may suggest a dehydrogenase-family protein and contains cysteines, but those clues alone do not establish which listed metal is required.
-
-
-**Missing item-specific fact**
-
-> The protein's identity and family-specific cofactor assignment, or direct evidence of its metal requirement, are not supplied in the question.
-
-
-**Reason**
-
-> Choosing zinc depends on recognizing the protein or obtaining its cofactor annotation; the reviewer-only sequence match and database annotation were not available to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports zinc as the intended answer; the other choices are not supported by the supplied sequence alone.
-
-
-### Important caveats
-
-- The zinc annotation is based on similarity to another protein, not independently verified experimental evidence for this exact sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may suggest a dehydrogenase-family protein and contains cysteines, but those clues alone do not establish which listed metal is required.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity and family-specific cofactor assignment, or direct evidence of its metal requirement, are not supplied in the question.",
-    "reason": "Choosing zinc depends on recognizing the protein or obtaining its cofactor annotation; the reviewer-only sequence match and database annotation were not available to the evaluated model."
-  },
-  "case_id": "cofactor_0052",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for geissoschizine synthase, whose zinc cofactor annotation specifies two Zn(2+) ions per subunit. The annotation is transferred by similarity from UniProtKB:P06525, so it supports the key by inference rather than demonstrating zinc binding experimentally for this exact protein."
-  },
-  "important_caveats": [
-    "The zinc annotation is based on similarity to another protein, not independently verified experimental evidence for this exact sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports zinc as the intended answer; the other choices are not supported by the supplied sequence alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0052",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt entry for geissoschizine synthase, whose zinc cofactor annotation specifies two Zn(2+) ions per subunit. The annotation is transferred by similarity from UniProtKB:P06525, so it supports the key by inference rather than demonstrating zinc binding experimentally for this exact protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may suggest a dehydrogenase-family protein and contains cysteines, but those clues alone do not establish which listed metal is required.",
-    "missing_item_specific_fact": "The protein's identity and family-specific cofactor assignment, or direct evidence of its metal requirement, are not supplied in the question.",
-    "reason": "Choosing zinc depends on recognizing the protein or obtaining its cofactor annotation; the reviewer-only sequence match and database annotation were not available to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports zinc as the intended answer; the other choices are not supported by the supplied sequence alone."
-  },
-  "important_caveats": [
-    "The zinc annotation is based on similarity to another protein, not independently verified experimental evidence for this exact sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A9E7LUR3 annotates Zn(2+) as the cofactor, stating 'Binds 2 Zn(2+) ions per subunit' (C5, H4). The sequence matches the benchmark exactly. However, the evidence code is ECO:0000250 (similarity), transferred from horse liver alcohol dehydrogenase (P06525), not a direct experimental determination on this specific geissoschizine synthase. The protein's alternative name 'Alcohol dehydrogenase GS' and its ADH-superfamily fold features (Rossmann motif GLGSVAVK, GAPET nucleotide-binding motif, cysteine-rich regions) are consistent with the canonical Zn(2+) cofactor of the ADH superfamily. The annotation is a computational inference by similarity, but the ADH-superfamily Zn dependence is well-established biochemistry.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains hallmark features of the alcohol dehydrogenase/reductase (ADH/R) superfamily: a canonical Rossmann-fold NAD(P)-binding motif (GLGSVAVK), a secondary nucleotide-binding motif (GAPET), a ~364-residue length typical of ADH monomers, and multiple cysteine-rich stretches (e.g., CGVCNFDMEM, GCMVGSCGKCYNC) consistent with zinc-coordination sites. The ADH superfamily is one of the best-characterized enzyme families in biochemistry, and Zn(2+) is its defining catalytic cofactor (typically two Zn ions per subunit, one catalytic and one structural). A biochemist recognizing the ADH fold could reasonably infer Zn(2+) over &#91;2Fe-2S&#93; (which requires a distinct Cys cluster pattern in ferredoxin-type proteins), Co(2+) (characteristic of corrinoid-dependent mutases and some diol dehydratases), or Mn(2+) (typical of superoxide dismutases and certain glycosyltransferases). The cysteine density and spacing in the sequence are more consistent with Zn tetrahedral coordination than with Fe-S cluster assembly motifs.
-
-
-**Missing item-specific fact**
-
-> The protein is actually EC 1.3.1.36 (geissoschizine synthase), a terpene indole alkaloid biosynthesis enzyme, not a classical alcohol dehydrogenase. The Zn annotation is transferred by similarity from horse liver ADH (P06525) rather than experimentally confirmed for this specific enzyme. Direct experimental cofactor determination for geissoschizine synthase would strengthen the answer, but the ADH-fold reasoning provides a defensible general-knowledge pathway.
-
-
-**Reason**
-
-> The ADH-superfamily sequence signatures (Rossmann motif, catalytic Cys/His patterns, overall fold architecture) are recognizable from the raw sequence and map to well-established general knowledge about Zn dependence in this superfamily. This constitutes a concrete biological argument rather than pure memorization of a database entry. The reasoning is indirect (fold-based family assignment → family-typical cofactor) but is standard practice in enzymology.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four distractors (Fe-S cluster, Co, Mn) are mechanistically and structurally inconsistent with the ADH-like fold features present in the sequence. No other option is defensible given the recognizable Rossmann fold, ADH-typical cysteine spacing, and absence of motifs characteristic of Fe-S proteins, corrinoid enzymes, or Mn-dependent oxidoreductases.
-
-
-### Important caveats
-
-- The Zn(2+) annotation carries evidence code ECO:0000250 (similarity transfer from P06525, horse liver ADH), not direct experimental evidence for geissoschizine synthase itself. The actual catalytic mechanism of EC 1.3.1.36 may differ from classical ADH chemistry.
-- The protein's primary name is 'Geissoschizine synthase' (EC 1.3.1.36); 'Alcohol dehydrogenase GS' is an alternative name reflecting fold similarity, not necessarily classical ADH function.
-- The UniProt entry was first released in 2025-06-18 (Swiss-Prot 2026_01); the benchmark's construction date is unknown, so the annotation may not have existed when the question was authored.
-- The reviewer identified the accession via dataset image-path metadata, not from the model input; the model saw only the raw sequence and four choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains hallmark features of the alcohol dehydrogenase/reductase (ADH/R) superfamily: a canonical Rossmann-fold NAD(P)-binding motif (GLGSVAVK), a secondary nucleotide-binding motif (GAPET), a ~364-residue length typical of ADH monomers, and multiple cysteine-rich stretches (e.g., CGVCNFDMEM, GCMVGSCGKCYNC) consistent with zinc-coordination sites. The ADH superfamily is one of the best-characterized enzyme families in biochemistry, and Zn(2+) is its defining catalytic cofactor (typically two Zn ions per subunit, one catalytic and one structural). A biochemist recognizing the ADH fold could reasonably infer Zn(2+) over [2Fe-2S] (which requires a distinct Cys cluster pattern in ferredoxin-type proteins), Co(2+) (characteristic of corrinoid-dependent mutases and some diol dehydratases), or Mn(2+) (typical of superoxide dismutases and certain glycosyltransferases). The cysteine density and spacing in the sequence are more consistent with Zn tetrahedral coordination than with Fe-S cluster assembly motifs.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The protein is actually EC 1.3.1.36 (geissoschizine synthase), a terpene indole alkaloid biosynthesis enzyme, not a classical alcohol dehydrogenase. The Zn annotation is transferred by similarity from horse liver ADH (P06525) rather than experimentally confirmed for this specific enzyme. Direct experimental cofactor determination for geissoschizine synthase would strengthen the answer, but the ADH-fold reasoning provides a defensible general-knowledge pathway.",
-    "reason": "The ADH-superfamily sequence signatures (Rossmann motif, catalytic Cys/His patterns, overall fold architecture) are recognizable from the raw sequence and map to well-established general knowledge about Zn dependence in this superfamily. This constitutes a concrete biological argument rather than pure memorization of a database entry. The reasoning is indirect (fold-based family assignment → family-typical cofactor) but is standard practice in enzymology."
-  },
-  "case_id": "cofactor_0052",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A9E7LUR3 annotates Zn(2+) as the cofactor, stating 'Binds 2 Zn(2+) ions per subunit' (C5, H4). The sequence matches the benchmark exactly. However, the evidence code is ECO:0000250 (similarity), transferred from horse liver alcohol dehydrogenase (P06525), not a direct experimental determination on this specific geissoschizine synthase. The protein's alternative name 'Alcohol dehydrogenase GS' and its ADH-superfamily fold features (Rossmann motif GLGSVAVK, GAPET nucleotide-binding motif, cysteine-rich regions) are consistent with the canonical Zn(2+) cofactor of the ADH superfamily. The annotation is a computational inference by similarity, but the ADH-superfamily Zn dependence is well-established biochemistry."
-  },
-  "important_caveats": [
-    "The Zn(2+) annotation carries evidence code ECO:0000250 (similarity transfer from P06525, horse liver ADH), not direct experimental evidence for geissoschizine synthase itself. The actual catalytic mechanism of EC 1.3.1.36 may differ from classical ADH chemistry.",
-    "The protein's primary name is 'Geissoschizine synthase' (EC 1.3.1.36); 'Alcohol dehydrogenase GS' is an alternative name reflecting fold similarity, not necessarily classical ADH function.",
-    "The UniProt entry was first released in 2025-06-18 (Swiss-Prot 2026_01); the benchmark's construction date is unknown, so the annotation may not have existed when the question was authored.",
-    "The reviewer identified the accession via dataset image-path metadata, not from the model input; the model saw only the raw sequence and four choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four distractors (Fe-S cluster, Co, Mn) are mechanistically and structurally inconsistent with the ADH-like fold features present in the sequence. No other option is defensible given the recognizable Rossmann fold, ADH-typical cysteine spacing, and absence of motifs characteristic of Fe-S proteins, corrinoid enzymes, or Mn-dependent oxidoreductases."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0052",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A9E7LUR3 annotates Zn(2+) as the cofactor, stating 'Binds 2 Zn(2+) ions per subunit' (C5, H4). The sequence matches the benchmark exactly. However, the evidence code is ECO:0000250 (similarity), transferred from horse liver alcohol dehydrogenase (P06525), not a direct experimental determination on this specific geissoschizine synthase. The protein's alternative name 'Alcohol dehydrogenase GS' and its ADH-superfamily fold features (Rossmann motif GLGSVAVK, GAPET nucleotide-binding motif, cysteine-rich regions) are consistent with the canonical Zn(2+) cofactor of the ADH superfamily. The annotation is a computational inference by similarity, but the ADH-superfamily Zn dependence is well-established biochemistry.",
-    "evidence_ids": ["C5", "H4", "C4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains hallmark features of the alcohol dehydrogenase/reductase (ADH/R) superfamily: a canonical Rossmann-fold NAD(P)-binding motif (GLGSVAVK), a secondary nucleotide-binding motif (GAPET), a ~364-residue length typical of ADH monomers, and multiple cysteine-rich stretches (e.g., CGVCNFDMEM, GCMVGSCGKCYNC) consistent with zinc-coordination sites. The ADH superfamily is one of the best-characterized enzyme families in biochemistry, and Zn(2+) is its defining catalytic cofactor (typically two Zn ions per subunit, one catalytic and one structural). A biochemist recognizing the ADH fold could reasonably infer Zn(2+) over [2Fe-2S] (which requires a distinct Cys cluster pattern in ferredoxin-type proteins), Co(2+) (characteristic of corrinoid-dependent mutases and some diol dehydratases), or Mn(2+) (typical of superoxide dismutases and certain glycosyltransferases). The cysteine density and spacing in the sequence are more consistent with Zn tetrahedral coordination than with Fe-S cluster assembly motifs.",
-    "missing_item_specific_fact": "The protein is actually EC 1.3.1.36 (geissoschizine synthase), a terpene indole alkaloid biosynthesis enzyme, not a classical alcohol dehydrogenase. The Zn annotation is transferred by similarity from horse liver ADH (P06525) rather than experimentally confirmed for this specific enzyme. Direct experimental cofactor determination for geissoschizine synthase would strengthen the answer, but the ADH-fold reasoning provides a defensible general-knowledge pathway.",
-    "reason": "The ADH-superfamily sequence signatures (Rossmann motif, catalytic Cys/His patterns, overall fold architecture) are recognizable from the raw sequence and map to well-established general knowledge about Zn dependence in this superfamily. This constitutes a concrete biological argument rather than pure memorization of a database entry. The reasoning is indirect (fold-based family assignment → family-typical cofactor) but is standard practice in enzymology."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four distractors (Fe-S cluster, Co, Mn) are mechanistically and structurally inconsistent with the ADH-like fold features present in the sequence. No other option is defensible given the recognizable Rossmann fold, ADH-typical cysteine spacing, and absence of motifs characteristic of Fe-S proteins, corrinoid enzymes, or Mn-dependent oxidoreductases."
-  },
-  "important_caveats": [
-    "The Zn(2+) annotation carries evidence code ECO:0000250 (similarity transfer from P06525, horse liver ADH), not direct experimental evidence for geissoschizine synthase itself. The actual catalytic mechanism of EC 1.3.1.36 may differ from classical ADH chemistry.",
-    "The protein's primary name is 'Geissoschizine synthase' (EC 1.3.1.36); 'Alcohol dehydrogenase GS' is an alternative name reflecting fold similarity, not necessarily classical ADH function.",
-    "The UniProt entry was first released in 2025-06-18 (Swiss-Prot 2026_01); the benchmark's construction date is unknown, so the annotation may not have existed when the question was authored.",
-    "The reviewer identified the accession via dataset image-path metadata, not from the model input; the model saw only the raw sequence and four choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -381,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -495,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7LUR3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6b2d31d337a1bc9f1e5478cf9eeafb327d5b0429e737e3aae6290d6c0ee2da2e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 364,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6b2d31d337a1bc9f1e5478cf9eeafb327d5b0429e737e3aae6290d6c0ee2da2e",
   "current_entry_audit": {
     "entryVersion": 14,
     "firstPublicDate": "2025-06-18",
@@ -526,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
-  "current_source_sequence_sha256": "6b2d31d337a1bc9f1e5478cf9eeafb327d5b0429e737e3aae6290d6c0ee2da2e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 364,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6b2d31d337a1bc9f1e5478cf9eeafb327d5b0429e737e3aae6290d6c0ee2da2e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 12,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7LUR3",
   "selected_historical_entry_version": 12,
+  "selected_historical_record_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
+  "selected_historical_source_sequence_length": 364,
+  "selected_historical_source_sequence_sha256": "6b2d31d337a1bc9f1e5478cf9eeafb327d5b0429e737e3aae6290d6c0ee2da2e",
   "selected_historical_version": {
     "accession": "A0A9E7LUR3",
     "database": "Swiss-Prot",
@@ -544,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GS_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
-  "selected_historical_source_sequence_sha256": "6b2d31d337a1bc9f1e5478cf9eeafb327d5b0429e737e3aae6290d6c0ee2da2e",
-  "selected_historical_source_sequence_length": 364,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 12,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -575,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json",
-  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
-  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7LUR3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json"
 }
 ```
 
@@ -594,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json",
-  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
-  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":14,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json"
 }
 ```
 
@@ -613,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json",
-  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
-  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json"
 }
 ```
 
@@ -632,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json",
-  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
-  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Alcohol dehydrogenase GS\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"1.3.1.36\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Geissoschizine synthase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsGS\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json"
 }
 ```
 
@@ -651,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json",
-  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
-  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P06525\",\"source\":\"UniProtKB\"}],\"name\":\"Zn(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P06525\",\"source\":\"UniProtKB\"}],\"value\":\"Binds 2 Zn(2+) ions per subunit.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json"
 }
 ```
 
@@ -670,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json",
-  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
-  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65381.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:11.087134+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json"
 }
 ```
 
@@ -688,18 +451,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12",
-  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
-  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   GS_ALSSC                Reviewed;         364 AA.\nAC   A0A9E7LUR3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 12.\nDE   RecName: Full=Geissoschizine synthase {ECO:0000303|PubMed:36349266};\nDE            Short=AsGS {ECO:0000303|PubMed:36349266};\nDE            EC=1.3.1.36 {ECO:0000269|PubMed:36349266};\nDE   AltName: Full=Alcohol dehydrogenase GS {ECO:0000305};\nGN   Name=GS {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12"
 }
 ```
 
@@ -709,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12",
-  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
-  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Geissoschizine synthase {ECO:0000303|PubMed:36349266};\nDE            Short=AsGS {ECO:0000303|PubMed:36349266};\nDE            EC=1.3.1.36 {ECO:0000269|PubMed:36349266};\nDE   AltName: Full=Alcohol dehydrogenase GS {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12"
 }
 ```
 
@@ -730,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12",
-  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
-  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
-  "source_locator": "lines 17-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65381.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12"
 }
 ```
 
@@ -751,18 +514,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12",
-  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
-  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
-  "source_locator": "lines 50-53",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;\nCC         Evidence={ECO:0000250|UniProtKB:P06525};\nCC       Note=Binds 2 Zn(2+) ions per subunit. {ECO:0000250|UniProtKB:P06525};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:15.563182+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12"
 }
 ```
 

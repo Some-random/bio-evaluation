@@ -1,18 +1,16 @@
-# GO_cellular_component_0067: before and after transfer clarification
+# GO_cellular_component_0067
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0067.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0067.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **C** — Ndc80 complex
+**Expected answer:** **C** — Ndc80 complex
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Toxoplasma gondii NUF2 entry. That entry annotates the protein to the Ndc80 complex (GO:0031262), though this annotation is computational (IEA:InterPro). A cited experimental subcellular-location annotation places it at the centromere/kinetochore and reports colocalization with NDC80, supporting the biological context of choice C.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The long, coiled-coil-rich sequence is compatible with a structural protein, but that general feature does not identify NUF2 or distinguish the Ndc80 complex from other protein complexes in the choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identity as NUF2 and its association with the Ndc80 complex are not provided in the question; recognizing them requires an external annotation or other protein-specific knowledge.
-
-
-**Reason**
-
-> The sequence alone does not provide a sufficiently specific signal for the listed complex. The reviewer-only annotation supports the key but was absent from the evaluated model input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the choices, Ndc80 complex is supported by the matched protein annotation and its kinetochore localization; the alternatives are not comparably supported.
-
-
-### Important caveats
-
-- The GO annotation to Ndc80 complex is computational (IEA:InterPro), not direct experimental evidence of complex membership in the cited excerpts.
-- The subcellular-location evidence is experimental, but it establishes centromere/kinetochore localization and colocalization with NDC80 rather than independently proving the GO complex annotation.
-- The exact source snapshot used by the original author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The long, coiled-coil-rich sequence is compatible with a structural protein, but that general feature does not identify NUF2 or distinguish the Ndc80 complex from other protein complexes in the choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identity as NUF2 and its association with the Ndc80 complex are not provided in the question; recognizing them requires an external annotation or other protein-specific knowledge.",
-    "reason": "The sequence alone does not provide a sufficiently specific signal for the listed complex. The reviewer-only annotation supports the key but was absent from the evaluated model input."
-  },
-  "case_id": "GO_cellular_component_0067",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Toxoplasma gondii NUF2 entry. That entry annotates the protein to the Ndc80 complex (GO:0031262), though this annotation is computational (IEA:InterPro). A cited experimental subcellular-location annotation places it at the centromere/kinetochore and reports colocalization with NDC80, supporting the biological context of choice C."
-  },
-  "important_caveats": [
-    "The GO annotation to Ndc80 complex is computational (IEA:InterPro), not direct experimental evidence of complex membership in the cited excerpts.",
-    "The subcellular-location evidence is experimental, but it establishes centromere/kinetochore localization and colocalization with NDC80 rather than independently proving the GO complex annotation.",
-    "The exact source snapshot used by the original author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the choices, Ndc80 complex is supported by the matched protein annotation and its kinetochore localization; the alternatives are not comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0067",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Toxoplasma gondii NUF2 entry. That entry annotates the protein to the Ndc80 complex (GO:0031262), though this annotation is computational (IEA:InterPro). A cited experimental subcellular-location annotation places it at the centromere/kinetochore and reports colocalization with NDC80, supporting the biological context of choice C.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The long, coiled-coil-rich sequence is compatible with a structural protein, but that general feature does not identify NUF2 or distinguish the Ndc80 complex from other protein complexes in the choices.",
-    "missing_item_specific_fact": "The protein-specific identity as NUF2 and its association with the Ndc80 complex are not provided in the question; recognizing them requires an external annotation or other protein-specific knowledge.",
-    "reason": "The sequence alone does not provide a sufficiently specific signal for the listed complex. The reviewer-only annotation supports the key but was absent from the evaluated model input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the choices, Ndc80 complex is supported by the matched protein annotation and its kinetochore localization; the alternatives are not comparably supported."
-  },
-  "important_caveats": [
-    "The GO annotation to Ndc80 complex is computational (IEA:InterPro), not direct experimental evidence of complex membership in the cited excerpts.",
-    "The subcellular-location evidence is experimental, but it establishes centromere/kinetochore localization and colocalization with NDC80 rather than independently proving the GO complex annotation.",
-    "The exact source snapshot used by the original author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt S8EV69 (NUF2_TOXGM, Toxoplasma gondii Kinetochore protein NUF2). Experimental evidence (ECO:0000269, PubMed:24015880) shows subcellular localization to 'Chromosome, centromere, kinetochore' with co-localization with NDC80 throughout the cell cycle. The GO:0031262 (Ndc80 complex) annotation is present as IEA:InterPro. NUF2 is a canonical, well-established subunit of the Ndc80 complex in all eukaryotes. The experimental kinetochore/NDC80 co-localization data and the conserved NUF2 identity support the Ndc80 complex assignment.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Option B (periplasmic space) is a prokaryotic/fungal compartment (GO:0042597 defined for Gram-negative bacteria and fungi) and is inapplicable to a eukaryotic protein with no signal peptide or prokaryotic export features. Option D (tRNA methyltransferase complex) requires methyltransferase catalytic domains, which are absent from this sequence. Option A (nuclear pore) requires FG-repeat nucleoporin motifs, transmembrane domains, or specific nucleoporin architecture, none of which are present. The sequence is dominated by a very long (~300+ residue) coiled-coil domain (heptad repeat pattern of E/R/L/Q residues spanning roughly residues 100–450), which is the hallmark structural feature of Ndc80 complex subunits (NDC80, NUF2, SPC24, SPC25). By elimination and by the distinctive long coiled-coil architecture, C is the most defensible choice.
-
-
-**Missing item-specific fact**
-
-> None strictly required; however, positive confirmation that this specific coiled-coil protein is NUF2 (rather than another coiled-coil protein) relies on recognizing the full domain architecture or knowing the protein's identity. The coiled-coil alone is not uniquely diagnostic of Ndc80 complex.
-
-
-**Reason**
-
-> The elimination of B (wrong organism type) and D (no methyltransferase domains) is straightforward. The distinction between A and C rests on the absence of nucleoporin-specific features and the presence of a long coiled-coil characteristic of Ndc80 complex proteins. This provides a concrete biological reasoning path, though the positive identification is somewhat indirect.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> B and D are clearly eliminated by organism type and domain content. A is weakly plausible but lacks supporting sequence features (no FG repeats, no transmembrane segments). C is the only option with positive structural support (long coiled-coil). No genuine ambiguity among defensible choices.
-
-
-### Important caveats
-
-- The GO:0031262 (Ndc80 complex) annotation in UniProt is IEA:InterPro (computational inference from InterPro domain matching), not a direct experimental assignment of complex membership. The experimental evidence (ECO:0000269) establishes kinetochore localization and NDC80 co-localization but does not directly prove Ndc80 complex incorporation.
-- The protein is from Toxoplasma gondii, an apicomplexan. NUF2 orthologs in divergent eukaryotes may have somewhat reduced sequence conservation, making domain-based identification harder than in model organisms.
-- The coiled-coil argument for Ndc80 complex is consistent but not uniquely diagnostic; many nuclear and cytoplasmic proteins contain long coiled-coils. The reasoning path relies primarily on elimination of clearly wrong options.
-- The UniProt entry was first public in 2025-06-18; the benchmark author's source snapshot is unknown but the sequence matches at all checked versions.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Option B (periplasmic space) is a prokaryotic/fungal compartment (GO:0042597 defined for Gram-negative bacteria and fungi) and is inapplicable to a eukaryotic protein with no signal peptide or prokaryotic export features. Option D (tRNA methyltransferase complex) requires methyltransferase catalytic domains, which are absent from this sequence. Option A (nuclear pore) requires FG-repeat nucleoporin motifs, transmembrane domains, or specific nucleoporin architecture, none of which are present. The sequence is dominated by a very long (~300+ residue) coiled-coil domain (heptad repeat pattern of E/R/L/Q residues spanning roughly residues 100–450), which is the hallmark structural feature of Ndc80 complex subunits (NDC80, NUF2, SPC24, SPC25). By elimination and by the distinctive long coiled-coil architecture, C is the most defensible choice.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required; however, positive confirmation that this specific coiled-coil protein is NUF2 (rather than another coiled-coil protein) relies on recognizing the full domain architecture or knowing the protein's identity. The coiled-coil alone is not uniquely diagnostic of Ndc80 complex.",
-    "reason": "The elimination of B (wrong organism type) and D (no methyltransferase domains) is straightforward. The distinction between A and C rests on the absence of nucleoporin-specific features and the presence of a long coiled-coil characteristic of Ndc80 complex proteins. This provides a concrete biological reasoning path, though the positive identification is somewhat indirect."
-  },
-  "case_id": "GO_cellular_component_0067",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H4",
-      "H5",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt S8EV69 (NUF2_TOXGM, Toxoplasma gondii Kinetochore protein NUF2). Experimental evidence (ECO:0000269, PubMed:24015880) shows subcellular localization to 'Chromosome, centromere, kinetochore' with co-localization with NDC80 throughout the cell cycle. The GO:0031262 (Ndc80 complex) annotation is present as IEA:InterPro. NUF2 is a canonical, well-established subunit of the Ndc80 complex in all eukaryotes. The experimental kinetochore/NDC80 co-localization data and the conserved NUF2 identity support the Ndc80 complex assignment."
-  },
-  "important_caveats": [
-    "The GO:0031262 (Ndc80 complex) annotation in UniProt is IEA:InterPro (computational inference from InterPro domain matching), not a direct experimental assignment of complex membership. The experimental evidence (ECO:0000269) establishes kinetochore localization and NDC80 co-localization but does not directly prove Ndc80 complex incorporation.",
-    "The protein is from Toxoplasma gondii, an apicomplexan. NUF2 orthologs in divergent eukaryotes may have somewhat reduced sequence conservation, making domain-based identification harder than in model organisms.",
-    "The coiled-coil argument for Ndc80 complex is consistent but not uniquely diagnostic; many nuclear and cytoplasmic proteins contain long coiled-coils. The reasoning path relies primarily on elimination of clearly wrong options.",
-    "The UniProt entry was first public in 2025-06-18; the benchmark author's source snapshot is unknown but the sequence matches at all checked versions."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and D are clearly eliminated by organism type and domain content. A is weakly plausible but lacks supporting sequence features (no FG repeats, no transmembrane segments). C is the only option with positive structural support (long coiled-coil). No genuine ambiguity among defensible choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0067",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt S8EV69 (NUF2_TOXGM, Toxoplasma gondii Kinetochore protein NUF2). Experimental evidence (ECO:0000269, PubMed:24015880) shows subcellular localization to 'Chromosome, centromere, kinetochore' with co-localization with NDC80 throughout the cell cycle. The GO:0031262 (Ndc80 complex) annotation is present as IEA:InterPro. NUF2 is a canonical, well-established subunit of the Ndc80 complex in all eukaryotes. The experimental kinetochore/NDC80 co-localization data and the conserved NUF2 identity support the Ndc80 complex assignment.",
-    "evidence_ids": ["C4", "C5", "C6", "H4", "H5", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Option B (periplasmic space) is a prokaryotic/fungal compartment (GO:0042597 defined for Gram-negative bacteria and fungi) and is inapplicable to a eukaryotic protein with no signal peptide or prokaryotic export features. Option D (tRNA methyltransferase complex) requires methyltransferase catalytic domains, which are absent from this sequence. Option A (nuclear pore) requires FG-repeat nucleoporin motifs, transmembrane domains, or specific nucleoporin architecture, none of which are present. The sequence is dominated by a very long (~300+ residue) coiled-coil domain (heptad repeat pattern of E/R/L/Q residues spanning roughly residues 100–450), which is the hallmark structural feature of Ndc80 complex subunits (NDC80, NUF2, SPC24, SPC25). By elimination and by the distinctive long coiled-coil architecture, C is the most defensible choice.",
-    "missing_item_specific_fact": "None strictly required; however, positive confirmation that this specific coiled-coil protein is NUF2 (rather than another coiled-coil protein) relies on recognizing the full domain architecture or knowing the protein's identity. The coiled-coil alone is not uniquely diagnostic of Ndc80 complex.",
-    "reason": "The elimination of B (wrong organism type) and D (no methyltransferase domains) is straightforward. The distinction between A and C rests on the absence of nucleoporin-specific features and the presence of a long coiled-coil characteristic of Ndc80 complex proteins. This provides a concrete biological reasoning path, though the positive identification is somewhat indirect."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and D are clearly eliminated by organism type and domain content. A is weakly plausible but lacks supporting sequence features (no FG repeats, no transmembrane segments). C is the only option with positive structural support (long coiled-coil). No genuine ambiguity among defensible choices."
-  },
-  "important_caveats": [
-    "The GO:0031262 (Ndc80 complex) annotation in UniProt is IEA:InterPro (computational inference from InterPro domain matching), not a direct experimental assignment of complex membership. The experimental evidence (ECO:0000269) establishes kinetochore localization and NDC80 co-localization but does not directly prove Ndc80 complex incorporation.",
-    "The protein is from Toxoplasma gondii, an apicomplexan. NUF2 orthologs in divergent eukaryotes may have somewhat reduced sequence conservation, making domain-based identification harder than in model organisms.",
-    "The coiled-coil argument for Ndc80 complex is consistent but not uniquely diagnostic; many nuclear and cytoplasmic proteins contain long coiled-coils. The reasoning path relies primarily on elimination of clearly wrong options.",
-    "The UniProt entry was first public in 2025-06-18; the benchmark author's source snapshot is unknown but the sequence matches at all checked versions."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "S8EV69",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b48650b65c0b00cace28156b972d9d6ce15cf53c7a1780904ed25f8cf8773472",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 608,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b48650b65c0b00cace28156b972d9d6ce15cf53c7a1780904ed25f8cf8773472",
   "current_entry_audit": {
     "entryVersion": 41,
     "firstPublicDate": "2025-06-18",
@@ -542,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2013-10-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "current_source_sequence_sha256": "b48650b65c0b00cace28156b972d9d6ce15cf53c7a1780904ed25f8cf8773472",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 608,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b48650b65c0b00cace28156b972d9d6ce15cf53c7a1780904ed25f8cf8773472",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 39,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "S8EV69",
   "selected_historical_entry_version": 39,
+  "selected_historical_record_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
+  "selected_historical_source_sequence_length": 608,
+  "selected_historical_source_sequence_sha256": "b48650b65c0b00cace28156b972d9d6ce15cf53c7a1780904ed25f8cf8773472",
   "selected_historical_version": {
     "accession": "S8EV69",
     "database": "Swiss-Prot",
@@ -560,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NUF2_TOXGM",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
-  "selected_historical_source_sequence_sha256": "b48650b65c0b00cace28156b972d9d6ce15cf53c7a1780904ed25f8cf8773472",
-  "selected_historical_source_sequence_length": 608,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 39,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -595,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"S8EV69\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -614,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":41,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2013-10-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -633,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001529\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Conoidasida\",\"Coccidia\",\"Eucoccidiorida\",\"Eimeriorina\",\"Sarcocystidae\",\"Toxoplasma\"],\"scientificName\":\"Toxoplasma gondii (strain ATCC 50611 / Me49)\",\"taxonId\":508771}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -652,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Kinetochore protein NUF2\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24015880\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30865554\",\"source\":\"PubMed\"}],\"value\":\"TgNuf2\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -671,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24015880\",\"source\":\"PubMed\"}],\"value\":\"Co-localizes with NDC80 throughout the cell cycle\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24015880\",\"source\":\"PubMed\"}],\"id\":\"SL-0149\",\"value\":\"Chromosome, centromere, kinetochore\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -690,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/11",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0031262\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:Ndc80 complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/11",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -709,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Farrell M.\",\"Gubbels M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24015880\"},{\"database\":\"DOI\",\"id\":\"10.1111/cmi.12185\"}],\"citationType\":\"journal article\",\"firstPage\":\"78\",\"id\":\"24015880\",\"journal\":\"Cell. Microbiol.\",\"lastPage\":\"94\",\"publicationDate\":\"2014\",\"title\":\"The Toxoplasma gondii kinetochore is required for centrosome association with the centrocone (spindle pole).\",\"volume\":\"16\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"DISRUPTION PHENOTYPE\",\"REGION REQUIRED FOR NUCLEAR LOCALIZATION\",\"MUTAGENESIS OF 121-ILE--ARG-125\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -728,15 +481,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json",
-  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
-  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Chen C.T.\",\"Gubbels M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30865554\"},{\"database\":\"DOI\",\"id\":\"10.1091/mbc.e18-10-0608\"}],\"citationType\":\"journal article\",\"firstPage\":\"1160\",\"id\":\"30865554\",\"journal\":\"Mol. Biol. Cell\",\"lastPage\":\"1169\",\"publicationDate\":\"2019\",\"title\":\"TgCep250 is dynamically processed through the division cycle and is essential for structural integrity of the Toxoplasma centrosome.\",\"volume\":\"30\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:33:58.410089+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "21d863f6ce77eb34e9be9d1b3d4aeabfd4e7421da314d69e1c53d0322926db17",
+  "url": "https://rest.uniprot.org/uniprotkb/S8EV69.json"
 }
 ```
 
@@ -746,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39",
-  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
-  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   NUF2_TOXGM              Reviewed;         608 AA.\nAC   S8EV69;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-OCT-2013, sequence version 1.\nDT   28-JAN-2026, entry version 39.\nDE   RecName: Full=Kinetochore protein NUF2 {ECO:0000305};\nDE            Short=TgNuf2 {ECO:0000303|PubMed:24015880, ECO:0000303|PubMed:30865554};\nGN   Name=NUF2 {ECO:0000305};\nGN   ORFNames=TGME49_309380 {ECO:0000312|EMBL:EPT26282.1};\nOS   Toxoplasma gondii (strain ATCC 50611 / Me49).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Conoidasida; Coccidia;\nOC   Eucoccidiorida; Eimeriorina; Sarcocystidae; Toxoplasma.\nOX   NCBI_TaxID=508771 {ECO:0000312|Proteomes:UP000001529};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
+  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39"
 }
 ```
 
@@ -767,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39",
-  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
-  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
-  "source_locator": "lines 20-27",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, SUBCELLULAR LOCATION, DISRUPTION PHENOTYPE, REGION REQUIRED FOR\nRP   NUCLEAR LOCALIZATION, AND MUTAGENESIS OF 121-ILE--ARG-125.\nRX   PubMed=24015880; DOI=10.1111/cmi.12185;\nRA   Farrell M., Gubbels M.J.;\nRT   \"The Toxoplasma gondii kinetochore is required for centrosome association\nRT   with the centrocone (spindle pole).\";\nRL   Cell. Microbiol. 16:78-94(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
+  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39"
 }
 ```
 
@@ -788,18 +541,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39",
-  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
-  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
-  "source_locator": "lines 28-34",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=30865554; DOI=10.1091/mbc.e18-10-0608;\nRA   Chen C.T., Gubbels M.J.;\nRT   \"TgCep250 is dynamically processed through the division cycle and is\nRT   essential for structural integrity of the Toxoplasma centrosome.\";\nRL   Mol. Biol. Cell 30:1160-1169(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
+  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39"
 }
 ```
 
@@ -809,18 +562,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39",
-  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
-  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
-  "source_locator": "lines 39-41",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Chromosome, centromere, kinetochore\nCC       {ECO:0000269|PubMed:24015880}. Note=Co-localizes with NDC80 throughout\nCC       the cell cycle. {ECO:0000269|PubMed:24015880}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
+  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39"
 }
 ```
 
@@ -830,18 +583,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39",
-  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
-  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
-  "source_locator": "lines 67-67",
   "excerpt": "DR   GO; GO:0031262; C:Ndc80 complex; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:34:00.721786+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 67-67",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "665a5d577c22b6c288b850d0d50c4d6f885ae6321f4d7320b54fc9362f20bc3a",
+  "url": "https://rest.uniprot.org/unisave/S8EV69?format=txt&versions=39"
 }
 ```
 
@@ -852,15 +605,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58104-58119",
   "excerpt": "[Term]\nid: GO:0005643\nname: nuclear pore\nnamespace: cellular_component\nalt_id: GO:0005644\ndef: \"A protein complex providing a discrete opening in the nuclear envelope of a eukaryotic cell, where the inner and outer nuclear membranes are joined.\" [ISBN:0198547684]\nsubset: goslim_pir\nsynonym: \"NPC\" EXACT []\nsynonym: \"nuclear pore complex\" EXACT []\nsynonym: \"nuclear pore membrane protein\" NARROW []\nsynonym: \"nucleopore\" EXACT [GOC:al, PMID:7603572]\nxref: NIF_Subcellular:sao220861693\nxref: Wikipedia:Nuclear_pore\nis_a: GO:0140513 ! nuclear protein-containing complex\nrelationship: part_of GO:0005635 ! nuclear envelope\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005643",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58104-58119",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005643"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -871,15 +624,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 174616-174624",
   "excerpt": "[Term]\nid: GO:0031262\nname: Ndc80 complex\nnamespace: cellular_component\ndef: \"An essential outer kinetochore complex involved in the attachment of microtubule ends to the chromosomes during mitosis.\" [GOC:vw, PMID:28502666, PMID:34810257]\nsynonym: \"Nuf2-Ndc80 complex\" EXACT []\nis_a: GO:0032991 ! protein-containing complex\nrelationship: part_of GO:0000940 ! outer kinetochore\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031262",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 174616-174624",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031262"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -890,15 +643,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 238998-239011",
   "excerpt": "[Term]\nid: GO:0042597\nname: periplasmic space\nnamespace: cellular_component\nalt_id: GO:0005620\ndef: \"The region between the inner (cytoplasmic) and outer membrane (Gram-negative Bacteria) or cytoplasmic membrane and cell wall (Fungi and Gram-positive Bacteria).\" [GOC:curators, GOC:md]\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsynonym: \"periplasm\" EXACT []\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005576 ! extracellular region\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042597",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 238998-239011",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042597"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -909,15 +662,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 248215-248222",
   "excerpt": "[Term]\nid: GO:0043527\nname: tRNA methyltransferase complex\nnamespace: cellular_component\ndef: \"A multimeric protein complex involved in the methylation of specific nucleotides in tRNA.\" [GOC:jl, PMID:24904644, PMID:9851972]\nsubset: goslim_pir\nis_a: GO:0034708 ! methyltransferase complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043527",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 248215-248222",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043527"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

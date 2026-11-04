@@ -1,18 +1,16 @@
-# active_site_0118: before and after transfer clarification
+# active_site_0118
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0118.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0118.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 558 (For beta-ketoacyl synthase activity)
+**Expected answer:** **C** — Position 558 (For beta-ketoacyl synthase activity)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the annotated 2,121-residue protein, and both current and pre-cutoff UniProt records annotate position 558 as an active site for beta-ketoacyl synthase activity. This is PROSITE-ProRule computational annotation, not evidence of direct experimental validation.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The long sequence and choices may suggest a multidomain polyketide synthase, but general knowledge does not establish that this particular residue at position 558 has the stated role.
-
-
-**Missing item-specific fact**
-
-> The protein-specific mapping of residue 558 to the beta-ketoacyl synthase active site, supplied here by a PROSITE-ProRule annotation.
-
-
-**Reason**
-
-> Selecting the exact numbered residue and its function requires a protein-specific annotation or equivalent external analysis; recognizing the protein or relying on general catalytic-residue heuristics is not enough.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied matching annotation supports option C among the listed choices. Other active-site annotations exist at positions not offered, but they do not make another listed option defensible.
-
-
-### Important caveats
-
-- The matching historical record also annotates positions 693 and 735 for beta-ketoacyl synthase activity; option C is one supported residue, not an exhaustive active-site list.
-- The author’s exact source snapshot is unknown, although the sequence matches the checked historical record.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The long sequence and choices may suggest a multidomain polyketide synthase, but general knowledge does not establish that this particular residue at position 558 has the stated role.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific mapping of residue 558 to the beta-ketoacyl synthase active site, supplied here by a PROSITE-ProRule annotation.",
-    "reason": "Selecting the exact numbered residue and its function requires a protein-specific annotation or equivalent external analysis; recognizing the protein or relying on general catalytic-residue heuristics is not enough."
-  },
-  "case_id": "active_site_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the annotated 2,121-residue protein, and both current and pre-cutoff UniProt records annotate position 558 as an active site for beta-ketoacyl synthase activity. This is PROSITE-ProRule computational annotation, not evidence of direct experimental validation."
-  },
-  "important_caveats": [
-    "The matching historical record also annotates positions 693 and 735 for beta-ketoacyl synthase activity; option C is one supported residue, not an exhaustive active-site list.",
-    "The author’s exact source snapshot is unknown, although the sequence matches the checked historical record."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied matching annotation supports option C among the listed choices. Other active-site annotations exist at positions not offered, but they do not make another listed option defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the annotated 2,121-residue protein, and both current and pre-cutoff UniProt records annotate position 558 as an active site for beta-ketoacyl synthase activity. This is PROSITE-ProRule computational annotation, not evidence of direct experimental validation.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The long sequence and choices may suggest a multidomain polyketide synthase, but general knowledge does not establish that this particular residue at position 558 has the stated role.",
-    "missing_item_specific_fact": "The protein-specific mapping of residue 558 to the beta-ketoacyl synthase active site, supplied here by a PROSITE-ProRule annotation.",
-    "reason": "Selecting the exact numbered residue and its function requires a protein-specific annotation or equivalent external analysis; recognizing the protein or relying on general catalytic-residue heuristics is not enough."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied matching annotation supports option C among the listed choices. Other active-site annotations exist at positions not offered, but they do not make another listed option defensible."
-  },
-  "important_caveats": [
-    "The matching historical record also annotates positions 693 and 735 for beta-ketoacyl synthase activity; option C is one supported residue, not an exhaustive active-site list.",
-    "The author’s exact source snapshot is unknown, although the sequence matches the checked historical record."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt Q2TXQ8 (Non-reducing polyketide synthase aoiG, Aspergillus oryzae) annotates position 558 as an active site 'For beta-ketoacyl synthase activity' (evidence C5, H3). The annotation is based on PROSITE-ProRule PRU01348 (ECO:0000255), a computational profile-based assignment, but the protein's overall function as a polyketide synthase is experimentally supported (PubMed 22447538, ECO:0000269). The sequence matches exactly. The distractor positions (93, 109, 324) do not correspond to any annotated active sites in this entry; the actual proton donor is at 1519 and proton acceptor at 1334.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [C10](#evidence-c10).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A knowledgeable person might recognize the sequence as a fungal non-reducing polyketide synthase and know that the KS domain contains a catalytic cysteine within a conserved Cys-His-His triad, and that the KS domain typically begins after a short N-terminal region. This could in principle exclude positions 93 and 109 (too early in the sequence for the KS catalytic residue in a 2121-residue PKS). However, distinguishing position 558 from position 324, or confirming 558 specifically, requires precise domain boundary identification or profile matching that cannot be reliably performed by mental inspection of a 2121-residue sequence.
-
-
-**Missing item-specific fact**
-
-> The exact domain boundaries of the KS domain within this specific 2121-residue protein, or the precise position of the catalytic cysteine within the KS active-site motif, which requires either recognition of this particular protein's database entry or running a domain-prediction/profile tool (e.g., PROSITE, InterProScan).
-
-
-**Reason**
-
-> While general PKS architecture knowledge provides a weak directional argument (KS domain is not in the extreme N-terminus), the task of selecting position 558 over 324 (or confirming 558 is the catalytic residue) from a raw 2121-residue sequence without computational tools depends on item-specific annotation or sequence recognition. The PROSITE-ProRule assignment itself is computational, and no motif context is provided in the question to enable position-level reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only position 558 matches an annotated active site among the four choices. Positions 93, 109, and 324 are not annotated as active sites in this entry. The functional labels attached to the distractors (Nucleophile at 109, Proton donor at 93, Proton acceptor at 324) do not correspond to any UniProt-annotated features at those positions. The question is unambiguous in that only one choice aligns with the annotation.
-
-
-### Important caveats
-
-- The active-site assignment at position 558 is based on PROSITE-ProRule (ECO:0000255), a computational profile-based annotation, not direct experimental mutagenesis or structural determination of this specific residue.
-- The protein also has active sites at positions 693 and 735 (also for beta-ketoacyl synthase activity) and at 1334/1519 (dehydratase). The question only lists position 558 among the choices, avoiding ambiguity among multiple KS sites.
-- The question does not identify the protein or provide domain annotations, making it effectively a sequence-recognition/lookup task for a 2121-residue protein.
-- The evidence code ECO:0000269 (experimental) supports the overall enzyme function, but the specific residue-level assignment is ECO:0000255 (computational by rule/profile).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A knowledgeable person might recognize the sequence as a fungal non-reducing polyketide synthase and know that the KS domain contains a catalytic cysteine within a conserved Cys-His-His triad, and that the KS domain typically begins after a short N-terminal region. This could in principle exclude positions 93 and 109 (too early in the sequence for the KS catalytic residue in a 2121-residue PKS). However, distinguishing position 558 from position 324, or confirming 558 specifically, requires precise domain boundary identification or profile matching that cannot be reliably performed by mental inspection of a 2121-residue sequence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact domain boundaries of the KS domain within this specific 2121-residue protein, or the precise position of the catalytic cysteine within the KS active-site motif, which requires either recognition of this particular protein's database entry or running a domain-prediction/profile tool (e.g., PROSITE, InterProScan).",
-    "reason": "While general PKS architecture knowledge provides a weak directional argument (KS domain is not in the extreme N-terminus), the task of selecting position 558 over 324 (or confirming 558 is the catalytic residue) from a raw 2121-residue sequence without computational tools depends on item-specific annotation or sequence recognition. The PROSITE-ProRule assignment itself is computational, and no motif context is provided in the question to enable position-level reasoning."
-  },
-  "case_id": "active_site_0118",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "C10"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt Q2TXQ8 (Non-reducing polyketide synthase aoiG, Aspergillus oryzae) annotates position 558 as an active site 'For beta-ketoacyl synthase activity' (evidence C5, H3). The annotation is based on PROSITE-ProRule PRU01348 (ECO:0000255), a computational profile-based assignment, but the protein's overall function as a polyketide synthase is experimentally supported (PubMed 22447538, ECO:0000269). The sequence matches exactly. The distractor positions (93, 109, 324) do not correspond to any annotated active sites in this entry; the actual proton donor is at 1519 and proton acceptor at 1334."
-  },
-  "important_caveats": [
-    "The active-site assignment at position 558 is based on PROSITE-ProRule (ECO:0000255), a computational profile-based annotation, not direct experimental mutagenesis or structural determination of this specific residue.",
-    "The protein also has active sites at positions 693 and 735 (also for beta-ketoacyl synthase activity) and at 1334/1519 (dehydratase). The question only lists position 558 among the choices, avoiding ambiguity among multiple KS sites.",
-    "The question does not identify the protein or provide domain annotations, making it effectively a sequence-recognition/lookup task for a 2121-residue protein.",
-    "The evidence code ECO:0000269 (experimental) supports the overall enzyme function, but the specific residue-level assignment is ECO:0000255 (computational by rule/profile)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only position 558 matches an annotated active site among the four choices. Positions 93, 109, and 324 are not annotated as active sites in this entry. The functional labels attached to the distractors (Nucleophile at 109, Proton donor at 93, Proton acceptor at 324) do not correspond to any UniProt-annotated features at those positions. The question is unambiguous in that only one choice aligns with the annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0118",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt Q2TXQ8 (Non-reducing polyketide synthase aoiG, Aspergillus oryzae) annotates position 558 as an active site 'For beta-ketoacyl synthase activity' (evidence C5, H3). The annotation is based on PROSITE-ProRule PRU01348 (ECO:0000255), a computational profile-based assignment, but the protein's overall function as a polyketide synthase is experimentally supported (PubMed 22447538, ECO:0000269). The sequence matches exactly. The distractor positions (93, 109, 324) do not correspond to any annotated active sites in this entry; the actual proton donor is at 1519 and proton acceptor at 1334.",
-    "evidence_ids": ["C5", "H3", "C4", "C10"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A knowledgeable person might recognize the sequence as a fungal non-reducing polyketide synthase and know that the KS domain contains a catalytic cysteine within a conserved Cys-His-His triad, and that the KS domain typically begins after a short N-terminal region. This could in principle exclude positions 93 and 109 (too early in the sequence for the KS catalytic residue in a 2121-residue PKS). However, distinguishing position 558 from position 324, or confirming 558 specifically, requires precise domain boundary identification or profile matching that cannot be reliably performed by mental inspection of a 2121-residue sequence.",
-    "missing_item_specific_fact": "The exact domain boundaries of the KS domain within this specific 2121-residue protein, or the precise position of the catalytic cysteine within the KS active-site motif, which requires either recognition of this particular protein's database entry or running a domain-prediction/profile tool (e.g., PROSITE, InterProScan).",
-    "reason": "While general PKS architecture knowledge provides a weak directional argument (KS domain is not in the extreme N-terminus), the task of selecting position 558 over 324 (or confirming 558 is the catalytic residue) from a raw 2121-residue sequence without computational tools depends on item-specific annotation or sequence recognition. The PROSITE-ProRule assignment itself is computational, and no motif context is provided in the question to enable position-level reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only position 558 matches an annotated active site among the four choices. Positions 93, 109, and 324 are not annotated as active sites in this entry. The functional labels attached to the distractors (Nucleophile at 109, Proton donor at 93, Proton acceptor at 324) do not correspond to any UniProt-annotated features at those positions. The question is unambiguous in that only one choice aligns with the annotation."
-  },
-  "important_caveats": [
-    "The active-site assignment at position 558 is based on PROSITE-ProRule (ECO:0000255), a computational profile-based annotation, not direct experimental mutagenesis or structural determination of this specific residue.",
-    "The protein also has active sites at positions 693 and 735 (also for beta-ketoacyl synthase activity) and at 1334/1519 (dehydratase). The question only lists position 558 among the choices, avoiding ambiguity among multiple KS sites.",
-    "The question does not identify the protein or provide domain annotations, making it effectively a sequence-recognition/lookup task for a 2121-residue protein.",
-    "The evidence code ECO:0000269 (experimental) supports the overall enzyme function, but the specific residue-level assignment is ECO:0000255 (computational by rule/profile)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -500,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q2TXQ8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "76b2331851b384dacd64975284637f2321c70245db127da1fdb2db4370c8e5af",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 2121,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "76b2331851b384dacd64975284637f2321c70245db127da1fdb2db4370c8e5af",
   "current_entry_audit": {
     "entryVersion": 124,
     "firstPublicDate": "2025-04-09",
@@ -531,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2006-01-24",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "current_source_sequence_sha256": "76b2331851b384dacd64975284637f2321c70245db127da1fdb2db4370c8e5af",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 2121,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "76b2331851b384dacd64975284637f2321c70245db127da1fdb2db4370c8e5af",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 122,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q2TXQ8",
   "selected_historical_entry_version": 122,
+  "selected_historical_record_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "selected_historical_source_sequence_length": 2121,
+  "selected_historical_source_sequence_sha256": "76b2331851b384dacd64975284637f2321c70245db127da1fdb2db4370c8e5af",
   "selected_historical_version": {
     "accession": "Q2TXQ8",
     "database": "Swiss-Prot",
@@ -549,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AOIG_ASPOR",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "selected_historical_source_sequence_sha256": "76b2331851b384dacd64975284637f2321c70245db127da1fdb2db4370c8e5af",
-  "selected_historical_source_sequence_length": 2121,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 122,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -580,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q2TXQ8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -599,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":124,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2006-01-24\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -618,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Yellow koji mold\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus oryzae (strain ATCC 42149 / RIB 40)\",\"taxonId\":510516}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -637,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22447538\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22447538\",\"source\":\"PubMed\"}],\"value\":\"Non-reducing polyketide synthase aoiG\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -656,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/features/12",
   "excerpt": "{\"description\":\"For beta-ketoacyl synthase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01348\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":558},\"start\":{\"modifier\":\"EXACT\",\"value\":558}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/12",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -675,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/features/13",
   "excerpt": "{\"description\":\"For beta-ketoacyl synthase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01348\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":693},\"start\":{\"modifier\":\"EXACT\",\"value\":693}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/13",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -694,15 +455,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/features/14",
   "excerpt": "{\"description\":\"For beta-ketoacyl synthase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01348\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":735},\"start\":{\"modifier\":\"EXACT\",\"value\":735}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/14",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -713,15 +474,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/features/15",
   "excerpt": "{\"description\":\"Proton acceptor; for dehydratase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01363\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":1334},\"start\":{\"modifier\":\"EXACT\",\"value\":1334}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/15",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -732,15 +493,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/features/16",
   "excerpt": "{\"description\":\"Proton donor; for dehydratase activity\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01363\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":1519},\"start\":{\"modifier\":\"EXACT\",\"value\":1519}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/16",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -751,15 +512,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json",
-  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
-  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Nakazawa T.\",\"Ishiuchi K.\",\"Praseuth A.\",\"Noguchi H.\",\"Hotta K.\",\"Watanabe K.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22447538\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201200107\"}],\"citationType\":\"journal article\",\"firstPage\":\"855\",\"id\":\"22447538\",\"journal\":\"ChemBioChem\",\"lastPage\":\"861\",\"publicationDate\":\"2012\",\"title\":\"Overexpressing transcriptional regulator in Aspergillus oryzae activates a silent biosynthetic pathway to produce a novel polyketide.\",\"volume\":\"13\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"DOMAIN\",\"INDUCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:41.744302+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b4c4ebc4523172992ff4dfe61bdc82ee604fd15ae8b9e8ecdc17c3d54ba10d69",
+  "url": "https://rest.uniprot.org/uniprotkb/Q2TXQ8.json"
 }
 ```
 
@@ -769,18 +530,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122",
-  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   AOIG_ASPOR              Reviewed;        2121 AA.\nAC   Q2TXQ8;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   24-JAN-2006, sequence version 1.\nDT   28-JAN-2026, entry version 122.\nDE   RecName: Full=Non-reducing polyketide synthase aoiG {ECO:0000303|PubMed:22447538};\nDE            EC=2.3.1.- {ECO:0000269|PubMed:22447538};\nGN   Name=aoiG {ECO:0000303|PubMed:22447538}; ORFNames=AO090010000048;\nOS   Aspergillus oryzae (strain ATCC 42149 / RIB 40) (Yellow koji mold).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=510516;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122"
 }
 ```
 
@@ -790,18 +551,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122",
-  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
-  "source_locator": "lines 32-38",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, PATHWAY, DOMAIN, AND INDUCTION.\nRX   PubMed=22447538; DOI=10.1002/cbic.201200107;\nRA   Nakazawa T., Ishiuchi K., Praseuth A., Noguchi H., Hotta K., Watanabe K.;\nRT   \"Overexpressing transcriptional regulator in Aspergillus oryzae activates a\nRT   silent biosynthetic pathway to produce a novel polyketide.\";\nRL   ChemBioChem 13:855-861(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-38",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122"
 }
 ```
 
@@ -811,18 +572,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122",
-  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
-  "source_locator": "lines 186-188",
   "excerpt": "FT   ACT_SITE        558\nFT                   /note=\"For beta-ketoacyl synthase activity\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01348\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 186-188",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122"
 }
 ```
 
@@ -832,18 +593,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122",
-  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
-  "source_locator": "lines 189-191",
   "excerpt": "FT   ACT_SITE        693\nFT                   /note=\"For beta-ketoacyl synthase activity\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01348\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 189-191",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122"
 }
 ```
 
@@ -853,18 +614,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122",
-  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
-  "source_locator": "lines 192-194",
   "excerpt": "FT   ACT_SITE        735\nFT                   /note=\"For beta-ketoacyl synthase activity\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01348\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 192-194",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122"
 }
 ```
 
@@ -874,18 +635,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122",
-  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
-  "source_locator": "lines 195-197",
   "excerpt": "FT   ACT_SITE        1334\nFT                   /note=\"Proton acceptor; for dehydratase activity\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01363\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 195-197",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122"
 }
 ```
 
@@ -895,18 +656,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122",
-  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
-  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
-  "source_locator": "lines 198-200",
   "excerpt": "FT   ACT_SITE        1519\nFT                   /note=\"Proton donor; for dehydratase activity\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01363\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:30:44.949915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 198-200",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "cd83ac8893085d09d81e762189c4a2dd94de9101c2c32f33675ed9162a05627b",
+  "url": "https://rest.uniprot.org/unisave/Q2TXQ8?format=txt&versions=122"
 }
 ```
 

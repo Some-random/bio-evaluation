@@ -1,18 +1,16 @@
-# temperature_0007: before and after transfer clarification
+# temperature_0007
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0007.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0007.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **B** — 25
+**Expected answer:** **B** — 25
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | output error (invalid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,245 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt entry, whose temperature-dependence annotation reports an optimum of 25 °C, citing experimental evidence (PubMed 9726878). This supports choice B, though the primary study was not independently reviewed here.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support identifying a protein family, but it provides no concrete basis for distinguishing an exact measured optimum of 25 °C from nearby numerical options.
-
-
-**Missing item-specific fact**
-
-> The protein-specific experimentally measured temperature optimum, reported as 25 °C in the cited annotation.
-
-
-**Reason**
-
-> Choosing the keyed value depends on an item-specific measurement absent from the sequence and question context; general thermal-adaptation heuristics do not establish this precise optimum.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options are distinct numerical values or a range, and the cited annotation specifically reports 25 °C.
-
-
-### Important caveats
-
-- The annotation cites an experimental paper, but the primary paper was not independently checked.
-- The sequence matches the database entry; the exact author source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support identifying a protein family, but it provides no concrete basis for distinguishing an exact measured optimum of 25 °C from nearby numerical options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific experimentally measured temperature optimum, reported as 25 °C in the cited annotation.",
-    "reason": "Choosing the keyed value depends on an item-specific measurement absent from the sequence and question context; general thermal-adaptation heuristics do not establish this precise optimum."
-  },
-  "case_id": "temperature_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry, whose temperature-dependence annotation reports an optimum of 25 °C, citing experimental evidence (PubMed 9726878). This supports choice B, though the primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The annotation cites an experimental paper, but the primary paper was not independently checked.",
-    "The sequence matches the database entry; the exact author source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options are distinct numerical values or a range, and the cited annotation specifically reports 25 °C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry, whose temperature-dependence annotation reports an optimum of 25 °C, citing experimental evidence (PubMed 9726878). This supports choice B, though the primary study was not independently reviewed here.",
-    "evidence_ids": ["C5", "H4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support identifying a protein family, but it provides no concrete basis for distinguishing an exact measured optimum of 25 °C from nearby numerical options.",
-    "missing_item_specific_fact": "The protein-specific experimentally measured temperature optimum, reported as 25 °C in the cited annotation.",
-    "reason": "Choosing the keyed value depends on an item-specific measurement absent from the sequence and question context; general thermal-adaptation heuristics do not establish this precise optimum."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options are distinct numerical values or a range, and the cited annotation specifically reports 25 °C."
-  },
-  "important_caveats": [
-    "The annotation cites an experimental paper, but the primary paper was not independently checked.",
-    "The sequence matches the database entry; the exact author source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** output error.
-**Canonical saved status:** `invalid_review`.
-
-**This saved response has an output error and is not a usable structured review.** Any labels below remain the original saved values; they are excluded from label distributions and agreement. This output status does not judge the benchmark question, author key or biological correctness. No field or option ID has been repaired.
-
-**Validation errors:** `question_ambiguity:invalid_option_ids`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A2H1K3G9 (L-methionine gamma-lyase from Brevibacterium aurantiacum, sequence matched) explicitly states under BIOPHYSICOCHEMICAL PROPERTIES: 'Optimum temperature is 25 degrees Celsius. Is active between 5 and 50 degrees Celsius.' This is experimentally determined (ECO:0000269, PubMed:9726878, Dias & Weimer 1998). The benchmark sequence SHA256 matches the UniProt sequence exactly. The expected answer of 25°C is directly supported by experimental evidence.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> One could argue that Brevibacterium aurantiacum is a mesophilic cheese-associated organism, making a thermophilic optimum (41-53°C, choice D) unlikely. However, this reasoning only eliminates D. It cannot distinguish 25°C (B) from 30°C (A) or 31°C (C), which are all plausible mesophilic optima. No general amino-acid-composition heuristic (e.g., charged-residue fraction, proline content, hydrophobicity) provides a reliable, validated mapping to a specific 5- or 6-degree-wide temperature window among 25, 30, and 31°C.
-
-
-**Missing item-specific fact**
-
-> The specific experimental measurement that this particular L-methionine gamma-lyase from Brevibacterium aurantiacum has an optimum temperature of exactly 25°C (as reported by Dias & Weimer, 1998). Without knowing the source organism or having access to this experimental datum, the sequence alone provides no principled basis to select 25 over 30 or 31.
-
-
-**Reason**
-
-> The three mesophilic choices (25, 30, 31) are too close to be distinguished by any established sequence-based rule. The question's framing ('subtle patterns in the amino acid sequence') overstates what sequence composition can predict at this resolution. Selection of B over A or C depends entirely on the item-specific experimental result recorded in UniProt, not on general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A (30)",
-  "B (25)",
-  "C (31)"
-]
-```
-
-> All three are plausible optimal temperatures for a mesophilic bacterial enzyme. Without the organism name or the specific experimental measurement, a knowledgeable respondent could reasonably select any of them. Only D (41-53°C) is clearly eliminable for a mesophile. The question provides no organism context, growth-temperature information, or comparative sequence data that would tip the balance among 25, 30, and 31.
-
-
-### Important caveats
-
-- The UniProt annotation is experimental (ECO:0000269) from the 1998 Dias & Weimer paper on B. linens BL2; the sequence in UniProt is from B. aurantiacum (reclassified from B. linens). The optimum temperature was measured on the B. linens BL2 enzyme; applicability to the B. aurantiacum sequence is assumed by UniProt curation.
-- The question labels the task as 'thermal adaptation category' but the choices are specific temperatures, not categories like 'cold-adapted' or 'moderate.' This is a minor wording inconsistency but does not change the underlying lookup dependence.
-- The reviewer-only UniProt accession and annotation were not available to the evaluated model; the model sees only the 406-residue sequence and four temperature choices.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "One could argue that Brevibacterium aurantiacum is a mesophilic cheese-associated organism, making a thermophilic optimum (41-53°C, choice D) unlikely. However, this reasoning only eliminates D. It cannot distinguish 25°C (B) from 30°C (A) or 31°C (C), which are all plausible mesophilic optima. No general amino-acid-composition heuristic (e.g., charged-residue fraction, proline content, hydrophobicity) provides a reliable, validated mapping to a specific 5- or 6-degree-wide temperature window among 25, 30, and 31°C.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimental measurement that this particular L-methionine gamma-lyase from Brevibacterium aurantiacum has an optimum temperature of exactly 25°C (as reported by Dias & Weimer, 1998). Without knowing the source organism or having access to this experimental datum, the sequence alone provides no principled basis to select 25 over 30 or 31.",
-    "reason": "The three mesophilic choices (25, 30, 31) are too close to be distinguished by any established sequence-based rule. The question's framing ('subtle patterns in the amino acid sequence') overstates what sequence composition can predict at this resolution. Selection of B over A or C depends entirely on the item-specific experimental result recorded in UniProt, not on general biological reasoning."
-  },
-  "case_id": "temperature_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2H1K3G9 (L-methionine gamma-lyase from Brevibacterium aurantiacum, sequence matched) explicitly states under BIOPHYSICOCHEMICAL PROPERTIES: 'Optimum temperature is 25 degrees Celsius. Is active between 5 and 50 degrees Celsius.' This is experimentally determined (ECO:0000269, PubMed:9726878, Dias & Weimer 1998). The benchmark sequence SHA256 matches the UniProt sequence exactly. The expected answer of 25°C is directly supported by experimental evidence."
-  },
-  "important_caveats": [
-    "The UniProt annotation is experimental (ECO:0000269) from the 1998 Dias & Weimer paper on B. linens BL2; the sequence in UniProt is from B. aurantiacum (reclassified from B. linens). The optimum temperature was measured on the B. linens BL2 enzyme; applicability to the B. aurantiacum sequence is assumed by UniProt curation.",
-    "The question labels the task as 'thermal adaptation category' but the choices are specific temperatures, not categories like 'cold-adapted' or 'moderate.' This is a minor wording inconsistency but does not change the underlying lookup dependence.",
-    "The reviewer-only UniProt accession and annotation were not available to the evaluated model; the model sees only the 406-residue sequence and four temperature choices."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A (30)",
-      "B (25)",
-      "C (31)"
-    ],
-    "reason": "All three are plausible optimal temperatures for a mesophilic bacterial enzyme. Without the organism name or the specific experimental measurement, a knowledgeable respondent could reasonably select any of them. Only D (41-53°C) is clearly eliminable for a mesophile. The question provides no organism context, growth-temperature information, or comparative sequence data that would tip the balance among 25, 30, and 31."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2H1K3G9 (L-methionine gamma-lyase from Brevibacterium aurantiacum, sequence matched) explicitly states under BIOPHYSICOCHEMICAL PROPERTIES: 'Optimum temperature is 25 degrees Celsius. Is active between 5 and 50 degrees Celsius.' This is experimentally determined (ECO:0000269, PubMed:9726878, Dias & Weimer 1998). The benchmark sequence SHA256 matches the UniProt sequence exactly. The expected answer of 25°C is directly supported by experimental evidence.",
-    "evidence_ids": ["C5", "H4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "One could argue that Brevibacterium aurantiacum is a mesophilic cheese-associated organism, making a thermophilic optimum (41-53°C, choice D) unlikely. However, this reasoning only eliminates D. It cannot distinguish 25°C (B) from 30°C (A) or 31°C (C), which are all plausible mesophilic optima. No general amino-acid-composition heuristic (e.g., charged-residue fraction, proline content, hydrophobicity) provides a reliable, validated mapping to a specific 5- or 6-degree-wide temperature window among 25, 30, and 31°C.",
-    "missing_item_specific_fact": "The specific experimental measurement that this particular L-methionine gamma-lyase from Brevibacterium aurantiacum has an optimum temperature of exactly 25°C (as reported by Dias & Weimer, 1998). Without knowing the source organism or having access to this experimental datum, the sequence alone provides no principled basis to select 25 over 30 or 31.",
-    "reason": "The three mesophilic choices (25, 30, 31) are too close to be distinguished by any established sequence-based rule. The question's framing ('subtle patterns in the amino acid sequence') overstates what sequence composition can predict at this resolution. Selection of B over A or C depends entirely on the item-specific experimental result recorded in UniProt, not on general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A (30)", "B (25)", "C (31)"],
-    "reason": "All three are plausible optimal temperatures for a mesophilic bacterial enzyme. Without the organism name or the specific experimental measurement, a knowledgeable respondent could reasonably select any of them. Only D (41-53°C) is clearly eliminable for a mesophile. The question provides no organism context, growth-temperature information, or comparative sequence data that would tip the balance among 25, 30, and 31."
-  },
-  "important_caveats": [
-    "The UniProt annotation is experimental (ECO:0000269) from the 1998 Dias & Weimer paper on B. linens BL2; the sequence in UniProt is from B. aurantiacum (reclassified from B. linens). The optimum temperature was measured on the B. linens BL2 enzyme; applicability to the B. aurantiacum sequence is assumed by UniProt curation.",
-    "The question labels the task as 'thermal adaptation category' but the choices are specific temperatures, not categories like 'cold-adapted' or 'moderate.' This is a minor wording inconsistency but does not change the underlying lookup dependence.",
-    "The reviewer-only UniProt accession and annotation were not available to the evaluated model; the model sees only the 406-residue sequence and four temperature choices."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -394,10 +158,9 @@ Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -517,30 +280,17 @@ Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4).
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2H1K3G9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 406,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-04-09",
@@ -548,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-01-31",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "current_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 406,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 32,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2H1K3G9",
   "selected_historical_entry_version": 32,
+  "selected_historical_record_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "selected_historical_source_sequence_length": 406,
+  "selected_historical_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
   "selected_historical_version": {
     "accession": "A0A2H1K3G9",
     "database": "Swiss-Prot",
@@ -566,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MEGL_BREAU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "selected_historical_source_sequence_sha256": "435ffd3b8e0f97253809f6299a192824acbc91b3f9ba8e80c96d087a48e0a9a8",
-  "selected_historical_source_sequence_length": 406,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 32,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -597,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2H1K3G9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -616,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-01-31\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -635,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Micrococcales\",\"Brevibacteriaceae\",\"Brevibacterium\"],\"scientificName\":\"Brevibacterium aurantiacum\",\"taxonId\":273384}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -654,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"value\":\"4.4.1.2\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"value\":\"Homocysteine desulfhydrase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"value\":\"MGL-BL929\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"4.4.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"L-methionine gamma-lyase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30940696\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"MGL\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -673,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"kineticParameters\":{\"maximumVelocities\":[{\"enzyme\":\"enzyme with L-methionine as substrate\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"unit\":\"umol/min/mg\",\"velocity\":7.0}],\"michaelisConstants\":[{\"constant\":6.12,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"substrate\":\"L-methionine\",\"unit\":\"mM\"},{\"constant\":6.83,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"substrate\":\"L-methionine\",\"unit\":\"mM\"},{\"constant\":0.94,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"substrate\":\"L-homocysteine\",\"unit\":\"mM\"}],\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"30940696\",\"source\":\"PubMed\"}],\"value\":\"kcat is 15.51 sec(-1) with L-methionine as substrate. kcat is 72.44 sec(-1) with L-homocysteine as substrate.\"}]}},\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is 7.5. Is stable at pHs ranging from 6.0 to 8.0 for 24 hours.\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"9726878\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 25 degrees Celsius. Is active between 5 and 50 degrees Celsius.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -692,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Dias B.\",\"Weimer B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"9726878\"},{\"database\":\"DOI\",\"id\":\"10.1128/aem.64.9.3327-3331.1998\"}],\"citationType\":\"journal article\",\"firstPage\":\"3327\",\"id\":\"9726878\",\"journal\":\"Appl. Environ. Microbiol.\",\"lastPage\":\"3331\",\"publicationDate\":\"1998\",\"title\":\"Purification and characterization of L-methionine gamma-lyase from brevibacterium linens BL2.\",\"volume\":\"64\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"BL2\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBSTRATE SPECIFICITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"ACTIVITY REGULATION\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -711,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json",
-  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
-  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Machover D.\",\"Rossi L.\",\"Hamelin J.\",\"Desterke C.\",\"Goldschmidt E.\",\"Chadefaux-Vekemans B.\",\"Bonnarme P.\",\"Briozzo P.\",\"Kopecny D.\",\"Pierige F.\",\"Magnani M.\",\"Mollicone R.\",\"Haghighi-Rad F.\",\"Gaston-Mathe Y.\",\"Dairou J.\",\"Boucheix C.\",\"Saffroy R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30940696\"},{\"database\":\"DOI\",\"id\":\"10.1124/jpet.119.256537\"}],\"citationType\":\"journal article\",\"firstPage\":\"489\",\"id\":\"30940696\",\"journal\":\"J. Pharmacol. Exp. Ther.\",\"lastPage\":\"502\",\"publicationDate\":\"2019\",\"title\":\"Effects in Cancer Cells of the Recombinant L-Methionine Gamma-Lyase from Brevibacterium aurantiacum. Encapsulation in Human Erythrocytes for Sustained L-Methionine Elimination.\",\"volume\":\"369\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 9175 / DSM 20426 / JCM 2590 / NBRC 12171 / NCDO 739 / NCIMB 8546 / KC\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBSTRATE SPECIFICITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:24:44.554855+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a920c3d8a2606b869b1968d0c8b2153e5ed89fbf0c4578d7222ed95845d1c3a6",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2H1K3G9.json"
 }
 ```
 
@@ -729,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   MEGL_BREAU              Reviewed;         406 AA.\nAC   A0A2H1K3G9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   31-JAN-2018, sequence version 1.\nDT   28-JAN-2026, entry version 32.\nDE   RecName: Full=L-methionine gamma-lyase {ECO:0000303|PubMed:30940696, ECO:0000303|PubMed:9726878};\nDE            Short=MGL {ECO:0000303|PubMed:30940696, ECO:0000303|PubMed:9726878};\nDE            EC=4.4.1.11 {ECO:0000269|PubMed:30940696, ECO:0000269|PubMed:9726878};\nDE   AltName: Full=Homocysteine desulfhydrase {ECO:0000303|PubMed:30940696};\nDE            EC=4.4.1.2 {ECO:0000269|PubMed:30940696};\nDE   AltName: Full=MGL-BL929 {ECO:0000303|PubMed:30940696};\nGN   ORFNames=BAUR9175_03070 {ECO:0000312|EMBL:SMX94104.1},\nGN   BAUR920_03040 {ECO:0000312|EMBL:SMX97377.1},\nGN   BAURA63_02933 {ECO:0000312|EMBL:SMX94451.1},\nGN   BAURA86_00394 {ECO:0000312|EMBL:SMX72154.1};\nOS   Brevibacterium aurantiacum.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Micrococcales;\nOC   Brevibacteriaceae; Brevibacterium.\nOX   NCBI_TaxID=273384;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 
@@ -750,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, SUBSTRATE SPECIFICITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, ACTIVITY REGULATION, AND SUBUNIT.\nRC   STRAIN=BL2;\nRX   PubMed=9726878; DOI=10.1128/aem.64.9.3327-3331.1998;\nRA   Dias B., Weimer B.;\nRT   \"Purification and characterization of L-methionine gamma-lyase from\nRT   brevibacterium linens BL2.\";\nRL   Appl. Environ. Microbiol. 64:3327-3331(1998).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 
@@ -771,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 36-49",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, COFACTOR, SUBSTRATE SPECIFICITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBUNIT, AND BIOTECHNOLOGY.\nRC   STRAIN=ATCC 9175 / DSM 20426 / JCM 2590 / NBRC 12171 / NCDO 739 / NCIMB\nRC   8546 / KC;\nRX   PubMed=30940696; DOI=10.1124/jpet.119.256537;\nRA   Machover D., Rossi L., Hamelin J., Desterke C., Goldschmidt E.,\nRA   Chadefaux-Vekemans B., Bonnarme P., Briozzo P., Kopecny D., Pierige F.,\nRA   Magnani M., Mollicone R., Haghighi-Rad F., Gaston-Mathe Y., Dairou J.,\nRA   Boucheix C., Saffroy R.;\nRT   \"Effects in Cancer Cells of the Recombinant L-Methionine Gamma-Lyase from\nRT   Brevibacterium aurantiacum. Encapsulation in Human Erythrocytes for\nRT   Sustained L-Methionine Elimination.\";\nRL   J. Pharmacol. Exp. Ther. 369:489-502(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 
@@ -792,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 32,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32",
-  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
-  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
-  "source_locator": "lines 81-96",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Kinetic parameters:\nCC         KM=6.12 mM for L-methionine {ECO:0000269|PubMed:9726878};\nCC         KM=6.83 mM for L-methionine {ECO:0000269|PubMed:30940696};\nCC         KM=0.94 mM for L-homocysteine {ECO:0000269|PubMed:30940696};\nCC         Vmax=7.0 umol/min/mg enzyme with L-methionine as substrate\nCC         {ECO:0000269|PubMed:9726878};\nCC         Note=kcat is 15.51 sec(-1) with L-methionine as substrate. kcat is\nCC         72.44 sec(-1) with L-homocysteine as substrate.\nCC         {ECO:0000269|PubMed:30940696};\nCC       pH dependence:\nCC         Optimum pH is 7.5. Is stable at pHs ranging from 6.0 to 8.0 for 24\nCC         hours. {ECO:0000269|PubMed:9726878};\nCC       Temperature dependence:\nCC         Optimum temperature is 25 degrees Celsius. Is active between 5 and 50\nCC         degrees Celsius. {ECO:0000269|PubMed:9726878};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 32,
+  "retrieved_utc": "2026-11-01T06:27:25.782043+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-96",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9f8f2097c25cd1b2756007ac83a5f1a172b3bde4aa3f977e22144a88c5ee6f0b",
+  "url": "https://rest.uniprot.org/unisave/A0A2H1K3G9?format=txt&versions=32"
 }
 ```
 

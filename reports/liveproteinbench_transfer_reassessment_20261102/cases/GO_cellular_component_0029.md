@@ -1,18 +1,16 @@
-# GO_cellular_component_0029: before and after transfer clarification
+# GO_cellular_component_0029
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0029.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0029.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — cytosol
+**Expected answer:** **A** — cytosol
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,251 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated to cytosol (GO:0005829) with IBA evidence, a computational, phylogenetically inferred annotation rather than direct experimental localization evidence. This supports the key as an annotation, without establishing that it was experimentally measured.
-
-Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a soluble protein and offers no obvious membrane-spanning or organelle-targeting signal, which can favor an intracellular soluble location over the membrane and chloroplast distractors. It does not, however, distinguish the specific GO label cytosol from the broader cytoplasm label.
-
-
-**Missing item-specific fact**
-
-> A protein-specific localization annotation or other evidence resolving which cellular-component term is intended; the input does not provide it.
-
-
-**Reason**
-
-> The sequence may support a general soluble intracellular prediction, but the decisive distinction between the nested cytosol and cytoplasm choices is not established by that inference. Selecting the keyed term depends on the protein-specific annotation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Cytosol is part of the cytoplasm, so both labels can describe a soluble intracellular protein. The question gives no criterion for choosing the narrower term over the broader one.
-
-
-### Important caveats
-
-- The sequence match and UniProt annotation support the key, but the cited IBA evidence is computational, not direct experimental localization evidence.
-- The reviewer-only source identity and annotation were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a soluble protein and offers no obvious membrane-spanning or organelle-targeting signal, which can favor an intracellular soluble location over the membrane and chloroplast distractors. It does not, however, distinguish the specific GO label cytosol from the broader cytoplasm label.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "A protein-specific localization annotation or other evidence resolving which cellular-component term is intended; the input does not provide it.",
-    "reason": "The sequence may support a general soluble intracellular prediction, but the decisive distinction between the nested cytosol and cytoplasm choices is not established by that inference. Selecting the keyed term depends on the protein-specific annotation."
-  },
-  "case_id": "GO_cellular_component_0029",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated to cytosol (GO:0005829) with IBA evidence, a computational, phylogenetically inferred annotation rather than direct experimental localization evidence. This supports the key as an annotation, without establishing that it was experimentally measured."
-  },
-  "important_caveats": [
-    "The sequence match and UniProt annotation support the key, but the cited IBA evidence is computational, not direct experimental localization evidence.",
-    "The reviewer-only source identity and annotation were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Cytosol is part of the cytoplasm, so both labels can describe a soluble intracellular protein. The question gives no criterion for choosing the narrower term over the broader one."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0029",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated to cytosol (GO:0005829) with IBA evidence, a computational, phylogenetically inferred annotation rather than direct experimental localization evidence. This supports the key as an annotation, without establishing that it was experimentally measured.",
-    "evidence_ids": ["C5", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a soluble protein and offers no obvious membrane-spanning or organelle-targeting signal, which can favor an intracellular soluble location over the membrane and chloroplast distractors. It does not, however, distinguish the specific GO label cytosol from the broader cytoplasm label.",
-    "missing_item_specific_fact": "A protein-specific localization annotation or other evidence resolving which cellular-component term is intended; the input does not provide it.",
-    "reason": "The sequence may support a general soluble intracellular prediction, but the decisive distinction between the nested cytosol and cytoplasm choices is not established by that inference. Selecting the keyed term depends on the protein-specific annotation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Cytosol is part of the cytoplasm, so both labels can describe a soluble intracellular protein. The question gives no criterion for choosing the narrower term over the broader one."
-  },
-  "important_caveats": [
-    "The sequence match and UniProt annotation support the key, but the cited IBA evidence is computational, not direct experimental localization evidence.",
-    "The reviewer-only source identity and annotation were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry (I6YBQ3, LRPA_MYCTU) annotates GO:0005829 (cytosol) with evidence code IBA:GO_Central (C5, H5). The protein is an HTH-type transcriptional regulator (LrpA / feast-famine regulatory protein) from Mycobacterium tuberculosis, a bacterium. Crystal structures (2IVM, 2VBW–2VC1, 2QZ8) confirm it is a soluble DNA-binding protein with cofactor-binding domains, consistent with cytosolic localization. The IBA evidence code indicates computational inference rather than direct experimental measurement, but the biological context (soluble bacterial transcription factor functioning in the aqueous phase to bind genomic DNA) strongly supports the cytosol annotation. Options B (chloroplast) and D (recycling endosome membrane) are inapplicable to a bacterium.
-
-Citations as saved: [C5](#evidence-c5), [C4](#evidence-c4), [C7](#evidence-c7), [H5](#evidence-h5), [H3](#evidence-h3), [H4](#evidence-h4), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is a 150-residue HTH-type transcriptional regulator from a bacterium (M. tuberculosis). Bacteria lack chloroplasts and endosomes, immediately eliminating B and D. The sequence contains no transmembrane helices, signal peptides, or organelle-targeting motifs; it is a soluble DNA-binding protein confirmed by multiple crystal structures. In GO, cytosol (GO:0005829) is defined as the part of the cytoplasm excluding organelles and is the appropriate term for soluble proteins functioning in the aqueous phase. A soluble bacterial transcription factor that binds genomic DNA in the nucleoid region resides in the cytosol, not merely the broader 'cytoplasm' (GO:0005737), which includes membrane-bound structures. This reasoning distinguishes A from C without requiring the specific UniProt annotation.
-
-
-**Missing item-specific fact**
-
-> None critical. The IBA evidence code means the specific 'cytosol' label was propagated computationally rather than measured, but the biological argument (soluble, no targeting signals, DNA-binding transcription factor) independently supports cytosol over cytoplasm.
-
-
-**Reason**
-
-> Eliminating B and D requires only knowing the organism is a bacterium. Distinguishing A (cytosol) from C (cytoplasm) relies on the general GO convention that soluble proteins are annotated to cytosol (the organelle-free aqueous fraction) rather than the broader cytoplasm. This is a defensible biological/ontological reasoning step applicable to any soluble protein, not a protein-specific lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> In the GO ontology, cytosol is a child of cytoplasm (cytosol part_of cytoplasm). For a soluble bacterial protein, 'cytoplasm' (C) is not biologically incorrect—it is simply less specific than 'cytosol' (A). A model selecting C could argue it is the broader, equally valid compartment. However, the question asks for the 'primary' cellular component, and for a soluble protein with no association to organelles or membranes, 'cytosol' is the more precise and conventionally preferred GO annotation, making A the better answer. B and D are unambiguously wrong for a bacterium.
-
-
-### Important caveats
-
-- The GO annotation uses IBA:GO_Central (Inferred by Biological Aspect of Ancestor), a graph-based computational inference, not direct experimental localization data. No subcellular fractionation or microscopy experiment is cited for this protein's localization.
-- The UniProt accession (I6YBQ3) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must reason from the sequence alone.
-- The protein was integrated into Swiss-Prot only on 2025-02-05 (entry version 81 at review time; version 79 at historical cutoff). The author's source snapshot date is unknown, but the sequence and annotation are consistent across versions checked.
-- The cytosol-vs-cytoplasm distinction, while resolvable by GO convention, is a fine-grained ontological point that some biologists treat as interchangeable in casual usage.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is a 150-residue HTH-type transcriptional regulator from a bacterium (M. tuberculosis). Bacteria lack chloroplasts and endosomes, immediately eliminating B and D. The sequence contains no transmembrane helices, signal peptides, or organelle-targeting motifs; it is a soluble DNA-binding protein confirmed by multiple crystal structures. In GO, cytosol (GO:0005829) is defined as the part of the cytoplasm excluding organelles and is the appropriate term for soluble proteins functioning in the aqueous phase. A soluble bacterial transcription factor that binds genomic DNA in the nucleoid region resides in the cytosol, not merely the broader 'cytoplasm' (GO:0005737), which includes membrane-bound structures. This reasoning distinguishes A from C without requiring the specific UniProt annotation.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The IBA evidence code means the specific 'cytosol' label was propagated computationally rather than measured, but the biological argument (soluble, no targeting signals, DNA-binding transcription factor) independently supports cytosol over cytoplasm.",
-    "reason": "Eliminating B and D requires only knowing the organism is a bacterium. Distinguishing A (cytosol) from C (cytoplasm) relies on the general GO convention that soluble proteins are annotated to cytosol (the organelle-free aqueous fraction) rather than the broader cytoplasm. This is a defensible biological/ontological reasoning step applicable to any soluble protein, not a protein-specific lookup."
-  },
-  "case_id": "GO_cellular_component_0029",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C4",
-      "C7",
-      "H5",
-      "H3",
-      "H4",
-      "GO2"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry (I6YBQ3, LRPA_MYCTU) annotates GO:0005829 (cytosol) with evidence code IBA:GO_Central (C5, H5). The protein is an HTH-type transcriptional regulator (LrpA / feast-famine regulatory protein) from Mycobacterium tuberculosis, a bacterium. Crystal structures (2IVM, 2VBW–2VC1, 2QZ8) confirm it is a soluble DNA-binding protein with cofactor-binding domains, consistent with cytosolic localization. The IBA evidence code indicates computational inference rather than direct experimental measurement, but the biological context (soluble bacterial transcription factor functioning in the aqueous phase to bind genomic DNA) strongly supports the cytosol annotation. Options B (chloroplast) and D (recycling endosome membrane) are inapplicable to a bacterium."
-  },
-  "important_caveats": [
-    "The GO annotation uses IBA:GO_Central (Inferred by Biological Aspect of Ancestor), a graph-based computational inference, not direct experimental localization data. No subcellular fractionation or microscopy experiment is cited for this protein's localization.",
-    "The UniProt accession (I6YBQ3) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must reason from the sequence alone.",
-    "The protein was integrated into Swiss-Prot only on 2025-02-05 (entry version 81 at review time; version 79 at historical cutoff). The author's source snapshot date is unknown, but the sequence and annotation are consistent across versions checked.",
-    "The cytosol-vs-cytoplasm distinction, while resolvable by GO convention, is a fine-grained ontological point that some biologists treat as interchangeable in casual usage."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "In the GO ontology, cytosol is a child of cytoplasm (cytosol part_of cytoplasm). For a soluble bacterial protein, 'cytoplasm' (C) is not biologically incorrect—it is simply less specific than 'cytosol' (A). A model selecting C could argue it is the broader, equally valid compartment. However, the question asks for the 'primary' cellular component, and for a soluble protein with no association to organelles or membranes, 'cytosol' is the more precise and conventionally preferred GO annotation, making A the better answer. B and D are unambiguously wrong for a bacterium."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0029",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry (I6YBQ3, LRPA_MYCTU) annotates GO:0005829 (cytosol) with evidence code IBA:GO_Central (C5, H5). The protein is an HTH-type transcriptional regulator (LrpA / feast-famine regulatory protein) from Mycobacterium tuberculosis, a bacterium. Crystal structures (2IVM, 2VBW–2VC1, 2QZ8) confirm it is a soluble DNA-binding protein with cofactor-binding domains, consistent with cytosolic localization. The IBA evidence code indicates computational inference rather than direct experimental measurement, but the biological context (soluble bacterial transcription factor functioning in the aqueous phase to bind genomic DNA) strongly supports the cytosol annotation. Options B (chloroplast) and D (recycling endosome membrane) are inapplicable to a bacterium.",
-    "evidence_ids": ["C5", "C4", "C7", "H5", "H3", "H4", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is a 150-residue HTH-type transcriptional regulator from a bacterium (M. tuberculosis). Bacteria lack chloroplasts and endosomes, immediately eliminating B and D. The sequence contains no transmembrane helices, signal peptides, or organelle-targeting motifs; it is a soluble DNA-binding protein confirmed by multiple crystal structures. In GO, cytosol (GO:0005829) is defined as the part of the cytoplasm excluding organelles and is the appropriate term for soluble proteins functioning in the aqueous phase. A soluble bacterial transcription factor that binds genomic DNA in the nucleoid region resides in the cytosol, not merely the broader 'cytoplasm' (GO:0005737), which includes membrane-bound structures. This reasoning distinguishes A from C without requiring the specific UniProt annotation.",
-    "missing_item_specific_fact": "None critical. The IBA evidence code means the specific 'cytosol' label was propagated computationally rather than measured, but the biological argument (soluble, no targeting signals, DNA-binding transcription factor) independently supports cytosol over cytoplasm.",
-    "reason": "Eliminating B and D requires only knowing the organism is a bacterium. Distinguishing A (cytosol) from C (cytoplasm) relies on the general GO convention that soluble proteins are annotated to cytosol (the organelle-free aqueous fraction) rather than the broader cytoplasm. This is a defensible biological/ontological reasoning step applicable to any soluble protein, not a protein-specific lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "In the GO ontology, cytosol is a child of cytoplasm (cytosol part_of cytoplasm). For a soluble bacterial protein, 'cytoplasm' (C) is not biologically incorrect—it is simply less specific than 'cytosol' (A). A model selecting C could argue it is the broader, equally valid compartment. However, the question asks for the 'primary' cellular component, and for a soluble protein with no association to organelles or membranes, 'cytosol' is the more precise and conventionally preferred GO annotation, making A the better answer. B and D are unambiguously wrong for a bacterium."
-  },
-  "important_caveats": [
-    "The GO annotation uses IBA:GO_Central (Inferred by Biological Aspect of Ancestor), a graph-based computational inference, not direct experimental localization data. No subcellular fractionation or microscopy experiment is cited for this protein's localization.",
-    "The UniProt accession (I6YBQ3) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must reason from the sequence alone.",
-    "The protein was integrated into Swiss-Prot only on 2025-02-05 (entry version 81 at review time; version 79 at historical cutoff). The author's source snapshot date is unknown, but the sequence and annotation are consistent across versions checked.",
-    "The cytosol-vs-cytoplasm distinction, while resolvable by GO convention, is a fine-grained ontological point that some biologists treat as interchangeable in casual usage."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -409,10 +167,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -532,30 +289,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "I6YBQ3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 150,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
   "current_entry_audit": {
     "entryVersion": 81,
     "firstPublicDate": "2025-02-05",
@@ -563,14 +307,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-10-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "current_source_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 150,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 79,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "I6YBQ3",
   "selected_historical_entry_version": 79,
+  "selected_historical_record_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "selected_historical_source_sequence_length": 150,
+  "selected_historical_source_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
   "selected_historical_version": {
     "accession": "I6YBQ3",
     "database": "Swiss-Prot",
@@ -581,24 +341,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "LRPA_MYCTU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
-  "selected_historical_source_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
-  "selected_historical_source_sequence_length": 150,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 79,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -616,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
-  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"I6YBQ3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json"
 }
 ```
 
@@ -635,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
-  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":81,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-10-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json"
 }
 ```
 
@@ -654,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
-  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Mycobacteriales\",\"Mycobacteriaceae\",\"Mycobacterium\",\"Mycobacterium tuberculosis complex\"],\"scientificName\":\"Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)\",\"taxonId\":83332}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json"
 }
 ```
 
@@ -673,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
-  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17962306\",\"source\":\"PubMed\"}],\"value\":\"Feast/famine regulatory protein Rv3291c\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17962306\",\"source\":\"PubMed\"}],\"value\":\"MtbLrp\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26789099\",\"source\":\"PubMed\"}],\"value\":\"MtbLrpA\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HTH-type transcriptional regulator LrpA\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json"
 }
 ```
 
@@ -692,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
-  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/42",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/42",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json"
 }
 ```
 
@@ -711,15 +458,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
-  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Song N.\",\"Cui Y.\",\"Li Z.\",\"Chen L.\",\"Liu S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26789099\"},{\"database\":\"DOI\",\"id\":\"10.1089/dna.2015.3040\"}],\"citationType\":\"journal article\",\"firstPage\":\"167\",\"id\":\"26789099\",\"journal\":\"DNA Cell Biol.\",\"lastPage\":\"176\",\"publicationDate\":\"2016\",\"title\":\"New Targets and Cofactors for the Transcription Factor LrpA from Mycobacterium tuberculosis.\",\"volume\":\"35\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"H37Rv\"}],\"referenceNumber\":6,\"referencePositions\":[\"FUNCTION\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json"
 }
 ```
 
@@ -730,15 +477,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
-  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
-  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Shrivastava T.\",\"Ramachandran R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17962306\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkm850\"}],\"citationType\":\"journal article\",\"firstPage\":\"7324\",\"id\":\"17962306\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"7335\",\"publicationDate\":\"2007\",\"title\":\"Mechanistic insights from the crystal structures of a feast/famine regulatory protein from Mycobacterium tuberculosis H37Rv.\",\"volume\":\"35\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2IVM\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBW\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBX\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBY\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBZ\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VC0\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VC1\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"H37Rv\"}],\"referenceNumber\":7,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS) OF APOPROTEIN AND IN COMPLEXES WITH HISTIDINE; LEUCINE; METHIONINE; PHENYLALANINE; TRYPTOPHAN AND TYROSINE\",\"ACTIVITY REGULATION\",\"SUBUNIT\",\"DOMAIN\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json"
 }
 ```
 
@@ -748,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 79,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
-  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
-  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   LRPA_MYCTU              Reviewed;         150 AA.\nAC   I6YBQ3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-OCT-2012, sequence version 1.\nDT   28-JAN-2026, entry version 79.\nDE   RecName: Full=HTH-type transcriptional regulator LrpA {ECO:0000305};\nDE   AltName: Full=Feast/famine regulatory protein Rv3291c {ECO:0000303|PubMed:17962306};\nDE   AltName: Full=MtbLrp {ECO:0000303|PubMed:17962306};\nDE   AltName: Full=MtbLrpA {ECO:0000303|PubMed:26789099};\nGN   Name=lrpA {ECO:0000303|PubMed:18042675};\nGN   OrderedLocusNames=Rv3291c {ECO:0000312|EMBL:CCP46110.1};\nOS   Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Mycobacteriales;\nOC   Mycobacteriaceae; Mycobacterium; Mycobacterium tuberculosis complex.\nOX   NCBI_TaxID=83332;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 79,
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79"
 }
 ```
 
@@ -769,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 79,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
-  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
-  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
-  "source_locator": "lines 67-74",
   "excerpt": "RN   [6]\nRP   FUNCTION, AND ACTIVITY REGULATION.\nRC   STRAIN=H37Rv;\nRX   PubMed=26789099; DOI=10.1089/dna.2015.3040;\nRA   Song N., Cui Y., Li Z., Chen L., Liu S.;\nRT   \"New Targets and Cofactors for the Transcription Factor LrpA from\nRT   Mycobacterium tuberculosis.\";\nRL   DNA Cell Biol. 35:167-176(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 79,
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 67-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79"
 }
 ```
 
@@ -790,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 79,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
-  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
-  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
-  "source_locator": "lines 75-84",
   "excerpt": "RN   [7] {ECO:0007744|PDB:2IVM, ECO:0007744|PDB:2VBW, ECO:0007744|PDB:2VBX, ECO:0007744|PDB:2VBY, ECO:0007744|PDB:2VBZ, ECO:0007744|PDB:2VC0, ECO:0007744|PDB:2VC1}\nRP   X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS) OF APOPROTEIN AND IN COMPLEXES WITH\nRP   HISTIDINE; LEUCINE; METHIONINE; PHENYLALANINE; TRYPTOPHAN AND TYROSINE,\nRP   ACTIVITY REGULATION, SUBUNIT, AND DOMAIN.\nRC   STRAIN=H37Rv;\nRX   PubMed=17962306; DOI=10.1093/nar/gkm850;\nRA   Shrivastava T., Ramachandran R.;\nRT   \"Mechanistic insights from the crystal structures of a feast/famine\nRT   regulatory protein from Mycobacterium tuberculosis H37Rv.\";\nRL   Nucleic Acids Res. 35:7324-7335(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 79,
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 75-84",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79"
 }
 ```
 
@@ -811,18 +558,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 79,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
-  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
-  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
-  "source_locator": "lines 85-93",
   "excerpt": "RN   [8] {ECO:0007744|PDB:2QZ8}\nRP   X-RAY CRYSTALLOGRAPHY (2.16 ANGSTROMS) OF 5-150 OF MUTANT MET-108,\nRP   FUNCTION, DNA-BINDING, ACTIVITY REGULATION, SUBUNIT, AND DOMAIN.\nRC   STRAIN=H37Rv;\nRX   PubMed=18042675; DOI=10.1110/ps.073192208;\nRA   Reddy M.C., Gokulan K., Jacobs W.R., Ioerger T.R., Sacchettini J.C.;\nRT   \"Crystal structure of Mycobacterium tuberculosis LrpA, a leucine-responsive\nRT   global regulator associated with starvation response.\";\nRL   Protein Sci. 17:159-170(2008).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 79,
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 85-93",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79"
 }
 ```
 
@@ -832,18 +579,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 79,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
-  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
-  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
-  "source_locator": "lines 193-193",
   "excerpt": "DR   GO; GO:0005829; C:cytosol; IBA:GO_Central.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 79,
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 193-193",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79"
 }
 ```
 
@@ -854,15 +601,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58957-58974",
   "excerpt": "[Term]\nid: GO:0005737\nname: cytoplasm\nnamespace: cellular_component\ndef: \"The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures.\" [ISBN:0198547684]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nxref: Wikipedia:Cytoplasm\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005622 ! intracellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005737",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58957-58974",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005737"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -873,15 +620,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59936-59953",
   "excerpt": "[Term]\nid: GO:0005829\nname: cytosol\nnamespace: cellular_component\ndef: \"The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.\" [GOC:hjd, GOC:jl]\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_plant\nxref: NIF_Subcellular:sao101633890\nxref: Wikipedia:Cytosol\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005829",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59936-59953",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005829"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -892,15 +639,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 97029-97038",
   "excerpt": "[Term]\nid: GO:0009507\nname: chloroplast\nnamespace: cellular_component\ndef: \"A chlorophyll-containing plastid with thylakoids organized into grana and frets, or stroma thylakoids, and embedded in a stroma.\" [ISBN:0471245208]\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nxref: Wikipedia:Chloroplast\nis_a: GO:0009536 ! plastid\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009507",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 97029-97038",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009507"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -911,15 +658,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 342824-342831",
   "excerpt": "[Term]\nid: GO:0055038\nname: recycling endosome membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding a recycling endosome.\" [GOC:jid, GOC:rph, PMID:10930469, PMID:15601896, PMID:16246101]\nis_a: GO:0010008 ! endosome membrane\nrelationship: part_of GO:0055037 ! recycling endosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0055038",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 342824-342831",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0055038"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

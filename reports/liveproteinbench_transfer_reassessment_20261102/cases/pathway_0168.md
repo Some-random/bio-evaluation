@@ -1,18 +1,16 @@
-# pathway_0168: before and after transfer clarification
+# pathway_0168
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0168.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0168.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **D** — One-carbon metabolism
+**Expected answer:** **D** — One-carbon metabolism
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact matched sequence is annotated as cytosolic serine hydroxymethyltransferase, with a pathway annotation of one-carbon metabolism. That annotation is transferred by similarity (ECO:0000250), so it supports the key but is not direct experimental confirmation for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Identifying the protein as serine hydroxymethyltransferase would connect its reaction to one-carbon metabolism, but the sequence alone does not state that identity or reaction. Generic enzyme-family clues do not reliably distinguish this pathway from the other metabolic choices.
-
-
-**Missing item-specific fact**
-
-> The sequence-specific assignment to serine hydroxymethyltransferase and its reaction linking serine and tetrahydrofolate to one-carbon metabolism.
-
-
-**Reason**
-
-> Choosing D depends on recognizing or retrieving the protein-specific functional assignment; the supplied sequence and choices do not provide a sufficiently discriminating biological argument without that assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the serine hydroxymethyltransferase annotation, one-carbon metabolism is the clearly relevant option among those listed.
-
-
-### Important caveats
-
-- The sequence matches the cited UniProt entry, but the pathway annotation is similarity-transferred rather than direct experimental evidence for this exact protein.
-- The source snapshot used by the author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Identifying the protein as serine hydroxymethyltransferase would connect its reaction to one-carbon metabolism, but the sequence alone does not state that identity or reaction. Generic enzyme-family clues do not reliably distinguish this pathway from the other metabolic choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The sequence-specific assignment to serine hydroxymethyltransferase and its reaction linking serine and tetrahydrofolate to one-carbon metabolism.",
-    "reason": "Choosing D depends on recognizing or retrieving the protein-specific functional assignment; the supplied sequence and choices do not provide a sufficiently discriminating biological argument without that assignment."
-  },
-  "case_id": "pathway_0168",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact matched sequence is annotated as cytosolic serine hydroxymethyltransferase, with a pathway annotation of one-carbon metabolism. That annotation is transferred by similarity (ECO:0000250), so it supports the key but is not direct experimental confirmation for this sequence."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt entry, but the pathway annotation is similarity-transferred rather than direct experimental evidence for this exact protein.",
-    "The source snapshot used by the author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the serine hydroxymethyltransferase annotation, one-carbon metabolism is the clearly relevant option among those listed."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0168",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact matched sequence is annotated as cytosolic serine hydroxymethyltransferase, with a pathway annotation of one-carbon metabolism. That annotation is transferred by similarity (ECO:0000250), so it supports the key but is not direct experimental confirmation for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Identifying the protein as serine hydroxymethyltransferase would connect its reaction to one-carbon metabolism, but the sequence alone does not state that identity or reaction. Generic enzyme-family clues do not reliably distinguish this pathway from the other metabolic choices.",
-    "missing_item_specific_fact": "The sequence-specific assignment to serine hydroxymethyltransferase and its reaction linking serine and tetrahydrofolate to one-carbon metabolism.",
-    "reason": "Choosing D depends on recognizing or retrieving the protein-specific functional assignment; the supplied sequence and choices do not provide a sufficiently discriminating biological argument without that assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the serine hydroxymethyltransferase annotation, one-carbon metabolism is the clearly relevant option among those listed."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt entry, but the pathway annotation is similarity-transferred rather than direct experimental evidence for this exact protein.",
-    "The source snapshot used by the author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein is UniProt Q4WXF4, serine hydroxymethyltransferase (SHMT, EC 2.1.2.1) from Aspergillus fumigatus. The UniProt entry explicitly annotates the pathway as 'One-carbon metabolism; tetrahydrofolate interconversion' (evidence C5, H3), supported by similarity to human SHMT (P34896, ECO:0000250) and by experimental function data (PubMed:39825596, evidence C6/H2). SHMT catalyzes serine + THF → glycine + 5,10-methylene-THF, the central reaction of one-carbon metabolism.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3), [C6](#evidence-c6), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A knowledgeable biochemist might note PLP-dependent enzyme hallmarks (conserved lysine, fold-type I architecture, ~470 aa length) and the somewhat distinctive 'DMAHISGL' motif region, suggesting an amino-acid-interconverting enzyme. However, this general observation narrows the field only to 'amino acid metabolism' broadly and does not uniquely select one-carbon metabolism over other PLP-dependent pathways. Distinguishing SHMT from other PLP enzymes (serine deaminase, cystathionine β-synthase, etc.) and then assigning it to one-carbon metabolism specifically requires recognizing the exact enzyme identity.
-
-
-**Missing item-specific fact**
-
-> The specific identification of this 471-aa fungal sequence as serine hydroxymethyltransferase (SHMT) requires either recognizing SHMT's precise sequence signature (e.g., the active-site lysine in context, the dimerization interface residues) or recalling the UniProt annotation for Q4WXF4. Without knowing the enzyme is SHMT, the general observation 'PLP-dependent amino acid enzyme' does not distinguish option D from a hypothetical amino-acid-degradation pathway.
-
-
-**Reason**
-
-> While the distractors (protein modification, leucine degradation, NAD synthesis) are clearly incompatible with a PLP-dependent amino-acid-interconverting enzyme, the positive identification of SHMT and its specific pathway assignment from raw sequence alone depends on enzyme-family-specific sequence knowledge rather than general pathway logic. The pathway label 'one-carbon metabolism' follows trivially once SHMT is identified, but that identification itself is the lookup-dependent step.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Once the enzyme is identified as SHMT, option D is unambiguously correct. The other options (protein modification, L-leucine degradation, NAD+ biosynthesis) are mechanistically incompatible with SHMT's catalytic function. No other option is defensible for this protein.
-
-
-### Important caveats
-
-- The pathway annotation carries evidence code ECO:0000250 (similarity to human SHMT P34896), indicating computational transfer rather than direct experimental pathway reconstitution in A. fumigatus, though a 2025 functional study (PubMed:39825596) confirms SHMT activity in this organism.
-- The sequence is from a fungal organism; SHMT is highly conserved across eukaryotes, so the pathway assignment is robust.
-- The reviewer evidence is absent from the evaluated model's input; the model must rely solely on the 471-aa sequence and general knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A knowledgeable biochemist might note PLP-dependent enzyme hallmarks (conserved lysine, fold-type I architecture, ~470 aa length) and the somewhat distinctive 'DMAHISGL' motif region, suggesting an amino-acid-interconverting enzyme. However, this general observation narrows the field only to 'amino acid metabolism' broadly and does not uniquely select one-carbon metabolism over other PLP-dependent pathways. Distinguishing SHMT from other PLP enzymes (serine deaminase, cystathionine β-synthase, etc.) and then assigning it to one-carbon metabolism specifically requires recognizing the exact enzyme identity.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identification of this 471-aa fungal sequence as serine hydroxymethyltransferase (SHMT) requires either recognizing SHMT's precise sequence signature (e.g., the active-site lysine in context, the dimerization interface residues) or recalling the UniProt annotation for Q4WXF4. Without knowing the enzyme is SHMT, the general observation 'PLP-dependent amino acid enzyme' does not distinguish option D from a hypothetical amino-acid-degradation pathway.",
-    "reason": "While the distractors (protein modification, leucine degradation, NAD synthesis) are clearly incompatible with a PLP-dependent amino-acid-interconverting enzyme, the positive identification of SHMT and its specific pathway assignment from raw sequence alone depends on enzyme-family-specific sequence knowledge rather than general pathway logic. The pathway label 'one-carbon metabolism' follows trivially once SHMT is identified, but that identification itself is the lookup-dependent step."
-  },
-  "case_id": "pathway_0168",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3",
-      "C6",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The protein is UniProt Q4WXF4, serine hydroxymethyltransferase (SHMT, EC 2.1.2.1) from Aspergillus fumigatus. The UniProt entry explicitly annotates the pathway as 'One-carbon metabolism; tetrahydrofolate interconversion' (evidence C5, H3), supported by similarity to human SHMT (P34896, ECO:0000250) and by experimental function data (PubMed:39825596, evidence C6/H2). SHMT catalyzes serine + THF → glycine + 5,10-methylene-THF, the central reaction of one-carbon metabolism."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000250 (similarity to human SHMT P34896), indicating computational transfer rather than direct experimental pathway reconstitution in A. fumigatus, though a 2025 functional study (PubMed:39825596) confirms SHMT activity in this organism.",
-    "The sequence is from a fungal organism; SHMT is highly conserved across eukaryotes, so the pathway assignment is robust.",
-    "The reviewer evidence is absent from the evaluated model's input; the model must rely solely on the 471-aa sequence and general knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the enzyme is identified as SHMT, option D is unambiguously correct. The other options (protein modification, L-leucine degradation, NAD+ biosynthesis) are mechanistically incompatible with SHMT's catalytic function. No other option is defensible for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0168",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein is UniProt Q4WXF4, serine hydroxymethyltransferase (SHMT, EC 2.1.2.1) from Aspergillus fumigatus. The UniProt entry explicitly annotates the pathway as 'One-carbon metabolism; tetrahydrofolate interconversion' (evidence C5, H3), supported by similarity to human SHMT (P34896, ECO:0000250) and by experimental function data (PubMed:39825596, evidence C6/H2). SHMT catalyzes serine + THF → glycine + 5,10-methylene-THF, the central reaction of one-carbon metabolism.",
-    "evidence_ids": ["C4", "C5", "H3", "C6", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A knowledgeable biochemist might note PLP-dependent enzyme hallmarks (conserved lysine, fold-type I architecture, ~470 aa length) and the somewhat distinctive 'DMAHISGL' motif region, suggesting an amino-acid-interconverting enzyme. However, this general observation narrows the field only to 'amino acid metabolism' broadly and does not uniquely select one-carbon metabolism over other PLP-dependent pathways. Distinguishing SHMT from other PLP enzymes (serine deaminase, cystathionine β-synthase, etc.) and then assigning it to one-carbon metabolism specifically requires recognizing the exact enzyme identity.",
-    "missing_item_specific_fact": "The specific identification of this 471-aa fungal sequence as serine hydroxymethyltransferase (SHMT) requires either recognizing SHMT's precise sequence signature (e.g., the active-site lysine in context, the dimerization interface residues) or recalling the UniProt annotation for Q4WXF4. Without knowing the enzyme is SHMT, the general observation 'PLP-dependent amino acid enzyme' does not distinguish option D from a hypothetical amino-acid-degradation pathway.",
-    "reason": "While the distractors (protein modification, leucine degradation, NAD synthesis) are clearly incompatible with a PLP-dependent amino-acid-interconverting enzyme, the positive identification of SHMT and its specific pathway assignment from raw sequence alone depends on enzyme-family-specific sequence knowledge rather than general pathway logic. The pathway label 'one-carbon metabolism' follows trivially once SHMT is identified, but that identification itself is the lookup-dependent step."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the enzyme is identified as SHMT, option D is unambiguously correct. The other options (protein modification, L-leucine degradation, NAD+ biosynthesis) are mechanistically incompatible with SHMT's catalytic function. No other option is defensible for this protein."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000250 (similarity to human SHMT P34896), indicating computational transfer rather than direct experimental pathway reconstitution in A. fumigatus, though a 2025 functional study (PubMed:39825596) confirms SHMT activity in this organism.",
-    "The sequence is from a fungal organism; SHMT is highly conserved across eukaryotes, so the pathway assignment is robust.",
-    "The reviewer evidence is absent from the evaluated model's input; the model must rely solely on the 471-aa sequence and general knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +156,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -496,30 +268,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q4WXF4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 471,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
   "current_entry_audit": {
     "entryVersion": 124,
     "firstPublicDate": "2025-06-18",
@@ -527,14 +286,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "current_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 471,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 122,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q4WXF4",
   "selected_historical_entry_version": 122,
+  "selected_historical_record_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "selected_historical_source_sequence_length": 471,
+  "selected_historical_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
   "selected_historical_version": {
     "accession": "Q4WXF4",
     "database": "Swiss-Prot",
@@ -545,24 +320,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "GLYC_ASPFU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "selected_historical_source_sequence_sha256": "f701b7b612f66565fce8586e5acff753094d2b7e38617cd4fba5d0a2faa13b4f",
-  "selected_historical_source_sequence_length": 471,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 122,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -576,15 +338,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q4WXF4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -595,15 +357,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":124,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -614,15 +376,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Neosartorya fumigata\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Fumigati\"],\"scientificName\":\"Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 / Af293)\",\"taxonId\":330879}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -633,15 +395,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P34896\",\"source\":\"UniProtKB\"}],\"value\":\"2.1.2.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39825596\",\"source\":\"PubMed\"}],\"value\":\"Serine hydroxymethyltransferase, cytosolic\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -652,15 +414,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P34896\",\"source\":\"UniProtKB\"}],\"value\":\"One-carbon metabolism; tetrahydrofolate interconversion\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -671,15 +433,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json",
-  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
-  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Alharthi R.\",\"Sueiro-Olivares M.\",\"Storer I.\",\"Bin Shuraym H.\",\"Scott J.\",\"Al-Shidhani R.\",\"Fortune-Grant R.\",\"Bignell E.\",\"Tabernero L.\",\"Bromley M.\",\"Zhao C.\",\"Amich J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39825596\"},{\"database\":\"DOI\",\"id\":\"10.1080/21505594.2024.2449075\"}],\"citationType\":\"journal article\",\"firstPage\":\"2449075\",\"id\":\"39825596\",\"journal\":\"Virulence\",\"lastPage\":\"2449075\",\"publicationDate\":\"2025\",\"title\":\"The sulfur-related metabolic status of Aspergillus fumigatus during infection reveals cytosolic serine hydroxymethyltransferase as a promising antifungal target.\",\"volume\":\"16\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"INDUCTION\",\"DISRUPTION PHENOTYPE\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:30:56.546837+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "58c0e8a11da085febbdf3005ab56b79d104ea1a48cbcd1855ec692b54ad939c6",
+  "url": "https://rest.uniprot.org/uniprotkb/Q4WXF4.json"
 }
 ```
 
@@ -689,18 +451,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122",
-  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   GLYC_ASPFU              Reviewed;         471 AA.\nAC   Q4WXF4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2005, sequence version 1.\nDT   28-JAN-2026, entry version 122.\nDE   RecName: Full=Serine hydroxymethyltransferase, cytosolic {ECO:0000303|PubMed:39825596};\nDE            EC=2.1.2.1 {ECO:0000250|UniProtKB:P34896};\nGN   Name=shmB {ECO:0000303|PubMed:39825596}; ORFNames=AFUA_3G09320;\nOS   Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 /\nOS   Af293) (Neosartorya fumigata).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Fumigati.\nOX   NCBI_TaxID=330879;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122"
 }
 ```
 
@@ -710,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122",
-  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
-  "source_locator": "lines 40-50",
   "excerpt": "RN   [2]\nRP   FUNCTION, SUBCELLULAR LOCATION, INDUCTION, DISRUPTION PHENOTYPE, AND\nRP   BIOTECHNOLOGY.\nRX   PubMed=39825596; DOI=10.1080/21505594.2024.2449075;\nRA   Alharthi R., Sueiro-Olivares M., Storer I., Bin Shuraym H., Scott J.,\nRA   Al-Shidhani R., Fortune-Grant R., Bignell E., Tabernero L., Bromley M.,\nRA   Zhao C., Amich J.;\nRT   \"The sulfur-related metabolic status of Aspergillus fumigatus during\nRT   infection reveals cytosolic serine hydroxymethyltransferase as a promising\nRT   antifungal target.\";\nRL   Virulence 16:2449075-2449075(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122"
 }
 ```
 
@@ -731,18 +493,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122",
-  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
-  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
-  "source_locator": "lines 64-65",
   "excerpt": "CC   -!- PATHWAY: One-carbon metabolism; tetrahydrofolate interconversion.\nCC       {ECO:0000250|UniProtKB:P34896}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:31:00.835030+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 64-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "86dc299bb08ad4eed40a64d75bf36be229472b86dc3076c4f22bd2ef05466eec",
+  "url": "https://rest.uniprot.org/unisave/Q4WXF4?format=txt&versions=122"
 }
 ```
 

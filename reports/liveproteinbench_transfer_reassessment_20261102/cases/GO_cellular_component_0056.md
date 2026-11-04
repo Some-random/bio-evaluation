@@ -1,18 +1,16 @@
-# GO_cellular_component_0056: before and after transfer clarification
+# GO_cellular_component_0056
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0056.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0056.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — nucleolus
+**Expected answer:** **A** — nucleolus
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the annotated Drosophila protein, for which a nucleolus GO annotation is supported by direct-assay evidence (IDA:FlyBase). The record also reports experimentally supported nuclear localization, consistent with but broader than nucleolar localization.
-
-Citations as saved: [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has a basic, Lys/Arg-rich region compatible with nuclear targeting, and the distractors are less plausible for a soluble enzyme. But those clues do not specifically distinguish nucleolus from other nuclear locations.
-
-
-**Missing item-specific fact**
-
-> The protein-specific association with the nucleolus, or its identity and experimentally characterized function as a 28S rRNA methyltransferase, is absent from the input.
-
-
-**Reason**
-
-> The key is supported by reviewer-only annotation evidence, but selecting the specific nucleolar compartment from this sequence alone depends on a protein-specific fact not supplied to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports nucleolus as the keyed option. Nuclear localization is broader, but nucleus is not one of the choices; no provided evidence supports another listed location.
-
-
-### Important caveats
-
-- The sequence match and annotation support apply to this Drosophila protein; the author’s exact source snapshot is unknown.
-- The GO nucleolus annotation is reported with IDA:FlyBase evidence, while the separate nuclear-location annotation does not by itself establish nucleolar localization.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has a basic, Lys/Arg-rich region compatible with nuclear targeting, and the distractors are less plausible for a soluble enzyme. But those clues do not specifically distinguish nucleolus from other nuclear locations.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific association with the nucleolus, or its identity and experimentally characterized function as a 28S rRNA methyltransferase, is absent from the input.",
-    "reason": "The key is supported by reviewer-only annotation evidence, but selecting the specific nucleolar compartment from this sequence alone depends on a protein-specific fact not supplied to the evaluated model."
-  },
-  "case_id": "GO_cellular_component_0056",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "C7",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated Drosophila protein, for which a nucleolus GO annotation is supported by direct-assay evidence (IDA:FlyBase). The record also reports experimentally supported nuclear localization, consistent with but broader than nucleolar localization."
-  },
-  "important_caveats": [
-    "The sequence match and annotation support apply to this Drosophila protein; the author’s exact source snapshot is unknown.",
-    "The GO nucleolus annotation is reported with IDA:FlyBase evidence, while the separate nuclear-location annotation does not by itself establish nucleolar localization."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports nucleolus as the keyed option. Nuclear localization is broader, but nucleus is not one of the choices; no provided evidence supports another listed location."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0056",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the annotated Drosophila protein, for which a nucleolus GO annotation is supported by direct-assay evidence (IDA:FlyBase). The record also reports experimentally supported nuclear localization, consistent with but broader than nucleolar localization.",
-    "evidence_ids": ["C6", "C7", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has a basic, Lys/Arg-rich region compatible with nuclear targeting, and the distractors are less plausible for a soluble enzyme. But those clues do not specifically distinguish nucleolus from other nuclear locations.",
-    "missing_item_specific_fact": "The protein-specific association with the nucleolus, or its identity and experimentally characterized function as a 28S rRNA methyltransferase, is absent from the input.",
-    "reason": "The key is supported by reviewer-only annotation evidence, but selecting the specific nucleolar compartment from this sequence alone depends on a protein-specific fact not supplied to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports nucleolus as the keyed option. Nuclear localization is broader, but nucleus is not one of the choices; no provided evidence supports another listed location."
-  },
-  "important_caveats": [
-    "The sequence match and annotation support apply to this Drosophila protein; the author’s exact source snapshot is unknown.",
-    "The GO nucleolus annotation is reported with IDA:FlyBase evidence, while the separate nuclear-location annotation does not by itself establish nucleolar localization."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A1Z830 (SPOUT_DROME, 28S rRNA uridine-N(3)-methyltransferase from Drosophila melanogaster) carries a GO annotation for nucleolus (GO:0005730) with evidence code IDA:FlyBase (Inferred from Direct Assay), indicating experimental localization to the nucleolus. The protein's function (28S rRNA methylation) is consistent with nucleolar localization, as 28S rRNA processing occurs in the nucleolus. The UniProt subcellular location comment states 'Nucleus' (ECO:0000269, PubMed:39671501), which is consistent since the nucleolus is part_of the nuclear lumen (GO1). The IDA:FlyBase evidence specifically assigns nucleolus.
-
-Citations as saved: [C6](#evidence-c6), [C5](#evidence-c5), [C7](#evidence-c7), [H4](#evidence-h4), [H3](#evidence-h3), [GO1](#evidence-go1), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence lacks long hydrophobic stretches characteristic of transmembrane domains, arguing against membrane-associated compartments (C: endosome membrane; D: other organism cell membrane). The protein contains a recognizable class I methyltransferase (SPOUT) fold with conserved catalytic motifs, indicating a soluble enzymatic function rather than aggregation (B: inclusion body). Multiple basic-residue clusters (e.g., 'KKQKKRKQ', 'RQQSKFRYREGVICDKKAKEG', 'RRDVLVSKKQKKRKQ') are consistent with nuclear/nucleolar targeting signals. Among the four options, nucleolus is the only nuclear compartment, so identifying nuclear targeting by elimination of clearly non-nuclear options points to A.
-
-
-**Missing item-specific fact**
-
-> Precise knowledge that SPOUT-domain proteins are rRNA methyltransferases that specifically localize to the nucleolus (rather than the broader nucleus) would provide more direct justification. However, this is not strictly necessary given the elimination logic and the fact that nucleolus is the sole nuclear option.
-
-
-**Reason**
-
-> General biological reasoning can meaningfully distinguish the answer: absence of transmembrane helices eliminates C and D; the presence of a defined catalytic domain argues against B (aggregation); basic clusters support nuclear targeting, and nucleolus is the only nuclear choice. While knowing the specific protein identity would make the answer trivial, the elimination path is defensible from sequence features and general cell biology.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The UniProt subcellular location comment states 'Nucleus' while the GO annotation specifies 'nucleolus' (IDA:FlyBase). However, since nucleolus is part_of nucleus, both are consistent. Among the four provided choices, only A is nuclear; B, C, and D are clearly incompatible with a soluble rRNA-modifying enzyme. No ambiguity among the offered options.
-
-
-### Important caveats
-
-- The UniProt subcellular location free-text comment reads 'Nucleus' rather than 'Nucleolus'; the more specific nucleolar assignment comes from the GO cross-reference with IDA:FlyBase evidence.
-- The nucleolus-specific annotation (IDA:FlyBase) is experimental but derived from FlyBase, not directly from the cited PubMed paper (39671501) which reports 'Nucleus' as the subcellular location.
-- The sequence-match is confirmed (485 aa, SHA256 match), but the identity of the protein was not provided to the evaluated model; reasoning must rely on sequence features alone.
-- The GO ontology snapshot used by the benchmark authors is unknown; current ontology confirms nucleolus is part_of nuclear lumen.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks long hydrophobic stretches characteristic of transmembrane domains, arguing against membrane-associated compartments (C: endosome membrane; D: other organism cell membrane). The protein contains a recognizable class I methyltransferase (SPOUT) fold with conserved catalytic motifs, indicating a soluble enzymatic function rather than aggregation (B: inclusion body). Multiple basic-residue clusters (e.g., 'KKQKKRKQ', 'RQQSKFRYREGVICDKKAKEG', 'RRDVLVSKKQKKRKQ') are consistent with nuclear/nucleolar targeting signals. Among the four options, nucleolus is the only nuclear compartment, so identifying nuclear targeting by elimination of clearly non-nuclear options points to A.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise knowledge that SPOUT-domain proteins are rRNA methyltransferases that specifically localize to the nucleolus (rather than the broader nucleus) would provide more direct justification. However, this is not strictly necessary given the elimination logic and the fact that nucleolus is the sole nuclear option.",
-    "reason": "General biological reasoning can meaningfully distinguish the answer: absence of transmembrane helices eliminates C and D; the presence of a defined catalytic domain argues against B (aggregation); basic clusters support nuclear targeting, and nucleolus is the only nuclear choice. While knowing the specific protein identity would make the answer trivial, the elimination path is defensible from sequence features and general cell biology."
-  },
-  "case_id": "GO_cellular_component_0056",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "C5",
-      "C7",
-      "H4",
-      "H3",
-      "GO1",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A1Z830 (SPOUT_DROME, 28S rRNA uridine-N(3)-methyltransferase from Drosophila melanogaster) carries a GO annotation for nucleolus (GO:0005730) with evidence code IDA:FlyBase (Inferred from Direct Assay), indicating experimental localization to the nucleolus. The protein's function (28S rRNA methylation) is consistent with nucleolar localization, as 28S rRNA processing occurs in the nucleolus. The UniProt subcellular location comment states 'Nucleus' (ECO:0000269, PubMed:39671501), which is consistent since the nucleolus is part_of the nuclear lumen (GO1). The IDA:FlyBase evidence specifically assigns nucleolus."
-  },
-  "important_caveats": [
-    "The UniProt subcellular location free-text comment reads 'Nucleus' rather than 'Nucleolus'; the more specific nucleolar assignment comes from the GO cross-reference with IDA:FlyBase evidence.",
-    "The nucleolus-specific annotation (IDA:FlyBase) is experimental but derived from FlyBase, not directly from the cited PubMed paper (39671501) which reports 'Nucleus' as the subcellular location.",
-    "The sequence-match is confirmed (485 aa, SHA256 match), but the identity of the protein was not provided to the evaluated model; reasoning must rely on sequence features alone.",
-    "The GO ontology snapshot used by the benchmark authors is unknown; current ontology confirms nucleolus is part_of nuclear lumen."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt subcellular location comment states 'Nucleus' while the GO annotation specifies 'nucleolus' (IDA:FlyBase). However, since nucleolus is part_of nucleus, both are consistent. Among the four provided choices, only A is nuclear; B, C, and D are clearly incompatible with a soluble rRNA-modifying enzyme. No ambiguity among the offered options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0056",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A1Z830 (SPOUT_DROME, 28S rRNA uridine-N(3)-methyltransferase from Drosophila melanogaster) carries a GO annotation for nucleolus (GO:0005730) with evidence code IDA:FlyBase (Inferred from Direct Assay), indicating experimental localization to the nucleolus. The protein's function (28S rRNA methylation) is consistent with nucleolar localization, as 28S rRNA processing occurs in the nucleolus. The UniProt subcellular location comment states 'Nucleus' (ECO:0000269, PubMed:39671501), which is consistent since the nucleolus is part_of the nuclear lumen (GO1). The IDA:FlyBase evidence specifically assigns nucleolus.",
-    "evidence_ids": ["C6", "C5", "C7", "H4", "H3", "GO1", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence lacks long hydrophobic stretches characteristic of transmembrane domains, arguing against membrane-associated compartments (C: endosome membrane; D: other organism cell membrane). The protein contains a recognizable class I methyltransferase (SPOUT) fold with conserved catalytic motifs, indicating a soluble enzymatic function rather than aggregation (B: inclusion body). Multiple basic-residue clusters (e.g., 'KKQKKRKQ', 'RQQSKFRYREGVICDKKAKEG', 'RRDVLVSKKQKKRKQ') are consistent with nuclear/nucleolar targeting signals. Among the four options, nucleolus is the only nuclear compartment, so identifying nuclear targeting by elimination of clearly non-nuclear options points to A.",
-    "missing_item_specific_fact": "Precise knowledge that SPOUT-domain proteins are rRNA methyltransferases that specifically localize to the nucleolus (rather than the broader nucleus) would provide more direct justification. However, this is not strictly necessary given the elimination logic and the fact that nucleolus is the sole nuclear option.",
-    "reason": "General biological reasoning can meaningfully distinguish the answer: absence of transmembrane helices eliminates C and D; the presence of a defined catalytic domain argues against B (aggregation); basic clusters support nuclear targeting, and nucleolus is the only nuclear choice. While knowing the specific protein identity would make the answer trivial, the elimination path is defensible from sequence features and general cell biology."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The UniProt subcellular location comment states 'Nucleus' while the GO annotation specifies 'nucleolus' (IDA:FlyBase). However, since nucleolus is part_of nucleus, both are consistent. Among the four provided choices, only A is nuclear; B, C, and D are clearly incompatible with a soluble rRNA-modifying enzyme. No ambiguity among the offered options."
-  },
-  "important_caveats": [
-    "The UniProt subcellular location free-text comment reads 'Nucleus' rather than 'Nucleolus'; the more specific nucleolar assignment comes from the GO cross-reference with IDA:FlyBase evidence.",
-    "The nucleolus-specific annotation (IDA:FlyBase) is experimental but derived from FlyBase, not directly from the cited PubMed paper (39671501) which reports 'Nucleus' as the subcellular location.",
-    "The sequence-match is confirmed (485 aa, SHA256 match), but the identity of the protein was not provided to the evaluated model; reasoning must rely on sequence features alone.",
-    "The GO ontology snapshot used by the benchmark authors is unknown; current ontology confirms nucleolus is part_of nuclear lumen."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -505,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A1Z830",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4f2ef6e6072d9758a23d9c485c14bc69df5f879c14058136a5103951746d6c1a",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 485,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4f2ef6e6072d9758a23d9c485c14bc69df5f879c14058136a5103951746d6c1a",
   "current_entry_audit": {
     "entryVersion": 124,
     "firstPublicDate": "2025-06-18",
@@ -536,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-02-06",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "current_source_sequence_sha256": "4f2ef6e6072d9758a23d9c485c14bc69df5f879c14058136a5103951746d6c1a",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 485,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4f2ef6e6072d9758a23d9c485c14bc69df5f879c14058136a5103951746d6c1a",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 122,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A1Z830",
   "selected_historical_entry_version": 122,
+  "selected_historical_record_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
+  "selected_historical_source_sequence_length": 485,
+  "selected_historical_source_sequence_sha256": "4f2ef6e6072d9758a23d9c485c14bc69df5f879c14058136a5103951746d6c1a",
   "selected_historical_version": {
     "accession": "A1Z830",
     "database": "Swiss-Prot",
@@ -554,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "SPOUT_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
-  "selected_historical_source_sequence_sha256": "4f2ef6e6072d9758a23d9c485c14bc69df5f879c14058136a5103951746d6c1a",
-  "selected_historical_source_sequence_length": 485,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 122,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -589,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A1Z830\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -608,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":124,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-02-06\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -627,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -646,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39671501\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"value\":\"28S rRNA (uridine-N(3))-methyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -665,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39671501\",\"source\":\"PubMed\"}],\"id\":\"SL-0191\",\"value\":\"Nucleus\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -684,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/27",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"39671501\",\"source\":\"PubMed\"}],\"id\":\"GO:0005730\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleolus\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/27",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -703,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/28",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39671501\",\"source\":\"PubMed\"}],\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/28",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -722,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json",
-  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
-  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Chen J.\",\"Bai Y.\",\"Huang Y.\",\"Cui M.\",\"Wang Y.\",\"Gu Z.\",\"Wu X.\",\"Li Y.\",\"Rong Y.S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39671501\"},{\"database\":\"DOI\",\"id\":\"10.1126/sciadv.adr1743\"}],\"citationType\":\"journal article\",\"firstPage\":\"eadr1743\",\"id\":\"39671501\",\"journal\":\"Sci. Adv.\",\"lastPage\":\"eadr1743\",\"publicationDate\":\"2024\",\"title\":\"The Ptch/SPOUT1 methyltransferase deposits an m3U modification on 28S rRNA for normal ribosomal function in flies and humans.\",\"volume\":\"10\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:26:46.725323+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4de9be795c2a99805d6ce7ac0a27b66607b8b069286e0594a016112d990fb2ac",
+  "url": "https://rest.uniprot.org/uniprotkb/A1Z830.json"
 }
 ```
 
@@ -740,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122",
-  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
-  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   SPOUT_DROME             Reviewed;         485 AA.\nAC   A1Z830;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   06-FEB-2007, sequence version 1.\nDT   28-JAN-2026, entry version 122.\nDE   RecName: Full=28S rRNA (uridine-N(3))-methyltransferase;\nDE            EC=2.1.1.- {ECO:0000269|PubMed:39671501};\nGN   Name=ptch {ECO:0000303|PubMed:39671501};\nGN   ORFNames=CG12128 {ECO:0000312|EMBL:AAF58861.1};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
+  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122"
 }
 ```
 
@@ -761,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122",
-  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
-  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
-  "source_locator": "lines 68-74",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND SUBCELLULAR LOCATION.\nRX   PubMed=39671501; DOI=10.1126/sciadv.adr1743;\nRA   Chen J., Bai Y., Huang Y., Cui M., Wang Y., Gu Z., Wu X., Li Y., Rong Y.S.;\nRT   \"The Ptch/SPOUT1 methyltransferase deposits an m3U modification on 28S rRNA\nRT   for normal ribosomal function in flies and humans.\";\nRL   Sci. Adv. 10:eadr1743-eadr1743(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 68-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
+  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122"
 }
 ```
 
@@ -782,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122",
-  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
-  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
-  "source_locator": "lines 87-87",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Nucleus {ECO:0000269|PubMed:39671501}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
+  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122"
 }
 ```
 
@@ -803,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 122,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122",
-  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
-  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
-  "source_locator": "lines 119-119",
   "excerpt": "DR   GO; GO:0005730; C:nucleolus; IDA:FlyBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 122,
+  "retrieved_utc": "2026-11-02T04:26:49.361895+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 119-119",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "104e9d6a622cdc871df72441a8a1c4c9cdae0ef3e255b6a18cf6297f273fb42c",
+  "url": "https://rest.uniprot.org/unisave/A1Z830?format=txt&versions=122"
 }
 ```
 
@@ -825,15 +583,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58875-58891",
   "excerpt": "[Term]\nid: GO:0005730\nname: nucleolus\nnamespace: cellular_component\ndef: \"A small, dense body one or more of which are present in the nucleus of eukaryotic cells. It is rich in RNA and protein, is not bounded by a limiting membrane, and is not seen during mitosis. Its prime function is the transcription of the nucleolar DNA into 45S ribosomal-precursor RNA, the processing of this RNA into 5.8S, 18S, and 28S components of ribosomal RNA, and the association of these components with 5S RNA and proteins synthesized outside the nucleolus. This association results in the formation of ribonucleoprotein precursors; these pass into the cytoplasm and mature into the 40S and 60S subunits of the ribosome.\" [ISBN:0198506732]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_generic\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_yeast\nxref: NIF_Subcellular:sao1820400233\nxref: Wikipedia:Nucleolus\nis_a: GO:0043232 ! intracellular membraneless organelle\nrelationship: part_of GO:0031981 ! nuclear lumen\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005730",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58875-58891",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005730"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -844,15 +602,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 101976-101986",
   "excerpt": "[Term]\nid: GO:0010008\nname: endosome membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding an endosome.\" [GOC:mah]\nsynonym: \"endosomal membrane\" EXACT [NIF_Subcellular:sao978443756]\nxref: NIF_Subcellular:sao978443756\nis_a: GO:0030659 ! cytoplasmic vesicle membrane\nis_a: GO:0098588 ! bounding membrane of organelle\nrelationship: part_of GO:0005768 ! endosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0010008",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 101976-101986",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0010008"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -863,15 +621,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 124897-124907",
   "excerpt": "[Term]\nid: GO:0016234\nname: inclusion body\nnamespace: cellular_component\ndef: \"A discrete intracellular part formed of aggregated molecules such as proteins or other biopolymers.\" [GOC:mah, PMID:11121744]\nsynonym: \"cellular inclusion\" RELATED [NIF_Subcellular:sao120573470]\nsynonym: \"neuronal cytoplasmic inclusion\" NARROW []\nxref: NIF_Subcellular:sao120573470\nxref: Wikipedia:Inclusion_bodies\nis_a: GO:0005622 ! intracellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016234",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 124897-124907",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016234"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -882,15 +640,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 255298-255307",
   "excerpt": "[Term]\nid: GO:0044218\nname: other organism cell membrane\nnamespace: cellular_component\nalt_id: GO:0044279\ndef: \"The cell membrane of a secondary organism with which the first organism is interacting.\" [GOC:jl]\nsynonym: \"foreign membrane\" RELATED []\nsynonym: \"other organism membrane\" BROAD []\nis_a: GO:0044217 ! other organism part\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044218",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 255298-255307",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044218"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

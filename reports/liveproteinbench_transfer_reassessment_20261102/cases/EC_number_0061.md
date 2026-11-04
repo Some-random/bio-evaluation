@@ -1,18 +1,16 @@
-# EC_number_0061: before and after transfer clarification
+# EC_number_0061
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0061.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0061.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **B** — 2.7.7.43
+**Expected answer:** **B** — 2.7.7.43
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for this protein. That entry assigns EC 2.7.7.43 and links the assignment to experimental evidence (ECO:0000269) describing the relevant CTP-dependent N-acylneuraminate reaction. This supports B, while the source snapshot does not establish what information the question's author used.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features may suggest an enzyme that binds nucleotide substrates, but the supplied sequence and choices do not establish the specific substrate and reaction needed to distinguish the exact EC number.
-
-
-**Missing item-specific fact**
-
-> The protein's experimentally established catalytic reaction and substrate specificity—N-acylneuraminate plus CTP yielding CMP-N-acylneuraminate and diphosphate—are absent from the input.
-
-
-**Reason**
-
-> The key is supported by sequence-matched, experimentally linked annotation, but that evidence is reviewer-only. Choosing the exact EC requires item-specific functional knowledge, not merely general sequence reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-only input does not justify an exact EC assignment, but the reviewer evidence supports a single answer for this protein.
-
-
-### Important caveats
-
-- The cited experimental evidence is recorded in UniProt, but the primary publication was not independently reviewed here.
-- The author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features may suggest an enzyme that binds nucleotide substrates, but the supplied sequence and choices do not establish the specific substrate and reaction needed to distinguish the exact EC number.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's experimentally established catalytic reaction and substrate specificity—N-acylneuraminate plus CTP yielding CMP-N-acylneuraminate and diphosphate—are absent from the input.",
-    "reason": "The key is supported by sequence-matched, experimentally linked annotation, but that evidence is reviewer-only. Choosing the exact EC requires item-specific functional knowledge, not merely general sequence reasoning."
-  },
-  "case_id": "EC_number_0061",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for this protein. That entry assigns EC 2.7.7.43 and links the assignment to experimental evidence (ECO:0000269) describing the relevant CTP-dependent N-acylneuraminate reaction. This supports B, while the source snapshot does not establish what information the question's author used."
-  },
-  "important_caveats": [
-    "The cited experimental evidence is recorded in UniProt, but the primary publication was not independently reviewed here.",
-    "The author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-only input does not justify an exact EC assignment, but the reviewer evidence supports a single answer for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0061",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for this protein. That entry assigns EC 2.7.7.43 and links the assignment to experimental evidence (ECO:0000269) describing the relevant CTP-dependent N-acylneuraminate reaction. This supports B, while the source snapshot does not establish what information the question's author used.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features may suggest an enzyme that binds nucleotide substrates, but the supplied sequence and choices do not establish the specific substrate and reaction needed to distinguish the exact EC number.",
-    "missing_item_specific_fact": "The protein's experimentally established catalytic reaction and substrate specificity—N-acylneuraminate plus CTP yielding CMP-N-acylneuraminate and diphosphate—are absent from the input.",
-    "reason": "The key is supported by sequence-matched, experimentally linked annotation, but that evidence is reviewer-only. Choosing the exact EC requires item-specific functional knowledge, not merely general sequence reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-only input does not justify an exact EC assignment, but the reviewer evidence supports a single answer for this protein."
-  },
-  "important_caveats": [
-    "The cited experimental evidence is recorded in UniProt, but the primary publication was not independently reviewed here.",
-    "The author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry P0DY07 (sequence matched, 394 aa) annotates this protein as N-acylneuraminate cytidylyltransferase with EC 2.7.7.43, supported by experimental evidence (ECO:0000269, PubMed 38382015, Ghosh & Raushel 2024). The catalytic activity (N-acylneuraminate + CTP → CMP-N-acyl-beta-neuraminate + diphosphate) confirms the EC assignment. The historical archived entry (version 2, released 2026-01-28) carries the same EC annotation.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a canonical P-loop/Walker A motif (GAGKTT at positions ~196-201) diagnostic of nucleotidyltransferases (EC 2.7.7.x), which eliminates option D (EC 4.2.1.9, a hydro-lyase) and option C (EC 2.7.8.43, a transferase of a different subclass). Additionally, the sequence contains the well-known 'NSS' motif (in the stretch DNSSKTDLEK, ~positions 290-298), a hallmark of the CMP-sialic acid synthase family involved in sialic acid biosynthesis. This motif is characteristic of N-acylneuraminate cytidylyltransferase (EC 2.7.7.43) and is not found in unrelated nucleotidyltransferases. The combination of P-loop (nucleotidyltransferase class) and NSS motif (sialic acid pathway specificity) provides a concrete biological argument favoring B over A (EC 2.7.7.88, an unrelated nucleotidyltransferase).
-
-
-**Missing item-specific fact**
-
-> None critical. The NSS motif is a recognized family-diagnostic signature in glycobiology, and the P-loop is standard enzyme-mechanism knowledge. Distinguishing 2.7.7.43 from 2.7.7.88 relies on recognizing that 2.7.7.88 is not a sialic acid pathway enzyme, which follows from the absence of the NSS motif and unrelated substrate specificity.
-
-
-**Reason**
-
-> The sequence provides two independently informative motifs: the GAGKTT P-loop constrains the EC class to 2.7.7.x (nucleotidyltransferases), and the NSS motif specifically identifies the CMP-sialic acid synthase family, pointing to EC 2.7.7.43. These are general biochemical knowledge elements (nucleotide-binding motifs and sialic acid pathway signatures) rather than a single item-specific database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices span three distinct EC classes (2.7.7, 2.7.8, 4.2.1), making the class-level distinction clear from the P-loop. Within 2.7.7, the NSS motif provides a specific family-level discriminator. No option is equally defensible given the sequence evidence.
-
-
-### Important caveats
-
-- The NSS motif identification, while well-established in glycobiology, represents moderately specialized knowledge; a model unfamiliar with sialic acid biosynthesis motifs might struggle to distinguish A from B.
-- The UniProt entry was first published 2025-06-18 with the EC annotation added via PubMed 38382015 (2024). The historical archived version (entry v2, Jan 2026) already carries the EC 2.7.7.43 annotation, so the key was available before the 2026-05-07 cutoff.
-- EC 2.7.7.88 is a valid but obscure nucleotidyltransferase entry; its obscurity makes it a relatively easy distractor once the sialic acid pathway is recognized.
-- All reviewer evidence is annotation-derived; the underlying experimental validation rests on the Ghosh & Raushel 2024 Biochemistry paper, which was not independently retrieved here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a canonical P-loop/Walker A motif (GAGKTT at positions ~196-201) diagnostic of nucleotidyltransferases (EC 2.7.7.x), which eliminates option D (EC 4.2.1.9, a hydro-lyase) and option C (EC 2.7.8.43, a transferase of a different subclass). Additionally, the sequence contains the well-known 'NSS' motif (in the stretch DNSSKTDLEK, ~positions 290-298), a hallmark of the CMP-sialic acid synthase family involved in sialic acid biosynthesis. This motif is characteristic of N-acylneuraminate cytidylyltransferase (EC 2.7.7.43) and is not found in unrelated nucleotidyltransferases. The combination of P-loop (nucleotidyltransferase class) and NSS motif (sialic acid pathway specificity) provides a concrete biological argument favoring B over A (EC 2.7.7.88, an unrelated nucleotidyltransferase).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The NSS motif is a recognized family-diagnostic signature in glycobiology, and the P-loop is standard enzyme-mechanism knowledge. Distinguishing 2.7.7.43 from 2.7.7.88 relies on recognizing that 2.7.7.88 is not a sialic acid pathway enzyme, which follows from the absence of the NSS motif and unrelated substrate specificity.",
-    "reason": "The sequence provides two independently informative motifs: the GAGKTT P-loop constrains the EC class to 2.7.7.x (nucleotidyltransferases), and the NSS motif specifically identifies the CMP-sialic acid synthase family, pointing to EC 2.7.7.43. These are general biochemical knowledge elements (nucleotide-binding motifs and sialic acid pathway signatures) rather than a single item-specific database lookup."
-  },
-  "case_id": "EC_number_0061",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry P0DY07 (sequence matched, 394 aa) annotates this protein as N-acylneuraminate cytidylyltransferase with EC 2.7.7.43, supported by experimental evidence (ECO:0000269, PubMed 38382015, Ghosh & Raushel 2024). The catalytic activity (N-acylneuraminate + CTP → CMP-N-acyl-beta-neuraminate + diphosphate) confirms the EC assignment. The historical archived entry (version 2, released 2026-01-28) carries the same EC annotation."
-  },
-  "important_caveats": [
-    "The NSS motif identification, while well-established in glycobiology, represents moderately specialized knowledge; a model unfamiliar with sialic acid biosynthesis motifs might struggle to distinguish A from B.",
-    "The UniProt entry was first published 2025-06-18 with the EC annotation added via PubMed 38382015 (2024). The historical archived version (entry v2, Jan 2026) already carries the EC 2.7.7.43 annotation, so the key was available before the 2026-05-07 cutoff.",
-    "EC 2.7.7.88 is a valid but obscure nucleotidyltransferase entry; its obscurity makes it a relatively easy distractor once the sialic acid pathway is recognized.",
-    "All reviewer evidence is annotation-derived; the underlying experimental validation rests on the Ghosh & Raushel 2024 Biochemistry paper, which was not independently retrieved here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span three distinct EC classes (2.7.7, 2.7.8, 4.2.1), making the class-level distinction clear from the P-loop. Within 2.7.7, the NSS motif provides a specific family-level discriminator. No option is equally defensible given the sequence evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0061",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry P0DY07 (sequence matched, 394 aa) annotates this protein as N-acylneuraminate cytidylyltransferase with EC 2.7.7.43, supported by experimental evidence (ECO:0000269, PubMed 38382015, Ghosh & Raushel 2024). The catalytic activity (N-acylneuraminate + CTP → CMP-N-acyl-beta-neuraminate + diphosphate) confirms the EC assignment. The historical archived entry (version 2, released 2026-01-28) carries the same EC annotation.",
-    "evidence_ids": ["C4", "C5", "C7", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a canonical P-loop/Walker A motif (GAGKTT at positions ~196-201) diagnostic of nucleotidyltransferases (EC 2.7.7.x), which eliminates option D (EC 4.2.1.9, a hydro-lyase) and option C (EC 2.7.8.43, a transferase of a different subclass). Additionally, the sequence contains the well-known 'NSS' motif (in the stretch DNSSKTDLEK, ~positions 290-298), a hallmark of the CMP-sialic acid synthase family involved in sialic acid biosynthesis. This motif is characteristic of N-acylneuraminate cytidylyltransferase (EC 2.7.7.43) and is not found in unrelated nucleotidyltransferases. The combination of P-loop (nucleotidyltransferase class) and NSS motif (sialic acid pathway specificity) provides a concrete biological argument favoring B over A (EC 2.7.7.88, an unrelated nucleotidyltransferase).",
-    "missing_item_specific_fact": "None critical. The NSS motif is a recognized family-diagnostic signature in glycobiology, and the P-loop is standard enzyme-mechanism knowledge. Distinguishing 2.7.7.43 from 2.7.7.88 relies on recognizing that 2.7.7.88 is not a sialic acid pathway enzyme, which follows from the absence of the NSS motif and unrelated substrate specificity.",
-    "reason": "The sequence provides two independently informative motifs: the GAGKTT P-loop constrains the EC class to 2.7.7.x (nucleotidyltransferases), and the NSS motif specifically identifies the CMP-sialic acid synthase family, pointing to EC 2.7.7.43. These are general biochemical knowledge elements (nucleotide-binding motifs and sialic acid pathway signatures) rather than a single item-specific database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices span three distinct EC classes (2.7.7, 2.7.8, 4.2.1), making the class-level distinction clear from the P-loop. Within 2.7.7, the NSS motif provides a specific family-level discriminator. No option is equally defensible given the sequence evidence."
-  },
-  "important_caveats": [
-    "The NSS motif identification, while well-established in glycobiology, represents moderately specialized knowledge; a model unfamiliar with sialic acid biosynthesis motifs might struggle to distinguish A from B.",
-    "The UniProt entry was first published 2025-06-18 with the EC annotation added via PubMed 38382015 (2024). The historical archived version (entry v2, Jan 2026) already carries the EC 2.7.7.43 annotation, so the key was available before the 2026-05-07 cutoff.",
-    "EC 2.7.7.88 is a valid but obscure nucleotidyltransferase entry; its obscurity makes it a relatively easy distractor once the sialic acid pathway is recognized.",
-    "All reviewer evidence is annotation-derived; the underlying experimental validation rests on the Ghosh & Raushel 2024 Biochemistry paper, which was not independently retrieved here."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "P0DY07",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 394,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
   "current_entry_audit": {
     "entryVersion": 4,
     "firstPublicDate": "2025-06-18",
@@ -538,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2025-06-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "current_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 394,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 2,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "P0DY07",
   "selected_historical_entry_version": 2,
+  "selected_historical_record_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "selected_historical_source_sequence_length": 394,
+  "selected_historical_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
   "selected_historical_version": {
     "accession": "P0DY07",
     "database": "Swiss-Prot",
@@ -556,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NEUAC_CAMJ8",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "selected_historical_source_sequence_sha256": "af09f26a5420425be58eeedbd38a5518b9f01e8f548d776db14ae23b9668a66c",
-  "selected_historical_source_sequence_length": 394,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 2,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"P0DY07\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -606,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":4,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-06-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -625,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Campylobacterota\",\"Epsilonproteobacteria\",\"Campylobacterales\",\"Campylobacteraceae\",\"Campylobacter\"],\"scientificName\":\"Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC 11828)\",\"taxonId\":407148}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -644,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"CMP-N-acetylneuraminate synthase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"CMP-Neu5Ac synthase\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"value\":\"2.7.7.43\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"N-acylneuraminate cytidylyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -663,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:11345\"}}],\"reaction\":{\"ecNumber\":\"2.7.7.43\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"name\":\"an N-acylneuraminate + CTP = a CMP-N-acyl-beta-neuraminate + diphosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:11344\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:33019\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:37563\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:60073\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:68671\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -682,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:80844\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38382015\",\"source\":\"PubMed\"}],\"name\":\"N-acetylneuraminate + CTP = CMP-N-acetyl-beta-neuraminate + diphosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:80843\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:33019\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:35418\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:37563\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57812\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -701,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json",
-  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
-  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Ghosh M.K.\",\"Raushel F.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38382015\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.biochem.3c00664\"}],\"citationType\":\"journal article\",\"firstPage\":\"688\",\"id\":\"38382015\",\"journal\":\"Biochemistry\",\"lastPage\":\"698\",\"publicationDate\":\"2024\",\"title\":\"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter jejuni.\",\"volume\":\"63\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"81116 / NCTC 11828\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:17.113205+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "b50ed6bd92ec8842f4e9d1ae4d13d75caa73c77d62a5df6448b510c17ce7cfca",
+  "url": "https://rest.uniprot.org/uniprotkb/P0DY07.json"
 }
 ```
 
@@ -719,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   NEUAC_CAMJ8             Reviewed;         394 AA.\nAC   P0DY07;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUN-2025, sequence version 1.\nDT   28-JAN-2026, entry version 2.\nDE   RecName: Full=N-acylneuraminate cytidylyltransferase {ECO:0000305};\nDE            EC=2.7.7.43 {ECO:0000269|PubMed:38382015};\nDE   AltName: Full=CMP-N-acetylneuraminate synthase {ECO:0000303|PubMed:38382015};\nDE            Short=CMP-Neu5Ac synthase {ECO:0000303|PubMed:38382015};\nGN   Name=HS6.5 {ECO:0000303|PubMed:38382015};\nGN   OrderedLocusNames=C8J_1333 {ECO:0000312|EMBL:ABV52931.1};\nOS   Campylobacter jejuni subsp. jejuni serotype O:6 (strain 81116 / NCTC\nOS   11828).\nOC   Bacteria; Pseudomonadati; Campylobacterota; Epsilonproteobacteria;\nOC   Campylobacterales; Campylobacteraceae; Campylobacter.\nOX   NCBI_TaxID=407148;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 
@@ -740,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=N-acylneuraminate cytidylyltransferase {ECO:0000305};\nDE            EC=2.7.7.43 {ECO:0000269|PubMed:38382015};\nDE   AltName: Full=CMP-N-acetylneuraminate synthase {ECO:0000303|PubMed:38382015};\nDE            Short=CMP-Neu5Ac synthase {ECO:0000303|PubMed:38382015};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 
@@ -761,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 26-34",
   "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND PATHWAY.\nRC   STRAIN=81116 / NCTC 11828;\nRX   PubMed=38382015; DOI=10.1021/acs.biochem.3c00664;\nRA   Ghosh M.K., Raushel F.M.;\nRT   \"Biosynthesis of UDP-alpha-N-Acetyl-d-mannosaminuronic Acid and CMP-beta-N-\nRT   Acetyl-d-neuraminic Acid for the Capsular Polysaccharides of Campylobacter\nRT   jejuni.\";\nRL   Biochemistry 63:688-698(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 26-34",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 
@@ -782,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 40-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=an N-acylneuraminate + CTP = a CMP-N-acyl-beta-neuraminate +\nCC         diphosphate; Xref=Rhea:RHEA:11344, ChEBI:CHEBI:33019,\nCC         ChEBI:CHEBI:37563, ChEBI:CHEBI:60073, ChEBI:CHEBI:68671; EC=2.7.7.43;\nCC         Evidence={ECO:0000269|PubMed:38382015};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:11345;\nCC         Evidence={ECO:0000269|PubMed:38382015};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 
@@ -803,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 2,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2",
-  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
-  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
-  "source_locator": "lines 47-53",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=N-acetylneuraminate + CTP = CMP-N-acetyl-beta-neuraminate +\nCC         diphosphate; Xref=Rhea:RHEA:80843, ChEBI:CHEBI:33019,\nCC         ChEBI:CHEBI:35418, ChEBI:CHEBI:37563, ChEBI:CHEBI:57812;\nCC         Evidence={ECO:0000269|PubMed:38382015};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:80844;\nCC         Evidence={ECO:0000269|PubMed:38382015};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 2,
+  "retrieved_utc": "2026-11-01T06:28:24.379520+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 47-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4fb8edfea54dbaf00ab1dbaeb2251b0f44292e2a8e79c4393f55f323eeaa2305",
+  "url": "https://rest.uniprot.org/unisave/P0DY07?format=txt&versions=2"
 }
 ```
 

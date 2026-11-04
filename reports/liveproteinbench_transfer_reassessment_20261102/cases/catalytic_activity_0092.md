@@ -1,18 +1,16 @@
-# catalytic_activity_0092: before and after transfer clarification
+# catalytic_activity_0092
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0092.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0092.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **C** — cyclo(L-Trp-L-Trp) + 2 dimethylallyl diphosphate = cyclo(N(8)-(alpha,alpha-dimethylallyl)-L-Trp-6a-(alpha,alpha-dimethylallyl)-L-Trp) + 2 diphosphate
+**Expected answer:** **C** — cyclo(L-Trp-L-Trp) + 2 dimethylallyl diphosphate = cyclo(N(8)-(alpha,alpha-dimethylallyl)-L-Trp-6a-(alpha,alpha-dimethylallyl)-L-Trp) + 2 diphosphate
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt sequence for this protein. Its catalytic-activity annotation gives the reaction in choice C and cites ECO:0000269 evidence linked to the 2017 paper. This supports the key, although the cited experiment was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Recognizing a prenyltransferase-like enzyme could make prenylation a plausible reaction class, but the sequence and choices alone do not establish this protein's specific substrate, reaction, or prenylation sites.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental finding that this enzyme prenylates cyclo(L-Trp-L-Trp) twice to produce the product in choice C.
-
-
-**Reason**
-
-> Choosing C requires knowing the substrate specificity and product of this particular enzyme; broad sequence-based classification would not establish that exact transformation.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The options describe distinct reactions, and the sequence-matched annotation supports choice C.
-
-
-### Important caveats
-
-- The UniProt annotation is linked to experimental evidence, but the primary paper was not independently validated here.
-- The exact data-source snapshot used by the question author is unknown; the checked historical and current entries match the supplied sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Recognizing a prenyltransferase-like enzyme could make prenylation a plausible reaction class, but the sequence and choices alone do not establish this protein's specific substrate, reaction, or prenylation sites.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental finding that this enzyme prenylates cyclo(L-Trp-L-Trp) twice to produce the product in choice C.",
-    "reason": "Choosing C requires knowing the substrate specificity and product of this particular enzyme; broad sequence-based classification would not establish that exact transformation."
-  },
-  "case_id": "catalytic_activity_0092",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence for this protein. Its catalytic-activity annotation gives the reaction in choice C and cites ECO:0000269 evidence linked to the 2017 paper. This supports the key, although the cited experiment was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The UniProt annotation is linked to experimental evidence, but the primary paper was not independently validated here.",
-    "The exact data-source snapshot used by the question author is unknown; the checked historical and current entries match the supplied sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options describe distinct reactions, and the sequence-matched annotation supports choice C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0092",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt sequence for this protein. Its catalytic-activity annotation gives the reaction in choice C and cites ECO:0000269 evidence linked to the 2017 paper. This supports the key, although the cited experiment was not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Recognizing a prenyltransferase-like enzyme could make prenylation a plausible reaction class, but the sequence and choices alone do not establish this protein's specific substrate, reaction, or prenylation sites.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental finding that this enzyme prenylates cyclo(L-Trp-L-Trp) twice to produce the product in choice C.",
-    "reason": "Choosing C requires knowing the substrate specificity and product of this particular enzyme; broad sequence-based classification would not establish that exact transformation."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The options describe distinct reactions, and the sequence-matched annotation supports choice C."
-  },
-  "important_caveats": [
-    "The UniProt annotation is linked to experimental evidence, but the primary paper was not independently validated here.",
-    "The exact data-source snapshot used by the question author is unknown; the checked historical and current entries match the supplied sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A2Z5U367 (OKAC_PENOH, Prenyltransferase okaC from Penicillium ochrochloron) is sequence-matched to the benchmark input (SHA256 identical, 429 aa). The catalytic activity annotation (C5, H4) explicitly states the reaction in Choice C verbatim, supported by experimental evidence (ECO:0000269|PubMed:28631282, Lai et al. Angew. Chem. Int. Ed. 2017). The EC number 2.5.1.- (transferase, transferring alkyl/aryl groups) is consistent with a prenyltransferase.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> In principle, if one could identify the protein as a prenyltransferase (EC 2.5.1.-) from sequence motifs (e.g., tryptophan-rich regions common in fungal indole prenyltransferases), then among the four options only C describes a prenyltransferase reaction; A is a nucleotidyltransferase, B is a PLP-dependent γ-synthase, and D is an epimerase. However, no universally recognized, unambiguous sequence motif in the provided 429-aa sequence definitively identifies this as a prenyltransferase acting on cyclo(L-Trp-L-Trp) with double DMAPP prenylation at N8 and 6a positions.
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity (cyclo(L-Trp-L-Trp)), the exact prenylation positions (N8 and 6a), the stoichiometry (2 DMAPP), and the product structure are highly specific biochemical facts established experimentally in Lai et al. 2017 (PubMed:28631282). These cannot be deduced from general sequence features without database lookup or memorization of this particular protein's characterized activity.
-
-
-**Reason**
-
-> Identifying this protein's exact catalytic reaction from its amino acid sequence alone requires either recognizing it as a specific fungal indole prenyltransferase (a specialized, non-obvious motif-based inference) or recalling the UniProt/literature annotation. The specificity of the substrate (cyclo(L-Trp-L-Trp)) and the regiochemistry of double prenylation are item-specific experimental facts not derivable from general biological reasoning on the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent entirely different enzyme classes (nucleotidyltransferase, PLP-dependent γ-synthase, prenyltransferase, epimerase), so once the enzyme class is identified, only one option is viable. There is no genuine ambiguity among the choices; the difficulty lies solely in identifying the enzyme class from the sequence.
-
-
-### Important caveats
-
-- The UniProt annotation carries experimental evidence (ECO:0000269) from a 2017 Angew. Chem. paper, so the catalytic activity is experimentally established, not merely computational.
-- The sequence match is exact (SHA256 confirmed) between the benchmark input and UniProt A0A2Z5U367.
-- Fungal indole prenyltransferases do share some conserved features (e.g., tryptophan-rich stretches), but these are not sufficient for unambiguous identification without specialized knowledge or database access.
-- The entry was first publicly released in 2025-02-05; the underlying experimental data is from 2017, so the knowledge predates the benchmark construction.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "In principle, if one could identify the protein as a prenyltransferase (EC 2.5.1.-) from sequence motifs (e.g., tryptophan-rich regions common in fungal indole prenyltransferases), then among the four options only C describes a prenyltransferase reaction; A is a nucleotidyltransferase, B is a PLP-dependent γ-synthase, and D is an epimerase. However, no universally recognized, unambiguous sequence motif in the provided 429-aa sequence definitively identifies this as a prenyltransferase acting on cyclo(L-Trp-L-Trp) with double DMAPP prenylation at N8 and 6a positions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate identity (cyclo(L-Trp-L-Trp)), the exact prenylation positions (N8 and 6a), the stoichiometry (2 DMAPP), and the product structure are highly specific biochemical facts established experimentally in Lai et al. 2017 (PubMed:28631282). These cannot be deduced from general sequence features without database lookup or memorization of this particular protein's characterized activity.",
-    "reason": "Identifying this protein's exact catalytic reaction from its amino acid sequence alone requires either recognizing it as a specific fungal indole prenyltransferase (a specialized, non-obvious motif-based inference) or recalling the UniProt/literature annotation. The specificity of the substrate (cyclo(L-Trp-L-Trp)) and the regiochemistry of double prenylation are item-specific experimental facts not derivable from general biological reasoning on the sequence."
-  },
-  "case_id": "catalytic_activity_0092",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U367 (OKAC_PENOH, Prenyltransferase okaC from Penicillium ochrochloron) is sequence-matched to the benchmark input (SHA256 identical, 429 aa). The catalytic activity annotation (C5, H4) explicitly states the reaction in Choice C verbatim, supported by experimental evidence (ECO:0000269|PubMed:28631282, Lai et al. Angew. Chem. Int. Ed. 2017). The EC number 2.5.1.- (transferase, transferring alkyl/aryl groups) is consistent with a prenyltransferase."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries experimental evidence (ECO:0000269) from a 2017 Angew. Chem. paper, so the catalytic activity is experimentally established, not merely computational.",
-    "The sequence match is exact (SHA256 confirmed) between the benchmark input and UniProt A0A2Z5U367.",
-    "Fungal indole prenyltransferases do share some conserved features (e.g., tryptophan-rich stretches), but these are not sufficient for unambiguous identification without specialized knowledge or database access.",
-    "The entry was first publicly released in 2025-02-05; the underlying experimental data is from 2017, so the knowledge predates the benchmark construction."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent entirely different enzyme classes (nucleotidyltransferase, PLP-dependent γ-synthase, prenyltransferase, epimerase), so once the enzyme class is identified, only one option is viable. There is no genuine ambiguity among the choices; the difficulty lies solely in identifying the enzyme class from the sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0092",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U367 (OKAC_PENOH, Prenyltransferase okaC from Penicillium ochrochloron) is sequence-matched to the benchmark input (SHA256 identical, 429 aa). The catalytic activity annotation (C5, H4) explicitly states the reaction in Choice C verbatim, supported by experimental evidence (ECO:0000269|PubMed:28631282, Lai et al. Angew. Chem. Int. Ed. 2017). The EC number 2.5.1.- (transferase, transferring alkyl/aryl groups) is consistent with a prenyltransferase.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "In principle, if one could identify the protein as a prenyltransferase (EC 2.5.1.-) from sequence motifs (e.g., tryptophan-rich regions common in fungal indole prenyltransferases), then among the four options only C describes a prenyltransferase reaction; A is a nucleotidyltransferase, B is a PLP-dependent γ-synthase, and D is an epimerase. However, no universally recognized, unambiguous sequence motif in the provided 429-aa sequence definitively identifies this as a prenyltransferase acting on cyclo(L-Trp-L-Trp) with double DMAPP prenylation at N8 and 6a positions.",
-    "missing_item_specific_fact": "The specific substrate identity (cyclo(L-Trp-L-Trp)), the exact prenylation positions (N8 and 6a), the stoichiometry (2 DMAPP), and the product structure are highly specific biochemical facts established experimentally in Lai et al. 2017 (PubMed:28631282). These cannot be deduced from general sequence features without database lookup or memorization of this particular protein's characterized activity.",
-    "reason": "Identifying this protein's exact catalytic reaction from its amino acid sequence alone requires either recognizing it as a specific fungal indole prenyltransferase (a specialized, non-obvious motif-based inference) or recalling the UniProt/literature annotation. The specificity of the substrate (cyclo(L-Trp-L-Trp)) and the regiochemistry of double prenylation are item-specific experimental facts not derivable from general biological reasoning on the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent entirely different enzyme classes (nucleotidyltransferase, PLP-dependent γ-synthase, prenyltransferase, epimerase), so once the enzyme class is identified, only one option is viable. There is no genuine ambiguity among the choices; the difficulty lies solely in identifying the enzyme class from the sequence."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries experimental evidence (ECO:0000269) from a 2017 Angew. Chem. paper, so the catalytic activity is experimentally established, not merely computational.",
-    "The sequence match is exact (SHA256 confirmed) between the benchmark input and UniProt A0A2Z5U367.",
-    "Fungal indole prenyltransferases do share some conserved features (e.g., tryptophan-rich stretches), but these are not sufficient for unambiguous identification without specialized knowledge or database access.",
-    "The entry was first publicly released in 2025-02-05; the underlying experimental data is from 2017, so the knowledge predates the benchmark construction."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2Z5U367",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "179527ead036ca4d89d89b92a62a63090047db34f9531fc461875234b010eaf3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 429,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "179527ead036ca4d89d89b92a62a63090047db34f9531fc461875234b010eaf3",
   "current_entry_audit": {
     "entryVersion": 18,
     "firstPublicDate": "2025-02-05",
@@ -532,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-10-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
-  "current_source_sequence_sha256": "179527ead036ca4d89d89b92a62a63090047db34f9531fc461875234b010eaf3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 429,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "179527ead036ca4d89d89b92a62a63090047db34f9531fc461875234b010eaf3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 17,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2Z5U367",
   "selected_historical_entry_version": 17,
+  "selected_historical_record_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
+  "selected_historical_source_sequence_length": 429,
+  "selected_historical_source_sequence_sha256": "179527ead036ca4d89d89b92a62a63090047db34f9531fc461875234b010eaf3",
   "selected_historical_version": {
     "accession": "A0A2Z5U367",
     "database": "Swiss-Prot",
@@ -550,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "OKAC_PENOH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
-  "selected_historical_source_sequence_sha256": "179527ead036ca4d89d89b92a62a63090047db34f9531fc461875234b010eaf3",
-  "selected_historical_source_sequence_length": 429,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 17,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -581,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json",
-  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
-  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2Z5U367\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json"
 }
 ```
 
@@ -600,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json",
-  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
-  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":18,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-10-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json"
 }
 ```
 
@@ -619,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json",
-  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
-  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium ochrochloron\",\"taxonId\":69780}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json"
 }
 ```
 
@@ -638,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json",
-  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
-  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Okaramines biosynthesis cluster protein C\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"2.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Prenyltransferase okaC\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json"
 }
 ```
 
@@ -657,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json",
-  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
-  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:82696\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"name\":\"cyclo(L-Trp-L-Trp) + 2 dimethylallyl diphosphate = cyclo(N(8)-(alpha,alpha-dimethylallyl)-L-Trp-6a-(alpha,alpha-dimethylallyl)-L-Trp) + 2 diphosphate\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:82695\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:33019\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57623\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:181817\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:232460\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json"
 }
 ```
 
@@ -676,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json",
-  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
-  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lai C.Y.\",\"Lo I.W.\",\"Hewage R.T.\",\"Chen Y.C.\",\"Chen C.T.\",\"Lee C.F.\",\"Lin S.\",\"Tang M.C.\",\"Lin H.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28631282\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.201705501\"}],\"citationType\":\"journal article\",\"firstPage\":\"9478\",\"id\":\"28631282\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"9482\",\"publicationDate\":\"2017\",\"title\":\"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise Pathway of Okaramines.\",\"volume\":\"56\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:51.637409+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "745553ffe5a45d604d8813919c97ac2acacebb93a50f27ada859db8468138868",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U367.json"
 }
 ```
 
@@ -694,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17",
-  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
-  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   OKAC_PENOH              Reviewed;         429 AA.\nAC   A0A2Z5U367;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-OCT-2018, sequence version 1.\nDT   28-JAN-2026, entry version 17.\nDE   RecName: Full=Prenyltransferase okaC {ECO:0000303|PubMed:28631282};\nDE            EC=2.5.1.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein C {ECO:0000303|PubMed:28631282};\nGN   Name=okaC {ECO:0000303|PubMed:28631282};\nOS   Penicillium ochrochloron.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=69780;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17"
 }
 ```
 
@@ -715,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17",
-  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
-  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Prenyltransferase okaC {ECO:0000303|PubMed:28631282};\nDE            EC=2.5.1.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein C {ECO:0000303|PubMed:28631282};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17"
 }
 ```
 
@@ -736,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17",
-  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
-  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
-  "source_locator": "lines 23-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=28631282; DOI=10.1002/anie.201705501;\nRA   Lai C.Y., Lo I.W., Hewage R.T., Chen Y.C., Chen C.T., Lee C.F., Lin S.,\nRA   Tang M.C., Lin H.C.;\nRT   \"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise\nRT   Pathway of Okaramines.\";\nRL   Angew. Chem. Int. Ed. 56:9478-9482(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 23-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17"
 }
 ```
 
@@ -757,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17",
-  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
-  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
-  "source_locator": "lines 59-66",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=cyclo(L-Trp-L-Trp) + 2 dimethylallyl diphosphate = cyclo(N(8)-\nCC         (alpha,alpha-dimethylallyl)-L-Trp-6a-(alpha,alpha-dimethylallyl)-L-\nCC         Trp) + 2 diphosphate; Xref=Rhea:RHEA:82695, ChEBI:CHEBI:33019,\nCC         ChEBI:CHEBI:57623, ChEBI:CHEBI:181817, ChEBI:CHEBI:232460;\nCC         Evidence={ECO:0000269|PubMed:28631282};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:82696;\nCC         Evidence={ECO:0000269|PubMed:28631282};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:53.857223+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 59-66",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "416679d3c491f97848e803aee8701828ad6e72beb06f8d3e3bffdc5bcae8d22d",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U367?format=txt&versions=17"
 }
 ```
 

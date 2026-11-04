@@ -1,18 +1,16 @@
-# EC_number_0099: before and after transfer clarification
+# EC_number_0099
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0099.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0099.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **D** — 5.4.99.39
+**Expected answer:** **D** — 5.4.99.39
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as beta-amyrin synthase 1, EC 5.4.99.39. Its catalytic-activity annotation specifies conversion of (S)-2,3-epoxysqualene to beta-amyrin and cites experimental evidence (ECO:0000269, PubMed:39043959).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a large plant oxidosqualene cyclase, which makes the isomerase choices more plausible than the oxidoreductase or glycosidase choices. However, that broad family-level inference does not establish which specific cyclization product this protein makes.
-
-
-**Missing item-specific fact**
-
-> The protein-specific product/function—beta-amyrin formation rather than the product associated with the other oxidosqualene-cyclase EC option—is not supplied in the question and requires an annotation, prior knowledge of this protein, or functional evidence.
-
-
-**Reason**
-
-> The exact EC distinction between the two isomerase choices depends on the enzyme's specific reaction, not something determined by general sequence-family recognition alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence alone leaves the precise oxidosqualene-cyclase product underdetermined, but the reviewer-only evidence supports D for this matched protein.
-
-
-### Important caveats
-
-- The UniProt sequence match and cited catalytic-activity evidence support the key, but the primary paper was not independently reviewed here.
-- The accession and database evidence were reviewer-only and were not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a large plant oxidosqualene cyclase, which makes the isomerase choices more plausible than the oxidoreductase or glycosidase choices. However, that broad family-level inference does not establish which specific cyclization product this protein makes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific product/function—beta-amyrin formation rather than the product associated with the other oxidosqualene-cyclase EC option—is not supplied in the question and requires an annotation, prior knowledge of this protein, or functional evidence.",
-    "reason": "The exact EC distinction between the two isomerase choices depends on the enzyme's specific reaction, not something determined by general sequence-family recognition alone."
-  },
-  "case_id": "EC_number_0099",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as beta-amyrin synthase 1, EC 5.4.99.39. Its catalytic-activity annotation specifies conversion of (S)-2,3-epoxysqualene to beta-amyrin and cites experimental evidence (ECO:0000269, PubMed:39043959)."
-  },
-  "important_caveats": [
-    "The UniProt sequence match and cited catalytic-activity evidence support the key, but the primary paper was not independently reviewed here.",
-    "The accession and database evidence were reviewer-only and were not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone leaves the precise oxidosqualene-cyclase product underdetermined, but the reviewer-only evidence supports D for this matched protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0099",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as beta-amyrin synthase 1, EC 5.4.99.39. Its catalytic-activity annotation specifies conversion of (S)-2,3-epoxysqualene to beta-amyrin and cites experimental evidence (ECO:0000269, PubMed:39043959).",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a large plant oxidosqualene cyclase, which makes the isomerase choices more plausible than the oxidoreductase or glycosidase choices. However, that broad family-level inference does not establish which specific cyclization product this protein makes.",
-    "missing_item_specific_fact": "The protein-specific product/function—beta-amyrin formation rather than the product associated with the other oxidosqualene-cyclase EC option—is not supplied in the question and requires an annotation, prior knowledge of this protein, or functional evidence.",
-    "reason": "The exact EC distinction between the two isomerase choices depends on the enzyme's specific reaction, not something determined by general sequence-family recognition alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence alone leaves the precise oxidosqualene-cyclase product underdetermined, but the reviewer-only evidence supports D for this matched protein."
-  },
-  "important_caveats": [
-    "The UniProt sequence match and cited catalytic-activity evidence support the key, but the primary paper was not independently reviewed here.",
-    "The accession and database evidence were reviewer-only and were not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0AAW1L0L7 (BAMS1_SAPOF) annotates this exact 760-aa sequence as Beta-amyrin synthase 1 with EC 5.4.99.39, supported by experimental evidence (ECO:0000269, PubMed:39043959). The catalytic reaction (S)-2,3-epoxysqualene → beta-amyrin is explicitly recorded. Sequence SHA256 matches between the benchmark input and the database entry.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains the DCTAE motif (…SDCTAEGLKCCLILST…) and a DDM-like motif, which are hallmarks of oxidosqualene cyclases (OSCs). This allows a knowledgeable model to eliminate B (1.14.18.1, copper monooxygenase) and C (3.2.1.18, glycosidase) because neither enzyme class uses a triterpene-cyclase fold or these motifs. However, both remaining options A (5.4.99.14) and D (5.4.99.39) fall within the same EC sub-subclass 5.4.99 (other intramolecular transferases / cyclases), and distinguishing the 4th digit—i.e., the specific triterpene product (beta-amyrin vs. another cyclization product)—cannot be reliably inferred from general sequence features alone.
-
-
-**Missing item-specific fact**
-
-> The precise product specificity of this particular oxidosqualene cyclase (beta-amyrin vs. another triterpene such as lupeol, taraxasterol, etc.) is determined by a small number of active-site residues and cannot be confidently assigned from the full sequence by general biological reasoning. Additionally, whether EC 5.4.99.14 is a valid, currently assigned EC number for a distinct cyclase or a fabricated distractor is an item-specific fact not derivable from the sequence.
-
-
-**Reason**
-
-> General knowledge of OSC motifs (DCTAE, DDM) narrows the answer to the 5.4.99.x class, eliminating B and C. But the final A-vs-D distinction requires knowing the exact cyclization product of this specific enzyme, which is an item-specific experimental annotation rather than something derivable from broad biological principles applied to the sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the experimental annotation and the DCTAE motif confirming an oxidosqualene cyclase, D (5.4.99.39) is the only option consistent with the full evidence. Options B and C are clearly incompatible with the sequence architecture. Option A (5.4.99.14) is in the correct EC class but represents a different product specificity; without evidence that 5.4.99.14 corresponds to this sequence, D is the single defensible answer. The question is not ambiguous in its correct answer, though the A-vs-D gap is narrow.
-
-
-### Important caveats
-
-- The EC annotation is backed by experimental evidence (ECO:0000269) from a 2025 Nat. Chem. Biol. paper (PubMed:39043959), not merely by sequence-similarity transfer.
-- The DCTAE motif reasoning eliminates B and C but does not uniquely determine the 4th EC digit; the final A-vs-D choice effectively depends on the specific experimental product characterization.
-- EC 5.4.99.14 may or may not be a currently assigned EC number; if it is a fabricated distractor, the question becomes easier, but this is an item-specific fact the model would need to know.
-- The sequence length (760 aa) and overall fold are consistent with plant OSCs, but many plant OSCs share high sequence identity while producing different triterpenes.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the DCTAE motif (…SDCTAEGLKCCLILST…) and a DDM-like motif, which are hallmarks of oxidosqualene cyclases (OSCs). This allows a knowledgeable model to eliminate B (1.14.18.1, copper monooxygenase) and C (3.2.1.18, glycosidase) because neither enzyme class uses a triterpene-cyclase fold or these motifs. However, both remaining options A (5.4.99.14) and D (5.4.99.39) fall within the same EC sub-subclass 5.4.99 (other intramolecular transferases / cyclases), and distinguishing the 4th digit—i.e., the specific triterpene product (beta-amyrin vs. another cyclization product)—cannot be reliably inferred from general sequence features alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The precise product specificity of this particular oxidosqualene cyclase (beta-amyrin vs. another triterpene such as lupeol, taraxasterol, etc.) is determined by a small number of active-site residues and cannot be confidently assigned from the full sequence by general biological reasoning. Additionally, whether EC 5.4.99.14 is a valid, currently assigned EC number for a distinct cyclase or a fabricated distractor is an item-specific fact not derivable from the sequence.",
-    "reason": "General knowledge of OSC motifs (DCTAE, DDM) narrows the answer to the 5.4.99.x class, eliminating B and C. But the final A-vs-D distinction requires knowing the exact cyclization product of this specific enzyme, which is an item-specific experimental annotation rather than something derivable from broad biological principles applied to the sequence."
-  },
-  "case_id": "EC_number_0099",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1L0L7 (BAMS1_SAPOF) annotates this exact 760-aa sequence as Beta-amyrin synthase 1 with EC 5.4.99.39, supported by experimental evidence (ECO:0000269, PubMed:39043959). The catalytic reaction (S)-2,3-epoxysqualene → beta-amyrin is explicitly recorded. Sequence SHA256 matches between the benchmark input and the database entry."
-  },
-  "important_caveats": [
-    "The EC annotation is backed by experimental evidence (ECO:0000269) from a 2025 Nat. Chem. Biol. paper (PubMed:39043959), not merely by sequence-similarity transfer.",
-    "The DCTAE motif reasoning eliminates B and C but does not uniquely determine the 4th EC digit; the final A-vs-D choice effectively depends on the specific experimental product characterization.",
-    "EC 5.4.99.14 may or may not be a currently assigned EC number; if it is a fabricated distractor, the question becomes easier, but this is an item-specific fact the model would need to know.",
-    "The sequence length (760 aa) and overall fold are consistent with plant OSCs, but many plant OSCs share high sequence identity while producing different triterpenes."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the experimental annotation and the DCTAE motif confirming an oxidosqualene cyclase, D (5.4.99.39) is the only option consistent with the full evidence. Options B and C are clearly incompatible with the sequence architecture. Option A (5.4.99.14) is in the correct EC class but represents a different product specificity; without evidence that 5.4.99.14 corresponds to this sequence, D is the single defensible answer. The question is not ambiguous in its correct answer, though the A-vs-D gap is narrow."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0099",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1L0L7 (BAMS1_SAPOF) annotates this exact 760-aa sequence as Beta-amyrin synthase 1 with EC 5.4.99.39, supported by experimental evidence (ECO:0000269, PubMed:39043959). The catalytic reaction (S)-2,3-epoxysqualene → beta-amyrin is explicitly recorded. Sequence SHA256 matches between the benchmark input and the database entry.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains the DCTAE motif (…SDCTAEGLKCCLILST…) and a DDM-like motif, which are hallmarks of oxidosqualene cyclases (OSCs). This allows a knowledgeable model to eliminate B (1.14.18.1, copper monooxygenase) and C (3.2.1.18, glycosidase) because neither enzyme class uses a triterpene-cyclase fold or these motifs. However, both remaining options A (5.4.99.14) and D (5.4.99.39) fall within the same EC sub-subclass 5.4.99 (other intramolecular transferases / cyclases), and distinguishing the 4th digit—i.e., the specific triterpene product (beta-amyrin vs. another cyclization product)—cannot be reliably inferred from general sequence features alone.",
-    "missing_item_specific_fact": "The precise product specificity of this particular oxidosqualene cyclase (beta-amyrin vs. another triterpene such as lupeol, taraxasterol, etc.) is determined by a small number of active-site residues and cannot be confidently assigned from the full sequence by general biological reasoning. Additionally, whether EC 5.4.99.14 is a valid, currently assigned EC number for a distinct cyclase or a fabricated distractor is an item-specific fact not derivable from the sequence.",
-    "reason": "General knowledge of OSC motifs (DCTAE, DDM) narrows the answer to the 5.4.99.x class, eliminating B and C. But the final A-vs-D distinction requires knowing the exact cyclization product of this specific enzyme, which is an item-specific experimental annotation rather than something derivable from broad biological principles applied to the sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the experimental annotation and the DCTAE motif confirming an oxidosqualene cyclase, D (5.4.99.39) is the only option consistent with the full evidence. Options B and C are clearly incompatible with the sequence architecture. Option A (5.4.99.14) is in the correct EC class but represents a different product specificity; without evidence that 5.4.99.14 corresponds to this sequence, D is the single defensible answer. The question is not ambiguous in its correct answer, though the A-vs-D gap is narrow."
-  },
-  "important_caveats": [
-    "The EC annotation is backed by experimental evidence (ECO:0000269) from a 2025 Nat. Chem. Biol. paper (PubMed:39043959), not merely by sequence-similarity transfer.",
-    "The DCTAE motif reasoning eliminates B and C but does not uniquely determine the 4th EC digit; the final A-vs-D choice effectively depends on the specific experimental product characterization.",
-    "EC 5.4.99.14 may or may not be a currently assigned EC number; if it is a fabricated distractor, the question becomes easier, but this is an item-specific fact the model would need to know.",
-    "The sequence length (760 aa) and overall fold are consistent with plant OSCs, but many plant OSCs share high sequence identity while producing different triterpenes."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +158,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAW1L0L7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 760,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-06-18",
@@ -539,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-11-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "current_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 760,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAW1L0L7",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "selected_historical_source_sequence_length": 760,
+  "selected_historical_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
   "selected_historical_version": {
     "accession": "A0AAW1L0L7",
     "database": "Swiss-Prot",
@@ -557,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BAMS1_SAPOF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "selected_historical_source_sequence_sha256": "f45cb32ac82bac07fe18a4c04087fada3e3b643744290cb71a5355e4210f1f86",
-  "selected_historical_source_sequence_length": 760,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +344,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAW1L0L7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -607,15 +363,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2024-11-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -626,15 +382,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Common soapwort\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Caryophyllaceae\",\"Caryophylleae\",\"Saponaria\"],\"scientificName\":\"Saponaria officinalis\",\"synonyms\":[\"Lychnis saponaria\"],\"taxonId\":3572}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -645,15 +401,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"5.4.99.39\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Beta-amyrin synthase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"SobAS1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -664,15 +420,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:31008\"}}],\"reaction\":{\"ecNumber\":\"5.4.99.39\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"name\":\"(S)-2,3-epoxysqualene = beta-amyrin\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:31007\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:10352\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15441\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -683,15 +439,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json",
-  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
-  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Jo S.\",\"El-Demerdash A.\",\"Owen C.\",\"Srivastava V.\",\"Wu D.\",\"Kikuchi S.\",\"Reed J.\",\"Hodgson H.\",\"Harkess A.\",\"Shu S.\",\"Plott C.\",\"Jenkins J.\",\"Williams M.\",\"Boston L.-B.\",\"Lacchini E.\",\"Qu T.\",\"Goossens A.\",\"Grimwood J.\",\"Schmutz J.\",\"Leebens-Mack J.\",\"Osbourn A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39043959\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-024-01681-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"215\",\"id\":\"39043959\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"226\",\"publicationDate\":\"2025\",\"title\":\"Unlocking saponin biosynthesis in soapwort.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WWM48160.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"TISSUE SPECIFICITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:39.404038+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2592e3175ed7f3aa157d1122cffa94daf5bffb1ead9950fe05e8661ef34af401",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1L0L7.json"
 }
 ```
 
@@ -701,18 +457,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5",
-  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   BAMS1_SAPOF             Reviewed;         760 AA.\nAC   A0AAW1L0L7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-NOV-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=Beta-amyrin synthase 1 {ECO:0000303|PubMed:39043959};\nDE            Short=SobAS1 {ECO:0000303|PubMed:39043959};\nDE            EC=5.4.99.39 {ECO:0000269|PubMed:39043959};\nGN   Name=bAS1 {ECO:0000303|PubMed:39043959};\nGN   Synonyms=Saoffv11027757m {ECO:0000303|PubMed:39043959};\nGN   ORFNames=RND81_05G236200 {ECO:0000312|EMBL:KAK9726778.1};\nOS   Saponaria officinalis (Common soapwort) (Lychnis saponaria).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Caryophyllaceae; Caryophylleae; Saponaria.\nOX   NCBI_TaxID=3572;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5"
 }
 ```
 
@@ -722,18 +478,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5",
-  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Beta-amyrin synthase 1 {ECO:0000303|PubMed:39043959};\nDE            Short=SobAS1 {ECO:0000303|PubMed:39043959};\nDE            EC=5.4.99.39 {ECO:0000269|PubMed:39043959};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5"
 }
 ```
 
@@ -743,18 +499,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5",
-  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
-  "source_locator": "lines 17-26",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WWM48160.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, TISSUE\nRP   SPECIFICITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39043959; DOI=10.1038/s41589-024-01681-7;\nRA   Jo S., El-Demerdash A., Owen C., Srivastava V., Wu D., Kikuchi S., Reed J.,\nRA   Hodgson H., Harkess A., Shu S., Plott C., Jenkins J., Williams M.,\nRA   Boston L.-B., Lacchini E., Qu T., Goossens A., Grimwood J., Schmutz J.,\nRA   Leebens-Mack J., Osbourn A.;\nRT   \"Unlocking saponin biosynthesis in soapwort.\";\nRL   Nat. Chem. Biol. 21:215-226(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5"
 }
 ```
 
@@ -764,18 +520,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5",
-  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
-  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
-  "source_locator": "lines 41-46",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=(S)-2,3-epoxysqualene = beta-amyrin; Xref=Rhea:RHEA:31007,\nCC         ChEBI:CHEBI:10352, ChEBI:CHEBI:15441; EC=5.4.99.39;\nCC         Evidence={ECO:0000269|PubMed:39043959};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:31008;\nCC         Evidence={ECO:0000269|PubMed:39043959};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:41.045167+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-46",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7d24bcffc9a88c6f7648cda9de366740d6556c36d7d06892bf26b5abff0fe742",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1L0L7?format=txt&versions=5"
 }
 ```
 

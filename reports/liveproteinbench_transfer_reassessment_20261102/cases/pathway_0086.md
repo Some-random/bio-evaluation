@@ -1,18 +1,16 @@
-# pathway_0086: before and after transfer clarification
+# pathway_0086
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0086.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0086.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Secondary metabolite biosynthesis
+**Expected answer:** **A** — Secondary metabolite biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches a UniProt entry annotated as echinocystic acid 23-monooxygenase, with the pathway listed as secondary metabolite and terpenoid biosynthesis. The pathway annotation cites experimental evidence (ECO:0000269), though the excerpt does not independently establish the underlying experiment's details.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a membrane-associated cytochrome P450, which makes an oxidative biosynthetic role plausible and makes choices such as polypeptide elongation and histidine biosynthesis less likely. But P450 identity alone does not establish this protein's primary pathway.
-
-
-**Missing item-specific fact**
-
-> Identifying this specific enzyme as echinocystic acid 23-monooxygenase, and thus connecting it to terpenoid secondary-metabolite biosynthesis, requires protein-specific functional annotation or experimental knowledge not supplied in the question.
-
-
-**Reason**
-
-> The sequence provides a broad enzyme-family clue, not a decisive pathway assignment. Choosing A over all possible functions of plant P450s depends on the missing protein-specific functional fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports A. The sequence alone does not conclusively resolve the pathway, but the supplied choices do not make another option equally supported by the available annotation.
-
-
-### Important caveats
-
-- The sequence match applies to the reviewer-identified UniProt record; that record identity was not supplied to the evaluated model.
-- The annotation is supported by a cited experimental evidence code, but the primary study was not independently reviewed here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a membrane-associated cytochrome P450, which makes an oxidative biosynthetic role plausible and makes choices such as polypeptide elongation and histidine biosynthesis less likely. But P450 identity alone does not establish this protein's primary pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Identifying this specific enzyme as echinocystic acid 23-monooxygenase, and thus connecting it to terpenoid secondary-metabolite biosynthesis, requires protein-specific functional annotation or experimental knowledge not supplied in the question.",
-    "reason": "The sequence provides a broad enzyme-family clue, not a decisive pathway assignment. Choosing A over all possible functions of plant P450s depends on the missing protein-specific functional fact."
-  },
-  "case_id": "pathway_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a UniProt entry annotated as echinocystic acid 23-monooxygenase, with the pathway listed as secondary metabolite and terpenoid biosynthesis. The pathway annotation cites experimental evidence (ECO:0000269), though the excerpt does not independently establish the underlying experiment's details."
-  },
-  "important_caveats": [
-    "The sequence match applies to the reviewer-identified UniProt record; that record identity was not supplied to the evaluated model.",
-    "The annotation is supported by a cited experimental evidence code, but the primary study was not independently reviewed here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports A. The sequence alone does not conclusively resolve the pathway, but the supplied choices do not make another option equally supported by the available annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a UniProt entry annotated as echinocystic acid 23-monooxygenase, with the pathway listed as secondary metabolite and terpenoid biosynthesis. The pathway annotation cites experimental evidence (ECO:0000269), though the excerpt does not independently establish the underlying experiment's details.",
-    "evidence_ids": ["C1", "C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a membrane-associated cytochrome P450, which makes an oxidative biosynthetic role plausible and makes choices such as polypeptide elongation and histidine biosynthesis less likely. But P450 identity alone does not establish this protein's primary pathway.",
-    "missing_item_specific_fact": "Identifying this specific enzyme as echinocystic acid 23-monooxygenase, and thus connecting it to terpenoid secondary-metabolite biosynthesis, requires protein-specific functional annotation or experimental knowledge not supplied in the question.",
-    "reason": "The sequence provides a broad enzyme-family clue, not a decisive pathway assignment. Choosing A over all possible functions of plant P450s depends on the missing protein-specific functional fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports A. The sequence alone does not conclusively resolve the pathway, but the supplied choices do not make another option equally supported by the available annotation."
-  },
-  "important_caveats": [
-    "The sequence match applies to the reviewer-identified UniProt record; that record identity was not supplied to the evaluated model.",
-    "The annotation is supported by a cited experimental evidence code, but the primary study was not independently reviewed here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0AAW1J8D7 (sequence SHA256 matched) annotates this protein as Echinocystic acid 23-monooxygenase (Cytochrome P450 72A984) from Saponaria officinalis, with the PATHWAY comment explicitly stating 'Secondary metabolite biosynthesis; terpenoid biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:39043959, Nat. Chem. Biol. 2025). Saponins are triterpenoid secondary metabolites, confirming the annotation.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable cytochrome P450 heme-binding motif (FGWGPRICIG near the C-terminus, matching the canonical FxxGxxxCxG pattern) and an N-terminal hydrophobic membrane-anchoring region (~20 residues), identifying the protein as a membrane-bound P450 monooxygenase. Among the four options: (1) polypeptide chain elongation involves ribosomal proteins and elongation factors, not P450s; (2) L-histidine biosynthesis uses specific enzymes (ATP phosphoribosyltransferase, histidinol dehydrogenase, etc.), not P450s; (3) fatty acid beta-oxidation uses acyl-CoA dehydrogenases, hydratases, and thiolases, not P450s; (4) plant P450s are predominantly and characteristically involved in secondary metabolite biosynthesis (terpenoid, alkaloid, phenylpropanoid pathways). Thus, identifying the P450 fold from the sequence and applying general knowledge of pathway biochemistry eliminates B, C, and D and selects A.
-
-
-**Missing item-specific fact**
-
-> None required beyond recognizing the P450 motif and general pathway biochemistry. The specific identity as a saponin-pathway enzyme is not needed to distinguish among the four given choices.
-
-
-**Reason**
-
-> The P450 heme-binding motif is extractable from the supplied sequence, and the exclusion of the other three pathways based on their constituent enzyme classes is standard biochemistry. No item-specific database lookup is necessary to reach the correct answer among these options.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B, C, and D describe pathways whose enzymatic machinery (ribosomes, amino-acid biosynthetic enzymes, beta-oxidation enzymes) is fundamentally incompatible with a P450 monooxygenase. Only A is compatible.
-
-
-### Important caveats
-
-- The UniProt pathway annotation is supported by experimental evidence (ECO:0000269) from a 2025 Nat. Chem. Biol. paper on saponin biosynthesis in soapwort.
-- The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark input and the UniProt entry.
-- The entry was first publicly released 2025-06-18; the author's source snapshot date is unknown but the historical record (entry version 5) also matches the sequence.
-- While P450s can participate in fatty acid omega-oxidation, the option specifically says 'beta-oxidation,' which is mechanistically distinct and does not involve P450s.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FGWGPRICIG near the C-terminus, matching the canonical FxxGxxxCxG pattern) and an N-terminal hydrophobic membrane-anchoring region (~20 residues), identifying the protein as a membrane-bound P450 monooxygenase. Among the four options: (1) polypeptide chain elongation involves ribosomal proteins and elongation factors, not P450s; (2) L-histidine biosynthesis uses specific enzymes (ATP phosphoribosyltransferase, histidinol dehydrogenase, etc.), not P450s; (3) fatty acid beta-oxidation uses acyl-CoA dehydrogenases, hydratases, and thiolases, not P450s; (4) plant P450s are predominantly and characteristically involved in secondary metabolite biosynthesis (terpenoid, alkaloid, phenylpropanoid pathways). Thus, identifying the P450 fold from the sequence and applying general knowledge of pathway biochemistry eliminates B, C, and D and selects A.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None required beyond recognizing the P450 motif and general pathway biochemistry. The specific identity as a saponin-pathway enzyme is not needed to distinguish among the four given choices.",
-    "reason": "The P450 heme-binding motif is extractable from the supplied sequence, and the exclusion of the other three pathways based on their constituent enzyme classes is standard biochemistry. No item-specific database lookup is necessary to reach the correct answer among these options."
-  },
-  "case_id": "pathway_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1J8D7 (sequence SHA256 matched) annotates this protein as Echinocystic acid 23-monooxygenase (Cytochrome P450 72A984) from Saponaria officinalis, with the PATHWAY comment explicitly stating 'Secondary metabolite biosynthesis; terpenoid biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:39043959, Nat. Chem. Biol. 2025). Saponins are triterpenoid secondary metabolites, confirming the annotation."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation is supported by experimental evidence (ECO:0000269) from a 2025 Nat. Chem. Biol. paper on saponin biosynthesis in soapwort.",
-    "The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark input and the UniProt entry.",
-    "The entry was first publicly released 2025-06-18; the author's source snapshot date is unknown but the historical record (entry version 5) also matches the sequence.",
-    "While P450s can participate in fatty acid omega-oxidation, the option specifically says 'beta-oxidation,' which is mechanistically distinct and does not involve P450s."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D describe pathways whose enzymatic machinery (ribosomes, amino-acid biosynthetic enzymes, beta-oxidation enzymes) is fundamentally incompatible with a P450 monooxygenase. Only A is compatible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0AAW1J8D7 (sequence SHA256 matched) annotates this protein as Echinocystic acid 23-monooxygenase (Cytochrome P450 72A984) from Saponaria officinalis, with the PATHWAY comment explicitly stating 'Secondary metabolite biosynthesis; terpenoid biosynthesis' supported by experimental evidence (ECO:0000269, PubMed:39043959, Nat. Chem. Biol. 2025). Saponins are triterpenoid secondary metabolites, confirming the annotation.",
-    "evidence_ids": ["C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FGWGPRICIG near the C-terminus, matching the canonical FxxGxxxCxG pattern) and an N-terminal hydrophobic membrane-anchoring region (~20 residues), identifying the protein as a membrane-bound P450 monooxygenase. Among the four options: (1) polypeptide chain elongation involves ribosomal proteins and elongation factors, not P450s; (2) L-histidine biosynthesis uses specific enzymes (ATP phosphoribosyltransferase, histidinol dehydrogenase, etc.), not P450s; (3) fatty acid beta-oxidation uses acyl-CoA dehydrogenases, hydratases, and thiolases, not P450s; (4) plant P450s are predominantly and characteristically involved in secondary metabolite biosynthesis (terpenoid, alkaloid, phenylpropanoid pathways). Thus, identifying the P450 fold from the sequence and applying general knowledge of pathway biochemistry eliminates B, C, and D and selects A.",
-    "missing_item_specific_fact": "None required beyond recognizing the P450 motif and general pathway biochemistry. The specific identity as a saponin-pathway enzyme is not needed to distinguish among the four given choices.",
-    "reason": "The P450 heme-binding motif is extractable from the supplied sequence, and the exclusion of the other three pathways based on their constituent enzyme classes is standard biochemistry. No item-specific database lookup is necessary to reach the correct answer among these options."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D describe pathways whose enzymatic machinery (ribosomes, amino-acid biosynthetic enzymes, beta-oxidation enzymes) is fundamentally incompatible with a P450 monooxygenase. Only A is compatible."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation is supported by experimental evidence (ECO:0000269) from a 2025 Nat. Chem. Biol. paper on saponin biosynthesis in soapwort.",
-    "The reviewer-only evidence confirms sequence identity (SHA256 match) between the benchmark input and the UniProt entry.",
-    "The entry was first publicly released 2025-06-18; the author's source snapshot date is unknown but the historical record (entry version 5) also matches the sequence.",
-    "While P450s can participate in fatty acid omega-oxidation, the option specifically says 'beta-oxidation,' which is mechanistically distinct and does not involve P450s."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0AAW1J8D7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "f866185e1e103357a9c3b20604b1a1695cd77c611aad66a57021597b19150016",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 522,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "f866185e1e103357a9c3b20604b1a1695cd77c611aad66a57021597b19150016",
   "current_entry_audit": {
     "entryVersion": 6,
     "firstPublicDate": "2025-06-18",
@@ -530,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2024-11-27",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
-  "current_source_sequence_sha256": "f866185e1e103357a9c3b20604b1a1695cd77c611aad66a57021597b19150016",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 522,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "f866185e1e103357a9c3b20604b1a1695cd77c611aad66a57021597b19150016",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 5,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0AAW1J8D7",
   "selected_historical_entry_version": 5,
+  "selected_historical_record_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
+  "selected_historical_source_sequence_length": 522,
+  "selected_historical_source_sequence_sha256": "f866185e1e103357a9c3b20604b1a1695cd77c611aad66a57021597b19150016",
   "selected_historical_version": {
     "accession": "A0AAW1J8D7",
     "database": "Swiss-Prot",
@@ -548,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "C7284_SAPOF",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
-  "selected_historical_source_sequence_sha256": "f866185e1e103357a9c3b20604b1a1695cd77c611aad66a57021597b19150016",
-  "selected_historical_source_sequence_length": 522,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 5,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json",
-  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
-  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0AAW1J8D7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json"
 }
 ```
 
@@ -598,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json",
-  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
-  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":6,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2024-11-27\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json"
 }
 ```
 
@@ -617,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json",
-  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
-  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Common soapwort\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"Caryophyllales\",\"Caryophyllaceae\",\"Caryophylleae\",\"Saponaria\"],\"scientificName\":\"Saponaria officinalis\",\"synonyms\":[\"Lychnis saponaria\"],\"taxonId\":3572}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json"
 }
 ```
 
@@ -636,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json",
-  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
-  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 72A984\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"SoCYP72A984\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"1.14.14.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Echinocystic acid 23-monooxygenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json"
 }
 ```
 
@@ -655,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json",
-  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
-  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39043959\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json"
 }
 ```
 
@@ -674,15 +435,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json",
-  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
-  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Jo S.\",\"El-Demerdash A.\",\"Owen C.\",\"Srivastava V.\",\"Wu D.\",\"Kikuchi S.\",\"Reed J.\",\"Hodgson H.\",\"Harkess A.\",\"Shu S.\",\"Plott C.\",\"Jenkins J.\",\"Williams M.\",\"Boston L.-B.\",\"Lacchini E.\",\"Qu T.\",\"Goossens A.\",\"Grimwood J.\",\"Schmutz J.\",\"Leebens-Mack J.\",\"Osbourn A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39043959\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41589-024-01681-7\"}],\"citationType\":\"journal article\",\"firstPage\":\"215\",\"id\":\"39043959\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"226\",\"publicationDate\":\"2025\",\"title\":\"Unlocking saponin biosynthesis in soapwort.\",\"volume\":\"21\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"WWM48154.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"TISSUE SPECIFICITY\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:33.543251+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "622ab455e7c549299e06dff7e6ac0d6d5fd4950316e1f887c806b70e5464ab02",
+  "url": "https://rest.uniprot.org/uniprotkb/A0AAW1J8D7.json"
 }
 ```
 
@@ -692,18 +453,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1J8D7?format=txt&versions=5",
-  "source_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
-  "retrieved_utc": "2026-11-02T04:26:35.528947+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   C7284_SAPOF             Reviewed;         522 AA.\nAC   A0AAW1J8D7;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-NOV-2024, sequence version 1.\nDT   28-JAN-2026, entry version 5.\nDE   RecName: Full=Echinocystic acid 23-monooxygenase {ECO:0000305};\nDE            EC=1.14.14.- {ECO:0000269|PubMed:39043959};\nDE   AltName: Full=Cytochrome P450 72A984 {ECO:0000303|PubMed:39043959};\nDE            Short=SoCYP72A984 {ECO:0000303|PubMed:39043959};\nGN   Name=CYP72A984 {ECO:0000303|PubMed:39043959};\nGN   Synonyms=Saoffv11042705m {ECO:0000303|PubMed:39043959};\nGN   ORFNames=RND81_08G155300 {ECO:0000312|EMBL:KAK9699133.1};\nOS   Saponaria officinalis (Common soapwort) (Lychnis saponaria).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   Caryophyllales; Caryophyllaceae; Caryophylleae; Saponaria.\nOX   NCBI_TaxID=3572;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:35.528947+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1J8D7?format=txt&versions=5"
 }
 ```
 
@@ -713,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1J8D7?format=txt&versions=5",
-  "source_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
-  "retrieved_utc": "2026-11-02T04:26:35.528947+00:00",
-  "source_locator": "lines 18-27",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:WWM48154.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, TISSUE\nRP   SPECIFICITY, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39043959; DOI=10.1038/s41589-024-01681-7;\nRA   Jo S., El-Demerdash A., Owen C., Srivastava V., Wu D., Kikuchi S., Reed J.,\nRA   Hodgson H., Harkess A., Shu S., Plott C., Jenkins J., Williams M.,\nRA   Boston L.-B., Lacchini E., Qu T., Goossens A., Grimwood J., Schmutz J.,\nRA   Leebens-Mack J., Osbourn A.;\nRT   \"Unlocking saponin biosynthesis in soapwort.\";\nRL   Nat. Chem. Biol. 21:215-226(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:35.528947+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 18-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1J8D7?format=txt&versions=5"
 }
 ```
 
@@ -734,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 5,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0AAW1J8D7?format=txt&versions=5",
-  "source_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
-  "retrieved_utc": "2026-11-02T04:26:35.528947+00:00",
-  "source_locator": "lines 54-55",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:39043959}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 5,
+  "retrieved_utc": "2026-11-02T04:26:35.528947+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 54-55",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "813ea7e8b060f5cf01f9f7baef81348aef78766a60262229bbc2dd6f2ea2a48e",
+  "url": "https://rest.uniprot.org/unisave/A0AAW1J8D7?format=txt&versions=5"
 }
 ```
 

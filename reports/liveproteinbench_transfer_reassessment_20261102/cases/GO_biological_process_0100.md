@@ -1,18 +1,16 @@
-# GO_biological_process_0100: before and after transfer clarification
+# GO_biological_process_0100
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0100.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0100.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — MAPK cascade
+**Expected answer:** **D** — MAPK cascade
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches a curated MKK1 sequence. The linked UniProt function annotation identifies it as a mitogen-activated protein kinase kinase in a MAPK cascade and cites experimental evidence (ECO:0000269). This supports D, though the cited study was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a protein kinase domain, which makes a signaling-kinase role plausible and disfavors cartilage development. But generic kinase motifs do not establish that this kinase participates specifically in a MAPK cascade rather than another process.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as MKK1 and its participation in the Mkh1–Mkk1–Spm1 MAPK cascade are not supplied in the question.
-
-
-**Reason**
-
-> Selecting D with confidence requires the absent protein-specific pathway annotation or equivalent experimental knowledge. Recognizing the exact sequence would be lookup or memorization, not reasoning from the provided input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports MAPK cascade among the listed choices; the other options are not supported as the protein's primary process by the supplied evidence.
-
-
-### Important caveats
-
-- The reviewer-only UniProt record matches the sequence, but the author's source snapshot is unknown.
-- The functional annotation cites experimental evidence, but the underlying primary study was not independently assessed.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a protein kinase domain, which makes a signaling-kinase role plausible and disfavors cartilage development. But generic kinase motifs do not establish that this kinase participates specifically in a MAPK cascade rather than another process.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as MKK1 and its participation in the Mkh1–Mkk1–Spm1 MAPK cascade are not supplied in the question.",
-    "reason": "Selecting D with confidence requires the absent protein-specific pathway annotation or equivalent experimental knowledge. Recognizing the exact sequence would be lookup or memorization, not reasoning from the provided input."
-  },
-  "case_id": "GO_biological_process_0100",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a curated MKK1 sequence. The linked UniProt function annotation identifies it as a mitogen-activated protein kinase kinase in a MAPK cascade and cites experimental evidence (ECO:0000269). This supports D, though the cited study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt record matches the sequence, but the author's source snapshot is unknown.",
-    "The functional annotation cites experimental evidence, but the underlying primary study was not independently assessed."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports MAPK cascade among the listed choices; the other options are not supported as the protein's primary process by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0100",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a curated MKK1 sequence. The linked UniProt function annotation identifies it as a mitogen-activated protein kinase kinase in a MAPK cascade and cites experimental evidence (ECO:0000269). This supports D, though the cited study was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a protein kinase domain, which makes a signaling-kinase role plausible and disfavors cartilage development. But generic kinase motifs do not establish that this kinase participates specifically in a MAPK cascade rather than another process.",
-    "missing_item_specific_fact": "The protein-specific identification as MKK1 and its participation in the Mkh1–Mkk1–Spm1 MAPK cascade are not supplied in the question.",
-    "reason": "Selecting D with confidence requires the absent protein-specific pathway annotation or equivalent experimental knowledge. Recognizing the exact sequence would be lookup or memorization, not reasoning from the provided input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports MAPK cascade among the listed choices; the other options are not supported as the protein's primary process by the supplied evidence."
-  },
-  "important_caveats": [
-    "The reviewer-only UniProt record matches the sequence, but the author's source snapshot is unknown.",
-    "The functional annotation cites experimental evidence, but the underlying primary study was not independently assessed."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry (A0A194VNL2) explicitly names the protein 'Mitogen-activated protein kinase kinase mkk1' (EC 2.7.11.24) and the FUNCTION comment states it is 'part of the mkh1-mkk1-spm1 MAPK cascade.' The GO term GO:0000165 (MAPK cascade) is defined as a cascade starting with MAP3K activation followed by MAP2K and MAPK. The protein is a MAP2K (MAPKK), a core component of this cascade. The expected answer D is directly supported by the experimental annotation (ECO:0000269, PubMed:39631571).
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a canonical protein kinase catalytic domain (Gly-rich loop 'GGLGEGAGGAVTR', VAIK lysine, HRD motif 'HRDIKPSN', DFG motif 'CDFGVSGDFG', and an activation segment with S/T residues). This identifies the protein as a kinase. Option A (cartilage development) is an animal-specific developmental process irrelevant to a fungal protein. Option C (carbohydrate derivative metabolic process) describes metabolic enzyme activity (glycosidases, glycosyltransferases), not kinase signaling. Option B (killing of cells of another organism) refers to effector-mediated cell death induction, not intracellular signaling. Option D (MAPK cascade) is the only option describing a protein-kinase-driven signal transduction pathway. Thus, identifying the kinase domain and eliminating non-kinase biological processes provides a meaningful reasoning path to D.
-
-
-**Missing item-specific fact**
-
-> Precise identification of the kinase as specifically a MAP2K (rather than a CDPK, receptor-like kinase, or other fungal kinase) would require subdomain-level comparison to known MAPKK activation-loop motifs (S/T-x-x-S/T) or database annotation. However, among the four provided options, the kinase-domain identification combined with elimination of non-kinase processes is sufficient to single out D.
-
-
-**Reason**
-
-> A model with general knowledge of protein kinase domain architecture and the biological processes associated with different protein classes can reason from the sequence to D without needing to memorize this specific UniProt entry. The kinase domain is clearly identifiable, and the distractors describe processes not mediated by protein kinases.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options describe fundamentally different types of biological processes (animal development, immune effector function, metabolic chemistry, kinase signaling). The presence of a clear kinase catalytic domain in the sequence and the fungal origin of the protein eliminate A, B, and C through general biological reasoning. Only D describes a process whose primary mechanism is protein kinase activity.
-
-
-### Important caveats
-
-- The UniProt entry was first publicly released 2025-06-18 with Swiss-Prot annotation integrated 2026-01-28. The benchmark may have been constructed before or after this date; however, the sequence itself (submitted 2016) and its kinase domain features are invariant.
-- The historical GO annotations in the archived entry (H4, H5) list only 'conidium formation' and 'sporulation' (IEA annotations), not 'MAPK cascade' directly. The MAPK cascade assignment comes from the FUNCTION comment (C5/H3) and the protein name, not a direct GO:0000165 annotation line in the supplied excerpts.
-- The reviewer-only evidence confirms the accession was inferred from dataset image-path metadata, not from the model input. The evaluated model must rely solely on the 532-aa sequence.
-- While the reasoning path (kinase → signaling → MAPK cascade) is defensible, distinguishing a MAPKK from other dual-specificity kinases at the sequence level without a database search remains non-trivial. The question's four-option format makes the task more tractable than an open-ended prediction.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a canonical protein kinase catalytic domain (Gly-rich loop 'GGLGEGAGGAVTR', VAIK lysine, HRD motif 'HRDIKPSN', DFG motif 'CDFGVSGDFG', and an activation segment with S/T residues). This identifies the protein as a kinase. Option A (cartilage development) is an animal-specific developmental process irrelevant to a fungal protein. Option C (carbohydrate derivative metabolic process) describes metabolic enzyme activity (glycosidases, glycosyltransferases), not kinase signaling. Option B (killing of cells of another organism) refers to effector-mediated cell death induction, not intracellular signaling. Option D (MAPK cascade) is the only option describing a protein-kinase-driven signal transduction pathway. Thus, identifying the kinase domain and eliminating non-kinase biological processes provides a meaningful reasoning path to D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Precise identification of the kinase as specifically a MAP2K (rather than a CDPK, receptor-like kinase, or other fungal kinase) would require subdomain-level comparison to known MAPKK activation-loop motifs (S/T-x-x-S/T) or database annotation. However, among the four provided options, the kinase-domain identification combined with elimination of non-kinase processes is sufficient to single out D.",
-    "reason": "A model with general knowledge of protein kinase domain architecture and the biological processes associated with different protein classes can reason from the sequence to D without needing to memorize this specific UniProt entry. The kinase domain is clearly identifiable, and the distractors describe processes not mediated by protein kinases."
-  },
-  "case_id": "GO_biological_process_0100",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H1",
-      "H3",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A194VNL2) explicitly names the protein 'Mitogen-activated protein kinase kinase mkk1' (EC 2.7.11.24) and the FUNCTION comment states it is 'part of the mkh1-mkk1-spm1 MAPK cascade.' The GO term GO:0000165 (MAPK cascade) is defined as a cascade starting with MAP3K activation followed by MAP2K and MAPK. The protein is a MAP2K (MAPKK), a core component of this cascade. The expected answer D is directly supported by the experimental annotation (ECO:0000269, PubMed:39631571)."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released 2025-06-18 with Swiss-Prot annotation integrated 2026-01-28. The benchmark may have been constructed before or after this date; however, the sequence itself (submitted 2016) and its kinase domain features are invariant.",
-    "The historical GO annotations in the archived entry (H4, H5) list only 'conidium formation' and 'sporulation' (IEA annotations), not 'MAPK cascade' directly. The MAPK cascade assignment comes from the FUNCTION comment (C5/H3) and the protein name, not a direct GO:0000165 annotation line in the supplied excerpts.",
-    "The reviewer-only evidence confirms the accession was inferred from dataset image-path metadata, not from the model input. The evaluated model must rely solely on the 532-aa sequence.",
-    "While the reasoning path (kinase → signaling → MAPK cascade) is defensible, distinguishing a MAPKK from other dual-specificity kinases at the sequence level without a database search remains non-trivial. The question's four-option format makes the task more tractable than an open-ended prediction."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options describe fundamentally different types of biological processes (animal development, immune effector function, metabolic chemistry, kinase signaling). The presence of a clear kinase catalytic domain in the sequence and the fungal origin of the protein eliminate A, B, and C through general biological reasoning. Only D describes a process whose primary mechanism is protein kinase activity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0100",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A194VNL2) explicitly names the protein 'Mitogen-activated protein kinase kinase mkk1' (EC 2.7.11.24) and the FUNCTION comment states it is 'part of the mkh1-mkk1-spm1 MAPK cascade.' The GO term GO:0000165 (MAPK cascade) is defined as a cascade starting with MAP3K activation followed by MAP2K and MAPK. The protein is a MAP2K (MAPKK), a core component of this cascade. The expected answer D is directly supported by the experimental annotation (ECO:0000269, PubMed:39631571).",
-    "evidence_ids": ["C4", "C5", "H1", "H3", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a canonical protein kinase catalytic domain (Gly-rich loop 'GGLGEGAGGAVTR', VAIK lysine, HRD motif 'HRDIKPSN', DFG motif 'CDFGVSGDFG', and an activation segment with S/T residues). This identifies the protein as a kinase. Option A (cartilage development) is an animal-specific developmental process irrelevant to a fungal protein. Option C (carbohydrate derivative metabolic process) describes metabolic enzyme activity (glycosidases, glycosyltransferases), not kinase signaling. Option B (killing of cells of another organism) refers to effector-mediated cell death induction, not intracellular signaling. Option D (MAPK cascade) is the only option describing a protein-kinase-driven signal transduction pathway. Thus, identifying the kinase domain and eliminating non-kinase biological processes provides a meaningful reasoning path to D.",
-    "missing_item_specific_fact": "Precise identification of the kinase as specifically a MAP2K (rather than a CDPK, receptor-like kinase, or other fungal kinase) would require subdomain-level comparison to known MAPKK activation-loop motifs (S/T-x-x-S/T) or database annotation. However, among the four provided options, the kinase-domain identification combined with elimination of non-kinase processes is sufficient to single out D.",
-    "reason": "A model with general knowledge of protein kinase domain architecture and the biological processes associated with different protein classes can reason from the sequence to D without needing to memorize this specific UniProt entry. The kinase domain is clearly identifiable, and the distractors describe processes not mediated by protein kinases."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options describe fundamentally different types of biological processes (animal development, immune effector function, metabolic chemistry, kinase signaling). The presence of a clear kinase catalytic domain in the sequence and the fungal origin of the protein eliminate A, B, and C through general biological reasoning. Only D describes a process whose primary mechanism is protein kinase activity."
-  },
-  "important_caveats": [
-    "The UniProt entry was first publicly released 2025-06-18 with Swiss-Prot annotation integrated 2026-01-28. The benchmark may have been constructed before or after this date; however, the sequence itself (submitted 2016) and its kinase domain features are invariant.",
-    "The historical GO annotations in the archived entry (H4, H5) list only 'conidium formation' and 'sporulation' (IEA annotations), not 'MAPK cascade' directly. The MAPK cascade assignment comes from the FUNCTION comment (C5/H3) and the protein name, not a direct GO:0000165 annotation line in the supplied excerpts.",
-    "The reviewer-only evidence confirms the accession was inferred from dataset image-path metadata, not from the model input. The evaluated model must rely solely on the 532-aa sequence.",
-    "While the reasoning path (kinase → signaling → MAPK cascade) is defensible, distinguishing a MAPKK from other dual-specificity kinases at the sequence level without a database search remains non-trivial. The question's four-option format makes the task more tractable than an open-ended prediction."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -501,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A194VNL2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "07f9e80c287de298072e8d020c3175e845b6a591986707ea34c7f9b29455b466",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 532,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "07f9e80c287de298072e8d020c3175e845b6a591986707ea34c7f9b29455b466",
   "current_entry_audit": {
     "entryVersion": 31,
     "firstPublicDate": "2025-06-18",
@@ -532,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2016-10-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
-  "current_source_sequence_sha256": "07f9e80c287de298072e8d020c3175e845b6a591986707ea34c7f9b29455b466",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 532,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "07f9e80c287de298072e8d020c3175e845b6a591986707ea34c7f9b29455b466",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 29,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A194VNL2",
   "selected_historical_entry_version": 29,
+  "selected_historical_record_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
+  "selected_historical_source_sequence_length": 532,
+  "selected_historical_source_sequence_sha256": "07f9e80c287de298072e8d020c3175e845b6a591986707ea34c7f9b29455b466",
   "selected_historical_version": {
     "accession": "A0A194VNL2",
     "database": "Swiss-Prot",
@@ -550,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MKK1_CYTMA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
-  "selected_historical_source_sequence_sha256": "07f9e80c287de298072e8d020c3175e845b6a591986707ea34c7f9b29455b466",
-  "selected_historical_source_sequence_length": 532,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 29,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -585,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json",
-  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
-  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A194VNL2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json"
 }
 ```
 
@@ -604,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json",
-  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
-  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":31,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2016-10-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json"
 }
 ```
 
@@ -623,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json",
-  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
-  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Apple Valsa canker fungus\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Sordariomycetidae\",\"Diaporthales\",\"Cytosporaceae\",\"Cytospora\"],\"scientificName\":\"Cytospora mali\",\"synonyms\":[\"Valsa mali\"],\"taxonId\":578113}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json"
 }
 ```
 
@@ -642,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json",
-  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
-  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"2.7.11.24\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"Mitogen-activated protein kinase kinase mkk1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"MAP kinase kinase mkk1\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"MAPKK mkk1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json"
 }
 ```
 
@@ -661,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json",
-  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
-  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39631571\",\"source\":\"PubMed\"}],\"value\":\"Mitogen-activated protein kinase kinase, part of the mkh1-mkk1-spm1 MAPK cascade that regulates regulates vegetative growth, conidial formation, colony surface hydrophobicity, osmotic stress, cell wall integrity maintenance, carbon and nitrogen source utilization, chitin distribution, septa formation, and pathogenicity\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json"
 }
 ```
 
@@ -680,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json",
-  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
-  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Diao Y.\",\"Xiong X.\",\"Jin J.\",\"Yu C.\",\"Tian Y.\",\"Zhao C.\",\"Wu Y.\",\"Liu H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39631571\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.micpath.2024.107194\"}],\"citationType\":\"journal article\",\"firstPage\":\"107194\",\"id\":\"39631571\",\"journal\":\"Microb. Pathog.\",\"lastPage\":\"107194\",\"publicationDate\":\"2025\",\"title\":\"Mitogen-activated protein (MAP) kinase signalling pathway VmMkh1-VmMkk1-VmSpm1 regulates cell wall integrity in Valsamali.\",\"volume\":\"198\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:31.030295+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "64947efb12ffe31eb19d5377a2c11808353008c104c9963c727f55828a864fe3",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A194VNL2.json"
 }
 ```
 
@@ -698,18 +458,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29",
-  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
-  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   MKK1_CYTMA              Reviewed;         532 AA.\nAC   A0A194VNL2;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-OCT-2016, sequence version 1.\nDT   28-JAN-2026, entry version 29.\nDE   RecName: Full=Mitogen-activated protein kinase kinase mkk1 {ECO:0000303|PubMed:39631571};\nDE            Short=MAP kinase kinase mkk1 {ECO:0000303|PubMed:39631571};\nDE            Short=MAPKK mkk1 {ECO:0000303|PubMed:39631571};\nDE            EC=2.7.11.24 {ECO:0000305|PubMed:39631571};\nGN   Name=mkk1 {ECO:0000303|PubMed:39631571}; ORFNames=VM1G_00540;\nOS   Cytospora mali (Apple Valsa canker fungus) (Valsa mali).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Sordariomycetidae; Diaporthales; Cytosporaceae; Cytospora.\nOX   NCBI_TaxID=578113;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
+  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29"
 }
 ```
 
@@ -719,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29",
-  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
-  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
-  "source_locator": "lines 24-30",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=39631571; DOI=10.1016/j.micpath.2024.107194;\nRA   Diao Y., Xiong X., Jin J., Yu C., Tian Y., Zhao C., Wu Y., Liu H.;\nRT   \"Mitogen-activated protein (MAP) kinase signalling pathway VmMkh1-VmMkk1-\nRT   VmSpm1 regulates cell wall integrity in Valsamali.\";\nRL   Microb. Pathog. 198:107194-107194(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
+  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29"
 }
 ```
 
@@ -740,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29",
-  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
-  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
-  "source_locator": "lines 31-36",
   "excerpt": "CC   -!- FUNCTION: Mitogen-activated protein kinase kinase, part of the mkh1-\nCC       mkk1-spm1 MAPK cascade that regulates regulates vegetative growth,\nCC       conidial formation, colony surface hydrophobicity, osmotic stress, cell\nCC       wall integrity maintenance, carbon and nitrogen source utilization,\nCC       chitin distribution, septa formation, and pathogenicity.\nCC       {ECO:0000269|PubMed:39631571}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
+  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29"
 }
 ```
 
@@ -761,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29",
-  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
-  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
-  "source_locator": "lines 73-73",
   "excerpt": "DR   GO; GO:0048315; P:conidium formation; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 73-73",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
+  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29"
 }
 ```
 
@@ -782,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 29,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29",
-  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
-  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
-  "source_locator": "lines 74-74",
   "excerpt": "DR   GO; GO:0030435; P:sporulation resulting in formation of a cellular spore; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 29,
+  "retrieved_utc": "2026-11-02T04:24:34.608752+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 74-74",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a2da14bfe1d104822e102f7877c4f08b310e89ec58d7f8998551d22b8e1a9d2",
+  "url": "https://rest.uniprot.org/unisave/A0A194VNL2?format=txt&versions=29"
 }
 ```
 
@@ -804,15 +564,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 1649-1670",
   "excerpt": "[Term]\nid: GO:0000165\nname: MAPK cascade\nnamespace: biological_process\nalt_id: GO:0007255\ndef: \"An intracellular protein kinase cascade containing at least a MAP kinase (MAPK). It starts with the activation of a MAP3K, and the consecutive activation of a MPK2K and a MAPK. The cascade can also contain an additional tier: the upstream MAP4K. The kinases in each tier phosphorylate and activate the kinase in the downstream tier to transmit a signal within a cell.\" [PMID:20811974, PMID:9561267]\ncomment: MAPK cascades lie downstream of many cell surface receptors and cooperate in transmitting various extracellular signals to the nucleus. One way by which the specificity of each cascade is regulated is through the existence of several distinct components in each tier of the different cascades. The cascades are typically named according to the component in the MAPK tier.\nsynonym: \"ERK/MAPK cascade\" NARROW []\nsynonym: \"MAP kinase cascade\" EXACT []\nsynonym: \"MAP kinase kinase kinase cascade\" EXACT []\nsynonym: \"MAPK signal transduction\" EXACT [GOC:signaling]\nsynonym: \"MAPK signaling\" RELATED []\nsynonym: \"MAPK signalling\" RELATED []\nsynonym: \"MAPKKK cascade\" EXACT []\nsynonym: \"MAPKKK cascade during sporulation\" NARROW []\nsynonym: \"mitogen-activated protein kinase cascade\" EXACT [GOC:bf]\nxref: Reactome:R-HSA-169893 \"Prolonged ERK activation events\"\nxref: Reactome:R-HSA-5673001 \"RAF/MAP kinase cascade\"\nxref: Wikipedia:MAPK_cascade\nxref: Wikipedia:Mitogen-activated_protein_kinase\nis_a: GO:0141124 ! intracellular signaling cassette\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000165",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 1649-1670",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000165"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -823,15 +583,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 178549-178560",
   "excerpt": "[Term]\nid: GO:0031640\nname: killing of cells of another organism\nnamespace: biological_process\nalt_id: GO:0001908\nalt_id: GO:0051852\ndef: \"Any process in an organism that results in the killing of cells of another organism, including in some cases the death of the other organism. Killing here refers to the induction of death in one cell by another cell, not cell-autonomous death due to internal or other environmental conditions.\" [GOC:add]\nsubset: goslim_pir\nsynonym: \"killing of cells of other organism\" EXACT []\nis_a: GO:0001906 ! cell killing\nis_a: GO:0141061 ! disruption of cell in another organism\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031640",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 178549-178560",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031640"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -842,15 +602,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 324268-324283",
   "excerpt": "[Term]\nid: GO:0051216\nname: cartilage development\nnamespace: biological_process\ndef: \"The process whose specific outcome is the progression of a cartilage element over time, from its formation to the mature structure. Cartilage elements are skeletal elements that consist of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate.\" [GOC:cjm, PMID:23251424]\nsynonym: \"cartilage biogenesis\" EXACT []\nsynonym: \"cartilage biosynthesis\" EXACT []\nsynonym: \"cartilage element development\" EXACT []\nsynonym: \"cartilage formation\" EXACT []\nsynonym: \"cartilage organ development\" EXACT []\nsynonym: \"chondrogenesis\" EXACT []\nxref: Wikipedia:Chondrogenesis\nis_a: GO:0048513 ! animal organ development\nrelationship: part_of GO:0001501 ! skeletal system development\nrelationship: part_of GO:0061448 ! connective tissue development\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0051216",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 324268-324283",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0051216"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -861,15 +621,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 471774-471785",
   "excerpt": "[Term]\nid: GO:1901135\nname: carbohydrate derivative metabolic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways involving carbohydrate derivative.\" [GOC:TermGenie]\nsubset: goslim_agr\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_prokaryote\nsynonym: \"carbohydrate derivative metabolism\" EXACT [GOC:TermGenie]\nis_a: GO:0008152 ! metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:1901135",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 471774-471785",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:1901135"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

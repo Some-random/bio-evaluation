@@ -1,18 +1,16 @@
-# GO_molecular_function_0170: before and after transfer clarification
+# GO_molecular_function_0170
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0170.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0170.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **B** — UDP-glucuronate decarboxylase activity
+**Expected answer:** **B** — UDP-glucuronate decarboxylase activity
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | contradicted | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | contradicted | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | contradicted | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | contradicted | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,241 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The sequence-matched protein is experimentally described as catalyzing decarboxylation of UDP-GlcNAcA to UDP-XylNAc and as unable to use UDP-glucuronic acid. Option B denotes decarboxylation of UDP-glucuronate to UDP-xylose, so the specific substrate and product do not match. Its GO annotation for B is computational (IEA:TreeGrafter), not experimental confirmation of that activity.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with an enzyme, but no supplied context or clear sequence feature distinguishes its exact nucleotide-sugar substrate specificity from the alternatives. Inferring a precise substrate and reaction requires protein-specific functional knowledge.
-
-
-**Missing item-specific fact**
-
-> The protein's experimentally characterized substrate specificity and catalytic reaction; specifically, that it acts on UDP-GlcNAcA rather than UDP-glucuronate.
-
-
-**Reason**
-
-> The sequence alone does not establish the specific molecular function at the level needed to choose among these options. Knowing the exact enzyme identity or its experimentally characterized reaction would require an external protein-specific fact.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports a decarboxylase function, but none of the options states the characterized UDP-GlcNAcA decarboxylase activity. Option B is related but specifies a different substrate and product.
-
-
-### Important caveats
-
-- The sequence match and experimental-function annotation apply to the supplied sequence, but the author's source snapshot is unknown.
-- The GO annotation for option B is present in UniProt, but its IEA:TreeGrafter evidence is computational and conflicts with the stated experimentally characterized substrate specificity.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, but no supplied context or clear sequence feature distinguishes its exact nucleotide-sugar substrate specificity from the alternatives. Inferring a precise substrate and reaction requires protein-specific functional knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's experimentally characterized substrate specificity and catalytic reaction; specifically, that it acts on UDP-GlcNAcA rather than UDP-glucuronate.",
-    "reason": "The sequence alone does not establish the specific molecular function at the level needed to choose among these options. Knowing the exact enzyme identity or its experimentally characterized reaction would require an external protein-specific fact."
-  },
-  "case_id": "GO_molecular_function_0170",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C8",
-      "GO2"
-    ],
-    "judgment": "contradicted",
-    "reason": "The sequence-matched protein is experimentally described as catalyzing decarboxylation of UDP-GlcNAcA to UDP-XylNAc and as unable to use UDP-glucuronic acid. Option B denotes decarboxylation of UDP-glucuronate to UDP-xylose, so the specific substrate and product do not match. Its GO annotation for B is computational (IEA:TreeGrafter), not experimental confirmation of that activity."
-  },
-  "important_caveats": [
-    "The sequence match and experimental-function annotation apply to the supplied sequence, but the author's source snapshot is unknown.",
-    "The GO annotation for option B is present in UniProt, but its IEA:TreeGrafter evidence is computational and conflicts with the stated experimentally characterized substrate specificity."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports a decarboxylase function, but none of the options states the characterized UDP-GlcNAcA decarboxylase activity. Option B is related but specifies a different substrate and product."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0170",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The sequence-matched protein is experimentally described as catalyzing decarboxylation of UDP-GlcNAcA to UDP-XylNAc and as unable to use UDP-glucuronic acid. Option B denotes decarboxylation of UDP-glucuronate to UDP-xylose, so the specific substrate and product do not match. Its GO annotation for B is computational (IEA:TreeGrafter), not experimental confirmation of that activity.",
-    "evidence_ids": ["C5", "C6", "C8", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with an enzyme, but no supplied context or clear sequence feature distinguishes its exact nucleotide-sugar substrate specificity from the alternatives. Inferring a precise substrate and reaction requires protein-specific functional knowledge.",
-    "missing_item_specific_fact": "The protein's experimentally characterized substrate specificity and catalytic reaction; specifically, that it acts on UDP-GlcNAcA rather than UDP-glucuronate.",
-    "reason": "The sequence alone does not establish the specific molecular function at the level needed to choose among these options. Knowing the exact enzyme identity or its experimentally characterized reaction would require an external protein-specific fact."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports a decarboxylase function, but none of the options states the characterized UDP-GlcNAcA decarboxylase activity. Option B is related but specifies a different substrate and product."
-  },
-  "important_caveats": [
-    "The sequence match and experimental-function annotation apply to the supplied sequence, but the author's source snapshot is unknown.",
-    "The GO annotation for option B is present in UniProt, but its IEA:TreeGrafter evidence is computational and conflicts with the stated experimentally characterized substrate specificity."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: contradicted
-
-> The UniProt entry for A7GKX7 carries GO:0048040 (UDP-glucuronate decarboxylase activity) only via IEA:TreeGrafter (computational transfer). The experimental evidence (PubMed:20529859, ECO:0000269) in C5/H3 explicitly states the protein 'Cannot use other UDP-uronates, such as UDP-glucuronic acid (UDP-GlcA).' The protein's actual experimentally verified activity is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase (EC 4.1.1.128), a different enzyme (EC 4.1.1.128 vs. EC 4.1.1.35 for GO:0048040). The GO annotation is an imprecise family-level computational transfer contradicted by the primary experimental data.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [H3](#evidence-h3), [H4](#evidence-h4), [H6](#evidence-h6), [GO2](#evidence-go2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The N-terminal 'GGAGFIGS' motif is a canonical Rossmann-fold NAD-binding signature found in NAD-dependent UDP-uronate decarboxylases and related dehydrogenases. This immediately rules out: (D) chaperone binding (a protein-protein interaction, not a catalytic activity; the sequence clearly encodes an enzyme), (C) histone kinase activity (kinases require a distinct bilobal kinase fold absent here, and this is a bacterial protein), and (A) tRNA methyltransferase (class I methyltransferases use a different Rossmann variant with a catalytic motif and lack the extended C-terminal UDP-sugar-binding domain seen here). Among the four choices, only B belongs to the NAD-dependent UDP-sugar decarboxylase superfamily, making it the uniquely defensible answer.
-
-
-**Missing item-specific fact**
-
-> Distinguishing the true substrate (UDP-GlcNAcA, EC 4.1.1.128) from the annotated substrate (UDP-glucuronate, EC 4.1.1.35) requires the specific experimental substrate-specificity data from PubMed:20529859. However, since UDP-GlcNAcA decarboxylase is not among the options, the reasoning path to B as the best available choice is intact.
-
-
-**Reason**
-
-> General knowledge of Rossmann-fold NAD-binding motifs, enzyme vs. binding protein architecture, and the distinction between bacterial metabolic enzymes and eukaryotic kinases/chaperones provides a concrete biological argument to eliminate A, C, and D and select B. The question does not require memorizing this specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, C, and D are clearly incompatible with the sequence architecture (bacterial NAD-dependent enzyme with Rossmann fold). Only B falls within the correct enzyme superfamily. No ambiguity among the four choices.
-
-
-### Important caveats
-
-- The expected answer B (UDP-glucuronate decarboxylase activity, GO:0048040, EC 4.1.1.35) is annotated in UniProt only via IEA:TreeGrafter and is contradicted by experimental evidence showing the protein acts on UDP-GlcNAcA (EC 4.1.1.128), not UDP-glucuronate.
-- The benchmark key likely derives from the UniProt GO annotation list, which includes this imprecise TreeGrafter transfer. The true molecular function is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase activity.
-- Despite the substrate-specificity error in the key, B remains the best answer among the four provided options because it is the only one in the correct enzyme superfamily (NAD-dependent UDP-uronate decarboxylase).
-- Sequence match to UniProt A7GKX7 is confirmed (SHA-256 match, 321 AA, both current and historical entry v94).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal 'GGAGFIGS' motif is a canonical Rossmann-fold NAD-binding signature found in NAD-dependent UDP-uronate decarboxylases and related dehydrogenases. This immediately rules out: (D) chaperone binding (a protein-protein interaction, not a catalytic activity; the sequence clearly encodes an enzyme), (C) histone kinase activity (kinases require a distinct bilobal kinase fold absent here, and this is a bacterial protein), and (A) tRNA methyltransferase (class I methyltransferases use a different Rossmann variant with a catalytic motif and lack the extended C-terminal UDP-sugar-binding domain seen here). Among the four choices, only B belongs to the NAD-dependent UDP-sugar decarboxylase superfamily, making it the uniquely defensible answer.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Distinguishing the true substrate (UDP-GlcNAcA, EC 4.1.1.128) from the annotated substrate (UDP-glucuronate, EC 4.1.1.35) requires the specific experimental substrate-specificity data from PubMed:20529859. However, since UDP-GlcNAcA decarboxylase is not among the options, the reasoning path to B as the best available choice is intact.",
-    "reason": "General knowledge of Rossmann-fold NAD-binding motifs, enzyme vs. binding protein architecture, and the distinction between bacterial metabolic enzymes and eukaryotic kinases/chaperones provides a concrete biological argument to eliminate A, C, and D and select B. The question does not require memorizing this specific UniProt entry."
-  },
-  "case_id": "GO_molecular_function_0170",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C8",
-      "H3",
-      "H4",
-      "H6",
-      "GO2"
-    ],
-    "judgment": "contradicted",
-    "reason": "The UniProt entry for A7GKX7 carries GO:0048040 (UDP-glucuronate decarboxylase activity) only via IEA:TreeGrafter (computational transfer). The experimental evidence (PubMed:20529859, ECO:0000269) in C5/H3 explicitly states the protein 'Cannot use other UDP-uronates, such as UDP-glucuronic acid (UDP-GlcA).' The protein's actual experimentally verified activity is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase (EC 4.1.1.128), a different enzyme (EC 4.1.1.128 vs. EC 4.1.1.35 for GO:0048040). The GO annotation is an imprecise family-level computational transfer contradicted by the primary experimental data."
-  },
-  "important_caveats": [
-    "The expected answer B (UDP-glucuronate decarboxylase activity, GO:0048040, EC 4.1.1.35) is annotated in UniProt only via IEA:TreeGrafter and is contradicted by experimental evidence showing the protein acts on UDP-GlcNAcA (EC 4.1.1.128), not UDP-glucuronate.",
-    "The benchmark key likely derives from the UniProt GO annotation list, which includes this imprecise TreeGrafter transfer. The true molecular function is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase activity.",
-    "Despite the substrate-specificity error in the key, B remains the best answer among the four provided options because it is the only one in the correct enzyme superfamily (NAD-dependent UDP-uronate decarboxylase).",
-    "Sequence match to UniProt A7GKX7 is confirmed (SHA-256 match, 321 AA, both current and historical entry v94)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are clearly incompatible with the sequence architecture (bacterial NAD-dependent enzyme with Rossmann fold). Only B falls within the correct enzyme superfamily. No ambiguity among the four choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0170",
-  "expected_answer_check": {
-    "judgment": "contradicted",
-    "reason": "The UniProt entry for A7GKX7 carries GO:0048040 (UDP-glucuronate decarboxylase activity) only via IEA:TreeGrafter (computational transfer). The experimental evidence (PubMed:20529859, ECO:0000269) in C5/H3 explicitly states the protein 'Cannot use other UDP-uronates, such as UDP-glucuronic acid (UDP-GlcA).' The protein's actual experimentally verified activity is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase (EC 4.1.1.128), a different enzyme (EC 4.1.1.128 vs. EC 4.1.1.35 for GO:0048040). The GO annotation is an imprecise family-level computational transfer contradicted by the primary experimental data.",
-    "evidence_ids": ["C5", "C6", "C8", "H3", "H4", "H6", "GO2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The N-terminal 'GGAGFIGS' motif is a canonical Rossmann-fold NAD-binding signature found in NAD-dependent UDP-uronate decarboxylases and related dehydrogenases. This immediately rules out: (D) chaperone binding (a protein-protein interaction, not a catalytic activity; the sequence clearly encodes an enzyme), (C) histone kinase activity (kinases require a distinct bilobal kinase fold absent here, and this is a bacterial protein), and (A) tRNA methyltransferase (class I methyltransferases use a different Rossmann variant with a catalytic motif and lack the extended C-terminal UDP-sugar-binding domain seen here). Among the four choices, only B belongs to the NAD-dependent UDP-sugar decarboxylase superfamily, making it the uniquely defensible answer.",
-    "missing_item_specific_fact": "Distinguishing the true substrate (UDP-GlcNAcA, EC 4.1.1.128) from the annotated substrate (UDP-glucuronate, EC 4.1.1.35) requires the specific experimental substrate-specificity data from PubMed:20529859. However, since UDP-GlcNAcA decarboxylase is not among the options, the reasoning path to B as the best available choice is intact.",
-    "reason": "General knowledge of Rossmann-fold NAD-binding motifs, enzyme vs. binding protein architecture, and the distinction between bacterial metabolic enzymes and eukaryotic kinases/chaperones provides a concrete biological argument to eliminate A, C, and D and select B. The question does not require memorizing this specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are clearly incompatible with the sequence architecture (bacterial NAD-dependent enzyme with Rossmann fold). Only B falls within the correct enzyme superfamily. No ambiguity among the four choices."
-  },
-  "important_caveats": [
-    "The expected answer B (UDP-glucuronate decarboxylase activity, GO:0048040, EC 4.1.1.35) is annotated in UniProt only via IEA:TreeGrafter and is contradicted by experimental evidence showing the protein acts on UDP-GlcNAcA (EC 4.1.1.128), not UDP-glucuronate.",
-    "The benchmark key likely derives from the UniProt GO annotation list, which includes this imprecise TreeGrafter transfer. The true molecular function is UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase activity.",
-    "Despite the substrate-specificity error in the key, B remains the best answer among the four provided options because it is the only one in the correct enzyme superfamily (NAD-dependent UDP-uronate decarboxylase).",
-    "Sequence match to UniProt A7GKX7 is confirmed (SHA-256 match, 321 AA, both current and historical entry v94)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: contradicted
 
@@ -392,10 +160,9 @@ Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -508,38 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-### Source check 1
-
-**Check:** `explicit_negative_substrate_evidence_traced`.
-
-> C5 explicitly states inability to use UDP-glucuronic acid, while GO2 defines the keyed UDP-glucuronate decarboxylase reaction. C6 instead uses UDP-GlcNAcA; C8 nevertheless assigns the key via IEA:TreeGrafter.
-
-**Remaining uncertainty:** This is stronger than mere absence: the supplied function text explicitly names the unusable keyed substrate. Primary assay conditions/paper were not independently reviewed.
-
-Evidence checked: [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [GO2](#evidence-go2).
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A7GKX7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 321,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
   "current_entry_audit": {
     "entryVersion": 96,
     "firstPublicDate": "2025-02-05",
@@ -547,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-09-11",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "current_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 321,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 94,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A7GKX7",
   "selected_historical_entry_version": 94,
+  "selected_historical_record_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "selected_historical_source_sequence_length": 321,
+  "selected_historical_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
   "selected_historical_version": {
     "accession": "A7GKX7",
     "database": "Swiss-Prot",
@@ -565,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UXNAS_BACCN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "selected_historical_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
-  "selected_historical_source_sequence_length": 321,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 94,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A7GKX7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -619,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":96,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-09-11\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -638,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Bacillota\",\"Bacilli\",\"Caryophanales\",\"Bacillaceae\",\"Bacillus\",\"Bacillus cereus group\"],\"scientificName\":\"Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98)\",\"taxonId\":315749}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -657,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-XylNAc synthase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.128\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-GlcNAcA decarboxylase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -676,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"Decarboxylase involved in the biosynthesis of the nucleotide-sugar UDP-N-acetylxylosamine (UDP-XylNAc) (PubMed:20529859). Catalyzes the NAD-dependent decarboxylation of UDP-N-acetylglucosaminuronic acid (UDP-GlcNAcA) to UDP-XylNAc (PubMed:20529859). Cannot use other UDP-uronates, such as UDP-glucuronic acid (UDP-GlcA) and UDP-galacturonic acid (UDP-GalA) (PubMed:20529859)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -695,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81488\"}}],\"reaction\":{\"ecNumber\":\"4.1.1.128\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"name\":\"UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + H(+) = UDP-N-acetyl-alpha-D-xylosamine + CO2\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81487\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:16526\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:65040\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231888\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -714,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/15",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0070403\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:NAD+ binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/15",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -733,15 +482,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0048040\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:UDP-glucuronate decarboxylase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -752,15 +501,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Gu X.\",\"Glushka J.\",\"Lee S.G.\",\"Bar-Peled M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20529859\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m110.125872\"}],\"citationType\":\"journal article\",\"firstPage\":\"24825\",\"id\":\"20529859\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"24833\",\"publicationDate\":\"2010\",\"title\":\"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\",\"volume\":\"285\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ADE43880.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 22905 / CIP 110041 / 391-98 / NVH 391-98\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -770,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   UXNAS_BACCN             Reviewed;         321 AA.\nAC   A7GKX7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   11-SEP-2007, sequence version 1.\nDT   28-JAN-2026, entry version 94.\nDE   RecName: Full=UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase {ECO:0000305};\nDE            Short=UDP-GlcNAcA decarboxylase {ECO:0000303|PubMed:20529859};\nDE            EC=4.1.1.128 {ECO:0000269|PubMed:20529859};\nDE   AltName: Full=UDP-XylNAc synthase {ECO:0000303|PubMed:20529859};\nGN   Name=UXNAcS {ECO:0000303|PubMed:20529859};\nGN   OrderedLocusNames=Bcer98_0430 {ECO:0000312|EMBL:ABS20785.1};\nOS   Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98).\nOC   Bacteria; Bacillati; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus;\nOC   Bacillus cereus group.\nOX   NCBI_TaxID=315749;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -791,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2] {ECO:0000312|EMBL:ADE43880.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, COFACTOR,\nRP   ACTIVITY REGULATION, BIOPHYSICOCHEMICAL PROPERTIES, AND SUBUNIT.\nRC   STRAIN=DSM 22905 / CIP 110041 / 391-98 / NVH 391-98;\nRX   PubMed=20529859; DOI=10.1074/jbc.m110.125872;\nRA   Gu X., Glushka J., Lee S.G., Bar-Peled M.;\nRT   \"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the\nRT   human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\";\nRL   J. Biol. Chem. 285:24825-24833(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -812,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 36-41",
   "excerpt": "CC   -!- FUNCTION: Decarboxylase involved in the biosynthesis of the nucleotide-\nCC       sugar UDP-N-acetylxylosamine (UDP-XylNAc) (PubMed:20529859). Catalyzes\nCC       the NAD-dependent decarboxylation of UDP-N-acetylglucosaminuronic acid\nCC       (UDP-GlcNAcA) to UDP-XylNAc (PubMed:20529859). Cannot use other UDP-\nCC       uronates, such as UDP-glucuronic acid (UDP-GlcA) and UDP-galacturonic\nCC       acid (UDP-GalA) (PubMed:20529859). {ECO:0000269|PubMed:20529859}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -833,18 +582,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 42-49",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=UDP-2-acetamido-2-deoxy-alpha-D-glucuronate + H(+) = UDP-N-\nCC         acetyl-alpha-D-xylosamine + CO2; Xref=Rhea:RHEA:81487,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:16526, ChEBI:CHEBI:65040,\nCC         ChEBI:CHEBI:231888; EC=4.1.1.128;\nCC         Evidence={ECO:0000269|PubMed:20529859};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81488;\nCC         Evidence={ECO:0000269|PubMed:20529859};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -854,18 +603,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 88-88",
   "excerpt": "DR   GO; GO:0070403; F:NAD+ binding; IEA:InterPro.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 88-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -875,18 +624,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 89-89",
   "excerpt": "DR   GO; GO:0048040; F:UDP-glucuronate decarboxylase activity; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 89-89",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -897,15 +646,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 215508-215515",
   "excerpt": "[Term]\nid: GO:0035173\nname: histone kinase activity\nnamespace: molecular_function\ndef: \"Catalysis of the transfer of a phosphate group to a histone.\" [GOC:bf]\nis_a: GO:0004672 ! protein kinase activity\nis_a: GO:0140993 ! histone modifying activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035173",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 215508-215515",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035173"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -916,15 +665,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 300082-300100",
   "excerpt": "[Term]\nid: GO:0048040\nname: UDP-glucuronate decarboxylase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: H+ + UDP-alpha-D-glucuronate = CO2 + UDP-alpha-D-xylose.\" [EC:4.1.1.35, RHEA:23916]\nsynonym: \"UDP-D-glucuronate carboxy-lyase (UDP-D-xylose-forming)\" RELATED [EC:4.1.1.35]\nsynonym: \"UDP-D-glucuronate carboxy-lyase activity\" RELATED [EC:4.1.1.35]\nsynonym: \"UDP-glucuronic acid decarboxylase activity\" EXACT []\nsynonym: \"UDPglucuronate decarboxylase activity\" RELATED [EC:4.1.1.35]\nsynonym: \"uridine-diphosphoglucuronate decarboxylase activity\" RELATED [EC:4.1.1.35]\nxref: EC:4.1.1.35\nxref: KEGG_REACTION:R01384\nxref: MetaCyc:UDP-GLUCURONATE-DECARBOXYLASE-RXN\nxref: Reactome:R-HSA-8863761 \"UXS1 tetramer decarboxylates UDP-glucuronate to UDP-xylose\"\nxref: RHEA:23916\nis_a: GO:0016831 ! carboxy-lyase activity\nproperty_value: skos:exactMatch EC:4.1.1.35\nproperty_value: skos:exactMatch RHEA:23916\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048040",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 300082-300100",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048040"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -935,15 +684,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 322738-322748",
   "excerpt": "[Term]\nid: GO:0051087\nname: protein-folding chaperone binding\nnamespace: molecular_function\ndef: \"Binding to a chaperone protein, a class of proteins that bind to nascent or unfolded polypeptides and ensure correct folding or transport.\" [PMID:10585443]\nsynonym: \"chaperone binding\" BROAD []\nsynonym: \"chaperone protein binding\" EXACT []\nsynonym: \"co-chaperone activity\" RELATED []\nsynonym: \"co-chaperonin activity\" RELATED []\nis_a: GO:0005515 ! protein binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0051087",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 322738-322748",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0051087"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

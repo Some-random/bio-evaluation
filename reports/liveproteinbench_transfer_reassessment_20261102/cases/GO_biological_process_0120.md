@@ -1,18 +1,16 @@
-# GO_biological_process_0120: before and after transfer clarification
+# GO_biological_process_0120
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0120.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0120.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — exocytosis
+**Expected answer:** **A** — exocytosis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,243 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry reports that TgDOC2 regulates microneme secretion, with experimental evidence cited, and associates it with exocytosis. This supports choice A, while distinguishing regulation of secretion from a claim that the protein itself performs vesicle fusion.
-
-Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> C2 domains can suggest membrane- or vesicle-related functions, but that broad clue does not establish this protein's role in secretion or distinguish exocytosis from the other listed processes.
-
-
-**Missing item-specific fact**
-
-> The protein-specific finding that this Toxoplasma gondii protein regulates microneme secretion and is associated with exocytosis.
-
-
-**Reason**
-
-> The sequence is provided without organism or functional context. Selecting exocytosis depends on knowing the protein's specific function; recognizing its identity or consulting its annotation is not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available protein-specific evidence supports exocytosis; none of the other choices is comparably supported.
-
-
-### Important caveats
-
-- The sequence match and relevant annotation are established by reviewer-only evidence, not information supplied to the evaluated model.
-- The UniProt GO annotation is marked IEA, while the secretion-function statement cites experimental evidence; these are distinct evidence types.
-- The function statement describes regulation of microneme secretion and probable regulation of other secretory granules, not direct demonstration that the protein catalyzes membrane fusion.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "C2 domains can suggest membrane- or vesicle-related functions, but that broad clue does not establish this protein's role in secretion or distinguish exocytosis from the other listed processes.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific finding that this Toxoplasma gondii protein regulates microneme secretion and is associated with exocytosis.",
-    "reason": "The sequence is provided without organism or functional context. Selecting exocytosis depends on knowing the protein's specific function; recognizing its identity or consulting its annotation is not reasoning from the supplied input."
-  },
-  "case_id": "GO_biological_process_0120",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry reports that TgDOC2 regulates microneme secretion, with experimental evidence cited, and associates it with exocytosis. This supports choice A, while distinguishing regulation of secretion from a claim that the protein itself performs vesicle fusion."
-  },
-  "important_caveats": [
-    "The sequence match and relevant annotation are established by reviewer-only evidence, not information supplied to the evaluated model.",
-    "The UniProt GO annotation is marked IEA, while the secretion-function statement cites experimental evidence; these are distinct evidence types.",
-    "The function statement describes regulation of microneme secretion and probable regulation of other secretory granules, not direct demonstration that the protein catalyzes membrane fusion."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available protein-specific evidence supports exocytosis; none of the other choices is comparably supported."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0120",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry reports that TgDOC2 regulates microneme secretion, with experimental evidence cited, and associates it with exocytosis. This supports choice A, while distinguishing regulation of secretion from a claim that the protein itself performs vesicle fusion.",
-    "evidence_ids": ["C5", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "C2 domains can suggest membrane- or vesicle-related functions, but that broad clue does not establish this protein's role in secretion or distinguish exocytosis from the other listed processes.",
-    "missing_item_specific_fact": "The protein-specific finding that this Toxoplasma gondii protein regulates microneme secretion and is associated with exocytosis.",
-    "reason": "The sequence is provided without organism or functional context. Selecting exocytosis depends on knowing the protein's specific function; recognizing its identity or consulting its annotation is not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available protein-specific evidence supports exocytosis; none of the other choices is comparably supported."
-  },
-  "important_caveats": [
-    "The sequence match and relevant annotation are established by reviewer-only evidence, not information supplied to the evaluated model.",
-    "The UniProt GO annotation is marked IEA, while the secretion-function statement cites experimental evidence; these are distinct evidence types.",
-    "The function statement describes regulation of microneme secretion and probable regulation of other secretory granules, not direct demonstration that the protein catalyzes membrane fusion."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A7J6K9S4 (TgDOC2, Toxoplasma gondii) is annotated with GO:0006887 (exocytosis). The FUNCTION comment (ECO:0000269, direct assay evidence) states it 'Regulates microneme secretion' and is 'probably involved in regulation of rhoptry and dense granule secretion,' backed by two experimental publications (PubMed:22246776, Science 2012; PubMed:33803212, Life 2021). The GO annotation itself is IEA:UniProtKB-KW, but the underlying experimental evidence for exocytosis is strong. The Science paper title explicitly states 'essential for apicomplexan parasite exocytosis.'
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein contains C2 domain(s), identifiable by conserved beta-sandwich structural motifs with aromatic and aspartate residues that coordinate calcium. C2 domains are well-established calcium-sensing modules in exocytosis machinery (e.g., synaptotagmin in neurotransmitter release, DOC2 in regulated secretion). A model recognizing C2 domain signatures can connect them to calcium-triggered vesicle fusion/exocytosis. The distractors are mechanistically incompatible: fatty acid biosynthesis requires FAS/ACC enzymatic domains, aggresome assembly requires chaperone/co-chaperone interaction domains, and DNA replication regulation requires polymerase-associated or cell-cycle regulatory domains—none of which are present in this sequence.
-
-
-**Missing item-specific fact**
-
-> None critical. The C2 domain → exocytosis association is general biological knowledge. The specific Toxoplasma microneme/rhoptry pathway is organism-specific but the general GO term 'exocytosis' is derivable from domain recognition.
-
-
-**Reason**
-
-> The presence of C2 domain architecture is a concrete sequence-based feature that connects to exocytosis through well-established biological knowledge. The four options are mechanistically distinct enough that domain recognition provides meaningful discrimination without requiring memorization of this specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The distractors (fatty acid biosynthesis, aggresome assembly, DNA replication regulation) are mechanistically incompatible with a C2 domain-containing secretory protein. Only exocytosis aligns with the domain architecture.
-
-
-### Important caveats
-
-- The GO annotation for exocytosis is IEA (inferred from keyword), not a direct experimental GO annotation, though the underlying function is experimentally validated (ECO:0000269).
-- The specific exocytosis pathway (microneme/rhoptry secretion) is Toxoplasma-specific; the general GO term 'exocytosis' is broader and still correct.
-- C2 domain recognition from raw sequence requires specialized domain knowledge; a model without this training may struggle to identify the domain in a 1910-aa protein with many other regions.
-- The identity of this protein as TgDOC2 was inferred from image-path metadata (reviewer-only); the evaluated model received only the raw sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein contains C2 domain(s), identifiable by conserved beta-sandwich structural motifs with aromatic and aspartate residues that coordinate calcium. C2 domains are well-established calcium-sensing modules in exocytosis machinery (e.g., synaptotagmin in neurotransmitter release, DOC2 in regulated secretion). A model recognizing C2 domain signatures can connect them to calcium-triggered vesicle fusion/exocytosis. The distractors are mechanistically incompatible: fatty acid biosynthesis requires FAS/ACC enzymatic domains, aggresome assembly requires chaperone/co-chaperone interaction domains, and DNA replication regulation requires polymerase-associated or cell-cycle regulatory domains—none of which are present in this sequence.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The C2 domain → exocytosis association is general biological knowledge. The specific Toxoplasma microneme/rhoptry pathway is organism-specific but the general GO term 'exocytosis' is derivable from domain recognition.",
-    "reason": "The presence of C2 domain architecture is a concrete sequence-based feature that connects to exocytosis through well-established biological knowledge. The four options are mechanistically distinct enough that domain recognition provides meaningful discrimination without requiring memorization of this specific UniProt entry."
-  },
-  "case_id": "GO_biological_process_0120",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C8",
-      "H2",
-      "H4",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A7J6K9S4 (TgDOC2, Toxoplasma gondii) is annotated with GO:0006887 (exocytosis). The FUNCTION comment (ECO:0000269, direct assay evidence) states it 'Regulates microneme secretion' and is 'probably involved in regulation of rhoptry and dense granule secretion,' backed by two experimental publications (PubMed:22246776, Science 2012; PubMed:33803212, Life 2021). The GO annotation itself is IEA:UniProtKB-KW, but the underlying experimental evidence for exocytosis is strong. The Science paper title explicitly states 'essential for apicomplexan parasite exocytosis.'"
-  },
-  "important_caveats": [
-    "The GO annotation for exocytosis is IEA (inferred from keyword), not a direct experimental GO annotation, though the underlying function is experimentally validated (ECO:0000269).",
-    "The specific exocytosis pathway (microneme/rhoptry secretion) is Toxoplasma-specific; the general GO term 'exocytosis' is broader and still correct.",
-    "C2 domain recognition from raw sequence requires specialized domain knowledge; a model without this training may struggle to identify the domain in a 1910-aa protein with many other regions.",
-    "The identity of this protein as TgDOC2 was inferred from image-path metadata (reviewer-only); the evaluated model received only the raw sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors (fatty acid biosynthesis, aggresome assembly, DNA replication regulation) are mechanistically incompatible with a C2 domain-containing secretory protein. Only exocytosis aligns with the domain architecture."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0120",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A7J6K9S4 (TgDOC2, Toxoplasma gondii) is annotated with GO:0006887 (exocytosis). The FUNCTION comment (ECO:0000269, direct assay evidence) states it 'Regulates microneme secretion' and is 'probably involved in regulation of rhoptry and dense granule secretion,' backed by two experimental publications (PubMed:22246776, Science 2012; PubMed:33803212, Life 2021). The GO annotation itself is IEA:UniProtKB-KW, but the underlying experimental evidence for exocytosis is strong. The Science paper title explicitly states 'essential for apicomplexan parasite exocytosis.'",
-    "evidence_ids": ["C5", "C6", "C8", "H2", "H4", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein contains C2 domain(s), identifiable by conserved beta-sandwich structural motifs with aromatic and aspartate residues that coordinate calcium. C2 domains are well-established calcium-sensing modules in exocytosis machinery (e.g., synaptotagmin in neurotransmitter release, DOC2 in regulated secretion). A model recognizing C2 domain signatures can connect them to calcium-triggered vesicle fusion/exocytosis. The distractors are mechanistically incompatible: fatty acid biosynthesis requires FAS/ACC enzymatic domains, aggresome assembly requires chaperone/co-chaperone interaction domains, and DNA replication regulation requires polymerase-associated or cell-cycle regulatory domains—none of which are present in this sequence.",
-    "missing_item_specific_fact": "None critical. The C2 domain → exocytosis association is general biological knowledge. The specific Toxoplasma microneme/rhoptry pathway is organism-specific but the general GO term 'exocytosis' is derivable from domain recognition.",
-    "reason": "The presence of C2 domain architecture is a concrete sequence-based feature that connects to exocytosis through well-established biological knowledge. The four options are mechanistically distinct enough that domain recognition provides meaningful discrimination without requiring memorization of this specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors (fatty acid biosynthesis, aggresome assembly, DNA replication regulation) are mechanistically incompatible with a C2 domain-containing secretory protein. Only exocytosis aligns with the domain architecture."
-  },
-  "important_caveats": [
-    "The GO annotation for exocytosis is IEA (inferred from keyword), not a direct experimental GO annotation, though the underlying function is experimentally validated (ECO:0000269).",
-    "The specific exocytosis pathway (microneme/rhoptry secretion) is Toxoplasma-specific; the general GO term 'exocytosis' is broader and still correct.",
-    "C2 domain recognition from raw sequence requires specialized domain knowledge; a model without this training may struggle to identify the domain in a 1910-aa protein with many other regions.",
-    "The identity of this protein as TgDOC2 was inferred from image-path metadata (reviewer-only); the evaluated model received only the raw sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +276,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7J6K9S4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "52c3fcbc01722e2bc4c9cc5fb0e191cb1c82c226125de77539c5eeb917ffb776",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1910,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "52c3fcbc01722e2bc4c9cc5fb0e191cb1c82c226125de77539c5eeb917ffb776",
   "current_entry_audit": {
     "entryVersion": 16,
     "firstPublicDate": "2025-02-05",
@@ -542,14 +294,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-04-07",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "current_source_sequence_sha256": "52c3fcbc01722e2bc4c9cc5fb0e191cb1c82c226125de77539c5eeb917ffb776",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1910,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "52c3fcbc01722e2bc4c9cc5fb0e191cb1c82c226125de77539c5eeb917ffb776",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 14,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7J6K9S4",
   "selected_historical_entry_version": 14,
+  "selected_historical_record_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
+  "selected_historical_source_sequence_length": 1910,
+  "selected_historical_source_sequence_sha256": "52c3fcbc01722e2bc4c9cc5fb0e191cb1c82c226125de77539c5eeb917ffb776",
   "selected_historical_version": {
     "accession": "A0A7J6K9S4",
     "database": "Swiss-Prot",
@@ -560,24 +328,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DOC2_TOXGO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
-  "selected_historical_source_sequence_sha256": "52c3fcbc01722e2bc4c9cc5fb0e191cb1c82c226125de77539c5eeb917ffb776",
-  "selected_historical_source_sequence_length": 1910,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 14,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -595,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7J6K9S4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -614,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":16,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-04-07\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -633,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000557509\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Conoidasida\",\"Coccidia\",\"Eucoccidiorida\",\"Eimeriorina\",\"Sarcocystidae\",\"Toxoplasma\"],\"scientificName\":\"Toxoplasma gondii\",\"taxonId\":5811}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -652,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"C2 domain-containing protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30564214\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"value\":\"TgDOC2\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22246776\",\"source\":\"PubMed\"}],\"value\":\"TgDOC2.1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -671,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22246776\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"value\":\"Regulates microneme secretion (PubMed:22246776, PubMed:33803212). Probably involved in regulation of rhoptry and dense granule secretion (PubMed:33803212)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -690,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Farrell A.\",\"Thirugnanam S.\",\"Lorestani A.\",\"Dvorin J.D.\",\"Eidell K.P.\",\"Ferguson D.J.\",\"Anderson-White B.R.\",\"Duraisingh M.T.\",\"Marth G.T.\",\"Gubbels M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22246776\"},{\"database\":\"DOI\",\"id\":\"10.1126/science.1210829\"}],\"citationType\":\"journal article\",\"firstPage\":\"218\",\"id\":\"22246776\",\"journal\":\"Science\",\"lastPage\":\"221\",\"publicationDate\":\"2012\",\"title\":\"A DOC2 protein identified by mutational profiling is essential for apicomplexan parasite exocytosis.\",\"volume\":\"335\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"MUTAGENESIS OF PHE-124\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -709,15 +464,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang N.Z.\",\"Gao Q.\",\"Wang M.\",\"Hou J.L.\",\"Zhang F.K.\",\"Hu L.Y.\",\"Zhu X.Q.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30564214\"},{\"database\":\"DOI\",\"id\":\"10.3389/fmicb.2018.02965\"}],\"citationType\":\"journal article\",\"firstPage\":\"2965\",\"id\":\"30564214\",\"journal\":\"Front. Microbiol.\",\"lastPage\":\"2965\",\"publicationDate\":\"2018\",\"title\":\"Protective Efficacy Against Acute and Chronic Toxoplasma gondii Infection Induced by Immunization With the DNA Vaccine TgDOC2C.\",\"volume\":\"9\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"VACCINE CANDIDATE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -728,15 +483,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json",
-  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
-  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Tagoe D.N.A.\",\"Drozda A.A.\",\"Falco J.A.\",\"Bechtel T.J.\",\"Weerapana E.\",\"Gubbels M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33803212\"},{\"database\":\"DOI\",\"id\":\"10.3390/life11030217\"}],\"citationType\":\"journal article\",\"firstPage\":\"0\",\"id\":\"33803212\",\"journal\":\"Life\",\"lastPage\":\"0\",\"publicationDate\":\"2021\",\"title\":\"Ferlins and TgDOC2 in Toxoplasma Microneme, Rhoptry and Dense Granule Secretion.\",\"volume\":\"11\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33803212\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"RH\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:25:41.523865+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6fe7822b937a0480c04f70d4c3597e0b526003636957e52477842b05828381ad",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7J6K9S4.json"
 }
 ```
 
@@ -746,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 14,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14",
-  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
-  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   DOC2_TOXGO              Reviewed;        1910 AA.\nAC   A0A7J6K9S4;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   07-APR-2021, sequence version 1.\nDT   28-JAN-2026, entry version 14.\nDE   RecName: Full=C2 domain-containing protein {ECO:0000305};\nDE            Short=TgDOC2 {ECO:0000303|PubMed:30564214, ECO:0000303|PubMed:33803212};\nDE            Short=TgDOC2.1 {ECO:0000303|PubMed:22246776};\nGN   ORFNames=TGRH88_030250 {ECO:0000312|EMBL:KAF4643359.1};\nOS   Toxoplasma gondii.\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Conoidasida; Coccidia;\nOC   Eucoccidiorida; Eimeriorina; Sarcocystidae; Toxoplasma.\nOX   NCBI_TaxID=5811 {ECO:0000312|Proteomes:UP000557509};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 14,
+  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14"
 }
 ```
 
@@ -767,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 14,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14",
-  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
-  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
-  "source_locator": "lines 20-28",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, AND MUTAGENESIS OF PHE-124.\nRX   PubMed=22246776; DOI=10.1126/science.1210829;\nRA   Farrell A., Thirugnanam S., Lorestani A., Dvorin J.D., Eidell K.P.,\nRA   Ferguson D.J., Anderson-White B.R., Duraisingh M.T., Marth G.T.,\nRA   Gubbels M.J.;\nRT   \"A DOC2 protein identified by mutational profiling is essential for\nRT   apicomplexan parasite exocytosis.\";\nRL   Science 335:218-221(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 14,
+  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-28",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14"
 }
 ```
 
@@ -788,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 14,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14",
-  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
-  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
-  "source_locator": "lines 29-35",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   VACCINE CANDIDATE.\nRX   PubMed=30564214; DOI=10.3389/fmicb.2018.02965;\nRA   Zhang N.Z., Gao Q., Wang M., Hou J.L., Zhang F.K., Hu L.Y., Zhu X.Q.;\nRT   \"Protective Efficacy Against Acute and Chronic Toxoplasma gondii Infection\nRT   Induced by Immunization With the DNA Vaccine TgDOC2C.\";\nRL   Front. Microbiol. 9:2965-2965(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 14,
+  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 29-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14"
 }
 ```
 
@@ -809,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 14,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14",
-  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
-  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
-  "source_locator": "lines 36-44",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION.\nRC   STRAIN=RH {ECO:0000303|PubMed:33803212};\nRX   PubMed=33803212; DOI=10.3390/life11030217;\nRA   Tagoe D.N.A., Drozda A.A., Falco J.A., Bechtel T.J., Weerapana E.,\nRA   Gubbels M.J.;\nRT   \"Ferlins and TgDOC2 in Toxoplasma Microneme, Rhoptry and Dense Granule\nRT   Secretion.\";\nRL   Life 11:0-0(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 14,
+  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14"
 }
 ```
 
@@ -830,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 14,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14",
-  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
-  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
-  "source_locator": "lines 45-48",
   "excerpt": "CC   -!- FUNCTION: Regulates microneme secretion (PubMed:22246776,\nCC       PubMed:33803212). Probably involved in regulation of rhoptry and dense\nCC       granule secretion (PubMed:33803212). {ECO:0000269|PubMed:22246776,\nCC       ECO:0000269|PubMed:33803212}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 14,
+  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 45-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14"
 }
 ```
 
@@ -851,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 14,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14",
-  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
-  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
-  "source_locator": "lines 65-65",
   "excerpt": "DR   GO; GO:0006887; P:exocytosis; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 14,
+  "retrieved_utc": "2026-11-02T04:25:43.566279+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 65-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ddf9bb5b3f8c44fb66c0d3965cb8eea2bffb58249da33057cc0b438994f15702",
+  "url": "https://rest.uniprot.org/unisave/A0A7J6K9S4?format=txt&versions=14"
 }
 ```
 
@@ -873,15 +628,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 64693-64700",
   "excerpt": "[Term]\nid: GO:0006275\nname: regulation of DNA replication\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of DNA replication.\" [GOC:curators]\nis_a: GO:0051052 ! regulation of DNA metabolic process\nrelationship: regulates GO:0006260 ! DNA replication\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006275",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 64693-64700",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006275"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -892,15 +647,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 68539-68559",
   "excerpt": "[Term]\nid: GO:0006633\nname: fatty acid biosynthetic process\nnamespace: biological_process\nalt_id: GO:0000037\ndef: \"The chemical reactions and pathways resulting in the formation of a fatty acid, any of the aliphatic monocarboxylic acids that can be liberated by hydrolysis from naturally occurring fats and oils. Fatty acids are predominantly straight-chain acids of 4 to 24 carbon atoms, which may be saturated or unsaturated; branched fatty acids and hydroxy fatty acids also occur, and very long chain acids of over 30 carbons are found in waxes.\" [GOC:mah, ISBN:0198506732]\nsynonym: \"fatty acid anabolism\" EXACT []\nsynonym: \"fatty acid biosynthesis\" EXACT []\nsynonym: \"fatty acid formation\" EXACT []\nsynonym: \"fatty acid synthesis\" EXACT []\nxref: MetaCyc:FASYN-INITIAL-PWY\nxref: MetaCyc:PWY-4381\nxref: MetaCyc:PWY-5156\nxref: Wikipedia:Fatty_acid_synthesis\nis_a: GO:0006631 ! fatty acid metabolic process\nis_a: GO:0008610 ! lipid biosynthetic process\nis_a: GO:0072330 ! monocarboxylic acid biosynthetic process\nproperty_value: skos:narrowMatch MetaCyc:FASYN-INITIAL-PWY\nproperty_value: skos:narrowMatch MetaCyc:PWY-4381\nproperty_value: skos:narrowMatch MetaCyc:PWY-5156\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006633",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 68539-68559",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006633"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -911,15 +666,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 71255-71268",
   "excerpt": "[Term]\nid: GO:0006887\nname: exocytosis\nnamespace: biological_process\nalt_id: GO:0016194\nalt_id: GO:0016195\ndef: \"A process of secretion by a cell that results in the release of intracellular molecules (e.g. hormones, matrix proteins) contained within a membrane-bounded vesicle. Exocytosis can occur either by full fusion, when the vesicle collapses into the plasma membrane, or by a kiss-and-run mechanism that involves the formation of a transient contact, a pore, between a granule (for example of chromaffin cells) and the plasma membrane. The latter process most of the time leads to only partial secretion of the granule content. Exocytosis begins with steps that prepare vesicles for fusion with the membrane (tethering and docking) and ends when molecules are secreted from the cell.\" [GOC:mah, ISBN:0716731363, PMID:22323285]\nsubset: goslim_yeast\nsynonym: \"nonselective vesicle exocytosis\" RELATED []\nsynonym: \"vesicle exocytosis\" EXACT []\nxref: Wikipedia:Exocytosis\nis_a: GO:0016192 ! vesicle-mediated transport\nis_a: GO:0032940 ! secretion by cell\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006887",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 71255-71268",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006887"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -930,15 +685,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 371574-371580",
   "excerpt": "[Term]\nid: GO:0070842\nname: aggresome assembly\nnamespace: biological_process\ndef: \"The aggregation, arrangement and bonding together of a set of components to form an aggresome; requires the microtubule cytoskeleton and dynein.\" [GOC:BHF, GOC:rl, PMID:14675537]\nis_a: GO:0070841 ! inclusion body assembly\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0070842",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 371574-371580",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0070842"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

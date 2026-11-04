@@ -1,18 +1,16 @@
-# GO_cellular_component_0123: before and after transfer clarification
+# GO_cellular_component_0123
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0123.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0123.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **A** — checkpoint clamp complex
+**Expected answer:** **A** — checkpoint clamp complex
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,237 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the Drosophila Rad1 entry, which has a checkpoint clamp complex GO annotation with IDA:FlyBase evidence. The archived annotation also predates the likely benchmark cutoff.
-
-Citations as saved: [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone provides no clear signal that meaningfully identifies checkpoint-clamp membership over the alternatives; recognizing a DNA-repair clamp subunit requires protein-specific knowledge.
-
-
-**Missing item-specific fact**
-
-> That this sequence is Drosophila Rad1 and is annotated as part of the checkpoint clamp complex.
-
-
-**Reason**
-
-> The supporting Rad1 identity and complex-membership annotation are external, item-specific facts, not supplied in the question. General sequence heuristics do not establish this complex association.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, the matched sequence has direct support for A; the evidence does not support the other listed terms.
-
-
-### Important caveats
-
-- Checkpoint clamp complex is a complex-membership cellular-component term, not a spatial compartment in the narrow sense.
-- The cited evidence also reports cytoplasm, nucleus, and nuclear-envelope localization, including nuclear-periphery localization in the 9-1-1 complex; these are not listed options.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone provides no clear signal that meaningfully identifies checkpoint-clamp membership over the alternatives; recognizing a DNA-repair clamp subunit requires protein-specific knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this sequence is Drosophila Rad1 and is annotated as part of the checkpoint clamp complex.",
-    "reason": "The supporting Rad1 identity and complex-membership annotation are external, item-specific facts, not supplied in the question. General sequence heuristics do not establish this complex association."
-  },
-  "case_id": "GO_cellular_component_0123",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the Drosophila Rad1 entry, which has a checkpoint clamp complex GO annotation with IDA:FlyBase evidence. The archived annotation also predates the likely benchmark cutoff."
-  },
-  "important_caveats": [
-    "Checkpoint clamp complex is a complex-membership cellular-component term, not a spatial compartment in the narrow sense.",
-    "The cited evidence also reports cytoplasm, nucleus, and nuclear-envelope localization, including nuclear-periphery localization in the 9-1-1 complex; these are not listed options."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the matched sequence has direct support for A; the evidence does not support the other listed terms."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0123",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the Drosophila Rad1 entry, which has a checkpoint clamp complex GO annotation with IDA:FlyBase evidence. The archived annotation also predates the likely benchmark cutoff.",
-    "evidence_ids": ["C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone provides no clear signal that meaningfully identifies checkpoint-clamp membership over the alternatives; recognizing a DNA-repair clamp subunit requires protein-specific knowledge.",
-    "missing_item_specific_fact": "That this sequence is Drosophila Rad1 and is annotated as part of the checkpoint clamp complex.",
-    "reason": "The supporting Rad1 identity and complex-membership annotation are external, item-specific facts, not supplied in the question. General sequence heuristics do not establish this complex association."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, the matched sequence has direct support for A; the evidence does not support the other listed terms."
-  },
-  "important_caveats": [
-    "Checkpoint clamp complex is a complex-membership cellular-component term, not a spatial compartment in the narrow sense.",
-    "The cited evidence also reports cytoplasm, nucleus, and nuclear-envelope localization, including nuclear-periphery localization in the 9-1-1 complex; these are not listed options."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q9VQD4 (DNA repair protein Rad1, Drosophila melanogaster, 274 aa). GO:0030896 (checkpoint clamp complex) is annotated with IDA:FlyBase evidence (C6/H4), indicating direct experimental evidence that Rad1 is a subunit of the 9-1-1 checkpoint clamp complex. The GO term definition (GO3) explicitly lists Rad1 as a subunit. The subcellular location annotation (C5/H3) notes localization to nuclear periphery when part of the 9-1-1 complex. The expected answer is supported by experimental (IDA) database annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C6](#evidence-c6), [H4](#evidence-h4), [GO3](#evidence-go3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence lacks an N-terminal mitochondrial targeting signal (no amphipathic α-helix enriched in positively charged residues), eliminating B (mitochondrial matrix). The protein is clearly eukaryotic with no repetitive capsid-assembly motifs, eliminating C (helical viral capsid). The sequence contains no hydrophobic transmembrane segments or signal peptides, eliminating D (trans-Golgi network membrane). The checkpoint clamp complex is a nuclear DNA-damage-response complex; among the four options, A is the only nuclear/chromatin-associated compartment, and the protein's features (short ~274 aa, no targeting signals, no TM domains) are consistent with a soluble nuclear protein. General knowledge that DNA repair and checkpoint proteins operate in the nucleus supports selecting A by elimination and positive nuclear context.
-
-
-**Missing item-specific fact**
-
-> Positive identification of this specific sequence as a PCNA-like fold protein or as the Rad1 subunit of the 9-1-1 complex would require sequence-family knowledge or structural prediction not derivable from raw sequence alone. However, this is not strictly needed given the elimination strategy.
-
-
-**Reason**
-
-> A model can distinguish the answer by applying general biological knowledge: absence of mitochondrial targeting signals, absence of viral capsid structural features, absence of transmembrane domains, and recognition that 'checkpoint clamp complex' is the only nuclear option. This constitutes a concrete elimination-based biological argument using general knowledge rather than memorizing the specific protein's database entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B, C, and D are clearly incompatible with a eukaryotic nuclear protein lacking mitochondrial signals, viral structural motifs, or transmembrane domains. Only A is a nuclear/chromatin-associated complex. No other option is defensible given the sequence features.
-
-
-### Important caveats
-
-- The positive identification of 'checkpoint clamp complex' specifically (vs. generic 'nucleus') relies on knowing that this GO term is nuclear and DNA-repair-related; a model unfamiliar with the term might struggle even after eliminating B, C, D.
-- The UniProt entry also annotates cytoplasm, nucleus, and nuclear envelope with EXP evidence; 'checkpoint clamp complex' is a more specific complex-level annotation (IDA:FlyBase) rather than the only location.
-- The reasoning pathway is primarily elimination-based; strong positive sequence-level evidence for PCNA-like fold or 9-1-1 membership is not available from the raw 274-aa sequence without structural prediction tools.
-- Identity of the protein (Q9VQD4/Rad1) was inferred by reviewer from dataset metadata and was not provided to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence lacks an N-terminal mitochondrial targeting signal (no amphipathic α-helix enriched in positively charged residues), eliminating B (mitochondrial matrix). The protein is clearly eukaryotic with no repetitive capsid-assembly motifs, eliminating C (helical viral capsid). The sequence contains no hydrophobic transmembrane segments or signal peptides, eliminating D (trans-Golgi network membrane). The checkpoint clamp complex is a nuclear DNA-damage-response complex; among the four options, A is the only nuclear/chromatin-associated compartment, and the protein's features (short ~274 aa, no targeting signals, no TM domains) are consistent with a soluble nuclear protein. General knowledge that DNA repair and checkpoint proteins operate in the nucleus supports selecting A by elimination and positive nuclear context.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Positive identification of this specific sequence as a PCNA-like fold protein or as the Rad1 subunit of the 9-1-1 complex would require sequence-family knowledge or structural prediction not derivable from raw sequence alone. However, this is not strictly needed given the elimination strategy.",
-    "reason": "A model can distinguish the answer by applying general biological knowledge: absence of mitochondrial targeting signals, absence of viral capsid structural features, absence of transmembrane domains, and recognition that 'checkpoint clamp complex' is the only nuclear option. This constitutes a concrete elimination-based biological argument using general knowledge rather than memorizing the specific protein's database entry."
-  },
-  "case_id": "GO_cellular_component_0123",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C6",
-      "H4",
-      "GO3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q9VQD4 (DNA repair protein Rad1, Drosophila melanogaster, 274 aa). GO:0030896 (checkpoint clamp complex) is annotated with IDA:FlyBase evidence (C6/H4), indicating direct experimental evidence that Rad1 is a subunit of the 9-1-1 checkpoint clamp complex. The GO term definition (GO3) explicitly lists Rad1 as a subunit. The subcellular location annotation (C5/H3) notes localization to nuclear periphery when part of the 9-1-1 complex. The expected answer is supported by experimental (IDA) database annotation."
-  },
-  "important_caveats": [
-    "The positive identification of 'checkpoint clamp complex' specifically (vs. generic 'nucleus') relies on knowing that this GO term is nuclear and DNA-repair-related; a model unfamiliar with the term might struggle even after eliminating B, C, D.",
-    "The UniProt entry also annotates cytoplasm, nucleus, and nuclear envelope with EXP evidence; 'checkpoint clamp complex' is a more specific complex-level annotation (IDA:FlyBase) rather than the only location.",
-    "The reasoning pathway is primarily elimination-based; strong positive sequence-level evidence for PCNA-like fold or 9-1-1 membership is not available from the raw 274-aa sequence without structural prediction tools.",
-    "Identity of the protein (Q9VQD4/Rad1) was inferred by reviewer from dataset metadata and was not provided to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D are clearly incompatible with a eukaryotic nuclear protein lacking mitochondrial signals, viral structural motifs, or transmembrane domains. Only A is a nuclear/chromatin-associated complex. No other option is defensible given the sequence features."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0123",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q9VQD4 (DNA repair protein Rad1, Drosophila melanogaster, 274 aa). GO:0030896 (checkpoint clamp complex) is annotated with IDA:FlyBase evidence (C6/H4), indicating direct experimental evidence that Rad1 is a subunit of the 9-1-1 checkpoint clamp complex. The GO term definition (GO3) explicitly lists Rad1 as a subunit. The subcellular location annotation (C5/H3) notes localization to nuclear periphery when part of the 9-1-1 complex. The expected answer is supported by experimental (IDA) database annotation.",
-    "evidence_ids": ["C1", "C4", "C6", "H4", "GO3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence lacks an N-terminal mitochondrial targeting signal (no amphipathic α-helix enriched in positively charged residues), eliminating B (mitochondrial matrix). The protein is clearly eukaryotic with no repetitive capsid-assembly motifs, eliminating C (helical viral capsid). The sequence contains no hydrophobic transmembrane segments or signal peptides, eliminating D (trans-Golgi network membrane). The checkpoint clamp complex is a nuclear DNA-damage-response complex; among the four options, A is the only nuclear/chromatin-associated compartment, and the protein's features (short ~274 aa, no targeting signals, no TM domains) are consistent with a soluble nuclear protein. General knowledge that DNA repair and checkpoint proteins operate in the nucleus supports selecting A by elimination and positive nuclear context.",
-    "missing_item_specific_fact": "Positive identification of this specific sequence as a PCNA-like fold protein or as the Rad1 subunit of the 9-1-1 complex would require sequence-family knowledge or structural prediction not derivable from raw sequence alone. However, this is not strictly needed given the elimination strategy.",
-    "reason": "A model can distinguish the answer by applying general biological knowledge: absence of mitochondrial targeting signals, absence of viral capsid structural features, absence of transmembrane domains, and recognition that 'checkpoint clamp complex' is the only nuclear option. This constitutes a concrete elimination-based biological argument using general knowledge rather than memorizing the specific protein's database entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B, C, and D are clearly incompatible with a eukaryotic nuclear protein lacking mitochondrial signals, viral structural motifs, or transmembrane domains. Only A is a nuclear/chromatin-associated complex. No other option is defensible given the sequence features."
-  },
-  "important_caveats": [
-    "The positive identification of 'checkpoint clamp complex' specifically (vs. generic 'nucleus') relies on knowing that this GO term is nuclear and DNA-repair-related; a model unfamiliar with the term might struggle even after eliminating B, C, D.",
-    "The UniProt entry also annotates cytoplasm, nucleus, and nuclear envelope with EXP evidence; 'checkpoint clamp complex' is a more specific complex-level annotation (IDA:FlyBase) rather than the only location.",
-    "The reasoning pathway is primarily elimination-based; strong positive sequence-level evidence for PCNA-like fold or 9-1-1 membership is not available from the raw 274-aa sequence without structural prediction tools.",
-    "Identity of the protein (Q9VQD4/Rad1) was inferred by reviewer from dataset metadata and was not provided to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VQD4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "5f0baf84cfb2e124c1fb56a2ca521a1366833741770715df31ddbbfd7e3d54e2",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 274,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "5f0baf84cfb2e124c1fb56a2ca521a1366833741770715df31ddbbfd7e3d54e2",
   "current_entry_audit": {
     "entryVersion": 173,
     "firstPublicDate": "2025-06-18",
@@ -533,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2002-10-01",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "current_source_sequence_sha256": "5f0baf84cfb2e124c1fb56a2ca521a1366833741770715df31ddbbfd7e3d54e2",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 274,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "5f0baf84cfb2e124c1fb56a2ca521a1366833741770715df31ddbbfd7e3d54e2",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 171,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VQD4",
   "selected_historical_entry_version": 171,
+  "selected_historical_record_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
+  "selected_historical_source_sequence_length": 274,
+  "selected_historical_source_sequence_sha256": "5f0baf84cfb2e124c1fb56a2ca521a1366833741770715df31ddbbfd7e3d54e2",
   "selected_historical_version": {
     "accession": "Q9VQD4",
     "database": "Swiss-Prot",
@@ -551,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RAD1_DROME",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
-  "selected_historical_source_sequence_sha256": "5f0baf84cfb2e124c1fb56a2ca521a1366833741770715df31ddbbfd7e3d54e2",
-  "selected_historical_source_sequence_length": 274,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 171,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VQD4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -605,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":173,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2002-10-01\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -624,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -643,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0026778\",\"source\":\"FlyBase\"}],\"value\":\"Protein radiation insensitive 1\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DNA repair protein Rad1\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -662,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"value\":\"Localizes to the nuclear periphery when part of the 9-1-1 complex with Rad9 isoform A and Rad1\"}]},\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"id\":\"SL-0086\",\"value\":\"Cytoplasm\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"id\":\"SL-0191\",\"value\":\"Nucleus\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"id\":\"SL-0178\",\"value\":\"Nucleus envelope\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -681,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/30",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"id\":\"GO:0030896\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:checkpoint clamp complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/30",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -700,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/31",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"id\":\"GO:0005737\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytoplasm\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/31",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -719,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/32",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"id\":\"GO:0005635\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nuclear envelope\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/32",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -738,15 +499,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/33",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22666434\",\"source\":\"PubMed\"}],\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"EXP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/33",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -757,15 +518,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json",
-  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
-  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Kadir R.\",\"Bakhrat A.\",\"Tokarsky R.\",\"Abdu U.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22666434\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0038010\"}],\"citationType\":\"journal article\",\"firstPage\":\"e38010\",\"id\":\"22666434\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e38010\",\"publicationDate\":\"2012\",\"title\":\"Localization of the Drosophila Rad9 protein to the nuclear membrane is regulated by the C-terminal region and is affected in the meiotic checkpoint.\",\"volume\":\"7\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":6,\"referencePositions\":[\"INTERACTION WITH RAD9\",\"SUBCELLULAR LOCATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:33:35.143975+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "16ce921df5b3e4a4b1cc7a458f452776bd0bde1fd36a87d16966b22696795c75",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VQD4.json"
 }
 ```
 
@@ -775,18 +536,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171",
-  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
-  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   RAD1_DROME              Reviewed;         274 AA.\nAC   Q9VQD4; Q9XYT3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-OCT-2002, sequence version 2.\nDT   28-JAN-2026, entry version 171.\nDE   RecName: Full=DNA repair protein Rad1 {ECO:0000305};\nDE   AltName: Full=Protein radiation insensitive 1 {ECO:0000312|FlyBase:FBgn0026778};\nGN   Name=Rad1 {ECO:0000312|FlyBase:FBgn0026778};\nGN   ORFNames=CG3240 {ECO:0000312|FlyBase:FBgn0026778};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
+  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171"
 }
 ```
 
@@ -796,18 +557,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171",
-  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
-  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
-  "source_locator": "lines 84-91",
   "excerpt": "RN   [6] {ECO:0000305}\nRP   INTERACTION WITH RAD9, AND SUBCELLULAR LOCATION.\nRX   PubMed=22666434; DOI=10.1371/journal.pone.0038010;\nRA   Kadir R., Bakhrat A., Tokarsky R., Abdu U.;\nRT   \"Localization of the Drosophila Rad9 protein to the nuclear membrane is\nRT   regulated by the C-terminal region and is affected in the meiotic\nRT   checkpoint.\";\nRL   PLoS ONE 7:e38010-e38010(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 84-91",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
+  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171"
 }
 ```
 
@@ -817,18 +578,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171",
-  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
-  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
-  "source_locator": "lines 100-104",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cytoplasm {ECO:0000269|PubMed:22666434}. Nucleus\nCC       {ECO:0000269|PubMed:22666434}. Nucleus envelope\nCC       {ECO:0000269|PubMed:22666434}. Note=Localizes to the nuclear periphery\nCC       when part of the 9-1-1 complex with Rad9 isoform A and Rad1.\nCC       {ECO:0000269|PubMed:22666434}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 100-104",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
+  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171"
 }
 ```
 
@@ -838,18 +599,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171",
-  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
-  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
-  "source_locator": "lines 142-142",
   "excerpt": "DR   GO; GO:0030896; C:checkpoint clamp complex; IDA:FlyBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 142-142",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
+  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171"
 }
 ```
 
@@ -859,18 +620,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171",
-  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
-  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
-  "source_locator": "lines 143-143",
   "excerpt": "DR   GO; GO:0005737; C:cytoplasm; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 143-143",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
+  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171"
 }
 ```
 
@@ -880,18 +641,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 171,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171",
-  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
-  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
-  "source_locator": "lines 144-144",
   "excerpt": "DR   GO; GO:0005635; C:nuclear envelope; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 171,
+  "retrieved_utc": "2026-11-02T04:33:38.224183+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 144-144",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "226a333b948bbec737d27994428fb188c8fdd2b4aec9d399b7236dc3888da8f4",
+  "url": "https://rest.uniprot.org/unisave/Q9VQD4?format=txt&versions=171"
 }
 ```
 
@@ -902,15 +663,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59194-59206",
   "excerpt": "[Term]\nid: GO:0005759\nname: mitochondrial matrix\nnamespace: cellular_component\nalt_id: GO:0031980\ndef: \"The gel-like material, with considerable fine structure, that lies in the matrix space, or lumen, of a mitochondrion. It contains the enzymes of the tricarboxylic acid cycle and, in some organisms, the enzymes concerned with fatty acid oxidation.\" [GOC:as, ISBN:0198506732]\nsynonym: \"mitochondrial lumen\" EXACT []\nsynonym: \"mitochondrial stroma\" NARROW []\nxref: NIF_Subcellular:sao1804523077\nxref: Wikipedia:Mitochondrial_matrix\nis_a: GO:0070013 ! intracellular organelle lumen\nrelationship: part_of GO:0005739 ! mitochondrion\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005759",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59194-59206",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005759"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -921,15 +682,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 144666-144672",
   "excerpt": "[Term]\nid: GO:0019029\nname: helical viral capsid\nnamespace: cellular_component\ndef: \"The protein coat that surrounds the infective nucleic acid in some virus particles; the subunits are arranged to form a protein helix with the genetic material contained within. Tobacco mosaic virus has such a capsid structure.\" [ISBN:071673706X, UniProtKB-KW:KW-1139, VZ:885]\nis_a: GO:0019028 ! viral capsid\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0019029",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 144666-144672",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0019029"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -940,15 +701,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 171270-171280",
   "excerpt": "[Term]\nid: GO:0030896\nname: checkpoint clamp complex\nnamespace: cellular_component\ndef: \"Conserved heterotrimeric complex of PCNA-like proteins that is loaded onto DNA at sites of DNA damage.\" [PMID:12531008]\ncomment: Note that the following subunit names have been used: human RAD9/RAD1/HUS1; S. pombe Rad9/Rad1/Hus1; S. cerevisiae Ddc1p/Rad17p/Mec3p.\nsynonym: \"CCC\" EXACT []\nsynonym: \"Rad9-Hus1-Rad1 (9-1-1) clamp complex\" EXACT []\nis_a: GO:0140513 ! nuclear protein-containing complex\nrelationship: part_of GO:0000794 ! condensed nuclear chromosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0030896",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 171270-171280",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0030896"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -959,15 +720,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 187565-187574",
   "excerpt": "[Term]\nid: GO:0032588\nname: trans-Golgi network membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding any of the compartments that make up the trans-Golgi network.\" [GOC:mah]\nsynonym: \"Golgi trans face membrane\" RELATED []\nsynonym: \"trans Golgi network membrane\" EXACT []\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0005802 ! trans-Golgi network\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032588",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 187565-187574",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032588"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

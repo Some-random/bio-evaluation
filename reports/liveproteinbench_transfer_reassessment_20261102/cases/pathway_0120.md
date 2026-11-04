@@ -1,18 +1,16 @@
-# pathway_0120: before and after transfer clarification
+# pathway_0120
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0120.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0120.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **C** — Secondary metabolite biosynthesis. .
+**Expected answer:** **C** — Secondary metabolite biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry for cytochrome P450 monooxygenase caaC, whose pathway is annotated as secondary metabolite biosynthesis with experimental evidence code ECO:0000269 and a cited publication. This supports choice C, though the cited paper was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has features consistent with a membrane-associated cytochrome P450, which makes the specific threonine and NAD-biosynthesis choices unlikely. But P450 family membership alone does not establish that this enzyme functions in secondary metabolite biosynthesis.
-
-
-**Missing item-specific fact**
-
-> The protein-specific annotation or experimental finding that this P450, caaC, participates in secondary metabolite biosynthesis.
-
-
-**Reason**
-
-> The sequence and choices support a broad family-level inference, but distinguishing the actual pathway requires item-specific knowledge not provided in the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The provided choices do not offer another comparably plausible pathway for a P450, although the sequence alone does not establish the specific pathway.
-
-
-### Important caveats
-
-- The reviewer-only annotation matches the supplied sequence, but the author's exact source snapshot is unknown.
-- The pathway annotation cites experimental evidence, but that underlying publication was not independently validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has features consistent with a membrane-associated cytochrome P450, which makes the specific threonine and NAD-biosynthesis choices unlikely. But P450 family membership alone does not establish that this enzyme functions in secondary metabolite biosynthesis.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific annotation or experimental finding that this P450, caaC, participates in secondary metabolite biosynthesis.",
-    "reason": "The sequence and choices support a broad family-level inference, but distinguishing the actual pathway requires item-specific knowledge not provided in the question."
-  },
-  "case_id": "pathway_0120",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for cytochrome P450 monooxygenase caaC, whose pathway is annotated as secondary metabolite biosynthesis with experimental evidence code ECO:0000269 and a cited publication. This supports choice C, though the cited paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but the author's exact source snapshot is unknown.",
-    "The pathway annotation cites experimental evidence, but that underlying publication was not independently validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The provided choices do not offer another comparably plausible pathway for a P450, although the sequence alone does not establish the specific pathway."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0120",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry for cytochrome P450 monooxygenase caaC, whose pathway is annotated as secondary metabolite biosynthesis with experimental evidence code ECO:0000269 and a cited publication. This supports choice C, though the cited paper was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has features consistent with a membrane-associated cytochrome P450, which makes the specific threonine and NAD-biosynthesis choices unlikely. But P450 family membership alone does not establish that this enzyme functions in secondary metabolite biosynthesis.",
-    "missing_item_specific_fact": "The protein-specific annotation or experimental finding that this P450, caaC, participates in secondary metabolite biosynthesis.",
-    "reason": "The sequence and choices support a broad family-level inference, but distinguishing the actual pathway requires item-specific knowledge not provided in the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The provided choices do not offer another comparably plausible pathway for a P450, although the sequence alone does not establish the specific pathway."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but the author's exact source snapshot is unknown.",
-    "The pathway annotation cites experimental evidence, but that underlying publication was not independently validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt A2QQU9 (CAAC_ASPNC), annotated as 'Cytochrome P450 monooxygenase caaC' / 'Carlosic acid biosynthesis cluster protein C' from Aspergillus niger. The UniProt PATHWAY comment explicitly states 'Secondary metabolite biosynthesis' with experimental evidence (ECO:0000269, PubMed:25044953). Carlosic acid is an acyltetronic acid polyketide, a secondary metabolite. The expected answer C is directly and experimentally supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable cytochrome P450 heme-binding motif (FxxGxxxCxG: 'FSFGPRSCLG' near the C-terminus, along with the conserved K preceding it), identifying the protein as a P450 monooxygenase. P450 monooxygenases are not components of L-threonine biosynthesis (which uses aspartokinase, homoserine dehydrogenase, homoserine kinase, threonine synthase — options A and D) nor of NAD+ biosynthesis (which uses aspartate oxidase, quinolinate synthase, NAPRT, NMNAT, NAD synthetase — option B). P450s are, however, ubiquitous in fungal secondary metabolite biosynthesis (polyketide, terpenoid, and other specialized pathways), making C the only biochemically consistent choice.
-
-
-**Missing item-specific fact**
-
-> None critical. The P450 motif is extractable from the sequence, and the pathway biochemistry of options A/B/D (no P450 involvement) is general knowledge sufficient to eliminate them.
-
-
-**Reason**
-
-> A knowledgeable model can identify the P450 signature from the sequence and use general pathway biochemistry to eliminate primary-metabolism options (A, B, D) that contain no P450 steps, leaving secondary metabolite biosynthesis (C) as the only pathway in which P450 monooxygenases function. This does not require memorizing the specific UniProt entry for A2QQU9.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and D are near-duplicates (both threonine biosynthesis), but neither is defensible once the P450 identity is recognized. Option B (NAD+ biosynthesis) also lacks any P450 step. Only C is consistent with a P450 monooxygenase. No ambiguity in the correct answer.
-
-
-### Important caveats
-
-- The P450 heme-binding motif identification from sequence is a heuristic; a model must correctly parse the FxxGxxxCxG pattern within a 497-aa sequence. Failure to recognize it would leave the question unanswerable without lookup.
-- Options A and D are redundant (both threonine biosynthesis), which is a minor construction flaw but does not affect the correctness of C.
-- The UniProt annotation is backed by experimental evidence (ECO:0000269) from the 2014 Yang et al. ChemBioChem paper, not merely computational inference.
-- The reviewer-only evidence was not available to the evaluated model; the reasoning argument relies solely on sequence features and general biochemistry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FxxGxxxCxG: 'FSFGPRSCLG' near the C-terminus, along with the conserved K preceding it), identifying the protein as a P450 monooxygenase. P450 monooxygenases are not components of L-threonine biosynthesis (which uses aspartokinase, homoserine dehydrogenase, homoserine kinase, threonine synthase — options A and D) nor of NAD+ biosynthesis (which uses aspartate oxidase, quinolinate synthase, NAPRT, NMNAT, NAD synthetase — option B). P450s are, however, ubiquitous in fungal secondary metabolite biosynthesis (polyketide, terpenoid, and other specialized pathways), making C the only biochemically consistent choice.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The P450 motif is extractable from the sequence, and the pathway biochemistry of options A/B/D (no P450 involvement) is general knowledge sufficient to eliminate them.",
-    "reason": "A knowledgeable model can identify the P450 signature from the sequence and use general pathway biochemistry to eliminate primary-metabolism options (A, B, D) that contain no P450 steps, leaving secondary metabolite biosynthesis (C) as the only pathway in which P450 monooxygenases function. This does not require memorizing the specific UniProt entry for A2QQU9."
-  },
-  "case_id": "pathway_0120",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A2QQU9 (CAAC_ASPNC), annotated as 'Cytochrome P450 monooxygenase caaC' / 'Carlosic acid biosynthesis cluster protein C' from Aspergillus niger. The UniProt PATHWAY comment explicitly states 'Secondary metabolite biosynthesis' with experimental evidence (ECO:0000269, PubMed:25044953). Carlosic acid is an acyltetronic acid polyketide, a secondary metabolite. The expected answer C is directly and experimentally supported."
-  },
-  "important_caveats": [
-    "The P450 heme-binding motif identification from sequence is a heuristic; a model must correctly parse the FxxGxxxCxG pattern within a 497-aa sequence. Failure to recognize it would leave the question unanswerable without lookup.",
-    "Options A and D are redundant (both threonine biosynthesis), which is a minor construction flaw but does not affect the correctness of C.",
-    "The UniProt annotation is backed by experimental evidence (ECO:0000269) from the 2014 Yang et al. ChemBioChem paper, not merely computational inference.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning argument relies solely on sequence features and general biochemistry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are near-duplicates (both threonine biosynthesis), but neither is defensible once the P450 identity is recognized. Option B (NAD+ biosynthesis) also lacks any P450 step. Only C is consistent with a P450 monooxygenase. No ambiguity in the correct answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0120",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt A2QQU9 (CAAC_ASPNC), annotated as 'Cytochrome P450 monooxygenase caaC' / 'Carlosic acid biosynthesis cluster protein C' from Aspergillus niger. The UniProt PATHWAY comment explicitly states 'Secondary metabolite biosynthesis' with experimental evidence (ECO:0000269, PubMed:25044953). Carlosic acid is an acyltetronic acid polyketide, a secondary metabolite. The expected answer C is directly and experimentally supported.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a recognizable cytochrome P450 heme-binding motif (FxxGxxxCxG: 'FSFGPRSCLG' near the C-terminus, along with the conserved K preceding it), identifying the protein as a P450 monooxygenase. P450 monooxygenases are not components of L-threonine biosynthesis (which uses aspartokinase, homoserine dehydrogenase, homoserine kinase, threonine synthase — options A and D) nor of NAD+ biosynthesis (which uses aspartate oxidase, quinolinate synthase, NAPRT, NMNAT, NAD synthetase — option B). P450s are, however, ubiquitous in fungal secondary metabolite biosynthesis (polyketide, terpenoid, and other specialized pathways), making C the only biochemically consistent choice.",
-    "missing_item_specific_fact": "None critical. The P450 motif is extractable from the sequence, and the pathway biochemistry of options A/B/D (no P450 involvement) is general knowledge sufficient to eliminate them.",
-    "reason": "A knowledgeable model can identify the P450 signature from the sequence and use general pathway biochemistry to eliminate primary-metabolism options (A, B, D) that contain no P450 steps, leaving secondary metabolite biosynthesis (C) as the only pathway in which P450 monooxygenases function. This does not require memorizing the specific UniProt entry for A2QQU9."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are near-duplicates (both threonine biosynthesis), but neither is defensible once the P450 identity is recognized. Option B (NAD+ biosynthesis) also lacks any P450 step. Only C is consistent with a P450 monooxygenase. No ambiguity in the correct answer."
-  },
-  "important_caveats": [
-    "The P450 heme-binding motif identification from sequence is a heuristic; a model must correctly parse the FxxGxxxCxG pattern within a 497-aa sequence. Failure to recognize it would leave the question unanswerable without lookup.",
-    "Options A and D are redundant (both threonine biosynthesis), which is a minor construction flaw but does not affect the correctness of C.",
-    "The UniProt annotation is backed by experimental evidence (ECO:0000269) from the 2014 Yang et al. ChemBioChem paper, not merely computational inference.",
-    "The reviewer-only evidence was not available to the evaluated model; the reasoning argument relies solely on sequence features and general biochemistry."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A2QQU9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "e271fb0582945d7a03d461266638ea0af4ac9474621fe87ecd6725c3a0f85b69",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 497,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "e271fb0582945d7a03d461266638ea0af4ac9474621fe87ecd6725c3a0f85b69",
   "current_entry_audit": {
     "entryVersion": 88,
     "firstPublicDate": "2025-04-09",
@@ -535,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-03-06",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
-  "current_source_sequence_sha256": "e271fb0582945d7a03d461266638ea0af4ac9474621fe87ecd6725c3a0f85b69",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 497,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "e271fb0582945d7a03d461266638ea0af4ac9474621fe87ecd6725c3a0f85b69",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 87,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A2QQU9",
   "selected_historical_entry_version": 87,
+  "selected_historical_record_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
+  "selected_historical_source_sequence_length": 497,
+  "selected_historical_source_sequence_sha256": "e271fb0582945d7a03d461266638ea0af4ac9474621fe87ecd6725c3a0f85b69",
   "selected_historical_version": {
     "accession": "A2QQU9",
     "database": "Swiss-Prot",
@@ -553,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "CAAC_ASPNC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
-  "selected_historical_source_sequence_sha256": "e271fb0582945d7a03d461266638ea0af4ac9474621fe87ecd6725c3a0f85b69",
-  "selected_historical_source_sequence_length": 497,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 87,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json",
-  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
-  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A2QQU9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
+  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json"
 }
 ```
 
@@ -603,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json",
-  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
-  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":88,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-03-06\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
+  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json"
 }
 ```
 
@@ -622,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json",
-  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
-  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus niger (strain ATCC MYA-4892 / CBS 513.88 / FGSC A1513)\",\"taxonId\":425011}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
+  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json"
 }
 ```
 
@@ -641,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json",
-  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
-  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"25044953\",\"source\":\"PubMed\"}],\"value\":\"Carlosic acid biosynthesis cluster protein C\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"25044953\",\"source\":\"PubMed\"}],\"value\":\"1.14.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"25044953\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase caaC\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
+  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json"
 }
 ```
 
@@ -660,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json",
-  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
-  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"25044953\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
+  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json"
 }
 ```
 
@@ -679,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json",
-  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
-  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yang X.L.\",\"Awakawa T.\",\"Wakimoto T.\",\"Abe I.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"25044953\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.201402172\"}],\"citationType\":\"journal article\",\"firstPage\":\"1578\",\"id\":\"25044953\",\"journal\":\"ChemBioChem\",\"lastPage\":\"1583\",\"publicationDate\":\"2014\",\"title\":\"Three acyltetronic acid derivatives: noncanonical cryptic polyketides from Aspergillus niger identified by genome mining.\",\"volume\":\"15\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"INDUCTION\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:57.143489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "da743c57c89b0ab786ac3a1103de54e0cfdcba8a2bc83d6afcffbb82b38db7a1",
+  "url": "https://rest.uniprot.org/uniprotkb/A2QQU9.json"
 }
 ```
 
@@ -697,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A2QQU9?format=txt&versions=87",
-  "source_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
-  "retrieved_utc": "2026-11-01T06:27:45.219435+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   CAAC_ASPNC              Reviewed;         497 AA.\nAC   A2QQU9;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   06-MAR-2007, sequence version 1.\nDT   28-JAN-2026, entry version 87.\nDE   RecName: Full=Cytochrome P450 monooxygenase caaC {ECO:0000303|PubMed:25044953};\nDE            EC=1.14.-.- {ECO:0000305|PubMed:25044953};\nDE   AltName: Full=Carlosic acid biosynthesis cluster protein C {ECO:0000303|PubMed:25044953};\nGN   Name=caaC {ECO:0000303|PubMed:25044953}; ORFNames=An08g03780;\nOS   Aspergillus niger (strain ATCC MYA-4892 / CBS 513.88 / FGSC A1513).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=425011;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:27:45.219435+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
+  "url": "https://rest.uniprot.org/unisave/A2QQU9?format=txt&versions=87"
 }
 ```
 
@@ -718,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A2QQU9?format=txt&versions=87",
-  "source_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
-  "retrieved_utc": "2026-11-01T06:27:45.219435+00:00",
-  "source_locator": "lines 36-42",
   "excerpt": "RN   [2]\nRP   FUNCTION, INDUCTION, AND PATHWAY.\nRX   PubMed=25044953; DOI=10.1002/cbic.201402172;\nRA   Yang X.L., Awakawa T., Wakimoto T., Abe I.;\nRT   \"Three acyltetronic acid derivatives: noncanonical cryptic polyketides from\nRT   Aspergillus niger identified by genome mining.\";\nRL   ChemBioChem 15:1578-1583(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:27:45.219435+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
+  "url": "https://rest.uniprot.org/unisave/A2QQU9?format=txt&versions=87"
 }
 ```
 
@@ -739,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 87,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A2QQU9?format=txt&versions=87",
-  "source_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
-  "retrieved_utc": "2026-11-01T06:27:45.219435+00:00",
-  "source_locator": "lines 57-58",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis.\nCC       {ECO:0000269|PubMed:25044953}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 87,
+  "retrieved_utc": "2026-11-01T06:27:45.219435+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 57-58",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "7a9ce4cdb7446a207fbe542c309e101b336add0fcb1eacdc0748a053d0baa66d",
+  "url": "https://rest.uniprot.org/unisave/A2QQU9?format=txt&versions=87"
 }
 ```
 

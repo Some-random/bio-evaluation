@@ -1,18 +1,16 @@
-# transmembrane_0115: before and after transfer clarification
+# transmembrane_0115
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0115.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/transmembrane_0115.txt)
 
 **Task:** `transmembrane`  
-**Author key, unchanged:** **A** — 604..624
+**Expected answer:** **A** — 604..624
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,248 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt annotation marks residues 604–624 as a helical transmembrane region, supporting choice A. Its evidence code indicates computational annotation, not experimental confirmation.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The strongly hydrophobic C-terminal stretch supports identifying a likely membrane-spanning helix and distinguishes it from the other proposed regions.
-
-
-**Missing item-specific fact**
-
-> The exact annotated boundary at residue 604, rather than 605, is not established by general sequence reasoning; that distinction depends on a protein-specific annotation or equivalent boundary evidence.
-
-
-**Reason**
-
-> Sequence analysis can locate the likely transmembrane stretch, but does not meaningfully resolve the one-residue boundary difference between A and C.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> A and C differ only by the first residue of the predicted span. Given the approximate nature of transmembrane boundaries, both describe the same hydrophobic helix, although the cited annotation specifically uses 604–624.
-
-
-### Important caveats
-
-- The reviewer-only annotation matches the supplied sequence, but the annotation is computational (ECO:0000255), not direct experimental evidence.
-- The exact source snapshot used by the benchmark author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The strongly hydrophobic C-terminal stretch supports identifying a likely membrane-spanning helix and distinguishes it from the other proposed regions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact annotated boundary at residue 604, rather than 605, is not established by general sequence reasoning; that distinction depends on a protein-specific annotation or equivalent boundary evidence.",
-    "reason": "Sequence analysis can locate the likely transmembrane stretch, but does not meaningfully resolve the one-residue boundary difference between A and C."
-  },
-  "case_id": "transmembrane_0115",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation marks residues 604–624 as a helical transmembrane region, supporting choice A. Its evidence code indicates computational annotation, not experimental confirmation."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but the annotation is computational (ECO:0000255), not direct experimental evidence.",
-    "The exact source snapshot used by the benchmark author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "A and C differ only by the first residue of the predicted span. Given the approximate nature of transmembrane boundaries, both describe the same hydrophobic helix, although the cited annotation specifically uses 604–624."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "transmembrane_0115",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation marks residues 604–624 as a helical transmembrane region, supporting choice A. Its evidence code indicates computational annotation, not experimental confirmation.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The strongly hydrophobic C-terminal stretch supports identifying a likely membrane-spanning helix and distinguishes it from the other proposed regions.",
-    "missing_item_specific_fact": "The exact annotated boundary at residue 604, rather than 605, is not established by general sequence reasoning; that distinction depends on a protein-specific annotation or equivalent boundary evidence.",
-    "reason": "Sequence analysis can locate the likely transmembrane stretch, but does not meaningfully resolve the one-residue boundary difference between A and C."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "A and C differ only by the first residue of the predicted span. Given the approximate nature of transmembrane boundaries, both describe the same hydrophobic helix, although the cited annotation specifically uses 604–624."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence, but the annotation is computational (ECO:0000255), not direct experimental evidence.",
-    "The exact source snapshot used by the benchmark author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9BIM7 (TgMIC8) explicitly annotates a transmembrane helical region at positions 604-624 (evidence C5, H3). The sequence at those positions (GTIALVVVGCVALLGIIAGGI) is strongly hydrophobic, consistent with a transmembrane alpha-helix. The annotation evidence code is ECO:0000255 (inferred by similarity), indicating a computational prediction rather than experimental determination, but the annotation unambiguously supports the expected answer.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1), [C4](#evidence-c4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The hydrophobic transmembrane stretch begins at G604, immediately after the charged K603, and extends through I624 before the polar S625. Option B (20-39: FLKEMDSIFVSAIRQNVQHT) contains multiple charged/polar residues and is clearly not a TM segment. Option D incorrectly adds 543-567 (CGSSDAVDACIAGTSTYTCRCKDGY), which is rich in charged and polar residues. The distinction between A (604-624) and C (605-624) is fine: G604 is hydrophobic and part of the helical core following the last charged residue K603, making 604 the biologically natural helix start, whereas T605 is polar and would exclude a hydrophobic glycine from the helix.
-
-
-**Missing item-specific fact**
-
-> The one-residue boundary difference between options A and C is extremely fine and could be resolved differently by different TM prediction algorithms; the exact 604 vs 605 start is ultimately an annotation convention.
-
-
-**Reason**
-
-> A model can eliminate B and D by recognizing non-hydrophobic sequences. The A vs C distinction (one residue) is narrow but has a defensible biological basis: G604 is hydrophobic and immediately follows the charged K603, making it the natural helix boundary. This allows reasoning-based selection, though the margin is small.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> The difference between 604-624 and 605-624 is a single residue (G vs T at the N-terminal boundary). Both define an essentially identical hydrophobic helix. While G604 is more hydrophobic than T605, making A slightly more defensible, a reasonable TM prediction tool could place the boundary at either position. The distinction is annotation-convention-dependent.
-
-
-### Important caveats
-
-- The transmembrane annotation uses evidence code ECO:0000255 (inferred by similarity), meaning it is a computational prediction, not an experimentally validated membrane topology.
-- The distinction between options A and C is a one-residue boundary call that is at the limit of what sequence-based reasoning can reliably resolve.
-- The protein is a precursor (signal peptide likely at N-terminus); the TM region at 604-624 is the C-terminal anchor consistent with the published literature (PubMed:11861763) describing TgMIC8 as a transmembrane microneme protein.
-- Sequence identity between the benchmark input and UniProt Q9BIM7 is confirmed (SHA256 match, 684 AA).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The hydrophobic transmembrane stretch begins at G604, immediately after the charged K603, and extends through I624 before the polar S625. Option B (20-39: FLKEMDSIFVSAIRQNVQHT) contains multiple charged/polar residues and is clearly not a TM segment. Option D incorrectly adds 543-567 (CGSSDAVDACIAGTSTYTCRCKDGY), which is rich in charged and polar residues. The distinction between A (604-624) and C (605-624) is fine: G604 is hydrophobic and part of the helical core following the last charged residue K603, making 604 the biologically natural helix start, whereas T605 is polar and would exclude a hydrophobic glycine from the helix.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The one-residue boundary difference between options A and C is extremely fine and could be resolved differently by different TM prediction algorithms; the exact 604 vs 605 start is ultimately an annotation convention.",
-    "reason": "A model can eliminate B and D by recognizing non-hydrophobic sequences. The A vs C distinction (one residue) is narrow but has a defensible biological basis: G604 is hydrophobic and immediately follows the charged K603, making it the natural helix boundary. This allows reasoning-based selection, though the margin is small."
-  },
-  "case_id": "transmembrane_0115",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C1",
-      "C4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9BIM7 (TgMIC8) explicitly annotates a transmembrane helical region at positions 604-624 (evidence C5, H3). The sequence at those positions (GTIALVVVGCVALLGIIAGGI) is strongly hydrophobic, consistent with a transmembrane alpha-helix. The annotation evidence code is ECO:0000255 (inferred by similarity), indicating a computational prediction rather than experimental determination, but the annotation unambiguously supports the expected answer."
-  },
-  "important_caveats": [
-    "The transmembrane annotation uses evidence code ECO:0000255 (inferred by similarity), meaning it is a computational prediction, not an experimentally validated membrane topology.",
-    "The distinction between options A and C is a one-residue boundary call that is at the limit of what sequence-based reasoning can reliably resolve.",
-    "The protein is a precursor (signal peptide likely at N-terminus); the TM region at 604-624 is the C-terminal anchor consistent with the published literature (PubMed:11861763) describing TgMIC8 as a transmembrane microneme protein.",
-    "Sequence identity between the benchmark input and UniProt Q9BIM7 is confirmed (SHA256 match, 684 AA)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "The difference between 604-624 and 605-624 is a single residue (G vs T at the N-terminal boundary). Both define an essentially identical hydrophobic helix. While G604 is more hydrophobic than T605, making A slightly more defensible, a reasonable TM prediction tool could place the boundary at either position. The distinction is annotation-convention-dependent."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "transmembrane_0115",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9BIM7 (TgMIC8) explicitly annotates a transmembrane helical region at positions 604-624 (evidence C5, H3). The sequence at those positions (GTIALVVVGCVALLGIIAGGI) is strongly hydrophobic, consistent with a transmembrane alpha-helix. The annotation evidence code is ECO:0000255 (inferred by similarity), indicating a computational prediction rather than experimental determination, but the annotation unambiguously supports the expected answer.",
-    "evidence_ids": ["C5", "H3", "C1", "C4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The hydrophobic transmembrane stretch begins at G604, immediately after the charged K603, and extends through I624 before the polar S625. Option B (20-39: FLKEMDSIFVSAIRQNVQHT) contains multiple charged/polar residues and is clearly not a TM segment. Option D incorrectly adds 543-567 (CGSSDAVDACIAGTSTYTCRCKDGY), which is rich in charged and polar residues. The distinction between A (604-624) and C (605-624) is fine: G604 is hydrophobic and part of the helical core following the last charged residue K603, making 604 the biologically natural helix start, whereas T605 is polar and would exclude a hydrophobic glycine from the helix.",
-    "missing_item_specific_fact": "The one-residue boundary difference between options A and C is extremely fine and could be resolved differently by different TM prediction algorithms; the exact 604 vs 605 start is ultimately an annotation convention.",
-    "reason": "A model can eliminate B and D by recognizing non-hydrophobic sequences. The A vs C distinction (one residue) is narrow but has a defensible biological basis: G604 is hydrophobic and immediately follows the charged K603, making it the natural helix boundary. This allows reasoning-based selection, though the margin is small."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "The difference between 604-624 and 605-624 is a single residue (G vs T at the N-terminal boundary). Both define an essentially identical hydrophobic helix. While G604 is more hydrophobic than T605, making A slightly more defensible, a reasonable TM prediction tool could place the boundary at either position. The distinction is annotation-convention-dependent."
-  },
-  "important_caveats": [
-    "The transmembrane annotation uses evidence code ECO:0000255 (inferred by similarity), meaning it is a computational prediction, not an experimentally validated membrane topology.",
-    "The distinction between options A and C is a one-residue boundary call that is at the limit of what sequence-based reasoning can reliably resolve.",
-    "The protein is a precursor (signal peptide likely at N-terminus); the TM region at 604-624 is the C-terminal anchor consistent with the published literature (PubMed:11861763) describing TgMIC8 as a transmembrane microneme protein.",
-    "Sequence identity between the benchmark input and UniProt Q9BIM7 is confirmed (SHA256 match, 684 AA)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -403,10 +164,9 @@ Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -524,30 +284,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9BIM7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b06f78ad156d49575dc708492a79dfb5aca4e4016331191d7f59e8147aee63ba",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 684,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b06f78ad156d49575dc708492a79dfb5aca4e4016331191d7f59e8147aee63ba",
   "current_entry_audit": {
     "entryVersion": 105,
     "firstPublicDate": "2025-06-18",
@@ -555,14 +302,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2001-06-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
-  "current_source_sequence_sha256": "b06f78ad156d49575dc708492a79dfb5aca4e4016331191d7f59e8147aee63ba",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 684,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b06f78ad156d49575dc708492a79dfb5aca4e4016331191d7f59e8147aee63ba",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 104,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9BIM7",
   "selected_historical_entry_version": 104,
+  "selected_historical_record_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
+  "selected_historical_source_sequence_length": 684,
+  "selected_historical_source_sequence_sha256": "b06f78ad156d49575dc708492a79dfb5aca4e4016331191d7f59e8147aee63ba",
   "selected_historical_version": {
     "accession": "Q9BIM7",
     "database": "Swiss-Prot",
@@ -573,24 +336,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "MIC8_TOXGO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
-  "selected_historical_source_sequence_sha256": "b06f78ad156d49575dc708492a79dfb5aca4e4016331191d7f59e8147aee63ba",
-  "selected_historical_source_sequence_length": 684,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 104,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -604,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json",
-  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
-  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9BIM7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json"
 }
 ```
 
@@ -623,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json",
-  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
-  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":105,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2001-06-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json"
 }
 ```
 
@@ -642,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json",
-  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
-  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"AAK19757.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Conoidasida\",\"Coccidia\",\"Eucoccidiorida\",\"Eimeriorina\",\"Sarcocystidae\",\"Toxoplasma\"],\"scientificName\":\"Toxoplasma gondii\",\"taxonId\":5811}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json"
 }
 ```
 
@@ -661,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json",
-  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
-  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"KAF4638404.1\",\"source\":\"EMBL\"}],\"value\":\"Microneme protein MIC8\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Micronemal protein 8\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"11861763\",\"source\":\"PubMed\"}],\"value\":\"TgMIC8\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json"
 }
 ```
 
@@ -680,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json",
-  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
-  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":624},\"start\":{\"modifier\":\"EXACT\",\"value\":604}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json"
 }
 ```
 
@@ -699,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json",
-  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
-  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
-  "json_pointer": "/references/4",
   "excerpt": "{\"citation\":{\"authors\":[\"Meissner M.\",\"Reiss M.\",\"Viebig N.\",\"Carruthers V.B.\",\"Toursel C.\",\"Tomavo S.\",\"Ajioka J.W.\",\"Soldati D.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"11861763\"},{\"database\":\"DOI\",\"id\":\"10.1242/jcs.115.3.563\"}],\"citationType\":\"journal article\",\"firstPage\":\"563\",\"id\":\"11861763\",\"journal\":\"J. Cell Sci.\",\"lastPage\":\"574\",\"publicationDate\":\"2002\",\"title\":\"A family of transmembrane microneme proteins of Toxoplasma gondii contain EGF-like domains and function as escorters.\",\"volume\":\"115\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":5,\"referencePositions\":[\"SUBCELLULAR LOCATION\",\"DEVELOPMENTAL STAGE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/4",
+  "retrieved_utc": "2026-11-02T04:32:41.847892+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1e26d02d811092d5350aec3cf5656bbd901e1bcb12f8e7f35f889b6548fa730c",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9BIM7.json"
 }
 ```
 
@@ -717,18 +467,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 104,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9BIM7?format=txt&versions=104",
-  "source_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
-  "retrieved_utc": "2026-11-02T04:32:43.749643+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   MIC8_TOXGO              Reviewed;         684 AA.\nAC   Q9BIM7; S7WHE3;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JUN-2001, sequence version 1.\nDT   28-JAN-2026, entry version 104.\nDE   RecName: Full=Micronemal protein 8 {ECO:0000305};\nDE            Short=TgMIC8 {ECO:0000303|PubMed:11861763};\nDE   AltName: Full=Microneme protein MIC8 {ECO:0000312|EMBL:KAF4638404.1};\nDE   Flags: Precursor;\nGN   Name=MIC8 {ECO:0000312|EMBL:AAK19757.1};\nGN   ORFNames=TGRH88_060120 {ECO:0000312|EMBL:KAF4638404.1};\nOS   Toxoplasma gondii.\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Conoidasida; Coccidia;\nOC   Eucoccidiorida; Eimeriorina; Sarcocystidae; Toxoplasma.\nOX   NCBI_TaxID=5811 {ECO:0000312|EMBL:AAK19757.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 104,
+  "retrieved_utc": "2026-11-02T04:32:43.749643+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
+  "url": "https://rest.uniprot.org/unisave/Q9BIM7?format=txt&versions=104"
 }
 ```
 
@@ -738,18 +488,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 104,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9BIM7?format=txt&versions=104",
-  "source_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
-  "retrieved_utc": "2026-11-02T04:32:43.749643+00:00",
-  "source_locator": "lines 42-49",
   "excerpt": "RN   [5] {ECO:0000305}\nRP   SUBCELLULAR LOCATION, AND DEVELOPMENTAL STAGE.\nRX   PubMed=11861763; DOI=10.1242/jcs.115.3.563;\nRA   Meissner M., Reiss M., Viebig N., Carruthers V.B., Toursel C., Tomavo S.,\nRA   Ajioka J.W., Soldati D.;\nRT   \"A family of transmembrane microneme proteins of Toxoplasma gondii contain\nRT   EGF-like domains and function as escorters.\";\nRL   J. Cell Sci. 115:563-574(2002).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 104,
+  "retrieved_utc": "2026-11-02T04:32:43.749643+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 42-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
+  "url": "https://rest.uniprot.org/unisave/Q9BIM7?format=txt&versions=104"
 }
 ```
 
@@ -759,18 +509,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 104,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9BIM7?format=txt&versions=104",
-  "source_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
-  "retrieved_utc": "2026-11-02T04:32:43.749643+00:00",
-  "source_locator": "lines 142-144",
   "excerpt": "FT   TRANSMEM        604..624\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 104,
+  "retrieved_utc": "2026-11-02T04:32:43.749643+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 142-144",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "8c1cdfe300fe0b7fd1b3d88242ec8673bd6601c370229c09fb7966b89d227666",
+  "url": "https://rest.uniprot.org/unisave/Q9BIM7?format=txt&versions=104"
 }
 ```
 

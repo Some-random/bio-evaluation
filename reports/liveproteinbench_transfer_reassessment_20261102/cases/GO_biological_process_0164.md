@@ -1,18 +1,16 @@
-# GO_biological_process_0164: before and after transfer clarification
+# GO_biological_process_0164
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0164.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0164.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — &#x27;de novo&#x27; L-methionine biosynthetic process
+**Expected answer:** **A** — &#x27;de novo&#x27; L-methionine biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the historical UniProt record for a fungal homoserine O-acetyltransferase. Its annotation says it commits homoserine to methionine biosynthesis, and assigns the de novo L-methionine biosynthetic process with IDA evidence. The function and pathway annotations cite experimental evidence, though the primary study was not independently reviewed here.
-
-Citations as saved: [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The options describe distinct processes, but the sequence alone does not provide a clear, general biological argument identifying this protein's specific enzymatic role or pathway.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that this sequence encodes homoserine O-acetyltransferase, which catalyzes an entry step into de novo methionine biosynthesis.
-
-
-**Reason**
-
-> Selecting A depends on identifying the protein and knowing its annotated or experimentally supported function—an item-specific fact absent from the question input. The reviewer-only sequence-matched annotations support the key but were not available to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports A; none of the other choices is indicated for this protein.
-
-
-### Important caveats
-
-- Sequence identity and historical annotation match are established by reviewer-only evidence; the accession and annotations were absent from the evaluated model input.
-- The cited experimental evidence supports the recorded function, but the underlying primary study was not independently assessed.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The options describe distinct processes, but the sequence alone does not provide a clear, general biological argument identifying this protein's specific enzymatic role or pathway.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence encodes homoserine O-acetyltransferase, which catalyzes an entry step into de novo methionine biosynthesis.",
-    "reason": "Selecting A depends on identifying the protein and knowing its annotated or experimentally supported function—an item-specific fact absent from the question input. The reviewer-only sequence-matched annotations support the key but were not available to the evaluated model."
-  },
-  "case_id": "GO_biological_process_0164",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "H3",
-      "H4",
-      "H5",
-      "C5",
-      "C6",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical UniProt record for a fungal homoserine O-acetyltransferase. Its annotation says it commits homoserine to methionine biosynthesis, and assigns the de novo L-methionine biosynthetic process with IDA evidence. The function and pathway annotations cite experimental evidence, though the primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "Sequence identity and historical annotation match are established by reviewer-only evidence; the accession and annotations were absent from the evaluated model input.",
-    "The cited experimental evidence supports the recorded function, but the underlying primary study was not independently assessed."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A; none of the other choices is indicated for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0164",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical UniProt record for a fungal homoserine O-acetyltransferase. Its annotation says it commits homoserine to methionine biosynthesis, and assigns the de novo L-methionine biosynthetic process with IDA evidence. The function and pathway annotations cite experimental evidence, though the primary study was not independently reviewed here.",
-    "evidence_ids": ["H3", "H4", "H5", "C5", "C6", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The options describe distinct processes, but the sequence alone does not provide a clear, general biological argument identifying this protein's specific enzymatic role or pathway.",
-    "missing_item_specific_fact": "The protein-specific fact that this sequence encodes homoserine O-acetyltransferase, which catalyzes an entry step into de novo methionine biosynthesis.",
-    "reason": "Selecting A depends on identifying the protein and knowing its annotated or experimentally supported function—an item-specific fact absent from the question input. The reviewer-only sequence-matched annotations support the key but were not available to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports A; none of the other choices is indicated for this protein."
-  },
-  "important_caveats": [
-    "Sequence identity and historical annotation match are established by reviewer-only evidence; the accession and annotations were absent from the evaluated model input.",
-    "The cited experimental evidence supports the recorded function, but the underlying primary study was not independently assessed."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt J9VIY8 (MET2_CRYN9), annotated as Homoserine O-acetyltransferase (EC 2.3.1.31) with experimental evidence (ECO:0000269, PubMed:17353245). The FUNCTION comment states it 'Commits homoserine to the methionine biosynthesis pathway by catalyzing its O-acetylation.' The PATHWAY comment places it in 'L-methionine biosynthesis via de novo pathway; O-acetyl-L-homoserine from L-homoserine: step 1/1.' The GO annotation GO:0071266 ('de novo' L-methionine biosynthetic process) is supported by IDA (Inferred from Direct Assay). Historical archived entry (version 54) confirms identical annotations.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The protein is from Cryptococcus neoformans (a fungus), eliminating option B (response to muscle stretch) since fungi lack muscles entirely. The sequence lacks transmembrane helices or transporter motifs, eliminating option C (manganese ion transport). The sequence contains motifs consistent with a GNAT (GCN5-related N-acetyltransferase) fold (e.g., 'GGSMGGMTVLEY' acetyl-CoA binding region), identifying it as an acyltransferase enzyme. GNAT acetyltransferases are predominantly involved in amino acid biosynthetic pathways (homoserine, lysine, isoleucine), not in ubiquinone biosynthesis, which employs prenyltransferases, methyltransferases, decarboxylases, and hydroxylases. This eliminates option D. The remaining option A ('de novo' L-methionine biosynthetic process) is the only amino acid biosynthetic pathway offered, consistent with GNAT-family function.
-
-
-**Missing item-specific fact**
-
-> Specific substrate identification (homoserine vs. other amino acid substrates) would require detailed active-site knowledge or database lookup, but since only one amino acid biosynthetic pathway is offered among the choices, the GNAT-to-amino-acid-biosynthesis association suffices to select A.
-
-
-**Reason**
-
-> A model with general biological knowledge can: (1) eliminate B because fungi lack muscle tissue; (2) eliminate C because the sequence lacks membrane-spanning regions; (3) recognize acyltransferase-like motifs and associate GNAT folds with amino acid biosynthesis rather than ubiquinone biosynthesis, eliminating D. This provides a concrete reasoning chain from sequence features and general pathway biology to option A, though the final step relies on the fact that only methionine biosynthesis is offered among amino acid pathways.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and C are clearly incompatible with a fungal soluble enzyme lacking transmembrane domains. Option D (ubiquinone biosynthesis) uses a distinct enzyme class (prenyltransferases, methyltransferases, oxidoreductases) unlike the GNAT acetyltransferase fold present here. Only option A is consistent with the sequence features and organism context.
-
-
-### Important caveats
-
-- The GNAT fold recognition from raw sequence without structural prediction tools is non-trivial; a model would need to identify the acetyl-CoA binding motifs (e.g., GGSMGGMT) and the compact domain architecture.
-- The reasoning distinguishes A from D via general pathway-enzyme-class associations but does not uniquely identify homoserine as the specific substrate from sequence alone; it relies on the fact that only one amino acid biosynthetic pathway is offered.
-- The GO annotation evidence code is IDA (Inferred from Direct Assay), indicating experimental support rather than computational transfer.
-- The historical entry (version 54, first released 2026-01) postdates the original sequence deposition (2012-11-28), so the Swiss-Prot annotation was added after the sequence was first published.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The protein is from Cryptococcus neoformans (a fungus), eliminating option B (response to muscle stretch) since fungi lack muscles entirely. The sequence lacks transmembrane helices or transporter motifs, eliminating option C (manganese ion transport). The sequence contains motifs consistent with a GNAT (GCN5-related N-acetyltransferase) fold (e.g., 'GGSMGGMTVLEY' acetyl-CoA binding region), identifying it as an acyltransferase enzyme. GNAT acetyltransferases are predominantly involved in amino acid biosynthetic pathways (homoserine, lysine, isoleucine), not in ubiquinone biosynthesis, which employs prenyltransferases, methyltransferases, decarboxylases, and hydroxylases. This eliminates option D. The remaining option A ('de novo' L-methionine biosynthetic process) is the only amino acid biosynthetic pathway offered, consistent with GNAT-family function.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Specific substrate identification (homoserine vs. other amino acid substrates) would require detailed active-site knowledge or database lookup, but since only one amino acid biosynthetic pathway is offered among the choices, the GNAT-to-amino-acid-biosynthesis association suffices to select A.",
-    "reason": "A model with general biological knowledge can: (1) eliminate B because fungi lack muscle tissue; (2) eliminate C because the sequence lacks membrane-spanning regions; (3) recognize acyltransferase-like motifs and associate GNAT folds with amino acid biosynthesis rather than ubiquinone biosynthesis, eliminating D. This provides a concrete reasoning chain from sequence features and general pathway biology to option A, though the final step relies on the fact that only methionine biosynthesis is offered among amino acid pathways."
-  },
-  "case_id": "GO_biological_process_0164",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt J9VIY8 (MET2_CRYN9), annotated as Homoserine O-acetyltransferase (EC 2.3.1.31) with experimental evidence (ECO:0000269, PubMed:17353245). The FUNCTION comment states it 'Commits homoserine to the methionine biosynthesis pathway by catalyzing its O-acetylation.' The PATHWAY comment places it in 'L-methionine biosynthesis via de novo pathway; O-acetyl-L-homoserine from L-homoserine: step 1/1.' The GO annotation GO:0071266 ('de novo' L-methionine biosynthetic process) is supported by IDA (Inferred from Direct Assay). Historical archived entry (version 54) confirms identical annotations."
-  },
-  "important_caveats": [
-    "The GNAT fold recognition from raw sequence without structural prediction tools is non-trivial; a model would need to identify the acetyl-CoA binding motifs (e.g., GGSMGGMT) and the compact domain architecture.",
-    "The reasoning distinguishes A from D via general pathway-enzyme-class associations but does not uniquely identify homoserine as the specific substrate from sequence alone; it relies on the fact that only one amino acid biosynthetic pathway is offered.",
-    "The GO annotation evidence code is IDA (Inferred from Direct Assay), indicating experimental support rather than computational transfer.",
-    "The historical entry (version 54, first released 2026-01) postdates the original sequence deposition (2012-11-28), so the Swiss-Prot annotation was added after the sequence was first published."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and C are clearly incompatible with a fungal soluble enzyme lacking transmembrane domains. Option D (ubiquinone biosynthesis) uses a distinct enzyme class (prenyltransferases, methyltransferases, oxidoreductases) unlike the GNAT acetyltransferase fold present here. Only option A is consistent with the sequence features and organism context."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0164",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt J9VIY8 (MET2_CRYN9), annotated as Homoserine O-acetyltransferase (EC 2.3.1.31) with experimental evidence (ECO:0000269, PubMed:17353245). The FUNCTION comment states it 'Commits homoserine to the methionine biosynthesis pathway by catalyzing its O-acetylation.' The PATHWAY comment places it in 'L-methionine biosynthesis via de novo pathway; O-acetyl-L-homoserine from L-homoserine: step 1/1.' The GO annotation GO:0071266 ('de novo' L-methionine biosynthetic process) is supported by IDA (Inferred from Direct Assay). Historical archived entry (version 54) confirms identical annotations.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H3", "H4", "H5", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The protein is from Cryptococcus neoformans (a fungus), eliminating option B (response to muscle stretch) since fungi lack muscles entirely. The sequence lacks transmembrane helices or transporter motifs, eliminating option C (manganese ion transport). The sequence contains motifs consistent with a GNAT (GCN5-related N-acetyltransferase) fold (e.g., 'GGSMGGMTVLEY' acetyl-CoA binding region), identifying it as an acyltransferase enzyme. GNAT acetyltransferases are predominantly involved in amino acid biosynthetic pathways (homoserine, lysine, isoleucine), not in ubiquinone biosynthesis, which employs prenyltransferases, methyltransferases, decarboxylases, and hydroxylases. This eliminates option D. The remaining option A ('de novo' L-methionine biosynthetic process) is the only amino acid biosynthetic pathway offered, consistent with GNAT-family function.",
-    "missing_item_specific_fact": "Specific substrate identification (homoserine vs. other amino acid substrates) would require detailed active-site knowledge or database lookup, but since only one amino acid biosynthetic pathway is offered among the choices, the GNAT-to-amino-acid-biosynthesis association suffices to select A.",
-    "reason": "A model with general biological knowledge can: (1) eliminate B because fungi lack muscle tissue; (2) eliminate C because the sequence lacks membrane-spanning regions; (3) recognize acyltransferase-like motifs and associate GNAT folds with amino acid biosynthesis rather than ubiquinone biosynthesis, eliminating D. This provides a concrete reasoning chain from sequence features and general pathway biology to option A, though the final step relies on the fact that only methionine biosynthesis is offered among amino acid pathways."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and C are clearly incompatible with a fungal soluble enzyme lacking transmembrane domains. Option D (ubiquinone biosynthesis) uses a distinct enzyme class (prenyltransferases, methyltransferases, oxidoreductases) unlike the GNAT acetyltransferase fold present here. Only option A is consistent with the sequence features and organism context."
-  },
-  "important_caveats": [
-    "The GNAT fold recognition from raw sequence without structural prediction tools is non-trivial; a model would need to identify the acetyl-CoA binding motifs (e.g., GGSMGGMT) and the compact domain architecture.",
-    "The reasoning distinguishes A from D via general pathway-enzyme-class associations but does not uniquely identify homoserine as the specific substrate from sequence alone; it relies on the fact that only one amino acid biosynthetic pathway is offered.",
-    "The GO annotation evidence code is IDA (Inferred from Direct Assay), indicating experimental support rather than computational transfer.",
-    "The historical entry (version 54, first released 2026-01) postdates the original sequence deposition (2012-11-28), so the Swiss-Prot annotation was added after the sequence was first published."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -509,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "J9VIY8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "57825f4d67b7b8a868fb283bc084d32ce6202d902a078ce010f45f7dba5b26c0",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 528,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "57825f4d67b7b8a868fb283bc084d32ce6202d902a078ce010f45f7dba5b26c0",
   "current_entry_audit": {
     "entryVersion": 56,
     "firstPublicDate": "2025-02-05",
@@ -540,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2012-11-28",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "current_source_sequence_sha256": "57825f4d67b7b8a868fb283bc084d32ce6202d902a078ce010f45f7dba5b26c0",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 528,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "57825f4d67b7b8a868fb283bc084d32ce6202d902a078ce010f45f7dba5b26c0",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 54,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "J9VIY8",
   "selected_historical_entry_version": 54,
+  "selected_historical_record_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
+  "selected_historical_source_sequence_length": 528,
+  "selected_historical_source_sequence_sha256": "57825f4d67b7b8a868fb283bc084d32ce6202d902a078ce010f45f7dba5b26c0",
   "selected_historical_version": {
     "accession": "J9VIY8",
     "database": "Swiss-Prot",
@@ -558,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MET2_CRYN9",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
-  "selected_historical_source_sequence_sha256": "57825f4d67b7b8a868fb283bc084d32ce6202d902a078ce010f45f7dba5b26c0",
-  "selected_historical_source_sequence_length": 528,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 54,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -593,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"J9VIY8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -612,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":56,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-11-28\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -631,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Cryptococcus neoformans var. grubii serotype A\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000010091\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Basidiomycota\",\"Agaricomycotina\",\"Tremellomycetes\",\"Tremellales\",\"Cryptococcaceae\",\"Cryptococcus\",\"Cryptococcus neoformans species complex\"],\"scientificName\":\"Cryptococcus neoformans (strain H99 / ATCC 208821 / CBS 10515 / FGSC 9487)\",\"taxonId\":235443}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -650,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17353245\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.31\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Homoserine O-acetyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -669,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17353245\",\"source\":\"PubMed\"}],\"value\":\"Commits homoserine to the methionine biosynthesis pathway by catalyzing its O-acetylation\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -688,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"17353245\",\"source\":\"PubMed\"}],\"value\":\"Amino-acid biosynthesis; L-methionine biosynthesis via de novo pathway; O-acetyl-L-homoserine from L-homoserine: step 1/1\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -707,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"17353245\",\"source\":\"PubMed\"}],\"id\":\"GO:0071266\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:'de novo' L-methionine biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -726,15 +480,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/14",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0009092\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:L-homoserine metabolic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/14",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -745,15 +499,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json",
-  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
-  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Nazi I.\",\"Scott A.\",\"Sham A.\",\"Rossi L.\",\"Williamson P.R.\",\"Kronstad J.W.\",\"Wright G.D.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17353245\"},{\"database\":\"DOI\",\"id\":\"10.1128/aac.01400-06\"}],\"citationType\":\"journal article\",\"firstPage\":\"1731\",\"id\":\"17353245\",\"journal\":\"Antimicrob. Agents Chemother.\",\"lastPage\":\"1736\",\"publicationDate\":\"2007\",\"title\":\"Role of homoserine transacetylase as a new target for antifungal agents.\",\"volume\":\"51\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"PATHWAY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:28:54.980036+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1dd26bd473689f347eca69268d64365a8d99894cc29c382df0bdcbe9218d5cda",
+  "url": "https://rest.uniprot.org/uniprotkb/J9VIY8.json"
 }
 ```
 
@@ -763,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54",
-  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
-  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   MET2_CRYN9              Reviewed;         528 AA.\nAC   J9VIY8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   28-NOV-2012, sequence version 1.\nDT   28-JAN-2026, entry version 54.\nDE   RecName: Full=Homoserine O-acetyltransferase {ECO:0000305};\nDE            EC=2.3.1.31 {ECO:0000269|PubMed:17353245};\nGN   Name=MET2 {ECO:0000303|PubMed:17353245};\nGN   ORFNames=CNAG_05122 {ECO:0000312|EMBL:AFR94387.1};\nOS   Cryptococcus neoformans (strain H99 / ATCC 208821 / CBS 10515 / FGSC 9487)\nOS   (Cryptococcus neoformans var. grubii serotype A).\nOC   Eukaryota; Fungi; Dikarya; Basidiomycota; Agaricomycotina; Tremellomycetes;\nOC   Tremellales; Cryptococcaceae; Cryptococcus;\nOC   Cryptococcus neoformans species complex.\nOX   NCBI_TaxID=235443 {ECO:0000312|Proteomes:UP000010091};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
+  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54"
 }
 ```
 
@@ -784,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54",
-  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
-  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
-  "source_locator": "lines 35-42",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, PATHWAY, AND DISRUPTION\nRP   PHENOTYPE.\nRX   PubMed=17353245; DOI=10.1128/aac.01400-06;\nRA   Nazi I., Scott A., Sham A., Rossi L., Williamson P.R., Kronstad J.W.,\nRA   Wright G.D.;\nRT   \"Role of homoserine transacetylase as a new target for antifungal agents.\";\nRL   Antimicrob. Agents Chemother. 51:1731-1736(2007).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
+  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54"
 }
 ```
 
@@ -805,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54",
-  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
-  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
-  "source_locator": "lines 43-44",
   "excerpt": "CC   -!- FUNCTION: Commits homoserine to the methionine biosynthesis pathway by\nCC       catalyzing its O-acetylation. {ECO:0000269|PubMed:17353245}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-44",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
+  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54"
 }
 ```
 
@@ -826,18 +580,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54",
-  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
-  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
-  "source_locator": "lines 55-57",
   "excerpt": "CC   -!- PATHWAY: Amino-acid biosynthesis; L-methionine biosynthesis via de novo\nCC       pathway; O-acetyl-L-homoserine from L-homoserine: step 1/1.\nCC       {ECO:0000269|PubMed:17353245}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 55-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
+  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54"
 }
 ```
 
@@ -847,18 +601,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54",
-  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
-  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
-  "source_locator": "lines 81-81",
   "excerpt": "DR   GO; GO:0071266; P:'de novo' L-methionine biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
+  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54"
 }
 ```
 
@@ -868,18 +622,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 54,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54",
-  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
-  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
-  "source_locator": "lines 82-82",
   "excerpt": "DR   GO; GO:0009092; P:homoserine metabolic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 54,
+  "retrieved_utc": "2026-11-02T04:28:57.924962+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 82-82",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f199a40bd4613a52dfaa0c84625c1bb8a81d2d65e01501415825a1c3b01fb844",
+  "url": "https://rest.uniprot.org/unisave/J9VIY8?format=txt&versions=54"
 }
 ```
 
@@ -890,15 +644,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 69876-69901",
   "excerpt": "[Term]\nid: GO:0006744\nname: ubiquinone biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of ubiquinone, a lipid-soluble electron-transporting coenzyme.\" [GOC:mah]\nsubset: goslim_drosophila\nsubset: goslim_pombe\nsynonym: \"coenzyme Q biosynthesis\" EXACT []\nsynonym: \"coenzyme Q biosynthetic process\" EXACT []\nsynonym: \"coenzyme Q10 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q10 biosynthetic process\" NARROW []\nsynonym: \"coenzyme Q6 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q6 biosynthetic process\" NARROW []\nsynonym: \"coenzyme Q8 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q8 biosynthetic process\" NARROW []\nsynonym: \"coenzyme Q9 biosynthesis\" NARROW []\nsynonym: \"coenzyme Q9 biosynthetic process\" NARROW []\nsynonym: \"ubiquinone anabolism\" EXACT []\nsynonym: \"ubiquinone biosynthesis\" EXACT []\nsynonym: \"ubiquinone formation\" EXACT []\nsynonym: \"ubiquinone synthesis\" EXACT []\nxref: MetaCyc:UBISYN-PWY\nxref: Reactome:R-HSA-2142789 \"Ubiquinol biosynthesis\"\nis_a: GO:0006743 ! ubiquinone metabolic process\nis_a: GO:1901663 ! quinone biosynthetic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006744",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 69876-69901",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006744"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -909,15 +663,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 70753-70759",
   "excerpt": "[Term]\nid: GO:0006828\nname: manganese ion transport\nnamespace: biological_process\ndef: \"The directed movement of manganese (Mn) ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore.\" [GOC:ai]\nis_a: GO:0000041 ! transition metal ion transport\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006828",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 70753-70759",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006828"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -928,15 +682,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 223355-223361",
   "excerpt": "[Term]\nid: GO:0035994\nname: response to muscle stretch\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a myofibril being extended beyond its slack length.\" [GOC:BHF, GOC:vk, PMID:14583192]\nis_a: GO:0009612 ! response to mechanical stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035994",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 223355-223361",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035994"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -947,15 +701,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 375453-375475",
   "excerpt": "[Term]\nid: GO:0071266\nname: 'de novo' L-methionine biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of L-methionine, the L-enantiomer of (2S)-2-amino-4-(methylsulfanyl)butanoic acid, from simpler components such as L-aspartate or L-homoserine. This process occurs in plants, bacteria, archae and fungi.\" [PMID:12818659, PMID:24939187]\nsynonym: \"'de novo' L-methionine anabolism\" EXACT [GOC:mah]\nsynonym: \"'de novo' L-methionine biosynthesis\" EXACT [GOC:mah]\nsynonym: \"'de novo' L-methionine formation\" EXACT [GOC:mah]\nsynonym: \"'de novo' L-methionine synthesis\" EXACT [GOC:mah]\nxref: MetaCyc:HOMOSER-METSYN-PWY\nxref: MetaCyc:HSERMETANA-PWY\nxref: MetaCyc:PWY-5345\nxref: MetaCyc:PWY-5347\nxref: MetaCyc:PWY-702\nxref: MetaCyc:PWY-7977\nis_a: GO:0071265 ! L-methionine biosynthetic process\nproperty_value: skos:narrowMatch MetaCyc:HOMOSER-METSYN-PWY\nproperty_value: skos:narrowMatch MetaCyc:HSERMETANA-PWY\nproperty_value: skos:narrowMatch MetaCyc:PWY-5345\nproperty_value: skos:narrowMatch MetaCyc:PWY-5347\nproperty_value: skos:narrowMatch MetaCyc:PWY-702\nproperty_value: skos:narrowMatch MetaCyc:PWY-7977\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0071266",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 375453-375475",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0071266"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

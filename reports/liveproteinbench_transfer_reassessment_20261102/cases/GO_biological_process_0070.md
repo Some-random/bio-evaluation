@@ -1,18 +1,16 @@
-# GO_biological_process_0070: before and after transfer clarification
+# GO_biological_process_0070
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0070.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0070.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **C** — mycotoxin biosynthetic process
+**Expected answer:** **C** — mycotoxin biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: uncertain
-
-> The sequence matches the UniProt entry for PbrB, and evidence describes its role in aspterric acid biosynthesis (C1, C5, H3). The specific mycotoxin biosynthetic process annotation is marked IEA:UniProtKB-ARBA (C7, H5), so it is computational annotation rather than experimental confirmation. The supplied evidence does not establish that aspterric acid is a mycotoxin, leaving the precise GO term unresolved.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a cytochrome P450, which could suggest a catalytic role, but that broad clue cannot identify its specific pathway or distinguish mycotoxin biosynthesis from other biological processes in the choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific fact that PbrB participates in aspterric acid biosynthesis, and whether that pathway qualifies as mycotoxin biosynthesis.
-
-
-**Reason**
-
-> Neither the pathway identity nor the specific GO annotation is supplied in the question. Choosing C depends on protein-specific annotation or prior knowledge, not a sequence-based argument that meaningfully separates it from the choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> No alternative is supported by the supplied sequence alone. The uncertainty concerns whether the mycotoxin label is appropriate for PbrB's reported aspterric acid pathway, not evidence for another listed option.
-
-
-### Important caveats
-
-- The sequence match is exact for the current and retrieved historical UniProt records, but the author's precise source snapshot is unknown.
-- The database's GO annotation is computational (IEA:UniProtKB-ARBA); it should not be represented as direct experimental evidence for the specific mycotoxin term.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a cytochrome P450, which could suggest a catalytic role, but that broad clue cannot identify its specific pathway or distinguish mycotoxin biosynthesis from other biological processes in the choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific fact that PbrB participates in aspterric acid biosynthesis, and whether that pathway qualifies as mycotoxin biosynthesis.",
-    "reason": "Neither the pathway identity nor the specific GO annotation is supplied in the question. Choosing C depends on protein-specific annotation or prior knowledge, not a sequence-based argument that meaningfully separates it from the choices."
-  },
-  "case_id": "GO_biological_process_0070",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "cannot_determine",
-    "reason": "The sequence matches the UniProt entry for PbrB, and evidence describes its role in aspterric acid biosynthesis (C1, C5, H3). The specific mycotoxin biosynthetic process annotation is marked IEA:UniProtKB-ARBA (C7, H5), so it is computational annotation rather than experimental confirmation. The supplied evidence does not establish that aspterric acid is a mycotoxin, leaving the precise GO term unresolved."
-  },
-  "important_caveats": [
-    "The sequence match is exact for the current and retrieved historical UniProt records, but the author's precise source snapshot is unknown.",
-    "The database's GO annotation is computational (IEA:UniProtKB-ARBA); it should not be represented as direct experimental evidence for the specific mycotoxin term."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No alternative is supported by the supplied sequence alone. The uncertainty concerns whether the mycotoxin label is appropriate for PbrB's reported aspterric acid pathway, not evidence for another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0070",
-  "expected_answer_check": {
-    "judgment": "cannot_determine",
-    "reason": "The sequence matches the UniProt entry for PbrB, and evidence describes its role in aspterric acid biosynthesis (C1, C5, H3). The specific mycotoxin biosynthetic process annotation is marked IEA:UniProtKB-ARBA (C7, H5), so it is computational annotation rather than experimental confirmation. The supplied evidence does not establish that aspterric acid is a mycotoxin, leaving the precise GO term unresolved.",
-    "evidence_ids": ["C1", "C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a cytochrome P450, which could suggest a catalytic role, but that broad clue cannot identify its specific pathway or distinguish mycotoxin biosynthesis from other biological processes in the choices.",
-    "missing_item_specific_fact": "The protein-specific fact that PbrB participates in aspterric acid biosynthesis, and whether that pathway qualifies as mycotoxin biosynthesis.",
-    "reason": "Neither the pathway identity nor the specific GO annotation is supplied in the question. Choosing C depends on protein-specific annotation or prior knowledge, not a sequence-based argument that meaningfully separates it from the choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "No alternative is supported by the supplied sequence alone. The uncertainty concerns whether the mycotoxin label is appropriate for PbrB's reported aspterric acid pathway, not evidence for another listed option."
-  },
-  "important_caveats": [
-    "The sequence match is exact for the current and retrieved historical UniProt records, but the author's precise source snapshot is unknown.",
-    "The database's GO annotation is computational (IEA:UniProtKB-ARBA); it should not be represented as direct experimental evidence for the specific mycotoxin term."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A0F7U0K0 (PBRB_PENBI) annotates GO:0043386 'mycotoxin biosynthetic process' to this protein (evidence C7, H5). The protein is a cytochrome P450 monooxygenase (pbrB) in the aspterric acid biosynthesis gene cluster of Penicillium brasilianum, a fungus. Aspterric acid is a sesquiterpenoid secondary metabolite produced by a fungus with toxic/herbicidal activity, fitting the broad GO definition of mycotoxin ('any poisonous substance produced by a fungus'). However, the GO annotation carries evidence code IEA:UniProtKB-ARBA (inferred from electronic annotation), not direct experimental evidence that aspterric acid is classified as a mycotoxin. The experimental evidence (PubMed:39511739) supports the function and the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (GO:0016114, also IEA). The key is supported by the database annotation, though the specific 'mycotoxin' label is a computational inference from the broader 'terpenoid biosynthetic process' annotation rather than a dedicated experimental classification.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [GO4](#evidence-go4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence exhibits hallmarks of a cytochrome P450 monooxygenase (heme-binding region with F…C spacing consistent with the FxxGxxxCxG motif near 'FSKGSRACLGIN', plus the overall architecture of a microsomal-type P450). A P450 is a catalytic enzyme that performs oxidative transformations in biosynthetic or metabolic pathways. Among the four options, three (A: positive regulation of VEGF production, B: regulation of mitochondrion organization, D: response to mechanical stimulus) describe regulatory or signaling processes that are mechanistically incompatible with a P450's catalytic role. Option A is additionally animal-specific (VEGF is a mammalian growth factor). Only option C describes a biosynthetic process, which is the only category consistent with a P450 enzyme's function. By elimination of the three clearly incompatible options, C is the only viable answer.
-
-
-**Missing item-specific fact**
-
-> The specific assignment to 'mycotoxin biosynthetic process' (rather than the more general 'terpenoid biosynthetic process' or 'secondary metabolite biosynthesis') requires knowing that the organism is a fungus and that the product (aspterric acid) is classified under the mycotoxin umbrella. The organism name and the specific metabolite identity are not provided in the input. However, this specificity is not needed to select C, because no alternative biosynthetic option is offered; the elimination argument suffices.
-
-
-**Reason**
-
-> A model with general knowledge of enzyme classes can identify the P450 catalytic signature in the sequence and reason that a catalytic oxidase participates in a biosynthetic process, not in regulation of organelles, cytokine production, or mechanical stimulus response. The three distractors are mechanistically incompatible with a P450 regardless of organism identity, making C the sole defensible choice by elimination. The specific 'mycotoxin' qualifier adds item-specific detail but is not required to arrive at C among the given options.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, B, and D are clearly incompatible with a cytochrome P450's catalytic biosynthetic function. A is animal-specific, B is an organelle-organization regulatory process, and D is a signaling response process. Only C is a biosynthetic process. No ambiguity exists among the given choices for a knowledgeable reasoner.
-
-
-### Important caveats
-
-- The GO:0043386 'mycotoxin biosynthetic process' annotation is IEA (Inferred from Electronic Annotation via UniProtKB-ARBA), not experimentally derived. The experimental evidence (PubMed:39511739) supports the function as part of aspterric acid biosynthesis and the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis.'
-- Aspterric acid is described as a sesquiterpenoid herbicide (DHAD inhibitor). Whether it strictly qualifies as a 'mycotoxin' in the classical sense (toxic to animals/humans) is debatable, though the GO definition is broad ('any poisonous substance produced by a fungus').
-- The organism (Penicillium brasilianum) and protein name (pbrB) are not provided in the model input; the reasoning-supported judgment relies on identifying the P450 fold and eliminating mechanistically incompatible options, not on knowing the specific protein identity.
-- The more precise pathway annotation is 'terpenoid biosynthetic process' (GO:0016114); 'mycotoxin biosynthetic process' is a broader automated grouping applied by UniProtKB-ARBA.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence exhibits hallmarks of a cytochrome P450 monooxygenase (heme-binding region with F…C spacing consistent with the FxxGxxxCxG motif near 'FSKGSRACLGIN', plus the overall architecture of a microsomal-type P450). A P450 is a catalytic enzyme that performs oxidative transformations in biosynthetic or metabolic pathways. Among the four options, three (A: positive regulation of VEGF production, B: regulation of mitochondrion organization, D: response to mechanical stimulus) describe regulatory or signaling processes that are mechanistically incompatible with a P450's catalytic role. Option A is additionally animal-specific (VEGF is a mammalian growth factor). Only option C describes a biosynthetic process, which is the only category consistent with a P450 enzyme's function. By elimination of the three clearly incompatible options, C is the only viable answer.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific assignment to 'mycotoxin biosynthetic process' (rather than the more general 'terpenoid biosynthetic process' or 'secondary metabolite biosynthesis') requires knowing that the organism is a fungus and that the product (aspterric acid) is classified under the mycotoxin umbrella. The organism name and the specific metabolite identity are not provided in the input. However, this specificity is not needed to select C, because no alternative biosynthetic option is offered; the elimination argument suffices.",
-    "reason": "A model with general knowledge of enzyme classes can identify the P450 catalytic signature in the sequence and reason that a catalytic oxidase participates in a biosynthetic process, not in regulation of organelles, cytokine production, or mechanical stimulus response. The three distractors are mechanistically incompatible with a P450 regardless of organism identity, making C the sole defensible choice by elimination. The specific 'mycotoxin' qualifier adds item-specific detail but is not required to arrive at C among the given options."
-  },
-  "case_id": "GO_biological_process_0070",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "C9",
-      "H1",
-      "H3",
-      "H4",
-      "H5",
-      "GO4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0F7U0K0 (PBRB_PENBI) annotates GO:0043386 'mycotoxin biosynthetic process' to this protein (evidence C7, H5). The protein is a cytochrome P450 monooxygenase (pbrB) in the aspterric acid biosynthesis gene cluster of Penicillium brasilianum, a fungus. Aspterric acid is a sesquiterpenoid secondary metabolite produced by a fungus with toxic/herbicidal activity, fitting the broad GO definition of mycotoxin ('any poisonous substance produced by a fungus'). However, the GO annotation carries evidence code IEA:UniProtKB-ARBA (inferred from electronic annotation), not direct experimental evidence that aspterric acid is classified as a mycotoxin. The experimental evidence (PubMed:39511739) supports the function and the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (GO:0016114, also IEA). The key is supported by the database annotation, though the specific 'mycotoxin' label is a computational inference from the broader 'terpenoid biosynthetic process' annotation rather than a dedicated experimental classification."
-  },
-  "important_caveats": [
-    "The GO:0043386 'mycotoxin biosynthetic process' annotation is IEA (Inferred from Electronic Annotation via UniProtKB-ARBA), not experimentally derived. The experimental evidence (PubMed:39511739) supports the function as part of aspterric acid biosynthesis and the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis.'",
-    "Aspterric acid is described as a sesquiterpenoid herbicide (DHAD inhibitor). Whether it strictly qualifies as a 'mycotoxin' in the classical sense (toxic to animals/humans) is debatable, though the GO definition is broad ('any poisonous substance produced by a fungus').",
-    "The organism (Penicillium brasilianum) and protein name (pbrB) are not provided in the model input; the reasoning-supported judgment relies on identifying the P450 fold and eliminating mechanistically incompatible options, not on knowing the specific protein identity.",
-    "The more precise pathway annotation is 'terpenoid biosynthetic process' (GO:0016114); 'mycotoxin biosynthetic process' is a broader automated grouping applied by UniProtKB-ARBA."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are clearly incompatible with a cytochrome P450's catalytic biosynthetic function. A is animal-specific, B is an organelle-organization regulatory process, and D is a signaling response process. Only C is a biosynthetic process. No ambiguity exists among the given choices for a knowledgeable reasoner."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0070",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A0F7U0K0 (PBRB_PENBI) annotates GO:0043386 'mycotoxin biosynthetic process' to this protein (evidence C7, H5). The protein is a cytochrome P450 monooxygenase (pbrB) in the aspterric acid biosynthesis gene cluster of Penicillium brasilianum, a fungus. Aspterric acid is a sesquiterpenoid secondary metabolite produced by a fungus with toxic/herbicidal activity, fitting the broad GO definition of mycotoxin ('any poisonous substance produced by a fungus'). However, the GO annotation carries evidence code IEA:UniProtKB-ARBA (inferred from electronic annotation), not direct experimental evidence that aspterric acid is classified as a mycotoxin. The experimental evidence (PubMed:39511739) supports the function and the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis' (GO:0016114, also IEA). The key is supported by the database annotation, though the specific 'mycotoxin' label is a computational inference from the broader 'terpenoid biosynthetic process' annotation rather than a dedicated experimental classification.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "C8", "C9", "H1", "H3", "H4", "H5", "GO4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence exhibits hallmarks of a cytochrome P450 monooxygenase (heme-binding region with F…C spacing consistent with the FxxGxxxCxG motif near 'FSKGSRACLGIN', plus the overall architecture of a microsomal-type P450). A P450 is a catalytic enzyme that performs oxidative transformations in biosynthetic or metabolic pathways. Among the four options, three (A: positive regulation of VEGF production, B: regulation of mitochondrion organization, D: response to mechanical stimulus) describe regulatory or signaling processes that are mechanistically incompatible with a P450's catalytic role. Option A is additionally animal-specific (VEGF is a mammalian growth factor). Only option C describes a biosynthetic process, which is the only category consistent with a P450 enzyme's function. By elimination of the three clearly incompatible options, C is the only viable answer.",
-    "missing_item_specific_fact": "The specific assignment to 'mycotoxin biosynthetic process' (rather than the more general 'terpenoid biosynthetic process' or 'secondary metabolite biosynthesis') requires knowing that the organism is a fungus and that the product (aspterric acid) is classified under the mycotoxin umbrella. The organism name and the specific metabolite identity are not provided in the input. However, this specificity is not needed to select C, because no alternative biosynthetic option is offered; the elimination argument suffices.",
-    "reason": "A model with general knowledge of enzyme classes can identify the P450 catalytic signature in the sequence and reason that a catalytic oxidase participates in a biosynthetic process, not in regulation of organelles, cytokine production, or mechanical stimulus response. The three distractors are mechanistically incompatible with a P450 regardless of organism identity, making C the sole defensible choice by elimination. The specific 'mycotoxin' qualifier adds item-specific detail but is not required to arrive at C among the given options."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, B, and D are clearly incompatible with a cytochrome P450's catalytic biosynthetic function. A is animal-specific, B is an organelle-organization regulatory process, and D is a signaling response process. Only C is a biosynthetic process. No ambiguity exists among the given choices for a knowledgeable reasoner."
-  },
-  "important_caveats": [
-    "The GO:0043386 'mycotoxin biosynthetic process' annotation is IEA (Inferred from Electronic Annotation via UniProtKB-ARBA), not experimentally derived. The experimental evidence (PubMed:39511739) supports the function as part of aspterric acid biosynthesis and the pathway as 'Secondary metabolite biosynthesis; terpenoid biosynthesis.'",
-    "Aspterric acid is described as a sesquiterpenoid herbicide (DHAD inhibitor). Whether it strictly qualifies as a 'mycotoxin' in the classical sense (toxic to animals/humans) is debatable, though the GO definition is broad ('any poisonous substance produced by a fungus').",
-    "The organism (Penicillium brasilianum) and protein name (pbrB) are not provided in the model input; the reasoning-supported judgment relies on identifying the P450 fold and eliminating mechanistically incompatible options, not on knowing the specific protein identity.",
-    "The more precise pathway annotation is 'terpenoid biosynthetic process' (GO:0016114); 'mycotoxin biosynthetic process' is a broader automated grouping applied by UniProtKB-ARBA."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -397,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -515,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A0F7U0K0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 512,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
   "current_entry_audit": {
     "entryVersion": 34,
     "firstPublicDate": "2025-04-09",
@@ -546,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2015-07-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "current_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 512,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 33,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A0F7U0K0",
   "selected_historical_entry_version": 33,
+  "selected_historical_record_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "selected_historical_source_sequence_length": 512,
+  "selected_historical_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
   "selected_historical_version": {
     "accession": "A0A0F7U0K0",
     "database": "Swiss-Prot",
@@ -564,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "PBRB_PENBI",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "selected_historical_source_sequence_sha256": "edee8c97cf5275f2f2bef0482f78975bc579546a68719c98dd692f657a374456",
-  "selected_historical_source_sequence_length": 512,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 33,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -599,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A0F7U0K0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -618,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":34,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2015-07-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -637,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium brasilianum\",\"taxonId\":104259}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -656,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Aspterric acid biosynthesis cluster protein B\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"1.-.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase pbrB\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -675,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q0CPG7\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase; part of the gene cluster that mediates the biosynthesis of the sesquiterpenoid aspterric acid (AA), an inhibitor of dihydroxy-acid dehydratase (DHAD) effective as an herbicide (PubMed:39511739). PbrB catalyzes the second step within the pathway and converts (-)-daucane produced by the terpene cyclase pbrA into an alpha-epoxy carboxylate intermediate which is further converted into the tricyclic aspterric acid by the cytochrome P450 monooxygenase pbrC (By similarity)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -694,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39511739\",\"source\":\"PubMed\"}],\"value\":\"Secondary metabolite biosynthesis; terpenoid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -713,15 +465,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/12",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0043386\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:mycotoxin biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-ARBA\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/12",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -732,15 +484,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/13",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0016114\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:terpenoid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-UniPathway\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -751,15 +503,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json",
-  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
-  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhou Z.\",\"Zhang Y.\",\"Wu Q.\",\"Hou X.\",\"Zhang B.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39511739\"},{\"database\":\"DOI\",\"id\":\"10.1021/acs.jafc.4c08468\"}],\"citationType\":\"journal article\",\"firstPage\":\"25755\",\"id\":\"39511739\",\"journal\":\"J. Agric. Food Chem.\",\"lastPage\":\"25766\",\"publicationDate\":\"2024\",\"title\":\"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\",\"volume\":\"72\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"PATHWAY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:04.728054+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1951db18aae8ea655496671dae4ed2ceed386d0303b535f8d545d4a738ebd6b4",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0F7U0K0.json"
 }
 ```
 
@@ -769,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   PBRB_PENBI              Reviewed;         512 AA.\nAC   A0A0F7U0K0;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-JUL-2015, sequence version 1.\nDT   28-JAN-2026, entry version 33.\nDE   RecName: Full=Cytochrome P450 monooxygenase pbrB {ECO:0000303|PubMed:39511739};\nDE            EC=1.-.-.- {ECO:0000305|PubMed:39511739};\nDE   AltName: Full=Aspterric acid biosynthesis cluster protein B {ECO:0000303|PubMed:39511739};\nGN   Name=pbrB {ECO:0000303|PubMed:39511739}; ORFNames=PMG11_09715;\nOS   Penicillium brasilianum.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=104259;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 
@@ -790,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 22-27",
   "excerpt": "RN   [2]\nRP   FUNCTION, PATHWAY, AND BIOTECHNOLOGY.\nRX   PubMed=39511739; DOI=10.1021/acs.jafc.4c08468;\nRA   Zhou Z., Zhang Y., Wu Q., Hou X., Zhang B.;\nRT   \"Yeast synthesis and herbicidal activity evaluation of aspterric acid.\";\nRL   J. Agric. Food Chem. 72:25755-25766(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-27",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 
@@ -811,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 28-36",
   "excerpt": "CC   -!- FUNCTION: Cytochrome P450 monooxygenase; part of the gene cluster that\nCC       mediates the biosynthesis of the sesquiterpenoid aspterric acid (AA),\nCC       an inhibitor of dihydroxy-acid dehydratase (DHAD) effective as an\nCC       herbicide (PubMed:39511739). PbrB catalyzes the second step within the\nCC       pathway and converts (-)-daucane produced by the terpene cyclase pbrA\nCC       into an alpha-epoxy carboxylate intermediate which is further converted\nCC       into the tricyclic aspterric acid by the cytochrome P450 monooxygenase\nCC       pbrC (By similarity). {ECO:0000250|UniProtKB:Q0CPG7,\nCC       ECO:0000269|PubMed:39511739}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 28-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 
@@ -832,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 40-41",
   "excerpt": "CC   -!- PATHWAY: Secondary metabolite biosynthesis; terpenoid biosynthesis.\nCC       {ECO:0000269|PubMed:39511739}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 40-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 
@@ -853,18 +605,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 33,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33",
-  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
-  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
-  "source_locator": "lines 65-65",
   "excerpt": "DR   GO; GO:0043386; P:mycotoxin biosynthetic process; IEA:UniProtKB-ARBA.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 33,
+  "retrieved_utc": "2026-11-02T04:24:07.037117+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 65-65",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "eab96187eebe2ceb8d100d0fe3a19afb001293de95e59f34fe76806382e6eed2",
+  "url": "https://rest.uniprot.org/unisave/A0A0F7U0K0?format=txt&versions=33"
 }
 ```
 
@@ -875,15 +627,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 97922-97931",
   "excerpt": "[Term]\nid: GO:0009612\nname: response to mechanical stimulus\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a mechanical stimulus.\" [GOC:hb]\nsynonym: \"chemi-mechanical coupling\" RELATED []\nsynonym: \"mechanical stimulus response\" EXACT []\nis_a: GO:0009605 ! response to external stimulus\nis_a: GO:0009628 ! response to abiotic stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009612",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 97922-97931",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009612"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -894,15 +646,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 107155-107163",
   "excerpt": "[Term]\nid: GO:0010575\nname: positive regulation of vascular endothelial growth factor production\nnamespace: biological_process\ndef: \"Any process that increases or activates the frequency, rate, or extent of production of vascular endothelial growth factor.\" [GOC:BHF, GOC:rl]\nis_a: GO:0001819 ! positive regulation of cytokine production\nis_a: GO:0010574 ! regulation of vascular endothelial growth factor production\nrelationship: positively_regulates GO:0010573 ! vascular endothelial growth factor production\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0010575",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 107155-107163",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0010575"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -913,15 +665,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 109322-109330",
   "excerpt": "[Term]\nid: GO:0010821\nname: regulation of mitochondrion organization\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of a mitochondrion.\" [GOC:dph, GOC:tb]\nsynonym: \"regulation of mitochondrion organisation\" EXACT [GOC:mah]\nis_a: GO:0033043 ! regulation of organelle organization\nrelationship: regulates GO:0007005 ! mitochondrion organization\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0010821",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 109322-109330",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0010821"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -932,15 +684,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 246712-246723",
   "excerpt": "[Term]\nid: GO:0043386\nname: mycotoxin biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of a mycotoxin, any poisonous substance produced by a fungus.\" [GOC:jl]\nsynonym: \"mycotoxin anabolism\" EXACT []\nsynonym: \"mycotoxin biosynthesis\" EXACT []\nsynonym: \"mycotoxin formation\" EXACT []\nsynonym: \"mycotoxin synthesis\" EXACT []\nis_a: GO:0009403 ! toxin biosynthetic process\nis_a: GO:0043385 ! mycotoxin metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043386",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 246712-246723",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043386"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

@@ -1,18 +1,16 @@
-# cofactor_0183: before and after transfer clarification
+# cofactor_0183
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0183.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0183.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **D** — Fe(2+)
+**Expected answer:** **D** — Fe(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,230 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry annotates Fe(2+) as the cofactor and says one Fe(2+) ion binds per subunit. The annotation is transferred from a human homolog, so it supports the key but is not direct experimental evidence for this protein.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a JmjC-domain oxygenase, including an HxD motif (the H-D in “PHD”) and nearby histidines consistent with the conserved metal-binding site. JmjC oxygenases use Fe(II), distinguishing it from the listed flavin, molybdenum, and heme cofactors.
-
-
-**Missing item-specific fact**
-
-> No protein-specific fact is strictly needed for this family-level inference; direct confirmation of this protein’s cofactor would require experimental evidence or an annotation.
-
-
-**Reason**
-
-> The sequence provides a defensible family and catalytic-metal clue that meaningfully favors Fe(2+). This is a predictive inference, not proof of experimentally measured cofactor binding.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, Fe(2+) is the cofactor consistent with the JmjC oxygenase family.
-
-
-### Important caveats
-
-- The database cofactor annotation is supported by evidence transferred from human Q8N371, rather than direct experimental evidence for the supplied Drosophila sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a JmjC-domain oxygenase, including an HxD motif (the H-D in “PHD”) and nearby histidines consistent with the conserved metal-binding site. JmjC oxygenases use Fe(II), distinguishing it from the listed flavin, molybdenum, and heme cofactors.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "No protein-specific fact is strictly needed for this family-level inference; direct confirmation of this protein’s cofactor would require experimental evidence or an annotation.",
-    "reason": "The sequence provides a defensible family and catalytic-metal clue that meaningfully favors Fe(2+). This is a predictive inference, not proof of experimentally measured cofactor binding."
-  },
-  "case_id": "cofactor_0183",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates Fe(2+) as the cofactor and says one Fe(2+) ion binds per subunit. The annotation is transferred from a human homolog, so it supports the key but is not direct experimental evidence for this protein."
-  },
-  "important_caveats": [
-    "The database cofactor annotation is supported by evidence transferred from human Q8N371, rather than direct experimental evidence for the supplied Drosophila sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, Fe(2+) is the cofactor consistent with the JmjC oxygenase family."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0183",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates Fe(2+) as the cofactor and says one Fe(2+) ion binds per subunit. The annotation is transferred from a human homolog, so it supports the key but is not direct experimental evidence for this protein.",
-    "evidence_ids": ["C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence is consistent with a JmjC-domain oxygenase, including an HxD motif (the H-D in “PHD”) and nearby histidines consistent with the conserved metal-binding site. JmjC oxygenases use Fe(II), distinguishing it from the listed flavin, molybdenum, and heme cofactors.",
-    "missing_item_specific_fact": "No protein-specific fact is strictly needed for this family-level inference; direct confirmation of this protein’s cofactor would require experimental evidence or an annotation.",
-    "reason": "The sequence provides a defensible family and catalytic-metal clue that meaningfully favors Fe(2+). This is a predictive inference, not proof of experimentally measured cofactor binding."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, Fe(2+) is the cofactor consistent with the JmjC oxygenase family."
-  },
-  "important_caveats": [
-    "The database cofactor annotation is supported by evidence transferred from human Q8N371, rather than direct experimental evidence for the supplied Drosophila sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q9W0M3 (KDM8_DROME, Jumonji C domain-containing protein 5 / Lysine-specific demethylase 8) annotates the cofactor as Fe(2+) (CHEBI:29033), binding 1 Fe(2+) ion per subunit. The EC number 1.14.11.73 (2-oxoglutarate-dependent dioxygenase) is consistent with Fe(II) as the metal cofactor. However, the evidence code is ECO:0000250 (inferred from similarity to human Q8N371), so this is a transferred annotation rather than direct experimental measurement on the Drosophila protein. The JmjC superfamily is universally Fe(II)/2-oxoglutarate-dependent, making the transferred annotation highly reliable.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C4](#evidence-c4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> If the JmjC domain could be identified in the sequence, the reasoning chain 'JmjC domain → Fe(II)/2-oxoglutarate-dependent dioxygenase superfamily → Fe(2+) cofactor' would be sound general biology. However, the input provides only a raw 401-aa sequence with no domain annotation, protein name, or functional context. Identifying the JmjC domain from the sequence alone requires recognizing its conserved HxD/E…H metal-coordinating motif and overall fold pattern, which is a trained-predictor or memorization task rather than a deductive reasoning step from general principles.
-
-
-**Missing item-specific fact**
-
-> The identification of this sequence as a Jumonji C (JmjC) domain-containing protein, or equivalently the recognition of the specific JmjC domain boundaries and its characteristic Fe(II)-coordinating His/Asp/Glu residues within the 401-residue sequence, is the critical item-specific fact not derivable by general reasoning from the raw sequence alone.
-
-
-**Reason**
-
-> The question requires first identifying the protein family (JmjC domain) from the sequence, which is a pattern-recognition/memorization step. Once identified, the Fe(II) cofactor follows from well-known superfamily biology. Without the family identification, none of the four cofactor options (FMN, Mo-bis-MGD, heme b, Fe2+) can be meaningfully distinguished from the sequence by general biological reasoning. No obvious heme-binding (CXXCH), flavin-binding, or molybdopterin-binding motifs are present to rule out alternatives, and no positive Fe(II)-specific motif is identifiable without prior domain knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Once the JmjC domain is recognized, Fe(2+) is the only defensible answer. The distractors (FMN, Mo-bis-MGD, heme b) correspond to entirely different enzyme classes with distinct sequence signatures (flavin-binding motifs, molybdenum cofactor motifs, CXXCH heme-binding motifs) that are absent here. The choices are well-differentiated for a knowledgeable annotator.
-
-
-### Important caveats
-
-- The cofactor annotation carries evidence code ECO:0000250 (inferred from similarity to human JMJD5, Q8N371), not direct experimental evidence on the Drosophila protein. However, the JmjC superfamily's Fe(II)/2-oxoglutarate dependence is one of the most robustly established facts in enzymology, making the transferred annotation highly reliable.
-- The UniProt entry was first publicly released on 2025-04-09 (Swiss-Prot), meaning the reviewed annotation postdates many possible training cutoffs. The TrEMBL-level annotation (and the well-known JmjC family biology) would have been available earlier.
-- The sequence match is exact (SHA-256 confirmed) between the benchmark input and the UniProt canonical entry, so the annotation applies to this exact sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "If the JmjC domain could be identified in the sequence, the reasoning chain 'JmjC domain → Fe(II)/2-oxoglutarate-dependent dioxygenase superfamily → Fe(2+) cofactor' would be sound general biology. However, the input provides only a raw 401-aa sequence with no domain annotation, protein name, or functional context. Identifying the JmjC domain from the sequence alone requires recognizing its conserved HxD/E…H metal-coordinating motif and overall fold pattern, which is a trained-predictor or memorization task rather than a deductive reasoning step from general principles.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identification of this sequence as a Jumonji C (JmjC) domain-containing protein, or equivalently the recognition of the specific JmjC domain boundaries and its characteristic Fe(II)-coordinating His/Asp/Glu residues within the 401-residue sequence, is the critical item-specific fact not derivable by general reasoning from the raw sequence alone.",
-    "reason": "The question requires first identifying the protein family (JmjC domain) from the sequence, which is a pattern-recognition/memorization step. Once identified, the Fe(II) cofactor follows from well-known superfamily biology. Without the family identification, none of the four cofactor options (FMN, Mo-bis-MGD, heme b, Fe2+) can be meaningfully distinguished from the sequence by general biological reasoning. No obvious heme-binding (CXXCH), flavin-binding, or molybdopterin-binding motifs are present to rule out alternatives, and no positive Fe(II)-specific motif is identifiable without prior domain knowledge."
-  },
-  "case_id": "cofactor_0183",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C4",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q9W0M3 (KDM8_DROME, Jumonji C domain-containing protein 5 / Lysine-specific demethylase 8) annotates the cofactor as Fe(2+) (CHEBI:29033), binding 1 Fe(2+) ion per subunit. The EC number 1.14.11.73 (2-oxoglutarate-dependent dioxygenase) is consistent with Fe(II) as the metal cofactor. However, the evidence code is ECO:0000250 (inferred from similarity to human Q8N371), so this is a transferred annotation rather than direct experimental measurement on the Drosophila protein. The JmjC superfamily is universally Fe(II)/2-oxoglutarate-dependent, making the transferred annotation highly reliable."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (inferred from similarity to human JMJD5, Q8N371), not direct experimental evidence on the Drosophila protein. However, the JmjC superfamily's Fe(II)/2-oxoglutarate dependence is one of the most robustly established facts in enzymology, making the transferred annotation highly reliable.",
-    "The UniProt entry was first publicly released on 2025-04-09 (Swiss-Prot), meaning the reviewed annotation postdates many possible training cutoffs. The TrEMBL-level annotation (and the well-known JmjC family biology) would have been available earlier.",
-    "The sequence match is exact (SHA-256 confirmed) between the benchmark input and the UniProt canonical entry, so the annotation applies to this exact sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the JmjC domain is recognized, Fe(2+) is the only defensible answer. The distractors (FMN, Mo-bis-MGD, heme b) correspond to entirely different enzyme classes with distinct sequence signatures (flavin-binding motifs, molybdenum cofactor motifs, CXXCH heme-binding motifs) that are absent here. The choices are well-differentiated for a knowledgeable annotator."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0183",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q9W0M3 (KDM8_DROME, Jumonji C domain-containing protein 5 / Lysine-specific demethylase 8) annotates the cofactor as Fe(2+) (CHEBI:29033), binding 1 Fe(2+) ion per subunit. The EC number 1.14.11.73 (2-oxoglutarate-dependent dioxygenase) is consistent with Fe(II) as the metal cofactor. However, the evidence code is ECO:0000250 (inferred from similarity to human Q8N371), so this is a transferred annotation rather than direct experimental measurement on the Drosophila protein. The JmjC superfamily is universally Fe(II)/2-oxoglutarate-dependent, making the transferred annotation highly reliable.",
-    "evidence_ids": ["C5", "H3", "C4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "If the JmjC domain could be identified in the sequence, the reasoning chain 'JmjC domain → Fe(II)/2-oxoglutarate-dependent dioxygenase superfamily → Fe(2+) cofactor' would be sound general biology. However, the input provides only a raw 401-aa sequence with no domain annotation, protein name, or functional context. Identifying the JmjC domain from the sequence alone requires recognizing its conserved HxD/E…H metal-coordinating motif and overall fold pattern, which is a trained-predictor or memorization task rather than a deductive reasoning step from general principles.",
-    "missing_item_specific_fact": "The identification of this sequence as a Jumonji C (JmjC) domain-containing protein, or equivalently the recognition of the specific JmjC domain boundaries and its characteristic Fe(II)-coordinating His/Asp/Glu residues within the 401-residue sequence, is the critical item-specific fact not derivable by general reasoning from the raw sequence alone.",
-    "reason": "The question requires first identifying the protein family (JmjC domain) from the sequence, which is a pattern-recognition/memorization step. Once identified, the Fe(II) cofactor follows from well-known superfamily biology. Without the family identification, none of the four cofactor options (FMN, Mo-bis-MGD, heme b, Fe2+) can be meaningfully distinguished from the sequence by general biological reasoning. No obvious heme-binding (CXXCH), flavin-binding, or molybdopterin-binding motifs are present to rule out alternatives, and no positive Fe(II)-specific motif is identifiable without prior domain knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Once the JmjC domain is recognized, Fe(2+) is the only defensible answer. The distractors (FMN, Mo-bis-MGD, heme b) correspond to entirely different enzyme classes with distinct sequence signatures (flavin-binding motifs, molybdenum cofactor motifs, CXXCH heme-binding motifs) that are absent here. The choices are well-differentiated for a knowledgeable annotator."
-  },
-  "important_caveats": [
-    "The cofactor annotation carries evidence code ECO:0000250 (inferred from similarity to human JMJD5, Q8N371), not direct experimental evidence on the Drosophila protein. However, the JmjC superfamily's Fe(II)/2-oxoglutarate dependence is one of the most robustly established facts in enzymology, making the transferred annotation highly reliable.",
-    "The UniProt entry was first publicly released on 2025-04-09 (Swiss-Prot), meaning the reviewed annotation postdates many possible training cutoffs. The TrEMBL-level annotation (and the well-known JmjC family biology) would have been available earlier.",
-    "The sequence match is exact (SHA-256 confirmed) between the benchmark input and the UniProt canonical entry, so the annotation applies to this exact sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -376,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -488,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9W0M3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "8ae812d7a91d29ae771da37685183b9f346a91cb506ca5e697440360355ffbac",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 401,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "8ae812d7a91d29ae771da37685183b9f346a91cb506ca5e697440360355ffbac",
   "current_entry_audit": {
     "entryVersion": 172,
     "firstPublicDate": "2025-04-09",
@@ -519,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-11-30",
     "sequenceVersion": 2
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
-  "current_source_sequence_sha256": "8ae812d7a91d29ae771da37685183b9f346a91cb506ca5e697440360355ffbac",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 401,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "8ae812d7a91d29ae771da37685183b9f346a91cb506ca5e697440360355ffbac",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 170,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 2
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9W0M3",
   "selected_historical_entry_version": 170,
+  "selected_historical_record_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
+  "selected_historical_source_sequence_length": 401,
+  "selected_historical_source_sequence_sha256": "8ae812d7a91d29ae771da37685183b9f346a91cb506ca5e697440360355ffbac",
   "selected_historical_version": {
     "accession": "Q9W0M3",
     "database": "Swiss-Prot",
@@ -537,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "KDM8_DROME",
     "sequenceVersion": 2
-  },
-  "selected_historical_record_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
-  "selected_historical_source_sequence_sha256": "8ae812d7a91d29ae771da37685183b9f346a91cb506ca5e697440360355ffbac",
-  "selected_historical_source_sequence_length": 401,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 170,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 2
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -568,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json",
-  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
-  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9W0M3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json"
 }
 ```
 
@@ -587,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json",
-  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
-  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":172,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-11-30\",\"sequenceVersion\":2}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json"
 }
 ```
 
@@ -606,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json",
-  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
-  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json"
 }
 ```
 
@@ -625,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json",
-  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
-  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Lysine-specific demethylase 8\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8N371\",\"source\":\"UniProtKB\"}],\"value\":\"1.14.11.73\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8N371\",\"source\":\"UniProtKB\"}],\"value\":\"3.4.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Jumonji C domain-containing protein 5\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json"
 }
 ```
 
@@ -644,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json",
-  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
-  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29033\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8N371\",\"source\":\"UniProtKB\"}],\"name\":\"Fe(2+)\"}],\"commentType\":\"COFACTOR\",\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8N371\",\"source\":\"UniProtKB\"}],\"value\":\"Binds 1 Fe(2+) ion per subunit.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:33:43.683489+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1ea6b03bc8ddb55213f5b2d1a92a5f5660c411ba7d6b4ad94233da43076eafe1",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9W0M3.json"
 }
 ```
 
@@ -662,18 +430,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 170,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W0M3?format=txt&versions=170",
-  "source_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
-  "retrieved_utc": "2026-11-02T04:33:45.948211+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   KDM8_DROME              Reviewed;         401 AA.\nAC   Q9W0M3; M9PDS1; Q86NX2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   30-NOV-2010, sequence version 2.\nDT   28-JAN-2026, entry version 170.\nDE   RecName: Full=Jumonji C domain-containing protein 5 {ECO:0000305};\nDE            EC=1.14.11.73 {ECO:0000250|UniProtKB:Q8N371};\nDE            EC=3.4.-.- {ECO:0000250|UniProtKB:Q8N371};\nDE   AltName: Full=Lysine-specific demethylase 8 {ECO:0000305};\nGN   Name=JMJD5 {ECO:0000312|FlyBase:FBgn0035166};\nGN   Synonyms=Kdm8 {ECO:0000312|FlyBase:FBgn0035166};\nGN   ORFNames=CG13902 {ECO:0000312|FlyBase:FBgn0035166};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 170,
+  "retrieved_utc": "2026-11-02T04:33:45.948211+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
+  "url": "https://rest.uniprot.org/unisave/Q9W0M3?format=txt&versions=170"
 }
 ```
 
@@ -683,18 +451,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 170,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W0M3?format=txt&versions=170",
-  "source_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
-  "retrieved_utc": "2026-11-02T04:33:45.948211+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Jumonji C domain-containing protein 5 {ECO:0000305};\nDE            EC=1.14.11.73 {ECO:0000250|UniProtKB:Q8N371};\nDE            EC=3.4.-.- {ECO:0000250|UniProtKB:Q8N371};\nDE   AltName: Full=Lysine-specific demethylase 8 {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 170,
+  "retrieved_utc": "2026-11-02T04:33:45.948211+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
+  "url": "https://rest.uniprot.org/unisave/Q9W0M3?format=txt&versions=170"
 }
 ```
 
@@ -704,18 +472,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 170,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9W0M3?format=txt&versions=170",
-  "source_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
-  "retrieved_utc": "2026-11-02T04:33:45.948211+00:00",
-  "source_locator": "lines 107-110",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Fe(2+); Xref=ChEBI:CHEBI:29033;\nCC         Evidence={ECO:0000250|UniProtKB:Q8N371};\nCC       Note=Binds 1 Fe(2+) ion per subunit. {ECO:0000250|UniProtKB:Q8N371};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 170,
+  "retrieved_utc": "2026-11-02T04:33:45.948211+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 2,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 107-110",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "45e70668e7a96138303d865036cba4c2edb7da0e5634453cb9fbab186acc3750",
+  "url": "https://rest.uniprot.org/unisave/Q9W0M3?format=txt&versions=170"
 }
 ```
 

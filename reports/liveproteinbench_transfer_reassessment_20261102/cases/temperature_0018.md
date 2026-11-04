@@ -1,18 +1,16 @@
-# temperature_0018: before and after transfer clarification
+# temperature_0018
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/temperature_0018.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/temperature_0018.txt)
 
 **Task:** `temperature`  
-**Author key, unchanged:** **A** — 37
+**Expected answer:** **A** — 37
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,242 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the UniProt record for this protein, which reports an optimum temperature of 37 °C with experimental evidence attributed to PubMed:20529859. This supports choice A as the measured optimum, rather than merely inferring it from sequence composition.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The supplied sequence gives no defensible way to distinguish an exact optimum of 37 °C from the listed alternative temperatures or ranges. General thermal-adaptation heuristics do not establish this protein's measured optimum.
-
-
-**Missing item-specific fact**
-
-> The protein-specific optimum-temperature measurement, reported as 37 °C in the matched record, is absent from the input.
-
-
-**Reason**
-
-> The key is supported by a protein-specific experimental annotation, but that annotation and the protein's identity are not provided to the evaluated model.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "C",
-  "D"
-]
-```
-
-> The temperature ranges overlap: any value from 44 to 49 °C fits both C (44–49) and D (38–50). The supported optimum of 37 °C does not fall in that overlap.
-
-
-### Important caveats
-
-- The question describes thermal-adaptation categories but supplies numerical temperatures and ranges as choices; the evidence supports a measured optimum temperature of 37 °C.
-- The experimental attribution is preserved from the UniProt annotation and cited study; the primary paper was not independently retrieved or validated here.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied sequence gives no defensible way to distinguish an exact optimum of 37 °C from the listed alternative temperatures or ranges. General thermal-adaptation heuristics do not establish this protein's measured optimum.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific optimum-temperature measurement, reported as 37 °C in the matched record, is absent from the input.",
-    "reason": "The key is supported by a protein-specific experimental annotation, but that annotation and the protein's identity are not provided to the evaluated model."
-  },
-  "case_id": "temperature_0018",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt record for this protein, which reports an optimum temperature of 37 °C with experimental evidence attributed to PubMed:20529859. This supports choice A as the measured optimum, rather than merely inferring it from sequence composition."
-  },
-  "important_caveats": [
-    "The question describes thermal-adaptation categories but supplies numerical temperatures and ranges as choices; the evidence supports a measured optimum temperature of 37 °C.",
-    "The experimental attribution is preserved from the UniProt annotation and cited study; the primary paper was not independently retrieved or validated here."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "C",
-      "D"
-    ],
-    "reason": "The temperature ranges overlap: any value from 44 to 49 °C fits both C (44–49) and D (38–50). The supported optimum of 37 °C does not fall in that overlap."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "temperature_0018",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the UniProt record for this protein, which reports an optimum temperature of 37 °C with experimental evidence attributed to PubMed:20529859. This supports choice A as the measured optimum, rather than merely inferring it from sequence composition.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The supplied sequence gives no defensible way to distinguish an exact optimum of 37 °C from the listed alternative temperatures or ranges. General thermal-adaptation heuristics do not establish this protein's measured optimum.",
-    "missing_item_specific_fact": "The protein-specific optimum-temperature measurement, reported as 37 °C in the matched record, is absent from the input.",
-    "reason": "The key is supported by a protein-specific experimental annotation, but that annotation and the protein's identity are not provided to the evaluated model."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["C", "D"],
-    "reason": "The temperature ranges overlap: any value from 44 to 49 °C fits both C (44–49) and D (38–50). The supported optimum of 37 °C does not fall in that overlap."
-  },
-  "important_caveats": [
-    "The question describes thermal-adaptation categories but supplies numerical temperatures and ranges as choices; the evidence supports a measured optimum temperature of 37 °C.",
-    "The experimental attribution is preserved from the UniProt annotation and cited study; the primary paper was not independently retrieved or validated here."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A7GKX7 (UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase from Bacillus cytotoxicus strain NVH 391-98) reports 'Optimum temperature is 37 degrees Celsius' with experimental evidence code ECO:0000269 from PubMed:20529859 (Gu et al., J. Biol. Chem. 2010). The benchmark sequence matches the UniProt sequence exactly (SHA-256 confirmed). Bacillus cytotoxicus is a mesophilic human pathogen, making 37°C biologically consistent. The answer A (37) is directly supported by a published experimental measurement.
-
-Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C3](#evidence-c3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model could potentially rule out B (79°C) as thermophilic by noting the absence of extensive ion-pair networks, high charged-residue content, and compact hydrophobic cores typical of thermophilic proteins. However, distinguishing the exact value 37 from the ranges 38-50 (D) or 44-49 (C) based on sequence features alone is not feasible. All three remaining options fall in the mesophilic to moderately warm range, and subtle sequence composition differences cannot reliably resolve whether the experimental optimum is 37, 45, or 48°C. Recognizing the organism as Bacillus cytotoxicus (a mesophilic human pathogen growing at ~37°C) would help, but that identification itself requires database lookup rather than de novo sequence reasoning.
-
-
-**Missing item-specific fact**
-
-> The specific experimentally measured optimum temperature of 37°C from PubMed:20529859 (Gu et al., 2010, J. Biol. Chem. 285:24825-24833) is required to select A over D (38-50) or C (44-49). No sequence-derived heuristic can distinguish 37 from 38-50 with confidence.
-
-
-**Reason**
-
-> The question requires selecting a precise experimental measurement (37°C) over overlapping mesophilic ranges (38-50, 44-49). While general biological knowledge can exclude the thermophilic option (79°C), the fine-grained distinction among mesophilic values depends on knowing the specific experimental result for this enzyme, not on interpretable sequence features.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Although A (37) and D (38-50) are numerically close, 37 falls strictly below the lower bound of D (38), so D does not contain the true experimental value. C (44-49) and B (79) are clearly incompatible with a mesophilic human pathogen. Given the exact experimental value of 37°C, only A is correct. The near-overlap between A and D is a design weakness but does not create genuine ambiguity in the correct answer.
-
-
-### Important caveats
-
-- The identity of the protein (A7GKX7, Bacillus cytotoxicus) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence and choices with no organism or function annotation.
-- The temperature measurement (37°C) is an in vitro enzymatic optimum reported in a 2010 JBC paper; it may differ from the organism's growth temperature or the protein's stability optimum in vivo.
-- The question format presents a single value (37) alongside ranges (44-49, 38-50), making the task partly about format matching (exact value vs range) in addition to biological reasoning.
-- The UniProt entry was first publicly released on 2025-02-05; if the benchmark was constructed before that date, the annotation source may differ from the currently retrieved record.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model could potentially rule out B (79°C) as thermophilic by noting the absence of extensive ion-pair networks, high charged-residue content, and compact hydrophobic cores typical of thermophilic proteins. However, distinguishing the exact value 37 from the ranges 38-50 (D) or 44-49 (C) based on sequence features alone is not feasible. All three remaining options fall in the mesophilic to moderately warm range, and subtle sequence composition differences cannot reliably resolve whether the experimental optimum is 37, 45, or 48°C. Recognizing the organism as Bacillus cytotoxicus (a mesophilic human pathogen growing at ~37°C) would help, but that identification itself requires database lookup rather than de novo sequence reasoning.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific experimentally measured optimum temperature of 37°C from PubMed:20529859 (Gu et al., 2010, J. Biol. Chem. 285:24825-24833) is required to select A over D (38-50) or C (44-49). No sequence-derived heuristic can distinguish 37 from 38-50 with confidence.",
-    "reason": "The question requires selecting a precise experimental measurement (37°C) over overlapping mesophilic ranges (38-50, 44-49). While general biological knowledge can exclude the thermophilic option (79°C), the fine-grained distinction among mesophilic values depends on knowing the specific experimental result for this enzyme, not on interpretable sequence features."
-  },
-  "case_id": "temperature_0018",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H3",
-      "C3"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A7GKX7 (UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase from Bacillus cytotoxicus strain NVH 391-98) reports 'Optimum temperature is 37 degrees Celsius' with experimental evidence code ECO:0000269 from PubMed:20529859 (Gu et al., J. Biol. Chem. 2010). The benchmark sequence matches the UniProt sequence exactly (SHA-256 confirmed). Bacillus cytotoxicus is a mesophilic human pathogen, making 37°C biologically consistent. The answer A (37) is directly supported by a published experimental measurement."
-  },
-  "important_caveats": [
-    "The identity of the protein (A7GKX7, Bacillus cytotoxicus) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence and choices with no organism or function annotation.",
-    "The temperature measurement (37°C) is an in vitro enzymatic optimum reported in a 2010 JBC paper; it may differ from the organism's growth temperature or the protein's stability optimum in vivo.",
-    "The question format presents a single value (37) alongside ranges (44-49, 38-50), making the task partly about format matching (exact value vs range) in addition to biological reasoning.",
-    "The UniProt entry was first publicly released on 2025-02-05; if the benchmark was constructed before that date, the annotation source may differ from the currently retrieved record."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although A (37) and D (38-50) are numerically close, 37 falls strictly below the lower bound of D (38), so D does not contain the true experimental value. C (44-49) and B (79) are clearly incompatible with a mesophilic human pathogen. Given the exact experimental value of 37°C, only A is correct. The near-overlap between A and D is a design weakness but does not create genuine ambiguity in the correct answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "temperature_0018",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A7GKX7 (UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase from Bacillus cytotoxicus strain NVH 391-98) reports 'Optimum temperature is 37 degrees Celsius' with experimental evidence code ECO:0000269 from PubMed:20529859 (Gu et al., J. Biol. Chem. 2010). The benchmark sequence matches the UniProt sequence exactly (SHA-256 confirmed). Bacillus cytotoxicus is a mesophilic human pathogen, making 37°C biologically consistent. The answer A (37) is directly supported by a published experimental measurement.",
-    "evidence_ids": ["C5", "H3", "C3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model could potentially rule out B (79°C) as thermophilic by noting the absence of extensive ion-pair networks, high charged-residue content, and compact hydrophobic cores typical of thermophilic proteins. However, distinguishing the exact value 37 from the ranges 38-50 (D) or 44-49 (C) based on sequence features alone is not feasible. All three remaining options fall in the mesophilic to moderately warm range, and subtle sequence composition differences cannot reliably resolve whether the experimental optimum is 37, 45, or 48°C. Recognizing the organism as Bacillus cytotoxicus (a mesophilic human pathogen growing at ~37°C) would help, but that identification itself requires database lookup rather than de novo sequence reasoning.",
-    "missing_item_specific_fact": "The specific experimentally measured optimum temperature of 37°C from PubMed:20529859 (Gu et al., 2010, J. Biol. Chem. 285:24825-24833) is required to select A over D (38-50) or C (44-49). No sequence-derived heuristic can distinguish 37 from 38-50 with confidence.",
-    "reason": "The question requires selecting a precise experimental measurement (37°C) over overlapping mesophilic ranges (38-50, 44-49). While general biological knowledge can exclude the thermophilic option (79°C), the fine-grained distinction among mesophilic values depends on knowing the specific experimental result for this enzyme, not on interpretable sequence features."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Although A (37) and D (38-50) are numerically close, 37 falls strictly below the lower bound of D (38), so D does not contain the true experimental value. C (44-49) and B (79) are clearly incompatible with a mesophilic human pathogen. Given the exact experimental value of 37°C, only A is correct. The near-overlap between A and D is a design weakness but does not create genuine ambiguity in the correct answer."
-  },
-  "important_caveats": [
-    "The identity of the protein (A7GKX7, Bacillus cytotoxicus) was inferred by the reviewer from dataset metadata; the evaluated model received only the raw sequence and choices with no organism or function annotation.",
-    "The temperature measurement (37°C) is an in vitro enzymatic optimum reported in a 2010 JBC paper; it may differ from the organism's growth temperature or the protein's stability optimum in vivo.",
-    "The question format presents a single value (37) alongside ranges (44-49, 38-50), making the task partly about format matching (exact value vs range) in addition to biological reasoning.",
-    "The UniProt entry was first publicly released on 2025-02-05; if the benchmark was constructed before that date, the annotation source may differ from the currently retrieved record."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A7GKX7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 321,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
   "current_entry_audit": {
     "entryVersion": 96,
     "firstPublicDate": "2025-02-05",
@@ -543,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-09-11",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "current_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 321,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 94,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A7GKX7",
   "selected_historical_entry_version": 94,
+  "selected_historical_record_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "selected_historical_source_sequence_length": 321,
+  "selected_historical_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
   "selected_historical_version": {
     "accession": "A7GKX7",
     "database": "Swiss-Prot",
@@ -561,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "UXNAS_BACCN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "selected_historical_source_sequence_sha256": "4c5f6d841731f9123f3dbb4943a6017c6602477e2820756b25be4ef0e94f0333",
-  "selected_historical_source_sequence_length": 321,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 94,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -592,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A7GKX7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -611,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":96,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-09-11\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -630,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Bacillota\",\"Bacilli\",\"Caryophanales\",\"Bacillaceae\",\"Bacillus\",\"Bacillus cereus group\"],\"scientificName\":\"Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98)\",\"taxonId\":315749}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -649,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-XylNAc synthase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"4.1.1.128\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"UDP-GlcNAcA decarboxylase\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -668,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"BIOPHYSICOCHEMICAL PROPERTIES\",\"kineticParameters\":{\"michaelisConstants\":[{\"constant\":67.0,\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"substrate\":\"UDP-GlcNAcA\",\"unit\":\"uM\"}],\"note\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"kcat is 0.47 sec(-1).\"}]}},\"phDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"Optimum pH is 8.2 (PubMed:20529859). No activity is observed below pH 4 (PubMed:20529859).\"}]},\"temperatureDependence\":{\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20529859\",\"source\":\"PubMed\"}],\"value\":\"Optimum temperature is 37 degrees Celsius.\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -687,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json",
-  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
-  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Gu X.\",\"Glushka J.\",\"Lee S.G.\",\"Bar-Peled M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20529859\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m110.125872\"}],\"citationType\":\"journal article\",\"firstPage\":\"24825\",\"id\":\"20529859\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"24833\",\"publicationDate\":\"2010\",\"title\":\"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\",\"volume\":\"285\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ADE43880.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 22905 / CIP 110041 / 391-98 / NVH 391-98\"}],\"referenceNumber\":2,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:00.082856+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "e37b9430cdb758a34827140a4468b1360af7ce820a7d40f214a2160c678d65be",
+  "url": "https://rest.uniprot.org/uniprotkb/A7GKX7.json"
 }
 ```
 
@@ -705,18 +461,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   UXNAS_BACCN             Reviewed;         321 AA.\nAC   A7GKX7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   11-SEP-2007, sequence version 1.\nDT   28-JAN-2026, entry version 94.\nDE   RecName: Full=UDP-N-acetyl-alpha-D-glucosaminuronate decarboxylase {ECO:0000305};\nDE            Short=UDP-GlcNAcA decarboxylase {ECO:0000303|PubMed:20529859};\nDE            EC=4.1.1.128 {ECO:0000269|PubMed:20529859};\nDE   AltName: Full=UDP-XylNAc synthase {ECO:0000303|PubMed:20529859};\nGN   Name=UXNAcS {ECO:0000303|PubMed:20529859};\nGN   OrderedLocusNames=Bcer98_0430 {ECO:0000312|EMBL:ABS20785.1};\nOS   Bacillus cytotoxicus (strain DSM 22905 / CIP 110041 / 391-98 / NVH 391-98).\nOC   Bacteria; Bacillati; Bacillota; Bacilli; Bacillales; Bacillaceae; Bacillus;\nOC   Bacillus cereus group.\nOX   NCBI_TaxID=315749;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -726,18 +482,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2] {ECO:0000312|EMBL:ADE43880.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, COFACTOR,\nRP   ACTIVITY REGULATION, BIOPHYSICOCHEMICAL PROPERTIES, AND SUBUNIT.\nRC   STRAIN=DSM 22905 / CIP 110041 / 391-98 / NVH 391-98;\nRX   PubMed=20529859; DOI=10.1074/jbc.m110.125872;\nRA   Gu X., Glushka J., Lee S.G., Bar-Peled M.;\nRT   \"Biosynthesis of a new UDP-sugar, UDP-2-acetamido-2-deoxyxylose, in the\nRT   human pathogen Bacillus cereus subspecies cytotoxis NVH 391-98.\";\nRL   J. Biol. Chem. 285:24825-24833(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 
@@ -747,18 +503,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 94,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94",
-  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
-  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
-  "source_locator": "lines 57-66",
   "excerpt": "CC   -!- BIOPHYSICOCHEMICAL PROPERTIES:\nCC       Kinetic parameters:\nCC         KM=67 uM for UDP-GlcNAcA {ECO:0000269|PubMed:20529859};\nCC         Note=kcat is 0.47 sec(-1). {ECO:0000269|PubMed:20529859};\nCC       pH dependence:\nCC         Optimum pH is 8.2 (PubMed:20529859). No activity is observed below pH\nCC         4 (PubMed:20529859). {ECO:0000269|PubMed:20529859};\nCC       Temperature dependence:\nCC         Optimum temperature is 37 degrees Celsius.\nCC         {ECO:0000269|PubMed:20529859};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 94,
+  "retrieved_utc": "2026-11-01T06:27:51.337169+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 57-66",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "3e6a7818add6ff28d4f35cd226e812162be4e132f88da510bdff71af66aa4fea",
+  "url": "https://rest.uniprot.org/unisave/A7GKX7?format=txt&versions=94"
 }
 ```
 

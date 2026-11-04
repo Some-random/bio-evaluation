@@ -1,18 +1,16 @@
-# GO_biological_process_0000: before and after transfer clarification
+# GO_biological_process_0000
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0000.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0000.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **A** — circadian behavior
+**Expected answer:** **A** — circadian behavior
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the Drosophila JMJD7 sequence in the cited records. That record annotates circadian behavior with IMP evidence and reports a possible role in regulating behavior and circadian rhythms. This supports A, while the qualified wording does not establish it as the protein's sole or primary function.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may be consistent with an enzyme, but it does not reveal a specific role in circadian behavior. The choices make some alternatives biologically implausible, but the sequence alone does not meaningfully distinguish circadian behavior from other animal behaviors.
-
-
-**Missing item-specific fact**
-
-> A protein-specific annotation or experimental finding linking Drosophila JMJD7 to circadian behavior.
-
-
-**Reason**
-
-> The decisive association is an item-specific functional finding absent from the input; identifying the exact protein and recalling its annotation would be lookup or memorization, not sequence-based reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports A among the listed choices; no evidence supplied supports another option for this protein.
-
-
-### Important caveats
-
-- The circadian-behavior annotation is evidence-based but qualified as a possible involvement; it does not imply that this is the protein's only or primary biological process.
-- The reviewer-only source match and annotation were not available in the original question.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may be consistent with an enzyme, but it does not reveal a specific role in circadian behavior. The choices make some alternatives biologically implausible, but the sequence alone does not meaningfully distinguish circadian behavior from other animal behaviors.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "A protein-specific annotation or experimental finding linking Drosophila JMJD7 to circadian behavior.",
-    "reason": "The decisive association is an item-specific functional finding absent from the input; identifying the exact protein and recalling its annotation would be lookup or memorization, not sequence-based reasoning."
-  },
-  "case_id": "GO_biological_process_0000",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the Drosophila JMJD7 sequence in the cited records. That record annotates circadian behavior with IMP evidence and reports a possible role in regulating behavior and circadian rhythms. This supports A, while the qualified wording does not establish it as the protein's sole or primary function."
-  },
-  "important_caveats": [
-    "The circadian-behavior annotation is evidence-based but qualified as a possible involvement; it does not imply that this is the protein's only or primary biological process.",
-    "The reviewer-only source match and annotation were not available in the original question."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports A among the listed choices; no evidence supplied supports another option for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0000",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the Drosophila JMJD7 sequence in the cited records. That record annotates circadian behavior with IMP evidence and reports a possible role in regulating behavior and circadian rhythms. This supports A, while the qualified wording does not establish it as the protein's sole or primary function.",
-    "evidence_ids": ["C5", "C6", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may be consistent with an enzyme, but it does not reveal a specific role in circadian behavior. The choices make some alternatives biologically implausible, but the sequence alone does not meaningfully distinguish circadian behavior from other animal behaviors.",
-    "missing_item_specific_fact": "A protein-specific annotation or experimental finding linking Drosophila JMJD7 to circadian behavior.",
-    "reason": "The decisive association is an item-specific functional finding absent from the input; identifying the exact protein and recalling its annotation would be lookup or memorization, not sequence-based reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports A among the listed choices; no evidence supplied supports another option for this protein."
-  },
-  "important_caveats": [
-    "The circadian-behavior annotation is evidence-based but qualified as a possible involvement; it does not imply that this is the protein's only or primary biological process.",
-    "The reviewer-only source match and annotation were not available in the original question."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q9VU77 (JMJD7_DROME, Drosophila melanogaster) carries a GO:0048512 'circadian behavior' annotation with evidence code IMP (Inferred by Mutant Phenotype) from PubMed:29339751 (Shalaby et al., 2018, 'JmjC domain proteins modulate circadian behaviors and sleep in Drosophila'). The FUNCTION comment states 'May be involved in regulation of behavior and circadian rhythms (PubMed:29339751).' The 'May be' qualifier indicates the circadian role is a phenotypic observation from a mutant study rather than a directly characterized molecular pathway, but the GO annotation itself is experimental (IMP) and matches the expected answer. The sequence matches Q9VU77 exactly (SHA-256 confirmed).
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4), [H5](#evidence-h5), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable JmjC-domain motifs (HxD/E and H…H patterns, e.g., 'GHKDF', 'HAGD', 'WFHH'), identifying it as a Jumonji-C domain protein—a class of 2-oxoglutarate-dependent oxygenases/histone modifiers involved in chromatin regulation. This identification allows elimination of options C ('de novo' IMP biosynthetic process, which involves multi-enzyme purine assembly on ribose-5-phosphate) and D (flavonoid biosynthetic process, a plant secondary-metabolite pathway irrelevant to an animal protein). Option B (mechanosensory behavior) is incompatible with a small (~316 AA) chromatin-modifying enzyme, as mechanosensory proteins are typically ion channels, cytoskeletal elements, or receptor complexes. Option A (circadian behavior) is the only remaining choice and is biologically coherent: circadian rhythms are driven by transcriptional-translational feedback loops, and chromatin modifiers (JmjC demethylases) can modulate circadian gene expression. Thus, domain identification plus general pathway knowledge meaningfully distinguishes A from B, C, and D.
-
-
-**Missing item-specific fact**
-
-> The positive, specific assignment to 'circadian behavior' (as opposed to, e.g., 'histone demethylation' or 'transcription regulation') derives from the mutant-phenotype study (PubMed:29339751) showing behavioral and sleep defects in JMJD7-mutant flies. The sequence alone cannot predict that this particular JmjC protein's behavioral phenotype is circadian rather than, say, locomotor or learning-related. However, among the four provided options, the elimination logic is sufficient.
-
-
-**Reason**
-
-> A model that recognizes the JmjC-domain signature can eliminate the three clearly incompatible options (biosynthetic enzymes, mechanosensory proteins) and select A as the only biologically plausible remaining choice. This constitutes a concrete biological reasoning chain from sequence features to answer selection, even though the precise behavioral annotation originates from a specific mutant study not derivable from sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options C and D describe metabolic biosynthetic pathways (purine ring assembly; plant flavonoid synthesis) that are structurally and functionally incompatible with a JmjC-domain oxygenase. Option B (mechanosensory behavior) requires ion-channel or cytoskeletal proteins, not a 316-AA peptidase/hydroxylase. Only A is compatible with the protein's domain architecture and organismal context. The 'May be involved' qualifier in UniProt introduces mild uncertainty about whether circadian behavior is the 'primary' process, but among the four choices it is the only one with any supporting annotation.
-
-
-### Important caveats
-
-- The GO annotation uses IMP (mutant phenotype) evidence with a 'May be involved' qualifier in the UniProt FUNCTION comment, indicating the circadian role is an observed phenotypic effect rather than a fully characterized molecular pathway role. JMJD7's primary molecular function is bifunctional peptidase/(3S)-lysyl hydroxylase activity.
-- The reviewer identified the accession (Q9VU77) from dataset metadata; this accession and its annotations were not provided to the evaluated model. The model must work from the raw sequence alone.
-- JMJD7 has an 'unusual dimeric JmjC fold' (PubMed:35410347), which may make canonical JmjC motif recognition somewhat less straightforward than for typical JmjC-domain histone demethylases.
-- The sequence length (316 AA) and absence of transmembrane domains or large catalytic multi-domain architecture are consistent with a small regulatory enzyme, aiding elimination of mechanosensory and biosynthetic options even without precise JmjC identification.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable JmjC-domain motifs (HxD/E and H…H patterns, e.g., 'GHKDF', 'HAGD', 'WFHH'), identifying it as a Jumonji-C domain protein—a class of 2-oxoglutarate-dependent oxygenases/histone modifiers involved in chromatin regulation. This identification allows elimination of options C ('de novo' IMP biosynthetic process, which involves multi-enzyme purine assembly on ribose-5-phosphate) and D (flavonoid biosynthetic process, a plant secondary-metabolite pathway irrelevant to an animal protein). Option B (mechanosensory behavior) is incompatible with a small (~316 AA) chromatin-modifying enzyme, as mechanosensory proteins are typically ion channels, cytoskeletal elements, or receptor complexes. Option A (circadian behavior) is the only remaining choice and is biologically coherent: circadian rhythms are driven by transcriptional-translational feedback loops, and chromatin modifiers (JmjC demethylases) can modulate circadian gene expression. Thus, domain identification plus general pathway knowledge meaningfully distinguishes A from B, C, and D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The positive, specific assignment to 'circadian behavior' (as opposed to, e.g., 'histone demethylation' or 'transcription regulation') derives from the mutant-phenotype study (PubMed:29339751) showing behavioral and sleep defects in JMJD7-mutant flies. The sequence alone cannot predict that this particular JmjC protein's behavioral phenotype is circadian rather than, say, locomotor or learning-related. However, among the four provided options, the elimination logic is sufficient.",
-    "reason": "A model that recognizes the JmjC-domain signature can eliminate the three clearly incompatible options (biosynthetic enzymes, mechanosensory proteins) and select A as the only biologically plausible remaining choice. This constitutes a concrete biological reasoning chain from sequence features to answer selection, even though the precise behavioral annotation originates from a specific mutant study not derivable from sequence alone."
-  },
-  "case_id": "GO_biological_process_0000",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H4",
-      "H5",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VU77 (JMJD7_DROME, Drosophila melanogaster) carries a GO:0048512 'circadian behavior' annotation with evidence code IMP (Inferred by Mutant Phenotype) from PubMed:29339751 (Shalaby et al., 2018, 'JmjC domain proteins modulate circadian behaviors and sleep in Drosophila'). The FUNCTION comment states 'May be involved in regulation of behavior and circadian rhythms (PubMed:29339751).' The 'May be' qualifier indicates the circadian role is a phenotypic observation from a mutant study rather than a directly characterized molecular pathway, but the GO annotation itself is experimental (IMP) and matches the expected answer. The sequence matches Q9VU77 exactly (SHA-256 confirmed)."
-  },
-  "important_caveats": [
-    "The GO annotation uses IMP (mutant phenotype) evidence with a 'May be involved' qualifier in the UniProt FUNCTION comment, indicating the circadian role is an observed phenotypic effect rather than a fully characterized molecular pathway role. JMJD7's primary molecular function is bifunctional peptidase/(3S)-lysyl hydroxylase activity.",
-    "The reviewer identified the accession (Q9VU77) from dataset metadata; this accession and its annotations were not provided to the evaluated model. The model must work from the raw sequence alone.",
-    "JMJD7 has an 'unusual dimeric JmjC fold' (PubMed:35410347), which may make canonical JmjC motif recognition somewhat less straightforward than for typical JmjC-domain histone demethylases.",
-    "The sequence length (316 AA) and absence of transmembrane domains or large catalytic multi-domain architecture are consistent with a small regulatory enzyme, aiding elimination of mechanosensory and biosynthetic options even without precise JmjC identification."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C and D describe metabolic biosynthetic pathways (purine ring assembly; plant flavonoid synthesis) that are structurally and functionally incompatible with a JmjC-domain oxygenase. Option B (mechanosensory behavior) requires ion-channel or cytoskeletal proteins, not a 316-AA peptidase/hydroxylase. Only A is compatible with the protein's domain architecture and organismal context. The 'May be involved' qualifier in UniProt introduces mild uncertainty about whether circadian behavior is the 'primary' process, but among the four choices it is the only one with any supporting annotation."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0000",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VU77 (JMJD7_DROME, Drosophila melanogaster) carries a GO:0048512 'circadian behavior' annotation with evidence code IMP (Inferred by Mutant Phenotype) from PubMed:29339751 (Shalaby et al., 2018, 'JmjC domain proteins modulate circadian behaviors and sleep in Drosophila'). The FUNCTION comment states 'May be involved in regulation of behavior and circadian rhythms (PubMed:29339751).' The 'May be' qualifier indicates the circadian role is a phenotypic observation from a mutant study rather than a directly characterized molecular pathway, but the GO annotation itself is experimental (IMP) and matches the expected answer. The sequence matches Q9VU77 exactly (SHA-256 confirmed).",
-    "evidence_ids": ["C5", "C6", "C7", "H4", "H5", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains recognizable JmjC-domain motifs (HxD/E and H…H patterns, e.g., 'GHKDF', 'HAGD', 'WFHH'), identifying it as a Jumonji-C domain protein—a class of 2-oxoglutarate-dependent oxygenases/histone modifiers involved in chromatin regulation. This identification allows elimination of options C ('de novo' IMP biosynthetic process, which involves multi-enzyme purine assembly on ribose-5-phosphate) and D (flavonoid biosynthetic process, a plant secondary-metabolite pathway irrelevant to an animal protein). Option B (mechanosensory behavior) is incompatible with a small (~316 AA) chromatin-modifying enzyme, as mechanosensory proteins are typically ion channels, cytoskeletal elements, or receptor complexes. Option A (circadian behavior) is the only remaining choice and is biologically coherent: circadian rhythms are driven by transcriptional-translational feedback loops, and chromatin modifiers (JmjC demethylases) can modulate circadian gene expression. Thus, domain identification plus general pathway knowledge meaningfully distinguishes A from B, C, and D.",
-    "missing_item_specific_fact": "The positive, specific assignment to 'circadian behavior' (as opposed to, e.g., 'histone demethylation' or 'transcription regulation') derives from the mutant-phenotype study (PubMed:29339751) showing behavioral and sleep defects in JMJD7-mutant flies. The sequence alone cannot predict that this particular JmjC protein's behavioral phenotype is circadian rather than, say, locomotor or learning-related. However, among the four provided options, the elimination logic is sufficient.",
-    "reason": "A model that recognizes the JmjC-domain signature can eliminate the three clearly incompatible options (biosynthetic enzymes, mechanosensory proteins) and select A as the only biologically plausible remaining choice. This constitutes a concrete biological reasoning chain from sequence features to answer selection, even though the precise behavioral annotation originates from a specific mutant study not derivable from sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C and D describe metabolic biosynthetic pathways (purine ring assembly; plant flavonoid synthesis) that are structurally and functionally incompatible with a JmjC-domain oxygenase. Option B (mechanosensory behavior) requires ion-channel or cytoskeletal proteins, not a 316-AA peptidase/hydroxylase. Only A is compatible with the protein's domain architecture and organismal context. The 'May be involved' qualifier in UniProt introduces mild uncertainty about whether circadian behavior is the 'primary' process, but among the four choices it is the only one with any supporting annotation."
-  },
-  "important_caveats": [
-    "The GO annotation uses IMP (mutant phenotype) evidence with a 'May be involved' qualifier in the UniProt FUNCTION comment, indicating the circadian role is an observed phenotypic effect rather than a fully characterized molecular pathway role. JMJD7's primary molecular function is bifunctional peptidase/(3S)-lysyl hydroxylase activity.",
-    "The reviewer identified the accession (Q9VU77) from dataset metadata; this accession and its annotations were not provided to the evaluated model. The model must work from the raw sequence alone.",
-    "JMJD7 has an 'unusual dimeric JmjC fold' (PubMed:35410347), which may make canonical JmjC motif recognition somewhat less straightforward than for typical JmjC-domain histone demethylases.",
-    "The sequence length (316 AA) and absence of transmembrane domains or large catalytic multi-domain architecture are consistent with a small regulatory enzyme, aiding elimination of mechanosensory and biosynthetic options even without precise JmjC identification."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -391,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VU77",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 316,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
   "current_entry_audit": {
     "entryVersion": 178,
     "firstPublicDate": "2025-04-09",
@@ -538,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "current_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 316,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 176,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VU77",
   "selected_historical_entry_version": 176,
+  "selected_historical_record_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "selected_historical_source_sequence_length": 316,
+  "selected_historical_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
   "selected_historical_version": {
     "accession": "Q9VU77",
     "database": "Swiss-Prot",
@@ -556,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "JMJD7_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "selected_historical_source_sequence_sha256": "733e4d48eefaab9b6305e750c192e23a03fad9599f5119a6f7f33245bd687968",
-  "selected_historical_source_sequence_length": 316,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 176,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VU77\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -610,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":178,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -629,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -648,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0036366\",\"source\":\"FlyBase\"}],\"value\":\"Jumonji domain containing protein 7\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35410347\",\"source\":\"PubMed\"}],\"value\":\"1.14.11.63\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P0C870\",\"source\":\"UniProtKB\"}],\"value\":\"3.4.-.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P0C870\",\"source\":\"UniProtKB\"}],\"value\":\"Bifunctional peptidase and (3S)-lysyl hydroxylase JMJD7\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -667,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P0C870\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29339751\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"35410347\",\"source\":\"PubMed\"}],\"value\":\"Bifunctional enzyme that acts both as an endopeptidase and 2-oxoglutarate-dependent monooxygenase (PubMed:35410347). Endopeptidase that cleaves histones N-terminal tails at the carboxyl side of methylated arginine or lysine residues, to generate 'tailless nucleosomes', which may trigger transcription elongation (By similarity). Hydroxylates the guanylate binding protein 128up (PubMed:35410347). May be involved in regulation of behavior and circadian rhythms (PubMed:29339751)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -686,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/48",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000315\",\"id\":\"29339751\",\"source\":\"PubMed\"}],\"id\":\"GO:0048512\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:circadian behavior\"},{\"key\":\"GoEvidenceType\",\"value\":\"IMP:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/48",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -705,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Shalaby N.A.\",\"Pinzon J.H.\",\"Narayanan A.S.\",\"Jin E.J.\",\"Ritz M.P.\",\"Dove R.J.\",\"Wolfenberg H.\",\"Rodan A.R.\",\"Buszczak M.\",\"Rothenfluh A.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29339751\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41598-017-18989-1\"}],\"citationType\":\"journal article\",\"firstPage\":\"815\",\"id\":\"29339751\",\"journal\":\"Sci. Rep.\",\"lastPage\":\"815\",\"publicationDate\":\"2018\",\"title\":\"JmjC domain proteins modulate circadian behaviors and sleep in Drosophila.\",\"volume\":\"8\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":6,\"referencePositions\":[\"FUNCTION\",\"TISSUE SPECIFICITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -724,15 +482,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json",
-  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
-  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
-  "json_pointer": "/references/6",
   "excerpt": "{\"citation\":{\"authors\":[\"Chowdhury R.\",\"Abboud M.I.\",\"Wiley J.\",\"Tumber A.\",\"Markolovic S.\",\"Schofield C.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"35410347\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41598-022-10028-y\"}],\"citationType\":\"journal article\",\"firstPage\":\"6065\",\"id\":\"35410347\",\"journal\":\"Sci. Rep.\",\"lastPage\":\"6065\",\"publicationDate\":\"2022\",\"title\":\"Conservation of the unusual dimeric JmjC fold of JMJD7 from Drosophila melanogaster to humans.\",\"volume\":\"12\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXG\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXH\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXI\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXJ\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXK\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7YXL\",\"source\":\"PDB\"}],\"referenceNumber\":7,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (1.64 ANGSTROMS) IN COMPLEX WITH 2-OXOGLUTARATE; MN(2+); SUCCINATE; N-OXALYLGLYCINE; N-OXALYL-D-ALANINE; N-OXALYL-D-PHENYLALANINE AND LUTIDINIC ACID\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\",\"SUBUNIT\",\"DISULFIDE BOND\",\"OXIDATION AT CYS-19\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/6",
+  "retrieved_utc": "2026-11-02T04:33:39.402140+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "3f44f9cf8070a93f81c5ebea15797eae9345f5530025b2d6a02c1b0f107c3c0f",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VU77.json"
 }
 ```
 
@@ -742,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   JMJD7_DROME             Reviewed;         316 AA.\nAC   Q9VU77;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 176.\nDE   RecName: Full=Bifunctional peptidase and (3S)-lysyl hydroxylase JMJD7 {ECO:0000250|UniProtKB:P0C870};\nDE            EC=1.14.11.63 {ECO:0000269|PubMed:35410347};\nDE            EC=3.4.-.- {ECO:0000250|UniProtKB:P0C870};\nDE   AltName: Full=Jumonji domain containing protein 7 {ECO:0000312|FlyBase:FBgn0036366};\nGN   Name=JMJD7 {ECO:0000312|FlyBase:FBgn0036366};\nGN   ORFNames=CG10133 {ECO:0000312|FlyBase:FBgn0036366};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -763,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 96-103",
   "excerpt": "RN   [6] {ECO:0000305}\nRP   FUNCTION, TISSUE SPECIFICITY, AND DISRUPTION PHENOTYPE.\nRX   PubMed=29339751; DOI=10.1038/s41598-017-18989-1;\nRA   Shalaby N.A., Pinzon J.H., Narayanan A.S., Jin E.J., Ritz M.P., Dove R.J.,\nRA   Wolfenberg H., Rodan A.R., Buszczak M., Rothenfluh A.;\nRT   \"JmjC domain proteins modulate circadian behaviors and sleep in\nRT   Drosophila.\";\nRL   Sci. Rep. 8:815-815(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 96-103",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -784,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 104-114",
   "excerpt": "RN   [7] {ECO:0007744|PDB:7YXG, ECO:0007744|PDB:7YXH, ECO:0007744|PDB:7YXI, ECO:0007744|PDB:7YXJ, ECO:0007744|PDB:7YXK, ECO:0007744|PDB:7YXL}\nRP   X-RAY CRYSTALLOGRAPHY (1.64 ANGSTROMS) IN COMPLEX WITH 2-OXOGLUTARATE;\nRP   MN(2+); SUCCINATE; N-OXALYLGLYCINE; N-OXALYL-D-ALANINE;\nRP   N-OXALYL-D-PHENYLALANINE AND LUTIDINIC ACID, FUNCTION, CATALYTIC ACTIVITY,\nRP   COFACTOR, SUBUNIT, DISULFIDE BOND, AND OXIDATION AT CYS-19.\nRX   PubMed=35410347; DOI=10.1038/s41598-022-10028-y;\nRA   Chowdhury R., Abboud M.I., Wiley J., Tumber A., Markolovic S.,\nRA   Schofield C.J.;\nRT   \"Conservation of the unusual dimeric JmjC fold of JMJD7 from Drosophila\nRT   melanogaster to humans.\";\nRL   Sci. Rep. 12:6065-6065(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 104-114",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -805,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 115-123",
   "excerpt": "CC   -!- FUNCTION: Bifunctional enzyme that acts both as an endopeptidase and 2-\nCC       oxoglutarate-dependent monooxygenase (PubMed:35410347). Endopeptidase\nCC       that cleaves histones N-terminal tails at the carboxyl side of\nCC       methylated arginine or lysine residues, to generate 'tailless\nCC       nucleosomes', which may trigger transcription elongation (By\nCC       similarity). Hydroxylates the guanylate binding protein 128up\nCC       (PubMed:35410347). May be involved in regulation of behavior and\nCC       circadian rhythms (PubMed:29339751). {ECO:0000250|UniProtKB:P0C870,\nCC       ECO:0000269|PubMed:29339751, ECO:0000269|PubMed:35410347}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 115-123",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -826,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 176,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176",
-  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
-  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
-  "source_locator": "lines 199-199",
   "excerpt": "DR   GO; GO:0048512; P:circadian behavior; IMP:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 176,
+  "retrieved_utc": "2026-11-02T04:33:41.782034+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 199-199",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "a1c372e1e6cdfb62ebfb0d23f4b2ede050f6bcae06c776e1265b4e0ab02f3ff5",
+  "url": "https://rest.uniprot.org/unisave/Q9VU77?format=txt&versions=176"
 }
 ```
 
@@ -848,15 +606,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 63725-63737",
   "excerpt": "[Term]\nid: GO:0006189\nname: 'de novo' IMP biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of IMP, inosine monophosphate, by the stepwise assembly of a purine ring on ribose 5-phosphate.\" [GOC:mah, ISBN:0716720094]\nsynonym: \"'de novo' IMP anabolism\" EXACT []\nsynonym: \"'de novo' IMP biosynthesis\" EXACT []\nsynonym: \"'de novo' IMP formation\" EXACT []\nsynonym: \"'de novo' IMP synthesis\" EXACT []\nsynonym: \"'de novo' purine biosynthesis\" BROAD []\nsynonym: \"'de novo' purine biosynthetic process\" BROAD []\nis_a: GO:0006188 ! IMP biosynthetic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0006189",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 63725-63737",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0006189"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -867,15 +625,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 78288-78298",
   "excerpt": "[Term]\nid: GO:0007638\nname: mechanosensory behavior\nnamespace: biological_process\ndef: \"Behavior that is dependent upon the sensation of a mechanical stimulus.\" [GOC:curators]\nsynonym: \"behavioral response to mechanical stimulus\" EXACT []\nsynonym: \"behavioural response to mechanical stimulus\" EXACT []\nsynonym: \"mechanosensory behaviour\" EXACT []\nis_a: GO:0007610 ! behavior\nrelationship: part_of GO:0009612 ! response to mechanical stimulus\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0007638",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 78288-78298",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0007638"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -886,15 +644,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 99900-99913",
   "excerpt": "[Term]\nid: GO:0009813\nname: flavonoid biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of flavonoids, a group of phenolic derivatives containing a flavan skeleton.\" [GOC:tair_curators, ISBN:0198547684]\nsynonym: \"flavonoid anabolism\" EXACT []\nsynonym: \"flavonoid biosynthesis\" EXACT []\nsynonym: \"flavonoid formation\" EXACT []\nsynonym: \"flavonoid synthesis\" EXACT []\nxref: MetaCyc:PWY1F-FLAVSYN\nxref: Wikipedia:Flavonoid\nis_a: GO:0009058 ! biosynthetic process\nis_a: GO:0009812 ! flavonoid metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0009813",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 99900-99913",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0009813"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -905,15 +663,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 303916-303924",
   "excerpt": "[Term]\nid: GO:0048512\nname: circadian behavior\nnamespace: biological_process\ndef: \"The specific behavior of an organism that recurs with a regularity of approximately 24 hours.\" [GOC:bf, GOC:curators, GOC:pr]\nsynonym: \"circadian rhythm behavior\" EXACT []\nis_a: GO:0007622 ! rhythmic behavior\nis_a: GO:0007623 ! circadian rhythm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0048512",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 303916-303924",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0048512"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

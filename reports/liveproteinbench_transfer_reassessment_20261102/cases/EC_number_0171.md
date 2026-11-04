@@ -1,18 +1,16 @@
-# EC_number_0171: before and after transfer clarification
+# EC_number_0171
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0171.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0171.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **B** — 1.2.1.11
+**Expected answer:** **B** — 1.2.1.11
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for a fungal aspartate-semialdehyde dehydrogenase, annotated EC 1.2.1.11. The annotation cites experimental evidence for the catalytic activity and reaction.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence features may suggest a nucleotide-binding oxidoreductase and help disfavor the isomerase option, but those broad clues do not establish this protein’s substrate-specific catalytic activity or uniquely distinguish the exact EC number.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as aspartate-semialdehyde dehydrogenase, supported here by curated annotation and cited catalytic-activity evidence.
-
-
-**Reason**
-
-> The sequence is supplied, but no biological context or functional evidence is provided that establishes its precise substrate and reaction. Recalling or retrieving this exact protein’s annotation would distinguish the choices; generic sequence heuristics alone do not.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports one EC assignment for the matched protein, but the sequence-only input does not provide enough function-specific evidence to distinguish that assignment reliably from the alternatives.
-
-
-### Important caveats
-
-- The UniProt annotation is sequence-matched, and its EC assignment cites experimental evidence; the cited primary papers were not independently reviewed here.
-- The annotation’s historical snapshot is known, but the author’s exact source snapshot is not.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence features may suggest a nucleotide-binding oxidoreductase and help disfavor the isomerase option, but those broad clues do not establish this protein’s substrate-specific catalytic activity or uniquely distinguish the exact EC number.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as aspartate-semialdehyde dehydrogenase, supported here by curated annotation and cited catalytic-activity evidence.",
-    "reason": "The sequence is supplied, but no biological context or functional evidence is provided that establishes its precise substrate and reaction. Recalling or retrieving this exact protein’s annotation would distinguish the choices; generic sequence heuristics alone do not."
-  },
-  "case_id": "EC_number_0171",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for a fungal aspartate-semialdehyde dehydrogenase, annotated EC 1.2.1.11. The annotation cites experimental evidence for the catalytic activity and reaction."
-  },
-  "important_caveats": [
-    "The UniProt annotation is sequence-matched, and its EC assignment cites experimental evidence; the cited primary papers were not independently reviewed here.",
-    "The annotation’s historical snapshot is known, but the author’s exact source snapshot is not."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports one EC assignment for the matched protein, but the sequence-only input does not provide enough function-specific evidence to distinguish that assignment reliably from the alternatives."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0171",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for a fungal aspartate-semialdehyde dehydrogenase, annotated EC 1.2.1.11. The annotation cites experimental evidence for the catalytic activity and reaction.",
-    "evidence_ids": ["C1", "C4", "C5", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence features may suggest a nucleotide-binding oxidoreductase and help disfavor the isomerase option, but those broad clues do not establish this protein’s substrate-specific catalytic activity or uniquely distinguish the exact EC number.",
-    "missing_item_specific_fact": "The protein-specific identification as aspartate-semialdehyde dehydrogenase, supported here by curated annotation and cited catalytic-activity evidence.",
-    "reason": "The sequence is supplied, but no biological context or functional evidence is provided that establishes its precise substrate and reaction. Recalling or retrieving this exact protein’s annotation would distinguish the choices; generic sequence heuristics alone do not."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports one EC assignment for the matched protein, but the sequence-only input does not provide enough function-specific evidence to distinguish that assignment reliably from the alternatives."
-  },
-  "important_caveats": [
-    "The UniProt annotation is sequence-matched, and its EC assignment cites experimental evidence; the cited primary papers were not independently reviewed here.",
-    "The annotation’s historical snapshot is known, but the author’s exact source snapshot is not."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q5KPK7 (sequence SHA256 match confirmed) annotates this protein as Aspartate-semialdehyde dehydrogenase with EC 1.2.1.11, supported by experimental evidence (ECO:0000269) from PubMed:26527262 (X-ray crystallography, PDB:5CEF) and PubMed:29608391 (functional/inhibitor studies). The catalytic reaction (L-aspartate 4-semialdehyde + phosphate + NADP(+) = 4-phospho-L-aspartate + NADPH + H(+)) is confirmed by Rhea:RHEA:24284.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H5](#evidence-h5), [C7](#evidence-c7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The Rossmann-fold motif (GVLGATGTVGQ) and catalytic cysteine residues suggest an NAD(P)-dependent aldehyde/oxo oxidoreductase (EC class 1.2), which helps eliminate option C (EC 1.1, acting on CH-OH group) and option D (EC 5.3, isomerase). However, distinguishing EC 1.2.1.11 (aspartate-semialdehyde dehydrogenase) from EC 1.2.1.46 (general aldehyde dehydrogenase, NADP+) requires recognizing specific substrate-binding residues for the aspartate-semialdehyde/phosphate moiety, which is not derivable from general biological reasoning about the sequence.
-
-
-**Missing item-specific fact**
-
-> The specific substrate-binding pocket architecture and active-site residues that distinguish aspartate-semialdehyde dehydrogenase (EC 1.2.1.11) from a general NADP+-dependent aldehyde dehydrogenase (EC 1.2.1.46) are not identifiable from the raw sequence without either recognizing this exact protein family or consulting a database annotation.
-
-
-**Reason**
-
-> While general oxidoreductase class (EC 1.2 vs 1.1 vs 5.3) can be partially inferred from the Rossmann fold and catalytic Cys mechanism, the critical distinction between the two EC 1.2.1.x options (A: 1.2.1.46 vs B: 1.2.1.11) depends on item-specific knowledge of ASADH's substrate specificity and active-site geometry that is not apparent from sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options C (1.1.1.336) and D (5.3.1.8) are in entirely different EC top-level classes and are inconsistent with the observed Rossmann fold and catalytic cysteine mechanism. Options A and B are both EC 1.2.1.x aldehyde dehydrogenases, but only B matches the experimental annotation. No ambiguity in the correct answer, though A is a plausible distractor.
-
-
-### Important caveats
-
-- The UniProt annotation carries experimental evidence codes (ECO:0000269) from two independent publications including X-ray crystallography, strengthening confidence in the EC assignment.
-- The identity origin (accession Q5KPK7) was inferred mechanically from dataset metadata and was not provided to the evaluated model; the model must work from sequence alone.
-- EC 1.2.1.46 (option A) is a legitimate aldehyde dehydrogenase (NADP+) and shares the same EC top-level class, making it a structurally and mechanistically close distractor that is difficult to exclude without specific ASADH knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The Rossmann-fold motif (GVLGATGTVGQ) and catalytic cysteine residues suggest an NAD(P)-dependent aldehyde/oxo oxidoreductase (EC class 1.2), which helps eliminate option C (EC 1.1, acting on CH-OH group) and option D (EC 5.3, isomerase). However, distinguishing EC 1.2.1.11 (aspartate-semialdehyde dehydrogenase) from EC 1.2.1.46 (general aldehyde dehydrogenase, NADP+) requires recognizing specific substrate-binding residues for the aspartate-semialdehyde/phosphate moiety, which is not derivable from general biological reasoning about the sequence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate-binding pocket architecture and active-site residues that distinguish aspartate-semialdehyde dehydrogenase (EC 1.2.1.11) from a general NADP+-dependent aldehyde dehydrogenase (EC 1.2.1.46) are not identifiable from the raw sequence without either recognizing this exact protein family or consulting a database annotation.",
-    "reason": "While general oxidoreductase class (EC 1.2 vs 1.1 vs 5.3) can be partially inferred from the Rossmann fold and catalytic Cys mechanism, the critical distinction between the two EC 1.2.1.x options (A: 1.2.1.46 vs B: 1.2.1.11) depends on item-specific knowledge of ASADH's substrate specificity and active-site geometry that is not apparent from sequence alone."
-  },
-  "case_id": "EC_number_0171",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "H2",
-      "H5",
-      "C7"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q5KPK7 (sequence SHA256 match confirmed) annotates this protein as Aspartate-semialdehyde dehydrogenase with EC 1.2.1.11, supported by experimental evidence (ECO:0000269) from PubMed:26527262 (X-ray crystallography, PDB:5CEF) and PubMed:29608391 (functional/inhibitor studies). The catalytic reaction (L-aspartate 4-semialdehyde + phosphate + NADP(+) = 4-phospho-L-aspartate + NADPH + H(+)) is confirmed by Rhea:RHEA:24284."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries experimental evidence codes (ECO:0000269) from two independent publications including X-ray crystallography, strengthening confidence in the EC assignment.",
-    "The identity origin (accession Q5KPK7) was inferred mechanically from dataset metadata and was not provided to the evaluated model; the model must work from sequence alone.",
-    "EC 1.2.1.46 (option A) is a legitimate aldehyde dehydrogenase (NADP+) and shares the same EC top-level class, making it a structurally and mechanistically close distractor that is difficult to exclude without specific ASADH knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (1.1.1.336) and D (5.3.1.8) are in entirely different EC top-level classes and are inconsistent with the observed Rossmann fold and catalytic cysteine mechanism. Options A and B are both EC 1.2.1.x aldehyde dehydrogenases, but only B matches the experimental annotation. No ambiguity in the correct answer, though A is a plausible distractor."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0171",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q5KPK7 (sequence SHA256 match confirmed) annotates this protein as Aspartate-semialdehyde dehydrogenase with EC 1.2.1.11, supported by experimental evidence (ECO:0000269) from PubMed:26527262 (X-ray crystallography, PDB:5CEF) and PubMed:29608391 (functional/inhibitor studies). The catalytic reaction (L-aspartate 4-semialdehyde + phosphate + NADP(+) = 4-phospho-L-aspartate + NADPH + H(+)) is confirmed by Rhea:RHEA:24284.",
-    "evidence_ids": ["C4", "C5", "H2", "H5", "C7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The Rossmann-fold motif (GVLGATGTVGQ) and catalytic cysteine residues suggest an NAD(P)-dependent aldehyde/oxo oxidoreductase (EC class 1.2), which helps eliminate option C (EC 1.1, acting on CH-OH group) and option D (EC 5.3, isomerase). However, distinguishing EC 1.2.1.11 (aspartate-semialdehyde dehydrogenase) from EC 1.2.1.46 (general aldehyde dehydrogenase, NADP+) requires recognizing specific substrate-binding residues for the aspartate-semialdehyde/phosphate moiety, which is not derivable from general biological reasoning about the sequence.",
-    "missing_item_specific_fact": "The specific substrate-binding pocket architecture and active-site residues that distinguish aspartate-semialdehyde dehydrogenase (EC 1.2.1.11) from a general NADP+-dependent aldehyde dehydrogenase (EC 1.2.1.46) are not identifiable from the raw sequence without either recognizing this exact protein family or consulting a database annotation.",
-    "reason": "While general oxidoreductase class (EC 1.2 vs 1.1 vs 5.3) can be partially inferred from the Rossmann fold and catalytic Cys mechanism, the critical distinction between the two EC 1.2.1.x options (A: 1.2.1.46 vs B: 1.2.1.11) depends on item-specific knowledge of ASADH's substrate specificity and active-site geometry that is not apparent from sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options C (1.1.1.336) and D (5.3.1.8) are in entirely different EC top-level classes and are inconsistent with the observed Rossmann fold and catalytic cysteine mechanism. Options A and B are both EC 1.2.1.x aldehyde dehydrogenases, but only B matches the experimental annotation. No ambiguity in the correct answer, though A is a plausible distractor."
-  },
-  "important_caveats": [
-    "The UniProt annotation carries experimental evidence codes (ECO:0000269) from two independent publications including X-ray crystallography, strengthening confidence in the EC assignment.",
-    "The identity origin (accession Q5KPK7) was inferred mechanically from dataset metadata and was not provided to the evaluated model; the model must work from sequence alone.",
-    "EC 1.2.1.46 (option A) is a legitimate aldehyde dehydrogenase (NADP+) and shares the same EC top-level class, making it a structurally and mechanistically close distractor that is difficult to exclude without specific ASADH knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -382,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +279,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5KPK7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "289af240e9c521aacb1c323e0f199e1285a4f553efd19687f56152d3509323b8",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 365,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "289af240e9c521aacb1c323e0f199e1285a4f553efd19687f56152d3509323b8",
   "current_entry_audit": {
     "entryVersion": 123,
     "firstPublicDate": "2025-02-05",
@@ -538,14 +297,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-02-15",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "current_source_sequence_sha256": "289af240e9c521aacb1c323e0f199e1285a4f553efd19687f56152d3509323b8",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 365,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "289af240e9c521aacb1c323e0f199e1285a4f553efd19687f56152d3509323b8",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 121,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5KPK7",
   "selected_historical_entry_version": 121,
+  "selected_historical_record_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
+  "selected_historical_source_sequence_length": 365,
+  "selected_historical_source_sequence_sha256": "289af240e9c521aacb1c323e0f199e1285a4f553efd19687f56152d3509323b8",
   "selected_historical_version": {
     "accession": "Q5KPK7",
     "database": "Swiss-Prot",
@@ -556,24 +331,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DHAS_CRYD1",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
-  "selected_historical_source_sequence_sha256": "289af240e9c521aacb1c323e0f199e1285a4f553efd19687f56152d3509323b8",
-  "selected_historical_source_sequence_length": 365,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 121,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -587,15 +349,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json",
-  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5KPK7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json"
 }
 ```
 
@@ -606,15 +368,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json",
-  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":123,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-02-15\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json"
 }
 ```
 
@@ -625,15 +387,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json",
-  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Cryptococcus neoformans var. neoformans serotype D\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000002149\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Basidiomycota\",\"Agaricomycotina\",\"Tremellomycetes\",\"Tremellales\",\"Cryptococcaceae\",\"Cryptococcus\",\"Cryptococcus neoformans species complex\"],\"scientificName\":\"Cryptococcus deneoformans (strain JEC21 / ATCC MYA-565)\",\"taxonId\":214684}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json"
 }
 ```
 
@@ -644,15 +406,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json",
-  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26527262\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29608391\",\"source\":\"PubMed\"}],\"value\":\"1.2.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Aspartate-semialdehyde dehydrogenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json"
 }
 ```
 
@@ -663,15 +425,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json",
-  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"right-to-left\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26527262\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29608391\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:24286\"}}],\"reaction\":{\"ecNumber\":\"1.2.1.11\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26527262\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29608391\",\"source\":\"PubMed\"}],\"name\":\"L-aspartate 4-semialdehyde + phosphate + NADP(+) = 4-phospho-L-aspartate + NADPH + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:24284\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:43474\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57535\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:537519\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json"
 }
 ```
 
@@ -682,15 +444,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json",
-  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Dahal G.P.\",\"Viola R.E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29608391\"},{\"database\":\"DOI\",\"id\":\"10.1177/2472555218767844\"}],\"citationType\":\"journal article\",\"firstPage\":\"520\",\"id\":\"29608391\",\"journal\":\"SLAS Discovery\",\"lastPage\":\"531\",\"publicationDate\":\"2018\",\"title\":\"A Fragment Library Screening Approach to Identify Selective Inhibitors against an Essential Fungal Enzyme.\",\"volume\":\"23\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json"
 }
 ```
 
@@ -701,15 +463,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json",
-  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
-  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Dahal G.\",\"Viola R.E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26527262\"},{\"database\":\"DOI\",\"id\":\"10.1107/s2053230x15017495\"}],\"citationType\":\"journal article\",\"firstPage\":\"1365\",\"id\":\"26527262\",\"journal\":\"Acta Crystallogr. F Struct. Biol. Commun.\",\"lastPage\":\"1371\",\"publicationDate\":\"2015\",\"title\":\"Structure of a fungal form of aspartate semialdehyde dehydrogenase from Cryptococcus neoformans.\",\"volume\":\"71\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"5CEF\",\"source\":\"PDB\"}],\"referenceNumber\":4,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.60 ANGSTROMS)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"SUBUNIT\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:31:24.745599+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "6e1b51beba0452942e5c6cb2774ea67654b44f73f1d91b259ec7240bea1d2e67",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5KPK7.json"
 }
 ```
 
@@ -719,18 +481,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121",
-  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
-  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   DHAS_CRYD1              Reviewed;         365 AA.\nAC   Q5KPK7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   15-FEB-2005, sequence version 1.\nDT   28-JAN-2026, entry version 121.\nDE   RecName: Full=Aspartate-semialdehyde dehydrogenase {ECO:0000305};\nDE            EC=1.2.1.11 {ECO:0000269|PubMed:26527262, ECO:0000269|PubMed:29608391};\nGN   OrderedLocusNames=CNA02450 {ECO:0000312|EMBL:AAW40826.1};\nOS   Cryptococcus deneoformans (strain JEC21 / ATCC MYA-565) (Cryptococcus\nOS   neoformans var. neoformans serotype D).\nOC   Eukaryota; Fungi; Dikarya; Basidiomycota; Agaricomycotina; Tremellomycetes;\nOC   Tremellales; Cryptococcaceae; Cryptococcus;\nOC   Cryptococcus neoformans species complex.\nOX   NCBI_TaxID=214684 {ECO:0000312|Proteomes:UP000002149};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
+  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121"
 }
 ```
 
@@ -740,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121",
-  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
-  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Aspartate-semialdehyde dehydrogenase {ECO:0000305};\nDE            EC=1.2.1.11 {ECO:0000269|PubMed:26527262, ECO:0000269|PubMed:29608391};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
+  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121"
 }
 ```
 
@@ -761,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121",
-  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
-  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
-  "source_locator": "lines 39-45",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, AND ACTIVITY REGULATION.\nRX   PubMed=29608391; DOI=10.1177/2472555218767844;\nRA   Dahal G.P., Viola R.E.;\nRT   \"A Fragment Library Screening Approach to Identify Selective Inhibitors\nRT   against an Essential Fungal Enzyme.\";\nRL   SLAS Discovery 23:520-531(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 39-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
+  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121"
 }
 ```
 
@@ -782,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121",
-  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
-  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
-  "source_locator": "lines 46-53",
   "excerpt": "RN   [4] {ECO:0007744|PDB:5CEF}\nRP   X-RAY CRYSTALLOGRAPHY (2.60 ANGSTROMS), FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, PATHWAY, AND SUBUNIT.\nRX   PubMed=26527262; DOI=10.1107/s2053230x15017495;\nRA   Dahal G., Viola R.E.;\nRT   \"Structure of a fungal form of aspartate semialdehyde dehydrogenase from\nRT   Cryptococcus neoformans.\";\nRL   Acta Crystallogr. F Struct. Biol. Commun. 71:1365-1371(2015).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-53",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
+  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121"
 }
 ```
 
@@ -803,18 +565,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 121,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121",
-  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
-  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
-  "source_locator": "lines 61-68",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-aspartate 4-semialdehyde + phosphate + NADP(+) = 4-phospho-\nCC         L-aspartate + NADPH + H(+); Xref=Rhea:RHEA:24284, ChEBI:CHEBI:15378,\nCC         ChEBI:CHEBI:43474, ChEBI:CHEBI:57535, ChEBI:CHEBI:57783,\nCC         ChEBI:CHEBI:58349, ChEBI:CHEBI:537519; EC=1.2.1.11;\nCC         Evidence={ECO:0000269|PubMed:26527262, ECO:0000269|PubMed:29608391};\nCC       PhysiologicalDirection=right-to-left; Xref=Rhea:RHEA:24286;\nCC         Evidence={ECO:0000269|PubMed:26527262, ECO:0000269|PubMed:29608391};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 121,
+  "retrieved_utc": "2026-11-02T04:31:27.262588+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 61-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "117184b77b1c1a6b186665d7a7a3070affc905fd69df2a927a14fb0e3ceb88c4",
+  "url": "https://rest.uniprot.org/unisave/Q5KPK7?format=txt&versions=121"
 }
 ```
 

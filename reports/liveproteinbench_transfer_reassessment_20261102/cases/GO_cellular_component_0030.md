@@ -1,18 +1,16 @@
-# GO_cellular_component_0030: before and after transfer clarification
+# GO_cellular_component_0030
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0030.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0030.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — nucleus
+**Expected answer:** **B** — nucleus
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | uncertain | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | uncertain | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record annotates the protein to the nucleus as well as the cytosol, so nucleus is a supported localization. However, the supplied evidence does not establish that it is the primary location; the localization annotations are transferred rather than direct experimental evidence for this protein.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices do not provide a decisive signal for nuclear localization. The enzyme-like sequence may make the complex choices less plausible, but that does not establish nucleus as its primary location.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization annotation or experimental evidence distinguishing its nuclear and cytosolic localization is absent from the input.
-
-
-**Reason**
-
-> Selecting nucleus depends on protein-specific localization knowledge. Recognizing the sequence or recalling its database annotation would be lookup or memorization, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Nucleus is an annotated localization among the listed choices, but the evidence also places the protein in the cytosol, which is not offered. The options do not identify which location is primary.
-
-
-### Important caveats
-
-- The sequence matches the cited UniProt record, but its nucleus and cytosol annotations are transferred by similarity rather than shown here as direct experiments on this protein.
-- The evidence supports nuclear localization, not a ranking of nucleus over cytosol as the primary location.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices do not provide a decisive signal for nuclear localization. The enzyme-like sequence may make the complex choices less plausible, but that does not establish nucleus as its primary location.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental evidence distinguishing its nuclear and cytosolic localization is absent from the input.",
-    "reason": "Selecting nucleus depends on protein-specific localization knowledge. Recognizing the sequence or recalling its database annotation would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "case_id": "GO_cellular_component_0030",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates the protein to the nucleus as well as the cytosol, so nucleus is a supported localization. However, the supplied evidence does not establish that it is the primary location; the localization annotations are transferred rather than direct experimental evidence for this protein."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt record, but its nucleus and cytosol annotations are transferred by similarity rather than shown here as direct experiments on this protein.",
-    "The evidence supports nuclear localization, not a ranking of nucleus over cytosol as the primary location."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Nucleus is an annotated localization among the listed choices, but the evidence also places the protein in the cytosol, which is not offered. The options do not identify which location is primary."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0030",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record annotates the protein to the nucleus as well as the cytosol, so nucleus is a supported localization. However, the supplied evidence does not establish that it is the primary location; the localization annotations are transferred rather than direct experimental evidence for this protein.",
-    "evidence_ids": ["C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices do not provide a decisive signal for nuclear localization. The enzyme-like sequence may make the complex choices less plausible, but that does not establish nucleus as its primary location.",
-    "missing_item_specific_fact": "The protein-specific localization annotation or experimental evidence distinguishing its nuclear and cytosolic localization is absent from the input.",
-    "reason": "Selecting nucleus depends on protein-specific localization knowledge. Recognizing the sequence or recalling its database annotation would be lookup or memorization, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Nucleus is an annotated localization among the listed choices, but the evidence also places the protein in the cytosol, which is not offered. The options do not identify which location is primary."
-  },
-  "important_caveats": [
-    "The sequence matches the cited UniProt record, but its nucleus and cytosol annotations are transferred by similarity rather than shown here as direct experiments on this protein.",
-    "The evidence supports nuclear localization, not a ranking of nucleus over cytosol as the primary location."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry (A0A080WMA9, ASADH from Trichophyton rubrum) annotates 'Nucleus' as a subcellular location (C5, H3, C7, H5). However, this is a secondary annotation transferred by similarity from E. coli ASADH (P13663) with evidence code ECO:0000250 (inferred from sequence/structural similarity) and GO evidence type IEA (Inferred from Electronic Annotation). The primary listed location is 'Cytoplasm, cytosol.' Among the four provided options, 'nucleus' is the only one that appears anywhere in the annotation. The other three (transcription regulator complex, mitochondrial outer membrane, tRNA methyltransferase complex) have no annotation support whatsoever. Thus the key is supported by the annotation, albeit as a secondary, computationally inferred location.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> ASADH (aspartate-semialdehyde dehydrogenase) is a well-characterized NADP-dependent oxidoreductase in the lysine/methionine biosynthesis pathway. A biologist recognizing the NADP-binding Rossmann-fold motifs and catalytic architecture can rule out: (A) transcription regulator complex — ASADH is a metabolic enzyme, not a DNA-binding transcription factor; (C) mitochondrial outer membrane — the sequence lacks β-barrel or α-helical transmembrane domains characteristic of outer-membrane proteins and lacks mitochondrial targeting signals; (D) tRNA methyltransferase complex — ASADH has no methyltransferase fold, no tRNA-binding domain, and no functional connection to tRNA modification. By elimination of three functionally and structurally incompatible options, B (nucleus) remains as the only plausible compartment among the choices, consistent with the annotation.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The elimination is based on general knowledge of enzyme classes, membrane-protein architecture, and complex membership. However, positively identifying 'nucleus' (rather than the true primary location, cytoplasm/cytosol) from sequence alone is weak; the reasoning is primarily eliminative rather than a positive NLS-based argument.
-
-
-**Reason**
-
-> The three distractors can be confidently excluded through general biological reasoning about protein function and structural features visible in the sequence. The remaining option (nucleus) is the only one consistent with any annotation, making the answer reachable without memorizing a specific database entry, though the positive nuclear-localization argument is thin.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A, C, and D are clearly incompatible with a dehydrogenase enzyme. Although the annotation lists cytoplasm/cytosol as the primary location (not offered as a choice), among the four given options only B (nucleus) has any annotation support. No other option is defensible.
-
-
-### Important caveats
-
-- The 'Nucleus' annotation is secondary and purely computational (ECO:0000250 / IEA), transferred from E. coli ASADH. No experimental evidence for nuclear localization of this fungal ASADH is provided.
-- The primary annotated location is 'Cytoplasm, cytosol,' which is not among the answer choices. The question asks for the 'primary' cellular component, creating a tension between the stated primary (cytoplasm) and the keyed answer (nucleus).
-- The sequence itself does not contain a readily identifiable classical bipartite or monopartite NLS that would allow a positive prediction of nuclear import from sequence features alone.
-- The UniProt entry was first public on 2025-02-05; the benchmark author's source snapshot is unknown, but the sequence matched across available historical versions.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "ASADH (aspartate-semialdehyde dehydrogenase) is a well-characterized NADP-dependent oxidoreductase in the lysine/methionine biosynthesis pathway. A biologist recognizing the NADP-binding Rossmann-fold motifs and catalytic architecture can rule out: (A) transcription regulator complex — ASADH is a metabolic enzyme, not a DNA-binding transcription factor; (C) mitochondrial outer membrane — the sequence lacks β-barrel or α-helical transmembrane domains characteristic of outer-membrane proteins and lacks mitochondrial targeting signals; (D) tRNA methyltransferase complex — ASADH has no methyltransferase fold, no tRNA-binding domain, and no functional connection to tRNA modification. By elimination of three functionally and structurally incompatible options, B (nucleus) remains as the only plausible compartment among the choices, consistent with the annotation.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The elimination is based on general knowledge of enzyme classes, membrane-protein architecture, and complex membership. However, positively identifying 'nucleus' (rather than the true primary location, cytoplasm/cytosol) from sequence alone is weak; the reasoning is primarily eliminative rather than a positive NLS-based argument.",
-    "reason": "The three distractors can be confidently excluded through general biological reasoning about protein function and structural features visible in the sequence. The remaining option (nucleus) is the only one consistent with any annotation, making the answer reachable without memorizing a specific database entry, though the positive nuclear-localization argument is thin."
-  },
-  "case_id": "GO_cellular_component_0030",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A080WMA9, ASADH from Trichophyton rubrum) annotates 'Nucleus' as a subcellular location (C5, H3, C7, H5). However, this is a secondary annotation transferred by similarity from E. coli ASADH (P13663) with evidence code ECO:0000250 (inferred from sequence/structural similarity) and GO evidence type IEA (Inferred from Electronic Annotation). The primary listed location is 'Cytoplasm, cytosol.' Among the four provided options, 'nucleus' is the only one that appears anywhere in the annotation. The other three (transcription regulator complex, mitochondrial outer membrane, tRNA methyltransferase complex) have no annotation support whatsoever. Thus the key is supported by the annotation, albeit as a secondary, computationally inferred location."
-  },
-  "important_caveats": [
-    "The 'Nucleus' annotation is secondary and purely computational (ECO:0000250 / IEA), transferred from E. coli ASADH. No experimental evidence for nuclear localization of this fungal ASADH is provided.",
-    "The primary annotated location is 'Cytoplasm, cytosol,' which is not among the answer choices. The question asks for the 'primary' cellular component, creating a tension between the stated primary (cytoplasm) and the keyed answer (nucleus).",
-    "The sequence itself does not contain a readily identifiable classical bipartite or monopartite NLS that would allow a positive prediction of nuclear import from sequence features alone.",
-    "The UniProt entry was first public on 2025-02-05; the benchmark author's source snapshot is unknown, but the sequence matched across available historical versions."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are clearly incompatible with a dehydrogenase enzyme. Although the annotation lists cytoplasm/cytosol as the primary location (not offered as a choice), among the four given options only B (nucleus) has any annotation support. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0030",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry (A0A080WMA9, ASADH from Trichophyton rubrum) annotates 'Nucleus' as a subcellular location (C5, H3, C7, H5). However, this is a secondary annotation transferred by similarity from E. coli ASADH (P13663) with evidence code ECO:0000250 (inferred from sequence/structural similarity) and GO evidence type IEA (Inferred from Electronic Annotation). The primary listed location is 'Cytoplasm, cytosol.' Among the four provided options, 'nucleus' is the only one that appears anywhere in the annotation. The other three (transcription regulator complex, mitochondrial outer membrane, tRNA methyltransferase complex) have no annotation support whatsoever. Thus the key is supported by the annotation, albeit as a secondary, computationally inferred location.",
-    "evidence_ids": ["C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "ASADH (aspartate-semialdehyde dehydrogenase) is a well-characterized NADP-dependent oxidoreductase in the lysine/methionine biosynthesis pathway. A biologist recognizing the NADP-binding Rossmann-fold motifs and catalytic architecture can rule out: (A) transcription regulator complex — ASADH is a metabolic enzyme, not a DNA-binding transcription factor; (C) mitochondrial outer membrane — the sequence lacks β-barrel or α-helical transmembrane domains characteristic of outer-membrane proteins and lacks mitochondrial targeting signals; (D) tRNA methyltransferase complex — ASADH has no methyltransferase fold, no tRNA-binding domain, and no functional connection to tRNA modification. By elimination of three functionally and structurally incompatible options, B (nucleus) remains as the only plausible compartment among the choices, consistent with the annotation.",
-    "missing_item_specific_fact": "None strictly required. The elimination is based on general knowledge of enzyme classes, membrane-protein architecture, and complex membership. However, positively identifying 'nucleus' (rather than the true primary location, cytoplasm/cytosol) from sequence alone is weak; the reasoning is primarily eliminative rather than a positive NLS-based argument.",
-    "reason": "The three distractors can be confidently excluded through general biological reasoning about protein function and structural features visible in the sequence. The remaining option (nucleus) is the only one consistent with any annotation, making the answer reachable without memorizing a specific database entry, though the positive nuclear-localization argument is thin."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A, C, and D are clearly incompatible with a dehydrogenase enzyme. Although the annotation lists cytoplasm/cytosol as the primary location (not offered as a choice), among the four given options only B (nucleus) has any annotation support. No other option is defensible."
-  },
-  "important_caveats": [
-    "The 'Nucleus' annotation is secondary and purely computational (ECO:0000250 / IEA), transferred from E. coli ASADH. No experimental evidence for nuclear localization of this fungal ASADH is provided.",
-    "The primary annotated location is 'Cytoplasm, cytosol,' which is not among the answer choices. The question asks for the 'primary' cellular component, creating a tension between the stated primary (cytoplasm) and the keyed answer (nucleus).",
-    "The sequence itself does not contain a readily identifiable classical bipartite or monopartite NLS that would allow a positive prediction of nuclear import from sequence features alone.",
-    "The UniProt entry was first public on 2025-02-05; the benchmark author's source snapshot is unknown, but the sequence matched across available historical versions."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: uncertain
 
@@ -390,10 +161,9 @@ Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), 
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -507,30 +277,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A080WMA9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ecc9f93bab233675495553ca0dc99c02862199248d190fa6418b0eaf45c3d7b5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 362,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ecc9f93bab233675495553ca0dc99c02862199248d190fa6418b0eaf45c3d7b5",
   "current_entry_audit": {
     "entryVersion": 40,
     "firstPublicDate": "2025-02-05",
@@ -538,14 +295,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2014-10-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "current_source_sequence_sha256": "ecc9f93bab233675495553ca0dc99c02862199248d190fa6418b0eaf45c3d7b5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 362,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ecc9f93bab233675495553ca0dc99c02862199248d190fa6418b0eaf45c3d7b5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 38,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A080WMA9",
   "selected_historical_entry_version": 38,
+  "selected_historical_record_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
+  "selected_historical_source_sequence_length": 362,
+  "selected_historical_source_sequence_sha256": "ecc9f93bab233675495553ca0dc99c02862199248d190fa6418b0eaf45c3d7b5",
   "selected_historical_version": {
     "accession": "A0A080WMA9",
     "database": "Swiss-Prot",
@@ -556,24 +329,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DHAS_TRIRC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
-  "selected_historical_source_sequence_sha256": "ecc9f93bab233675495553ca0dc99c02862199248d190fa6418b0eaf45c3d7b5",
-  "selected_historical_source_sequence_length": 362,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 38,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +351,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A080WMA9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -610,15 +370,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":40,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2014-10-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -629,15 +389,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Athlete's foot fungus\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000008864\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Onygenales\",\"Arthrodermataceae\",\"Trichophyton\"],\"scientificName\":\"Trichophyton rubrum (strain ATCC MYA-4607 / CBS 118892)\",\"taxonId\":559305}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -648,15 +408,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26869335\",\"source\":\"PubMed\"}],\"value\":\"TrASADH\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"26869335\",\"source\":\"PubMed\"}],\"value\":\"1.2.1.11\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Aspartate-semialdehyde dehydrogenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -667,15 +427,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P13663\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0091\",\"value\":\"Cytoplasm, cytosol\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P13663\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0191\",\"value\":\"Nucleus\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -686,15 +446,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/16",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/16",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -705,15 +465,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/17",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005634\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:nucleus\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/17",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -724,15 +484,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json",
-  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
-  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Li Q.\",\"Mu Z.\",\"Zhao R.\",\"Dahal G.\",\"Viola R.E.\",\"Liu T.\",\"Jin Q.\",\"Cui S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26869335\"},{\"database\":\"DOI\",\"id\":\"10.1038/srep21067\"}],\"citationType\":\"journal article\",\"firstPage\":\"21067\",\"id\":\"26869335\",\"journal\":\"Sci. Rep.\",\"lastPage\":\"21067\",\"publicationDate\":\"2016\",\"title\":\"Structural Insights into the Tetrameric State of Aspartate-beta-semialdehyde Dehydrogenases from Fungal Species.\",\"volume\":\"6\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"4ZHS\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"4ZIC\",\"source\":\"PDB\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26869335\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"BMU01672\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.55 ANGSTROMS) IN COMPLEX WITH NADP(+)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\",\"SUBUNIT\",\"MUTAGENESIS OF 196-ASP--PHE-198 AND ARG-309\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:23:53.783847+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bf278bc137aa3857c873dcee85929131e2e626bb23054806edb11415af48ec0e",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A080WMA9.json"
 }
 ```
 
@@ -742,18 +502,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38",
-  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
-  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   DHAS_TRIRC              Reviewed;         362 AA.\nAC   A0A080WMA9; A0A140UHG6;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-OCT-2014, sequence version 1.\nDT   18-JUN-2025, entry version 38.\nDE   RecName: Full=Aspartate-semialdehyde dehydrogenase {ECO:0000305};\nDE            EC=1.2.1.11 {ECO:0000269|PubMed:26869335};\nDE   AltName: Full=TrASADH {ECO:0000303|PubMed:26869335};\nGN   ORFNames=TERG_03598 {ECO:0000312|EMBL:KFL61260.1};\nOS   Trichophyton rubrum (strain ATCC MYA-4607 / CBS 118892) (Athlete's foot\nOS   fungus).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Onygenales; Arthrodermataceae; Trichophyton.\nOX   NCBI_TaxID=559305 {ECO:0000312|Proteomes:UP000008864};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
+  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38"
 }
 ```
 
@@ -763,18 +523,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38",
-  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
-  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
-  "source_locator": "lines 27-36",
   "excerpt": "RN   [2] {ECO:0007744|PDB:4ZHS, ECO:0007744|PDB:4ZIC}\nRP   X-RAY CRYSTALLOGRAPHY (2.55 ANGSTROMS) IN COMPLEX WITH NADP(+), FUNCTION,\nRP   CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, PATHWAY, SUBUNIT, AND\nRP   MUTAGENESIS OF 196-ASP--PHE-198 AND ARG-309.\nRC   STRAIN=BMU01672 {ECO:0000303|PubMed:26869335};\nRX   PubMed=26869335; DOI=10.1038/srep21067;\nRA   Li Q., Mu Z., Zhao R., Dahal G., Viola R.E., Liu T., Jin Q., Cui S.;\nRT   \"Structural Insights into the Tetrameric State of Aspartate-beta-\nRT   semialdehyde Dehydrogenases from Fungal Species.\";\nRL   Sci. Rep. 6:21067-21067(2016).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-36",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
+  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38"
 }
 ```
 
@@ -784,18 +544,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38",
-  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
-  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
-  "source_locator": "lines 63-64",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cytoplasm, cytosol\nCC       {ECO:0000250|UniProtKB:P13663}. Nucleus {ECO:0000250|UniProtKB:P13663}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-64",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
+  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38"
 }
 ```
 
@@ -805,18 +565,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38",
-  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
-  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
-  "source_locator": "lines 87-87",
   "excerpt": "DR   GO; GO:0005829; C:cytosol; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-87",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
+  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38"
 }
 ```
 
@@ -826,18 +586,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38",
-  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
-  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
-  "source_locator": "lines 88-88",
   "excerpt": "DR   GO; GO:0005634; C:nucleus; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:23:57.418115+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 88-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "319e2a6ea09f79026f215490dfab47119b95e8f6a8e21b934e31e170e04fc34f",
+  "url": "https://rest.uniprot.org/unisave/A0A080WMA9?format=txt&versions=38"
 }
 ```
 
@@ -848,15 +608,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58002-58025",
   "excerpt": "[Term]\nid: GO:0005634\nname: nucleus\nnamespace: cellular_component\ndef: \"A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell's chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent.\" [GOC:curators]\nsubset: goslim_agr\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_metagenomics\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_yeast\nsynonym: \"cell nucleus\" EXACT []\nsynonym: \"horsetail nucleus\" NARROW [GOC:al, GOC:mah, GOC:vw, PMID:15030757]\nxref: NIF_Subcellular:sao1702920020\nxref: Wikipedia:Cell_nucleus\nis_a: GO:0043231 ! intracellular membrane-bounded organelle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005634",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58002-58025",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005634"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -867,15 +627,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58346-58358",
   "excerpt": "[Term]\nid: GO:0005667\nname: transcription regulator complex\nnamespace: cellular_component\nalt_id: GO:0044797\nalt_id: GO:0044798\ndef: \"A protein complex that is capable of associating with DNA by direct binding, or via other DNA-binding proteins or complexes, and regulating transcription.\" [GOC:jl]\nsubset: goslim_pir\nsynonym: \"cytoplasmic transcription factor complex\" RELATED []\nsynonym: \"nuclear transcription factor complex\" RELATED []\nsynonym: \"transcription factor complex\" RELATED []\nis_a: GO:0032991 ! protein-containing complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005667",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58346-58358",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005667"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -886,15 +646,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59009-59021",
   "excerpt": "[Term]\nid: GO:0005741\nname: mitochondrial outer membrane\nnamespace: cellular_component\ndef: \"The outer, i.e. cytoplasm-facing, lipid bilayer of the mitochondrial envelope.\" [GOC:ai]\nsynonym: \"mitochondrion outer membrane\" EXACT []\nsynonym: \"outer mitochondrial membrane\" EXACT []\nsynonym: \"outer mitochondrion membrane\" EXACT []\nxref: NIF_Subcellular:sao1289741256\nxref: Wikipedia:Outer_mitochondrial_membrane\nis_a: GO:0031966 ! mitochondrial membrane\nis_a: GO:0031968 ! organelle outer membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005741",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59009-59021",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005741"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -905,15 +665,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 248215-248222",
   "excerpt": "[Term]\nid: GO:0043527\nname: tRNA methyltransferase complex\nnamespace: cellular_component\ndef: \"A multimeric protein complex involved in the methylation of specific nucleotides in tRNA.\" [GOC:jl, PMID:24904644, PMID:9851972]\nsubset: goslim_pir\nis_a: GO:0034708 ! methyltransferase complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0043527",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 248215-248222",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0043527"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

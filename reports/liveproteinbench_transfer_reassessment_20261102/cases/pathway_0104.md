@@ -1,18 +1,16 @@
-# pathway_0104: before and after transfer clarification
+# pathway_0104
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0104.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0104.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **B** — Alkaloid biosynthesis. .
+**Expected answer:** **B** — Alkaloid biosynthesis. .
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the annotated 450-aa protein. UniProt records its pathway as alkaloid biosynthesis, citing experimental evidence, and identifies it as an FAD-dependent monooxygenase in the okaramine biosynthesis cluster.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Sequence-based recognition of an FAD-dependent monooxygenase could suggest enzyme activity, but does not meaningfully identify the specific alkaloid pathway rather than the other listed pathways.
-
-
-**Missing item-specific fact**
-
-> The protein-specific link to okaramine/alkaloid biosynthesis, established by pathway annotation and cited research, is not provided in the question.
-
-
-**Reason**
-
-> The pathway choice depends on protein-specific functional knowledge absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization, not a biological argument supplied by the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports alkaloid biosynthesis for the matched sequence; no other option is supported by the supplied evidence.
-
-
-### Important caveats
-
-- The pathway annotation cites experimental evidence, but the primary papers were not independently reviewed here.
-- The exact author source snapshot is unknown, although the sequence matches both the current and checked historical UniProt records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Sequence-based recognition of an FAD-dependent monooxygenase could suggest enzyme activity, but does not meaningfully identify the specific alkaloid pathway rather than the other listed pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific link to okaramine/alkaloid biosynthesis, established by pathway annotation and cited research, is not provided in the question.",
-    "reason": "The pathway choice depends on protein-specific functional knowledge absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization, not a biological argument supplied by the question."
-  },
-  "case_id": "pathway_0104",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the annotated 450-aa protein. UniProt records its pathway as alkaloid biosynthesis, citing experimental evidence, and identifies it as an FAD-dependent monooxygenase in the okaramine biosynthesis cluster."
-  },
-  "important_caveats": [
-    "The pathway annotation cites experimental evidence, but the primary papers were not independently reviewed here.",
-    "The exact author source snapshot is unknown, although the sequence matches both the current and checked historical UniProt records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports alkaloid biosynthesis for the matched sequence; no other option is supported by the supplied evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0104",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the annotated 450-aa protein. UniProt records its pathway as alkaloid biosynthesis, citing experimental evidence, and identifies it as an FAD-dependent monooxygenase in the okaramine biosynthesis cluster.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Sequence-based recognition of an FAD-dependent monooxygenase could suggest enzyme activity, but does not meaningfully identify the specific alkaloid pathway rather than the other listed pathways.",
-    "missing_item_specific_fact": "The protein-specific link to okaramine/alkaloid biosynthesis, established by pathway annotation and cited research, is not provided in the question.",
-    "reason": "The pathway choice depends on protein-specific functional knowledge absent from the sequence prompt; recognizing the sequence or recalling its annotation would be lookup or memorization, not a biological argument supplied by the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports alkaloid biosynthesis for the matched sequence; no other option is supported by the supplied evidence."
-  },
-  "important_caveats": [
-    "The pathway annotation cites experimental evidence, but the primary papers were not independently reviewed here.",
-    "The exact author source snapshot is unknown, although the sequence matches both the current and checked historical UniProt records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A2Z5U368 (OKAB_PENOH) explicitly annotates the PATHWAY as 'Alkaloid biosynthesis' with experimental evidence codes (ECO:0000269) from two independent PubMed references (28631282, 29384650). The protein is named 'FAD-dependent monooxygenase okaB' and is part of the 'Okaramines biosynthesis cluster,' where okaramines are indole alkaloids produced by Penicillium ochrochloron. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed). The expected answer B is directly and experimentally supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Weak reasoning clues exist: the sequence contains recognizable FAD-binding Rossmann-fold motifs (e.g., 'GISIGSNG', 'IGDAAHAALPSSG'), and the organism is a fungus, suggesting secondary metabolism. FAD-dependent monooxygenases in fungi are more commonly associated with alkaloid biosynthesis than with carotenoid biosynthesis (which primarily uses FAD-dependent desaturases and cyclases). However, distinguishing a monooxygenase from a desaturase purely from sequence is not straightforward, and the specific assignment to 'alkaloid biosynthesis' over 'carotenoid biosynthesis' for a FAD-binding enzyme in a fungus requires knowledge of this protein's role in the okaramine biosynthetic gene cluster.
-
-
-**Missing item-specific fact**
-
-> Knowledge that this specific FAD-dependent monooxygenase (okaB) is part of the okaramine (indole alkaloid) biosynthetic gene cluster in Penicillium ochrochloron, and that its monooxygenase activity (EC 1.14.99.-) functions in indole alkaloid modification rather than in carotenoid desaturation or other FAD-dependent pathways.
-
-
-**Reason**
-
-> While distractors A (branched-chain amino acid biosynthesis) and D (fucose degradation) can be eliminated by noting the absence of relevant enzyme motifs (ketol-acid reductoisomerase, fucose kinase, etc.), the critical distinction between B (alkaloid biosynthesis) and C (carotenoid biosynthesis) for a FAD-binding enzyme in a fungal organism depends on protein-specific annotation. A model would need to recognize this as okaB or know that fungal FAD-dependent monooxygenases in secondary metabolism are predominantly alkaloid-pathway enzymes, which is a specific biochemical fact rather than a general inference derivable from the sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and D are clearly incompatible with a FAD-dependent monooxygenase from a fungus. Between B and C, the biological evidence (monooxygenase vs. desaturase activity, okaramine cluster membership) unambiguously supports B. No other option is defensible given the experimental evidence, though from sequence alone C might appear superficially plausible.
-
-
-### Important caveats
-
-- The UniProt pathway annotation carries experimental evidence codes (ECO:0000269) from two independent studies, making it well-supported rather than purely computational.
-- The sequence-to-entry identity is confirmed by SHA-256 match across both current and historical (entry version 15) records.
-- The reviewer-only evidence was absent from the evaluated model input; the model sees only the 450-aa sequence and four pathway labels.
-- The first public date of this Swiss-Prot entry is 2025-02-05, meaning the protein was not in Swiss-Prot before that date; the author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Weak reasoning clues exist: the sequence contains recognizable FAD-binding Rossmann-fold motifs (e.g., 'GISIGSNG', 'IGDAAHAALPSSG'), and the organism is a fungus, suggesting secondary metabolism. FAD-dependent monooxygenases in fungi are more commonly associated with alkaloid biosynthesis than with carotenoid biosynthesis (which primarily uses FAD-dependent desaturases and cyclases). However, distinguishing a monooxygenase from a desaturase purely from sequence is not straightforward, and the specific assignment to 'alkaloid biosynthesis' over 'carotenoid biosynthesis' for a FAD-binding enzyme in a fungus requires knowledge of this protein's role in the okaramine biosynthetic gene cluster.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Knowledge that this specific FAD-dependent monooxygenase (okaB) is part of the okaramine (indole alkaloid) biosynthetic gene cluster in Penicillium ochrochloron, and that its monooxygenase activity (EC 1.14.99.-) functions in indole alkaloid modification rather than in carotenoid desaturation or other FAD-dependent pathways.",
-    "reason": "While distractors A (branched-chain amino acid biosynthesis) and D (fucose degradation) can be eliminated by noting the absence of relevant enzyme motifs (ketol-acid reductoisomerase, fucose kinase, etc.), the critical distinction between B (alkaloid biosynthesis) and C (carotenoid biosynthesis) for a FAD-binding enzyme in a fungal organism depends on protein-specific annotation. A model would need to recognize this as okaB or know that fungal FAD-dependent monooxygenases in secondary metabolism are predominantly alkaloid-pathway enzymes, which is a specific biochemical fact rather than a general inference derivable from the sequence alone."
-  },
-  "case_id": "pathway_0104",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U368 (OKAB_PENOH) explicitly annotates the PATHWAY as 'Alkaloid biosynthesis' with experimental evidence codes (ECO:0000269) from two independent PubMed references (28631282, 29384650). The protein is named 'FAD-dependent monooxygenase okaB' and is part of the 'Okaramines biosynthesis cluster,' where okaramines are indole alkaloids produced by Penicillium ochrochloron. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed). The expected answer B is directly and experimentally supported."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation carries experimental evidence codes (ECO:0000269) from two independent studies, making it well-supported rather than purely computational.",
-    "The sequence-to-entry identity is confirmed by SHA-256 match across both current and historical (entry version 15) records.",
-    "The reviewer-only evidence was absent from the evaluated model input; the model sees only the 450-aa sequence and four pathway labels.",
-    "The first public date of this Swiss-Prot entry is 2025-02-05, meaning the protein was not in Swiss-Prot before that date; the author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are clearly incompatible with a FAD-dependent monooxygenase from a fungus. Between B and C, the biological evidence (monooxygenase vs. desaturase activity, okaramine cluster membership) unambiguously supports B. No other option is defensible given the experimental evidence, though from sequence alone C might appear superficially plausible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0104",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A2Z5U368 (OKAB_PENOH) explicitly annotates the PATHWAY as 'Alkaloid biosynthesis' with experimental evidence codes (ECO:0000269) from two independent PubMed references (28631282, 29384650). The protein is named 'FAD-dependent monooxygenase okaB' and is part of the 'Okaramines biosynthesis cluster,' where okaramines are indole alkaloids produced by Penicillium ochrochloron. The sequence in the question matches the UniProt entry exactly (SHA-256 confirmed). The expected answer B is directly and experimentally supported.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Weak reasoning clues exist: the sequence contains recognizable FAD-binding Rossmann-fold motifs (e.g., 'GISIGSNG', 'IGDAAHAALPSSG'), and the organism is a fungus, suggesting secondary metabolism. FAD-dependent monooxygenases in fungi are more commonly associated with alkaloid biosynthesis than with carotenoid biosynthesis (which primarily uses FAD-dependent desaturases and cyclases). However, distinguishing a monooxygenase from a desaturase purely from sequence is not straightforward, and the specific assignment to 'alkaloid biosynthesis' over 'carotenoid biosynthesis' for a FAD-binding enzyme in a fungus requires knowledge of this protein's role in the okaramine biosynthetic gene cluster.",
-    "missing_item_specific_fact": "Knowledge that this specific FAD-dependent monooxygenase (okaB) is part of the okaramine (indole alkaloid) biosynthetic gene cluster in Penicillium ochrochloron, and that its monooxygenase activity (EC 1.14.99.-) functions in indole alkaloid modification rather than in carotenoid desaturation or other FAD-dependent pathways.",
-    "reason": "While distractors A (branched-chain amino acid biosynthesis) and D (fucose degradation) can be eliminated by noting the absence of relevant enzyme motifs (ketol-acid reductoisomerase, fucose kinase, etc.), the critical distinction between B (alkaloid biosynthesis) and C (carotenoid biosynthesis) for a FAD-binding enzyme in a fungal organism depends on protein-specific annotation. A model would need to recognize this as okaB or know that fungal FAD-dependent monooxygenases in secondary metabolism are predominantly alkaloid-pathway enzymes, which is a specific biochemical fact rather than a general inference derivable from the sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are clearly incompatible with a FAD-dependent monooxygenase from a fungus. Between B and C, the biological evidence (monooxygenase vs. desaturase activity, okaramine cluster membership) unambiguously supports B. No other option is defensible given the experimental evidence, though from sequence alone C might appear superficially plausible."
-  },
-  "important_caveats": [
-    "The UniProt pathway annotation carries experimental evidence codes (ECO:0000269) from two independent studies, making it well-supported rather than purely computational.",
-    "The sequence-to-entry identity is confirmed by SHA-256 match across both current and historical (entry version 15) records.",
-    "The reviewer-only evidence was absent from the evaluated model input; the model sees only the 450-aa sequence and four pathway labels.",
-    "The first public date of this Swiss-Prot entry is 2025-02-05, meaning the protein was not in Swiss-Prot before that date; the author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -503,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2Z5U368",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "124cba0703561d79a948a58076c33eaa4eaf16e3222aea1ac2d1e8c3a2ee56d7",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 450,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "124cba0703561d79a948a58076c33eaa4eaf16e3222aea1ac2d1e8c3a2ee56d7",
   "current_entry_audit": {
     "entryVersion": 16,
     "firstPublicDate": "2025-02-05",
@@ -534,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-10-10",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "current_source_sequence_sha256": "124cba0703561d79a948a58076c33eaa4eaf16e3222aea1ac2d1e8c3a2ee56d7",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 450,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "124cba0703561d79a948a58076c33eaa4eaf16e3222aea1ac2d1e8c3a2ee56d7",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 15,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2Z5U368",
   "selected_historical_entry_version": 15,
+  "selected_historical_record_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
+  "selected_historical_source_sequence_length": 450,
+  "selected_historical_source_sequence_sha256": "124cba0703561d79a948a58076c33eaa4eaf16e3222aea1ac2d1e8c3a2ee56d7",
   "selected_historical_version": {
     "accession": "A0A2Z5U368",
     "database": "Swiss-Prot",
@@ -552,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "OKAB_PENOH",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
-  "selected_historical_source_sequence_sha256": "124cba0703561d79a948a58076c33eaa4eaf16e3222aea1ac2d1e8c3a2ee56d7",
-  "selected_historical_source_sequence_length": 450,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 15,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -583,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json",
-  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2Z5U368\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json"
 }
 ```
 
@@ -602,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json",
-  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":16,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-10-10\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json"
 }
 ```
 
@@ -621,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json",
-  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Penicillium\"],\"scientificName\":\"Penicillium ochrochloron\",\"taxonId\":69780}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json"
 }
 ```
 
@@ -640,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json",
-  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"Okaramines biosynthesis cluster protein B\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"1.14.99.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28631282\",\"source\":\"PubMed\"}],\"value\":\"FAD-dependent monooxygenase okaB\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json"
 }
 ```
 
@@ -659,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json",
-  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28631282\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"29384650\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json"
 }
 ```
 
@@ -678,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json",
-  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Kato N.\",\"Furutani S.\",\"Otaka J.\",\"Noguchi A.\",\"Kinugasa K.\",\"Kai K.\",\"Hayashi H.\",\"Ihara M.\",\"Takahashi S.\",\"Matsuda K.\",\"Osada H.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"29384650\"},{\"database\":\"DOI\",\"id\":\"10.1021/acschembio.7b00878\"}],\"citationType\":\"journal article\",\"firstPage\":\"561\",\"id\":\"29384650\",\"journal\":\"ACS Chem. Biol.\",\"lastPage\":\"566\",\"publicationDate\":\"2018\",\"title\":\"Biosynthesis and Structure-Activity Relationship Studies of Okaramines That Target Insect Glutamate-Gated Chloride Channels.\",\"volume\":\"13\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 90288 / AK-40\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json"
 }
 ```
 
@@ -697,15 +456,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json",
-  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
-  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Lai C.Y.\",\"Lo I.W.\",\"Hewage R.T.\",\"Chen Y.C.\",\"Chen C.T.\",\"Lee C.F.\",\"Lin S.\",\"Tang M.C.\",\"Lin H.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28631282\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.201705501\"}],\"citationType\":\"journal article\",\"firstPage\":\"9478\",\"id\":\"28631282\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"9482\",\"publicationDate\":\"2017\",\"title\":\"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise Pathway of Okaramines.\",\"volume\":\"56\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:44.878062+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2ad261f4bfb3cc5a0c15be1b85a5a0a206207ff734703e51463cb91db4206521",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2Z5U368.json"
 }
 ```
 
@@ -715,18 +474,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15",
-  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
-  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   OKAB_PENOH              Reviewed;         450 AA.\nAC   A0A2Z5U368;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-OCT-2018, sequence version 1.\nDT   28-JAN-2026, entry version 15.\nDE   RecName: Full=FAD-dependent monooxygenase okaB {ECO:0000303|PubMed:28631282};\nDE            EC=1.14.99.- {ECO:0000269|PubMed:28631282};\nDE   AltName: Full=Okaramines biosynthesis cluster protein B {ECO:0000303|PubMed:28631282};\nGN   Name=okaB {ECO:0000303|PubMed:28631282};\nOS   Penicillium ochrochloron.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Penicillium.\nOX   NCBI_TaxID=69780;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15"
 }
 ```
 
@@ -736,18 +495,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15",
-  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
-  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
-  "source_locator": "lines 14-23",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, DISRUPTION PHENOTYPE, AND\nRP   PATHWAY.\nRC   STRAIN=ATCC 90288 / AK-40;\nRX   PubMed=29384650; DOI=10.1021/acschembio.7b00878;\nRA   Kato N., Furutani S., Otaka J., Noguchi A., Kinugasa K., Kai K.,\nRA   Hayashi H., Ihara M., Takahashi S., Matsuda K., Osada H.;\nRT   \"Biosynthesis and Structure-Activity Relationship Studies of Okaramines\nRT   That Target Insect Glutamate-Gated Chloride Channels.\";\nRL   ACS Chem. Biol. 13:561-566(2018).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15"
 }
 ```
 
@@ -757,18 +516,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15",
-  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
-  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, CATALYTIC ACTIVITY, AND PATHWAY.\nRX   PubMed=28631282; DOI=10.1002/anie.201705501;\nRA   Lai C.Y., Lo I.W., Hewage R.T., Chen Y.C., Chen C.T., Lee C.F., Lin S.,\nRA   Tang M.C., Lin H.C.;\nRT   \"Biosynthesis of Complex Indole Alkaloids: Elucidation of the Concise\nRT   Pathway of Okaramines.\";\nRL   Angew. Chem. Int. Ed. 56:9478-9482(2017).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15"
 }
 ```
 
@@ -778,18 +537,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 15,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15",
-  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
-  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
-  "source_locator": "lines 71-72",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:28631282,\nCC       ECO:0000269|PubMed:29384650}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 15,
+  "retrieved_utc": "2026-11-01T06:27:27.489126+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 71-72",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "2b1bcd0b8c5416082f01d4157f94c2cc77d314020740aa2f915b5447068a6cc8",
+  "url": "https://rest.uniprot.org/unisave/A0A2Z5U368?format=txt&versions=15"
 }
 ```
 

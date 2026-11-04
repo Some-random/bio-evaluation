@@ -1,18 +1,16 @@
-# cofactor_0019: before and after transfer clarification
+# cofactor_0019
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0019.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0019.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Zn(2+)
+**Expected answer:** **B** — Zn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProt entry A0A1I1NU16, which annotates Zn(2+) as a cofactor. The annotation is transferred by similarity from UniProtKB:Q8U1Y4, so it supports the key at the annotation level but is not direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a sufficiently specific basis to identify Zn(2+) as the required cofactor among these options; its cysteine and histidine residues do not establish a zinc requirement.
-
-
-**Missing item-specific fact**
-
-> The protein-specific cofactor annotation, or equivalent experimental evidence, identifying Zn(2+) for this protein or a relevant homolog.
-
-
-**Reason**
-
-> The supplied input gives only a sequence and choices. Identifying the keyed cofactor depends on an item-specific annotation or evidence not provided in the question, rather than a defensible sequence-based distinction.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports Zn(2+) as the annotated answer, and none of the other choices is supported by the supplied sequence-level context. The annotation's transferred nature limits confidence in direct experimental confirmation but does not establish a competing option.
-
-
-### Important caveats
-
-- The matched UniProt annotation cites similarity-based evidence from Q8U1Y4; the cited evidence does not independently demonstrate a Zn(2+) requirement for the supplied protein.
-- The author's exact source snapshot is unknown, although the matched sequence and Zn(2+) annotation are present in the archived entry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific basis to identify Zn(2+) as the required cofactor among these options; its cysteine and histidine residues do not establish a zinc requirement.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation, or equivalent experimental evidence, identifying Zn(2+) for this protein or a relevant homolog.",
-    "reason": "The supplied input gives only a sequence and choices. Identifying the keyed cofactor depends on an item-specific annotation or evidence not provided in the question, rather than a defensible sequence-based distinction."
-  },
-  "case_id": "cofactor_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry A0A1I1NU16, which annotates Zn(2+) as a cofactor. The annotation is transferred by similarity from UniProtKB:Q8U1Y4, so it supports the key at the annotation level but is not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The matched UniProt annotation cites similarity-based evidence from Q8U1Y4; the cited evidence does not independently demonstrate a Zn(2+) requirement for the supplied protein.",
-    "The author's exact source snapshot is unknown, although the matched sequence and Zn(2+) annotation are present in the archived entry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports Zn(2+) as the annotated answer, and none of the other choices is supported by the supplied sequence-level context. The annotation's transferred nature limits confidence in direct experimental confirmation but does not establish a competing option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProt entry A0A1I1NU16, which annotates Zn(2+) as a cofactor. The annotation is transferred by similarity from UniProtKB:Q8U1Y4, so it supports the key at the annotation level but is not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific basis to identify Zn(2+) as the required cofactor among these options; its cysteine and histidine residues do not establish a zinc requirement.",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation, or equivalent experimental evidence, identifying Zn(2+) for this protein or a relevant homolog.",
-    "reason": "The supplied input gives only a sequence and choices. Identifying the keyed cofactor depends on an item-specific annotation or evidence not provided in the question, rather than a defensible sequence-based distinction."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports Zn(2+) as the annotated answer, and none of the other choices is supported by the supplied sequence-level context. The annotation's transferred nature limits confidence in direct experimental confirmation but does not establish a competing option."
-  },
-  "important_caveats": [
-    "The matched UniProt annotation cites similarity-based evidence from Q8U1Y4; the cited evidence does not independently demonstrate a Zn(2+) requirement for the supplied protein.",
-    "The author's exact source snapshot is unknown, although the matched sequence and Zn(2+) annotation are present in the archived entry."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt annotation (C5, H4) lists Zn(2+) as the cofactor for A0A1I1NU16 (BilC, EC 3.4.19.-, bacterial deubiquitinase-like protein). The evidence code is ECO:0000250 (inferred by similarity to Q8U1Y4), not direct experimental proof for this specific protein, but the biological context strongly supports it: deubiquitinases (EC 3.4.19.-) are well-established zinc-dependent enzymes, and the sequence contains a recognizable H-C…H-H…H…C zinc-binding motif ('HGDAFAKLWSHCREKGLTVVADVHTHPGAGFQSDSDRTNPMVARQGHIAIILPNFARWPIRQGNLGIYEYCGQHEW') characteristic of DUB zinc fingers. The answer is consistent with both the database annotation and general DUB biochemistry.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The 173-aa sequence contains a distinctive H-C…H-H…H…C arrangement (e.g., 'HGDAFAKLWSHCREKGLTVVADVHTHPGAGFQSDSDRTNPMVARQGHIAIILPNFARWPIRQGNLGIYEYCGQHEW') that is a hallmark of the zinc-binding finger found in deubiquitinase (DUB) domains. Combined with general knowledge that DUBs (EC 3.4.19.-) are predominantly zinc-dependent cysteine proteases where Zn(2+) coordinates the catalytic site, this pattern provides a concrete biological argument for Zn(2+). The remaining options (Ca²⁺, tungstopterin, cob(II)alamin) are associated with entirely different enzyme classes (signaling/structural proteins, anaerobic oxidoreductases, and methyltransferases/isomerases respectively) and have no plausible connection to a DUB-like fold.
-
-
-**Missing item-specific fact**
-
-> None critical. Identifying the protein as a DUB from a 173-aa sequence requires recognizing the zinc-finger motif and overall DUB-like architecture, which is within the scope of general protein-domain knowledge, though it demands some familiarity with DUB structural motifs.
-
-
-**Reason**
-
-> A knowledgeable model can (a) detect the H/C-rich zinc-binding pattern in the sequence, (b) recognize the overall fold as consistent with a DUB-like cysteine protease domain, and (c) apply the well-established fact that DUBs require Zn(2+). The distractors are from unrelated enzyme classes, making the reasoning chain tractable without memorizing this specific entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options represent cofactors from very different enzyme classes. Ca(2+) is associated with structural/signaling proteins, tungstopterin with anaerobic aldehyde oxidoreductases, and cob(II)alamin with methyltransferases/isomerases. None of these is biologically plausible for a DUB-like protein. Zn(2+) is the only option consistent with the zinc-binding motif present in the sequence and with DUB biochemistry.
-
-
-### Important caveats
-
-- The UniProt Zn(2+) cofactor annotation carries evidence code ECO:0000250 (inferred by similarity to Q8U1Y4), meaning it is a computational transfer rather than a direct experimental measurement on BilC itself.
-- The protein is annotated as EC 3.4.19.- (deubiquitinase-like), a class where Zn(2+) dependence is well established, but the specific BilC protein's zinc dependence has not been independently confirmed by the cited 2024 Nature paper (which focuses on function and Asp-115 mutagenesis, not cofactor characterization).
-- The sequence-match to UniProt A0A1I1NU16 is confirmed (SHA-256 match, 173 aa), so the annotation applies to the exact benchmark sequence.
-- The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the question must be answerable from sequence and general knowledge alone.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The 173-aa sequence contains a distinctive H-C…H-H…H…C arrangement (e.g., 'HGDAFAKLWSHCREKGLTVVADVHTHPGAGFQSDSDRTNPMVARQGHIAIILPNFARWPIRQGNLGIYEYCGQHEW') that is a hallmark of the zinc-binding finger found in deubiquitinase (DUB) domains. Combined with general knowledge that DUBs (EC 3.4.19.-) are predominantly zinc-dependent cysteine proteases where Zn(2+) coordinates the catalytic site, this pattern provides a concrete biological argument for Zn(2+). The remaining options (Ca²⁺, tungstopterin, cob(II)alamin) are associated with entirely different enzyme classes (signaling/structural proteins, anaerobic oxidoreductases, and methyltransferases/isomerases respectively) and have no plausible connection to a DUB-like fold.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. Identifying the protein as a DUB from a 173-aa sequence requires recognizing the zinc-finger motif and overall DUB-like architecture, which is within the scope of general protein-domain knowledge, though it demands some familiarity with DUB structural motifs.",
-    "reason": "A knowledgeable model can (a) detect the H/C-rich zinc-binding pattern in the sequence, (b) recognize the overall fold as consistent with a DUB-like cysteine protease domain, and (c) apply the well-established fact that DUBs require Zn(2+). The distractors are from unrelated enzyme classes, making the reasoning chain tractable without memorizing this specific entry."
-  },
-  "case_id": "cofactor_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H4) lists Zn(2+) as the cofactor for A0A1I1NU16 (BilC, EC 3.4.19.-, bacterial deubiquitinase-like protein). The evidence code is ECO:0000250 (inferred by similarity to Q8U1Y4), not direct experimental proof for this specific protein, but the biological context strongly supports it: deubiquitinases (EC 3.4.19.-) are well-established zinc-dependent enzymes, and the sequence contains a recognizable H-C…H-H…H…C zinc-binding motif ('HGDAFAKLWSHCREKGLTVVADVHTHPGAGFQSDSDRTNPMVARQGHIAIILPNFARWPIRQGNLGIYEYCGQHEW') characteristic of DUB zinc fingers. The answer is consistent with both the database annotation and general DUB biochemistry."
-  },
-  "important_caveats": [
-    "The UniProt Zn(2+) cofactor annotation carries evidence code ECO:0000250 (inferred by similarity to Q8U1Y4), meaning it is a computational transfer rather than a direct experimental measurement on BilC itself.",
-    "The protein is annotated as EC 3.4.19.- (deubiquitinase-like), a class where Zn(2+) dependence is well established, but the specific BilC protein's zinc dependence has not been independently confirmed by the cited 2024 Nature paper (which focuses on function and Asp-115 mutagenesis, not cofactor characterization).",
-    "The sequence-match to UniProt A0A1I1NU16 is confirmed (SHA-256 match, 173 aa), so the annotation applies to the exact benchmark sequence.",
-    "The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the question must be answerable from sequence and general knowledge alone."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent cofactors from very different enzyme classes. Ca(2+) is associated with structural/signaling proteins, tungstopterin with anaerobic aldehyde oxidoreductases, and cob(II)alamin with methyltransferases/isomerases. None of these is biologically plausible for a DUB-like protein. Zn(2+) is the only option consistent with the zinc-binding motif present in the sequence and with DUB biochemistry."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt annotation (C5, H4) lists Zn(2+) as the cofactor for A0A1I1NU16 (BilC, EC 3.4.19.-, bacterial deubiquitinase-like protein). The evidence code is ECO:0000250 (inferred by similarity to Q8U1Y4), not direct experimental proof for this specific protein, but the biological context strongly supports it: deubiquitinases (EC 3.4.19.-) are well-established zinc-dependent enzymes, and the sequence contains a recognizable H-C…H-H…H…C zinc-binding motif ('HGDAFAKLWSHCREKGLTVVADVHTHPGAGFQSDSDRTNPMVARQGHIAIILPNFARWPIRQGNLGIYEYCGQHEW') characteristic of DUB zinc fingers. The answer is consistent with both the database annotation and general DUB biochemistry.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The 173-aa sequence contains a distinctive H-C…H-H…H…C arrangement (e.g., 'HGDAFAKLWSHCREKGLTVVADVHTHPGAGFQSDSDRTNPMVARQGHIAIILPNFARWPIRQGNLGIYEYCGQHEW') that is a hallmark of the zinc-binding finger found in deubiquitinase (DUB) domains. Combined with general knowledge that DUBs (EC 3.4.19.-) are predominantly zinc-dependent cysteine proteases where Zn(2+) coordinates the catalytic site, this pattern provides a concrete biological argument for Zn(2+). The remaining options (Ca²⁺, tungstopterin, cob(II)alamin) are associated with entirely different enzyme classes (signaling/structural proteins, anaerobic oxidoreductases, and methyltransferases/isomerases respectively) and have no plausible connection to a DUB-like fold.",
-    "missing_item_specific_fact": "None critical. Identifying the protein as a DUB from a 173-aa sequence requires recognizing the zinc-finger motif and overall DUB-like architecture, which is within the scope of general protein-domain knowledge, though it demands some familiarity with DUB structural motifs.",
-    "reason": "A knowledgeable model can (a) detect the H/C-rich zinc-binding pattern in the sequence, (b) recognize the overall fold as consistent with a DUB-like cysteine protease domain, and (c) apply the well-established fact that DUBs require Zn(2+). The distractors are from unrelated enzyme classes, making the reasoning chain tractable without memorizing this specific entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options represent cofactors from very different enzyme classes. Ca(2+) is associated with structural/signaling proteins, tungstopterin with anaerobic aldehyde oxidoreductases, and cob(II)alamin with methyltransferases/isomerases. None of these is biologically plausible for a DUB-like protein. Zn(2+) is the only option consistent with the zinc-binding motif present in the sequence and with DUB biochemistry."
-  },
-  "important_caveats": [
-    "The UniProt Zn(2+) cofactor annotation carries evidence code ECO:0000250 (inferred by similarity to Q8U1Y4), meaning it is a computational transfer rather than a direct experimental measurement on BilC itself.",
-    "The protein is annotated as EC 3.4.19.- (deubiquitinase-like), a class where Zn(2+) dependence is well established, but the specific BilC protein's zinc dependence has not been independently confirmed by the cited 2024 Nature paper (which focuses on function and Asp-115 mutagenesis, not cofactor characterization).",
-    "The sequence-match to UniProt A0A1I1NU16 is confirmed (SHA-256 match, 173 aa), so the annotation applies to the exact benchmark sequence.",
-    "The reviewer-only evidence (UniProt accession, annotation) was not available to the evaluated model; the question must be answerable from sequence and general knowledge alone."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -387,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +269,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A1I1NU16",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "d895b201f6e47e07f5d218ae2fc39becf53cafed9f0ce331c296e06777dbb9bb",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 173,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "d895b201f6e47e07f5d218ae2fc39becf53cafed9f0ce331c296e06777dbb9bb",
   "current_entry_audit": {
     "entryVersion": 17,
     "firstPublicDate": "2025-04-09",
@@ -530,14 +287,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-11-22",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
-  "current_source_sequence_sha256": "d895b201f6e47e07f5d218ae2fc39becf53cafed9f0ce331c296e06777dbb9bb",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 173,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "d895b201f6e47e07f5d218ae2fc39becf53cafed9f0ce331c296e06777dbb9bb",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 16,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A1I1NU16",
   "selected_historical_entry_version": 16,
+  "selected_historical_record_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
+  "selected_historical_source_sequence_length": 173,
+  "selected_historical_source_sequence_sha256": "d895b201f6e47e07f5d218ae2fc39becf53cafed9f0ce331c296e06777dbb9bb",
   "selected_historical_version": {
     "accession": "A0A1I1NU16",
     "database": "Swiss-Prot",
@@ -548,24 +321,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "BILC_COLS4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
-  "selected_historical_source_sequence_sha256": "d895b201f6e47e07f5d218ae2fc39becf53cafed9f0ce331c296e06777dbb9bb",
-  "selected_historical_source_sequence_length": 173,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 16,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +339,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json",
-  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
-  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A1I1NU16\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json"
 }
 ```
 
@@ -598,15 +358,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json",
-  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
-  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":17,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-11-22\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json"
 }
 ```
 
@@ -617,15 +377,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json",
-  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
-  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Burkholderiales\",\"Oxalobacteraceae\",\"Collimonas\"],\"scientificName\":\"Collimonas sp. (strain OK412)\",\"taxonId\":1801619}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json"
 }
 ```
 
@@ -636,15 +396,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json",
-  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
-  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"3.4.19.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"Bacterial deubiquitinase-like protein BilC\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39020165\",\"source\":\"PubMed\"}],\"value\":\"DUB\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json"
 }
 ```
 
@@ -655,15 +415,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json",
-  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
-  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8U1Y4\",\"source\":\"UniProtKB\"}],\"name\":\"Zn(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json"
 }
 ```
 
@@ -674,15 +434,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json",
-  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
-  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Hoer J.\",\"Wolf S.G.\",\"Sorek R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39020165\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41586-024-07616-5\"}],\"citationType\":\"journal article\",\"firstPage\":\"850\",\"id\":\"39020165\",\"journal\":\"Nature\",\"lastPage\":\"856\",\"publicationDate\":\"2024\",\"title\":\"Bacteria conjugate ubiquitin-like proteins to interfere with phage assembly.\",\"volume\":\"631\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"MUTAGENESIS OF ASP-115\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:36.222044+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2450dd0158f63f7b3f964bfa3e69c422b1dc5d0a2efaa93e6a1ae658b0822f51",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1I1NU16.json"
 }
 ```
 
@@ -692,18 +452,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16",
-  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
-  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   BILC_COLS4              Reviewed;         173 AA.\nAC   A0A1I1NU16;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   22-NOV-2017, sequence version 1.\nDT   28-JAN-2026, entry version 16.\nDE   RecName: Full=Bacterial deubiquitinase-like protein BilC {ECO:0000303|PubMed:39020165};\nDE            Short=DUB {ECO:0000303|PubMed:39020165};\nDE            EC=3.4.19.- {ECO:0000269|PubMed:39020165};\nGN   Name=bilC {ECO:0000303|PubMed:39020165};\nGN   ORFNames=SAMN04515619_11956 {ECO:0000312|EMBL:SFD01151.1};\nOS   Collimonas sp. (strain OK412).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria;\nOC   Burkholderiales; Oxalobacteraceae; Collimonas.\nOX   NCBI_TaxID=1801619;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16"
 }
 ```
 
@@ -713,18 +473,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16",
-  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
-  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Bacterial deubiquitinase-like protein BilC {ECO:0000303|PubMed:39020165};\nDE            Short=DUB {ECO:0000303|PubMed:39020165};\nDE            EC=3.4.19.- {ECO:0000269|PubMed:39020165};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16"
 }
 ```
 
@@ -734,18 +494,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16",
-  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
-  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
-  "source_locator": "lines 20-26",
   "excerpt": "RN   [2]\nRP   FUNCTION, AND MUTAGENESIS OF ASP-115.\nRX   PubMed=39020165; DOI=10.1038/s41586-024-07616-5;\nRA   Hoer J., Wolf S.G., Sorek R.;\nRT   \"Bacteria conjugate ubiquitin-like proteins to interfere with phage\nRT   assembly.\";\nRL   Nature 631:850-856(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-26",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16"
 }
 ```
 
@@ -755,18 +515,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 16,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16",
-  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
-  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
-  "source_locator": "lines 52-54",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;\nCC         Evidence={ECO:0000250|UniProtKB:Q8U1Y4};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 16,
+  "retrieved_utc": "2026-11-02T04:24:38.299172+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "96684b22a4f18425cd76c99b60ea43354370a287ba92e5f18d487c26373fdf25",
+  "url": "https://rest.uniprot.org/unisave/A0A1I1NU16?format=txt&versions=16"
 }
 ```
 

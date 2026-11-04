@@ -1,18 +1,16 @@
-# GO_cellular_component_0019: before and after transfer clarification
+# GO_cellular_component_0019
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0019.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0019.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **D** — mitochondrial membrane
+**Expected answer:** **D** — mitochondrial membrane
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,252 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches the annotated Drosophila protein. Its mitochondrial-membrane annotation is transferred by similarity, while the record also includes experimentally supported mitochondrial localization and complex I assembly-complex localization. These support choice D, though the membrane-specific annotation is not itself direct experimental evidence in the cited record.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence appears to encode a multipass membrane protein, which weighs against spindle and is consistent with a membrane location. Hydrophobic segments alone do not distinguish mitochondrial membrane from trans-Golgi network membrane, nor establish the protein-specific mitochondrial association.
-
-
-**Missing item-specific fact**
-
-> The protein-specific association with mitochondrial complex I biogenesis and mitochondrial localization.
-
-
-**Reason**
-
-> The exact distinction needed for D relies on protein-specific annotation or experimental knowledge not supplied with the sequence. Recognizing the sequence or naming a predictor would not provide an input-based biological argument for that location.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The evidence supports the more specific choice, mitochondrial membrane. Although that is within a mitochondrion, option A is the distinct GO term “host cell mitochondrion,” not a general alternative for mitochondrial membrane.
-
-
-### Important caveats
-
-- The mitochondrial-membrane subcellular-location annotation is transferred by similarity; the cited experimental GO annotations support mitochondrial and complex I assembly-complex localization.
-- The author’s exact source snapshot is unknown, but the supplied sequence matches both current and historical records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence appears to encode a multipass membrane protein, which weighs against spindle and is consistent with a membrane location. Hydrophobic segments alone do not distinguish mitochondrial membrane from trans-Golgi network membrane, nor establish the protein-specific mitochondrial association.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific association with mitochondrial complex I biogenesis and mitochondrial localization.",
-    "reason": "The exact distinction needed for D relies on protein-specific annotation or experimental knowledge not supplied with the sequence. Recognizing the sequence or naming a predictor would not provide an input-based biological argument for that location."
-  },
-  "case_id": "GO_cellular_component_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "C8",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches the annotated Drosophila protein. Its mitochondrial-membrane annotation is transferred by similarity, while the record also includes experimentally supported mitochondrial localization and complex I assembly-complex localization. These support choice D, though the membrane-specific annotation is not itself direct experimental evidence in the cited record."
-  },
-  "important_caveats": [
-    "The mitochondrial-membrane subcellular-location annotation is transferred by similarity; the cited experimental GO annotations support mitochondrial and complex I assembly-complex localization.",
-    "The author’s exact source snapshot is unknown, but the supplied sequence matches both current and historical records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports the more specific choice, mitochondrial membrane. Although that is within a mitochondrion, option A is the distinct GO term “host cell mitochondrion,” not a general alternative for mitochondrial membrane."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches the annotated Drosophila protein. Its mitochondrial-membrane annotation is transferred by similarity, while the record also includes experimentally supported mitochondrial localization and complex I assembly-complex localization. These support choice D, though the membrane-specific annotation is not itself direct experimental evidence in the cited record.",
-    "evidence_ids": ["C1", "C5", "C6", "C8", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence appears to encode a multipass membrane protein, which weighs against spindle and is consistent with a membrane location. Hydrophobic segments alone do not distinguish mitochondrial membrane from trans-Golgi network membrane, nor establish the protein-specific mitochondrial association.",
-    "missing_item_specific_fact": "The protein-specific association with mitochondrial complex I biogenesis and mitochondrial localization.",
-    "reason": "The exact distinction needed for D relies on protein-specific annotation or experimental knowledge not supplied with the sequence. Recognizing the sequence or naming a predictor would not provide an input-based biological argument for that location."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The evidence supports the more specific choice, mitochondrial membrane. Although that is within a mitochondrion, option A is the distinct GO term “host cell mitochondrion,” not a general alternative for mitochondrial membrane."
-  },
-  "important_caveats": [
-    "The mitochondrial-membrane subcellular-location annotation is transferred by similarity; the cited experimental GO annotations support mitochondrial and complex I assembly-complex localization.",
-    "The author’s exact source snapshot is unknown, but the supplied sequence matches both current and historical records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry Q9VLM7 (TMEM126B/dTMEM126B) is annotated with SUBCELLULAR LOCATION: Mitochondrion membrane (multi-pass membrane protein). GO:0031966 (mitochondrial membrane) is directly annotated (ISS). Additionally, the experimentally supported (IDA:FlyBase) annotation GO:0160295 (mitochondrial complex I intermediate assembly complex) is part_of GO:0005743 (mitochondrial inner membrane), which is_a GO:0031966 (mitochondrial membrane). The 2021 PubMed paper (34386730) confirms involvement in mitochondrial complex I biogenesis. Option D is well-supported by both direct annotation and the ontology hierarchy connecting the MCIA complex to mitochondrial membrane.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [C8](#evidence-c8), [C9](#evidence-c9), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5), [GO3](#evidence-go3), [GO7](#evidence-go7).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Some general reasoning can eliminate C (spindle is a microtubule structure, incompatible with a multi-pass membrane protein) and A (host cell mitochondrion is a GO term reserved for pathogen-host symbiosis contexts, not applicable to a Drosophila protein in its own cell). The absence of a cleavable signal peptide at the N-terminus weakly argues against secretory-pathway compartments like the trans-Golgi network. However, the sequence lacks a canonical N-terminal mitochondrial targeting sequence (positively charged amphipathic helix), and the multi-pass TM topology alone does not distinguish mitochondrial membrane from Golgi membrane. The definitive identification of this protein as TMEM126B / a component of the MCIA complex (mitochondrial complex I intermediate assembly complex) requires protein-specific knowledge not derivable from the bare sequence.
-
-
-**Missing item-specific fact**
-
-> The identity of this 223-aa protein as Drosophila TMEM126B, a known subunit of the mitochondrial complex I intermediate assembly (MCIA) complex localized to the inner mitochondrial membrane. Without this identification, the multi-pass membrane topology and lack of obvious targeting signals do not conclusively distinguish mitochondrial membrane (D) from trans-Golgi network membrane (B).
-
-
-**Reason**
-
-> While general reasoning can eliminate spindle (C) and host cell mitochondrion (A) through GO ontology logic and basic biology, the critical D-vs-B distinction for a short multi-pass membrane protein without a canonical mitochondrial presequence or ER signal peptide depends on recognizing the protein's specific identity and its role in complex I assembly. The UniProt 'mitochondrion membrane' annotation itself is ISS (inferred from similarity to human Q8IUX1), underscoring that this localization is not trivially predictable from the Drosophila sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "D"
-]
-```
-
-> Option A ('host cell mitochondrion', GO:0033650) is technically a mitochondrion term and a model unfamiliar with the GO term's pathogen-specific context might select it over D. However, the GO definition explicitly restricts it to symbiotic/host contexts, making D the correct and more specific answer. Option B (trans-Golgi network membrane) is the most challenging distractor because the sequence provides no definitive targeting signal to exclude it without protein identity knowledge.
-
-
-### Important caveats
-
-- The direct 'mitochondrion membrane' annotation (C5/H3) carries evidence code ECO:0000250 (similarity to human Q8IUX1), not direct experimental evidence for this Drosophila protein. The IDA experimental evidence (C6, C8) supports 'mitochondrion' and 'MCIA complex' but the membrane specificity comes through the ontology hierarchy (MCIA is part_of inner mitochondrial membrane is_a mitochondrial membrane).
-- The UniProt entry was first public on 2025-02-05; the historical snapshot (entry v168, Jan 2026) already contains the mitochondrial membrane annotation, so the key was available at the time of benchmark construction.
-- The sequence-match is confirmed (SHA256 match across current and historical records), so the annotation applies to the exact 223-aa sequence provided.
-- The absence of a canonical N-terminal mitochondrial targeting presequence in the sequence is notable; TMEM126B is a multi-pass membrane protein whose mitochondrial targeting mechanism differs from the classic N-terminal presequence pathway.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Some general reasoning can eliminate C (spindle is a microtubule structure, incompatible with a multi-pass membrane protein) and A (host cell mitochondrion is a GO term reserved for pathogen-host symbiosis contexts, not applicable to a Drosophila protein in its own cell). The absence of a cleavable signal peptide at the N-terminus weakly argues against secretory-pathway compartments like the trans-Golgi network. However, the sequence lacks a canonical N-terminal mitochondrial targeting sequence (positively charged amphipathic helix), and the multi-pass TM topology alone does not distinguish mitochondrial membrane from Golgi membrane. The definitive identification of this protein as TMEM126B / a component of the MCIA complex (mitochondrial complex I intermediate assembly complex) requires protein-specific knowledge not derivable from the bare sequence.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of this 223-aa protein as Drosophila TMEM126B, a known subunit of the mitochondrial complex I intermediate assembly (MCIA) complex localized to the inner mitochondrial membrane. Without this identification, the multi-pass membrane topology and lack of obvious targeting signals do not conclusively distinguish mitochondrial membrane (D) from trans-Golgi network membrane (B).",
-    "reason": "While general reasoning can eliminate spindle (C) and host cell mitochondrion (A) through GO ontology logic and basic biology, the critical D-vs-B distinction for a short multi-pass membrane protein without a canonical mitochondrial presequence or ER signal peptide depends on recognizing the protein's specific identity and its role in complex I assembly. The UniProt 'mitochondrion membrane' annotation itself is ISS (inferred from similarity to human Q8IUX1), underscoring that this localization is not trivially predictable from the Drosophila sequence alone."
-  },
-  "case_id": "GO_cellular_component_0019",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "C8",
-      "C9",
-      "H3",
-      "H4",
-      "H5",
-      "GO3",
-      "GO7"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VLM7 (TMEM126B/dTMEM126B) is annotated with SUBCELLULAR LOCATION: Mitochondrion membrane (multi-pass membrane protein). GO:0031966 (mitochondrial membrane) is directly annotated (ISS). Additionally, the experimentally supported (IDA:FlyBase) annotation GO:0160295 (mitochondrial complex I intermediate assembly complex) is part_of GO:0005743 (mitochondrial inner membrane), which is_a GO:0031966 (mitochondrial membrane). The 2021 PubMed paper (34386730) confirms involvement in mitochondrial complex I biogenesis. Option D is well-supported by both direct annotation and the ontology hierarchy connecting the MCIA complex to mitochondrial membrane."
-  },
-  "important_caveats": [
-    "The direct 'mitochondrion membrane' annotation (C5/H3) carries evidence code ECO:0000250 (similarity to human Q8IUX1), not direct experimental evidence for this Drosophila protein. The IDA experimental evidence (C6, C8) supports 'mitochondrion' and 'MCIA complex' but the membrane specificity comes through the ontology hierarchy (MCIA is part_of inner mitochondrial membrane is_a mitochondrial membrane).",
-    "The UniProt entry was first public on 2025-02-05; the historical snapshot (entry v168, Jan 2026) already contains the mitochondrial membrane annotation, so the key was available at the time of benchmark construction.",
-    "The sequence-match is confirmed (SHA256 match across current and historical records), so the annotation applies to the exact 223-aa sequence provided.",
-    "The absence of a canonical N-terminal mitochondrial targeting presequence in the sequence is notable; TMEM126B is a multi-pass membrane protein whose mitochondrial targeting mechanism differs from the classic N-terminal presequence pathway."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "D"
-    ],
-    "reason": "Option A ('host cell mitochondrion', GO:0033650) is technically a mitochondrion term and a model unfamiliar with the GO term's pathogen-specific context might select it over D. However, the GO definition explicitly restricts it to symbiotic/host contexts, making D the correct and more specific answer. Option B (trans-Golgi network membrane) is the most challenging distractor because the sequence provides no definitive targeting signal to exclude it without protein identity knowledge."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0019",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry Q9VLM7 (TMEM126B/dTMEM126B) is annotated with SUBCELLULAR LOCATION: Mitochondrion membrane (multi-pass membrane protein). GO:0031966 (mitochondrial membrane) is directly annotated (ISS). Additionally, the experimentally supported (IDA:FlyBase) annotation GO:0160295 (mitochondrial complex I intermediate assembly complex) is part_of GO:0005743 (mitochondrial inner membrane), which is_a GO:0031966 (mitochondrial membrane). The 2021 PubMed paper (34386730) confirms involvement in mitochondrial complex I biogenesis. Option D is well-supported by both direct annotation and the ontology hierarchy connecting the MCIA complex to mitochondrial membrane.",
-    "evidence_ids": ["C5", "C6", "C7", "C8", "C9", "H3", "H4", "H5", "GO3", "GO7"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Some general reasoning can eliminate C (spindle is a microtubule structure, incompatible with a multi-pass membrane protein) and A (host cell mitochondrion is a GO term reserved for pathogen-host symbiosis contexts, not applicable to a Drosophila protein in its own cell). The absence of a cleavable signal peptide at the N-terminus weakly argues against secretory-pathway compartments like the trans-Golgi network. However, the sequence lacks a canonical N-terminal mitochondrial targeting sequence (positively charged amphipathic helix), and the multi-pass TM topology alone does not distinguish mitochondrial membrane from Golgi membrane. The definitive identification of this protein as TMEM126B / a component of the MCIA complex (mitochondrial complex I intermediate assembly complex) requires protein-specific knowledge not derivable from the bare sequence.",
-    "missing_item_specific_fact": "The identity of this 223-aa protein as Drosophila TMEM126B, a known subunit of the mitochondrial complex I intermediate assembly (MCIA) complex localized to the inner mitochondrial membrane. Without this identification, the multi-pass membrane topology and lack of obvious targeting signals do not conclusively distinguish mitochondrial membrane (D) from trans-Golgi network membrane (B).",
-    "reason": "While general reasoning can eliminate spindle (C) and host cell mitochondrion (A) through GO ontology logic and basic biology, the critical D-vs-B distinction for a short multi-pass membrane protein without a canonical mitochondrial presequence or ER signal peptide depends on recognizing the protein's specific identity and its role in complex I assembly. The UniProt 'mitochondrion membrane' annotation itself is ISS (inferred from similarity to human Q8IUX1), underscoring that this localization is not trivially predictable from the Drosophila sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "D"],
-    "reason": "Option A ('host cell mitochondrion', GO:0033650) is technically a mitochondrion term and a model unfamiliar with the GO term's pathogen-specific context might select it over D. However, the GO definition explicitly restricts it to symbiotic/host contexts, making D the correct and more specific answer. Option B (trans-Golgi network membrane) is the most challenging distractor because the sequence provides no definitive targeting signal to exclude it without protein identity knowledge."
-  },
-  "important_caveats": [
-    "The direct 'mitochondrion membrane' annotation (C5/H3) carries evidence code ECO:0000250 (similarity to human Q8IUX1), not direct experimental evidence for this Drosophila protein. The IDA experimental evidence (C6, C8) supports 'mitochondrion' and 'MCIA complex' but the membrane specificity comes through the ontology hierarchy (MCIA is part_of inner mitochondrial membrane is_a mitochondrial membrane).",
-    "The UniProt entry was first public on 2025-02-05; the historical snapshot (entry v168, Jan 2026) already contains the mitochondrial membrane annotation, so the key was available at the time of benchmark construction.",
-    "The sequence-match is confirmed (SHA256 match across current and historical records), so the annotation applies to the exact 223-aa sequence provided.",
-    "The absence of a canonical N-terminal mitochondrial targeting presequence in the sequence is notable; TMEM126B is a multi-pass membrane protein whose mitochondrial targeting mechanism differs from the classic N-terminal presequence pathway."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -405,10 +162,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -524,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q9VLM7",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "348e261d0e928244343eb91071c92f465eb86fcf296f8991e3baaa5305428ff0",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 223,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "348e261d0e928244343eb91071c92f465eb86fcf296f8991e3baaa5305428ff0",
   "current_entry_audit": {
     "entryVersion": 170,
     "firstPublicDate": "2025-02-05",
@@ -555,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2000-05-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "current_source_sequence_sha256": "348e261d0e928244343eb91071c92f465eb86fcf296f8991e3baaa5305428ff0",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 223,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "348e261d0e928244343eb91071c92f465eb86fcf296f8991e3baaa5305428ff0",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 168,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q9VLM7",
   "selected_historical_entry_version": 168,
+  "selected_historical_record_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
+  "selected_historical_source_sequence_length": 223,
+  "selected_historical_source_sequence_sha256": "348e261d0e928244343eb91071c92f465eb86fcf296f8991e3baaa5305428ff0",
   "selected_historical_version": {
     "accession": "Q9VLM7",
     "database": "Swiss-Prot",
@@ -573,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "T126_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
-  "selected_historical_source_sequence_sha256": "348e261d0e928244343eb91071c92f465eb86fcf296f8991e3baaa5305428ff0",
-  "selected_historical_source_sequence_length": 223,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 168,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -608,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q9VLM7\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -627,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":170,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2000-05-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -646,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -665,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0032033\",\"source\":\"FlyBase\"}],\"value\":\"Transmembrane protein 126\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34386730\",\"source\":\"PubMed\"}],\"value\":\"dTMEM126B\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -684,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q8IUX1\",\"source\":\"UniProtKB\"}],\"id\":\"SL-0171\",\"value\":\"Mitochondrion membrane\"},\"topology\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"id\":\"SL-9909\",\"value\":\"Multi-pass membrane protein\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -703,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/32",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"34386730\",\"source\":\"PubMed\"}],\"id\":\"GO:0160295\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrial complex I intermediate assembly complex\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/32",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -722,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/33",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0031966\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrial membrane\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/33",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -741,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/34",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"34386730\",\"source\":\"PubMed\"}],\"id\":\"GO:0005739\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:mitochondrion\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:FlyBase\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/34",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -760,15 +506,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json",
-  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
-  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Murari A.\",\"Rhooms S.K.\",\"Garcia C.\",\"Liu T.\",\"Li H.\",\"Mishra B.\",\"Deshong C.\",\"Owusu-Ansah E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34386730\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.isci.2021.102869\"}],\"citationType\":\"journal article\",\"firstPage\":\"102869\",\"id\":\"34386730\",\"journal\":\"IScience\",\"lastPage\":\"102869\",\"publicationDate\":\"2021\",\"title\":\"Dissecting the concordant and disparate roles of NDUFAF3 and NDUFAF4 in mitochondrial complex I biogenesis.\",\"volume\":\"24\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"INTERACTION WITH COMPLEX 1\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:33:25.958156+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "1bcd7111d7277e25bf4c25f893d24cbc495d89cdc4770cf6a66f205e3d829c07",
+  "url": "https://rest.uniprot.org/uniprotkb/Q9VLM7.json"
 }
 ```
 
@@ -778,18 +524,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 168,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168",
-  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
-  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   T126_DROME              Reviewed;         223 AA.\nAC   Q9VLM7;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-MAY-2000, sequence version 1.\nDT   28-JAN-2026, entry version 168.\nDE   RecName: Full=Transmembrane protein 126 {ECO:0000312|FlyBase:FBgn0032033};\nDE            Short=dTMEM126B {ECO:0000303|PubMed:34386730};\nGN   Name=Tmem126 {ECO:0000312|FlyBase:FBgn0032033};\nGN   ORFNames=CG13392 {ECO:0000312|FlyBase:FBgn0032033};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 168,
+  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
+  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168"
 }
 ```
 
@@ -799,18 +545,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 168,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168",
-  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
-  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
-  "source_locator": "lines 74-81",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, AND INTERACTION WITH COMPLEX 1.\nRX   PubMed=34386730; DOI=10.1016/j.isci.2021.102869;\nRA   Murari A., Rhooms S.K., Garcia C., Liu T., Li H., Mishra B., Deshong C.,\nRA   Owusu-Ansah E.;\nRT   \"Dissecting the concordant and disparate roles of NDUFAF3 and NDUFAF4 in\nRT   mitochondrial complex I biogenesis.\";\nRL   IScience 24:102869-102869(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 168,
+  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 74-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
+  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168"
 }
 ```
 
@@ -820,18 +566,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 168,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168",
-  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
-  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
-  "source_locator": "lines 86-88",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Mitochondrion membrane\nCC       {ECO:0000250|UniProtKB:Q8IUX1}; Multi-pass membrane protein\nCC       {ECO:0000255}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 168,
+  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 86-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
+  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168"
 }
 ```
 
@@ -841,18 +587,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 168,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168",
-  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
-  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
-  "source_locator": "lines 125-125",
   "excerpt": "DR   GO; GO:0031966; C:mitochondrial membrane; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 168,
+  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 125-125",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
+  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168"
 }
 ```
 
@@ -862,18 +608,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 168,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168",
-  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
-  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
-  "source_locator": "lines 126-126",
   "excerpt": "DR   GO; GO:0005739; C:mitochondrion; IDA:FlyBase.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 168,
+  "retrieved_utc": "2026-11-02T04:33:30.846128+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 126-126",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aa6b59d19cc42e8140fd34df1a8b1e15291088b9b8268a8d83178bcf68a1764a",
+  "url": "https://rest.uniprot.org/unisave/Q9VLM7?format=txt&versions=168"
 }
 ```
 
@@ -884,15 +630,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59031-59043",
   "excerpt": "[Term]\nid: GO:0005743\nname: mitochondrial inner membrane\nnamespace: cellular_component\ndef: \"The inner, i.e. lumen-facing, lipid bilayer of the mitochondrial envelope. It is highly folded to form cristae.\" [GOC:ai]\nsynonym: \"inner mitochondrial membrane\" EXACT []\nsynonym: \"inner mitochondrion membrane\" EXACT []\nsynonym: \"mitochondrion inner membrane\" EXACT []\nxref: NIF_Subcellular:sao1371347282\nxref: Wikipedia:Inner_mitochondrial_membrane\nis_a: GO:0019866 ! organelle inner membrane\nis_a: GO:0031966 ! mitochondrial membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005743",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59031-59043",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005743"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -903,15 +649,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59855-59863",
   "excerpt": "[Term]\nid: GO:0005819\nname: spindle\nnamespace: cellular_component\ndef: \"The array of microtubules and associated molecules that forms between opposite poles of a eukaryotic cell during mitosis or meiosis and serves to move the duplicated chromosomes apart.\" [ISBN:0198547684]\nxref: Wikipedia:Spindle_apparatus\nis_a: GO:0043232 ! intracellular membraneless organelle\nrelationship: part_of GO:0015630 ! microtubule cytoskeleton\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005819",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59855-59863",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005819"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -922,15 +668,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 181484-181492",
   "excerpt": "[Term]\nid: GO:0031966\nname: mitochondrial membrane\nnamespace: cellular_component\ndef: \"Either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope.\" [GOC:mah, NIF_Subcellular:sao1045389829]\nxref: NIF_Subcellular:sao1045389829\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0005740 ! mitochondrial envelope\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031966",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 181484-181492",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031966"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -941,15 +687,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 187565-187574",
   "excerpt": "[Term]\nid: GO:0032588\nname: trans-Golgi network membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding any of the compartments that make up the trans-Golgi network.\" [GOC:mah]\nsynonym: \"Golgi trans face membrane\" RELATED []\nsynonym: \"trans Golgi network membrane\" EXACT []\nis_a: GO:0031090 ! organelle membrane\nrelationship: part_of GO:0005802 ! trans-Golgi network\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0032588",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 187565-187574",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0032588"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -960,15 +706,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 199319-199327",
   "excerpt": "[Term]\nid: GO:0033650\nname: host cell mitochondrion\nnamespace: cellular_component\ndef: \"A semiautonomous, self replicating organelle as found in host cells that occurs in varying numbers, shapes, and sizes in the cell cytoplasm. The host is defined as the larger of the organisms involved in a symbiotic interaction.\" [GOC:pamgo_curators]\nsynonym: \"host mitochondria\" EXACT []\nis_a: GO:0033648 ! host intracellular membrane-bounded organelle\nis_a: GO:0033655 ! host cell cytoplasm part\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0033650",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 199319-199327",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0033650"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -979,15 +725,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO6",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 411064-411072",
   "excerpt": "[Term]\nid: GO:0098800\nname: inner mitochondrial membrane protein complex\nnamespace: cellular_component\ndef: \"Any protein complex that is part of the inner mitochondrial membrane.\" [GOC:dos]\nis_a: GO:0098796 ! membrane protein complex\nis_a: GO:0098798 ! mitochondrial protein-containing complex\nrelationship: part_of GO:0005743 ! mitochondrial inner membrane\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0098800",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 411064-411072",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0098800"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -998,15 +744,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO7",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 451477-451485",
   "excerpt": "[Term]\nid: GO:0160295\nname: mitochondrial complex I intermediate assembly complex\nnamespace: cellular_component\ndef: \"A protein complex involved in mitochondrial respiratory chain complex I (MCI) assembly. The mitochondrial complex I intermediate assembly (MCIA) complex is an inner mitochondrial membrane complex required for the aggregation, arrangement and bonding together of the subunits of the ND2-module of MCI. In humans, the MCIA complex is formed from NDUFAF1, ACAD9, ECSIT, TMEM126B, TMEM186 and COA1.\" [PMID:32320651]\nsynonym: \"MCIA complex\" EXACT []\nsynonym: \"mitochondrial CI assembly complex\" EXACT []\nis_a: GO:0098800 ! inner mitochondrial membrane protein complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0160295",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 451477-451485",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0160295"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

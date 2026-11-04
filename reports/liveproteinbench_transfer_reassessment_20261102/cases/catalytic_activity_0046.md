@@ -1,18 +1,16 @@
-# catalytic_activity_0046: before and after transfer clarification
+# catalytic_activity_0046
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0046.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0046.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — L-aspartate + ATP = 4-phospho-L-aspartate + ADP
+**Expected answer:** **B** — L-aspartate + ATP = 4-phospho-L-aspartate + ADP
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,236 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt entry annotates the protein as aspartokinase and gives the reaction in choice B. The annotation is transferred by similarity from UniProtKB:P10869 (ECO:0000250), rather than shown here as direct experimental evidence for this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is compatible with a kinase, and its length may disfavor some alternatives, but those broad features do not establish the substrate or distinguish aspartokinase activity in B from the other ATP-dependent kinase activity in C.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment to aspartokinase, or equivalent evidence identifying its enzyme family and substrate specificity, is not supplied in the question.
-
-
-**Reason**
-
-> Choosing B requires identifying this particular sequence as an aspartokinase; that identity and its reaction are provided by the reviewer-only database annotation, not by a decisive general biological argument in the prompt.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied evidence supports B for the matched protein. The sequence-only prompt does not make another option equally well supported, though it lacks enough explicit information to establish B by general reasoning alone.
-
-
-### Important caveats
-
-- The current and historical UniProt records match the supplied sequence, but the author’s exact source snapshot is unknown.
-- The cited catalytic-activity annotation is supported by similarity evidence to P10869; the supplied evidence does not independently establish experimental validation for this Candida albicans protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is compatible with a kinase, and its length may disfavor some alternatives, but those broad features do not establish the substrate or distinguish aspartokinase activity in B from the other ATP-dependent kinase activity in C.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment to aspartokinase, or equivalent evidence identifying its enzyme family and substrate specificity, is not supplied in the question.",
-    "reason": "Choosing B requires identifying this particular sequence as an aspartokinase; that identity and its reaction are provided by the reviewer-only database annotation, not by a decisive general biological argument in the prompt."
-  },
-  "case_id": "catalytic_activity_0046",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates the protein as aspartokinase and gives the reaction in choice B. The annotation is transferred by similarity from UniProtKB:P10869 (ECO:0000250), rather than shown here as direct experimental evidence for this exact protein."
-  },
-  "important_caveats": [
-    "The current and historical UniProt records match the supplied sequence, but the author’s exact source snapshot is unknown.",
-    "The cited catalytic-activity annotation is supported by similarity evidence to P10869; the supplied evidence does not independently establish experimental validation for this Candida albicans protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports B for the matched protein. The sequence-only prompt does not make another option equally well supported, though it lacks enough explicit information to establish B by general reasoning alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0046",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt entry annotates the protein as aspartokinase and gives the reaction in choice B. The annotation is transferred by similarity from UniProtKB:P10869 (ECO:0000250), rather than shown here as direct experimental evidence for this exact protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is compatible with a kinase, and its length may disfavor some alternatives, but those broad features do not establish the substrate or distinguish aspartokinase activity in B from the other ATP-dependent kinase activity in C.",
-    "missing_item_specific_fact": "The protein-specific assignment to aspartokinase, or equivalent evidence identifying its enzyme family and substrate specificity, is not supplied in the question.",
-    "reason": "Choosing B requires identifying this particular sequence as an aspartokinase; that identity and its reaction are provided by the reviewer-only database annotation, not by a decisive general biological argument in the prompt."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied evidence supports B for the matched protein. The sequence-only prompt does not make another option equally well supported, though it lacks enough explicit information to establish B by general reasoning alone."
-  },
-  "important_caveats": [
-    "The current and historical UniProt records match the supplied sequence, but the author’s exact source snapshot is unknown.",
-    "The cited catalytic-activity annotation is supported by similarity evidence to P10869; the supplied evidence does not independently establish experimental validation for this Candida albicans protein."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence (544 aa) matches UniProt entry A0A1D8PMB8 (AK_CANAL, Candida albicans aspartokinase, EC 2.7.2.4) with exact sequence comparison. The entry's catalytic activity annotation reads 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP', which is identical to Choice B. The annotation carries evidence code ECO:0000250 (similarity-based transfer from P10869, the S. cerevisiae aspartokinase), so it is a computational/similarity annotation rather than direct experimental measurement on this Candida protein, but it is a well-supported and consistent assignment.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Choices A (radical-SAM taurine dioxygenase) and D (polyketide synthase/methyltransferase) can be eliminated by general reasoning: the sequence lacks radical-SAM CX3CX2C motifs and does not resemble a type I PKS. The sequence contains nucleotide-binding-like motifs (e.g., 'GGTSVGK', 'GKGTIIYPDNIGRR') suggesting a kinase, which narrows to B or C. However, distinguishing aspartokinase (amino acid kinase superfamily) from phosphoglycerate kinase (P-loop kinase family) from a raw 544-aa string requires recognizing family-specific fold signatures or the exact sequence. The 544-aa length is consistent with fungal aspartokinases (S. cerevisiae AK is also 544 aa) and longer than typical phosphoglycerate kinases (~417 aa), but this is a weak heuristic, not a definitive structural argument.
-
-
-**Missing item-specific fact**
-
-> The specific sequence motifs and domain architecture unique to the amino acid kinase superfamily (aspartokinase) versus the P-loop kinase family (phosphoglycerate kinase), or recognition of this exact Candida albicans HOM3/AK sequence, is needed to confidently choose B over C.
-
-
-**Reason**
-
-> General kinase motif recognition narrows the field to B vs C, but the final discrimination between aspartokinase and phosphoglycerate kinase depends on item-specific knowledge of family-specific sequence signatures or direct sequence identification, not on a self-contained biological argument derivable from the raw sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choices A and D are clearly non-kinase reactions and can be eliminated. Between B and C, the sequence length (544 aa) and the absence of the canonical PGK-specific motifs (e.g., the highly conserved 'DxxxxGK' P-loop of PGK) mildly favor B, but neither choice is strictly ambiguous given the correct annotation. No two choices are equally defensible.
-
-
-### Important caveats
-
-- The aspartokinase annotation is based on similarity transfer (ECO:0000250 from P10869), not direct experimental characterization of the Candida albicans protein.
-- The UniProt accession was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.
-- The sequence length heuristic (544 aa ≈ fungal AK vs ~417 aa PGK) provides only a weak, non-quantitative hint and should not be treated as a rigorous discriminator.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Choices A (radical-SAM taurine dioxygenase) and D (polyketide synthase/methyltransferase) can be eliminated by general reasoning: the sequence lacks radical-SAM CX3CX2C motifs and does not resemble a type I PKS. The sequence contains nucleotide-binding-like motifs (e.g., 'GGTSVGK', 'GKGTIIYPDNIGRR') suggesting a kinase, which narrows to B or C. However, distinguishing aspartokinase (amino acid kinase superfamily) from phosphoglycerate kinase (P-loop kinase family) from a raw 544-aa string requires recognizing family-specific fold signatures or the exact sequence. The 544-aa length is consistent with fungal aspartokinases (S. cerevisiae AK is also 544 aa) and longer than typical phosphoglycerate kinases (~417 aa), but this is a weak heuristic, not a definitive structural argument.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific sequence motifs and domain architecture unique to the amino acid kinase superfamily (aspartokinase) versus the P-loop kinase family (phosphoglycerate kinase), or recognition of this exact Candida albicans HOM3/AK sequence, is needed to confidently choose B over C.",
-    "reason": "General kinase motif recognition narrows the field to B vs C, but the final discrimination between aspartokinase and phosphoglycerate kinase depends on item-specific knowledge of family-specific sequence signatures or direct sequence identification, not on a self-contained biological argument derivable from the raw sequence alone."
-  },
-  "case_id": "catalytic_activity_0046",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence (544 aa) matches UniProt entry A0A1D8PMB8 (AK_CANAL, Candida albicans aspartokinase, EC 2.7.2.4) with exact sequence comparison. The entry's catalytic activity annotation reads 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP', which is identical to Choice B. The annotation carries evidence code ECO:0000250 (similarity-based transfer from P10869, the S. cerevisiae aspartokinase), so it is a computational/similarity annotation rather than direct experimental measurement on this Candida protein, but it is a well-supported and consistent assignment."
-  },
-  "important_caveats": [
-    "The aspartokinase annotation is based on similarity transfer (ECO:0000250 from P10869), not direct experimental characterization of the Candida albicans protein.",
-    "The UniProt accession was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
-    "The sequence length heuristic (544 aa ≈ fungal AK vs ~417 aa PGK) provides only a weak, non-quantitative hint and should not be treated as a rigorous discriminator."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A and D are clearly non-kinase reactions and can be eliminated. Between B and C, the sequence length (544 aa) and the absence of the canonical PGK-specific motifs (e.g., the highly conserved 'DxxxxGK' P-loop of PGK) mildly favor B, but neither choice is strictly ambiguous given the correct annotation. No two choices are equally defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0046",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence (544 aa) matches UniProt entry A0A1D8PMB8 (AK_CANAL, Candida albicans aspartokinase, EC 2.7.2.4) with exact sequence comparison. The entry's catalytic activity annotation reads 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP', which is identical to Choice B. The annotation carries evidence code ECO:0000250 (similarity-based transfer from P10869, the S. cerevisiae aspartokinase), so it is a computational/similarity annotation rather than direct experimental measurement on this Candida protein, but it is a well-supported and consistent assignment.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Choices A (radical-SAM taurine dioxygenase) and D (polyketide synthase/methyltransferase) can be eliminated by general reasoning: the sequence lacks radical-SAM CX3CX2C motifs and does not resemble a type I PKS. The sequence contains nucleotide-binding-like motifs (e.g., 'GGTSVGK', 'GKGTIIYPDNIGRR') suggesting a kinase, which narrows to B or C. However, distinguishing aspartokinase (amino acid kinase superfamily) from phosphoglycerate kinase (P-loop kinase family) from a raw 544-aa string requires recognizing family-specific fold signatures or the exact sequence. The 544-aa length is consistent with fungal aspartokinases (S. cerevisiae AK is also 544 aa) and longer than typical phosphoglycerate kinases (~417 aa), but this is a weak heuristic, not a definitive structural argument.",
-    "missing_item_specific_fact": "The specific sequence motifs and domain architecture unique to the amino acid kinase superfamily (aspartokinase) versus the P-loop kinase family (phosphoglycerate kinase), or recognition of this exact Candida albicans HOM3/AK sequence, is needed to confidently choose B over C.",
-    "reason": "General kinase motif recognition narrows the field to B vs C, but the final discrimination between aspartokinase and phosphoglycerate kinase depends on item-specific knowledge of family-specific sequence signatures or direct sequence identification, not on a self-contained biological argument derivable from the raw sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A and D are clearly non-kinase reactions and can be eliminated. Between B and C, the sequence length (544 aa) and the absence of the canonical PGK-specific motifs (e.g., the highly conserved 'DxxxxGK' P-loop of PGK) mildly favor B, but neither choice is strictly ambiguous given the correct annotation. No two choices are equally defensible."
-  },
-  "important_caveats": [
-    "The aspartokinase annotation is based on similarity transfer (ECO:0000250 from P10869), not direct experimental characterization of the Candida albicans protein.",
-    "The UniProt accession was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
-    "The sequence length heuristic (544 aa ≈ fungal AK vs ~417 aa PGK) provides only a weak, non-quantitative hint and should not be treated as a rigorous discriminator."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -385,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A1D8PMB8",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 544,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
   "current_entry_audit": {
     "entryVersion": 41,
     "firstPublicDate": "2025-02-05",
@@ -530,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-01-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
-  "current_source_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 544,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 39,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A1D8PMB8",
   "selected_historical_entry_version": 39,
+  "selected_historical_record_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "selected_historical_source_sequence_length": 544,
+  "selected_historical_source_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
   "selected_historical_version": {
     "accession": "A0A1D8PMB8",
     "database": "Swiss-Prot",
@@ -548,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "AK_CANAL",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
-  "selected_historical_source_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
-  "selected_historical_source_sequence_length": 544,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 39,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
-  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
-  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A1D8PMB8\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json"
 }
 ```
 
@@ -598,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
-  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
-  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":41,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-01-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json"
 }
 ```
 
@@ -617,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
-  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
-  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Yeast\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000559\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Pichiomycetes\",\"Debaryomycetaceae\",\"Candida/Lodderomyces clade\",\"Candida\"],\"scientificName\":\"Candida albicans (strain SC5314 / ATCC MYA-2876)\",\"taxonId\":237561}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json"
 }
 ```
 
@@ -636,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
-  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
-  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10869\",\"source\":\"UniProtKB\"}],\"value\":\"2.7.2.4\"}],\"fullName\":{\"value\":\"Aspartokinase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json"
 }
 ```
 
@@ -655,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
-  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
-  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10869\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:23777\"}}],\"reaction\":{\"ecNumber\":\"2.7.2.4\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10869\",\"source\":\"UniProtKB\"}],\"name\":\"L-aspartate + ATP = 4-phospho-L-aspartate + ADP\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:23776\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29991\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57535\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json"
 }
 ```
 
@@ -673,18 +435,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39",
-  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
-  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   AK_CANAL                Reviewed;         544 AA.\nAC   A0A1D8PMB8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JAN-2017, sequence version 1.\nDT   18-JUN-2025, entry version 39.\nDE   RecName: Full=Aspartokinase;\nDE            EC=2.7.2.4 {ECO:0000250|UniProtKB:P10869};\nGN   Name=HOM3 {ECO:0000312|CGD:CAL0000181037};\nGN   OrderedLocusNames=CAALFM_C405540WA {ECO:0000312|EMBL:AOW29286.1},\nGN   orf19.8820 {ECO:0000312|CGD:CAL0000181037};\nOS   Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Pichiomycetes;\nOC   Debaryomycetaceae; Candida/Lodderomyces clade; Candida.\nOX   NCBI_TaxID=237561 {ECO:0000312|Proteomes:UP000000559};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39"
 }
 ```
 
@@ -694,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39",
-  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
-  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Aspartokinase;\nDE            EC=2.7.2.4 {ECO:0000250|UniProtKB:P10869};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39"
 }
 ```
 
@@ -715,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 39,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39",
-  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
-  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
-  "source_locator": "lines 63-69",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-aspartate + ATP = 4-phospho-L-aspartate + ADP;\nCC         Xref=Rhea:RHEA:23776, ChEBI:CHEBI:29991, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:57535, ChEBI:CHEBI:456216; EC=2.7.2.4;\nCC         Evidence={ECO:0000250|UniProtKB:P10869};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:23777;\nCC         Evidence={ECO:0000250|UniProtKB:P10869};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 39,
+  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 63-69",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39"
 }
 ```
 

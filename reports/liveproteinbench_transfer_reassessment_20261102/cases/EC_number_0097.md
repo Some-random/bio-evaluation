@@ -1,18 +1,16 @@
-# EC_number_0097: before and after transfer clarification
+# EC_number_0097
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0097.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0097.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **A** — 1.16.1.10
+**Expected answer:** **A** — 1.16.1.10
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,249 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry for ferric acinetobactin reductase, annotated EC 1.16.1.10. The entry links this assignment and its catalytic reactions to PubMed 34308084 with experimental-evidence code ECO:0000269.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a sufficiently specific basis to identify the enzyme's siderophore substrate or assign this complete four-part EC number rather than the alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional assignment as ferric acinetobactin reductase, including its experimentally characterized reactions with Fe(II)-siderophore and NAD(P)+.
-
-
-**Reason**
-
-> The key is supported by sequence-matched, evidence-coded database annotation, but that annotation and its cited experimental characterization were not supplied to the evaluated model. General sequence-based reasoning does not distinguish the exact EC number.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available sequence-matched annotation supports A; the alternatives describe different enzyme classifications, and no evidence here supports them for this protein.
-
-
-### Important caveats
-
-- The reviewer-only database evidence was absent from the original input and supports the key without making the question reasoning-supported.
-- The UniProt entry cites a biochemical characterization paper, but that primary paper was not independently retrieved or validated here.
-- The exact author source snapshot is unknown; the sequence matches both the current and checked historical UniProt records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific basis to identify the enzyme's siderophore substrate or assign this complete four-part EC number rather than the alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional assignment as ferric acinetobactin reductase, including its experimentally characterized reactions with Fe(II)-siderophore and NAD(P)+.",
-    "reason": "The key is supported by sequence-matched, evidence-coded database annotation, but that annotation and its cited experimental characterization were not supplied to the evaluated model. General sequence-based reasoning does not distinguish the exact EC number."
-  },
-  "case_id": "EC_number_0097",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for ferric acinetobactin reductase, annotated EC 1.16.1.10. The entry links this assignment and its catalytic reactions to PubMed 34308084 with experimental-evidence code ECO:0000269."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence was absent from the original input and supports the key without making the question reasoning-supported.",
-    "The UniProt entry cites a biochemical characterization paper, but that primary paper was not independently retrieved or validated here.",
-    "The exact author source snapshot is unknown; the sequence matches both the current and checked historical UniProt records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence-matched annotation supports A; the alternatives describe different enzyme classifications, and no evidence here supports them for this protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0097",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry for ferric acinetobactin reductase, annotated EC 1.16.1.10. The entry links this assignment and its catalytic reactions to PubMed 34308084 with experimental-evidence code ECO:0000269.",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently specific basis to identify the enzyme's siderophore substrate or assign this complete four-part EC number rather than the alternatives.",
-    "missing_item_specific_fact": "The protein-specific functional assignment as ferric acinetobactin reductase, including its experimentally characterized reactions with Fe(II)-siderophore and NAD(P)+.",
-    "reason": "The key is supported by sequence-matched, evidence-coded database annotation, but that annotation and its cited experimental characterization were not supplied to the evaluated model. General sequence-based reasoning does not distinguish the exact EC number."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available sequence-matched annotation supports A; the alternatives describe different enzyme classifications, and no evidence here supports them for this protein."
-  },
-  "important_caveats": [
-    "The reviewer-only database evidence was absent from the original input and supports the key without making the question reasoning-supported.",
-    "The UniProt entry cites a biochemical characterization paper, but that primary paper was not independently retrieved or validated here.",
-    "The exact author source snapshot is unknown; the sequence matches both the current and checked historical UniProt records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt entry A0A1E3M8P2 (BAUF_ACIBA), annotated as Ferric acinetobactin reductase with EC=1.16.1.10. The annotation carries evidence code ECO:0000269 (direct assay) from PubMed:34308084, supported by X-ray crystallography (PDB 7LRN) in complex with FAD. The catalytic reaction (2 Fe(II)-siderophore + NAD(P)+ + H+ = 2 Fe(III)-siderophore + NAD(P)H) is experimentally verified. This is a direct experimental annotation, not merely computational inference.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model might partially narrow the class: the sequence lacks the cytochrome P450 heme-binding motif (FxxGxxxCxG), potentially ruling out EC 1.14.19.80; it lacks obvious decarboxylase or ATP-diphosphohydrolase motifs, potentially ruling out EC 4.1.1.129 and 3.6.1.5. However, identifying the specific 4-digit EC number 1.16.1.10 (ferric acinetobactin reductase) from a 286-aa sequence requires recognizing it as a flavin-dependent siderophore-interacting protein specific to acinetobactin in Acinetobacter baumannii — an item-specific annotation not derivable from general sequence reasoning.
-
-
-**Missing item-specific fact**
-
-> The specific identity of this protein as BauF (ferric acinetobactin reductase) and its assignment to the narrow EC 1.16.1.10 class (acting on Fe(II)-siderophore with NAD+/NADP+ as acceptor) requires database lookup or memorization of this particular protein's experimental characterization (PubMed 34308084, PDB 7LRN). No general sequence feature uniquely encodes 'ferric acinetobactin reductase' as opposed to other flavin-dependent reductases.
-
-
-**Reason**
-
-> While broad class discrimination (oxidoreductase vs. hydrolase vs. lyase) is partially feasible from sequence, the precise 4-digit EC assignment 1.16.1.10 depends on knowing this is specifically a siderophore-interacting protein acting on Fe(II)-acinetobactin. The sequence provides no unique signature that distinguishes EC 1.16.1.10 from other flavin-dependent oxidoreductases without external annotation lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The distractors span different EC top-level classes (1, 3, 4), and B is a P450 with a well-known heme motif absent from this sequence. Given the experimental evidence, only A is correct. The question is not ambiguous in terms of the correct answer, though it is difficult to resolve by reasoning alone.
-
-
-### Important caveats
-
-- The UniProt annotation is based on direct experimental evidence (ECO:0000269, direct assay; X-ray crystallography PDB 7LRN), providing high confidence in the EC assignment.
-- The sequence is 286 aa and matches the canonical UniProt entry exactly (sha256 confirmed).
-- The EC number 1.16.1.10 is a very specific, recently characterized enzyme class (2021 publication), making memorization-based identification even less likely for a general model.
-- The identity_origin of the accession was inferred mechanically from dataset metadata and was absent from the evaluated model input.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model might partially narrow the class: the sequence lacks the cytochrome P450 heme-binding motif (FxxGxxxCxG), potentially ruling out EC 1.14.19.80; it lacks obvious decarboxylase or ATP-diphosphohydrolase motifs, potentially ruling out EC 4.1.1.129 and 3.6.1.5. However, identifying the specific 4-digit EC number 1.16.1.10 (ferric acinetobactin reductase) from a 286-aa sequence requires recognizing it as a flavin-dependent siderophore-interacting protein specific to acinetobactin in Acinetobacter baumannii — an item-specific annotation not derivable from general sequence reasoning.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific identity of this protein as BauF (ferric acinetobactin reductase) and its assignment to the narrow EC 1.16.1.10 class (acting on Fe(II)-siderophore with NAD+/NADP+ as acceptor) requires database lookup or memorization of this particular protein's experimental characterization (PubMed 34308084, PDB 7LRN). No general sequence feature uniquely encodes 'ferric acinetobactin reductase' as opposed to other flavin-dependent reductases.",
-    "reason": "While broad class discrimination (oxidoreductase vs. hydrolase vs. lyase) is partially feasible from sequence, the precise 4-digit EC assignment 1.16.1.10 depends on knowing this is specifically a siderophore-interacting protein acting on Fe(II)-acinetobactin. The sequence provides no unique signature that distinguishes EC 1.16.1.10 from other flavin-dependent oxidoreductases without external annotation lookup."
-  },
-  "case_id": "EC_number_0097",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H2",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry A0A1E3M8P2 (BAUF_ACIBA), annotated as Ferric acinetobactin reductase with EC=1.16.1.10. The annotation carries evidence code ECO:0000269 (direct assay) from PubMed:34308084, supported by X-ray crystallography (PDB 7LRN) in complex with FAD. The catalytic reaction (2 Fe(II)-siderophore + NAD(P)+ + H+ = 2 Fe(III)-siderophore + NAD(P)H) is experimentally verified. This is a direct experimental annotation, not merely computational inference."
-  },
-  "important_caveats": [
-    "The UniProt annotation is based on direct experimental evidence (ECO:0000269, direct assay; X-ray crystallography PDB 7LRN), providing high confidence in the EC assignment.",
-    "The sequence is 286 aa and matches the canonical UniProt entry exactly (sha256 confirmed).",
-    "The EC number 1.16.1.10 is a very specific, recently characterized enzyme class (2021 publication), making memorization-based identification even less likely for a general model.",
-    "The identity_origin of the accession was inferred mechanically from dataset metadata and was absent from the evaluated model input."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors span different EC top-level classes (1, 3, 4), and B is a P450 with a well-known heme motif absent from this sequence. Given the experimental evidence, only A is correct. The question is not ambiguous in terms of the correct answer, though it is difficult to resolve by reasoning alone."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0097",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt entry A0A1E3M8P2 (BAUF_ACIBA), annotated as Ferric acinetobactin reductase with EC=1.16.1.10. The annotation carries evidence code ECO:0000269 (direct assay) from PubMed:34308084, supported by X-ray crystallography (PDB 7LRN) in complex with FAD. The catalytic reaction (2 Fe(II)-siderophore + NAD(P)+ + H+ = 2 Fe(III)-siderophore + NAD(P)H) is experimentally verified. This is a direct experimental annotation, not merely computational inference.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H2", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model might partially narrow the class: the sequence lacks the cytochrome P450 heme-binding motif (FxxGxxxCxG), potentially ruling out EC 1.14.19.80; it lacks obvious decarboxylase or ATP-diphosphohydrolase motifs, potentially ruling out EC 4.1.1.129 and 3.6.1.5. However, identifying the specific 4-digit EC number 1.16.1.10 (ferric acinetobactin reductase) from a 286-aa sequence requires recognizing it as a flavin-dependent siderophore-interacting protein specific to acinetobactin in Acinetobacter baumannii — an item-specific annotation not derivable from general sequence reasoning.",
-    "missing_item_specific_fact": "The specific identity of this protein as BauF (ferric acinetobactin reductase) and its assignment to the narrow EC 1.16.1.10 class (acting on Fe(II)-siderophore with NAD+/NADP+ as acceptor) requires database lookup or memorization of this particular protein's experimental characterization (PubMed 34308084, PDB 7LRN). No general sequence feature uniquely encodes 'ferric acinetobactin reductase' as opposed to other flavin-dependent reductases.",
-    "reason": "While broad class discrimination (oxidoreductase vs. hydrolase vs. lyase) is partially feasible from sequence, the precise 4-digit EC assignment 1.16.1.10 depends on knowing this is specifically a siderophore-interacting protein acting on Fe(II)-acinetobactin. The sequence provides no unique signature that distinguishes EC 1.16.1.10 from other flavin-dependent oxidoreductases without external annotation lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The distractors span different EC top-level classes (1, 3, 4), and B is a P450 with a well-known heme motif absent from this sequence. Given the experimental evidence, only A is correct. The question is not ambiguous in terms of the correct answer, though it is difficult to resolve by reasoning alone."
-  },
-  "important_caveats": [
-    "The UniProt annotation is based on direct experimental evidence (ECO:0000269, direct assay; X-ray crystallography PDB 7LRN), providing high confidence in the EC assignment.",
-    "The sequence is 286 aa and matches the canonical UniProt entry exactly (sha256 confirmed).",
-    "The EC number 1.16.1.10 is a very specific, recently characterized enzyme class (2021 publication), making memorization-based identification even less likely for a general model.",
-    "The identity_origin of the accession was inferred mechanically from dataset metadata and was absent from the evaluated model input."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -398,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -516,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A1E3M8P2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 286,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
   "current_entry_audit": {
     "entryVersion": 37,
     "firstPublicDate": "2025-04-09",
@@ -547,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2017-01-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "current_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 286,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 35,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A1E3M8P2",
   "selected_historical_entry_version": 35,
+  "selected_historical_record_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "selected_historical_source_sequence_length": 286,
+  "selected_historical_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
   "selected_historical_version": {
     "accession": "A0A1E3M8P2",
     "database": "Swiss-Prot",
@@ -565,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "BAUF_ACIBA",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "selected_historical_source_sequence_sha256": "69db519277a1b220b6f5ad165e8b2558cee0754be3f6745d9bf8c017a90dd9e3",
-  "selected_historical_source_sequence_length": 286,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 35,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -596,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A1E3M8P2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -615,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":37,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-01-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -634,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Gammaproteobacteria\",\"Moraxellales\",\"Moraxellaceae\",\"Acinetobacter\",\"Acinetobacter calcoaceticus/baumannii complex\"],\"scientificName\":\"Acinetobacter baumannii\",\"taxonId\":470}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -653,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"value\":\"Flavin-dependent siderophore-interacting protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"value\":\"Flavin-dependent SIP\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"value\":\"1.16.1.10\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Ferric acinetobactin reductase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -672,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"right-to-left\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:15063\"}}],\"reaction\":{\"ecNumber\":\"1.16.1.10\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"name\":\"2 a Fe(II)-siderophore + NAD(+) + H(+) = 2 a Fe(III)-siderophore + NADH\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:15061\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11342\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11344\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29033\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29034\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57540\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57945\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -691,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"right-to-left\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:28797\"}}],\"reaction\":{\"ecNumber\":\"1.16.1.10\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"34308084\",\"source\":\"PubMed\"}],\"name\":\"2 a Fe(II)-siderophore + NADP(+) + H(+) = 2 a Fe(III)-siderophore + NADPH\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:28795\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11342\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11344\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29033\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29034\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57783\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58349\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -710,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json",
-  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
-  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Valentino H.\",\"Korasick D.A.\",\"Bohac T.J.\",\"Shapiro J.A.\",\"Wencewicz T.A.\",\"Tanner J.J.\",\"Sobrado P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"34308084\"},{\"database\":\"DOI\",\"id\":\"10.1021/acsomega.1c03047\"}],\"citationType\":\"journal article\",\"firstPage\":\"18537\",\"id\":\"34308084\",\"journal\":\"ACS Omega\",\"lastPage\":\"18547\",\"publicationDate\":\"2021\",\"title\":\"Structural and Biochemical Characterization of the Flavin-Dependent Siderophore-Interacting Protein from Acinetobacter baumannii.\",\"volume\":\"6\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7LRN\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"ATCC 17978 / DSM 105126 / CIP 53.77 / LMG 1025 / NCDC KC755 / 5377\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.85 ANGSTROMS) IN COMPLEX WITH FAD\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"COFACTOR\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:33.445950+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27262ada0697001eda3da1d3769c61657664eca5dc8977cc9c5dbaec21268418",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1E3M8P2.json"
 }
 ```
 
@@ -728,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   BAUF_ACIBA              Reviewed;         286 AA.\nAC   A0A1E3M8P2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JAN-2017, sequence version 1.\nDT   28-JAN-2026, entry version 35.\nDE   RecName: Full=Ferric acinetobactin reductase {ECO:0000305};\nDE            EC=1.16.1.10 {ECO:0000269|PubMed:34308084};\nDE   AltName: Full=Flavin-dependent siderophore-interacting protein {ECO:0000303|PubMed:34308084};\nDE            Short=Flavin-dependent SIP {ECO:0000303|PubMed:34308084};\nGN   Name=bauF {ECO:0000303|PubMed:34308084};\nGN   ORFNames=AUO97_00860 {ECO:0000312|EMBL:APP29445.1};\nOS   Acinetobacter baumannii.\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Gammaproteobacteria;\nOC   Moraxellales; Moraxellaceae; Acinetobacter;\nOC   Acinetobacter calcoaceticus/baumannii complex.\nOX   NCBI_TaxID=470;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 
@@ -749,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Ferric acinetobactin reductase {ECO:0000305};\nDE            EC=1.16.1.10 {ECO:0000269|PubMed:34308084};\nDE   AltName: Full=Flavin-dependent siderophore-interacting protein {ECO:0000303|PubMed:34308084};\nDE            Short=Flavin-dependent SIP {ECO:0000303|PubMed:34308084};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 
@@ -770,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 22-31",
   "excerpt": "RN   [2] {ECO:0007744|PDB:7LRN}\nRP   X-RAY CRYSTALLOGRAPHY (2.85 ANGSTROMS) IN COMPLEX WITH FAD, FUNCTION,\nRP   CATALYTIC ACTIVITY, AND COFACTOR.\nRC   STRAIN=ATCC 17978 / DSM 105126 / CIP 53.77 / LMG 1025 / NCDC KC755 / 5377;\nRX   PubMed=34308084; DOI=10.1021/acsomega.1c03047;\nRA   Valentino H., Korasick D.A., Bohac T.J., Shapiro J.A., Wencewicz T.A.,\nRA   Tanner J.J., Sobrado P.;\nRT   \"Structural and Biochemical Characterization of the Flavin-Dependent\nRT   Siderophore-Interacting Protein from Acinetobacter baumannii.\";\nRL   ACS Omega 6:18537-18547(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 
@@ -791,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 43-50",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=2 a Fe(II)-siderophore + NAD(+) + H(+) = 2 a Fe(III)-\nCC         siderophore + NADH; Xref=Rhea:RHEA:15061, Rhea:RHEA-COMP:11342,\nCC         Rhea:RHEA-COMP:11344, ChEBI:CHEBI:15378, ChEBI:CHEBI:29033,\nCC         ChEBI:CHEBI:29034, ChEBI:CHEBI:57540, ChEBI:CHEBI:57945;\nCC         EC=1.16.1.10; Evidence={ECO:0000269|PubMed:34308084};\nCC       PhysiologicalDirection=right-to-left; Xref=Rhea:RHEA:15063;\nCC         Evidence={ECO:0000269|PubMed:34308084};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 
@@ -812,18 +561,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 35,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35",
-  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
-  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
-  "source_locator": "lines 51-58",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=2 a Fe(II)-siderophore + NADP(+) + H(+) = 2 a Fe(III)-\nCC         siderophore + NADPH; Xref=Rhea:RHEA:28795, Rhea:RHEA-COMP:11342,\nCC         Rhea:RHEA-COMP:11344, ChEBI:CHEBI:15378, ChEBI:CHEBI:29033,\nCC         ChEBI:CHEBI:29034, ChEBI:CHEBI:57783, ChEBI:CHEBI:58349;\nCC         EC=1.16.1.10; Evidence={ECO:0000269|PubMed:34308084};\nCC       PhysiologicalDirection=right-to-left; Xref=Rhea:RHEA:28797;\nCC         Evidence={ECO:0000269|PubMed:34308084};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 35,
+  "retrieved_utc": "2026-11-02T04:24:37.007835+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-58",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "21245d159df4b708ad492dd55bbbd986a27609a5d66677beffd60475a84e1746",
+  "url": "https://rest.uniprot.org/unisave/A0A1E3M8P2?format=txt&versions=35"
 }
 ```
 

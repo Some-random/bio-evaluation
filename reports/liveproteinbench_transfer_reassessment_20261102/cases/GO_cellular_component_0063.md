@@ -1,18 +1,16 @@
-# GO_cellular_component_0063: before and after transfer clarification
+# GO_cellular_component_0063
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0063.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0063.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — cytoplasm
+**Expected answer:** **B** — cytoplasm
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt record reports cytoplasm with experimental evidence (ECO:0000269), as well as secretion. Thus cytoplasm is supported, though it is not the protein’s only reported location.
-
-Citations as saved: [C5](#evidence-c5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The N-terminal hydrophobic stretch is consistent with a signal peptide and secretion, but does not establish cytoplasmic localization. The sequence lacks an obvious basis for the more specialized membrane or P-body choices, yet that does not specifically demonstrate cytoplasm.
-
-
-**Missing item-specific fact**
-
-> The protein-specific localization report that this protein is found in the cytoplasm as well as being secreted.
-
-
-**Reason**
-
-> Choosing cytoplasm as the supported localization depends on the protein-specific annotation or experiment, not on a sequence feature that meaningfully establishes that compartment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, cytoplasm is supported by the cited localization evidence; the reported secreted location is not offered as a choice. The word “primary” is underspecified for a protein reported in both locations.
-
-
-### Important caveats
-
-- The experimental evidence is cited in the database record but was not independently validated from the primary paper here.
-- The GO cytoplasm cross-reference is computationally assigned (IEA), distinct from the experimental subcellular-location evidence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with a signal peptide and secretion, but does not establish cytoplasmic localization. The sequence lacks an obvious basis for the more specialized membrane or P-body choices, yet that does not specifically demonstrate cytoplasm.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific localization report that this protein is found in the cytoplasm as well as being secreted.",
-    "reason": "Choosing cytoplasm as the supported localization depends on the protein-specific annotation or experiment, not on a sequence feature that meaningfully establishes that compartment."
-  },
-  "case_id": "GO_cellular_component_0063",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record reports cytoplasm with experimental evidence (ECO:0000269), as well as secretion. Thus cytoplasm is supported, though it is not the protein’s only reported location."
-  },
-  "important_caveats": [
-    "The experimental evidence is cited in the database record but was not independently validated from the primary paper here.",
-    "The GO cytoplasm cross-reference is computationally assigned (IEA), distinct from the experimental subcellular-location evidence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, cytoplasm is supported by the cited localization evidence; the reported secreted location is not offered as a choice. The word “primary” is underspecified for a protein reported in both locations."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0063",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt record reports cytoplasm with experimental evidence (ECO:0000269), as well as secretion. Thus cytoplasm is supported, though it is not the protein’s only reported location.",
-    "evidence_ids": ["C5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The N-terminal hydrophobic stretch is consistent with a signal peptide and secretion, but does not establish cytoplasmic localization. The sequence lacks an obvious basis for the more specialized membrane or P-body choices, yet that does not specifically demonstrate cytoplasm.",
-    "missing_item_specific_fact": "The protein-specific localization report that this protein is found in the cytoplasm as well as being secreted.",
-    "reason": "Choosing cytoplasm as the supported localization depends on the protein-specific annotation or experiment, not on a sequence feature that meaningfully establishes that compartment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, cytoplasm is supported by the cited localization evidence; the reported secreted location is not offered as a choice. The word “primary” is underspecified for a protein reported in both locations."
-  },
-  "important_caveats": [
-    "The experimental evidence is cited in the database record but was not independently validated from the primary paper here.",
-    "The GO cytoplasm cross-reference is computationally assigned (IEA), distinct from the experimental subcellular-location evidence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry D4QD81 (Longistatin, Haemaphysalis longicornis) explicitly annotates SUBCELLULAR LOCATION as both 'Secreted' and 'Cytoplasm' (C5, H6), both citing PubMed:19968997. The GO cross-reference includes GO:0005737 (cytoplasm) with IEA:UniProtKB-SubCell evidence (C6, H7). Among the four provided options, 'cytoplasm' is the only one with any annotation support. The extracellular/secreted annotation (IDA, GO:0005615) is also present but 'extracellular space' is not among the choices. The expected answer B is therefore supported by the database annotation, though the evidence code for cytoplasm is IEA (electronic) rather than direct experimental.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H6](#evidence-h6), [H7](#evidence-h7).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The C-terminal region contains EF-hand calcium-binding motifs (e.g., 'DNNNKLDGQEMMAAMFHTNHHEEDDEHDGKVPLIIPEQDIASYVDSVLRADKNQDGFISYPELRTSDLTNQI'), and EF-hand proteins (calmodulin, troponin C, etc.) are canonically cytoplasmic calcium sensors. This provides a positive biological argument for cytoplasm. The other three options can be eliminated: (A) early endosome membrane requires transmembrane segments or endosomal targeting signals absent here; (C) P-body requires RNA-binding/mRNA-decay motifs absent here; (D) 'other organism cell membrane' refers to host-pathogen membrane interactions and requires transmembrane domains absent here. Thus, EF-hand biology plus elimination of the other three options provides a reasoning path to B.
-
-
-**Missing item-specific fact**
-
-> The signal peptide (MTHRRLLWALCVAALLGVVAAQAG) strongly suggests secretion/extracellular localization, which is not among the options. The dual UniProt annotation (Secreted AND Cytoplasm) and the fact that 'extracellular space' was excluded from the choices are item-specific facts that resolve the tension created by the signal peptide. Without knowing that the protein is experimentally found in both fractions and that extracellular is not an option, a model focusing on the signal peptide could be misled.
-
-
-**Reason**
-
-> A concrete biological argument exists: EF-hand proteins are classically cytoplasmic, and none of the other three options have any sequence-level support (no TM domains, no RNA-binding motifs). The signal peptide creates tension but does not point to any of the other three options either. The elimination logic (no TM → not A or D; no RNA motifs → not C) combined with EF-hand → cytoplasm provides a defensible reasoning chain, though the signal peptide introduces real ambiguity that is only fully resolved by knowing the annotation and the option set.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four options, only B (cytoplasm) has any annotation or biological-motif support. Options A, C, and D lack any sequence-level justification (no transmembrane domains, no endosomal signals, no RNA-binding motifs). The signal peptide suggests secretion, but 'extracellular space' or 'secreted' is not an option, so it does not create a competing defensible choice. The question is somewhat misleading given the prominent signal peptide, but it does not produce a genuinely ambiguous answer among the provided options.
-
-
-### Important caveats
-
-- The UniProt cytoplasm annotation carries evidence code IEA (Inferred from Electronic Annotation via UniProtKB-SubCell), which is weaker than the IDA evidence for extracellular space. The 'primary' location could reasonably be argued to be secreted/extracellular, but that is not among the options.
-- The signal peptide (residues 1-21) is a strong secretion signal. A model correctly identifying it would expect a secreted/extracellular answer, creating confusion when that option is absent.
-- The UniProt annotation lists both 'Secreted' and 'Cytoplasm' from the same reference (PubMed:19968997), suggesting the protein is found in both compartments. The question's use of 'primary' is ambiguous in this dual-localization context.
-- The GO cytoplasm term (GO:0005737) is a very broad term ('the contents of a cell excluding the plasma membrane and nucleus'), which includes many sub-compartments. Its presence as an annotation does not strongly specify a precise subcellular niche.
-- Sequence match is confirmed (SHA-256 match between benchmark sequence and UniProt D4QD81 at both current and historical entry versions).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The C-terminal region contains EF-hand calcium-binding motifs (e.g., 'DNNNKLDGQEMMAAMFHTNHHEEDDEHDGKVPLIIPEQDIASYVDSVLRADKNQDGFISYPELRTSDLTNQI'), and EF-hand proteins (calmodulin, troponin C, etc.) are canonically cytoplasmic calcium sensors. This provides a positive biological argument for cytoplasm. The other three options can be eliminated: (A) early endosome membrane requires transmembrane segments or endosomal targeting signals absent here; (C) P-body requires RNA-binding/mRNA-decay motifs absent here; (D) 'other organism cell membrane' refers to host-pathogen membrane interactions and requires transmembrane domains absent here. Thus, EF-hand biology plus elimination of the other three options provides a reasoning path to B.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The signal peptide (MTHRRLLWALCVAALLGVVAAQAG) strongly suggests secretion/extracellular localization, which is not among the options. The dual UniProt annotation (Secreted AND Cytoplasm) and the fact that 'extracellular space' was excluded from the choices are item-specific facts that resolve the tension created by the signal peptide. Without knowing that the protein is experimentally found in both fractions and that extracellular is not an option, a model focusing on the signal peptide could be misled.",
-    "reason": "A concrete biological argument exists: EF-hand proteins are classically cytoplasmic, and none of the other three options have any sequence-level support (no TM domains, no RNA-binding motifs). The signal peptide creates tension but does not point to any of the other three options either. The elimination logic (no TM → not A or D; no RNA motifs → not C) combined with EF-hand → cytoplasm provides a defensible reasoning chain, though the signal peptide introduces real ambiguity that is only fully resolved by knowing the annotation and the option set."
-  },
-  "case_id": "GO_cellular_component_0063",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H6",
-      "H7"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry D4QD81 (Longistatin, Haemaphysalis longicornis) explicitly annotates SUBCELLULAR LOCATION as both 'Secreted' and 'Cytoplasm' (C5, H6), both citing PubMed:19968997. The GO cross-reference includes GO:0005737 (cytoplasm) with IEA:UniProtKB-SubCell evidence (C6, H7). Among the four provided options, 'cytoplasm' is the only one with any annotation support. The extracellular/secreted annotation (IDA, GO:0005615) is also present but 'extracellular space' is not among the choices. The expected answer B is therefore supported by the database annotation, though the evidence code for cytoplasm is IEA (electronic) rather than direct experimental."
-  },
-  "important_caveats": [
-    "The UniProt cytoplasm annotation carries evidence code IEA (Inferred from Electronic Annotation via UniProtKB-SubCell), which is weaker than the IDA evidence for extracellular space. The 'primary' location could reasonably be argued to be secreted/extracellular, but that is not among the options.",
-    "The signal peptide (residues 1-21) is a strong secretion signal. A model correctly identifying it would expect a secreted/extracellular answer, creating confusion when that option is absent.",
-    "The UniProt annotation lists both 'Secreted' and 'Cytoplasm' from the same reference (PubMed:19968997), suggesting the protein is found in both compartments. The question's use of 'primary' is ambiguous in this dual-localization context.",
-    "The GO cytoplasm term (GO:0005737) is a very broad term ('the contents of a cell excluding the plasma membrane and nucleus'), which includes many sub-compartments. Its presence as an annotation does not strongly specify a precise subcellular niche.",
-    "Sequence match is confirmed (SHA-256 match between benchmark sequence and UniProt D4QD81 at both current and historical entry versions)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four options, only B (cytoplasm) has any annotation or biological-motif support. Options A, C, and D lack any sequence-level justification (no transmembrane domains, no endosomal signals, no RNA-binding motifs). The signal peptide suggests secretion, but 'extracellular space' or 'secreted' is not an option, so it does not create a competing defensible choice. The question is somewhat misleading given the prominent signal peptide, but it does not produce a genuinely ambiguous answer among the provided options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0063",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry D4QD81 (Longistatin, Haemaphysalis longicornis) explicitly annotates SUBCELLULAR LOCATION as both 'Secreted' and 'Cytoplasm' (C5, H6), both citing PubMed:19968997. The GO cross-reference includes GO:0005737 (cytoplasm) with IEA:UniProtKB-SubCell evidence (C6, H7). Among the four provided options, 'cytoplasm' is the only one with any annotation support. The extracellular/secreted annotation (IDA, GO:0005615) is also present but 'extracellular space' is not among the choices. The expected answer B is therefore supported by the database annotation, though the evidence code for cytoplasm is IEA (electronic) rather than direct experimental.",
-    "evidence_ids": ["C5", "C6", "H6", "H7"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The C-terminal region contains EF-hand calcium-binding motifs (e.g., 'DNNNKLDGQEMMAAMFHTNHHEEDDEHDGKVPLIIPEQDIASYVDSVLRADKNQDGFISYPELRTSDLTNQI'), and EF-hand proteins (calmodulin, troponin C, etc.) are canonically cytoplasmic calcium sensors. This provides a positive biological argument for cytoplasm. The other three options can be eliminated: (A) early endosome membrane requires transmembrane segments or endosomal targeting signals absent here; (C) P-body requires RNA-binding/mRNA-decay motifs absent here; (D) 'other organism cell membrane' refers to host-pathogen membrane interactions and requires transmembrane domains absent here. Thus, EF-hand biology plus elimination of the other three options provides a reasoning path to B.",
-    "missing_item_specific_fact": "The signal peptide (MTHRRLLWALCVAALLGVVAAQAG) strongly suggests secretion/extracellular localization, which is not among the options. The dual UniProt annotation (Secreted AND Cytoplasm) and the fact that 'extracellular space' was excluded from the choices are item-specific facts that resolve the tension created by the signal peptide. Without knowing that the protein is experimentally found in both fractions and that extracellular is not an option, a model focusing on the signal peptide could be misled.",
-    "reason": "A concrete biological argument exists: EF-hand proteins are classically cytoplasmic, and none of the other three options have any sequence-level support (no TM domains, no RNA-binding motifs). The signal peptide creates tension but does not point to any of the other three options either. The elimination logic (no TM → not A or D; no RNA motifs → not C) combined with EF-hand → cytoplasm provides a defensible reasoning chain, though the signal peptide introduces real ambiguity that is only fully resolved by knowing the annotation and the option set."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four options, only B (cytoplasm) has any annotation or biological-motif support. Options A, C, and D lack any sequence-level justification (no transmembrane domains, no endosomal signals, no RNA-binding motifs). The signal peptide suggests secretion, but 'extracellular space' or 'secreted' is not an option, so it does not create a competing defensible choice. The question is somewhat misleading given the prominent signal peptide, but it does not produce a genuinely ambiguous answer among the provided options."
-  },
-  "important_caveats": [
-    "The UniProt cytoplasm annotation carries evidence code IEA (Inferred from Electronic Annotation via UniProtKB-SubCell), which is weaker than the IDA evidence for extracellular space. The 'primary' location could reasonably be argued to be secreted/extracellular, but that is not among the options.",
-    "The signal peptide (residues 1-21) is a strong secretion signal. A model correctly identifying it would expect a secreted/extracellular answer, creating confusion when that option is absent.",
-    "The UniProt annotation lists both 'Secreted' and 'Cytoplasm' from the same reference (PubMed:19968997), suggesting the protein is found in both compartments. The question's use of 'primary' is ambiguous in this dual-localization context.",
-    "The GO cytoplasm term (GO:0005737) is a very broad term ('the contents of a cell excluding the plasma membrane and nucleus'), which includes many sub-compartments. Its presence as an annotation does not strongly specify a precise subcellular niche.",
-    "Sequence match is confirmed (SHA-256 match between benchmark sequence and UniProt D4QD81 at both current and historical entry versions)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +159,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -512,30 +281,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "D4QD81",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b49da4c85afbae35dc43277360770712180ee44911013a8d16fcb6c5a4bf35a3",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 156,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b49da4c85afbae35dc43277360770712180ee44911013a8d16fcb6c5a4bf35a3",
   "current_entry_audit": {
     "entryVersion": 32,
     "firstPublicDate": "2025-04-09",
@@ -543,14 +299,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-06-15",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "current_source_sequence_sha256": "b49da4c85afbae35dc43277360770712180ee44911013a8d16fcb6c5a4bf35a3",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 156,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b49da4c85afbae35dc43277360770712180ee44911013a8d16fcb6c5a4bf35a3",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 31,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "D4QD81",
   "selected_historical_entry_version": 31,
+  "selected_historical_record_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "selected_historical_source_sequence_length": 156,
+  "selected_historical_source_sequence_sha256": "b49da4c85afbae35dc43277360770712180ee44911013a8d16fcb6c5a4bf35a3",
   "selected_historical_version": {
     "accession": "D4QD81",
     "database": "Swiss-Prot",
@@ -561,24 +333,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "LONG_HAELO",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "selected_historical_source_sequence_sha256": "b49da4c85afbae35dc43277360770712180ee44911013a8d16fcb6c5a4bf35a3",
-  "selected_historical_source_sequence_length": 156,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 31,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -596,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"D4QD81\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -615,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":32,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-06-15\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -634,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Bush tick\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAI99729.1\",\"source\":\"EMBL\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Chelicerata\",\"Arachnida\",\"Acari\",\"Parasitiformes\",\"Ixodida\",\"Ixodoidea\",\"Ixodidae\",\"Haemaphysalinae\",\"Haemaphysalis\"],\"scientificName\":\"Haemaphysalis longicornis\",\"taxonId\":44386}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -653,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22206819\",\"source\":\"PubMed\"}],\"value\":\"3.4.21.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"19968997\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21423674\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21925150\",\"source\":\"PubMed\"}],\"value\":\"Longistatin\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -672,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19968997\",\"source\":\"PubMed\"}],\"id\":\"SL-0243\",\"value\":\"Secreted\"}},{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"19968997\",\"source\":\"PubMed\"}],\"id\":\"SL-0086\",\"value\":\"Cytoplasm\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -691,15 +450,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/3",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005737\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytoplasm\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:UniProtKB-SubCell\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/3",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -710,15 +469,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/4",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"19968997\",\"source\":\"PubMed\"}],\"id\":\"GO:0005576\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:extracellular region\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/4",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -729,15 +488,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Anisuzzaman X.\",\"Islam M.K.\",\"Miyoshi T.\",\"Alim M.A.\",\"Hatta T.\",\"Yamaji K.\",\"Matsumoto Y.\",\"Fujisaki K.\",\"Tsuji N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"19968997\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.ijpara.2009.11.004\"}],\"citationType\":\"journal article\",\"firstPage\":\"721\",\"id\":\"19968997\",\"journal\":\"Int. J. Parasitol.\",\"lastPage\":\"729\",\"publicationDate\":\"2010\",\"title\":\"Longistatin, a novel EF-hand protein from the ixodid tick Haemaphysalis longicornis, is required for acquisition of host blood-meals.\",\"volume\":\"40\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAI99729.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"SUBCELLULAR LOCATION\",\"TISSUE SPECIFICITY\",\"DEVELOPMENTAL STAGE\",\"INDUCTION BY BLOOD FEEDING\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -748,15 +507,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Anisuzzaman X.\",\"Khyrul Islam M.\",\"Abdul Alim M.\",\"Miyoshi T.\",\"Hatta T.\",\"Yamaji K.\",\"Matsumoto Y.\",\"Fujisaki K.\",\"Tsuji N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21925150\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.bbrc.2011.09.009\"}],\"citationType\":\"journal article\",\"firstPage\":\"599\",\"id\":\"21925150\",\"journal\":\"Biochem. Biophys. Res. Commun.\",\"lastPage\":\"604\",\"publicationDate\":\"2011\",\"title\":\"Longistatin, a novel plasminogen activator from vector ticks, is resistant to plasminogen activator inhibitor-1.\",\"volume\":\"413\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -767,15 +526,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Anisuzzaman X.\",\"Islam M.K.\",\"Alim M.A.\",\"Miyoshi T.\",\"Hatta T.\",\"Yamaji K.\",\"Matsumoto Y.\",\"Fujisaki K.\",\"Tsuji N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21423674\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.ppat.1001312\"}],\"citationType\":\"journal article\",\"firstPage\":\"e1001312\",\"id\":\"21423674\",\"journal\":\"PLoS Pathog.\",\"lastPage\":\"e1001312\",\"publicationDate\":\"2011\",\"title\":\"Longistatin, a plasminogen activator, is key to the availability of blood-meals for ixodid ticks.\",\"volume\":\"7\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"INTERACTION WITH HOST FIBRIN\",\"TISSUE SPECIFICITY\",\"INDUCTION BY BLOOD FEEDING\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -786,15 +545,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json",
-  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
-  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Anisuzzaman X.\",\"Islam M.K.\",\"Alim M.A.\",\"Miyoshi T.\",\"Hatta T.\",\"Yamaji K.\",\"Matsumoto Y.\",\"Fujisaki K.\",\"Tsuji N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22206819\"},{\"database\":\"DOI\",\"id\":\"10.1016/j.molbiopara.2011.12.002\"}],\"citationType\":\"journal article\",\"firstPage\":\"45\",\"id\":\"22206819\",\"journal\":\"Mol. Biochem. Parasitol.\",\"lastPage\":\"53\",\"publicationDate\":\"2012\",\"title\":\"Longistatin is an unconventional serine protease and induces protective immunity against tick infestation.\",\"volume\":\"182\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-01T06:25:05.409363+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "27d5a24c10550956afab284439c23ad93d6c94ed57b9a87ce791ea4e4597d0dd",
+  "url": "https://rest.uniprot.org/uniprotkb/D4QD81.json"
 }
 ```
 
@@ -804,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   LONG_HAELO              Reviewed;         156 AA.\nAC   D4QD81;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   15-JUN-2010, sequence version 1.\nDT   28-JAN-2026, entry version 31.\nDE   RecName: Full=Longistatin {ECO:0000303|PubMed:19968997, ECO:0000303|PubMed:21423674, ECO:0000303|PubMed:21925150};\nDE            EC=3.4.21.- {ECO:0000269|PubMed:22206819};\nDE   Flags: Precursor;\nGN   Name=A01M12 {ECO:0000312|EMBL:BAI99729.1};\nOS   Haemaphysalis longicornis (Bush tick).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Chelicerata; Arachnida; Acari;\nOC   Parasitiformes; Ixodida; Ixodoidea; Ixodidae; Haemaphysalinae;\nOC   Haemaphysalis.\nOX   NCBI_TaxID=44386 {ECO:0000312|EMBL:BAI99729.1};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -825,18 +584,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 15-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAI99729.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, SUBCELLULAR LOCATION, TISSUE\nRP   SPECIFICITY, DEVELOPMENTAL STAGE, AND INDUCTION BY BLOOD FEEDING.\nRX   PubMed=19968997; DOI=10.1016/j.ijpara.2009.11.004;\nRA   Anisuzzaman X., Islam M.K., Miyoshi T., Alim M.A., Hatta T., Yamaji K.,\nRA   Matsumoto Y., Fujisaki K., Tsuji N.;\nRT   \"Longistatin, a novel EF-hand protein from the ixodid tick Haemaphysalis\nRT   longicornis, is required for acquisition of host blood-meals.\";\nRL   Int. J. Parasitol. 40:721-729(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -846,18 +605,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 24-31",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, AND ACTIVITY REGULATION.\nRX   PubMed=21925150; DOI=10.1016/j.bbrc.2011.09.009;\nRA   Anisuzzaman X., Khyrul Islam M., Abdul Alim M., Miyoshi T., Hatta T.,\nRA   Yamaji K., Matsumoto Y., Fujisaki K., Tsuji N.;\nRT   \"Longistatin, a novel plasminogen activator from vector ticks, is resistant\nRT   to plasminogen activator inhibitor-1.\";\nRL   Biochem. Biophys. Res. Commun. 413:599-604(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-31",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -867,18 +626,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 32-40",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, INTERACTION WITH HOST FIBRIN, TISSUE SPECIFICITY, INDUCTION BY\nRP   BLOOD FEEDING, AND DISRUPTION PHENOTYPE.\nRX   PubMed=21423674; DOI=10.1371/journal.ppat.1001312;\nRA   Anisuzzaman X., Islam M.K., Alim M.A., Miyoshi T., Hatta T., Yamaji K.,\nRA   Matsumoto Y., Fujisaki K., Tsuji N.;\nRT   \"Longistatin, a plasminogen activator, is key to the availability of blood-\nRT   meals for ixodid ticks.\";\nRL   PLoS Pathog. 7:e1001312-e1001312(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 32-40",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -888,18 +647,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 41-49",
   "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, BIOPHYSICOCHEMICAL\nRP   PROPERTIES, AND TISSUE SPECIFICITY.\nRX   PubMed=22206819; DOI=10.1016/j.molbiopara.2011.12.002;\nRA   Anisuzzaman X., Islam M.K., Alim M.A., Miyoshi T., Hatta T., Yamaji K.,\nRA   Matsumoto Y., Fujisaki K., Tsuji N.;\nRT   \"Longistatin is an unconventional serine protease and induces protective\nRT   immunity against tick infestation.\";\nRL   Mol. Biochem. Parasitol. 182:45-53(2012).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 41-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -909,18 +668,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 100-101",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Secreted {ECO:0000269|PubMed:19968997}. Cytoplasm\nCC       {ECO:0000269|PubMed:19968997}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 100-101",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -930,18 +689,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 138-138",
   "excerpt": "DR   GO; GO:0005737; C:cytoplasm; IEA:UniProtKB-SubCell.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 138-138",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -951,18 +710,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 31,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31",
-  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
-  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
-  "source_locator": "lines 139-139",
   "excerpt": "DR   GO; GO:0005615; C:extracellular space; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 31,
+  "retrieved_utc": "2026-11-01T06:28:00.036900+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 139-139",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "33d72b54de397540314c319d5d65281dcef13ef22f478476c602e399ba6c861a",
+  "url": "https://rest.uniprot.org/unisave/D4QD81?format=txt&versions=31"
 }
 ```
 
@@ -973,15 +732,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 6737-6747",
   "excerpt": "[Term]\nid: GO:0000932\nname: P-body\nnamespace: cellular_component\ndef: \"A focus in the cytoplasm where mRNAs may become inactivated by decapping or some other mechanism. Protein and RNA localized to these foci are involved in mRNA degradation, nonsense-mediated mRNA decay (NMD), translational repression, and RNA-mediated gene silencing.\" [GOC:clt, PMID:12730603]\nsynonym: \"cytoplasmic foci\" RELATED []\nsynonym: \"cytoplasmic mRNA processing body\" EXACT []\nsynonym: \"P body\" EXACT []\nxref: Wikipedia:P_body\nis_a: GO:0036464 ! cytoplasmic ribonucleoprotein granule\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0000932",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 6737-6747",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0000932"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -992,15 +751,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 58957-58974",
   "excerpt": "[Term]\nid: GO:0005737\nname: cytoplasm\nnamespace: cellular_component\ndef: \"The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures.\" [ISBN:0198547684]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nxref: Wikipedia:Cytoplasm\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005622 ! intracellular anatomical structure\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005737",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 58957-58974",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005737"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1011,15 +770,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 180777-180784",
   "excerpt": "[Term]\nid: GO:0031901\nname: early endosome membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding an early endosome.\" [GOC:pz]\nis_a: GO:0010008 ! endosome membrane\nrelationship: part_of GO:0005769 ! early endosome\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0031901",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 180777-180784",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0031901"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -1030,15 +789,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 255298-255307",
   "excerpt": "[Term]\nid: GO:0044218\nname: other organism cell membrane\nnamespace: cellular_component\nalt_id: GO:0044279\ndef: \"The cell membrane of a secondary organism with which the first organism is interacting.\" [GOC:jl]\nsynonym: \"foreign membrane\" RELATED []\nsynonym: \"other organism membrane\" BROAD []\nis_a: GO:0044217 ! other organism part\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0044218",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 255298-255307",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0044218"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

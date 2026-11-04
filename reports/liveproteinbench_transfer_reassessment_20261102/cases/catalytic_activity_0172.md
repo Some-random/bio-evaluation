@@ -1,18 +1,16 @@
-# catalytic_activity_0172: before and after transfer clarification
+# catalytic_activity_0172
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0172.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0172.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — (S,S)-2,5-di-(p-hydroxybenzyl)piperazine + reduced &#91;NADPH--hemoprotein reductase&#93; + O2 = (1S,4S)-4-&#91;(4-hydroxyphenyl)methyl&#93;-2,5-diazaspiro&#91;bicyclo&#91;3.2.1&#93;octane-6,1&#x27;-cyclohexane&#93;-2&#x27;,5&#x27;-dien-4&#x27;-one + oxidized &#91;NADPH--hemoprotein reductase&#93; + 2 H2O + H(+)
+**Expected answer:** **D** — (S,S)-2,5-di-(p-hydroxybenzyl)piperazine + reduced &#91;NADPH--hemoprotein reductase&#93; + O2 = (1S,4S)-4-&#91;(4-hydroxyphenyl)methyl&#93;-2,5-diazaspiro&#91;bicyclo&#91;3.2.1&#93;octane-6,1&#x27;-cyclohexane&#93;-2&#x27;,5&#x27;-dien-4&#x27;-one + oxidized &#91;NADPH--hemoprotein reductase&#93; + 2 H2O + H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the historical and current UniProt entry for FrzC, whose catalytic-activity annotation gives the reaction in choice D and cites experimental evidence (ECO:0000269, PubMed 33372776).
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a membrane-associated cytochrome P450, supporting an oxidative reaction over methylation or ATP-dependent chemistry. But that broad inference does not distinguish D from B, which is also an oxygen-dependent oxidation.
-
-
-**Missing item-specific fact**
-
-> The protein-specific substrate and reaction assignment for FrzC, established by its annotation or experimental characterization, is needed to select D over the other oxidative option.
-
-
-**Reason**
-
-> Sequence-based family recognition may narrow the choices, but the exact substrate transformation and electron-donor system are not established by the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The choices describe distinct reactions, and the sequence-matched experimental annotation supports D. The limitation is that the supplied sequence alone does not uniquely establish that reaction.
-
-
-### Important caveats
-
-- The cited experimental evidence is reported in the database annotation; the primary paper was not independently reviewed here.
-- The historical and current database records match the supplied sequence, but the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a membrane-associated cytochrome P450, supporting an oxidative reaction over methylation or ATP-dependent chemistry. But that broad inference does not distinguish D from B, which is also an oxygen-dependent oxidation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific substrate and reaction assignment for FrzC, established by its annotation or experimental characterization, is needed to select D over the other oxidative option.",
-    "reason": "Sequence-based family recognition may narrow the choices, but the exact substrate transformation and electron-donor system are not established by the supplied input."
-  },
-  "case_id": "catalytic_activity_0172",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical and current UniProt entry for FrzC, whose catalytic-activity annotation gives the reaction in choice D and cites experimental evidence (ECO:0000269, PubMed 33372776)."
-  },
-  "important_caveats": [
-    "The cited experimental evidence is reported in the database annotation; the primary paper was not independently reviewed here.",
-    "The historical and current database records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reactions, and the sequence-matched experimental annotation supports D. The limitation is that the supplied sequence alone does not uniquely establish that reaction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0172",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical and current UniProt entry for FrzC, whose catalytic-activity annotation gives the reaction in choice D and cites experimental evidence (ECO:0000269, PubMed 33372776).",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a membrane-associated cytochrome P450, supporting an oxidative reaction over methylation or ATP-dependent chemistry. But that broad inference does not distinguish D from B, which is also an oxygen-dependent oxidation.",
-    "missing_item_specific_fact": "The protein-specific substrate and reaction assignment for FrzC, established by its annotation or experimental characterization, is needed to select D over the other oxidative option.",
-    "reason": "Sequence-based family recognition may narrow the choices, but the exact substrate transformation and electron-donor system are not established by the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The choices describe distinct reactions, and the sequence-matched experimental annotation supports D. The limitation is that the supplied sequence alone does not uniquely establish that reaction."
-  },
-  "important_caveats": [
-    "The cited experimental evidence is reported in the database annotation; the primary paper was not independently reviewed here.",
-    "The historical and current database records match the supplied sequence, but the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A7T8F1I4 (FRZC_CLASX, 495 AA, sequence SHA256 match confirmed) annotates the catalytic activity as exactly Choice D, supported by experimental evidence (ECO:0000269, PubMed:33372776, Zhang et al. JACS 2021). The reaction converts (S,S)-2,5-di-(p-hydroxybenzyl)piperazine to the spirocyclic intermediate in the FR901483 biosynthetic pathway using NADPH-hemoprotein reductase and O2, consistent with its annotation as Cytochrome P450 monooxygenase FrzC (EC 1.14.14.-).
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains the canonical P450 heme-binding motif (FGSG...CIGM around residues ~170-370), allowing identification as a cytochrome P450 monooxygenase. This eliminates Choice A (SAM-dependent methyltransferase) and Choice C (ATP-dependent cyclase), as neither involves NADPH-hemoprotein reductase/O2 chemistry. However, both remaining options B and D are P450 reactions; distinguishing the substrate (luteothin vs. 2,5-di-(p-hydroxybenzyl)piperazine) requires knowledge of the specific enzyme identity (FrzC from the FR901483 pathway vs. an aureothin-pathway P450).
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity of this P450 (i.e., that it is FrzC acting on (S,S)-2,5-di-(p-hydroxybenzyl)piperazine in the FR901483 biosynthetic cluster) cannot be inferred from the amino acid sequence alone without database lookup or memorization of the 2021 JACS paper.
-
-
-**Reason**
-
-> While P450 identification from the heme-binding motif narrows four choices to two, the final discrimination between B (aureothin pathway P450) and D (FR901483 pathway P450) depends entirely on knowing which specific natural-product biosynthetic cluster this enzyme belongs to—an item-specific annotation fact not derivable from general sequence features or biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Choices A and C are clearly incompatible with P450 chemistry (no NADPH-hemoprotein reductase/O2 involvement). Choices B and D are both P450 reactions, but only D matches the annotated substrate. Given the sequence is a P450, a model that correctly identifies the enzyme class and knows the FR901483 pathway can select D; however, without pathway-specific knowledge, B and D are equally plausible from sequence alone. The question is not truly ambiguous in the sense that only one is correct, but the discrimination between B and D is not reasoning-accessible.
-
-
-### Important caveats
-
-- The P450 heme-binding motif (FGSG...CIGM) is clearly present, enabling elimination of non-P450 options (A, C).
-- The annotation evidence code ECO:0000269 confirms experimental (not computational) support for the catalytic activity.
-- The sequence-to-substrate mapping for P450s is not predictable from primary sequence alone; active-site architecture determines substrate specificity.
-- Both B and D involve the same cofactor system (NADPH-hemoprotein reductase + O2), making the distinction purely substrate-specific.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains the canonical P450 heme-binding motif (FGSG...CIGM around residues ~170-370), allowing identification as a cytochrome P450 monooxygenase. This eliminates Choice A (SAM-dependent methyltransferase) and Choice C (ATP-dependent cyclase), as neither involves NADPH-hemoprotein reductase/O2 chemistry. However, both remaining options B and D are P450 reactions; distinguishing the substrate (luteothin vs. 2,5-di-(p-hydroxybenzyl)piperazine) requires knowledge of the specific enzyme identity (FrzC from the FR901483 pathway vs. an aureothin-pathway P450).",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate identity of this P450 (i.e., that it is FrzC acting on (S,S)-2,5-di-(p-hydroxybenzyl)piperazine in the FR901483 biosynthetic cluster) cannot be inferred from the amino acid sequence alone without database lookup or memorization of the 2021 JACS paper.",
-    "reason": "While P450 identification from the heme-binding motif narrows four choices to two, the final discrimination between B (aureothin pathway P450) and D (FR901483 pathway P450) depends entirely on knowing which specific natural-product biosynthetic cluster this enzyme belongs to—an item-specific annotation fact not derivable from general sequence features or biological reasoning."
-  },
-  "case_id": "catalytic_activity_0172",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7T8F1I4 (FRZC_CLASX, 495 AA, sequence SHA256 match confirmed) annotates the catalytic activity as exactly Choice D, supported by experimental evidence (ECO:0000269, PubMed:33372776, Zhang et al. JACS 2021). The reaction converts (S,S)-2,5-di-(p-hydroxybenzyl)piperazine to the spirocyclic intermediate in the FR901483 biosynthetic pathway using NADPH-hemoprotein reductase and O2, consistent with its annotation as Cytochrome P450 monooxygenase FrzC (EC 1.14.14.-)."
-  },
-  "important_caveats": [
-    "The P450 heme-binding motif (FGSG...CIGM) is clearly present, enabling elimination of non-P450 options (A, C).",
-    "The annotation evidence code ECO:0000269 confirms experimental (not computational) support for the catalytic activity.",
-    "The sequence-to-substrate mapping for P450s is not predictable from primary sequence alone; active-site architecture determines substrate specificity.",
-    "Both B and D involve the same cofactor system (NADPH-hemoprotein reductase + O2), making the distinction purely substrate-specific."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A and C are clearly incompatible with P450 chemistry (no NADPH-hemoprotein reductase/O2 involvement). Choices B and D are both P450 reactions, but only D matches the annotated substrate. Given the sequence is a P450, a model that correctly identifies the enzyme class and knows the FR901483 pathway can select D; however, without pathway-specific knowledge, B and D are equally plausible from sequence alone. The question is not truly ambiguous in the sense that only one is correct, but the discrimination between B and D is not reasoning-accessible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0172",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A7T8F1I4 (FRZC_CLASX, 495 AA, sequence SHA256 match confirmed) annotates the catalytic activity as exactly Choice D, supported by experimental evidence (ECO:0000269, PubMed:33372776, Zhang et al. JACS 2021). The reaction converts (S,S)-2,5-di-(p-hydroxybenzyl)piperazine to the spirocyclic intermediate in the FR901483 biosynthetic pathway using NADPH-hemoprotein reductase and O2, consistent with its annotation as Cytochrome P450 monooxygenase FrzC (EC 1.14.14.-).",
-    "evidence_ids": ["C1", "C4", "C5", "C6", "H1", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains the canonical P450 heme-binding motif (FGSG...CIGM around residues ~170-370), allowing identification as a cytochrome P450 monooxygenase. This eliminates Choice A (SAM-dependent methyltransferase) and Choice C (ATP-dependent cyclase), as neither involves NADPH-hemoprotein reductase/O2 chemistry. However, both remaining options B and D are P450 reactions; distinguishing the substrate (luteothin vs. 2,5-di-(p-hydroxybenzyl)piperazine) requires knowledge of the specific enzyme identity (FrzC from the FR901483 pathway vs. an aureothin-pathway P450).",
-    "missing_item_specific_fact": "The specific substrate identity of this P450 (i.e., that it is FrzC acting on (S,S)-2,5-di-(p-hydroxybenzyl)piperazine in the FR901483 biosynthetic cluster) cannot be inferred from the amino acid sequence alone without database lookup or memorization of the 2021 JACS paper.",
-    "reason": "While P450 identification from the heme-binding motif narrows four choices to two, the final discrimination between B (aureothin pathway P450) and D (FR901483 pathway P450) depends entirely on knowing which specific natural-product biosynthetic cluster this enzyme belongs to—an item-specific annotation fact not derivable from general sequence features or biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Choices A and C are clearly incompatible with P450 chemistry (no NADPH-hemoprotein reductase/O2 involvement). Choices B and D are both P450 reactions, but only D matches the annotated substrate. Given the sequence is a P450, a model that correctly identifies the enzyme class and knows the FR901483 pathway can select D; however, without pathway-specific knowledge, B and D are equally plausible from sequence alone. The question is not truly ambiguous in the sense that only one is correct, but the discrimination between B and D is not reasoning-accessible."
-  },
-  "important_caveats": [
-    "The P450 heme-binding motif (FGSG...CIGM) is clearly present, enabling elimination of non-P450 options (A, C).",
-    "The annotation evidence code ECO:0000269 confirms experimental (not computational) support for the catalytic activity.",
-    "The sequence-to-substrate mapping for P450s is not predictable from primary sequence alone; active-site architecture determines substrate specificity.",
-    "Both B and D involve the same cofactor system (NADPH-hemoprotein reductase + O2), making the distinction purely substrate-specific."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7T8F1I4",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "33136adb3fb622649a4deb8775bb79a2e51befd4b556c2131d0cea6fc396df9b",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 495,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "33136adb3fb622649a4deb8775bb79a2e51befd4b556c2131d0cea6fc396df9b",
   "current_entry_audit": {
     "entryVersion": 20,
     "firstPublicDate": "2025-06-18",
@@ -533,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
-  "current_source_sequence_sha256": "33136adb3fb622649a4deb8775bb79a2e51befd4b556c2131d0cea6fc396df9b",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 495,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "33136adb3fb622649a4deb8775bb79a2e51befd4b556c2131d0cea6fc396df9b",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 18,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7T8F1I4",
   "selected_historical_entry_version": 18,
+  "selected_historical_record_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
+  "selected_historical_source_sequence_length": 495,
+  "selected_historical_source_sequence_sha256": "33136adb3fb622649a4deb8775bb79a2e51befd4b556c2131d0cea6fc396df9b",
   "selected_historical_version": {
     "accession": "A0A7T8F1I4",
     "database": "Swiss-Prot",
@@ -551,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FRZC_CLASX",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
-  "selected_historical_source_sequence_sha256": "33136adb3fb622649a4deb8775bb79a2e51befd4b556c2131d0cea6fc396df9b",
-  "selected_historical_source_sequence_length": 495,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 18,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -582,15 +341,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json",
-  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
-  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7T8F1I4\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json"
 }
 ```
 
@@ -601,15 +360,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json",
-  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
-  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":20,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json"
 }
 ```
 
@@ -620,15 +379,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json",
-  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
-  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Sordariomycetes\",\"Hypocreomycetidae\",\"Hypocreales\",\"Hypocreaceae\",\"Cladobotryum\"],\"scientificName\":\"Cladobotryum sp\",\"taxonId\":2040732}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json"
 }
 ```
 
@@ -639,15 +398,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json",
-  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
-  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"FR901483 biosynthesis cluster protein C\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"1.14.14.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 monooxygenase FrzC\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json"
 }
 ```
 
@@ -658,15 +417,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json",
-  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
-  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:83580\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33372776\",\"source\":\"PubMed\"}],\"name\":\"(S,S)-2,5-di-(p-hydroxybenzyl)piperazine + reduced [NADPH--hemoprotein reductase] + O2 = (1S,4S)-4-[(4-hydroxyphenyl)methyl]-2,5-diazaspiro[bicyclo[3.2.1]octane-6,1'-cyclohexane]-2',5'-dien-4'-one + oxidized [NADPH--hemoprotein reductase] + 2 H2O + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:83579\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11964\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11965\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15377\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15379\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57618\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:58210\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:145882\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:233174\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json"
 }
 ```
 
@@ -677,15 +436,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json",
-  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
-  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Zhang Z.\",\"Tamura Y.\",\"Tang M.\",\"Qiao T.\",\"Sato M.\",\"Otsu Y.\",\"Sasamura S.\",\"Taniguchi M.\",\"Watanabe K.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33372776\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.0c12352\"}],\"citationType\":\"journal article\",\"firstPage\":\"132\",\"id\":\"33372776\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"136\",\"publicationDate\":\"2021\",\"title\":\"Biosynthesis of the Immunosuppressant (-)-FR901483.\",\"volume\":\"143\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"11231\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [GENOMIC DNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:25:44.613598+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "a450aa333c0480566d67fc577725d57e8ffabeeea7f1c8ff429be621fd79b04b",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7T8F1I4.json"
 }
 ```
 
@@ -695,18 +454,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18",
-  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
-  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   FRZC_CLASX              Reviewed;         495 AA.\nAC   A0A7T8F1I4;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 18.\nDE   RecName: Full=Cytochrome P450 monooxygenase FrzC {ECO:0000303|PubMed:33372776};\nDE            EC=1.14.14.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein C {ECO:0000303|PubMed:33372776};\nGN   Name=FrzC {ECO:0000303|PubMed:33372776};\nOS   Cladobotryum sp.\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Sordariomycetes;\nOC   Hypocreomycetidae; Hypocreales; Hypocreaceae; Cladobotryum.\nOX   NCBI_TaxID=2040732;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18"
 }
 ```
 
@@ -716,18 +475,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18",
-  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
-  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=Cytochrome P450 monooxygenase FrzC {ECO:0000303|PubMed:33372776};\nDE            EC=1.14.14.- {ECO:0000269|PubMed:33372776};\nDE   AltName: Full=FR901483 biosynthesis cluster protein C {ECO:0000303|PubMed:33372776};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18"
 }
 ```
 
@@ -737,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18",
-  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
-  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
-  "source_locator": "lines 14-22",
   "excerpt": "RN   [1]\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], FUNCTION, CATALYTIC ACTIVITY, AND\nRP   PATHWAY.\nRC   STRAIN=11231;\nRX   PubMed=33372776; DOI=10.1021/jacs.0c12352;\nRA   Zhang Z., Tamura Y., Tang M., Qiao T., Sato M., Otsu Y., Sasamura S.,\nRA   Taniguchi M., Watanabe K., Tang Y.;\nRT   \"Biosynthesis of the Immunosuppressant (-)-FR901483.\";\nRL   J. Am. Chem. Soc. 143:132-136(2021).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 14-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18"
 }
 ```
 
@@ -758,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 18,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18",
-  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
-  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
-  "source_locator": "lines 57-67",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=(S,S)-2,5-di-(p-hydroxybenzyl)piperazine + reduced [NADPH--\nCC         hemoprotein reductase] + O2 = (1S,4S)-4-[(4-hydroxyphenyl)methyl]-\nCC         2,5-diazaspiro[bicyclo[3.2.1]octane-6,1'-cyclohexane]-2',5'-dien-4'-\nCC         one + oxidized [NADPH--hemoprotein reductase] + 2 H2O + H(+);\nCC         Xref=Rhea:RHEA:83579, Rhea:RHEA-COMP:11964, Rhea:RHEA-COMP:11965,\nCC         ChEBI:CHEBI:15377, ChEBI:CHEBI:15378, ChEBI:CHEBI:15379,\nCC         ChEBI:CHEBI:57618, ChEBI:CHEBI:58210, ChEBI:CHEBI:145882,\nCC         ChEBI:CHEBI:233174; Evidence={ECO:0000269|PubMed:33372776};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:83580;\nCC         Evidence={ECO:0000269|PubMed:33372776};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 18,
+  "retrieved_utc": "2026-11-02T04:25:47.051386+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 57-67",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9364b021301c1c0c3fb659db92b723838ee62210edc6aa3fb3422781d6bcadb6",
+  "url": "https://rest.uniprot.org/unisave/A0A7T8F1I4?format=txt&versions=18"
 }
 ```
 

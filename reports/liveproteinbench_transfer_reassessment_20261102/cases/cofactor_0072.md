@@ -1,18 +1,16 @@
-# cofactor_0072: before and after transfer clarification
+# cofactor_0072
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0072.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0072.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **B** — Zn(2+)
+**Expected answer:** **B** — Zn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,232 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated with Zn(2+) as a cofactor. However, the annotation is transferred by similarity from another UniProt entry (ECO:0000250), not shown here as a direct experimental determination for this protein.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains potential metal-binding residues, but that observation does not establish zinc dependence or distinguish Zn(2+) from the other listed cofactors.
-
-
-**Missing item-specific fact**
-
-> The protein-specific cofactor annotation, transferred from a homolog, is not supplied in the question.
-
-
-**Reason**
-
-> The sequence and choices provide no reliable general biological argument that identifies Zn(2+) specifically; selecting it depends on an absent protein-specific annotation or equivalent evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied reviewer evidence supports Zn(2+) as the annotated cofactor, although it does not establish direct experimental confirmation for this exact protein.
-
-
-### Important caveats
-
-- The matched UniProt annotation is evidence for the expected answer, but its evidence code indicates transfer by similarity rather than direct experimental support for the supplied sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains potential metal-binding residues, but that observation does not establish zinc dependence or distinguish Zn(2+) from the other listed cofactors.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation, transferred from a homolog, is not supplied in the question.",
-    "reason": "The sequence and choices provide no reliable general biological argument that identifies Zn(2+) specifically; selecting it depends on an absent protein-specific annotation or equivalent evidence."
-  },
-  "case_id": "cofactor_0072",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with Zn(2+) as a cofactor. However, the annotation is transferred by similarity from another UniProt entry (ECO:0000250), not shown here as a direct experimental determination for this protein."
-  },
-  "important_caveats": [
-    "The matched UniProt annotation is evidence for the expected answer, but its evidence code indicates transfer by similarity rather than direct experimental support for the supplied sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports Zn(2+) as the annotated cofactor, although it does not establish direct experimental confirmation for this exact protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0072",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated with Zn(2+) as a cofactor. However, the annotation is transferred by similarity from another UniProt entry (ECO:0000250), not shown here as a direct experimental determination for this protein.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains potential metal-binding residues, but that observation does not establish zinc dependence or distinguish Zn(2+) from the other listed cofactors.",
-    "missing_item_specific_fact": "The protein-specific cofactor annotation, transferred from a homolog, is not supplied in the question.",
-    "reason": "The sequence and choices provide no reliable general biological argument that identifies Zn(2+) specifically; selecting it depends on an absent protein-specific annotation or equivalent evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied reviewer evidence supports Zn(2+) as the annotated cofactor, although it does not establish direct experimental confirmation for this exact protein."
-  },
-  "important_caveats": [
-    "The matched UniProt annotation is evidence for the expected answer, but its evidence code indicates transfer by similarity rather than direct experimental support for the supplied sequence."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry for B1G5Y9 (3,5-dioxohexanoate:acetyl-CoA acetone transferase, EC 2.3.1.319) annotates Zn(2+) as the cofactor (C5/H4). The evidence code is ECO:0000250 (inferred by similarity from B0VHH0), so it is a transferred computational annotation rather than direct experimental proof for this specific protein. However, the enzyme belongs to the thiolase superfamily (EC 2.3.1.x), whose Zn(2+) dependence is well-established textbook biochemistry. The sequence contains canonical thiolase-superfamily motifs (e.g., 'GGSPHMT', 'GGIGAHP', active-site cysteines in 'CGANGTRFEFECY'), consistent with Zn(2+) coordination. The answer is supported by both the database annotation and general biochemical knowledge of the enzyme class.
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [H2](#evidence-h2), [C6](#evidence-c6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence displays recognizable thiolase-superfamily hallmarks: the N-terminal 'CAPTGAIHTPSMSPYLPVTPQQIGDAALAAAKEGAAIIHLHARDP' block, the 'GGSPHMT' motif (~residue 100), and the 'GGIGAHP' motif (~residue 215), together with catalytic cysteines in 'CGANGTRFEFECY'. Thiolase-superfamily enzymes (3-ketoacyl-CoA thiolases, 3-ketoacyl-ACP synthases, and related transferases) are well known to require Zn(2+) for catalysis. This allows elimination of PLP (aminotransferase/decarboxylase cofactor), FMN (oxidoreductase cofactor), and &#91;4Fe-4S&#93; clusters (radical SAM / ferredoxin cofactors), none of whose characteristic binding motifs (e.g., CxxCxxC for Fe-S, KxxxK for PLP, NxGxxG for FMN) are present.
-
-
-**Missing item-specific fact**
-
-> None critical. Recognizing the thiolase superfamily from sequence motifs and knowing its Zn(2+) requirement constitutes general biochemical knowledge, not an item-specific lookup. The exact EC number 2.3.1.319 is obscure, but the broader thiolase-superfamily Zn(2+) dependence is standard.
-
-
-**Reason**
-
-> A knowledgeable reader can identify thiolase-superfamily motifs in the sequence, recall that this enzyme class uses Zn(2+), and exclude the other three cofactors on the basis of incompatible enzyme classes and absent binding motifs. The reasoning chain is concrete and does not require memorizing the UniProt entry for this particular accession.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four choices correspond to distinct enzyme classes (Fe-S radical enzymes, metallo-hydrolases/thiolases, PLP-dependent enzymes, flavoproteins). The sequence's thiolase motifs and absence of Fe-S/PLP/FMN binding signatures leave Zn(2+) as the only defensible option.
-
-
-### Important caveats
-
-- The UniProt Zn(2+) annotation carries evidence code ECO:0000250 (similarity-based transfer from B0VHH0), not direct experimental verification for B1G5Y9 itself. The support rests on the well-established thiolase-superfamily Zn(2+) requirement.
-- The specific EC 2.3.1.319 (3,5-dioxohexanoate:acetyl-CoA acetone transferase) is a relatively recently characterized and obscure enzyme; a solver unfamiliar with the thiolase superfamily might struggle to identify the motifs, though the motifs themselves are present in the sequence.
-- All reviewer evidence is from UniProt current/historical snapshots; the author's actual source snapshot is unknown. Sequence match is confirmed (SHA-256 identical).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence displays recognizable thiolase-superfamily hallmarks: the N-terminal 'CAPTGAIHTPSMSPYLPVTPQQIGDAALAAAKEGAAIIHLHARDP' block, the 'GGSPHMT' motif (~residue 100), and the 'GGIGAHP' motif (~residue 215), together with catalytic cysteines in 'CGANGTRFEFECY'. Thiolase-superfamily enzymes (3-ketoacyl-CoA thiolases, 3-ketoacyl-ACP synthases, and related transferases) are well known to require Zn(2+) for catalysis. This allows elimination of PLP (aminotransferase/decarboxylase cofactor), FMN (oxidoreductase cofactor), and [4Fe-4S] clusters (radical SAM / ferredoxin cofactors), none of whose characteristic binding motifs (e.g., CxxCxxC for Fe-S, KxxxK for PLP, NxGxxG for FMN) are present.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. Recognizing the thiolase superfamily from sequence motifs and knowing its Zn(2+) requirement constitutes general biochemical knowledge, not an item-specific lookup. The exact EC number 2.3.1.319 is obscure, but the broader thiolase-superfamily Zn(2+) dependence is standard.",
-    "reason": "A knowledgeable reader can identify thiolase-superfamily motifs in the sequence, recall that this enzyme class uses Zn(2+), and exclude the other three cofactors on the basis of incompatible enzyme classes and absent binding motifs. The reasoning chain is concrete and does not require memorizing the UniProt entry for this particular accession."
-  },
-  "case_id": "cofactor_0072",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4",
-      "H2",
-      "C6"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry for B1G5Y9 (3,5-dioxohexanoate:acetyl-CoA acetone transferase, EC 2.3.1.319) annotates Zn(2+) as the cofactor (C5/H4). The evidence code is ECO:0000250 (inferred by similarity from B0VHH0), so it is a transferred computational annotation rather than direct experimental proof for this specific protein. However, the enzyme belongs to the thiolase superfamily (EC 2.3.1.x), whose Zn(2+) dependence is well-established textbook biochemistry. The sequence contains canonical thiolase-superfamily motifs (e.g., 'GGSPHMT', 'GGIGAHP', active-site cysteines in 'CGANGTRFEFECY'), consistent with Zn(2+) coordination. The answer is supported by both the database annotation and general biochemical knowledge of the enzyme class."
-  },
-  "important_caveats": [
-    "The UniProt Zn(2+) annotation carries evidence code ECO:0000250 (similarity-based transfer from B0VHH0), not direct experimental verification for B1G5Y9 itself. The support rests on the well-established thiolase-superfamily Zn(2+) requirement.",
-    "The specific EC 2.3.1.319 (3,5-dioxohexanoate:acetyl-CoA acetone transferase) is a relatively recently characterized and obscure enzyme; a solver unfamiliar with the thiolase superfamily might struggle to identify the motifs, though the motifs themselves are present in the sequence.",
-    "All reviewer evidence is from UniProt current/historical snapshots; the author's actual source snapshot is unknown. Sequence match is confirmed (SHA-256 identical)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices correspond to distinct enzyme classes (Fe-S radical enzymes, metallo-hydrolases/thiolases, PLP-dependent enzymes, flavoproteins). The sequence's thiolase motifs and absence of Fe-S/PLP/FMN binding signatures leave Zn(2+) as the only defensible option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0072",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry for B1G5Y9 (3,5-dioxohexanoate:acetyl-CoA acetone transferase, EC 2.3.1.319) annotates Zn(2+) as the cofactor (C5/H4). The evidence code is ECO:0000250 (inferred by similarity from B0VHH0), so it is a transferred computational annotation rather than direct experimental proof for this specific protein. However, the enzyme belongs to the thiolase superfamily (EC 2.3.1.x), whose Zn(2+) dependence is well-established textbook biochemistry. The sequence contains canonical thiolase-superfamily motifs (e.g., 'GGSPHMT', 'GGIGAHP', active-site cysteines in 'CGANGTRFEFECY'), consistent with Zn(2+) coordination. The answer is supported by both the database annotation and general biochemical knowledge of the enzyme class.",
-    "evidence_ids": ["C5", "H4", "C4", "H2", "C6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence displays recognizable thiolase-superfamily hallmarks: the N-terminal 'CAPTGAIHTPSMSPYLPVTPQQIGDAALAAAKEGAAIIHLHARDP' block, the 'GGSPHMT' motif (~residue 100), and the 'GGIGAHP' motif (~residue 215), together with catalytic cysteines in 'CGANGTRFEFECY'. Thiolase-superfamily enzymes (3-ketoacyl-CoA thiolases, 3-ketoacyl-ACP synthases, and related transferases) are well known to require Zn(2+) for catalysis. This allows elimination of PLP (aminotransferase/decarboxylase cofactor), FMN (oxidoreductase cofactor), and [4Fe-4S] clusters (radical SAM / ferredoxin cofactors), none of whose characteristic binding motifs (e.g., CxxCxxC for Fe-S, KxxxK for PLP, NxGxxG for FMN) are present.",
-    "missing_item_specific_fact": "None critical. Recognizing the thiolase superfamily from sequence motifs and knowing its Zn(2+) requirement constitutes general biochemical knowledge, not an item-specific lookup. The exact EC number 2.3.1.319 is obscure, but the broader thiolase-superfamily Zn(2+) dependence is standard.",
-    "reason": "A knowledgeable reader can identify thiolase-superfamily motifs in the sequence, recall that this enzyme class uses Zn(2+), and exclude the other three cofactors on the basis of incompatible enzyme classes and absent binding motifs. The reasoning chain is concrete and does not require memorizing the UniProt entry for this particular accession."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four choices correspond to distinct enzyme classes (Fe-S radical enzymes, metallo-hydrolases/thiolases, PLP-dependent enzymes, flavoproteins). The sequence's thiolase motifs and absence of Fe-S/PLP/FMN binding signatures leave Zn(2+) as the only defensible option."
-  },
-  "important_caveats": [
-    "The UniProt Zn(2+) annotation carries evidence code ECO:0000250 (similarity-based transfer from B0VHH0), not direct experimental verification for B1G5Y9 itself. The support rests on the well-established thiolase-superfamily Zn(2+) requirement.",
-    "The specific EC 2.3.1.319 (3,5-dioxohexanoate:acetyl-CoA acetone transferase) is a relatively recently characterized and obscure enzyme; a solver unfamiliar with the thiolase superfamily might struggle to identify the motifs, though the motifs themselves are present in the sequence.",
-    "All reviewer evidence is from UniProt current/historical snapshots; the author's actual source snapshot is unknown. Sequence match is confirmed (SHA-256 identical)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -380,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -497,30 +273,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "B1G5Y9",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "669119f3660e25802e4d9d5d3abdcf25e9feb3666a00e1d4a9a294493841e494",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 310,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "669119f3660e25802e4d9d5d3abdcf25e9feb3666a00e1d4a9a294493841e494",
   "current_entry_audit": {
     "entryVersion": 44,
     "firstPublicDate": "2025-02-05",
@@ -528,14 +291,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2008-04-29",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
-  "current_source_sequence_sha256": "669119f3660e25802e4d9d5d3abdcf25e9feb3666a00e1d4a9a294493841e494",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 310,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "669119f3660e25802e4d9d5d3abdcf25e9feb3666a00e1d4a9a294493841e494",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 43,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "B1G5Y9",
   "selected_historical_entry_version": 43,
+  "selected_historical_record_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
+  "selected_historical_source_sequence_length": 310,
+  "selected_historical_source_sequence_sha256": "669119f3660e25802e4d9d5d3abdcf25e9feb3666a00e1d4a9a294493841e494",
   "selected_historical_version": {
     "accession": "B1G5Y9",
     "database": "Swiss-Prot",
@@ -546,24 +325,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "DOHCE_PARG4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
-  "selected_historical_source_sequence_sha256": "669119f3660e25802e4d9d5d3abdcf25e9feb3666a00e1d4a9a294493841e494",
-  "selected_historical_source_sequence_length": 310,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 43,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -577,15 +343,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json",
-  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
-  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"B1G5Y9\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
+  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json"
 }
 ```
 
@@ -596,15 +362,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json",
-  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
-  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":44,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2008-04-29\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
+  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json"
 }
 ```
 
@@ -615,15 +381,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json",
-  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
-  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Burkholderiales\",\"Burkholderiaceae\",\"Paraburkholderia\"],\"scientificName\":\"Paraburkholderia graminis (strain ATCC 700544 / DSM 17151 / LMG 18924 / NCIMB 13744 / C4D1M)\",\"taxonId\":396598}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
+  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json"
 }
 ```
 
@@ -634,15 +400,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json",
-  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
-  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"3,5-dioxohexanoate cleavage enzyme\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"24240508\",\"source\":\"PubMed\"}],\"value\":\"BKACE_274\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"24240508\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.319\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"3,5-dioxohexanoate:acetyl-CoA acetone transferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
+  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json"
 }
 ```
 
@@ -653,15 +419,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json",
-  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
-  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"B0VHH0\",\"source\":\"UniProtKB\"}],\"name\":\"Zn(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
+  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json"
 }
 ```
 
@@ -672,15 +438,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json",
-  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
-  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Bastard K.\",\"Smith A.A.\",\"Vergne-Vaxelaire C.\",\"Perret A.\",\"Zaparucha A.\",\"De Melo-Minardi R.\",\"Mariage A.\",\"Boutard M.\",\"Debard A.\",\"Lechaplais C.\",\"Pelle C.\",\"Pellouin V.\",\"Perchat N.\",\"Petit J.L.\",\"Kreimeyer A.\",\"Medigue C.\",\"Weissenbach J.\",\"Artiguenave F.\",\"De Berardinis V.\",\"Vallenet D.\",\"Salanoubat M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"24240508\"},{\"database\":\"DOI\",\"id\":\"10.1038/nchembio.1387\"}],\"citationType\":\"journal article\",\"firstPage\":\"42\",\"id\":\"24240508\",\"journal\":\"Nat. Chem. Biol.\",\"lastPage\":\"49\",\"publicationDate\":\"2014\",\"title\":\"Revealing the hidden functional diversity of an enzyme family.\",\"volume\":\"10\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-01T06:25:00.301562+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "2f758acaffa7f035f51c7b9c1246eab2f4b6b5dd0f1a47ea47461062bd10b2fb",
+  "url": "https://rest.uniprot.org/uniprotkb/B1G5Y9.json"
 }
 ```
 
@@ -690,18 +456,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 43,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43",
-  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
-  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   DOHCE_PARG4             Reviewed;         310 AA.\nAC   B1G5Y9;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   29-APR-2008, sequence version 1.\nDT   28-JAN-2026, entry version 43.\nDE   RecName: Full=3,5-dioxohexanoate:acetyl-CoA acetone transferase {ECO:0000305};\nDE            EC=2.3.1.319 {ECO:0000269|PubMed:24240508};\nDE   AltName: Full=3,5-dioxohexanoate cleavage enzyme {ECO:0000305};\nDE   AltName: Full=BKACE_274 {ECO:0000303|PubMed:24240508};\nGN   Name=kce_3 {ECO:0000312|EMBL:CAB3715113.1};\nGN   ORFNames=BgramDRAFT_4880 {ECO:0000312|EMBL:EDT08458.1},\nGN   R8871_04389 {ECO:0000312|EMBL:CAB3715113.1};\nOS   Paraburkholderia graminis (strain ATCC 700544 / DSM 17151 / LMG 18924 /\nOS   NCIMB 13744 / C4D1M).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria;\nOC   Burkholderiales; Burkholderiaceae; Paraburkholderia.\nOX   NCBI_TaxID=396598;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 43,
+  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
+  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43"
 }
 ```
 
@@ -711,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 43,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43",
-  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
-  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=3,5-dioxohexanoate:acetyl-CoA acetone transferase {ECO:0000305};\nDE            EC=2.3.1.319 {ECO:0000269|PubMed:24240508};\nDE   AltName: Full=3,5-dioxohexanoate cleavage enzyme {ECO:0000305};\nDE   AltName: Full=BKACE_274 {ECO:0000303|PubMed:24240508};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 43,
+  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
+  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43"
 }
 ```
 
@@ -732,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 43,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43",
-  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
-  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
-  "source_locator": "lines 33-42",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=24240508; DOI=10.1038/nchembio.1387;\nRA   Bastard K., Smith A.A., Vergne-Vaxelaire C., Perret A., Zaparucha A.,\nRA   De Melo-Minardi R., Mariage A., Boutard M., Debard A., Lechaplais C.,\nRA   Pelle C., Pellouin V., Perchat N., Petit J.L., Kreimeyer A., Medigue C.,\nRA   Weissenbach J., Artiguenave F., De Berardinis V., Vallenet D.,\nRA   Salanoubat M.;\nRT   \"Revealing the hidden functional diversity of an enzyme family.\";\nRL   Nat. Chem. Biol. 10:42-49(2014).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 43,
+  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 33-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
+  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43"
 }
 ```
 
@@ -753,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 43,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43",
-  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
-  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
-  "source_locator": "lines 52-54",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;\nCC         Evidence={ECO:0000250|UniProtKB:B0VHH0};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 43,
+  "retrieved_utc": "2026-11-01T06:27:50.999580+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 52-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "d90dafbf43111239cd98ed128138c3a4aaac27f177ca000100c8186666b4ab94",
+  "url": "https://rest.uniprot.org/unisave/B1G5Y9?format=txt&versions=43"
 }
 ```
 

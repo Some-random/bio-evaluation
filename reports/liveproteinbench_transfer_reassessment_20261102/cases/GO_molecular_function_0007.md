@@ -1,18 +1,16 @@
-# GO_molecular_function_0007: before and after transfer clarification
+# GO_molecular_function_0007
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0007.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_molecular_function_0007.txt)
 
 **Task:** `GO_molecular_function`  
-**Author key, unchanged:** **D** — metal ion binding
+**Expected answer:** **D** — metal ion binding
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence matches the protein entry, which is annotated as zinc ion binding with experimental evidence; zinc binding supports the broader option D, metal ion binding. The historical entry also carried a metal ion binding annotation, though that annotation was computationally assigned.
-
-Citations as saved: [C8](#evidence-c8), [H4](#evidence-h4), [C1](#evidence-c1).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence and choices alone do not provide a clear, specific basis for identifying metal binding over the alternatives. A general sequence-based inference would not establish this protein's metal-binding function.
-
-
-**Missing item-specific fact**
-
-> That this particular protein is a zinc-dependent metalloprotease and binds a metal ion.
-
-
-**Reason**
-
-> Selecting D depends on protein-specific functional knowledge or annotation not supplied in the question. Recognizing the exact sequence or relying on an unspecified predictor would be lookup or memorization, not reasoning from the provided evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the listed choices, metal ion binding is supported. The protein's catalytic peptidase activity is not offered, so D is the supported listed option, although it describes metal binding rather than the protein's catalytic activity.
-
-
-### Important caveats
-
-- The historical metal-ion-binding annotation is computationally assigned; the current zinc-ion-binding annotation is supported by experimental evidence.
-- The exact author source snapshot is unknown, but the matched historical entry already includes the broader metal-ion-binding annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence and choices alone do not provide a clear, specific basis for identifying metal binding over the alternatives. A general sequence-based inference would not establish this protein's metal-binding function.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this particular protein is a zinc-dependent metalloprotease and binds a metal ion.",
-    "reason": "Selecting D depends on protein-specific functional knowledge or annotation not supplied in the question. Recognizing the exact sequence or relying on an unspecified predictor would be lookup or memorization, not reasoning from the provided evidence."
-  },
-  "case_id": "GO_molecular_function_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C8",
-      "H4",
-      "C1"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the protein entry, which is annotated as zinc ion binding with experimental evidence; zinc binding supports the broader option D, metal ion binding. The historical entry also carried a metal ion binding annotation, though that annotation was computationally assigned."
-  },
-  "important_caveats": [
-    "The historical metal-ion-binding annotation is computationally assigned; the current zinc-ion-binding annotation is supported by experimental evidence.",
-    "The exact author source snapshot is unknown, but the matched historical entry already includes the broader metal-ion-binding annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, metal ion binding is supported. The protein's catalytic peptidase activity is not offered, so D is the supported listed option, although it describes metal binding rather than the protein's catalytic activity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_molecular_function_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence matches the protein entry, which is annotated as zinc ion binding with experimental evidence; zinc binding supports the broader option D, metal ion binding. The historical entry also carried a metal ion binding annotation, though that annotation was computationally assigned.",
-    "evidence_ids": ["C8", "H4", "C1"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence and choices alone do not provide a clear, specific basis for identifying metal binding over the alternatives. A general sequence-based inference would not establish this protein's metal-binding function.",
-    "missing_item_specific_fact": "That this particular protein is a zinc-dependent metalloprotease and binds a metal ion.",
-    "reason": "Selecting D depends on protein-specific functional knowledge or annotation not supplied in the question. Recognizing the exact sequence or relying on an unspecified predictor would be lookup or memorization, not reasoning from the provided evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the listed choices, metal ion binding is supported. The protein's catalytic peptidase activity is not offered, so D is the supported listed option, although it describes metal binding rather than the protein's catalytic activity."
-  },
-  "important_caveats": [
-    "The historical metal-ion-binding annotation is computationally assigned; the current zinc-ion-binding annotation is supported by experimental evidence.",
-    "The exact author source snapshot is unknown, but the matched historical entry already includes the broader metal-ion-binding annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein E0N688 (MPG_NEIM3) is annotated with GO:0046872 (metal ion binding) in UniProt. More specifically, GO:0008270 (zinc ion binding) is annotated with IDA (Inferred from Direct Assay) evidence from the crystal structure PDB 3SLU solved in complex with nickel, confirming experimental demonstration of metal coordination. The protein is a zinc metalloprotease (DD-carboxypeptidase/endopeptidase Mpg) that requires zinc as a catalytic cofactor. GO:0008270 is_a GO:0046914 (transition metal ion binding) is_a GO:0046872 (metal ion binding), so the broader term applies. While the primary catalytic function is metalloendopeptidase activity (GO:0004222), metal ion binding is a valid and experimentally supported molecular function annotation for this protein.
-
-Citations as saved: [C4](#evidence-c4), [C8](#evidence-c8), [C9](#evidence-c9), [H4](#evidence-h4), [H5](#evidence-h5), [GO4](#evidence-go4), [GO5](#evidence-go5), [GO1](#evidence-go1).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains multiple H-x-H motifs (e.g., 'HPILHTWRLHTG', 'IRHANGVETLYAHLS', 'RSTGPHLHYEARING') characteristic of zinc-binding sites in metalloproteases. The N-terminal hydrophobic signal peptide and overall architecture are consistent with a bacterial outer membrane/periplasmic protein. A zinc metalloprotease by definition binds a metal ion cofactor. The three distractors are clearly incompatible: glycosyltransferases require DXD/NDxD motifs and a GT fold; CDP-diacylglycerol phosphatidyltransferases are integral membrane enzymes with distinct topology; mechanosensitive cation channels require multiple transmembrane helices with a pore-forming architecture absent here. Elimination plus identification of metal-binding motifs supports D.
-
-
-**Missing item-specific fact**
-
-> None strictly required. The H-x-H motifs and the absence of features diagnostic of the other three options provide sufficient grounds. However, confirming this is specifically a peptidase (rather than another metal-binding protein) would require recognizing the full metalloprotease fold, which adds some difficulty but does not change the answer among the given choices.
-
-
-**Reason**
-
-> The sequence provides identifiable metal-binding motifs (H-x-H patterns) and lacks features of the three distractor functions. General knowledge of metalloprotease sequence signatures and the structural requirements of glycosyltransferases, phosphatidyltransferases, and mechanosensitive channels allow a model to eliminate A, B, and C and select D through reasoning rather than memorizing this specific UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, only D (metal ion binding) is compatible with a zinc metalloprotease. The other three options describe functions with entirely different sequence/structural requirements that are absent from this protein. No ambiguity among the given options.
-
-
-### Important caveats
-
-- The question asks for 'primary molecular function,' but the true primary function is metalloendopeptidase/metallocarboxypeptidase activity (GO:0004222/GO:0004181), not metal ion binding per se. Metal ion binding is a secondary/auxiliary annotation. However, since peptidase activity is not among the choices, D remains the only correct option.
-- The GO:0046872 annotation carries evidence code IEA:UniProtKB-KW (automatic keyword-based), while the more specific zinc ion binding (GO:0008270) has IDA evidence from crystallography. The broader term is thus computationally assigned but supported by the narrower experimental annotation.
-- The crystal structure (3SLU) was solved in complex with nickel (a crystallization artifact), not zinc. The zinc-binding assignment is inferred from sequence motifs and the metalloprotease family classification rather than direct observation of zinc in the crystal.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains multiple H-x-H motifs (e.g., 'HPILHTWRLHTG', 'IRHANGVETLYAHLS', 'RSTGPHLHYEARING') characteristic of zinc-binding sites in metalloproteases. The N-terminal hydrophobic signal peptide and overall architecture are consistent with a bacterial outer membrane/periplasmic protein. A zinc metalloprotease by definition binds a metal ion cofactor. The three distractors are clearly incompatible: glycosyltransferases require DXD/NDxD motifs and a GT fold; CDP-diacylglycerol phosphatidyltransferases are integral membrane enzymes with distinct topology; mechanosensitive cation channels require multiple transmembrane helices with a pore-forming architecture absent here. Elimination plus identification of metal-binding motifs supports D.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None strictly required. The H-x-H motifs and the absence of features diagnostic of the other three options provide sufficient grounds. However, confirming this is specifically a peptidase (rather than another metal-binding protein) would require recognizing the full metalloprotease fold, which adds some difficulty but does not change the answer among the given choices.",
-    "reason": "The sequence provides identifiable metal-binding motifs (H-x-H patterns) and lacks features of the three distractor functions. General knowledge of metalloprotease sequence signatures and the structural requirements of glycosyltransferases, phosphatidyltransferases, and mechanosensitive channels allow a model to eliminate A, B, and C and select D through reasoning rather than memorizing this specific UniProt entry."
-  },
-  "case_id": "GO_molecular_function_0007",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C8",
-      "C9",
-      "H4",
-      "H5",
-      "GO4",
-      "GO5",
-      "GO1"
-    ],
-    "judgment": "supported",
-    "reason": "The protein E0N688 (MPG_NEIM3) is annotated with GO:0046872 (metal ion binding) in UniProt. More specifically, GO:0008270 (zinc ion binding) is annotated with IDA (Inferred from Direct Assay) evidence from the crystal structure PDB 3SLU solved in complex with nickel, confirming experimental demonstration of metal coordination. The protein is a zinc metalloprotease (DD-carboxypeptidase/endopeptidase Mpg) that requires zinc as a catalytic cofactor. GO:0008270 is_a GO:0046914 (transition metal ion binding) is_a GO:0046872 (metal ion binding), so the broader term applies. While the primary catalytic function is metalloendopeptidase activity (GO:0004222), metal ion binding is a valid and experimentally supported molecular function annotation for this protein."
-  },
-  "important_caveats": [
-    "The question asks for 'primary molecular function,' but the true primary function is metalloendopeptidase/metallocarboxypeptidase activity (GO:0004222/GO:0004181), not metal ion binding per se. Metal ion binding is a secondary/auxiliary annotation. However, since peptidase activity is not among the choices, D remains the only correct option.",
-    "The GO:0046872 annotation carries evidence code IEA:UniProtKB-KW (automatic keyword-based), while the more specific zinc ion binding (GO:0008270) has IDA evidence from crystallography. The broader term is thus computationally assigned but supported by the narrower experimental annotation.",
-    "The crystal structure (3SLU) was solved in complex with nickel (a crystallization artifact), not zinc. The zinc-binding assignment is inferred from sequence motifs and the metalloprotease family classification rather than direct observation of zinc in the crystal."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only D (metal ion binding) is compatible with a zinc metalloprotease. The other three options describe functions with entirely different sequence/structural requirements that are absent from this protein. No ambiguity among the given options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_molecular_function_0007",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein E0N688 (MPG_NEIM3) is annotated with GO:0046872 (metal ion binding) in UniProt. More specifically, GO:0008270 (zinc ion binding) is annotated with IDA (Inferred from Direct Assay) evidence from the crystal structure PDB 3SLU solved in complex with nickel, confirming experimental demonstration of metal coordination. The protein is a zinc metalloprotease (DD-carboxypeptidase/endopeptidase Mpg) that requires zinc as a catalytic cofactor. GO:0008270 is_a GO:0046914 (transition metal ion binding) is_a GO:0046872 (metal ion binding), so the broader term applies. While the primary catalytic function is metalloendopeptidase activity (GO:0004222), metal ion binding is a valid and experimentally supported molecular function annotation for this protein.",
-    "evidence_ids": ["C4", "C8", "C9", "H4", "H5", "GO4", "GO5", "GO1"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains multiple H-x-H motifs (e.g., 'HPILHTWRLHTG', 'IRHANGVETLYAHLS', 'RSTGPHLHYEARING') characteristic of zinc-binding sites in metalloproteases. The N-terminal hydrophobic signal peptide and overall architecture are consistent with a bacterial outer membrane/periplasmic protein. A zinc metalloprotease by definition binds a metal ion cofactor. The three distractors are clearly incompatible: glycosyltransferases require DXD/NDxD motifs and a GT fold; CDP-diacylglycerol phosphatidyltransferases are integral membrane enzymes with distinct topology; mechanosensitive cation channels require multiple transmembrane helices with a pore-forming architecture absent here. Elimination plus identification of metal-binding motifs supports D.",
-    "missing_item_specific_fact": "None strictly required. The H-x-H motifs and the absence of features diagnostic of the other three options provide sufficient grounds. However, confirming this is specifically a peptidase (rather than another metal-binding protein) would require recognizing the full metalloprotease fold, which adds some difficulty but does not change the answer among the given choices.",
-    "reason": "The sequence provides identifiable metal-binding motifs (H-x-H patterns) and lacks features of the three distractor functions. General knowledge of metalloprotease sequence signatures and the structural requirements of glycosyltransferases, phosphatidyltransferases, and mechanosensitive channels allow a model to eliminate A, B, and C and select D through reasoning rather than memorizing this specific UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, only D (metal ion binding) is compatible with a zinc metalloprotease. The other three options describe functions with entirely different sequence/structural requirements that are absent from this protein. No ambiguity among the given options."
-  },
-  "important_caveats": [
-    "The question asks for 'primary molecular function,' but the true primary function is metalloendopeptidase/metallocarboxypeptidase activity (GO:0004222/GO:0004181), not metal ion binding per se. Metal ion binding is a secondary/auxiliary annotation. However, since peptidase activity is not among the choices, D remains the only correct option.",
-    "The GO:0046872 annotation carries evidence code IEA:UniProtKB-KW (automatic keyword-based), while the more specific zinc ion binding (GO:0008270) has IDA evidence from crystallography. The broader term is thus computationally assigned but supported by the narrower experimental annotation.",
-    "The crystal structure (3SLU) was solved in complex with nickel (a crystallization artifact), not zinc. The zinc-binding assignment is inferred from sequence motifs and the metalloprotease family classification rather than direct observation of zinc in the crystal."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +274,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E0N688",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 430,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +292,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-11-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "current_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 430,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E0N688",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "selected_historical_source_sequence_length": 430,
+  "selected_historical_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
   "selected_historical_version": {
     "accession": "E0N688",
     "database": "Swiss-Prot",
@@ -553,24 +326,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "MPG_NEIM3",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "selected_historical_source_sequence_sha256": "3e75444ef73a59ea32e1df8dd911f094a963233fecca96f1fb511d7b05e30d56",
-  "selected_historical_source_sequence_length": 430,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -588,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E0N688\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -607,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-11-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -626,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Betaproteobacteria\",\"Neisseriales\",\"Neisseriaceae\",\"Neisseria\"],\"scientificName\":\"Neisseria meningitidis serogroup B (strain ATCC 13091 / M2091)\",\"taxonId\":862513}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -645,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5F676\",\"source\":\"UniProtKB\"}],\"value\":\"Metalloprotease active against peptidoglycan\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"value\":\"Outer membrane protein\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"value\":\"OMP\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Zinc metallopeptidase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Zinc metalloprotease\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"value\":\"Zinc-dependent metallopeptidase\"}}],\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5F676\",\"source\":\"UniProtKB\"}],\"value\":\"3.4.17.-\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5F676\",\"source\":\"UniProtKB\"}],\"value\":\"3.4.24.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"DD-carboxypeptidase/endopeptidase Mpg\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -664,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q5F676\",\"source\":\"UniProtKB\"}],\"value\":\"Has both endopeptidase and DD-carboxypeptidase activities. Degrades cell wall peptidoglycan (PG) to allow consummate expression of pili\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -683,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/9",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0004181\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:metallocarboxypeptidase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/9",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -702,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/10",
   "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0004222\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:metalloendopeptidase activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"ISS:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/10",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -721,15 +481,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/11",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"id\":\"GO:0008270\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:zinc ion binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/11",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -740,15 +500,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json",
-  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
-  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang X.\",\"Yang X.\",\"Yang C.\",\"Wu Z.\",\"Xu H.\",\"Shen Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22046377\"},{\"database\":\"DOI\",\"id\":\"10.1371/journal.pone.0026845\"}],\"citationType\":\"journal article\",\"firstPage\":\"e26845\",\"id\":\"22046377\",\"journal\":\"PLoS ONE\",\"lastPage\":\"e26845\",\"publicationDate\":\"2011\",\"title\":\"Crystal structure of outer membrane protein NMB0315 from Neisseria meningitidis.\",\"volume\":\"6\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"3SLU\",\"source\":\"PDB\"}],\"referenceComments\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"22046377\",\"source\":\"PubMed\"}],\"type\":\"STRAIN\",\"value\":\"ATCC 13091 / M2091\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.41 ANGSTROMS) OF 54-420 IN COMPLEX WITH NICKEL\",\"COFACTOR\",\"SUBUNIT\",\"SUBCELLULAR LOCATION\",\"PTM\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:27:57.637304+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "15b7733cc2a0e4ab39ce1f757e23e6eca2f74da5098179381b3861594fe30e7a",
+  "url": "https://rest.uniprot.org/uniprotkb/E0N688.json"
 }
 ```
 
@@ -758,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 1-20",
   "excerpt": "ID   MPG_NEIM3               Reviewed;         430 AA.\nAC   E0N688;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-NOV-2010, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=DD-carboxypeptidase/endopeptidase Mpg {ECO:0000305};\nDE            EC=3.4.17.- {ECO:0000250|UniProtKB:Q5F676};\nDE            EC=3.4.24.- {ECO:0000250|UniProtKB:Q5F676};\nDE   AltName: Full=Metalloprotease active against peptidoglycan {ECO:0000250|UniProtKB:Q5F676};\nDE   AltName: Full=Outer membrane protein {ECO:0000303|PubMed:22046377};\nDE            Short=OMP {ECO:0000303|PubMed:22046377};\nDE   AltName: Full=Zinc metallopeptidase {ECO:0000305};\nDE   AltName: Full=Zinc metalloprotease {ECO:0000305};\nDE   AltName: Full=Zinc-dependent metallopeptidase {ECO:0000303|PubMed:22046377};\nDE   Flags: Precursor;\nGN   ORFNames=HMPREF0602_0018 {ECO:0000312|EMBL:EFM05396.1};\nOS   Neisseria meningitidis serogroup B (strain ATCC 13091 / M2091).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Betaproteobacteria; Neisseriales;\nOC   Neisseriaceae; Neisseria.\nOX   NCBI_TaxID=862513;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-20",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -779,18 +539,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 37-45",
   "excerpt": "RN   [2] {ECO:0007744|PDB:3SLU}\nRP   X-RAY CRYSTALLOGRAPHY (2.41 ANGSTROMS) OF 54-420 IN COMPLEX WITH NICKEL,\nRP   COFACTOR, SUBUNIT, SUBCELLULAR LOCATION, AND PTM.\nRC   STRAIN=ATCC 13091 / M2091 {ECO:0000303|PubMed:22046377};\nRX   PubMed=22046377; DOI=10.1371/journal.pone.0026845;\nRA   Wang X., Yang X., Yang C., Wu Z., Xu H., Shen Y.;\nRT   \"Crystal structure of outer membrane protein NMB0315 from Neisseria\nRT   meningitidis.\";\nRL   PLoS ONE 6:e26845-e26845(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 37-45",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -800,18 +560,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 46-48",
   "excerpt": "CC   -!- FUNCTION: Has both endopeptidase and DD-carboxypeptidase activities.\nCC       Degrades cell wall peptidoglycan (PG) to allow consummate expression of\nCC       pili. {ECO:0000250|UniProtKB:Q5F676}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 46-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -821,18 +581,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 80-80",
   "excerpt": "DR   GO; GO:0046872; F:metal ion binding; IEA:UniProtKB-KW.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 80-80",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -842,18 +602,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51",
-  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
-  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
-  "source_locator": "lines 81-81",
   "excerpt": "DR   GO; GO:0004222; F:metalloendopeptidase activity; IEA:TreeGrafter.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:01.531640+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "6bc19bde1a2b73ea5937ac1c69862e82fb2baf2bbd761f0a7ea56227dc234bf1",
+  "url": "https://rest.uniprot.org/unisave/E0N688?format=txt&versions=51"
 }
 ```
 
@@ -864,15 +624,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 81431-81439",
   "excerpt": "[Term]\nid: GO:0008270\nname: zinc ion binding\nnamespace: molecular_function\ndef: \"Binding to a zinc ion (Zn).\" [GOC:ai]\nsynonym: \"zinc binding\" EXACT []\nsynonym: \"Zn binding\" EXACT []\nis_a: GO:0046914 ! transition metal ion binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008270",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 81431-81439",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008270"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -883,15 +643,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 83359-83389",
   "excerpt": "[Term]\nid: GO:0008444\nname: CDP-diacylglycerol-glycerol-3-phosphate 3-phosphatidyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: sn-glycerol 3-phosphate + CDP-diacylglycerol = 3-(3-sn-phosphatidyl)-sn-glycerol 1-phosphate + CMP + H+.\" [EC:2.7.8.5, RHEA:12593]\nsynonym: \"3-phosphatidyl-1'-glycerol-3'-phosphate synthase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"CDP-diacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"CDPdiacylglycerol-glycerol-3-phosphate 3-phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"CDPdiacylglycerol-sn-glycerol-3-phosphate 3-phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"CDPdiacylglycerol:glycerol-3-phosphate phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"CDPdiacylglycerol:sn-glycero-3-phosphate phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"cytidine 5'-diphospho-1,2-diacyl-sn-glycerol (CDPdiglyceride):sn-glycerol-3-phosphate phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"glycerol 3-phosphate phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"glycerol phosphate phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"glycerophosphate phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"PGP synthase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"phosphatidylglycerol phosphate synthase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"phosphatidylglycerol phosphate synthetase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"phosphatidylglycerolphosphate synthase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"phosphatidylglycerophosphate synthase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"phosphatidylglycerophosphate synthetase activity\" RELATED [EC:2.7.8.5]\nsynonym: \"sn-glycerol-3-phosphate phosphatidyltransferase activity\" RELATED [EC:2.7.8.5]\nxref: EC:2.7.8.5\nxref: KEGG_REACTION:R01801\nxref: MetaCyc:PHOSPHAGLYPSYN-RXN\nxref: Reactome:R-HSA-1482939 \"CDP-DAG is converted to PGP by PGS1\"\nxref: RHEA:12593\nis_a: GO:0017169 ! CDP-alcohol phosphatidyltransferase activity\nproperty_value: skos:exactMatch EC:2.7.8.5\nproperty_value: skos:exactMatch RHEA:12593\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0008444",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 83359-83389",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0008444"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -902,15 +662,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 129828-129846",
   "excerpt": "[Term]\nid: GO:0016757\nname: glycosyltransferase activity\nnamespace: molecular_function\nalt_id: GO:0016932\ndef: \"Catalysis of the transfer of a glycosyl group from one compound (donor) to another (acceptor).\" [GOC:jl, ISBN:0198506732]\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_yeast\nsynonym: \"transferase activity, transferring glycosyl groups\" EXACT []\nsynonym: \"transferase activity, transferring other glycosyl groups\" NARROW []\nsynonym: \"transglycosidase activity\" EXACT []\nsynonym: \"transglycosylase activity\" EXACT []\nxref: EC:2.4.-.-\nxref: Reactome:R-HSA-5173005 \"B3GALTL transfers glucose to O-fucosyl-proteins\"\nxref: Reactome:R-HSA-6785565 \"Defective B3GALTL does not transfer glucose to O-fucosyl-proteins\"\nis_a: GO:0016740 ! transferase activity\nproperty_value: skos:exactMatch EC:2.4.-.-\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0016757",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 129828-129846",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0016757"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -921,15 +681,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 281280-281292",
   "excerpt": "[Term]\nid: GO:0046872\nname: metal ion binding\nnamespace: molecular_function\ndef: \"Binding to a metal ion.\" [GOC:ai]\nsubset: goslim_agr\nsubset: goslim_drosophila\nsubset: goslim_flybase_ribbon\nsubset: goslim_metagenomics\nsynonym: \"heavy metal binding\" NARROW []\nsynonym: \"metal binding\" EXACT []\nis_a: GO:0043169 ! cation binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046872",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 281280-281292",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046872"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -940,15 +700,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO5",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 281764-281770",
   "excerpt": "[Term]\nid: GO:0046914\nname: transition metal ion binding\nnamespace: molecular_function\ndef: \"Binding to a transition metal ions; a transition metal is an element whose atom has an incomplete d-subshell of extranuclear electrons, or which gives rise to a cation or cations with an incomplete d-subshell. Transition metals often have more than one valency state. Biologically relevant transition metals include vanadium, manganese, iron, copper, cobalt, nickel, molybdenum and silver.\" [ISBN:0198506732]\nis_a: GO:0046872 ! metal ion binding\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0046914",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 281764-281770",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0046914"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -959,15 +719,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO6",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 437568-437580",
   "excerpt": "[Term]\nid: GO:0140135\nname: mechanosensitive monoatomic cation channel activity\nnamespace: molecular_function\ndef: \"Enables the transmembrane transfer of a monoatomic cation by a channel that opens in response to a mechanical stress.\" [GOC:ha, PMID:22343900]\nsynonym: \"mechanically-gated cation channel activity\" EXACT []\nsynonym: \"mechanosensitive cation channel activity\" BROAD []\nxref: Reactome:R-HSA-9659380 \"Mechanoelectrical transduction (MET) channel transports cations from the extracellular region into the cytosol of stereocilia of inner hair cell\"\nxref: Reactome:R-HSA-9663363 \"Mechanoelectrical transduction (MET) channel transports cations into the cytosol of stereocilia of cochlear outer hair cell\"\nxref: Reactome:R-HSA-9855089 \"PIEZO1 trimer passively transports cations across the plasma membrane according to their electrochemical gradients\"\nis_a: GO:0005261 ! monoatomic cation channel activity\nis_a: GO:0008381 ! mechanosensitive monoatomic ion channel activity\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0140135",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 437568-437580",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0140135"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

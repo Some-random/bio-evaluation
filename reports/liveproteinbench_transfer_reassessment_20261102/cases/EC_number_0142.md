@@ -1,18 +1,16 @@
-# EC_number_0142: before and after transfer clarification
+# EC_number_0142
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0142.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0142.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 2.7.11.1
+**Expected answer:** **C** — 2.7.11.1
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 1598-aa sequence matches the UniProt entry for Toxoplasma gondii Nek1, which assigns EC 2.7.11.1 and annotates serine- and threonine-phosphorylation reactions with literature-linked evidence. This supports choice C, though the annotation is not an independent validation of the primary experiments.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a protein-kinase-like catalytic domain, which supports a kinase interpretation over the oxidoreductase and lyase choices. It does not, from the supplied information alone, establish the specific kinase EC subclass.
-
-
-**Missing item-specific fact**
-
-> The protein's specific identity/function as Nek1 and its annotated catalytic activity, including the EC 2.7.11.1 classification.
-
-
-**Reason**
-
-> The broad sequence features support kinase activity, but selecting the complete EC number over another kinase option requires protein-specific functional annotation or experimental information absent from the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched annotation supports EC 2.7.11.1; the supplied evidence does not support another listed option.
-
-
-### Important caveats
-
-- The UniProt annotation is literature-linked and curator asserted; the primary study was not independently retrieved or assessed here.
-- Reviewer-only accession and annotation evidence support the key but were not supplied to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a protein-kinase-like catalytic domain, which supports a kinase interpretation over the oxidoreductase and lyase choices. It does not, from the supplied information alone, establish the specific kinase EC subclass.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's specific identity/function as Nek1 and its annotated catalytic activity, including the EC 2.7.11.1 classification.",
-    "reason": "The broad sequence features support kinase activity, but selecting the complete EC number over another kinase option requires protein-specific functional annotation or experimental information absent from the question."
-  },
-  "case_id": "EC_number_0142",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 1598-aa sequence matches the UniProt entry for Toxoplasma gondii Nek1, which assigns EC 2.7.11.1 and annotates serine- and threonine-phosphorylation reactions with literature-linked evidence. This supports choice C, though the annotation is not an independent validation of the primary experiments."
-  },
-  "important_caveats": [
-    "The UniProt annotation is literature-linked and curator asserted; the primary study was not independently retrieved or assessed here.",
-    "Reviewer-only accession and annotation evidence support the key but were not supplied to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports EC 2.7.11.1; the supplied evidence does not support another listed option."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0142",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 1598-aa sequence matches the UniProt entry for Toxoplasma gondii Nek1, which assigns EC 2.7.11.1 and annotates serine- and threonine-phosphorylation reactions with literature-linked evidence. This supports choice C, though the annotation is not an independent validation of the primary experiments.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a protein-kinase-like catalytic domain, which supports a kinase interpretation over the oxidoreductase and lyase choices. It does not, from the supplied information alone, establish the specific kinase EC subclass.",
-    "missing_item_specific_fact": "The protein's specific identity/function as Nek1 and its annotated catalytic activity, including the EC 2.7.11.1 classification.",
-    "reason": "The broad sequence features support kinase activity, but selecting the complete EC number over another kinase option requires protein-specific functional annotation or experimental information absent from the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched annotation supports EC 2.7.11.1; the supplied evidence does not support another listed option."
-  },
-  "important_caveats": [
-    "The UniProt annotation is literature-linked and curator asserted; the primary study was not independently retrieved or assessed here.",
-    "Reviewer-only accession and annotation evidence support the key but were not supplied to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry S8GI44 (sequence SHA256 match confirmed) is annotated as 'Serine/threonine-protein kinase Nek1' with EC 2.7.11.1, supported by experimental evidence from PubMed:23729737 (Chen & Gubbels, 2013, J. Cell Sci.). The catalytic activities listed are phosphorylation of L-seryl-&#91;protein&#93; and L-threonyl-&#91;protein&#93; using ATP, consistent with EC 2.7.11.1. The evidence code ECO:0000305 indicates curator inference from the cited publication, which performed mutagenesis and functional characterization of TgNek1.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H5](#evidence-h5), [H6](#evidence-h6).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains canonical protein kinase domain motifs: a glycine-rich loop (GAGRFGEV...KATKALL), the HRD catalytic motif (HRDLKPCNIFLASHPEY), the DFG activation segment (DFGLSRHLNMHSMAHSCVGTPYYWSPEL), and the APE motif. These unambiguously identify the protein as a protein kinase (EC 2.7.11.x), eliminating option B (EC 1.14.13.238, a monooxygenase/oxidoreductase) and option D (EC 4.2.99.18, a lyase). To distinguish 2.7.11.1 (Ser/Thr kinase) from 2.7.11.11 (receptor-type tyrosine-protein kinase): EC 2.7.11.11 requires a transmembrane domain and extracellular ligand-binding domain, neither of which is present in this sequence (no long hydrophobic stretch; the protein is cytoplasmic). Additionally, the HRD motif pattern 'HRDLKPCNIFLASHPEY' is characteristic of Ser/Thr kinases rather than tyrosine kinases (which typically show 'HRDLAARN'). The long C-terminal S/T-rich tail is a hallmark of NIMA-related (Nek) Ser/Thr kinases.
-
-
-**Missing item-specific fact**
-
-> None critical. The kinase domain motifs, absence of transmembrane topology, and HRD motif pattern provide sufficient biological reasoning to select 2.7.11.1 over the alternatives.
-
-
-**Reason**
-
-> The sequence itself provides kinase domain signatures that eliminate B and D by class (oxidoreductase vs. lyase vs. transferase). The absence of any transmembrane or receptor extracellular domain eliminates 2.7.11.11 (receptor-type tyrosine kinase). The HRD motif sequence and overall domain architecture (kinase domain + long cytoplasmic tail) are consistent with a cytoplasmic Ser/Thr kinase, supporting 2.7.11.1.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B and D are entirely different enzyme classes (oxidoreductase, lyase) and are eliminated by the clear kinase domain. Option A (2.7.11.11) is a receptor-type tyrosine kinase requiring a transmembrane domain absent from this sequence. Only option C (2.7.11.1) is consistent with a cytoplasmic Ser/Thr protein kinase bearing NIMA-family architecture.
-
-
-### Important caveats
-
-- The UniProt annotation uses evidence code ECO:0000305 (curator inference from published literature), not direct in vitro enzyme kinetics characterization of this specific protein.
-- The PubMed:23729737 study characterized TgNek1 function in Toxoplasma cell division and performed mutagenesis of catalytic residues, supporting kinase activity assignment.
-- EC 2.7.11.11 in current IUBMB nomenclature refers specifically to receptor-type tyrosine-protein kinase; if the question intended a non-receptor tyrosine kinase, the EC number would differ, but the sequence clearly lacks tyrosine kinase signatures.
-- The NIMA-related kinase family is well-established as Ser/Thr kinases across eukaryotes, providing taxonomic and phylogenetic context for the classification.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains canonical protein kinase domain motifs: a glycine-rich loop (GAGRFGEV...KATKALL), the HRD catalytic motif (HRDLKPCNIFLASHPEY), the DFG activation segment (DFGLSRHLNMHSMAHSCVGTPYYWSPEL), and the APE motif. These unambiguously identify the protein as a protein kinase (EC 2.7.11.x), eliminating option B (EC 1.14.13.238, a monooxygenase/oxidoreductase) and option D (EC 4.2.99.18, a lyase). To distinguish 2.7.11.1 (Ser/Thr kinase) from 2.7.11.11 (receptor-type tyrosine-protein kinase): EC 2.7.11.11 requires a transmembrane domain and extracellular ligand-binding domain, neither of which is present in this sequence (no long hydrophobic stretch; the protein is cytoplasmic). Additionally, the HRD motif pattern 'HRDLKPCNIFLASHPEY' is characteristic of Ser/Thr kinases rather than tyrosine kinases (which typically show 'HRDLAARN'). The long C-terminal S/T-rich tail is a hallmark of NIMA-related (Nek) Ser/Thr kinases.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The kinase domain motifs, absence of transmembrane topology, and HRD motif pattern provide sufficient biological reasoning to select 2.7.11.1 over the alternatives.",
-    "reason": "The sequence itself provides kinase domain signatures that eliminate B and D by class (oxidoreductase vs. lyase vs. transferase). The absence of any transmembrane or receptor extracellular domain eliminates 2.7.11.11 (receptor-type tyrosine kinase). The HRD motif sequence and overall domain architecture (kinase domain + long cytoplasmic tail) are consistent with a cytoplasmic Ser/Thr kinase, supporting 2.7.11.1."
-  },
-  "case_id": "EC_number_0142",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "C7",
-      "H1",
-      "H2",
-      "H5",
-      "H6"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry S8GI44 (sequence SHA256 match confirmed) is annotated as 'Serine/threonine-protein kinase Nek1' with EC 2.7.11.1, supported by experimental evidence from PubMed:23729737 (Chen & Gubbels, 2013, J. Cell Sci.). The catalytic activities listed are phosphorylation of L-seryl-[protein] and L-threonyl-[protein] using ATP, consistent with EC 2.7.11.1. The evidence code ECO:0000305 indicates curator inference from the cited publication, which performed mutagenesis and functional characterization of TgNek1."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses evidence code ECO:0000305 (curator inference from published literature), not direct in vitro enzyme kinetics characterization of this specific protein.",
-    "The PubMed:23729737 study characterized TgNek1 function in Toxoplasma cell division and performed mutagenesis of catalytic residues, supporting kinase activity assignment.",
-    "EC 2.7.11.11 in current IUBMB nomenclature refers specifically to receptor-type tyrosine-protein kinase; if the question intended a non-receptor tyrosine kinase, the EC number would differ, but the sequence clearly lacks tyrosine kinase signatures.",
-    "The NIMA-related kinase family is well-established as Ser/Thr kinases across eukaryotes, providing taxonomic and phylogenetic context for the classification."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D are entirely different enzyme classes (oxidoreductase, lyase) and are eliminated by the clear kinase domain. Option A (2.7.11.11) is a receptor-type tyrosine kinase requiring a transmembrane domain absent from this sequence. Only option C (2.7.11.1) is consistent with a cytoplasmic Ser/Thr protein kinase bearing NIMA-family architecture."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0142",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry S8GI44 (sequence SHA256 match confirmed) is annotated as 'Serine/threonine-protein kinase Nek1' with EC 2.7.11.1, supported by experimental evidence from PubMed:23729737 (Chen & Gubbels, 2013, J. Cell Sci.). The catalytic activities listed are phosphorylation of L-seryl-[protein] and L-threonyl-[protein] using ATP, consistent with EC 2.7.11.1. The evidence code ECO:0000305 indicates curator inference from the cited publication, which performed mutagenesis and functional characterization of TgNek1.",
-    "evidence_ids": ["C4", "C5", "C6", "C7", "H1", "H2", "H5", "H6"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains canonical protein kinase domain motifs: a glycine-rich loop (GAGRFGEV...KATKALL), the HRD catalytic motif (HRDLKPCNIFLASHPEY), the DFG activation segment (DFGLSRHLNMHSMAHSCVGTPYYWSPEL), and the APE motif. These unambiguously identify the protein as a protein kinase (EC 2.7.11.x), eliminating option B (EC 1.14.13.238, a monooxygenase/oxidoreductase) and option D (EC 4.2.99.18, a lyase). To distinguish 2.7.11.1 (Ser/Thr kinase) from 2.7.11.11 (receptor-type tyrosine-protein kinase): EC 2.7.11.11 requires a transmembrane domain and extracellular ligand-binding domain, neither of which is present in this sequence (no long hydrophobic stretch; the protein is cytoplasmic). Additionally, the HRD motif pattern 'HRDLKPCNIFLASHPEY' is characteristic of Ser/Thr kinases rather than tyrosine kinases (which typically show 'HRDLAARN'). The long C-terminal S/T-rich tail is a hallmark of NIMA-related (Nek) Ser/Thr kinases.",
-    "missing_item_specific_fact": "None critical. The kinase domain motifs, absence of transmembrane topology, and HRD motif pattern provide sufficient biological reasoning to select 2.7.11.1 over the alternatives.",
-    "reason": "The sequence itself provides kinase domain signatures that eliminate B and D by class (oxidoreductase vs. lyase vs. transferase). The absence of any transmembrane or receptor extracellular domain eliminates 2.7.11.11 (receptor-type tyrosine kinase). The HRD motif sequence and overall domain architecture (kinase domain + long cytoplasmic tail) are consistent with a cytoplasmic Ser/Thr kinase, supporting 2.7.11.1."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B and D are entirely different enzyme classes (oxidoreductase, lyase) and are eliminated by the clear kinase domain. Option A (2.7.11.11) is a receptor-type tyrosine kinase requiring a transmembrane domain absent from this sequence. Only option C (2.7.11.1) is consistent with a cytoplasmic Ser/Thr protein kinase bearing NIMA-family architecture."
-  },
-  "important_caveats": [
-    "The UniProt annotation uses evidence code ECO:0000305 (curator inference from published literature), not direct in vitro enzyme kinetics characterization of this specific protein.",
-    "The PubMed:23729737 study characterized TgNek1 function in Toxoplasma cell division and performed mutagenesis of catalytic residues, supporting kinase activity assignment.",
-    "EC 2.7.11.11 in current IUBMB nomenclature refers specifically to receptor-type tyrosine-protein kinase; if the question intended a non-receptor tyrosine kinase, the EC number would differ, but the sequence clearly lacks tyrosine kinase signatures.",
-    "The NIMA-related kinase family is well-established as Ser/Thr kinases across eukaryotes, providing taxonomic and phylogenetic context for the classification."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -395,10 +160,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -511,30 +275,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "S8GI44",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ab6db6c7f1b507247aead50ff77b5cf5cf47c47d81065d7bb0f292936dc66224",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 1598,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ab6db6c7f1b507247aead50ff77b5cf5cf47c47d81065d7bb0f292936dc66224",
   "current_entry_audit": {
     "entryVersion": 40,
     "firstPublicDate": "2025-06-18",
@@ -542,14 +293,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2013-10-16",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "current_source_sequence_sha256": "ab6db6c7f1b507247aead50ff77b5cf5cf47c47d81065d7bb0f292936dc66224",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 1598,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ab6db6c7f1b507247aead50ff77b5cf5cf47c47d81065d7bb0f292936dc66224",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 38,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "S8GI44",
   "selected_historical_entry_version": 38,
+  "selected_historical_record_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
+  "selected_historical_source_sequence_length": 1598,
+  "selected_historical_source_sequence_sha256": "ab6db6c7f1b507247aead50ff77b5cf5cf47c47d81065d7bb0f292936dc66224",
   "selected_historical_version": {
     "accession": "S8GI44",
     "database": "Swiss-Prot",
@@ -560,24 +327,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "NEK_TOXGM",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
-  "selected_historical_source_sequence_sha256": "ab6db6c7f1b507247aead50ff77b5cf5cf47c47d81065d7bb0f292936dc66224",
-  "selected_historical_source_sequence_length": 1598,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 38,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -591,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"S8GI44\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -610,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":40,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2013-10-16\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -629,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000001529\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Sar\",\"Alveolata\",\"Apicomplexa\",\"Conoidasida\",\"Coccidia\",\"Eucoccidiorida\",\"Eimeriorina\",\"Sarcocystidae\",\"Toxoplasma\"],\"scientificName\":\"Toxoplasma gondii (strain ATCC 50611 / Me49)\",\"taxonId\":508771}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -648,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"NIMA-related protein kinase NIMA1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"23729737\",\"source\":\"PubMed\"}],\"value\":\"2.7.11.1\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Serine/threonine-protein kinase Nek1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"30865554\",\"source\":\"PubMed\"}],\"value\":\"TgNek1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -667,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.11.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"23729737\",\"source\":\"PubMed\"}],\"name\":\"L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:17989\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:9863\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11604\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29999\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:83421\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -686,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"2.7.11.1\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"23729737\",\"source\":\"PubMed\"}],\"name\":\"L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] + ADP + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:46608\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11060\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:11605\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30013\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61977\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -705,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Chen C.T.\",\"Gubbels M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"23729737\"},{\"database\":\"DOI\",\"id\":\"10.1242/jcs.123364\"}],\"citationType\":\"journal article\",\"firstPage\":\"3344\",\"id\":\"23729737\",\"journal\":\"J. Cell Sci.\",\"lastPage\":\"3355\",\"publicationDate\":\"2013\",\"title\":\"The Toxoplasma gondii centrosome is the platform for internal daughter budding as revealed by a Nek1 kinase mutant.\",\"volume\":\"126\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"ACTIVITY REGULATION\",\"SUBCELLULAR LOCATION\",\"ALTERNATIVE SPLICING\",\"ISOFORM TGNEK1-1\",\"ISOFORM TGNEK1-2\",\"DEVELOPMENTAL STAGE\",\"MUTAGENESIS OF LYS-135; SER-278; SER-282; THR-286 AND CYS-319\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -724,15 +478,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json",
-  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
-  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Chen C.T.\",\"Gubbels M.J.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"30865554\"},{\"database\":\"DOI\",\"id\":\"10.1091/mbc.e18-10-0608\"}],\"citationType\":\"journal article\",\"firstPage\":\"1160\",\"id\":\"30865554\",\"journal\":\"Mol. Biol. Cell\",\"lastPage\":\"1169\",\"publicationDate\":\"2019\",\"title\":\"TgCep250 is dynamically processed through the division cycle and is essential for structural integrity of the Toxoplasma centrosome.\",\"volume\":\"30\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:33:59.328831+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "4b5822ee1f6499622b11503feef2e697e56747663823cb38bef569dafff9bad6",
+  "url": "https://rest.uniprot.org/uniprotkb/S8GI44.json"
 }
 ```
 
@@ -742,18 +496,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38",
-  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
-  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   NEK_TOXGM               Reviewed;        1598 AA.\nAC   S8GI44;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   16-OCT-2013, sequence version 1.\nDT   28-JAN-2026, entry version 38.\nDE   RecName: Full=Serine/threonine-protein kinase Nek1 {ECO:0000305};\nDE            Short=TgNek1 {ECO:0000303|PubMed:30865554};\nDE            EC=2.7.11.1 {ECO:0000305|PubMed:23729737};\nDE   AltName: Full=NIMA-related protein kinase NIMA1 {ECO:0000305};\nGN   Name=NEK {ECO:0000312|EMBL:EPT28124.1};\nGN   ORFNames=TGME49_292140 {ECO:0000312|EMBL:EPT28124.1};\nOS   Toxoplasma gondii (strain ATCC 50611 / Me49).\nOC   Eukaryota; Sar; Alveolata; Apicomplexa; Conoidasida; Coccidia;\nOC   Eucoccidiorida; Eimeriorina; Sarcocystidae; Toxoplasma.\nOX   NCBI_TaxID=508771 {ECO:0000312|Proteomes:UP000001529};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
+  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38"
 }
 ```
 
@@ -763,18 +517,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38",
-  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
-  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Serine/threonine-protein kinase Nek1 {ECO:0000305};\nDE            Short=TgNek1 {ECO:0000303|PubMed:30865554};\nDE            EC=2.7.11.1 {ECO:0000305|PubMed:23729737};\nDE   AltName: Full=NIMA-related protein kinase NIMA1 {ECO:0000305};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
+  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38"
 }
 ```
 
@@ -784,18 +538,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38",
-  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
-  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
-  "source_locator": "lines 22-30",
   "excerpt": "RN   [2] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, ACTIVITY REGULATION, SUBCELLULAR LOCATION,\nRP   ALTERNATIVE SPLICING, ISOFORM TGNEK1-1, ISOFORM TGNEK1-2, DEVELOPMENTAL\nRP   STAGE, AND MUTAGENESIS OF LYS-135; SER-278; SER-282; THR-286 AND CYS-319.\nRX   PubMed=23729737; DOI=10.1242/jcs.123364;\nRA   Chen C.T., Gubbels M.J.;\nRT   \"The Toxoplasma gondii centrosome is the platform for internal daughter\nRT   budding as revealed by a Nek1 kinase mutant.\";\nRL   J. Cell Sci. 126:3344-3355(2013).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
+  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38"
 }
 ```
 
@@ -805,18 +559,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38",
-  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
-  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
-  "source_locator": "lines 31-37",
   "excerpt": "RN   [3] {ECO:0000305}\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=30865554; DOI=10.1091/mbc.e18-10-0608;\nRA   Chen C.T., Gubbels M.J.;\nRT   \"TgCep250 is dynamically processed through the division cycle and is\nRT   essential for structural integrity of the Toxoplasma centrosome.\";\nRL   Mol. Biol. Cell 30:1160-1169(2019).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
+  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38"
 }
 ```
 
@@ -826,18 +580,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38",
-  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
-  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
-  "source_locator": "lines 43-48",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-seryl-[protein] + ATP = O-phospho-L-seryl-[protein] + ADP +\nCC         H(+); Xref=Rhea:RHEA:17989, Rhea:RHEA-COMP:9863, Rhea:RHEA-\nCC         COMP:11604, ChEBI:CHEBI:15378, ChEBI:CHEBI:29999, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:83421, ChEBI:CHEBI:456216; EC=2.7.11.1;\nCC         Evidence={ECO:0000305|PubMed:23729737};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-48",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
+  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38"
 }
 ```
 
@@ -847,18 +601,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 38,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38",
-  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
-  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
-  "source_locator": "lines 49-54",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-threonyl-[protein] + ATP = O-phospho-L-threonyl-[protein] +\nCC         ADP + H(+); Xref=Rhea:RHEA:46608, Rhea:RHEA-COMP:11060, Rhea:RHEA-\nCC         COMP:11605, ChEBI:CHEBI:15378, ChEBI:CHEBI:30013, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:61977, ChEBI:CHEBI:456216; EC=2.7.11.1;\nCC         Evidence={ECO:0000305|PubMed:23729737};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 38,
+  "retrieved_utc": "2026-11-02T04:34:03.906590+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 49-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "324a63b3f3f2268eff7cb13606084915dd80f645516a1c6d849025251ebde12f",
+  "url": "https://rest.uniprot.org/unisave/S8GI44?format=txt&versions=38"
 }
 ```
 

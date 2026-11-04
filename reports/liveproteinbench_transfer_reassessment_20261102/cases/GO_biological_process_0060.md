@@ -1,18 +1,16 @@
-# GO_biological_process_0060: before and after transfer clarification
+# GO_biological_process_0060
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_biological_process_0060.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_biological_process_0060.txt)
 
 **Task:** `GO_biological_process`  
-**Author key, unchanged:** **D** — indole alkaloid biosynthetic process
+**Expected answer:** **D** — indole alkaloid biosynthetic process
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the historical and current UniProt record for rhazimal reductase 1. That record describes a role in akuammilan monoterpene indole alkaloid biosynthesis and annotates the GO term “indole alkaloid biosynthetic process.” The function annotation cites experimental evidence (ECO:0000269), and the GO annotation is IDA.
-
-Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is a protein, but its amino-acid sequence alone does not establish the specific substrate, organismal pathway, or biological process needed to distinguish indole alkaloid biosynthesis from the other choices.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification and functional finding that this enzyme catalyzes rhazimal-to-rhazimol conversion in indole alkaloid biosynthesis.
-
-
-**Reason**
-
-> The supporting functional and GO annotations are external, item-specific facts absent from the input. Inferring a precise pathway from general sequence features would not meaningfully distinguish these choices.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The sequence-matched record supports D; the other options describe distinct processes and are not supported by the supplied sequence.
-
-
-### Important caveats
-
-- The reviewer-only evidence establishes the key but was not available to the evaluated model.
-- UniProt records and sequence matches apply to the supplied sequence; the author’s exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is a protein, but its amino-acid sequence alone does not establish the specific substrate, organismal pathway, or biological process needed to distinguish indole alkaloid biosynthesis from the other choices.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification and functional finding that this enzyme catalyzes rhazimal-to-rhazimol conversion in indole alkaloid biosynthesis.",
-    "reason": "The supporting functional and GO annotations are external, item-specific facts absent from the input. Inferring a precise pathway from general sequence features would not meaningfully distinguish these choices."
-  },
-  "case_id": "GO_biological_process_0060",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C7",
-      "H3",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical and current UniProt record for rhazimal reductase 1. That record describes a role in akuammilan monoterpene indole alkaloid biosynthesis and annotates the GO term “indole alkaloid biosynthetic process.” The function annotation cites experimental evidence (ECO:0000269), and the GO annotation is IDA."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence establishes the key but was not available to the evaluated model.",
-    "UniProt records and sequence matches apply to the supplied sequence; the author’s exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched record supports D; the other options describe distinct processes and are not supported by the supplied sequence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_biological_process_0060",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the historical and current UniProt record for rhazimal reductase 1. That record describes a role in akuammilan monoterpene indole alkaloid biosynthesis and annotates the GO term “indole alkaloid biosynthetic process.” The function annotation cites experimental evidence (ECO:0000269), and the GO annotation is IDA.",
-    "evidence_ids": ["C5", "C7", "H3", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is a protein, but its amino-acid sequence alone does not establish the specific substrate, organismal pathway, or biological process needed to distinguish indole alkaloid biosynthesis from the other choices.",
-    "missing_item_specific_fact": "The protein-specific identification and functional finding that this enzyme catalyzes rhazimal-to-rhazimol conversion in indole alkaloid biosynthesis.",
-    "reason": "The supporting functional and GO annotations are external, item-specific facts absent from the input. Inferring a precise pathway from general sequence features would not meaningfully distinguish these choices."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The sequence-matched record supports D; the other options describe distinct processes and are not supported by the supplied sequence."
-  },
-  "important_caveats": [
-    "The reviewer-only evidence establishes the key but was not available to the evaluated model.",
-    "UniProt records and sequence matches apply to the supplied sequence; the author’s exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The protein (UniProt A0A9E7S518, Rhazimal reductase 1, EC 1.1.1.440 from Alstonia scholaris) is annotated with GO:0035835 (indole alkaloid biosynthetic process) with evidence code IDA (Inferred from Direct Assay) based on experimental work (PubMed:36349266). The protein catalyzes the conversion of rhazimal to rhazimol in the biosynthesis of akuammilan monoterpene indole alkaloids. The GO annotation is directly assigned and experimentally supported.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence (323 aa) exhibits a Rossmann-like fold motif (GFGTC near position 20) and overall composition consistent with a plant oxidoreductase enzyme. From general biological knowledge: (1) The protein is clearly plant-derived (no animal-specific signal peptides, no mammalian regulatory motifs), eliminating A (response to parathyroid hormone — an animal endocrine signaling process) and C (drinking behavior — an animal behavioral process). (2) The protein is an enzyme with catalytic fold features, not a transcription factor or regulatory protein, eliminating B (regulation of gene expression). (3) D (indole alkaloid biosynthetic process) is the only option representing a plant-specific biosynthetic pathway, which is the only remaining category consistent with a plant enzyme involved in secondary metabolism.
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity (rhazimal → rhazimol) and the precise pathway assignment to 'indole alkaloid' biosynthesis (as opposed to other plant secondary metabolite pathways like flavonoid or terpenoid biosynthesis) cannot be determined from the sequence alone. However, this specificity is not needed to distinguish among the four given choices.
-
-
-**Reason**
-
-> The elimination reasoning through general biological knowledge (plant vs. animal, enzyme vs. regulator, biosynthetic pathway vs. signaling/behavior) provides a concrete and defensible argument that uniquely selects D among the four options. The distractors are designed so that basic biological categorization suffices to distinguish the correct answer without requiring memorization of this specific protein's pathway assignment.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and C are animal-specific processes incompatible with a plant protein. Option B requires regulatory/transcription-factor features absent from this oxidoreductase. Only D is consistent with a plant biosynthetic enzyme among the given choices.
-
-
-### Important caveats
-
-- The positive identification of 'indole alkaloid' specifically (vs. other plant secondary metabolite pathways) relies on elimination rather than sequence-intrinsic motifs unique to MIA biosynthesis.
-- The GO annotation evidence code is IDA (direct assay), confirming experimental basis for the pathway assignment.
-- The protein was first publicly annotated in June 2025; if the benchmark was constructed earlier, the annotation may have been derived from the 2022 primary publication (PubMed:36349266) or computational prediction at that time.
-- Sequence match to UniProt A0A9E7S518 is exact (SHA-256 confirmed) across both current and historical (entry version 12) snapshots.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence (323 aa) exhibits a Rossmann-like fold motif (GFGTC near position 20) and overall composition consistent with a plant oxidoreductase enzyme. From general biological knowledge: (1) The protein is clearly plant-derived (no animal-specific signal peptides, no mammalian regulatory motifs), eliminating A (response to parathyroid hormone — an animal endocrine signaling process) and C (drinking behavior — an animal behavioral process). (2) The protein is an enzyme with catalytic fold features, not a transcription factor or regulatory protein, eliminating B (regulation of gene expression). (3) D (indole alkaloid biosynthetic process) is the only option representing a plant-specific biosynthetic pathway, which is the only remaining category consistent with a plant enzyme involved in secondary metabolism.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "The specific substrate identity (rhazimal → rhazimol) and the precise pathway assignment to 'indole alkaloid' biosynthesis (as opposed to other plant secondary metabolite pathways like flavonoid or terpenoid biosynthesis) cannot be determined from the sequence alone. However, this specificity is not needed to distinguish among the four given choices.",
-    "reason": "The elimination reasoning through general biological knowledge (plant vs. animal, enzyme vs. regulator, biosynthetic pathway vs. signaling/behavior) provides a concrete and defensible argument that uniquely selects D among the four options. The distractors are designed so that basic biological categorization suffices to distinguish the correct answer without requiring memorization of this specific protein's pathway assignment."
-  },
-  "case_id": "GO_biological_process_0060",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The protein (UniProt A0A9E7S518, Rhazimal reductase 1, EC 1.1.1.440 from Alstonia scholaris) is annotated with GO:0035835 (indole alkaloid biosynthetic process) with evidence code IDA (Inferred from Direct Assay) based on experimental work (PubMed:36349266). The protein catalyzes the conversion of rhazimal to rhazimol in the biosynthesis of akuammilan monoterpene indole alkaloids. The GO annotation is directly assigned and experimentally supported."
-  },
-  "important_caveats": [
-    "The positive identification of 'indole alkaloid' specifically (vs. other plant secondary metabolite pathways) relies on elimination rather than sequence-intrinsic motifs unique to MIA biosynthesis.",
-    "The GO annotation evidence code is IDA (direct assay), confirming experimental basis for the pathway assignment.",
-    "The protein was first publicly annotated in June 2025; if the benchmark was constructed earlier, the annotation may have been derived from the 2022 primary publication (PubMed:36349266) or computational prediction at that time.",
-    "Sequence match to UniProt A0A9E7S518 is exact (SHA-256 confirmed) across both current and historical (entry version 12) snapshots."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C are animal-specific processes incompatible with a plant protein. Option B requires regulatory/transcription-factor features absent from this oxidoreductase. Only D is consistent with a plant biosynthetic enzyme among the given choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_biological_process_0060",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The protein (UniProt A0A9E7S518, Rhazimal reductase 1, EC 1.1.1.440 from Alstonia scholaris) is annotated with GO:0035835 (indole alkaloid biosynthetic process) with evidence code IDA (Inferred from Direct Assay) based on experimental work (PubMed:36349266). The protein catalyzes the conversion of rhazimal to rhazimol in the biosynthesis of akuammilan monoterpene indole alkaloids. The GO annotation is directly assigned and experimentally supported.",
-    "evidence_ids": ["C5", "C6", "C7", "H3", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence (323 aa) exhibits a Rossmann-like fold motif (GFGTC near position 20) and overall composition consistent with a plant oxidoreductase enzyme. From general biological knowledge: (1) The protein is clearly plant-derived (no animal-specific signal peptides, no mammalian regulatory motifs), eliminating A (response to parathyroid hormone — an animal endocrine signaling process) and C (drinking behavior — an animal behavioral process). (2) The protein is an enzyme with catalytic fold features, not a transcription factor or regulatory protein, eliminating B (regulation of gene expression). (3) D (indole alkaloid biosynthetic process) is the only option representing a plant-specific biosynthetic pathway, which is the only remaining category consistent with a plant enzyme involved in secondary metabolism.",
-    "missing_item_specific_fact": "The specific substrate identity (rhazimal → rhazimol) and the precise pathway assignment to 'indole alkaloid' biosynthesis (as opposed to other plant secondary metabolite pathways like flavonoid or terpenoid biosynthesis) cannot be determined from the sequence alone. However, this specificity is not needed to distinguish among the four given choices.",
-    "reason": "The elimination reasoning through general biological knowledge (plant vs. animal, enzyme vs. regulator, biosynthetic pathway vs. signaling/behavior) provides a concrete and defensible argument that uniquely selects D among the four options. The distractors are designed so that basic biological categorization suffices to distinguish the correct answer without requiring memorization of this specific protein's pathway assignment."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and C are animal-specific processes incompatible with a plant protein. Option B requires regulatory/transcription-factor features absent from this oxidoreductase. Only D is consistent with a plant biosynthetic enzyme among the given choices."
-  },
-  "important_caveats": [
-    "The positive identification of 'indole alkaloid' specifically (vs. other plant secondary metabolite pathways) relies on elimination rather than sequence-intrinsic motifs unique to MIA biosynthesis.",
-    "The GO annotation evidence code is IDA (direct assay), confirming experimental basis for the pathway assignment.",
-    "The protein was first publicly annotated in June 2025; if the benchmark was constructed earlier, the annotation may have been derived from the 2022 primary publication (PubMed:36349266) or computational prediction at that time.",
-    "Sequence match to UniProt A0A9E7S518 is exact (SHA-256 confirmed) across both current and historical (entry version 12) snapshots."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -386,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -486,30 +254,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A9E7S518",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 323,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
   "current_entry_audit": {
     "entryVersion": 13,
     "firstPublicDate": "2025-06-18",
@@ -517,14 +272,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2023-05-03",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "current_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 323,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 12,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A9E7S518",
   "selected_historical_entry_version": 12,
+  "selected_historical_record_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "selected_historical_source_sequence_length": 323,
+  "selected_historical_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
   "selected_historical_version": {
     "accession": "A0A9E7S518",
     "database": "Swiss-Prot",
@@ -535,24 +306,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "RHR1_ALSSC",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "selected_historical_source_sequence_sha256": "016d2556a5540f503b5f5d1c251aaf15f9f522ff3142edec17aaac977d884675",
-  "selected_historical_source_sequence_length": 323,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 12,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -570,15 +328,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A9E7S518\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -589,15 +347,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":13,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2023-05-03\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -608,15 +366,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Dogbane\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Alstonieae\",\"Alstonia\"],\"scientificName\":\"Alstonia scholaris\",\"synonyms\":[\"Echites scholaris\"],\"taxonId\":52822}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -627,15 +385,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"1.1.1.440\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Rhazimal reductase 1\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"AsRHR1\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -646,15 +404,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/comments/0",
   "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Oxidoreductase involved in the biosynthesis of akuammilan monoterpene indole alkaloids (MIAs) natural products, components with various biological properties such as antidiabetic, antibacterial, anti-inflammatory, anticancer, and antimalarial activities (PubMed:36349266). Catalyzes the conversion of rhazimal to rhazimol (PubMed:36349266)\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/0",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -665,15 +423,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/comments/3",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/3",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -684,15 +442,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/7",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"36349266\",\"source\":\"PubMed\"}],\"id\":\"GO:0035835\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"P:indole alkaloid biosynthetic process\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/7",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -703,15 +461,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json",
-  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
-  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Wang Z.\",\"Xiao Y.\",\"Wu S.\",\"Chen J.\",\"Li A.\",\"Tatsis E.C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36349266\"},{\"database\":\"DOI\",\"id\":\"10.1039/d2sc03612f\"}],\"citationType\":\"journal article\",\"firstPage\":\"12389\",\"id\":\"36349266\",\"journal\":\"Chem. Sci.\",\"lastPage\":\"12395\",\"publicationDate\":\"2022\",\"title\":\"Deciphering and reprogramming the cyclization regioselectivity in bifurcation of indole alkaloid biosynthesis.\",\"volume\":\"13\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"URS65385.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:26:12.223906+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "48100f49c79084f47d85a13a08484c59c6d716f4326ce301e0bac7ab49997534",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A9E7S518.json"
 }
 ```
 
@@ -721,18 +479,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 1-15",
   "excerpt": "ID   RHR1_ALSSC              Reviewed;         323 AA.\nAC   A0A9E7S518;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-MAY-2023, sequence version 1.\nDT   28-JAN-2026, entry version 12.\nDE   RecName: Full=Rhazimal reductase 1 {ECO:0000303|PubMed:36349266};\nDE            Short=AsRHR1 {ECO:0000303|PubMed:36349266};\nDE            EC=1.1.1.440 {ECO:0000269|PubMed:36349266};\nGN   Name=RHR1 {ECO:0000303|PubMed:36349266};\nOS   Alstonia scholaris (Dogbane) (Echites scholaris).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Alstonieae;\nOC   Alstonia.\nOX   NCBI_TaxID=52822;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-15",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 
@@ -742,18 +500,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 16-23",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:URS65385.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY, AND\nRP   BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=36349266; DOI=10.1039/d2sc03612f;\nRA   Wang Z., Xiao Y., Wu S., Chen J., Li A., Tatsis E.C.;\nRT   \"Deciphering and reprogramming the cyclization regioselectivity in\nRT   bifurcation of indole alkaloid biosynthesis.\";\nRL   Chem. Sci. 13:12389-12395(2022).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 16-23",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 
@@ -763,18 +521,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 24-29",
   "excerpt": "CC   -!- FUNCTION: Oxidoreductase involved in the biosynthesis of akuammilan\nCC       monoterpene indole alkaloids (MIAs) natural products, components with\nCC       various biological properties such as antidiabetic, antibacterial,\nCC       anti-inflammatory, anticancer, and antimalarial activities\nCC       (PubMed:36349266). Catalyzes the conversion of rhazimal to rhazimol\nCC       (PubMed:36349266). {ECO:0000269|PubMed:36349266}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 24-29",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 
@@ -784,18 +542,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 43-43",
   "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis. {ECO:0000269|PubMed:36349266}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-43",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 
@@ -805,18 +563,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 12,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12",
-  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
-  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
-  "source_locator": "lines 54-54",
   "excerpt": "DR   GO; GO:0035835; P:indole alkaloid biosynthetic process; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 12,
+  "retrieved_utc": "2026-11-02T04:26:14.092631+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 54-54",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "9e7eab76338f130e203ce1b1b78446aa08ea74e562c2d55ca9d31f37f8958320",
+  "url": "https://rest.uniprot.org/unisave/A0A9E7S518?format=txt&versions=12"
 }
 ```
 
@@ -827,15 +585,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 106270-106286",
   "excerpt": "[Term]\nid: GO:0010468\nname: regulation of gene expression\nnamespace: biological_process\ndef: \"Any process that modulates the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product (protein or RNA).\" [GOC:txnOH-2018]\ncomment: This class covers any process that regulates the rate of production of a mature gene product, and so includes processes that regulate that rate by regulating the level, stability or availability of intermediates in the process of gene expression. For example, it covers any process that regulates the level, stability or availability of mRNA or circRNA for translation and thereby regulates the rate of production of the encoded protein via translation.\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_plant_ribbon\nsynonym: \"gene regulation\" RELATED [GOC:cjm]\nsynonym: \"regulation of gene product expression\" RELATED []\nsynonym: \"regulation of protein expression\" NARROW []\nxref: Reactome:R-HSA-163767 \"PP2A-mediated dephosphorylation of key metabolic factors\"\nxref: Reactome:R-HSA-9752946 \"Expression and translocation of olfactory receptors\"\nxref: Wikipedia:Regulation_of_gene_expression\nis_a: GO:0010556 ! regulation of macromolecule biosynthetic process\nrelationship: regulates GO:0010467 ! gene expression\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0010468",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 106270-106286",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0010468"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -846,15 +604,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 221717-221728",
   "excerpt": "[Term]\nid: GO:0035835\nname: indole alkaloid biosynthetic process\nnamespace: biological_process\ndef: \"The chemical reactions and pathways resulting in the formation of an indole alkaloid, an alkaloid containing an indole skeleton.\" [GOC:yaf]\nsynonym: \"indole alkaloid anabolism\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid biosynthesis\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid formation\" EXACT [GOC:bf]\nsynonym: \"indole alkaloid synthesis\" EXACT [GOC:bf]\nis_a: GO:0009821 ! alkaloid biosynthetic process\nis_a: GO:0035834 ! indole alkaloid metabolic process\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0035835",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 221717-221728",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0035835"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -865,15 +623,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 240525-240532",
   "excerpt": "[Term]\nid: GO:0042756\nname: drinking behavior\nnamespace: biological_process\ndef: \"The specific behavior of an organism relating to the intake of liquids, especially water.\" [GOC:curators, GOC:pr]\nsynonym: \"drinking behaviour\" EXACT []\nis_a: GO:0007631 ! feeding behavior\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042756",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 240525-240532",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042756"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -884,15 +642,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 374090-374097",
   "excerpt": "[Term]\nid: GO:0071107\nname: response to parathyroid hormone\nnamespace: biological_process\ndef: \"Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a parathyroid hormone stimulus.\" [GOC:mah, GOC:yaf]\nsynonym: \"response to parathyroid hormone stimulus\" EXACT [GOC:dos]\nis_a: GO:0009725 ! response to hormone\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0071107",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 374090-374097",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0071107"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

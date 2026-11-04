@@ -1,18 +1,16 @@
-# EC_number_0086: before and after transfer clarification
+# EC_number_0086
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0086.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0086.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **B** — 3.2.1.18
+**Expected answer:** **B** — 3.2.1.18
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,244 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches UniProtKB Q8QV65, annotated as mumps virus hemagglutinin-neuraminidase with EC 3.2.1.18. The catalytic-activity annotation specifies hydrolysis of terminal sialic-acid linkages. Its evidence is transferred from another UniProtKB entry (ECO:0000250), so this supports the annotation but is not direct experimental evidence for this sequence.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence is consistent with a viral membrane glycoprotein, which makes some options less plausible, but that broad context does not establish the specific catalytic activity or substrate needed to distinguish EC 3.2.1.18 from other glycosidases.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as mumps virus hemagglutinin-neuraminidase, or evidence that it hydrolyzes terminal sialic-acid linkages, is absent from the question.
-
-
-**Reason**
-
-> Choosing the precise EC number depends on protein-specific functional annotation or equivalent evidence, not a general biological inference available from the sequence and choices alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The matched UniProt annotation supports choice B; the other listed EC numbers describe different activities.
-
-
-### Important caveats
-
-- The reviewer-only accession and annotations were not supplied to the evaluated model.
-- The annotation evidence is transferred from a related entry rather than direct experimental evidence for this sequence.
-- The author's exact source snapshot is unknown, although a historical entry with an exact sequence match was retrieved.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence is consistent with a viral membrane glycoprotein, which makes some options less plausible, but that broad context does not establish the specific catalytic activity or substrate needed to distinguish EC 3.2.1.18 from other glycosidases.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as mumps virus hemagglutinin-neuraminidase, or evidence that it hydrolyzes terminal sialic-acid linkages, is absent from the question.",
-    "reason": "Choosing the precise EC number depends on protein-specific functional annotation or equivalent evidence, not a general biological inference available from the sequence and choices alone."
-  },
-  "case_id": "EC_number_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProtKB Q8QV65, annotated as mumps virus hemagglutinin-neuraminidase with EC 3.2.1.18. The catalytic-activity annotation specifies hydrolysis of terminal sialic-acid linkages. Its evidence is transferred from another UniProtKB entry (ECO:0000250), so this supports the annotation but is not direct experimental evidence for this sequence."
-  },
-  "important_caveats": [
-    "The reviewer-only accession and annotations were not supplied to the evaluated model.",
-    "The annotation evidence is transferred from a related entry rather than direct experimental evidence for this sequence.",
-    "The author's exact source snapshot is unknown, although a historical entry with an exact sequence match was retrieved."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched UniProt annotation supports choice B; the other listed EC numbers describe different activities."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches UniProtKB Q8QV65, annotated as mumps virus hemagglutinin-neuraminidase with EC 3.2.1.18. The catalytic-activity annotation specifies hydrolysis of terminal sialic-acid linkages. Its evidence is transferred from another UniProtKB entry (ECO:0000250), so this supports the annotation but is not direct experimental evidence for this sequence.",
-    "evidence_ids": ["C1", "C4", "C5", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence is consistent with a viral membrane glycoprotein, which makes some options less plausible, but that broad context does not establish the specific catalytic activity or substrate needed to distinguish EC 3.2.1.18 from other glycosidases.",
-    "missing_item_specific_fact": "The protein-specific identification as mumps virus hemagglutinin-neuraminidase, or evidence that it hydrolyzes terminal sialic-acid linkages, is absent from the question.",
-    "reason": "Choosing the precise EC number depends on protein-specific functional annotation or equivalent evidence, not a general biological inference available from the sequence and choices alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The matched UniProt annotation supports choice B; the other listed EC numbers describe different activities."
-  },
-  "important_caveats": [
-    "The reviewer-only accession and annotations were not supplied to the evaluated model.",
-    "The annotation evidence is transferred from a related entry rather than direct experimental evidence for this sequence.",
-    "The author's exact source snapshot is unknown, although a historical entry with an exact sequence match was retrieved."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence matches UniProt Q8QV65 (Mumps virus Jeryl-Lynn HN protein, 582 aa, sequence SHA-256 confirmed). The current and historical (v114) UniProt entries annotate this protein as Hemagglutinin-neuraminidase with EC 3.2.1.18 (exo-alpha-sialidase), catalyzing hydrolysis of alpha-(2→3)-, alpha-(2→6)-, alpha-(2→8)-glycosidic linkages of terminal sialic acid residues. The evidence code is ECO:0000250 (similarity transfer from Q9WAF5), so the annotation is computational/inferred rather than directly experimental for this exact sequence, but paramyxovirus HN neuraminidase activity is well-established in the literature. The expected answer B (3.2.1.18) is consistent with the annotation.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A general virology argument exists: recognizing the sequence as a paramyxovirus surface glycoprotein (signal peptide at N-terminus, transmembrane anchor, multiple N-linked glycosylation sites) and recalling that paramyxovirus HN proteins possess neuraminidase (sialidase) activity would point to EC 3.2.1.18. However, this requires identifying the specific protein family and recalling its functional annotation rather than deriving the EC number from catalytic motifs visible in the sequence. The neuraminidase catalytic residues (conserved Arg, Tyr, Asp in a beta-propeller) are not readily identifiable in the raw 582-aa sequence without prior structural/family knowledge.
-
-
-**Missing item-specific fact**
-
-> Recognition that this specific 582-aa sequence is the Mumps virus HN glycoprotein (or a paramyxovirus HN protein) and the associated knowledge that HN proteins carry exo-alpha-sialidase (neuraminidase) activity. Without this protein-specific identification, the raw sequence does not present obvious catalytic motifs that would allow reasoning to distinguish EC 3.2.1.18 from EC 3.2.1.20 (alpha-N-acetylglucosaminidase) or the unrelated options C and D.
-
-
-**Reason**
-
-> The question requires identifying a specific viral protein and recalling its enzymatic function. While the distractors span different EC classes (glycosidase vs monooxygenase vs lyase), narrowing to the correct glycosidase subtype (3.2.1.18 vs 3.2.1.20) demands knowledge of the protein's identity and substrate specificity that is not derivable from sequence features alone. This is essentially a lookup of the UniProt annotation for Q8QV65.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The four options span three EC classes (3.2.1.x glycosidases, 1.14.x.x oxidoreductases, 4.2.x.x lyases), so options C and D are clearly wrong for a glycosidase. Between A (3.2.1.20, alpha-N-acetylglucosaminidase) and B (3.2.1.18, exo-alpha-sialidase), the annotation unambiguously supports B. No genuine ambiguity among the options given the protein identity.
-
-
-### Important caveats
-
-- The EC annotation carries evidence code ECO:0000250 (similarity transfer from Q9WAF5), meaning it is not a direct experimental measurement on this exact Jeryl-Lynn sequence, though neuraminidase activity of paramyxovirus HN proteins is broadly well-characterized.
-- The UniProt entry was first public in April 2025; the benchmark's construction date is unknown, so the author may have used an earlier or different source.
-- The reviewer-only accession (Q8QV65) was inferred from dataset image-path metadata and was not available to the evaluated model.
-- The sequence is 582 aa and matches the canonical entry exactly; no isoform or construct numbering issues apply.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A general virology argument exists: recognizing the sequence as a paramyxovirus surface glycoprotein (signal peptide at N-terminus, transmembrane anchor, multiple N-linked glycosylation sites) and recalling that paramyxovirus HN proteins possess neuraminidase (sialidase) activity would point to EC 3.2.1.18. However, this requires identifying the specific protein family and recalling its functional annotation rather than deriving the EC number from catalytic motifs visible in the sequence. The neuraminidase catalytic residues (conserved Arg, Tyr, Asp in a beta-propeller) are not readily identifiable in the raw 582-aa sequence without prior structural/family knowledge.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "Recognition that this specific 582-aa sequence is the Mumps virus HN glycoprotein (or a paramyxovirus HN protein) and the associated knowledge that HN proteins carry exo-alpha-sialidase (neuraminidase) activity. Without this protein-specific identification, the raw sequence does not present obvious catalytic motifs that would allow reasoning to distinguish EC 3.2.1.18 from EC 3.2.1.20 (alpha-N-acetylglucosaminidase) or the unrelated options C and D.",
-    "reason": "The question requires identifying a specific viral protein and recalling its enzymatic function. While the distractors span different EC classes (glycosidase vs monooxygenase vs lyase), narrowing to the correct glycosidase subtype (3.2.1.18 vs 3.2.1.20) demands knowledge of the protein's identity and substrate specificity that is not derivable from sequence features alone. This is essentially a lookup of the UniProt annotation for Q8QV65."
-  },
-  "case_id": "EC_number_0086",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q8QV65 (Mumps virus Jeryl-Lynn HN protein, 582 aa, sequence SHA-256 confirmed). The current and historical (v114) UniProt entries annotate this protein as Hemagglutinin-neuraminidase with EC 3.2.1.18 (exo-alpha-sialidase), catalyzing hydrolysis of alpha-(2→3)-, alpha-(2→6)-, alpha-(2→8)-glycosidic linkages of terminal sialic acid residues. The evidence code is ECO:0000250 (similarity transfer from Q9WAF5), so the annotation is computational/inferred rather than directly experimental for this exact sequence, but paramyxovirus HN neuraminidase activity is well-established in the literature. The expected answer B (3.2.1.18) is consistent with the annotation."
-  },
-  "important_caveats": [
-    "The EC annotation carries evidence code ECO:0000250 (similarity transfer from Q9WAF5), meaning it is not a direct experimental measurement on this exact Jeryl-Lynn sequence, though neuraminidase activity of paramyxovirus HN proteins is broadly well-characterized.",
-    "The UniProt entry was first public in April 2025; the benchmark's construction date is unknown, so the author may have used an earlier or different source.",
-    "The reviewer-only accession (Q8QV65) was inferred from dataset image-path metadata and was not available to the evaluated model.",
-    "The sequence is 582 aa and matches the canonical entry exactly; no isoform or construct numbering issues apply."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span three EC classes (3.2.1.x glycosidases, 1.14.x.x oxidoreductases, 4.2.x.x lyases), so options C and D are clearly wrong for a glycosidase. Between A (3.2.1.20, alpha-N-acetylglucosaminidase) and B (3.2.1.18, exo-alpha-sialidase), the annotation unambiguously supports B. No genuine ambiguity among the options given the protein identity."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0086",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence matches UniProt Q8QV65 (Mumps virus Jeryl-Lynn HN protein, 582 aa, sequence SHA-256 confirmed). The current and historical (v114) UniProt entries annotate this protein as Hemagglutinin-neuraminidase with EC 3.2.1.18 (exo-alpha-sialidase), catalyzing hydrolysis of alpha-(2→3)-, alpha-(2→6)-, alpha-(2→8)-glycosidic linkages of terminal sialic acid residues. The evidence code is ECO:0000250 (similarity transfer from Q9WAF5), so the annotation is computational/inferred rather than directly experimental for this exact sequence, but paramyxovirus HN neuraminidase activity is well-established in the literature. The expected answer B (3.2.1.18) is consistent with the annotation.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A general virology argument exists: recognizing the sequence as a paramyxovirus surface glycoprotein (signal peptide at N-terminus, transmembrane anchor, multiple N-linked glycosylation sites) and recalling that paramyxovirus HN proteins possess neuraminidase (sialidase) activity would point to EC 3.2.1.18. However, this requires identifying the specific protein family and recalling its functional annotation rather than deriving the EC number from catalytic motifs visible in the sequence. The neuraminidase catalytic residues (conserved Arg, Tyr, Asp in a beta-propeller) are not readily identifiable in the raw 582-aa sequence without prior structural/family knowledge.",
-    "missing_item_specific_fact": "Recognition that this specific 582-aa sequence is the Mumps virus HN glycoprotein (or a paramyxovirus HN protein) and the associated knowledge that HN proteins carry exo-alpha-sialidase (neuraminidase) activity. Without this protein-specific identification, the raw sequence does not present obvious catalytic motifs that would allow reasoning to distinguish EC 3.2.1.18 from EC 3.2.1.20 (alpha-N-acetylglucosaminidase) or the unrelated options C and D.",
-    "reason": "The question requires identifying a specific viral protein and recalling its enzymatic function. While the distractors span different EC classes (glycosidase vs monooxygenase vs lyase), narrowing to the correct glycosidase subtype (3.2.1.18 vs 3.2.1.20) demands knowledge of the protein's identity and substrate specificity that is not derivable from sequence features alone. This is essentially a lookup of the UniProt annotation for Q8QV65."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The four options span three EC classes (3.2.1.x glycosidases, 1.14.x.x oxidoreductases, 4.2.x.x lyases), so options C and D are clearly wrong for a glycosidase. Between A (3.2.1.20, alpha-N-acetylglucosaminidase) and B (3.2.1.18, exo-alpha-sialidase), the annotation unambiguously supports B. No genuine ambiguity among the options given the protein identity."
-  },
-  "important_caveats": [
-    "The EC annotation carries evidence code ECO:0000250 (similarity transfer from Q9WAF5), meaning it is not a direct experimental measurement on this exact Jeryl-Lynn sequence, though neuraminidase activity of paramyxovirus HN proteins is broadly well-characterized.",
-    "The UniProt entry was first public in April 2025; the benchmark's construction date is unknown, so the author may have used an earlier or different source.",
-    "The reviewer-only accession (Q8QV65) was inferred from dataset image-path metadata and was not available to the evaluated model.",
-    "The sequence is 582 aa and matches the canonical entry exactly; no isoform or construct numbering issues apply."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -392,10 +157,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -506,30 +270,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q8QV65",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "6c411ff86d03391238be03a02eacdb3e2948b7a46bfa5706f0f99e829e1e420f",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 582,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "6c411ff86d03391238be03a02eacdb3e2948b7a46bfa5706f0f99e829e1e420f",
   "current_entry_audit": {
     "entryVersion": 116,
     "firstPublicDate": "2025-04-09",
@@ -537,14 +288,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2002-06-01",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
-  "current_source_sequence_sha256": "6c411ff86d03391238be03a02eacdb3e2948b7a46bfa5706f0f99e829e1e420f",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 582,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "6c411ff86d03391238be03a02eacdb3e2948b7a46bfa5706f0f99e829e1e420f",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 114,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q8QV65",
   "selected_historical_entry_version": 114,
+  "selected_historical_record_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
+  "selected_historical_source_sequence_length": 582,
+  "selected_historical_source_sequence_sha256": "6c411ff86d03391238be03a02eacdb3e2948b7a46bfa5706f0f99e829e1e420f",
   "selected_historical_version": {
     "accession": "Q8QV65",
     "database": "Swiss-Prot",
@@ -555,24 +322,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "HN_MUMPJ",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
-  "selected_historical_source_sequence_sha256": "6c411ff86d03391238be03a02eacdb3e2948b7a46bfa5706f0f99e829e1e420f",
-  "selected_historical_source_sequence_length": 582,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 114,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +340,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json",
-  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
-  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q8QV65\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json"
 }
 ```
 
@@ -605,15 +359,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json",
-  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
-  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":116,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2002-06-01\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json"
 }
 ```
 
@@ -624,15 +378,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json",
-  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
-  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"MuV\",\"lineage\":[\"Viruses\",\"Riboviria\",\"Orthornavirae\",\"Negarnaviricota\",\"Haploviricotina\",\"Monjiviricetes\",\"Mononegavirales\",\"Paramyxoviridae\",\"Rubulavirinae\",\"Orthorubulavirus\",\"Orthorubulavirus parotitidis\",\"Mumps orthorubulavirus\"],\"scientificName\":\"Mumps virus genotype A (strain Jeryl-Lynn)\",\"taxonId\":11168}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json"
 }
 ```
 
@@ -643,15 +397,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json",
-  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
-  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9WAF5\",\"source\":\"UniProtKB\"}],\"value\":\"3.2.1.18\"}],\"fullName\":{\"value\":\"Hemagglutinin-neuraminidase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json"
 }
 ```
 
@@ -662,15 +416,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json",
-  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
-  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"reaction\":{\"ecNumber\":\"3.2.1.18\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q9WAF5\",\"source\":\"UniProtKB\"}],\"name\":\"Hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-(2->8)- glycosidic linkages of terminal sialic acid residues in oligosaccharides, glycoproteins, glycolipids, colominic acid and synthetic substrates.\"}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:32:24.225587+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bc4438119d1c029de1baa6feae7ea6afaed8e7e0d19410c4fed725f8fcb3753b",
+  "url": "https://rest.uniprot.org/uniprotkb/Q8QV65.json"
 }
 ```
 
@@ -680,18 +434,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 114,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8QV65?format=txt&versions=114",
-  "source_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
-  "retrieved_utc": "2026-11-02T04:32:27.640645+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   HN_MUMPJ                Reviewed;         582 AA.\nAC   Q8QV65; C7C5S5;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-JUN-2002, sequence version 1.\nDT   28-JAN-2026, entry version 114.\nDE   RecName: Full=Hemagglutinin-neuraminidase;\nDE            EC=3.2.1.18 {ECO:0000250|UniProtKB:Q9WAF5};\nGN   Name=HN;\nOS   Mumps virus genotype A (strain Jeryl-Lynn) (MuV).\nOC   Viruses; Riboviria; Orthornavirae; Negarnaviricota; Haploviricotina;\nOC   Monjiviricetes; Mononegavirales; Paramyxoviridae; Rubulavirinae;\nOC   Orthorubulavirus; Orthorubulavirus parotitidis; Mumps orthorubulavirus.\nOX   NCBI_TaxID=11168;\nOH   NCBI_TaxID=9606; Homo sapiens (Human).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 114,
+  "retrieved_utc": "2026-11-02T04:32:27.640645+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
+  "url": "https://rest.uniprot.org/unisave/Q8QV65?format=txt&versions=114"
 }
 ```
 
@@ -701,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 114,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8QV65?format=txt&versions=114",
-  "source_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
-  "retrieved_utc": "2026-11-02T04:32:27.640645+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=Hemagglutinin-neuraminidase;\nDE            EC=3.2.1.18 {ECO:0000250|UniProtKB:Q9WAF5};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 114,
+  "retrieved_utc": "2026-11-02T04:32:27.640645+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
+  "url": "https://rest.uniprot.org/unisave/Q8QV65?format=txt&versions=114"
 }
 ```
 
@@ -722,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 114,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q8QV65?format=txt&versions=114",
-  "source_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
-  "retrieved_utc": "2026-11-02T04:32:27.640645+00:00",
-  "source_locator": "lines 50-55",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=Hydrolysis of alpha-(2->3)-, alpha-(2->6)-, alpha-\nCC         (2->8)- glycosidic linkages of terminal sialic acid residues in\nCC         oligosaccharides, glycoproteins, glycolipids, colominic acid and\nCC         synthetic substrates.; EC=3.2.1.18;\nCC         Evidence={ECO:0000250|UniProtKB:Q9WAF5};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 114,
+  "retrieved_utc": "2026-11-02T04:32:27.640645+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 50-55",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "32a38cacb11cc75414f260107fe816d041e5d43d9075624a51461e99158215ec",
+  "url": "https://rest.uniprot.org/unisave/Q8QV65?format=txt&versions=114"
 }
 ```
 

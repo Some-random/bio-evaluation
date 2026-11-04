@@ -1,18 +1,16 @@
-# catalytic_activity_0166: before and after transfer clarification
+# catalytic_activity_0166
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0166.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0166.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **D** — L-lysyl-&#91;protein&#93; + acetyl-CoA = N(6)-acetyl-L-lysyl-&#91;protein&#93; + CoA + H(+)
+**Expected answer:** **D** — L-lysyl-&#91;protein&#93; + acetyl-CoA = N(6)-acetyl-L-lysyl-&#91;protein&#93; + CoA + H(+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry, whose catalytic-activity annotation gives the reaction in D and cites experimental evidence from PubMed 39601562. This supports the key, though the primary paper was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence may support predicting an acetyltransferase-like function, but it does not by itself establish this protein's specific substrate and reaction well enough to distinguish D from the alternatives.
-
-
-**Missing item-specific fact**
-
-> The protein-specific assignment of this sequence to GcnE and its experimentally annotated acetylation of protein-bound lysine using acetyl-CoA.
-
-
-**Reason**
-
-> Selecting the precise reaction depends on a protein-specific functional annotation or experimental result absent from the question. Recognizing the sequence from a database would be lookup, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Only D matches the supported listed reaction. The protein also has an annotated benzoyltransferase activity, but that reaction is not among the choices.
-
-
-### Important caveats
-
-- The database annotation cites experimental evidence, but the cited primary study was not independently validated in the supplied evidence.
-- The reviewer-only sequence match and annotations were not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence may support predicting an acetyltransferase-like function, but it does not by itself establish this protein's specific substrate and reaction well enough to distinguish D from the alternatives.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific assignment of this sequence to GcnE and its experimentally annotated acetylation of protein-bound lysine using acetyl-CoA.",
-    "reason": "Selecting the precise reaction depends on a protein-specific functional annotation or experimental result absent from the question. Recognizing the sequence from a database would be lookup, not reasoning from the supplied input."
-  },
-  "case_id": "catalytic_activity_0166",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, whose catalytic-activity annotation gives the reaction in D and cites experimental evidence from PubMed 39601562. This supports the key, though the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The database annotation cites experimental evidence, but the cited primary study was not independently validated in the supplied evidence.",
-    "The reviewer-only sequence match and annotations were not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only D matches the supported listed reaction. The protein also has an annotated benzoyltransferase activity, but that reaction is not among the choices."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0166",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, whose catalytic-activity annotation gives the reaction in D and cites experimental evidence from PubMed 39601562. This supports the key, though the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence may support predicting an acetyltransferase-like function, but it does not by itself establish this protein's specific substrate and reaction well enough to distinguish D from the alternatives.",
-    "missing_item_specific_fact": "The protein-specific assignment of this sequence to GcnE and its experimentally annotated acetylation of protein-bound lysine using acetyl-CoA.",
-    "reason": "Selecting the precise reaction depends on a protein-specific functional annotation or experimental result absent from the question. Recognizing the sequence from a database would be lookup, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Only D matches the supported listed reaction. The protein also has an annotated benzoyltransferase activity, but that reaction is not among the choices."
-  },
-  "important_caveats": [
-    "The database annotation cites experimental evidence, but the cited primary study was not independently validated in the supplied evidence.",
-    "The reviewer-only sequence match and annotations were not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry A0A7U2QYM2 (GCNE_ASPFN, Histone acetyltransferase gcnE, EC 2.3.1.48) from Aspergillus flavus explicitly annotates the catalytic activity as 'L-lysyl-&#91;protein&#93; + acetyl-CoA = N(6)-acetyl-L-lysyl-&#91;protein&#93; + CoA + H(+)' with experimental evidence (ECO:0000269, PubMed:39601562). The sequence matches exactly (SHA256 identical, 402 AA). The recommended name is Histone acetyltransferase gcnE, and the EC number 2.3.1.48 corresponds precisely to the reaction in Choice D.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> None readily available from the raw sequence. While the protein belongs to the GNAT (Gcn5-related N-acetyltransferase) family, identifying a GNAT fold from a 402-aa fungal sequence without prior knowledge of this specific protein or access to sequence databases is not achievable through general biological reasoning. The four distractors (uracil DNA glycosylase, Cs+ transporter, alcohol dehydrogenase, histone acetyltransferase) represent entirely different enzyme classes, and nothing in the sequence text alone—such as an easily recognizable active-site motif or substrate-binding signature—allows a general biologist to distinguish acetyltransferase activity from the other options.
-
-
-**Missing item-specific fact**
-
-> The identity of this protein as GcnE (a Gcn5-related N-acetyltransferase) from Aspergillus flavus, or recognition of the specific GNAT-domain fold architecture in this sequence, which is required to select D over the other three enzyme classes.
-
-
-**Reason**
-
-> Selecting D requires recognizing this specific protein's identity or its GNAT-domain fold. A trained model might recall the sequence-to-function mapping, but that constitutes memorization of a database entry rather than reasoning from general biological principles. No general argument from amino-acid composition, length, or obvious motifs distinguishes a histone acetyltransferase from a DNA repair enzyme, ion transporter, or alcohol dehydrogenase in this sequence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Among the four choices, D is the only one matching the experimentally validated primary catalytic activity of this protein. The alternative benzoyltransferase activity (benzoyl-CoA + L-lysyl-&#91;protein&#93; = N(6)-benzoyl-L-lysyl-&#91;protein&#93; + CoA + H(+)) is not offered as a choice, so no ambiguity exists among the listed options.
-
-
-### Important caveats
-
-- The protein also has a documented benzoyltransferase activity (EC 2.3.1.-, PubMed:39601562), but this reaction is not among the choices, so it does not create ambiguity.
-- The primary annotation of histone acetyltransferase activity carries evidence code ECO:0000250 (similarity to UniProtKB:Q03330, S. cerevisiae Gcn5) for the name, while the catalytic activity annotation itself is backed by experimental evidence (ECO:0000269, PubMed:39601562).
-- The identity origin of the accession (A0A7U2QYM2) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model only saw the raw sequence.
-- The entry was first publicly released in April 2025 and the supporting publication appeared in 2025; the author's source snapshot date is unknown, so the annotation may not have existed at the time of question construction.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "None readily available from the raw sequence. While the protein belongs to the GNAT (Gcn5-related N-acetyltransferase) family, identifying a GNAT fold from a 402-aa fungal sequence without prior knowledge of this specific protein or access to sequence databases is not achievable through general biological reasoning. The four distractors (uracil DNA glycosylase, Cs+ transporter, alcohol dehydrogenase, histone acetyltransferase) represent entirely different enzyme classes, and nothing in the sequence text alone—such as an easily recognizable active-site motif or substrate-binding signature—allows a general biologist to distinguish acetyltransferase activity from the other options.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of this protein as GcnE (a Gcn5-related N-acetyltransferase) from Aspergillus flavus, or recognition of the specific GNAT-domain fold architecture in this sequence, which is required to select D over the other three enzyme classes.",
-    "reason": "Selecting D requires recognizing this specific protein's identity or its GNAT-domain fold. A trained model might recall the sequence-to-function mapping, but that constitutes memorization of a database entry rather than reasoning from general biological principles. No general argument from amino-acid composition, length, or obvious motifs distinguishes a histone acetyltransferase from a DNA repair enzyme, ion transporter, or alcohol dehydrogenase in this sequence."
-  },
-  "case_id": "catalytic_activity_0166",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C7",
-      "H1",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A7U2QYM2 (GCNE_ASPFN, Histone acetyltransferase gcnE, EC 2.3.1.48) from Aspergillus flavus explicitly annotates the catalytic activity as 'L-lysyl-[protein] + acetyl-CoA = N(6)-acetyl-L-lysyl-[protein] + CoA + H(+)' with experimental evidence (ECO:0000269, PubMed:39601562). The sequence matches exactly (SHA256 identical, 402 AA). The recommended name is Histone acetyltransferase gcnE, and the EC number 2.3.1.48 corresponds precisely to the reaction in Choice D."
-  },
-  "important_caveats": [
-    "The protein also has a documented benzoyltransferase activity (EC 2.3.1.-, PubMed:39601562), but this reaction is not among the choices, so it does not create ambiguity.",
-    "The primary annotation of histone acetyltransferase activity carries evidence code ECO:0000250 (similarity to UniProtKB:Q03330, S. cerevisiae Gcn5) for the name, while the catalytic activity annotation itself is backed by experimental evidence (ECO:0000269, PubMed:39601562).",
-    "The identity origin of the accession (A0A7U2QYM2) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model only saw the raw sequence.",
-    "The entry was first publicly released in April 2025 and the supporting publication appeared in 2025; the author's source snapshot date is unknown, so the annotation may not have existed at the time of question construction."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, D is the only one matching the experimentally validated primary catalytic activity of this protein. The alternative benzoyltransferase activity (benzoyl-CoA + L-lysyl-[protein] = N(6)-benzoyl-L-lysyl-[protein] + CoA + H(+)) is not offered as a choice, so no ambiguity exists among the listed options."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0166",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry A0A7U2QYM2 (GCNE_ASPFN, Histone acetyltransferase gcnE, EC 2.3.1.48) from Aspergillus flavus explicitly annotates the catalytic activity as 'L-lysyl-[protein] + acetyl-CoA = N(6)-acetyl-L-lysyl-[protein] + CoA + H(+)' with experimental evidence (ECO:0000269, PubMed:39601562). The sequence matches exactly (SHA256 identical, 402 AA). The recommended name is Histone acetyltransferase gcnE, and the EC number 2.3.1.48 corresponds precisely to the reaction in Choice D.",
-    "evidence_ids": ["C4", "C5", "C7", "H1", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "None readily available from the raw sequence. While the protein belongs to the GNAT (Gcn5-related N-acetyltransferase) family, identifying a GNAT fold from a 402-aa fungal sequence without prior knowledge of this specific protein or access to sequence databases is not achievable through general biological reasoning. The four distractors (uracil DNA glycosylase, Cs+ transporter, alcohol dehydrogenase, histone acetyltransferase) represent entirely different enzyme classes, and nothing in the sequence text alone—such as an easily recognizable active-site motif or substrate-binding signature—allows a general biologist to distinguish acetyltransferase activity from the other options.",
-    "missing_item_specific_fact": "The identity of this protein as GcnE (a Gcn5-related N-acetyltransferase) from Aspergillus flavus, or recognition of the specific GNAT-domain fold architecture in this sequence, which is required to select D over the other three enzyme classes.",
-    "reason": "Selecting D requires recognizing this specific protein's identity or its GNAT-domain fold. A trained model might recall the sequence-to-function mapping, but that constitutes memorization of a database entry rather than reasoning from general biological principles. No general argument from amino-acid composition, length, or obvious motifs distinguishes a histone acetyltransferase from a DNA repair enzyme, ion transporter, or alcohol dehydrogenase in this sequence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Among the four choices, D is the only one matching the experimentally validated primary catalytic activity of this protein. The alternative benzoyltransferase activity (benzoyl-CoA + L-lysyl-[protein] = N(6)-benzoyl-L-lysyl-[protein] + CoA + H(+)) is not offered as a choice, so no ambiguity exists among the listed options."
-  },
-  "important_caveats": [
-    "The protein also has a documented benzoyltransferase activity (EC 2.3.1.-, PubMed:39601562), but this reaction is not among the choices, so it does not create ambiguity.",
-    "The primary annotation of histone acetyltransferase activity carries evidence code ECO:0000250 (similarity to UniProtKB:Q03330, S. cerevisiae Gcn5) for the name, while the catalytic activity annotation itself is backed by experimental evidence (ECO:0000269, PubMed:39601562).",
-    "The identity origin of the accession (A0A7U2QYM2) was inferred mechanically from dataset metadata and was absent from the evaluated model input; the model only saw the raw sequence.",
-    "The entry was first publicly released in April 2025 and the supporting publication appeared in 2025; the author's source snapshot date is unknown, so the annotation may not have existed at the time of question construction."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -384,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -498,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A7U2QYM2",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 402,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
   "current_entry_audit": {
     "entryVersion": 22,
     "firstPublicDate": "2025-04-09",
@@ -529,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2021-06-02",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "current_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 402,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A7U2QYM2",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "selected_historical_source_sequence_length": 402,
+  "selected_historical_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
   "selected_historical_version": {
     "accession": "A0A7U2QYM2",
     "database": "Swiss-Prot",
@@ -547,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "GCNE_ASPFN",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "selected_historical_source_sequence_sha256": "98f104b9c1052647fe3ad81fec046783468f372eba17bee1bf0a42e9d10f7d90",
-  "selected_historical_source_sequence_length": 402,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -578,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A7U2QYM2\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -597,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":22,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2021-06-02\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -616,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357 / JCM 12722 / SRRC 167)\",\"taxonId\":332952}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -635,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"Benzoyltransferase gcnE\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.48\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q03330\",\"source\":\"UniProtKB\"}],\"value\":\"Histone acetyltransferase gcnE\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -654,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:45949\"}}],\"reaction\":{\"ecNumber\":\"2.3.1.48\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"name\":\"L-lysyl-[protein] + acetyl-CoA = N(6)-acetyl-L-lysyl-[protein] + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:45948\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:9752\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:10731\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29969\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:61930\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -673,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:83532\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"39601562\",\"source\":\"PubMed\"}],\"name\":\"benzoyl-CoA + L-lysyl-[protein] = N(6)-benzoyl-L-lysyl-[protein] + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:83531\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:9752\"},{\"database\":\"Rhea\",\"id\":\"RHEA-COMP:20154\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29969\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57369\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:233144\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -692,15 +451,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json",
-  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
-  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Chen X.\",\"Wu L.\",\"Zhang Y.\",\"Wang S.\",\"Wang S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"39601562\"},{\"database\":\"DOI\",\"id\":\"10.1128/mbio.02665-24\"}],\"citationType\":\"journal article\",\"firstPage\":\"e0266524\",\"id\":\"39601562\",\"journal\":\"MBio\",\"lastPage\":\"e0266524\",\"publicationDate\":\"2025\",\"title\":\"Importance of benzoyltransferase GcnE and lysine benzoylation of alcohol dehydrogenase AdhB in pathogenesis and aflatoxin production in Aspergillus flavus.\",\"volume\":\"16\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\",\"CATALYTIC ACTIVITY\",\"DOMAIN\",\"ACTIVE SITE\",\"MUTAGENESIS OF GLU-139\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-01T06:24:51.100326+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "62832be697e21c858f10966f2857a43e5cbc83ed896c702c9eaf6b22d957a2f7",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A7U2QYM2.json"
 }
 ```
 
@@ -710,18 +469,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   GCNE_ASPFN              Reviewed;         402 AA.\nAC   A0A7U2QYM2;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   02-JUN-2021, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=Histone acetyltransferase gcnE {ECO:0000250|UniProtKB:Q03330};\nDE            EC=2.3.1.48 {ECO:0000269|PubMed:39601562};\nDE   AltName: Full=Benzoyltransferase gcnE {ECO:0000303|PubMed:39601562};\nDE            EC=2.3.1.- {ECO:0000269|PubMed:39601562};\nGN   Name=gcnE {ECO:0000303|PubMed:39601562}; ORFNames=F9C07_11133;\nOS   Aspergillus flavus (strain ATCC 200026 / FGSC A1120 / IAM 13836 / NRRL 3357\nOS   / JCM 12722 / SRRC 167).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=332952;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -731,18 +490,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Histone acetyltransferase gcnE {ECO:0000250|UniProtKB:Q03330};\nDE            EC=2.3.1.48 {ECO:0000269|PubMed:39601562};\nDE   AltName: Full=Benzoyltransferase gcnE {ECO:0000303|PubMed:39601562};\nDE            EC=2.3.1.- {ECO:0000269|PubMed:39601562};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -752,18 +511,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 27-35",
   "excerpt": "RN   [2]\nRP   FUNCTION, DISRUPTION PHENOTYPE, CATALYTIC ACTIVITY, DOMAIN, ACTIVE SITE,\nRP   AND MUTAGENESIS OF GLU-139.\nRX   PubMed=39601562; DOI=10.1128/mbio.02665-24;\nRA   Chen X., Wu L., Zhang Y., Wang S., Wang S.;\nRT   \"Importance of benzoyltransferase GcnE and lysine benzoylation of alcohol\nRT   dehydrogenase AdhB in pathogenesis and aflatoxin production in Aspergillus\nRT   flavus.\";\nRL   MBio 16:e0266524-e0266524(2025).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 27-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -773,18 +532,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 43-50",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-lysyl-[protein] + acetyl-CoA = N(6)-acetyl-L-lysyl-[protein]\nCC         + CoA + H(+); Xref=Rhea:RHEA:45948, Rhea:RHEA-COMP:9752, Rhea:RHEA-\nCC         COMP:10731, ChEBI:CHEBI:15378, ChEBI:CHEBI:29969, ChEBI:CHEBI:57287,\nCC         ChEBI:CHEBI:57288, ChEBI:CHEBI:61930; EC=2.3.1.48;\nCC         Evidence={ECO:0000269|PubMed:39601562};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:45949;\nCC         Evidence={ECO:0000269|PubMed:39601562};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-50",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 
@@ -794,18 +553,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21",
-  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
-  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
-  "source_locator": "lines 51-58",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=benzoyl-CoA + L-lysyl-[protein] = N(6)-benzoyl-L-lysyl-\nCC         [protein] + CoA + H(+); Xref=Rhea:RHEA:83531, Rhea:RHEA-COMP:9752,\nCC         Rhea:RHEA-COMP:20154, ChEBI:CHEBI:15378, ChEBI:CHEBI:29969,\nCC         ChEBI:CHEBI:57287, ChEBI:CHEBI:57369, ChEBI:CHEBI:233144;\nCC         Evidence={ECO:0000269|PubMed:39601562};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:83532;\nCC         Evidence={ECO:0000269|PubMed:39601562};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-01T06:27:33.661793+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 51-58",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "36f550ae7bc08c06f607864032c4242543bb45af90f57f1b6319f8ebe893703c",
+  "url": "https://rest.uniprot.org/unisave/A0A7U2QYM2?format=txt&versions=21"
 }
 ```
 

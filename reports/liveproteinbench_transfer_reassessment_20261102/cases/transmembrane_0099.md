@@ -1,18 +1,16 @@
-# transmembrane_0099: before and after transfer clarification
+# transmembrane_0099
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0099.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/transmembrane_0099.txt)
 
 **Task:** `transmembrane`  
-**Author key, unchanged:** **D** — 483..503
+**Expected answer:** **D** — 483..503
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,250 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence-matched UniProt annotation places a helical transmembrane region at 483..503, matching choice D. This annotation is computationally supported (ECO:0000255), not presented as direct experimental evidence.
-
-Citations as saved: [C6](#evidence-c6), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a conspicuous hydrophobic C-terminal stretch consistent with a membrane-spanning helix, distinguishing it from the other distant candidate regions.
-
-
-**Missing item-specific fact**
-
-> The exact annotated boundary, especially whether the region ends at 503 or extends to 507, is not uniquely established by general hydropathy reasoning.
-
-
-**Reason**
-
-> Sequence reasoning supports the location of a membrane-spanning helix, but selecting the precise annotated endpoint requires a protein-specific boundary annotation or comparable item-specific evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> Both choices include the strongly hydrophobic segment at 483 onward. The additional residues in B could be treated as part of an extended membrane-associated region, while the supplied evidence annotates the core helix as ending at 503.
-
-
-### Important caveats
-
-- The reviewer-only annotation matches the supplied sequence; the actual source snapshot used by the author is unknown.
-- The cited transmembrane annotation is computationally evidenced, not independently validated here by primary experimental data.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a conspicuous hydrophobic C-terminal stretch consistent with a membrane-spanning helix, distinguishing it from the other distant candidate regions.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact annotated boundary, especially whether the region ends at 503 or extends to 507, is not uniquely established by general hydropathy reasoning.",
-    "reason": "Sequence reasoning supports the location of a membrane-spanning helix, but selecting the precise annotated endpoint requires a protein-specific boundary annotation or comparable item-specific evidence."
-  },
-  "case_id": "transmembrane_0099",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation places a helical transmembrane region at 483..503, matching choice D. This annotation is computationally supported (ECO:0000255), not presented as direct experimental evidence."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence; the actual source snapshot used by the author is unknown.",
-    "The cited transmembrane annotation is computationally evidenced, not independently validated here by primary experimental data."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "Both choices include the strongly hydrophobic segment at 483 onward. The additional residues in B could be treated as part of an extended membrane-associated region, while the supplied evidence annotates the core helix as ending at 503."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "transmembrane_0099",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence-matched UniProt annotation places a helical transmembrane region at 483..503, matching choice D. This annotation is computationally supported (ECO:0000255), not presented as direct experimental evidence.",
-    "evidence_ids": ["C6", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a conspicuous hydrophobic C-terminal stretch consistent with a membrane-spanning helix, distinguishing it from the other distant candidate regions.",
-    "missing_item_specific_fact": "The exact annotated boundary, especially whether the region ends at 503 or extends to 507, is not uniquely established by general hydropathy reasoning.",
-    "reason": "Sequence reasoning supports the location of a membrane-spanning helix, but selecting the precise annotated endpoint requires a protein-specific boundary annotation or comparable item-specific evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "Both choices include the strongly hydrophobic segment at 483 onward. The additional residues in B could be treated as part of an extended membrane-associated region, while the supplied evidence annotates the core helix as ending at 503."
-  },
-  "important_caveats": [
-    "The reviewer-only annotation matches the supplied sequence; the actual source snapshot used by the author is unknown.",
-    "The cited transmembrane annotation is computationally evidenced, not independently validated here by primary experimental data."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q5SC53 (Mumps virus Fusion glycoprotein F0, 538 AA) annotates a single transmembrane helix at positions 483..503 (evidence code ECO:0000255, homology/proximity inference), flanked by an extracellular topological domain (20..482) and a cytoplasmic domain (504..538). This is consistent with the well-established single-pass type I membrane topology of paramyxovirus class I fusion glycoproteins. The sequence match is confirmed (SHA-256 identical). The annotation is computational/homology-based rather than directly experimental, but it is a standard, well-supported annotation for this protein family.
-
-Citations as saved: [C6](#evidence-c6), [H3](#evidence-h3), [C5](#evidence-c5), [C7](#evidence-c7), [H2](#evidence-h2), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> A model can reason from the sequence that (1) option A references positions (278-286, 308-323) in the large extracellular domain where the sequence is not hydrophobic, and (2) option C references positions 567-591 which exceed the protein length of 538 residues, so both are clearly eliminable. The remaining critical choice is between B (483..507) and D (483..503). The hydrophobic stretch in the C-terminal region is identifiable, but the exact C-terminal boundary of the TM helix at residue 503 versus 507 cannot be definitively resolved from sequence alone: residues 504-507 (C, C, W, A) are also hydrophobic, and the aromatic Trp at ~506 could plausibly be part of the membrane-water interface. Distinguishing 21-residue vs 25-residue TM helix boundaries depends on the specific annotation convention for this protein.
-
-
-**Missing item-specific fact**
-
-> The precise C-terminal boundary of the transmembrane helix (residue 503 vs 507) as annotated in UniProt for this specific Mumps virus F protein entry, which is a protein-specific annotation boundary not derivable from general hydrophobicity analysis alone.
-
-
-**Reason**
-
-> While general sequence reasoning eliminates options A and C, the decisive distinction between B (483..507) and D (483..503) requires knowledge of the exact annotation boundary. Both 21- and 25-residue TM helices are within the normal range for class I fusion proteins, and the sequence around 503-507 (FLCCWA) does not provide a clear-cut hydrophobicity cutoff. The answer depends on the specific UniProt annotation rather than a generalizable biological principle.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "B",
-  "D"
-]
-```
-
-> From sequence analysis alone, both 483..503 (21 residues) and 483..507 (25 residues) are plausible TM helix boundaries. The residues at 504-507 (C, C, W, A) are hydrophobic, and Trp is a classic membrane-interface residue. Without the specific annotation, a knowledgeable model could reasonably select B. However, option C is definitively eliminable (positions beyond protein length) and A is eliminable (non-hydrophobic extracellular region).
-
-
-### Important caveats
-
-- The UniProt TM annotation uses evidence code ECO:0000255 (similarity/proximity), meaning it is inferred by homology to related paramyxovirus F proteins rather than from direct experimental measurement of this specific strain's TM boundaries.
-- The sequence is from a vaccine strain (L-Zagreb) of Mumps virus genotype N; TM boundaries in paramyxovirus F proteins are generally well-conserved across strains.
-- Option C's second segment (567..591) references positions beyond the 538-residue protein, making it trivially eliminable regardless of biological reasoning.
-- The author key (D) matches the current UniProt annotation exactly, but the annotation is computational/homology-based, not experimentally determined for this specific protein.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "A model can reason from the sequence that (1) option A references positions (278-286, 308-323) in the large extracellular domain where the sequence is not hydrophobic, and (2) option C references positions 567-591 which exceed the protein length of 538 residues, so both are clearly eliminable. The remaining critical choice is between B (483..507) and D (483..503). The hydrophobic stretch in the C-terminal region is identifiable, but the exact C-terminal boundary of the TM helix at residue 503 versus 507 cannot be definitively resolved from sequence alone: residues 504-507 (C, C, W, A) are also hydrophobic, and the aromatic Trp at ~506 could plausibly be part of the membrane-water interface. Distinguishing 21-residue vs 25-residue TM helix boundaries depends on the specific annotation convention for this protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The precise C-terminal boundary of the transmembrane helix (residue 503 vs 507) as annotated in UniProt for this specific Mumps virus F protein entry, which is a protein-specific annotation boundary not derivable from general hydrophobicity analysis alone.",
-    "reason": "While general sequence reasoning eliminates options A and C, the decisive distinction between B (483..507) and D (483..503) requires knowledge of the exact annotation boundary. Both 21- and 25-residue TM helices are within the normal range for class I fusion proteins, and the sequence around 503-507 (FLCCWA) does not provide a clear-cut hydrophobicity cutoff. The answer depends on the specific UniProt annotation rather than a generalizable biological principle."
-  },
-  "case_id": "transmembrane_0099",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C6",
-      "H3",
-      "C5",
-      "C7",
-      "H2",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q5SC53 (Mumps virus Fusion glycoprotein F0, 538 AA) annotates a single transmembrane helix at positions 483..503 (evidence code ECO:0000255, homology/proximity inference), flanked by an extracellular topological domain (20..482) and a cytoplasmic domain (504..538). This is consistent with the well-established single-pass type I membrane topology of paramyxovirus class I fusion glycoproteins. The sequence match is confirmed (SHA-256 identical). The annotation is computational/homology-based rather than directly experimental, but it is a standard, well-supported annotation for this protein family."
-  },
-  "important_caveats": [
-    "The UniProt TM annotation uses evidence code ECO:0000255 (similarity/proximity), meaning it is inferred by homology to related paramyxovirus F proteins rather than from direct experimental measurement of this specific strain's TM boundaries.",
-    "The sequence is from a vaccine strain (L-Zagreb) of Mumps virus genotype N; TM boundaries in paramyxovirus F proteins are generally well-conserved across strains.",
-    "Option C's second segment (567..591) references positions beyond the 538-residue protein, making it trivially eliminable regardless of biological reasoning.",
-    "The author key (D) matches the current UniProt annotation exactly, but the annotation is computational/homology-based, not experimentally determined for this specific protein."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "B",
-      "D"
-    ],
-    "reason": "From sequence analysis alone, both 483..503 (21 residues) and 483..507 (25 residues) are plausible TM helix boundaries. The residues at 504-507 (C, C, W, A) are hydrophobic, and Trp is a classic membrane-interface residue. Without the specific annotation, a knowledgeable model could reasonably select B. However, option C is definitively eliminable (positions beyond protein length) and A is eliminable (non-hydrophobic extracellular region)."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "transmembrane_0099",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q5SC53 (Mumps virus Fusion glycoprotein F0, 538 AA) annotates a single transmembrane helix at positions 483..503 (evidence code ECO:0000255, homology/proximity inference), flanked by an extracellular topological domain (20..482) and a cytoplasmic domain (504..538). This is consistent with the well-established single-pass type I membrane topology of paramyxovirus class I fusion glycoproteins. The sequence match is confirmed (SHA-256 identical). The annotation is computational/homology-based rather than directly experimental, but it is a standard, well-supported annotation for this protein family.",
-    "evidence_ids": ["C6", "H3", "C5", "C7", "H2", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "A model can reason from the sequence that (1) option A references positions (278-286, 308-323) in the large extracellular domain where the sequence is not hydrophobic, and (2) option C references positions 567-591 which exceed the protein length of 538 residues, so both are clearly eliminable. The remaining critical choice is between B (483..507) and D (483..503). The hydrophobic stretch in the C-terminal region is identifiable, but the exact C-terminal boundary of the TM helix at residue 503 versus 507 cannot be definitively resolved from sequence alone: residues 504-507 (C, C, W, A) are also hydrophobic, and the aromatic Trp at ~506 could plausibly be part of the membrane-water interface. Distinguishing 21-residue vs 25-residue TM helix boundaries depends on the specific annotation convention for this protein.",
-    "missing_item_specific_fact": "The precise C-terminal boundary of the transmembrane helix (residue 503 vs 507) as annotated in UniProt for this specific Mumps virus F protein entry, which is a protein-specific annotation boundary not derivable from general hydrophobicity analysis alone.",
-    "reason": "While general sequence reasoning eliminates options A and C, the decisive distinction between B (483..507) and D (483..503) requires knowledge of the exact annotation boundary. Both 21- and 25-residue TM helices are within the normal range for class I fusion proteins, and the sequence around 503-507 (FLCCWA) does not provide a clear-cut hydrophobicity cutoff. The answer depends on the specific UniProt annotation rather than a generalizable biological principle."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["B", "D"],
-    "reason": "From sequence analysis alone, both 483..503 (21 residues) and 483..507 (25 residues) are plausible TM helix boundaries. The residues at 504-507 (C, C, W, A) are hydrophobic, and Trp is a classic membrane-interface residue. Without the specific annotation, a knowledgeable model could reasonably select B. However, option C is definitively eliminable (positions beyond protein length) and A is eliminable (non-hydrophobic extracellular region)."
-  },
-  "important_caveats": [
-    "The UniProt TM annotation uses evidence code ECO:0000255 (similarity/proximity), meaning it is inferred by homology to related paramyxovirus F proteins rather than from direct experimental measurement of this specific strain's TM boundaries.",
-    "The sequence is from a vaccine strain (L-Zagreb) of Mumps virus genotype N; TM boundaries in paramyxovirus F proteins are generally well-conserved across strains.",
-    "Option C's second segment (567..591) references positions beyond the 538-residue protein, making it trivially eliminable regardless of biological reasoning.",
-    "The author key (D) matches the current UniProt annotation exactly, but the annotation is computational/homology-based, not experimentally determined for this specific protein."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -404,10 +163,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -520,30 +278,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q5SC53",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "ca344ce86c8ca532870fd703c59b36aa651563981a4288efac2646db70979fec",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 538,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "ca344ce86c8ca532870fd703c59b36aa651563981a4288efac2646db70979fec",
   "current_entry_audit": {
     "entryVersion": 81,
     "firstPublicDate": "2025-04-09",
@@ -551,14 +296,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-12-21",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "current_source_sequence_sha256": "ca344ce86c8ca532870fd703c59b36aa651563981a4288efac2646db70979fec",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 538,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "ca344ce86c8ca532870fd703c59b36aa651563981a4288efac2646db70979fec",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 80,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q5SC53",
   "selected_historical_entry_version": 80,
+  "selected_historical_record_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
+  "selected_historical_source_sequence_length": 538,
+  "selected_historical_source_sequence_sha256": "ca344ce86c8ca532870fd703c59b36aa651563981a4288efac2646db70979fec",
   "selected_historical_version": {
     "accession": "Q5SC53",
     "database": "Swiss-Prot",
@@ -569,24 +330,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "FUS_MUMPZ",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
-  "selected_historical_source_sequence_sha256": "ca344ce86c8ca532870fd703c59b36aa651563981a4288efac2646db70979fec",
-  "selected_historical_source_sequence_length": 538,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 80,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -600,15 +348,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json",
-  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q5SC53\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json"
 }
 ```
 
@@ -619,15 +367,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json",
-  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":81,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2004-12-21\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json"
 }
 ```
 
@@ -638,15 +386,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json",
-  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"MuV\",\"lineage\":[\"Viruses\",\"Riboviria\",\"Orthornavirae\",\"Negarnaviricota\",\"Haploviricotina\",\"Monjiviricetes\",\"Mononegavirales\",\"Paramyxoviridae\",\"Rubulavirinae\",\"Orthorubulavirus\",\"Orthorubulavirus parotitidis\",\"Mumps orthorubulavirus\"],\"scientificName\":\"Mumps virus genotype N (strain L-Zagreb vaccine)\",\"taxonId\":301186}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json"
 }
 ```
 
@@ -657,15 +405,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json",
-  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"contains\":[{\"recommendedName\":{\"fullName\":{\"value\":\"Fusion glycoprotein F2\"}}},{\"recommendedName\":{\"fullName\":{\"value\":\"Fusion glycoprotein F1\"}}}],\"flag\":\"Precursor\",\"recommendedName\":{\"fullName\":{\"value\":\"Fusion glycoprotein F0\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json"
 }
 ```
 
@@ -676,15 +424,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json",
-  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"Extracellular\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":482},\"start\":{\"modifier\":\"EXACT\",\"value\":20}},\"type\":\"Topological domain\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json"
 }
 ```
 
@@ -695,15 +443,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json",
-  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":503},\"start\":{\"modifier\":\"EXACT\",\"value\":483}},\"type\":\"Transmembrane\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json"
 }
 ```
 
@@ -714,15 +462,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json",
-  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
-  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"Cytoplasmic\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":538},\"start\":{\"modifier\":\"EXACT\",\"value\":504}},\"type\":\"Topological domain\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-01T06:25:22.414761+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "72eeca0dc4f0e1b54320c79e260ae9238e7fcefb733b978db81bae5e0d233fa9",
+  "url": "https://rest.uniprot.org/uniprotkb/Q5SC53.json"
 }
 ```
 
@@ -732,18 +480,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 80,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80",
-  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
-  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
-  "source_locator": "lines 1-18",
   "excerpt": "ID   FUS_MUMPZ               Reviewed;         538 AA.\nAC   Q5SC53;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   21-DEC-2004, sequence version 1.\nDT   28-JAN-2026, entry version 80.\nDE   RecName: Full=Fusion glycoprotein F0;\nDE   Contains:\nDE     RecName: Full=Fusion glycoprotein F2;\nDE   Contains:\nDE     RecName: Full=Fusion glycoprotein F1;\nDE   Flags: Precursor;\nGN   Name=F;\nOS   Mumps virus genotype N (strain L-Zagreb vaccine) (MuV).\nOC   Viruses; Riboviria; Orthornavirae; Negarnaviricota; Haploviricotina;\nOC   Monjiviricetes; Mononegavirales; Paramyxoviridae; Rubulavirinae;\nOC   Orthorubulavirus; Orthorubulavirus parotitidis; Mumps orthorubulavirus.\nOX   NCBI_TaxID=301186;\nOH   NCBI_TaxID=9606; Homo sapiens (Human).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 80,
+  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-18",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
+  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80"
 }
 ```
 
@@ -753,18 +501,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 80,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80",
-  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
-  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
-  "source_locator": "lines 124-126",
   "excerpt": "FT   TOPO_DOM        20..482\nFT                   /note=\"Extracellular\"\nFT                   /evidence=\"ECO:0000250\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 80,
+  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 124-126",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
+  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80"
 }
 ```
 
@@ -774,18 +522,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 80,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80",
-  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
-  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
-  "source_locator": "lines 127-129",
   "excerpt": "FT   TRANSMEM        483..503\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 80,
+  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 127-129",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
+  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80"
 }
 ```
 
@@ -795,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 80,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80",
-  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
-  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
-  "source_locator": "lines 130-132",
   "excerpt": "FT   TOPO_DOM        504..538\nFT                   /note=\"Cytoplasmic\"\nFT                   /evidence=\"ECO:0000250\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 80,
+  "retrieved_utc": "2026-11-01T06:28:38.619336+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 130-132",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "afb9ab9d6093f040c16474e49b884836fed8582e6d2cecfa0264668dfd09db66",
+  "url": "https://rest.uniprot.org/unisave/Q5SC53?format=txt&versions=80"
 }
 ```
 

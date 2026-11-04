@@ -1,18 +1,16 @@
-# catalytic_activity_0135: before and after transfer clarification
+# catalytic_activity_0135
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0135.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/catalytic_activity_0135.txt)
 
 **Task:** `catalytic_activity`  
-**Author key, unchanged:** **B** — demethylluteothin + S-adenosyl-L-methionine = luteothin + S-adenosyl-L-homocysteine
+**Expected answer:** **B** — demethylluteothin + S-adenosyl-L-methionine = luteothin + S-adenosyl-L-homocysteine
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,246 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The sequence exactly matches the UniProt entry for demethylluteothin O-methyltransferase, whose annotated catalytic reaction is choice B. The reaction annotation cites experimental evidence from a paper, though that primary study was not independently reviewed here.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C6](#evidence-c6), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices suggest distinct reaction classes, and sequence analysis might suggest an enzyme family, but the supplied sequence alone does not identify demethylluteothin as the substrate or establish this specific methylation reaction.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional annotation or experimental identification linking this sequence to demethylluteothin O-methylation.
-
-
-**Reason**
-
-> Selecting B depends on a particular substrate-and-product assignment absent from the input. Recognizing the exact sequence or retrieving its annotation would be lookup, not reasoning from supplied evidence.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The supplied sequence does not distinguish the options, but the reviewer-only sequence-matched annotation supports B; no evidence here supports another option as the enzyme's reaction.
-
-
-### Important caveats
-
-- The supporting database reaction annotation cites experimental evidence, but the primary paper was not independently validated in this review.
-- Reviewer-only identity and annotation evidence were not available to the evaluated model.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices suggest distinct reaction classes, and sequence analysis might suggest an enzyme family, but the supplied sequence alone does not identify demethylluteothin as the substrate or establish this specific methylation reaction.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental identification linking this sequence to demethylluteothin O-methylation.",
-    "reason": "Selecting B depends on a particular substrate-and-product assignment absent from the input. Recognizing the exact sequence or retrieving its annotation would be lookup, not reasoning from supplied evidence."
-  },
-  "case_id": "catalytic_activity_0135",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "C6",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry for demethylluteothin O-methyltransferase, whose annotated catalytic reaction is choice B. The reaction annotation cites experimental evidence from a paper, though that primary study was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The supporting database reaction annotation cites experimental evidence, but the primary paper was not independently validated in this review.",
-    "Reviewer-only identity and annotation evidence were not available to the evaluated model."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied sequence does not distinguish the options, but the reviewer-only sequence-matched annotation supports B; no evidence here supports another option as the enzyme's reaction."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "catalytic_activity_0135",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The sequence exactly matches the UniProt entry for demethylluteothin O-methyltransferase, whose annotated catalytic reaction is choice B. The reaction annotation cites experimental evidence from a paper, though that primary study was not independently reviewed here.",
-    "evidence_ids": ["C1", "C5", "C6", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices suggest distinct reaction classes, and sequence analysis might suggest an enzyme family, but the supplied sequence alone does not identify demethylluteothin as the substrate or establish this specific methylation reaction.",
-    "missing_item_specific_fact": "The protein-specific functional annotation or experimental identification linking this sequence to demethylluteothin O-methylation.",
-    "reason": "Selecting B depends on a particular substrate-and-product assignment absent from the input. Recognizing the exact sequence or retrieving its annotation would be lookup, not reasoning from supplied evidence."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The supplied sequence does not distinguish the options, but the reviewer-only sequence-matched annotation supports B; no evidence here supports another option as the enzyme's reaction."
-  },
-  "important_caveats": [
-    "The supporting database reaction annotation cites experimental evidence, but the primary paper was not independently validated in this review.",
-    "Reviewer-only identity and annotation evidence were not available to the evaluated model."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q70KH3 (AURI_STRTU, Streptomyces thioluteus, 230 aa, sequence matched) explicitly annotates the catalytic activity as 'demethylluteothin + S-adenosyl-L-methionine = luteothin + S-adenosyl-L-homocysteine' (EC 2.1.1.353) with experimental evidence (ECO:0000269, PubMed:16292785, Mueller et al. 2006, ChemBioChem). The protein is named 'Demethylluteothin O-methyltransferase.' The expected answer exactly matches the annotated reaction.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H2](#evidence-h2), [H4](#evidence-h4), [H5](#evidence-h5).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> General sequence analysis can reasonably eliminate C (no cytochrome P450 heme-binding CXXG motif, no P450 fold) and D (no GH18/GH19 chitinase catalytic domain, no CBM50/CBM12 carbohydrate-binding module). The sequence contains motifs suggestive of a SAM-dependent methyltransferase (e.g., a 'GATVL' region reminiscent of β-strand methyltransferase folds), which is consistent with both A and B. However, distinguishing a catechol O-methyltransferase (COMT-type, Choice A) from a pyrone O-methyltransferase (Choice B) requires knowledge of the specific active-site architecture for these very different substrates (catecholamine vs. γ-pyrone polyketide), which is not reliably derivable from the 230-aa sequence by general biological reasoning alone.
-
-
-**Missing item-specific fact**
-
-> The identity of this protein as AurI from the aureothin biosynthetic gene cluster of Streptomyces thioluteus, and its experimentally determined substrate specificity for demethylluteothin (a γ-pyrone polyketide intermediate) rather than a catecholamine, is an item-specific annotation/experimental fact not encoded in the sequence in a way distinguishable from other SAM-methyltransferases by general reasoning.
-
-
-**Reason**
-
-> While the sequence supports a methyltransferase assignment (eliminating C and D), the critical discrimination between A (catecholamine O-methyltransferase) and B (pyrone O-methyltransferase) depends on recognizing this exact protein or knowing its specific substrate from the literature. No organism context is provided in the question input, and the shared Rossmann-like methyltransferase fold does not encode substrate identity in a way resolvable by general biological reasoning.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "B"
-]
-```
-
-> Both A and B describe SAM-dependent O-methyltransferase reactions. Without organism context (Streptomyces, polyketide biosynthesis) or specific structural knowledge of the active site, a model reasoning from sequence alone could plausibly assign either a catecholamine or a polyketide-pyrone substrate. The sequence does not contain a uniquely diagnostic motif that unambiguously selects B over A by general reasoning.
-
-
-### Important caveats
-
-- The UniProt annotation for this entry was first publicly released on 2025-02-05; the author's source snapshot date is unknown. If the benchmark was constructed before this date, the annotation may not have been available.
-- The experimental evidence (PubMed:16292785) is from a 2006 paper dissecting aureothin biosynthesis; the functional characterization is well-established in the literature.
-- The sequence match is exact (SHA256 identical, 230 aa), confirming the protein identity.
-- Eliminating C and D by general reasoning is straightforward; the core difficulty is the A-vs-B discrimination, which is the crux of the lookup dependency.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "General sequence analysis can reasonably eliminate C (no cytochrome P450 heme-binding CXXG motif, no P450 fold) and D (no GH18/GH19 chitinase catalytic domain, no CBM50/CBM12 carbohydrate-binding module). The sequence contains motifs suggestive of a SAM-dependent methyltransferase (e.g., a 'GATVL' region reminiscent of β-strand methyltransferase folds), which is consistent with both A and B. However, distinguishing a catechol O-methyltransferase (COMT-type, Choice A) from a pyrone O-methyltransferase (Choice B) requires knowledge of the specific active-site architecture for these very different substrates (catecholamine vs. γ-pyrone polyketide), which is not reliably derivable from the 230-aa sequence by general biological reasoning alone.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The identity of this protein as AurI from the aureothin biosynthetic gene cluster of Streptomyces thioluteus, and its experimentally determined substrate specificity for demethylluteothin (a γ-pyrone polyketide intermediate) rather than a catecholamine, is an item-specific annotation/experimental fact not encoded in the sequence in a way distinguishable from other SAM-methyltransferases by general reasoning.",
-    "reason": "While the sequence supports a methyltransferase assignment (eliminating C and D), the critical discrimination between A (catecholamine O-methyltransferase) and B (pyrone O-methyltransferase) depends on recognizing this exact protein or knowing its specific substrate from the literature. No organism context is provided in the question input, and the shared Rossmann-like methyltransferase fold does not encode substrate identity in a way resolvable by general biological reasoning."
-  },
-  "case_id": "catalytic_activity_0135",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H2",
-      "H4",
-      "H5"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q70KH3 (AURI_STRTU, Streptomyces thioluteus, 230 aa, sequence matched) explicitly annotates the catalytic activity as 'demethylluteothin + S-adenosyl-L-methionine = luteothin + S-adenosyl-L-homocysteine' (EC 2.1.1.353) with experimental evidence (ECO:0000269, PubMed:16292785, Mueller et al. 2006, ChemBioChem). The protein is named 'Demethylluteothin O-methyltransferase.' The expected answer exactly matches the annotated reaction."
-  },
-  "important_caveats": [
-    "The UniProt annotation for this entry was first publicly released on 2025-02-05; the author's source snapshot date is unknown. If the benchmark was constructed before this date, the annotation may not have been available.",
-    "The experimental evidence (PubMed:16292785) is from a 2006 paper dissecting aureothin biosynthesis; the functional characterization is well-established in the literature.",
-    "The sequence match is exact (SHA256 identical, 230 aa), confirming the protein identity.",
-    "Eliminating C and D by general reasoning is straightforward; the core difficulty is the A-vs-B discrimination, which is the crux of the lookup dependency."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "B"
-    ],
-    "reason": "Both A and B describe SAM-dependent O-methyltransferase reactions. Without organism context (Streptomyces, polyketide biosynthesis) or specific structural knowledge of the active site, a model reasoning from sequence alone could plausibly assign either a catecholamine or a polyketide-pyrone substrate. The sequence does not contain a uniquely diagnostic motif that unambiguously selects B over A by general reasoning."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "catalytic_activity_0135",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q70KH3 (AURI_STRTU, Streptomyces thioluteus, 230 aa, sequence matched) explicitly annotates the catalytic activity as 'demethylluteothin + S-adenosyl-L-methionine = luteothin + S-adenosyl-L-homocysteine' (EC 2.1.1.353) with experimental evidence (ECO:0000269, PubMed:16292785, Mueller et al. 2006, ChemBioChem). The protein is named 'Demethylluteothin O-methyltransferase.' The expected answer exactly matches the annotated reaction.",
-    "evidence_ids": ["C4", "C5", "C6", "H2", "H4", "H5"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "General sequence analysis can reasonably eliminate C (no cytochrome P450 heme-binding CXXG motif, no P450 fold) and D (no GH18/GH19 chitinase catalytic domain, no CBM50/CBM12 carbohydrate-binding module). The sequence contains motifs suggestive of a SAM-dependent methyltransferase (e.g., a 'GATVL' region reminiscent of β-strand methyltransferase folds), which is consistent with both A and B. However, distinguishing a catechol O-methyltransferase (COMT-type, Choice A) from a pyrone O-methyltransferase (Choice B) requires knowledge of the specific active-site architecture for these very different substrates (catecholamine vs. γ-pyrone polyketide), which is not reliably derivable from the 230-aa sequence by general biological reasoning alone.",
-    "missing_item_specific_fact": "The identity of this protein as AurI from the aureothin biosynthetic gene cluster of Streptomyces thioluteus, and its experimentally determined substrate specificity for demethylluteothin (a γ-pyrone polyketide intermediate) rather than a catecholamine, is an item-specific annotation/experimental fact not encoded in the sequence in a way distinguishable from other SAM-methyltransferases by general reasoning.",
-    "reason": "While the sequence supports a methyltransferase assignment (eliminating C and D), the critical discrimination between A (catecholamine O-methyltransferase) and B (pyrone O-methyltransferase) depends on recognizing this exact protein or knowing its specific substrate from the literature. No organism context is provided in the question input, and the shared Rossmann-like methyltransferase fold does not encode substrate identity in a way resolvable by general biological reasoning."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "B"],
-    "reason": "Both A and B describe SAM-dependent O-methyltransferase reactions. Without organism context (Streptomyces, polyketide biosynthesis) or specific structural knowledge of the active site, a model reasoning from sequence alone could plausibly assign either a catecholamine or a polyketide-pyrone substrate. The sequence does not contain a uniquely diagnostic motif that unambiguously selects B over A by general reasoning."
-  },
-  "important_caveats": [
-    "The UniProt annotation for this entry was first publicly released on 2025-02-05; the author's source snapshot date is unknown. If the benchmark was constructed before this date, the annotation may not have been available.",
-    "The experimental evidence (PubMed:16292785) is from a 2006 paper dissecting aureothin biosynthesis; the functional characterization is well-established in the literature.",
-    "The sequence match is exact (SHA256 identical, 230 aa), confirming the protein identity.",
-    "Eliminating C and D by general reasoning is straightforward; the core difficulty is the A-vs-B discrimination, which is the crux of the lookup dependency."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -401,10 +164,9 @@ Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -518,30 +280,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q70KH3",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "51d4c0c4566dd5a453776af928588d79c76090f51f04d3c471c21531287c77f5",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 230,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "51d4c0c4566dd5a453776af928588d79c76090f51f04d3c471c21531287c77f5",
   "current_entry_audit": {
     "entryVersion": 59,
     "firstPublicDate": "2025-02-05",
@@ -549,14 +298,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2004-07-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
-  "current_source_sequence_sha256": "51d4c0c4566dd5a453776af928588d79c76090f51f04d3c471c21531287c77f5",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 230,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "51d4c0c4566dd5a453776af928588d79c76090f51f04d3c471c21531287c77f5",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 58,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q70KH3",
   "selected_historical_entry_version": 58,
+  "selected_historical_record_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
+  "selected_historical_source_sequence_length": 230,
+  "selected_historical_source_sequence_sha256": "51d4c0c4566dd5a453776af928588d79c76090f51f04d3c471c21531287c77f5",
   "selected_historical_version": {
     "accession": "Q70KH3",
     "database": "Swiss-Prot",
@@ -567,24 +332,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "AURI_STRTU",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
-  "selected_historical_source_sequence_sha256": "51d4c0c4566dd5a453776af928588d79c76090f51f04d3c471c21531287c77f5",
-  "selected_historical_source_sequence_length": 230,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 58,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -598,15 +350,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json",
-  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
-  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q70KH3\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json"
 }
 ```
 
@@ -617,15 +369,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json",
-  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
-  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":59,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2004-07-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json"
 }
 ```
 
@@ -636,15 +388,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json",
-  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
-  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Kitasatosporales\",\"Streptomycetaceae\",\"Streptomyces\"],\"scientificName\":\"Streptomyces thioluteus\",\"taxonId\":66431}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json"
 }
 ```
 
@@ -655,15 +407,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json",
-  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
-  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"16292785\",\"source\":\"PubMed\"}],\"value\":\"Gamma-pyrone methyltransferase\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"16292785\",\"source\":\"PubMed\"}],\"value\":\"SAM-dependent pyrone methyltransferase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"16292785\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.353\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Demethylluteothin O-methyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json"
 }
 ```
 
@@ -674,15 +426,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json",
-  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
-  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"16292785\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:59065\"}}],\"reaction\":{\"ecNumber\":\"2.1.1.353\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"16292785\",\"source\":\"PubMed\"}],\"name\":\"demethylluteothin + S-adenosyl-L-methionine = luteothin + S-adenosyl-L-homocysteine\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:59064\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:142840\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:142870\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json"
 }
 ```
 
@@ -693,15 +445,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json",
-  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
-  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Mueller M.\",\"He J.\",\"Hertweck C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"16292785\"},{\"database\":\"DOI\",\"id\":\"10.1002/cbic.200500161\"}],\"citationType\":\"journal article\",\"firstPage\":\"37\",\"id\":\"16292785\",\"journal\":\"ChemBioChem\",\"lastPage\":\"39\",\"publicationDate\":\"2006\",\"title\":\"Dissection of the late steps in aureothin biosynthesis.\",\"volume\":\"7\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:31:46.995748+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "31716edcac38405ac53b5851941888070e610d9716c8cadb344cc4e1bc18ba1e",
+  "url": "https://rest.uniprot.org/uniprotkb/Q70KH3.json"
 }
 ```
 
@@ -711,18 +463,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 58,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58",
-  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
-  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
-  "source_locator": "lines 1-14",
   "excerpt": "ID   AURI_STRTU              Reviewed;         230 AA.\nAC   Q70KH3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-JUL-2004, sequence version 1.\nDT   09-APR-2025, entry version 58.\nDE   RecName: Full=Demethylluteothin O-methyltransferase {ECO:0000305};\nDE            EC=2.1.1.353 {ECO:0000269|PubMed:16292785};\nDE   AltName: Full=Gamma-pyrone methyltransferase {ECO:0000303|PubMed:16292785};\nDE   AltName: Full=SAM-dependent pyrone methyltransferase {ECO:0000303|PubMed:16292785};\nGN   Name=aurI {ECO:0000303|PubMed:14700630};\nOS   Streptomyces thioluteus.\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Kitasatosporales;\nOC   Streptomycetaceae; Streptomyces.\nOX   NCBI_TaxID=66431;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 58,
+  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-14",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
+  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58"
 }
 ```
 
@@ -732,18 +484,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 58,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58",
-  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
-  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
-  "source_locator": "lines 6-9",
   "excerpt": "DE   RecName: Full=Demethylluteothin O-methyltransferase {ECO:0000305};\nDE            EC=2.1.1.353 {ECO:0000269|PubMed:16292785};\nDE   AltName: Full=Gamma-pyrone methyltransferase {ECO:0000303|PubMed:16292785};\nDE   AltName: Full=SAM-dependent pyrone methyltransferase {ECO:0000303|PubMed:16292785};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 58,
+  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-9",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
+  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58"
 }
 ```
 
@@ -753,18 +505,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 58,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58",
-  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
-  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
-  "source_locator": "lines 15-22",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAE02607.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].\nRC   STRAIN=HKI-227;\nRX   PubMed=14700630; DOI=10.1016/j.chembiol.2003.11.009;\nRA   He J., Hertweck C.;\nRT   \"Iteration as programmed event during polyketide assembly; molecular\nRT   analysis of the aureothin biosynthesis gene cluster.\";\nRL   Chem. Biol. 10:1225-1232(2003).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 58,
+  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 15-22",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
+  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58"
 }
 ```
 
@@ -774,18 +526,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 58,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58",
-  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
-  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
-  "source_locator": "lines 30-35",
   "excerpt": "RN   [3]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND DISRUPTION PHENOTYPE.\nRX   PubMed=16292785; DOI=10.1002/cbic.200500161;\nRA   Mueller M., He J., Hertweck C.;\nRT   \"Dissection of the late steps in aureothin biosynthesis.\";\nRL   ChemBioChem 7:37-39(2006).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 58,
+  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 30-35",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
+  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58"
 }
 ```
 
@@ -795,18 +547,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 58,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58",
-  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
-  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
-  "source_locator": "lines 43-49",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=demethylluteothin + S-adenosyl-L-methionine = luteothin + S-\nCC         adenosyl-L-homocysteine; Xref=Rhea:RHEA:59064, ChEBI:CHEBI:57856,\nCC         ChEBI:CHEBI:59789, ChEBI:CHEBI:142840, ChEBI:CHEBI:142870;\nCC         EC=2.1.1.353; Evidence={ECO:0000269|PubMed:16292785};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:59065;\nCC         Evidence={ECO:0000269|PubMed:16292785};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 58,
+  "retrieved_utc": "2026-11-02T04:31:49.122851+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 43-49",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "ecdac3ea83c9b526b46a0656f9bc8ad6168658ba01edaa0f5f3f90bf6b40cc09",
+  "url": "https://rest.uniprot.org/unisave/Q70KH3?format=txt&versions=58"
 }
 ```
 

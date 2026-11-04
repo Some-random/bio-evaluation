@@ -1,18 +1,16 @@
-# EC_number_0149: before and after transfer clarification
+# EC_number_0149
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/EC_number_0149.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/EC_number_0149.txt)
 
 **Task:** `EC_number`  
-**Author key, unchanged:** **C** — 2.3.1.312
+**Expected answer:** **C** — 2.3.1.312
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,247 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches the UniProt entry annotated as D-glutamate N-acetyltransferase, EC 2.3.1.312. The annotation links the catalytic activity to PubMed evidence code ECO:0000269; the cited reaction is D-glutamate + acetyl-CoA → N-acetyl-D-glutamate + CoA + H(+). This supports choice C, although the primary paper was not independently reviewed here.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The choices include different enzyme reaction classifications, but the sequence and options alone provide no sufficiently specific biological argument for identifying this protein's exact substrate and reaction. Broad sequence-based functional inference would not establish the complete EC number.
-
-
-**Missing item-specific fact**
-
-> The protein-specific functional assignment identifying the sequence as D-glutamate N-acetyltransferase, and its catalyzed reaction, is needed to select EC 2.3.1.312.
-
-
-**Reason**
-
-> The reviewer evidence supports the key, but that annotation and its cited experimental evidence were not provided to the evaluated model. Recognizing or retrieving the exact protein entry would be lookup, not reasoning from the supplied input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer-only sequence-matched annotation specifies EC 2.3.1.312; no supplied evidence supports another listed choice.
-
-
-### Important caveats
-
-- The UniProt evidence links the functional assignment to a cited publication, but that publication was not independently assessed.
-- The exact source snapshot used by the benchmark author is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The choices include different enzyme reaction classifications, but the sequence and options alone provide no sufficiently specific biological argument for identifying this protein's exact substrate and reaction. Broad sequence-based functional inference would not establish the complete EC number.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific functional assignment identifying the sequence as D-glutamate N-acetyltransferase, and its catalyzed reaction, is needed to select EC 2.3.1.312.",
-    "reason": "The reviewer evidence supports the key, but that annotation and its cited experimental evidence were not provided to the evaluated model. Recognizing or retrieving the exact protein entry would be lookup, not reasoning from the supplied input."
-  },
-  "case_id": "EC_number_0149",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as D-glutamate N-acetyltransferase, EC 2.3.1.312. The annotation links the catalytic activity to PubMed evidence code ECO:0000269; the cited reaction is D-glutamate + acetyl-CoA → N-acetyl-D-glutamate + CoA + H(+). This supports choice C, although the primary paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The UniProt evidence links the functional assignment to a cited publication, but that publication was not independently assessed.",
-    "The exact source snapshot used by the benchmark author is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only sequence-matched annotation specifies EC 2.3.1.312; no supplied evidence supports another listed choice."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "EC_number_0149",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches the UniProt entry annotated as D-glutamate N-acetyltransferase, EC 2.3.1.312. The annotation links the catalytic activity to PubMed evidence code ECO:0000269; the cited reaction is D-glutamate + acetyl-CoA → N-acetyl-D-glutamate + CoA + H(+). This supports choice C, although the primary paper was not independently reviewed here.",
-    "evidence_ids": ["C4", "C5", "C6", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The choices include different enzyme reaction classifications, but the sequence and options alone provide no sufficiently specific biological argument for identifying this protein's exact substrate and reaction. Broad sequence-based functional inference would not establish the complete EC number.",
-    "missing_item_specific_fact": "The protein-specific functional assignment identifying the sequence as D-glutamate N-acetyltransferase, and its catalyzed reaction, is needed to select EC 2.3.1.312.",
-    "reason": "The reviewer evidence supports the key, but that annotation and its cited experimental evidence were not provided to the evaluated model. Recognizing or retrieving the exact protein entry would be lookup, not reasoning from the supplied input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer-only sequence-matched annotation specifies EC 2.3.1.312; no supplied evidence supports another listed choice."
-  },
-  "important_caveats": [
-    "The UniProt evidence links the functional assignment to a cited publication, but that publication was not independently assessed.",
-    "The exact source snapshot used by the benchmark author is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A2T1AE85 (sequence match confirmed, 333 AA, same SHA256) is annotated as D-glutamate N-acetyltransferase, EC 2.3.1.312, with experimental evidence (ECO:0000269 from PubMed:36690779). X-ray crystallography at 2.20 Å (PDB:7XRJ) confirmed catalytic activity and mutagenesis of key residues (HIS-119, ARG-122, SER-125, GLN-177, ASP-185, ASP-190). The reaction D-glutamate + acetyl-CoA → N-acetyl-D-glutamate + CoA + H(+) is experimentally established. This is a Swiss-Prot reviewed entry.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains recognizable GNAT (GCN5-related N-acetyltransferase) fold motifs (e.g., 'GKISQEWKK', 'GTDCSVGK', 'GDGVPLDA'), which supports classification as an acyltransferase (EC 2.3.1.x), thereby eliminating option B (2.7.7.43, nucleotidyltransferase) and D (5.4.99.14, isomerase). However, this fold-level argument cannot distinguish between EC 2.3.1.322 (option A) and EC 2.3.1.312 (option C), both of which are acetyltransferases in the same subclass.
-
-
-**Missing item-specific fact**
-
-> The specific substrate identity (D-glutamate for 2.3.1.312 vs. the substrate of 2.3.1.322) required to distinguish the two remaining acyltransferase options. This enzyme was characterized in a 2023 paper (Yu et al., ISME J.) describing a novel D-glutamate catabolic pathway, making it a recently discovered enzyme whose substrate specificity cannot be inferred from general biological knowledge of the GNAT fold alone.
-
-
-**Reason**
-
-> While the GNAT fold narrows the answer to the 2.3.1.x subclass, the final distinction between two closely related acetyltransferase EC numbers (2.3.1.322 vs. 2.3.1.312) requires knowledge of the specific substrate or a database lookup. No sequence motif in the provided 333-residue protein uniquely encodes 'D-glutamate' as the substrate without external annotation or memorization of this specific enzyme's characterization.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[
-  "A",
-  "C"
-]
-```
-
-> Both options A (2.3.1.322) and C (2.3.1.312) are acetyltransferases in the same EC subclass. Without specific substrate knowledge or database access, a model identifying the GNAT fold could reasonably select either option. The distractors B (nucleotidyltransferase) and D (isomerase) are eliminable by fold recognition, but A vs. C requires item-specific knowledge.
-
-
-### Important caveats
-
-- The expected answer is experimentally validated (X-ray crystallography, mutagenesis, PubMed:36690779), so the key is scientifically correct.
-- This is a novel enzyme described in 2023, making it unlikely to appear in pre-2023 training data, further increasing reliance on database lookup.
-- The GNAT fold identification provides partial reasoning support (eliminates B and D) but is insufficient for the final A-vs-C discrimination.
-- The identity of the protein was inferred from dataset metadata (reviewer-only); the evaluated model received only the raw sequence.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains recognizable GNAT (GCN5-related N-acetyltransferase) fold motifs (e.g., 'GKISQEWKK', 'GTDCSVGK', 'GDGVPLDA'), which supports classification as an acyltransferase (EC 2.3.1.x), thereby eliminating option B (2.7.7.43, nucleotidyltransferase) and D (5.4.99.14, isomerase). However, this fold-level argument cannot distinguish between EC 2.3.1.322 (option A) and EC 2.3.1.312 (option C), both of which are acetyltransferases in the same subclass.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate identity (D-glutamate for 2.3.1.312 vs. the substrate of 2.3.1.322) required to distinguish the two remaining acyltransferase options. This enzyme was characterized in a 2023 paper (Yu et al., ISME J.) describing a novel D-glutamate catabolic pathway, making it a recently discovered enzyme whose substrate specificity cannot be inferred from general biological knowledge of the GNAT fold alone.",
-    "reason": "While the GNAT fold narrows the answer to the 2.3.1.x subclass, the final distinction between two closely related acetyltransferase EC numbers (2.3.1.322 vs. 2.3.1.312) requires knowledge of the specific substrate or a database lookup. No sequence motif in the provided 333-residue protein uniquely encodes 'D-glutamate' as the substrate without external annotation or memorization of this specific enzyme's characterization."
-  },
-  "case_id": "EC_number_0149",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2T1AE85 (sequence match confirmed, 333 AA, same SHA256) is annotated as D-glutamate N-acetyltransferase, EC 2.3.1.312, with experimental evidence (ECO:0000269 from PubMed:36690779). X-ray crystallography at 2.20 Å (PDB:7XRJ) confirmed catalytic activity and mutagenesis of key residues (HIS-119, ARG-122, SER-125, GLN-177, ASP-185, ASP-190). The reaction D-glutamate + acetyl-CoA → N-acetyl-D-glutamate + CoA + H(+) is experimentally established. This is a Swiss-Prot reviewed entry."
-  },
-  "important_caveats": [
-    "The expected answer is experimentally validated (X-ray crystallography, mutagenesis, PubMed:36690779), so the key is scientifically correct.",
-    "This is a novel enzyme described in 2023, making it unlikely to appear in pre-2023 training data, further increasing reliance on database lookup.",
-    "The GNAT fold identification provides partial reasoning support (eliminates B and D) but is insufficient for the final A-vs-C discrimination.",
-    "The identity of the protein was inferred from dataset metadata (reviewer-only); the evaluated model received only the raw sequence."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [
-      "A",
-      "C"
-    ],
-    "reason": "Both options A (2.3.1.322) and C (2.3.1.312) are acetyltransferases in the same EC subclass. Without specific substrate knowledge or database access, a model identifying the GNAT fold could reasonably select either option. The distractors B (nucleotidyltransferase) and D (isomerase) are eliminable by fold recognition, but A vs. C requires item-specific knowledge."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "EC_number_0149",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A2T1AE85 (sequence match confirmed, 333 AA, same SHA256) is annotated as D-glutamate N-acetyltransferase, EC 2.3.1.312, with experimental evidence (ECO:0000269 from PubMed:36690779). X-ray crystallography at 2.20 Å (PDB:7XRJ) confirmed catalytic activity and mutagenesis of key residues (HIS-119, ARG-122, SER-125, GLN-177, ASP-185, ASP-190). The reaction D-glutamate + acetyl-CoA → N-acetyl-D-glutamate + CoA + H(+) is experimentally established. This is a Swiss-Prot reviewed entry.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains recognizable GNAT (GCN5-related N-acetyltransferase) fold motifs (e.g., 'GKISQEWKK', 'GTDCSVGK', 'GDGVPLDA'), which supports classification as an acyltransferase (EC 2.3.1.x), thereby eliminating option B (2.7.7.43, nucleotidyltransferase) and D (5.4.99.14, isomerase). However, this fold-level argument cannot distinguish between EC 2.3.1.322 (option A) and EC 2.3.1.312 (option C), both of which are acetyltransferases in the same subclass.",
-    "missing_item_specific_fact": "The specific substrate identity (D-glutamate for 2.3.1.312 vs. the substrate of 2.3.1.322) required to distinguish the two remaining acyltransferase options. This enzyme was characterized in a 2023 paper (Yu et al., ISME J.) describing a novel D-glutamate catabolic pathway, making it a recently discovered enzyme whose substrate specificity cannot be inferred from general biological knowledge of the GNAT fold alone.",
-    "reason": "While the GNAT fold narrows the answer to the 2.3.1.x subclass, the final distinction between two closely related acetyltransferase EC numbers (2.3.1.322 vs. 2.3.1.312) requires knowledge of the specific substrate or a database lookup. No sequence motif in the provided 333-residue protein uniquely encodes 'D-glutamate' as the substrate without external annotation or memorization of this specific enzyme's characterization."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": ["A", "C"],
-    "reason": "Both options A (2.3.1.322) and C (2.3.1.312) are acetyltransferases in the same EC subclass. Without specific substrate knowledge or database access, a model identifying the GNAT fold could reasonably select either option. The distractors B (nucleotidyltransferase) and D (isomerase) are eliminable by fold recognition, but A vs. C requires item-specific knowledge."
-  },
-  "important_caveats": [
-    "The expected answer is experimentally validated (X-ray crystallography, mutagenesis, PubMed:36690779), so the key is scientifically correct.",
-    "This is a novel enzyme described in 2023, making it unlikely to appear in pre-2023 training data, further increasing reliance on database lookup.",
-    "The GNAT fold identification provides partial reasoning support (eliminates B and D) but is insufficient for the final A-vs-C discrimination.",
-    "The identity of the protein was inferred from dataset metadata (reviewer-only); the evaluated model received only the raw sequence."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -396,10 +158,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -522,30 +283,17 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), 
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A2T1AE85",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "c0d9f366f41666bbc0ced1375f251e0666f921019f749a5a93a254b4c941f9e7",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 333,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "c0d9f366f41666bbc0ced1375f251e0666f921019f749a5a93a254b4c941f9e7",
   "current_entry_audit": {
     "entryVersion": 19,
     "firstPublicDate": "2025-04-09",
@@ -553,14 +301,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-07-18",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
-  "current_source_sequence_sha256": "c0d9f366f41666bbc0ced1375f251e0666f921019f749a5a93a254b4c941f9e7",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 333,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "c0d9f366f41666bbc0ced1375f251e0666f921019f749a5a93a254b4c941f9e7",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 17,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A2T1AE85",
   "selected_historical_entry_version": 17,
+  "selected_historical_record_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
+  "selected_historical_source_sequence_length": 333,
+  "selected_historical_source_sequence_sha256": "c0d9f366f41666bbc0ced1375f251e0666f921019f749a5a93a254b4c941f9e7",
   "selected_historical_version": {
     "accession": "A0A2T1AE85",
     "database": "Swiss-Prot",
@@ -571,24 +335,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "DGCN_TRISK",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
-  "selected_historical_source_sequence_sha256": "c0d9f366f41666bbc0ced1375f251e0666f921019f749a5a93a254b4c941f9e7",
-  "selected_historical_source_sequence_length": 333,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 17,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -602,15 +353,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json",
-  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
-  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A2T1AE85\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json"
 }
 ```
 
@@ -621,15 +372,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json",
-  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
-  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":19,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-07-18\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json"
 }
 ```
 
@@ -640,15 +391,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json",
-  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
-  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Epibacterium scottomollicae\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Alphaproteobacteria\",\"Rhodobacterales\",\"Paracoccaceae\",\"Tritonibacter\"],\"scientificName\":\"Tritonibacter scottomollicae\",\"taxonId\":483013}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json"
 }
 ```
 
@@ -659,15 +410,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json",
-  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
-  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"value\":\"2.3.1.312\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"D-glutamate N-acetyltransferase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json"
 }
 ```
 
@@ -678,15 +429,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json",
-  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
-  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
-  "json_pointer": "/comments/1",
   "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:76496\"}}],\"reaction\":{\"ecNumber\":\"2.3.1.312\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"36690779\",\"source\":\"PubMed\"}],\"name\":\"D-glutamate + acetyl-CoA = N-acetyl-D-glutamate + CoA + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:76495\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29986\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57287\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57288\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:195260\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/1",
+  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json"
 }
 ```
 
@@ -697,15 +448,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json",
-  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
-  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
-  "json_pointer": "/references/1",
   "excerpt": "{\"citation\":{\"authors\":[\"Yu Y.\",\"Wang P.\",\"Cao H.Y.\",\"Teng Z.J.\",\"Zhu Y.\",\"Wang M.\",\"McMinn A.\",\"Chen Y.\",\"Xiang H.\",\"Zhang Y.Z.\",\"Chen X.L.\",\"Zhang Y.Q.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"36690779\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41396-023-01364-6\"}],\"citationType\":\"journal article\",\"firstPage\":\"537\",\"id\":\"36690779\",\"journal\":\"ISME J.\",\"lastPage\":\"548\",\"publicationDate\":\"2023\",\"title\":\"Novel D-glutamate catabolic pathway in marine Proteobacteria and halophilic archaea.\",\"volume\":\"17\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"7XRJ\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"DSM 25328 / CCUG 55858 / LMG 24367 / R-28751\"}],\"referenceNumber\":2,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS)\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"MUTAGENESIS OF HIS-119; ARG-122; SER-125; GLN-177; ASP-185 AND ASP-190\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/1",
+  "retrieved_utc": "2026-11-02T04:24:51.195751+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "09121d8b0043538afc137588986b1d12862e9e65cc3c978945cfbf12b87fe159",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A2T1AE85.json"
 }
 ```
 
@@ -715,18 +466,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17",
-  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
-  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
-  "source_locator": "lines 1-13",
   "excerpt": "ID   DGCN_TRISK              Reviewed;         333 AA.\nAC   A0A2T1AE85;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JUL-2018, sequence version 1.\nDT   28-JAN-2026, entry version 17.\nDE   RecName: Full=D-glutamate N-acetyltransferase {ECO:0000305};\nDE            EC=2.3.1.312 {ECO:0000269|PubMed:36690779};\nGN   Name=dgcN {ECO:0000303|PubMed:36690779};\nGN   ORFNames=CLV89_10851 {ECO:0000312|EMBL:PRZ46905.1};\nOS   Tritonibacter scottomollicae (Epibacterium scottomollicae).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Alphaproteobacteria;\nOC   Rhodobacterales; Paracoccaceae; Tritonibacter.\nOX   NCBI_TaxID=483013;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-13",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
+  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17"
 }
 ```
 
@@ -736,18 +487,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17",
-  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
-  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
-  "source_locator": "lines 6-7",
   "excerpt": "DE   RecName: Full=D-glutamate N-acetyltransferase {ECO:0000305};\nDE            EC=2.3.1.312 {ECO:0000269|PubMed:36690779};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-7",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
+  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17"
 }
 ```
 
@@ -757,18 +508,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17",
-  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
-  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
-  "source_locator": "lines 21-30",
   "excerpt": "RN   [2] {ECO:0007744|PDB:7XRJ}\nRP   X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS), FUNCTION, CATALYTIC ACTIVITY, AND\nRP   MUTAGENESIS OF HIS-119; ARG-122; SER-125; GLN-177; ASP-185 AND ASP-190.\nRC   STRAIN=DSM 25328 / CCUG 55858 / LMG 24367 / R-28751;\nRX   PubMed=36690779; DOI=10.1038/s41396-023-01364-6;\nRA   Yu Y., Wang P., Cao H.Y., Teng Z.J., Zhu Y., Wang M., McMinn A., Chen Y.,\nRA   Xiang H., Zhang Y.Z., Chen X.L., Zhang Y.Q.;\nRT   \"Novel D-glutamate catabolic pathway in marine Proteobacteria and\nRT   halophilic archaea.\";\nRL   ISME J. 17:537-548(2023).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 21-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
+  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17"
 }
 ```
 
@@ -778,18 +529,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 17,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17",
-  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
-  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
-  "source_locator": "lines 36-42",
   "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=D-glutamate + acetyl-CoA = N-acetyl-D-glutamate + CoA + H(+);\nCC         Xref=Rhea:RHEA:76495, ChEBI:CHEBI:15378, ChEBI:CHEBI:29986,\nCC         ChEBI:CHEBI:57287, ChEBI:CHEBI:57288, ChEBI:CHEBI:195260;\nCC         EC=2.3.1.312; Evidence={ECO:0000269|PubMed:36690779};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:76496;\nCC         Evidence={ECO:0000305|PubMed:36690779};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 17,
+  "retrieved_utc": "2026-11-02T04:24:54.258050+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 36-42",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "4926acbea4e1ee7863274bfaadb5d06ca988e0c858a7b746efe1a16dba9863d6",
+  "url": "https://rest.uniprot.org/unisave/A0A2T1AE85?format=txt&versions=17"
 }
 ```
 

@@ -1,18 +1,16 @@
-# pathway_0059: before and after transfer clarification
+# pathway_0059
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0059.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0059.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Pyrimidine metabolism
+**Expected answer:** **A** — Pyrimidine metabolism
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the Drosophila thymidylate kinase entry, whose pathway annotation is pyrimidine metabolism; dTTP biosynthesis. The entry also gives EC 2.7.4.9 with experimental evidence for the enzyme assignment, although the pathway annotation itself is literature-based rather than presented here as a direct pathway experiment.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence has a kinase-like nucleotide-binding motif, which is compatible with nucleotide phosphorylation, but that generic feature does not establish thymidylate as the substrate or uniquely select pyrimidine metabolism over the other pathways.
-
-
-**Missing item-specific fact**
-
-> The protein-specific identification as thymidylate kinase, or equivalent knowledge of its substrate and function, is absent from the supplied input.
-
-
-**Reason**
-
-> The reviewer-only database evidence supports the key but was not supplied to the evaluated model. A precise pathway choice depends on identifying this particular enzyme, not just recognizing a broad sequence motif.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the matched protein annotation, pyrimidine metabolism is the uniquely supported option among those listed.
-
-
-### Important caveats
-
-- The sequence match and pathway annotation are reviewer-only evidence; they do not make the answer reasoning-supported from the original input.
-- The cited experimental evidence supports the thymidylate kinase enzyme assignment; the pathway statement is a literature-based database annotation.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence has a kinase-like nucleotide-binding motif, which is compatible with nucleotide phosphorylation, but that generic feature does not establish thymidylate as the substrate or uniquely select pyrimidine metabolism over the other pathways.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific identification as thymidylate kinase, or equivalent knowledge of its substrate and function, is absent from the supplied input.",
-    "reason": "The reviewer-only database evidence supports the key but was not supplied to the evaluated model. A precise pathway choice depends on identifying this particular enzyme, not just recognizing a broad sequence motif."
-  },
-  "case_id": "pathway_0059",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila thymidylate kinase entry, whose pathway annotation is pyrimidine metabolism; dTTP biosynthesis. The entry also gives EC 2.7.4.9 with experimental evidence for the enzyme assignment, although the pathway annotation itself is literature-based rather than presented here as a direct pathway experiment."
-  },
-  "important_caveats": [
-    "The sequence match and pathway annotation are reviewer-only evidence; they do not make the answer reasoning-supported from the original input.",
-    "The cited experimental evidence supports the thymidylate kinase enzyme assignment; the pathway statement is a literature-based database annotation."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the matched protein annotation, pyrimidine metabolism is the uniquely supported option among those listed."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0059",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the Drosophila thymidylate kinase entry, whose pathway annotation is pyrimidine metabolism; dTTP biosynthesis. The entry also gives EC 2.7.4.9 with experimental evidence for the enzyme assignment, although the pathway annotation itself is literature-based rather than presented here as a direct pathway experiment.",
-    "evidence_ids": ["C1", "C4", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence has a kinase-like nucleotide-binding motif, which is compatible with nucleotide phosphorylation, but that generic feature does not establish thymidylate as the substrate or uniquely select pyrimidine metabolism over the other pathways.",
-    "missing_item_specific_fact": "The protein-specific identification as thymidylate kinase, or equivalent knowledge of its substrate and function, is absent from the supplied input.",
-    "reason": "The reviewer-only database evidence supports the key but was not supplied to the evaluated model. A precise pathway choice depends on identifying this particular enzyme, not just recognizing a broad sequence motif."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the matched protein annotation, pyrimidine metabolism is the uniquely supported option among those listed."
-  },
-  "important_caveats": [
-    "The sequence match and pathway annotation are reviewer-only evidence; they do not make the answer reasoning-supported from the original input.",
-    "The cited experimental evidence supports the thymidylate kinase enzyme assignment; the pathway statement is a literature-based database annotation."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A1ZB29 (sequence SHA256 match confirmed) identifies the protein as Thymidylate kinase (DmTMPK, EC 2.7.4.9) from Drosophila melanogaster. The PATHWAY annotation explicitly states 'Pyrimidine metabolism; dTTP biosynthesis' (evidence ECO:0000305|PubMed:38518117, a 2024 experimental characterization paper). Thymidylate kinase catalyzes dTMP + ATP → dTDP + ADP, a committed step in deoxythymidine triphosphate biosynthesis, which is a sub-branch of pyrimidine metabolism. The expected answer A is correct.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a recognizable Walker A / P-loop motif ('GCDRSGKTT', matching the GxxGxGKS/T consensus of the NMP kinase superfamily) and is ~211 residues, consistent with the small NMP kinase fold. This allows identification as a nucleotide monophosphate kinase. The three distractors (alkaloid biosynthesis, L-isoleucine biosynthesis, shikimate pathway/chorismate synthesis) belong to entirely unrelated metabolic categories (secondary metabolism, amino acid biosynthesis, aromatic amino acid biosynthesis) and involve completely different enzyme classes (e.g., methyltransferases, dehydratases, DAHP synthase). Recognizing the protein as a nucleotide kinase eliminates B, C, and D. Since purine metabolism is not offered as a competing option, any NMP kinase identification converges on A (pyrimidine metabolism).
-
-
-**Missing item-specific fact**
-
-> Distinguishing thymidylate kinase specifically from adenylate kinase or guanylate kinase within the NMP kinase superfamily requires subfamily-specific motif knowledge or database lookup. However, because no purine-metabolism distractor is present, this finer distinction is not strictly necessary to select the correct answer.
-
-
-**Reason**
-
-> The P-loop and NMP kinase architecture are identifiable from the sequence, and the distractors are in wholly unrelated pathways. A model with general knowledge of kinase motifs and metabolic pathway categories can eliminate B, C, D and select A without needing to recall the exact UniProt entry.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options B (alkaloid biosynthesis), C (L-isoleucine biosynthesis), and D (shikimate pathway step 7/7) involve entirely different enzyme classes and metabolic contexts. No reasonable biological argument supports selecting any of them for a nucleotide kinase. Option A is the only defensible answer.
-
-
-### Important caveats
-
-- The pathway annotation carries evidence code ECO:0000305 (inferred from PubMed:38518117, a 2024 experimental paper), so it is experimentally grounded rather than purely computational.
-- The absence of a purine-metabolism distractor (e.g., adenylate kinase → purine metabolism) makes the question easier than it would be otherwise; a model that identifies the protein only as a generic NMP kinase still arrives at A.
-- The UniProt entry was first publicly released 2025-04-09; the 2024 characterization paper (PubMed:38518117) is the primary experimental source. The author's source snapshot is unknown, but the sequence has been unchanged since 2007.
-- Reviewer-only evidence was not available to the evaluated model; the assessment of answerability relies solely on what can be inferred from the 211-residue sequence and general biological knowledge.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a recognizable Walker A / P-loop motif ('GCDRSGKTT', matching the GxxGxGKS/T consensus of the NMP kinase superfamily) and is ~211 residues, consistent with the small NMP kinase fold. This allows identification as a nucleotide monophosphate kinase. The three distractors (alkaloid biosynthesis, L-isoleucine biosynthesis, shikimate pathway/chorismate synthesis) belong to entirely unrelated metabolic categories (secondary metabolism, amino acid biosynthesis, aromatic amino acid biosynthesis) and involve completely different enzyme classes (e.g., methyltransferases, dehydratases, DAHP synthase). Recognizing the protein as a nucleotide kinase eliminates B, C, and D. Since purine metabolism is not offered as a competing option, any NMP kinase identification converges on A (pyrimidine metabolism).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "Distinguishing thymidylate kinase specifically from adenylate kinase or guanylate kinase within the NMP kinase superfamily requires subfamily-specific motif knowledge or database lookup. However, because no purine-metabolism distractor is present, this finer distinction is not strictly necessary to select the correct answer.",
-    "reason": "The P-loop and NMP kinase architecture are identifiable from the sequence, and the distractors are in wholly unrelated pathways. A model with general knowledge of kinase motifs and metabolic pathway categories can eliminate B, C, D and select A without needing to recall the exact UniProt entry."
-  },
-  "case_id": "pathway_0059",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H2",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A1ZB29 (sequence SHA256 match confirmed) identifies the protein as Thymidylate kinase (DmTMPK, EC 2.7.4.9) from Drosophila melanogaster. The PATHWAY annotation explicitly states 'Pyrimidine metabolism; dTTP biosynthesis' (evidence ECO:0000305|PubMed:38518117, a 2024 experimental characterization paper). Thymidylate kinase catalyzes dTMP + ATP → dTDP + ADP, a committed step in deoxythymidine triphosphate biosynthesis, which is a sub-branch of pyrimidine metabolism. The expected answer A is correct."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000305 (inferred from PubMed:38518117, a 2024 experimental paper), so it is experimentally grounded rather than purely computational.",
-    "The absence of a purine-metabolism distractor (e.g., adenylate kinase → purine metabolism) makes the question easier than it would be otherwise; a model that identifies the protein only as a generic NMP kinase still arrives at A.",
-    "The UniProt entry was first publicly released 2025-04-09; the 2024 characterization paper (PubMed:38518117) is the primary experimental source. The author's source snapshot is unknown, but the sequence has been unchanged since 2007.",
-    "Reviewer-only evidence was not available to the evaluated model; the assessment of answerability relies solely on what can be inferred from the 211-residue sequence and general biological knowledge."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B (alkaloid biosynthesis), C (L-isoleucine biosynthesis), and D (shikimate pathway step 7/7) involve entirely different enzyme classes and metabolic contexts. No reasonable biological argument supports selecting any of them for a nucleotide kinase. Option A is the only defensible answer."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0059",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A1ZB29 (sequence SHA256 match confirmed) identifies the protein as Thymidylate kinase (DmTMPK, EC 2.7.4.9) from Drosophila melanogaster. The PATHWAY annotation explicitly states 'Pyrimidine metabolism; dTTP biosynthesis' (evidence ECO:0000305|PubMed:38518117, a 2024 experimental characterization paper). Thymidylate kinase catalyzes dTMP + ATP → dTDP + ADP, a committed step in deoxythymidine triphosphate biosynthesis, which is a sub-branch of pyrimidine metabolism. The expected answer A is correct.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H2", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a recognizable Walker A / P-loop motif ('GCDRSGKTT', matching the GxxGxGKS/T consensus of the NMP kinase superfamily) and is ~211 residues, consistent with the small NMP kinase fold. This allows identification as a nucleotide monophosphate kinase. The three distractors (alkaloid biosynthesis, L-isoleucine biosynthesis, shikimate pathway/chorismate synthesis) belong to entirely unrelated metabolic categories (secondary metabolism, amino acid biosynthesis, aromatic amino acid biosynthesis) and involve completely different enzyme classes (e.g., methyltransferases, dehydratases, DAHP synthase). Recognizing the protein as a nucleotide kinase eliminates B, C, and D. Since purine metabolism is not offered as a competing option, any NMP kinase identification converges on A (pyrimidine metabolism).",
-    "missing_item_specific_fact": "Distinguishing thymidylate kinase specifically from adenylate kinase or guanylate kinase within the NMP kinase superfamily requires subfamily-specific motif knowledge or database lookup. However, because no purine-metabolism distractor is present, this finer distinction is not strictly necessary to select the correct answer.",
-    "reason": "The P-loop and NMP kinase architecture are identifiable from the sequence, and the distractors are in wholly unrelated pathways. A model with general knowledge of kinase motifs and metabolic pathway categories can eliminate B, C, D and select A without needing to recall the exact UniProt entry."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options B (alkaloid biosynthesis), C (L-isoleucine biosynthesis), and D (shikimate pathway step 7/7) involve entirely different enzyme classes and metabolic contexts. No reasonable biological argument supports selecting any of them for a nucleotide kinase. Option A is the only defensible answer."
-  },
-  "important_caveats": [
-    "The pathway annotation carries evidence code ECO:0000305 (inferred from PubMed:38518117, a 2024 experimental paper), so it is experimentally grounded rather than purely computational.",
-    "The absence of a purine-metabolism distractor (e.g., adenylate kinase → purine metabolism) makes the question easier than it would be otherwise; a model that identifies the protein only as a generic NMP kinase still arrives at A.",
-    "The UniProt entry was first publicly released 2025-04-09; the 2024 characterization paper (PubMed:38518117) is the primary experimental source. The author's source snapshot is unknown, but the sequence has been unchanged since 2007.",
-    "Reviewer-only evidence was not available to the evaluated model; the assessment of answerability relies solely on what can be inferred from the 211-residue sequence and general biological knowledge."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -389,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -499,30 +267,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A1ZB29",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "bf1ed8a3fcd4c18e58888815bfd740519681fc01ccace8f65722bc742c0f0cdf",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 211,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "bf1ed8a3fcd4c18e58888815bfd740519681fc01ccace8f65722bc742c0f0cdf",
   "current_entry_audit": {
     "entryVersion": 158,
     "firstPublicDate": "2025-04-09",
@@ -530,14 +285,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2007-02-06",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
-  "current_source_sequence_sha256": "bf1ed8a3fcd4c18e58888815bfd740519681fc01ccace8f65722bc742c0f0cdf",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 211,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "bf1ed8a3fcd4c18e58888815bfd740519681fc01ccace8f65722bc742c0f0cdf",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 156,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A1ZB29",
   "selected_historical_entry_version": 156,
+  "selected_historical_record_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
+  "selected_historical_source_sequence_length": 211,
+  "selected_historical_source_sequence_sha256": "bf1ed8a3fcd4c18e58888815bfd740519681fc01ccace8f65722bc742c0f0cdf",
   "selected_historical_version": {
     "accession": "A1ZB29",
     "database": "Swiss-Prot",
@@ -548,24 +319,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "KTHY_DROME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
-  "selected_historical_source_sequence_sha256": "bf1ed8a3fcd4c18e58888815bfd740519681fc01ccace8f65722bc742c0f0cdf",
-  "selected_historical_source_sequence_length": 211,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 156,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -579,15 +337,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json",
-  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
-  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A1ZB29\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
+  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json"
 }
 ```
 
@@ -598,15 +356,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json",
-  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
-  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":158,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2007-02-06\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
+  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json"
 }
 ```
 
@@ -617,15 +375,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json",
-  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
-  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Fruit fly\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000803\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Metazoa\",\"Ecdysozoa\",\"Arthropoda\",\"Altocrustacea\",\"Allotriocarida\",\"Hexapoda\",\"Insecta\",\"Pterygota\",\"Neoptera\",\"Eumetabola\",\"Endopterygota\",\"Aparaglossata\",\"Panorpida\",\"Diptera\",\"Brachycera\",\"Muscomorpha\",\"Ephydroidea\",\"Drosophilidae\",\"Drosophila\",\"Sophophora\"],\"scientificName\":\"Drosophila melanogaster\",\"taxonId\":7227}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
+  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json"
 }
 ```
 
@@ -636,15 +394,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json",
-  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
-  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"FBgn0034299\",\"source\":\"FlyBase\"}],\"value\":\"Deoxythymidylate kinase\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38518117\",\"source\":\"PubMed\"}],\"value\":\"2.7.4.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38518117\",\"source\":\"PubMed\"}],\"value\":\"Thymidylate kinase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38518117\",\"source\":\"PubMed\"}],\"value\":\"DmTMPK\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
+  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json"
 }
 ```
 
@@ -655,15 +413,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json",
-  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
-  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
-  "json_pointer": "/comments/5",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"38518117\",\"source\":\"PubMed\"}],\"value\":\"Pyrimidine metabolism; dTTP biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/5",
+  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
+  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json"
 }
 ```
 
@@ -674,15 +432,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json",
-  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
-  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
-  "json_pointer": "/references/5",
   "excerpt": "{\"citation\":{\"authors\":[\"Hu Frisk J.\",\"Wang L.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38518117\"},{\"database\":\"DOI\",\"id\":\"10.1080/15257770.2024.2332410\"}],\"citationType\":\"journal article\",\"firstPage\":\"1\",\"id\":\"38518117\",\"journal\":\"Nucleosides Nucleotides Nucleic Acids\",\"lastPage\":\"9\",\"publicationDate\":\"2024\",\"title\":\"Molecular characterization of Drosophila melanogaster thymidylate kinase.\",\"volume\":\"43\"},\"referenceNumber\":6,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/5",
+  "retrieved_utc": "2026-11-02T04:26:47.024723+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8555e9f6519f5abfebd9fbac4f9f543b7c48facea7144c3741a9180f4122ceb7",
+  "url": "https://rest.uniprot.org/uniprotkb/A1ZB29.json"
 }
 ```
 
@@ -692,18 +450,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 156,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A1ZB29?format=txt&versions=156",
-  "source_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
-  "retrieved_utc": "2026-11-02T04:26:49.964915+00:00",
-  "source_locator": "lines 1-17",
   "excerpt": "ID   KTHY_DROME              Reviewed;         211 AA.\nAC   A1ZB29; A0AP29; A0AP30; A0AP31; C0MJH3; Q8SZQ0;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   06-FEB-2007, sequence version 1.\nDT   28-JAN-2026, entry version 156.\nDE   RecName: Full=Thymidylate kinase {ECO:0000303|PubMed:38518117};\nDE            Short=DmTMPK {ECO:0000303|PubMed:38518117};\nDE            EC=2.7.4.9 {ECO:0000269|PubMed:38518117};\nDE   AltName: Full=Deoxythymidylate kinase {ECO:0000312|FlyBase:FBgn0034299};\nGN   Name=Dtymk {ECO:0000312|FlyBase:FBgn0034299};\nGN   Synonyms=TMPK {ECO:0000303|PubMed:38518117};\nGN   ORFNames=CG5757 {ECO:0000312|FlyBase:FBgn0034299};\nOS   Drosophila melanogaster (Fruit fly).\nOC   Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta; Pterygota;\nOC   Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha; Ephydroidea;\nOC   Drosophilidae; Drosophila; Sophophora.\nOX   NCBI_TaxID=7227 {ECO:0000312|Proteomes:UP000000803};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 156,
+  "retrieved_utc": "2026-11-02T04:26:49.964915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-17",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
+  "url": "https://rest.uniprot.org/unisave/A1ZB29?format=txt&versions=156"
 }
 ```
 
@@ -713,18 +471,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 156,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A1ZB29?format=txt&versions=156",
-  "source_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
-  "retrieved_utc": "2026-11-02T04:26:49.964915+00:00",
-  "source_locator": "lines 99-105",
   "excerpt": "RN   [6]\nRP   FUNCTION, CATALYTIC ACTIVITY, AND BIOPHYSICOCHEMICAL PROPERTIES.\nRX   PubMed=38518117; DOI=10.1080/15257770.2024.2332410;\nRA   Hu Frisk J., Wang L.;\nRT   \"Molecular characterization of Drosophila melanogaster thymidylate\nRT   kinase.\";\nRL   Nucleosides Nucleotides Nucleic Acids 43:1-9(2024).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 156,
+  "retrieved_utc": "2026-11-02T04:26:49.964915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 99-105",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
+  "url": "https://rest.uniprot.org/unisave/A1ZB29?format=txt&versions=156"
 }
 ```
 
@@ -734,18 +492,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 156,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A1ZB29?format=txt&versions=156",
-  "source_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
-  "retrieved_utc": "2026-11-02T04:26:49.964915+00:00",
-  "source_locator": "lines 143-144",
   "excerpt": "CC   -!- PATHWAY: Pyrimidine metabolism; dTTP biosynthesis.\nCC       {ECO:0000305|PubMed:38518117}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 156,
+  "retrieved_utc": "2026-11-02T04:26:49.964915+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 143-144",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "bec1661b56942c96a37903d0045394314b809ce2713c1f5e399dfd08e81195a9",
+  "url": "https://rest.uniprot.org/unisave/A1ZB29?format=txt&versions=156"
 }
 ```
 

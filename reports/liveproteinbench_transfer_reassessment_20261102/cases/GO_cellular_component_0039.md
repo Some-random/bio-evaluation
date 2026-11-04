@@ -1,18 +1,16 @@
-# GO_cellular_component_0039: before and after transfer clarification
+# GO_cellular_component_0039
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0039.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/GO_cellular_component_0039.txt)
 
 **Task:** `GO_cellular_component`  
-**Author key, unchanged:** **B** — cytosol
+**Expected answer:** **B** — cytosol
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,239 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches the UniProt entry, which annotates the protein to the cytosol with experimental evidence cited to PubMed and a GO IDA annotation. This supports choice B, though the underlying paper was not independently reviewed here.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence appears consistent with a soluble protein and lacks an obvious membrane-spanning segment or secretion signal, making endosome and membrane attack complex less plausible. That does not reliably distinguish cytosol from nucleus.
-
-
-**Missing item-specific fact**
-
-> The experimentally supported subcellular localization of this particular protein is not supplied in the question.
-
-
-**Reason**
-
-> General sequence features can make a soluble cytosolic enzyme plausible, but they do not establish its primary location over other soluble compartments. Selecting cytosol specifically depends on protein-specific localization information absent from the input.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports cytosol as the annotated location, and the choices name distinct compartments or complexes. The sequence alone is not enough to resolve the localization, as noted above.
-
-
-### Important caveats
-
-- The localization evidence is attributed to a PubMed reference and recorded as experimental, but the primary paper was not independently validated here.
-- The matched sequence and historical annotation support the key; the author's exact source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence appears consistent with a soluble protein and lacks an obvious membrane-spanning segment or secretion signal, making endosome and membrane attack complex less plausible. That does not reliably distinguish cytosol from nucleus.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The experimentally supported subcellular localization of this particular protein is not supplied in the question.",
-    "reason": "General sequence features can make a soluble cytosolic enzyme plausible, but they do not establish its primary location over other soluble compartments. Selecting cytosol specifically depends on protein-specific localization information absent from the input."
-  },
-  "case_id": "GO_cellular_component_0039",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which annotates the protein to the cytosol with experimental evidence cited to PubMed and a GO IDA annotation. This supports choice B, though the underlying paper was not independently reviewed here."
-  },
-  "important_caveats": [
-    "The localization evidence is attributed to a PubMed reference and recorded as experimental, but the primary paper was not independently validated here.",
-    "The matched sequence and historical annotation support the key; the author's exact source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports cytosol as the annotated location, and the choices name distinct compartments or complexes. The sequence alone is not enough to resolve the localization, as noted above."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "GO_cellular_component_0039",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches the UniProt entry, which annotates the protein to the cytosol with experimental evidence cited to PubMed and a GO IDA annotation. This supports choice B, though the underlying paper was not independently reviewed here.",
-    "evidence_ids": ["C5", "C6", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence appears consistent with a soluble protein and lacks an obvious membrane-spanning segment or secretion signal, making endosome and membrane attack complex less plausible. That does not reliably distinguish cytosol from nucleus.",
-    "missing_item_specific_fact": "The experimentally supported subcellular localization of this particular protein is not supplied in the question.",
-    "reason": "General sequence features can make a soluble cytosolic enzyme plausible, but they do not establish its primary location over other soluble compartments. Selecting cytosol specifically depends on protein-specific localization information absent from the input."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports cytosol as the annotated location, and the choices name distinct compartments or complexes. The sequence alone is not enough to resolve the localization, as noted above."
-  },
-  "important_caveats": [
-    "The localization evidence is attributed to a PubMed reference and recorded as experimental, but the primary paper was not independently validated here.",
-    "The matched sequence and historical annotation support the key; the author's exact source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The UniProt entry D3KYA0 (OMT3_CARIP, 3-O-methylredipecamine 2-O-methyltransferase IpeOMT3 from Carapichea ipecacuanha) is annotated with SUBCELLULAR LOCATION: Cytoplasm, cytosol with evidence code ECO:0000269 (inferred from direct assay, PubMed:20061395). The GO cross-reference GO:0005829 (C:cytosol) carries IDA:UniProtKB evidence. The sequence matches exactly (SHA256 confirmed). This is experimental, not merely computational, annotation.
-
-Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> Three independent lines of reasoning distinguish cytosol from the distractors: (1) 'Membrane attack complex' (GO:0005579) is a complement-system protein complex unique to animal immunity; a plant protein cannot reside there. (2) 'Host cell nucleus' (GO:0042025) is a virus-specific GO term describing viral proteins within a host nucleus; it is inapplicable to a plant enzyme. (3) Between cytosol and endosome, the 358-aa sequence lacks an N-terminal signal peptide, transmembrane helices, or any endosomal/vesicular targeting motif. The sequence contains SAM-binding motifs (e.g., VGGGSGT, DKLLKNRGHGHA) characteristic of a methyltransferase, a class of soluble enzymes in plant secondary-metabolite (alkaloid) biosynthesis that are canonically cytosolic. The absence of organelle-targeting peptides (no mitochondrial transit, no chloroplast transit, no ER signal) combined with the soluble-enzyme character points to cytosol.
-
-
-**Missing item-specific fact**
-
-> None critical. The reasoning relies on general GO-term semantics (MAC is animal complement; host cell nucleus is virus-specific), standard signal-peptide/targeting-signal absence, and the well-known cytosolic localization of plant O-methyltransferases in alkaloid pathways.
-
-
-**Reason**
-
-> A knowledgeable model can eliminate D and A purely from GO-term definitions (animal complement system; viral host-cell term) and distinguish B from C by noting the absence of any membrane or vesicle targeting signals and the methyltransferase character of the sequence. This constitutes a concrete biological argument grounded in the supplied sequence and general knowledge, not mere database lookup.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Options A and D are eliminated by GO-term semantics (virus-specific and animal-complement-specific, respectively). Option C (endosome) requires membrane/vesicle targeting features entirely absent from the sequence. Only B (cytosol) is consistent with a soluble plant methyltransferase lacking organelle-targeting signals.
-
-
-### Important caveats
-
-- The UniProt subcellular-location annotation is experimental (ECO:0000269, direct assay from Nomura & Kutchan 2010), not computational inference.
-- The GO term 'host cell nucleus' (GO:0042025) is restricted to viral proteins; its inclusion as a distractor for a plant enzyme is somewhat unusual but does not create genuine ambiguity.
-- The reviewer-only evidence confirms the accession via dataset metadata; the evaluated model had no access to this identifier and must reason from sequence and general biology.
-- The historical entry (v55) and current entry (v57) both carry the same cytosol annotation; no annotation change affects the answer.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Three independent lines of reasoning distinguish cytosol from the distractors: (1) 'Membrane attack complex' (GO:0005579) is a complement-system protein complex unique to animal immunity; a plant protein cannot reside there. (2) 'Host cell nucleus' (GO:0042025) is a virus-specific GO term describing viral proteins within a host nucleus; it is inapplicable to a plant enzyme. (3) Between cytosol and endosome, the 358-aa sequence lacks an N-terminal signal peptide, transmembrane helices, or any endosomal/vesicular targeting motif. The sequence contains SAM-binding motifs (e.g., VGGGSGT, DKLLKNRGHGHA) characteristic of a methyltransferase, a class of soluble enzymes in plant secondary-metabolite (alkaloid) biosynthesis that are canonically cytosolic. The absence of organelle-targeting peptides (no mitochondrial transit, no chloroplast transit, no ER signal) combined with the soluble-enzyme character points to cytosol.",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The reasoning relies on general GO-term semantics (MAC is animal complement; host cell nucleus is virus-specific), standard signal-peptide/targeting-signal absence, and the well-known cytosolic localization of plant O-methyltransferases in alkaloid pathways.",
-    "reason": "A knowledgeable model can eliminate D and A purely from GO-term definitions (animal complement system; viral host-cell term) and distinguish B from C by noting the absence of any membrane or vesicle targeting signals and the methyltransferase character of the sequence. This constitutes a concrete biological argument grounded in the supplied sequence and general knowledge, not mere database lookup."
-  },
-  "case_id": "GO_cellular_component_0039",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "C6",
-      "C7",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The UniProt entry D3KYA0 (OMT3_CARIP, 3-O-methylredipecamine 2-O-methyltransferase IpeOMT3 from Carapichea ipecacuanha) is annotated with SUBCELLULAR LOCATION: Cytoplasm, cytosol with evidence code ECO:0000269 (inferred from direct assay, PubMed:20061395). The GO cross-reference GO:0005829 (C:cytosol) carries IDA:UniProtKB evidence. The sequence matches exactly (SHA256 confirmed). This is experimental, not merely computational, annotation."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation is experimental (ECO:0000269, direct assay from Nomura & Kutchan 2010), not computational inference.",
-    "The GO term 'host cell nucleus' (GO:0042025) is restricted to viral proteins; its inclusion as a distractor for a plant enzyme is somewhat unusual but does not create genuine ambiguity.",
-    "The reviewer-only evidence confirms the accession via dataset metadata; the evaluated model had no access to this identifier and must reason from sequence and general biology.",
-    "The historical entry (v55) and current entry (v57) both carry the same cytosol annotation; no annotation change affects the answer."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are eliminated by GO-term semantics (virus-specific and animal-complement-specific, respectively). Option C (endosome) requires membrane/vesicle targeting features entirely absent from the sequence. Only B (cytosol) is consistent with a soluble plant methyltransferase lacking organelle-targeting signals."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "GO_cellular_component_0039",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The UniProt entry D3KYA0 (OMT3_CARIP, 3-O-methylredipecamine 2-O-methyltransferase IpeOMT3 from Carapichea ipecacuanha) is annotated with SUBCELLULAR LOCATION: Cytoplasm, cytosol with evidence code ECO:0000269 (inferred from direct assay, PubMed:20061395). The GO cross-reference GO:0005829 (C:cytosol) carries IDA:UniProtKB evidence. The sequence matches exactly (SHA256 confirmed). This is experimental, not merely computational, annotation.",
-    "evidence_ids": ["C5", "C6", "C7", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "Three independent lines of reasoning distinguish cytosol from the distractors: (1) 'Membrane attack complex' (GO:0005579) is a complement-system protein complex unique to animal immunity; a plant protein cannot reside there. (2) 'Host cell nucleus' (GO:0042025) is a virus-specific GO term describing viral proteins within a host nucleus; it is inapplicable to a plant enzyme. (3) Between cytosol and endosome, the 358-aa sequence lacks an N-terminal signal peptide, transmembrane helices, or any endosomal/vesicular targeting motif. The sequence contains SAM-binding motifs (e.g., VGGGSGT, DKLLKNRGHGHA) characteristic of a methyltransferase, a class of soluble enzymes in plant secondary-metabolite (alkaloid) biosynthesis that are canonically cytosolic. The absence of organelle-targeting peptides (no mitochondrial transit, no chloroplast transit, no ER signal) combined with the soluble-enzyme character points to cytosol.",
-    "missing_item_specific_fact": "None critical. The reasoning relies on general GO-term semantics (MAC is animal complement; host cell nucleus is virus-specific), standard signal-peptide/targeting-signal absence, and the well-known cytosolic localization of plant O-methyltransferases in alkaloid pathways.",
-    "reason": "A knowledgeable model can eliminate D and A purely from GO-term definitions (animal complement system; viral host-cell term) and distinguish B from C by noting the absence of any membrane or vesicle targeting signals and the methyltransferase character of the sequence. This constitutes a concrete biological argument grounded in the supplied sequence and general knowledge, not mere database lookup."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Options A and D are eliminated by GO-term semantics (virus-specific and animal-complement-specific, respectively). Option C (endosome) requires membrane/vesicle targeting features entirely absent from the sequence. Only B (cytosol) is consistent with a soluble plant methyltransferase lacking organelle-targeting signals."
-  },
-  "important_caveats": [
-    "The UniProt subcellular-location annotation is experimental (ECO:0000269, direct assay from Nomura & Kutchan 2010), not computational inference.",
-    "The GO term 'host cell nucleus' (GO:0042025) is restricted to viral proteins; its inclusion as a distractor for a plant enzyme is somewhat unusual but does not create genuine ambiguity.",
-    "The reviewer-only evidence confirms the accession via dataset metadata; the evaluated model had no access to this identifier and must reason from sequence and general biology.",
-    "The historical entry (v55) and current entry (v57) both carry the same cytosol annotation; no annotation change affects the answer."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -388,10 +158,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -502,30 +271,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "D3KYA0",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b42926ade645f070c913bd00eaccaa6a9eecc7a916f573ff2ef68122889f81c1",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 358,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b42926ade645f070c913bd00eaccaa6a9eecc7a916f573ff2ef68122889f81c1",
   "current_entry_audit": {
     "entryVersion": 57,
     "firstPublicDate": "2025-06-18",
@@ -533,14 +289,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2010-04-20",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "current_source_sequence_sha256": "b42926ade645f070c913bd00eaccaa6a9eecc7a916f573ff2ef68122889f81c1",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 358,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b42926ade645f070c913bd00eaccaa6a9eecc7a916f573ff2ef68122889f81c1",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 55,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "D3KYA0",
   "selected_historical_entry_version": 55,
+  "selected_historical_record_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
+  "selected_historical_source_sequence_length": 358,
+  "selected_historical_source_sequence_sha256": "b42926ade645f070c913bd00eaccaa6a9eecc7a916f573ff2ef68122889f81c1",
   "selected_historical_version": {
     "accession": "D3KYA0",
     "database": "Swiss-Prot",
@@ -551,24 +323,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "OMT3_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
-  "selected_historical_source_sequence_sha256": "b42926ade645f070c913bd00eaccaa6a9eecc7a916f573ff2ef68122889f81c1",
-  "selected_historical_source_sequence_length": 358,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 55,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -586,15 +345,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json",
-  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"D3KYA0\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json"
 }
 ```
 
@@ -605,15 +364,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json",
-  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":57,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2010-04-20\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json"
 }
 ```
 
@@ -624,15 +383,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json",
-  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json"
 }
 ```
 
@@ -643,15 +402,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json",
-  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"(S)-norreticuline 7-O-methyltransferase IpeOMT1\"}},{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"Ipecac/benzylisoquinoline alkaloid O-methyltransferase 3\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAI79245.1\",\"source\":\"EMBL\"}],\"value\":\"IpeOMT3\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"value\":\"3-O-methylredipecamine 2-O-methyltransferase IpeOMT3\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json"
 }
 ```
 
@@ -662,15 +421,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json",
-  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
-  "json_pointer": "/comments/4",
   "excerpt": "{\"commentType\":\"SUBCELLULAR LOCATION\",\"subcellularLocations\":[{\"location\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"id\":\"SL-0091\",\"value\":\"Cytoplasm, cytosol\"}}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/4",
+  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json"
 }
 ```
 
@@ -681,15 +440,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json",
-  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
-  "json_pointer": "/uniProtKBCrossReferences/5",
   "excerpt": "{\"database\":\"GO\",\"evidences\":[{\"evidenceCode\":\"ECO:0000314\",\"id\":\"20061395\",\"source\":\"PubMed\"}],\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"IDA:UniProtKB\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/uniProtKBCrossReferences/5",
+  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json"
 }
 ```
 
@@ -700,15 +459,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json",
-  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
-  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Nomura T.\",\"Kutchan T.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20061395\"},{\"database\":\"DOI\",\"id\":\"10.1074/jbc.m109.086157\"}],\"citationType\":\"journal article\",\"firstPage\":\"7722\",\"id\":\"20061395\",\"journal\":\"J. Biol. Chem.\",\"lastPage\":\"7738\",\"publicationDate\":\"2010\",\"title\":\"Three new O-methyltransferases are sufficient for all O-methylation reactions of ipecac alkaloid biosynthesis in root culture of Psychotria ipecacuanha.\",\"volume\":\"285\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAI79245.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"SUBCELLULAR LOCATION\",\"PATHWAY\",\"TISSUE SPECIFICITY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-01T06:25:05.017010+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "8911ef7ad13ac56e9c6773425d0a513fcd7261f04f5d354fbd82723603276578",
+  "url": "https://rest.uniprot.org/uniprotkb/D3KYA0.json"
 }
 ```
 
@@ -718,18 +477,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55",
-  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
-  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
-  "source_locator": "lines 1-19",
   "excerpt": "ID   OMT3_CARIP              Reviewed;         358 AA.\nAC   D3KYA0;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   20-APR-2010, sequence version 1.\nDT   28-JAN-2026, entry version 55.\nDE   RecName: Full=3-O-methylredipecamine 2-O-methyltransferase IpeOMT3 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=(S)-norreticuline 7-O-methyltransferase IpeOMT1 {ECO:0000303|PubMed:20061395};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nDE   AltName: Full=Ipecac/benzylisoquinoline alkaloid O-methyltransferase 3 {ECO:0000303|PubMed:20061395};\nDE            Short=IpeOMT3 {ECO:0000303|PubMed:20061395, ECO:0000312|EMBL:BAI79245.1};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:20061395};\nGN   Name=OMT3 {ECO:0000312|EMBL:BAI79245.1};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-19",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
+  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55"
 }
 ```
 
@@ -739,18 +498,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55",
-  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
-  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
-  "source_locator": "lines 20-30",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAI79245.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, SUBCELLULAR LOCATION, PATHWAY, AND TISSUE\nRP   SPECIFICITY.\nRC   TISSUE=Root;\nRX   PubMed=20061395; DOI=10.1074/jbc.m109.086157;\nRA   Nomura T., Kutchan T.M.;\nRT   \"Three new O-methyltransferases are sufficient for all O-methylation\nRT   reactions of ipecac alkaloid biosynthesis in root culture of Psychotria\nRT   ipecacuanha.\";\nRL   J. Biol. Chem. 285:7722-7738(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 20-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
+  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55"
 }
 ```
 
@@ -760,18 +519,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55",
-  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
-  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
-  "source_locator": "lines 68-68",
   "excerpt": "CC   -!- SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000269|PubMed:20061395}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 68-68",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
+  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55"
 }
 ```
 
@@ -781,18 +540,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 55,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55",
-  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
-  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
-  "source_locator": "lines 81-81",
   "excerpt": "DR   GO; GO:0005829; C:cytosol; IDA:UniProtKB.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 55,
+  "retrieved_utc": "2026-11-01T06:27:56.691295+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 81-81",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "b2752ed70781d19baf56582001780d450973cdc5bdf7404b99bcf5d3ef0488be",
+  "url": "https://rest.uniprot.org/unisave/D3KYA0?format=txt&versions=55"
 }
 ```
 
@@ -803,15 +562,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO1",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 57517-57530",
   "excerpt": "[Term]\nid: GO:0005579\nname: membrane attack complex\nnamespace: cellular_component\ndef: \"A protein complex produced by sequentially activated components of the complement cascade inserted into a target cell membrane and forming a pore leading to cell lysis via ion and water flow.\" [GOC:add, ISBN:0198547684, ISBN:068340007X, ISBN:0781735149]\nsynonym: \"MAC\" EXACT []\nsynonym: \"membrane attack complex protein alphaM chain\" NARROW []\nsynonym: \"membrane attack complex protein beta2 chain\" NARROW []\nsynonym: \"TCC\" EXACT []\nsynonym: \"terminal complement complex\" EXACT []\nxref: Wikipedia:Complement_membrane_attack_complex\nis_a: GO:0046930 ! pore complex\nis_a: GO:0098797 ! plasma membrane protein complex\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005579",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 57517-57530",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005579"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -822,15 +581,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO2",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59284-59302",
   "excerpt": "[Term]\nid: GO:0005768\nname: endosome\nnamespace: cellular_component\ndef: \"A vacuole to which materials ingested by endocytosis are delivered.\" [ISBN:0198506732, PMID:19696797]\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nxref: NIF_Subcellular:sao1720343330\nxref: Wikipedia:Endosome\nis_a: GO:0031410 ! cytoplasmic vesicle\nrelationship: part_of GO:0012505 ! endomembrane system\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005768",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59284-59302",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005768"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -841,15 +600,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO3",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 59936-59953",
   "excerpt": "[Term]\nid: GO:0005829\nname: cytosol\nnamespace: cellular_component\ndef: \"The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.\" [GOC:hjd, GOC:jl]\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_plant\nxref: NIF_Subcellular:sao101633890\nxref: Wikipedia:Cytosol\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0005829",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 59936-59953",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0005829"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 
@@ -860,15 +619,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "GO4",
-  "source": "Gene Ontology current ontology",
-  "url": "https://current.geneontology.org/ontology/go-basic.obo",
-  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
-  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
-  "source_locator": "lines 233685-233693",
   "excerpt": "[Term]\nid: GO:0042025\nname: host cell nucleus\nnamespace: cellular_component\nalt_id: GO:0033649\ndef: \"A membrane-bounded organelle as it is found in the host cell in which chromosomes are housed and replicated. The host is defined as the larger of the organisms involved in a symbiotic interaction.\" [GOC:pamgo_curators]\nsubset: goslim_virus\nis_a: GO:0033648 ! host intracellular membrane-bounded organelle\n\n",
   "excerpt_format": "literal contiguous OBO lines",
+  "go_id": "GO:0042025",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source": "Gene Ontology current ontology",
+  "source_locator": "lines 233685-233693",
   "source_scope": "current ontology; exact historical benchmark ontology unknown",
-  "go_id": "GO:0042025"
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo"
 }
 ```
 

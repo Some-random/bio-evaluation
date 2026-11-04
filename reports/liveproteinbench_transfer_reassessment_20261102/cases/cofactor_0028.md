@@ -1,18 +1,16 @@
-# cofactor_0028: before and after transfer clarification
+# cofactor_0028
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/cofactor_0028.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/cofactor_0028.txt)
 
 **Task:** `cofactor`  
-**Author key, unchanged:** **C** — Zn(2+)
+**Expected answer:** **C** — Zn(2+)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,235 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The supplied sequence exactly matches a UniProt entry annotated as L-arabinitol 4-dehydrogenase, with Zn(2+) listed as its cofactor. The annotation is transferred by similarity from UniProtKB:Q7SI09 (ECO:0000250), so it supports the key but is not direct experimental evidence for this particular protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence alone does not provide a sufficiently diagnostic basis to identify the required cofactor. Cysteine and histidine residues are not, by themselves, conclusive evidence for zinc binding.
-
-
-**Missing item-specific fact**
-
-> The protein's identity/function as L-arabinitol 4-dehydrogenase and the cofactor annotation transferred from a related protein are absent from the question.
-
-
-**Reason**
-
-> Distinguishing Zn(2+) requires protein-specific functional or annotation knowledge; recognizing the sequence or consulting its database record is lookup, not reasoning from information supplied.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports Zn(2+); it does not support another listed option. The evidence is inferential rather than direct experimental confirmation for this exact protein.
-
-
-### Important caveats
-
-- The sequence match is exact, but the cofactor annotation has ECO:0000250 evidence and is transferred from UniProtKB:Q7SI09.
-- The evidence supports the expected answer as an annotation; it does not establish that this specific protein's zinc requirement was experimentally measured.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently diagnostic basis to identify the required cofactor. Cysteine and histidine residues are not, by themselves, conclusive evidence for zinc binding.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein's identity/function as L-arabinitol 4-dehydrogenase and the cofactor annotation transferred from a related protein are absent from the question.",
-    "reason": "Distinguishing Zn(2+) requires protein-specific functional or annotation knowledge; recognizing the sequence or consulting its database record is lookup, not reasoning from information supplied."
-  },
-  "case_id": "cofactor_0028",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a UniProt entry annotated as L-arabinitol 4-dehydrogenase, with Zn(2+) listed as its cofactor. The annotation is transferred by similarity from UniProtKB:Q7SI09 (ECO:0000250), so it supports the key but is not direct experimental evidence for this particular protein."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the cofactor annotation has ECO:0000250 evidence and is transferred from UniProtKB:Q7SI09.",
-    "The evidence supports the expected answer as an annotation; it does not establish that this specific protein's zinc requirement was experimentally measured."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports Zn(2+); it does not support another listed option. The evidence is inferential rather than direct experimental confirmation for this exact protein."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "cofactor_0028",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The supplied sequence exactly matches a UniProt entry annotated as L-arabinitol 4-dehydrogenase, with Zn(2+) listed as its cofactor. The annotation is transferred by similarity from UniProtKB:Q7SI09 (ECO:0000250), so it supports the key but is not direct experimental evidence for this particular protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence alone does not provide a sufficiently diagnostic basis to identify the required cofactor. Cysteine and histidine residues are not, by themselves, conclusive evidence for zinc binding.",
-    "missing_item_specific_fact": "The protein's identity/function as L-arabinitol 4-dehydrogenase and the cofactor annotation transferred from a related protein are absent from the question.",
-    "reason": "Distinguishing Zn(2+) requires protein-specific functional or annotation knowledge; recognizing the sequence or consulting its database record is lookup, not reasoning from information supplied."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports Zn(2+); it does not support another listed option. The evidence is inferential rather than direct experimental confirmation for this exact protein."
-  },
-  "important_caveats": [
-    "The sequence match is exact, but the cofactor annotation has ECO:0000250 evidence and is transferred from UniProtKB:Q7SI09.",
-    "The evidence supports the expected answer as an annotation; it does not establish that this specific protein's zinc requirement was experimentally measured."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry A0A385XI11 (L-arabinitol 4-dehydrogenase, EC 1.1.1.12) explicitly annotates Zn(2+) as the cofactor (C5, H4). The evidence code ECO:0000250 indicates the annotation is transferred by similarity from Q7SI09 rather than directly experimentally determined for this protein, but EC 1.1.1.12 (L-arabinitol 4-dehydrogenase) belongs to the short-chain dehydrogenase/reductase (SDR) family, which is well-established in biochemistry as Zn(2+)-dependent. The sequence match is confirmed (SHA-256 identical across current and historical snapshots).
-
-Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [H2](#evidence-h2).
-
-### Reasoning versus lookup: reasoning-supported
-
-**Discriminating biological argument**
-
-> The sequence contains a Rossmann-fold NAD(P)-binding motif (GAGPIGLVTLACVKAAG, residues ~175-192), identifying the protein as a NAD(P)-dependent dehydrogenase. The Cys-rich region (ICGECEPCLTG) and His residues (VHENV, VNHPAMWCHK) near the active site are characteristic of the SDR catalytic zinc-binding site. SDR dehydrogenases (the family to which L-arabinitol 4-dehydrogenase belongs) are textbook Zn(2+)-dependent enzymes. Mg(2+) is typical of kinases and polymerases, Ca(2+) of structural/signaling proteins, and Mo-bis(MGD) of specialized molybdoenzymes (xanthine oxidase, nitrate reductase)—none of which match an SDR dehydrogenase. The combination of Rossmann fold + Cys/His zinc-ligand pattern + dehydrogenase activity provides a concrete sequence-to-cofactor argument favoring Zn(2+).
-
-
-**Missing item-specific fact**
-
-> None critical. The Zn(2+) assignment for SDR dehydrogenases is general biochemical knowledge. One could argue that distinguishing SDR from other NAD-dependent dehydrogenase families (e.g., some aldehyde dehydrogenases that use Cys catalysis without Zn) requires family-level knowledge, but the Cys/His coordination pattern visible in the sequence is a strong SDR signature.
-
-
-**Reason**
-
-> A model with knowledge of enzyme superfamilies can identify the Rossmann fold, recognize the SDR zinc-binding Cys/His pattern, and apply the well-established rule that SDR dehydrogenases require Zn(2+). The distractors (Mg2+, Ca2+, Mo-bis(MGD)) are inconsistent with SDR dehydrogenase biochemistry. This is not mere memorization of a database entry but application of general enzymology.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Zn(2+) is the only cofactor consistent with SDR dehydrogenase biochemistry. Mg(2+) is not used by SDR enzymes; Ca(2+) is irrelevant to dehydrogenase catalysis; Mo-bis(MGD) is restricted to molybdoenzymes with entirely different folds and chemistry. No other option is defensible.
-
-
-### Important caveats
-
-- The Zn(2+) annotation in UniProt carries evidence code ECO:0000250 (inferred by similarity from Q7SI09), not direct experimental determination on this specific protein. However, the SDR Zn(2+) requirement is a robust general biochemical principle.
-- The protein name 'L-arabinitol 4-dehydrogenase' and EC number 1.1.1.12 were derived from the annotation evidence; the evaluated model sees only the raw sequence and must infer function from sequence features.
-- The Mo-bis(MGD) distractor is an extreme outlier (molybdoenzymes have entirely different folds), making the effective discrimination primarily between Zn(2+) and Mg(2+), which the SDR family knowledge resolves.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a Rossmann-fold NAD(P)-binding motif (GAGPIGLVTLACVKAAG, residues ~175-192), identifying the protein as a NAD(P)-dependent dehydrogenase. The Cys-rich region (ICGECEPCLTG) and His residues (VHENV, VNHPAMWCHK) near the active site are characteristic of the SDR catalytic zinc-binding site. SDR dehydrogenases (the family to which L-arabinitol 4-dehydrogenase belongs) are textbook Zn(2+)-dependent enzymes. Mg(2+) is typical of kinases and polymerases, Ca(2+) of structural/signaling proteins, and Mo-bis(MGD) of specialized molybdoenzymes (xanthine oxidase, nitrate reductase)—none of which match an SDR dehydrogenase. The combination of Rossmann fold + Cys/His zinc-ligand pattern + dehydrogenase activity provides a concrete sequence-to-cofactor argument favoring Zn(2+).",
-    "judgment": "reasoning_supported",
-    "missing_item_specific_fact": "None critical. The Zn(2+) assignment for SDR dehydrogenases is general biochemical knowledge. One could argue that distinguishing SDR from other NAD-dependent dehydrogenase families (e.g., some aldehyde dehydrogenases that use Cys catalysis without Zn) requires family-level knowledge, but the Cys/His coordination pattern visible in the sequence is a strong SDR signature.",
-    "reason": "A model with knowledge of enzyme superfamilies can identify the Rossmann fold, recognize the SDR zinc-binding Cys/His pattern, and apply the well-established rule that SDR dehydrogenases require Zn(2+). The distractors (Mg2+, Ca2+, Mo-bis(MGD)) are inconsistent with SDR dehydrogenase biochemistry. This is not mere memorization of a database entry but application of general enzymology."
-  },
-  "case_id": "cofactor_0028",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C5",
-      "H4",
-      "C4",
-      "H2"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry A0A385XI11 (L-arabinitol 4-dehydrogenase, EC 1.1.1.12) explicitly annotates Zn(2+) as the cofactor (C5, H4). The evidence code ECO:0000250 indicates the annotation is transferred by similarity from Q7SI09 rather than directly experimentally determined for this protein, but EC 1.1.1.12 (L-arabinitol 4-dehydrogenase) belongs to the short-chain dehydrogenase/reductase (SDR) family, which is well-established in biochemistry as Zn(2+)-dependent. The sequence match is confirmed (SHA-256 identical across current and historical snapshots)."
-  },
-  "important_caveats": [
-    "The Zn(2+) annotation in UniProt carries evidence code ECO:0000250 (inferred by similarity from Q7SI09), not direct experimental determination on this specific protein. However, the SDR Zn(2+) requirement is a robust general biochemical principle.",
-    "The protein name 'L-arabinitol 4-dehydrogenase' and EC number 1.1.1.12 were derived from the annotation evidence; the evaluated model sees only the raw sequence and must infer function from sequence features.",
-    "The Mo-bis(MGD) distractor is an extreme outlier (molybdoenzymes have entirely different folds), making the effective discrimination primarily between Zn(2+) and Mg(2+), which the SDR family knowledge resolves."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Zn(2+) is the only cofactor consistent with SDR dehydrogenase biochemistry. Mg(2+) is not used by SDR enzymes; Ca(2+) is irrelevant to dehydrogenase catalysis; Mo-bis(MGD) is restricted to molybdoenzymes with entirely different folds and chemistry. No other option is defensible."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "cofactor_0028",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry A0A385XI11 (L-arabinitol 4-dehydrogenase, EC 1.1.1.12) explicitly annotates Zn(2+) as the cofactor (C5, H4). The evidence code ECO:0000250 indicates the annotation is transferred by similarity from Q7SI09 rather than directly experimentally determined for this protein, but EC 1.1.1.12 (L-arabinitol 4-dehydrogenase) belongs to the short-chain dehydrogenase/reductase (SDR) family, which is well-established in biochemistry as Zn(2+)-dependent. The sequence match is confirmed (SHA-256 identical across current and historical snapshots).",
-    "evidence_ids": ["C5", "H4", "C4", "H2"]
-  },
-  "answerability_check": {
-    "judgment": "reasoning_supported",
-    "discriminating_biological_argument": "The sequence contains a Rossmann-fold NAD(P)-binding motif (GAGPIGLVTLACVKAAG, residues ~175-192), identifying the protein as a NAD(P)-dependent dehydrogenase. The Cys-rich region (ICGECEPCLTG) and His residues (VHENV, VNHPAMWCHK) near the active site are characteristic of the SDR catalytic zinc-binding site. SDR dehydrogenases (the family to which L-arabinitol 4-dehydrogenase belongs) are textbook Zn(2+)-dependent enzymes. Mg(2+) is typical of kinases and polymerases, Ca(2+) of structural/signaling proteins, and Mo-bis(MGD) of specialized molybdoenzymes (xanthine oxidase, nitrate reductase)—none of which match an SDR dehydrogenase. The combination of Rossmann fold + Cys/His zinc-ligand pattern + dehydrogenase activity provides a concrete sequence-to-cofactor argument favoring Zn(2+).",
-    "missing_item_specific_fact": "None critical. The Zn(2+) assignment for SDR dehydrogenases is general biochemical knowledge. One could argue that distinguishing SDR from other NAD-dependent dehydrogenase families (e.g., some aldehyde dehydrogenases that use Cys catalysis without Zn) requires family-level knowledge, but the Cys/His coordination pattern visible in the sequence is a strong SDR signature.",
-    "reason": "A model with knowledge of enzyme superfamilies can identify the Rossmann fold, recognize the SDR zinc-binding Cys/His pattern, and apply the well-established rule that SDR dehydrogenases require Zn(2+). The distractors (Mg2+, Ca2+, Mo-bis(MGD)) are inconsistent with SDR dehydrogenase biochemistry. This is not mere memorization of a database entry but application of general enzymology."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Zn(2+) is the only cofactor consistent with SDR dehydrogenase biochemistry. Mg(2+) is not used by SDR enzymes; Ca(2+) is irrelevant to dehydrogenase catalysis; Mo-bis(MGD) is restricted to molybdoenzymes with entirely different folds and chemistry. No other option is defensible."
-  },
-  "important_caveats": [
-    "The Zn(2+) annotation in UniProt carries evidence code ECO:0000250 (inferred by similarity from Q7SI09), not direct experimental determination on this specific protein. However, the SDR Zn(2+) requirement is a robust general biochemical principle.",
-    "The protein name 'L-arabinitol 4-dehydrogenase' and EC number 1.1.1.12 were derived from the annotation evidence; the evaluated model sees only the raw sequence and must infer function from sequence features.",
-    "The Mo-bis(MGD) distractor is an extreme outlier (molybdoenzymes have entirely different folds), making the effective discrimination primarily between Zn(2+) and Mg(2+), which the SDR family knowledge resolves."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -381,10 +155,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -493,30 +266,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "A0A385XI11",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "b6243c25f76bd5341c3276e5e72351d95b636da19da05dae2fa407490c6e3c1c",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 368,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "b6243c25f76bd5341c3276e5e72351d95b636da19da05dae2fa407490c6e3c1c",
   "current_entry_audit": {
     "entryVersion": 22,
     "firstPublicDate": "2025-02-05",
@@ -524,14 +284,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2018-12-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
-  "current_source_sequence_sha256": "b6243c25f76bd5341c3276e5e72351d95b636da19da05dae2fa407490c6e3c1c",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 368,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "b6243c25f76bd5341c3276e5e72351d95b636da19da05dae2fa407490c6e3c1c",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 21,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "A0A385XI11",
   "selected_historical_entry_version": 21,
+  "selected_historical_record_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
+  "selected_historical_source_sequence_length": 368,
+  "selected_historical_source_sequence_sha256": "b6243c25f76bd5341c3276e5e72351d95b636da19da05dae2fa407490c6e3c1c",
   "selected_historical_version": {
     "accession": "A0A385XI11",
     "database": "Swiss-Prot",
@@ -542,24 +318,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "10-Jun-2026",
     "name": "LAD_AURME",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
-  "selected_historical_source_sequence_sha256": "b6243c25f76bd5341c3276e5e72351d95b636da19da05dae2fa407490c6e3c1c",
-  "selected_historical_source_sequence_length": 368,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 21,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -573,15 +336,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json",
-  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
-  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"A0A385XI11\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json"
 }
 ```
 
@@ -592,15 +355,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json",
-  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
-  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":22,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2018-12-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json"
 }
 ```
 
@@ -611,15 +374,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json",
-  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
-  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Aureobasidium pullulans var. melanogenum\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Dothideomycetes\",\"Dothideomycetidae\",\"Dothideales\",\"Saccotheciaceae\",\"Aureobasidium\"],\"scientificName\":\"Aureobasidium melanogenum\",\"taxonId\":46634}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json"
 }
 ```
 
@@ -630,15 +393,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json",
-  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
-  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q7SI09\",\"source\":\"UniProtKB\"}],\"value\":\"1.1.1.12\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"L-arabinitol 4-dehydrogenase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"32003433\",\"source\":\"PubMed\"}],\"value\":\"ArDH\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json"
 }
 ```
 
@@ -649,15 +412,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json",
-  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
-  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
-  "json_pointer": "/comments/2",
   "excerpt": "{\"cofactors\":[{\"cofactorCrossReference\":{\"database\":\"ChEBI\",\"id\":\"CHEBI:29105\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"Q7SI09\",\"source\":\"UniProtKB\"}],\"name\":\"Zn(2+)\"}],\"commentType\":\"COFACTOR\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/2",
+  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json"
 }
 ```
 
@@ -668,15 +431,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json",
-  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
-  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
-  "json_pointer": "/references/3",
   "excerpt": "{\"citation\":{\"authors\":[\"Xue S.J.\",\"Liu G.L.\",\"Chi Z.\",\"Gao Z.C.\",\"Hu Z.\",\"Chi Z.M.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"32003433\"},{\"database\":\"DOI\",\"id\":\"10.1042/bcj20190922\"}],\"citationType\":\"journal article\",\"firstPage\":\"887\",\"id\":\"32003433\",\"journal\":\"Biochem. J.\",\"lastPage\":\"903\",\"publicationDate\":\"2020\",\"title\":\"Genetic evidences for the core biosynthesis pathway, regulation, transport and secretion of liamocins in yeast-like fungal cells.\",\"volume\":\"477\"},\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"DISRUPTION PHENOTYPE\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/3",
+  "retrieved_utc": "2026-11-02T04:25:01.614534+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "c0f4e12f3c5638b0c24763ce28172b6f2345a6e21ca287d93bc736545c524a59",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A385XI11.json"
 }
 ```
 
@@ -686,18 +449,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21",
-  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
-  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
-  "source_locator": "lines 1-12",
   "excerpt": "ID   LAD_AURME               Reviewed;         368 AA.\nAC   A0A385XI11;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-DEC-2018, sequence version 1.\nDT   28-JAN-2026, entry version 21.\nDE   RecName: Full=L-arabinitol 4-dehydrogenase {ECO:0000303|PubMed:32003433};\nDE            Short=ArDH {ECO:0000303|PubMed:32003433};\nDE            EC=1.1.1.12 {ECO:0000250|UniProtKB:Q7SI09};\nOS   Aureobasidium melanogenum (Aureobasidium pullulans var. melanogenum).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Dothideomycetes;\nOC   Dothideomycetidae; Dothideales; Saccotheciaceae; Aureobasidium.\nOX   NCBI_TaxID=46634;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-12",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
+  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21"
 }
 ```
 
@@ -707,18 +470,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21",
-  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
-  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
-  "source_locator": "lines 6-8",
   "excerpt": "DE   RecName: Full=L-arabinitol 4-dehydrogenase {ECO:0000303|PubMed:32003433};\nDE            Short=ArDH {ECO:0000303|PubMed:32003433};\nDE            EC=1.1.1.12 {ECO:0000250|UniProtKB:Q7SI09};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 6-8",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
+  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21"
 }
 ```
 
@@ -728,18 +491,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21",
-  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
-  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
-  "source_locator": "lines 31-37",
   "excerpt": "RN   [4]\nRP   FUNCTION, AND DISRUPTION PHENOTYPE.\nRX   PubMed=32003433; DOI=10.1042/bcj20190922;\nRA   Xue S.J., Liu G.L., Chi Z., Gao Z.C., Hu Z., Chi Z.M.;\nRT   \"Genetic evidences for the core biosynthesis pathway, regulation, transport\nRT   and secretion of liamocins in yeast-like fungal cells.\";\nRL   Biochem. J. 477:887-903(2020).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 31-37",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
+  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21"
 }
 ```
 
@@ -749,18 +512,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 21,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21",
-  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
-  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
-  "source_locator": "lines 55-57",
   "excerpt": "CC   -!- COFACTOR:\nCC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;\nCC         Evidence={ECO:0000250|UniProtKB:Q7SI09};\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 21,
+  "retrieved_utc": "2026-11-02T04:25:08.764058+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 55-57",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "5c615e0fdf8aac79a43f24c537604725504bfa82d8a9e8beaddd17caae9d44a9",
+  "url": "https://rest.uniprot.org/unisave/A0A385XI11?format=txt&versions=21"
 }
 ```
 

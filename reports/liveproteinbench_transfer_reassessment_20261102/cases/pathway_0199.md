@@ -1,18 +1,16 @@
-# pathway_0199: before and after transfer clarification
+# pathway_0199
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0199.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/pathway_0199.txt)
 
 **Task:** `pathway`  
-**Author key, unchanged:** **A** — Carotenoid biosynthesis
+**Expected answer:** **A** — Carotenoid biosynthesis
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,240 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact sequence matches a UniProt entry annotated as spheroidene monooxygenase with a carotenoid-biosynthesis pathway annotation. The enzyme name and pathway assignment are partly similarity-transferred, so this supports the key without establishing that every annotation is based on direct experiments on this exact protein.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The supplied sequence alone offers no clear, general biological feature that distinguishes carotenoid biosynthesis from the other listed pathways. Identifying it as a particular pathway enzyme requires recognizing or annotating the protein.
-
-
-**Missing item-specific fact**
-
-> That this exact sequence is CrtA, a spheroidene monooxygenase associated with spheroidene and carotenoid biosynthesis.
-
-
-**Reason**
-
-> The reviewer-only matched-sequence annotation supports the expected pathway, but that protein-specific identity and function are not supplied in the question. Inferring them from the raw sequence would depend on an external database or protein-specific knowledge.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The available matched-sequence annotation supports carotenoid biosynthesis; no alternative listed pathway is comparably supported by the evidence.
-
-
-### Important caveats
-
-- The pathway annotation is marked as transferred by similarity (ECO:0000250), rather than established here as a direct experimental result for this exact protein.
-- The author's exact source snapshot is unknown, although the sequence matches both current and historical UniProt records.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The supplied sequence alone offers no clear, general biological feature that distinguishes carotenoid biosynthesis from the other listed pathways. Identifying it as a particular pathway enzyme requires recognizing or annotating the protein.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "That this exact sequence is CrtA, a spheroidene monooxygenase associated with spheroidene and carotenoid biosynthesis.",
-    "reason": "The reviewer-only matched-sequence annotation supports the expected pathway, but that protein-specific identity and function are not supplied in the question. Inferring them from the raw sequence would depend on an external database or protein-specific knowledge."
-  },
-  "case_id": "pathway_0199",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as spheroidene monooxygenase with a carotenoid-biosynthesis pathway annotation. The enzyme name and pathway assignment are partly similarity-transferred, so this supports the key without establishing that every annotation is based on direct experiments on this exact protein."
-  },
-  "important_caveats": [
-    "The pathway annotation is marked as transferred by similarity (ECO:0000250), rather than established here as a direct experimental result for this exact protein.",
-    "The author's exact source snapshot is unknown, although the sequence matches both current and historical UniProt records."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available matched-sequence annotation supports carotenoid biosynthesis; no alternative listed pathway is comparably supported by the evidence."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "pathway_0199",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact sequence matches a UniProt entry annotated as spheroidene monooxygenase with a carotenoid-biosynthesis pathway annotation. The enzyme name and pathway assignment are partly similarity-transferred, so this supports the key without establishing that every annotation is based on direct experiments on this exact protein.",
-    "evidence_ids": ["C1", "C4", "C5", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The supplied sequence alone offers no clear, general biological feature that distinguishes carotenoid biosynthesis from the other listed pathways. Identifying it as a particular pathway enzyme requires recognizing or annotating the protein.",
-    "missing_item_specific_fact": "That this exact sequence is CrtA, a spheroidene monooxygenase associated with spheroidene and carotenoid biosynthesis.",
-    "reason": "The reviewer-only matched-sequence annotation supports the expected pathway, but that protein-specific identity and function are not supplied in the question. Inferring them from the raw sequence would depend on an external database or protein-specific knowledge."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The available matched-sequence annotation supports carotenoid biosynthesis; no alternative listed pathway is comparably supported by the evidence."
-  },
-  "important_caveats": [
-    "The pathway annotation is marked as transferred by similarity (ECO:0000250), rather than established here as a direct experimental result for this exact protein.",
-    "The author's exact source snapshot is unknown, although the sequence matches both current and historical UniProt records."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry Q3J189 (CRTA_CERS4) is annotated as Spheroidene monooxygenase (EC 1.14.15.9) from Cereibacter sphaeroides. The pathway comment explicitly states 'Carotenoid biosynthesis; spheroidene biosynthesis.' The protein name is supported by experimental evidence (PubMed:20851979, ECO:0000303), while the pathway annotation is transferred by similarity to P17055 (ECO:0000250). The EC number assignment is also by similarity. Nonetheless, the experimental paper (Lee et al. 2010, Appl. Environ. Microbiol.) directly characterized the spheroidene monooxygenase activity of CrtA expressed in E. coli, confirming its role in carotenoid/spheroidene biosynthesis. Choice A is well supported.
-
-Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H1](#evidence-h1), [H3](#evidence-h3), [H4](#evidence-h4).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence contains a GxGxxG-like motif (MFGSGTGQG) suggestive of a dinucleotide-binding/Rossmann fold, and scattered Glu/His residues that could indicate a di-iron carboxylate monooxygenase active site. However, these features are shared across many oxidoreductase families. The C-terminal proline/alanine-rich linker is unusual but not pathway-specific. No sequence feature uniquely points to carotenoid substrates rather than amino-acid or one-carbon metabolites.
-
-
-**Missing item-specific fact**
-
-> The specific substrate specificity of this di-iron monooxygenase for spheroidene (a carotenoid) cannot be inferred from sequence alone. Distinguishing carotenoid biosynthesis from amino-acid degradation or one-carbon metabolism requires knowing that this particular enzyme is CrtA/spheroidene monooxygenase, whose substrate pocket accommodates the C40 carotenoid spheroidene—a fact established experimentally (Lee et al. 2010) and not deducible from the ~324-residue sequence without prior identification.
-
-
-**Reason**
-
-> While one could infer 'monooxygenase' from the GxGxxG motif and metal-binding residues, the leap from 'monooxygenase' to 'carotenoid biosynthesis' (as opposed to amino-acid degradation or one-carbon metabolism, which also employ monooxygenases) requires the specific item-level knowledge that this is CrtA acting on spheroidene. No general biological reasoning from the sequence alone meaningfully eliminates choices B, C, or D.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> Given the confirmed identity of the protein as spheroidene monooxygenase, only choice A is correct. The other options (one-carbon metabolism, amino-acid degradation, LPS O-antigen biosynthesis) are not pathways in which CrtA functions. There is no genuine ambiguity in the correct answer, though without protein identification the question is effectively unanswerable by reasoning.
-
-
-### Important caveats
-
-- The pathway annotation in UniProt (ECO:0000250) is transferred by similarity to P17055 (Rhodobacter capsulatus CrtA), not independently derived for this entry. However, the experimental paper (PubMed:20851979) directly demonstrated spheroidene monooxygenase activity of CrtA from R. sphaeroides.
-- The sequence-match is confirmed (SHA256 identical between benchmark and UniProt entry Q3J189, sequence version 1).
-- The proline-rich C-terminal region (~120 residues) is unusual for a monooxygenase and its functional role is not annotated; it does not aid pathway assignment.
-- The benchmark provides only the sequence with no organism context, making identification of this as a Rhodobacter/Cereibacter carotenoid enzyme reliant on memorization of the specific entry.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence contains a GxGxxG-like motif (MFGSGTGQG) suggestive of a dinucleotide-binding/Rossmann fold, and scattered Glu/His residues that could indicate a di-iron carboxylate monooxygenase active site. However, these features are shared across many oxidoreductase families. The C-terminal proline/alanine-rich linker is unusual but not pathway-specific. No sequence feature uniquely points to carotenoid substrates rather than amino-acid or one-carbon metabolites.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The specific substrate specificity of this di-iron monooxygenase for spheroidene (a carotenoid) cannot be inferred from sequence alone. Distinguishing carotenoid biosynthesis from amino-acid degradation or one-carbon metabolism requires knowing that this particular enzyme is CrtA/spheroidene monooxygenase, whose substrate pocket accommodates the C40 carotenoid spheroidene—a fact established experimentally (Lee et al. 2010) and not deducible from the ~324-residue sequence without prior identification.",
-    "reason": "While one could infer 'monooxygenase' from the GxGxxG motif and metal-binding residues, the leap from 'monooxygenase' to 'carotenoid biosynthesis' (as opposed to amino-acid degradation or one-carbon metabolism, which also employ monooxygenases) requires the specific item-level knowledge that this is CrtA acting on spheroidene. No general biological reasoning from the sequence alone meaningfully eliminates choices B, C, or D."
-  },
-  "case_id": "pathway_0199",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C4",
-      "C5",
-      "C6",
-      "H1",
-      "H3",
-      "H4"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry Q3J189 (CRTA_CERS4) is annotated as Spheroidene monooxygenase (EC 1.14.15.9) from Cereibacter sphaeroides. The pathway comment explicitly states 'Carotenoid biosynthesis; spheroidene biosynthesis.' The protein name is supported by experimental evidence (PubMed:20851979, ECO:0000303), while the pathway annotation is transferred by similarity to P17055 (ECO:0000250). The EC number assignment is also by similarity. Nonetheless, the experimental paper (Lee et al. 2010, Appl. Environ. Microbiol.) directly characterized the spheroidene monooxygenase activity of CrtA expressed in E. coli, confirming its role in carotenoid/spheroidene biosynthesis. Choice A is well supported."
-  },
-  "important_caveats": [
-    "The pathway annotation in UniProt (ECO:0000250) is transferred by similarity to P17055 (Rhodobacter capsulatus CrtA), not independently derived for this entry. However, the experimental paper (PubMed:20851979) directly demonstrated spheroidene monooxygenase activity of CrtA from R. sphaeroides.",
-    "The sequence-match is confirmed (SHA256 identical between benchmark and UniProt entry Q3J189, sequence version 1).",
-    "The proline-rich C-terminal region (~120 residues) is unusual for a monooxygenase and its functional role is not annotated; it does not aid pathway assignment.",
-    "The benchmark provides only the sequence with no organism context, making identification of this as a Rhodobacter/Cereibacter carotenoid enzyme reliant on memorization of the specific entry."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the confirmed identity of the protein as spheroidene monooxygenase, only choice A is correct. The other options (one-carbon metabolism, amino-acid degradation, LPS O-antigen biosynthesis) are not pathways in which CrtA functions. There is no genuine ambiguity in the correct answer, though without protein identification the question is effectively unanswerable by reasoning."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "pathway_0199",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry Q3J189 (CRTA_CERS4) is annotated as Spheroidene monooxygenase (EC 1.14.15.9) from Cereibacter sphaeroides. The pathway comment explicitly states 'Carotenoid biosynthesis; spheroidene biosynthesis.' The protein name is supported by experimental evidence (PubMed:20851979, ECO:0000303), while the pathway annotation is transferred by similarity to P17055 (ECO:0000250). The EC number assignment is also by similarity. Nonetheless, the experimental paper (Lee et al. 2010, Appl. Environ. Microbiol.) directly characterized the spheroidene monooxygenase activity of CrtA expressed in E. coli, confirming its role in carotenoid/spheroidene biosynthesis. Choice A is well supported.",
-    "evidence_ids": ["C4", "C5", "C6", "H1", "H3", "H4"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence contains a GxGxxG-like motif (MFGSGTGQG) suggestive of a dinucleotide-binding/Rossmann fold, and scattered Glu/His residues that could indicate a di-iron carboxylate monooxygenase active site. However, these features are shared across many oxidoreductase families. The C-terminal proline/alanine-rich linker is unusual but not pathway-specific. No sequence feature uniquely points to carotenoid substrates rather than amino-acid or one-carbon metabolites.",
-    "missing_item_specific_fact": "The specific substrate specificity of this di-iron monooxygenase for spheroidene (a carotenoid) cannot be inferred from sequence alone. Distinguishing carotenoid biosynthesis from amino-acid degradation or one-carbon metabolism requires knowing that this particular enzyme is CrtA/spheroidene monooxygenase, whose substrate pocket accommodates the C40 carotenoid spheroidene—a fact established experimentally (Lee et al. 2010) and not deducible from the ~324-residue sequence without prior identification.",
-    "reason": "While one could infer 'monooxygenase' from the GxGxxG motif and metal-binding residues, the leap from 'monooxygenase' to 'carotenoid biosynthesis' (as opposed to amino-acid degradation or one-carbon metabolism, which also employ monooxygenases) requires the specific item-level knowledge that this is CrtA acting on spheroidene. No general biological reasoning from the sequence alone meaningfully eliminates choices B, C, or D."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "Given the confirmed identity of the protein as spheroidene monooxygenase, only choice A is correct. The other options (one-carbon metabolism, amino-acid degradation, LPS O-antigen biosynthesis) are not pathways in which CrtA functions. There is no genuine ambiguity in the correct answer, though without protein identification the question is effectively unanswerable by reasoning."
-  },
-  "important_caveats": [
-    "The pathway annotation in UniProt (ECO:0000250) is transferred by similarity to P17055 (Rhodobacter capsulatus CrtA), not independently derived for this entry. However, the experimental paper (PubMed:20851979) directly demonstrated spheroidene monooxygenase activity of CrtA from R. sphaeroides.",
-    "The sequence-match is confirmed (SHA256 identical between benchmark and UniProt entry Q3J189, sequence version 1).",
-    "The proline-rich C-terminal region (~120 residues) is unusual for a monooxygenase and its functional role is not annotated; it does not aid pathway assignment.",
-    "The benchmark provides only the sequence with no organism context, making identification of this as a Rhodobacter/Cereibacter carotenoid enzyme reliant on memorization of the specific entry."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -390,10 +159,9 @@ Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -504,30 +272,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "Q3J189",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "729a48d70d6bbe461cee74d78aec69eadd0836a65bfc944cb3241dac87281b34",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 324,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "729a48d70d6bbe461cee74d78aec69eadd0836a65bfc944cb3241dac87281b34",
   "current_entry_audit": {
     "entryVersion": 76,
     "firstPublicDate": "2025-02-05",
@@ -535,14 +290,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2005-11-08",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
-  "current_source_sequence_sha256": "729a48d70d6bbe461cee74d78aec69eadd0836a65bfc944cb3241dac87281b34",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 324,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "729a48d70d6bbe461cee74d78aec69eadd0836a65bfc944cb3241dac87281b34",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 74,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "Q3J189",
   "selected_historical_entry_version": 74,
+  "selected_historical_record_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
+  "selected_historical_source_sequence_length": 324,
+  "selected_historical_source_sequence_sha256": "729a48d70d6bbe461cee74d78aec69eadd0836a65bfc944cb3241dac87281b34",
   "selected_historical_version": {
     "accession": "Q3J189",
     "database": "Swiss-Prot",
@@ -553,24 +324,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CRTA_CERS4",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
-  "selected_historical_source_sequence_sha256": "729a48d70d6bbe461cee74d78aec69eadd0836a65bfc944cb3241dac87281b34",
-  "selected_historical_source_sequence_length": 324,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 74,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -584,15 +342,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json",
-  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
-  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"Q3J189\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json"
 }
 ```
 
@@ -603,15 +361,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json",
-  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
-  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":76,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-11-08\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json"
 }
 ```
 
@@ -622,15 +380,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json",
-  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
-  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Rhodobacter sphaeroides\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Alphaproteobacteria\",\"Rhodobacterales\",\"Paracoccaceae\",\"Cereibacter\"],\"scientificName\":\"Cereibacter sphaeroides (strain ATCC 17023 / DSM 158 / JCM 6121 / CCUG 31486 / LMG 2827 / NBRC 12203 / NCIMB 8253 / ATH 2.4.1.)\",\"taxonId\":272943}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json"
 }
 ```
 
@@ -641,15 +399,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json",
-  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
-  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17055\",\"source\":\"UniProtKB\"}],\"value\":\"1.14.15.9\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"20851979\",\"source\":\"PubMed\"}],\"value\":\"Spheroidene monooxygenase\"}}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json"
 }
 ```
 
@@ -660,15 +418,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json",
-  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
-  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
-  "json_pointer": "/comments/6",
   "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P17055\",\"source\":\"UniProtKB\"}],\"value\":\"Carotenoid biosynthesis; spheroidene biosynthesis\"}]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/comments/6",
+  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json"
 }
 ```
 
@@ -679,15 +437,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json",
-  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
-  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
-  "json_pointer": "/references/2",
   "excerpt": "{\"citation\":{\"authors\":[\"Lee P.C.\",\"Holtzapple E.\",\"Schmidt-Dannert C.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"20851979\"},{\"database\":\"DOI\",\"id\":\"10.1128/aem.01606-10\"}],\"citationType\":\"journal article\",\"firstPage\":\"7328\",\"id\":\"20851979\",\"journal\":\"Appl. Environ. Microbiol.\",\"lastPage\":\"7331\",\"publicationDate\":\"2010\",\"title\":\"Novel activity of Rhodobacter sphaeroides spheroidene monooxygenase CrtA expressed in Escherichia coli.\",\"volume\":\"76\"},\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\",\"COFACTOR\",\"SUBSTRATE SPECIFICITY\",\"BIOTECHNOLOGY\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/2",
+  "retrieved_utc": "2026-11-02T04:30:46.651114+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "bb9e4370b135cf6bb041c348a58e23b19fdc2893ec68a930956c87901797cae8",
+  "url": "https://rest.uniprot.org/uniprotkb/Q3J189.json"
 }
 ```
 
@@ -697,18 +455,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74",
-  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
-  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
-  "source_locator": "lines 1-16",
   "excerpt": "ID   CRTA_CERS4              Reviewed;         324 AA.\nAC   Q3J189; Q54790;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   08-NOV-2005, sequence version 1.\nDT   28-JAN-2026, entry version 74.\nDE   RecName: Full=Spheroidene monooxygenase {ECO:0000303|PubMed:20851979};\nDE            EC=1.14.15.9 {ECO:0000250|UniProtKB:P17055};\nGN   Name=crtA {ECO:0000303|PubMed:7721699};\nGN   OrderedLocusNames=RHOS4_18770 {ECO:0000305};\nGN   ORFNames=RSP_0272 {ECO:0000312|EMBL:ABA79445.1};\nOS   Cereibacter sphaeroides (strain ATCC 17023 / DSM 158 / JCM 6121 / CCUG\nOS   31486 / LMG 2827 / NBRC 12203 / NCIMB 8253 / ATH 2.4.1.) (Rhodobacter\nOS   sphaeroides).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Alphaproteobacteria;\nOC   Rhodobacterales; Paracoccaceae; Cereibacter.\nOX   NCBI_TaxID=272943;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-16",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
+  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74"
 }
 ```
 
@@ -718,18 +476,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74",
-  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
-  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
-  "source_locator": "lines 17-25",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:CAB38738.1}\nRP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].\nRC   STRAIN=ATCC 17023 / DSM 158 / JCM 6121 / CCUG 31486 / LMG 2827 / NBRC 12203\nRC   / NCIMB 8253 / ATH 2.4.1.;\nRX   PubMed=7721699; DOI=10.1128/jb.177.8.2064-2073.1995;\nRA   Lang H.P., Cogdell R.J., Takaichi S., Hunter C.N.;\nRT   \"Complete DNA sequence, specific Tn5 insertion map, and gene assignment of\nRT   the carotenoid biosynthesis pathway of Rhodobacter sphaeroides.\";\nRL   J. Bacteriol. 177:2064-2073(1995).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 17-25",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
+  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74"
 }
 ```
 
@@ -739,18 +497,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74",
-  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
-  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
-  "source_locator": "lines 35-41",
   "excerpt": "RN   [3]\nRP   FUNCTION, COFACTOR, SUBSTRATE SPECIFICITY, AND BIOTECHNOLOGY.\nRX   PubMed=20851979; DOI=10.1128/aem.01606-10;\nRA   Lee P.C., Holtzapple E., Schmidt-Dannert C.;\nRT   \"Novel activity of Rhodobacter sphaeroides spheroidene monooxygenase CrtA\nRT   expressed in Escherichia coli.\";\nRL   Appl. Environ. Microbiol. 76:7328-7331(2010).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 35-41",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
+  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74"
 }
 ```
 
@@ -760,18 +518,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 74,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74",
-  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
-  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
-  "source_locator": "lines 87-88",
   "excerpt": "CC   -!- PATHWAY: Carotenoid biosynthesis; spheroidene biosynthesis.\nCC       {ECO:0000250|UniProtKB:P17055}.\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 74,
+  "retrieved_utc": "2026-11-02T04:30:50.636898+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 87-88",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "f2d04e35df9019d909d7088f5a01d53d2e955051a5e45ba5642a2108e2735aa3",
+  "url": "https://rest.uniprot.org/unisave/Q3J189?format=txt&versions=74"
 }
 ```
 

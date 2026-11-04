@@ -1,18 +1,16 @@
-# active_site_0082: before and after transfer clarification
+# active_site_0082
 
-[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/active_site_0082.txt)
+[All questions](../README.md) · [Summary](../SUMMARY.md) · [Method](../METHOD.md) · [Exact reviewer input](../inputs/active_site_0082.txt)
 
 **Task:** `active_site`  
-**Author key, unchanged:** **C** — Position 254 (Proton acceptor)
+**Expected answer:** **C** — Position 254 (Proton acceptor)
 
-| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
-|---|---|---|---|---|
-| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
-| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
-| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
-| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| Reviewer | Expected-answer support | Reasoning versus lookup |
+|---|---|---|
+| GPT-6 Luna | supported | reasoning-supported |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported |
 
-**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+The reviewers assess the question and its expected answer. Their agreement is not expert confirmation. An unusable review is an output failure, not a finding that the question is wrong.
 
 ## Complete original question
 
@@ -52,238 +50,11 @@ Provide your response in the following format:
 
 </details>
 
-## Four saved visible reviews
+## Reviewer assessments
 
-## Before: GPT-6 Luna
+## GPT-6 Luna
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> The exact 350-residue sequence matches the UniProt entry, which annotates residue 254 as a proton acceptor in both the current and archived records. This supports choice C as a database annotation, though the annotation is attributed to a PROSITE rule rather than direct experimental evidence in the supplied excerpts.
-
-Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> The sequence length rules out positions 1134 and 2475, but general reasoning from the sequence does not establish whether residue 254 or residue 280 is the catalytic proton acceptor.
-
-
-**Missing item-specific fact**
-
-> The protein-specific active-site assignment of residue 254 as a proton acceptor, supplied here by the UniProt/PROSITE annotation.
-
-
-**Reason**
-
-> Choosing between the two in-range positions requires an item-specific active-site annotation or equivalent protein-specific evidence absent from the question.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> The reviewer evidence supports C, while B and D refer to positions beyond the 350-residue sequence. The input itself, however, does not distinguish the in-range candidates A and C.
-
-
-### Important caveats
-
-- The supporting active-site annotation is computationally attributed to PROSITE-ProRule, not shown here as experimentally established.
-- The sequence match is exact, but the author's source snapshot is unknown.
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "The sequence length rules out positions 1134 and 2475, but general reasoning from the sequence does not establish whether residue 254 or residue 280 is the catalytic proton acceptor.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The protein-specific active-site assignment of residue 254 as a proton acceptor, supplied here by the UniProt/PROSITE annotation.",
-    "reason": "Choosing between the two in-range positions requires an item-specific active-site annotation or equivalent protein-specific evidence absent from the question."
-  },
-  "case_id": "active_site_0082",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C5",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "The exact 350-residue sequence matches the UniProt entry, which annotates residue 254 as a proton acceptor in both the current and archived records. This supports choice C as a database annotation, though the annotation is attributed to a PROSITE rule rather than direct experimental evidence in the supplied excerpts."
-  },
-  "important_caveats": [
-    "The supporting active-site annotation is computationally attributed to PROSITE-ProRule, not shown here as experimentally established.",
-    "The sequence match is exact, but the author's source snapshot is unknown."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports C, while B and D refer to positions beyond the 350-residue sequence. The input itself, however, does not distinguish the in-range candidates A and C."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-{
-  "case_id": "active_site_0082",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "The exact 350-residue sequence matches the UniProt entry, which annotates residue 254 as a proton acceptor in both the current and archived records. This supports choice C as a database annotation, though the annotation is attributed to a PROSITE rule rather than direct experimental evidence in the supplied excerpts.",
-    "evidence_ids": ["C1", "C5", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "The sequence length rules out positions 1134 and 2475, but general reasoning from the sequence does not establish whether residue 254 or residue 280 is the catalytic proton acceptor.",
-    "missing_item_specific_fact": "The protein-specific active-site assignment of residue 254 as a proton acceptor, supplied here by the UniProt/PROSITE annotation.",
-    "reason": "Choosing between the two in-range positions requires an item-specific active-site annotation or equivalent protein-specific evidence absent from the question."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "The reviewer evidence supports C, while B and D refer to positions beyond the 350-residue sequence. The input itself, however, does not distinguish the in-range candidates A and C."
-  },
-  "important_caveats": [
-    "The supporting active-site annotation is computationally attributed to PROSITE-ProRule, not shown here as experimentally established.",
-    "The sequence match is exact, but the author's source snapshot is unknown."
-  ]
-}
-```
-
-</details>
-
-## Before: Qwen3.8-Flash-Next-NVFP4
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
-
-### Expected-answer support: supported
-
-> UniProt entry E7FL15 (Cephaeline 6'-O-methyltransferase CiOMT, 350 AA, sequence matched) annotates position 254 as 'Active site: Proton acceptor' (evidence_id C5, H3). The annotation derives from PROSITE-ProRule PRU01020 (ECO:0000255, computational pattern matching), not direct experimentation, but it is the sole active-site annotation in the entry. The supplied sequence is 350 residues, so position 254 is in range. Choices B (position 1134) and D (position 2475) exceed the protein length and reference unrelated enzyme activities (dehydratase, beta-ketoacyl synthase 2), making them clearly incorrect. Choice A (position 280) is within range but is not annotated as an active site. The author key C matches the UniProt annotation exactly.
-
-Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H3](#evidence-h3).
-
-### Reasoning versus lookup: lookup-dependent
-
-**Discriminating biological argument**
-
-> Choices B and D are trivially eliminable: the protein is 350 residues, so positions 1134 and 2475 are out of range, and their functional descriptions (dehydratase, beta-ketoacyl synthase 2) are inconsistent with the O-methyltransferase fold evident from the GGGNGT SAM-binding motif (~residues 192-198). However, distinguishing A (position 280, Lys) from C (position 254, His) requires knowing the specific PROSITE-ProRule PRU01020 pattern match or the UniProt annotation. General OMT catalytic knowledge points to a Glu or Asp as the general base; neither position 254 (His) nor position 280 (Lys) is a canonical OMT catalytic residue, so biochemical reasoning alone cannot reliably select one over the other without the item-specific pattern/annotation.
-
-
-**Missing item-specific fact**
-
-> The exact PROSITE-ProRule PRU01020 pattern match identifying residue 254 (His) as the proton acceptor in this particular OMT, or equivalently the UniProt active-site annotation for E7FL15 at position 254.
-
-
-**Reason**
-
-> While the protein can be identified as a plant SAM-dependent O-methyltransferase from sequence motifs, the precise catalytic position cannot be deduced from general enzyme-mechanism knowledge because the annotated proton acceptor (His-254) is atypical for OMTs. Selection between the two in-range proton-acceptor options depends on a specific database annotation or pattern-matching result not derivable from the sequence alone.
-
-
-### Question ambiguity
-
-**Multiple defensible options, exactly as saved:**
-
-```json
-[]
-```
-
-> B and D are unambiguously wrong (out of range / wrong enzyme class). Between A and C, only one matches the UniProt annotation. No two options are equally defensible given the annotation, though the reasoning path to distinguish them is weak without the specific pattern.
-
-
-### Important caveats
-
-- The active-site annotation at position 254 is computational (ECO:0000255, PROSITE-ProRule PRU01020), not experimentally validated. The original publication (PubMed 21228475) reports cloning, function, and catalytic activity but the specific proton-acceptor residue assignment comes from pattern matching.
-- Residue 254 is His (H) in the provided sequence, which is atypical for an OMT general base (usually Glu or Asp). This makes general biochemical reasoning about OMT catalysis an unreliable guide for selecting position 254 over position 280.
-- The UniProt accession E7FL15 was not provided in the model input; it was inferred reviewer-side from dataset metadata. The evaluated model sees only the raw sequence.
-- Sequence identity is confirmed (SHA-256 match across current and historical snapshots, 350 AA, sequence version 1).
-
-<details>
-<summary>Complete saved parsed visible review</summary>
-
-```json
-{
-  "answerability_check": {
-    "discriminating_biological_argument": "Choices B and D are trivially eliminable: the protein is 350 residues, so positions 1134 and 2475 are out of range, and their functional descriptions (dehydratase, beta-ketoacyl synthase 2) are inconsistent with the O-methyltransferase fold evident from the GGGNGT SAM-binding motif (~residues 192-198). However, distinguishing A (position 280, Lys) from C (position 254, His) requires knowing the specific PROSITE-ProRule PRU01020 pattern match or the UniProt annotation. General OMT catalytic knowledge points to a Glu or Asp as the general base; neither position 254 (His) nor position 280 (Lys) is a canonical OMT catalytic residue, so biochemical reasoning alone cannot reliably select one over the other without the item-specific pattern/annotation.",
-    "judgment": "lookup_or_memorization_dependent",
-    "missing_item_specific_fact": "The exact PROSITE-ProRule PRU01020 pattern match identifying residue 254 (His) as the proton acceptor in this particular OMT, or equivalently the UniProt active-site annotation for E7FL15 at position 254.",
-    "reason": "While the protein can be identified as a plant SAM-dependent O-methyltransferase from sequence motifs, the precise catalytic position cannot be deduced from general enzyme-mechanism knowledge because the annotated proton acceptor (His-254) is atypical for OMTs. Selection between the two in-range proton-acceptor options depends on a specific database annotation or pattern-matching result not derivable from the sequence alone."
-  },
-  "case_id": "active_site_0082",
-  "expected_answer_check": {
-    "evidence_ids": [
-      "C1",
-      "C4",
-      "C5",
-      "H1",
-      "H3"
-    ],
-    "judgment": "supported",
-    "reason": "UniProt entry E7FL15 (Cephaeline 6'-O-methyltransferase CiOMT, 350 AA, sequence matched) annotates position 254 as 'Active site: Proton acceptor' (evidence_id C5, H3). The annotation derives from PROSITE-ProRule PRU01020 (ECO:0000255, computational pattern matching), not direct experimentation, but it is the sole active-site annotation in the entry. The supplied sequence is 350 residues, so position 254 is in range. Choices B (position 1134) and D (position 2475) exceed the protein length and reference unrelated enzyme activities (dehydratase, beta-ketoacyl synthase 2), making them clearly incorrect. Choice A (position 280) is within range but is not annotated as an active site. The author key C matches the UniProt annotation exactly."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 254 is computational (ECO:0000255, PROSITE-ProRule PRU01020), not experimentally validated. The original publication (PubMed 21228475) reports cloning, function, and catalytic activity but the specific proton-acceptor residue assignment comes from pattern matching.",
-    "Residue 254 is His (H) in the provided sequence, which is atypical for an OMT general base (usually Glu or Asp). This makes general biochemical reasoning about OMT catalysis an unreliable guide for selecting position 254 over position 280.",
-    "The UniProt accession E7FL15 was not provided in the model input; it was inferred reviewer-side from dataset metadata. The evaluated model sees only the raw sequence.",
-    "Sequence identity is confirmed (SHA-256 match across current and historical snapshots, 350 AA, sequence version 1)."
-  ],
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and D are unambiguously wrong (out of range / wrong enzyme class). Between A and C, only one matches the UniProt annotation. No two options are equally defensible given the annotation, though the reasoning path to distinguish them is weak without the specific pattern."
-  }
-}
-```
-
-</details>
-
-<details>
-<summary>Exact saved visible final text</summary>
-
-```text
-
-
-{
-  "case_id": "active_site_0082",
-  "expected_answer_check": {
-    "judgment": "supported",
-    "reason": "UniProt entry E7FL15 (Cephaeline 6'-O-methyltransferase CiOMT, 350 AA, sequence matched) annotates position 254 as 'Active site: Proton acceptor' (evidence_id C5, H3). The annotation derives from PROSITE-ProRule PRU01020 (ECO:0000255, computational pattern matching), not direct experimentation, but it is the sole active-site annotation in the entry. The supplied sequence is 350 residues, so position 254 is in range. Choices B (position 1134) and D (position 2475) exceed the protein length and reference unrelated enzyme activities (dehydratase, beta-ketoacyl synthase 2), making them clearly incorrect. Choice A (position 280) is within range but is not annotated as an active site. The author key C matches the UniProt annotation exactly.",
-    "evidence_ids": ["C1", "C4", "C5", "H1", "H3"]
-  },
-  "answerability_check": {
-    "judgment": "lookup_or_memorization_dependent",
-    "discriminating_biological_argument": "Choices B and D are trivially eliminable: the protein is 350 residues, so positions 1134 and 2475 are out of range, and their functional descriptions (dehydratase, beta-ketoacyl synthase 2) are inconsistent with the O-methyltransferase fold evident from the GGGNGT SAM-binding motif (~residues 192-198). However, distinguishing A (position 280, Lys) from C (position 254, His) requires knowing the specific PROSITE-ProRule PRU01020 pattern match or the UniProt annotation. General OMT catalytic knowledge points to a Glu or Asp as the general base; neither position 254 (His) nor position 280 (Lys) is a canonical OMT catalytic residue, so biochemical reasoning alone cannot reliably select one over the other without the item-specific pattern/annotation.",
-    "missing_item_specific_fact": "The exact PROSITE-ProRule PRU01020 pattern match identifying residue 254 (His) as the proton acceptor in this particular OMT, or equivalently the UniProt active-site annotation for E7FL15 at position 254.",
-    "reason": "While the protein can be identified as a plant SAM-dependent O-methyltransferase from sequence motifs, the precise catalytic position cannot be deduced from general enzyme-mechanism knowledge because the annotated proton acceptor (His-254) is atypical for OMTs. Selection between the two in-range proton-acceptor options depends on a specific database annotation or pattern-matching result not derivable from the sequence alone."
-  },
-  "question_ambiguity": {
-    "multiple_defensible_options": [],
-    "reason": "B and D are unambiguously wrong (out of range / wrong enzyme class). Between A and C, only one matches the UniProt annotation. No two options are equally defensible given the annotation, though the reasoning path to distinguish them is weak without the specific pattern."
-  },
-  "important_caveats": [
-    "The active-site annotation at position 254 is computational (ECO:0000255, PROSITE-ProRule PRU01020), not experimentally validated. The original publication (PubMed 21228475) reports cloning, function, and catalytic activity but the specific proton-acceptor residue assignment comes from pattern matching.",
-    "Residue 254 is His (H) in the provided sequence, which is atypical for an OMT general base (usually Glu or Asp). This makes general biochemical reasoning about OMT catalysis an unreliable guide for selecting position 254 over position 280.",
-    "The UniProt accession E7FL15 was not provided in the model input; it was inferred reviewer-side from dataset metadata. The evaluated model sees only the raw sequence.",
-    "Sequence identity is confirmed (SHA-256 match across current and historical snapshots, 350 AA, sequence version 1)."
-  ]
-}
-```
-
-</details>
-
-## After: GPT-6 Luna
-
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -383,10 +154,9 @@ Empty string, as saved.
 
 </details>
 
-## After: Qwen3.8-Flash-Next-NVFP4
+## Qwen3.8-Flash-Next-NVFP4
 
-**Output usability:** usable output: format-valid review.
-**Canonical saved status:** `valid_review`.
+**Saved status:** `valid_review`.
 
 ### Expected-answer support: supported
 
@@ -495,30 +265,17 @@ Empty string, as saved.
 
 </details>
 
-## Existing project source checks of the old Luna review only
-
-These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
-
-## Project source-check notes
-
-These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
-
-No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
-
 ## Complete reviewer-only evidence and qualifications
 
-All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+These source excerpts were available to the reviewers. They were not included in the original benchmark-solving input.
 
-**Applicability metadata, unchanged:**
+**Source applicability:**
 
 ```json
 {
-  "requested_accession": "E7FL15",
-  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
-  "benchmark_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
+  "actual_author_source_snapshot": "unknown",
   "benchmark_sequence_length": 350,
-  "current_status": "retrieved",
-  "current_sequence_comparison": "matched",
+  "benchmark_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
   "current_entry_audit": {
     "entryVersion": 53,
     "firstPublicDate": "2025-06-18",
@@ -526,14 +283,30 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastSequenceUpdateDate": "2011-04-05",
     "sequenceVersion": 1
   },
-  "current_uniprot_release": "2026_03",
   "current_record_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "current_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
+  "current_sequence_comparison": "matched",
   "current_source_sequence_length": 350,
-  "historical_status": "retrieved",
+  "current_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
+  "current_status": "retrieved",
+  "current_uniprot_release": "2026_03",
   "historical_cutoff_date": "2026-05-07",
   "historical_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 51,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "historical_status": "retrieved",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed.",
+  "requested_accession": "E7FL15",
   "selected_historical_entry_version": 51,
+  "selected_historical_record_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "selected_historical_source_sequence_length": 350,
+  "selected_historical_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
   "selected_historical_version": {
     "accession": "E7FL15",
     "database": "Swiss-Prot",
@@ -544,24 +317,11 @@ All excerpts supplied in the original and revised reviewer user message follow. 
     "lastReleaseDate": "28-Jan-2026",
     "name": "CIOMT_CARIP",
     "sequenceVersion": 1
-  },
-  "selected_historical_record_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "selected_historical_source_sequence_sha256": "06d60d20d59ec0d189d9e458b41043b823eff47106d90b331759a7a28b559f05",
-  "selected_historical_source_sequence_length": 350,
-  "latest_at_cutoff_sequence_comparison": "matched",
-  "historical_sequence_versions_checked": [
-    {
-      "entry_version": 51,
-      "exact_sequence_comparison": "matched",
-      "sequence_version": 1
-    }
-  ],
-  "actual_author_source_snapshot": "unknown",
-  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+  }
 }
 ```
 
-**Qualifications, unchanged:**
+**Qualifications:**
 
 - All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
 - UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
@@ -575,15 +335,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C1",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/primaryAccession",
   "excerpt": "\"E7FL15\"",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/primaryAccession",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -594,15 +354,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C2",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/entryAudit",
   "excerpt": "{\"entryVersion\":53,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2011-04-05\",\"sequenceVersion\":1}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/entryAudit",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -613,15 +373,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C3",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/organism",
   "excerpt": "{\"commonName\":\"Ipecac\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Rubiaceae\",\"Rubioideae\",\"Palicoureeae\",\"Carapichea\"],\"scientificName\":\"Carapichea ipecacuanha\",\"synonyms\":[\"Callicocca ipecacuanha\"],\"taxonId\":77880}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/organism",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -632,15 +392,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C4",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/proteinDescription",
   "excerpt": "{\"alternativeNames\":[{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.395\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"7'-O-demethylcephaeline 7'-O-methyltransferase CiOMT\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"Cephaeline synthase CiOMT\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ72588.1\",\"source\":\"EMBL\"}],\"value\":\"7'-O-demethylcephaeline/cephaeline O-methyltransferase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ72588.1\",\"source\":\"EMBL\"}],\"value\":\"7'OMT\"},{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"CiOMT\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.396\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"Cephaeline 6'-O-methyltransferase CiOMT\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"21228475\",\"source\":\"PubMed\"}],\"value\":\"Emetine synthase CiOMT\"}]}}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/proteinDescription",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -651,15 +411,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C5",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/features/1",
   "excerpt": "{\"description\":\"Proton acceptor\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":254},\"start\":{\"modifier\":\"EXACT\",\"value\":254}},\"type\":\"Active site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/1",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -670,15 +430,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C6",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/features/2",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O24529\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59789\",\"name\":\"S-adenosyl-L-methionine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":193},\"start\":{\"modifier\":\"EXACT\",\"value\":193}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/2",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -689,15 +449,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C7",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/features/3",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O24529\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59789\",\"name\":\"S-adenosyl-L-methionine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":216},\"start\":{\"modifier\":\"EXACT\",\"value\":216}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/3",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -708,15 +468,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C8",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/features/4",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O24529\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59789\",\"name\":\"S-adenosyl-L-methionine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":236},\"start\":{\"modifier\":\"EXACT\",\"value\":236}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/4",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -727,15 +487,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C9",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/features/5",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O24529\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59789\",\"name\":\"S-adenosyl-L-methionine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":237},\"start\":{\"modifier\":\"EXACT\",\"value\":237}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/5",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -746,15 +506,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C10",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/features/6",
   "excerpt": "{\"description\":\"\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"O24529\",\"source\":\"UniProtKB\"},{\"evidenceCode\":\"ECO:0000255\",\"id\":\"PRU01020\",\"source\":\"PROSITE-ProRule\"}],\"featureCrossReferences\":[{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"}],\"ligand\":{\"id\":\"ChEBI:CHEBI:59789\",\"name\":\"S-adenosyl-L-methionine\"},\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":250},\"start\":{\"modifier\":\"EXACT\",\"value\":250}},\"type\":\"Binding site\"}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/features/6",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -765,15 +525,15 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 ```json
 {
   "evidence_id": "C11",
-  "source": "UniProtKB current entry",
-  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json",
-  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
-  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
-  "json_pointer": "/references/0",
   "excerpt": "{\"citation\":{\"authors\":[\"Cheong B.E.\",\"Takemura T.\",\"Yoshimatsu K.\",\"Sato F.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"21228475\"},{\"database\":\"DOI\",\"id\":\"10.1271/bbb.100605\"}],\"citationType\":\"journal article\",\"firstPage\":\"107\",\"id\":\"21228475\",\"journal\":\"Biosci. Biotechnol. Biochem.\",\"lastPage\":\"113\",\"publicationDate\":\"2011\",\"title\":\"Molecular cloning of an O-methyltransferase from adventitious roots of Carapichea ipecacuanha.\",\"volume\":\"75\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"BAJ72588.1\",\"source\":\"EMBL\"}],\"referenceComments\":[{\"type\":\"TISSUE\",\"value\":\"Root\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"ACTIVITY REGULATION\"]}",
   "excerpt_format": "canonical JSON value at JSON pointer",
+  "json_pointer": "/references/0",
+  "retrieved_utc": "2026-11-02T04:28:03.494312+00:00",
+  "sequence_comparison": "matched",
+  "source": "UniProtKB current entry",
   "source_scope": "current snapshot; actual author source snapshot unknown",
-  "sequence_comparison": "matched"
+  "source_sha256": "609cf6cd020d9d7e0fa677f3e50015958090b4fcff0bd824c92b61563b40280a",
+  "url": "https://rest.uniprot.org/uniprotkb/E7FL15.json"
 }
 ```
 
@@ -783,18 +543,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H1",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 1-21",
   "excerpt": "ID   CIOMT_CARIP             Reviewed;         350 AA.\nAC   E7FL15;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-APR-2011, sequence version 1.\nDT   28-JAN-2026, entry version 51.\nDE   RecName: Full=Cephaeline 6'-O-methyltransferase CiOMT {ECO:0000303|PubMed:21228475};\nDE            Short=Emetine synthase CiOMT {ECO:0000303|PubMed:21228475};\nDE            EC=2.1.1.396 {ECO:0000269|PubMed:21228475};\nDE   AltName: Full=7'-O-demethylcephaeline 7'-O-methyltransferase CiOMT {ECO:0000303|PubMed:21228475};\nDE            Short=Cephaeline synthase CiOMT {ECO:0000303|PubMed:21228475};\nDE            EC=2.1.1.395 {ECO:0000269|PubMed:21228475};\nDE   AltName: Full=7'-O-demethylcephaeline/cephaeline O-methyltransferase {ECO:0000303|PubMed:21228475, ECO:0000312|EMBL:BAJ72588.1};\nDE            Short=7'OMT {ECO:0000312|EMBL:BAJ72588.1};\nDE            Short=CiOMT {ECO:0000303|PubMed:21228475};\nGN   Name=OMT {ECO:0000303|PubMed:21228475};\nOS   Carapichea ipecacuanha (Ipecac) (Callicocca ipecacuanha).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Rubiaceae; Rubioideae; Palicoureeae;\nOC   Carapichea.\nOX   NCBI_TaxID=77880;\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 1-21",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -804,18 +564,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H2",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 22-30",
   "excerpt": "RN   [1] {ECO:0000312|EMBL:BAJ72588.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, AND ACTIVITY REGULATION.\nRC   TISSUE=Root;\nRX   PubMed=21228475; DOI=10.1271/bbb.100605;\nRA   Cheong B.E., Takemura T., Yoshimatsu K., Sato F.;\nRT   \"Molecular cloning of an O-methyltransferase from adventitious roots of\nRT   Carapichea ipecacuanha.\";\nRL   Biosci. Biotechnol. Biochem. 75:107-113(2011).\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 22-30",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -825,18 +585,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H3",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 111-113",
   "excerpt": "FT   ACT_SITE        254\nFT                   /note=\"Proton acceptor\"\nFT                   /evidence=\"ECO:0000255|PROSITE-ProRule:PRU01020\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 111-113",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -846,18 +606,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H4",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 114-118",
   "excerpt": "FT   BINDING         193\nFT                   /ligand=\"S-adenosyl-L-methionine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59789\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O24529,\nFT                   ECO:0000255|PROSITE-ProRule:PRU01020\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 114-118",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -867,18 +627,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H5",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 119-123",
   "excerpt": "FT   BINDING         216\nFT                   /ligand=\"S-adenosyl-L-methionine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59789\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O24529,\nFT                   ECO:0000255|PROSITE-ProRule:PRU01020\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 119-123",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -888,18 +648,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H6",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 124-128",
   "excerpt": "FT   BINDING         236\nFT                   /ligand=\"S-adenosyl-L-methionine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59789\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O24529,\nFT                   ECO:0000255|PROSITE-ProRule:PRU01020\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 124-128",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -909,18 +669,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H7",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 129-133",
   "excerpt": "FT   BINDING         237\nFT                   /ligand=\"S-adenosyl-L-methionine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59789\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O24529,\nFT                   ECO:0000255|PROSITE-ProRule:PRU01020\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 129-133",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
@@ -930,18 +690,18 @@ All excerpts supplied in the original and revised reviewer user message follow. 
 
 ```json
 {
+  "entry_version": 51,
   "evidence_id": "H8",
-  "source": "UniSave archived UniProt entry",
-  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51",
-  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
-  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
-  "source_locator": "lines 134-138",
   "excerpt": "FT   BINDING         250\nFT                   /ligand=\"S-adenosyl-L-methionine\"\nFT                   /ligand_id=\"ChEBI:CHEBI:59789\"\nFT                   /evidence=\"ECO:0000250|UniProtKB:O24529,\nFT                   ECO:0000255|PROSITE-ProRule:PRU01020\"\n",
   "excerpt_format": "literal contiguous UniProt flat-file lines",
-  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
-  "entry_version": 51,
+  "retrieved_utc": "2026-11-02T04:28:05.930954+00:00",
+  "sequence_comparison": "matched",
   "sequence_version": 1,
-  "sequence_comparison": "matched"
+  "source": "UniSave archived UniProt entry",
+  "source_locator": "lines 134-138",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "source_sha256": "aff433f793df82273b03a21e91750cddc3849d13d8eed7c0543d7bb82fb2f13f",
+  "url": "https://rest.uniprot.org/unisave/E7FL15?format=txt&versions=51"
 }
 ```
 
